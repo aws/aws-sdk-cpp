@@ -56,7 +56,7 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secretOptions"))
   {
-    Array<JsonView> secretOptionsJsonList = jsonValue.GetArray("secretOptions");
+    Aws::Utils::Array<JsonView> secretOptionsJsonList = jsonValue.GetArray("secretOptions");
     for(unsigned secretOptionsIndex = 0; secretOptionsIndex < secretOptionsJsonList.GetLength(); ++secretOptionsIndex)
     {
       m_secretOptions.push_back(secretOptionsJsonList[secretOptionsIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue LogConfiguration::Jsonize() const
 
   if(m_secretOptionsHasBeenSet)
   {
-   Array<JsonValue> secretOptionsJsonList(m_secretOptions.size());
+   Aws::Utils::Array<JsonValue> secretOptionsJsonList(m_secretOptions.size());
    for(unsigned secretOptionsIndex = 0; secretOptionsIndex < secretOptionsJsonList.GetLength(); ++secretOptionsIndex)
    {
      secretOptionsJsonList[secretOptionsIndex].AsObject(m_secretOptions[secretOptionsIndex].Jsonize());

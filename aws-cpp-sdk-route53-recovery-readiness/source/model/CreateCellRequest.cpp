@@ -31,7 +31,7 @@ Aws::String CreateCellRequest::SerializePayload() const
 
   if(m_cellsHasBeenSet)
   {
-   Array<JsonValue> cellsJsonList(m_cells.size());
+   Aws::Utils::Array<JsonValue> cellsJsonList(m_cells.size());
    for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
    {
      cellsJsonList[cellsIndex].AsString(m_cells[cellsIndex]);

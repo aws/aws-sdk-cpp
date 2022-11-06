@@ -50,7 +50,7 @@ DescribeDimensionResult& DescribeDimensionResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("stringValues"))
   {
-    Array<JsonView> stringValuesJsonList = jsonValue.GetArray("stringValues");
+    Aws::Utils::Array<JsonView> stringValuesJsonList = jsonValue.GetArray("stringValues");
     for(unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex)
     {
       m_stringValues.push_back(stringValuesJsonList[stringValuesIndex].AsString());

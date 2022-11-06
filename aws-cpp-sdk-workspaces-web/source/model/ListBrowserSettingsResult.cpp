@@ -30,7 +30,7 @@ ListBrowserSettingsResult& ListBrowserSettingsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("browserSettings"))
   {
-    Array<JsonView> browserSettingsJsonList = jsonValue.GetArray("browserSettings");
+    Aws::Utils::Array<JsonView> browserSettingsJsonList = jsonValue.GetArray("browserSettings");
     for(unsigned browserSettingsIndex = 0; browserSettingsIndex < browserSettingsJsonList.GetLength(); ++browserSettingsIndex)
     {
       m_browserSettings.push_back(browserSettingsJsonList[browserSettingsIndex].AsObject());

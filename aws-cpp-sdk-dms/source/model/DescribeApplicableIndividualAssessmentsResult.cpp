@@ -30,7 +30,7 @@ DescribeApplicableIndividualAssessmentsResult& DescribeApplicableIndividualAsses
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IndividualAssessmentNames"))
   {
-    Array<JsonView> individualAssessmentNamesJsonList = jsonValue.GetArray("IndividualAssessmentNames");
+    Aws::Utils::Array<JsonView> individualAssessmentNamesJsonList = jsonValue.GetArray("IndividualAssessmentNames");
     for(unsigned individualAssessmentNamesIndex = 0; individualAssessmentNamesIndex < individualAssessmentNamesJsonList.GetLength(); ++individualAssessmentNamesIndex)
     {
       m_individualAssessmentNames.push_back(individualAssessmentNamesJsonList[individualAssessmentNamesIndex].AsString());

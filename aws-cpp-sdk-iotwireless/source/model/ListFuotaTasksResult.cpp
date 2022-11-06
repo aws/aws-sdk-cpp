@@ -36,7 +36,7 @@ ListFuotaTasksResult& ListFuotaTasksResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("FuotaTaskList"))
   {
-    Array<JsonView> fuotaTaskListJsonList = jsonValue.GetArray("FuotaTaskList");
+    Aws::Utils::Array<JsonView> fuotaTaskListJsonList = jsonValue.GetArray("FuotaTaskList");
     for(unsigned fuotaTaskListIndex = 0; fuotaTaskListIndex < fuotaTaskListJsonList.GetLength(); ++fuotaTaskListIndex)
     {
       m_fuotaTaskList.push_back(fuotaTaskListJsonList[fuotaTaskListIndex].AsObject());

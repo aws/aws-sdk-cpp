@@ -42,7 +42,7 @@ MetricKeyDataPoints& MetricKeyDataPoints::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DataPoints"))
   {
-    Array<JsonView> dataPointsJsonList = jsonValue.GetArray("DataPoints");
+    Aws::Utils::Array<JsonView> dataPointsJsonList = jsonValue.GetArray("DataPoints");
     for(unsigned dataPointsIndex = 0; dataPointsIndex < dataPointsJsonList.GetLength(); ++dataPointsIndex)
     {
       m_dataPoints.push_back(dataPointsJsonList[dataPointsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue MetricKeyDataPoints::Jsonize() const
 
   if(m_dataPointsHasBeenSet)
   {
-   Array<JsonValue> dataPointsJsonList(m_dataPoints.size());
+   Aws::Utils::Array<JsonValue> dataPointsJsonList(m_dataPoints.size());
    for(unsigned dataPointsIndex = 0; dataPointsIndex < dataPointsJsonList.GetLength(); ++dataPointsIndex)
    {
      dataPointsJsonList[dataPointsIndex].AsObject(m_dataPoints[dataPointsIndex].Jsonize());

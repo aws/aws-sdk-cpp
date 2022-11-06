@@ -38,7 +38,7 @@ Aws::String CreateIpGroupRequest::SerializePayload() const
 
   if(m_userRulesHasBeenSet)
   {
-   Array<JsonValue> userRulesJsonList(m_userRules.size());
+   Aws::Utils::Array<JsonValue> userRulesJsonList(m_userRules.size());
    for(unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex)
    {
      userRulesJsonList[userRulesIndex].AsObject(m_userRules[userRulesIndex].Jsonize());
@@ -49,7 +49,7 @@ Aws::String CreateIpGroupRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

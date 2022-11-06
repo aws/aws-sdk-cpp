@@ -30,7 +30,7 @@ TestMetricFilterResult& TestMetricFilterResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("matches"))
   {
-    Array<JsonView> matchesJsonList = jsonValue.GetArray("matches");
+    Aws::Utils::Array<JsonView> matchesJsonList = jsonValue.GetArray("matches");
     for(unsigned matchesIndex = 0; matchesIndex < matchesJsonList.GetLength(); ++matchesIndex)
     {
       m_matches.push_back(matchesJsonList[matchesIndex].AsObject());

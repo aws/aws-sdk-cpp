@@ -100,7 +100,7 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
 
   if(jsonValue.ValueExists("utilizationMetrics"))
   {
-    Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
+    Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
     for(unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength(); ++utilizationMetricsIndex)
     {
       m_utilizationMetrics.push_back(utilizationMetricsJsonList[utilizationMetricsIndex].AsObject());
@@ -131,7 +131,7 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
 
   if(jsonValue.ValueExists("findingReasonCodes"))
   {
-    Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("findingReasonCodes");
+    Aws::Utils::Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("findingReasonCodes");
     for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
     {
       m_findingReasonCodes.push_back(LambdaFunctionRecommendationFindingReasonCodeMapper::GetLambdaFunctionRecommendationFindingReasonCodeForName(findingReasonCodesJsonList[findingReasonCodesIndex].AsString()));
@@ -141,7 +141,7 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
 
   if(jsonValue.ValueExists("memorySizeRecommendationOptions"))
   {
-    Array<JsonView> memorySizeRecommendationOptionsJsonList = jsonValue.GetArray("memorySizeRecommendationOptions");
+    Aws::Utils::Array<JsonView> memorySizeRecommendationOptionsJsonList = jsonValue.GetArray("memorySizeRecommendationOptions");
     for(unsigned memorySizeRecommendationOptionsIndex = 0; memorySizeRecommendationOptionsIndex < memorySizeRecommendationOptionsJsonList.GetLength(); ++memorySizeRecommendationOptionsIndex)
     {
       m_memorySizeRecommendationOptions.push_back(memorySizeRecommendationOptionsJsonList[memorySizeRecommendationOptionsIndex].AsObject());
@@ -195,7 +195,7 @@ JsonValue LambdaFunctionRecommendation::Jsonize() const
 
   if(m_utilizationMetricsHasBeenSet)
   {
-   Array<JsonValue> utilizationMetricsJsonList(m_utilizationMetrics.size());
+   Aws::Utils::Array<JsonValue> utilizationMetricsJsonList(m_utilizationMetrics.size());
    for(unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength(); ++utilizationMetricsIndex)
    {
      utilizationMetricsJsonList[utilizationMetricsIndex].AsObject(m_utilizationMetrics[utilizationMetricsIndex].Jsonize());
@@ -222,7 +222,7 @@ JsonValue LambdaFunctionRecommendation::Jsonize() const
 
   if(m_findingReasonCodesHasBeenSet)
   {
-   Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
+   Aws::Utils::Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
    for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
    {
      findingReasonCodesJsonList[findingReasonCodesIndex].AsString(LambdaFunctionRecommendationFindingReasonCodeMapper::GetNameForLambdaFunctionRecommendationFindingReasonCode(m_findingReasonCodes[findingReasonCodesIndex]));
@@ -233,7 +233,7 @@ JsonValue LambdaFunctionRecommendation::Jsonize() const
 
   if(m_memorySizeRecommendationOptionsHasBeenSet)
   {
-   Array<JsonValue> memorySizeRecommendationOptionsJsonList(m_memorySizeRecommendationOptions.size());
+   Aws::Utils::Array<JsonValue> memorySizeRecommendationOptionsJsonList(m_memorySizeRecommendationOptions.size());
    for(unsigned memorySizeRecommendationOptionsIndex = 0; memorySizeRecommendationOptionsIndex < memorySizeRecommendationOptionsJsonList.GetLength(); ++memorySizeRecommendationOptionsIndex)
    {
      memorySizeRecommendationOptionsJsonList[memorySizeRecommendationOptionsIndex].AsObject(m_memorySizeRecommendationOptions[memorySizeRecommendationOptionsIndex].Jsonize());

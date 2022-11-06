@@ -43,7 +43,7 @@ BackendAPIResourceConfig& BackendAPIResourceConfig::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("additionalAuthTypes"))
   {
-    Array<JsonView> additionalAuthTypesJsonList = jsonValue.GetArray("additionalAuthTypes");
+    Aws::Utils::Array<JsonView> additionalAuthTypesJsonList = jsonValue.GetArray("additionalAuthTypes");
     for(unsigned additionalAuthTypesIndex = 0; additionalAuthTypesIndex < additionalAuthTypesJsonList.GetLength(); ++additionalAuthTypesIndex)
     {
       m_additionalAuthTypes.push_back(additionalAuthTypesJsonList[additionalAuthTypesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue BackendAPIResourceConfig::Jsonize() const
 
   if(m_additionalAuthTypesHasBeenSet)
   {
-   Array<JsonValue> additionalAuthTypesJsonList(m_additionalAuthTypes.size());
+   Aws::Utils::Array<JsonValue> additionalAuthTypesJsonList(m_additionalAuthTypes.size());
    for(unsigned additionalAuthTypesIndex = 0; additionalAuthTypesIndex < additionalAuthTypesJsonList.GetLength(); ++additionalAuthTypesIndex)
    {
      additionalAuthTypesJsonList[additionalAuthTypesIndex].AsObject(m_additionalAuthTypes[additionalAuthTypesIndex].Jsonize());

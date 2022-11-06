@@ -30,7 +30,7 @@ ListLicenseSpecificationsForResourceResult& ListLicenseSpecificationsForResource
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LicenseSpecifications"))
   {
-    Array<JsonView> licenseSpecificationsJsonList = jsonValue.GetArray("LicenseSpecifications");
+    Aws::Utils::Array<JsonView> licenseSpecificationsJsonList = jsonValue.GetArray("LicenseSpecifications");
     for(unsigned licenseSpecificationsIndex = 0; licenseSpecificationsIndex < licenseSpecificationsJsonList.GetLength(); ++licenseSpecificationsIndex)
     {
       m_licenseSpecifications.push_back(licenseSpecificationsJsonList[licenseSpecificationsIndex].AsObject());

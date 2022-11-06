@@ -30,7 +30,7 @@ DescribeBudgetActionHistoriesResult& DescribeBudgetActionHistoriesResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ActionHistories"))
   {
-    Array<JsonView> actionHistoriesJsonList = jsonValue.GetArray("ActionHistories");
+    Aws::Utils::Array<JsonView> actionHistoriesJsonList = jsonValue.GetArray("ActionHistories");
     for(unsigned actionHistoriesIndex = 0; actionHistoriesIndex < actionHistoriesJsonList.GetLength(); ++actionHistoriesIndex)
     {
       m_actionHistories.push_back(actionHistoriesJsonList[actionHistoriesIndex].AsObject());

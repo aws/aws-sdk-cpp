@@ -44,7 +44,7 @@ Aws::String GetColumnStatisticsForTableRequest::SerializePayload() const
 
   if(m_columnNamesHasBeenSet)
   {
-   Array<JsonValue> columnNamesJsonList(m_columnNames.size());
+   Aws::Utils::Array<JsonValue> columnNamesJsonList(m_columnNames.size());
    for(unsigned columnNamesIndex = 0; columnNamesIndex < columnNamesJsonList.GetLength(); ++columnNamesIndex)
    {
      columnNamesJsonList[columnNamesIndex].AsString(m_columnNames[columnNamesIndex]);

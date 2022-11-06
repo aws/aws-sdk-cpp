@@ -30,7 +30,7 @@ DescribeVpcPeeringAuthorizationsResult& DescribeVpcPeeringAuthorizationsResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VpcPeeringAuthorizations"))
   {
-    Array<JsonView> vpcPeeringAuthorizationsJsonList = jsonValue.GetArray("VpcPeeringAuthorizations");
+    Aws::Utils::Array<JsonView> vpcPeeringAuthorizationsJsonList = jsonValue.GetArray("VpcPeeringAuthorizations");
     for(unsigned vpcPeeringAuthorizationsIndex = 0; vpcPeeringAuthorizationsIndex < vpcPeeringAuthorizationsJsonList.GetLength(); ++vpcPeeringAuthorizationsIndex)
     {
       m_vpcPeeringAuthorizations.push_back(vpcPeeringAuthorizationsJsonList[vpcPeeringAuthorizationsIndex].AsObject());

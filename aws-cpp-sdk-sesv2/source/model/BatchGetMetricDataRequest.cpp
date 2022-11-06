@@ -23,7 +23,7 @@ Aws::String BatchGetMetricDataRequest::SerializePayload() const
 
   if(m_queriesHasBeenSet)
   {
-   Array<JsonValue> queriesJsonList(m_queries.size());
+   Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
    for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
    {
      queriesJsonList[queriesIndex].AsObject(m_queries[queriesIndex].Jsonize());

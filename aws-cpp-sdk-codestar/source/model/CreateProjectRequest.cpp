@@ -53,7 +53,7 @@ Aws::String CreateProjectRequest::SerializePayload() const
 
   if(m_sourceCodeHasBeenSet)
   {
-   Array<JsonValue> sourceCodeJsonList(m_sourceCode.size());
+   Aws::Utils::Array<JsonValue> sourceCodeJsonList(m_sourceCode.size());
    for(unsigned sourceCodeIndex = 0; sourceCodeIndex < sourceCodeJsonList.GetLength(); ++sourceCodeIndex)
    {
      sourceCodeJsonList[sourceCodeIndex].AsObject(m_sourceCode[sourceCodeIndex].Jsonize());

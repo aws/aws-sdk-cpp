@@ -48,7 +48,7 @@ DescribePrincipalMappingResult& DescribePrincipalMappingResult::operator =(const
 
   if(jsonValue.ValueExists("GroupOrderingIdSummaries"))
   {
-    Array<JsonView> groupOrderingIdSummariesJsonList = jsonValue.GetArray("GroupOrderingIdSummaries");
+    Aws::Utils::Array<JsonView> groupOrderingIdSummariesJsonList = jsonValue.GetArray("GroupOrderingIdSummaries");
     for(unsigned groupOrderingIdSummariesIndex = 0; groupOrderingIdSummariesIndex < groupOrderingIdSummariesJsonList.GetLength(); ++groupOrderingIdSummariesIndex)
     {
       m_groupOrderingIdSummaries.push_back(groupOrderingIdSummariesJsonList[groupOrderingIdSummariesIndex].AsObject());

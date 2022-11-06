@@ -30,7 +30,7 @@ ListTaskDefinitionFamiliesResult& ListTaskDefinitionFamiliesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("families"))
   {
-    Array<JsonView> familiesJsonList = jsonValue.GetArray("families");
+    Aws::Utils::Array<JsonView> familiesJsonList = jsonValue.GetArray("families");
     for(unsigned familiesIndex = 0; familiesIndex < familiesJsonList.GetLength(); ++familiesIndex)
     {
       m_families.push_back(familiesJsonList[familiesIndex].AsString());

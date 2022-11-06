@@ -44,7 +44,7 @@ SelectFields& SelectFields::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -54,10 +54,10 @@ SelectFields& SelectFields::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Paths"))
   {
-    Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
+    Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
     for(unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex)
     {
-      Array<JsonView> enclosedInStringPropertiesJsonList = pathsJsonList[pathsIndex].AsArray();
+      Aws::Utils::Array<JsonView> enclosedInStringPropertiesJsonList = pathsJsonList[pathsIndex].AsArray();
       Aws::Vector<Aws::String> enclosedInStringPropertiesList;
       enclosedInStringPropertiesList.reserve((size_t)enclosedInStringPropertiesJsonList.GetLength());
       for(unsigned enclosedInStringPropertiesIndex = 0; enclosedInStringPropertiesIndex < enclosedInStringPropertiesJsonList.GetLength(); ++enclosedInStringPropertiesIndex)
@@ -84,7 +84,7 @@ JsonValue SelectFields::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
@@ -95,10 +95,10 @@ JsonValue SelectFields::Jsonize() const
 
   if(m_pathsHasBeenSet)
   {
-   Array<JsonValue> pathsJsonList(m_paths.size());
+   Aws::Utils::Array<JsonValue> pathsJsonList(m_paths.size());
    for(unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex)
    {
-     Array<JsonValue> enclosedInStringPropertiesJsonList(m_paths[pathsIndex].size());
+     Aws::Utils::Array<JsonValue> enclosedInStringPropertiesJsonList(m_paths[pathsIndex].size());
      for(unsigned enclosedInStringPropertiesIndex = 0; enclosedInStringPropertiesIndex < enclosedInStringPropertiesJsonList.GetLength(); ++enclosedInStringPropertiesIndex)
      {
        enclosedInStringPropertiesJsonList[enclosedInStringPropertiesIndex].AsString(m_paths[pathsIndex][enclosedInStringPropertiesIndex]);

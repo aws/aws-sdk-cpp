@@ -36,7 +36,7 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("messages"))
   {
-    Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
+    Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
     for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
     {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());
@@ -45,7 +45,7 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("interpretations"))
   {
-    Array<JsonView> interpretationsJsonList = jsonValue.GetArray("interpretations");
+    Aws::Utils::Array<JsonView> interpretationsJsonList = jsonValue.GetArray("interpretations");
     for(unsigned interpretationsIndex = 0; interpretationsIndex < interpretationsJsonList.GetLength(); ++interpretationsIndex)
     {
       m_interpretations.push_back(interpretationsJsonList[interpretationsIndex].AsObject());

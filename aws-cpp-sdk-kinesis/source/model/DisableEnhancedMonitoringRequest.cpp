@@ -30,7 +30,7 @@ Aws::String DisableEnhancedMonitoringRequest::SerializePayload() const
 
   if(m_shardLevelMetricsHasBeenSet)
   {
-   Array<JsonValue> shardLevelMetricsJsonList(m_shardLevelMetrics.size());
+   Aws::Utils::Array<JsonValue> shardLevelMetricsJsonList(m_shardLevelMetrics.size());
    for(unsigned shardLevelMetricsIndex = 0; shardLevelMetricsIndex < shardLevelMetricsJsonList.GetLength(); ++shardLevelMetricsIndex)
    {
      shardLevelMetricsJsonList[shardLevelMetricsIndex].AsString(MetricsNameMapper::GetNameForMetricsName(m_shardLevelMetrics[shardLevelMetricsIndex]));

@@ -26,7 +26,7 @@ Aws::String ListResourcesRequest::SerializePayload() const
 
   if(m_filterConditionListHasBeenSet)
   {
-   Array<JsonValue> filterConditionListJsonList(m_filterConditionList.size());
+   Aws::Utils::Array<JsonValue> filterConditionListJsonList(m_filterConditionList.size());
    for(unsigned filterConditionListIndex = 0; filterConditionListIndex < filterConditionListJsonList.GetLength(); ++filterConditionListIndex)
    {
      filterConditionListJsonList[filterConditionListIndex].AsObject(m_filterConditionList[filterConditionListIndex].Jsonize());

@@ -37,7 +37,7 @@ TargetInstances& TargetInstances::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tagFilters"))
   {
-    Array<JsonView> tagFiltersJsonList = jsonValue.GetArray("tagFilters");
+    Aws::Utils::Array<JsonView> tagFiltersJsonList = jsonValue.GetArray("tagFilters");
     for(unsigned tagFiltersIndex = 0; tagFiltersIndex < tagFiltersJsonList.GetLength(); ++tagFiltersIndex)
     {
       m_tagFilters.push_back(tagFiltersJsonList[tagFiltersIndex].AsObject());
@@ -47,7 +47,7 @@ TargetInstances& TargetInstances::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("autoScalingGroups"))
   {
-    Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
+    Aws::Utils::Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
     for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
     {
       m_autoScalingGroups.push_back(autoScalingGroupsJsonList[autoScalingGroupsIndex].AsString());
@@ -71,7 +71,7 @@ JsonValue TargetInstances::Jsonize() const
 
   if(m_tagFiltersHasBeenSet)
   {
-   Array<JsonValue> tagFiltersJsonList(m_tagFilters.size());
+   Aws::Utils::Array<JsonValue> tagFiltersJsonList(m_tagFilters.size());
    for(unsigned tagFiltersIndex = 0; tagFiltersIndex < tagFiltersJsonList.GetLength(); ++tagFiltersIndex)
    {
      tagFiltersJsonList[tagFiltersIndex].AsObject(m_tagFilters[tagFiltersIndex].Jsonize());
@@ -82,7 +82,7 @@ JsonValue TargetInstances::Jsonize() const
 
   if(m_autoScalingGroupsHasBeenSet)
   {
-   Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
+   Aws::Utils::Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
    for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
    {
      autoScalingGroupsJsonList[autoScalingGroupsIndex].AsString(m_autoScalingGroups[autoScalingGroupsIndex]);

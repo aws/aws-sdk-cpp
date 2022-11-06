@@ -30,7 +30,7 @@ ListBusinessReportSchedulesResult& ListBusinessReportSchedulesResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BusinessReportSchedules"))
   {
-    Array<JsonView> businessReportSchedulesJsonList = jsonValue.GetArray("BusinessReportSchedules");
+    Aws::Utils::Array<JsonView> businessReportSchedulesJsonList = jsonValue.GetArray("BusinessReportSchedules");
     for(unsigned businessReportSchedulesIndex = 0; businessReportSchedulesIndex < businessReportSchedulesJsonList.GetLength(); ++businessReportSchedulesIndex)
     {
       m_businessReportSchedules.push_back(businessReportSchedulesJsonList[businessReportSchedulesIndex].AsObject());

@@ -30,7 +30,7 @@ DescribeComplianceByConfigRuleResult& DescribeComplianceByConfigRuleResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComplianceByConfigRules"))
   {
-    Array<JsonView> complianceByConfigRulesJsonList = jsonValue.GetArray("ComplianceByConfigRules");
+    Aws::Utils::Array<JsonView> complianceByConfigRulesJsonList = jsonValue.GetArray("ComplianceByConfigRules");
     for(unsigned complianceByConfigRulesIndex = 0; complianceByConfigRulesIndex < complianceByConfigRulesJsonList.GetLength(); ++complianceByConfigRulesIndex)
     {
       m_complianceByConfigRules.push_back(complianceByConfigRulesJsonList[complianceByConfigRulesIndex].AsObject());

@@ -36,7 +36,7 @@ GetRecommendationSummariesResult& GetRecommendationSummariesResult::operator =(c
 
   if(jsonValue.ValueExists("recommendationSummaries"))
   {
-    Array<JsonView> recommendationSummariesJsonList = jsonValue.GetArray("recommendationSummaries");
+    Aws::Utils::Array<JsonView> recommendationSummariesJsonList = jsonValue.GetArray("recommendationSummaries");
     for(unsigned recommendationSummariesIndex = 0; recommendationSummariesIndex < recommendationSummariesJsonList.GetLength(); ++recommendationSummariesIndex)
     {
       m_recommendationSummaries.push_back(recommendationSummariesJsonList[recommendationSummariesIndex].AsObject());

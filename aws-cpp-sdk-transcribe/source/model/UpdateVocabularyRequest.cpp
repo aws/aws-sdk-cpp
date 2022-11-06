@@ -38,7 +38,7 @@ Aws::String UpdateVocabularyRequest::SerializePayload() const
 
   if(m_phrasesHasBeenSet)
   {
-   Array<JsonValue> phrasesJsonList(m_phrases.size());
+   Aws::Utils::Array<JsonValue> phrasesJsonList(m_phrases.size());
    for(unsigned phrasesIndex = 0; phrasesIndex < phrasesJsonList.GetLength(); ++phrasesIndex)
    {
      phrasesJsonList[phrasesIndex].AsString(m_phrases[phrasesIndex]);

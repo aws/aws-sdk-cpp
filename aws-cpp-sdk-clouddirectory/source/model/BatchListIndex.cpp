@@ -41,7 +41,7 @@ BatchListIndex& BatchListIndex::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RangesOnIndexedValues"))
   {
-    Array<JsonView> rangesOnIndexedValuesJsonList = jsonValue.GetArray("RangesOnIndexedValues");
+    Aws::Utils::Array<JsonView> rangesOnIndexedValuesJsonList = jsonValue.GetArray("RangesOnIndexedValues");
     for(unsigned rangesOnIndexedValuesIndex = 0; rangesOnIndexedValuesIndex < rangesOnIndexedValuesJsonList.GetLength(); ++rangesOnIndexedValuesIndex)
     {
       m_rangesOnIndexedValues.push_back(rangesOnIndexedValuesJsonList[rangesOnIndexedValuesIndex].AsObject());
@@ -79,7 +79,7 @@ JsonValue BatchListIndex::Jsonize() const
 
   if(m_rangesOnIndexedValuesHasBeenSet)
   {
-   Array<JsonValue> rangesOnIndexedValuesJsonList(m_rangesOnIndexedValues.size());
+   Aws::Utils::Array<JsonValue> rangesOnIndexedValuesJsonList(m_rangesOnIndexedValues.size());
    for(unsigned rangesOnIndexedValuesIndex = 0; rangesOnIndexedValuesIndex < rangesOnIndexedValuesJsonList.GetLength(); ++rangesOnIndexedValuesIndex)
    {
      rangesOnIndexedValuesJsonList[rangesOnIndexedValuesIndex].AsObject(m_rangesOnIndexedValues[rangesOnIndexedValuesIndex].Jsonize());

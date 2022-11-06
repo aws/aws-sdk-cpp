@@ -30,7 +30,7 @@ CancelStepsResult& CancelStepsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CancelStepsInfoList"))
   {
-    Array<JsonView> cancelStepsInfoListJsonList = jsonValue.GetArray("CancelStepsInfoList");
+    Aws::Utils::Array<JsonView> cancelStepsInfoListJsonList = jsonValue.GetArray("CancelStepsInfoList");
     for(unsigned cancelStepsInfoListIndex = 0; cancelStepsInfoListIndex < cancelStepsInfoListJsonList.GetLength(); ++cancelStepsInfoListIndex)
     {
       m_cancelStepsInfoList.push_back(cancelStepsInfoListJsonList[cancelStepsInfoListIndex].AsObject());

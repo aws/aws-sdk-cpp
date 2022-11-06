@@ -64,7 +64,7 @@ LambdaFunctionRecipeSource& LambdaFunctionRecipeSource::operator =(JsonView json
 
   if(jsonValue.ValueExists("componentPlatforms"))
   {
-    Array<JsonView> componentPlatformsJsonList = jsonValue.GetArray("componentPlatforms");
+    Aws::Utils::Array<JsonView> componentPlatformsJsonList = jsonValue.GetArray("componentPlatforms");
     for(unsigned componentPlatformsIndex = 0; componentPlatformsIndex < componentPlatformsJsonList.GetLength(); ++componentPlatformsIndex)
     {
       m_componentPlatforms.push_back(componentPlatformsJsonList[componentPlatformsIndex].AsObject());
@@ -116,7 +116,7 @@ JsonValue LambdaFunctionRecipeSource::Jsonize() const
 
   if(m_componentPlatformsHasBeenSet)
   {
-   Array<JsonValue> componentPlatformsJsonList(m_componentPlatforms.size());
+   Aws::Utils::Array<JsonValue> componentPlatformsJsonList(m_componentPlatforms.size());
    for(unsigned componentPlatformsIndex = 0; componentPlatformsIndex < componentPlatformsJsonList.GetLength(); ++componentPlatformsIndex)
    {
      componentPlatformsJsonList[componentPlatformsIndex].AsObject(m_componentPlatforms[componentPlatformsIndex].Jsonize());

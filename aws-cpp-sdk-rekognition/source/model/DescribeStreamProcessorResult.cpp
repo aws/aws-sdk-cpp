@@ -104,7 +104,7 @@ DescribeStreamProcessorResult& DescribeStreamProcessorResult::operator =(const A
 
   if(jsonValue.ValueExists("RegionsOfInterest"))
   {
-    Array<JsonView> regionsOfInterestJsonList = jsonValue.GetArray("RegionsOfInterest");
+    Aws::Utils::Array<JsonView> regionsOfInterestJsonList = jsonValue.GetArray("RegionsOfInterest");
     for(unsigned regionsOfInterestIndex = 0; regionsOfInterestIndex < regionsOfInterestJsonList.GetLength(); ++regionsOfInterestIndex)
     {
       m_regionsOfInterest.push_back(regionsOfInterestJsonList[regionsOfInterestIndex].AsObject());

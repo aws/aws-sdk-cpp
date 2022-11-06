@@ -60,7 +60,7 @@ OrganizationCustomPolicyRuleMetadataNoPolicy& OrganizationCustomPolicyRuleMetada
 
   if(jsonValue.ValueExists("OrganizationConfigRuleTriggerTypes"))
   {
-    Array<JsonView> organizationConfigRuleTriggerTypesJsonList = jsonValue.GetArray("OrganizationConfigRuleTriggerTypes");
+    Aws::Utils::Array<JsonView> organizationConfigRuleTriggerTypesJsonList = jsonValue.GetArray("OrganizationConfigRuleTriggerTypes");
     for(unsigned organizationConfigRuleTriggerTypesIndex = 0; organizationConfigRuleTriggerTypesIndex < organizationConfigRuleTriggerTypesJsonList.GetLength(); ++organizationConfigRuleTriggerTypesIndex)
     {
       m_organizationConfigRuleTriggerTypes.push_back(OrganizationConfigRuleTriggerTypeNoSNMapper::GetOrganizationConfigRuleTriggerTypeNoSNForName(organizationConfigRuleTriggerTypesJsonList[organizationConfigRuleTriggerTypesIndex].AsString()));
@@ -84,7 +84,7 @@ OrganizationCustomPolicyRuleMetadataNoPolicy& OrganizationCustomPolicyRuleMetada
 
   if(jsonValue.ValueExists("ResourceTypesScope"))
   {
-    Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
+    Aws::Utils::Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
     for(unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength(); ++resourceTypesScopeIndex)
     {
       m_resourceTypesScope.push_back(resourceTypesScopeJsonList[resourceTypesScopeIndex].AsString());
@@ -122,7 +122,7 @@ OrganizationCustomPolicyRuleMetadataNoPolicy& OrganizationCustomPolicyRuleMetada
 
   if(jsonValue.ValueExists("DebugLogDeliveryAccounts"))
   {
-    Array<JsonView> debugLogDeliveryAccountsJsonList = jsonValue.GetArray("DebugLogDeliveryAccounts");
+    Aws::Utils::Array<JsonView> debugLogDeliveryAccountsJsonList = jsonValue.GetArray("DebugLogDeliveryAccounts");
     for(unsigned debugLogDeliveryAccountsIndex = 0; debugLogDeliveryAccountsIndex < debugLogDeliveryAccountsJsonList.GetLength(); ++debugLogDeliveryAccountsIndex)
     {
       m_debugLogDeliveryAccounts.push_back(debugLogDeliveryAccountsJsonList[debugLogDeliveryAccountsIndex].AsString());
@@ -145,7 +145,7 @@ JsonValue OrganizationCustomPolicyRuleMetadataNoPolicy::Jsonize() const
 
   if(m_organizationConfigRuleTriggerTypesHasBeenSet)
   {
-   Array<JsonValue> organizationConfigRuleTriggerTypesJsonList(m_organizationConfigRuleTriggerTypes.size());
+   Aws::Utils::Array<JsonValue> organizationConfigRuleTriggerTypesJsonList(m_organizationConfigRuleTriggerTypes.size());
    for(unsigned organizationConfigRuleTriggerTypesIndex = 0; organizationConfigRuleTriggerTypesIndex < organizationConfigRuleTriggerTypesJsonList.GetLength(); ++organizationConfigRuleTriggerTypesIndex)
    {
      organizationConfigRuleTriggerTypesJsonList[organizationConfigRuleTriggerTypesIndex].AsString(OrganizationConfigRuleTriggerTypeNoSNMapper::GetNameForOrganizationConfigRuleTriggerTypeNoSN(m_organizationConfigRuleTriggerTypes[organizationConfigRuleTriggerTypesIndex]));
@@ -167,7 +167,7 @@ JsonValue OrganizationCustomPolicyRuleMetadataNoPolicy::Jsonize() const
 
   if(m_resourceTypesScopeHasBeenSet)
   {
-   Array<JsonValue> resourceTypesScopeJsonList(m_resourceTypesScope.size());
+   Aws::Utils::Array<JsonValue> resourceTypesScopeJsonList(m_resourceTypesScope.size());
    for(unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength(); ++resourceTypesScopeIndex)
    {
      resourceTypesScopeJsonList[resourceTypesScopeIndex].AsString(m_resourceTypesScope[resourceTypesScopeIndex]);
@@ -202,7 +202,7 @@ JsonValue OrganizationCustomPolicyRuleMetadataNoPolicy::Jsonize() const
 
   if(m_debugLogDeliveryAccountsHasBeenSet)
   {
-   Array<JsonValue> debugLogDeliveryAccountsJsonList(m_debugLogDeliveryAccounts.size());
+   Aws::Utils::Array<JsonValue> debugLogDeliveryAccountsJsonList(m_debugLogDeliveryAccounts.size());
    for(unsigned debugLogDeliveryAccountsIndex = 0; debugLogDeliveryAccountsIndex < debugLogDeliveryAccountsJsonList.GetLength(); ++debugLogDeliveryAccountsIndex)
    {
      debugLogDeliveryAccountsJsonList[debugLogDeliveryAccountsIndex].AsString(m_debugLogDeliveryAccounts[debugLogDeliveryAccountsIndex]);

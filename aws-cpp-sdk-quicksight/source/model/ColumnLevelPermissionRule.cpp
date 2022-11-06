@@ -35,7 +35,7 @@ ColumnLevelPermissionRule& ColumnLevelPermissionRule::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("Principals"))
   {
-    Array<JsonView> principalsJsonList = jsonValue.GetArray("Principals");
+    Aws::Utils::Array<JsonView> principalsJsonList = jsonValue.GetArray("Principals");
     for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
     {
       m_principals.push_back(principalsJsonList[principalsIndex].AsString());
@@ -45,7 +45,7 @@ ColumnLevelPermissionRule& ColumnLevelPermissionRule::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ColumnNames"))
   {
-    Array<JsonView> columnNamesJsonList = jsonValue.GetArray("ColumnNames");
+    Aws::Utils::Array<JsonView> columnNamesJsonList = jsonValue.GetArray("ColumnNames");
     for(unsigned columnNamesIndex = 0; columnNamesIndex < columnNamesJsonList.GetLength(); ++columnNamesIndex)
     {
       m_columnNames.push_back(columnNamesJsonList[columnNamesIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue ColumnLevelPermissionRule::Jsonize() const
 
   if(m_principalsHasBeenSet)
   {
-   Array<JsonValue> principalsJsonList(m_principals.size());
+   Aws::Utils::Array<JsonValue> principalsJsonList(m_principals.size());
    for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
    {
      principalsJsonList[principalsIndex].AsString(m_principals[principalsIndex]);
@@ -73,7 +73,7 @@ JsonValue ColumnLevelPermissionRule::Jsonize() const
 
   if(m_columnNamesHasBeenSet)
   {
-   Array<JsonValue> columnNamesJsonList(m_columnNames.size());
+   Aws::Utils::Array<JsonValue> columnNamesJsonList(m_columnNames.size());
    for(unsigned columnNamesIndex = 0; columnNamesIndex < columnNamesJsonList.GetLength(); ++columnNamesIndex)
    {
      columnNamesJsonList[columnNamesIndex].AsString(m_columnNames[columnNamesIndex]);

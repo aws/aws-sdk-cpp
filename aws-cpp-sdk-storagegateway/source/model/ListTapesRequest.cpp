@@ -26,7 +26,7 @@ Aws::String ListTapesRequest::SerializePayload() const
 
   if(m_tapeARNsHasBeenSet)
   {
-   Array<JsonValue> tapeARNsJsonList(m_tapeARNs.size());
+   Aws::Utils::Array<JsonValue> tapeARNsJsonList(m_tapeARNs.size());
    for(unsigned tapeARNsIndex = 0; tapeARNsIndex < tapeARNsJsonList.GetLength(); ++tapeARNsIndex)
    {
      tapeARNsJsonList[tapeARNsIndex].AsString(m_tapeARNs[tapeARNsIndex]);

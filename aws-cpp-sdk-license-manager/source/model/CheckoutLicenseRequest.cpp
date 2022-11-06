@@ -47,7 +47,7 @@ Aws::String CheckoutLicenseRequest::SerializePayload() const
 
   if(m_entitlementsHasBeenSet)
   {
-   Array<JsonValue> entitlementsJsonList(m_entitlements.size());
+   Aws::Utils::Array<JsonValue> entitlementsJsonList(m_entitlements.size());
    for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
    {
      entitlementsJsonList[entitlementsIndex].AsObject(m_entitlements[entitlementsIndex].Jsonize());

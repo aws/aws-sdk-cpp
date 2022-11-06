@@ -36,7 +36,7 @@ ListSafetyRulesResult& ListSafetyRulesResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("SafetyRules"))
   {
-    Array<JsonView> safetyRulesJsonList = jsonValue.GetArray("SafetyRules");
+    Aws::Utils::Array<JsonView> safetyRulesJsonList = jsonValue.GetArray("SafetyRules");
     for(unsigned safetyRulesIndex = 0; safetyRulesIndex < safetyRulesJsonList.GetLength(); ++safetyRulesIndex)
     {
       m_safetyRules.push_back(safetyRulesJsonList[safetyRulesIndex].AsObject());

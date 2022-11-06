@@ -44,7 +44,7 @@ DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("HsmsLastActionFailed"))
   {
-    Array<JsonView> hsmsLastActionFailedJsonList = jsonValue.GetArray("HsmsLastActionFailed");
+    Aws::Utils::Array<JsonView> hsmsLastActionFailedJsonList = jsonValue.GetArray("HsmsLastActionFailed");
     for(unsigned hsmsLastActionFailedIndex = 0; hsmsLastActionFailedIndex < hsmsLastActionFailedJsonList.GetLength(); ++hsmsLastActionFailedIndex)
     {
       m_hsmsLastActionFailed.push_back(hsmsLastActionFailedJsonList[hsmsLastActionFailedIndex].AsString());
@@ -53,7 +53,7 @@ DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("HsmsPendingDeletion"))
   {
-    Array<JsonView> hsmsPendingDeletionJsonList = jsonValue.GetArray("HsmsPendingDeletion");
+    Aws::Utils::Array<JsonView> hsmsPendingDeletionJsonList = jsonValue.GetArray("HsmsPendingDeletion");
     for(unsigned hsmsPendingDeletionIndex = 0; hsmsPendingDeletionIndex < hsmsPendingDeletionJsonList.GetLength(); ++hsmsPendingDeletionIndex)
     {
       m_hsmsPendingDeletion.push_back(hsmsPendingDeletionJsonList[hsmsPendingDeletionIndex].AsString());
@@ -62,7 +62,7 @@ DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("HsmsPendingRegistration"))
   {
-    Array<JsonView> hsmsPendingRegistrationJsonList = jsonValue.GetArray("HsmsPendingRegistration");
+    Aws::Utils::Array<JsonView> hsmsPendingRegistrationJsonList = jsonValue.GetArray("HsmsPendingRegistration");
     for(unsigned hsmsPendingRegistrationIndex = 0; hsmsPendingRegistrationIndex < hsmsPendingRegistrationJsonList.GetLength(); ++hsmsPendingRegistrationIndex)
     {
       m_hsmsPendingRegistration.push_back(hsmsPendingRegistrationJsonList[hsmsPendingRegistrationIndex].AsString());
@@ -83,7 +83,7 @@ DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("PartitionSerialList"))
   {
-    Array<JsonView> partitionSerialListJsonList = jsonValue.GetArray("PartitionSerialList");
+    Aws::Utils::Array<JsonView> partitionSerialListJsonList = jsonValue.GetArray("PartitionSerialList");
     for(unsigned partitionSerialListIndex = 0; partitionSerialListIndex < partitionSerialListJsonList.GetLength(); ++partitionSerialListIndex)
     {
       m_partitionSerialList.push_back(partitionSerialListJsonList[partitionSerialListIndex].AsString());

@@ -24,7 +24,7 @@ Aws::String StartFailbackLaunchRequest::SerializePayload() const
 
   if(m_recoveryInstanceIDsHasBeenSet)
   {
-   Array<JsonValue> recoveryInstanceIDsJsonList(m_recoveryInstanceIDs.size());
+   Aws::Utils::Array<JsonValue> recoveryInstanceIDsJsonList(m_recoveryInstanceIDs.size());
    for(unsigned recoveryInstanceIDsIndex = 0; recoveryInstanceIDsIndex < recoveryInstanceIDsJsonList.GetLength(); ++recoveryInstanceIDsIndex)
    {
      recoveryInstanceIDsJsonList[recoveryInstanceIDsIndex].AsString(m_recoveryInstanceIDs[recoveryInstanceIDsIndex]);

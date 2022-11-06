@@ -36,7 +36,7 @@ ListServiceProfilesResult& ListServiceProfilesResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ServiceProfileList"))
   {
-    Array<JsonView> serviceProfileListJsonList = jsonValue.GetArray("ServiceProfileList");
+    Aws::Utils::Array<JsonView> serviceProfileListJsonList = jsonValue.GetArray("ServiceProfileList");
     for(unsigned serviceProfileListIndex = 0; serviceProfileListIndex < serviceProfileListJsonList.GetLength(); ++serviceProfileListIndex)
     {
       m_serviceProfileList.push_back(serviceProfileListJsonList[serviceProfileListIndex].AsObject());

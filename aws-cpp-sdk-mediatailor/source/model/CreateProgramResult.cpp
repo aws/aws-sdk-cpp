@@ -30,7 +30,7 @@ CreateProgramResult& CreateProgramResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AdBreaks"))
   {
-    Array<JsonView> adBreaksJsonList = jsonValue.GetArray("AdBreaks");
+    Aws::Utils::Array<JsonView> adBreaksJsonList = jsonValue.GetArray("AdBreaks");
     for(unsigned adBreaksIndex = 0; adBreaksIndex < adBreaksJsonList.GetLength(); ++adBreaksIndex)
     {
       m_adBreaks.push_back(adBreaksJsonList[adBreaksIndex].AsObject());

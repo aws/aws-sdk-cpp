@@ -30,7 +30,7 @@ ListTaskExecutionsResult& ListTaskExecutionsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TaskExecutions"))
   {
-    Array<JsonView> taskExecutionsJsonList = jsonValue.GetArray("TaskExecutions");
+    Aws::Utils::Array<JsonView> taskExecutionsJsonList = jsonValue.GetArray("TaskExecutions");
     for(unsigned taskExecutionsIndex = 0; taskExecutionsIndex < taskExecutionsJsonList.GetLength(); ++taskExecutionsIndex)
     {
       m_taskExecutions.push_back(taskExecutionsJsonList[taskExecutionsIndex].AsObject());

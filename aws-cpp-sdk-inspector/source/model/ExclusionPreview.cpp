@@ -62,7 +62,7 @@ ExclusionPreview& ExclusionPreview::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("scopes"))
   {
-    Array<JsonView> scopesJsonList = jsonValue.GetArray("scopes");
+    Aws::Utils::Array<JsonView> scopesJsonList = jsonValue.GetArray("scopes");
     for(unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex)
     {
       m_scopes.push_back(scopesJsonList[scopesIndex].AsObject());
@@ -72,7 +72,7 @@ ExclusionPreview& ExclusionPreview::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -107,7 +107,7 @@ JsonValue ExclusionPreview::Jsonize() const
 
   if(m_scopesHasBeenSet)
   {
-   Array<JsonValue> scopesJsonList(m_scopes.size());
+   Aws::Utils::Array<JsonValue> scopesJsonList(m_scopes.size());
    for(unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex)
    {
      scopesJsonList[scopesIndex].AsObject(m_scopes[scopesIndex].Jsonize());
@@ -118,7 +118,7 @@ JsonValue ExclusionPreview::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());

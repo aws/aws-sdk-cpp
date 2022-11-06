@@ -36,7 +36,7 @@ ListRepositoriesResult& ListRepositoriesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("repositories"))
   {
-    Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
+    Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
     for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
     {
       m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());

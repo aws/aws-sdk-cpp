@@ -42,7 +42,7 @@ ThingTypeProperties& ThingTypeProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("searchableAttributes"))
   {
-    Array<JsonView> searchableAttributesJsonList = jsonValue.GetArray("searchableAttributes");
+    Aws::Utils::Array<JsonView> searchableAttributesJsonList = jsonValue.GetArray("searchableAttributes");
     for(unsigned searchableAttributesIndex = 0; searchableAttributesIndex < searchableAttributesJsonList.GetLength(); ++searchableAttributesIndex)
     {
       m_searchableAttributes.push_back(searchableAttributesJsonList[searchableAttributesIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue ThingTypeProperties::Jsonize() const
 
   if(m_searchableAttributesHasBeenSet)
   {
-   Array<JsonValue> searchableAttributesJsonList(m_searchableAttributes.size());
+   Aws::Utils::Array<JsonValue> searchableAttributesJsonList(m_searchableAttributes.size());
    for(unsigned searchableAttributesIndex = 0; searchableAttributesIndex < searchableAttributesJsonList.GetLength(); ++searchableAttributesIndex)
    {
      searchableAttributesJsonList[searchableAttributesIndex].AsString(m_searchableAttributes[searchableAttributesIndex]);

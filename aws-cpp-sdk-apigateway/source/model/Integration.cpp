@@ -159,7 +159,7 @@ Integration& Integration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("cacheKeyParameters"))
   {
-    Array<JsonView> cacheKeyParametersJsonList = jsonValue.GetArray("cacheKeyParameters");
+    Aws::Utils::Array<JsonView> cacheKeyParametersJsonList = jsonValue.GetArray("cacheKeyParameters");
     for(unsigned cacheKeyParametersIndex = 0; cacheKeyParametersIndex < cacheKeyParametersJsonList.GetLength(); ++cacheKeyParametersIndex)
     {
       m_cacheKeyParameters.push_back(cacheKeyParametersJsonList[cacheKeyParametersIndex].AsString());
@@ -272,7 +272,7 @@ JsonValue Integration::Jsonize() const
 
   if(m_cacheKeyParametersHasBeenSet)
   {
-   Array<JsonValue> cacheKeyParametersJsonList(m_cacheKeyParameters.size());
+   Aws::Utils::Array<JsonValue> cacheKeyParametersJsonList(m_cacheKeyParameters.size());
    for(unsigned cacheKeyParametersIndex = 0; cacheKeyParametersIndex < cacheKeyParametersJsonList.GetLength(); ++cacheKeyParametersIndex)
    {
      cacheKeyParametersJsonList[cacheKeyParametersIndex].AsString(m_cacheKeyParameters[cacheKeyParametersIndex]);

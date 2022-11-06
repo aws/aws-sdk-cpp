@@ -36,7 +36,7 @@ GetUserResult& GetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   if(jsonValue.ValueExists("UserAttributes"))
   {
-    Array<JsonView> userAttributesJsonList = jsonValue.GetArray("UserAttributes");
+    Aws::Utils::Array<JsonView> userAttributesJsonList = jsonValue.GetArray("UserAttributes");
     for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
     {
       m_userAttributes.push_back(userAttributesJsonList[userAttributesIndex].AsObject());
@@ -45,7 +45,7 @@ GetUserResult& GetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   if(jsonValue.ValueExists("MFAOptions"))
   {
-    Array<JsonView> mFAOptionsJsonList = jsonValue.GetArray("MFAOptions");
+    Aws::Utils::Array<JsonView> mFAOptionsJsonList = jsonValue.GetArray("MFAOptions");
     for(unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex)
     {
       m_mFAOptions.push_back(mFAOptionsJsonList[mFAOptionsIndex].AsObject());
@@ -60,7 +60,7 @@ GetUserResult& GetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   if(jsonValue.ValueExists("UserMFASettingList"))
   {
-    Array<JsonView> userMFASettingListJsonList = jsonValue.GetArray("UserMFASettingList");
+    Aws::Utils::Array<JsonView> userMFASettingListJsonList = jsonValue.GetArray("UserMFASettingList");
     for(unsigned userMFASettingListIndex = 0; userMFASettingListIndex < userMFASettingListJsonList.GetLength(); ++userMFASettingListIndex)
     {
       m_userMFASettingList.push_back(userMFASettingListJsonList[userMFASettingListIndex].AsString());

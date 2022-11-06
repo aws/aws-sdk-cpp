@@ -30,7 +30,7 @@ ListHypervisorsResult& ListHypervisorsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Hypervisors"))
   {
-    Array<JsonView> hypervisorsJsonList = jsonValue.GetArray("Hypervisors");
+    Aws::Utils::Array<JsonView> hypervisorsJsonList = jsonValue.GetArray("Hypervisors");
     for(unsigned hypervisorsIndex = 0; hypervisorsIndex < hypervisorsJsonList.GetLength(); ++hypervisorsIndex)
     {
       m_hypervisors.push_back(hypervisorsJsonList[hypervisorsIndex].AsObject());

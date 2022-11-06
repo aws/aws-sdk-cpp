@@ -24,7 +24,7 @@ Aws::String BatchMeterUsageRequest::SerializePayload() const
 
   if(m_usageRecordsHasBeenSet)
   {
-   Array<JsonValue> usageRecordsJsonList(m_usageRecords.size());
+   Aws::Utils::Array<JsonValue> usageRecordsJsonList(m_usageRecords.size());
    for(unsigned usageRecordsIndex = 0; usageRecordsIndex < usageRecordsJsonList.GetLength(); ++usageRecordsIndex)
    {
      usageRecordsJsonList[usageRecordsIndex].AsObject(m_usageRecords[usageRecordsIndex].Jsonize());

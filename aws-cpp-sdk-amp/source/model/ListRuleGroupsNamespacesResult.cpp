@@ -36,7 +36,7 @@ ListRuleGroupsNamespacesResult& ListRuleGroupsNamespacesResult::operator =(const
 
   if(jsonValue.ValueExists("ruleGroupsNamespaces"))
   {
-    Array<JsonView> ruleGroupsNamespacesJsonList = jsonValue.GetArray("ruleGroupsNamespaces");
+    Aws::Utils::Array<JsonView> ruleGroupsNamespacesJsonList = jsonValue.GetArray("ruleGroupsNamespaces");
     for(unsigned ruleGroupsNamespacesIndex = 0; ruleGroupsNamespacesIndex < ruleGroupsNamespacesJsonList.GetLength(); ++ruleGroupsNamespacesIndex)
     {
       m_ruleGroupsNamespaces.push_back(ruleGroupsNamespacesJsonList[ruleGroupsNamespacesIndex].AsObject());

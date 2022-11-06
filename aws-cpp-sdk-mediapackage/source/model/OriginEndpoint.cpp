@@ -177,7 +177,7 @@ OriginEndpoint& OriginEndpoint::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("whitelist"))
   {
-    Array<JsonView> whitelistJsonList = jsonValue.GetArray("whitelist");
+    Aws::Utils::Array<JsonView> whitelistJsonList = jsonValue.GetArray("whitelist");
     for(unsigned whitelistIndex = 0; whitelistIndex < whitelistJsonList.GetLength(); ++whitelistIndex)
     {
       m_whitelist.push_back(whitelistJsonList[whitelistIndex].AsString());
@@ -288,7 +288,7 @@ JsonValue OriginEndpoint::Jsonize() const
 
   if(m_whitelistHasBeenSet)
   {
-   Array<JsonValue> whitelistJsonList(m_whitelist.size());
+   Aws::Utils::Array<JsonValue> whitelistJsonList(m_whitelist.size());
    for(unsigned whitelistIndex = 0; whitelistIndex < whitelistJsonList.GetLength(); ++whitelistIndex)
    {
      whitelistJsonList[whitelistIndex].AsString(m_whitelist[whitelistIndex]);

@@ -53,7 +53,7 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("vpcEndpoints"))
   {
-    Array<JsonView> vpcEndpointsJsonList = jsonValue.GetArray("vpcEndpoints");
+    Aws::Utils::Array<JsonView> vpcEndpointsJsonList = jsonValue.GetArray("vpcEndpoints");
     for(unsigned vpcEndpointsIndex = 0; vpcEndpointsIndex < vpcEndpointsJsonList.GetLength(); ++vpcEndpointsIndex)
     {
       m_vpcEndpoints.push_back(vpcEndpointsJsonList[vpcEndpointsIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue Endpoint::Jsonize() const
 
   if(m_vpcEndpointsHasBeenSet)
   {
-   Array<JsonValue> vpcEndpointsJsonList(m_vpcEndpoints.size());
+   Aws::Utils::Array<JsonValue> vpcEndpointsJsonList(m_vpcEndpoints.size());
    for(unsigned vpcEndpointsIndex = 0; vpcEndpointsIndex < vpcEndpointsJsonList.GetLength(); ++vpcEndpointsIndex)
    {
      vpcEndpointsJsonList[vpcEndpointsIndex].AsObject(m_vpcEndpoints[vpcEndpointsIndex].Jsonize());

@@ -36,7 +36,7 @@ ListGeoMatchSetsResult& ListGeoMatchSetsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("GeoMatchSets"))
   {
-    Array<JsonView> geoMatchSetsJsonList = jsonValue.GetArray("GeoMatchSets");
+    Aws::Utils::Array<JsonView> geoMatchSetsJsonList = jsonValue.GetArray("GeoMatchSets");
     for(unsigned geoMatchSetsIndex = 0; geoMatchSetsIndex < geoMatchSetsJsonList.GetLength(); ++geoMatchSetsIndex)
     {
       m_geoMatchSets.push_back(geoMatchSetsJsonList[geoMatchSetsIndex].AsObject());

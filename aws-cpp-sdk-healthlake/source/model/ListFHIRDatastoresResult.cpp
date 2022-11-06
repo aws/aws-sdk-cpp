@@ -30,7 +30,7 @@ ListFHIRDatastoresResult& ListFHIRDatastoresResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DatastorePropertiesList"))
   {
-    Array<JsonView> datastorePropertiesListJsonList = jsonValue.GetArray("DatastorePropertiesList");
+    Aws::Utils::Array<JsonView> datastorePropertiesListJsonList = jsonValue.GetArray("DatastorePropertiesList");
     for(unsigned datastorePropertiesListIndex = 0; datastorePropertiesListIndex < datastorePropertiesListJsonList.GetLength(); ++datastorePropertiesListIndex)
     {
       m_datastorePropertiesList.push_back(datastorePropertiesListJsonList[datastorePropertiesListIndex].AsObject());

@@ -70,7 +70,7 @@ DescribeWorldExportJobResult& DescribeWorldExportJobResult::operator =(const Aws
 
   if(jsonValue.ValueExists("worlds"))
   {
-    Array<JsonView> worldsJsonList = jsonValue.GetArray("worlds");
+    Aws::Utils::Array<JsonView> worldsJsonList = jsonValue.GetArray("worlds");
     for(unsigned worldsIndex = 0; worldsIndex < worldsJsonList.GetLength(); ++worldsIndex)
     {
       m_worlds.push_back(worldsJsonList[worldsIndex].AsString());

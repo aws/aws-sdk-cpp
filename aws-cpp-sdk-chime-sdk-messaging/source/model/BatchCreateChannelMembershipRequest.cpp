@@ -34,7 +34,7 @@ Aws::String BatchCreateChannelMembershipRequest::SerializePayload() const
 
   if(m_memberArnsHasBeenSet)
   {
-   Array<JsonValue> memberArnsJsonList(m_memberArns.size());
+   Aws::Utils::Array<JsonValue> memberArnsJsonList(m_memberArns.size());
    for(unsigned memberArnsIndex = 0; memberArnsIndex < memberArnsJsonList.GetLength(); ++memberArnsIndex)
    {
      memberArnsJsonList[memberArnsIndex].AsString(m_memberArns[memberArnsIndex]);

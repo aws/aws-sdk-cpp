@@ -70,7 +70,7 @@ AwsEc2SecurityGroupIpPermission& AwsEc2SecurityGroupIpPermission::operator =(Jso
 
   if(jsonValue.ValueExists("UserIdGroupPairs"))
   {
-    Array<JsonView> userIdGroupPairsJsonList = jsonValue.GetArray("UserIdGroupPairs");
+    Aws::Utils::Array<JsonView> userIdGroupPairsJsonList = jsonValue.GetArray("UserIdGroupPairs");
     for(unsigned userIdGroupPairsIndex = 0; userIdGroupPairsIndex < userIdGroupPairsJsonList.GetLength(); ++userIdGroupPairsIndex)
     {
       m_userIdGroupPairs.push_back(userIdGroupPairsJsonList[userIdGroupPairsIndex].AsObject());
@@ -80,7 +80,7 @@ AwsEc2SecurityGroupIpPermission& AwsEc2SecurityGroupIpPermission::operator =(Jso
 
   if(jsonValue.ValueExists("IpRanges"))
   {
-    Array<JsonView> ipRangesJsonList = jsonValue.GetArray("IpRanges");
+    Aws::Utils::Array<JsonView> ipRangesJsonList = jsonValue.GetArray("IpRanges");
     for(unsigned ipRangesIndex = 0; ipRangesIndex < ipRangesJsonList.GetLength(); ++ipRangesIndex)
     {
       m_ipRanges.push_back(ipRangesJsonList[ipRangesIndex].AsObject());
@@ -90,7 +90,7 @@ AwsEc2SecurityGroupIpPermission& AwsEc2SecurityGroupIpPermission::operator =(Jso
 
   if(jsonValue.ValueExists("Ipv6Ranges"))
   {
-    Array<JsonView> ipv6RangesJsonList = jsonValue.GetArray("Ipv6Ranges");
+    Aws::Utils::Array<JsonView> ipv6RangesJsonList = jsonValue.GetArray("Ipv6Ranges");
     for(unsigned ipv6RangesIndex = 0; ipv6RangesIndex < ipv6RangesJsonList.GetLength(); ++ipv6RangesIndex)
     {
       m_ipv6Ranges.push_back(ipv6RangesJsonList[ipv6RangesIndex].AsObject());
@@ -100,7 +100,7 @@ AwsEc2SecurityGroupIpPermission& AwsEc2SecurityGroupIpPermission::operator =(Jso
 
   if(jsonValue.ValueExists("PrefixListIds"))
   {
-    Array<JsonView> prefixListIdsJsonList = jsonValue.GetArray("PrefixListIds");
+    Aws::Utils::Array<JsonView> prefixListIdsJsonList = jsonValue.GetArray("PrefixListIds");
     for(unsigned prefixListIdsIndex = 0; prefixListIdsIndex < prefixListIdsJsonList.GetLength(); ++prefixListIdsIndex)
     {
       m_prefixListIds.push_back(prefixListIdsJsonList[prefixListIdsIndex].AsObject());
@@ -135,7 +135,7 @@ JsonValue AwsEc2SecurityGroupIpPermission::Jsonize() const
 
   if(m_userIdGroupPairsHasBeenSet)
   {
-   Array<JsonValue> userIdGroupPairsJsonList(m_userIdGroupPairs.size());
+   Aws::Utils::Array<JsonValue> userIdGroupPairsJsonList(m_userIdGroupPairs.size());
    for(unsigned userIdGroupPairsIndex = 0; userIdGroupPairsIndex < userIdGroupPairsJsonList.GetLength(); ++userIdGroupPairsIndex)
    {
      userIdGroupPairsJsonList[userIdGroupPairsIndex].AsObject(m_userIdGroupPairs[userIdGroupPairsIndex].Jsonize());
@@ -146,7 +146,7 @@ JsonValue AwsEc2SecurityGroupIpPermission::Jsonize() const
 
   if(m_ipRangesHasBeenSet)
   {
-   Array<JsonValue> ipRangesJsonList(m_ipRanges.size());
+   Aws::Utils::Array<JsonValue> ipRangesJsonList(m_ipRanges.size());
    for(unsigned ipRangesIndex = 0; ipRangesIndex < ipRangesJsonList.GetLength(); ++ipRangesIndex)
    {
      ipRangesJsonList[ipRangesIndex].AsObject(m_ipRanges[ipRangesIndex].Jsonize());
@@ -157,7 +157,7 @@ JsonValue AwsEc2SecurityGroupIpPermission::Jsonize() const
 
   if(m_ipv6RangesHasBeenSet)
   {
-   Array<JsonValue> ipv6RangesJsonList(m_ipv6Ranges.size());
+   Aws::Utils::Array<JsonValue> ipv6RangesJsonList(m_ipv6Ranges.size());
    for(unsigned ipv6RangesIndex = 0; ipv6RangesIndex < ipv6RangesJsonList.GetLength(); ++ipv6RangesIndex)
    {
      ipv6RangesJsonList[ipv6RangesIndex].AsObject(m_ipv6Ranges[ipv6RangesIndex].Jsonize());
@@ -168,7 +168,7 @@ JsonValue AwsEc2SecurityGroupIpPermission::Jsonize() const
 
   if(m_prefixListIdsHasBeenSet)
   {
-   Array<JsonValue> prefixListIdsJsonList(m_prefixListIds.size());
+   Aws::Utils::Array<JsonValue> prefixListIdsJsonList(m_prefixListIds.size());
    for(unsigned prefixListIdsIndex = 0; prefixListIdsIndex < prefixListIdsJsonList.GetLength(); ++prefixListIdsIndex)
    {
      prefixListIdsJsonList[prefixListIdsIndex].AsObject(m_prefixListIds[prefixListIdsIndex].Jsonize());

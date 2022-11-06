@@ -46,7 +46,7 @@ DimensionValues& DimensionValues::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
@@ -56,7 +56,7 @@ DimensionValues& DimensionValues::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MatchOptions"))
   {
-    Array<JsonView> matchOptionsJsonList = jsonValue.GetArray("MatchOptions");
+    Aws::Utils::Array<JsonView> matchOptionsJsonList = jsonValue.GetArray("MatchOptions");
     for(unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex)
     {
       m_matchOptions.push_back(MatchOptionMapper::GetMatchOptionForName(matchOptionsJsonList[matchOptionsIndex].AsString()));
@@ -78,7 +78,7 @@ JsonValue DimensionValues::Jsonize() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
@@ -89,7 +89,7 @@ JsonValue DimensionValues::Jsonize() const
 
   if(m_matchOptionsHasBeenSet)
   {
-   Array<JsonValue> matchOptionsJsonList(m_matchOptions.size());
+   Aws::Utils::Array<JsonValue> matchOptionsJsonList(m_matchOptions.size());
    for(unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex)
    {
      matchOptionsJsonList[matchOptionsIndex].AsString(MatchOptionMapper::GetNameForMatchOption(m_matchOptions[matchOptionsIndex]));

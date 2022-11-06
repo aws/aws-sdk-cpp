@@ -33,7 +33,7 @@ SnowflakeMetadata& SnowflakeMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("supportedRegions"))
   {
-    Array<JsonView> supportedRegionsJsonList = jsonValue.GetArray("supportedRegions");
+    Aws::Utils::Array<JsonView> supportedRegionsJsonList = jsonValue.GetArray("supportedRegions");
     for(unsigned supportedRegionsIndex = 0; supportedRegionsIndex < supportedRegionsJsonList.GetLength(); ++supportedRegionsIndex)
     {
       m_supportedRegions.push_back(supportedRegionsJsonList[supportedRegionsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue SnowflakeMetadata::Jsonize() const
 
   if(m_supportedRegionsHasBeenSet)
   {
-   Array<JsonValue> supportedRegionsJsonList(m_supportedRegions.size());
+   Aws::Utils::Array<JsonValue> supportedRegionsJsonList(m_supportedRegions.size());
    for(unsigned supportedRegionsIndex = 0; supportedRegionsIndex < supportedRegionsJsonList.GetLength(); ++supportedRegionsIndex)
    {
      supportedRegionsJsonList[supportedRegionsIndex].AsString(m_supportedRegions[supportedRegionsIndex]);

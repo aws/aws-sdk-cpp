@@ -51,7 +51,7 @@ InstanceSnapshotInfo& InstanceSnapshotInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("fromDiskInfo"))
   {
-    Array<JsonView> fromDiskInfoJsonList = jsonValue.GetArray("fromDiskInfo");
+    Aws::Utils::Array<JsonView> fromDiskInfoJsonList = jsonValue.GetArray("fromDiskInfo");
     for(unsigned fromDiskInfoIndex = 0; fromDiskInfoIndex < fromDiskInfoJsonList.GetLength(); ++fromDiskInfoIndex)
     {
       m_fromDiskInfo.push_back(fromDiskInfoJsonList[fromDiskInfoIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue InstanceSnapshotInfo::Jsonize() const
 
   if(m_fromDiskInfoHasBeenSet)
   {
-   Array<JsonValue> fromDiskInfoJsonList(m_fromDiskInfo.size());
+   Aws::Utils::Array<JsonValue> fromDiskInfoJsonList(m_fromDiskInfo.size());
    for(unsigned fromDiskInfoIndex = 0; fromDiskInfoIndex < fromDiskInfoJsonList.GetLength(); ++fromDiskInfoIndex)
    {
      fromDiskInfoJsonList[fromDiskInfoIndex].AsObject(m_fromDiskInfo[fromDiskInfoIndex].Jsonize());

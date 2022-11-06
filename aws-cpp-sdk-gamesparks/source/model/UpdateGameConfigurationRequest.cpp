@@ -24,7 +24,7 @@ Aws::String UpdateGameConfigurationRequest::SerializePayload() const
 
   if(m_modificationsHasBeenSet)
   {
-   Array<JsonValue> modificationsJsonList(m_modifications.size());
+   Aws::Utils::Array<JsonValue> modificationsJsonList(m_modifications.size());
    for(unsigned modificationsIndex = 0; modificationsIndex < modificationsJsonList.GetLength(); ++modificationsIndex)
    {
      modificationsJsonList[modificationsIndex].AsObject(m_modifications[modificationsIndex].Jsonize());

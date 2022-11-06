@@ -42,7 +42,7 @@ DescribeNotebookInstanceLifecycleConfigResult& DescribeNotebookInstanceLifecycle
 
   if(jsonValue.ValueExists("OnCreate"))
   {
-    Array<JsonView> onCreateJsonList = jsonValue.GetArray("OnCreate");
+    Aws::Utils::Array<JsonView> onCreateJsonList = jsonValue.GetArray("OnCreate");
     for(unsigned onCreateIndex = 0; onCreateIndex < onCreateJsonList.GetLength(); ++onCreateIndex)
     {
       m_onCreate.push_back(onCreateJsonList[onCreateIndex].AsObject());
@@ -51,7 +51,7 @@ DescribeNotebookInstanceLifecycleConfigResult& DescribeNotebookInstanceLifecycle
 
   if(jsonValue.ValueExists("OnStart"))
   {
-    Array<JsonView> onStartJsonList = jsonValue.GetArray("OnStart");
+    Aws::Utils::Array<JsonView> onStartJsonList = jsonValue.GetArray("OnStart");
     for(unsigned onStartIndex = 0; onStartIndex < onStartJsonList.GetLength(); ++onStartIndex)
     {
       m_onStart.push_back(onStartJsonList[onStartIndex].AsObject());

@@ -42,7 +42,7 @@ MetricSetDataQualityMetric& MetricSetDataQualityMetric::operator =(JsonView json
 
   if(jsonValue.ValueExists("DataQualityMetricList"))
   {
-    Array<JsonView> dataQualityMetricListJsonList = jsonValue.GetArray("DataQualityMetricList");
+    Aws::Utils::Array<JsonView> dataQualityMetricListJsonList = jsonValue.GetArray("DataQualityMetricList");
     for(unsigned dataQualityMetricListIndex = 0; dataQualityMetricListIndex < dataQualityMetricListJsonList.GetLength(); ++dataQualityMetricListIndex)
     {
       m_dataQualityMetricList.push_back(dataQualityMetricListJsonList[dataQualityMetricListIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue MetricSetDataQualityMetric::Jsonize() const
 
   if(m_dataQualityMetricListHasBeenSet)
   {
-   Array<JsonValue> dataQualityMetricListJsonList(m_dataQualityMetricList.size());
+   Aws::Utils::Array<JsonValue> dataQualityMetricListJsonList(m_dataQualityMetricList.size());
    for(unsigned dataQualityMetricListIndex = 0; dataQualityMetricListIndex < dataQualityMetricListJsonList.GetLength(); ++dataQualityMetricListIndex)
    {
      dataQualityMetricListJsonList[dataQualityMetricListIndex].AsObject(m_dataQualityMetricList[dataQualityMetricListIndex].Jsonize());

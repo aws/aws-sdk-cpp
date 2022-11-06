@@ -36,7 +36,7 @@ ListStagesResult& ListStagesResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("Stages"))
   {
-    Array<JsonView> stagesJsonList = jsonValue.GetArray("Stages");
+    Aws::Utils::Array<JsonView> stagesJsonList = jsonValue.GetArray("Stages");
     for(unsigned stagesIndex = 0; stagesIndex < stagesJsonList.GetLength(); ++stagesIndex)
     {
       m_stages.push_back(stagesJsonList[stagesIndex].AsObject());

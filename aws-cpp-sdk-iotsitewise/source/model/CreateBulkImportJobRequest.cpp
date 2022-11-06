@@ -39,7 +39,7 @@ Aws::String CreateBulkImportJobRequest::SerializePayload() const
 
   if(m_filesHasBeenSet)
   {
-   Array<JsonValue> filesJsonList(m_files.size());
+   Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
    for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
    {
      filesJsonList[filesIndex].AsObject(m_files[filesIndex].Jsonize());

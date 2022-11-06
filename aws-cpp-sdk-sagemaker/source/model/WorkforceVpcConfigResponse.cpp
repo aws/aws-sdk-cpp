@@ -46,7 +46,7 @@ WorkforceVpcConfigResponse& WorkforceVpcConfigResponse::operator =(JsonView json
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -56,7 +56,7 @@ WorkforceVpcConfigResponse& WorkforceVpcConfigResponse::operator =(JsonView json
 
   if(jsonValue.ValueExists("Subnets"))
   {
-    Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
+    Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
@@ -86,7 +86,7 @@ JsonValue WorkforceVpcConfigResponse::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -97,7 +97,7 @@ JsonValue WorkforceVpcConfigResponse::Jsonize() const
 
   if(m_subnetsHasBeenSet)
   {
-   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
    {
      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);

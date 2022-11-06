@@ -112,7 +112,7 @@ RxNormEntity& RxNormEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -122,7 +122,7 @@ RxNormEntity& RxNormEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Traits"))
   {
-    Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
+    Aws::Utils::Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
     for(unsigned traitsIndex = 0; traitsIndex < traitsJsonList.GetLength(); ++traitsIndex)
     {
       m_traits.push_back(traitsJsonList[traitsIndex].AsObject());
@@ -132,7 +132,7 @@ RxNormEntity& RxNormEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RxNormConcepts"))
   {
-    Array<JsonView> rxNormConceptsJsonList = jsonValue.GetArray("RxNormConcepts");
+    Aws::Utils::Array<JsonView> rxNormConceptsJsonList = jsonValue.GetArray("RxNormConcepts");
     for(unsigned rxNormConceptsIndex = 0; rxNormConceptsIndex < rxNormConceptsJsonList.GetLength(); ++rxNormConceptsIndex)
     {
       m_rxNormConcepts.push_back(rxNormConceptsJsonList[rxNormConceptsIndex].AsObject());
@@ -189,7 +189,7 @@ JsonValue RxNormEntity::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
@@ -200,7 +200,7 @@ JsonValue RxNormEntity::Jsonize() const
 
   if(m_traitsHasBeenSet)
   {
-   Array<JsonValue> traitsJsonList(m_traits.size());
+   Aws::Utils::Array<JsonValue> traitsJsonList(m_traits.size());
    for(unsigned traitsIndex = 0; traitsIndex < traitsJsonList.GetLength(); ++traitsIndex)
    {
      traitsJsonList[traitsIndex].AsObject(m_traits[traitsIndex].Jsonize());
@@ -211,7 +211,7 @@ JsonValue RxNormEntity::Jsonize() const
 
   if(m_rxNormConceptsHasBeenSet)
   {
-   Array<JsonValue> rxNormConceptsJsonList(m_rxNormConcepts.size());
+   Aws::Utils::Array<JsonValue> rxNormConceptsJsonList(m_rxNormConcepts.size());
    for(unsigned rxNormConceptsIndex = 0; rxNormConceptsIndex < rxNormConceptsJsonList.GetLength(); ++rxNormConceptsIndex)
    {
      rxNormConceptsJsonList[rxNormConceptsIndex].AsObject(m_rxNormConcepts[rxNormConceptsIndex].Jsonize());

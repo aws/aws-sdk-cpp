@@ -42,7 +42,7 @@ MetricSetDimensionFilter& MetricSetDimensionFilter::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("FilterList"))
   {
-    Array<JsonView> filterListJsonList = jsonValue.GetArray("FilterList");
+    Aws::Utils::Array<JsonView> filterListJsonList = jsonValue.GetArray("FilterList");
     for(unsigned filterListIndex = 0; filterListIndex < filterListJsonList.GetLength(); ++filterListIndex)
     {
       m_filterList.push_back(filterListJsonList[filterListIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue MetricSetDimensionFilter::Jsonize() const
 
   if(m_filterListHasBeenSet)
   {
-   Array<JsonValue> filterListJsonList(m_filterList.size());
+   Aws::Utils::Array<JsonValue> filterListJsonList(m_filterList.size());
    for(unsigned filterListIndex = 0; filterListIndex < filterListJsonList.GetLength(); ++filterListIndex)
    {
      filterListJsonList[filterListIndex].AsObject(m_filterList[filterListIndex].Jsonize());

@@ -33,7 +33,7 @@ Aws::String DescribePullThroughCacheRulesRequest::SerializePayload() const
 
   if(m_ecrRepositoryPrefixesHasBeenSet)
   {
-   Array<JsonValue> ecrRepositoryPrefixesJsonList(m_ecrRepositoryPrefixes.size());
+   Aws::Utils::Array<JsonValue> ecrRepositoryPrefixesJsonList(m_ecrRepositoryPrefixes.size());
    for(unsigned ecrRepositoryPrefixesIndex = 0; ecrRepositoryPrefixesIndex < ecrRepositoryPrefixesJsonList.GetLength(); ++ecrRepositoryPrefixesIndex)
    {
      ecrRepositoryPrefixesJsonList[ecrRepositoryPrefixesIndex].AsString(m_ecrRepositoryPrefixes[ecrRepositoryPrefixesIndex]);

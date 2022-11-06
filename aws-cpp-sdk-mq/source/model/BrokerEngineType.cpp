@@ -44,7 +44,7 @@ BrokerEngineType& BrokerEngineType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("engineVersions"))
   {
-    Array<JsonView> engineVersionsJsonList = jsonValue.GetArray("engineVersions");
+    Aws::Utils::Array<JsonView> engineVersionsJsonList = jsonValue.GetArray("engineVersions");
     for(unsigned engineVersionsIndex = 0; engineVersionsIndex < engineVersionsJsonList.GetLength(); ++engineVersionsIndex)
     {
       m_engineVersions.push_back(engineVersionsJsonList[engineVersionsIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue BrokerEngineType::Jsonize() const
 
   if(m_engineVersionsHasBeenSet)
   {
-   Array<JsonValue> engineVersionsJsonList(m_engineVersions.size());
+   Aws::Utils::Array<JsonValue> engineVersionsJsonList(m_engineVersions.size());
    for(unsigned engineVersionsIndex = 0; engineVersionsIndex < engineVersionsJsonList.GetLength(); ++engineVersionsIndex)
    {
      engineVersionsJsonList[engineVersionsIndex].AsObject(m_engineVersions[engineVersionsIndex].Jsonize());

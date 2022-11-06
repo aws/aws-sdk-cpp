@@ -42,7 +42,7 @@ GetRightsizingRecommendationResult& GetRightsizingRecommendationResult::operator
 
   if(jsonValue.ValueExists("RightsizingRecommendations"))
   {
-    Array<JsonView> rightsizingRecommendationsJsonList = jsonValue.GetArray("RightsizingRecommendations");
+    Aws::Utils::Array<JsonView> rightsizingRecommendationsJsonList = jsonValue.GetArray("RightsizingRecommendations");
     for(unsigned rightsizingRecommendationsIndex = 0; rightsizingRecommendationsIndex < rightsizingRecommendationsJsonList.GetLength(); ++rightsizingRecommendationsIndex)
     {
       m_rightsizingRecommendations.push_back(rightsizingRecommendationsJsonList[rightsizingRecommendationsIndex].AsObject());

@@ -30,7 +30,7 @@ ListBuiltInSlotTypesResult& ListBuiltInSlotTypesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("builtInSlotTypeSummaries"))
   {
-    Array<JsonView> builtInSlotTypeSummariesJsonList = jsonValue.GetArray("builtInSlotTypeSummaries");
+    Aws::Utils::Array<JsonView> builtInSlotTypeSummariesJsonList = jsonValue.GetArray("builtInSlotTypeSummaries");
     for(unsigned builtInSlotTypeSummariesIndex = 0; builtInSlotTypeSummariesIndex < builtInSlotTypeSummariesJsonList.GetLength(); ++builtInSlotTypeSummariesIndex)
     {
       m_builtInSlotTypeSummaries.push_back(builtInSlotTypeSummariesJsonList[builtInSlotTypeSummariesIndex].AsObject());

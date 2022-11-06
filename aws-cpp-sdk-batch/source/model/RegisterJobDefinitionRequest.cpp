@@ -106,7 +106,7 @@ Aws::String RegisterJobDefinitionRequest::SerializePayload() const
 
   if(m_platformCapabilitiesHasBeenSet)
   {
-   Array<JsonValue> platformCapabilitiesJsonList(m_platformCapabilities.size());
+   Aws::Utils::Array<JsonValue> platformCapabilitiesJsonList(m_platformCapabilities.size());
    for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
    {
      platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString(PlatformCapabilityMapper::GetNameForPlatformCapability(m_platformCapabilities[platformCapabilitiesIndex]));

@@ -30,7 +30,7 @@ Aws::String DescribeTaskDefinitionRequest::SerializePayload() const
 
   if(m_includeHasBeenSet)
   {
-   Array<JsonValue> includeJsonList(m_include.size());
+   Aws::Utils::Array<JsonValue> includeJsonList(m_include.size());
    for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
    {
      includeJsonList[includeIndex].AsString(TaskDefinitionFieldMapper::GetNameForTaskDefinitionField(m_include[includeIndex]));

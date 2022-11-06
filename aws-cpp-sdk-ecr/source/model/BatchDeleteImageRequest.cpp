@@ -37,7 +37,7 @@ Aws::String BatchDeleteImageRequest::SerializePayload() const
 
   if(m_imageIdsHasBeenSet)
   {
-   Array<JsonValue> imageIdsJsonList(m_imageIds.size());
+   Aws::Utils::Array<JsonValue> imageIdsJsonList(m_imageIds.size());
    for(unsigned imageIdsIndex = 0; imageIdsIndex < imageIdsJsonList.GetLength(); ++imageIdsIndex)
    {
      imageIdsJsonList[imageIdsIndex].AsObject(m_imageIds[imageIdsIndex].Jsonize());

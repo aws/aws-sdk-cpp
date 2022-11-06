@@ -30,7 +30,7 @@ ListProxySessionsResult& ListProxySessionsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProxySessions"))
   {
-    Array<JsonView> proxySessionsJsonList = jsonValue.GetArray("ProxySessions");
+    Aws::Utils::Array<JsonView> proxySessionsJsonList = jsonValue.GetArray("ProxySessions");
     for(unsigned proxySessionsIndex = 0; proxySessionsIndex < proxySessionsJsonList.GetLength(); ++proxySessionsIndex)
     {
       m_proxySessions.push_back(proxySessionsJsonList[proxySessionsIndex].AsObject());

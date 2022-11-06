@@ -41,7 +41,7 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Containers"))
   {
-    Array<JsonView> containersJsonList = jsonValue.GetArray("Containers");
+    Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("Containers");
     for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
     {
       m_containers.push_back(containersJsonList[containersIndex].AsObject());
@@ -51,7 +51,7 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedTransformInstanceTypes"))
   {
-    Array<JsonView> supportedTransformInstanceTypesJsonList = jsonValue.GetArray("SupportedTransformInstanceTypes");
+    Aws::Utils::Array<JsonView> supportedTransformInstanceTypesJsonList = jsonValue.GetArray("SupportedTransformInstanceTypes");
     for(unsigned supportedTransformInstanceTypesIndex = 0; supportedTransformInstanceTypesIndex < supportedTransformInstanceTypesJsonList.GetLength(); ++supportedTransformInstanceTypesIndex)
     {
       m_supportedTransformInstanceTypes.push_back(TransformInstanceTypeMapper::GetTransformInstanceTypeForName(supportedTransformInstanceTypesJsonList[supportedTransformInstanceTypesIndex].AsString()));
@@ -61,7 +61,7 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedRealtimeInferenceInstanceTypes"))
   {
-    Array<JsonView> supportedRealtimeInferenceInstanceTypesJsonList = jsonValue.GetArray("SupportedRealtimeInferenceInstanceTypes");
+    Aws::Utils::Array<JsonView> supportedRealtimeInferenceInstanceTypesJsonList = jsonValue.GetArray("SupportedRealtimeInferenceInstanceTypes");
     for(unsigned supportedRealtimeInferenceInstanceTypesIndex = 0; supportedRealtimeInferenceInstanceTypesIndex < supportedRealtimeInferenceInstanceTypesJsonList.GetLength(); ++supportedRealtimeInferenceInstanceTypesIndex)
     {
       m_supportedRealtimeInferenceInstanceTypes.push_back(ProductionVariantInstanceTypeMapper::GetProductionVariantInstanceTypeForName(supportedRealtimeInferenceInstanceTypesJsonList[supportedRealtimeInferenceInstanceTypesIndex].AsString()));
@@ -71,7 +71,7 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedContentTypes"))
   {
-    Array<JsonView> supportedContentTypesJsonList = jsonValue.GetArray("SupportedContentTypes");
+    Aws::Utils::Array<JsonView> supportedContentTypesJsonList = jsonValue.GetArray("SupportedContentTypes");
     for(unsigned supportedContentTypesIndex = 0; supportedContentTypesIndex < supportedContentTypesJsonList.GetLength(); ++supportedContentTypesIndex)
     {
       m_supportedContentTypes.push_back(supportedContentTypesJsonList[supportedContentTypesIndex].AsString());
@@ -81,7 +81,7 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedResponseMIMETypes"))
   {
-    Array<JsonView> supportedResponseMIMETypesJsonList = jsonValue.GetArray("SupportedResponseMIMETypes");
+    Aws::Utils::Array<JsonView> supportedResponseMIMETypesJsonList = jsonValue.GetArray("SupportedResponseMIMETypes");
     for(unsigned supportedResponseMIMETypesIndex = 0; supportedResponseMIMETypesIndex < supportedResponseMIMETypesJsonList.GetLength(); ++supportedResponseMIMETypesIndex)
     {
       m_supportedResponseMIMETypes.push_back(supportedResponseMIMETypesJsonList[supportedResponseMIMETypesIndex].AsString());
@@ -98,7 +98,7 @@ JsonValue InferenceSpecification::Jsonize() const
 
   if(m_containersHasBeenSet)
   {
-   Array<JsonValue> containersJsonList(m_containers.size());
+   Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
    for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
    {
      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
@@ -109,7 +109,7 @@ JsonValue InferenceSpecification::Jsonize() const
 
   if(m_supportedTransformInstanceTypesHasBeenSet)
   {
-   Array<JsonValue> supportedTransformInstanceTypesJsonList(m_supportedTransformInstanceTypes.size());
+   Aws::Utils::Array<JsonValue> supportedTransformInstanceTypesJsonList(m_supportedTransformInstanceTypes.size());
    for(unsigned supportedTransformInstanceTypesIndex = 0; supportedTransformInstanceTypesIndex < supportedTransformInstanceTypesJsonList.GetLength(); ++supportedTransformInstanceTypesIndex)
    {
      supportedTransformInstanceTypesJsonList[supportedTransformInstanceTypesIndex].AsString(TransformInstanceTypeMapper::GetNameForTransformInstanceType(m_supportedTransformInstanceTypes[supportedTransformInstanceTypesIndex]));
@@ -120,7 +120,7 @@ JsonValue InferenceSpecification::Jsonize() const
 
   if(m_supportedRealtimeInferenceInstanceTypesHasBeenSet)
   {
-   Array<JsonValue> supportedRealtimeInferenceInstanceTypesJsonList(m_supportedRealtimeInferenceInstanceTypes.size());
+   Aws::Utils::Array<JsonValue> supportedRealtimeInferenceInstanceTypesJsonList(m_supportedRealtimeInferenceInstanceTypes.size());
    for(unsigned supportedRealtimeInferenceInstanceTypesIndex = 0; supportedRealtimeInferenceInstanceTypesIndex < supportedRealtimeInferenceInstanceTypesJsonList.GetLength(); ++supportedRealtimeInferenceInstanceTypesIndex)
    {
      supportedRealtimeInferenceInstanceTypesJsonList[supportedRealtimeInferenceInstanceTypesIndex].AsString(ProductionVariantInstanceTypeMapper::GetNameForProductionVariantInstanceType(m_supportedRealtimeInferenceInstanceTypes[supportedRealtimeInferenceInstanceTypesIndex]));
@@ -131,7 +131,7 @@ JsonValue InferenceSpecification::Jsonize() const
 
   if(m_supportedContentTypesHasBeenSet)
   {
-   Array<JsonValue> supportedContentTypesJsonList(m_supportedContentTypes.size());
+   Aws::Utils::Array<JsonValue> supportedContentTypesJsonList(m_supportedContentTypes.size());
    for(unsigned supportedContentTypesIndex = 0; supportedContentTypesIndex < supportedContentTypesJsonList.GetLength(); ++supportedContentTypesIndex)
    {
      supportedContentTypesJsonList[supportedContentTypesIndex].AsString(m_supportedContentTypes[supportedContentTypesIndex]);
@@ -142,7 +142,7 @@ JsonValue InferenceSpecification::Jsonize() const
 
   if(m_supportedResponseMIMETypesHasBeenSet)
   {
-   Array<JsonValue> supportedResponseMIMETypesJsonList(m_supportedResponseMIMETypes.size());
+   Aws::Utils::Array<JsonValue> supportedResponseMIMETypesJsonList(m_supportedResponseMIMETypes.size());
    for(unsigned supportedResponseMIMETypesIndex = 0; supportedResponseMIMETypesIndex < supportedResponseMIMETypesJsonList.GetLength(); ++supportedResponseMIMETypesIndex)
    {
      supportedResponseMIMETypesJsonList[supportedResponseMIMETypesIndex].AsString(m_supportedResponseMIMETypes[supportedResponseMIMETypesIndex]);

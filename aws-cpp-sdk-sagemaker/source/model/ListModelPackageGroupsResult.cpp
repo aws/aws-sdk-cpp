@@ -30,7 +30,7 @@ ListModelPackageGroupsResult& ListModelPackageGroupsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ModelPackageGroupSummaryList"))
   {
-    Array<JsonView> modelPackageGroupSummaryListJsonList = jsonValue.GetArray("ModelPackageGroupSummaryList");
+    Aws::Utils::Array<JsonView> modelPackageGroupSummaryListJsonList = jsonValue.GetArray("ModelPackageGroupSummaryList");
     for(unsigned modelPackageGroupSummaryListIndex = 0; modelPackageGroupSummaryListIndex < modelPackageGroupSummaryListJsonList.GetLength(); ++modelPackageGroupSummaryListIndex)
     {
       m_modelPackageGroupSummaryList.push_back(modelPackageGroupSummaryListJsonList[modelPackageGroupSummaryListIndex].AsObject());

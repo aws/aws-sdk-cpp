@@ -103,7 +103,7 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -246,7 +246,7 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PublicKeys"))
   {
-    Array<JsonView> publicKeysJsonList = jsonValue.GetArray("PublicKeys");
+    Aws::Utils::Array<JsonView> publicKeysJsonList = jsonValue.GetArray("PublicKeys");
     for(unsigned publicKeysIndex = 0; publicKeysIndex < publicKeysJsonList.GetLength(); ++publicKeysIndex)
     {
       m_publicKeys.push_back(publicKeysJsonList[publicKeysIndex].AsString());
@@ -292,7 +292,7 @@ JsonValue DevEndpoint::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -414,7 +414,7 @@ JsonValue DevEndpoint::Jsonize() const
 
   if(m_publicKeysHasBeenSet)
   {
-   Array<JsonValue> publicKeysJsonList(m_publicKeys.size());
+   Aws::Utils::Array<JsonValue> publicKeysJsonList(m_publicKeys.size());
    for(unsigned publicKeysIndex = 0; publicKeysIndex < publicKeysJsonList.GetLength(); ++publicKeysIndex)
    {
      publicKeysJsonList[publicKeysIndex].AsString(m_publicKeys[publicKeysIndex]);

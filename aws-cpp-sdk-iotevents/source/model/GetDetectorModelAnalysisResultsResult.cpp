@@ -30,7 +30,7 @@ GetDetectorModelAnalysisResultsResult& GetDetectorModelAnalysisResultsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("analysisResults"))
   {
-    Array<JsonView> analysisResultsJsonList = jsonValue.GetArray("analysisResults");
+    Aws::Utils::Array<JsonView> analysisResultsJsonList = jsonValue.GetArray("analysisResults");
     for(unsigned analysisResultsIndex = 0; analysisResultsIndex < analysisResultsJsonList.GetLength(); ++analysisResultsIndex)
     {
       m_analysisResults.push_back(analysisResultsJsonList[analysisResultsIndex].AsObject());

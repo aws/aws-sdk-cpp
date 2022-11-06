@@ -28,22 +28,48 @@ namespace ForecastQueryService
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ForecastQueryServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ForecastQueryServiceClient(const Aws::ForecastQueryService::ForecastQueryServiceClientConfiguration& clientConfiguration = Aws::ForecastQueryService::ForecastQueryServiceClientConfiguration(),
+                                   std::shared_ptr<ForecastQueryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ForecastQueryServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ForecastQueryServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                   const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                   std::shared_ptr<ForecastQueryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ForecastQueryServiceEndpointProvider>(ALLOCATION_TAG),
+                                   const Aws::ForecastQueryService::ForecastQueryServiceClientConfiguration& clientConfiguration = Aws::ForecastQueryService::ForecastQueryServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ForecastQueryServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                   const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                   std::shared_ptr<ForecastQueryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ForecastQueryServiceEndpointProvider>(ALLOCATION_TAG),
+                                   const Aws::ForecastQueryService::ForecastQueryServiceClientConfiguration& clientConfiguration = Aws::ForecastQueryService::ForecastQueryServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ForecastQueryServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ForecastQueryServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                   const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ForecastQueryServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                   const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ForecastQueryServiceClient();
 
 
@@ -94,12 +120,13 @@ namespace ForecastQueryService
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ForecastQueryServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const ForecastQueryServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ForecastQueryServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ForecastQueryServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ForecastQueryService

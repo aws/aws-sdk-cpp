@@ -45,7 +45,7 @@ MaintenanceWindowAutomationParameters& MaintenanceWindowAutomationParameters::op
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonView> automationParameterValueListJsonList = parametersItem.second.AsArray();
+      Aws::Utils::Array<JsonView> automationParameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> automationParameterValueListList;
       automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
@@ -75,7 +75,7 @@ JsonValue MaintenanceWindowAutomationParameters::Jsonize() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> automationParameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> automationParameterValueListJsonList(parametersItem.second.size());
      for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
      {
        automationParameterValueListJsonList[automationParameterValueListIndex].AsString(parametersItem.second[automationParameterValueListIndex]);

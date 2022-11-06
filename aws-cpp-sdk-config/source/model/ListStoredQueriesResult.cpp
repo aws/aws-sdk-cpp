@@ -30,7 +30,7 @@ ListStoredQueriesResult& ListStoredQueriesResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StoredQueryMetadata"))
   {
-    Array<JsonView> storedQueryMetadataJsonList = jsonValue.GetArray("StoredQueryMetadata");
+    Aws::Utils::Array<JsonView> storedQueryMetadataJsonList = jsonValue.GetArray("StoredQueryMetadata");
     for(unsigned storedQueryMetadataIndex = 0; storedQueryMetadataIndex < storedQueryMetadataJsonList.GetLength(); ++storedQueryMetadataIndex)
     {
       m_storedQueryMetadata.push_back(storedQueryMetadataJsonList[storedQueryMetadataIndex].AsObject());

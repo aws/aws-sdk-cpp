@@ -30,7 +30,7 @@ DescribeWorkspaceDirectoriesResult& DescribeWorkspaceDirectoriesResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Directories"))
   {
-    Array<JsonView> directoriesJsonList = jsonValue.GetArray("Directories");
+    Aws::Utils::Array<JsonView> directoriesJsonList = jsonValue.GetArray("Directories");
     for(unsigned directoriesIndex = 0; directoriesIndex < directoriesJsonList.GetLength(); ++directoriesIndex)
     {
       m_directories.push_back(directoriesJsonList[directoriesIndex].AsObject());

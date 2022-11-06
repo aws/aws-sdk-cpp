@@ -59,7 +59,7 @@ DeviceInstance& DeviceInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("labels"))
   {
-    Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
+    Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());
@@ -109,7 +109,7 @@ JsonValue DeviceInstance::Jsonize() const
 
   if(m_labelsHasBeenSet)
   {
-   Array<JsonValue> labelsJsonList(m_labels.size());
+   Aws::Utils::Array<JsonValue> labelsJsonList(m_labels.size());
    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
    {
      labelsJsonList[labelsIndex].AsString(m_labels[labelsIndex]);

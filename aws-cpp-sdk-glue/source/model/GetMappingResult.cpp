@@ -30,7 +30,7 @@ GetMappingResult& GetMappingResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Mapping"))
   {
-    Array<JsonView> mappingJsonList = jsonValue.GetArray("Mapping");
+    Aws::Utils::Array<JsonView> mappingJsonList = jsonValue.GetArray("Mapping");
     for(unsigned mappingIndex = 0; mappingIndex < mappingJsonList.GetLength(); ++mappingIndex)
     {
       m_mapping.push_back(mappingJsonList[mappingIndex].AsObject());

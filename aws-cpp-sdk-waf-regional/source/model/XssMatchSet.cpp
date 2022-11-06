@@ -51,7 +51,7 @@ XssMatchSet& XssMatchSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("XssMatchTuples"))
   {
-    Array<JsonView> xssMatchTuplesJsonList = jsonValue.GetArray("XssMatchTuples");
+    Aws::Utils::Array<JsonView> xssMatchTuplesJsonList = jsonValue.GetArray("XssMatchTuples");
     for(unsigned xssMatchTuplesIndex = 0; xssMatchTuplesIndex < xssMatchTuplesJsonList.GetLength(); ++xssMatchTuplesIndex)
     {
       m_xssMatchTuples.push_back(xssMatchTuplesJsonList[xssMatchTuplesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue XssMatchSet::Jsonize() const
 
   if(m_xssMatchTuplesHasBeenSet)
   {
-   Array<JsonValue> xssMatchTuplesJsonList(m_xssMatchTuples.size());
+   Aws::Utils::Array<JsonValue> xssMatchTuplesJsonList(m_xssMatchTuples.size());
    for(unsigned xssMatchTuplesIndex = 0; xssMatchTuplesIndex < xssMatchTuplesJsonList.GetLength(); ++xssMatchTuplesIndex)
    {
      xssMatchTuplesJsonList[xssMatchTuplesIndex].AsObject(m_xssMatchTuples[xssMatchTuplesIndex].Jsonize());

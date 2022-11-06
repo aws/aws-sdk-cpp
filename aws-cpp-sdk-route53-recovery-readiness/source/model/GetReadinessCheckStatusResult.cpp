@@ -32,7 +32,7 @@ GetReadinessCheckStatusResult& GetReadinessCheckStatusResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("messages"))
   {
-    Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
+    Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
     for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
     {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());
@@ -53,7 +53,7 @@ GetReadinessCheckStatusResult& GetReadinessCheckStatusResult::operator =(const A
 
   if(jsonValue.ValueExists("resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());

@@ -84,7 +84,7 @@ GetRouteResult& GetRouteResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   if(jsonValue.ValueExists("Methods"))
   {
-    Array<JsonView> methodsJsonList = jsonValue.GetArray("Methods");
+    Aws::Utils::Array<JsonView> methodsJsonList = jsonValue.GetArray("Methods");
     for(unsigned methodsIndex = 0; methodsIndex < methodsJsonList.GetLength(); ++methodsIndex)
     {
       m_methods.push_back(HttpMethodMapper::GetHttpMethodForName(methodsJsonList[methodsIndex].AsString()));

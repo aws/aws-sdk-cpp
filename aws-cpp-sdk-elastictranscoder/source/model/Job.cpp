@@ -83,7 +83,7 @@ Job& Job::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
@@ -100,7 +100,7 @@ Job& Job::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Outputs"))
   {
-    Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
+    Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
@@ -117,7 +117,7 @@ Job& Job::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Playlists"))
   {
-    Array<JsonView> playlistsJsonList = jsonValue.GetArray("Playlists");
+    Aws::Utils::Array<JsonView> playlistsJsonList = jsonValue.GetArray("Playlists");
     for(unsigned playlistsIndex = 0; playlistsIndex < playlistsJsonList.GetLength(); ++playlistsIndex)
     {
       m_playlists.push_back(playlistsJsonList[playlistsIndex].AsObject());
@@ -182,7 +182,7 @@ JsonValue Job::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
@@ -199,7 +199,7 @@ JsonValue Job::Jsonize() const
 
   if(m_outputsHasBeenSet)
   {
-   Array<JsonValue> outputsJsonList(m_outputs.size());
+   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
    for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
    {
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
@@ -216,7 +216,7 @@ JsonValue Job::Jsonize() const
 
   if(m_playlistsHasBeenSet)
   {
-   Array<JsonValue> playlistsJsonList(m_playlists.size());
+   Aws::Utils::Array<JsonValue> playlistsJsonList(m_playlists.size());
    for(unsigned playlistsIndex = 0; playlistsIndex < playlistsJsonList.GetLength(); ++playlistsIndex)
    {
      playlistsJsonList[playlistsIndex].AsObject(m_playlists[playlistsIndex].Jsonize());

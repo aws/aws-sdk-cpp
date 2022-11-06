@@ -154,7 +154,7 @@ ContactDetail& ContactDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExtraParams"))
   {
-    Array<JsonView> extraParamsJsonList = jsonValue.GetArray("ExtraParams");
+    Aws::Utils::Array<JsonView> extraParamsJsonList = jsonValue.GetArray("ExtraParams");
     for(unsigned extraParamsIndex = 0; extraParamsIndex < extraParamsJsonList.GetLength(); ++extraParamsIndex)
     {
       m_extraParams.push_back(extraParamsJsonList[extraParamsIndex].AsObject());
@@ -247,7 +247,7 @@ JsonValue ContactDetail::Jsonize() const
 
   if(m_extraParamsHasBeenSet)
   {
-   Array<JsonValue> extraParamsJsonList(m_extraParams.size());
+   Aws::Utils::Array<JsonValue> extraParamsJsonList(m_extraParams.size());
    for(unsigned extraParamsIndex = 0; extraParamsIndex < extraParamsJsonList.GetLength(); ++extraParamsIndex)
    {
      extraParamsJsonList[extraParamsIndex].AsObject(m_extraParams[extraParamsIndex].Jsonize());

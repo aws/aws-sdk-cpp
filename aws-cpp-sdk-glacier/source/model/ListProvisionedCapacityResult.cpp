@@ -30,7 +30,7 @@ ListProvisionedCapacityResult& ListProvisionedCapacityResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisionedCapacityList"))
   {
-    Array<JsonView> provisionedCapacityListJsonList = jsonValue.GetArray("ProvisionedCapacityList");
+    Aws::Utils::Array<JsonView> provisionedCapacityListJsonList = jsonValue.GetArray("ProvisionedCapacityList");
     for(unsigned provisionedCapacityListIndex = 0; provisionedCapacityListIndex < provisionedCapacityListJsonList.GetLength(); ++provisionedCapacityListIndex)
     {
       m_provisionedCapacityList.push_back(provisionedCapacityListJsonList[provisionedCapacityListIndex].AsObject());

@@ -30,7 +30,7 @@ TestAuthorizationResult& TestAuthorizationResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("authResults"))
   {
-    Array<JsonView> authResultsJsonList = jsonValue.GetArray("authResults");
+    Aws::Utils::Array<JsonView> authResultsJsonList = jsonValue.GetArray("authResults");
     for(unsigned authResultsIndex = 0; authResultsIndex < authResultsJsonList.GetLength(); ++authResultsIndex)
     {
       m_authResults.push_back(authResultsJsonList[authResultsIndex].AsObject());

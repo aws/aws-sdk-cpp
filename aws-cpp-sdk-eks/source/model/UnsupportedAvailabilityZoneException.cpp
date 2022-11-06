@@ -60,7 +60,7 @@ UnsupportedAvailabilityZoneException& UnsupportedAvailabilityZoneException::oper
 
   if(jsonValue.ValueExists("validZones"))
   {
-    Array<JsonView> validZonesJsonList = jsonValue.GetArray("validZones");
+    Aws::Utils::Array<JsonView> validZonesJsonList = jsonValue.GetArray("validZones");
     for(unsigned validZonesIndex = 0; validZonesIndex < validZonesJsonList.GetLength(); ++validZonesIndex)
     {
       m_validZones.push_back(validZonesJsonList[validZonesIndex].AsString());
@@ -95,7 +95,7 @@ JsonValue UnsupportedAvailabilityZoneException::Jsonize() const
 
   if(m_validZonesHasBeenSet)
   {
-   Array<JsonValue> validZonesJsonList(m_validZones.size());
+   Aws::Utils::Array<JsonValue> validZonesJsonList(m_validZones.size());
    for(unsigned validZonesIndex = 0; validZonesIndex < validZonesJsonList.GetLength(); ++validZonesIndex)
    {
      validZonesJsonList[validZonesIndex].AsString(m_validZones[validZonesIndex]);

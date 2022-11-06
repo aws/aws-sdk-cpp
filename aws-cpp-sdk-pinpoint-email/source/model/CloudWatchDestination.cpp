@@ -33,7 +33,7 @@ CloudWatchDestination& CloudWatchDestination::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DimensionConfigurations"))
   {
-    Array<JsonView> dimensionConfigurationsJsonList = jsonValue.GetArray("DimensionConfigurations");
+    Aws::Utils::Array<JsonView> dimensionConfigurationsJsonList = jsonValue.GetArray("DimensionConfigurations");
     for(unsigned dimensionConfigurationsIndex = 0; dimensionConfigurationsIndex < dimensionConfigurationsJsonList.GetLength(); ++dimensionConfigurationsIndex)
     {
       m_dimensionConfigurations.push_back(dimensionConfigurationsJsonList[dimensionConfigurationsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue CloudWatchDestination::Jsonize() const
 
   if(m_dimensionConfigurationsHasBeenSet)
   {
-   Array<JsonValue> dimensionConfigurationsJsonList(m_dimensionConfigurations.size());
+   Aws::Utils::Array<JsonValue> dimensionConfigurationsJsonList(m_dimensionConfigurations.size());
    for(unsigned dimensionConfigurationsIndex = 0; dimensionConfigurationsIndex < dimensionConfigurationsJsonList.GetLength(); ++dimensionConfigurationsIndex)
    {
      dimensionConfigurationsJsonList[dimensionConfigurationsIndex].AsObject(m_dimensionConfigurations[dimensionConfigurationsIndex].Jsonize());

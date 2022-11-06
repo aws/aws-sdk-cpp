@@ -56,7 +56,7 @@ StreamConfigurationCreate& StreamConfigurationCreate::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ec2InstanceTypes"))
   {
-    Array<JsonView> ec2InstanceTypesJsonList = jsonValue.GetArray("ec2InstanceTypes");
+    Aws::Utils::Array<JsonView> ec2InstanceTypesJsonList = jsonValue.GetArray("ec2InstanceTypes");
     for(unsigned ec2InstanceTypesIndex = 0; ec2InstanceTypesIndex < ec2InstanceTypesJsonList.GetLength(); ++ec2InstanceTypesIndex)
     {
       m_ec2InstanceTypes.push_back(StreamingInstanceTypeMapper::GetStreamingInstanceTypeForName(ec2InstanceTypesJsonList[ec2InstanceTypesIndex].AsString()));
@@ -87,7 +87,7 @@ StreamConfigurationCreate& StreamConfigurationCreate::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("streamingImageIds"))
   {
-    Array<JsonView> streamingImageIdsJsonList = jsonValue.GetArray("streamingImageIds");
+    Aws::Utils::Array<JsonView> streamingImageIdsJsonList = jsonValue.GetArray("streamingImageIds");
     for(unsigned streamingImageIdsIndex = 0; streamingImageIdsIndex < streamingImageIdsJsonList.GetLength(); ++streamingImageIdsIndex)
     {
       m_streamingImageIds.push_back(streamingImageIdsJsonList[streamingImageIdsIndex].AsString());
@@ -109,7 +109,7 @@ JsonValue StreamConfigurationCreate::Jsonize() const
 
   if(m_ec2InstanceTypesHasBeenSet)
   {
-   Array<JsonValue> ec2InstanceTypesJsonList(m_ec2InstanceTypes.size());
+   Aws::Utils::Array<JsonValue> ec2InstanceTypesJsonList(m_ec2InstanceTypes.size());
    for(unsigned ec2InstanceTypesIndex = 0; ec2InstanceTypesIndex < ec2InstanceTypesJsonList.GetLength(); ++ec2InstanceTypesIndex)
    {
      ec2InstanceTypesJsonList[ec2InstanceTypesIndex].AsString(StreamingInstanceTypeMapper::GetNameForStreamingInstanceType(m_ec2InstanceTypes[ec2InstanceTypesIndex]));
@@ -138,7 +138,7 @@ JsonValue StreamConfigurationCreate::Jsonize() const
 
   if(m_streamingImageIdsHasBeenSet)
   {
-   Array<JsonValue> streamingImageIdsJsonList(m_streamingImageIds.size());
+   Aws::Utils::Array<JsonValue> streamingImageIdsJsonList(m_streamingImageIds.size());
    for(unsigned streamingImageIdsIndex = 0; streamingImageIdsIndex < streamingImageIdsJsonList.GetLength(); ++streamingImageIdsIndex)
    {
      streamingImageIdsJsonList[streamingImageIdsIndex].AsString(m_streamingImageIds[streamingImageIdsIndex]);

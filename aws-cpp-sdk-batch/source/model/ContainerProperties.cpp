@@ -78,7 +78,7 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
+    Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -102,7 +102,7 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("volumes"))
   {
-    Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
+    Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
     for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
     {
       m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());
@@ -112,7 +112,7 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("environment"))
   {
-    Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
+    Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
     for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
     {
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());
@@ -122,7 +122,7 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mountPoints"))
   {
-    Array<JsonView> mountPointsJsonList = jsonValue.GetArray("mountPoints");
+    Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("mountPoints");
     for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
     {
       m_mountPoints.push_back(mountPointsJsonList[mountPointsIndex].AsObject());
@@ -146,7 +146,7 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ulimits"))
   {
-    Array<JsonView> ulimitsJsonList = jsonValue.GetArray("ulimits");
+    Aws::Utils::Array<JsonView> ulimitsJsonList = jsonValue.GetArray("ulimits");
     for(unsigned ulimitsIndex = 0; ulimitsIndex < ulimitsJsonList.GetLength(); ++ulimitsIndex)
     {
       m_ulimits.push_back(ulimitsJsonList[ulimitsIndex].AsObject());
@@ -170,7 +170,7 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourceRequirements"))
   {
-    Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
+    Aws::Utils::Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
     for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
     {
       m_resourceRequirements.push_back(resourceRequirementsJsonList[resourceRequirementsIndex].AsObject());
@@ -194,7 +194,7 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secrets"))
   {
-    Array<JsonView> secretsJsonList = jsonValue.GetArray("secrets");
+    Aws::Utils::Array<JsonView> secretsJsonList = jsonValue.GetArray("secrets");
     for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
     {
       m_secrets.push_back(secretsJsonList[secretsIndex].AsObject());
@@ -231,7 +231,7 @@ JsonValue ContainerProperties::Jsonize() const
 
   if(m_commandHasBeenSet)
   {
-   Array<JsonValue> commandJsonList(m_command.size());
+   Aws::Utils::Array<JsonValue> commandJsonList(m_command.size());
    for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
    {
      commandJsonList[commandIndex].AsString(m_command[commandIndex]);
@@ -254,7 +254,7 @@ JsonValue ContainerProperties::Jsonize() const
 
   if(m_volumesHasBeenSet)
   {
-   Array<JsonValue> volumesJsonList(m_volumes.size());
+   Aws::Utils::Array<JsonValue> volumesJsonList(m_volumes.size());
    for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
    {
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
@@ -265,7 +265,7 @@ JsonValue ContainerProperties::Jsonize() const
 
   if(m_environmentHasBeenSet)
   {
-   Array<JsonValue> environmentJsonList(m_environment.size());
+   Aws::Utils::Array<JsonValue> environmentJsonList(m_environment.size());
    for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
    {
      environmentJsonList[environmentIndex].AsObject(m_environment[environmentIndex].Jsonize());
@@ -276,7 +276,7 @@ JsonValue ContainerProperties::Jsonize() const
 
   if(m_mountPointsHasBeenSet)
   {
-   Array<JsonValue> mountPointsJsonList(m_mountPoints.size());
+   Aws::Utils::Array<JsonValue> mountPointsJsonList(m_mountPoints.size());
    for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
    {
      mountPointsJsonList[mountPointsIndex].AsObject(m_mountPoints[mountPointsIndex].Jsonize());
@@ -299,7 +299,7 @@ JsonValue ContainerProperties::Jsonize() const
 
   if(m_ulimitsHasBeenSet)
   {
-   Array<JsonValue> ulimitsJsonList(m_ulimits.size());
+   Aws::Utils::Array<JsonValue> ulimitsJsonList(m_ulimits.size());
    for(unsigned ulimitsIndex = 0; ulimitsIndex < ulimitsJsonList.GetLength(); ++ulimitsIndex)
    {
      ulimitsJsonList[ulimitsIndex].AsObject(m_ulimits[ulimitsIndex].Jsonize());
@@ -322,7 +322,7 @@ JsonValue ContainerProperties::Jsonize() const
 
   if(m_resourceRequirementsHasBeenSet)
   {
-   Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
+   Aws::Utils::Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
    for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
    {
      resourceRequirementsJsonList[resourceRequirementsIndex].AsObject(m_resourceRequirements[resourceRequirementsIndex].Jsonize());
@@ -345,7 +345,7 @@ JsonValue ContainerProperties::Jsonize() const
 
   if(m_secretsHasBeenSet)
   {
-   Array<JsonValue> secretsJsonList(m_secrets.size());
+   Aws::Utils::Array<JsonValue> secretsJsonList(m_secrets.size());
    for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
    {
      secretsJsonList[secretsIndex].AsObject(m_secrets[secretsIndex].Jsonize());

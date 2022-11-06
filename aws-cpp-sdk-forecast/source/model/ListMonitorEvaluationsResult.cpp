@@ -36,7 +36,7 @@ ListMonitorEvaluationsResult& ListMonitorEvaluationsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("PredictorMonitorEvaluations"))
   {
-    Array<JsonView> predictorMonitorEvaluationsJsonList = jsonValue.GetArray("PredictorMonitorEvaluations");
+    Aws::Utils::Array<JsonView> predictorMonitorEvaluationsJsonList = jsonValue.GetArray("PredictorMonitorEvaluations");
     for(unsigned predictorMonitorEvaluationsIndex = 0; predictorMonitorEvaluationsIndex < predictorMonitorEvaluationsJsonList.GetLength(); ++predictorMonitorEvaluationsIndex)
     {
       m_predictorMonitorEvaluations.push_back(predictorMonitorEvaluationsJsonList[predictorMonitorEvaluationsIndex].AsObject());

@@ -42,7 +42,7 @@ SuggestionTextWithHighlights& SuggestionTextWithHighlights::operator =(JsonView 
 
   if(jsonValue.ValueExists("Highlights"))
   {
-    Array<JsonView> highlightsJsonList = jsonValue.GetArray("Highlights");
+    Aws::Utils::Array<JsonView> highlightsJsonList = jsonValue.GetArray("Highlights");
     for(unsigned highlightsIndex = 0; highlightsIndex < highlightsJsonList.GetLength(); ++highlightsIndex)
     {
       m_highlights.push_back(highlightsJsonList[highlightsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue SuggestionTextWithHighlights::Jsonize() const
 
   if(m_highlightsHasBeenSet)
   {
-   Array<JsonValue> highlightsJsonList(m_highlights.size());
+   Aws::Utils::Array<JsonValue> highlightsJsonList(m_highlights.size());
    for(unsigned highlightsIndex = 0; highlightsIndex < highlightsJsonList.GetLength(); ++highlightsIndex)
    {
      highlightsJsonList[highlightsIndex].AsObject(m_highlights[highlightsIndex].Jsonize());

@@ -28,22 +28,48 @@ namespace TranscribeStreamingService
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        TranscribeStreamingServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        TranscribeStreamingServiceClient(const Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration& clientConfiguration = Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration(),
+                                         std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         TranscribeStreamingServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                         std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG),
+                                         const Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration& clientConfiguration = Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         TranscribeStreamingServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                         std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG),
+                                         const Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration& clientConfiguration = Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TranscribeStreamingServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TranscribeStreamingServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        TranscribeStreamingServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~TranscribeStreamingServiceClient();
 
 
@@ -56,11 +82,11 @@ namespace TranscribeStreamingService
          *
          * Queues the request into a thread executor.
          * The streamReadyHandler is triggered when the stream is ready to be written to.
-         * The responseHandler is triggered when the request is finished.
+         * The handler is triggered when the request is finished.
          */
         virtual void StartMedicalStreamTranscriptionAsync(Model::StartMedicalStreamTranscriptionRequest& request,
                 const StartMedicalStreamTranscriptionStreamReadyHandler& streamReadyHandler,
-                const StartMedicalStreamTranscriptionResponseReceivedHandler& responseHandler,
+                const StartMedicalStreamTranscriptionResponseReceivedHandler& handler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
         /**
@@ -78,21 +104,22 @@ namespace TranscribeStreamingService
          *
          * Queues the request into a thread executor.
          * The streamReadyHandler is triggered when the stream is ready to be written to.
-         * The responseHandler is triggered when the request is finished.
+         * The handler is triggered when the request is finished.
          */
         virtual void StartStreamTranscriptionAsync(Model::StartStreamTranscriptionRequest& request,
                 const StartStreamTranscriptionStreamReadyHandler& streamReadyHandler,
-                const StartStreamTranscriptionResponseReceivedHandler& responseHandler,
+                const StartStreamTranscriptionResponseReceivedHandler& handler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const TranscribeStreamingServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      TranscribeStreamingServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace TranscribeStreamingService

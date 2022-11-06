@@ -37,7 +37,7 @@ Aws::String DisassociatePersonasFromEntitiesRequest::SerializePayload() const
 
   if(m_entityIdsHasBeenSet)
   {
-   Array<JsonValue> entityIdsJsonList(m_entityIds.size());
+   Aws::Utils::Array<JsonValue> entityIdsJsonList(m_entityIds.size());
    for(unsigned entityIdsIndex = 0; entityIdsIndex < entityIdsJsonList.GetLength(); ++entityIdsIndex)
    {
      entityIdsJsonList[entityIdsIndex].AsString(m_entityIds[entityIdsIndex]);

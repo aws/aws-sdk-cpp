@@ -30,7 +30,7 @@ ListBotsResult& ListBotsResult::operator =(const Aws::AmazonWebServiceResult<Jso
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Bots"))
   {
-    Array<JsonView> botsJsonList = jsonValue.GetArray("Bots");
+    Aws::Utils::Array<JsonView> botsJsonList = jsonValue.GetArray("Bots");
     for(unsigned botsIndex = 0; botsIndex < botsJsonList.GetLength(); ++botsIndex)
     {
       m_bots.push_back(botsJsonList[botsIndex].AsObject());

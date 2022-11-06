@@ -30,7 +30,7 @@ DescribeLogGroupsResult& DescribeLogGroupsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("logGroups"))
   {
-    Array<JsonView> logGroupsJsonList = jsonValue.GetArray("logGroups");
+    Aws::Utils::Array<JsonView> logGroupsJsonList = jsonValue.GetArray("logGroups");
     for(unsigned logGroupsIndex = 0; logGroupsIndex < logGroupsJsonList.GetLength(); ++logGroupsIndex)
     {
       m_logGroups.push_back(logGroupsJsonList[logGroupsIndex].AsObject());

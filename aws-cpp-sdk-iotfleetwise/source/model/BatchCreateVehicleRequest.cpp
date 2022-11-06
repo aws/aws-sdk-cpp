@@ -23,7 +23,7 @@ Aws::String BatchCreateVehicleRequest::SerializePayload() const
 
   if(m_vehiclesHasBeenSet)
   {
-   Array<JsonValue> vehiclesJsonList(m_vehicles.size());
+   Aws::Utils::Array<JsonValue> vehiclesJsonList(m_vehicles.size());
    for(unsigned vehiclesIndex = 0; vehiclesIndex < vehiclesJsonList.GetLength(); ++vehiclesIndex)
    {
      vehiclesJsonList[vehiclesIndex].AsObject(m_vehicles[vehiclesIndex].Jsonize());

@@ -30,7 +30,7 @@ BatchExecuteStatementResult& BatchExecuteStatementResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("updateResults"))
   {
-    Array<JsonView> updateResultsJsonList = jsonValue.GetArray("updateResults");
+    Aws::Utils::Array<JsonView> updateResultsJsonList = jsonValue.GetArray("updateResults");
     for(unsigned updateResultsIndex = 0; updateResultsIndex < updateResultsJsonList.GetLength(); ++updateResultsIndex)
     {
       m_updateResults.push_back(updateResultsJsonList[updateResultsIndex].AsObject());

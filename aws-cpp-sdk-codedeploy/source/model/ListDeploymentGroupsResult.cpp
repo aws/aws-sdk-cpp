@@ -36,7 +36,7 @@ ListDeploymentGroupsResult& ListDeploymentGroupsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("deploymentGroups"))
   {
-    Array<JsonView> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
+    Aws::Utils::Array<JsonView> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
     for(unsigned deploymentGroupsIndex = 0; deploymentGroupsIndex < deploymentGroupsJsonList.GetLength(); ++deploymentGroupsIndex)
     {
       m_deploymentGroups.push_back(deploymentGroupsJsonList[deploymentGroupsIndex].AsString());

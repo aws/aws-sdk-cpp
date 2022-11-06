@@ -90,7 +90,7 @@ Job& Job::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("participatingServers"))
   {
-    Array<JsonView> participatingServersJsonList = jsonValue.GetArray("participatingServers");
+    Aws::Utils::Array<JsonView> participatingServersJsonList = jsonValue.GetArray("participatingServers");
     for(unsigned participatingServersIndex = 0; participatingServersIndex < participatingServersJsonList.GetLength(); ++participatingServersIndex)
     {
       m_participatingServers.push_back(participatingServersJsonList[participatingServersIndex].AsObject());
@@ -160,7 +160,7 @@ JsonValue Job::Jsonize() const
 
   if(m_participatingServersHasBeenSet)
   {
-   Array<JsonValue> participatingServersJsonList(m_participatingServers.size());
+   Aws::Utils::Array<JsonValue> participatingServersJsonList(m_participatingServers.size());
    for(unsigned participatingServersIndex = 0; participatingServersIndex < participatingServersJsonList.GetLength(); ++participatingServersIndex)
    {
      participatingServersJsonList[participatingServersIndex].AsObject(m_participatingServers[participatingServersIndex].Jsonize());

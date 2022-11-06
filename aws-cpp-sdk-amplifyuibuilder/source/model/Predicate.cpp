@@ -41,7 +41,7 @@ Predicate& Predicate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("and"))
   {
-    Array<JsonView> andJsonList = jsonValue.GetArray("and");
+    Aws::Utils::Array<JsonView> andJsonList = jsonValue.GetArray("and");
     for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
     {
       m_and.push_back(andJsonList[andIndex].AsObject());
@@ -72,7 +72,7 @@ Predicate& Predicate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("or"))
   {
-    Array<JsonView> orJsonList = jsonValue.GetArray("or");
+    Aws::Utils::Array<JsonView> orJsonList = jsonValue.GetArray("or");
     for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
     {
       m_or.push_back(orJsonList[orIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue Predicate::Jsonize() const
 
   if(m_andHasBeenSet)
   {
-   Array<JsonValue> andJsonList(m_and.size());
+   Aws::Utils::Array<JsonValue> andJsonList(m_and.size());
    for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
    {
      andJsonList[andIndex].AsObject(m_and[andIndex].Jsonize());
@@ -118,7 +118,7 @@ JsonValue Predicate::Jsonize() const
 
   if(m_orHasBeenSet)
   {
-   Array<JsonValue> orJsonList(m_or.size());
+   Aws::Utils::Array<JsonValue> orJsonList(m_or.size());
    for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
    {
      orJsonList[orIndex].AsObject(m_or[orIndex].Jsonize());

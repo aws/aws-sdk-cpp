@@ -68,7 +68,7 @@ TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("titles"))
   {
-    Array<JsonView> titlesJsonList = jsonValue.GetArray("titles");
+    Aws::Utils::Array<JsonView> titlesJsonList = jsonValue.GetArray("titles");
     for(unsigned titlesIndex = 0; titlesIndex < titlesJsonList.GetLength(); ++titlesIndex)
     {
       m_titles.push_back(titlesJsonList[titlesIndex].AsObject());
@@ -78,7 +78,7 @@ TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("vulnerabilityIds"))
   {
-    Array<JsonView> vulnerabilityIdsJsonList = jsonValue.GetArray("vulnerabilityIds");
+    Aws::Utils::Array<JsonView> vulnerabilityIdsJsonList = jsonValue.GetArray("vulnerabilityIds");
     for(unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex)
     {
       m_vulnerabilityIds.push_back(vulnerabilityIdsJsonList[vulnerabilityIdsIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue TitleAggregation::Jsonize() const
 
   if(m_titlesHasBeenSet)
   {
-   Array<JsonValue> titlesJsonList(m_titles.size());
+   Aws::Utils::Array<JsonValue> titlesJsonList(m_titles.size());
    for(unsigned titlesIndex = 0; titlesIndex < titlesJsonList.GetLength(); ++titlesIndex)
    {
      titlesJsonList[titlesIndex].AsObject(m_titles[titlesIndex].Jsonize());
@@ -121,7 +121,7 @@ JsonValue TitleAggregation::Jsonize() const
 
   if(m_vulnerabilityIdsHasBeenSet)
   {
-   Array<JsonValue> vulnerabilityIdsJsonList(m_vulnerabilityIds.size());
+   Aws::Utils::Array<JsonValue> vulnerabilityIdsJsonList(m_vulnerabilityIds.size());
    for(unsigned vulnerabilityIdsIndex = 0; vulnerabilityIdsIndex < vulnerabilityIdsJsonList.GetLength(); ++vulnerabilityIdsIndex)
    {
      vulnerabilityIdsJsonList[vulnerabilityIdsIndex].AsObject(m_vulnerabilityIds[vulnerabilityIdsIndex].Jsonize());

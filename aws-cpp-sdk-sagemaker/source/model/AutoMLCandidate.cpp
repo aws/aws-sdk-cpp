@@ -78,7 +78,7 @@ AutoMLCandidate& AutoMLCandidate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CandidateSteps"))
   {
-    Array<JsonView> candidateStepsJsonList = jsonValue.GetArray("CandidateSteps");
+    Aws::Utils::Array<JsonView> candidateStepsJsonList = jsonValue.GetArray("CandidateSteps");
     for(unsigned candidateStepsIndex = 0; candidateStepsIndex < candidateStepsJsonList.GetLength(); ++candidateStepsIndex)
     {
       m_candidateSteps.push_back(candidateStepsJsonList[candidateStepsIndex].AsObject());
@@ -95,7 +95,7 @@ AutoMLCandidate& AutoMLCandidate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InferenceContainers"))
   {
-    Array<JsonView> inferenceContainersJsonList = jsonValue.GetArray("InferenceContainers");
+    Aws::Utils::Array<JsonView> inferenceContainersJsonList = jsonValue.GetArray("InferenceContainers");
     for(unsigned inferenceContainersIndex = 0; inferenceContainersIndex < inferenceContainersJsonList.GetLength(); ++inferenceContainersIndex)
     {
       m_inferenceContainers.push_back(inferenceContainersJsonList[inferenceContainersIndex].AsObject());
@@ -164,7 +164,7 @@ JsonValue AutoMLCandidate::Jsonize() const
 
   if(m_candidateStepsHasBeenSet)
   {
-   Array<JsonValue> candidateStepsJsonList(m_candidateSteps.size());
+   Aws::Utils::Array<JsonValue> candidateStepsJsonList(m_candidateSteps.size());
    for(unsigned candidateStepsIndex = 0; candidateStepsIndex < candidateStepsJsonList.GetLength(); ++candidateStepsIndex)
    {
      candidateStepsJsonList[candidateStepsIndex].AsObject(m_candidateSteps[candidateStepsIndex].Jsonize());
@@ -180,7 +180,7 @@ JsonValue AutoMLCandidate::Jsonize() const
 
   if(m_inferenceContainersHasBeenSet)
   {
-   Array<JsonValue> inferenceContainersJsonList(m_inferenceContainers.size());
+   Aws::Utils::Array<JsonValue> inferenceContainersJsonList(m_inferenceContainers.size());
    for(unsigned inferenceContainersIndex = 0; inferenceContainersIndex < inferenceContainersJsonList.GetLength(); ++inferenceContainersIndex)
    {
      inferenceContainersJsonList[inferenceContainersIndex].AsObject(m_inferenceContainers[inferenceContainersIndex].Jsonize());

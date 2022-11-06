@@ -71,7 +71,7 @@ FlowDefinition& FlowDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tasks"))
   {
-    Array<JsonView> tasksJsonList = jsonValue.GetArray("Tasks");
+    Aws::Utils::Array<JsonView> tasksJsonList = jsonValue.GetArray("Tasks");
     for(unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex)
     {
       m_tasks.push_back(tasksJsonList[tasksIndex].AsObject());
@@ -119,7 +119,7 @@ JsonValue FlowDefinition::Jsonize() const
 
   if(m_tasksHasBeenSet)
   {
-   Array<JsonValue> tasksJsonList(m_tasks.size());
+   Aws::Utils::Array<JsonValue> tasksJsonList(m_tasks.size());
    for(unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex)
    {
      tasksJsonList[tasksIndex].AsObject(m_tasks[tasksIndex].Jsonize());

@@ -30,7 +30,7 @@ ListElasticsearchVersionsResult& ListElasticsearchVersionsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ElasticsearchVersions"))
   {
-    Array<JsonView> elasticsearchVersionsJsonList = jsonValue.GetArray("ElasticsearchVersions");
+    Aws::Utils::Array<JsonView> elasticsearchVersionsJsonList = jsonValue.GetArray("ElasticsearchVersions");
     for(unsigned elasticsearchVersionsIndex = 0; elasticsearchVersionsIndex < elasticsearchVersionsJsonList.GetLength(); ++elasticsearchVersionsIndex)
     {
       m_elasticsearchVersions.push_back(elasticsearchVersionsJsonList[elasticsearchVersionsIndex].AsString());

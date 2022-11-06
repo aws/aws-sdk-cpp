@@ -30,7 +30,7 @@ ListPreparedStatementsResult& ListPreparedStatementsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PreparedStatements"))
   {
-    Array<JsonView> preparedStatementsJsonList = jsonValue.GetArray("PreparedStatements");
+    Aws::Utils::Array<JsonView> preparedStatementsJsonList = jsonValue.GetArray("PreparedStatements");
     for(unsigned preparedStatementsIndex = 0; preparedStatementsIndex < preparedStatementsJsonList.GetLength(); ++preparedStatementsIndex)
     {
       m_preparedStatements.push_back(preparedStatementsJsonList[preparedStatementsIndex].AsObject());

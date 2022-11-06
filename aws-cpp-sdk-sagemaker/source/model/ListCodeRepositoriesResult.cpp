@@ -30,7 +30,7 @@ ListCodeRepositoriesResult& ListCodeRepositoriesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CodeRepositorySummaryList"))
   {
-    Array<JsonView> codeRepositorySummaryListJsonList = jsonValue.GetArray("CodeRepositorySummaryList");
+    Aws::Utils::Array<JsonView> codeRepositorySummaryListJsonList = jsonValue.GetArray("CodeRepositorySummaryList");
     for(unsigned codeRepositorySummaryListIndex = 0; codeRepositorySummaryListIndex < codeRepositorySummaryListJsonList.GetLength(); ++codeRepositorySummaryListIndex)
     {
       m_codeRepositorySummaryList.push_back(codeRepositorySummaryListJsonList[codeRepositorySummaryListIndex].AsObject());

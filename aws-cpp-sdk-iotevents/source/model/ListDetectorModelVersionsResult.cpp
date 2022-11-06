@@ -30,7 +30,7 @@ ListDetectorModelVersionsResult& ListDetectorModelVersionsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("detectorModelVersionSummaries"))
   {
-    Array<JsonView> detectorModelVersionSummariesJsonList = jsonValue.GetArray("detectorModelVersionSummaries");
+    Aws::Utils::Array<JsonView> detectorModelVersionSummariesJsonList = jsonValue.GetArray("detectorModelVersionSummaries");
     for(unsigned detectorModelVersionSummariesIndex = 0; detectorModelVersionSummariesIndex < detectorModelVersionSummariesJsonList.GetLength(); ++detectorModelVersionSummariesIndex)
     {
       m_detectorModelVersionSummaries.push_back(detectorModelVersionSummariesJsonList[detectorModelVersionSummariesIndex].AsObject());

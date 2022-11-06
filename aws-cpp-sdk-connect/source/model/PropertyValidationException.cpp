@@ -42,7 +42,7 @@ PropertyValidationException& PropertyValidationException::operator =(JsonView js
 
   if(jsonValue.ValueExists("PropertyList"))
   {
-    Array<JsonView> propertyListJsonList = jsonValue.GetArray("PropertyList");
+    Aws::Utils::Array<JsonView> propertyListJsonList = jsonValue.GetArray("PropertyList");
     for(unsigned propertyListIndex = 0; propertyListIndex < propertyListJsonList.GetLength(); ++propertyListIndex)
     {
       m_propertyList.push_back(propertyListJsonList[propertyListIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue PropertyValidationException::Jsonize() const
 
   if(m_propertyListHasBeenSet)
   {
-   Array<JsonValue> propertyListJsonList(m_propertyList.size());
+   Aws::Utils::Array<JsonValue> propertyListJsonList(m_propertyList.size());
    for(unsigned propertyListIndex = 0; propertyListIndex < propertyListJsonList.GetLength(); ++propertyListIndex)
    {
      propertyListJsonList[propertyListIndex].AsObject(m_propertyList[propertyListIndex].Jsonize());

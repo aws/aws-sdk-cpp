@@ -62,7 +62,7 @@ SearchPlaceIndexForPositionSummary& SearchPlaceIndexForPositionSummary::operator
 
   if(jsonValue.ValueExists("Position"))
   {
-    Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
+    Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
     for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
     {
       m_position.push_back(positionJsonList[positionIndex].AsDouble());
@@ -97,7 +97,7 @@ JsonValue SearchPlaceIndexForPositionSummary::Jsonize() const
 
   if(m_positionHasBeenSet)
   {
-   Array<JsonValue> positionJsonList(m_position.size());
+   Aws::Utils::Array<JsonValue> positionJsonList(m_position.size());
    for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
    {
      positionJsonList[positionIndex].AsDouble(m_position[positionIndex]);

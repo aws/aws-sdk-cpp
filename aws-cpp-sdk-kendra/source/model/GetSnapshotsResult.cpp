@@ -36,7 +36,7 @@ GetSnapshotsResult& GetSnapshotsResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("SnapshotsDataHeader"))
   {
-    Array<JsonView> snapshotsDataHeaderJsonList = jsonValue.GetArray("SnapshotsDataHeader");
+    Aws::Utils::Array<JsonView> snapshotsDataHeaderJsonList = jsonValue.GetArray("SnapshotsDataHeader");
     for(unsigned snapshotsDataHeaderIndex = 0; snapshotsDataHeaderIndex < snapshotsDataHeaderJsonList.GetLength(); ++snapshotsDataHeaderIndex)
     {
       m_snapshotsDataHeader.push_back(snapshotsDataHeaderJsonList[snapshotsDataHeaderIndex].AsString());
@@ -45,10 +45,10 @@ GetSnapshotsResult& GetSnapshotsResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("SnapshotsData"))
   {
-    Array<JsonView> snapshotsDataJsonList = jsonValue.GetArray("SnapshotsData");
+    Aws::Utils::Array<JsonView> snapshotsDataJsonList = jsonValue.GetArray("SnapshotsData");
     for(unsigned snapshotsDataIndex = 0; snapshotsDataIndex < snapshotsDataJsonList.GetLength(); ++snapshotsDataIndex)
     {
-      Array<JsonView> snapshotsDataRecordJsonList = snapshotsDataJsonList[snapshotsDataIndex].AsArray();
+      Aws::Utils::Array<JsonView> snapshotsDataRecordJsonList = snapshotsDataJsonList[snapshotsDataIndex].AsArray();
       Aws::Vector<Aws::String> snapshotsDataRecordList;
       snapshotsDataRecordList.reserve((size_t)snapshotsDataRecordJsonList.GetLength());
       for(unsigned snapshotsDataRecordIndex = 0; snapshotsDataRecordIndex < snapshotsDataRecordJsonList.GetLength(); ++snapshotsDataRecordIndex)

@@ -51,7 +51,7 @@ AssessmentTemplateFilter& AssessmentTemplateFilter::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
-    Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
+    Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
     for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
     {
       m_rulesPackageArns.push_back(rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue AssessmentTemplateFilter::Jsonize() const
 
   if(m_rulesPackageArnsHasBeenSet)
   {
-   Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
+   Aws::Utils::Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
    for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
    {
      rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString(m_rulesPackageArns[rulesPackageArnsIndex]);

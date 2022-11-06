@@ -26,7 +26,7 @@ Aws::String DescribeLaunchConfigurationTemplatesRequest::SerializePayload() cons
 
   if(m_launchConfigurationTemplateIDsHasBeenSet)
   {
-   Array<JsonValue> launchConfigurationTemplateIDsJsonList(m_launchConfigurationTemplateIDs.size());
+   Aws::Utils::Array<JsonValue> launchConfigurationTemplateIDsJsonList(m_launchConfigurationTemplateIDs.size());
    for(unsigned launchConfigurationTemplateIDsIndex = 0; launchConfigurationTemplateIDsIndex < launchConfigurationTemplateIDsJsonList.GetLength(); ++launchConfigurationTemplateIDsIndex)
    {
      launchConfigurationTemplateIDsJsonList[launchConfigurationTemplateIDsIndex].AsString(m_launchConfigurationTemplateIDs[launchConfigurationTemplateIDsIndex]);

@@ -23,7 +23,7 @@ Aws::String BatchSnoozeAlarmRequest::SerializePayload() const
 
   if(m_snoozeActionRequestsHasBeenSet)
   {
-   Array<JsonValue> snoozeActionRequestsJsonList(m_snoozeActionRequests.size());
+   Aws::Utils::Array<JsonValue> snoozeActionRequestsJsonList(m_snoozeActionRequests.size());
    for(unsigned snoozeActionRequestsIndex = 0; snoozeActionRequestsIndex < snoozeActionRequestsJsonList.GetLength(); ++snoozeActionRequestsIndex)
    {
      snoozeActionRequestsJsonList[snoozeActionRequestsIndex].AsObject(m_snoozeActionRequests[snoozeActionRequestsIndex].Jsonize());

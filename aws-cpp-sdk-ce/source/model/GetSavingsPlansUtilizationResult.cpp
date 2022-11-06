@@ -30,7 +30,7 @@ GetSavingsPlansUtilizationResult& GetSavingsPlansUtilizationResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SavingsPlansUtilizationsByTime"))
   {
-    Array<JsonView> savingsPlansUtilizationsByTimeJsonList = jsonValue.GetArray("SavingsPlansUtilizationsByTime");
+    Aws::Utils::Array<JsonView> savingsPlansUtilizationsByTimeJsonList = jsonValue.GetArray("SavingsPlansUtilizationsByTime");
     for(unsigned savingsPlansUtilizationsByTimeIndex = 0; savingsPlansUtilizationsByTimeIndex < savingsPlansUtilizationsByTimeJsonList.GetLength(); ++savingsPlansUtilizationsByTimeIndex)
     {
       m_savingsPlansUtilizationsByTime.push_back(savingsPlansUtilizationsByTimeJsonList[savingsPlansUtilizationsByTimeIndex].AsObject());

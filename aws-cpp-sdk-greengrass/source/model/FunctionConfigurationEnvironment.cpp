@@ -55,7 +55,7 @@ FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(J
 
   if(jsonValue.ValueExists("ResourceAccessPolicies"))
   {
-    Array<JsonView> resourceAccessPoliciesJsonList = jsonValue.GetArray("ResourceAccessPolicies");
+    Aws::Utils::Array<JsonView> resourceAccessPoliciesJsonList = jsonValue.GetArray("ResourceAccessPolicies");
     for(unsigned resourceAccessPoliciesIndex = 0; resourceAccessPoliciesIndex < resourceAccessPoliciesJsonList.GetLength(); ++resourceAccessPoliciesIndex)
     {
       m_resourceAccessPolicies.push_back(resourceAccessPoliciesJsonList[resourceAccessPoliciesIndex].AsObject());
@@ -94,7 +94,7 @@ JsonValue FunctionConfigurationEnvironment::Jsonize() const
 
   if(m_resourceAccessPoliciesHasBeenSet)
   {
-   Array<JsonValue> resourceAccessPoliciesJsonList(m_resourceAccessPolicies.size());
+   Aws::Utils::Array<JsonValue> resourceAccessPoliciesJsonList(m_resourceAccessPolicies.size());
    for(unsigned resourceAccessPoliciesIndex = 0; resourceAccessPoliciesIndex < resourceAccessPoliciesJsonList.GetLength(); ++resourceAccessPoliciesIndex)
    {
      resourceAccessPoliciesJsonList[resourceAccessPoliciesIndex].AsObject(m_resourceAccessPolicies[resourceAccessPoliciesIndex].Jsonize());

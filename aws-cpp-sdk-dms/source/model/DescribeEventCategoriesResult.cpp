@@ -30,7 +30,7 @@ DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EventCategoryGroupList"))
   {
-    Array<JsonView> eventCategoryGroupListJsonList = jsonValue.GetArray("EventCategoryGroupList");
+    Aws::Utils::Array<JsonView> eventCategoryGroupListJsonList = jsonValue.GetArray("EventCategoryGroupList");
     for(unsigned eventCategoryGroupListIndex = 0; eventCategoryGroupListIndex < eventCategoryGroupListJsonList.GetLength(); ++eventCategoryGroupListIndex)
     {
       m_eventCategoryGroupList.push_back(eventCategoryGroupListJsonList[eventCategoryGroupListIndex].AsObject());

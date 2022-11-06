@@ -51,7 +51,7 @@ Computer& Computer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ComputerAttributes"))
   {
-    Array<JsonView> computerAttributesJsonList = jsonValue.GetArray("ComputerAttributes");
+    Aws::Utils::Array<JsonView> computerAttributesJsonList = jsonValue.GetArray("ComputerAttributes");
     for(unsigned computerAttributesIndex = 0; computerAttributesIndex < computerAttributesJsonList.GetLength(); ++computerAttributesIndex)
     {
       m_computerAttributes.push_back(computerAttributesJsonList[computerAttributesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue Computer::Jsonize() const
 
   if(m_computerAttributesHasBeenSet)
   {
-   Array<JsonValue> computerAttributesJsonList(m_computerAttributes.size());
+   Aws::Utils::Array<JsonValue> computerAttributesJsonList(m_computerAttributes.size());
    for(unsigned computerAttributesIndex = 0; computerAttributesIndex < computerAttributesJsonList.GetLength(); ++computerAttributesIndex)
    {
      computerAttributesJsonList[computerAttributesIndex].AsObject(m_computerAttributes[computerAttributesIndex].Jsonize());

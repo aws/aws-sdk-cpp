@@ -30,7 +30,7 @@ ListMetricSetsResult& ListMetricSetsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MetricSetSummaryList"))
   {
-    Array<JsonView> metricSetSummaryListJsonList = jsonValue.GetArray("MetricSetSummaryList");
+    Aws::Utils::Array<JsonView> metricSetSummaryListJsonList = jsonValue.GetArray("MetricSetSummaryList");
     for(unsigned metricSetSummaryListIndex = 0; metricSetSummaryListIndex < metricSetSummaryListJsonList.GetLength(); ++metricSetSummaryListIndex)
     {
       m_metricSetSummaryList.push_back(metricSetSummaryListJsonList[metricSetSummaryListIndex].AsObject());

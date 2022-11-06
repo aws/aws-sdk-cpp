@@ -44,7 +44,7 @@ SearchResourcesTagCriterion& SearchResourcesTagCriterion::operator =(JsonView js
 
   if(jsonValue.ValueExists("tagValues"))
   {
-    Array<JsonView> tagValuesJsonList = jsonValue.GetArray("tagValues");
+    Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("tagValues");
     for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
     {
       m_tagValues.push_back(tagValuesJsonList[tagValuesIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue SearchResourcesTagCriterion::Jsonize() const
 
   if(m_tagValuesHasBeenSet)
   {
-   Array<JsonValue> tagValuesJsonList(m_tagValues.size());
+   Aws::Utils::Array<JsonValue> tagValuesJsonList(m_tagValues.size());
    for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
    {
      tagValuesJsonList[tagValuesIndex].AsObject(m_tagValues[tagValuesIndex].Jsonize());

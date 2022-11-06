@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/ecr/ECRErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/ecr/ECREndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -90,6 +92,10 @@ namespace Aws
 
   namespace ECR
   {
+    using ECRClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ECREndpointProviderBase = Aws::ECR::Endpoint::ECREndpointProviderBase;
+    using ECREndpointProvider = Aws::ECR::Endpoint::ECREndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ECRClient header */

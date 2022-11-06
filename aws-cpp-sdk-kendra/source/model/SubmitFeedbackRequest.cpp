@@ -38,7 +38,7 @@ Aws::String SubmitFeedbackRequest::SerializePayload() const
 
   if(m_clickFeedbackItemsHasBeenSet)
   {
-   Array<JsonValue> clickFeedbackItemsJsonList(m_clickFeedbackItems.size());
+   Aws::Utils::Array<JsonValue> clickFeedbackItemsJsonList(m_clickFeedbackItems.size());
    for(unsigned clickFeedbackItemsIndex = 0; clickFeedbackItemsIndex < clickFeedbackItemsJsonList.GetLength(); ++clickFeedbackItemsIndex)
    {
      clickFeedbackItemsJsonList[clickFeedbackItemsIndex].AsObject(m_clickFeedbackItems[clickFeedbackItemsIndex].Jsonize());
@@ -49,7 +49,7 @@ Aws::String SubmitFeedbackRequest::SerializePayload() const
 
   if(m_relevanceFeedbackItemsHasBeenSet)
   {
-   Array<JsonValue> relevanceFeedbackItemsJsonList(m_relevanceFeedbackItems.size());
+   Aws::Utils::Array<JsonValue> relevanceFeedbackItemsJsonList(m_relevanceFeedbackItems.size());
    for(unsigned relevanceFeedbackItemsIndex = 0; relevanceFeedbackItemsIndex < relevanceFeedbackItemsJsonList.GetLength(); ++relevanceFeedbackItemsIndex)
    {
      relevanceFeedbackItemsJsonList[relevanceFeedbackItemsIndex].AsObject(m_relevanceFeedbackItems[relevanceFeedbackItemsIndex].Jsonize());

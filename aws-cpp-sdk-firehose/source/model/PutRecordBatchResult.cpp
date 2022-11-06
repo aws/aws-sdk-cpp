@@ -46,7 +46,7 @@ PutRecordBatchResult& PutRecordBatchResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("RequestResponses"))
   {
-    Array<JsonView> requestResponsesJsonList = jsonValue.GetArray("RequestResponses");
+    Aws::Utils::Array<JsonView> requestResponsesJsonList = jsonValue.GetArray("RequestResponses");
     for(unsigned requestResponsesIndex = 0; requestResponsesIndex < requestResponsesJsonList.GetLength(); ++requestResponsesIndex)
     {
       m_requestResponses.push_back(requestResponsesJsonList[requestResponsesIndex].AsObject());

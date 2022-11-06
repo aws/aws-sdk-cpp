@@ -30,7 +30,7 @@ Aws::String UpdateTagsForDomainRequest::SerializePayload() const
 
   if(m_tagsToUpdateHasBeenSet)
   {
-   Array<JsonValue> tagsToUpdateJsonList(m_tagsToUpdate.size());
+   Aws::Utils::Array<JsonValue> tagsToUpdateJsonList(m_tagsToUpdate.size());
    for(unsigned tagsToUpdateIndex = 0; tagsToUpdateIndex < tagsToUpdateJsonList.GetLength(); ++tagsToUpdateIndex)
    {
      tagsToUpdateJsonList[tagsToUpdateIndex].AsObject(m_tagsToUpdate[tagsToUpdateIndex].Jsonize());

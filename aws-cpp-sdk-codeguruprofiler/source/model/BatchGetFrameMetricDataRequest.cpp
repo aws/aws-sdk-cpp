@@ -32,7 +32,7 @@ Aws::String BatchGetFrameMetricDataRequest::SerializePayload() const
 
   if(m_frameMetricsHasBeenSet)
   {
-   Array<JsonValue> frameMetricsJsonList(m_frameMetrics.size());
+   Aws::Utils::Array<JsonValue> frameMetricsJsonList(m_frameMetrics.size());
    for(unsigned frameMetricsIndex = 0; frameMetricsIndex < frameMetricsJsonList.GetLength(); ++frameMetricsIndex)
    {
      frameMetricsJsonList[frameMetricsIndex].AsObject(m_frameMetrics[frameMetricsIndex].Jsonize());

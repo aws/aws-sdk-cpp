@@ -35,7 +35,7 @@ ResultRow& ResultRow::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GroupedBys"))
   {
-    Array<JsonView> groupedBysJsonList = jsonValue.GetArray("GroupedBys");
+    Aws::Utils::Array<JsonView> groupedBysJsonList = jsonValue.GetArray("GroupedBys");
     for(unsigned groupedBysIndex = 0; groupedBysIndex < groupedBysJsonList.GetLength(); ++groupedBysIndex)
     {
       m_groupedBys.push_back(groupedBysJsonList[groupedBysIndex].AsObject());
@@ -45,7 +45,7 @@ ResultRow& ResultRow::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue ResultRow::Jsonize() const
 
   if(m_groupedBysHasBeenSet)
   {
-   Array<JsonValue> groupedBysJsonList(m_groupedBys.size());
+   Aws::Utils::Array<JsonValue> groupedBysJsonList(m_groupedBys.size());
    for(unsigned groupedBysIndex = 0; groupedBysIndex < groupedBysJsonList.GetLength(); ++groupedBysIndex)
    {
      groupedBysJsonList[groupedBysIndex].AsObject(m_groupedBys[groupedBysIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue ResultRow::Jsonize() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());

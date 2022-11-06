@@ -30,7 +30,7 @@ ListCustomPluginsResult& ListCustomPluginsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("customPlugins"))
   {
-    Array<JsonView> customPluginsJsonList = jsonValue.GetArray("customPlugins");
+    Aws::Utils::Array<JsonView> customPluginsJsonList = jsonValue.GetArray("customPlugins");
     for(unsigned customPluginsIndex = 0; customPluginsIndex < customPluginsJsonList.GetLength(); ++customPluginsIndex)
     {
       m_customPlugins.push_back(customPluginsJsonList[customPluginsIndex].AsObject());

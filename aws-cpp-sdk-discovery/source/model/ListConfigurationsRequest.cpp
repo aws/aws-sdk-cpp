@@ -34,7 +34,7 @@ Aws::String ListConfigurationsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
@@ -57,7 +57,7 @@ Aws::String ListConfigurationsRequest::SerializePayload() const
 
   if(m_orderByHasBeenSet)
   {
-   Array<JsonValue> orderByJsonList(m_orderBy.size());
+   Aws::Utils::Array<JsonValue> orderByJsonList(m_orderBy.size());
    for(unsigned orderByIndex = 0; orderByIndex < orderByJsonList.GetLength(); ++orderByIndex)
    {
      orderByJsonList[orderByIndex].AsObject(m_orderBy[orderByIndex].Jsonize());

@@ -93,7 +93,7 @@ HyperParameterTuningJobSearchEntity& HyperParameterTuningJobSearchEntity::operat
 
   if(jsonValue.ValueExists("TrainingJobDefinitions"))
   {
-    Array<JsonView> trainingJobDefinitionsJsonList = jsonValue.GetArray("TrainingJobDefinitions");
+    Aws::Utils::Array<JsonView> trainingJobDefinitionsJsonList = jsonValue.GetArray("TrainingJobDefinitions");
     for(unsigned trainingJobDefinitionsIndex = 0; trainingJobDefinitionsIndex < trainingJobDefinitionsJsonList.GetLength(); ++trainingJobDefinitionsIndex)
     {
       m_trainingJobDefinitions.push_back(trainingJobDefinitionsJsonList[trainingJobDefinitionsIndex].AsObject());
@@ -173,7 +173,7 @@ HyperParameterTuningJobSearchEntity& HyperParameterTuningJobSearchEntity::operat
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -214,7 +214,7 @@ JsonValue HyperParameterTuningJobSearchEntity::Jsonize() const
 
   if(m_trainingJobDefinitionsHasBeenSet)
   {
-   Array<JsonValue> trainingJobDefinitionsJsonList(m_trainingJobDefinitions.size());
+   Aws::Utils::Array<JsonValue> trainingJobDefinitionsJsonList(m_trainingJobDefinitions.size());
    for(unsigned trainingJobDefinitionsIndex = 0; trainingJobDefinitionsIndex < trainingJobDefinitionsJsonList.GetLength(); ++trainingJobDefinitionsIndex)
    {
      trainingJobDefinitionsJsonList[trainingJobDefinitionsIndex].AsObject(m_trainingJobDefinitions[trainingJobDefinitionsIndex].Jsonize());
@@ -281,7 +281,7 @@ JsonValue HyperParameterTuningJobSearchEntity::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

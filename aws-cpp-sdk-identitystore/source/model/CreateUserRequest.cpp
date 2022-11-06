@@ -72,7 +72,7 @@ Aws::String CreateUserRequest::SerializePayload() const
 
   if(m_emailsHasBeenSet)
   {
-   Array<JsonValue> emailsJsonList(m_emails.size());
+   Aws::Utils::Array<JsonValue> emailsJsonList(m_emails.size());
    for(unsigned emailsIndex = 0; emailsIndex < emailsJsonList.GetLength(); ++emailsIndex)
    {
      emailsJsonList[emailsIndex].AsObject(m_emails[emailsIndex].Jsonize());
@@ -83,7 +83,7 @@ Aws::String CreateUserRequest::SerializePayload() const
 
   if(m_addressesHasBeenSet)
   {
-   Array<JsonValue> addressesJsonList(m_addresses.size());
+   Aws::Utils::Array<JsonValue> addressesJsonList(m_addresses.size());
    for(unsigned addressesIndex = 0; addressesIndex < addressesJsonList.GetLength(); ++addressesIndex)
    {
      addressesJsonList[addressesIndex].AsObject(m_addresses[addressesIndex].Jsonize());
@@ -94,7 +94,7 @@ Aws::String CreateUserRequest::SerializePayload() const
 
   if(m_phoneNumbersHasBeenSet)
   {
-   Array<JsonValue> phoneNumbersJsonList(m_phoneNumbers.size());
+   Aws::Utils::Array<JsonValue> phoneNumbersJsonList(m_phoneNumbers.size());
    for(unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex)
    {
      phoneNumbersJsonList[phoneNumbersIndex].AsObject(m_phoneNumbers[phoneNumbersIndex].Jsonize());

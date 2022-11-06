@@ -79,7 +79,7 @@ SkillDetails& SkillDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GenericKeywords"))
   {
-    Array<JsonView> genericKeywordsJsonList = jsonValue.GetArray("GenericKeywords");
+    Aws::Utils::Array<JsonView> genericKeywordsJsonList = jsonValue.GetArray("GenericKeywords");
     for(unsigned genericKeywordsIndex = 0; genericKeywordsIndex < genericKeywordsJsonList.GetLength(); ++genericKeywordsIndex)
     {
       m_genericKeywords.push_back(genericKeywordsJsonList[genericKeywordsIndex].AsString());
@@ -89,7 +89,7 @@ SkillDetails& SkillDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("BulletPoints"))
   {
-    Array<JsonView> bulletPointsJsonList = jsonValue.GetArray("BulletPoints");
+    Aws::Utils::Array<JsonView> bulletPointsJsonList = jsonValue.GetArray("BulletPoints");
     for(unsigned bulletPointsIndex = 0; bulletPointsIndex < bulletPointsJsonList.GetLength(); ++bulletPointsIndex)
     {
       m_bulletPoints.push_back(bulletPointsJsonList[bulletPointsIndex].AsString());
@@ -99,7 +99,7 @@ SkillDetails& SkillDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NewInThisVersionBulletPoints"))
   {
-    Array<JsonView> newInThisVersionBulletPointsJsonList = jsonValue.GetArray("NewInThisVersionBulletPoints");
+    Aws::Utils::Array<JsonView> newInThisVersionBulletPointsJsonList = jsonValue.GetArray("NewInThisVersionBulletPoints");
     for(unsigned newInThisVersionBulletPointsIndex = 0; newInThisVersionBulletPointsIndex < newInThisVersionBulletPointsJsonList.GetLength(); ++newInThisVersionBulletPointsIndex)
     {
       m_newInThisVersionBulletPoints.push_back(newInThisVersionBulletPointsJsonList[newInThisVersionBulletPointsIndex].AsString());
@@ -109,7 +109,7 @@ SkillDetails& SkillDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SkillTypes"))
   {
-    Array<JsonView> skillTypesJsonList = jsonValue.GetArray("SkillTypes");
+    Aws::Utils::Array<JsonView> skillTypesJsonList = jsonValue.GetArray("SkillTypes");
     for(unsigned skillTypesIndex = 0; skillTypesIndex < skillTypesJsonList.GetLength(); ++skillTypesIndex)
     {
       m_skillTypes.push_back(skillTypesJsonList[skillTypesIndex].AsString());
@@ -167,7 +167,7 @@ JsonValue SkillDetails::Jsonize() const
 
   if(m_genericKeywordsHasBeenSet)
   {
-   Array<JsonValue> genericKeywordsJsonList(m_genericKeywords.size());
+   Aws::Utils::Array<JsonValue> genericKeywordsJsonList(m_genericKeywords.size());
    for(unsigned genericKeywordsIndex = 0; genericKeywordsIndex < genericKeywordsJsonList.GetLength(); ++genericKeywordsIndex)
    {
      genericKeywordsJsonList[genericKeywordsIndex].AsString(m_genericKeywords[genericKeywordsIndex]);
@@ -178,7 +178,7 @@ JsonValue SkillDetails::Jsonize() const
 
   if(m_bulletPointsHasBeenSet)
   {
-   Array<JsonValue> bulletPointsJsonList(m_bulletPoints.size());
+   Aws::Utils::Array<JsonValue> bulletPointsJsonList(m_bulletPoints.size());
    for(unsigned bulletPointsIndex = 0; bulletPointsIndex < bulletPointsJsonList.GetLength(); ++bulletPointsIndex)
    {
      bulletPointsJsonList[bulletPointsIndex].AsString(m_bulletPoints[bulletPointsIndex]);
@@ -189,7 +189,7 @@ JsonValue SkillDetails::Jsonize() const
 
   if(m_newInThisVersionBulletPointsHasBeenSet)
   {
-   Array<JsonValue> newInThisVersionBulletPointsJsonList(m_newInThisVersionBulletPoints.size());
+   Aws::Utils::Array<JsonValue> newInThisVersionBulletPointsJsonList(m_newInThisVersionBulletPoints.size());
    for(unsigned newInThisVersionBulletPointsIndex = 0; newInThisVersionBulletPointsIndex < newInThisVersionBulletPointsJsonList.GetLength(); ++newInThisVersionBulletPointsIndex)
    {
      newInThisVersionBulletPointsJsonList[newInThisVersionBulletPointsIndex].AsString(m_newInThisVersionBulletPoints[newInThisVersionBulletPointsIndex]);
@@ -200,7 +200,7 @@ JsonValue SkillDetails::Jsonize() const
 
   if(m_skillTypesHasBeenSet)
   {
-   Array<JsonValue> skillTypesJsonList(m_skillTypes.size());
+   Aws::Utils::Array<JsonValue> skillTypesJsonList(m_skillTypes.size());
    for(unsigned skillTypesIndex = 0; skillTypesIndex < skillTypesJsonList.GetLength(); ++skillTypesIndex)
    {
      skillTypesJsonList[skillTypesIndex].AsString(m_skillTypes[skillTypesIndex]);

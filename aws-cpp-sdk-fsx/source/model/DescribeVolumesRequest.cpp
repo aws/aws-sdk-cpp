@@ -27,7 +27,7 @@ Aws::String DescribeVolumesRequest::SerializePayload() const
 
   if(m_volumeIdsHasBeenSet)
   {
-   Array<JsonValue> volumeIdsJsonList(m_volumeIds.size());
+   Aws::Utils::Array<JsonValue> volumeIdsJsonList(m_volumeIds.size());
    for(unsigned volumeIdsIndex = 0; volumeIdsIndex < volumeIdsJsonList.GetLength(); ++volumeIdsIndex)
    {
      volumeIdsJsonList[volumeIdsIndex].AsString(m_volumeIds[volumeIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeVolumesRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

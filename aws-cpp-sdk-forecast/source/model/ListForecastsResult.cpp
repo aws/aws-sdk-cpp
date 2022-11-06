@@ -30,7 +30,7 @@ ListForecastsResult& ListForecastsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Forecasts"))
   {
-    Array<JsonView> forecastsJsonList = jsonValue.GetArray("Forecasts");
+    Aws::Utils::Array<JsonView> forecastsJsonList = jsonValue.GetArray("Forecasts");
     for(unsigned forecastsIndex = 0; forecastsIndex < forecastsJsonList.GetLength(); ++forecastsIndex)
     {
       m_forecasts.push_back(forecastsJsonList[forecastsIndex].AsObject());

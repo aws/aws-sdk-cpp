@@ -30,7 +30,7 @@ ListEventIntegrationsResult& ListEventIntegrationsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EventIntegrations"))
   {
-    Array<JsonView> eventIntegrationsJsonList = jsonValue.GetArray("EventIntegrations");
+    Aws::Utils::Array<JsonView> eventIntegrationsJsonList = jsonValue.GetArray("EventIntegrations");
     for(unsigned eventIntegrationsIndex = 0; eventIntegrationsIndex < eventIntegrationsJsonList.GetLength(); ++eventIntegrationsIndex)
     {
       m_eventIntegrations.push_back(eventIntegrationsJsonList[eventIntegrationsIndex].AsObject());

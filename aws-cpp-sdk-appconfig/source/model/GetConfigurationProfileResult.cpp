@@ -66,7 +66,7 @@ GetConfigurationProfileResult& GetConfigurationProfileResult::operator =(const A
 
   if(jsonValue.ValueExists("Validators"))
   {
-    Array<JsonView> validatorsJsonList = jsonValue.GetArray("Validators");
+    Aws::Utils::Array<JsonView> validatorsJsonList = jsonValue.GetArray("Validators");
     for(unsigned validatorsIndex = 0; validatorsIndex < validatorsJsonList.GetLength(); ++validatorsIndex)
     {
       m_validators.push_back(validatorsJsonList[validatorsIndex].AsObject());

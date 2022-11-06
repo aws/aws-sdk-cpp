@@ -67,7 +67,7 @@ ViewFrame& ViewFrame::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("HiddenColumns"))
   {
-    Array<JsonView> hiddenColumnsJsonList = jsonValue.GetArray("HiddenColumns");
+    Aws::Utils::Array<JsonView> hiddenColumnsJsonList = jsonValue.GetArray("HiddenColumns");
     for(unsigned hiddenColumnsIndex = 0; hiddenColumnsIndex < hiddenColumnsJsonList.GetLength(); ++hiddenColumnsIndex)
     {
       m_hiddenColumns.push_back(hiddenColumnsJsonList[hiddenColumnsIndex].AsString());
@@ -117,7 +117,7 @@ JsonValue ViewFrame::Jsonize() const
 
   if(m_hiddenColumnsHasBeenSet)
   {
-   Array<JsonValue> hiddenColumnsJsonList(m_hiddenColumns.size());
+   Aws::Utils::Array<JsonValue> hiddenColumnsJsonList(m_hiddenColumns.size());
    for(unsigned hiddenColumnsIndex = 0; hiddenColumnsIndex < hiddenColumnsJsonList.GetLength(); ++hiddenColumnsIndex)
    {
      hiddenColumnsJsonList[hiddenColumnsIndex].AsString(m_hiddenColumns[hiddenColumnsIndex]);

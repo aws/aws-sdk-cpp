@@ -53,7 +53,7 @@ Aws::String CreateAssessmentRequest::SerializePayload() const
 
   if(m_rolesHasBeenSet)
   {
-   Array<JsonValue> rolesJsonList(m_roles.size());
+   Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
    for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
    {
      rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());

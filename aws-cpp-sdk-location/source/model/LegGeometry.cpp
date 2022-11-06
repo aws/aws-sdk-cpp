@@ -33,10 +33,10 @@ LegGeometry& LegGeometry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LineString"))
   {
-    Array<JsonView> lineStringJsonList = jsonValue.GetArray("LineString");
+    Aws::Utils::Array<JsonView> lineStringJsonList = jsonValue.GetArray("LineString");
     for(unsigned lineStringIndex = 0; lineStringIndex < lineStringJsonList.GetLength(); ++lineStringIndex)
     {
-      Array<JsonView> positionJsonList = lineStringJsonList[lineStringIndex].AsArray();
+      Aws::Utils::Array<JsonView> positionJsonList = lineStringJsonList[lineStringIndex].AsArray();
       Aws::Vector<double> positionList;
       positionList.reserve((size_t)positionJsonList.GetLength());
       for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
@@ -57,10 +57,10 @@ JsonValue LegGeometry::Jsonize() const
 
   if(m_lineStringHasBeenSet)
   {
-   Array<JsonValue> lineStringJsonList(m_lineString.size());
+   Aws::Utils::Array<JsonValue> lineStringJsonList(m_lineString.size());
    for(unsigned lineStringIndex = 0; lineStringIndex < lineStringJsonList.GetLength(); ++lineStringIndex)
    {
-     Array<JsonValue> positionJsonList(m_lineString[lineStringIndex].size());
+     Aws::Utils::Array<JsonValue> positionJsonList(m_lineString[lineStringIndex].size());
      for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
      {
        positionJsonList[positionIndex].AsDouble(m_lineString[lineStringIndex][positionIndex]);

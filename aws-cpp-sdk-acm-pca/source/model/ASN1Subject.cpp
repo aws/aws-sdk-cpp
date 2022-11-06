@@ -159,7 +159,7 @@ ASN1Subject& ASN1Subject::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CustomAttributes"))
   {
-    Array<JsonView> customAttributesJsonList = jsonValue.GetArray("CustomAttributes");
+    Aws::Utils::Array<JsonView> customAttributesJsonList = jsonValue.GetArray("CustomAttributes");
     for(unsigned customAttributesIndex = 0; customAttributesIndex < customAttributesJsonList.GetLength(); ++customAttributesIndex)
     {
       m_customAttributes.push_back(customAttributesJsonList[customAttributesIndex].AsObject());
@@ -260,7 +260,7 @@ JsonValue ASN1Subject::Jsonize() const
 
   if(m_customAttributesHasBeenSet)
   {
-   Array<JsonValue> customAttributesJsonList(m_customAttributes.size());
+   Aws::Utils::Array<JsonValue> customAttributesJsonList(m_customAttributes.size());
    for(unsigned customAttributesIndex = 0; customAttributesIndex < customAttributesJsonList.GetLength(); ++customAttributesIndex)
    {
      customAttributesJsonList[customAttributesIndex].AsObject(m_customAttributes[customAttributesIndex].Jsonize());

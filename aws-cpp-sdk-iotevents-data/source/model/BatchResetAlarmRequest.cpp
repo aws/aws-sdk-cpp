@@ -23,7 +23,7 @@ Aws::String BatchResetAlarmRequest::SerializePayload() const
 
   if(m_resetActionRequestsHasBeenSet)
   {
-   Array<JsonValue> resetActionRequestsJsonList(m_resetActionRequests.size());
+   Aws::Utils::Array<JsonValue> resetActionRequestsJsonList(m_resetActionRequests.size());
    for(unsigned resetActionRequestsIndex = 0; resetActionRequestsIndex < resetActionRequestsJsonList.GetLength(); ++resetActionRequestsIndex)
    {
      resetActionRequestsJsonList[resetActionRequestsIndex].AsObject(m_resetActionRequests[resetActionRequestsIndex].Jsonize());

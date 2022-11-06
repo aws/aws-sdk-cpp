@@ -59,7 +59,7 @@ ConfigurationSetInformation& ConfigurationSetInformation::operator =(JsonView js
 
   if(jsonValue.ValueExists("EventDestinations"))
   {
-    Array<JsonView> eventDestinationsJsonList = jsonValue.GetArray("EventDestinations");
+    Aws::Utils::Array<JsonView> eventDestinationsJsonList = jsonValue.GetArray("EventDestinations");
     for(unsigned eventDestinationsIndex = 0; eventDestinationsIndex < eventDestinationsJsonList.GetLength(); ++eventDestinationsIndex)
     {
       m_eventDestinations.push_back(eventDestinationsJsonList[eventDestinationsIndex].AsObject());
@@ -109,7 +109,7 @@ JsonValue ConfigurationSetInformation::Jsonize() const
 
   if(m_eventDestinationsHasBeenSet)
   {
-   Array<JsonValue> eventDestinationsJsonList(m_eventDestinations.size());
+   Aws::Utils::Array<JsonValue> eventDestinationsJsonList(m_eventDestinations.size());
    for(unsigned eventDestinationsIndex = 0; eventDestinationsIndex < eventDestinationsJsonList.GetLength(); ++eventDestinationsIndex)
    {
      eventDestinationsJsonList[eventDestinationsIndex].AsObject(m_eventDestinations[eventDestinationsIndex].Jsonize());

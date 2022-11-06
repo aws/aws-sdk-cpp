@@ -30,7 +30,7 @@ ListRealtimeContactAnalysisSegmentsResult& ListRealtimeContactAnalysisSegmentsRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Segments"))
   {
-    Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
+    Aws::Utils::Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
     for(unsigned segmentsIndex = 0; segmentsIndex < segmentsJsonList.GetLength(); ++segmentsIndex)
     {
       m_segments.push_back(segmentsJsonList[segmentsIndex].AsObject());

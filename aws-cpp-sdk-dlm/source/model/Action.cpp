@@ -42,7 +42,7 @@ Action& Action::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CrossRegionCopy"))
   {
-    Array<JsonView> crossRegionCopyJsonList = jsonValue.GetArray("CrossRegionCopy");
+    Aws::Utils::Array<JsonView> crossRegionCopyJsonList = jsonValue.GetArray("CrossRegionCopy");
     for(unsigned crossRegionCopyIndex = 0; crossRegionCopyIndex < crossRegionCopyJsonList.GetLength(); ++crossRegionCopyIndex)
     {
       m_crossRegionCopy.push_back(crossRegionCopyJsonList[crossRegionCopyIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue Action::Jsonize() const
 
   if(m_crossRegionCopyHasBeenSet)
   {
-   Array<JsonValue> crossRegionCopyJsonList(m_crossRegionCopy.size());
+   Aws::Utils::Array<JsonValue> crossRegionCopyJsonList(m_crossRegionCopy.size());
    for(unsigned crossRegionCopyIndex = 0; crossRegionCopyIndex < crossRegionCopyJsonList.GetLength(); ++crossRegionCopyIndex)
    {
      crossRegionCopyJsonList[crossRegionCopyIndex].AsObject(m_crossRegionCopy[crossRegionCopyIndex].Jsonize());

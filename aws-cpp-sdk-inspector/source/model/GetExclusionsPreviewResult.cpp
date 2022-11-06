@@ -38,7 +38,7 @@ GetExclusionsPreviewResult& GetExclusionsPreviewResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("exclusionPreviews"))
   {
-    Array<JsonView> exclusionPreviewsJsonList = jsonValue.GetArray("exclusionPreviews");
+    Aws::Utils::Array<JsonView> exclusionPreviewsJsonList = jsonValue.GetArray("exclusionPreviews");
     for(unsigned exclusionPreviewsIndex = 0; exclusionPreviewsIndex < exclusionPreviewsJsonList.GetLength(); ++exclusionPreviewsIndex)
     {
       m_exclusionPreviews.push_back(exclusionPreviewsJsonList[exclusionPreviewsIndex].AsObject());

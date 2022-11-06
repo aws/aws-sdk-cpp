@@ -42,7 +42,7 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
@@ -53,7 +53,7 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
 
   if(m_protocolsHasBeenSet)
   {
-   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
    {
      protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
@@ -93,7 +93,7 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
 
   if(m_filesHasBeenSet)
   {
-   Array<JsonValue> filesJsonList(m_files.size());
+   Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
    for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
    {
      filesJsonList[filesIndex].AsObject(m_files[filesIndex].Jsonize());
@@ -121,7 +121,7 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

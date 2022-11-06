@@ -44,7 +44,7 @@ ProtectiveEquipmentSummarizationAttributes& ProtectiveEquipmentSummarizationAttr
 
   if(jsonValue.ValueExists("RequiredEquipmentTypes"))
   {
-    Array<JsonView> requiredEquipmentTypesJsonList = jsonValue.GetArray("RequiredEquipmentTypes");
+    Aws::Utils::Array<JsonView> requiredEquipmentTypesJsonList = jsonValue.GetArray("RequiredEquipmentTypes");
     for(unsigned requiredEquipmentTypesIndex = 0; requiredEquipmentTypesIndex < requiredEquipmentTypesJsonList.GetLength(); ++requiredEquipmentTypesIndex)
     {
       m_requiredEquipmentTypes.push_back(ProtectiveEquipmentTypeMapper::GetProtectiveEquipmentTypeForName(requiredEquipmentTypesJsonList[requiredEquipmentTypesIndex].AsString()));
@@ -67,7 +67,7 @@ JsonValue ProtectiveEquipmentSummarizationAttributes::Jsonize() const
 
   if(m_requiredEquipmentTypesHasBeenSet)
   {
-   Array<JsonValue> requiredEquipmentTypesJsonList(m_requiredEquipmentTypes.size());
+   Aws::Utils::Array<JsonValue> requiredEquipmentTypesJsonList(m_requiredEquipmentTypes.size());
    for(unsigned requiredEquipmentTypesIndex = 0; requiredEquipmentTypesIndex < requiredEquipmentTypesJsonList.GetLength(); ++requiredEquipmentTypesIndex)
    {
      requiredEquipmentTypesJsonList[requiredEquipmentTypesIndex].AsString(ProtectiveEquipmentTypeMapper::GetNameForProtectiveEquipmentType(m_requiredEquipmentTypes[requiredEquipmentTypesIndex]));

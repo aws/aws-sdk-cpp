@@ -30,7 +30,7 @@ ListDashboardsResult& ListDashboardsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("dashboardSummaries"))
   {
-    Array<JsonView> dashboardSummariesJsonList = jsonValue.GetArray("dashboardSummaries");
+    Aws::Utils::Array<JsonView> dashboardSummariesJsonList = jsonValue.GetArray("dashboardSummaries");
     for(unsigned dashboardSummariesIndex = 0; dashboardSummariesIndex < dashboardSummariesJsonList.GetLength(); ++dashboardSummariesIndex)
     {
       m_dashboardSummaries.push_back(dashboardSummariesJsonList[dashboardSummariesIndex].AsObject());

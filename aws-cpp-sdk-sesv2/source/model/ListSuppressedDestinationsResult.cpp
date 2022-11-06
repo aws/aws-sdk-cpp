@@ -30,7 +30,7 @@ ListSuppressedDestinationsResult& ListSuppressedDestinationsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SuppressedDestinationSummaries"))
   {
-    Array<JsonView> suppressedDestinationSummariesJsonList = jsonValue.GetArray("SuppressedDestinationSummaries");
+    Aws::Utils::Array<JsonView> suppressedDestinationSummariesJsonList = jsonValue.GetArray("SuppressedDestinationSummaries");
     for(unsigned suppressedDestinationSummariesIndex = 0; suppressedDestinationSummariesIndex < suppressedDestinationSummariesJsonList.GetLength(); ++suppressedDestinationSummariesIndex)
     {
       m_suppressedDestinationSummaries.push_back(suppressedDestinationSummariesJsonList[suppressedDestinationSummariesIndex].AsObject());

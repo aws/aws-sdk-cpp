@@ -37,7 +37,7 @@ ResolvedTargets& ResolvedTargets::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParameterValues"))
   {
-    Array<JsonView> parameterValuesJsonList = jsonValue.GetArray("ParameterValues");
+    Aws::Utils::Array<JsonView> parameterValuesJsonList = jsonValue.GetArray("ParameterValues");
     for(unsigned parameterValuesIndex = 0; parameterValuesIndex < parameterValuesJsonList.GetLength(); ++parameterValuesIndex)
     {
       m_parameterValues.push_back(parameterValuesJsonList[parameterValuesIndex].AsString());
@@ -61,7 +61,7 @@ JsonValue ResolvedTargets::Jsonize() const
 
   if(m_parameterValuesHasBeenSet)
   {
-   Array<JsonValue> parameterValuesJsonList(m_parameterValues.size());
+   Aws::Utils::Array<JsonValue> parameterValuesJsonList(m_parameterValues.size());
    for(unsigned parameterValuesIndex = 0; parameterValuesIndex < parameterValuesJsonList.GetLength(); ++parameterValuesIndex)
    {
      parameterValuesJsonList[parameterValuesIndex].AsString(m_parameterValues[parameterValuesIndex]);

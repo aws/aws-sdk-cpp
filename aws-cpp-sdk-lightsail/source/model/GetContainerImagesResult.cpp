@@ -30,7 +30,7 @@ GetContainerImagesResult& GetContainerImagesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("containerImages"))
   {
-    Array<JsonView> containerImagesJsonList = jsonValue.GetArray("containerImages");
+    Aws::Utils::Array<JsonView> containerImagesJsonList = jsonValue.GetArray("containerImages");
     for(unsigned containerImagesIndex = 0; containerImagesIndex < containerImagesJsonList.GetLength(); ++containerImagesIndex)
     {
       m_containerImages.push_back(containerImagesJsonList[containerImagesIndex].AsObject());

@@ -42,7 +42,7 @@ PolicyInformation& PolicyInformation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PolicyQualifiers"))
   {
-    Array<JsonView> policyQualifiersJsonList = jsonValue.GetArray("PolicyQualifiers");
+    Aws::Utils::Array<JsonView> policyQualifiersJsonList = jsonValue.GetArray("PolicyQualifiers");
     for(unsigned policyQualifiersIndex = 0; policyQualifiersIndex < policyQualifiersJsonList.GetLength(); ++policyQualifiersIndex)
     {
       m_policyQualifiers.push_back(policyQualifiersJsonList[policyQualifiersIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue PolicyInformation::Jsonize() const
 
   if(m_policyQualifiersHasBeenSet)
   {
-   Array<JsonValue> policyQualifiersJsonList(m_policyQualifiers.size());
+   Aws::Utils::Array<JsonValue> policyQualifiersJsonList(m_policyQualifiers.size());
    for(unsigned policyQualifiersIndex = 0; policyQualifiersIndex < policyQualifiersJsonList.GetLength(); ++policyQualifiersIndex)
    {
      policyQualifiersJsonList[policyQualifiersIndex].AsObject(m_policyQualifiers[policyQualifiersIndex].Jsonize());

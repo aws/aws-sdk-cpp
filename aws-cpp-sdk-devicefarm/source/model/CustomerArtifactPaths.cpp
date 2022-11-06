@@ -37,7 +37,7 @@ CustomerArtifactPaths& CustomerArtifactPaths::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("iosPaths"))
   {
-    Array<JsonView> iosPathsJsonList = jsonValue.GetArray("iosPaths");
+    Aws::Utils::Array<JsonView> iosPathsJsonList = jsonValue.GetArray("iosPaths");
     for(unsigned iosPathsIndex = 0; iosPathsIndex < iosPathsJsonList.GetLength(); ++iosPathsIndex)
     {
       m_iosPaths.push_back(iosPathsJsonList[iosPathsIndex].AsString());
@@ -47,7 +47,7 @@ CustomerArtifactPaths& CustomerArtifactPaths::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("androidPaths"))
   {
-    Array<JsonView> androidPathsJsonList = jsonValue.GetArray("androidPaths");
+    Aws::Utils::Array<JsonView> androidPathsJsonList = jsonValue.GetArray("androidPaths");
     for(unsigned androidPathsIndex = 0; androidPathsIndex < androidPathsJsonList.GetLength(); ++androidPathsIndex)
     {
       m_androidPaths.push_back(androidPathsJsonList[androidPathsIndex].AsString());
@@ -57,7 +57,7 @@ CustomerArtifactPaths& CustomerArtifactPaths::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("deviceHostPaths"))
   {
-    Array<JsonView> deviceHostPathsJsonList = jsonValue.GetArray("deviceHostPaths");
+    Aws::Utils::Array<JsonView> deviceHostPathsJsonList = jsonValue.GetArray("deviceHostPaths");
     for(unsigned deviceHostPathsIndex = 0; deviceHostPathsIndex < deviceHostPathsJsonList.GetLength(); ++deviceHostPathsIndex)
     {
       m_deviceHostPaths.push_back(deviceHostPathsJsonList[deviceHostPathsIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue CustomerArtifactPaths::Jsonize() const
 
   if(m_iosPathsHasBeenSet)
   {
-   Array<JsonValue> iosPathsJsonList(m_iosPaths.size());
+   Aws::Utils::Array<JsonValue> iosPathsJsonList(m_iosPaths.size());
    for(unsigned iosPathsIndex = 0; iosPathsIndex < iosPathsJsonList.GetLength(); ++iosPathsIndex)
    {
      iosPathsJsonList[iosPathsIndex].AsString(m_iosPaths[iosPathsIndex]);
@@ -85,7 +85,7 @@ JsonValue CustomerArtifactPaths::Jsonize() const
 
   if(m_androidPathsHasBeenSet)
   {
-   Array<JsonValue> androidPathsJsonList(m_androidPaths.size());
+   Aws::Utils::Array<JsonValue> androidPathsJsonList(m_androidPaths.size());
    for(unsigned androidPathsIndex = 0; androidPathsIndex < androidPathsJsonList.GetLength(); ++androidPathsIndex)
    {
      androidPathsJsonList[androidPathsIndex].AsString(m_androidPaths[androidPathsIndex]);
@@ -96,7 +96,7 @@ JsonValue CustomerArtifactPaths::Jsonize() const
 
   if(m_deviceHostPathsHasBeenSet)
   {
-   Array<JsonValue> deviceHostPathsJsonList(m_deviceHostPaths.size());
+   Aws::Utils::Array<JsonValue> deviceHostPathsJsonList(m_deviceHostPaths.size());
    for(unsigned deviceHostPathsIndex = 0; deviceHostPathsIndex < deviceHostPathsJsonList.GetLength(); ++deviceHostPathsIndex)
    {
      deviceHostPathsJsonList[deviceHostPathsIndex].AsString(m_deviceHostPaths[deviceHostPathsIndex]);

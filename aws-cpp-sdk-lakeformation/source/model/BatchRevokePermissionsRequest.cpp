@@ -30,7 +30,7 @@ Aws::String BatchRevokePermissionsRequest::SerializePayload() const
 
   if(m_entriesHasBeenSet)
   {
-   Array<JsonValue> entriesJsonList(m_entries.size());
+   Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
    for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
    {
      entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());

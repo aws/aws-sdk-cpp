@@ -30,7 +30,7 @@ ListAggregateDiscoveredResourcesResult& ListAggregateDiscoveredResourcesResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceIdentifiers"))
   {
-    Array<JsonView> resourceIdentifiersJsonList = jsonValue.GetArray("ResourceIdentifiers");
+    Aws::Utils::Array<JsonView> resourceIdentifiersJsonList = jsonValue.GetArray("ResourceIdentifiers");
     for(unsigned resourceIdentifiersIndex = 0; resourceIdentifiersIndex < resourceIdentifiersJsonList.GetLength(); ++resourceIdentifiersIndex)
     {
       m_resourceIdentifiers.push_back(resourceIdentifiersJsonList[resourceIdentifiersIndex].AsObject());

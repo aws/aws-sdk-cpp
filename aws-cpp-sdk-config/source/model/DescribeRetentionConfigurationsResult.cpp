@@ -30,7 +30,7 @@ DescribeRetentionConfigurationsResult& DescribeRetentionConfigurationsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RetentionConfigurations"))
   {
-    Array<JsonView> retentionConfigurationsJsonList = jsonValue.GetArray("RetentionConfigurations");
+    Aws::Utils::Array<JsonView> retentionConfigurationsJsonList = jsonValue.GetArray("RetentionConfigurations");
     for(unsigned retentionConfigurationsIndex = 0; retentionConfigurationsIndex < retentionConfigurationsJsonList.GetLength(); ++retentionConfigurationsIndex)
     {
       m_retentionConfigurations.push_back(retentionConfigurationsJsonList[retentionConfigurationsIndex].AsObject());

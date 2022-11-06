@@ -40,7 +40,7 @@ LabelSchema& LabelSchema::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> labelMapperJsonMap = jsonValue.GetObject("labelMapper").GetAllObjects();
     for(auto& labelMapperItem : labelMapperJsonMap)
     {
-      Array<JsonView> listOfStringsJsonList = labelMapperItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOfStringsJsonList = labelMapperItem.second.AsArray();
       Aws::Vector<Aws::String> listOfStringsList;
       listOfStringsList.reserve((size_t)listOfStringsJsonList.GetLength());
       for(unsigned listOfStringsIndex = 0; listOfStringsIndex < listOfStringsJsonList.GetLength(); ++listOfStringsIndex)
@@ -71,7 +71,7 @@ JsonValue LabelSchema::Jsonize() const
    JsonValue labelMapperJsonMap;
    for(auto& labelMapperItem : m_labelMapper)
    {
-     Array<JsonValue> listOfStringsJsonList(labelMapperItem.second.size());
+     Aws::Utils::Array<JsonValue> listOfStringsJsonList(labelMapperItem.second.size());
      for(unsigned listOfStringsIndex = 0; listOfStringsIndex < listOfStringsJsonList.GetLength(); ++listOfStringsIndex)
      {
        listOfStringsJsonList[listOfStringsIndex].AsString(labelMapperItem.second[listOfStringsIndex]);

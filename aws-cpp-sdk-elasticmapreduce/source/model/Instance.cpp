@@ -134,7 +134,7 @@ Instance& Instance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EbsVolumes"))
   {
-    Array<JsonView> ebsVolumesJsonList = jsonValue.GetArray("EbsVolumes");
+    Aws::Utils::Array<JsonView> ebsVolumesJsonList = jsonValue.GetArray("EbsVolumes");
     for(unsigned ebsVolumesIndex = 0; ebsVolumesIndex < ebsVolumesJsonList.GetLength(); ++ebsVolumesIndex)
     {
       m_ebsVolumes.push_back(ebsVolumesJsonList[ebsVolumesIndex].AsObject());
@@ -216,7 +216,7 @@ JsonValue Instance::Jsonize() const
 
   if(m_ebsVolumesHasBeenSet)
   {
-   Array<JsonValue> ebsVolumesJsonList(m_ebsVolumes.size());
+   Aws::Utils::Array<JsonValue> ebsVolumesJsonList(m_ebsVolumes.size());
    for(unsigned ebsVolumesIndex = 0; ebsVolumesIndex < ebsVolumesJsonList.GetLength(); ++ebsVolumesIndex)
    {
      ebsVolumesJsonList[ebsVolumesIndex].AsObject(m_ebsVolumes[ebsVolumesIndex].Jsonize());

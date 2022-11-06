@@ -23,7 +23,7 @@ Aws::String DeleteFleetAdvisorDatabasesRequest::SerializePayload() const
 
   if(m_databaseIdsHasBeenSet)
   {
-   Array<JsonValue> databaseIdsJsonList(m_databaseIds.size());
+   Aws::Utils::Array<JsonValue> databaseIdsJsonList(m_databaseIds.size());
    for(unsigned databaseIdsIndex = 0; databaseIdsIndex < databaseIdsJsonList.GetLength(); ++databaseIdsIndex)
    {
      databaseIdsJsonList[databaseIdsIndex].AsString(m_databaseIds[databaseIdsIndex]);

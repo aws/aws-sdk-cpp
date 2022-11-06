@@ -30,7 +30,7 @@ GetScalingPlanResourceForecastDataResult& GetScalingPlanResourceForecastDataResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Datapoints"))
   {
-    Array<JsonView> datapointsJsonList = jsonValue.GetArray("Datapoints");
+    Aws::Utils::Array<JsonView> datapointsJsonList = jsonValue.GetArray("Datapoints");
     for(unsigned datapointsIndex = 0; datapointsIndex < datapointsJsonList.GetLength(); ++datapointsIndex)
     {
       m_datapoints.push_back(datapointsJsonList[datapointsIndex].AsObject());

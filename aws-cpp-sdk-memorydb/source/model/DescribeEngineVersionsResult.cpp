@@ -36,7 +36,7 @@ DescribeEngineVersionsResult& DescribeEngineVersionsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("EngineVersions"))
   {
-    Array<JsonView> engineVersionsJsonList = jsonValue.GetArray("EngineVersions");
+    Aws::Utils::Array<JsonView> engineVersionsJsonList = jsonValue.GetArray("EngineVersions");
     for(unsigned engineVersionsIndex = 0; engineVersionsIndex < engineVersionsJsonList.GetLength(); ++engineVersionsIndex)
     {
       m_engineVersions.push_back(engineVersionsJsonList[engineVersionsIndex].AsObject());

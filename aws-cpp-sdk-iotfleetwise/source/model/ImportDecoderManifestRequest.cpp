@@ -30,7 +30,7 @@ Aws::String ImportDecoderManifestRequest::SerializePayload() const
 
   if(m_networkFileDefinitionsHasBeenSet)
   {
-   Array<JsonValue> networkFileDefinitionsJsonList(m_networkFileDefinitions.size());
+   Aws::Utils::Array<JsonValue> networkFileDefinitionsJsonList(m_networkFileDefinitions.size());
    for(unsigned networkFileDefinitionsIndex = 0; networkFileDefinitionsIndex < networkFileDefinitionsJsonList.GetLength(); ++networkFileDefinitionsIndex)
    {
      networkFileDefinitionsJsonList[networkFileDefinitionsIndex].AsObject(m_networkFileDefinitions[networkFileDefinitionsIndex].Jsonize());

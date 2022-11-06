@@ -175,7 +175,7 @@ Build& Build::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("phases"))
   {
-    Array<JsonView> phasesJsonList = jsonValue.GetArray("phases");
+    Aws::Utils::Array<JsonView> phasesJsonList = jsonValue.GetArray("phases");
     for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
     {
       m_phases.push_back(phasesJsonList[phasesIndex].AsObject());
@@ -192,7 +192,7 @@ Build& Build::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secondarySources"))
   {
-    Array<JsonView> secondarySourcesJsonList = jsonValue.GetArray("secondarySources");
+    Aws::Utils::Array<JsonView> secondarySourcesJsonList = jsonValue.GetArray("secondarySources");
     for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
     {
       m_secondarySources.push_back(secondarySourcesJsonList[secondarySourcesIndex].AsObject());
@@ -202,7 +202,7 @@ Build& Build::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secondarySourceVersions"))
   {
-    Array<JsonView> secondarySourceVersionsJsonList = jsonValue.GetArray("secondarySourceVersions");
+    Aws::Utils::Array<JsonView> secondarySourceVersionsJsonList = jsonValue.GetArray("secondarySourceVersions");
     for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
     {
       m_secondarySourceVersions.push_back(secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject());
@@ -219,7 +219,7 @@ Build& Build::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secondaryArtifacts"))
   {
-    Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
+    Aws::Utils::Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
     for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
     {
       m_secondaryArtifacts.push_back(secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject());
@@ -306,7 +306,7 @@ Build& Build::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("exportedEnvironmentVariables"))
   {
-    Array<JsonView> exportedEnvironmentVariablesJsonList = jsonValue.GetArray("exportedEnvironmentVariables");
+    Aws::Utils::Array<JsonView> exportedEnvironmentVariablesJsonList = jsonValue.GetArray("exportedEnvironmentVariables");
     for(unsigned exportedEnvironmentVariablesIndex = 0; exportedEnvironmentVariablesIndex < exportedEnvironmentVariablesJsonList.GetLength(); ++exportedEnvironmentVariablesIndex)
     {
       m_exportedEnvironmentVariables.push_back(exportedEnvironmentVariablesJsonList[exportedEnvironmentVariablesIndex].AsObject());
@@ -316,7 +316,7 @@ Build& Build::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("reportArns"))
   {
-    Array<JsonView> reportArnsJsonList = jsonValue.GetArray("reportArns");
+    Aws::Utils::Array<JsonView> reportArnsJsonList = jsonValue.GetArray("reportArns");
     for(unsigned reportArnsIndex = 0; reportArnsIndex < reportArnsJsonList.GetLength(); ++reportArnsIndex)
     {
       m_reportArns.push_back(reportArnsJsonList[reportArnsIndex].AsString());
@@ -326,7 +326,7 @@ Build& Build::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("fileSystemLocations"))
   {
-    Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
+    Aws::Utils::Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
     for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
     {
       m_fileSystemLocations.push_back(fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject());
@@ -414,7 +414,7 @@ JsonValue Build::Jsonize() const
 
   if(m_phasesHasBeenSet)
   {
-   Array<JsonValue> phasesJsonList(m_phases.size());
+   Aws::Utils::Array<JsonValue> phasesJsonList(m_phases.size());
    for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
    {
      phasesJsonList[phasesIndex].AsObject(m_phases[phasesIndex].Jsonize());
@@ -431,7 +431,7 @@ JsonValue Build::Jsonize() const
 
   if(m_secondarySourcesHasBeenSet)
   {
-   Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
+   Aws::Utils::Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
    for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
    {
      secondarySourcesJsonList[secondarySourcesIndex].AsObject(m_secondarySources[secondarySourcesIndex].Jsonize());
@@ -442,7 +442,7 @@ JsonValue Build::Jsonize() const
 
   if(m_secondarySourceVersionsHasBeenSet)
   {
-   Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
+   Aws::Utils::Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
    for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
    {
      secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject(m_secondarySourceVersions[secondarySourceVersionsIndex].Jsonize());
@@ -459,7 +459,7 @@ JsonValue Build::Jsonize() const
 
   if(m_secondaryArtifactsHasBeenSet)
   {
-   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   Aws::Utils::Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
    for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
    {
      secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());
@@ -536,7 +536,7 @@ JsonValue Build::Jsonize() const
 
   if(m_exportedEnvironmentVariablesHasBeenSet)
   {
-   Array<JsonValue> exportedEnvironmentVariablesJsonList(m_exportedEnvironmentVariables.size());
+   Aws::Utils::Array<JsonValue> exportedEnvironmentVariablesJsonList(m_exportedEnvironmentVariables.size());
    for(unsigned exportedEnvironmentVariablesIndex = 0; exportedEnvironmentVariablesIndex < exportedEnvironmentVariablesJsonList.GetLength(); ++exportedEnvironmentVariablesIndex)
    {
      exportedEnvironmentVariablesJsonList[exportedEnvironmentVariablesIndex].AsObject(m_exportedEnvironmentVariables[exportedEnvironmentVariablesIndex].Jsonize());
@@ -547,7 +547,7 @@ JsonValue Build::Jsonize() const
 
   if(m_reportArnsHasBeenSet)
   {
-   Array<JsonValue> reportArnsJsonList(m_reportArns.size());
+   Aws::Utils::Array<JsonValue> reportArnsJsonList(m_reportArns.size());
    for(unsigned reportArnsIndex = 0; reportArnsIndex < reportArnsJsonList.GetLength(); ++reportArnsIndex)
    {
      reportArnsJsonList[reportArnsIndex].AsString(m_reportArns[reportArnsIndex]);
@@ -558,7 +558,7 @@ JsonValue Build::Jsonize() const
 
   if(m_fileSystemLocationsHasBeenSet)
   {
-   Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
+   Aws::Utils::Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
    for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
    {
      fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());

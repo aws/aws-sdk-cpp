@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/secretsmanager/SecretsManagerErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/secretsmanager/SecretsManagerEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -70,6 +72,10 @@ namespace Aws
 
   namespace SecretsManager
   {
+    using SecretsManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SecretsManagerEndpointProviderBase = Aws::SecretsManager::Endpoint::SecretsManagerEndpointProviderBase;
+    using SecretsManagerEndpointProvider = Aws::SecretsManager::Endpoint::SecretsManagerEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in SecretsManagerClient header */

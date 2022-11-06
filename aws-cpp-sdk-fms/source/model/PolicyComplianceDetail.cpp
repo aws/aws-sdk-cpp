@@ -68,7 +68,7 @@ PolicyComplianceDetail& PolicyComplianceDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Violators"))
   {
-    Array<JsonView> violatorsJsonList = jsonValue.GetArray("Violators");
+    Aws::Utils::Array<JsonView> violatorsJsonList = jsonValue.GetArray("Violators");
     for(unsigned violatorsIndex = 0; violatorsIndex < violatorsJsonList.GetLength(); ++violatorsIndex)
     {
       m_violators.push_back(violatorsJsonList[violatorsIndex].AsObject());
@@ -127,7 +127,7 @@ JsonValue PolicyComplianceDetail::Jsonize() const
 
   if(m_violatorsHasBeenSet)
   {
-   Array<JsonValue> violatorsJsonList(m_violators.size());
+   Aws::Utils::Array<JsonValue> violatorsJsonList(m_violators.size());
    for(unsigned violatorsIndex = 0; violatorsIndex < violatorsJsonList.GetLength(); ++violatorsIndex)
    {
      violatorsJsonList[violatorsIndex].AsObject(m_violators[violatorsIndex].Jsonize());

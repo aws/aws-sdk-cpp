@@ -26,7 +26,7 @@ Aws::String BatchUpdateTableRowsRequest::SerializePayload() const
 
   if(m_rowsToUpdateHasBeenSet)
   {
-   Array<JsonValue> rowsToUpdateJsonList(m_rowsToUpdate.size());
+   Aws::Utils::Array<JsonValue> rowsToUpdateJsonList(m_rowsToUpdate.size());
    for(unsigned rowsToUpdateIndex = 0; rowsToUpdateIndex < rowsToUpdateJsonList.GetLength(); ++rowsToUpdateIndex)
    {
      rowsToUpdateJsonList[rowsToUpdateIndex].AsObject(m_rowsToUpdate[rowsToUpdateIndex].Jsonize());

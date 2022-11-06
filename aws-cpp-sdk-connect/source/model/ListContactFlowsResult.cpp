@@ -30,7 +30,7 @@ ListContactFlowsResult& ListContactFlowsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ContactFlowSummaryList"))
   {
-    Array<JsonView> contactFlowSummaryListJsonList = jsonValue.GetArray("ContactFlowSummaryList");
+    Aws::Utils::Array<JsonView> contactFlowSummaryListJsonList = jsonValue.GetArray("ContactFlowSummaryList");
     for(unsigned contactFlowSummaryListIndex = 0; contactFlowSummaryListIndex < contactFlowSummaryListJsonList.GetLength(); ++contactFlowSummaryListIndex)
     {
       m_contactFlowSummaryList.push_back(contactFlowSummaryListJsonList[contactFlowSummaryListIndex].AsObject());

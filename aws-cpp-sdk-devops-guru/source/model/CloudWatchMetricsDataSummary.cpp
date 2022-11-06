@@ -37,7 +37,7 @@ CloudWatchMetricsDataSummary& CloudWatchMetricsDataSummary::operator =(JsonView 
 {
   if(jsonValue.ValueExists("TimestampMetricValuePairList"))
   {
-    Array<JsonView> timestampMetricValuePairListJsonList = jsonValue.GetArray("TimestampMetricValuePairList");
+    Aws::Utils::Array<JsonView> timestampMetricValuePairListJsonList = jsonValue.GetArray("TimestampMetricValuePairList");
     for(unsigned timestampMetricValuePairListIndex = 0; timestampMetricValuePairListIndex < timestampMetricValuePairListJsonList.GetLength(); ++timestampMetricValuePairListIndex)
     {
       m_timestampMetricValuePairList.push_back(timestampMetricValuePairListJsonList[timestampMetricValuePairListIndex].AsObject());
@@ -61,7 +61,7 @@ JsonValue CloudWatchMetricsDataSummary::Jsonize() const
 
   if(m_timestampMetricValuePairListHasBeenSet)
   {
-   Array<JsonValue> timestampMetricValuePairListJsonList(m_timestampMetricValuePairList.size());
+   Aws::Utils::Array<JsonValue> timestampMetricValuePairListJsonList(m_timestampMetricValuePairList.size());
    for(unsigned timestampMetricValuePairListIndex = 0; timestampMetricValuePairListIndex < timestampMetricValuePairListJsonList.GetLength(); ++timestampMetricValuePairListIndex)
    {
      timestampMetricValuePairListJsonList[timestampMetricValuePairListIndex].AsObject(m_timestampMetricValuePairList[timestampMetricValuePairListIndex].Jsonize());

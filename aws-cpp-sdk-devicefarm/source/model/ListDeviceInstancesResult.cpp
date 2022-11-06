@@ -30,7 +30,7 @@ ListDeviceInstancesResult& ListDeviceInstancesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deviceInstances"))
   {
-    Array<JsonView> deviceInstancesJsonList = jsonValue.GetArray("deviceInstances");
+    Aws::Utils::Array<JsonView> deviceInstancesJsonList = jsonValue.GetArray("deviceInstances");
     for(unsigned deviceInstancesIndex = 0; deviceInstancesIndex < deviceInstancesJsonList.GetLength(); ++deviceInstancesIndex)
     {
       m_deviceInstances.push_back(deviceInstancesJsonList[deviceInstancesIndex].AsObject());

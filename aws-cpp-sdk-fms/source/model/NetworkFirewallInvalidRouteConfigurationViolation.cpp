@@ -65,7 +65,7 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
 {
   if(jsonValue.ValueExists("AffectedSubnets"))
   {
-    Array<JsonView> affectedSubnetsJsonList = jsonValue.GetArray("AffectedSubnets");
+    Aws::Utils::Array<JsonView> affectedSubnetsJsonList = jsonValue.GetArray("AffectedSubnets");
     for(unsigned affectedSubnetsIndex = 0; affectedSubnetsIndex < affectedSubnetsJsonList.GetLength(); ++affectedSubnetsIndex)
     {
       m_affectedSubnets.push_back(affectedSubnetsJsonList[affectedSubnetsIndex].AsString());
@@ -131,7 +131,7 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
 
   if(jsonValue.ValueExists("ExpectedFirewallSubnetRoutes"))
   {
-    Array<JsonView> expectedFirewallSubnetRoutesJsonList = jsonValue.GetArray("ExpectedFirewallSubnetRoutes");
+    Aws::Utils::Array<JsonView> expectedFirewallSubnetRoutesJsonList = jsonValue.GetArray("ExpectedFirewallSubnetRoutes");
     for(unsigned expectedFirewallSubnetRoutesIndex = 0; expectedFirewallSubnetRoutesIndex < expectedFirewallSubnetRoutesJsonList.GetLength(); ++expectedFirewallSubnetRoutesIndex)
     {
       m_expectedFirewallSubnetRoutes.push_back(expectedFirewallSubnetRoutesJsonList[expectedFirewallSubnetRoutesIndex].AsObject());
@@ -141,7 +141,7 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
 
   if(jsonValue.ValueExists("ActualFirewallSubnetRoutes"))
   {
-    Array<JsonView> actualFirewallSubnetRoutesJsonList = jsonValue.GetArray("ActualFirewallSubnetRoutes");
+    Aws::Utils::Array<JsonView> actualFirewallSubnetRoutesJsonList = jsonValue.GetArray("ActualFirewallSubnetRoutes");
     for(unsigned actualFirewallSubnetRoutesIndex = 0; actualFirewallSubnetRoutesIndex < actualFirewallSubnetRoutesJsonList.GetLength(); ++actualFirewallSubnetRoutesIndex)
     {
       m_actualFirewallSubnetRoutes.push_back(actualFirewallSubnetRoutesJsonList[actualFirewallSubnetRoutesIndex].AsObject());
@@ -165,7 +165,7 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
 
   if(jsonValue.ValueExists("ExpectedInternetGatewayRoutes"))
   {
-    Array<JsonView> expectedInternetGatewayRoutesJsonList = jsonValue.GetArray("ExpectedInternetGatewayRoutes");
+    Aws::Utils::Array<JsonView> expectedInternetGatewayRoutesJsonList = jsonValue.GetArray("ExpectedInternetGatewayRoutes");
     for(unsigned expectedInternetGatewayRoutesIndex = 0; expectedInternetGatewayRoutesIndex < expectedInternetGatewayRoutesJsonList.GetLength(); ++expectedInternetGatewayRoutesIndex)
     {
       m_expectedInternetGatewayRoutes.push_back(expectedInternetGatewayRoutesJsonList[expectedInternetGatewayRoutesIndex].AsObject());
@@ -175,7 +175,7 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
 
   if(jsonValue.ValueExists("ActualInternetGatewayRoutes"))
   {
-    Array<JsonView> actualInternetGatewayRoutesJsonList = jsonValue.GetArray("ActualInternetGatewayRoutes");
+    Aws::Utils::Array<JsonView> actualInternetGatewayRoutesJsonList = jsonValue.GetArray("ActualInternetGatewayRoutes");
     for(unsigned actualInternetGatewayRoutesIndex = 0; actualInternetGatewayRoutesIndex < actualInternetGatewayRoutesJsonList.GetLength(); ++actualInternetGatewayRoutesIndex)
     {
       m_actualInternetGatewayRoutes.push_back(actualInternetGatewayRoutesJsonList[actualInternetGatewayRoutesIndex].AsObject());
@@ -199,7 +199,7 @@ JsonValue NetworkFirewallInvalidRouteConfigurationViolation::Jsonize() const
 
   if(m_affectedSubnetsHasBeenSet)
   {
-   Array<JsonValue> affectedSubnetsJsonList(m_affectedSubnets.size());
+   Aws::Utils::Array<JsonValue> affectedSubnetsJsonList(m_affectedSubnets.size());
    for(unsigned affectedSubnetsIndex = 0; affectedSubnetsIndex < affectedSubnetsJsonList.GetLength(); ++affectedSubnetsIndex)
    {
      affectedSubnetsJsonList[affectedSubnetsIndex].AsString(m_affectedSubnets[affectedSubnetsIndex]);
@@ -258,7 +258,7 @@ JsonValue NetworkFirewallInvalidRouteConfigurationViolation::Jsonize() const
 
   if(m_expectedFirewallSubnetRoutesHasBeenSet)
   {
-   Array<JsonValue> expectedFirewallSubnetRoutesJsonList(m_expectedFirewallSubnetRoutes.size());
+   Aws::Utils::Array<JsonValue> expectedFirewallSubnetRoutesJsonList(m_expectedFirewallSubnetRoutes.size());
    for(unsigned expectedFirewallSubnetRoutesIndex = 0; expectedFirewallSubnetRoutesIndex < expectedFirewallSubnetRoutesJsonList.GetLength(); ++expectedFirewallSubnetRoutesIndex)
    {
      expectedFirewallSubnetRoutesJsonList[expectedFirewallSubnetRoutesIndex].AsObject(m_expectedFirewallSubnetRoutes[expectedFirewallSubnetRoutesIndex].Jsonize());
@@ -269,7 +269,7 @@ JsonValue NetworkFirewallInvalidRouteConfigurationViolation::Jsonize() const
 
   if(m_actualFirewallSubnetRoutesHasBeenSet)
   {
-   Array<JsonValue> actualFirewallSubnetRoutesJsonList(m_actualFirewallSubnetRoutes.size());
+   Aws::Utils::Array<JsonValue> actualFirewallSubnetRoutesJsonList(m_actualFirewallSubnetRoutes.size());
    for(unsigned actualFirewallSubnetRoutesIndex = 0; actualFirewallSubnetRoutesIndex < actualFirewallSubnetRoutesJsonList.GetLength(); ++actualFirewallSubnetRoutesIndex)
    {
      actualFirewallSubnetRoutesJsonList[actualFirewallSubnetRoutesIndex].AsObject(m_actualFirewallSubnetRoutes[actualFirewallSubnetRoutesIndex].Jsonize());
@@ -292,7 +292,7 @@ JsonValue NetworkFirewallInvalidRouteConfigurationViolation::Jsonize() const
 
   if(m_expectedInternetGatewayRoutesHasBeenSet)
   {
-   Array<JsonValue> expectedInternetGatewayRoutesJsonList(m_expectedInternetGatewayRoutes.size());
+   Aws::Utils::Array<JsonValue> expectedInternetGatewayRoutesJsonList(m_expectedInternetGatewayRoutes.size());
    for(unsigned expectedInternetGatewayRoutesIndex = 0; expectedInternetGatewayRoutesIndex < expectedInternetGatewayRoutesJsonList.GetLength(); ++expectedInternetGatewayRoutesIndex)
    {
      expectedInternetGatewayRoutesJsonList[expectedInternetGatewayRoutesIndex].AsObject(m_expectedInternetGatewayRoutes[expectedInternetGatewayRoutesIndex].Jsonize());
@@ -303,7 +303,7 @@ JsonValue NetworkFirewallInvalidRouteConfigurationViolation::Jsonize() const
 
   if(m_actualInternetGatewayRoutesHasBeenSet)
   {
-   Array<JsonValue> actualInternetGatewayRoutesJsonList(m_actualInternetGatewayRoutes.size());
+   Aws::Utils::Array<JsonValue> actualInternetGatewayRoutesJsonList(m_actualInternetGatewayRoutes.size());
    for(unsigned actualInternetGatewayRoutesIndex = 0; actualInternetGatewayRoutesIndex < actualInternetGatewayRoutesJsonList.GetLength(); ++actualInternetGatewayRoutesIndex)
    {
      actualInternetGatewayRoutesJsonList[actualInternetGatewayRoutesIndex].AsObject(m_actualInternetGatewayRoutes[actualInternetGatewayRoutesIndex].Jsonize());

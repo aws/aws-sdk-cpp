@@ -30,7 +30,7 @@ BatchGetTracesResult& BatchGetTracesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Traces"))
   {
-    Array<JsonView> tracesJsonList = jsonValue.GetArray("Traces");
+    Aws::Utils::Array<JsonView> tracesJsonList = jsonValue.GetArray("Traces");
     for(unsigned tracesIndex = 0; tracesIndex < tracesJsonList.GetLength(); ++tracesIndex)
     {
       m_traces.push_back(tracesJsonList[tracesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetTracesResult& BatchGetTracesResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("UnprocessedTraceIds"))
   {
-    Array<JsonView> unprocessedTraceIdsJsonList = jsonValue.GetArray("UnprocessedTraceIds");
+    Aws::Utils::Array<JsonView> unprocessedTraceIdsJsonList = jsonValue.GetArray("UnprocessedTraceIds");
     for(unsigned unprocessedTraceIdsIndex = 0; unprocessedTraceIdsIndex < unprocessedTraceIdsJsonList.GetLength(); ++unprocessedTraceIdsIndex)
     {
       m_unprocessedTraceIds.push_back(unprocessedTraceIdsJsonList[unprocessedTraceIdsIndex].AsString());

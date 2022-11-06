@@ -33,7 +33,7 @@ TrafficRoute& TrafficRoute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("listenerArns"))
   {
-    Array<JsonView> listenerArnsJsonList = jsonValue.GetArray("listenerArns");
+    Aws::Utils::Array<JsonView> listenerArnsJsonList = jsonValue.GetArray("listenerArns");
     for(unsigned listenerArnsIndex = 0; listenerArnsIndex < listenerArnsJsonList.GetLength(); ++listenerArnsIndex)
     {
       m_listenerArns.push_back(listenerArnsJsonList[listenerArnsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue TrafficRoute::Jsonize() const
 
   if(m_listenerArnsHasBeenSet)
   {
-   Array<JsonValue> listenerArnsJsonList(m_listenerArns.size());
+   Aws::Utils::Array<JsonValue> listenerArnsJsonList(m_listenerArns.size());
    for(unsigned listenerArnsIndex = 0; listenerArnsIndex < listenerArnsJsonList.GetLength(); ++listenerArnsIndex)
    {
      listenerArnsJsonList[listenerArnsIndex].AsString(m_listenerArns[listenerArnsIndex]);

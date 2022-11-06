@@ -59,7 +59,7 @@ Aws::String UpdatePortfolioRequest::SerializePayload() const
 
   if(m_addTagsHasBeenSet)
   {
-   Array<JsonValue> addTagsJsonList(m_addTags.size());
+   Aws::Utils::Array<JsonValue> addTagsJsonList(m_addTags.size());
    for(unsigned addTagsIndex = 0; addTagsIndex < addTagsJsonList.GetLength(); ++addTagsIndex)
    {
      addTagsJsonList[addTagsIndex].AsObject(m_addTags[addTagsIndex].Jsonize());
@@ -70,7 +70,7 @@ Aws::String UpdatePortfolioRequest::SerializePayload() const
 
   if(m_removeTagsHasBeenSet)
   {
-   Array<JsonValue> removeTagsJsonList(m_removeTags.size());
+   Aws::Utils::Array<JsonValue> removeTagsJsonList(m_removeTags.size());
    for(unsigned removeTagsIndex = 0; removeTagsIndex < removeTagsJsonList.GetLength(); ++removeTagsIndex)
    {
      removeTagsJsonList[removeTagsIndex].AsString(m_removeTags[removeTagsIndex]);

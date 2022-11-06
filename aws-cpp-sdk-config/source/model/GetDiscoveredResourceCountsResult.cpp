@@ -38,7 +38,7 @@ GetDiscoveredResourceCountsResult& GetDiscoveredResourceCountsResult::operator =
 
   if(jsonValue.ValueExists("resourceCounts"))
   {
-    Array<JsonView> resourceCountsJsonList = jsonValue.GetArray("resourceCounts");
+    Aws::Utils::Array<JsonView> resourceCountsJsonList = jsonValue.GetArray("resourceCounts");
     for(unsigned resourceCountsIndex = 0; resourceCountsIndex < resourceCountsJsonList.GetLength(); ++resourceCountsIndex)
     {
       m_resourceCounts.push_back(resourceCountsJsonList[resourceCountsIndex].AsObject());

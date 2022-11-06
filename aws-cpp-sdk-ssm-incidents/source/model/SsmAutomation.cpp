@@ -72,7 +72,7 @@ SsmAutomation& SsmAutomation::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonView> ssmParameterValuesJsonList = parametersItem.second.AsArray();
+      Aws::Utils::Array<JsonView> ssmParameterValuesJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> ssmParameterValuesList;
       ssmParameterValuesList.reserve((size_t)ssmParameterValuesJsonList.GetLength());
       for(unsigned ssmParameterValuesIndex = 0; ssmParameterValuesIndex < ssmParameterValuesJsonList.GetLength(); ++ssmParameterValuesIndex)
@@ -133,7 +133,7 @@ JsonValue SsmAutomation::Jsonize() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> ssmParameterValuesJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> ssmParameterValuesJsonList(parametersItem.second.size());
      for(unsigned ssmParameterValuesIndex = 0; ssmParameterValuesIndex < ssmParameterValuesJsonList.GetLength(); ++ssmParameterValuesIndex)
      {
        ssmParameterValuesJsonList[ssmParameterValuesIndex].AsString(parametersItem.second[ssmParameterValuesIndex]);

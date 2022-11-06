@@ -30,7 +30,7 @@ Aws::String ListDeviceIdentifiersRequest::SerializePayload() const
    JsonValue filtersJsonMap;
    for(auto& filtersItem : m_filters)
    {
-     Array<JsonValue> deviceIdentifierFilterValuesJsonList(filtersItem.second.size());
+     Aws::Utils::Array<JsonValue> deviceIdentifierFilterValuesJsonList(filtersItem.second.size());
      for(unsigned deviceIdentifierFilterValuesIndex = 0; deviceIdentifierFilterValuesIndex < deviceIdentifierFilterValuesJsonList.GetLength(); ++deviceIdentifierFilterValuesIndex)
      {
        deviceIdentifierFilterValuesJsonList[deviceIdentifierFilterValuesIndex].AsString(filtersItem.second[deviceIdentifierFilterValuesIndex]);

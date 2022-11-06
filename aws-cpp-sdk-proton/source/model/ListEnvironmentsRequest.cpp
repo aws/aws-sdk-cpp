@@ -26,7 +26,7 @@ Aws::String ListEnvironmentsRequest::SerializePayload() const
 
   if(m_environmentTemplatesHasBeenSet)
   {
-   Array<JsonValue> environmentTemplatesJsonList(m_environmentTemplates.size());
+   Aws::Utils::Array<JsonValue> environmentTemplatesJsonList(m_environmentTemplates.size());
    for(unsigned environmentTemplatesIndex = 0; environmentTemplatesIndex < environmentTemplatesJsonList.GetLength(); ++environmentTemplatesIndex)
    {
      environmentTemplatesJsonList[environmentTemplatesIndex].AsObject(m_environmentTemplates[environmentTemplatesIndex].Jsonize());

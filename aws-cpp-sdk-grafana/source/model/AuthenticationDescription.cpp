@@ -44,7 +44,7 @@ AuthenticationDescription& AuthenticationDescription::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("providers"))
   {
-    Array<JsonView> providersJsonList = jsonValue.GetArray("providers");
+    Aws::Utils::Array<JsonView> providersJsonList = jsonValue.GetArray("providers");
     for(unsigned providersIndex = 0; providersIndex < providersJsonList.GetLength(); ++providersIndex)
     {
       m_providers.push_back(AuthenticationProviderTypesMapper::GetAuthenticationProviderTypesForName(providersJsonList[providersIndex].AsString()));
@@ -74,7 +74,7 @@ JsonValue AuthenticationDescription::Jsonize() const
 
   if(m_providersHasBeenSet)
   {
-   Array<JsonValue> providersJsonList(m_providers.size());
+   Aws::Utils::Array<JsonValue> providersJsonList(m_providers.size());
    for(unsigned providersIndex = 0; providersIndex < providersJsonList.GetLength(); ++providersIndex)
    {
      providersJsonList[providersIndex].AsString(AuthenticationProviderTypesMapper::GetNameForAuthenticationProviderTypes(m_providers[providersIndex]));

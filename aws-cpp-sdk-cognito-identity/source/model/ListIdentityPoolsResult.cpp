@@ -30,7 +30,7 @@ ListIdentityPoolsResult& ListIdentityPoolsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityPools"))
   {
-    Array<JsonView> identityPoolsJsonList = jsonValue.GetArray("IdentityPools");
+    Aws::Utils::Array<JsonView> identityPoolsJsonList = jsonValue.GetArray("IdentityPools");
     for(unsigned identityPoolsIndex = 0; identityPoolsIndex < identityPoolsJsonList.GetLength(); ++identityPoolsIndex)
     {
       m_identityPools.push_back(identityPoolsJsonList[identityPoolsIndex].AsObject());

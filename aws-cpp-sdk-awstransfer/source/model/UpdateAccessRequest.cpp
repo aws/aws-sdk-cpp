@@ -42,7 +42,7 @@ Aws::String UpdateAccessRequest::SerializePayload() const
 
   if(m_homeDirectoryMappingsHasBeenSet)
   {
-   Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
+   Aws::Utils::Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
    for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
    {
      homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());

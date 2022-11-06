@@ -44,7 +44,7 @@ VpcConfigurationUpdate& VpcConfigurationUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubnetIdUpdates"))
   {
-    Array<JsonView> subnetIdUpdatesJsonList = jsonValue.GetArray("SubnetIdUpdates");
+    Aws::Utils::Array<JsonView> subnetIdUpdatesJsonList = jsonValue.GetArray("SubnetIdUpdates");
     for(unsigned subnetIdUpdatesIndex = 0; subnetIdUpdatesIndex < subnetIdUpdatesJsonList.GetLength(); ++subnetIdUpdatesIndex)
     {
       m_subnetIdUpdates.push_back(subnetIdUpdatesJsonList[subnetIdUpdatesIndex].AsString());
@@ -54,7 +54,7 @@ VpcConfigurationUpdate& VpcConfigurationUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIdUpdates"))
   {
-    Array<JsonView> securityGroupIdUpdatesJsonList = jsonValue.GetArray("SecurityGroupIdUpdates");
+    Aws::Utils::Array<JsonView> securityGroupIdUpdatesJsonList = jsonValue.GetArray("SecurityGroupIdUpdates");
     for(unsigned securityGroupIdUpdatesIndex = 0; securityGroupIdUpdatesIndex < securityGroupIdUpdatesJsonList.GetLength(); ++securityGroupIdUpdatesIndex)
     {
       m_securityGroupIdUpdates.push_back(securityGroupIdUpdatesJsonList[securityGroupIdUpdatesIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue VpcConfigurationUpdate::Jsonize() const
 
   if(m_subnetIdUpdatesHasBeenSet)
   {
-   Array<JsonValue> subnetIdUpdatesJsonList(m_subnetIdUpdates.size());
+   Aws::Utils::Array<JsonValue> subnetIdUpdatesJsonList(m_subnetIdUpdates.size());
    for(unsigned subnetIdUpdatesIndex = 0; subnetIdUpdatesIndex < subnetIdUpdatesJsonList.GetLength(); ++subnetIdUpdatesIndex)
    {
      subnetIdUpdatesJsonList[subnetIdUpdatesIndex].AsString(m_subnetIdUpdates[subnetIdUpdatesIndex]);
@@ -88,7 +88,7 @@ JsonValue VpcConfigurationUpdate::Jsonize() const
 
   if(m_securityGroupIdUpdatesHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdUpdatesJsonList(m_securityGroupIdUpdates.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdUpdatesJsonList(m_securityGroupIdUpdates.size());
    for(unsigned securityGroupIdUpdatesIndex = 0; securityGroupIdUpdatesIndex < securityGroupIdUpdatesJsonList.GetLength(); ++securityGroupIdUpdatesIndex)
    {
      securityGroupIdUpdatesJsonList[securityGroupIdUpdatesIndex].AsString(m_securityGroupIdUpdates[securityGroupIdUpdatesIndex]);

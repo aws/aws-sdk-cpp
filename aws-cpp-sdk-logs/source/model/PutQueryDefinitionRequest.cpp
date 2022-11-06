@@ -38,7 +38,7 @@ Aws::String PutQueryDefinitionRequest::SerializePayload() const
 
   if(m_logGroupNamesHasBeenSet)
   {
-   Array<JsonValue> logGroupNamesJsonList(m_logGroupNames.size());
+   Aws::Utils::Array<JsonValue> logGroupNamesJsonList(m_logGroupNames.size());
    for(unsigned logGroupNamesIndex = 0; logGroupNamesIndex < logGroupNamesJsonList.GetLength(); ++logGroupNamesIndex)
    {
      logGroupNamesJsonList[logGroupNamesIndex].AsString(m_logGroupNames[logGroupNamesIndex]);

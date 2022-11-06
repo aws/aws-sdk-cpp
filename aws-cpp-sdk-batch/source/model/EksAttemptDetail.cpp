@@ -47,7 +47,7 @@ EksAttemptDetail& EksAttemptDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containers"))
   {
-    Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
+    Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
     for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
     {
       m_containers.push_back(containersJsonList[containersIndex].AsObject());
@@ -99,7 +99,7 @@ JsonValue EksAttemptDetail::Jsonize() const
 
   if(m_containersHasBeenSet)
   {
-   Array<JsonValue> containersJsonList(m_containers.size());
+   Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
    for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
    {
      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());

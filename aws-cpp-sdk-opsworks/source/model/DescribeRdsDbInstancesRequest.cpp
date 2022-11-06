@@ -30,7 +30,7 @@ Aws::String DescribeRdsDbInstancesRequest::SerializePayload() const
 
   if(m_rdsDbInstanceArnsHasBeenSet)
   {
-   Array<JsonValue> rdsDbInstanceArnsJsonList(m_rdsDbInstanceArns.size());
+   Aws::Utils::Array<JsonValue> rdsDbInstanceArnsJsonList(m_rdsDbInstanceArns.size());
    for(unsigned rdsDbInstanceArnsIndex = 0; rdsDbInstanceArnsIndex < rdsDbInstanceArnsJsonList.GetLength(); ++rdsDbInstanceArnsIndex)
    {
      rdsDbInstanceArnsJsonList[rdsDbInstanceArnsIndex].AsString(m_rdsDbInstanceArns[rdsDbInstanceArnsIndex]);

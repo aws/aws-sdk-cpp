@@ -41,7 +41,7 @@ PhysicalResource& PhysicalResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("appComponents"))
   {
-    Array<JsonView> appComponentsJsonList = jsonValue.GetArray("appComponents");
+    Aws::Utils::Array<JsonView> appComponentsJsonList = jsonValue.GetArray("appComponents");
     for(unsigned appComponentsIndex = 0; appComponentsIndex < appComponentsJsonList.GetLength(); ++appComponentsIndex)
     {
       m_appComponents.push_back(appComponentsJsonList[appComponentsIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue PhysicalResource::Jsonize() const
 
   if(m_appComponentsHasBeenSet)
   {
-   Array<JsonValue> appComponentsJsonList(m_appComponents.size());
+   Aws::Utils::Array<JsonValue> appComponentsJsonList(m_appComponents.size());
    for(unsigned appComponentsIndex = 0; appComponentsIndex < appComponentsJsonList.GetLength(); ++appComponentsIndex)
    {
      appComponentsJsonList[appComponentsIndex].AsObject(m_appComponents[appComponentsIndex].Jsonize());

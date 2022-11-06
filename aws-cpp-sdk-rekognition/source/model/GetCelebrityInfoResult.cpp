@@ -30,7 +30,7 @@ GetCelebrityInfoResult& GetCelebrityInfoResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Urls"))
   {
-    Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
+    Aws::Utils::Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
     for(unsigned urlsIndex = 0; urlsIndex < urlsJsonList.GetLength(); ++urlsIndex)
     {
       m_urls.push_back(urlsJsonList[urlsIndex].AsString());

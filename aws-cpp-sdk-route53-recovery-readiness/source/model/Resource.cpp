@@ -53,7 +53,7 @@ Resource& Resource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("readinessScopes"))
   {
-    Array<JsonView> readinessScopesJsonList = jsonValue.GetArray("readinessScopes");
+    Aws::Utils::Array<JsonView> readinessScopesJsonList = jsonValue.GetArray("readinessScopes");
     for(unsigned readinessScopesIndex = 0; readinessScopesIndex < readinessScopesJsonList.GetLength(); ++readinessScopesIndex)
     {
       m_readinessScopes.push_back(readinessScopesJsonList[readinessScopesIndex].AsString());
@@ -89,7 +89,7 @@ JsonValue Resource::Jsonize() const
 
   if(m_readinessScopesHasBeenSet)
   {
-   Array<JsonValue> readinessScopesJsonList(m_readinessScopes.size());
+   Aws::Utils::Array<JsonValue> readinessScopesJsonList(m_readinessScopes.size());
    for(unsigned readinessScopesIndex = 0; readinessScopesIndex < readinessScopesJsonList.GetLength(); ++readinessScopesIndex)
    {
      readinessScopesJsonList[readinessScopesIndex].AsString(m_readinessScopes[readinessScopesIndex]);

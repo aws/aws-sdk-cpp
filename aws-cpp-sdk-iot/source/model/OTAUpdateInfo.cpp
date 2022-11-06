@@ -102,7 +102,7 @@ OTAUpdateInfo& OTAUpdateInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
@@ -112,7 +112,7 @@ OTAUpdateInfo& OTAUpdateInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("protocols"))
   {
-    Array<JsonView> protocolsJsonList = jsonValue.GetArray("protocols");
+    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("protocols");
     for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
     {
       m_protocols.push_back(ProtocolMapper::GetProtocolForName(protocolsJsonList[protocolsIndex].AsString()));
@@ -143,7 +143,7 @@ OTAUpdateInfo& OTAUpdateInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("otaUpdateFiles"))
   {
-    Array<JsonView> otaUpdateFilesJsonList = jsonValue.GetArray("otaUpdateFiles");
+    Aws::Utils::Array<JsonView> otaUpdateFilesJsonList = jsonValue.GetArray("otaUpdateFiles");
     for(unsigned otaUpdateFilesIndex = 0; otaUpdateFilesIndex < otaUpdateFilesJsonList.GetLength(); ++otaUpdateFilesIndex)
     {
       m_otaUpdateFiles.push_back(otaUpdateFilesJsonList[otaUpdateFilesIndex].AsObject());
@@ -226,7 +226,7 @@ JsonValue OTAUpdateInfo::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
@@ -237,7 +237,7 @@ JsonValue OTAUpdateInfo::Jsonize() const
 
   if(m_protocolsHasBeenSet)
   {
-   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
    {
      protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
@@ -265,7 +265,7 @@ JsonValue OTAUpdateInfo::Jsonize() const
 
   if(m_otaUpdateFilesHasBeenSet)
   {
-   Array<JsonValue> otaUpdateFilesJsonList(m_otaUpdateFiles.size());
+   Aws::Utils::Array<JsonValue> otaUpdateFilesJsonList(m_otaUpdateFiles.size());
    for(unsigned otaUpdateFilesIndex = 0; otaUpdateFilesIndex < otaUpdateFilesJsonList.GetLength(); ++otaUpdateFilesIndex)
    {
      otaUpdateFilesJsonList[otaUpdateFilesIndex].AsObject(m_otaUpdateFiles[otaUpdateFilesIndex].Jsonize());

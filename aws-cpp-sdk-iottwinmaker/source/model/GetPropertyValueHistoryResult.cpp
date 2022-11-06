@@ -36,7 +36,7 @@ GetPropertyValueHistoryResult& GetPropertyValueHistoryResult::operator =(const A
 
   if(jsonValue.ValueExists("propertyValues"))
   {
-    Array<JsonView> propertyValuesJsonList = jsonValue.GetArray("propertyValues");
+    Aws::Utils::Array<JsonView> propertyValuesJsonList = jsonValue.GetArray("propertyValues");
     for(unsigned propertyValuesIndex = 0; propertyValuesIndex < propertyValuesJsonList.GetLength(); ++propertyValuesIndex)
     {
       m_propertyValues.push_back(propertyValuesJsonList[propertyValuesIndex].AsObject());

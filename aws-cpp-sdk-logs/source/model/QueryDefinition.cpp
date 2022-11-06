@@ -71,7 +71,7 @@ QueryDefinition& QueryDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("logGroupNames"))
   {
-    Array<JsonView> logGroupNamesJsonList = jsonValue.GetArray("logGroupNames");
+    Aws::Utils::Array<JsonView> logGroupNamesJsonList = jsonValue.GetArray("logGroupNames");
     for(unsigned logGroupNamesIndex = 0; logGroupNamesIndex < logGroupNamesJsonList.GetLength(); ++logGroupNamesIndex)
     {
       m_logGroupNames.push_back(logGroupNamesJsonList[logGroupNamesIndex].AsString());
@@ -112,7 +112,7 @@ JsonValue QueryDefinition::Jsonize() const
 
   if(m_logGroupNamesHasBeenSet)
   {
-   Array<JsonValue> logGroupNamesJsonList(m_logGroupNames.size());
+   Aws::Utils::Array<JsonValue> logGroupNamesJsonList(m_logGroupNames.size());
    for(unsigned logGroupNamesIndex = 0; logGroupNamesIndex < logGroupNamesJsonList.GetLength(); ++logGroupNamesIndex)
    {
      logGroupNamesJsonList[logGroupNamesIndex].AsString(m_logGroupNames[logGroupNamesIndex]);

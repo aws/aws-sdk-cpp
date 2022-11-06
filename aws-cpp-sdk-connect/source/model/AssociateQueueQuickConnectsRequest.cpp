@@ -25,7 +25,7 @@ Aws::String AssociateQueueQuickConnectsRequest::SerializePayload() const
 
   if(m_quickConnectIdsHasBeenSet)
   {
-   Array<JsonValue> quickConnectIdsJsonList(m_quickConnectIds.size());
+   Aws::Utils::Array<JsonValue> quickConnectIdsJsonList(m_quickConnectIds.size());
    for(unsigned quickConnectIdsIndex = 0; quickConnectIdsIndex < quickConnectIdsJsonList.GetLength(); ++quickConnectIdsIndex)
    {
      quickConnectIdsJsonList[quickConnectIdsIndex].AsString(m_quickConnectIds[quickConnectIdsIndex]);

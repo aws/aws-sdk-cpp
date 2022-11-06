@@ -30,7 +30,7 @@ GetEC2RecommendationProjectedMetricsResult& GetEC2RecommendationProjectedMetrics
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("recommendedOptionProjectedMetrics"))
   {
-    Array<JsonView> recommendedOptionProjectedMetricsJsonList = jsonValue.GetArray("recommendedOptionProjectedMetrics");
+    Aws::Utils::Array<JsonView> recommendedOptionProjectedMetricsJsonList = jsonValue.GetArray("recommendedOptionProjectedMetrics");
     for(unsigned recommendedOptionProjectedMetricsIndex = 0; recommendedOptionProjectedMetricsIndex < recommendedOptionProjectedMetricsJsonList.GetLength(); ++recommendedOptionProjectedMetricsIndex)
     {
       m_recommendedOptionProjectedMetrics.push_back(recommendedOptionProjectedMetricsJsonList[recommendedOptionProjectedMetricsIndex].AsObject());

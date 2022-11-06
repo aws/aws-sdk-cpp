@@ -56,7 +56,7 @@ ListAnswersResult& ListAnswersResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("AnswerSummaries"))
   {
-    Array<JsonView> answerSummariesJsonList = jsonValue.GetArray("AnswerSummaries");
+    Aws::Utils::Array<JsonView> answerSummariesJsonList = jsonValue.GetArray("AnswerSummaries");
     for(unsigned answerSummariesIndex = 0; answerSummariesIndex < answerSummariesJsonList.GetLength(); ++answerSummariesIndex)
     {
       m_answerSummaries.push_back(answerSummariesJsonList[answerSummariesIndex].AsObject());

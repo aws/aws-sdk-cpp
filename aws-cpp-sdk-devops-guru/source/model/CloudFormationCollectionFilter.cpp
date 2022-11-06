@@ -33,7 +33,7 @@ CloudFormationCollectionFilter& CloudFormationCollectionFilter::operator =(JsonV
 {
   if(jsonValue.ValueExists("StackNames"))
   {
-    Array<JsonView> stackNamesJsonList = jsonValue.GetArray("StackNames");
+    Aws::Utils::Array<JsonView> stackNamesJsonList = jsonValue.GetArray("StackNames");
     for(unsigned stackNamesIndex = 0; stackNamesIndex < stackNamesJsonList.GetLength(); ++stackNamesIndex)
     {
       m_stackNames.push_back(stackNamesJsonList[stackNamesIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue CloudFormationCollectionFilter::Jsonize() const
 
   if(m_stackNamesHasBeenSet)
   {
-   Array<JsonValue> stackNamesJsonList(m_stackNames.size());
+   Aws::Utils::Array<JsonValue> stackNamesJsonList(m_stackNames.size());
    for(unsigned stackNamesIndex = 0; stackNamesIndex < stackNamesJsonList.GetLength(); ++stackNamesIndex)
    {
      stackNamesJsonList[stackNamesIndex].AsString(m_stackNames[stackNamesIndex]);

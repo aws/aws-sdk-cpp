@@ -64,7 +64,7 @@ PerformanceInsightsMetricsDetail& PerformanceInsightsMetricsDetail::operator =(J
 
   if(jsonValue.ValueExists("ReferenceData"))
   {
-    Array<JsonView> referenceDataJsonList = jsonValue.GetArray("ReferenceData");
+    Aws::Utils::Array<JsonView> referenceDataJsonList = jsonValue.GetArray("ReferenceData");
     for(unsigned referenceDataIndex = 0; referenceDataIndex < referenceDataJsonList.GetLength(); ++referenceDataIndex)
     {
       m_referenceData.push_back(referenceDataJsonList[referenceDataIndex].AsObject());
@@ -74,7 +74,7 @@ PerformanceInsightsMetricsDetail& PerformanceInsightsMetricsDetail::operator =(J
 
   if(jsonValue.ValueExists("StatsAtAnomaly"))
   {
-    Array<JsonView> statsAtAnomalyJsonList = jsonValue.GetArray("StatsAtAnomaly");
+    Aws::Utils::Array<JsonView> statsAtAnomalyJsonList = jsonValue.GetArray("StatsAtAnomaly");
     for(unsigned statsAtAnomalyIndex = 0; statsAtAnomalyIndex < statsAtAnomalyJsonList.GetLength(); ++statsAtAnomalyIndex)
     {
       m_statsAtAnomaly.push_back(statsAtAnomalyJsonList[statsAtAnomalyIndex].AsObject());
@@ -84,7 +84,7 @@ PerformanceInsightsMetricsDetail& PerformanceInsightsMetricsDetail::operator =(J
 
   if(jsonValue.ValueExists("StatsAtBaseline"))
   {
-    Array<JsonView> statsAtBaselineJsonList = jsonValue.GetArray("StatsAtBaseline");
+    Aws::Utils::Array<JsonView> statsAtBaselineJsonList = jsonValue.GetArray("StatsAtBaseline");
     for(unsigned statsAtBaselineIndex = 0; statsAtBaselineIndex < statsAtBaselineJsonList.GetLength(); ++statsAtBaselineIndex)
     {
       m_statsAtBaseline.push_back(statsAtBaselineJsonList[statsAtBaselineIndex].AsObject());
@@ -119,7 +119,7 @@ JsonValue PerformanceInsightsMetricsDetail::Jsonize() const
 
   if(m_referenceDataHasBeenSet)
   {
-   Array<JsonValue> referenceDataJsonList(m_referenceData.size());
+   Aws::Utils::Array<JsonValue> referenceDataJsonList(m_referenceData.size());
    for(unsigned referenceDataIndex = 0; referenceDataIndex < referenceDataJsonList.GetLength(); ++referenceDataIndex)
    {
      referenceDataJsonList[referenceDataIndex].AsObject(m_referenceData[referenceDataIndex].Jsonize());
@@ -130,7 +130,7 @@ JsonValue PerformanceInsightsMetricsDetail::Jsonize() const
 
   if(m_statsAtAnomalyHasBeenSet)
   {
-   Array<JsonValue> statsAtAnomalyJsonList(m_statsAtAnomaly.size());
+   Aws::Utils::Array<JsonValue> statsAtAnomalyJsonList(m_statsAtAnomaly.size());
    for(unsigned statsAtAnomalyIndex = 0; statsAtAnomalyIndex < statsAtAnomalyJsonList.GetLength(); ++statsAtAnomalyIndex)
    {
      statsAtAnomalyJsonList[statsAtAnomalyIndex].AsObject(m_statsAtAnomaly[statsAtAnomalyIndex].Jsonize());
@@ -141,7 +141,7 @@ JsonValue PerformanceInsightsMetricsDetail::Jsonize() const
 
   if(m_statsAtBaselineHasBeenSet)
   {
-   Array<JsonValue> statsAtBaselineJsonList(m_statsAtBaseline.size());
+   Aws::Utils::Array<JsonValue> statsAtBaselineJsonList(m_statsAtBaseline.size());
    for(unsigned statsAtBaselineIndex = 0; statsAtBaselineIndex < statsAtBaselineJsonList.GetLength(); ++statsAtBaselineIndex)
    {
      statsAtBaselineJsonList[statsAtBaselineIndex].AsObject(m_statsAtBaseline[statsAtBaselineIndex].Jsonize());

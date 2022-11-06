@@ -26,7 +26,7 @@ Aws::String CreateJobForDevicesRequest::SerializePayload() const
 
   if(m_deviceIdsHasBeenSet)
   {
-   Array<JsonValue> deviceIdsJsonList(m_deviceIds.size());
+   Aws::Utils::Array<JsonValue> deviceIdsJsonList(m_deviceIds.size());
    for(unsigned deviceIdsIndex = 0; deviceIdsIndex < deviceIdsJsonList.GetLength(); ++deviceIdsIndex)
    {
      deviceIdsJsonList[deviceIdsIndex].AsString(m_deviceIds[deviceIdsIndex]);

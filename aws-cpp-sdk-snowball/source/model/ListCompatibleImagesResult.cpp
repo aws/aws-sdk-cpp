@@ -30,7 +30,7 @@ ListCompatibleImagesResult& ListCompatibleImagesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CompatibleImages"))
   {
-    Array<JsonView> compatibleImagesJsonList = jsonValue.GetArray("CompatibleImages");
+    Aws::Utils::Array<JsonView> compatibleImagesJsonList = jsonValue.GetArray("CompatibleImages");
     for(unsigned compatibleImagesIndex = 0; compatibleImagesIndex < compatibleImagesJsonList.GetLength(); ++compatibleImagesIndex)
     {
       m_compatibleImages.push_back(compatibleImagesJsonList[compatibleImagesIndex].AsObject());

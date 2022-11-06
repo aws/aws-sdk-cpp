@@ -35,7 +35,7 @@ Aws::String CreateLicenseManagerReportGeneratorRequest::SerializePayload() const
 
   if(m_typeHasBeenSet)
   {
-   Array<JsonValue> typeJsonList(m_type.size());
+   Aws::Utils::Array<JsonValue> typeJsonList(m_type.size());
    for(unsigned typeIndex = 0; typeIndex < typeJsonList.GetLength(); ++typeIndex)
    {
      typeJsonList[typeIndex].AsString(ReportTypeMapper::GetNameForReportType(m_type[typeIndex]));
@@ -70,7 +70,7 @@ Aws::String CreateLicenseManagerReportGeneratorRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

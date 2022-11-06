@@ -42,7 +42,7 @@ ListPricingPlansAssociatedWithPricingRuleResult& ListPricingPlansAssociatedWithP
 
   if(jsonValue.ValueExists("PricingPlanArns"))
   {
-    Array<JsonView> pricingPlanArnsJsonList = jsonValue.GetArray("PricingPlanArns");
+    Aws::Utils::Array<JsonView> pricingPlanArnsJsonList = jsonValue.GetArray("PricingPlanArns");
     for(unsigned pricingPlanArnsIndex = 0; pricingPlanArnsIndex < pricingPlanArnsJsonList.GetLength(); ++pricingPlanArnsIndex)
     {
       m_pricingPlanArns.push_back(pricingPlanArnsJsonList[pricingPlanArnsIndex].AsString());

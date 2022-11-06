@@ -36,7 +36,7 @@ ListSlackChannelConfigurationsResult& ListSlackChannelConfigurationsResult::oper
 
   if(jsonValue.ValueExists("slackChannelConfigurations"))
   {
-    Array<JsonView> slackChannelConfigurationsJsonList = jsonValue.GetArray("slackChannelConfigurations");
+    Aws::Utils::Array<JsonView> slackChannelConfigurationsJsonList = jsonValue.GetArray("slackChannelConfigurations");
     for(unsigned slackChannelConfigurationsIndex = 0; slackChannelConfigurationsIndex < slackChannelConfigurationsJsonList.GetLength(); ++slackChannelConfigurationsIndex)
     {
       m_slackChannelConfigurations.push_back(slackChannelConfigurationsJsonList[slackChannelConfigurationsIndex].AsObject());

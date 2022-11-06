@@ -52,7 +52,7 @@ Aws::String CreateIPSetRequest::SerializePayload() const
 
   if(m_addressesHasBeenSet)
   {
-   Array<JsonValue> addressesJsonList(m_addresses.size());
+   Aws::Utils::Array<JsonValue> addressesJsonList(m_addresses.size());
    for(unsigned addressesIndex = 0; addressesIndex < addressesJsonList.GetLength(); ++addressesIndex)
    {
      addressesJsonList[addressesIndex].AsString(m_addresses[addressesIndex]);
@@ -63,7 +63,7 @@ Aws::String CreateIPSetRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -78,7 +78,7 @@ ListAggregatedUtterancesResult& ListAggregatedUtterancesResult::operator =(const
 
   if(jsonValue.ValueExists("aggregatedUtterancesSummaries"))
   {
-    Array<JsonView> aggregatedUtterancesSummariesJsonList = jsonValue.GetArray("aggregatedUtterancesSummaries");
+    Aws::Utils::Array<JsonView> aggregatedUtterancesSummariesJsonList = jsonValue.GetArray("aggregatedUtterancesSummaries");
     for(unsigned aggregatedUtterancesSummariesIndex = 0; aggregatedUtterancesSummariesIndex < aggregatedUtterancesSummariesJsonList.GetLength(); ++aggregatedUtterancesSummariesIndex)
     {
       m_aggregatedUtterancesSummaries.push_back(aggregatedUtterancesSummariesJsonList[aggregatedUtterancesSummariesIndex].AsObject());

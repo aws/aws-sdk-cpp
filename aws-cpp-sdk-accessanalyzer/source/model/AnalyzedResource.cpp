@@ -101,7 +101,7 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsString());
@@ -111,7 +111,7 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sharedVia"))
   {
-    Array<JsonView> sharedViaJsonList = jsonValue.GetArray("sharedVia");
+    Aws::Utils::Array<JsonView> sharedViaJsonList = jsonValue.GetArray("sharedVia");
     for(unsigned sharedViaIndex = 0; sharedViaIndex < sharedViaJsonList.GetLength(); ++sharedViaIndex)
     {
       m_sharedVia.push_back(sharedViaJsonList[sharedViaIndex].AsString());
@@ -181,7 +181,7 @@ JsonValue AnalyzedResource::Jsonize() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsString(m_actions[actionsIndex]);
@@ -192,7 +192,7 @@ JsonValue AnalyzedResource::Jsonize() const
 
   if(m_sharedViaHasBeenSet)
   {
-   Array<JsonValue> sharedViaJsonList(m_sharedVia.size());
+   Aws::Utils::Array<JsonValue> sharedViaJsonList(m_sharedVia.size());
    for(unsigned sharedViaIndex = 0; sharedViaIndex < sharedViaJsonList.GetLength(); ++sharedViaIndex)
    {
      sharedViaJsonList[sharedViaIndex].AsString(m_sharedVia[sharedViaIndex]);

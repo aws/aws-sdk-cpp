@@ -80,7 +80,7 @@ DescribeWhatIfForecastResult& DescribeWhatIfForecastResult::operator =(const Aws
 
   if(jsonValue.ValueExists("TimeSeriesTransformations"))
   {
-    Array<JsonView> timeSeriesTransformationsJsonList = jsonValue.GetArray("TimeSeriesTransformations");
+    Aws::Utils::Array<JsonView> timeSeriesTransformationsJsonList = jsonValue.GetArray("TimeSeriesTransformations");
     for(unsigned timeSeriesTransformationsIndex = 0; timeSeriesTransformationsIndex < timeSeriesTransformationsJsonList.GetLength(); ++timeSeriesTransformationsIndex)
     {
       m_timeSeriesTransformations.push_back(timeSeriesTransformationsJsonList[timeSeriesTransformationsIndex].AsObject());
@@ -95,7 +95,7 @@ DescribeWhatIfForecastResult& DescribeWhatIfForecastResult::operator =(const Aws
 
   if(jsonValue.ValueExists("ForecastTypes"))
   {
-    Array<JsonView> forecastTypesJsonList = jsonValue.GetArray("ForecastTypes");
+    Aws::Utils::Array<JsonView> forecastTypesJsonList = jsonValue.GetArray("ForecastTypes");
     for(unsigned forecastTypesIndex = 0; forecastTypesIndex < forecastTypesJsonList.GetLength(); ++forecastTypesIndex)
     {
       m_forecastTypes.push_back(forecastTypesJsonList[forecastTypesIndex].AsString());

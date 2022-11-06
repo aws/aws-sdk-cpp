@@ -42,7 +42,7 @@ JobAlbumArt& JobAlbumArt::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Artwork"))
   {
-    Array<JsonView> artworkJsonList = jsonValue.GetArray("Artwork");
+    Aws::Utils::Array<JsonView> artworkJsonList = jsonValue.GetArray("Artwork");
     for(unsigned artworkIndex = 0; artworkIndex < artworkJsonList.GetLength(); ++artworkIndex)
     {
       m_artwork.push_back(artworkJsonList[artworkIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue JobAlbumArt::Jsonize() const
 
   if(m_artworkHasBeenSet)
   {
-   Array<JsonValue> artworkJsonList(m_artwork.size());
+   Aws::Utils::Array<JsonValue> artworkJsonList(m_artwork.size());
    for(unsigned artworkIndex = 0; artworkIndex < artworkJsonList.GetLength(); ++artworkIndex)
    {
      artworkJsonList[artworkIndex].AsObject(m_artwork[artworkIndex].Jsonize());

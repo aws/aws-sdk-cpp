@@ -36,7 +36,7 @@ ListQueuesResult& ListQueuesResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("queues"))
   {
-    Array<JsonView> queuesJsonList = jsonValue.GetArray("queues");
+    Aws::Utils::Array<JsonView> queuesJsonList = jsonValue.GetArray("queues");
     for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsObject());

@@ -30,7 +30,7 @@ Aws::String StartMaintenanceRequest::SerializePayload() const
 
   if(m_engineAttributesHasBeenSet)
   {
-   Array<JsonValue> engineAttributesJsonList(m_engineAttributes.size());
+   Aws::Utils::Array<JsonValue> engineAttributesJsonList(m_engineAttributes.size());
    for(unsigned engineAttributesIndex = 0; engineAttributesIndex < engineAttributesJsonList.GetLength(); ++engineAttributesIndex)
    {
      engineAttributesJsonList[engineAttributesIndex].AsObject(m_engineAttributes[engineAttributesIndex].Jsonize());

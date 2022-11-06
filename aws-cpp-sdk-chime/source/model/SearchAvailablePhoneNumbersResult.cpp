@@ -30,7 +30,7 @@ SearchAvailablePhoneNumbersResult& SearchAvailablePhoneNumbersResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("E164PhoneNumbers"))
   {
-    Array<JsonView> e164PhoneNumbersJsonList = jsonValue.GetArray("E164PhoneNumbers");
+    Aws::Utils::Array<JsonView> e164PhoneNumbersJsonList = jsonValue.GetArray("E164PhoneNumbers");
     for(unsigned e164PhoneNumbersIndex = 0; e164PhoneNumbersIndex < e164PhoneNumbersJsonList.GetLength(); ++e164PhoneNumbersIndex)
     {
       m_e164PhoneNumbers.push_back(e164PhoneNumbersJsonList[e164PhoneNumbersIndex].AsString());

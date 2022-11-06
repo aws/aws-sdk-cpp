@@ -50,7 +50,7 @@ DescribeSecurityProfileResult& DescribeSecurityProfileResult::operator =(const A
 
   if(jsonValue.ValueExists("behaviors"))
   {
-    Array<JsonView> behaviorsJsonList = jsonValue.GetArray("behaviors");
+    Aws::Utils::Array<JsonView> behaviorsJsonList = jsonValue.GetArray("behaviors");
     for(unsigned behaviorsIndex = 0; behaviorsIndex < behaviorsJsonList.GetLength(); ++behaviorsIndex)
     {
       m_behaviors.push_back(behaviorsJsonList[behaviorsIndex].AsObject());
@@ -68,7 +68,7 @@ DescribeSecurityProfileResult& DescribeSecurityProfileResult::operator =(const A
 
   if(jsonValue.ValueExists("additionalMetricsToRetainV2"))
   {
-    Array<JsonView> additionalMetricsToRetainV2JsonList = jsonValue.GetArray("additionalMetricsToRetainV2");
+    Aws::Utils::Array<JsonView> additionalMetricsToRetainV2JsonList = jsonValue.GetArray("additionalMetricsToRetainV2");
     for(unsigned additionalMetricsToRetainV2Index = 0; additionalMetricsToRetainV2Index < additionalMetricsToRetainV2JsonList.GetLength(); ++additionalMetricsToRetainV2Index)
     {
       m_additionalMetricsToRetainV2.push_back(additionalMetricsToRetainV2JsonList[additionalMetricsToRetainV2Index].AsObject());

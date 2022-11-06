@@ -42,7 +42,7 @@ ScpActionDefinition& ScpActionDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetIds"))
   {
-    Array<JsonView> targetIdsJsonList = jsonValue.GetArray("TargetIds");
+    Aws::Utils::Array<JsonView> targetIdsJsonList = jsonValue.GetArray("TargetIds");
     for(unsigned targetIdsIndex = 0; targetIdsIndex < targetIdsJsonList.GetLength(); ++targetIdsIndex)
     {
       m_targetIds.push_back(targetIdsJsonList[targetIdsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue ScpActionDefinition::Jsonize() const
 
   if(m_targetIdsHasBeenSet)
   {
-   Array<JsonValue> targetIdsJsonList(m_targetIds.size());
+   Aws::Utils::Array<JsonValue> targetIdsJsonList(m_targetIds.size());
    for(unsigned targetIdsIndex = 0; targetIdsIndex < targetIdsJsonList.GetLength(); ++targetIdsIndex)
    {
      targetIdsJsonList[targetIdsIndex].AsString(m_targetIds[targetIdsIndex]);

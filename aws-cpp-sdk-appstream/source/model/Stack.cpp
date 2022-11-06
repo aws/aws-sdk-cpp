@@ -94,7 +94,7 @@ Stack& Stack::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StorageConnectors"))
   {
-    Array<JsonView> storageConnectorsJsonList = jsonValue.GetArray("StorageConnectors");
+    Aws::Utils::Array<JsonView> storageConnectorsJsonList = jsonValue.GetArray("StorageConnectors");
     for(unsigned storageConnectorsIndex = 0; storageConnectorsIndex < storageConnectorsJsonList.GetLength(); ++storageConnectorsIndex)
     {
       m_storageConnectors.push_back(storageConnectorsJsonList[storageConnectorsIndex].AsObject());
@@ -118,7 +118,7 @@ Stack& Stack::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StackErrors"))
   {
-    Array<JsonView> stackErrorsJsonList = jsonValue.GetArray("StackErrors");
+    Aws::Utils::Array<JsonView> stackErrorsJsonList = jsonValue.GetArray("StackErrors");
     for(unsigned stackErrorsIndex = 0; stackErrorsIndex < stackErrorsJsonList.GetLength(); ++stackErrorsIndex)
     {
       m_stackErrors.push_back(stackErrorsJsonList[stackErrorsIndex].AsObject());
@@ -128,7 +128,7 @@ Stack& Stack::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("UserSettings"))
   {
-    Array<JsonView> userSettingsJsonList = jsonValue.GetArray("UserSettings");
+    Aws::Utils::Array<JsonView> userSettingsJsonList = jsonValue.GetArray("UserSettings");
     for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
     {
       m_userSettings.push_back(userSettingsJsonList[userSettingsIndex].AsObject());
@@ -145,7 +145,7 @@ Stack& Stack::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AccessEndpoints"))
   {
-    Array<JsonView> accessEndpointsJsonList = jsonValue.GetArray("AccessEndpoints");
+    Aws::Utils::Array<JsonView> accessEndpointsJsonList = jsonValue.GetArray("AccessEndpoints");
     for(unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex)
     {
       m_accessEndpoints.push_back(accessEndpointsJsonList[accessEndpointsIndex].AsObject());
@@ -155,7 +155,7 @@ Stack& Stack::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EmbedHostDomains"))
   {
-    Array<JsonView> embedHostDomainsJsonList = jsonValue.GetArray("EmbedHostDomains");
+    Aws::Utils::Array<JsonView> embedHostDomainsJsonList = jsonValue.GetArray("EmbedHostDomains");
     for(unsigned embedHostDomainsIndex = 0; embedHostDomainsIndex < embedHostDomainsJsonList.GetLength(); ++embedHostDomainsIndex)
     {
       m_embedHostDomains.push_back(embedHostDomainsJsonList[embedHostDomainsIndex].AsString());
@@ -208,7 +208,7 @@ JsonValue Stack::Jsonize() const
 
   if(m_storageConnectorsHasBeenSet)
   {
-   Array<JsonValue> storageConnectorsJsonList(m_storageConnectors.size());
+   Aws::Utils::Array<JsonValue> storageConnectorsJsonList(m_storageConnectors.size());
    for(unsigned storageConnectorsIndex = 0; storageConnectorsIndex < storageConnectorsJsonList.GetLength(); ++storageConnectorsIndex)
    {
      storageConnectorsJsonList[storageConnectorsIndex].AsObject(m_storageConnectors[storageConnectorsIndex].Jsonize());
@@ -231,7 +231,7 @@ JsonValue Stack::Jsonize() const
 
   if(m_stackErrorsHasBeenSet)
   {
-   Array<JsonValue> stackErrorsJsonList(m_stackErrors.size());
+   Aws::Utils::Array<JsonValue> stackErrorsJsonList(m_stackErrors.size());
    for(unsigned stackErrorsIndex = 0; stackErrorsIndex < stackErrorsJsonList.GetLength(); ++stackErrorsIndex)
    {
      stackErrorsJsonList[stackErrorsIndex].AsObject(m_stackErrors[stackErrorsIndex].Jsonize());
@@ -242,7 +242,7 @@ JsonValue Stack::Jsonize() const
 
   if(m_userSettingsHasBeenSet)
   {
-   Array<JsonValue> userSettingsJsonList(m_userSettings.size());
+   Aws::Utils::Array<JsonValue> userSettingsJsonList(m_userSettings.size());
    for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
    {
      userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
@@ -259,7 +259,7 @@ JsonValue Stack::Jsonize() const
 
   if(m_accessEndpointsHasBeenSet)
   {
-   Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
+   Aws::Utils::Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
    for(unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex)
    {
      accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());
@@ -270,7 +270,7 @@ JsonValue Stack::Jsonize() const
 
   if(m_embedHostDomainsHasBeenSet)
   {
-   Array<JsonValue> embedHostDomainsJsonList(m_embedHostDomains.size());
+   Aws::Utils::Array<JsonValue> embedHostDomainsJsonList(m_embedHostDomains.size());
    for(unsigned embedHostDomainsIndex = 0; embedHostDomainsIndex < embedHostDomainsJsonList.GetLength(); ++embedHostDomainsIndex)
    {
      embedHostDomainsJsonList[embedHostDomainsIndex].AsString(m_embedHostDomains[embedHostDomainsIndex]);

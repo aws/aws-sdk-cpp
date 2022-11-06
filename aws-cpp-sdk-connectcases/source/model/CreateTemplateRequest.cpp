@@ -45,7 +45,7 @@ Aws::String CreateTemplateRequest::SerializePayload() const
 
   if(m_requiredFieldsHasBeenSet)
   {
-   Array<JsonValue> requiredFieldsJsonList(m_requiredFields.size());
+   Aws::Utils::Array<JsonValue> requiredFieldsJsonList(m_requiredFields.size());
    for(unsigned requiredFieldsIndex = 0; requiredFieldsIndex < requiredFieldsJsonList.GetLength(); ++requiredFieldsIndex)
    {
      requiredFieldsJsonList[requiredFieldsIndex].AsObject(m_requiredFields[requiredFieldsIndex].Jsonize());

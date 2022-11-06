@@ -30,7 +30,7 @@ DescribeRemediationExceptionsResult& DescribeRemediationExceptionsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RemediationExceptions"))
   {
-    Array<JsonView> remediationExceptionsJsonList = jsonValue.GetArray("RemediationExceptions");
+    Aws::Utils::Array<JsonView> remediationExceptionsJsonList = jsonValue.GetArray("RemediationExceptions");
     for(unsigned remediationExceptionsIndex = 0; remediationExceptionsIndex < remediationExceptionsJsonList.GetLength(); ++remediationExceptionsIndex)
     {
       m_remediationExceptions.push_back(remediationExceptionsJsonList[remediationExceptionsIndex].AsObject());

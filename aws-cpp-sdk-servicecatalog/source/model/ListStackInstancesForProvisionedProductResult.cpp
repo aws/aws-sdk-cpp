@@ -30,7 +30,7 @@ ListStackInstancesForProvisionedProductResult& ListStackInstancesForProvisionedP
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StackInstances"))
   {
-    Array<JsonView> stackInstancesJsonList = jsonValue.GetArray("StackInstances");
+    Aws::Utils::Array<JsonView> stackInstancesJsonList = jsonValue.GetArray("StackInstances");
     for(unsigned stackInstancesIndex = 0; stackInstancesIndex < stackInstancesJsonList.GetLength(); ++stackInstancesIndex)
     {
       m_stackInstances.push_back(stackInstancesJsonList[stackInstancesIndex].AsObject());

@@ -67,7 +67,7 @@ Aws::String StartEventsDetectionJobRequest::SerializePayload() const
 
   if(m_targetEventTypesHasBeenSet)
   {
-   Array<JsonValue> targetEventTypesJsonList(m_targetEventTypes.size());
+   Aws::Utils::Array<JsonValue> targetEventTypesJsonList(m_targetEventTypes.size());
    for(unsigned targetEventTypesIndex = 0; targetEventTypesIndex < targetEventTypesJsonList.GetLength(); ++targetEventTypesIndex)
    {
      targetEventTypesJsonList[targetEventTypesIndex].AsString(m_targetEventTypes[targetEventTypesIndex]);
@@ -78,7 +78,7 @@ Aws::String StartEventsDetectionJobRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/serverlessrepo/ServerlessApplicationRepositoryEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -62,6 +64,10 @@ namespace Aws
 
   namespace ServerlessApplicationRepository
   {
+    using ServerlessApplicationRepositoryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ServerlessApplicationRepositoryEndpointProviderBase = Aws::ServerlessApplicationRepository::Endpoint::ServerlessApplicationRepositoryEndpointProviderBase;
+    using ServerlessApplicationRepositoryEndpointProvider = Aws::ServerlessApplicationRepository::Endpoint::ServerlessApplicationRepositoryEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ServerlessApplicationRepositoryClient header */

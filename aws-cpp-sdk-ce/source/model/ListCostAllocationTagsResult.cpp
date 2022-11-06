@@ -30,7 +30,7 @@ ListCostAllocationTagsResult& ListCostAllocationTagsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CostAllocationTags"))
   {
-    Array<JsonView> costAllocationTagsJsonList = jsonValue.GetArray("CostAllocationTags");
+    Aws::Utils::Array<JsonView> costAllocationTagsJsonList = jsonValue.GetArray("CostAllocationTags");
     for(unsigned costAllocationTagsIndex = 0; costAllocationTagsIndex < costAllocationTagsJsonList.GetLength(); ++costAllocationTagsIndex)
     {
       m_costAllocationTags.push_back(costAllocationTagsJsonList[costAllocationTagsIndex].AsObject());

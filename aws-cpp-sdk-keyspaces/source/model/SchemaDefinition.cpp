@@ -39,7 +39,7 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allColumns"))
   {
-    Array<JsonView> allColumnsJsonList = jsonValue.GetArray("allColumns");
+    Aws::Utils::Array<JsonView> allColumnsJsonList = jsonValue.GetArray("allColumns");
     for(unsigned allColumnsIndex = 0; allColumnsIndex < allColumnsJsonList.GetLength(); ++allColumnsIndex)
     {
       m_allColumns.push_back(allColumnsJsonList[allColumnsIndex].AsObject());
@@ -49,7 +49,7 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("partitionKeys"))
   {
-    Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("partitionKeys");
+    Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("partitionKeys");
     for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
     {
       m_partitionKeys.push_back(partitionKeysJsonList[partitionKeysIndex].AsObject());
@@ -59,7 +59,7 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("clusteringKeys"))
   {
-    Array<JsonView> clusteringKeysJsonList = jsonValue.GetArray("clusteringKeys");
+    Aws::Utils::Array<JsonView> clusteringKeysJsonList = jsonValue.GetArray("clusteringKeys");
     for(unsigned clusteringKeysIndex = 0; clusteringKeysIndex < clusteringKeysJsonList.GetLength(); ++clusteringKeysIndex)
     {
       m_clusteringKeys.push_back(clusteringKeysJsonList[clusteringKeysIndex].AsObject());
@@ -69,7 +69,7 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("staticColumns"))
   {
-    Array<JsonView> staticColumnsJsonList = jsonValue.GetArray("staticColumns");
+    Aws::Utils::Array<JsonView> staticColumnsJsonList = jsonValue.GetArray("staticColumns");
     for(unsigned staticColumnsIndex = 0; staticColumnsIndex < staticColumnsJsonList.GetLength(); ++staticColumnsIndex)
     {
       m_staticColumns.push_back(staticColumnsJsonList[staticColumnsIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue SchemaDefinition::Jsonize() const
 
   if(m_allColumnsHasBeenSet)
   {
-   Array<JsonValue> allColumnsJsonList(m_allColumns.size());
+   Aws::Utils::Array<JsonValue> allColumnsJsonList(m_allColumns.size());
    for(unsigned allColumnsIndex = 0; allColumnsIndex < allColumnsJsonList.GetLength(); ++allColumnsIndex)
    {
      allColumnsJsonList[allColumnsIndex].AsObject(m_allColumns[allColumnsIndex].Jsonize());
@@ -97,7 +97,7 @@ JsonValue SchemaDefinition::Jsonize() const
 
   if(m_partitionKeysHasBeenSet)
   {
-   Array<JsonValue> partitionKeysJsonList(m_partitionKeys.size());
+   Aws::Utils::Array<JsonValue> partitionKeysJsonList(m_partitionKeys.size());
    for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
    {
      partitionKeysJsonList[partitionKeysIndex].AsObject(m_partitionKeys[partitionKeysIndex].Jsonize());
@@ -108,7 +108,7 @@ JsonValue SchemaDefinition::Jsonize() const
 
   if(m_clusteringKeysHasBeenSet)
   {
-   Array<JsonValue> clusteringKeysJsonList(m_clusteringKeys.size());
+   Aws::Utils::Array<JsonValue> clusteringKeysJsonList(m_clusteringKeys.size());
    for(unsigned clusteringKeysIndex = 0; clusteringKeysIndex < clusteringKeysJsonList.GetLength(); ++clusteringKeysIndex)
    {
      clusteringKeysJsonList[clusteringKeysIndex].AsObject(m_clusteringKeys[clusteringKeysIndex].Jsonize());
@@ -119,7 +119,7 @@ JsonValue SchemaDefinition::Jsonize() const
 
   if(m_staticColumnsHasBeenSet)
   {
-   Array<JsonValue> staticColumnsJsonList(m_staticColumns.size());
+   Aws::Utils::Array<JsonValue> staticColumnsJsonList(m_staticColumns.size());
    for(unsigned staticColumnsIndex = 0; staticColumnsIndex < staticColumnsJsonList.GetLength(); ++staticColumnsIndex)
    {
      staticColumnsJsonList[staticColumnsIndex].AsObject(m_staticColumns[staticColumnsIndex].Jsonize());

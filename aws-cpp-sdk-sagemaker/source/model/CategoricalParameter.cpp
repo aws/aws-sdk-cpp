@@ -42,7 +42,7 @@ CategoricalParameter& CategoricalParameter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Value"))
   {
-    Array<JsonView> valueJsonList = jsonValue.GetArray("Value");
+    Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("Value");
     for(unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex)
     {
       m_value.push_back(valueJsonList[valueIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue CategoricalParameter::Jsonize() const
 
   if(m_valueHasBeenSet)
   {
-   Array<JsonValue> valueJsonList(m_value.size());
+   Aws::Utils::Array<JsonValue> valueJsonList(m_value.size());
    for(unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex)
    {
      valueJsonList[valueIndex].AsString(m_value[valueIndex]);

@@ -43,7 +43,7 @@ Aws::String CreateExperimentTemplateRequest::SerializePayload() const
 
   if(m_stopConditionsHasBeenSet)
   {
-   Array<JsonValue> stopConditionsJsonList(m_stopConditions.size());
+   Aws::Utils::Array<JsonValue> stopConditionsJsonList(m_stopConditions.size());
    for(unsigned stopConditionsIndex = 0; stopConditionsIndex < stopConditionsJsonList.GetLength(); ++stopConditionsIndex)
    {
      stopConditionsJsonList[stopConditionsIndex].AsObject(m_stopConditions[stopConditionsIndex].Jsonize());

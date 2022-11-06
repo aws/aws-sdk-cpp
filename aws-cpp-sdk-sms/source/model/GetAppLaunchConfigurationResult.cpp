@@ -50,7 +50,7 @@ GetAppLaunchConfigurationResult& GetAppLaunchConfigurationResult::operator =(con
 
   if(jsonValue.ValueExists("serverGroupLaunchConfigurations"))
   {
-    Array<JsonView> serverGroupLaunchConfigurationsJsonList = jsonValue.GetArray("serverGroupLaunchConfigurations");
+    Aws::Utils::Array<JsonView> serverGroupLaunchConfigurationsJsonList = jsonValue.GetArray("serverGroupLaunchConfigurations");
     for(unsigned serverGroupLaunchConfigurationsIndex = 0; serverGroupLaunchConfigurationsIndex < serverGroupLaunchConfigurationsJsonList.GetLength(); ++serverGroupLaunchConfigurationsIndex)
     {
       m_serverGroupLaunchConfigurations.push_back(serverGroupLaunchConfigurationsJsonList[serverGroupLaunchConfigurationsIndex].AsObject());

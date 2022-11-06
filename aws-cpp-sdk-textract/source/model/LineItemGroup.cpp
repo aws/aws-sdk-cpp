@@ -44,7 +44,7 @@ LineItemGroup& LineItemGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LineItems"))
   {
-    Array<JsonView> lineItemsJsonList = jsonValue.GetArray("LineItems");
+    Aws::Utils::Array<JsonView> lineItemsJsonList = jsonValue.GetArray("LineItems");
     for(unsigned lineItemsIndex = 0; lineItemsIndex < lineItemsJsonList.GetLength(); ++lineItemsIndex)
     {
       m_lineItems.push_back(lineItemsJsonList[lineItemsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue LineItemGroup::Jsonize() const
 
   if(m_lineItemsHasBeenSet)
   {
-   Array<JsonValue> lineItemsJsonList(m_lineItems.size());
+   Aws::Utils::Array<JsonValue> lineItemsJsonList(m_lineItems.size());
    for(unsigned lineItemsIndex = 0; lineItemsIndex < lineItemsJsonList.GetLength(); ++lineItemsIndex)
    {
      lineItemsJsonList[lineItemsIndex].AsObject(m_lineItems[lineItemsIndex].Jsonize());

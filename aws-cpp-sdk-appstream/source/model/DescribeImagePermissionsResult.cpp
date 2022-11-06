@@ -36,7 +36,7 @@ DescribeImagePermissionsResult& DescribeImagePermissionsResult::operator =(const
 
   if(jsonValue.ValueExists("SharedImagePermissionsList"))
   {
-    Array<JsonView> sharedImagePermissionsListJsonList = jsonValue.GetArray("SharedImagePermissionsList");
+    Aws::Utils::Array<JsonView> sharedImagePermissionsListJsonList = jsonValue.GetArray("SharedImagePermissionsList");
     for(unsigned sharedImagePermissionsListIndex = 0; sharedImagePermissionsListIndex < sharedImagePermissionsListJsonList.GetLength(); ++sharedImagePermissionsListIndex)
     {
       m_sharedImagePermissionsList.push_back(sharedImagePermissionsListJsonList[sharedImagePermissionsListIndex].AsObject());

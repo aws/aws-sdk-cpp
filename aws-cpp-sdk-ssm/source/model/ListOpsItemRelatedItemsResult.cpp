@@ -36,7 +36,7 @@ ListOpsItemRelatedItemsResult& ListOpsItemRelatedItemsResult::operator =(const A
 
   if(jsonValue.ValueExists("Summaries"))
   {
-    Array<JsonView> summariesJsonList = jsonValue.GetArray("Summaries");
+    Aws::Utils::Array<JsonView> summariesJsonList = jsonValue.GetArray("Summaries");
     for(unsigned summariesIndex = 0; summariesIndex < summariesJsonList.GetLength(); ++summariesIndex)
     {
       m_summaries.push_back(summariesJsonList[summariesIndex].AsObject());

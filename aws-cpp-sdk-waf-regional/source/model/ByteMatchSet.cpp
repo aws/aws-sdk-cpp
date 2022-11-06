@@ -51,7 +51,7 @@ ByteMatchSet& ByteMatchSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ByteMatchTuples"))
   {
-    Array<JsonView> byteMatchTuplesJsonList = jsonValue.GetArray("ByteMatchTuples");
+    Aws::Utils::Array<JsonView> byteMatchTuplesJsonList = jsonValue.GetArray("ByteMatchTuples");
     for(unsigned byteMatchTuplesIndex = 0; byteMatchTuplesIndex < byteMatchTuplesJsonList.GetLength(); ++byteMatchTuplesIndex)
     {
       m_byteMatchTuples.push_back(byteMatchTuplesJsonList[byteMatchTuplesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue ByteMatchSet::Jsonize() const
 
   if(m_byteMatchTuplesHasBeenSet)
   {
-   Array<JsonValue> byteMatchTuplesJsonList(m_byteMatchTuples.size());
+   Aws::Utils::Array<JsonValue> byteMatchTuplesJsonList(m_byteMatchTuples.size());
    for(unsigned byteMatchTuplesIndex = 0; byteMatchTuplesIndex < byteMatchTuplesJsonList.GetLength(); ++byteMatchTuplesIndex)
    {
      byteMatchTuplesJsonList[byteMatchTuplesIndex].AsObject(m_byteMatchTuples[byteMatchTuplesIndex].Jsonize());

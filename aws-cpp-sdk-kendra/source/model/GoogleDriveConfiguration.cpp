@@ -52,7 +52,7 @@ GoogleDriveConfiguration& GoogleDriveConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
-    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
     for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
     {
       m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
@@ -62,7 +62,7 @@ GoogleDriveConfiguration& GoogleDriveConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
-    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
     for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
     {
       m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
@@ -72,7 +72,7 @@ GoogleDriveConfiguration& GoogleDriveConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("FieldMappings"))
   {
-    Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
+    Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
     for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
     {
       m_fieldMappings.push_back(fieldMappingsJsonList[fieldMappingsIndex].AsObject());
@@ -82,7 +82,7 @@ GoogleDriveConfiguration& GoogleDriveConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ExcludeMimeTypes"))
   {
-    Array<JsonView> excludeMimeTypesJsonList = jsonValue.GetArray("ExcludeMimeTypes");
+    Aws::Utils::Array<JsonView> excludeMimeTypesJsonList = jsonValue.GetArray("ExcludeMimeTypes");
     for(unsigned excludeMimeTypesIndex = 0; excludeMimeTypesIndex < excludeMimeTypesJsonList.GetLength(); ++excludeMimeTypesIndex)
     {
       m_excludeMimeTypes.push_back(excludeMimeTypesJsonList[excludeMimeTypesIndex].AsString());
@@ -92,7 +92,7 @@ GoogleDriveConfiguration& GoogleDriveConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ExcludeUserAccounts"))
   {
-    Array<JsonView> excludeUserAccountsJsonList = jsonValue.GetArray("ExcludeUserAccounts");
+    Aws::Utils::Array<JsonView> excludeUserAccountsJsonList = jsonValue.GetArray("ExcludeUserAccounts");
     for(unsigned excludeUserAccountsIndex = 0; excludeUserAccountsIndex < excludeUserAccountsJsonList.GetLength(); ++excludeUserAccountsIndex)
     {
       m_excludeUserAccounts.push_back(excludeUserAccountsJsonList[excludeUserAccountsIndex].AsString());
@@ -102,7 +102,7 @@ GoogleDriveConfiguration& GoogleDriveConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ExcludeSharedDrives"))
   {
-    Array<JsonView> excludeSharedDrivesJsonList = jsonValue.GetArray("ExcludeSharedDrives");
+    Aws::Utils::Array<JsonView> excludeSharedDrivesJsonList = jsonValue.GetArray("ExcludeSharedDrives");
     for(unsigned excludeSharedDrivesIndex = 0; excludeSharedDrivesIndex < excludeSharedDrivesJsonList.GetLength(); ++excludeSharedDrivesIndex)
     {
       m_excludeSharedDrives.push_back(excludeSharedDrivesJsonList[excludeSharedDrivesIndex].AsString());
@@ -125,7 +125,7 @@ JsonValue GoogleDriveConfiguration::Jsonize() const
 
   if(m_inclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
    {
      inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
@@ -136,7 +136,7 @@ JsonValue GoogleDriveConfiguration::Jsonize() const
 
   if(m_exclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
    {
      exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);
@@ -147,7 +147,7 @@ JsonValue GoogleDriveConfiguration::Jsonize() const
 
   if(m_fieldMappingsHasBeenSet)
   {
-   Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
+   Aws::Utils::Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
    for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
    {
      fieldMappingsJsonList[fieldMappingsIndex].AsObject(m_fieldMappings[fieldMappingsIndex].Jsonize());
@@ -158,7 +158,7 @@ JsonValue GoogleDriveConfiguration::Jsonize() const
 
   if(m_excludeMimeTypesHasBeenSet)
   {
-   Array<JsonValue> excludeMimeTypesJsonList(m_excludeMimeTypes.size());
+   Aws::Utils::Array<JsonValue> excludeMimeTypesJsonList(m_excludeMimeTypes.size());
    for(unsigned excludeMimeTypesIndex = 0; excludeMimeTypesIndex < excludeMimeTypesJsonList.GetLength(); ++excludeMimeTypesIndex)
    {
      excludeMimeTypesJsonList[excludeMimeTypesIndex].AsString(m_excludeMimeTypes[excludeMimeTypesIndex]);
@@ -169,7 +169,7 @@ JsonValue GoogleDriveConfiguration::Jsonize() const
 
   if(m_excludeUserAccountsHasBeenSet)
   {
-   Array<JsonValue> excludeUserAccountsJsonList(m_excludeUserAccounts.size());
+   Aws::Utils::Array<JsonValue> excludeUserAccountsJsonList(m_excludeUserAccounts.size());
    for(unsigned excludeUserAccountsIndex = 0; excludeUserAccountsIndex < excludeUserAccountsJsonList.GetLength(); ++excludeUserAccountsIndex)
    {
      excludeUserAccountsJsonList[excludeUserAccountsIndex].AsString(m_excludeUserAccounts[excludeUserAccountsIndex]);
@@ -180,7 +180,7 @@ JsonValue GoogleDriveConfiguration::Jsonize() const
 
   if(m_excludeSharedDrivesHasBeenSet)
   {
-   Array<JsonValue> excludeSharedDrivesJsonList(m_excludeSharedDrives.size());
+   Aws::Utils::Array<JsonValue> excludeSharedDrivesJsonList(m_excludeSharedDrives.size());
    for(unsigned excludeSharedDrivesIndex = 0; excludeSharedDrivesIndex < excludeSharedDrivesJsonList.GetLength(); ++excludeSharedDrivesIndex)
    {
      excludeSharedDrivesJsonList[excludeSharedDrivesIndex].AsString(m_excludeSharedDrives[excludeSharedDrivesIndex]);

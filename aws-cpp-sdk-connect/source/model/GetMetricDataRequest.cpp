@@ -47,7 +47,7 @@ Aws::String GetMetricDataRequest::SerializePayload() const
 
   if(m_groupingsHasBeenSet)
   {
-   Array<JsonValue> groupingsJsonList(m_groupings.size());
+   Aws::Utils::Array<JsonValue> groupingsJsonList(m_groupings.size());
    for(unsigned groupingsIndex = 0; groupingsIndex < groupingsJsonList.GetLength(); ++groupingsIndex)
    {
      groupingsJsonList[groupingsIndex].AsString(GroupingMapper::GetNameForGrouping(m_groupings[groupingsIndex]));
@@ -58,7 +58,7 @@ Aws::String GetMetricDataRequest::SerializePayload() const
 
   if(m_historicalMetricsHasBeenSet)
   {
-   Array<JsonValue> historicalMetricsJsonList(m_historicalMetrics.size());
+   Aws::Utils::Array<JsonValue> historicalMetricsJsonList(m_historicalMetrics.size());
    for(unsigned historicalMetricsIndex = 0; historicalMetricsIndex < historicalMetricsJsonList.GetLength(); ++historicalMetricsIndex)
    {
      historicalMetricsJsonList[historicalMetricsIndex].AsObject(m_historicalMetrics[historicalMetricsIndex].Jsonize());

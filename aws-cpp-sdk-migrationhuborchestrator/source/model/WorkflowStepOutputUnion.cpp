@@ -53,7 +53,7 @@ WorkflowStepOutputUnion& WorkflowStepOutputUnion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("listOfStringValue"))
   {
-    Array<JsonView> listOfStringValueJsonList = jsonValue.GetArray("listOfStringValue");
+    Aws::Utils::Array<JsonView> listOfStringValueJsonList = jsonValue.GetArray("listOfStringValue");
     for(unsigned listOfStringValueIndex = 0; listOfStringValueIndex < listOfStringValueJsonList.GetLength(); ++listOfStringValueIndex)
     {
       m_listOfStringValue.push_back(listOfStringValueJsonList[listOfStringValueIndex].AsString());
@@ -82,7 +82,7 @@ JsonValue WorkflowStepOutputUnion::Jsonize() const
 
   if(m_listOfStringValueHasBeenSet)
   {
-   Array<JsonValue> listOfStringValueJsonList(m_listOfStringValue.size());
+   Aws::Utils::Array<JsonValue> listOfStringValueJsonList(m_listOfStringValue.size());
    for(unsigned listOfStringValueIndex = 0; listOfStringValueIndex < listOfStringValueJsonList.GetLength(); ++listOfStringValueIndex)
    {
      listOfStringValueJsonList[listOfStringValueIndex].AsString(m_listOfStringValue[listOfStringValueIndex]);

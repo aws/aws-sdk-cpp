@@ -30,7 +30,7 @@ GetBucketAccessKeysResult& GetBucketAccessKeysResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("accessKeys"))
   {
-    Array<JsonView> accessKeysJsonList = jsonValue.GetArray("accessKeys");
+    Aws::Utils::Array<JsonView> accessKeysJsonList = jsonValue.GetArray("accessKeys");
     for(unsigned accessKeysIndex = 0; accessKeysIndex < accessKeysJsonList.GetLength(); ++accessKeysIndex)
     {
       m_accessKeys.push_back(accessKeysJsonList[accessKeysIndex].AsObject());

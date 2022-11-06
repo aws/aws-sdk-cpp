@@ -44,7 +44,7 @@ NodeOverrides& NodeOverrides::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("nodePropertyOverrides"))
   {
-    Array<JsonView> nodePropertyOverridesJsonList = jsonValue.GetArray("nodePropertyOverrides");
+    Aws::Utils::Array<JsonView> nodePropertyOverridesJsonList = jsonValue.GetArray("nodePropertyOverrides");
     for(unsigned nodePropertyOverridesIndex = 0; nodePropertyOverridesIndex < nodePropertyOverridesJsonList.GetLength(); ++nodePropertyOverridesIndex)
     {
       m_nodePropertyOverrides.push_back(nodePropertyOverridesJsonList[nodePropertyOverridesIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue NodeOverrides::Jsonize() const
 
   if(m_nodePropertyOverridesHasBeenSet)
   {
-   Array<JsonValue> nodePropertyOverridesJsonList(m_nodePropertyOverrides.size());
+   Aws::Utils::Array<JsonValue> nodePropertyOverridesJsonList(m_nodePropertyOverrides.size());
    for(unsigned nodePropertyOverridesIndex = 0; nodePropertyOverridesIndex < nodePropertyOverridesJsonList.GetLength(); ++nodePropertyOverridesIndex)
    {
      nodePropertyOverridesJsonList[nodePropertyOverridesIndex].AsObject(m_nodePropertyOverrides[nodePropertyOverridesIndex].Jsonize());

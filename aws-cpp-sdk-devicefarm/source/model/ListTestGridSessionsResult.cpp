@@ -30,7 +30,7 @@ ListTestGridSessionsResult& ListTestGridSessionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("testGridSessions"))
   {
-    Array<JsonView> testGridSessionsJsonList = jsonValue.GetArray("testGridSessions");
+    Aws::Utils::Array<JsonView> testGridSessionsJsonList = jsonValue.GetArray("testGridSessions");
     for(unsigned testGridSessionsIndex = 0; testGridSessionsIndex < testGridSessionsJsonList.GetLength(); ++testGridSessionsIndex)
     {
       m_testGridSessions.push_back(testGridSessionsJsonList[testGridSessionsIndex].AsObject());

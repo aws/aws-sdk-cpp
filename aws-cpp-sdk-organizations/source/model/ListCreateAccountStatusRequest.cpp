@@ -26,7 +26,7 @@ Aws::String ListCreateAccountStatusRequest::SerializePayload() const
 
   if(m_statesHasBeenSet)
   {
-   Array<JsonValue> statesJsonList(m_states.size());
+   Aws::Utils::Array<JsonValue> statesJsonList(m_states.size());
    for(unsigned statesIndex = 0; statesIndex < statesJsonList.GetLength(); ++statesIndex)
    {
      statesJsonList[statesIndex].AsString(CreateAccountStateMapper::GetNameForCreateAccountState(m_states[statesIndex]));

@@ -42,7 +42,7 @@ MultiMeasureMappings& MultiMeasureMappings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MultiMeasureAttributeMappings"))
   {
-    Array<JsonView> multiMeasureAttributeMappingsJsonList = jsonValue.GetArray("MultiMeasureAttributeMappings");
+    Aws::Utils::Array<JsonView> multiMeasureAttributeMappingsJsonList = jsonValue.GetArray("MultiMeasureAttributeMappings");
     for(unsigned multiMeasureAttributeMappingsIndex = 0; multiMeasureAttributeMappingsIndex < multiMeasureAttributeMappingsJsonList.GetLength(); ++multiMeasureAttributeMappingsIndex)
     {
       m_multiMeasureAttributeMappings.push_back(multiMeasureAttributeMappingsJsonList[multiMeasureAttributeMappingsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue MultiMeasureMappings::Jsonize() const
 
   if(m_multiMeasureAttributeMappingsHasBeenSet)
   {
-   Array<JsonValue> multiMeasureAttributeMappingsJsonList(m_multiMeasureAttributeMappings.size());
+   Aws::Utils::Array<JsonValue> multiMeasureAttributeMappingsJsonList(m_multiMeasureAttributeMappings.size());
    for(unsigned multiMeasureAttributeMappingsIndex = 0; multiMeasureAttributeMappingsIndex < multiMeasureAttributeMappingsJsonList.GetLength(); ++multiMeasureAttributeMappingsIndex)
    {
      multiMeasureAttributeMappingsJsonList[multiMeasureAttributeMappingsIndex].AsObject(m_multiMeasureAttributeMappings[multiMeasureAttributeMappingsIndex].Jsonize());

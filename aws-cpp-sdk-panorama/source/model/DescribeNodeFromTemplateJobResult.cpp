@@ -46,7 +46,7 @@ DescribeNodeFromTemplateJobResult& DescribeNodeFromTemplateJobResult::operator =
 
   if(jsonValue.ValueExists("JobTags"))
   {
-    Array<JsonView> jobTagsJsonList = jsonValue.GetArray("JobTags");
+    Aws::Utils::Array<JsonView> jobTagsJsonList = jsonValue.GetArray("JobTags");
     for(unsigned jobTagsIndex = 0; jobTagsIndex < jobTagsJsonList.GetLength(); ++jobTagsIndex)
     {
       m_jobTags.push_back(jobTagsJsonList[jobTagsIndex].AsObject());

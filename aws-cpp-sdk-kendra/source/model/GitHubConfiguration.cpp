@@ -121,7 +121,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RepositoryFilter"))
   {
-    Array<JsonView> repositoryFilterJsonList = jsonValue.GetArray("RepositoryFilter");
+    Aws::Utils::Array<JsonView> repositoryFilterJsonList = jsonValue.GetArray("RepositoryFilter");
     for(unsigned repositoryFilterIndex = 0; repositoryFilterIndex < repositoryFilterJsonList.GetLength(); ++repositoryFilterIndex)
     {
       m_repositoryFilter.push_back(repositoryFilterJsonList[repositoryFilterIndex].AsString());
@@ -131,7 +131,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionFolderNamePatterns"))
   {
-    Array<JsonView> inclusionFolderNamePatternsJsonList = jsonValue.GetArray("InclusionFolderNamePatterns");
+    Aws::Utils::Array<JsonView> inclusionFolderNamePatternsJsonList = jsonValue.GetArray("InclusionFolderNamePatterns");
     for(unsigned inclusionFolderNamePatternsIndex = 0; inclusionFolderNamePatternsIndex < inclusionFolderNamePatternsJsonList.GetLength(); ++inclusionFolderNamePatternsIndex)
     {
       m_inclusionFolderNamePatterns.push_back(inclusionFolderNamePatternsJsonList[inclusionFolderNamePatternsIndex].AsString());
@@ -141,7 +141,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionFileTypePatterns"))
   {
-    Array<JsonView> inclusionFileTypePatternsJsonList = jsonValue.GetArray("InclusionFileTypePatterns");
+    Aws::Utils::Array<JsonView> inclusionFileTypePatternsJsonList = jsonValue.GetArray("InclusionFileTypePatterns");
     for(unsigned inclusionFileTypePatternsIndex = 0; inclusionFileTypePatternsIndex < inclusionFileTypePatternsJsonList.GetLength(); ++inclusionFileTypePatternsIndex)
     {
       m_inclusionFileTypePatterns.push_back(inclusionFileTypePatternsJsonList[inclusionFileTypePatternsIndex].AsString());
@@ -151,7 +151,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionFileNamePatterns"))
   {
-    Array<JsonView> inclusionFileNamePatternsJsonList = jsonValue.GetArray("InclusionFileNamePatterns");
+    Aws::Utils::Array<JsonView> inclusionFileNamePatternsJsonList = jsonValue.GetArray("InclusionFileNamePatterns");
     for(unsigned inclusionFileNamePatternsIndex = 0; inclusionFileNamePatternsIndex < inclusionFileNamePatternsJsonList.GetLength(); ++inclusionFileNamePatternsIndex)
     {
       m_inclusionFileNamePatterns.push_back(inclusionFileNamePatternsJsonList[inclusionFileNamePatternsIndex].AsString());
@@ -161,7 +161,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionFolderNamePatterns"))
   {
-    Array<JsonView> exclusionFolderNamePatternsJsonList = jsonValue.GetArray("ExclusionFolderNamePatterns");
+    Aws::Utils::Array<JsonView> exclusionFolderNamePatternsJsonList = jsonValue.GetArray("ExclusionFolderNamePatterns");
     for(unsigned exclusionFolderNamePatternsIndex = 0; exclusionFolderNamePatternsIndex < exclusionFolderNamePatternsJsonList.GetLength(); ++exclusionFolderNamePatternsIndex)
     {
       m_exclusionFolderNamePatterns.push_back(exclusionFolderNamePatternsJsonList[exclusionFolderNamePatternsIndex].AsString());
@@ -171,7 +171,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionFileTypePatterns"))
   {
-    Array<JsonView> exclusionFileTypePatternsJsonList = jsonValue.GetArray("ExclusionFileTypePatterns");
+    Aws::Utils::Array<JsonView> exclusionFileTypePatternsJsonList = jsonValue.GetArray("ExclusionFileTypePatterns");
     for(unsigned exclusionFileTypePatternsIndex = 0; exclusionFileTypePatternsIndex < exclusionFileTypePatternsJsonList.GetLength(); ++exclusionFileTypePatternsIndex)
     {
       m_exclusionFileTypePatterns.push_back(exclusionFileTypePatternsJsonList[exclusionFileTypePatternsIndex].AsString());
@@ -181,7 +181,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionFileNamePatterns"))
   {
-    Array<JsonView> exclusionFileNamePatternsJsonList = jsonValue.GetArray("ExclusionFileNamePatterns");
+    Aws::Utils::Array<JsonView> exclusionFileNamePatternsJsonList = jsonValue.GetArray("ExclusionFileNamePatterns");
     for(unsigned exclusionFileNamePatternsIndex = 0; exclusionFileNamePatternsIndex < exclusionFileNamePatternsJsonList.GetLength(); ++exclusionFileNamePatternsIndex)
     {
       m_exclusionFileNamePatterns.push_back(exclusionFileNamePatternsJsonList[exclusionFileNamePatternsIndex].AsString());
@@ -198,7 +198,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GitHubRepositoryConfigurationFieldMappings"))
   {
-    Array<JsonView> gitHubRepositoryConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubRepositoryConfigurationFieldMappings");
+    Aws::Utils::Array<JsonView> gitHubRepositoryConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubRepositoryConfigurationFieldMappings");
     for(unsigned gitHubRepositoryConfigurationFieldMappingsIndex = 0; gitHubRepositoryConfigurationFieldMappingsIndex < gitHubRepositoryConfigurationFieldMappingsJsonList.GetLength(); ++gitHubRepositoryConfigurationFieldMappingsIndex)
     {
       m_gitHubRepositoryConfigurationFieldMappings.push_back(gitHubRepositoryConfigurationFieldMappingsJsonList[gitHubRepositoryConfigurationFieldMappingsIndex].AsObject());
@@ -208,7 +208,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GitHubCommitConfigurationFieldMappings"))
   {
-    Array<JsonView> gitHubCommitConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubCommitConfigurationFieldMappings");
+    Aws::Utils::Array<JsonView> gitHubCommitConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubCommitConfigurationFieldMappings");
     for(unsigned gitHubCommitConfigurationFieldMappingsIndex = 0; gitHubCommitConfigurationFieldMappingsIndex < gitHubCommitConfigurationFieldMappingsJsonList.GetLength(); ++gitHubCommitConfigurationFieldMappingsIndex)
     {
       m_gitHubCommitConfigurationFieldMappings.push_back(gitHubCommitConfigurationFieldMappingsJsonList[gitHubCommitConfigurationFieldMappingsIndex].AsObject());
@@ -218,7 +218,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GitHubIssueDocumentConfigurationFieldMappings"))
   {
-    Array<JsonView> gitHubIssueDocumentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubIssueDocumentConfigurationFieldMappings");
+    Aws::Utils::Array<JsonView> gitHubIssueDocumentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubIssueDocumentConfigurationFieldMappings");
     for(unsigned gitHubIssueDocumentConfigurationFieldMappingsIndex = 0; gitHubIssueDocumentConfigurationFieldMappingsIndex < gitHubIssueDocumentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubIssueDocumentConfigurationFieldMappingsIndex)
     {
       m_gitHubIssueDocumentConfigurationFieldMappings.push_back(gitHubIssueDocumentConfigurationFieldMappingsJsonList[gitHubIssueDocumentConfigurationFieldMappingsIndex].AsObject());
@@ -228,7 +228,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GitHubIssueCommentConfigurationFieldMappings"))
   {
-    Array<JsonView> gitHubIssueCommentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubIssueCommentConfigurationFieldMappings");
+    Aws::Utils::Array<JsonView> gitHubIssueCommentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubIssueCommentConfigurationFieldMappings");
     for(unsigned gitHubIssueCommentConfigurationFieldMappingsIndex = 0; gitHubIssueCommentConfigurationFieldMappingsIndex < gitHubIssueCommentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubIssueCommentConfigurationFieldMappingsIndex)
     {
       m_gitHubIssueCommentConfigurationFieldMappings.push_back(gitHubIssueCommentConfigurationFieldMappingsJsonList[gitHubIssueCommentConfigurationFieldMappingsIndex].AsObject());
@@ -238,7 +238,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GitHubIssueAttachmentConfigurationFieldMappings"))
   {
-    Array<JsonView> gitHubIssueAttachmentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubIssueAttachmentConfigurationFieldMappings");
+    Aws::Utils::Array<JsonView> gitHubIssueAttachmentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubIssueAttachmentConfigurationFieldMappings");
     for(unsigned gitHubIssueAttachmentConfigurationFieldMappingsIndex = 0; gitHubIssueAttachmentConfigurationFieldMappingsIndex < gitHubIssueAttachmentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubIssueAttachmentConfigurationFieldMappingsIndex)
     {
       m_gitHubIssueAttachmentConfigurationFieldMappings.push_back(gitHubIssueAttachmentConfigurationFieldMappingsJsonList[gitHubIssueAttachmentConfigurationFieldMappingsIndex].AsObject());
@@ -248,7 +248,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GitHubPullRequestCommentConfigurationFieldMappings"))
   {
-    Array<JsonView> gitHubPullRequestCommentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubPullRequestCommentConfigurationFieldMappings");
+    Aws::Utils::Array<JsonView> gitHubPullRequestCommentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubPullRequestCommentConfigurationFieldMappings");
     for(unsigned gitHubPullRequestCommentConfigurationFieldMappingsIndex = 0; gitHubPullRequestCommentConfigurationFieldMappingsIndex < gitHubPullRequestCommentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubPullRequestCommentConfigurationFieldMappingsIndex)
     {
       m_gitHubPullRequestCommentConfigurationFieldMappings.push_back(gitHubPullRequestCommentConfigurationFieldMappingsJsonList[gitHubPullRequestCommentConfigurationFieldMappingsIndex].AsObject());
@@ -258,7 +258,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GitHubPullRequestDocumentConfigurationFieldMappings"))
   {
-    Array<JsonView> gitHubPullRequestDocumentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubPullRequestDocumentConfigurationFieldMappings");
+    Aws::Utils::Array<JsonView> gitHubPullRequestDocumentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubPullRequestDocumentConfigurationFieldMappings");
     for(unsigned gitHubPullRequestDocumentConfigurationFieldMappingsIndex = 0; gitHubPullRequestDocumentConfigurationFieldMappingsIndex < gitHubPullRequestDocumentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubPullRequestDocumentConfigurationFieldMappingsIndex)
     {
       m_gitHubPullRequestDocumentConfigurationFieldMappings.push_back(gitHubPullRequestDocumentConfigurationFieldMappingsJsonList[gitHubPullRequestDocumentConfigurationFieldMappingsIndex].AsObject());
@@ -268,7 +268,7 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings"))
   {
-    Array<JsonView> gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings");
+    Aws::Utils::Array<JsonView> gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings");
     for(unsigned gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsIndex = 0; gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsIndex < gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsIndex)
     {
       m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings.push_back(gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsJsonList[gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsIndex].AsObject());
@@ -320,7 +320,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_repositoryFilterHasBeenSet)
   {
-   Array<JsonValue> repositoryFilterJsonList(m_repositoryFilter.size());
+   Aws::Utils::Array<JsonValue> repositoryFilterJsonList(m_repositoryFilter.size());
    for(unsigned repositoryFilterIndex = 0; repositoryFilterIndex < repositoryFilterJsonList.GetLength(); ++repositoryFilterIndex)
    {
      repositoryFilterJsonList[repositoryFilterIndex].AsString(m_repositoryFilter[repositoryFilterIndex]);
@@ -331,7 +331,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_inclusionFolderNamePatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionFolderNamePatternsJsonList(m_inclusionFolderNamePatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionFolderNamePatternsJsonList(m_inclusionFolderNamePatterns.size());
    for(unsigned inclusionFolderNamePatternsIndex = 0; inclusionFolderNamePatternsIndex < inclusionFolderNamePatternsJsonList.GetLength(); ++inclusionFolderNamePatternsIndex)
    {
      inclusionFolderNamePatternsJsonList[inclusionFolderNamePatternsIndex].AsString(m_inclusionFolderNamePatterns[inclusionFolderNamePatternsIndex]);
@@ -342,7 +342,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_inclusionFileTypePatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionFileTypePatternsJsonList(m_inclusionFileTypePatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionFileTypePatternsJsonList(m_inclusionFileTypePatterns.size());
    for(unsigned inclusionFileTypePatternsIndex = 0; inclusionFileTypePatternsIndex < inclusionFileTypePatternsJsonList.GetLength(); ++inclusionFileTypePatternsIndex)
    {
      inclusionFileTypePatternsJsonList[inclusionFileTypePatternsIndex].AsString(m_inclusionFileTypePatterns[inclusionFileTypePatternsIndex]);
@@ -353,7 +353,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_inclusionFileNamePatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionFileNamePatternsJsonList(m_inclusionFileNamePatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionFileNamePatternsJsonList(m_inclusionFileNamePatterns.size());
    for(unsigned inclusionFileNamePatternsIndex = 0; inclusionFileNamePatternsIndex < inclusionFileNamePatternsJsonList.GetLength(); ++inclusionFileNamePatternsIndex)
    {
      inclusionFileNamePatternsJsonList[inclusionFileNamePatternsIndex].AsString(m_inclusionFileNamePatterns[inclusionFileNamePatternsIndex]);
@@ -364,7 +364,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_exclusionFolderNamePatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionFolderNamePatternsJsonList(m_exclusionFolderNamePatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionFolderNamePatternsJsonList(m_exclusionFolderNamePatterns.size());
    for(unsigned exclusionFolderNamePatternsIndex = 0; exclusionFolderNamePatternsIndex < exclusionFolderNamePatternsJsonList.GetLength(); ++exclusionFolderNamePatternsIndex)
    {
      exclusionFolderNamePatternsJsonList[exclusionFolderNamePatternsIndex].AsString(m_exclusionFolderNamePatterns[exclusionFolderNamePatternsIndex]);
@@ -375,7 +375,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_exclusionFileTypePatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionFileTypePatternsJsonList(m_exclusionFileTypePatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionFileTypePatternsJsonList(m_exclusionFileTypePatterns.size());
    for(unsigned exclusionFileTypePatternsIndex = 0; exclusionFileTypePatternsIndex < exclusionFileTypePatternsJsonList.GetLength(); ++exclusionFileTypePatternsIndex)
    {
      exclusionFileTypePatternsJsonList[exclusionFileTypePatternsIndex].AsString(m_exclusionFileTypePatterns[exclusionFileTypePatternsIndex]);
@@ -386,7 +386,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_exclusionFileNamePatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionFileNamePatternsJsonList(m_exclusionFileNamePatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionFileNamePatternsJsonList(m_exclusionFileNamePatterns.size());
    for(unsigned exclusionFileNamePatternsIndex = 0; exclusionFileNamePatternsIndex < exclusionFileNamePatternsJsonList.GetLength(); ++exclusionFileNamePatternsIndex)
    {
      exclusionFileNamePatternsJsonList[exclusionFileNamePatternsIndex].AsString(m_exclusionFileNamePatterns[exclusionFileNamePatternsIndex]);
@@ -403,7 +403,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> gitHubRepositoryConfigurationFieldMappingsJsonList(m_gitHubRepositoryConfigurationFieldMappings.size());
+   Aws::Utils::Array<JsonValue> gitHubRepositoryConfigurationFieldMappingsJsonList(m_gitHubRepositoryConfigurationFieldMappings.size());
    for(unsigned gitHubRepositoryConfigurationFieldMappingsIndex = 0; gitHubRepositoryConfigurationFieldMappingsIndex < gitHubRepositoryConfigurationFieldMappingsJsonList.GetLength(); ++gitHubRepositoryConfigurationFieldMappingsIndex)
    {
      gitHubRepositoryConfigurationFieldMappingsJsonList[gitHubRepositoryConfigurationFieldMappingsIndex].AsObject(m_gitHubRepositoryConfigurationFieldMappings[gitHubRepositoryConfigurationFieldMappingsIndex].Jsonize());
@@ -414,7 +414,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_gitHubCommitConfigurationFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> gitHubCommitConfigurationFieldMappingsJsonList(m_gitHubCommitConfigurationFieldMappings.size());
+   Aws::Utils::Array<JsonValue> gitHubCommitConfigurationFieldMappingsJsonList(m_gitHubCommitConfigurationFieldMappings.size());
    for(unsigned gitHubCommitConfigurationFieldMappingsIndex = 0; gitHubCommitConfigurationFieldMappingsIndex < gitHubCommitConfigurationFieldMappingsJsonList.GetLength(); ++gitHubCommitConfigurationFieldMappingsIndex)
    {
      gitHubCommitConfigurationFieldMappingsJsonList[gitHubCommitConfigurationFieldMappingsIndex].AsObject(m_gitHubCommitConfigurationFieldMappings[gitHubCommitConfigurationFieldMappingsIndex].Jsonize());
@@ -425,7 +425,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> gitHubIssueDocumentConfigurationFieldMappingsJsonList(m_gitHubIssueDocumentConfigurationFieldMappings.size());
+   Aws::Utils::Array<JsonValue> gitHubIssueDocumentConfigurationFieldMappingsJsonList(m_gitHubIssueDocumentConfigurationFieldMappings.size());
    for(unsigned gitHubIssueDocumentConfigurationFieldMappingsIndex = 0; gitHubIssueDocumentConfigurationFieldMappingsIndex < gitHubIssueDocumentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubIssueDocumentConfigurationFieldMappingsIndex)
    {
      gitHubIssueDocumentConfigurationFieldMappingsJsonList[gitHubIssueDocumentConfigurationFieldMappingsIndex].AsObject(m_gitHubIssueDocumentConfigurationFieldMappings[gitHubIssueDocumentConfigurationFieldMappingsIndex].Jsonize());
@@ -436,7 +436,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> gitHubIssueCommentConfigurationFieldMappingsJsonList(m_gitHubIssueCommentConfigurationFieldMappings.size());
+   Aws::Utils::Array<JsonValue> gitHubIssueCommentConfigurationFieldMappingsJsonList(m_gitHubIssueCommentConfigurationFieldMappings.size());
    for(unsigned gitHubIssueCommentConfigurationFieldMappingsIndex = 0; gitHubIssueCommentConfigurationFieldMappingsIndex < gitHubIssueCommentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubIssueCommentConfigurationFieldMappingsIndex)
    {
      gitHubIssueCommentConfigurationFieldMappingsJsonList[gitHubIssueCommentConfigurationFieldMappingsIndex].AsObject(m_gitHubIssueCommentConfigurationFieldMappings[gitHubIssueCommentConfigurationFieldMappingsIndex].Jsonize());
@@ -447,7 +447,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> gitHubIssueAttachmentConfigurationFieldMappingsJsonList(m_gitHubIssueAttachmentConfigurationFieldMappings.size());
+   Aws::Utils::Array<JsonValue> gitHubIssueAttachmentConfigurationFieldMappingsJsonList(m_gitHubIssueAttachmentConfigurationFieldMappings.size());
    for(unsigned gitHubIssueAttachmentConfigurationFieldMappingsIndex = 0; gitHubIssueAttachmentConfigurationFieldMappingsIndex < gitHubIssueAttachmentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubIssueAttachmentConfigurationFieldMappingsIndex)
    {
      gitHubIssueAttachmentConfigurationFieldMappingsJsonList[gitHubIssueAttachmentConfigurationFieldMappingsIndex].AsObject(m_gitHubIssueAttachmentConfigurationFieldMappings[gitHubIssueAttachmentConfigurationFieldMappingsIndex].Jsonize());
@@ -458,7 +458,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> gitHubPullRequestCommentConfigurationFieldMappingsJsonList(m_gitHubPullRequestCommentConfigurationFieldMappings.size());
+   Aws::Utils::Array<JsonValue> gitHubPullRequestCommentConfigurationFieldMappingsJsonList(m_gitHubPullRequestCommentConfigurationFieldMappings.size());
    for(unsigned gitHubPullRequestCommentConfigurationFieldMappingsIndex = 0; gitHubPullRequestCommentConfigurationFieldMappingsIndex < gitHubPullRequestCommentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubPullRequestCommentConfigurationFieldMappingsIndex)
    {
      gitHubPullRequestCommentConfigurationFieldMappingsJsonList[gitHubPullRequestCommentConfigurationFieldMappingsIndex].AsObject(m_gitHubPullRequestCommentConfigurationFieldMappings[gitHubPullRequestCommentConfigurationFieldMappingsIndex].Jsonize());
@@ -469,7 +469,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> gitHubPullRequestDocumentConfigurationFieldMappingsJsonList(m_gitHubPullRequestDocumentConfigurationFieldMappings.size());
+   Aws::Utils::Array<JsonValue> gitHubPullRequestDocumentConfigurationFieldMappingsJsonList(m_gitHubPullRequestDocumentConfigurationFieldMappings.size());
    for(unsigned gitHubPullRequestDocumentConfigurationFieldMappingsIndex = 0; gitHubPullRequestDocumentConfigurationFieldMappingsIndex < gitHubPullRequestDocumentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubPullRequestDocumentConfigurationFieldMappingsIndex)
    {
      gitHubPullRequestDocumentConfigurationFieldMappingsJsonList[gitHubPullRequestDocumentConfigurationFieldMappingsIndex].AsObject(m_gitHubPullRequestDocumentConfigurationFieldMappings[gitHubPullRequestDocumentConfigurationFieldMappingsIndex].Jsonize());
@@ -480,7 +480,7 @@ JsonValue GitHubConfiguration::Jsonize() const
 
   if(m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsJsonList(m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings.size());
+   Aws::Utils::Array<JsonValue> gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsJsonList(m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings.size());
    for(unsigned gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsIndex = 0; gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsIndex < gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsJsonList.GetLength(); ++gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsIndex)
    {
      gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsJsonList[gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsIndex].AsObject(m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings[gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsIndex].Jsonize());

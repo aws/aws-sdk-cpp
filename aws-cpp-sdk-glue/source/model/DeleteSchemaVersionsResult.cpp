@@ -30,7 +30,7 @@ DeleteSchemaVersionsResult& DeleteSchemaVersionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SchemaVersionErrors"))
   {
-    Array<JsonView> schemaVersionErrorsJsonList = jsonValue.GetArray("SchemaVersionErrors");
+    Aws::Utils::Array<JsonView> schemaVersionErrorsJsonList = jsonValue.GetArray("SchemaVersionErrors");
     for(unsigned schemaVersionErrorsIndex = 0; schemaVersionErrorsIndex < schemaVersionErrorsJsonList.GetLength(); ++schemaVersionErrorsIndex)
     {
       m_schemaVersionErrors.push_back(schemaVersionErrorsJsonList[schemaVersionErrorsIndex].AsObject());

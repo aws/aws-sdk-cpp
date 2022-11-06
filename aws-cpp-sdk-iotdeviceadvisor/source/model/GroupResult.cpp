@@ -51,7 +51,7 @@ GroupResult& GroupResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tests"))
   {
-    Array<JsonView> testsJsonList = jsonValue.GetArray("tests");
+    Aws::Utils::Array<JsonView> testsJsonList = jsonValue.GetArray("tests");
     for(unsigned testsIndex = 0; testsIndex < testsJsonList.GetLength(); ++testsIndex)
     {
       m_tests.push_back(testsJsonList[testsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue GroupResult::Jsonize() const
 
   if(m_testsHasBeenSet)
   {
-   Array<JsonValue> testsJsonList(m_tests.size());
+   Aws::Utils::Array<JsonValue> testsJsonList(m_tests.size());
    for(unsigned testsIndex = 0; testsIndex < testsJsonList.GetLength(); ++testsIndex)
    {
      testsJsonList[testsIndex].AsObject(m_tests[testsIndex].Jsonize());

@@ -30,7 +30,7 @@ DescribePullRequestEventsResult& DescribePullRequestEventsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pullRequestEvents"))
   {
-    Array<JsonView> pullRequestEventsJsonList = jsonValue.GetArray("pullRequestEvents");
+    Aws::Utils::Array<JsonView> pullRequestEventsJsonList = jsonValue.GetArray("pullRequestEvents");
     for(unsigned pullRequestEventsIndex = 0; pullRequestEventsIndex < pullRequestEventsJsonList.GetLength(); ++pullRequestEventsIndex)
     {
       m_pullRequestEvents.push_back(pullRequestEventsJsonList[pullRequestEventsIndex].AsObject());

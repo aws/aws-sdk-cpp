@@ -23,7 +23,7 @@ Aws::String StartAssociationsOnceRequest::SerializePayload() const
 
   if(m_associationIdsHasBeenSet)
   {
-   Array<JsonValue> associationIdsJsonList(m_associationIds.size());
+   Aws::Utils::Array<JsonValue> associationIdsJsonList(m_associationIds.size());
    for(unsigned associationIdsIndex = 0; associationIdsIndex < associationIdsJsonList.GetLength(); ++associationIdsIndex)
    {
      associationIdsJsonList[associationIdsIndex].AsString(m_associationIds[associationIdsIndex]);

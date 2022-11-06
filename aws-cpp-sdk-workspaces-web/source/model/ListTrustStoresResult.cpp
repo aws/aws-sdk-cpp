@@ -36,7 +36,7 @@ ListTrustStoresResult& ListTrustStoresResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("trustStores"))
   {
-    Array<JsonView> trustStoresJsonList = jsonValue.GetArray("trustStores");
+    Aws::Utils::Array<JsonView> trustStoresJsonList = jsonValue.GetArray("trustStores");
     for(unsigned trustStoresIndex = 0; trustStoresIndex < trustStoresJsonList.GetLength(); ++trustStoresIndex)
     {
       m_trustStores.push_back(trustStoresJsonList[trustStoresIndex].AsObject());

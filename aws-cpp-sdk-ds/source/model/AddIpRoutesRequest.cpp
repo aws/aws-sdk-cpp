@@ -32,7 +32,7 @@ Aws::String AddIpRoutesRequest::SerializePayload() const
 
   if(m_ipRoutesHasBeenSet)
   {
-   Array<JsonValue> ipRoutesJsonList(m_ipRoutes.size());
+   Aws::Utils::Array<JsonValue> ipRoutesJsonList(m_ipRoutes.size());
    for(unsigned ipRoutesIndex = 0; ipRoutesIndex < ipRoutesJsonList.GetLength(); ++ipRoutesIndex)
    {
      ipRoutesJsonList[ipRoutesIndex].AsObject(m_ipRoutes[ipRoutesIndex].Jsonize());

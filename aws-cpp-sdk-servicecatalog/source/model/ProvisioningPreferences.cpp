@@ -51,7 +51,7 @@ ProvisioningPreferences& ProvisioningPreferences::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StackSetAccounts"))
   {
-    Array<JsonView> stackSetAccountsJsonList = jsonValue.GetArray("StackSetAccounts");
+    Aws::Utils::Array<JsonView> stackSetAccountsJsonList = jsonValue.GetArray("StackSetAccounts");
     for(unsigned stackSetAccountsIndex = 0; stackSetAccountsIndex < stackSetAccountsJsonList.GetLength(); ++stackSetAccountsIndex)
     {
       m_stackSetAccounts.push_back(stackSetAccountsJsonList[stackSetAccountsIndex].AsString());
@@ -61,7 +61,7 @@ ProvisioningPreferences& ProvisioningPreferences::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StackSetRegions"))
   {
-    Array<JsonView> stackSetRegionsJsonList = jsonValue.GetArray("StackSetRegions");
+    Aws::Utils::Array<JsonView> stackSetRegionsJsonList = jsonValue.GetArray("StackSetRegions");
     for(unsigned stackSetRegionsIndex = 0; stackSetRegionsIndex < stackSetRegionsJsonList.GetLength(); ++stackSetRegionsIndex)
     {
       m_stackSetRegions.push_back(stackSetRegionsJsonList[stackSetRegionsIndex].AsString());
@@ -106,7 +106,7 @@ JsonValue ProvisioningPreferences::Jsonize() const
 
   if(m_stackSetAccountsHasBeenSet)
   {
-   Array<JsonValue> stackSetAccountsJsonList(m_stackSetAccounts.size());
+   Aws::Utils::Array<JsonValue> stackSetAccountsJsonList(m_stackSetAccounts.size());
    for(unsigned stackSetAccountsIndex = 0; stackSetAccountsIndex < stackSetAccountsJsonList.GetLength(); ++stackSetAccountsIndex)
    {
      stackSetAccountsJsonList[stackSetAccountsIndex].AsString(m_stackSetAccounts[stackSetAccountsIndex]);
@@ -117,7 +117,7 @@ JsonValue ProvisioningPreferences::Jsonize() const
 
   if(m_stackSetRegionsHasBeenSet)
   {
-   Array<JsonValue> stackSetRegionsJsonList(m_stackSetRegions.size());
+   Aws::Utils::Array<JsonValue> stackSetRegionsJsonList(m_stackSetRegions.size());
    for(unsigned stackSetRegionsIndex = 0; stackSetRegionsIndex < stackSetRegionsJsonList.GetLength(); ++stackSetRegionsIndex)
    {
      stackSetRegionsJsonList[stackSetRegionsIndex].AsString(m_stackSetRegions[stackSetRegionsIndex]);

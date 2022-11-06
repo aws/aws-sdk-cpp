@@ -42,7 +42,7 @@ DetectTextFilters& DetectTextFilters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RegionsOfInterest"))
   {
-    Array<JsonView> regionsOfInterestJsonList = jsonValue.GetArray("RegionsOfInterest");
+    Aws::Utils::Array<JsonView> regionsOfInterestJsonList = jsonValue.GetArray("RegionsOfInterest");
     for(unsigned regionsOfInterestIndex = 0; regionsOfInterestIndex < regionsOfInterestJsonList.GetLength(); ++regionsOfInterestIndex)
     {
       m_regionsOfInterest.push_back(regionsOfInterestJsonList[regionsOfInterestIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue DetectTextFilters::Jsonize() const
 
   if(m_regionsOfInterestHasBeenSet)
   {
-   Array<JsonValue> regionsOfInterestJsonList(m_regionsOfInterest.size());
+   Aws::Utils::Array<JsonValue> regionsOfInterestJsonList(m_regionsOfInterest.size());
    for(unsigned regionsOfInterestIndex = 0; regionsOfInterestIndex < regionsOfInterestJsonList.GetLength(); ++regionsOfInterestIndex)
    {
      regionsOfInterestJsonList[regionsOfInterestIndex].AsObject(m_regionsOfInterest[regionsOfInterestIndex].Jsonize());

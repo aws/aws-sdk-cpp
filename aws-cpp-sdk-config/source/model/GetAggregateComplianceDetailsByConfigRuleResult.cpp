@@ -30,7 +30,7 @@ GetAggregateComplianceDetailsByConfigRuleResult& GetAggregateComplianceDetailsBy
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AggregateEvaluationResults"))
   {
-    Array<JsonView> aggregateEvaluationResultsJsonList = jsonValue.GetArray("AggregateEvaluationResults");
+    Aws::Utils::Array<JsonView> aggregateEvaluationResultsJsonList = jsonValue.GetArray("AggregateEvaluationResults");
     for(unsigned aggregateEvaluationResultsIndex = 0; aggregateEvaluationResultsIndex < aggregateEvaluationResultsJsonList.GetLength(); ++aggregateEvaluationResultsIndex)
     {
       m_aggregateEvaluationResults.push_back(aggregateEvaluationResultsJsonList[aggregateEvaluationResultsIndex].AsObject());

@@ -36,7 +36,7 @@ ListSchemaVersionsResult& ListSchemaVersionsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("SchemaVersions"))
   {
-    Array<JsonView> schemaVersionsJsonList = jsonValue.GetArray("SchemaVersions");
+    Aws::Utils::Array<JsonView> schemaVersionsJsonList = jsonValue.GetArray("SchemaVersions");
     for(unsigned schemaVersionsIndex = 0; schemaVersionsIndex < schemaVersionsJsonList.GetLength(); ++schemaVersionsIndex)
     {
       m_schemaVersions.push_back(schemaVersionsJsonList[schemaVersionsIndex].AsObject());

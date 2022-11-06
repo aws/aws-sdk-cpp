@@ -30,7 +30,7 @@ ListEnvironmentsResult& ListEnvironmentsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("environments"))
   {
-    Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");
+    Aws::Utils::Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");
     for(unsigned environmentsIndex = 0; environmentsIndex < environmentsJsonList.GetLength(); ++environmentsIndex)
     {
       m_environments.push_back(environmentsJsonList[environmentsIndex].AsObject());

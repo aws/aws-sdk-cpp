@@ -23,7 +23,7 @@ Aws::String RebootWorkspacesRequest::SerializePayload() const
 
   if(m_rebootWorkspaceRequestsHasBeenSet)
   {
-   Array<JsonValue> rebootWorkspaceRequestsJsonList(m_rebootWorkspaceRequests.size());
+   Aws::Utils::Array<JsonValue> rebootWorkspaceRequestsJsonList(m_rebootWorkspaceRequests.size());
    for(unsigned rebootWorkspaceRequestsIndex = 0; rebootWorkspaceRequestsIndex < rebootWorkspaceRequestsJsonList.GetLength(); ++rebootWorkspaceRequestsIndex)
    {
      rebootWorkspaceRequestsJsonList[rebootWorkspaceRequestsIndex].AsObject(m_rebootWorkspaceRequests[rebootWorkspaceRequestsIndex].Jsonize());

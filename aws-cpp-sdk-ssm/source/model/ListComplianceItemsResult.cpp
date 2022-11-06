@@ -30,7 +30,7 @@ ListComplianceItemsResult& ListComplianceItemsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComplianceItems"))
   {
-    Array<JsonView> complianceItemsJsonList = jsonValue.GetArray("ComplianceItems");
+    Aws::Utils::Array<JsonView> complianceItemsJsonList = jsonValue.GetArray("ComplianceItems");
     for(unsigned complianceItemsIndex = 0; complianceItemsIndex < complianceItemsJsonList.GetLength(); ++complianceItemsIndex)
     {
       m_complianceItems.push_back(complianceItemsJsonList[complianceItemsIndex].AsObject());

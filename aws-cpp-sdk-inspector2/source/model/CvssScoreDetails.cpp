@@ -45,7 +45,7 @@ CvssScoreDetails& CvssScoreDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adjustments"))
   {
-    Array<JsonView> adjustmentsJsonList = jsonValue.GetArray("adjustments");
+    Aws::Utils::Array<JsonView> adjustmentsJsonList = jsonValue.GetArray("adjustments");
     for(unsigned adjustmentsIndex = 0; adjustmentsIndex < adjustmentsJsonList.GetLength(); ++adjustmentsIndex)
     {
       m_adjustments.push_back(adjustmentsJsonList[adjustmentsIndex].AsObject());
@@ -97,7 +97,7 @@ JsonValue CvssScoreDetails::Jsonize() const
 
   if(m_adjustmentsHasBeenSet)
   {
-   Array<JsonValue> adjustmentsJsonList(m_adjustments.size());
+   Aws::Utils::Array<JsonValue> adjustmentsJsonList(m_adjustments.size());
    for(unsigned adjustmentsIndex = 0; adjustmentsIndex < adjustmentsJsonList.GetLength(); ++adjustmentsIndex)
    {
      adjustmentsJsonList[adjustmentsIndex].AsObject(m_adjustments[adjustmentsIndex].Jsonize());

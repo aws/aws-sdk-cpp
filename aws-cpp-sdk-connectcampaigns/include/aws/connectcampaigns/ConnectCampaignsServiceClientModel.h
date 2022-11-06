@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/connectcampaigns/ConnectCampaignsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/connectcampaigns/ConnectCampaignsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -60,6 +62,10 @@ namespace Aws
 
   namespace ConnectCampaigns
   {
+    using ConnectCampaignsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectCampaignsEndpointProviderBase = Aws::ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProviderBase;
+    using ConnectCampaignsEndpointProvider = Aws::ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ConnectCampaignsClient header */

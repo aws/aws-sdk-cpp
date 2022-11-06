@@ -48,7 +48,7 @@ Aws::String CreateContainerServiceRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -62,7 +62,7 @@ Aws::String CreateContainerServiceRequest::SerializePayload() const
    JsonValue publicDomainNamesJsonMap;
    for(auto& publicDomainNamesItem : m_publicDomainNames)
    {
-     Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
+     Aws::Utils::Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
      for(unsigned containerServicePublicDomainsListIndex = 0; containerServicePublicDomainsListIndex < containerServicePublicDomainsListJsonList.GetLength(); ++containerServicePublicDomainsListIndex)
      {
        containerServicePublicDomainsListJsonList[containerServicePublicDomainsListIndex].AsString(publicDomainNamesItem.second[containerServicePublicDomainsListIndex]);

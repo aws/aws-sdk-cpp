@@ -30,7 +30,7 @@ ListDomainAssociationsResult& ListDomainAssociationsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("domainAssociations"))
   {
-    Array<JsonView> domainAssociationsJsonList = jsonValue.GetArray("domainAssociations");
+    Aws::Utils::Array<JsonView> domainAssociationsJsonList = jsonValue.GetArray("domainAssociations");
     for(unsigned domainAssociationsIndex = 0; domainAssociationsIndex < domainAssociationsJsonList.GetLength(); ++domainAssociationsIndex)
     {
       m_domainAssociations.push_back(domainAssociationsJsonList[domainAssociationsIndex].AsObject());

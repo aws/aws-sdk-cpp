@@ -30,7 +30,7 @@ DeleteFleetAdvisorDatabasesResult& DeleteFleetAdvisorDatabasesResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DatabaseIds"))
   {
-    Array<JsonView> databaseIdsJsonList = jsonValue.GetArray("DatabaseIds");
+    Aws::Utils::Array<JsonView> databaseIdsJsonList = jsonValue.GetArray("DatabaseIds");
     for(unsigned databaseIdsIndex = 0; databaseIdsIndex < databaseIdsJsonList.GetLength(); ++databaseIdsIndex)
     {
       m_databaseIds.push_back(databaseIdsJsonList[databaseIdsIndex].AsString());

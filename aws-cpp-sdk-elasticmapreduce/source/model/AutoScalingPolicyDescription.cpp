@@ -51,7 +51,7 @@ AutoScalingPolicyDescription& AutoScalingPolicyDescription::operator =(JsonView 
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue AutoScalingPolicyDescription::Jsonize() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());

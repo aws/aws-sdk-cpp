@@ -36,7 +36,7 @@ GetRecommendationPreferencesResult& GetRecommendationPreferencesResult::operator
 
   if(jsonValue.ValueExists("recommendationPreferencesDetails"))
   {
-    Array<JsonView> recommendationPreferencesDetailsJsonList = jsonValue.GetArray("recommendationPreferencesDetails");
+    Aws::Utils::Array<JsonView> recommendationPreferencesDetailsJsonList = jsonValue.GetArray("recommendationPreferencesDetails");
     for(unsigned recommendationPreferencesDetailsIndex = 0; recommendationPreferencesDetailsIndex < recommendationPreferencesDetailsJsonList.GetLength(); ++recommendationPreferencesDetailsIndex)
     {
       m_recommendationPreferencesDetails.push_back(recommendationPreferencesDetailsJsonList[recommendationPreferencesDetailsIndex].AsObject());

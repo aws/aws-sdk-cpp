@@ -30,7 +30,7 @@ ListAnomalyGroupRelatedMetricsResult& ListAnomalyGroupRelatedMetricsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InterMetricImpactList"))
   {
-    Array<JsonView> interMetricImpactListJsonList = jsonValue.GetArray("InterMetricImpactList");
+    Aws::Utils::Array<JsonView> interMetricImpactListJsonList = jsonValue.GetArray("InterMetricImpactList");
     for(unsigned interMetricImpactListIndex = 0; interMetricImpactListIndex < interMetricImpactListJsonList.GetLength(); ++interMetricImpactListIndex)
     {
       m_interMetricImpactList.push_back(interMetricImpactListJsonList[interMetricImpactListIndex].AsObject());

@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsClient.h>
-#include <aws/chime-sdk-meetings/ChimeSDKMeetingsEndpoint.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrorMarshaller.h>
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsEndpointProvider.h>
 #include <aws/chime-sdk-meetings/model/BatchCreateAttendeeRequest.h>
 #include <aws/chime-sdk-meetings/model/BatchUpdateAttendeeCapabilitiesExceptRequest.h>
 #include <aws/chime-sdk-meetings/model/CreateAttendeeRequest.h>
@@ -44,20 +45,71 @@ using namespace Aws::ChimeSDKMeetings;
 using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* ChimeSDKMeetingsClient::SERVICE_NAME = "chime";
 const char* ChimeSDKMeetingsClient::ALLOCATION_TAG = "ChimeSDKMeetingsClient";
 
-ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const Client::ClientConfiguration& clientConfiguration) :
+ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const ChimeSDKMeetings::ChimeSDKMeetingsClientConfiguration& clientConfiguration,
+                                               std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
+}
+
+ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const AWSCredentials& credentials,
+                                               std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> endpointProvider,
+                                               const ChimeSDKMeetings::ChimeSDKMeetingsClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                               std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> endpointProvider,
+                                               const ChimeSDKMeetings::ChimeSDKMeetingsClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
 }
 
 ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const AWSCredentials& credentials,
@@ -68,9 +120,11 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const AWSCredentials& credentials
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -81,56 +135,53 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const std::shared_ptr<AWSCredenti
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 ChimeSDKMeetingsClient::~ChimeSDKMeetingsClient()
 {
 }
 
-void ChimeSDKMeetingsClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase>& ChimeSDKMeetingsClient::accessEndpointProvider()
+{
+  return m_endpointProvider;
+}
+
+void ChimeSDKMeetingsClient::init(const ChimeSDKMeetings::ChimeSDKMeetingsClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Chime SDK Meetings");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + ChimeSDKMeetingsEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void ChimeSDKMeetingsClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 BatchCreateAttendeeOutcome ChimeSDKMeetingsClient::BatchCreateAttendee(const BatchCreateAttendeeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchCreateAttendee", "Required field: MeetingId, is not set");
     return BatchCreateAttendeeOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchCreateAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  uri.AddPathSegments("/attendees");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/attendees");
   ss.str("?operation=batch-create");
-  uri.SetQueryString(ss.str());
-  return BatchCreateAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return BatchCreateAttendeeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchCreateAttendeeOutcomeCallable ChimeSDKMeetingsClient::BatchCreateAttendeeCallable(const BatchCreateAttendeeRequest& request) const
@@ -151,19 +202,21 @@ void ChimeSDKMeetingsClient::BatchCreateAttendeeAsync(const BatchCreateAttendeeR
 
 BatchUpdateAttendeeCapabilitiesExceptOutcome ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExcept(const BatchUpdateAttendeeCapabilitiesExceptRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateAttendeeCapabilitiesExcept, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchUpdateAttendeeCapabilitiesExcept", "Required field: MeetingId, is not set");
     return BatchUpdateAttendeeCapabilitiesExceptOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateAttendeeCapabilitiesExcept, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  uri.AddPathSegments("/attendees/capabilities");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/attendees/capabilities");
   ss.str("?operation=batch-update-except");
-  uri.SetQueryString(ss.str());
-  return BatchUpdateAttendeeCapabilitiesExceptOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return BatchUpdateAttendeeCapabilitiesExceptOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchUpdateAttendeeCapabilitiesExceptOutcomeCallable ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptCallable(const BatchUpdateAttendeeCapabilitiesExceptRequest& request) const
@@ -184,16 +237,18 @@ void ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptAsync(const Ba
 
 CreateAttendeeOutcome ChimeSDKMeetingsClient::CreateAttendee(const CreateAttendeeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateAttendee", "Required field: MeetingId, is not set");
     return CreateAttendeeOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  uri.AddPathSegments("/attendees");
-  return CreateAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/attendees");
+  return CreateAttendeeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAttendeeOutcomeCallable ChimeSDKMeetingsClient::CreateAttendeeCallable(const CreateAttendeeRequest& request) const
@@ -214,9 +269,11 @@ void ChimeSDKMeetingsClient::CreateAttendeeAsync(const CreateAttendeeRequest& re
 
 CreateMeetingOutcome ChimeSDKMeetingsClient::CreateMeeting(const CreateMeetingRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/meetings");
-  return CreateMeetingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings");
+  return CreateMeetingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateMeetingOutcomeCallable ChimeSDKMeetingsClient::CreateMeetingCallable(const CreateMeetingRequest& request) const
@@ -237,12 +294,14 @@ void ChimeSDKMeetingsClient::CreateMeetingAsync(const CreateMeetingRequest& requ
 
 CreateMeetingWithAttendeesOutcome ChimeSDKMeetingsClient::CreateMeetingWithAttendees(const CreateMeetingWithAttendeesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMeetingWithAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMeetingWithAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/meetings");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings");
   ss.str("?operation=create-attendees");
-  uri.SetQueryString(ss.str());
-  return CreateMeetingWithAttendeesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return CreateMeetingWithAttendeesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateMeetingWithAttendeesOutcomeCallable ChimeSDKMeetingsClient::CreateMeetingWithAttendeesCallable(const CreateMeetingWithAttendeesRequest& request) const
@@ -263,6 +322,7 @@ void ChimeSDKMeetingsClient::CreateMeetingWithAttendeesAsync(const CreateMeeting
 
 DeleteAttendeeOutcome ChimeSDKMeetingsClient::DeleteAttendee(const DeleteAttendeeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAttendee", "Required field: MeetingId, is not set");
@@ -273,12 +333,13 @@ DeleteAttendeeOutcome ChimeSDKMeetingsClient::DeleteAttendee(const DeleteAttende
     AWS_LOGSTREAM_ERROR("DeleteAttendee", "Required field: AttendeeId, is not set");
     return DeleteAttendeeOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  uri.AddPathSegments("/attendees/");
-  uri.AddPathSegment(request.GetAttendeeId());
-  return DeleteAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/attendees/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttendeeId());
+  return DeleteAttendeeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAttendeeOutcomeCallable ChimeSDKMeetingsClient::DeleteAttendeeCallable(const DeleteAttendeeRequest& request) const
@@ -299,15 +360,17 @@ void ChimeSDKMeetingsClient::DeleteAttendeeAsync(const DeleteAttendeeRequest& re
 
 DeleteMeetingOutcome ChimeSDKMeetingsClient::DeleteMeeting(const DeleteMeetingRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteMeeting", "Required field: MeetingId, is not set");
     return DeleteMeetingOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  return DeleteMeetingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  return DeleteMeetingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMeetingOutcomeCallable ChimeSDKMeetingsClient::DeleteMeetingCallable(const DeleteMeetingRequest& request) const
@@ -328,6 +391,7 @@ void ChimeSDKMeetingsClient::DeleteMeetingAsync(const DeleteMeetingRequest& requ
 
 GetAttendeeOutcome ChimeSDKMeetingsClient::GetAttendee(const GetAttendeeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAttendee", "Required field: MeetingId, is not set");
@@ -338,12 +402,13 @@ GetAttendeeOutcome ChimeSDKMeetingsClient::GetAttendee(const GetAttendeeRequest&
     AWS_LOGSTREAM_ERROR("GetAttendee", "Required field: AttendeeId, is not set");
     return GetAttendeeOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  uri.AddPathSegments("/attendees/");
-  uri.AddPathSegment(request.GetAttendeeId());
-  return GetAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/attendees/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttendeeId());
+  return GetAttendeeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAttendeeOutcomeCallable ChimeSDKMeetingsClient::GetAttendeeCallable(const GetAttendeeRequest& request) const
@@ -364,15 +429,17 @@ void ChimeSDKMeetingsClient::GetAttendeeAsync(const GetAttendeeRequest& request,
 
 GetMeetingOutcome ChimeSDKMeetingsClient::GetMeeting(const GetMeetingRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMeeting", "Required field: MeetingId, is not set");
     return GetMeetingOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  return GetMeetingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  return GetMeetingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMeetingOutcomeCallable ChimeSDKMeetingsClient::GetMeetingCallable(const GetMeetingRequest& request) const
@@ -393,16 +460,18 @@ void ChimeSDKMeetingsClient::GetMeetingAsync(const GetMeetingRequest& request, c
 
 ListAttendeesOutcome ChimeSDKMeetingsClient::ListAttendees(const ListAttendeesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListAttendees", "Required field: MeetingId, is not set");
     return ListAttendeesOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  uri.AddPathSegments("/attendees");
-  return ListAttendeesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/attendees");
+  return ListAttendeesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAttendeesOutcomeCallable ChimeSDKMeetingsClient::ListAttendeesCallable(const ListAttendeesRequest& request) const
@@ -423,14 +492,16 @@ void ChimeSDKMeetingsClient::ListAttendeesAsync(const ListAttendeesRequest& requ
 
 ListTagsForResourceOutcome ChimeSDKMeetingsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceARNHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceARN, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceARN]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags");
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable ChimeSDKMeetingsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -451,19 +522,21 @@ void ChimeSDKMeetingsClient::ListTagsForResourceAsync(const ListTagsForResourceR
 
 StartMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StartMeetingTranscription(const StartMeetingTranscriptionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMeetingTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartMeetingTranscription", "Required field: MeetingId, is not set");
     return StartMeetingTranscriptionOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMeetingTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  uri.AddPathSegments("/transcription");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/transcription");
   ss.str("?operation=start");
-  uri.SetQueryString(ss.str());
-  return StartMeetingTranscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return StartMeetingTranscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartMeetingTranscriptionOutcomeCallable ChimeSDKMeetingsClient::StartMeetingTranscriptionCallable(const StartMeetingTranscriptionRequest& request) const
@@ -484,19 +557,21 @@ void ChimeSDKMeetingsClient::StartMeetingTranscriptionAsync(const StartMeetingTr
 
 StopMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StopMeetingTranscription(const StopMeetingTranscriptionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopMeetingTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StopMeetingTranscription", "Required field: MeetingId, is not set");
     return StopMeetingTranscriptionOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopMeetingTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  uri.AddPathSegments("/transcription");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/transcription");
   ss.str("?operation=stop");
-  uri.SetQueryString(ss.str());
-  return StopMeetingTranscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return StopMeetingTranscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopMeetingTranscriptionOutcomeCallable ChimeSDKMeetingsClient::StopMeetingTranscriptionCallable(const StopMeetingTranscriptionRequest& request) const
@@ -517,12 +592,14 @@ void ChimeSDKMeetingsClient::StopMeetingTranscriptionAsync(const StopMeetingTran
 
 TagResourceOutcome ChimeSDKMeetingsClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/tags");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   ss.str("?operation=tag-resource");
-  uri.SetQueryString(ss.str());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable ChimeSDKMeetingsClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -543,12 +620,14 @@ void ChimeSDKMeetingsClient::TagResourceAsync(const TagResourceRequest& request,
 
 UntagResourceOutcome ChimeSDKMeetingsClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/tags");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   ss.str("?operation=untag-resource");
-  uri.SetQueryString(ss.str());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable ChimeSDKMeetingsClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -569,6 +648,7 @@ void ChimeSDKMeetingsClient::UntagResourceAsync(const UntagResourceRequest& requ
 
 UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabilities(const UpdateAttendeeCapabilitiesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAttendeeCapabilities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAttendeeCapabilities", "Required field: MeetingId, is not set");
@@ -579,13 +659,14 @@ UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabili
     AWS_LOGSTREAM_ERROR("UpdateAttendeeCapabilities", "Required field: AttendeeId, is not set");
     return UpdateAttendeeCapabilitiesOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/meetings/");
-  uri.AddPathSegment(request.GetMeetingId());
-  uri.AddPathSegments("/attendees/");
-  uri.AddPathSegment(request.GetAttendeeId());
-  uri.AddPathSegments("/capabilities");
-  return UpdateAttendeeCapabilitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAttendeeCapabilities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/meetings/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/attendees/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttendeeId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/capabilities");
+  return UpdateAttendeeCapabilitiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAttendeeCapabilitiesOutcomeCallable ChimeSDKMeetingsClient::UpdateAttendeeCapabilitiesCallable(const UpdateAttendeeCapabilitiesRequest& request) const

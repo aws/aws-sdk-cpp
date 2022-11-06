@@ -39,7 +39,7 @@ Aws::String UpdateChannelRequest::SerializePayload() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
@@ -56,7 +56,7 @@ Aws::String UpdateChannelRequest::SerializePayload() const
 
   if(m_inputAttachmentsHasBeenSet)
   {
-   Array<JsonValue> inputAttachmentsJsonList(m_inputAttachments.size());
+   Aws::Utils::Array<JsonValue> inputAttachmentsJsonList(m_inputAttachments.size());
    for(unsigned inputAttachmentsIndex = 0; inputAttachmentsIndex < inputAttachmentsJsonList.GetLength(); ++inputAttachmentsIndex)
    {
      inputAttachmentsJsonList[inputAttachmentsIndex].AsObject(m_inputAttachments[inputAttachmentsIndex].Jsonize());

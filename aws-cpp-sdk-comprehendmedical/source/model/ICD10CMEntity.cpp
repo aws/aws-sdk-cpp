@@ -112,7 +112,7 @@ ICD10CMEntity& ICD10CMEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -122,7 +122,7 @@ ICD10CMEntity& ICD10CMEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Traits"))
   {
-    Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
+    Aws::Utils::Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
     for(unsigned traitsIndex = 0; traitsIndex < traitsJsonList.GetLength(); ++traitsIndex)
     {
       m_traits.push_back(traitsJsonList[traitsIndex].AsObject());
@@ -132,7 +132,7 @@ ICD10CMEntity& ICD10CMEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ICD10CMConcepts"))
   {
-    Array<JsonView> iCD10CMConceptsJsonList = jsonValue.GetArray("ICD10CMConcepts");
+    Aws::Utils::Array<JsonView> iCD10CMConceptsJsonList = jsonValue.GetArray("ICD10CMConcepts");
     for(unsigned iCD10CMConceptsIndex = 0; iCD10CMConceptsIndex < iCD10CMConceptsJsonList.GetLength(); ++iCD10CMConceptsIndex)
     {
       m_iCD10CMConcepts.push_back(iCD10CMConceptsJsonList[iCD10CMConceptsIndex].AsObject());
@@ -189,7 +189,7 @@ JsonValue ICD10CMEntity::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
@@ -200,7 +200,7 @@ JsonValue ICD10CMEntity::Jsonize() const
 
   if(m_traitsHasBeenSet)
   {
-   Array<JsonValue> traitsJsonList(m_traits.size());
+   Aws::Utils::Array<JsonValue> traitsJsonList(m_traits.size());
    for(unsigned traitsIndex = 0; traitsIndex < traitsJsonList.GetLength(); ++traitsIndex)
    {
      traitsJsonList[traitsIndex].AsObject(m_traits[traitsIndex].Jsonize());
@@ -211,7 +211,7 @@ JsonValue ICD10CMEntity::Jsonize() const
 
   if(m_iCD10CMConceptsHasBeenSet)
   {
-   Array<JsonValue> iCD10CMConceptsJsonList(m_iCD10CMConcepts.size());
+   Aws::Utils::Array<JsonValue> iCD10CMConceptsJsonList(m_iCD10CMConcepts.size());
    for(unsigned iCD10CMConceptsIndex = 0; iCD10CMConceptsIndex < iCD10CMConceptsJsonList.GetLength(); ++iCD10CMConceptsIndex)
    {
      iCD10CMConceptsJsonList[iCD10CMConceptsIndex].AsObject(m_iCD10CMConcepts[iCD10CMConceptsIndex].Jsonize());

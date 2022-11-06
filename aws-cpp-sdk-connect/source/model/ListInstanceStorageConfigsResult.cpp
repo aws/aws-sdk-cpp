@@ -30,7 +30,7 @@ ListInstanceStorageConfigsResult& ListInstanceStorageConfigsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StorageConfigs"))
   {
-    Array<JsonView> storageConfigsJsonList = jsonValue.GetArray("StorageConfigs");
+    Aws::Utils::Array<JsonView> storageConfigsJsonList = jsonValue.GetArray("StorageConfigs");
     for(unsigned storageConfigsIndex = 0; storageConfigsIndex < storageConfigsJsonList.GetLength(); ++storageConfigsIndex)
     {
       m_storageConfigs.push_back(storageConfigsJsonList[storageConfigsIndex].AsObject());

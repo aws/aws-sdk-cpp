@@ -30,7 +30,7 @@ DescribeComputeEnvironmentsResult& DescribeComputeEnvironmentsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("computeEnvironments"))
   {
-    Array<JsonView> computeEnvironmentsJsonList = jsonValue.GetArray("computeEnvironments");
+    Aws::Utils::Array<JsonView> computeEnvironmentsJsonList = jsonValue.GetArray("computeEnvironments");
     for(unsigned computeEnvironmentsIndex = 0; computeEnvironmentsIndex < computeEnvironmentsJsonList.GetLength(); ++computeEnvironmentsIndex)
     {
       m_computeEnvironments.push_back(computeEnvironmentsJsonList[computeEnvironmentsIndex].AsObject());

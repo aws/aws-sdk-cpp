@@ -30,7 +30,7 @@ DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceTags"))
   {
-    Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("resourceTags");
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("resourceTags");
     for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
     {
       m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());

@@ -75,7 +75,7 @@ ExperimentTemplateAction& ExperimentTemplateAction::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("startAfter"))
   {
-    Array<JsonView> startAfterJsonList = jsonValue.GetArray("startAfter");
+    Aws::Utils::Array<JsonView> startAfterJsonList = jsonValue.GetArray("startAfter");
     for(unsigned startAfterIndex = 0; startAfterIndex < startAfterJsonList.GetLength(); ++startAfterIndex)
     {
       m_startAfter.push_back(startAfterJsonList[startAfterIndex].AsString());
@@ -126,7 +126,7 @@ JsonValue ExperimentTemplateAction::Jsonize() const
 
   if(m_startAfterHasBeenSet)
   {
-   Array<JsonValue> startAfterJsonList(m_startAfter.size());
+   Aws::Utils::Array<JsonValue> startAfterJsonList(m_startAfter.size());
    for(unsigned startAfterIndex = 0; startAfterIndex < startAfterJsonList.GetLength(); ++startAfterIndex)
    {
      startAfterJsonList[startAfterIndex].AsString(m_startAfter[startAfterIndex]);

@@ -38,7 +38,7 @@ Aws::String UpdateLFTagRequest::SerializePayload() const
 
   if(m_tagValuesToDeleteHasBeenSet)
   {
-   Array<JsonValue> tagValuesToDeleteJsonList(m_tagValuesToDelete.size());
+   Aws::Utils::Array<JsonValue> tagValuesToDeleteJsonList(m_tagValuesToDelete.size());
    for(unsigned tagValuesToDeleteIndex = 0; tagValuesToDeleteIndex < tagValuesToDeleteJsonList.GetLength(); ++tagValuesToDeleteIndex)
    {
      tagValuesToDeleteJsonList[tagValuesToDeleteIndex].AsString(m_tagValuesToDelete[tagValuesToDeleteIndex]);
@@ -49,7 +49,7 @@ Aws::String UpdateLFTagRequest::SerializePayload() const
 
   if(m_tagValuesToAddHasBeenSet)
   {
-   Array<JsonValue> tagValuesToAddJsonList(m_tagValuesToAdd.size());
+   Aws::Utils::Array<JsonValue> tagValuesToAddJsonList(m_tagValuesToAdd.size());
    for(unsigned tagValuesToAddIndex = 0; tagValuesToAddIndex < tagValuesToAddJsonList.GetLength(); ++tagValuesToAddIndex)
    {
      tagValuesToAddJsonList[tagValuesToAddIndex].AsString(m_tagValuesToAdd[tagValuesToAddIndex]);

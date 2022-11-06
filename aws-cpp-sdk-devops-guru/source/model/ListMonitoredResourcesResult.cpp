@@ -30,7 +30,7 @@ ListMonitoredResourcesResult& ListMonitoredResourcesResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MonitoredResourceIdentifiers"))
   {
-    Array<JsonView> monitoredResourceIdentifiersJsonList = jsonValue.GetArray("MonitoredResourceIdentifiers");
+    Aws::Utils::Array<JsonView> monitoredResourceIdentifiersJsonList = jsonValue.GetArray("MonitoredResourceIdentifiers");
     for(unsigned monitoredResourceIdentifiersIndex = 0; monitoredResourceIdentifiersIndex < monitoredResourceIdentifiersJsonList.GetLength(); ++monitoredResourceIdentifiersIndex)
     {
       m_monitoredResourceIdentifiers.push_back(monitoredResourceIdentifiersJsonList[monitoredResourceIdentifiersIndex].AsObject());

@@ -30,7 +30,7 @@ DescribeDirectoriesResult& DescribeDirectoriesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DirectoryDescriptions"))
   {
-    Array<JsonView> directoryDescriptionsJsonList = jsonValue.GetArray("DirectoryDescriptions");
+    Aws::Utils::Array<JsonView> directoryDescriptionsJsonList = jsonValue.GetArray("DirectoryDescriptions");
     for(unsigned directoryDescriptionsIndex = 0; directoryDescriptionsIndex < directoryDescriptionsJsonList.GetLength(); ++directoryDescriptionsIndex)
     {
       m_directoryDescriptions.push_back(directoryDescriptionsJsonList[directoryDescriptionsIndex].AsObject());

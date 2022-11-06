@@ -30,7 +30,7 @@ GetInterpolatedAssetPropertyValuesResult& GetInterpolatedAssetPropertyValuesResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("interpolatedAssetPropertyValues"))
   {
-    Array<JsonView> interpolatedAssetPropertyValuesJsonList = jsonValue.GetArray("interpolatedAssetPropertyValues");
+    Aws::Utils::Array<JsonView> interpolatedAssetPropertyValuesJsonList = jsonValue.GetArray("interpolatedAssetPropertyValues");
     for(unsigned interpolatedAssetPropertyValuesIndex = 0; interpolatedAssetPropertyValuesIndex < interpolatedAssetPropertyValuesJsonList.GetLength(); ++interpolatedAssetPropertyValuesIndex)
     {
       m_interpolatedAssetPropertyValues.push_back(interpolatedAssetPropertyValuesJsonList[interpolatedAssetPropertyValuesIndex].AsObject());

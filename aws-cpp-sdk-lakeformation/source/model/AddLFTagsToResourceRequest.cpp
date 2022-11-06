@@ -37,7 +37,7 @@ Aws::String AddLFTagsToResourceRequest::SerializePayload() const
 
   if(m_lFTagsHasBeenSet)
   {
-   Array<JsonValue> lFTagsJsonList(m_lFTags.size());
+   Aws::Utils::Array<JsonValue> lFTagsJsonList(m_lFTags.size());
    for(unsigned lFTagsIndex = 0; lFTagsIndex < lFTagsJsonList.GetLength(); ++lFTagsIndex)
    {
      lFTagsJsonList[lFTagsIndex].AsObject(m_lFTags[lFTagsIndex].Jsonize());

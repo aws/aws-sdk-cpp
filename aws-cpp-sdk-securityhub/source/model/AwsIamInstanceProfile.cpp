@@ -78,7 +78,7 @@ AwsIamInstanceProfile& AwsIamInstanceProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Roles"))
   {
-    Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
+    Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
     for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
     {
       m_roles.push_back(rolesJsonList[rolesIndex].AsObject());
@@ -125,7 +125,7 @@ JsonValue AwsIamInstanceProfile::Jsonize() const
 
   if(m_rolesHasBeenSet)
   {
-   Array<JsonValue> rolesJsonList(m_roles.size());
+   Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
    for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
    {
      rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());

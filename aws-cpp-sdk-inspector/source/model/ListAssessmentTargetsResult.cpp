@@ -30,7 +30,7 @@ ListAssessmentTargetsResult& ListAssessmentTargetsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assessmentTargetArns"))
   {
-    Array<JsonView> assessmentTargetArnsJsonList = jsonValue.GetArray("assessmentTargetArns");
+    Aws::Utils::Array<JsonView> assessmentTargetArnsJsonList = jsonValue.GetArray("assessmentTargetArns");
     for(unsigned assessmentTargetArnsIndex = 0; assessmentTargetArnsIndex < assessmentTargetArnsJsonList.GetLength(); ++assessmentTargetArnsIndex)
     {
       m_assessmentTargetArns.push_back(assessmentTargetArnsJsonList[assessmentTargetArnsIndex].AsString());

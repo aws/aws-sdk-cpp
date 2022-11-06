@@ -44,7 +44,7 @@ Alternative& Alternative::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Items"))
   {
-    Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
+    Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
     for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
@@ -54,7 +54,7 @@ Alternative& Alternative::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Entities"))
   {
-    Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
+    Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
     for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue Alternative::Jsonize() const
 
   if(m_itemsHasBeenSet)
   {
-   Array<JsonValue> itemsJsonList(m_items.size());
+   Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
    {
      itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue Alternative::Jsonize() const
 
   if(m_entitiesHasBeenSet)
   {
-   Array<JsonValue> entitiesJsonList(m_entities.size());
+   Aws::Utils::Array<JsonValue> entitiesJsonList(m_entities.size());
    for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
    {
      entitiesJsonList[entitiesIndex].AsObject(m_entities[entitiesIndex].Jsonize());

@@ -36,7 +36,7 @@ ListAppImageConfigsResult& ListAppImageConfigsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("AppImageConfigs"))
   {
-    Array<JsonView> appImageConfigsJsonList = jsonValue.GetArray("AppImageConfigs");
+    Aws::Utils::Array<JsonView> appImageConfigsJsonList = jsonValue.GetArray("AppImageConfigs");
     for(unsigned appImageConfigsIndex = 0; appImageConfigsIndex < appImageConfigsJsonList.GetLength(); ++appImageConfigsIndex)
     {
       m_appImageConfigs.push_back(appImageConfigsJsonList[appImageConfigsIndex].AsObject());

@@ -71,7 +71,7 @@ DnsRuleGroupPriorityConflictViolation& DnsRuleGroupPriorityConflictViolation::op
 
   if(jsonValue.ValueExists("UnavailablePriorities"))
   {
-    Array<JsonView> unavailablePrioritiesJsonList = jsonValue.GetArray("UnavailablePriorities");
+    Aws::Utils::Array<JsonView> unavailablePrioritiesJsonList = jsonValue.GetArray("UnavailablePriorities");
     for(unsigned unavailablePrioritiesIndex = 0; unavailablePrioritiesIndex < unavailablePrioritiesJsonList.GetLength(); ++unavailablePrioritiesIndex)
     {
       m_unavailablePriorities.push_back(unavailablePrioritiesJsonList[unavailablePrioritiesIndex].AsInteger());
@@ -112,7 +112,7 @@ JsonValue DnsRuleGroupPriorityConflictViolation::Jsonize() const
 
   if(m_unavailablePrioritiesHasBeenSet)
   {
-   Array<JsonValue> unavailablePrioritiesJsonList(m_unavailablePriorities.size());
+   Aws::Utils::Array<JsonValue> unavailablePrioritiesJsonList(m_unavailablePriorities.size());
    for(unsigned unavailablePrioritiesIndex = 0; unavailablePrioritiesIndex < unavailablePrioritiesJsonList.GetLength(); ++unavailablePrioritiesIndex)
    {
      unavailablePrioritiesJsonList[unavailablePrioritiesIndex].AsInteger(m_unavailablePriorities[unavailablePrioritiesIndex]);

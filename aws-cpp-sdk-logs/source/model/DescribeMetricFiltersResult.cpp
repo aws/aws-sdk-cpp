@@ -30,7 +30,7 @@ DescribeMetricFiltersResult& DescribeMetricFiltersResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("metricFilters"))
   {
-    Array<JsonView> metricFiltersJsonList = jsonValue.GetArray("metricFilters");
+    Aws::Utils::Array<JsonView> metricFiltersJsonList = jsonValue.GetArray("metricFilters");
     for(unsigned metricFiltersIndex = 0; metricFiltersIndex < metricFiltersJsonList.GetLength(); ++metricFiltersIndex)
     {
       m_metricFilters.push_back(metricFiltersJsonList[metricFiltersIndex].AsObject());

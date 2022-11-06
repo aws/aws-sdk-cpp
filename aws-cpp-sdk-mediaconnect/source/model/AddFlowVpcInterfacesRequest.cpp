@@ -24,7 +24,7 @@ Aws::String AddFlowVpcInterfacesRequest::SerializePayload() const
 
   if(m_vpcInterfacesHasBeenSet)
   {
-   Array<JsonValue> vpcInterfacesJsonList(m_vpcInterfaces.size());
+   Aws::Utils::Array<JsonValue> vpcInterfacesJsonList(m_vpcInterfaces.size());
    for(unsigned vpcInterfacesIndex = 0; vpcInterfacesIndex < vpcInterfacesJsonList.GetLength(); ++vpcInterfacesIndex)
    {
      vpcInterfacesJsonList[vpcInterfacesIndex].AsObject(m_vpcInterfaces[vpcInterfacesIndex].Jsonize());

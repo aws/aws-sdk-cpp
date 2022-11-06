@@ -46,7 +46,7 @@ GetCostEstimationResult& GetCostEstimationResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("Costs"))
   {
-    Array<JsonView> costsJsonList = jsonValue.GetArray("Costs");
+    Aws::Utils::Array<JsonView> costsJsonList = jsonValue.GetArray("Costs");
     for(unsigned costsIndex = 0; costsIndex < costsJsonList.GetLength(); ++costsIndex)
     {
       m_costs.push_back(costsJsonList[costsIndex].AsObject());

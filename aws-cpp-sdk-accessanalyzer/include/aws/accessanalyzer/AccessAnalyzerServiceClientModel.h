@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/accessanalyzer/AccessAnalyzerErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/accessanalyzer/AccessAnalyzerEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -71,6 +73,10 @@ namespace Aws
 
   namespace AccessAnalyzer
   {
+    using AccessAnalyzerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AccessAnalyzerEndpointProviderBase = Aws::AccessAnalyzer::Endpoint::AccessAnalyzerEndpointProviderBase;
+    using AccessAnalyzerEndpointProvider = Aws::AccessAnalyzer::Endpoint::AccessAnalyzerEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in AccessAnalyzerClient header */

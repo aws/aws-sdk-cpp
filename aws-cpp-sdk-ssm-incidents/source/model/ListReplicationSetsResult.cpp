@@ -36,7 +36,7 @@ ListReplicationSetsResult& ListReplicationSetsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("replicationSetArns"))
   {
-    Array<JsonView> replicationSetArnsJsonList = jsonValue.GetArray("replicationSetArns");
+    Aws::Utils::Array<JsonView> replicationSetArnsJsonList = jsonValue.GetArray("replicationSetArns");
     for(unsigned replicationSetArnsIndex = 0; replicationSetArnsIndex < replicationSetArnsJsonList.GetLength(); ++replicationSetArnsIndex)
     {
       m_replicationSetArns.push_back(replicationSetArnsJsonList[replicationSetArnsIndex].AsString());

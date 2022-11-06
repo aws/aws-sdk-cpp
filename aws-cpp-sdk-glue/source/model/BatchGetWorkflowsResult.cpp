@@ -30,7 +30,7 @@ BatchGetWorkflowsResult& BatchGetWorkflowsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Workflows"))
   {
-    Array<JsonView> workflowsJsonList = jsonValue.GetArray("Workflows");
+    Aws::Utils::Array<JsonView> workflowsJsonList = jsonValue.GetArray("Workflows");
     for(unsigned workflowsIndex = 0; workflowsIndex < workflowsJsonList.GetLength(); ++workflowsIndex)
     {
       m_workflows.push_back(workflowsJsonList[workflowsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetWorkflowsResult& BatchGetWorkflowsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("MissingWorkflows"))
   {
-    Array<JsonView> missingWorkflowsJsonList = jsonValue.GetArray("MissingWorkflows");
+    Aws::Utils::Array<JsonView> missingWorkflowsJsonList = jsonValue.GetArray("MissingWorkflows");
     for(unsigned missingWorkflowsIndex = 0; missingWorkflowsIndex < missingWorkflowsJsonList.GetLength(); ++missingWorkflowsIndex)
     {
       m_missingWorkflows.push_back(missingWorkflowsJsonList[missingWorkflowsIndex].AsString());

@@ -33,7 +33,7 @@ RunCommandParameters& RunCommandParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RunCommandTargets"))
   {
-    Array<JsonView> runCommandTargetsJsonList = jsonValue.GetArray("RunCommandTargets");
+    Aws::Utils::Array<JsonView> runCommandTargetsJsonList = jsonValue.GetArray("RunCommandTargets");
     for(unsigned runCommandTargetsIndex = 0; runCommandTargetsIndex < runCommandTargetsJsonList.GetLength(); ++runCommandTargetsIndex)
     {
       m_runCommandTargets.push_back(runCommandTargetsJsonList[runCommandTargetsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue RunCommandParameters::Jsonize() const
 
   if(m_runCommandTargetsHasBeenSet)
   {
-   Array<JsonValue> runCommandTargetsJsonList(m_runCommandTargets.size());
+   Aws::Utils::Array<JsonValue> runCommandTargetsJsonList(m_runCommandTargets.size());
    for(unsigned runCommandTargetsIndex = 0; runCommandTargetsIndex < runCommandTargetsJsonList.GetLength(); ++runCommandTargetsIndex)
    {
      runCommandTargetsJsonList[runCommandTargetsIndex].AsObject(m_runCommandTargets[runCommandTargetsIndex].Jsonize());

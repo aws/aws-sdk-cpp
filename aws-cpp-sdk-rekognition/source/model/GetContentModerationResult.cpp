@@ -50,7 +50,7 @@ GetContentModerationResult& GetContentModerationResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("ModerationLabels"))
   {
-    Array<JsonView> moderationLabelsJsonList = jsonValue.GetArray("ModerationLabels");
+    Aws::Utils::Array<JsonView> moderationLabelsJsonList = jsonValue.GetArray("ModerationLabels");
     for(unsigned moderationLabelsIndex = 0; moderationLabelsIndex < moderationLabelsJsonList.GetLength(); ++moderationLabelsIndex)
     {
       m_moderationLabels.push_back(moderationLabelsJsonList[moderationLabelsIndex].AsObject());

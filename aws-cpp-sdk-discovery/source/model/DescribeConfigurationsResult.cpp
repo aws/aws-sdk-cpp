@@ -30,7 +30,7 @@ DescribeConfigurationsResult& DescribeConfigurationsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurations"))
   {
-    Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       Aws::Map<Aws::String, JsonView> describeConfigurationsAttributeJsonMap = configurationsJsonList[configurationsIndex].GetAllObjects();

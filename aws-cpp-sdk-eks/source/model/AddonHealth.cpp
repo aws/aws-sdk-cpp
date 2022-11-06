@@ -33,7 +33,7 @@ AddonHealth& AddonHealth::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("issues"))
   {
-    Array<JsonView> issuesJsonList = jsonValue.GetArray("issues");
+    Aws::Utils::Array<JsonView> issuesJsonList = jsonValue.GetArray("issues");
     for(unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex)
     {
       m_issues.push_back(issuesJsonList[issuesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AddonHealth::Jsonize() const
 
   if(m_issuesHasBeenSet)
   {
-   Array<JsonValue> issuesJsonList(m_issues.size());
+   Aws::Utils::Array<JsonValue> issuesJsonList(m_issues.size());
    for(unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex)
    {
      issuesJsonList[issuesIndex].AsObject(m_issues[issuesIndex].Jsonize());

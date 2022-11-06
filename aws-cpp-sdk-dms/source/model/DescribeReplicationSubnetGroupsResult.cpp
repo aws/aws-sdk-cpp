@@ -36,7 +36,7 @@ DescribeReplicationSubnetGroupsResult& DescribeReplicationSubnetGroupsResult::op
 
   if(jsonValue.ValueExists("ReplicationSubnetGroups"))
   {
-    Array<JsonView> replicationSubnetGroupsJsonList = jsonValue.GetArray("ReplicationSubnetGroups");
+    Aws::Utils::Array<JsonView> replicationSubnetGroupsJsonList = jsonValue.GetArray("ReplicationSubnetGroups");
     for(unsigned replicationSubnetGroupsIndex = 0; replicationSubnetGroupsIndex < replicationSubnetGroupsJsonList.GetLength(); ++replicationSubnetGroupsIndex)
     {
       m_replicationSubnetGroups.push_back(replicationSubnetGroupsJsonList[replicationSubnetGroupsIndex].AsObject());

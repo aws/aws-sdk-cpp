@@ -30,7 +30,7 @@ DescribeConnectionAliasesResult& DescribeConnectionAliasesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConnectionAliases"))
   {
-    Array<JsonView> connectionAliasesJsonList = jsonValue.GetArray("ConnectionAliases");
+    Aws::Utils::Array<JsonView> connectionAliasesJsonList = jsonValue.GetArray("ConnectionAliases");
     for(unsigned connectionAliasesIndex = 0; connectionAliasesIndex < connectionAliasesJsonList.GetLength(); ++connectionAliasesIndex)
     {
       m_connectionAliases.push_back(connectionAliasesJsonList[connectionAliasesIndex].AsObject());

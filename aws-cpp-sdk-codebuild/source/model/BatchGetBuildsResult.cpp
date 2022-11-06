@@ -30,7 +30,7 @@ BatchGetBuildsResult& BatchGetBuildsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("builds"))
   {
-    Array<JsonView> buildsJsonList = jsonValue.GetArray("builds");
+    Aws::Utils::Array<JsonView> buildsJsonList = jsonValue.GetArray("builds");
     for(unsigned buildsIndex = 0; buildsIndex < buildsJsonList.GetLength(); ++buildsIndex)
     {
       m_builds.push_back(buildsJsonList[buildsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetBuildsResult& BatchGetBuildsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("buildsNotFound"))
   {
-    Array<JsonView> buildsNotFoundJsonList = jsonValue.GetArray("buildsNotFound");
+    Aws::Utils::Array<JsonView> buildsNotFoundJsonList = jsonValue.GetArray("buildsNotFound");
     for(unsigned buildsNotFoundIndex = 0; buildsNotFoundIndex < buildsNotFoundJsonList.GetLength(); ++buildsNotFoundIndex)
     {
       m_buildsNotFound.push_back(buildsNotFoundJsonList[buildsNotFoundIndex].AsString());

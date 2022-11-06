@@ -106,7 +106,7 @@ AuditFinding& AuditFinding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("relatedResources"))
   {
-    Array<JsonView> relatedResourcesJsonList = jsonValue.GetArray("relatedResources");
+    Aws::Utils::Array<JsonView> relatedResourcesJsonList = jsonValue.GetArray("relatedResources");
     for(unsigned relatedResourcesIndex = 0; relatedResourcesIndex < relatedResourcesJsonList.GetLength(); ++relatedResourcesIndex)
     {
       m_relatedResources.push_back(relatedResourcesJsonList[relatedResourcesIndex].AsObject());
@@ -183,7 +183,7 @@ JsonValue AuditFinding::Jsonize() const
 
   if(m_relatedResourcesHasBeenSet)
   {
-   Array<JsonValue> relatedResourcesJsonList(m_relatedResources.size());
+   Aws::Utils::Array<JsonValue> relatedResourcesJsonList(m_relatedResources.size());
    for(unsigned relatedResourcesIndex = 0; relatedResourcesIndex < relatedResourcesJsonList.GetLength(); ++relatedResourcesIndex)
    {
      relatedResourcesJsonList[relatedResourcesIndex].AsObject(m_relatedResources[relatedResourcesIndex].Jsonize());

@@ -73,7 +73,7 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cidrAllowList"))
   {
-    Array<JsonView> cidrAllowListJsonList = jsonValue.GetArray("cidrAllowList");
+    Aws::Utils::Array<JsonView> cidrAllowListJsonList = jsonValue.GetArray("cidrAllowList");
     for(unsigned cidrAllowListIndex = 0; cidrAllowListIndex < cidrAllowListJsonList.GetLength(); ++cidrAllowListIndex)
     {
       m_cidrAllowList.push_back(cidrAllowListJsonList[cidrAllowListIndex].AsString());
@@ -111,7 +111,7 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mediaStreamOutputConfigurations"))
   {
-    Array<JsonView> mediaStreamOutputConfigurationsJsonList = jsonValue.GetArray("mediaStreamOutputConfigurations");
+    Aws::Utils::Array<JsonView> mediaStreamOutputConfigurationsJsonList = jsonValue.GetArray("mediaStreamOutputConfigurations");
     for(unsigned mediaStreamOutputConfigurationsIndex = 0; mediaStreamOutputConfigurationsIndex < mediaStreamOutputConfigurationsJsonList.GetLength(); ++mediaStreamOutputConfigurationsIndex)
     {
       m_mediaStreamOutputConfigurations.push_back(mediaStreamOutputConfigurationsJsonList[mediaStreamOutputConfigurationsIndex].AsObject());
@@ -191,7 +191,7 @@ JsonValue AddOutputRequest::Jsonize() const
 
   if(m_cidrAllowListHasBeenSet)
   {
-   Array<JsonValue> cidrAllowListJsonList(m_cidrAllowList.size());
+   Aws::Utils::Array<JsonValue> cidrAllowListJsonList(m_cidrAllowList.size());
    for(unsigned cidrAllowListIndex = 0; cidrAllowListIndex < cidrAllowListJsonList.GetLength(); ++cidrAllowListIndex)
    {
      cidrAllowListJsonList[cidrAllowListIndex].AsString(m_cidrAllowList[cidrAllowListIndex]);
@@ -226,7 +226,7 @@ JsonValue AddOutputRequest::Jsonize() const
 
   if(m_mediaStreamOutputConfigurationsHasBeenSet)
   {
-   Array<JsonValue> mediaStreamOutputConfigurationsJsonList(m_mediaStreamOutputConfigurations.size());
+   Aws::Utils::Array<JsonValue> mediaStreamOutputConfigurationsJsonList(m_mediaStreamOutputConfigurations.size());
    for(unsigned mediaStreamOutputConfigurationsIndex = 0; mediaStreamOutputConfigurationsIndex < mediaStreamOutputConfigurationsJsonList.GetLength(); ++mediaStreamOutputConfigurationsIndex)
    {
      mediaStreamOutputConfigurationsJsonList[mediaStreamOutputConfigurationsIndex].AsObject(m_mediaStreamOutputConfigurations[mediaStreamOutputConfigurationsIndex].Jsonize());

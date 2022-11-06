@@ -36,7 +36,7 @@ ListWebACLsResult& ListWebACLsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("WebACLs"))
   {
-    Array<JsonView> webACLsJsonList = jsonValue.GetArray("WebACLs");
+    Aws::Utils::Array<JsonView> webACLsJsonList = jsonValue.GetArray("WebACLs");
     for(unsigned webACLsIndex = 0; webACLsIndex < webACLsJsonList.GetLength(); ++webACLsIndex)
     {
       m_webACLs.push_back(webACLsJsonList[webACLsIndex].AsObject());

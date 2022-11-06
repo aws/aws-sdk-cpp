@@ -30,7 +30,7 @@ ListShardsResult& ListShardsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Shards"))
   {
-    Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
+    Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
     for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
     {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());

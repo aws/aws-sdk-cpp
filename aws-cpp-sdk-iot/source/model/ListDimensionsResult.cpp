@@ -30,7 +30,7 @@ ListDimensionsResult& ListDimensionsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("dimensionNames"))
   {
-    Array<JsonView> dimensionNamesJsonList = jsonValue.GetArray("dimensionNames");
+    Aws::Utils::Array<JsonView> dimensionNamesJsonList = jsonValue.GetArray("dimensionNames");
     for(unsigned dimensionNamesIndex = 0; dimensionNamesIndex < dimensionNamesJsonList.GetLength(); ++dimensionNamesIndex)
     {
       m_dimensionNames.push_back(dimensionNamesJsonList[dimensionNamesIndex].AsString());

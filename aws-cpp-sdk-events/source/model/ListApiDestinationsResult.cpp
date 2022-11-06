@@ -30,7 +30,7 @@ ListApiDestinationsResult& ListApiDestinationsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ApiDestinations"))
   {
-    Array<JsonView> apiDestinationsJsonList = jsonValue.GetArray("ApiDestinations");
+    Aws::Utils::Array<JsonView> apiDestinationsJsonList = jsonValue.GetArray("ApiDestinations");
     for(unsigned apiDestinationsIndex = 0; apiDestinationsIndex < apiDestinationsJsonList.GetLength(); ++apiDestinationsIndex)
     {
       m_apiDestinations.push_back(apiDestinationsJsonList[apiDestinationsIndex].AsObject());

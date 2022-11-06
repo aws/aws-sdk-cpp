@@ -37,7 +37,7 @@ Aws::String CreateCustomEntityTypeRequest::SerializePayload() const
 
   if(m_contextWordsHasBeenSet)
   {
-   Array<JsonValue> contextWordsJsonList(m_contextWords.size());
+   Aws::Utils::Array<JsonValue> contextWordsJsonList(m_contextWords.size());
    for(unsigned contextWordsIndex = 0; contextWordsIndex < contextWordsJsonList.GetLength(); ++contextWordsIndex)
    {
      contextWordsJsonList[contextWordsIndex].AsString(m_contextWords[contextWordsIndex]);

@@ -36,7 +36,7 @@ ListComponentProvisionedResourcesResult& ListComponentProvisionedResourcesResult
 
   if(jsonValue.ValueExists("provisionedResources"))
   {
-    Array<JsonView> provisionedResourcesJsonList = jsonValue.GetArray("provisionedResources");
+    Aws::Utils::Array<JsonView> provisionedResourcesJsonList = jsonValue.GetArray("provisionedResources");
     for(unsigned provisionedResourcesIndex = 0; provisionedResourcesIndex < provisionedResourcesJsonList.GetLength(); ++provisionedResourcesIndex)
     {
       m_provisionedResources.push_back(provisionedResourcesJsonList[provisionedResourcesIndex].AsObject());

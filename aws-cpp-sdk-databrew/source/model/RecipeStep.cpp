@@ -42,7 +42,7 @@ RecipeStep& RecipeStep::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ConditionExpressions"))
   {
-    Array<JsonView> conditionExpressionsJsonList = jsonValue.GetArray("ConditionExpressions");
+    Aws::Utils::Array<JsonView> conditionExpressionsJsonList = jsonValue.GetArray("ConditionExpressions");
     for(unsigned conditionExpressionsIndex = 0; conditionExpressionsIndex < conditionExpressionsJsonList.GetLength(); ++conditionExpressionsIndex)
     {
       m_conditionExpressions.push_back(conditionExpressionsJsonList[conditionExpressionsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue RecipeStep::Jsonize() const
 
   if(m_conditionExpressionsHasBeenSet)
   {
-   Array<JsonValue> conditionExpressionsJsonList(m_conditionExpressions.size());
+   Aws::Utils::Array<JsonValue> conditionExpressionsJsonList(m_conditionExpressions.size());
    for(unsigned conditionExpressionsIndex = 0; conditionExpressionsIndex < conditionExpressionsJsonList.GetLength(); ++conditionExpressionsIndex)
    {
      conditionExpressionsJsonList[conditionExpressionsIndex].AsObject(m_conditionExpressions[conditionExpressionsIndex].Jsonize());

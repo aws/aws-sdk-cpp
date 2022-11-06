@@ -33,7 +33,7 @@ ModifyRecommendationDetail& ModifyRecommendationDetail::operator =(JsonView json
 {
   if(jsonValue.ValueExists("TargetInstances"))
   {
-    Array<JsonView> targetInstancesJsonList = jsonValue.GetArray("TargetInstances");
+    Aws::Utils::Array<JsonView> targetInstancesJsonList = jsonValue.GetArray("TargetInstances");
     for(unsigned targetInstancesIndex = 0; targetInstancesIndex < targetInstancesJsonList.GetLength(); ++targetInstancesIndex)
     {
       m_targetInstances.push_back(targetInstancesJsonList[targetInstancesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ModifyRecommendationDetail::Jsonize() const
 
   if(m_targetInstancesHasBeenSet)
   {
-   Array<JsonValue> targetInstancesJsonList(m_targetInstances.size());
+   Aws::Utils::Array<JsonValue> targetInstancesJsonList(m_targetInstances.size());
    for(unsigned targetInstancesIndex = 0; targetInstancesIndex < targetInstancesJsonList.GetLength(); ++targetInstancesIndex)
    {
      targetInstancesJsonList[targetInstancesIndex].AsObject(m_targetInstances[targetInstancesIndex].Jsonize());

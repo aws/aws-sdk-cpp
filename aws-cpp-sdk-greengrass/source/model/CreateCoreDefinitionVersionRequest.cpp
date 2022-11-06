@@ -26,7 +26,7 @@ Aws::String CreateCoreDefinitionVersionRequest::SerializePayload() const
 
   if(m_coresHasBeenSet)
   {
-   Array<JsonValue> coresJsonList(m_cores.size());
+   Aws::Utils::Array<JsonValue> coresJsonList(m_cores.size());
    for(unsigned coresIndex = 0; coresIndex < coresJsonList.GetLength(); ++coresIndex)
    {
      coresJsonList[coresIndex].AsObject(m_cores[coresIndex].Jsonize());

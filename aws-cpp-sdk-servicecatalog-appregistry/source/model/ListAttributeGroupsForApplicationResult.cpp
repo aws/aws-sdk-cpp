@@ -30,7 +30,7 @@ ListAttributeGroupsForApplicationResult& ListAttributeGroupsForApplicationResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("attributeGroupsDetails"))
   {
-    Array<JsonView> attributeGroupsDetailsJsonList = jsonValue.GetArray("attributeGroupsDetails");
+    Aws::Utils::Array<JsonView> attributeGroupsDetailsJsonList = jsonValue.GetArray("attributeGroupsDetails");
     for(unsigned attributeGroupsDetailsIndex = 0; attributeGroupsDetailsIndex < attributeGroupsDetailsJsonList.GetLength(); ++attributeGroupsDetailsIndex)
     {
       m_attributeGroupsDetails.push_back(attributeGroupsDetailsJsonList[attributeGroupsDetailsIndex].AsObject());

@@ -36,7 +36,7 @@ GetModelsResult& GetModelsResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("models"))
   {
-    Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
+    Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
     for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
     {
       m_models.push_back(modelsJsonList[modelsIndex].AsObject());

@@ -106,7 +106,7 @@ OntapFileSystemConfiguration& OntapFileSystemConfiguration::operator =(JsonView 
 
   if(jsonValue.ValueExists("RouteTableIds"))
   {
-    Array<JsonView> routeTableIdsJsonList = jsonValue.GetArray("RouteTableIds");
+    Aws::Utils::Array<JsonView> routeTableIdsJsonList = jsonValue.GetArray("RouteTableIds");
     for(unsigned routeTableIdsIndex = 0; routeTableIdsIndex < routeTableIdsJsonList.GetLength(); ++routeTableIdsIndex)
     {
       m_routeTableIds.push_back(routeTableIdsJsonList[routeTableIdsIndex].AsString());
@@ -178,7 +178,7 @@ JsonValue OntapFileSystemConfiguration::Jsonize() const
 
   if(m_routeTableIdsHasBeenSet)
   {
-   Array<JsonValue> routeTableIdsJsonList(m_routeTableIds.size());
+   Aws::Utils::Array<JsonValue> routeTableIdsJsonList(m_routeTableIds.size());
    for(unsigned routeTableIdsIndex = 0; routeTableIdsIndex < routeTableIdsJsonList.GetLength(); ++routeTableIdsIndex)
    {
      routeTableIdsJsonList[routeTableIdsIndex].AsString(m_routeTableIds[routeTableIdsIndex]);

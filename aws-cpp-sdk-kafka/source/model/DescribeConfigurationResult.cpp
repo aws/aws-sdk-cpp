@@ -50,7 +50,7 @@ DescribeConfigurationResult& DescribeConfigurationResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("kafkaVersions"))
   {
-    Array<JsonView> kafkaVersionsJsonList = jsonValue.GetArray("kafkaVersions");
+    Aws::Utils::Array<JsonView> kafkaVersionsJsonList = jsonValue.GetArray("kafkaVersions");
     for(unsigned kafkaVersionsIndex = 0; kafkaVersionsIndex < kafkaVersionsJsonList.GetLength(); ++kafkaVersionsIndex)
     {
       m_kafkaVersions.push_back(kafkaVersionsJsonList[kafkaVersionsIndex].AsString());

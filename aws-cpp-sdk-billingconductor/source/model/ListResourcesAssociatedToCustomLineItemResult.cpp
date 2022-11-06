@@ -36,7 +36,7 @@ ListResourcesAssociatedToCustomLineItemResult& ListResourcesAssociatedToCustomLi
 
   if(jsonValue.ValueExists("AssociatedResources"))
   {
-    Array<JsonView> associatedResourcesJsonList = jsonValue.GetArray("AssociatedResources");
+    Aws::Utils::Array<JsonView> associatedResourcesJsonList = jsonValue.GetArray("AssociatedResources");
     for(unsigned associatedResourcesIndex = 0; associatedResourcesIndex < associatedResourcesJsonList.GetLength(); ++associatedResourcesIndex)
     {
       m_associatedResources.push_back(associatedResourcesJsonList[associatedResourcesIndex].AsObject());

@@ -37,7 +37,7 @@ TargetGroupPairInfo& TargetGroupPairInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("targetGroups"))
   {
-    Array<JsonView> targetGroupsJsonList = jsonValue.GetArray("targetGroups");
+    Aws::Utils::Array<JsonView> targetGroupsJsonList = jsonValue.GetArray("targetGroups");
     for(unsigned targetGroupsIndex = 0; targetGroupsIndex < targetGroupsJsonList.GetLength(); ++targetGroupsIndex)
     {
       m_targetGroups.push_back(targetGroupsJsonList[targetGroupsIndex].AsObject());
@@ -68,7 +68,7 @@ JsonValue TargetGroupPairInfo::Jsonize() const
 
   if(m_targetGroupsHasBeenSet)
   {
-   Array<JsonValue> targetGroupsJsonList(m_targetGroups.size());
+   Aws::Utils::Array<JsonValue> targetGroupsJsonList(m_targetGroups.size());
    for(unsigned targetGroupsIndex = 0; targetGroupsIndex < targetGroupsJsonList.GetLength(); ++targetGroupsIndex)
    {
      targetGroupsJsonList[targetGroupsIndex].AsObject(m_targetGroups[targetGroupsIndex].Jsonize());

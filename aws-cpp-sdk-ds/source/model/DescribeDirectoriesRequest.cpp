@@ -26,7 +26,7 @@ Aws::String DescribeDirectoriesRequest::SerializePayload() const
 
   if(m_directoryIdsHasBeenSet)
   {
-   Array<JsonValue> directoryIdsJsonList(m_directoryIds.size());
+   Aws::Utils::Array<JsonValue> directoryIdsJsonList(m_directoryIds.size());
    for(unsigned directoryIdsIndex = 0; directoryIdsIndex < directoryIdsJsonList.GetLength(); ++directoryIdsIndex)
    {
      directoryIdsJsonList[directoryIdsIndex].AsString(m_directoryIds[directoryIdsIndex]);

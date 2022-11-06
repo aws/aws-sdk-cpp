@@ -30,7 +30,7 @@ ListTextTranslationJobsResult& ListTextTranslationJobsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TextTranslationJobPropertiesList"))
   {
-    Array<JsonView> textTranslationJobPropertiesListJsonList = jsonValue.GetArray("TextTranslationJobPropertiesList");
+    Aws::Utils::Array<JsonView> textTranslationJobPropertiesListJsonList = jsonValue.GetArray("TextTranslationJobPropertiesList");
     for(unsigned textTranslationJobPropertiesListIndex = 0; textTranslationJobPropertiesListIndex < textTranslationJobPropertiesListJsonList.GetLength(); ++textTranslationJobPropertiesListIndex)
     {
       m_textTranslationJobPropertiesList.push_back(textTranslationJobPropertiesListJsonList[textTranslationJobPropertiesListIndex].AsObject());

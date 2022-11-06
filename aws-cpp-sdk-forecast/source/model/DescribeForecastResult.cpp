@@ -44,7 +44,7 @@ DescribeForecastResult& DescribeForecastResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("ForecastTypes"))
   {
-    Array<JsonView> forecastTypesJsonList = jsonValue.GetArray("ForecastTypes");
+    Aws::Utils::Array<JsonView> forecastTypesJsonList = jsonValue.GetArray("ForecastTypes");
     for(unsigned forecastTypesIndex = 0; forecastTypesIndex < forecastTypesJsonList.GetLength(); ++forecastTypesIndex)
     {
       m_forecastTypes.push_back(forecastTypesJsonList[forecastTypesIndex].AsString());

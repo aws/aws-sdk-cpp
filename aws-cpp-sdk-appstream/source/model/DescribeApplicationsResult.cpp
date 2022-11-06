@@ -30,7 +30,7 @@ DescribeApplicationsResult& DescribeApplicationsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Applications"))
   {
-    Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
+    Aws::Utils::Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
     for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
     {
       m_applications.push_back(applicationsJsonList[applicationsIndex].AsObject());

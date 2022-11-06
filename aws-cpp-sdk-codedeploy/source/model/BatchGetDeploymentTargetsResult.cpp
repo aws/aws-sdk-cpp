@@ -30,7 +30,7 @@ BatchGetDeploymentTargetsResult& BatchGetDeploymentTargetsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentTargets"))
   {
-    Array<JsonView> deploymentTargetsJsonList = jsonValue.GetArray("deploymentTargets");
+    Aws::Utils::Array<JsonView> deploymentTargetsJsonList = jsonValue.GetArray("deploymentTargets");
     for(unsigned deploymentTargetsIndex = 0; deploymentTargetsIndex < deploymentTargetsJsonList.GetLength(); ++deploymentTargetsIndex)
     {
       m_deploymentTargets.push_back(deploymentTargetsJsonList[deploymentTargetsIndex].AsObject());

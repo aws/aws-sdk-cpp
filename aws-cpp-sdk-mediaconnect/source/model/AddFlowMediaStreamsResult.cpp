@@ -36,7 +36,7 @@ AddFlowMediaStreamsResult& AddFlowMediaStreamsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("mediaStreams"))
   {
-    Array<JsonView> mediaStreamsJsonList = jsonValue.GetArray("mediaStreams");
+    Aws::Utils::Array<JsonView> mediaStreamsJsonList = jsonValue.GetArray("mediaStreams");
     for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
     {
       m_mediaStreams.push_back(mediaStreamsJsonList[mediaStreamsIndex].AsObject());

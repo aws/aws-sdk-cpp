@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/lightsail/LightsailErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/lightsail/LightsailEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -204,6 +206,10 @@ namespace Aws
 
   namespace Lightsail
   {
+    using LightsailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LightsailEndpointProviderBase = Aws::Lightsail::Endpoint::LightsailEndpointProviderBase;
+    using LightsailEndpointProvider = Aws::Lightsail::Endpoint::LightsailEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in LightsailClient header */

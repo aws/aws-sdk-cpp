@@ -37,7 +37,7 @@ ConflictResolution& ConflictResolution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("replaceContents"))
   {
-    Array<JsonView> replaceContentsJsonList = jsonValue.GetArray("replaceContents");
+    Aws::Utils::Array<JsonView> replaceContentsJsonList = jsonValue.GetArray("replaceContents");
     for(unsigned replaceContentsIndex = 0; replaceContentsIndex < replaceContentsJsonList.GetLength(); ++replaceContentsIndex)
     {
       m_replaceContents.push_back(replaceContentsJsonList[replaceContentsIndex].AsObject());
@@ -47,7 +47,7 @@ ConflictResolution& ConflictResolution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("deleteFiles"))
   {
-    Array<JsonView> deleteFilesJsonList = jsonValue.GetArray("deleteFiles");
+    Aws::Utils::Array<JsonView> deleteFilesJsonList = jsonValue.GetArray("deleteFiles");
     for(unsigned deleteFilesIndex = 0; deleteFilesIndex < deleteFilesJsonList.GetLength(); ++deleteFilesIndex)
     {
       m_deleteFiles.push_back(deleteFilesJsonList[deleteFilesIndex].AsObject());
@@ -57,7 +57,7 @@ ConflictResolution& ConflictResolution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("setFileModes"))
   {
-    Array<JsonView> setFileModesJsonList = jsonValue.GetArray("setFileModes");
+    Aws::Utils::Array<JsonView> setFileModesJsonList = jsonValue.GetArray("setFileModes");
     for(unsigned setFileModesIndex = 0; setFileModesIndex < setFileModesJsonList.GetLength(); ++setFileModesIndex)
     {
       m_setFileModes.push_back(setFileModesJsonList[setFileModesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue ConflictResolution::Jsonize() const
 
   if(m_replaceContentsHasBeenSet)
   {
-   Array<JsonValue> replaceContentsJsonList(m_replaceContents.size());
+   Aws::Utils::Array<JsonValue> replaceContentsJsonList(m_replaceContents.size());
    for(unsigned replaceContentsIndex = 0; replaceContentsIndex < replaceContentsJsonList.GetLength(); ++replaceContentsIndex)
    {
      replaceContentsJsonList[replaceContentsIndex].AsObject(m_replaceContents[replaceContentsIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue ConflictResolution::Jsonize() const
 
   if(m_deleteFilesHasBeenSet)
   {
-   Array<JsonValue> deleteFilesJsonList(m_deleteFiles.size());
+   Aws::Utils::Array<JsonValue> deleteFilesJsonList(m_deleteFiles.size());
    for(unsigned deleteFilesIndex = 0; deleteFilesIndex < deleteFilesJsonList.GetLength(); ++deleteFilesIndex)
    {
      deleteFilesJsonList[deleteFilesIndex].AsObject(m_deleteFiles[deleteFilesIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue ConflictResolution::Jsonize() const
 
   if(m_setFileModesHasBeenSet)
   {
-   Array<JsonValue> setFileModesJsonList(m_setFileModes.size());
+   Aws::Utils::Array<JsonValue> setFileModesJsonList(m_setFileModes.size());
    for(unsigned setFileModesIndex = 0; setFileModesIndex < setFileModesJsonList.GetLength(); ++setFileModesIndex)
    {
      setFileModesJsonList[setFileModesIndex].AsObject(m_setFileModes[setFileModesIndex].Jsonize());

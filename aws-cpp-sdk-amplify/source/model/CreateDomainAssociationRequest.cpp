@@ -41,7 +41,7 @@ Aws::String CreateDomainAssociationRequest::SerializePayload() const
 
   if(m_subDomainSettingsHasBeenSet)
   {
-   Array<JsonValue> subDomainSettingsJsonList(m_subDomainSettings.size());
+   Aws::Utils::Array<JsonValue> subDomainSettingsJsonList(m_subDomainSettings.size());
    for(unsigned subDomainSettingsIndex = 0; subDomainSettingsIndex < subDomainSettingsJsonList.GetLength(); ++subDomainSettingsIndex)
    {
      subDomainSettingsJsonList[subDomainSettingsIndex].AsObject(m_subDomainSettings[subDomainSettingsIndex].Jsonize());
@@ -52,7 +52,7 @@ Aws::String CreateDomainAssociationRequest::SerializePayload() const
 
   if(m_autoSubDomainCreationPatternsHasBeenSet)
   {
-   Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
+   Aws::Utils::Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
    for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
    {
      autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString(m_autoSubDomainCreationPatterns[autoSubDomainCreationPatternsIndex]);

@@ -46,7 +46,7 @@ CreateThemeData& CreateThemeData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("overrides"))
   {
-    Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
+    Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
     for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
     {
       m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
@@ -66,7 +66,7 @@ CreateThemeData& CreateThemeData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("values"))
   {
-    Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue CreateThemeData::Jsonize() const
 
   if(m_overridesHasBeenSet)
   {
-   Array<JsonValue> overridesJsonList(m_overrides.size());
+   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
    {
      overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
@@ -111,7 +111,7 @@ JsonValue CreateThemeData::Jsonize() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());

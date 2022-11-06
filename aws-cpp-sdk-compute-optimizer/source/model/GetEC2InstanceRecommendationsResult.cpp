@@ -36,7 +36,7 @@ GetEC2InstanceRecommendationsResult& GetEC2InstanceRecommendationsResult::operat
 
   if(jsonValue.ValueExists("instanceRecommendations"))
   {
-    Array<JsonView> instanceRecommendationsJsonList = jsonValue.GetArray("instanceRecommendations");
+    Aws::Utils::Array<JsonView> instanceRecommendationsJsonList = jsonValue.GetArray("instanceRecommendations");
     for(unsigned instanceRecommendationsIndex = 0; instanceRecommendationsIndex < instanceRecommendationsJsonList.GetLength(); ++instanceRecommendationsIndex)
     {
       m_instanceRecommendations.push_back(instanceRecommendationsJsonList[instanceRecommendationsIndex].AsObject());
@@ -45,7 +45,7 @@ GetEC2InstanceRecommendationsResult& GetEC2InstanceRecommendationsResult::operat
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

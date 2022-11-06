@@ -62,7 +62,7 @@ AnalysisResult& AnalysisResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("locations"))
   {
-    Array<JsonView> locationsJsonList = jsonValue.GetArray("locations");
+    Aws::Utils::Array<JsonView> locationsJsonList = jsonValue.GetArray("locations");
     for(unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex)
     {
       m_locations.push_back(locationsJsonList[locationsIndex].AsObject());
@@ -96,7 +96,7 @@ JsonValue AnalysisResult::Jsonize() const
 
   if(m_locationsHasBeenSet)
   {
-   Array<JsonValue> locationsJsonList(m_locations.size());
+   Aws::Utils::Array<JsonValue> locationsJsonList(m_locations.size());
    for(unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex)
    {
      locationsJsonList[locationsIndex].AsObject(m_locations[locationsIndex].Jsonize());

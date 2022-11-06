@@ -44,7 +44,7 @@ RuleGroupReferenceStatement& RuleGroupReferenceStatement::operator =(JsonView js
 
   if(jsonValue.ValueExists("ExcludedRules"))
   {
-    Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
+    Aws::Utils::Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
     for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
     {
       m_excludedRules.push_back(excludedRulesJsonList[excludedRulesIndex].AsObject());
@@ -54,7 +54,7 @@ RuleGroupReferenceStatement& RuleGroupReferenceStatement::operator =(JsonView js
 
   if(jsonValue.ValueExists("RuleActionOverrides"))
   {
-    Array<JsonView> ruleActionOverridesJsonList = jsonValue.GetArray("RuleActionOverrides");
+    Aws::Utils::Array<JsonView> ruleActionOverridesJsonList = jsonValue.GetArray("RuleActionOverrides");
     for(unsigned ruleActionOverridesIndex = 0; ruleActionOverridesIndex < ruleActionOverridesJsonList.GetLength(); ++ruleActionOverridesIndex)
     {
       m_ruleActionOverrides.push_back(ruleActionOverridesJsonList[ruleActionOverridesIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue RuleGroupReferenceStatement::Jsonize() const
 
   if(m_excludedRulesHasBeenSet)
   {
-   Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
+   Aws::Utils::Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
    for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
    {
      excludedRulesJsonList[excludedRulesIndex].AsObject(m_excludedRules[excludedRulesIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue RuleGroupReferenceStatement::Jsonize() const
 
   if(m_ruleActionOverridesHasBeenSet)
   {
-   Array<JsonValue> ruleActionOverridesJsonList(m_ruleActionOverrides.size());
+   Aws::Utils::Array<JsonValue> ruleActionOverridesJsonList(m_ruleActionOverrides.size());
    for(unsigned ruleActionOverridesIndex = 0; ruleActionOverridesIndex < ruleActionOverridesJsonList.GetLength(); ++ruleActionOverridesIndex)
    {
      ruleActionOverridesJsonList[ruleActionOverridesIndex].AsObject(m_ruleActionOverrides[ruleActionOverridesIndex].Jsonize());

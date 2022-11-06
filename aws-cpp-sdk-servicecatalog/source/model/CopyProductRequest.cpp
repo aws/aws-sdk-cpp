@@ -54,7 +54,7 @@ Aws::String CopyProductRequest::SerializePayload() const
 
   if(m_sourceProvisioningArtifactIdentifiersHasBeenSet)
   {
-   Array<JsonValue> sourceProvisioningArtifactIdentifiersJsonList(m_sourceProvisioningArtifactIdentifiers.size());
+   Aws::Utils::Array<JsonValue> sourceProvisioningArtifactIdentifiersJsonList(m_sourceProvisioningArtifactIdentifiers.size());
    for(unsigned sourceProvisioningArtifactIdentifiersIndex = 0; sourceProvisioningArtifactIdentifiersIndex < sourceProvisioningArtifactIdentifiersJsonList.GetLength(); ++sourceProvisioningArtifactIdentifiersIndex)
    {
      JsonValue sourceProvisioningArtifactPropertiesMapJsonMap;
@@ -70,7 +70,7 @@ Aws::String CopyProductRequest::SerializePayload() const
 
   if(m_copyOptionsHasBeenSet)
   {
-   Array<JsonValue> copyOptionsJsonList(m_copyOptions.size());
+   Aws::Utils::Array<JsonValue> copyOptionsJsonList(m_copyOptions.size());
    for(unsigned copyOptionsIndex = 0; copyOptionsIndex < copyOptionsJsonList.GetLength(); ++copyOptionsIndex)
    {
      copyOptionsJsonList[copyOptionsIndex].AsString(CopyOptionMapper::GetNameForCopyOption(m_copyOptions[copyOptionsIndex]));

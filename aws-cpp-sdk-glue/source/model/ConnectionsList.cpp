@@ -33,7 +33,7 @@ ConnectionsList& ConnectionsList::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Connections"))
   {
-    Array<JsonView> connectionsJsonList = jsonValue.GetArray("Connections");
+    Aws::Utils::Array<JsonView> connectionsJsonList = jsonValue.GetArray("Connections");
     for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
     {
       m_connections.push_back(connectionsJsonList[connectionsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue ConnectionsList::Jsonize() const
 
   if(m_connectionsHasBeenSet)
   {
-   Array<JsonValue> connectionsJsonList(m_connections.size());
+   Aws::Utils::Array<JsonValue> connectionsJsonList(m_connections.size());
    for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
    {
      connectionsJsonList[connectionsIndex].AsString(m_connections[connectionsIndex]);

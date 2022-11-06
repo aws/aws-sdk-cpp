@@ -48,7 +48,7 @@ GetSdkTypeResult& GetSdkTypeResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("configurationProperties"))
   {
-    Array<JsonView> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
+    Aws::Utils::Array<JsonView> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
     for(unsigned configurationPropertiesIndex = 0; configurationPropertiesIndex < configurationPropertiesJsonList.GetLength(); ++configurationPropertiesIndex)
     {
       m_configurationProperties.push_back(configurationPropertiesJsonList[configurationPropertiesIndex].AsObject());

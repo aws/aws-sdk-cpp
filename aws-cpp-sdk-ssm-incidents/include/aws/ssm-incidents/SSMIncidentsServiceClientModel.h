@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/ssm-incidents/SSMIncidentsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/ssm-incidents/SSMIncidentsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -78,6 +80,10 @@ namespace Aws
 
   namespace SSMIncidents
   {
+    using SSMIncidentsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSMIncidentsEndpointProviderBase = Aws::SSMIncidents::Endpoint::SSMIncidentsEndpointProviderBase;
+    using SSMIncidentsEndpointProvider = Aws::SSMIncidents::Endpoint::SSMIncidentsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in SSMIncidentsClient header */

@@ -42,7 +42,7 @@ AnomalyDetectorDataQualityMetric& AnomalyDetectorDataQualityMetric::operator =(J
 
   if(jsonValue.ValueExists("MetricSetDataQualityMetricList"))
   {
-    Array<JsonView> metricSetDataQualityMetricListJsonList = jsonValue.GetArray("MetricSetDataQualityMetricList");
+    Aws::Utils::Array<JsonView> metricSetDataQualityMetricListJsonList = jsonValue.GetArray("MetricSetDataQualityMetricList");
     for(unsigned metricSetDataQualityMetricListIndex = 0; metricSetDataQualityMetricListIndex < metricSetDataQualityMetricListJsonList.GetLength(); ++metricSetDataQualityMetricListIndex)
     {
       m_metricSetDataQualityMetricList.push_back(metricSetDataQualityMetricListJsonList[metricSetDataQualityMetricListIndex].AsObject());
@@ -64,7 +64,7 @@ JsonValue AnomalyDetectorDataQualityMetric::Jsonize() const
 
   if(m_metricSetDataQualityMetricListHasBeenSet)
   {
-   Array<JsonValue> metricSetDataQualityMetricListJsonList(m_metricSetDataQualityMetricList.size());
+   Aws::Utils::Array<JsonValue> metricSetDataQualityMetricListJsonList(m_metricSetDataQualityMetricList.size());
    for(unsigned metricSetDataQualityMetricListIndex = 0; metricSetDataQualityMetricListIndex < metricSetDataQualityMetricListJsonList.GetLength(); ++metricSetDataQualityMetricListIndex)
    {
      metricSetDataQualityMetricListJsonList[metricSetDataQualityMetricListIndex].AsObject(m_metricSetDataQualityMetricList[metricSetDataQualityMetricListIndex].Jsonize());

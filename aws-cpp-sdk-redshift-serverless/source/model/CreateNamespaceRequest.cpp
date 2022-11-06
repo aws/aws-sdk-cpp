@@ -55,7 +55,7 @@ Aws::String CreateNamespaceRequest::SerializePayload() const
 
   if(m_iamRolesHasBeenSet)
   {
-   Array<JsonValue> iamRolesJsonList(m_iamRoles.size());
+   Aws::Utils::Array<JsonValue> iamRolesJsonList(m_iamRoles.size());
    for(unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex)
    {
      iamRolesJsonList[iamRolesIndex].AsString(m_iamRoles[iamRolesIndex]);
@@ -72,7 +72,7 @@ Aws::String CreateNamespaceRequest::SerializePayload() const
 
   if(m_logExportsHasBeenSet)
   {
-   Array<JsonValue> logExportsJsonList(m_logExports.size());
+   Aws::Utils::Array<JsonValue> logExportsJsonList(m_logExports.size());
    for(unsigned logExportsIndex = 0; logExportsIndex < logExportsJsonList.GetLength(); ++logExportsIndex)
    {
      logExportsJsonList[logExportsIndex].AsString(LogExportMapper::GetNameForLogExport(m_logExports[logExportsIndex]));
@@ -89,7 +89,7 @@ Aws::String CreateNamespaceRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

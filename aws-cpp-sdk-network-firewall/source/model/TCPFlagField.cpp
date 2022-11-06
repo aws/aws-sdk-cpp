@@ -35,7 +35,7 @@ TCPFlagField& TCPFlagField::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Flags"))
   {
-    Array<JsonView> flagsJsonList = jsonValue.GetArray("Flags");
+    Aws::Utils::Array<JsonView> flagsJsonList = jsonValue.GetArray("Flags");
     for(unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex)
     {
       m_flags.push_back(TCPFlagMapper::GetTCPFlagForName(flagsJsonList[flagsIndex].AsString()));
@@ -45,7 +45,7 @@ TCPFlagField& TCPFlagField::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Masks"))
   {
-    Array<JsonView> masksJsonList = jsonValue.GetArray("Masks");
+    Aws::Utils::Array<JsonView> masksJsonList = jsonValue.GetArray("Masks");
     for(unsigned masksIndex = 0; masksIndex < masksJsonList.GetLength(); ++masksIndex)
     {
       m_masks.push_back(TCPFlagMapper::GetTCPFlagForName(masksJsonList[masksIndex].AsString()));
@@ -62,7 +62,7 @@ JsonValue TCPFlagField::Jsonize() const
 
   if(m_flagsHasBeenSet)
   {
-   Array<JsonValue> flagsJsonList(m_flags.size());
+   Aws::Utils::Array<JsonValue> flagsJsonList(m_flags.size());
    for(unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex)
    {
      flagsJsonList[flagsIndex].AsString(TCPFlagMapper::GetNameForTCPFlag(m_flags[flagsIndex]));
@@ -73,7 +73,7 @@ JsonValue TCPFlagField::Jsonize() const
 
   if(m_masksHasBeenSet)
   {
-   Array<JsonValue> masksJsonList(m_masks.size());
+   Aws::Utils::Array<JsonValue> masksJsonList(m_masks.size());
    for(unsigned masksIndex = 0; masksIndex < masksJsonList.GetLength(); ++masksIndex)
    {
      masksJsonList[masksIndex].AsString(TCPFlagMapper::GetNameForTCPFlag(m_masks[masksIndex]));

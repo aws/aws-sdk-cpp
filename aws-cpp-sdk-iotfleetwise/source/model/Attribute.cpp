@@ -83,7 +83,7 @@ Attribute& Attribute::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("allowedValues"))
   {
-    Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
+    Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
     for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
     {
       m_allowedValues.push_back(allowedValuesJsonList[allowedValuesIndex].AsString());
@@ -151,7 +151,7 @@ JsonValue Attribute::Jsonize() const
 
   if(m_allowedValuesHasBeenSet)
   {
-   Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
+   Aws::Utils::Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
    for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
    {
      allowedValuesJsonList[allowedValuesIndex].AsString(m_allowedValues[allowedValuesIndex]);

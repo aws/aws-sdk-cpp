@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/mediastore/MediaStoreErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/mediastore/MediaStoreEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -70,6 +72,10 @@ namespace Aws
 
   namespace MediaStore
   {
+    using MediaStoreClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaStoreEndpointProviderBase = Aws::MediaStore::Endpoint::MediaStoreEndpointProviderBase;
+    using MediaStoreEndpointProvider = Aws::MediaStore::Endpoint::MediaStoreEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in MediaStoreClient header */

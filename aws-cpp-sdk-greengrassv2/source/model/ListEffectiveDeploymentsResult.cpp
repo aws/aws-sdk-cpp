@@ -30,7 +30,7 @@ ListEffectiveDeploymentsResult& ListEffectiveDeploymentsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("effectiveDeployments"))
   {
-    Array<JsonView> effectiveDeploymentsJsonList = jsonValue.GetArray("effectiveDeployments");
+    Aws::Utils::Array<JsonView> effectiveDeploymentsJsonList = jsonValue.GetArray("effectiveDeployments");
     for(unsigned effectiveDeploymentsIndex = 0; effectiveDeploymentsIndex < effectiveDeploymentsJsonList.GetLength(); ++effectiveDeploymentsIndex)
     {
       m_effectiveDeployments.push_back(effectiveDeploymentsJsonList[effectiveDeploymentsIndex].AsObject());

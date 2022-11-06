@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/mediapackage-vod/MediaPackageVodErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/mediapackage-vod/MediaPackageVodEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -65,6 +67,10 @@ namespace Aws
 
   namespace MediaPackageVod
   {
+    using MediaPackageVodClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaPackageVodEndpointProviderBase = Aws::MediaPackageVod::Endpoint::MediaPackageVodEndpointProviderBase;
+    using MediaPackageVodEndpointProvider = Aws::MediaPackageVod::Endpoint::MediaPackageVodEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in MediaPackageVodClient header */

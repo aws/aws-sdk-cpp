@@ -29,7 +29,7 @@ Aws::String DescribeConnectorProfilesRequest::SerializePayload() const
 
   if(m_connectorProfileNamesHasBeenSet)
   {
-   Array<JsonValue> connectorProfileNamesJsonList(m_connectorProfileNames.size());
+   Aws::Utils::Array<JsonValue> connectorProfileNamesJsonList(m_connectorProfileNames.size());
    for(unsigned connectorProfileNamesIndex = 0; connectorProfileNamesIndex < connectorProfileNamesJsonList.GetLength(); ++connectorProfileNamesIndex)
    {
      connectorProfileNamesJsonList[connectorProfileNamesIndex].AsString(m_connectorProfileNames[connectorProfileNamesIndex]);

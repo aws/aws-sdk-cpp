@@ -76,7 +76,7 @@ Type& Type::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RowColumnInfo"))
   {
-    Array<JsonView> rowColumnInfoJsonList = jsonValue.GetArray("RowColumnInfo");
+    Aws::Utils::Array<JsonView> rowColumnInfoJsonList = jsonValue.GetArray("RowColumnInfo");
     for(unsigned rowColumnInfoIndex = 0; rowColumnInfoIndex < rowColumnInfoJsonList.GetLength(); ++rowColumnInfoIndex)
     {
       m_rowColumnInfo.push_back(rowColumnInfoJsonList[rowColumnInfoIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue Type::Jsonize() const
 
   if(m_rowColumnInfoHasBeenSet)
   {
-   Array<JsonValue> rowColumnInfoJsonList(m_rowColumnInfo.size());
+   Aws::Utils::Array<JsonValue> rowColumnInfoJsonList(m_rowColumnInfo.size());
    for(unsigned rowColumnInfoIndex = 0; rowColumnInfoIndex < rowColumnInfoJsonList.GetLength(); ++rowColumnInfoIndex)
    {
      rowColumnInfoJsonList[rowColumnInfoIndex].AsObject(m_rowColumnInfo[rowColumnInfoIndex].Jsonize());

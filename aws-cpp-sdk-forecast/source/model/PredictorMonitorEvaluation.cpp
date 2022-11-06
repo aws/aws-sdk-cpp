@@ -111,7 +111,7 @@ PredictorMonitorEvaluation& PredictorMonitorEvaluation::operator =(JsonView json
 
   if(jsonValue.ValueExists("MetricResults"))
   {
-    Array<JsonView> metricResultsJsonList = jsonValue.GetArray("MetricResults");
+    Aws::Utils::Array<JsonView> metricResultsJsonList = jsonValue.GetArray("MetricResults");
     for(unsigned metricResultsIndex = 0; metricResultsIndex < metricResultsJsonList.GetLength(); ++metricResultsIndex)
     {
       m_metricResults.push_back(metricResultsJsonList[metricResultsIndex].AsObject());
@@ -187,7 +187,7 @@ JsonValue PredictorMonitorEvaluation::Jsonize() const
 
   if(m_metricResultsHasBeenSet)
   {
-   Array<JsonValue> metricResultsJsonList(m_metricResults.size());
+   Aws::Utils::Array<JsonValue> metricResultsJsonList(m_metricResults.size());
    for(unsigned metricResultsIndex = 0; metricResultsIndex < metricResultsJsonList.GetLength(); ++metricResultsIndex)
    {
      metricResultsJsonList[metricResultsIndex].AsObject(m_metricResults[metricResultsIndex].Jsonize());

@@ -30,7 +30,7 @@ DescribeUpdateDirectoryResult& DescribeUpdateDirectoryResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UpdateActivities"))
   {
-    Array<JsonView> updateActivitiesJsonList = jsonValue.GetArray("UpdateActivities");
+    Aws::Utils::Array<JsonView> updateActivitiesJsonList = jsonValue.GetArray("UpdateActivities");
     for(unsigned updateActivitiesIndex = 0; updateActivitiesIndex < updateActivitiesJsonList.GetLength(); ++updateActivitiesIndex)
     {
       m_updateActivities.push_back(updateActivitiesJsonList[updateActivitiesIndex].AsObject());

@@ -24,7 +24,7 @@ Aws::String BatchCreateAttendeeRequest::SerializePayload() const
 
   if(m_attendeesHasBeenSet)
   {
-   Array<JsonValue> attendeesJsonList(m_attendees.size());
+   Aws::Utils::Array<JsonValue> attendeesJsonList(m_attendees.size());
    for(unsigned attendeesIndex = 0; attendeesIndex < attendeesJsonList.GetLength(); ++attendeesIndex)
    {
      attendeesJsonList[attendeesIndex].AsObject(m_attendees[attendeesIndex].Jsonize());

@@ -36,7 +36,7 @@ DescribeMountTargetsResult& DescribeMountTargetsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("MountTargets"))
   {
-    Array<JsonView> mountTargetsJsonList = jsonValue.GetArray("MountTargets");
+    Aws::Utils::Array<JsonView> mountTargetsJsonList = jsonValue.GetArray("MountTargets");
     for(unsigned mountTargetsIndex = 0; mountTargetsIndex < mountTargetsJsonList.GetLength(); ++mountTargetsIndex)
     {
       m_mountTargets.push_back(mountTargetsJsonList[mountTargetsIndex].AsObject());

@@ -30,7 +30,7 @@ GetCloudFormationStackRecordsResult& GetCloudFormationStackRecordsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("cloudFormationStackRecords"))
   {
-    Array<JsonView> cloudFormationStackRecordsJsonList = jsonValue.GetArray("cloudFormationStackRecords");
+    Aws::Utils::Array<JsonView> cloudFormationStackRecordsJsonList = jsonValue.GetArray("cloudFormationStackRecords");
     for(unsigned cloudFormationStackRecordsIndex = 0; cloudFormationStackRecordsIndex < cloudFormationStackRecordsJsonList.GetLength(); ++cloudFormationStackRecordsIndex)
     {
       m_cloudFormationStackRecords.push_back(cloudFormationStackRecordsJsonList[cloudFormationStackRecordsIndex].AsObject());

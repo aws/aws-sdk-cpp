@@ -30,7 +30,7 @@ BatchGetPreparedStatementResult& BatchGetPreparedStatementResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PreparedStatements"))
   {
-    Array<JsonView> preparedStatementsJsonList = jsonValue.GetArray("PreparedStatements");
+    Aws::Utils::Array<JsonView> preparedStatementsJsonList = jsonValue.GetArray("PreparedStatements");
     for(unsigned preparedStatementsIndex = 0; preparedStatementsIndex < preparedStatementsJsonList.GetLength(); ++preparedStatementsIndex)
     {
       m_preparedStatements.push_back(preparedStatementsJsonList[preparedStatementsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetPreparedStatementResult& BatchGetPreparedStatementResult::operator =(con
 
   if(jsonValue.ValueExists("UnprocessedPreparedStatementNames"))
   {
-    Array<JsonView> unprocessedPreparedStatementNamesJsonList = jsonValue.GetArray("UnprocessedPreparedStatementNames");
+    Aws::Utils::Array<JsonView> unprocessedPreparedStatementNamesJsonList = jsonValue.GetArray("UnprocessedPreparedStatementNames");
     for(unsigned unprocessedPreparedStatementNamesIndex = 0; unprocessedPreparedStatementNamesIndex < unprocessedPreparedStatementNamesJsonList.GetLength(); ++unprocessedPreparedStatementNamesIndex)
     {
       m_unprocessedPreparedStatementNames.push_back(unprocessedPreparedStatementNamesJsonList[unprocessedPreparedStatementNamesIndex].AsObject());

@@ -25,7 +25,7 @@ Aws::String UpdateLiveSourceRequest::SerializePayload() const
 
   if(m_httpPackageConfigurationsHasBeenSet)
   {
-   Array<JsonValue> httpPackageConfigurationsJsonList(m_httpPackageConfigurations.size());
+   Aws::Utils::Array<JsonValue> httpPackageConfigurationsJsonList(m_httpPackageConfigurations.size());
    for(unsigned httpPackageConfigurationsIndex = 0; httpPackageConfigurationsIndex < httpPackageConfigurationsJsonList.GetLength(); ++httpPackageConfigurationsIndex)
    {
      httpPackageConfigurationsJsonList[httpPackageConfigurationsIndex].AsObject(m_httpPackageConfigurations[httpPackageConfigurationsIndex].Jsonize());

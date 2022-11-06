@@ -76,7 +76,7 @@ StatementData& StatementData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("QueryParameters"))
   {
-    Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
+    Aws::Utils::Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
     for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
     {
       m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
@@ -93,7 +93,7 @@ StatementData& StatementData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("QueryStrings"))
   {
-    Array<JsonView> queryStringsJsonList = jsonValue.GetArray("QueryStrings");
+    Aws::Utils::Array<JsonView> queryStringsJsonList = jsonValue.GetArray("QueryStrings");
     for(unsigned queryStringsIndex = 0; queryStringsIndex < queryStringsJsonList.GetLength(); ++queryStringsIndex)
     {
       m_queryStrings.push_back(queryStringsJsonList[queryStringsIndex].AsString());
@@ -155,7 +155,7 @@ JsonValue StatementData::Jsonize() const
 
   if(m_queryParametersHasBeenSet)
   {
-   Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
+   Aws::Utils::Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
    for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
    {
      queryParametersJsonList[queryParametersIndex].AsObject(m_queryParameters[queryParametersIndex].Jsonize());
@@ -172,7 +172,7 @@ JsonValue StatementData::Jsonize() const
 
   if(m_queryStringsHasBeenSet)
   {
-   Array<JsonValue> queryStringsJsonList(m_queryStrings.size());
+   Aws::Utils::Array<JsonValue> queryStringsJsonList(m_queryStrings.size());
    for(unsigned queryStringsIndex = 0; queryStringsIndex < queryStringsJsonList.GetLength(); ++queryStringsIndex)
    {
      queryStringsJsonList[queryStringsIndex].AsString(m_queryStrings[queryStringsIndex]);

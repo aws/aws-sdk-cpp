@@ -30,7 +30,7 @@ DescribeAcceleratorsResult& DescribeAcceleratorsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("acceleratorSet"))
   {
-    Array<JsonView> acceleratorSetJsonList = jsonValue.GetArray("acceleratorSet");
+    Aws::Utils::Array<JsonView> acceleratorSetJsonList = jsonValue.GetArray("acceleratorSet");
     for(unsigned acceleratorSetIndex = 0; acceleratorSetIndex < acceleratorSetJsonList.GetLength(); ++acceleratorSetIndex)
     {
       m_acceleratorSet.push_back(acceleratorSetJsonList[acceleratorSetIndex].AsObject());

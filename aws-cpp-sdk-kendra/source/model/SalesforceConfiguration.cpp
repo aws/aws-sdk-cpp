@@ -65,7 +65,7 @@ SalesforceConfiguration& SalesforceConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StandardObjectConfigurations"))
   {
-    Array<JsonView> standardObjectConfigurationsJsonList = jsonValue.GetArray("StandardObjectConfigurations");
+    Aws::Utils::Array<JsonView> standardObjectConfigurationsJsonList = jsonValue.GetArray("StandardObjectConfigurations");
     for(unsigned standardObjectConfigurationsIndex = 0; standardObjectConfigurationsIndex < standardObjectConfigurationsJsonList.GetLength(); ++standardObjectConfigurationsIndex)
     {
       m_standardObjectConfigurations.push_back(standardObjectConfigurationsJsonList[standardObjectConfigurationsIndex].AsObject());
@@ -103,7 +103,7 @@ SalesforceConfiguration& SalesforceConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IncludeAttachmentFilePatterns"))
   {
-    Array<JsonView> includeAttachmentFilePatternsJsonList = jsonValue.GetArray("IncludeAttachmentFilePatterns");
+    Aws::Utils::Array<JsonView> includeAttachmentFilePatternsJsonList = jsonValue.GetArray("IncludeAttachmentFilePatterns");
     for(unsigned includeAttachmentFilePatternsIndex = 0; includeAttachmentFilePatternsIndex < includeAttachmentFilePatternsJsonList.GetLength(); ++includeAttachmentFilePatternsIndex)
     {
       m_includeAttachmentFilePatterns.push_back(includeAttachmentFilePatternsJsonList[includeAttachmentFilePatternsIndex].AsString());
@@ -113,7 +113,7 @@ SalesforceConfiguration& SalesforceConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExcludeAttachmentFilePatterns"))
   {
-    Array<JsonView> excludeAttachmentFilePatternsJsonList = jsonValue.GetArray("ExcludeAttachmentFilePatterns");
+    Aws::Utils::Array<JsonView> excludeAttachmentFilePatternsJsonList = jsonValue.GetArray("ExcludeAttachmentFilePatterns");
     for(unsigned excludeAttachmentFilePatternsIndex = 0; excludeAttachmentFilePatternsIndex < excludeAttachmentFilePatternsJsonList.GetLength(); ++excludeAttachmentFilePatternsIndex)
     {
       m_excludeAttachmentFilePatterns.push_back(excludeAttachmentFilePatternsJsonList[excludeAttachmentFilePatternsIndex].AsString());
@@ -142,7 +142,7 @@ JsonValue SalesforceConfiguration::Jsonize() const
 
   if(m_standardObjectConfigurationsHasBeenSet)
   {
-   Array<JsonValue> standardObjectConfigurationsJsonList(m_standardObjectConfigurations.size());
+   Aws::Utils::Array<JsonValue> standardObjectConfigurationsJsonList(m_standardObjectConfigurations.size());
    for(unsigned standardObjectConfigurationsIndex = 0; standardObjectConfigurationsIndex < standardObjectConfigurationsJsonList.GetLength(); ++standardObjectConfigurationsIndex)
    {
      standardObjectConfigurationsJsonList[standardObjectConfigurationsIndex].AsObject(m_standardObjectConfigurations[standardObjectConfigurationsIndex].Jsonize());
@@ -177,7 +177,7 @@ JsonValue SalesforceConfiguration::Jsonize() const
 
   if(m_includeAttachmentFilePatternsHasBeenSet)
   {
-   Array<JsonValue> includeAttachmentFilePatternsJsonList(m_includeAttachmentFilePatterns.size());
+   Aws::Utils::Array<JsonValue> includeAttachmentFilePatternsJsonList(m_includeAttachmentFilePatterns.size());
    for(unsigned includeAttachmentFilePatternsIndex = 0; includeAttachmentFilePatternsIndex < includeAttachmentFilePatternsJsonList.GetLength(); ++includeAttachmentFilePatternsIndex)
    {
      includeAttachmentFilePatternsJsonList[includeAttachmentFilePatternsIndex].AsString(m_includeAttachmentFilePatterns[includeAttachmentFilePatternsIndex]);
@@ -188,7 +188,7 @@ JsonValue SalesforceConfiguration::Jsonize() const
 
   if(m_excludeAttachmentFilePatternsHasBeenSet)
   {
-   Array<JsonValue> excludeAttachmentFilePatternsJsonList(m_excludeAttachmentFilePatterns.size());
+   Aws::Utils::Array<JsonValue> excludeAttachmentFilePatternsJsonList(m_excludeAttachmentFilePatterns.size());
    for(unsigned excludeAttachmentFilePatternsIndex = 0; excludeAttachmentFilePatternsIndex < excludeAttachmentFilePatternsJsonList.GetLength(); ++excludeAttachmentFilePatternsIndex)
    {
      excludeAttachmentFilePatternsJsonList[excludeAttachmentFilePatternsIndex].AsString(m_excludeAttachmentFilePatterns[excludeAttachmentFilePatternsIndex]);

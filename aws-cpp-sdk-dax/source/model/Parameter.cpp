@@ -78,7 +78,7 @@ Parameter& Parameter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NodeTypeSpecificValues"))
   {
-    Array<JsonView> nodeTypeSpecificValuesJsonList = jsonValue.GetArray("NodeTypeSpecificValues");
+    Aws::Utils::Array<JsonView> nodeTypeSpecificValuesJsonList = jsonValue.GetArray("NodeTypeSpecificValues");
     for(unsigned nodeTypeSpecificValuesIndex = 0; nodeTypeSpecificValuesIndex < nodeTypeSpecificValuesJsonList.GetLength(); ++nodeTypeSpecificValuesIndex)
     {
       m_nodeTypeSpecificValues.push_back(nodeTypeSpecificValuesJsonList[nodeTypeSpecificValuesIndex].AsObject());
@@ -154,7 +154,7 @@ JsonValue Parameter::Jsonize() const
 
   if(m_nodeTypeSpecificValuesHasBeenSet)
   {
-   Array<JsonValue> nodeTypeSpecificValuesJsonList(m_nodeTypeSpecificValues.size());
+   Aws::Utils::Array<JsonValue> nodeTypeSpecificValuesJsonList(m_nodeTypeSpecificValues.size());
    for(unsigned nodeTypeSpecificValuesIndex = 0; nodeTypeSpecificValuesIndex < nodeTypeSpecificValuesJsonList.GetLength(); ++nodeTypeSpecificValuesIndex)
    {
      nodeTypeSpecificValuesJsonList[nodeTypeSpecificValuesIndex].AsObject(m_nodeTypeSpecificValues[nodeTypeSpecificValuesIndex].Jsonize());

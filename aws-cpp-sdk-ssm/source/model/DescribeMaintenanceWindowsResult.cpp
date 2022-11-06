@@ -30,7 +30,7 @@ DescribeMaintenanceWindowsResult& DescribeMaintenanceWindowsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WindowIdentities"))
   {
-    Array<JsonView> windowIdentitiesJsonList = jsonValue.GetArray("WindowIdentities");
+    Aws::Utils::Array<JsonView> windowIdentitiesJsonList = jsonValue.GetArray("WindowIdentities");
     for(unsigned windowIdentitiesIndex = 0; windowIdentitiesIndex < windowIdentitiesJsonList.GetLength(); ++windowIdentitiesIndex)
     {
       m_windowIdentities.push_back(windowIdentitiesJsonList[windowIdentitiesIndex].AsObject());

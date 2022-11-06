@@ -30,7 +30,7 @@ ListDecoderManifestNetworkInterfacesResult& ListDecoderManifestNetworkInterfaces
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("networkInterfaces"))
   {
-    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
     for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
     {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());

@@ -36,7 +36,7 @@ AddFlowVpcInterfacesResult& AddFlowVpcInterfacesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("vpcInterfaces"))
   {
-    Array<JsonView> vpcInterfacesJsonList = jsonValue.GetArray("vpcInterfaces");
+    Aws::Utils::Array<JsonView> vpcInterfacesJsonList = jsonValue.GetArray("vpcInterfaces");
     for(unsigned vpcInterfacesIndex = 0; vpcInterfacesIndex < vpcInterfacesJsonList.GetLength(); ++vpcInterfacesIndex)
     {
       m_vpcInterfaces.push_back(vpcInterfacesJsonList[vpcInterfacesIndex].AsObject());

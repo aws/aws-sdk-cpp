@@ -56,7 +56,7 @@ Aws::String SubmitTaskStateChangeRequest::SerializePayload() const
 
   if(m_containersHasBeenSet)
   {
-   Array<JsonValue> containersJsonList(m_containers.size());
+   Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
    for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
    {
      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
@@ -67,7 +67,7 @@ Aws::String SubmitTaskStateChangeRequest::SerializePayload() const
 
   if(m_attachmentsHasBeenSet)
   {
-   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
    {
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
@@ -78,7 +78,7 @@ Aws::String SubmitTaskStateChangeRequest::SerializePayload() const
 
   if(m_managedAgentsHasBeenSet)
   {
-   Array<JsonValue> managedAgentsJsonList(m_managedAgents.size());
+   Aws::Utils::Array<JsonValue> managedAgentsJsonList(m_managedAgents.size());
    for(unsigned managedAgentsIndex = 0; managedAgentsIndex < managedAgentsJsonList.GetLength(); ++managedAgentsIndex)
    {
      managedAgentsJsonList[managedAgentsIndex].AsObject(m_managedAgents[managedAgentsIndex].Jsonize());

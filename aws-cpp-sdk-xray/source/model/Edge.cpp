@@ -73,7 +73,7 @@ Edge& Edge::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
   {
-    Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
+    Aws::Utils::Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
     for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
     {
       m_responseTimeHistogram.push_back(responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject());
@@ -83,7 +83,7 @@ Edge& Edge::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Aliases"))
   {
-    Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
+    Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
     for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
     {
       m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());
@@ -122,7 +122,7 @@ JsonValue Edge::Jsonize() const
 
   if(m_responseTimeHistogramHasBeenSet)
   {
-   Array<JsonValue> responseTimeHistogramJsonList(m_responseTimeHistogram.size());
+   Aws::Utils::Array<JsonValue> responseTimeHistogramJsonList(m_responseTimeHistogram.size());
    for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
    {
      responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject(m_responseTimeHistogram[responseTimeHistogramIndex].Jsonize());
@@ -133,7 +133,7 @@ JsonValue Edge::Jsonize() const
 
   if(m_aliasesHasBeenSet)
   {
-   Array<JsonValue> aliasesJsonList(m_aliases.size());
+   Aws::Utils::Array<JsonValue> aliasesJsonList(m_aliases.size());
    for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
    {
      aliasesJsonList[aliasesIndex].AsObject(m_aliases[aliasesIndex].Jsonize());

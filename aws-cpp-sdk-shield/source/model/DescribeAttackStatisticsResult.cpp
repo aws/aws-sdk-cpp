@@ -36,7 +36,7 @@ DescribeAttackStatisticsResult& DescribeAttackStatisticsResult::operator =(const
 
   if(jsonValue.ValueExists("DataItems"))
   {
-    Array<JsonView> dataItemsJsonList = jsonValue.GetArray("DataItems");
+    Aws::Utils::Array<JsonView> dataItemsJsonList = jsonValue.GetArray("DataItems");
     for(unsigned dataItemsIndex = 0; dataItemsIndex < dataItemsJsonList.GetLength(); ++dataItemsIndex)
     {
       m_dataItems.push_back(dataItemsJsonList[dataItemsIndex].AsObject());

@@ -36,7 +36,7 @@ DescribeReleaseLabelResult& DescribeReleaseLabelResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("Applications"))
   {
-    Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
+    Aws::Utils::Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
     for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
     {
       m_applications.push_back(applicationsJsonList[applicationsIndex].AsObject());
@@ -51,7 +51,7 @@ DescribeReleaseLabelResult& DescribeReleaseLabelResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("AvailableOSReleases"))
   {
-    Array<JsonView> availableOSReleasesJsonList = jsonValue.GetArray("AvailableOSReleases");
+    Aws::Utils::Array<JsonView> availableOSReleasesJsonList = jsonValue.GetArray("AvailableOSReleases");
     for(unsigned availableOSReleasesIndex = 0; availableOSReleasesIndex < availableOSReleasesJsonList.GetLength(); ++availableOSReleasesIndex)
     {
       m_availableOSReleases.push_back(availableOSReleasesJsonList[availableOSReleasesIndex].AsObject());

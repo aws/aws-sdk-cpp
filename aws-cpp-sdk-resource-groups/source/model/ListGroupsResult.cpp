@@ -30,7 +30,7 @@ ListGroupsResult& ListGroupsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GroupIdentifiers"))
   {
-    Array<JsonView> groupIdentifiersJsonList = jsonValue.GetArray("GroupIdentifiers");
+    Aws::Utils::Array<JsonView> groupIdentifiersJsonList = jsonValue.GetArray("GroupIdentifiers");
     for(unsigned groupIdentifiersIndex = 0; groupIdentifiersIndex < groupIdentifiersJsonList.GetLength(); ++groupIdentifiersIndex)
     {
       m_groupIdentifiers.push_back(groupIdentifiersJsonList[groupIdentifiersIndex].AsObject());

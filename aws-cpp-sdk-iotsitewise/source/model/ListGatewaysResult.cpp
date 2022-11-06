@@ -30,7 +30,7 @@ ListGatewaysResult& ListGatewaysResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("gatewaySummaries"))
   {
-    Array<JsonView> gatewaySummariesJsonList = jsonValue.GetArray("gatewaySummaries");
+    Aws::Utils::Array<JsonView> gatewaySummariesJsonList = jsonValue.GetArray("gatewaySummaries");
     for(unsigned gatewaySummariesIndex = 0; gatewaySummariesIndex < gatewaySummariesJsonList.GetLength(); ++gatewaySummariesIndex)
     {
       m_gatewaySummaries.push_back(gatewaySummariesJsonList[gatewaySummariesIndex].AsObject());

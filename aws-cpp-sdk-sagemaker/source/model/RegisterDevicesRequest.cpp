@@ -31,7 +31,7 @@ Aws::String RegisterDevicesRequest::SerializePayload() const
 
   if(m_devicesHasBeenSet)
   {
-   Array<JsonValue> devicesJsonList(m_devices.size());
+   Aws::Utils::Array<JsonValue> devicesJsonList(m_devices.size());
    for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
    {
      devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());
@@ -42,7 +42,7 @@ Aws::String RegisterDevicesRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

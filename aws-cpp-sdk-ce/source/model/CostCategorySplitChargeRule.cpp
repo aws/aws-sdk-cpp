@@ -48,7 +48,7 @@ CostCategorySplitChargeRule& CostCategorySplitChargeRule::operator =(JsonView js
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
@@ -65,7 +65,7 @@ CostCategorySplitChargeRule& CostCategorySplitChargeRule::operator =(JsonView js
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
@@ -88,7 +88,7 @@ JsonValue CostCategorySplitChargeRule::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
@@ -104,7 +104,7 @@ JsonValue CostCategorySplitChargeRule::Jsonize() const
 
   if(m_parametersHasBeenSet)
   {
-   Array<JsonValue> parametersJsonList(m_parameters.size());
+   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
    {
      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());

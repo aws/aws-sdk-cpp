@@ -35,7 +35,7 @@ OneDriveUsers& OneDriveUsers::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OneDriveUserList"))
   {
-    Array<JsonView> oneDriveUserListJsonList = jsonValue.GetArray("OneDriveUserList");
+    Aws::Utils::Array<JsonView> oneDriveUserListJsonList = jsonValue.GetArray("OneDriveUserList");
     for(unsigned oneDriveUserListIndex = 0; oneDriveUserListIndex < oneDriveUserListJsonList.GetLength(); ++oneDriveUserListIndex)
     {
       m_oneDriveUserList.push_back(oneDriveUserListJsonList[oneDriveUserListIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue OneDriveUsers::Jsonize() const
 
   if(m_oneDriveUserListHasBeenSet)
   {
-   Array<JsonValue> oneDriveUserListJsonList(m_oneDriveUserList.size());
+   Aws::Utils::Array<JsonValue> oneDriveUserListJsonList(m_oneDriveUserList.size());
    for(unsigned oneDriveUserListIndex = 0; oneDriveUserListIndex < oneDriveUserListJsonList.GetLength(); ++oneDriveUserListIndex)
    {
      oneDriveUserListJsonList[oneDriveUserListIndex].AsString(m_oneDriveUserList[oneDriveUserListIndex]);

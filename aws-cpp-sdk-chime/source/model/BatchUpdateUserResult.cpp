@@ -30,7 +30,7 @@ BatchUpdateUserResult& BatchUpdateUserResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserErrors"))
   {
-    Array<JsonView> userErrorsJsonList = jsonValue.GetArray("UserErrors");
+    Aws::Utils::Array<JsonView> userErrorsJsonList = jsonValue.GetArray("UserErrors");
     for(unsigned userErrorsIndex = 0; userErrorsIndex < userErrorsJsonList.GetLength(); ++userErrorsIndex)
     {
       m_userErrors.push_back(userErrorsJsonList[userErrorsIndex].AsObject());

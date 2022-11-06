@@ -43,7 +43,7 @@ InputDeviceNetworkSettings& InputDeviceNetworkSettings::operator =(JsonView json
 {
   if(jsonValue.ValueExists("dnsAddresses"))
   {
-    Array<JsonView> dnsAddressesJsonList = jsonValue.GetArray("dnsAddresses");
+    Aws::Utils::Array<JsonView> dnsAddressesJsonList = jsonValue.GetArray("dnsAddresses");
     for(unsigned dnsAddressesIndex = 0; dnsAddressesIndex < dnsAddressesJsonList.GetLength(); ++dnsAddressesIndex)
     {
       m_dnsAddresses.push_back(dnsAddressesJsonList[dnsAddressesIndex].AsString());
@@ -88,7 +88,7 @@ JsonValue InputDeviceNetworkSettings::Jsonize() const
 
   if(m_dnsAddressesHasBeenSet)
   {
-   Array<JsonValue> dnsAddressesJsonList(m_dnsAddresses.size());
+   Aws::Utils::Array<JsonValue> dnsAddressesJsonList(m_dnsAddresses.size());
    for(unsigned dnsAddressesIndex = 0; dnsAddressesIndex < dnsAddressesJsonList.GetLength(); ++dnsAddressesIndex)
    {
      dnsAddressesJsonList[dnsAddressesIndex].AsString(m_dnsAddresses[dnsAddressesIndex]);

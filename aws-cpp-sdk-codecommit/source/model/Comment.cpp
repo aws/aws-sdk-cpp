@@ -109,7 +109,7 @@ Comment& Comment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("callerReactions"))
   {
-    Array<JsonView> callerReactionsJsonList = jsonValue.GetArray("callerReactions");
+    Aws::Utils::Array<JsonView> callerReactionsJsonList = jsonValue.GetArray("callerReactions");
     for(unsigned callerReactionsIndex = 0; callerReactionsIndex < callerReactionsJsonList.GetLength(); ++callerReactionsIndex)
     {
       m_callerReactions.push_back(callerReactionsJsonList[callerReactionsIndex].AsString());
@@ -182,7 +182,7 @@ JsonValue Comment::Jsonize() const
 
   if(m_callerReactionsHasBeenSet)
   {
-   Array<JsonValue> callerReactionsJsonList(m_callerReactions.size());
+   Aws::Utils::Array<JsonValue> callerReactionsJsonList(m_callerReactions.size());
    for(unsigned callerReactionsIndex = 0; callerReactionsIndex < callerReactionsJsonList.GetLength(); ++callerReactionsIndex)
    {
      callerReactionsJsonList[callerReactionsIndex].AsString(m_callerReactions[callerReactionsIndex]);

@@ -126,7 +126,7 @@ Control& Control::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("controlMappingSources"))
   {
-    Array<JsonView> controlMappingSourcesJsonList = jsonValue.GetArray("controlMappingSources");
+    Aws::Utils::Array<JsonView> controlMappingSourcesJsonList = jsonValue.GetArray("controlMappingSources");
     for(unsigned controlMappingSourcesIndex = 0; controlMappingSourcesIndex < controlMappingSourcesJsonList.GetLength(); ++controlMappingSourcesIndex)
     {
       m_controlMappingSources.push_back(controlMappingSourcesJsonList[controlMappingSourcesIndex].AsObject());
@@ -234,7 +234,7 @@ JsonValue Control::Jsonize() const
 
   if(m_controlMappingSourcesHasBeenSet)
   {
-   Array<JsonValue> controlMappingSourcesJsonList(m_controlMappingSources.size());
+   Aws::Utils::Array<JsonValue> controlMappingSourcesJsonList(m_controlMappingSources.size());
    for(unsigned controlMappingSourcesIndex = 0; controlMappingSourcesIndex < controlMappingSourcesJsonList.GetLength(); ++controlMappingSourcesIndex)
    {
      controlMappingSourcesJsonList[controlMappingSourcesIndex].AsObject(m_controlMappingSources[controlMappingSourcesIndex].Jsonize());

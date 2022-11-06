@@ -30,7 +30,7 @@ ListParentsResult& ListParentsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Parents"))
   {
-    Array<JsonView> parentsJsonList = jsonValue.GetArray("Parents");
+    Aws::Utils::Array<JsonView> parentsJsonList = jsonValue.GetArray("Parents");
     for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
     {
       m_parents.push_back(parentsJsonList[parentsIndex].AsObject());

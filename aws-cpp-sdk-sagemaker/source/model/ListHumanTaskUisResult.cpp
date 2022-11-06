@@ -30,7 +30,7 @@ ListHumanTaskUisResult& ListHumanTaskUisResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HumanTaskUiSummaries"))
   {
-    Array<JsonView> humanTaskUiSummariesJsonList = jsonValue.GetArray("HumanTaskUiSummaries");
+    Aws::Utils::Array<JsonView> humanTaskUiSummariesJsonList = jsonValue.GetArray("HumanTaskUiSummaries");
     for(unsigned humanTaskUiSummariesIndex = 0; humanTaskUiSummariesIndex < humanTaskUiSummariesJsonList.GetLength(); ++humanTaskUiSummariesIndex)
     {
       m_humanTaskUiSummaries.push_back(humanTaskUiSummariesJsonList[humanTaskUiSummariesIndex].AsObject());

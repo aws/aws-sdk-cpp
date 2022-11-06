@@ -57,7 +57,7 @@ UriPathRouteInput& UriPathRouteInput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Methods"))
   {
-    Array<JsonView> methodsJsonList = jsonValue.GetArray("Methods");
+    Aws::Utils::Array<JsonView> methodsJsonList = jsonValue.GetArray("Methods");
     for(unsigned methodsIndex = 0; methodsIndex < methodsJsonList.GetLength(); ++methodsIndex)
     {
       m_methods.push_back(HttpMethodMapper::GetHttpMethodForName(methodsJsonList[methodsIndex].AsString()));
@@ -92,7 +92,7 @@ JsonValue UriPathRouteInput::Jsonize() const
 
   if(m_methodsHasBeenSet)
   {
-   Array<JsonValue> methodsJsonList(m_methods.size());
+   Aws::Utils::Array<JsonValue> methodsJsonList(m_methods.size());
    for(unsigned methodsIndex = 0; methodsIndex < methodsJsonList.GetLength(); ++methodsIndex)
    {
      methodsJsonList[methodsIndex].AsString(HttpMethodMapper::GetNameForHttpMethod(m_methods[methodsIndex]));

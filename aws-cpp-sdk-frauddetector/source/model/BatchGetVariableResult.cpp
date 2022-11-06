@@ -30,7 +30,7 @@ BatchGetVariableResult& BatchGetVariableResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("variables"))
   {
-    Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
+    Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
     for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
     {
       m_variables.push_back(variablesJsonList[variablesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetVariableResult& BatchGetVariableResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

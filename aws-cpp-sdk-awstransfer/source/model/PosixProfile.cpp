@@ -55,7 +55,7 @@ PosixProfile& PosixProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecondaryGids"))
   {
-    Array<JsonView> secondaryGidsJsonList = jsonValue.GetArray("SecondaryGids");
+    Aws::Utils::Array<JsonView> secondaryGidsJsonList = jsonValue.GetArray("SecondaryGids");
     for(unsigned secondaryGidsIndex = 0; secondaryGidsIndex < secondaryGidsJsonList.GetLength(); ++secondaryGidsIndex)
     {
       m_secondaryGids.push_back(secondaryGidsJsonList[secondaryGidsIndex].AsInt64());
@@ -84,7 +84,7 @@ JsonValue PosixProfile::Jsonize() const
 
   if(m_secondaryGidsHasBeenSet)
   {
-   Array<JsonValue> secondaryGidsJsonList(m_secondaryGids.size());
+   Aws::Utils::Array<JsonValue> secondaryGidsJsonList(m_secondaryGids.size());
    for(unsigned secondaryGidsIndex = 0; secondaryGidsIndex < secondaryGidsJsonList.GetLength(); ++secondaryGidsIndex)
    {
      secondaryGidsJsonList[secondaryGidsIndex].AsInt64(m_secondaryGids[secondaryGidsIndex]);

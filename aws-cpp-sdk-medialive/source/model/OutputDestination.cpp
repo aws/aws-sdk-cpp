@@ -46,7 +46,7 @@ OutputDestination& OutputDestination::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mediaPackageSettings"))
   {
-    Array<JsonView> mediaPackageSettingsJsonList = jsonValue.GetArray("mediaPackageSettings");
+    Aws::Utils::Array<JsonView> mediaPackageSettingsJsonList = jsonValue.GetArray("mediaPackageSettings");
     for(unsigned mediaPackageSettingsIndex = 0; mediaPackageSettingsIndex < mediaPackageSettingsJsonList.GetLength(); ++mediaPackageSettingsIndex)
     {
       m_mediaPackageSettings.push_back(mediaPackageSettingsJsonList[mediaPackageSettingsIndex].AsObject());
@@ -63,7 +63,7 @@ OutputDestination& OutputDestination::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("settings"))
   {
-    Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
+    Aws::Utils::Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
     for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
     {
       m_settings.push_back(settingsJsonList[settingsIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue OutputDestination::Jsonize() const
 
   if(m_mediaPackageSettingsHasBeenSet)
   {
-   Array<JsonValue> mediaPackageSettingsJsonList(m_mediaPackageSettings.size());
+   Aws::Utils::Array<JsonValue> mediaPackageSettingsJsonList(m_mediaPackageSettings.size());
    for(unsigned mediaPackageSettingsIndex = 0; mediaPackageSettingsIndex < mediaPackageSettingsJsonList.GetLength(); ++mediaPackageSettingsIndex)
    {
      mediaPackageSettingsJsonList[mediaPackageSettingsIndex].AsObject(m_mediaPackageSettings[mediaPackageSettingsIndex].Jsonize());
@@ -103,7 +103,7 @@ JsonValue OutputDestination::Jsonize() const
 
   if(m_settingsHasBeenSet)
   {
-   Array<JsonValue> settingsJsonList(m_settings.size());
+   Aws::Utils::Array<JsonValue> settingsJsonList(m_settings.size());
    for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
    {
      settingsJsonList[settingsIndex].AsObject(m_settings[settingsIndex].Jsonize());

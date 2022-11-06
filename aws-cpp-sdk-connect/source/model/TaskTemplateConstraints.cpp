@@ -37,7 +37,7 @@ TaskTemplateConstraints& TaskTemplateConstraints::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RequiredFields"))
   {
-    Array<JsonView> requiredFieldsJsonList = jsonValue.GetArray("RequiredFields");
+    Aws::Utils::Array<JsonView> requiredFieldsJsonList = jsonValue.GetArray("RequiredFields");
     for(unsigned requiredFieldsIndex = 0; requiredFieldsIndex < requiredFieldsJsonList.GetLength(); ++requiredFieldsIndex)
     {
       m_requiredFields.push_back(requiredFieldsJsonList[requiredFieldsIndex].AsObject());
@@ -47,7 +47,7 @@ TaskTemplateConstraints& TaskTemplateConstraints::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReadOnlyFields"))
   {
-    Array<JsonView> readOnlyFieldsJsonList = jsonValue.GetArray("ReadOnlyFields");
+    Aws::Utils::Array<JsonView> readOnlyFieldsJsonList = jsonValue.GetArray("ReadOnlyFields");
     for(unsigned readOnlyFieldsIndex = 0; readOnlyFieldsIndex < readOnlyFieldsJsonList.GetLength(); ++readOnlyFieldsIndex)
     {
       m_readOnlyFields.push_back(readOnlyFieldsJsonList[readOnlyFieldsIndex].AsObject());
@@ -57,7 +57,7 @@ TaskTemplateConstraints& TaskTemplateConstraints::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InvisibleFields"))
   {
-    Array<JsonView> invisibleFieldsJsonList = jsonValue.GetArray("InvisibleFields");
+    Aws::Utils::Array<JsonView> invisibleFieldsJsonList = jsonValue.GetArray("InvisibleFields");
     for(unsigned invisibleFieldsIndex = 0; invisibleFieldsIndex < invisibleFieldsJsonList.GetLength(); ++invisibleFieldsIndex)
     {
       m_invisibleFields.push_back(invisibleFieldsJsonList[invisibleFieldsIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue TaskTemplateConstraints::Jsonize() const
 
   if(m_requiredFieldsHasBeenSet)
   {
-   Array<JsonValue> requiredFieldsJsonList(m_requiredFields.size());
+   Aws::Utils::Array<JsonValue> requiredFieldsJsonList(m_requiredFields.size());
    for(unsigned requiredFieldsIndex = 0; requiredFieldsIndex < requiredFieldsJsonList.GetLength(); ++requiredFieldsIndex)
    {
      requiredFieldsJsonList[requiredFieldsIndex].AsObject(m_requiredFields[requiredFieldsIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue TaskTemplateConstraints::Jsonize() const
 
   if(m_readOnlyFieldsHasBeenSet)
   {
-   Array<JsonValue> readOnlyFieldsJsonList(m_readOnlyFields.size());
+   Aws::Utils::Array<JsonValue> readOnlyFieldsJsonList(m_readOnlyFields.size());
    for(unsigned readOnlyFieldsIndex = 0; readOnlyFieldsIndex < readOnlyFieldsJsonList.GetLength(); ++readOnlyFieldsIndex)
    {
      readOnlyFieldsJsonList[readOnlyFieldsIndex].AsObject(m_readOnlyFields[readOnlyFieldsIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue TaskTemplateConstraints::Jsonize() const
 
   if(m_invisibleFieldsHasBeenSet)
   {
-   Array<JsonValue> invisibleFieldsJsonList(m_invisibleFields.size());
+   Aws::Utils::Array<JsonValue> invisibleFieldsJsonList(m_invisibleFields.size());
    for(unsigned invisibleFieldsIndex = 0; invisibleFieldsIndex < invisibleFieldsJsonList.GetLength(); ++invisibleFieldsIndex)
    {
      invisibleFieldsJsonList[invisibleFieldsIndex].AsObject(m_invisibleFields[invisibleFieldsIndex].Jsonize());

@@ -59,7 +59,7 @@ ConfigurationAggregator& ConfigurationAggregator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AccountAggregationSources"))
   {
-    Array<JsonView> accountAggregationSourcesJsonList = jsonValue.GetArray("AccountAggregationSources");
+    Aws::Utils::Array<JsonView> accountAggregationSourcesJsonList = jsonValue.GetArray("AccountAggregationSources");
     for(unsigned accountAggregationSourcesIndex = 0; accountAggregationSourcesIndex < accountAggregationSourcesJsonList.GetLength(); ++accountAggregationSourcesIndex)
     {
       m_accountAggregationSources.push_back(accountAggregationSourcesJsonList[accountAggregationSourcesIndex].AsObject());
@@ -116,7 +116,7 @@ JsonValue ConfigurationAggregator::Jsonize() const
 
   if(m_accountAggregationSourcesHasBeenSet)
   {
-   Array<JsonValue> accountAggregationSourcesJsonList(m_accountAggregationSources.size());
+   Aws::Utils::Array<JsonValue> accountAggregationSourcesJsonList(m_accountAggregationSources.size());
    for(unsigned accountAggregationSourcesIndex = 0; accountAggregationSourcesIndex < accountAggregationSourcesJsonList.GetLength(); ++accountAggregationSourcesIndex)
    {
      accountAggregationSourcesJsonList[accountAggregationSourcesIndex].AsObject(m_accountAggregationSources[accountAggregationSourcesIndex].Jsonize());

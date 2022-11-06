@@ -30,7 +30,7 @@ ListComplianceStatusResult& ListComplianceStatusResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PolicyComplianceStatusList"))
   {
-    Array<JsonView> policyComplianceStatusListJsonList = jsonValue.GetArray("PolicyComplianceStatusList");
+    Aws::Utils::Array<JsonView> policyComplianceStatusListJsonList = jsonValue.GetArray("PolicyComplianceStatusList");
     for(unsigned policyComplianceStatusListIndex = 0; policyComplianceStatusListIndex < policyComplianceStatusListJsonList.GetLength(); ++policyComplianceStatusListIndex)
     {
       m_policyComplianceStatusList.push_back(policyComplianceStatusListJsonList[policyComplianceStatusListIndex].AsObject());

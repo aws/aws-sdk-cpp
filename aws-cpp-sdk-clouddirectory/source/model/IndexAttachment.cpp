@@ -35,7 +35,7 @@ IndexAttachment& IndexAttachment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexedAttributes"))
   {
-    Array<JsonView> indexedAttributesJsonList = jsonValue.GetArray("IndexedAttributes");
+    Aws::Utils::Array<JsonView> indexedAttributesJsonList = jsonValue.GetArray("IndexedAttributes");
     for(unsigned indexedAttributesIndex = 0; indexedAttributesIndex < indexedAttributesJsonList.GetLength(); ++indexedAttributesIndex)
     {
       m_indexedAttributes.push_back(indexedAttributesJsonList[indexedAttributesIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue IndexAttachment::Jsonize() const
 
   if(m_indexedAttributesHasBeenSet)
   {
-   Array<JsonValue> indexedAttributesJsonList(m_indexedAttributes.size());
+   Aws::Utils::Array<JsonValue> indexedAttributesJsonList(m_indexedAttributes.size());
    for(unsigned indexedAttributesIndex = 0; indexedAttributesIndex < indexedAttributesJsonList.GetLength(); ++indexedAttributesIndex)
    {
      indexedAttributesJsonList[indexedAttributesIndex].AsObject(m_indexedAttributes[indexedAttributesIndex].Jsonize());

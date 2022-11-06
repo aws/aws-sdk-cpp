@@ -36,7 +36,7 @@ ReplicateSecretToRegionsResult& ReplicateSecretToRegionsResult::operator =(const
 
   if(jsonValue.ValueExists("ReplicationStatus"))
   {
-    Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
+    Aws::Utils::Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
     for(unsigned replicationStatusIndex = 0; replicationStatusIndex < replicationStatusJsonList.GetLength(); ++replicationStatusIndex)
     {
       m_replicationStatus.push_back(replicationStatusJsonList[replicationStatusIndex].AsObject());

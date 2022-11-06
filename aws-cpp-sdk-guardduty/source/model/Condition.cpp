@@ -51,7 +51,7 @@ Condition& Condition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("equals"))
   {
-    Array<JsonView> equalsJsonList = jsonValue.GetArray("equals");
+    Aws::Utils::Array<JsonView> equalsJsonList = jsonValue.GetArray("equals");
     for(unsigned equalsIndex = 0; equalsIndex < equalsJsonList.GetLength(); ++equalsIndex)
     {
       m_equals.push_back(equalsJsonList[equalsIndex].AsString());
@@ -61,7 +61,7 @@ Condition& Condition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("notEquals"))
   {
-    Array<JsonView> notEqualsJsonList = jsonValue.GetArray("notEquals");
+    Aws::Utils::Array<JsonView> notEqualsJsonList = jsonValue.GetArray("notEquals");
     for(unsigned notEqualsIndex = 0; notEqualsIndex < notEqualsJsonList.GetLength(); ++notEqualsIndex)
     {
       m_notEquals.push_back(notEqualsJsonList[notEqualsIndex].AsString());
@@ -106,7 +106,7 @@ JsonValue Condition::Jsonize() const
 
   if(m_equalsHasBeenSet)
   {
-   Array<JsonValue> equalsJsonList(m_equals.size());
+   Aws::Utils::Array<JsonValue> equalsJsonList(m_equals.size());
    for(unsigned equalsIndex = 0; equalsIndex < equalsJsonList.GetLength(); ++equalsIndex)
    {
      equalsJsonList[equalsIndex].AsString(m_equals[equalsIndex]);
@@ -117,7 +117,7 @@ JsonValue Condition::Jsonize() const
 
   if(m_notEqualsHasBeenSet)
   {
-   Array<JsonValue> notEqualsJsonList(m_notEquals.size());
+   Aws::Utils::Array<JsonValue> notEqualsJsonList(m_notEquals.size());
    for(unsigned notEqualsIndex = 0; notEqualsIndex < notEqualsJsonList.GetLength(); ++notEqualsIndex)
    {
      notEqualsJsonList[notEqualsIndex].AsString(m_notEquals[notEqualsIndex]);

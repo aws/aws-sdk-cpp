@@ -122,7 +122,7 @@ Action& Action::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Subscribers"))
   {
-    Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
+    Aws::Utils::Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
     for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
     {
       m_subscribers.push_back(subscribersJsonList[subscribersIndex].AsObject());
@@ -189,7 +189,7 @@ JsonValue Action::Jsonize() const
 
   if(m_subscribersHasBeenSet)
   {
-   Array<JsonValue> subscribersJsonList(m_subscribers.size());
+   Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
    for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
    {
      subscribersJsonList[subscribersIndex].AsObject(m_subscribers[subscribersIndex].Jsonize());

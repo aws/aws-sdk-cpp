@@ -31,7 +31,7 @@ Aws::String CreateACLRequest::SerializePayload() const
 
   if(m_userNamesHasBeenSet)
   {
-   Array<JsonValue> userNamesJsonList(m_userNames.size());
+   Aws::Utils::Array<JsonValue> userNamesJsonList(m_userNames.size());
    for(unsigned userNamesIndex = 0; userNamesIndex < userNamesJsonList.GetLength(); ++userNamesIndex)
    {
      userNamesJsonList[userNamesIndex].AsString(m_userNames[userNamesIndex]);
@@ -42,7 +42,7 @@ Aws::String CreateACLRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

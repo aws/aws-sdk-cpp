@@ -45,7 +45,7 @@ StillWaitingResponseSpecification& StillWaitingResponseSpecification::operator =
 {
   if(jsonValue.ValueExists("messageGroups"))
   {
-    Array<JsonView> messageGroupsJsonList = jsonValue.GetArray("messageGroups");
+    Aws::Utils::Array<JsonView> messageGroupsJsonList = jsonValue.GetArray("messageGroups");
     for(unsigned messageGroupsIndex = 0; messageGroupsIndex < messageGroupsJsonList.GetLength(); ++messageGroupsIndex)
     {
       m_messageGroups.push_back(messageGroupsJsonList[messageGroupsIndex].AsObject());
@@ -83,7 +83,7 @@ JsonValue StillWaitingResponseSpecification::Jsonize() const
 
   if(m_messageGroupsHasBeenSet)
   {
-   Array<JsonValue> messageGroupsJsonList(m_messageGroups.size());
+   Aws::Utils::Array<JsonValue> messageGroupsJsonList(m_messageGroups.size());
    for(unsigned messageGroupsIndex = 0; messageGroupsIndex < messageGroupsJsonList.GetLength(); ++messageGroupsIndex)
    {
      messageGroupsJsonList[messageGroupsIndex].AsObject(m_messageGroups[messageGroupsIndex].Jsonize());

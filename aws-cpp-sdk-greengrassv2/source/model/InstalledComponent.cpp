@@ -109,7 +109,7 @@ InstalledComponent& InstalledComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("lifecycleStatusCodes"))
   {
-    Array<JsonView> lifecycleStatusCodesJsonList = jsonValue.GetArray("lifecycleStatusCodes");
+    Aws::Utils::Array<JsonView> lifecycleStatusCodesJsonList = jsonValue.GetArray("lifecycleStatusCodes");
     for(unsigned lifecycleStatusCodesIndex = 0; lifecycleStatusCodesIndex < lifecycleStatusCodesJsonList.GetLength(); ++lifecycleStatusCodesIndex)
     {
       m_lifecycleStatusCodes.push_back(lifecycleStatusCodesJsonList[lifecycleStatusCodesIndex].AsString());
@@ -171,7 +171,7 @@ JsonValue InstalledComponent::Jsonize() const
 
   if(m_lifecycleStatusCodesHasBeenSet)
   {
-   Array<JsonValue> lifecycleStatusCodesJsonList(m_lifecycleStatusCodes.size());
+   Aws::Utils::Array<JsonValue> lifecycleStatusCodesJsonList(m_lifecycleStatusCodes.size());
    for(unsigned lifecycleStatusCodesIndex = 0; lifecycleStatusCodesIndex < lifecycleStatusCodesJsonList.GetLength(); ++lifecycleStatusCodesIndex)
    {
      lifecycleStatusCodesJsonList[lifecycleStatusCodesIndex].AsString(m_lifecycleStatusCodes[lifecycleStatusCodesIndex]);

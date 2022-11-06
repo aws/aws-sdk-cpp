@@ -30,7 +30,7 @@ ListApplicationVersionsResult& ListApplicationVersionsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ApplicationVersionSummaries"))
   {
-    Array<JsonView> applicationVersionSummariesJsonList = jsonValue.GetArray("ApplicationVersionSummaries");
+    Aws::Utils::Array<JsonView> applicationVersionSummariesJsonList = jsonValue.GetArray("ApplicationVersionSummaries");
     for(unsigned applicationVersionSummariesIndex = 0; applicationVersionSummariesIndex < applicationVersionSummariesJsonList.GetLength(); ++applicationVersionSummariesIndex)
     {
       m_applicationVersionSummaries.push_back(applicationVersionSummariesJsonList[applicationVersionSummariesIndex].AsObject());

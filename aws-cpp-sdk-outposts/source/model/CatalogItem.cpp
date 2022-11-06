@@ -65,7 +65,7 @@ CatalogItem& CatalogItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EC2Capacities"))
   {
-    Array<JsonView> eC2CapacitiesJsonList = jsonValue.GetArray("EC2Capacities");
+    Aws::Utils::Array<JsonView> eC2CapacitiesJsonList = jsonValue.GetArray("EC2Capacities");
     for(unsigned eC2CapacitiesIndex = 0; eC2CapacitiesIndex < eC2CapacitiesJsonList.GetLength(); ++eC2CapacitiesIndex)
     {
       m_eC2Capacities.push_back(eC2CapacitiesJsonList[eC2CapacitiesIndex].AsObject());
@@ -89,7 +89,7 @@ CatalogItem& CatalogItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedUplinkGbps"))
   {
-    Array<JsonView> supportedUplinkGbpsJsonList = jsonValue.GetArray("SupportedUplinkGbps");
+    Aws::Utils::Array<JsonView> supportedUplinkGbpsJsonList = jsonValue.GetArray("SupportedUplinkGbps");
     for(unsigned supportedUplinkGbpsIndex = 0; supportedUplinkGbpsIndex < supportedUplinkGbpsJsonList.GetLength(); ++supportedUplinkGbpsIndex)
     {
       m_supportedUplinkGbps.push_back(supportedUplinkGbpsJsonList[supportedUplinkGbpsIndex].AsInteger());
@@ -99,7 +99,7 @@ CatalogItem& CatalogItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedStorage"))
   {
-    Array<JsonView> supportedStorageJsonList = jsonValue.GetArray("SupportedStorage");
+    Aws::Utils::Array<JsonView> supportedStorageJsonList = jsonValue.GetArray("SupportedStorage");
     for(unsigned supportedStorageIndex = 0; supportedStorageIndex < supportedStorageJsonList.GetLength(); ++supportedStorageIndex)
     {
       m_supportedStorage.push_back(SupportedStorageEnumMapper::GetSupportedStorageEnumForName(supportedStorageJsonList[supportedStorageIndex].AsString()));
@@ -127,7 +127,7 @@ JsonValue CatalogItem::Jsonize() const
 
   if(m_eC2CapacitiesHasBeenSet)
   {
-   Array<JsonValue> eC2CapacitiesJsonList(m_eC2Capacities.size());
+   Aws::Utils::Array<JsonValue> eC2CapacitiesJsonList(m_eC2Capacities.size());
    for(unsigned eC2CapacitiesIndex = 0; eC2CapacitiesIndex < eC2CapacitiesJsonList.GetLength(); ++eC2CapacitiesIndex)
    {
      eC2CapacitiesJsonList[eC2CapacitiesIndex].AsObject(m_eC2Capacities[eC2CapacitiesIndex].Jsonize());
@@ -150,7 +150,7 @@ JsonValue CatalogItem::Jsonize() const
 
   if(m_supportedUplinkGbpsHasBeenSet)
   {
-   Array<JsonValue> supportedUplinkGbpsJsonList(m_supportedUplinkGbps.size());
+   Aws::Utils::Array<JsonValue> supportedUplinkGbpsJsonList(m_supportedUplinkGbps.size());
    for(unsigned supportedUplinkGbpsIndex = 0; supportedUplinkGbpsIndex < supportedUplinkGbpsJsonList.GetLength(); ++supportedUplinkGbpsIndex)
    {
      supportedUplinkGbpsJsonList[supportedUplinkGbpsIndex].AsInteger(m_supportedUplinkGbps[supportedUplinkGbpsIndex]);
@@ -161,7 +161,7 @@ JsonValue CatalogItem::Jsonize() const
 
   if(m_supportedStorageHasBeenSet)
   {
-   Array<JsonValue> supportedStorageJsonList(m_supportedStorage.size());
+   Aws::Utils::Array<JsonValue> supportedStorageJsonList(m_supportedStorage.size());
    for(unsigned supportedStorageIndex = 0; supportedStorageIndex < supportedStorageJsonList.GetLength(); ++supportedStorageIndex)
    {
      supportedStorageJsonList[supportedStorageIndex].AsString(SupportedStorageEnumMapper::GetNameForSupportedStorageEnum(m_supportedStorage[supportedStorageIndex]));

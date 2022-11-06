@@ -52,7 +52,7 @@ GetDetectorVersionResult& GetDetectorVersionResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("externalModelEndpoints"))
   {
-    Array<JsonView> externalModelEndpointsJsonList = jsonValue.GetArray("externalModelEndpoints");
+    Aws::Utils::Array<JsonView> externalModelEndpointsJsonList = jsonValue.GetArray("externalModelEndpoints");
     for(unsigned externalModelEndpointsIndex = 0; externalModelEndpointsIndex < externalModelEndpointsJsonList.GetLength(); ++externalModelEndpointsIndex)
     {
       m_externalModelEndpoints.push_back(externalModelEndpointsJsonList[externalModelEndpointsIndex].AsString());
@@ -61,7 +61,7 @@ GetDetectorVersionResult& GetDetectorVersionResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("modelVersions"))
   {
-    Array<JsonView> modelVersionsJsonList = jsonValue.GetArray("modelVersions");
+    Aws::Utils::Array<JsonView> modelVersionsJsonList = jsonValue.GetArray("modelVersions");
     for(unsigned modelVersionsIndex = 0; modelVersionsIndex < modelVersionsJsonList.GetLength(); ++modelVersionsIndex)
     {
       m_modelVersions.push_back(modelVersionsJsonList[modelVersionsIndex].AsObject());
@@ -70,7 +70,7 @@ GetDetectorVersionResult& GetDetectorVersionResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());

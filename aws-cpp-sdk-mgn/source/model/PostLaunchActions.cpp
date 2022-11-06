@@ -71,7 +71,7 @@ PostLaunchActions& PostLaunchActions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ssmDocuments"))
   {
-    Array<JsonView> ssmDocumentsJsonList = jsonValue.GetArray("ssmDocuments");
+    Aws::Utils::Array<JsonView> ssmDocumentsJsonList = jsonValue.GetArray("ssmDocuments");
     for(unsigned ssmDocumentsIndex = 0; ssmDocumentsIndex < ssmDocumentsJsonList.GetLength(); ++ssmDocumentsIndex)
     {
       m_ssmDocuments.push_back(ssmDocumentsJsonList[ssmDocumentsIndex].AsObject());
@@ -111,7 +111,7 @@ JsonValue PostLaunchActions::Jsonize() const
 
   if(m_ssmDocumentsHasBeenSet)
   {
-   Array<JsonValue> ssmDocumentsJsonList(m_ssmDocuments.size());
+   Aws::Utils::Array<JsonValue> ssmDocumentsJsonList(m_ssmDocuments.size());
    for(unsigned ssmDocumentsIndex = 0; ssmDocumentsIndex < ssmDocumentsJsonList.GetLength(); ++ssmDocumentsIndex)
    {
      ssmDocumentsJsonList[ssmDocumentsIndex].AsObject(m_ssmDocuments[ssmDocumentsIndex].Jsonize());

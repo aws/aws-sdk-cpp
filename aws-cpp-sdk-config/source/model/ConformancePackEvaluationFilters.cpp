@@ -41,7 +41,7 @@ ConformancePackEvaluationFilters& ConformancePackEvaluationFilters::operator =(J
 {
   if(jsonValue.ValueExists("ConfigRuleNames"))
   {
-    Array<JsonView> configRuleNamesJsonList = jsonValue.GetArray("ConfigRuleNames");
+    Aws::Utils::Array<JsonView> configRuleNamesJsonList = jsonValue.GetArray("ConfigRuleNames");
     for(unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex)
     {
       m_configRuleNames.push_back(configRuleNamesJsonList[configRuleNamesIndex].AsString());
@@ -65,7 +65,7 @@ ConformancePackEvaluationFilters& ConformancePackEvaluationFilters::operator =(J
 
   if(jsonValue.ValueExists("ResourceIds"))
   {
-    Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("ResourceIds");
+    Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("ResourceIds");
     for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
     {
       m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsString());
@@ -82,7 +82,7 @@ JsonValue ConformancePackEvaluationFilters::Jsonize() const
 
   if(m_configRuleNamesHasBeenSet)
   {
-   Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
+   Aws::Utils::Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
    for(unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex)
    {
      configRuleNamesJsonList[configRuleNamesIndex].AsString(m_configRuleNames[configRuleNamesIndex]);
@@ -104,7 +104,7 @@ JsonValue ConformancePackEvaluationFilters::Jsonize() const
 
   if(m_resourceIdsHasBeenSet)
   {
-   Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
    {
      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);

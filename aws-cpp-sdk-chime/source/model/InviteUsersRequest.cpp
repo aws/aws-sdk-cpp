@@ -26,7 +26,7 @@ Aws::String InviteUsersRequest::SerializePayload() const
 
   if(m_userEmailListHasBeenSet)
   {
-   Array<JsonValue> userEmailListJsonList(m_userEmailList.size());
+   Aws::Utils::Array<JsonValue> userEmailListJsonList(m_userEmailList.size());
    for(unsigned userEmailListIndex = 0; userEmailListIndex < userEmailListJsonList.GetLength(); ++userEmailListIndex)
    {
      userEmailListJsonList[userEmailListIndex].AsString(m_userEmailList[userEmailListIndex]);

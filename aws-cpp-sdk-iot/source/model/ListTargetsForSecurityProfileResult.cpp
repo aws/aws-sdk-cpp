@@ -30,7 +30,7 @@ ListTargetsForSecurityProfileResult& ListTargetsForSecurityProfileResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("securityProfileTargets"))
   {
-    Array<JsonView> securityProfileTargetsJsonList = jsonValue.GetArray("securityProfileTargets");
+    Aws::Utils::Array<JsonView> securityProfileTargetsJsonList = jsonValue.GetArray("securityProfileTargets");
     for(unsigned securityProfileTargetsIndex = 0; securityProfileTargetsIndex < securityProfileTargetsJsonList.GetLength(); ++securityProfileTargetsIndex)
     {
       m_securityProfileTargets.push_back(securityProfileTargetsJsonList[securityProfileTargetsIndex].AsObject());

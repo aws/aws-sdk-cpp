@@ -32,7 +32,7 @@ SearchAnalysesResult& SearchAnalysesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AnalysisSummaryList"))
   {
-    Array<JsonView> analysisSummaryListJsonList = jsonValue.GetArray("AnalysisSummaryList");
+    Aws::Utils::Array<JsonView> analysisSummaryListJsonList = jsonValue.GetArray("AnalysisSummaryList");
     for(unsigned analysisSummaryListIndex = 0; analysisSummaryListIndex < analysisSummaryListJsonList.GetLength(); ++analysisSummaryListIndex)
     {
       m_analysisSummaryList.push_back(analysisSummaryListJsonList[analysisSummaryListIndex].AsObject());

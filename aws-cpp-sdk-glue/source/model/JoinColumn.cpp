@@ -42,10 +42,10 @@ JoinColumn& JoinColumn::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
+    Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
-      Array<JsonView> enclosedInStringPropertiesJsonList = keysJsonList[keysIndex].AsArray();
+      Aws::Utils::Array<JsonView> enclosedInStringPropertiesJsonList = keysJsonList[keysIndex].AsArray();
       Aws::Vector<Aws::String> enclosedInStringPropertiesList;
       enclosedInStringPropertiesList.reserve((size_t)enclosedInStringPropertiesJsonList.GetLength());
       for(unsigned enclosedInStringPropertiesIndex = 0; enclosedInStringPropertiesIndex < enclosedInStringPropertiesJsonList.GetLength(); ++enclosedInStringPropertiesIndex)
@@ -72,10 +72,10 @@ JsonValue JoinColumn::Jsonize() const
 
   if(m_keysHasBeenSet)
   {
-   Array<JsonValue> keysJsonList(m_keys.size());
+   Aws::Utils::Array<JsonValue> keysJsonList(m_keys.size());
    for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
    {
-     Array<JsonValue> enclosedInStringPropertiesJsonList(m_keys[keysIndex].size());
+     Aws::Utils::Array<JsonValue> enclosedInStringPropertiesJsonList(m_keys[keysIndex].size());
      for(unsigned enclosedInStringPropertiesIndex = 0; enclosedInStringPropertiesIndex < enclosedInStringPropertiesJsonList.GetLength(); ++enclosedInStringPropertiesIndex)
      {
        enclosedInStringPropertiesJsonList[enclosedInStringPropertiesIndex].AsString(m_keys[keysIndex][enclosedInStringPropertiesIndex]);

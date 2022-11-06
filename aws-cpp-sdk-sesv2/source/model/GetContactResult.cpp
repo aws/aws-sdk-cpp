@@ -44,7 +44,7 @@ GetContactResult& GetContactResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("TopicPreferences"))
   {
-    Array<JsonView> topicPreferencesJsonList = jsonValue.GetArray("TopicPreferences");
+    Aws::Utils::Array<JsonView> topicPreferencesJsonList = jsonValue.GetArray("TopicPreferences");
     for(unsigned topicPreferencesIndex = 0; topicPreferencesIndex < topicPreferencesJsonList.GetLength(); ++topicPreferencesIndex)
     {
       m_topicPreferences.push_back(topicPreferencesJsonList[topicPreferencesIndex].AsObject());
@@ -53,7 +53,7 @@ GetContactResult& GetContactResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("TopicDefaultPreferences"))
   {
-    Array<JsonView> topicDefaultPreferencesJsonList = jsonValue.GetArray("TopicDefaultPreferences");
+    Aws::Utils::Array<JsonView> topicDefaultPreferencesJsonList = jsonValue.GetArray("TopicDefaultPreferences");
     for(unsigned topicDefaultPreferencesIndex = 0; topicDefaultPreferencesIndex < topicDefaultPreferencesJsonList.GetLength(); ++topicDefaultPreferencesIndex)
     {
       m_topicDefaultPreferences.push_back(topicDefaultPreferencesJsonList[topicDefaultPreferencesIndex].AsObject());

@@ -36,7 +36,7 @@ ListByteMatchSetsResult& ListByteMatchSetsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("ByteMatchSets"))
   {
-    Array<JsonView> byteMatchSetsJsonList = jsonValue.GetArray("ByteMatchSets");
+    Aws::Utils::Array<JsonView> byteMatchSetsJsonList = jsonValue.GetArray("ByteMatchSets");
     for(unsigned byteMatchSetsIndex = 0; byteMatchSetsIndex < byteMatchSetsJsonList.GetLength(); ++byteMatchSetsIndex)
     {
       m_byteMatchSets.push_back(byteMatchSetsJsonList[byteMatchSetsIndex].AsObject());

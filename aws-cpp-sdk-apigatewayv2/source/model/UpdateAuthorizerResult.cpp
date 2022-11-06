@@ -78,7 +78,7 @@ UpdateAuthorizerResult& UpdateAuthorizerResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("identitySource"))
   {
-    Array<JsonView> identitySourceJsonList = jsonValue.GetArray("identitySource");
+    Aws::Utils::Array<JsonView> identitySourceJsonList = jsonValue.GetArray("identitySource");
     for(unsigned identitySourceIndex = 0; identitySourceIndex < identitySourceJsonList.GetLength(); ++identitySourceIndex)
     {
       m_identitySource.push_back(identitySourceJsonList[identitySourceIndex].AsString());

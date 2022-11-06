@@ -36,7 +36,7 @@ AnalyzeExpenseResult& AnalyzeExpenseResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("ExpenseDocuments"))
   {
-    Array<JsonView> expenseDocumentsJsonList = jsonValue.GetArray("ExpenseDocuments");
+    Aws::Utils::Array<JsonView> expenseDocumentsJsonList = jsonValue.GetArray("ExpenseDocuments");
     for(unsigned expenseDocumentsIndex = 0; expenseDocumentsIndex < expenseDocumentsJsonList.GetLength(); ++expenseDocumentsIndex)
     {
       m_expenseDocuments.push_back(expenseDocumentsJsonList[expenseDocumentsIndex].AsObject());

@@ -30,7 +30,7 @@ GetMembersResult& GetMembersResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("members"))
   {
-    Array<JsonView> membersJsonList = jsonValue.GetArray("members");
+    Aws::Utils::Array<JsonView> membersJsonList = jsonValue.GetArray("members");
     for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
     {
       m_members.push_back(membersJsonList[membersIndex].AsObject());
@@ -39,7 +39,7 @@ GetMembersResult& GetMembersResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("unprocessedAccounts"))
   {
-    Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
+    Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
     for(unsigned unprocessedAccountsIndex = 0; unprocessedAccountsIndex < unprocessedAccountsJsonList.GetLength(); ++unprocessedAccountsIndex)
     {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());

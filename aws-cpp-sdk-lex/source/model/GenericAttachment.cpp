@@ -69,7 +69,7 @@ GenericAttachment& GenericAttachment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("buttons"))
   {
-    Array<JsonView> buttonsJsonList = jsonValue.GetArray("buttons");
+    Aws::Utils::Array<JsonView> buttonsJsonList = jsonValue.GetArray("buttons");
     for(unsigned buttonsIndex = 0; buttonsIndex < buttonsJsonList.GetLength(); ++buttonsIndex)
     {
       m_buttons.push_back(buttonsJsonList[buttonsIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue GenericAttachment::Jsonize() const
 
   if(m_buttonsHasBeenSet)
   {
-   Array<JsonValue> buttonsJsonList(m_buttons.size());
+   Aws::Utils::Array<JsonValue> buttonsJsonList(m_buttons.size());
    for(unsigned buttonsIndex = 0; buttonsIndex < buttonsJsonList.GetLength(); ++buttonsIndex)
    {
      buttonsJsonList[buttonsIndex].AsObject(m_buttons[buttonsIndex].Jsonize());

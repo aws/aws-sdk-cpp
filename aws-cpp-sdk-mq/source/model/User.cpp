@@ -48,7 +48,7 @@ User& User::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("groups"))
   {
-    Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
+    Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());
@@ -85,7 +85,7 @@ JsonValue User::Jsonize() const
 
   if(m_groupsHasBeenSet)
   {
-   Array<JsonValue> groupsJsonList(m_groups.size());
+   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
    {
      groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);

@@ -33,7 +33,7 @@ AllowedPublishers& AllowedPublishers::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SigningProfileVersionArns"))
   {
-    Array<JsonView> signingProfileVersionArnsJsonList = jsonValue.GetArray("SigningProfileVersionArns");
+    Aws::Utils::Array<JsonView> signingProfileVersionArnsJsonList = jsonValue.GetArray("SigningProfileVersionArns");
     for(unsigned signingProfileVersionArnsIndex = 0; signingProfileVersionArnsIndex < signingProfileVersionArnsJsonList.GetLength(); ++signingProfileVersionArnsIndex)
     {
       m_signingProfileVersionArns.push_back(signingProfileVersionArnsJsonList[signingProfileVersionArnsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue AllowedPublishers::Jsonize() const
 
   if(m_signingProfileVersionArnsHasBeenSet)
   {
-   Array<JsonValue> signingProfileVersionArnsJsonList(m_signingProfileVersionArns.size());
+   Aws::Utils::Array<JsonValue> signingProfileVersionArnsJsonList(m_signingProfileVersionArns.size());
    for(unsigned signingProfileVersionArnsIndex = 0; signingProfileVersionArnsIndex < signingProfileVersionArnsJsonList.GetLength(); ++signingProfileVersionArnsIndex)
    {
      signingProfileVersionArnsJsonList[signingProfileVersionArnsIndex].AsString(m_signingProfileVersionArns[signingProfileVersionArnsIndex]);

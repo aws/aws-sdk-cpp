@@ -30,7 +30,7 @@ ListAppsListsResult& ListAppsListsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AppsLists"))
   {
-    Array<JsonView> appsListsJsonList = jsonValue.GetArray("AppsLists");
+    Aws::Utils::Array<JsonView> appsListsJsonList = jsonValue.GetArray("AppsLists");
     for(unsigned appsListsIndex = 0; appsListsIndex < appsListsJsonList.GetLength(); ++appsListsIndex)
     {
       m_appsLists.push_back(appsListsJsonList[appsListsIndex].AsObject());

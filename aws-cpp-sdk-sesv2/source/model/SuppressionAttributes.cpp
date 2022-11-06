@@ -33,7 +33,7 @@ SuppressionAttributes& SuppressionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SuppressedReasons"))
   {
-    Array<JsonView> suppressedReasonsJsonList = jsonValue.GetArray("SuppressedReasons");
+    Aws::Utils::Array<JsonView> suppressedReasonsJsonList = jsonValue.GetArray("SuppressedReasons");
     for(unsigned suppressedReasonsIndex = 0; suppressedReasonsIndex < suppressedReasonsJsonList.GetLength(); ++suppressedReasonsIndex)
     {
       m_suppressedReasons.push_back(SuppressionListReasonMapper::GetSuppressionListReasonForName(suppressedReasonsJsonList[suppressedReasonsIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue SuppressionAttributes::Jsonize() const
 
   if(m_suppressedReasonsHasBeenSet)
   {
-   Array<JsonValue> suppressedReasonsJsonList(m_suppressedReasons.size());
+   Aws::Utils::Array<JsonValue> suppressedReasonsJsonList(m_suppressedReasons.size());
    for(unsigned suppressedReasonsIndex = 0; suppressedReasonsIndex < suppressedReasonsJsonList.GetLength(); ++suppressedReasonsIndex)
    {
      suppressedReasonsJsonList[suppressedReasonsIndex].AsString(SuppressionListReasonMapper::GetNameForSuppressionListReason(m_suppressedReasons[suppressedReasonsIndex]));

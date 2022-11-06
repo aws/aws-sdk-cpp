@@ -44,7 +44,7 @@ AuditMitigationActionsTaskTarget& AuditMitigationActionsTaskTarget::operator =(J
 
   if(jsonValue.ValueExists("findingIds"))
   {
-    Array<JsonView> findingIdsJsonList = jsonValue.GetArray("findingIds");
+    Aws::Utils::Array<JsonView> findingIdsJsonList = jsonValue.GetArray("findingIds");
     for(unsigned findingIdsIndex = 0; findingIdsIndex < findingIdsJsonList.GetLength(); ++findingIdsIndex)
     {
       m_findingIds.push_back(findingIdsJsonList[findingIdsIndex].AsString());
@@ -57,7 +57,7 @@ AuditMitigationActionsTaskTarget& AuditMitigationActionsTaskTarget::operator =(J
     Aws::Map<Aws::String, JsonView> auditCheckToReasonCodeFilterJsonMap = jsonValue.GetObject("auditCheckToReasonCodeFilter").GetAllObjects();
     for(auto& auditCheckToReasonCodeFilterItem : auditCheckToReasonCodeFilterJsonMap)
     {
-      Array<JsonView> reasonForNonComplianceCodesJsonList = auditCheckToReasonCodeFilterItem.second.AsArray();
+      Aws::Utils::Array<JsonView> reasonForNonComplianceCodesJsonList = auditCheckToReasonCodeFilterItem.second.AsArray();
       Aws::Vector<Aws::String> reasonForNonComplianceCodesList;
       reasonForNonComplianceCodesList.reserve((size_t)reasonForNonComplianceCodesJsonList.GetLength());
       for(unsigned reasonForNonComplianceCodesIndex = 0; reasonForNonComplianceCodesIndex < reasonForNonComplianceCodesJsonList.GetLength(); ++reasonForNonComplianceCodesIndex)
@@ -84,7 +84,7 @@ JsonValue AuditMitigationActionsTaskTarget::Jsonize() const
 
   if(m_findingIdsHasBeenSet)
   {
-   Array<JsonValue> findingIdsJsonList(m_findingIds.size());
+   Aws::Utils::Array<JsonValue> findingIdsJsonList(m_findingIds.size());
    for(unsigned findingIdsIndex = 0; findingIdsIndex < findingIdsJsonList.GetLength(); ++findingIdsIndex)
    {
      findingIdsJsonList[findingIdsIndex].AsString(m_findingIds[findingIdsIndex]);
@@ -98,7 +98,7 @@ JsonValue AuditMitigationActionsTaskTarget::Jsonize() const
    JsonValue auditCheckToReasonCodeFilterJsonMap;
    for(auto& auditCheckToReasonCodeFilterItem : m_auditCheckToReasonCodeFilter)
    {
-     Array<JsonValue> reasonForNonComplianceCodesJsonList(auditCheckToReasonCodeFilterItem.second.size());
+     Aws::Utils::Array<JsonValue> reasonForNonComplianceCodesJsonList(auditCheckToReasonCodeFilterItem.second.size());
      for(unsigned reasonForNonComplianceCodesIndex = 0; reasonForNonComplianceCodesIndex < reasonForNonComplianceCodesJsonList.GetLength(); ++reasonForNonComplianceCodesIndex)
      {
        reasonForNonComplianceCodesJsonList[reasonForNonComplianceCodesIndex].AsString(auditCheckToReasonCodeFilterItem.second[reasonForNonComplianceCodesIndex]);

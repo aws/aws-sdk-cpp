@@ -69,7 +69,7 @@ TrustedAdvisorCheckDescription& TrustedAdvisorCheckDescription::operator =(JsonV
 
   if(jsonValue.ValueExists("metadata"))
   {
-    Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
+    Aws::Utils::Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
     for(unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex)
     {
       m_metadata.push_back(metadataJsonList[metadataIndex].AsString());
@@ -110,7 +110,7 @@ JsonValue TrustedAdvisorCheckDescription::Jsonize() const
 
   if(m_metadataHasBeenSet)
   {
-   Array<JsonValue> metadataJsonList(m_metadata.size());
+   Aws::Utils::Array<JsonValue> metadataJsonList(m_metadata.size());
    for(unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex)
    {
      metadataJsonList[metadataIndex].AsString(m_metadata[metadataIndex]);

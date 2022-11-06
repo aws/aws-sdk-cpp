@@ -30,7 +30,7 @@ DescribeDeliveryChannelsResult& DescribeDeliveryChannelsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeliveryChannels"))
   {
-    Array<JsonView> deliveryChannelsJsonList = jsonValue.GetArray("DeliveryChannels");
+    Aws::Utils::Array<JsonView> deliveryChannelsJsonList = jsonValue.GetArray("DeliveryChannels");
     for(unsigned deliveryChannelsIndex = 0; deliveryChannelsIndex < deliveryChannelsJsonList.GetLength(); ++deliveryChannelsIndex)
     {
       m_deliveryChannels.push_back(deliveryChannelsJsonList[deliveryChannelsIndex].AsObject());

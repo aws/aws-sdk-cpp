@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/alexaforbusiness/AlexaForBusinessErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/alexaforbusiness/AlexaForBusinessEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -142,6 +144,10 @@ namespace Aws
 
   namespace AlexaForBusiness
   {
+    using AlexaForBusinessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AlexaForBusinessEndpointProviderBase = Aws::AlexaForBusiness::Endpoint::AlexaForBusinessEndpointProviderBase;
+    using AlexaForBusinessEndpointProvider = Aws::AlexaForBusiness::Endpoint::AlexaForBusinessEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in AlexaForBusinessClient header */

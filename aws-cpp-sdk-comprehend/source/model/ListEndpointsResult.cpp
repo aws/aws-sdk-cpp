@@ -30,7 +30,7 @@ ListEndpointsResult& ListEndpointsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EndpointPropertiesList"))
   {
-    Array<JsonView> endpointPropertiesListJsonList = jsonValue.GetArray("EndpointPropertiesList");
+    Aws::Utils::Array<JsonView> endpointPropertiesListJsonList = jsonValue.GetArray("EndpointPropertiesList");
     for(unsigned endpointPropertiesListIndex = 0; endpointPropertiesListIndex < endpointPropertiesListJsonList.GetLength(); ++endpointPropertiesListIndex)
     {
       m_endpointPropertiesList.push_back(endpointPropertiesListJsonList[endpointPropertiesListIndex].AsObject());

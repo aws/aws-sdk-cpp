@@ -136,7 +136,7 @@ EventsDetectionJobProperties& EventsDetectionJobProperties::operator =(JsonView 
 
   if(jsonValue.ValueExists("TargetEventTypes"))
   {
-    Array<JsonView> targetEventTypesJsonList = jsonValue.GetArray("TargetEventTypes");
+    Aws::Utils::Array<JsonView> targetEventTypesJsonList = jsonValue.GetArray("TargetEventTypes");
     for(unsigned targetEventTypesIndex = 0; targetEventTypesIndex < targetEventTypesJsonList.GetLength(); ++targetEventTypesIndex)
     {
       m_targetEventTypes.push_back(targetEventTypesJsonList[targetEventTypesIndex].AsString());
@@ -215,7 +215,7 @@ JsonValue EventsDetectionJobProperties::Jsonize() const
 
   if(m_targetEventTypesHasBeenSet)
   {
-   Array<JsonValue> targetEventTypesJsonList(m_targetEventTypes.size());
+   Aws::Utils::Array<JsonValue> targetEventTypesJsonList(m_targetEventTypes.size());
    for(unsigned targetEventTypesIndex = 0; targetEventTypesIndex < targetEventTypesJsonList.GetLength(); ++targetEventTypesIndex)
    {
      targetEventTypesJsonList[targetEventTypesIndex].AsString(m_targetEventTypes[targetEventTypesIndex]);

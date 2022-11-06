@@ -30,7 +30,7 @@ DescribeEffectivePatchesForPatchBaselineResult& DescribeEffectivePatchesForPatch
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EffectivePatches"))
   {
-    Array<JsonView> effectivePatchesJsonList = jsonValue.GetArray("EffectivePatches");
+    Aws::Utils::Array<JsonView> effectivePatchesJsonList = jsonValue.GetArray("EffectivePatches");
     for(unsigned effectivePatchesIndex = 0; effectivePatchesIndex < effectivePatchesJsonList.GetLength(); ++effectivePatchesIndex)
     {
       m_effectivePatches.push_back(effectivePatchesJsonList[effectivePatchesIndex].AsObject());

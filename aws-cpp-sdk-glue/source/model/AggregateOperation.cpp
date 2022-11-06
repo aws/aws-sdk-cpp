@@ -37,7 +37,7 @@ AggregateOperation& AggregateOperation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Column"))
   {
-    Array<JsonView> columnJsonList = jsonValue.GetArray("Column");
+    Aws::Utils::Array<JsonView> columnJsonList = jsonValue.GetArray("Column");
     for(unsigned columnIndex = 0; columnIndex < columnJsonList.GetLength(); ++columnIndex)
     {
       m_column.push_back(columnJsonList[columnIndex].AsString());
@@ -61,7 +61,7 @@ JsonValue AggregateOperation::Jsonize() const
 
   if(m_columnHasBeenSet)
   {
-   Array<JsonValue> columnJsonList(m_column.size());
+   Aws::Utils::Array<JsonValue> columnJsonList(m_column.size());
    for(unsigned columnIndex = 0; columnIndex < columnJsonList.GetLength(); ++columnIndex)
    {
      columnJsonList[columnIndex].AsString(m_column[columnIndex]);

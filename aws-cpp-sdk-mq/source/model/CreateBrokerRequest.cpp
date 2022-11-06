@@ -129,7 +129,7 @@ Aws::String CreateBrokerRequest::SerializePayload() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);
@@ -145,7 +145,7 @@ Aws::String CreateBrokerRequest::SerializePayload() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -167,7 +167,7 @@ Aws::String CreateBrokerRequest::SerializePayload() const
 
   if(m_usersHasBeenSet)
   {
-   Array<JsonValue> usersJsonList(m_users.size());
+   Aws::Utils::Array<JsonValue> usersJsonList(m_users.size());
    for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
    {
      usersJsonList[usersIndex].AsObject(m_users[usersIndex].Jsonize());

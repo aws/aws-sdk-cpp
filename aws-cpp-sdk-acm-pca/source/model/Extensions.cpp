@@ -41,7 +41,7 @@ Extensions& Extensions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CertificatePolicies"))
   {
-    Array<JsonView> certificatePoliciesJsonList = jsonValue.GetArray("CertificatePolicies");
+    Aws::Utils::Array<JsonView> certificatePoliciesJsonList = jsonValue.GetArray("CertificatePolicies");
     for(unsigned certificatePoliciesIndex = 0; certificatePoliciesIndex < certificatePoliciesJsonList.GetLength(); ++certificatePoliciesIndex)
     {
       m_certificatePolicies.push_back(certificatePoliciesJsonList[certificatePoliciesIndex].AsObject());
@@ -51,7 +51,7 @@ Extensions& Extensions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExtendedKeyUsage"))
   {
-    Array<JsonView> extendedKeyUsageJsonList = jsonValue.GetArray("ExtendedKeyUsage");
+    Aws::Utils::Array<JsonView> extendedKeyUsageJsonList = jsonValue.GetArray("ExtendedKeyUsage");
     for(unsigned extendedKeyUsageIndex = 0; extendedKeyUsageIndex < extendedKeyUsageJsonList.GetLength(); ++extendedKeyUsageIndex)
     {
       m_extendedKeyUsage.push_back(extendedKeyUsageJsonList[extendedKeyUsageIndex].AsObject());
@@ -68,7 +68,7 @@ Extensions& Extensions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubjectAlternativeNames"))
   {
-    Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("SubjectAlternativeNames");
+    Aws::Utils::Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("SubjectAlternativeNames");
     for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
     {
       m_subjectAlternativeNames.push_back(subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsObject());
@@ -78,7 +78,7 @@ Extensions& Extensions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CustomExtensions"))
   {
-    Array<JsonView> customExtensionsJsonList = jsonValue.GetArray("CustomExtensions");
+    Aws::Utils::Array<JsonView> customExtensionsJsonList = jsonValue.GetArray("CustomExtensions");
     for(unsigned customExtensionsIndex = 0; customExtensionsIndex < customExtensionsJsonList.GetLength(); ++customExtensionsIndex)
     {
       m_customExtensions.push_back(customExtensionsJsonList[customExtensionsIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue Extensions::Jsonize() const
 
   if(m_certificatePoliciesHasBeenSet)
   {
-   Array<JsonValue> certificatePoliciesJsonList(m_certificatePolicies.size());
+   Aws::Utils::Array<JsonValue> certificatePoliciesJsonList(m_certificatePolicies.size());
    for(unsigned certificatePoliciesIndex = 0; certificatePoliciesIndex < certificatePoliciesJsonList.GetLength(); ++certificatePoliciesIndex)
    {
      certificatePoliciesJsonList[certificatePoliciesIndex].AsObject(m_certificatePolicies[certificatePoliciesIndex].Jsonize());
@@ -106,7 +106,7 @@ JsonValue Extensions::Jsonize() const
 
   if(m_extendedKeyUsageHasBeenSet)
   {
-   Array<JsonValue> extendedKeyUsageJsonList(m_extendedKeyUsage.size());
+   Aws::Utils::Array<JsonValue> extendedKeyUsageJsonList(m_extendedKeyUsage.size());
    for(unsigned extendedKeyUsageIndex = 0; extendedKeyUsageIndex < extendedKeyUsageJsonList.GetLength(); ++extendedKeyUsageIndex)
    {
      extendedKeyUsageJsonList[extendedKeyUsageIndex].AsObject(m_extendedKeyUsage[extendedKeyUsageIndex].Jsonize());
@@ -123,7 +123,7 @@ JsonValue Extensions::Jsonize() const
 
   if(m_subjectAlternativeNamesHasBeenSet)
   {
-   Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
+   Aws::Utils::Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
    for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
    {
      subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsObject(m_subjectAlternativeNames[subjectAlternativeNamesIndex].Jsonize());
@@ -134,7 +134,7 @@ JsonValue Extensions::Jsonize() const
 
   if(m_customExtensionsHasBeenSet)
   {
-   Array<JsonValue> customExtensionsJsonList(m_customExtensions.size());
+   Aws::Utils::Array<JsonValue> customExtensionsJsonList(m_customExtensions.size());
    for(unsigned customExtensionsIndex = 0; customExtensionsIndex < customExtensionsJsonList.GetLength(); ++customExtensionsIndex)
    {
      customExtensionsJsonList[customExtensionsIndex].AsObject(m_customExtensions[customExtensionsIndex].Jsonize());

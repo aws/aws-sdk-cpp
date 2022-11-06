@@ -30,7 +30,7 @@ ListSentimentDetectionJobsResult& ListSentimentDetectionJobsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SentimentDetectionJobPropertiesList"))
   {
-    Array<JsonView> sentimentDetectionJobPropertiesListJsonList = jsonValue.GetArray("SentimentDetectionJobPropertiesList");
+    Aws::Utils::Array<JsonView> sentimentDetectionJobPropertiesListJsonList = jsonValue.GetArray("SentimentDetectionJobPropertiesList");
     for(unsigned sentimentDetectionJobPropertiesListIndex = 0; sentimentDetectionJobPropertiesListIndex < sentimentDetectionJobPropertiesListJsonList.GetLength(); ++sentimentDetectionJobPropertiesListIndex)
     {
       m_sentimentDetectionJobPropertiesList.push_back(sentimentDetectionJobPropertiesListJsonList[sentimentDetectionJobPropertiesListIndex].AsObject());

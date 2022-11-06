@@ -30,7 +30,7 @@ ListAccountAssociationsResult& ListAccountAssociationsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LinkedAccounts"))
   {
-    Array<JsonView> linkedAccountsJsonList = jsonValue.GetArray("LinkedAccounts");
+    Aws::Utils::Array<JsonView> linkedAccountsJsonList = jsonValue.GetArray("LinkedAccounts");
     for(unsigned linkedAccountsIndex = 0; linkedAccountsIndex < linkedAccountsJsonList.GetLength(); ++linkedAccountsIndex)
     {
       m_linkedAccounts.push_back(linkedAccountsJsonList[linkedAccountsIndex].AsObject());

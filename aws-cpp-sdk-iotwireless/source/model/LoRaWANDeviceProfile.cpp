@@ -190,7 +190,7 @@ LoRaWANDeviceProfile& LoRaWANDeviceProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FactoryPresetFreqsList"))
   {
-    Array<JsonView> factoryPresetFreqsListJsonList = jsonValue.GetArray("FactoryPresetFreqsList");
+    Aws::Utils::Array<JsonView> factoryPresetFreqsListJsonList = jsonValue.GetArray("FactoryPresetFreqsList");
     for(unsigned factoryPresetFreqsListIndex = 0; factoryPresetFreqsListIndex < factoryPresetFreqsListJsonList.GetLength(); ++factoryPresetFreqsListIndex)
     {
       m_factoryPresetFreqsList.push_back(factoryPresetFreqsListJsonList[factoryPresetFreqsListIndex].AsInteger());
@@ -320,7 +320,7 @@ JsonValue LoRaWANDeviceProfile::Jsonize() const
 
   if(m_factoryPresetFreqsListHasBeenSet)
   {
-   Array<JsonValue> factoryPresetFreqsListJsonList(m_factoryPresetFreqsList.size());
+   Aws::Utils::Array<JsonValue> factoryPresetFreqsListJsonList(m_factoryPresetFreqsList.size());
    for(unsigned factoryPresetFreqsListIndex = 0; factoryPresetFreqsListIndex < factoryPresetFreqsListJsonList.GetLength(); ++factoryPresetFreqsListIndex)
    {
      factoryPresetFreqsListJsonList[factoryPresetFreqsListIndex].AsInteger(m_factoryPresetFreqsList[factoryPresetFreqsListIndex]);

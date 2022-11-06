@@ -74,7 +74,7 @@ DescribeTaskResult& DescribeTaskResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("SourceNetworkInterfaceArns"))
   {
-    Array<JsonView> sourceNetworkInterfaceArnsJsonList = jsonValue.GetArray("SourceNetworkInterfaceArns");
+    Aws::Utils::Array<JsonView> sourceNetworkInterfaceArnsJsonList = jsonValue.GetArray("SourceNetworkInterfaceArns");
     for(unsigned sourceNetworkInterfaceArnsIndex = 0; sourceNetworkInterfaceArnsIndex < sourceNetworkInterfaceArnsJsonList.GetLength(); ++sourceNetworkInterfaceArnsIndex)
     {
       m_sourceNetworkInterfaceArns.push_back(sourceNetworkInterfaceArnsJsonList[sourceNetworkInterfaceArnsIndex].AsString());
@@ -83,7 +83,7 @@ DescribeTaskResult& DescribeTaskResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("DestinationNetworkInterfaceArns"))
   {
-    Array<JsonView> destinationNetworkInterfaceArnsJsonList = jsonValue.GetArray("DestinationNetworkInterfaceArns");
+    Aws::Utils::Array<JsonView> destinationNetworkInterfaceArnsJsonList = jsonValue.GetArray("DestinationNetworkInterfaceArns");
     for(unsigned destinationNetworkInterfaceArnsIndex = 0; destinationNetworkInterfaceArnsIndex < destinationNetworkInterfaceArnsJsonList.GetLength(); ++destinationNetworkInterfaceArnsIndex)
     {
       m_destinationNetworkInterfaceArns.push_back(destinationNetworkInterfaceArnsJsonList[destinationNetworkInterfaceArnsIndex].AsString());
@@ -98,7 +98,7 @@ DescribeTaskResult& DescribeTaskResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("Excludes"))
   {
-    Array<JsonView> excludesJsonList = jsonValue.GetArray("Excludes");
+    Aws::Utils::Array<JsonView> excludesJsonList = jsonValue.GetArray("Excludes");
     for(unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex)
     {
       m_excludes.push_back(excludesJsonList[excludesIndex].AsObject());
@@ -131,7 +131,7 @@ DescribeTaskResult& DescribeTaskResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("Includes"))
   {
-    Array<JsonView> includesJsonList = jsonValue.GetArray("Includes");
+    Aws::Utils::Array<JsonView> includesJsonList = jsonValue.GetArray("Includes");
     for(unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex)
     {
       m_includes.push_back(includesJsonList[includesIndex].AsObject());

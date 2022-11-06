@@ -62,7 +62,7 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("AutoMLAlgorithmArns"))
   {
-    Array<JsonView> autoMLAlgorithmArnsJsonList = jsonValue.GetArray("AutoMLAlgorithmArns");
+    Aws::Utils::Array<JsonView> autoMLAlgorithmArnsJsonList = jsonValue.GetArray("AutoMLAlgorithmArns");
     for(unsigned autoMLAlgorithmArnsIndex = 0; autoMLAlgorithmArnsIndex < autoMLAlgorithmArnsJsonList.GetLength(); ++autoMLAlgorithmArnsIndex)
     {
       m_autoMLAlgorithmArns.push_back(autoMLAlgorithmArnsJsonList[autoMLAlgorithmArnsIndex].AsString());
@@ -77,7 +77,7 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("ForecastTypes"))
   {
-    Array<JsonView> forecastTypesJsonList = jsonValue.GetArray("ForecastTypes");
+    Aws::Utils::Array<JsonView> forecastTypesJsonList = jsonValue.GetArray("ForecastTypes");
     for(unsigned forecastTypesIndex = 0; forecastTypesIndex < forecastTypesJsonList.GetLength(); ++forecastTypesIndex)
     {
       m_forecastTypes.push_back(forecastTypesJsonList[forecastTypesIndex].AsString());
@@ -161,7 +161,7 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("DatasetImportJobArns"))
   {
-    Array<JsonView> datasetImportJobArnsJsonList = jsonValue.GetArray("DatasetImportJobArns");
+    Aws::Utils::Array<JsonView> datasetImportJobArnsJsonList = jsonValue.GetArray("DatasetImportJobArns");
     for(unsigned datasetImportJobArnsIndex = 0; datasetImportJobArnsIndex < datasetImportJobArnsJsonList.GetLength(); ++datasetImportJobArnsIndex)
     {
       m_datasetImportJobArns.push_back(datasetImportJobArnsJsonList[datasetImportJobArnsIndex].AsString());

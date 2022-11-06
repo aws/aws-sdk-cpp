@@ -48,7 +48,7 @@ VirtualNodeSpec& VirtualNodeSpec::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("backends"))
   {
-    Array<JsonView> backendsJsonList = jsonValue.GetArray("backends");
+    Aws::Utils::Array<JsonView> backendsJsonList = jsonValue.GetArray("backends");
     for(unsigned backendsIndex = 0; backendsIndex < backendsJsonList.GetLength(); ++backendsIndex)
     {
       m_backends.push_back(backendsJsonList[backendsIndex].AsObject());
@@ -58,7 +58,7 @@ VirtualNodeSpec& VirtualNodeSpec::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("listeners"))
   {
-    Array<JsonView> listenersJsonList = jsonValue.GetArray("listeners");
+    Aws::Utils::Array<JsonView> listenersJsonList = jsonValue.GetArray("listeners");
     for(unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex)
     {
       m_listeners.push_back(listenersJsonList[listenersIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue VirtualNodeSpec::Jsonize() const
 
   if(m_backendsHasBeenSet)
   {
-   Array<JsonValue> backendsJsonList(m_backends.size());
+   Aws::Utils::Array<JsonValue> backendsJsonList(m_backends.size());
    for(unsigned backendsIndex = 0; backendsIndex < backendsJsonList.GetLength(); ++backendsIndex)
    {
      backendsJsonList[backendsIndex].AsObject(m_backends[backendsIndex].Jsonize());
@@ -106,7 +106,7 @@ JsonValue VirtualNodeSpec::Jsonize() const
 
   if(m_listenersHasBeenSet)
   {
-   Array<JsonValue> listenersJsonList(m_listeners.size());
+   Aws::Utils::Array<JsonValue> listenersJsonList(m_listeners.size());
    for(unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex)
    {
      listenersJsonList[listenersIndex].AsObject(m_listeners[listenersIndex].Jsonize());

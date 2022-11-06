@@ -53,7 +53,7 @@ CoreNetworkEdge& CoreNetworkEdge::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InsideCidrBlocks"))
   {
-    Array<JsonView> insideCidrBlocksJsonList = jsonValue.GetArray("InsideCidrBlocks");
+    Aws::Utils::Array<JsonView> insideCidrBlocksJsonList = jsonValue.GetArray("InsideCidrBlocks");
     for(unsigned insideCidrBlocksIndex = 0; insideCidrBlocksIndex < insideCidrBlocksJsonList.GetLength(); ++insideCidrBlocksIndex)
     {
       m_insideCidrBlocks.push_back(insideCidrBlocksJsonList[insideCidrBlocksIndex].AsString());
@@ -82,7 +82,7 @@ JsonValue CoreNetworkEdge::Jsonize() const
 
   if(m_insideCidrBlocksHasBeenSet)
   {
-   Array<JsonValue> insideCidrBlocksJsonList(m_insideCidrBlocks.size());
+   Aws::Utils::Array<JsonValue> insideCidrBlocksJsonList(m_insideCidrBlocks.size());
    for(unsigned insideCidrBlocksIndex = 0; insideCidrBlocksIndex < insideCidrBlocksJsonList.GetLength(); ++insideCidrBlocksIndex)
    {
      insideCidrBlocksJsonList[insideCidrBlocksIndex].AsString(m_insideCidrBlocks[insideCidrBlocksIndex]);

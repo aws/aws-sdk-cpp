@@ -36,7 +36,7 @@ ListOriginEndpointsResult& ListOriginEndpointsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("originEndpoints"))
   {
-    Array<JsonView> originEndpointsJsonList = jsonValue.GetArray("originEndpoints");
+    Aws::Utils::Array<JsonView> originEndpointsJsonList = jsonValue.GetArray("originEndpoints");
     for(unsigned originEndpointsIndex = 0; originEndpointsIndex < originEndpointsJsonList.GetLength(); ++originEndpointsIndex)
     {
       m_originEndpoints.push_back(originEndpointsJsonList[originEndpointsIndex].AsObject());

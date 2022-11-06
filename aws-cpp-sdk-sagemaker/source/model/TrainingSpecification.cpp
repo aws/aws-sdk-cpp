@@ -63,7 +63,7 @@ TrainingSpecification& TrainingSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedHyperParameters"))
   {
-    Array<JsonView> supportedHyperParametersJsonList = jsonValue.GetArray("SupportedHyperParameters");
+    Aws::Utils::Array<JsonView> supportedHyperParametersJsonList = jsonValue.GetArray("SupportedHyperParameters");
     for(unsigned supportedHyperParametersIndex = 0; supportedHyperParametersIndex < supportedHyperParametersJsonList.GetLength(); ++supportedHyperParametersIndex)
     {
       m_supportedHyperParameters.push_back(supportedHyperParametersJsonList[supportedHyperParametersIndex].AsObject());
@@ -73,7 +73,7 @@ TrainingSpecification& TrainingSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedTrainingInstanceTypes"))
   {
-    Array<JsonView> supportedTrainingInstanceTypesJsonList = jsonValue.GetArray("SupportedTrainingInstanceTypes");
+    Aws::Utils::Array<JsonView> supportedTrainingInstanceTypesJsonList = jsonValue.GetArray("SupportedTrainingInstanceTypes");
     for(unsigned supportedTrainingInstanceTypesIndex = 0; supportedTrainingInstanceTypesIndex < supportedTrainingInstanceTypesJsonList.GetLength(); ++supportedTrainingInstanceTypesIndex)
     {
       m_supportedTrainingInstanceTypes.push_back(TrainingInstanceTypeMapper::GetTrainingInstanceTypeForName(supportedTrainingInstanceTypesJsonList[supportedTrainingInstanceTypesIndex].AsString()));
@@ -90,7 +90,7 @@ TrainingSpecification& TrainingSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MetricDefinitions"))
   {
-    Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
+    Aws::Utils::Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
     for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
     {
       m_metricDefinitions.push_back(metricDefinitionsJsonList[metricDefinitionsIndex].AsObject());
@@ -100,7 +100,7 @@ TrainingSpecification& TrainingSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TrainingChannels"))
   {
-    Array<JsonView> trainingChannelsJsonList = jsonValue.GetArray("TrainingChannels");
+    Aws::Utils::Array<JsonView> trainingChannelsJsonList = jsonValue.GetArray("TrainingChannels");
     for(unsigned trainingChannelsIndex = 0; trainingChannelsIndex < trainingChannelsJsonList.GetLength(); ++trainingChannelsIndex)
     {
       m_trainingChannels.push_back(trainingChannelsJsonList[trainingChannelsIndex].AsObject());
@@ -110,7 +110,7 @@ TrainingSpecification& TrainingSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedTuningJobObjectiveMetrics"))
   {
-    Array<JsonView> supportedTuningJobObjectiveMetricsJsonList = jsonValue.GetArray("SupportedTuningJobObjectiveMetrics");
+    Aws::Utils::Array<JsonView> supportedTuningJobObjectiveMetricsJsonList = jsonValue.GetArray("SupportedTuningJobObjectiveMetrics");
     for(unsigned supportedTuningJobObjectiveMetricsIndex = 0; supportedTuningJobObjectiveMetricsIndex < supportedTuningJobObjectiveMetricsJsonList.GetLength(); ++supportedTuningJobObjectiveMetricsIndex)
     {
       m_supportedTuningJobObjectiveMetrics.push_back(supportedTuningJobObjectiveMetricsJsonList[supportedTuningJobObjectiveMetricsIndex].AsObject());
@@ -139,7 +139,7 @@ JsonValue TrainingSpecification::Jsonize() const
 
   if(m_supportedHyperParametersHasBeenSet)
   {
-   Array<JsonValue> supportedHyperParametersJsonList(m_supportedHyperParameters.size());
+   Aws::Utils::Array<JsonValue> supportedHyperParametersJsonList(m_supportedHyperParameters.size());
    for(unsigned supportedHyperParametersIndex = 0; supportedHyperParametersIndex < supportedHyperParametersJsonList.GetLength(); ++supportedHyperParametersIndex)
    {
      supportedHyperParametersJsonList[supportedHyperParametersIndex].AsObject(m_supportedHyperParameters[supportedHyperParametersIndex].Jsonize());
@@ -150,7 +150,7 @@ JsonValue TrainingSpecification::Jsonize() const
 
   if(m_supportedTrainingInstanceTypesHasBeenSet)
   {
-   Array<JsonValue> supportedTrainingInstanceTypesJsonList(m_supportedTrainingInstanceTypes.size());
+   Aws::Utils::Array<JsonValue> supportedTrainingInstanceTypesJsonList(m_supportedTrainingInstanceTypes.size());
    for(unsigned supportedTrainingInstanceTypesIndex = 0; supportedTrainingInstanceTypesIndex < supportedTrainingInstanceTypesJsonList.GetLength(); ++supportedTrainingInstanceTypesIndex)
    {
      supportedTrainingInstanceTypesJsonList[supportedTrainingInstanceTypesIndex].AsString(TrainingInstanceTypeMapper::GetNameForTrainingInstanceType(m_supportedTrainingInstanceTypes[supportedTrainingInstanceTypesIndex]));
@@ -167,7 +167,7 @@ JsonValue TrainingSpecification::Jsonize() const
 
   if(m_metricDefinitionsHasBeenSet)
   {
-   Array<JsonValue> metricDefinitionsJsonList(m_metricDefinitions.size());
+   Aws::Utils::Array<JsonValue> metricDefinitionsJsonList(m_metricDefinitions.size());
    for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
    {
      metricDefinitionsJsonList[metricDefinitionsIndex].AsObject(m_metricDefinitions[metricDefinitionsIndex].Jsonize());
@@ -178,7 +178,7 @@ JsonValue TrainingSpecification::Jsonize() const
 
   if(m_trainingChannelsHasBeenSet)
   {
-   Array<JsonValue> trainingChannelsJsonList(m_trainingChannels.size());
+   Aws::Utils::Array<JsonValue> trainingChannelsJsonList(m_trainingChannels.size());
    for(unsigned trainingChannelsIndex = 0; trainingChannelsIndex < trainingChannelsJsonList.GetLength(); ++trainingChannelsIndex)
    {
      trainingChannelsJsonList[trainingChannelsIndex].AsObject(m_trainingChannels[trainingChannelsIndex].Jsonize());
@@ -189,7 +189,7 @@ JsonValue TrainingSpecification::Jsonize() const
 
   if(m_supportedTuningJobObjectiveMetricsHasBeenSet)
   {
-   Array<JsonValue> supportedTuningJobObjectiveMetricsJsonList(m_supportedTuningJobObjectiveMetrics.size());
+   Aws::Utils::Array<JsonValue> supportedTuningJobObjectiveMetricsJsonList(m_supportedTuningJobObjectiveMetrics.size());
    for(unsigned supportedTuningJobObjectiveMetricsIndex = 0; supportedTuningJobObjectiveMetricsIndex < supportedTuningJobObjectiveMetricsJsonList.GetLength(); ++supportedTuningJobObjectiveMetricsIndex)
    {
      supportedTuningJobObjectiveMetricsJsonList[supportedTuningJobObjectiveMetricsIndex].AsObject(m_supportedTuningJobObjectiveMetrics[supportedTuningJobObjectiveMetricsIndex].Jsonize());

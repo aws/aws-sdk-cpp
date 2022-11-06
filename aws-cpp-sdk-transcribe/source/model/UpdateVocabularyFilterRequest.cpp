@@ -31,7 +31,7 @@ Aws::String UpdateVocabularyFilterRequest::SerializePayload() const
 
   if(m_wordsHasBeenSet)
   {
-   Array<JsonValue> wordsJsonList(m_words.size());
+   Aws::Utils::Array<JsonValue> wordsJsonList(m_words.size());
    for(unsigned wordsIndex = 0; wordsIndex < wordsJsonList.GetLength(); ++wordsIndex)
    {
      wordsJsonList[wordsIndex].AsString(m_words[wordsIndex]);

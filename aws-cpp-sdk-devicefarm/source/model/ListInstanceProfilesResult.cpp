@@ -30,7 +30,7 @@ ListInstanceProfilesResult& ListInstanceProfilesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceProfiles"))
   {
-    Array<JsonView> instanceProfilesJsonList = jsonValue.GetArray("instanceProfiles");
+    Aws::Utils::Array<JsonView> instanceProfilesJsonList = jsonValue.GetArray("instanceProfiles");
     for(unsigned instanceProfilesIndex = 0; instanceProfilesIndex < instanceProfilesJsonList.GetLength(); ++instanceProfilesIndex)
     {
       m_instanceProfiles.push_back(instanceProfilesJsonList[instanceProfilesIndex].AsObject());

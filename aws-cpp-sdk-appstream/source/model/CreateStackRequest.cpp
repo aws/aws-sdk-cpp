@@ -52,7 +52,7 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   if(m_storageConnectorsHasBeenSet)
   {
-   Array<JsonValue> storageConnectorsJsonList(m_storageConnectors.size());
+   Aws::Utils::Array<JsonValue> storageConnectorsJsonList(m_storageConnectors.size());
    for(unsigned storageConnectorsIndex = 0; storageConnectorsIndex < storageConnectorsJsonList.GetLength(); ++storageConnectorsIndex)
    {
      storageConnectorsJsonList[storageConnectorsIndex].AsObject(m_storageConnectors[storageConnectorsIndex].Jsonize());
@@ -75,7 +75,7 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   if(m_userSettingsHasBeenSet)
   {
-   Array<JsonValue> userSettingsJsonList(m_userSettings.size());
+   Aws::Utils::Array<JsonValue> userSettingsJsonList(m_userSettings.size());
    for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
    {
      userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
@@ -103,7 +103,7 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   if(m_accessEndpointsHasBeenSet)
   {
-   Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
+   Aws::Utils::Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
    for(unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex)
    {
      accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());
@@ -114,7 +114,7 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   if(m_embedHostDomainsHasBeenSet)
   {
-   Array<JsonValue> embedHostDomainsJsonList(m_embedHostDomains.size());
+   Aws::Utils::Array<JsonValue> embedHostDomainsJsonList(m_embedHostDomains.size());
    for(unsigned embedHostDomainsIndex = 0; embedHostDomainsIndex < embedHostDomainsJsonList.GetLength(); ++embedHostDomainsIndex)
    {
      embedHostDomainsJsonList[embedHostDomainsIndex].AsString(m_embedHostDomains[embedHostDomainsIndex]);

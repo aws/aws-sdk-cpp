@@ -62,7 +62,7 @@ AutoSnapshotDetails& AutoSnapshotDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("fromAttachedDisks"))
   {
-    Array<JsonView> fromAttachedDisksJsonList = jsonValue.GetArray("fromAttachedDisks");
+    Aws::Utils::Array<JsonView> fromAttachedDisksJsonList = jsonValue.GetArray("fromAttachedDisks");
     for(unsigned fromAttachedDisksIndex = 0; fromAttachedDisksIndex < fromAttachedDisksJsonList.GetLength(); ++fromAttachedDisksIndex)
     {
       m_fromAttachedDisks.push_back(fromAttachedDisksJsonList[fromAttachedDisksIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue AutoSnapshotDetails::Jsonize() const
 
   if(m_fromAttachedDisksHasBeenSet)
   {
-   Array<JsonValue> fromAttachedDisksJsonList(m_fromAttachedDisks.size());
+   Aws::Utils::Array<JsonValue> fromAttachedDisksJsonList(m_fromAttachedDisks.size());
    for(unsigned fromAttachedDisksIndex = 0; fromAttachedDisksIndex < fromAttachedDisksJsonList.GetLength(); ++fromAttachedDisksIndex)
    {
      fromAttachedDisksJsonList[fromAttachedDisksIndex].AsObject(m_fromAttachedDisks[fromAttachedDisksIndex].Jsonize());

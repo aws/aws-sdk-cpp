@@ -30,7 +30,7 @@ DescribeLifecycleConfigurationResult& DescribeLifecycleConfigurationResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LifecyclePolicies"))
   {
-    Array<JsonView> lifecyclePoliciesJsonList = jsonValue.GetArray("LifecyclePolicies");
+    Aws::Utils::Array<JsonView> lifecyclePoliciesJsonList = jsonValue.GetArray("LifecyclePolicies");
     for(unsigned lifecyclePoliciesIndex = 0; lifecyclePoliciesIndex < lifecyclePoliciesJsonList.GetLength(); ++lifecyclePoliciesIndex)
     {
       m_lifecyclePolicies.push_back(lifecyclePoliciesJsonList[lifecyclePoliciesIndex].AsObject());

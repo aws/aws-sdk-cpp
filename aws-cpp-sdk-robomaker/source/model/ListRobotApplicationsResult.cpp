@@ -30,7 +30,7 @@ ListRobotApplicationsResult& ListRobotApplicationsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("robotApplicationSummaries"))
   {
-    Array<JsonView> robotApplicationSummariesJsonList = jsonValue.GetArray("robotApplicationSummaries");
+    Aws::Utils::Array<JsonView> robotApplicationSummariesJsonList = jsonValue.GetArray("robotApplicationSummaries");
     for(unsigned robotApplicationSummariesIndex = 0; robotApplicationSummariesIndex < robotApplicationSummariesJsonList.GetLength(); ++robotApplicationSummariesIndex)
     {
       m_robotApplicationSummaries.push_back(robotApplicationSummariesJsonList[robotApplicationSummariesIndex].AsObject());

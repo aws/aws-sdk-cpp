@@ -93,7 +93,7 @@ CloudFormationStackRecord& CloudFormationStackRecord::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("sourceInfo"))
   {
-    Array<JsonView> sourceInfoJsonList = jsonValue.GetArray("sourceInfo");
+    Aws::Utils::Array<JsonView> sourceInfoJsonList = jsonValue.GetArray("sourceInfo");
     for(unsigned sourceInfoIndex = 0; sourceInfoIndex < sourceInfoJsonList.GetLength(); ++sourceInfoIndex)
     {
       m_sourceInfo.push_back(sourceInfoJsonList[sourceInfoIndex].AsObject());
@@ -150,7 +150,7 @@ JsonValue CloudFormationStackRecord::Jsonize() const
 
   if(m_sourceInfoHasBeenSet)
   {
-   Array<JsonValue> sourceInfoJsonList(m_sourceInfo.size());
+   Aws::Utils::Array<JsonValue> sourceInfoJsonList(m_sourceInfo.size());
    for(unsigned sourceInfoIndex = 0; sourceInfoIndex < sourceInfoJsonList.GetLength(); ++sourceInfoIndex)
    {
      sourceInfoJsonList[sourceInfoIndex].AsObject(m_sourceInfo[sourceInfoIndex].Jsonize());

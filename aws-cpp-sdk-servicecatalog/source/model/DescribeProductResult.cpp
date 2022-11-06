@@ -36,7 +36,7 @@ DescribeProductResult& DescribeProductResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("ProvisioningArtifacts"))
   {
-    Array<JsonView> provisioningArtifactsJsonList = jsonValue.GetArray("ProvisioningArtifacts");
+    Aws::Utils::Array<JsonView> provisioningArtifactsJsonList = jsonValue.GetArray("ProvisioningArtifacts");
     for(unsigned provisioningArtifactsIndex = 0; provisioningArtifactsIndex < provisioningArtifactsJsonList.GetLength(); ++provisioningArtifactsIndex)
     {
       m_provisioningArtifacts.push_back(provisioningArtifactsJsonList[provisioningArtifactsIndex].AsObject());
@@ -45,7 +45,7 @@ DescribeProductResult& DescribeProductResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("Budgets"))
   {
-    Array<JsonView> budgetsJsonList = jsonValue.GetArray("Budgets");
+    Aws::Utils::Array<JsonView> budgetsJsonList = jsonValue.GetArray("Budgets");
     for(unsigned budgetsIndex = 0; budgetsIndex < budgetsJsonList.GetLength(); ++budgetsIndex)
     {
       m_budgets.push_back(budgetsJsonList[budgetsIndex].AsObject());
@@ -54,7 +54,7 @@ DescribeProductResult& DescribeProductResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("LaunchPaths"))
   {
-    Array<JsonView> launchPathsJsonList = jsonValue.GetArray("LaunchPaths");
+    Aws::Utils::Array<JsonView> launchPathsJsonList = jsonValue.GetArray("LaunchPaths");
     for(unsigned launchPathsIndex = 0; launchPathsIndex < launchPathsJsonList.GetLength(); ++launchPathsIndex)
     {
       m_launchPaths.push_back(launchPathsJsonList[launchPathsIndex].AsObject());

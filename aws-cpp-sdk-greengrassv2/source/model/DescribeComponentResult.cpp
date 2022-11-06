@@ -72,7 +72,7 @@ DescribeComponentResult& DescribeComponentResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("platforms"))
   {
-    Array<JsonView> platformsJsonList = jsonValue.GetArray("platforms");
+    Aws::Utils::Array<JsonView> platformsJsonList = jsonValue.GetArray("platforms");
     for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
     {
       m_platforms.push_back(platformsJsonList[platformsIndex].AsObject());

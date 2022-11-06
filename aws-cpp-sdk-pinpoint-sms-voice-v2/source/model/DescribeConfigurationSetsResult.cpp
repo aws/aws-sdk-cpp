@@ -30,7 +30,7 @@ DescribeConfigurationSetsResult& DescribeConfigurationSetsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigurationSets"))
   {
-    Array<JsonView> configurationSetsJsonList = jsonValue.GetArray("ConfigurationSets");
+    Aws::Utils::Array<JsonView> configurationSetsJsonList = jsonValue.GetArray("ConfigurationSets");
     for(unsigned configurationSetsIndex = 0; configurationSetsIndex < configurationSetsJsonList.GetLength(); ++configurationSetsIndex)
     {
       m_configurationSets.push_back(configurationSetsJsonList[configurationSetsIndex].AsObject());

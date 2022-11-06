@@ -45,7 +45,7 @@ ListObjectParentsResult& ListObjectParentsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("ParentLinks"))
   {
-    Array<JsonView> parentLinksJsonList = jsonValue.GetArray("ParentLinks");
+    Aws::Utils::Array<JsonView> parentLinksJsonList = jsonValue.GetArray("ParentLinks");
     for(unsigned parentLinksIndex = 0; parentLinksIndex < parentLinksJsonList.GetLength(); ++parentLinksIndex)
     {
       m_parentLinks.push_back(parentLinksJsonList[parentLinksIndex].AsObject());

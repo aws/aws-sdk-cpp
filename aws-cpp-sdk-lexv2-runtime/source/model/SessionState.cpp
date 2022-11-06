@@ -57,7 +57,7 @@ SessionState& SessionState::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("activeContexts"))
   {
-    Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
+    Aws::Utils::Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
     for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
     {
       m_activeContexts.push_back(activeContextsJsonList[activeContextsIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue SessionState::Jsonize() const
 
   if(m_activeContextsHasBeenSet)
   {
-   Array<JsonValue> activeContextsJsonList(m_activeContexts.size());
+   Aws::Utils::Array<JsonValue> activeContextsJsonList(m_activeContexts.size());
    for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
    {
      activeContextsJsonList[activeContextsIndex].AsObject(m_activeContexts[activeContextsIndex].Jsonize());

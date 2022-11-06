@@ -38,7 +38,7 @@ GetUsageStatisticsResult& GetUsageStatisticsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("records"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());

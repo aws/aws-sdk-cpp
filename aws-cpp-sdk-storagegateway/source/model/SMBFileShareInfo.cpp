@@ -219,7 +219,7 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdminUserList"))
   {
-    Array<JsonView> adminUserListJsonList = jsonValue.GetArray("AdminUserList");
+    Aws::Utils::Array<JsonView> adminUserListJsonList = jsonValue.GetArray("AdminUserList");
     for(unsigned adminUserListIndex = 0; adminUserListIndex < adminUserListJsonList.GetLength(); ++adminUserListIndex)
     {
       m_adminUserList.push_back(adminUserListJsonList[adminUserListIndex].AsString());
@@ -229,7 +229,7 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ValidUserList"))
   {
-    Array<JsonView> validUserListJsonList = jsonValue.GetArray("ValidUserList");
+    Aws::Utils::Array<JsonView> validUserListJsonList = jsonValue.GetArray("ValidUserList");
     for(unsigned validUserListIndex = 0; validUserListIndex < validUserListJsonList.GetLength(); ++validUserListIndex)
     {
       m_validUserList.push_back(validUserListJsonList[validUserListIndex].AsString());
@@ -239,7 +239,7 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InvalidUserList"))
   {
-    Array<JsonView> invalidUserListJsonList = jsonValue.GetArray("InvalidUserList");
+    Aws::Utils::Array<JsonView> invalidUserListJsonList = jsonValue.GetArray("InvalidUserList");
     for(unsigned invalidUserListIndex = 0; invalidUserListIndex < invalidUserListJsonList.GetLength(); ++invalidUserListIndex)
     {
       m_invalidUserList.push_back(invalidUserListJsonList[invalidUserListIndex].AsString());
@@ -270,7 +270,7 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -424,7 +424,7 @@ JsonValue SMBFileShareInfo::Jsonize() const
 
   if(m_adminUserListHasBeenSet)
   {
-   Array<JsonValue> adminUserListJsonList(m_adminUserList.size());
+   Aws::Utils::Array<JsonValue> adminUserListJsonList(m_adminUserList.size());
    for(unsigned adminUserListIndex = 0; adminUserListIndex < adminUserListJsonList.GetLength(); ++adminUserListIndex)
    {
      adminUserListJsonList[adminUserListIndex].AsString(m_adminUserList[adminUserListIndex]);
@@ -435,7 +435,7 @@ JsonValue SMBFileShareInfo::Jsonize() const
 
   if(m_validUserListHasBeenSet)
   {
-   Array<JsonValue> validUserListJsonList(m_validUserList.size());
+   Aws::Utils::Array<JsonValue> validUserListJsonList(m_validUserList.size());
    for(unsigned validUserListIndex = 0; validUserListIndex < validUserListJsonList.GetLength(); ++validUserListIndex)
    {
      validUserListJsonList[validUserListIndex].AsString(m_validUserList[validUserListIndex]);
@@ -446,7 +446,7 @@ JsonValue SMBFileShareInfo::Jsonize() const
 
   if(m_invalidUserListHasBeenSet)
   {
-   Array<JsonValue> invalidUserListJsonList(m_invalidUserList.size());
+   Aws::Utils::Array<JsonValue> invalidUserListJsonList(m_invalidUserList.size());
    for(unsigned invalidUserListIndex = 0; invalidUserListIndex < invalidUserListJsonList.GetLength(); ++invalidUserListIndex)
    {
      invalidUserListJsonList[invalidUserListIndex].AsString(m_invalidUserList[invalidUserListIndex]);
@@ -474,7 +474,7 @@ JsonValue SMBFileShareInfo::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

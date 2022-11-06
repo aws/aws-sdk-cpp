@@ -27,7 +27,7 @@ Aws::String ListReceivedLicensesRequest::SerializePayload() const
 
   if(m_licenseArnsHasBeenSet)
   {
-   Array<JsonValue> licenseArnsJsonList(m_licenseArns.size());
+   Aws::Utils::Array<JsonValue> licenseArnsJsonList(m_licenseArns.size());
    for(unsigned licenseArnsIndex = 0; licenseArnsIndex < licenseArnsJsonList.GetLength(); ++licenseArnsIndex)
    {
      licenseArnsJsonList[licenseArnsIndex].AsString(m_licenseArns[licenseArnsIndex]);
@@ -38,7 +38,7 @@ Aws::String ListReceivedLicensesRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

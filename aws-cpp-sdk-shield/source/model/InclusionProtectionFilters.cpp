@@ -37,7 +37,7 @@ InclusionProtectionFilters& InclusionProtectionFilters::operator =(JsonView json
 {
   if(jsonValue.ValueExists("ResourceArns"))
   {
-    Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("ResourceArns");
+    Aws::Utils::Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("ResourceArns");
     for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
     {
       m_resourceArns.push_back(resourceArnsJsonList[resourceArnsIndex].AsString());
@@ -47,7 +47,7 @@ InclusionProtectionFilters& InclusionProtectionFilters::operator =(JsonView json
 
   if(jsonValue.ValueExists("ProtectionNames"))
   {
-    Array<JsonView> protectionNamesJsonList = jsonValue.GetArray("ProtectionNames");
+    Aws::Utils::Array<JsonView> protectionNamesJsonList = jsonValue.GetArray("ProtectionNames");
     for(unsigned protectionNamesIndex = 0; protectionNamesIndex < protectionNamesJsonList.GetLength(); ++protectionNamesIndex)
     {
       m_protectionNames.push_back(protectionNamesJsonList[protectionNamesIndex].AsString());
@@ -57,7 +57,7 @@ InclusionProtectionFilters& InclusionProtectionFilters::operator =(JsonView json
 
   if(jsonValue.ValueExists("ResourceTypes"))
   {
-    Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
+    Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
     for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
     {
       m_resourceTypes.push_back(ProtectedResourceTypeMapper::GetProtectedResourceTypeForName(resourceTypesJsonList[resourceTypesIndex].AsString()));
@@ -74,7 +74,7 @@ JsonValue InclusionProtectionFilters::Jsonize() const
 
   if(m_resourceArnsHasBeenSet)
   {
-   Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
    for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
    {
      resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
@@ -85,7 +85,7 @@ JsonValue InclusionProtectionFilters::Jsonize() const
 
   if(m_protectionNamesHasBeenSet)
   {
-   Array<JsonValue> protectionNamesJsonList(m_protectionNames.size());
+   Aws::Utils::Array<JsonValue> protectionNamesJsonList(m_protectionNames.size());
    for(unsigned protectionNamesIndex = 0; protectionNamesIndex < protectionNamesJsonList.GetLength(); ++protectionNamesIndex)
    {
      protectionNamesJsonList[protectionNamesIndex].AsString(m_protectionNames[protectionNamesIndex]);
@@ -96,7 +96,7 @@ JsonValue InclusionProtectionFilters::Jsonize() const
 
   if(m_resourceTypesHasBeenSet)
   {
-   Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
    {
      resourceTypesJsonList[resourceTypesIndex].AsString(ProtectedResourceTypeMapper::GetNameForProtectedResourceType(m_resourceTypes[resourceTypesIndex]));

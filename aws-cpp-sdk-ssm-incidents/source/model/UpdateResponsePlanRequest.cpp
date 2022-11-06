@@ -36,7 +36,7 @@ Aws::String UpdateResponsePlanRequest::SerializePayload() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
@@ -71,7 +71,7 @@ Aws::String UpdateResponsePlanRequest::SerializePayload() const
 
   if(m_engagementsHasBeenSet)
   {
-   Array<JsonValue> engagementsJsonList(m_engagements.size());
+   Aws::Utils::Array<JsonValue> engagementsJsonList(m_engagements.size());
    for(unsigned engagementsIndex = 0; engagementsIndex < engagementsJsonList.GetLength(); ++engagementsIndex)
    {
      engagementsJsonList[engagementsIndex].AsString(m_engagements[engagementsIndex]);
@@ -94,7 +94,7 @@ Aws::String UpdateResponsePlanRequest::SerializePayload() const
 
   if(m_incidentTemplateNotificationTargetsHasBeenSet)
   {
-   Array<JsonValue> incidentTemplateNotificationTargetsJsonList(m_incidentTemplateNotificationTargets.size());
+   Aws::Utils::Array<JsonValue> incidentTemplateNotificationTargetsJsonList(m_incidentTemplateNotificationTargets.size());
    for(unsigned incidentTemplateNotificationTargetsIndex = 0; incidentTemplateNotificationTargetsIndex < incidentTemplateNotificationTargetsJsonList.GetLength(); ++incidentTemplateNotificationTargetsIndex)
    {
      incidentTemplateNotificationTargetsJsonList[incidentTemplateNotificationTargetsIndex].AsObject(m_incidentTemplateNotificationTargets[incidentTemplateNotificationTargetsIndex].Jsonize());

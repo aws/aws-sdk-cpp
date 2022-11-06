@@ -30,7 +30,7 @@ DescribeJobQueuesResult& DescribeJobQueuesResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobQueues"))
   {
-    Array<JsonView> jobQueuesJsonList = jsonValue.GetArray("jobQueues");
+    Aws::Utils::Array<JsonView> jobQueuesJsonList = jsonValue.GetArray("jobQueues");
     for(unsigned jobQueuesIndex = 0; jobQueuesIndex < jobQueuesJsonList.GetLength(); ++jobQueuesIndex)
     {
       m_jobQueues.push_back(jobQueuesJsonList[jobQueuesIndex].AsObject());

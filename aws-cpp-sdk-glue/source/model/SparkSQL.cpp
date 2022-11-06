@@ -48,7 +48,7 @@ SparkSQL& SparkSQL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -65,7 +65,7 @@ SparkSQL& SparkSQL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SqlAliases"))
   {
-    Array<JsonView> sqlAliasesJsonList = jsonValue.GetArray("SqlAliases");
+    Aws::Utils::Array<JsonView> sqlAliasesJsonList = jsonValue.GetArray("SqlAliases");
     for(unsigned sqlAliasesIndex = 0; sqlAliasesIndex < sqlAliasesJsonList.GetLength(); ++sqlAliasesIndex)
     {
       m_sqlAliases.push_back(sqlAliasesJsonList[sqlAliasesIndex].AsObject());
@@ -75,7 +75,7 @@ SparkSQL& SparkSQL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OutputSchemas"))
   {
-    Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
+    Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
     for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
     {
       m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
@@ -98,7 +98,7 @@ JsonValue SparkSQL::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
@@ -115,7 +115,7 @@ JsonValue SparkSQL::Jsonize() const
 
   if(m_sqlAliasesHasBeenSet)
   {
-   Array<JsonValue> sqlAliasesJsonList(m_sqlAliases.size());
+   Aws::Utils::Array<JsonValue> sqlAliasesJsonList(m_sqlAliases.size());
    for(unsigned sqlAliasesIndex = 0; sqlAliasesIndex < sqlAliasesJsonList.GetLength(); ++sqlAliasesIndex)
    {
      sqlAliasesJsonList[sqlAliasesIndex].AsObject(m_sqlAliases[sqlAliasesIndex].Jsonize());
@@ -126,7 +126,7 @@ JsonValue SparkSQL::Jsonize() const
 
   if(m_outputSchemasHasBeenSet)
   {
-   Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
    {
      outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());

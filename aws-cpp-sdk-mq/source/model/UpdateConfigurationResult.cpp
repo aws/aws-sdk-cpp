@@ -60,7 +60,7 @@ UpdateConfigurationResult& UpdateConfigurationResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());

@@ -51,7 +51,7 @@ InputSchemaUpdate& InputSchemaUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RecordColumnUpdates"))
   {
-    Array<JsonView> recordColumnUpdatesJsonList = jsonValue.GetArray("RecordColumnUpdates");
+    Aws::Utils::Array<JsonView> recordColumnUpdatesJsonList = jsonValue.GetArray("RecordColumnUpdates");
     for(unsigned recordColumnUpdatesIndex = 0; recordColumnUpdatesIndex < recordColumnUpdatesJsonList.GetLength(); ++recordColumnUpdatesIndex)
     {
       m_recordColumnUpdates.push_back(recordColumnUpdatesJsonList[recordColumnUpdatesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue InputSchemaUpdate::Jsonize() const
 
   if(m_recordColumnUpdatesHasBeenSet)
   {
-   Array<JsonValue> recordColumnUpdatesJsonList(m_recordColumnUpdates.size());
+   Aws::Utils::Array<JsonValue> recordColumnUpdatesJsonList(m_recordColumnUpdates.size());
    for(unsigned recordColumnUpdatesIndex = 0; recordColumnUpdatesIndex < recordColumnUpdatesJsonList.GetLength(); ++recordColumnUpdatesIndex)
    {
      recordColumnUpdatesJsonList[recordColumnUpdatesIndex].AsObject(m_recordColumnUpdates[recordColumnUpdatesIndex].Jsonize());

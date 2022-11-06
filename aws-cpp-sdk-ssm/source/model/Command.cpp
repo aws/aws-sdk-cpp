@@ -133,7 +133,7 @@ Command& Command::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
+      Aws::Utils::Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> parameterValueListList;
       parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
@@ -147,7 +147,7 @@ Command& Command::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceIds"))
   {
-    Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
+    Aws::Utils::Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
     for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
     {
       m_instanceIds.push_back(instanceIdsJsonList[instanceIdsIndex].AsString());
@@ -157,7 +157,7 @@ Command& Command::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
@@ -286,7 +286,7 @@ Command& Command::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TriggeredAlarms"))
   {
-    Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
+    Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
     for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
     {
       m_triggeredAlarms.push_back(triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject());
@@ -335,7 +335,7 @@ JsonValue Command::Jsonize() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> parameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> parameterValueListJsonList(parametersItem.second.size());
      for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
      {
        parameterValueListJsonList[parameterValueListIndex].AsString(parametersItem.second[parameterValueListIndex]);
@@ -348,7 +348,7 @@ JsonValue Command::Jsonize() const
 
   if(m_instanceIdsHasBeenSet)
   {
-   Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
+   Aws::Utils::Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
    for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
    {
      instanceIdsJsonList[instanceIdsIndex].AsString(m_instanceIds[instanceIdsIndex]);
@@ -359,7 +359,7 @@ JsonValue Command::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
@@ -470,7 +470,7 @@ JsonValue Command::Jsonize() const
 
   if(m_triggeredAlarmsHasBeenSet)
   {
-   Array<JsonValue> triggeredAlarmsJsonList(m_triggeredAlarms.size());
+   Aws::Utils::Array<JsonValue> triggeredAlarmsJsonList(m_triggeredAlarms.size());
    for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
    {
      triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject(m_triggeredAlarms[triggeredAlarmsIndex].Jsonize());

@@ -30,7 +30,7 @@ GetPercentilesResult& GetPercentilesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("percentiles"))
   {
-    Array<JsonView> percentilesJsonList = jsonValue.GetArray("percentiles");
+    Aws::Utils::Array<JsonView> percentilesJsonList = jsonValue.GetArray("percentiles");
     for(unsigned percentilesIndex = 0; percentilesIndex < percentilesJsonList.GetLength(); ++percentilesIndex)
     {
       m_percentiles.push_back(percentilesJsonList[percentilesIndex].AsObject());

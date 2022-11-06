@@ -30,7 +30,7 @@ ListMonitoringExecutionsResult& ListMonitoringExecutionsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MonitoringExecutionSummaries"))
   {
-    Array<JsonView> monitoringExecutionSummariesJsonList = jsonValue.GetArray("MonitoringExecutionSummaries");
+    Aws::Utils::Array<JsonView> monitoringExecutionSummariesJsonList = jsonValue.GetArray("MonitoringExecutionSummaries");
     for(unsigned monitoringExecutionSummariesIndex = 0; monitoringExecutionSummariesIndex < monitoringExecutionSummariesJsonList.GetLength(); ++monitoringExecutionSummariesIndex)
     {
       m_monitoringExecutionSummaries.push_back(monitoringExecutionSummariesJsonList[monitoringExecutionSummariesIndex].AsObject());

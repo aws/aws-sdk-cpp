@@ -30,7 +30,7 @@ GetLinkAssociationsResult& GetLinkAssociationsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LinkAssociations"))
   {
-    Array<JsonView> linkAssociationsJsonList = jsonValue.GetArray("LinkAssociations");
+    Aws::Utils::Array<JsonView> linkAssociationsJsonList = jsonValue.GetArray("LinkAssociations");
     for(unsigned linkAssociationsIndex = 0; linkAssociationsIndex < linkAssociationsJsonList.GetLength(); ++linkAssociationsIndex)
     {
       m_linkAssociations.push_back(linkAssociationsJsonList[linkAssociationsIndex].AsObject());

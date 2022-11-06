@@ -27,7 +27,7 @@ Aws::String DescribeConfigurationSetsRequest::SerializePayload() const
 
   if(m_configurationSetNamesHasBeenSet)
   {
-   Array<JsonValue> configurationSetNamesJsonList(m_configurationSetNames.size());
+   Aws::Utils::Array<JsonValue> configurationSetNamesJsonList(m_configurationSetNames.size());
    for(unsigned configurationSetNamesIndex = 0; configurationSetNamesIndex < configurationSetNamesJsonList.GetLength(); ++configurationSetNamesIndex)
    {
      configurationSetNamesJsonList[configurationSetNamesIndex].AsString(m_configurationSetNames[configurationSetNamesIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeConfigurationSetsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

@@ -28,22 +28,48 @@ namespace LexRuntimeV2
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexRuntimeV2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LexRuntimeV2Client(const Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration = Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration(),
+                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LexRuntimeV2Client(const Aws::Auth::AWSCredentials& credentials,
-                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG),
+                           const Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration = Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LexRuntimeV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG),
+                           const Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration = Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexRuntimeV2Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexRuntimeV2Client(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        LexRuntimeV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~LexRuntimeV2Client();
 
 
@@ -232,21 +258,22 @@ namespace LexRuntimeV2
          *
          * Queues the request into a thread executor.
          * The streamReadyHandler is triggered when the stream is ready to be written to.
-         * The responseHandler is triggered when the request is finished.
+         * The handler is triggered when the request is finished.
          */
         virtual void StartConversationAsync(Model::StartConversationRequest& request,
                 const StartConversationStreamReadyHandler& streamReadyHandler,
-                const StartConversationResponseReceivedHandler& responseHandler,
+                const StartConversationResponseReceivedHandler& handler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<LexRuntimeV2EndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const LexRuntimeV2ClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      LexRuntimeV2ClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<LexRuntimeV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LexRuntimeV2

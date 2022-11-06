@@ -65,7 +65,7 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
 
   if(m_containerDefinitionsHasBeenSet)
   {
-   Array<JsonValue> containerDefinitionsJsonList(m_containerDefinitions.size());
+   Aws::Utils::Array<JsonValue> containerDefinitionsJsonList(m_containerDefinitions.size());
    for(unsigned containerDefinitionsIndex = 0; containerDefinitionsIndex < containerDefinitionsJsonList.GetLength(); ++containerDefinitionsIndex)
    {
      containerDefinitionsJsonList[containerDefinitionsIndex].AsObject(m_containerDefinitions[containerDefinitionsIndex].Jsonize());
@@ -76,7 +76,7 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
 
   if(m_volumesHasBeenSet)
   {
-   Array<JsonValue> volumesJsonList(m_volumes.size());
+   Aws::Utils::Array<JsonValue> volumesJsonList(m_volumes.size());
    for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
    {
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
@@ -87,7 +87,7 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
 
   if(m_placementConstraintsHasBeenSet)
   {
-   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
    {
      placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
@@ -98,7 +98,7 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
 
   if(m_requiresCompatibilitiesHasBeenSet)
   {
-   Array<JsonValue> requiresCompatibilitiesJsonList(m_requiresCompatibilities.size());
+   Aws::Utils::Array<JsonValue> requiresCompatibilitiesJsonList(m_requiresCompatibilities.size());
    for(unsigned requiresCompatibilitiesIndex = 0; requiresCompatibilitiesIndex < requiresCompatibilitiesJsonList.GetLength(); ++requiresCompatibilitiesIndex)
    {
      requiresCompatibilitiesJsonList[requiresCompatibilitiesIndex].AsString(CompatibilityMapper::GetNameForCompatibility(m_requiresCompatibilities[requiresCompatibilitiesIndex]));
@@ -121,7 +121,7 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -148,7 +148,7 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
 
   if(m_inferenceAcceleratorsHasBeenSet)
   {
-   Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
+   Aws::Utils::Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
    for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
    {
      inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject(m_inferenceAccelerators[inferenceAcceleratorsIndex].Jsonize());

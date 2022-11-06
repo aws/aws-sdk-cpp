@@ -30,7 +30,7 @@ DescribeCanariesLastRunResult& DescribeCanariesLastRunResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CanariesLastRun"))
   {
-    Array<JsonView> canariesLastRunJsonList = jsonValue.GetArray("CanariesLastRun");
+    Aws::Utils::Array<JsonView> canariesLastRunJsonList = jsonValue.GetArray("CanariesLastRun");
     for(unsigned canariesLastRunIndex = 0; canariesLastRunIndex < canariesLastRunJsonList.GetLength(); ++canariesLastRunIndex)
     {
       m_canariesLastRun.push_back(canariesLastRunJsonList[canariesLastRunIndex].AsObject());

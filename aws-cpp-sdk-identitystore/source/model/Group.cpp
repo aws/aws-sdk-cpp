@@ -55,7 +55,7 @@ Group& Group::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExternalIds"))
   {
-    Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
+    Aws::Utils::Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
     for(unsigned externalIdsIndex = 0; externalIdsIndex < externalIdsJsonList.GetLength(); ++externalIdsIndex)
     {
       m_externalIds.push_back(externalIdsJsonList[externalIdsIndex].AsObject());
@@ -98,7 +98,7 @@ JsonValue Group::Jsonize() const
 
   if(m_externalIdsHasBeenSet)
   {
-   Array<JsonValue> externalIdsJsonList(m_externalIds.size());
+   Aws::Utils::Array<JsonValue> externalIdsJsonList(m_externalIds.size());
    for(unsigned externalIdsIndex = 0; externalIdsIndex < externalIdsJsonList.GetLength(); ++externalIdsIndex)
    {
      externalIdsJsonList[externalIdsIndex].AsObject(m_externalIds[externalIdsIndex].Jsonize());

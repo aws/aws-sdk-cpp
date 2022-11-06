@@ -30,7 +30,7 @@ ListSchemaExtensionsResult& ListSchemaExtensionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SchemaExtensionsInfo"))
   {
-    Array<JsonView> schemaExtensionsInfoJsonList = jsonValue.GetArray("SchemaExtensionsInfo");
+    Aws::Utils::Array<JsonView> schemaExtensionsInfoJsonList = jsonValue.GetArray("SchemaExtensionsInfo");
     for(unsigned schemaExtensionsInfoIndex = 0; schemaExtensionsInfoIndex < schemaExtensionsInfoJsonList.GetLength(); ++schemaExtensionsInfoIndex)
     {
       m_schemaExtensionsInfo.push_back(schemaExtensionsInfoJsonList[schemaExtensionsInfoIndex].AsObject());

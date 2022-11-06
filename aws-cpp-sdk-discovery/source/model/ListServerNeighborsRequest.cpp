@@ -41,7 +41,7 @@ Aws::String ListServerNeighborsRequest::SerializePayload() const
 
   if(m_neighborConfigurationIdsHasBeenSet)
   {
-   Array<JsonValue> neighborConfigurationIdsJsonList(m_neighborConfigurationIds.size());
+   Aws::Utils::Array<JsonValue> neighborConfigurationIdsJsonList(m_neighborConfigurationIds.size());
    for(unsigned neighborConfigurationIdsIndex = 0; neighborConfigurationIdsIndex < neighborConfigurationIdsJsonList.GetLength(); ++neighborConfigurationIdsIndex)
    {
      neighborConfigurationIdsJsonList[neighborConfigurationIdsIndex].AsString(m_neighborConfigurationIds[neighborConfigurationIdsIndex]);

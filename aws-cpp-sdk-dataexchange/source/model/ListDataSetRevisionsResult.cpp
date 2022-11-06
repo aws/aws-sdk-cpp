@@ -36,7 +36,7 @@ ListDataSetRevisionsResult& ListDataSetRevisionsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("Revisions"))
   {
-    Array<JsonView> revisionsJsonList = jsonValue.GetArray("Revisions");
+    Aws::Utils::Array<JsonView> revisionsJsonList = jsonValue.GetArray("Revisions");
     for(unsigned revisionsIndex = 0; revisionsIndex < revisionsJsonList.GetLength(); ++revisionsIndex)
     {
       m_revisions.push_back(revisionsJsonList[revisionsIndex].AsObject());

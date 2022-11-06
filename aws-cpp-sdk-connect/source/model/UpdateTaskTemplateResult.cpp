@@ -80,7 +80,7 @@ UpdateTaskTemplateResult& UpdateTaskTemplateResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("Fields"))
   {
-    Array<JsonView> fieldsJsonList = jsonValue.GetArray("Fields");
+    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("Fields");
     for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
     {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());

@@ -71,7 +71,7 @@ BuildSummary& BuildSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secondaryArtifacts"))
   {
-    Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
+    Aws::Utils::Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
     for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
     {
       m_secondaryArtifacts.push_back(secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue BuildSummary::Jsonize() const
 
   if(m_secondaryArtifactsHasBeenSet)
   {
-   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   Aws::Utils::Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
    for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
    {
      secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());

@@ -59,7 +59,7 @@ Aws::String PutConformancePackRequest::SerializePayload() const
 
   if(m_conformancePackInputParametersHasBeenSet)
   {
-   Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
+   Aws::Utils::Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
    for(unsigned conformancePackInputParametersIndex = 0; conformancePackInputParametersIndex < conformancePackInputParametersJsonList.GetLength(); ++conformancePackInputParametersIndex)
    {
      conformancePackInputParametersJsonList[conformancePackInputParametersIndex].AsObject(m_conformancePackInputParameters[conformancePackInputParametersIndex].Jsonize());

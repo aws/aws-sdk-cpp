@@ -30,7 +30,7 @@ ListAttributeGroupsResult& ListAttributeGroupsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("attributeGroups"))
   {
-    Array<JsonView> attributeGroupsJsonList = jsonValue.GetArray("attributeGroups");
+    Aws::Utils::Array<JsonView> attributeGroupsJsonList = jsonValue.GetArray("attributeGroups");
     for(unsigned attributeGroupsIndex = 0; attributeGroupsIndex < attributeGroupsJsonList.GetLength(); ++attributeGroupsIndex)
     {
       m_attributeGroups.push_back(attributeGroupsJsonList[attributeGroupsIndex].AsObject());

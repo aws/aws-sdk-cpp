@@ -30,7 +30,7 @@ ExportThemesResult& ExportThemesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("entities"))
   {
-    Array<JsonView> entitiesJsonList = jsonValue.GetArray("entities");
+    Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("entities");
     for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());

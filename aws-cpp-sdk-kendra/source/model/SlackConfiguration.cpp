@@ -88,7 +88,7 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SlackEntityList"))
   {
-    Array<JsonView> slackEntityListJsonList = jsonValue.GetArray("SlackEntityList");
+    Aws::Utils::Array<JsonView> slackEntityListJsonList = jsonValue.GetArray("SlackEntityList");
     for(unsigned slackEntityListIndex = 0; slackEntityListIndex < slackEntityListJsonList.GetLength(); ++slackEntityListIndex)
     {
       m_slackEntityList.push_back(SlackEntityMapper::GetSlackEntityForName(slackEntityListJsonList[slackEntityListIndex].AsString()));
@@ -133,7 +133,7 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PrivateChannelFilter"))
   {
-    Array<JsonView> privateChannelFilterJsonList = jsonValue.GetArray("PrivateChannelFilter");
+    Aws::Utils::Array<JsonView> privateChannelFilterJsonList = jsonValue.GetArray("PrivateChannelFilter");
     for(unsigned privateChannelFilterIndex = 0; privateChannelFilterIndex < privateChannelFilterJsonList.GetLength(); ++privateChannelFilterIndex)
     {
       m_privateChannelFilter.push_back(privateChannelFilterJsonList[privateChannelFilterIndex].AsString());
@@ -143,7 +143,7 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PublicChannelFilter"))
   {
-    Array<JsonView> publicChannelFilterJsonList = jsonValue.GetArray("PublicChannelFilter");
+    Aws::Utils::Array<JsonView> publicChannelFilterJsonList = jsonValue.GetArray("PublicChannelFilter");
     for(unsigned publicChannelFilterIndex = 0; publicChannelFilterIndex < publicChannelFilterJsonList.GetLength(); ++publicChannelFilterIndex)
     {
       m_publicChannelFilter.push_back(publicChannelFilterJsonList[publicChannelFilterIndex].AsString());
@@ -153,7 +153,7 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
-    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
     for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
     {
       m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
@@ -163,7 +163,7 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
-    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
     for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
     {
       m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
@@ -173,7 +173,7 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FieldMappings"))
   {
-    Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
+    Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
     for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
     {
       m_fieldMappings.push_back(fieldMappingsJsonList[fieldMappingsIndex].AsObject());
@@ -208,7 +208,7 @@ JsonValue SlackConfiguration::Jsonize() const
 
   if(m_slackEntityListHasBeenSet)
   {
-   Array<JsonValue> slackEntityListJsonList(m_slackEntityList.size());
+   Aws::Utils::Array<JsonValue> slackEntityListJsonList(m_slackEntityList.size());
    for(unsigned slackEntityListIndex = 0; slackEntityListIndex < slackEntityListJsonList.GetLength(); ++slackEntityListIndex)
    {
      slackEntityListJsonList[slackEntityListIndex].AsString(SlackEntityMapper::GetNameForSlackEntity(m_slackEntityList[slackEntityListIndex]));
@@ -249,7 +249,7 @@ JsonValue SlackConfiguration::Jsonize() const
 
   if(m_privateChannelFilterHasBeenSet)
   {
-   Array<JsonValue> privateChannelFilterJsonList(m_privateChannelFilter.size());
+   Aws::Utils::Array<JsonValue> privateChannelFilterJsonList(m_privateChannelFilter.size());
    for(unsigned privateChannelFilterIndex = 0; privateChannelFilterIndex < privateChannelFilterJsonList.GetLength(); ++privateChannelFilterIndex)
    {
      privateChannelFilterJsonList[privateChannelFilterIndex].AsString(m_privateChannelFilter[privateChannelFilterIndex]);
@@ -260,7 +260,7 @@ JsonValue SlackConfiguration::Jsonize() const
 
   if(m_publicChannelFilterHasBeenSet)
   {
-   Array<JsonValue> publicChannelFilterJsonList(m_publicChannelFilter.size());
+   Aws::Utils::Array<JsonValue> publicChannelFilterJsonList(m_publicChannelFilter.size());
    for(unsigned publicChannelFilterIndex = 0; publicChannelFilterIndex < publicChannelFilterJsonList.GetLength(); ++publicChannelFilterIndex)
    {
      publicChannelFilterJsonList[publicChannelFilterIndex].AsString(m_publicChannelFilter[publicChannelFilterIndex]);
@@ -271,7 +271,7 @@ JsonValue SlackConfiguration::Jsonize() const
 
   if(m_inclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
    {
      inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
@@ -282,7 +282,7 @@ JsonValue SlackConfiguration::Jsonize() const
 
   if(m_exclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
    {
      exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);
@@ -293,7 +293,7 @@ JsonValue SlackConfiguration::Jsonize() const
 
   if(m_fieldMappingsHasBeenSet)
   {
-   Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
+   Aws::Utils::Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
    for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
    {
      fieldMappingsJsonList[fieldMappingsIndex].AsObject(m_fieldMappings[fieldMappingsIndex].Jsonize());

@@ -52,7 +52,7 @@ Aws::String CreateMLTransformRequest::SerializePayload() const
 
   if(m_inputRecordTablesHasBeenSet)
   {
-   Array<JsonValue> inputRecordTablesJsonList(m_inputRecordTables.size());
+   Aws::Utils::Array<JsonValue> inputRecordTablesJsonList(m_inputRecordTables.size());
    for(unsigned inputRecordTablesIndex = 0; inputRecordTablesIndex < inputRecordTablesJsonList.GetLength(); ++inputRecordTablesIndex)
    {
      inputRecordTablesJsonList[inputRecordTablesIndex].AsObject(m_inputRecordTables[inputRecordTablesIndex].Jsonize());

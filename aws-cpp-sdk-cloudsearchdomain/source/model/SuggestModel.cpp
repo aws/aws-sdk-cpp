@@ -53,7 +53,7 @@ SuggestModel& SuggestModel::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("suggestions"))
   {
-    Array<JsonView> suggestionsJsonList = jsonValue.GetArray("suggestions");
+    Aws::Utils::Array<JsonView> suggestionsJsonList = jsonValue.GetArray("suggestions");
     for(unsigned suggestionsIndex = 0; suggestionsIndex < suggestionsJsonList.GetLength(); ++suggestionsIndex)
     {
       m_suggestions.push_back(suggestionsJsonList[suggestionsIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue SuggestModel::Jsonize() const
 
   if(m_suggestionsHasBeenSet)
   {
-   Array<JsonValue> suggestionsJsonList(m_suggestions.size());
+   Aws::Utils::Array<JsonValue> suggestionsJsonList(m_suggestions.size());
    for(unsigned suggestionsIndex = 0; suggestionsIndex < suggestionsJsonList.GetLength(); ++suggestionsIndex)
    {
      suggestionsJsonList[suggestionsIndex].AsObject(m_suggestions[suggestionsIndex].Jsonize());

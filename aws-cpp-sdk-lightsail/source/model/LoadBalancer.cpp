@@ -123,7 +123,7 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -154,7 +154,7 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("publicPorts"))
   {
-    Array<JsonView> publicPortsJsonList = jsonValue.GetArray("publicPorts");
+    Aws::Utils::Array<JsonView> publicPortsJsonList = jsonValue.GetArray("publicPorts");
     for(unsigned publicPortsIndex = 0; publicPortsIndex < publicPortsJsonList.GetLength(); ++publicPortsIndex)
     {
       m_publicPorts.push_back(publicPortsJsonList[publicPortsIndex].AsInteger());
@@ -178,7 +178,7 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("instanceHealthSummary"))
   {
-    Array<JsonView> instanceHealthSummaryJsonList = jsonValue.GetArray("instanceHealthSummary");
+    Aws::Utils::Array<JsonView> instanceHealthSummaryJsonList = jsonValue.GetArray("instanceHealthSummary");
     for(unsigned instanceHealthSummaryIndex = 0; instanceHealthSummaryIndex < instanceHealthSummaryJsonList.GetLength(); ++instanceHealthSummaryIndex)
     {
       m_instanceHealthSummary.push_back(instanceHealthSummaryJsonList[instanceHealthSummaryIndex].AsObject());
@@ -188,7 +188,7 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tlsCertificateSummaries"))
   {
-    Array<JsonView> tlsCertificateSummariesJsonList = jsonValue.GetArray("tlsCertificateSummaries");
+    Aws::Utils::Array<JsonView> tlsCertificateSummariesJsonList = jsonValue.GetArray("tlsCertificateSummaries");
     for(unsigned tlsCertificateSummariesIndex = 0; tlsCertificateSummariesIndex < tlsCertificateSummariesJsonList.GetLength(); ++tlsCertificateSummariesIndex)
     {
       m_tlsCertificateSummaries.push_back(tlsCertificateSummariesJsonList[tlsCertificateSummariesIndex].AsObject());
@@ -270,7 +270,7 @@ JsonValue LoadBalancer::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -297,7 +297,7 @@ JsonValue LoadBalancer::Jsonize() const
 
   if(m_publicPortsHasBeenSet)
   {
-   Array<JsonValue> publicPortsJsonList(m_publicPorts.size());
+   Aws::Utils::Array<JsonValue> publicPortsJsonList(m_publicPorts.size());
    for(unsigned publicPortsIndex = 0; publicPortsIndex < publicPortsJsonList.GetLength(); ++publicPortsIndex)
    {
      publicPortsJsonList[publicPortsIndex].AsInteger(m_publicPorts[publicPortsIndex]);
@@ -320,7 +320,7 @@ JsonValue LoadBalancer::Jsonize() const
 
   if(m_instanceHealthSummaryHasBeenSet)
   {
-   Array<JsonValue> instanceHealthSummaryJsonList(m_instanceHealthSummary.size());
+   Aws::Utils::Array<JsonValue> instanceHealthSummaryJsonList(m_instanceHealthSummary.size());
    for(unsigned instanceHealthSummaryIndex = 0; instanceHealthSummaryIndex < instanceHealthSummaryJsonList.GetLength(); ++instanceHealthSummaryIndex)
    {
      instanceHealthSummaryJsonList[instanceHealthSummaryIndex].AsObject(m_instanceHealthSummary[instanceHealthSummaryIndex].Jsonize());
@@ -331,7 +331,7 @@ JsonValue LoadBalancer::Jsonize() const
 
   if(m_tlsCertificateSummariesHasBeenSet)
   {
-   Array<JsonValue> tlsCertificateSummariesJsonList(m_tlsCertificateSummaries.size());
+   Aws::Utils::Array<JsonValue> tlsCertificateSummariesJsonList(m_tlsCertificateSummaries.size());
    for(unsigned tlsCertificateSummariesIndex = 0; tlsCertificateSummariesIndex < tlsCertificateSummariesJsonList.GetLength(); ++tlsCertificateSummariesIndex)
    {
      tlsCertificateSummariesJsonList[tlsCertificateSummariesIndex].AsObject(m_tlsCertificateSummaries[tlsCertificateSummariesIndex].Jsonize());

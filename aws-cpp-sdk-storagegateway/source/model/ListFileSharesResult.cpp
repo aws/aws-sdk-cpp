@@ -42,7 +42,7 @@ ListFileSharesResult& ListFileSharesResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("FileShareInfoList"))
   {
-    Array<JsonView> fileShareInfoListJsonList = jsonValue.GetArray("FileShareInfoList");
+    Aws::Utils::Array<JsonView> fileShareInfoListJsonList = jsonValue.GetArray("FileShareInfoList");
     for(unsigned fileShareInfoListIndex = 0; fileShareInfoListIndex < fileShareInfoListJsonList.GetLength(); ++fileShareInfoListIndex)
     {
       m_fileShareInfoList.push_back(fileShareInfoListJsonList[fileShareInfoListIndex].AsObject());

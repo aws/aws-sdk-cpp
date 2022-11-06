@@ -30,7 +30,7 @@ GetApplicationComponentStrategiesResult& GetApplicationComponentStrategiesResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("applicationComponentStrategies"))
   {
-    Array<JsonView> applicationComponentStrategiesJsonList = jsonValue.GetArray("applicationComponentStrategies");
+    Aws::Utils::Array<JsonView> applicationComponentStrategiesJsonList = jsonValue.GetArray("applicationComponentStrategies");
     for(unsigned applicationComponentStrategiesIndex = 0; applicationComponentStrategiesIndex < applicationComponentStrategiesJsonList.GetLength(); ++applicationComponentStrategiesIndex)
     {
       m_applicationComponentStrategies.push_back(applicationComponentStrategiesJsonList[applicationComponentStrategiesIndex].AsObject());

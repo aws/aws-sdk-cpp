@@ -34,22 +34,48 @@ namespace ImportExport
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ImportExportClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ImportExportClient(const Aws::ImportExport::ImportExportClientConfiguration& clientConfiguration = Aws::ImportExport::ImportExportClientConfiguration(),
+                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ImportExportClient(const Aws::Auth::AWSCredentials& credentials,
-                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::ImportExport::ImportExportClientConfiguration& clientConfiguration = Aws::ImportExport::ImportExportClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ImportExportClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::ImportExport::ImportExportClientConfiguration& clientConfiguration = Aws::ImportExport::ImportExportClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ImportExportClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ImportExportClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ImportExportClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ImportExportClient();
 
 
@@ -181,12 +207,13 @@ namespace ImportExport
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<ImportExportEndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void init(const ImportExportClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        ImportExportClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<ImportExportEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ImportExport

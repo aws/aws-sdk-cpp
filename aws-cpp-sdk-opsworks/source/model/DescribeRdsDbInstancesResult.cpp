@@ -30,7 +30,7 @@ DescribeRdsDbInstancesResult& DescribeRdsDbInstancesResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RdsDbInstances"))
   {
-    Array<JsonView> rdsDbInstancesJsonList = jsonValue.GetArray("RdsDbInstances");
+    Aws::Utils::Array<JsonView> rdsDbInstancesJsonList = jsonValue.GetArray("RdsDbInstances");
     for(unsigned rdsDbInstancesIndex = 0; rdsDbInstancesIndex < rdsDbInstancesJsonList.GetLength(); ++rdsDbInstancesIndex)
     {
       m_rdsDbInstances.push_back(rdsDbInstancesJsonList[rdsDbInstancesIndex].AsObject());

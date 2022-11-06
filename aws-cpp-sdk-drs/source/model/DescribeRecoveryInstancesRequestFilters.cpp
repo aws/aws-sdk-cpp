@@ -35,7 +35,7 @@ DescribeRecoveryInstancesRequestFilters& DescribeRecoveryInstancesRequestFilters
 {
   if(jsonValue.ValueExists("recoveryInstanceIDs"))
   {
-    Array<JsonView> recoveryInstanceIDsJsonList = jsonValue.GetArray("recoveryInstanceIDs");
+    Aws::Utils::Array<JsonView> recoveryInstanceIDsJsonList = jsonValue.GetArray("recoveryInstanceIDs");
     for(unsigned recoveryInstanceIDsIndex = 0; recoveryInstanceIDsIndex < recoveryInstanceIDsJsonList.GetLength(); ++recoveryInstanceIDsIndex)
     {
       m_recoveryInstanceIDs.push_back(recoveryInstanceIDsJsonList[recoveryInstanceIDsIndex].AsString());
@@ -45,7 +45,7 @@ DescribeRecoveryInstancesRequestFilters& DescribeRecoveryInstancesRequestFilters
 
   if(jsonValue.ValueExists("sourceServerIDs"))
   {
-    Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
+    Aws::Utils::Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
     for(unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex)
     {
       m_sourceServerIDs.push_back(sourceServerIDsJsonList[sourceServerIDsIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue DescribeRecoveryInstancesRequestFilters::Jsonize() const
 
   if(m_recoveryInstanceIDsHasBeenSet)
   {
-   Array<JsonValue> recoveryInstanceIDsJsonList(m_recoveryInstanceIDs.size());
+   Aws::Utils::Array<JsonValue> recoveryInstanceIDsJsonList(m_recoveryInstanceIDs.size());
    for(unsigned recoveryInstanceIDsIndex = 0; recoveryInstanceIDsIndex < recoveryInstanceIDsJsonList.GetLength(); ++recoveryInstanceIDsIndex)
    {
      recoveryInstanceIDsJsonList[recoveryInstanceIDsIndex].AsString(m_recoveryInstanceIDs[recoveryInstanceIDsIndex]);
@@ -73,7 +73,7 @@ JsonValue DescribeRecoveryInstancesRequestFilters::Jsonize() const
 
   if(m_sourceServerIDsHasBeenSet)
   {
-   Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
+   Aws::Utils::Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
    for(unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex)
    {
      sourceServerIDsJsonList[sourceServerIDsIndex].AsString(m_sourceServerIDs[sourceServerIDsIndex]);

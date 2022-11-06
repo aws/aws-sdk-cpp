@@ -37,7 +37,7 @@ Aws::String DescribeDeploymentsRequest::SerializePayload() const
 
   if(m_deploymentIdsHasBeenSet)
   {
-   Array<JsonValue> deploymentIdsJsonList(m_deploymentIds.size());
+   Aws::Utils::Array<JsonValue> deploymentIdsJsonList(m_deploymentIds.size());
    for(unsigned deploymentIdsIndex = 0; deploymentIdsIndex < deploymentIdsJsonList.GetLength(); ++deploymentIdsIndex)
    {
      deploymentIdsJsonList[deploymentIdsIndex].AsString(m_deploymentIds[deploymentIdsIndex]);

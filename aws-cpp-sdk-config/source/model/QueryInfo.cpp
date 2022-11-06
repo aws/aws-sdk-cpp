@@ -33,7 +33,7 @@ QueryInfo& QueryInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SelectFields"))
   {
-    Array<JsonView> selectFieldsJsonList = jsonValue.GetArray("SelectFields");
+    Aws::Utils::Array<JsonView> selectFieldsJsonList = jsonValue.GetArray("SelectFields");
     for(unsigned selectFieldsIndex = 0; selectFieldsIndex < selectFieldsJsonList.GetLength(); ++selectFieldsIndex)
     {
       m_selectFields.push_back(selectFieldsJsonList[selectFieldsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue QueryInfo::Jsonize() const
 
   if(m_selectFieldsHasBeenSet)
   {
-   Array<JsonValue> selectFieldsJsonList(m_selectFields.size());
+   Aws::Utils::Array<JsonValue> selectFieldsJsonList(m_selectFields.size());
    for(unsigned selectFieldsIndex = 0; selectFieldsIndex < selectFieldsJsonList.GetLength(); ++selectFieldsIndex)
    {
      selectFieldsJsonList[selectFieldsIndex].AsObject(m_selectFields[selectFieldsIndex].Jsonize());

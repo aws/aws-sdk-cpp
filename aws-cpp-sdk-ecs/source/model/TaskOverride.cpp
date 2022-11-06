@@ -45,7 +45,7 @@ TaskOverride& TaskOverride::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerOverrides"))
   {
-    Array<JsonView> containerOverridesJsonList = jsonValue.GetArray("containerOverrides");
+    Aws::Utils::Array<JsonView> containerOverridesJsonList = jsonValue.GetArray("containerOverrides");
     for(unsigned containerOverridesIndex = 0; containerOverridesIndex < containerOverridesJsonList.GetLength(); ++containerOverridesIndex)
     {
       m_containerOverrides.push_back(containerOverridesJsonList[containerOverridesIndex].AsObject());
@@ -62,7 +62,7 @@ TaskOverride& TaskOverride::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inferenceAcceleratorOverrides"))
   {
-    Array<JsonView> inferenceAcceleratorOverridesJsonList = jsonValue.GetArray("inferenceAcceleratorOverrides");
+    Aws::Utils::Array<JsonView> inferenceAcceleratorOverridesJsonList = jsonValue.GetArray("inferenceAcceleratorOverrides");
     for(unsigned inferenceAcceleratorOverridesIndex = 0; inferenceAcceleratorOverridesIndex < inferenceAcceleratorOverridesJsonList.GetLength(); ++inferenceAcceleratorOverridesIndex)
     {
       m_inferenceAcceleratorOverrides.push_back(inferenceAcceleratorOverridesJsonList[inferenceAcceleratorOverridesIndex].AsObject());
@@ -107,7 +107,7 @@ JsonValue TaskOverride::Jsonize() const
 
   if(m_containerOverridesHasBeenSet)
   {
-   Array<JsonValue> containerOverridesJsonList(m_containerOverrides.size());
+   Aws::Utils::Array<JsonValue> containerOverridesJsonList(m_containerOverrides.size());
    for(unsigned containerOverridesIndex = 0; containerOverridesIndex < containerOverridesJsonList.GetLength(); ++containerOverridesIndex)
    {
      containerOverridesJsonList[containerOverridesIndex].AsObject(m_containerOverrides[containerOverridesIndex].Jsonize());
@@ -124,7 +124,7 @@ JsonValue TaskOverride::Jsonize() const
 
   if(m_inferenceAcceleratorOverridesHasBeenSet)
   {
-   Array<JsonValue> inferenceAcceleratorOverridesJsonList(m_inferenceAcceleratorOverrides.size());
+   Aws::Utils::Array<JsonValue> inferenceAcceleratorOverridesJsonList(m_inferenceAcceleratorOverrides.size());
    for(unsigned inferenceAcceleratorOverridesIndex = 0; inferenceAcceleratorOverridesIndex < inferenceAcceleratorOverridesJsonList.GetLength(); ++inferenceAcceleratorOverridesIndex)
    {
      inferenceAcceleratorOverridesJsonList[inferenceAcceleratorOverridesIndex].AsObject(m_inferenceAcceleratorOverrides[inferenceAcceleratorOverridesIndex].Jsonize());

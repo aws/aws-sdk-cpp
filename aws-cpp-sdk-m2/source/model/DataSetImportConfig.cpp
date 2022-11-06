@@ -35,7 +35,7 @@ DataSetImportConfig& DataSetImportConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("dataSets"))
   {
-    Array<JsonView> dataSetsJsonList = jsonValue.GetArray("dataSets");
+    Aws::Utils::Array<JsonView> dataSetsJsonList = jsonValue.GetArray("dataSets");
     for(unsigned dataSetsIndex = 0; dataSetsIndex < dataSetsJsonList.GetLength(); ++dataSetsIndex)
     {
       m_dataSets.push_back(dataSetsJsonList[dataSetsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue DataSetImportConfig::Jsonize() const
 
   if(m_dataSetsHasBeenSet)
   {
-   Array<JsonValue> dataSetsJsonList(m_dataSets.size());
+   Aws::Utils::Array<JsonValue> dataSetsJsonList(m_dataSets.size());
    for(unsigned dataSetsIndex = 0; dataSetsIndex < dataSetsJsonList.GetLength(); ++dataSetsIndex)
    {
      dataSetsJsonList[dataSetsIndex].AsObject(m_dataSets[dataSetsIndex].Jsonize());

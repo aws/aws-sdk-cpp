@@ -23,7 +23,7 @@ Aws::String BatchGetRecordRequest::SerializePayload() const
 
   if(m_identifiersHasBeenSet)
   {
-   Array<JsonValue> identifiersJsonList(m_identifiers.size());
+   Aws::Utils::Array<JsonValue> identifiersJsonList(m_identifiers.size());
    for(unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex)
    {
      identifiersJsonList[identifiersIndex].AsObject(m_identifiers[identifiersIndex].Jsonize());

@@ -36,7 +36,7 @@ ListKeyspacesResult& ListKeyspacesResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("keyspaces"))
   {
-    Array<JsonView> keyspacesJsonList = jsonValue.GetArray("keyspaces");
+    Aws::Utils::Array<JsonView> keyspacesJsonList = jsonValue.GetArray("keyspaces");
     for(unsigned keyspacesIndex = 0; keyspacesIndex < keyspacesJsonList.GetLength(); ++keyspacesIndex)
     {
       m_keyspaces.push_back(keyspacesJsonList[keyspacesIndex].AsObject());

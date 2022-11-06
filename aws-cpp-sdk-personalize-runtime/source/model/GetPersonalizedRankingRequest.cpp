@@ -34,7 +34,7 @@ Aws::String GetPersonalizedRankingRequest::SerializePayload() const
 
   if(m_inputListHasBeenSet)
   {
-   Array<JsonValue> inputListJsonList(m_inputList.size());
+   Aws::Utils::Array<JsonValue> inputListJsonList(m_inputList.size());
    for(unsigned inputListIndex = 0; inputListIndex < inputListJsonList.GetLength(); ++inputListIndex)
    {
      inputListJsonList[inputListIndex].AsString(m_inputList[inputListIndex]);

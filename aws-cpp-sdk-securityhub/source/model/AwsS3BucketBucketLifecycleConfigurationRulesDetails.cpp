@@ -108,7 +108,7 @@ AwsS3BucketBucketLifecycleConfigurationRulesDetails& AwsS3BucketBucketLifecycleC
 
   if(jsonValue.ValueExists("NoncurrentVersionTransitions"))
   {
-    Array<JsonView> noncurrentVersionTransitionsJsonList = jsonValue.GetArray("NoncurrentVersionTransitions");
+    Aws::Utils::Array<JsonView> noncurrentVersionTransitionsJsonList = jsonValue.GetArray("NoncurrentVersionTransitions");
     for(unsigned noncurrentVersionTransitionsIndex = 0; noncurrentVersionTransitionsIndex < noncurrentVersionTransitionsJsonList.GetLength(); ++noncurrentVersionTransitionsIndex)
     {
       m_noncurrentVersionTransitions.push_back(noncurrentVersionTransitionsJsonList[noncurrentVersionTransitionsIndex].AsObject());
@@ -132,7 +132,7 @@ AwsS3BucketBucketLifecycleConfigurationRulesDetails& AwsS3BucketBucketLifecycleC
 
   if(jsonValue.ValueExists("Transitions"))
   {
-    Array<JsonView> transitionsJsonList = jsonValue.GetArray("Transitions");
+    Aws::Utils::Array<JsonView> transitionsJsonList = jsonValue.GetArray("Transitions");
     for(unsigned transitionsIndex = 0; transitionsIndex < transitionsJsonList.GetLength(); ++transitionsIndex)
     {
       m_transitions.push_back(transitionsJsonList[transitionsIndex].AsObject());
@@ -191,7 +191,7 @@ JsonValue AwsS3BucketBucketLifecycleConfigurationRulesDetails::Jsonize() const
 
   if(m_noncurrentVersionTransitionsHasBeenSet)
   {
-   Array<JsonValue> noncurrentVersionTransitionsJsonList(m_noncurrentVersionTransitions.size());
+   Aws::Utils::Array<JsonValue> noncurrentVersionTransitionsJsonList(m_noncurrentVersionTransitions.size());
    for(unsigned noncurrentVersionTransitionsIndex = 0; noncurrentVersionTransitionsIndex < noncurrentVersionTransitionsJsonList.GetLength(); ++noncurrentVersionTransitionsIndex)
    {
      noncurrentVersionTransitionsJsonList[noncurrentVersionTransitionsIndex].AsObject(m_noncurrentVersionTransitions[noncurrentVersionTransitionsIndex].Jsonize());
@@ -214,7 +214,7 @@ JsonValue AwsS3BucketBucketLifecycleConfigurationRulesDetails::Jsonize() const
 
   if(m_transitionsHasBeenSet)
   {
-   Array<JsonValue> transitionsJsonList(m_transitions.size());
+   Aws::Utils::Array<JsonValue> transitionsJsonList(m_transitions.size());
    for(unsigned transitionsIndex = 0; transitionsIndex < transitionsJsonList.GetLength(); ++transitionsIndex)
    {
      transitionsJsonList[transitionsIndex].AsObject(m_transitions[transitionsIndex].Jsonize());

@@ -30,7 +30,7 @@ BatchPutMessageResult& BatchPutMessageResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("batchPutMessageErrorEntries"))
   {
-    Array<JsonView> batchPutMessageErrorEntriesJsonList = jsonValue.GetArray("batchPutMessageErrorEntries");
+    Aws::Utils::Array<JsonView> batchPutMessageErrorEntriesJsonList = jsonValue.GetArray("batchPutMessageErrorEntries");
     for(unsigned batchPutMessageErrorEntriesIndex = 0; batchPutMessageErrorEntriesIndex < batchPutMessageErrorEntriesJsonList.GetLength(); ++batchPutMessageErrorEntriesIndex)
     {
       m_batchPutMessageErrorEntries.push_back(batchPutMessageErrorEntriesJsonList[batchPutMessageErrorEntriesIndex].AsObject());

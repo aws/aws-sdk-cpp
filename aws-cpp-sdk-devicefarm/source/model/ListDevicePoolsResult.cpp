@@ -30,7 +30,7 @@ ListDevicePoolsResult& ListDevicePoolsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("devicePools"))
   {
-    Array<JsonView> devicePoolsJsonList = jsonValue.GetArray("devicePools");
+    Aws::Utils::Array<JsonView> devicePoolsJsonList = jsonValue.GetArray("devicePools");
     for(unsigned devicePoolsIndex = 0; devicePoolsIndex < devicePoolsJsonList.GetLength(); ++devicePoolsIndex)
     {
       m_devicePools.push_back(devicePoolsJsonList[devicePoolsIndex].AsObject());

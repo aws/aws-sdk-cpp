@@ -91,7 +91,7 @@ BatchGetAssetPropertyValueHistoryEntry& BatchGetAssetPropertyValueHistoryEntry::
 
   if(jsonValue.ValueExists("qualities"))
   {
-    Array<JsonView> qualitiesJsonList = jsonValue.GetArray("qualities");
+    Aws::Utils::Array<JsonView> qualitiesJsonList = jsonValue.GetArray("qualities");
     for(unsigned qualitiesIndex = 0; qualitiesIndex < qualitiesJsonList.GetLength(); ++qualitiesIndex)
     {
       m_qualities.push_back(QualityMapper::GetQualityForName(qualitiesJsonList[qualitiesIndex].AsString()));
@@ -149,7 +149,7 @@ JsonValue BatchGetAssetPropertyValueHistoryEntry::Jsonize() const
 
   if(m_qualitiesHasBeenSet)
   {
-   Array<JsonValue> qualitiesJsonList(m_qualities.size());
+   Aws::Utils::Array<JsonValue> qualitiesJsonList(m_qualities.size());
    for(unsigned qualitiesIndex = 0; qualitiesIndex < qualitiesJsonList.GetLength(); ++qualitiesIndex)
    {
      qualitiesJsonList[qualitiesIndex].AsString(QualityMapper::GetNameForQuality(m_qualities[qualitiesIndex]));

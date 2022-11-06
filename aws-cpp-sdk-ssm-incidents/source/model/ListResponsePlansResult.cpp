@@ -36,7 +36,7 @@ ListResponsePlansResult& ListResponsePlansResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("responsePlanSummaries"))
   {
-    Array<JsonView> responsePlanSummariesJsonList = jsonValue.GetArray("responsePlanSummaries");
+    Aws::Utils::Array<JsonView> responsePlanSummariesJsonList = jsonValue.GetArray("responsePlanSummaries");
     for(unsigned responsePlanSummariesIndex = 0; responsePlanSummariesIndex < responsePlanSummariesJsonList.GetLength(); ++responsePlanSummariesIndex)
     {
       m_responsePlanSummaries.push_back(responsePlanSummariesJsonList[responsePlanSummariesIndex].AsObject());

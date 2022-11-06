@@ -60,7 +60,7 @@ AppsListDataSummary& AppsListDataSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AppsList"))
   {
-    Array<JsonView> appsListJsonList = jsonValue.GetArray("AppsList");
+    Aws::Utils::Array<JsonView> appsListJsonList = jsonValue.GetArray("AppsList");
     for(unsigned appsListIndex = 0; appsListIndex < appsListJsonList.GetLength(); ++appsListIndex)
     {
       m_appsList.push_back(appsListJsonList[appsListIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue AppsListDataSummary::Jsonize() const
 
   if(m_appsListHasBeenSet)
   {
-   Array<JsonValue> appsListJsonList(m_appsList.size());
+   Aws::Utils::Array<JsonValue> appsListJsonList(m_appsList.size());
    for(unsigned appsListIndex = 0; appsListIndex < appsListJsonList.GetLength(); ++appsListIndex)
    {
      appsListJsonList[appsListIndex].AsObject(m_appsList[appsListIndex].Jsonize());

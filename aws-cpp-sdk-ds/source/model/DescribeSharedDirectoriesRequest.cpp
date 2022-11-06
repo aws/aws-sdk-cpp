@@ -33,7 +33,7 @@ Aws::String DescribeSharedDirectoriesRequest::SerializePayload() const
 
   if(m_sharedDirectoryIdsHasBeenSet)
   {
-   Array<JsonValue> sharedDirectoryIdsJsonList(m_sharedDirectoryIds.size());
+   Aws::Utils::Array<JsonValue> sharedDirectoryIdsJsonList(m_sharedDirectoryIds.size());
    for(unsigned sharedDirectoryIdsIndex = 0; sharedDirectoryIdsIndex < sharedDirectoryIdsJsonList.GetLength(); ++sharedDirectoryIdsIndex)
    {
      sharedDirectoryIdsJsonList[sharedDirectoryIdsIndex].AsString(m_sharedDirectoryIds[sharedDirectoryIdsIndex]);

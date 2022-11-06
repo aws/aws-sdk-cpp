@@ -36,7 +36,7 @@ ListLabelGroupsResult& ListLabelGroupsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("LabelGroupSummaries"))
   {
-    Array<JsonView> labelGroupSummariesJsonList = jsonValue.GetArray("LabelGroupSummaries");
+    Aws::Utils::Array<JsonView> labelGroupSummariesJsonList = jsonValue.GetArray("LabelGroupSummaries");
     for(unsigned labelGroupSummariesIndex = 0; labelGroupSummariesIndex < labelGroupSummariesJsonList.GetLength(); ++labelGroupSummariesIndex)
     {
       m_labelGroupSummaries.push_back(labelGroupSummariesJsonList[labelGroupSummariesIndex].AsObject());

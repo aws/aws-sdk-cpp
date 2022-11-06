@@ -58,7 +58,7 @@ DestinationPortMapping& DestinationPortMapping::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AcceleratorSocketAddresses"))
   {
-    Array<JsonView> acceleratorSocketAddressesJsonList = jsonValue.GetArray("AcceleratorSocketAddresses");
+    Aws::Utils::Array<JsonView> acceleratorSocketAddressesJsonList = jsonValue.GetArray("AcceleratorSocketAddresses");
     for(unsigned acceleratorSocketAddressesIndex = 0; acceleratorSocketAddressesIndex < acceleratorSocketAddressesJsonList.GetLength(); ++acceleratorSocketAddressesIndex)
     {
       m_acceleratorSocketAddresses.push_back(acceleratorSocketAddressesJsonList[acceleratorSocketAddressesIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue DestinationPortMapping::Jsonize() const
 
   if(m_acceleratorSocketAddressesHasBeenSet)
   {
-   Array<JsonValue> acceleratorSocketAddressesJsonList(m_acceleratorSocketAddresses.size());
+   Aws::Utils::Array<JsonValue> acceleratorSocketAddressesJsonList(m_acceleratorSocketAddresses.size());
    for(unsigned acceleratorSocketAddressesIndex = 0; acceleratorSocketAddressesIndex < acceleratorSocketAddressesJsonList.GetLength(); ++acceleratorSocketAddressesIndex)
    {
      acceleratorSocketAddressesJsonList[acceleratorSocketAddressesIndex].AsObject(m_acceleratorSocketAddresses[acceleratorSocketAddressesIndex].Jsonize());

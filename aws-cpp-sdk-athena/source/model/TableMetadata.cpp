@@ -73,7 +73,7 @@ TableMetadata& TableMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Columns"))
   {
-    Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
+    Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
     for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
     {
       m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
@@ -83,7 +83,7 @@ TableMetadata& TableMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PartitionKeys"))
   {
-    Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
+    Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
     for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
     {
       m_partitionKeys.push_back(partitionKeysJsonList[partitionKeysIndex].AsObject());
@@ -132,7 +132,7 @@ JsonValue TableMetadata::Jsonize() const
 
   if(m_columnsHasBeenSet)
   {
-   Array<JsonValue> columnsJsonList(m_columns.size());
+   Aws::Utils::Array<JsonValue> columnsJsonList(m_columns.size());
    for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
    {
      columnsJsonList[columnsIndex].AsObject(m_columns[columnsIndex].Jsonize());
@@ -143,7 +143,7 @@ JsonValue TableMetadata::Jsonize() const
 
   if(m_partitionKeysHasBeenSet)
   {
-   Array<JsonValue> partitionKeysJsonList(m_partitionKeys.size());
+   Aws::Utils::Array<JsonValue> partitionKeysJsonList(m_partitionKeys.size());
    for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
    {
      partitionKeysJsonList[partitionKeysIndex].AsObject(m_partitionKeys[partitionKeysIndex].Jsonize());

@@ -30,7 +30,7 @@ BatchGetRepositoriesResult& BatchGetRepositoriesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("repositories"))
   {
-    Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
+    Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
     for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
     {
       m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetRepositoriesResult& BatchGetRepositoriesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("repositoriesNotFound"))
   {
-    Array<JsonView> repositoriesNotFoundJsonList = jsonValue.GetArray("repositoriesNotFound");
+    Aws::Utils::Array<JsonView> repositoriesNotFoundJsonList = jsonValue.GetArray("repositoriesNotFound");
     for(unsigned repositoriesNotFoundIndex = 0; repositoriesNotFoundIndex < repositoriesNotFoundJsonList.GetLength(); ++repositoriesNotFoundIndex)
     {
       m_repositoriesNotFound.push_back(repositoriesNotFoundJsonList[repositoriesNotFoundIndex].AsString());

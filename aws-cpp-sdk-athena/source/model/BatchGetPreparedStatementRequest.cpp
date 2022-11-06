@@ -24,7 +24,7 @@ Aws::String BatchGetPreparedStatementRequest::SerializePayload() const
 
   if(m_preparedStatementNamesHasBeenSet)
   {
-   Array<JsonValue> preparedStatementNamesJsonList(m_preparedStatementNames.size());
+   Aws::Utils::Array<JsonValue> preparedStatementNamesJsonList(m_preparedStatementNames.size());
    for(unsigned preparedStatementNamesIndex = 0; preparedStatementNamesIndex < preparedStatementNamesJsonList.GetLength(); ++preparedStatementNamesIndex)
    {
      preparedStatementNamesJsonList[preparedStatementNamesIndex].AsString(m_preparedStatementNames[preparedStatementNamesIndex]);

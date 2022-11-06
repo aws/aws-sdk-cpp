@@ -30,7 +30,7 @@ DescribeProjectVersionsResult& DescribeProjectVersionsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProjectVersionDescriptions"))
   {
-    Array<JsonView> projectVersionDescriptionsJsonList = jsonValue.GetArray("ProjectVersionDescriptions");
+    Aws::Utils::Array<JsonView> projectVersionDescriptionsJsonList = jsonValue.GetArray("ProjectVersionDescriptions");
     for(unsigned projectVersionDescriptionsIndex = 0; projectVersionDescriptionsIndex < projectVersionDescriptionsJsonList.GetLength(); ++projectVersionDescriptionsIndex)
     {
       m_projectVersionDescriptions.push_back(projectVersionDescriptionsJsonList[projectVersionDescriptionsIndex].AsObject());

@@ -32,10 +32,10 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("records"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
-      Array<JsonView> fieldListJsonList = recordsJsonList[recordsIndex].AsArray();
+      Aws::Utils::Array<JsonView> fieldListJsonList = recordsJsonList[recordsIndex].AsArray();
       Aws::Vector<Field> fieldListList;
       fieldListList.reserve((size_t)fieldListJsonList.GetLength());
       for(unsigned fieldListIndex = 0; fieldListIndex < fieldListJsonList.GetLength(); ++fieldListIndex)
@@ -48,7 +48,7 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("columnMetadata"))
   {
-    Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
+    Aws::Utils::Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
     for(unsigned columnMetadataIndex = 0; columnMetadataIndex < columnMetadataJsonList.GetLength(); ++columnMetadataIndex)
     {
       m_columnMetadata.push_back(columnMetadataJsonList[columnMetadataIndex].AsObject());
@@ -63,7 +63,7 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("generatedFields"))
   {
-    Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");
+    Aws::Utils::Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");
     for(unsigned generatedFieldsIndex = 0; generatedFieldsIndex < generatedFieldsJsonList.GetLength(); ++generatedFieldsIndex)
     {
       m_generatedFields.push_back(generatedFieldsJsonList[generatedFieldsIndex].AsObject());

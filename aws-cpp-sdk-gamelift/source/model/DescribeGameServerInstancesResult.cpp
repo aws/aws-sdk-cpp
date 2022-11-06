@@ -30,7 +30,7 @@ DescribeGameServerInstancesResult& DescribeGameServerInstancesResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GameServerInstances"))
   {
-    Array<JsonView> gameServerInstancesJsonList = jsonValue.GetArray("GameServerInstances");
+    Aws::Utils::Array<JsonView> gameServerInstancesJsonList = jsonValue.GetArray("GameServerInstances");
     for(unsigned gameServerInstancesIndex = 0; gameServerInstancesIndex < gameServerInstancesJsonList.GetLength(); ++gameServerInstancesIndex)
     {
       m_gameServerInstances.push_back(gameServerInstancesJsonList[gameServerInstancesIndex].AsObject());

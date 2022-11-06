@@ -162,7 +162,7 @@ InputTemplate& InputTemplate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputClippings"))
   {
-    Array<JsonView> inputClippingsJsonList = jsonValue.GetArray("inputClippings");
+    Aws::Utils::Array<JsonView> inputClippingsJsonList = jsonValue.GetArray("inputClippings");
     for(unsigned inputClippingsIndex = 0; inputClippingsIndex < inputClippingsJsonList.GetLength(); ++inputClippingsIndex)
     {
       m_inputClippings.push_back(inputClippingsJsonList[inputClippingsIndex].AsObject());
@@ -300,7 +300,7 @@ JsonValue InputTemplate::Jsonize() const
 
   if(m_inputClippingsHasBeenSet)
   {
-   Array<JsonValue> inputClippingsJsonList(m_inputClippings.size());
+   Aws::Utils::Array<JsonValue> inputClippingsJsonList(m_inputClippings.size());
    for(unsigned inputClippingsIndex = 0; inputClippingsIndex < inputClippingsJsonList.GetLength(); ++inputClippingsIndex)
    {
      inputClippingsJsonList[inputClippingsIndex].AsObject(m_inputClippings[inputClippingsIndex].Jsonize());

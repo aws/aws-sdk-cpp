@@ -42,7 +42,7 @@ HistoricalMetricResult& HistoricalMetricResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Collections"))
   {
-    Array<JsonView> collectionsJsonList = jsonValue.GetArray("Collections");
+    Aws::Utils::Array<JsonView> collectionsJsonList = jsonValue.GetArray("Collections");
     for(unsigned collectionsIndex = 0; collectionsIndex < collectionsJsonList.GetLength(); ++collectionsIndex)
     {
       m_collections.push_back(collectionsJsonList[collectionsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue HistoricalMetricResult::Jsonize() const
 
   if(m_collectionsHasBeenSet)
   {
-   Array<JsonValue> collectionsJsonList(m_collections.size());
+   Aws::Utils::Array<JsonValue> collectionsJsonList(m_collections.size());
    for(unsigned collectionsIndex = 0; collectionsIndex < collectionsJsonList.GetLength(); ++collectionsIndex)
    {
      collectionsJsonList[collectionsIndex].AsObject(m_collections[collectionsIndex].Jsonize());

@@ -32,7 +32,7 @@ SearchSkillGroupsResult& SearchSkillGroupsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SkillGroups"))
   {
-    Array<JsonView> skillGroupsJsonList = jsonValue.GetArray("SkillGroups");
+    Aws::Utils::Array<JsonView> skillGroupsJsonList = jsonValue.GetArray("SkillGroups");
     for(unsigned skillGroupsIndex = 0; skillGroupsIndex < skillGroupsJsonList.GetLength(); ++skillGroupsIndex)
     {
       m_skillGroups.push_back(skillGroupsJsonList[skillGroupsIndex].AsObject());

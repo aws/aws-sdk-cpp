@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -63,6 +65,10 @@ namespace Aws
 
   namespace IoTDeviceAdvisor
   {
+    using IoTDeviceAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTDeviceAdvisorEndpointProviderBase = Aws::IoTDeviceAdvisor::Endpoint::IoTDeviceAdvisorEndpointProviderBase;
+    using IoTDeviceAdvisorEndpointProvider = Aws::IoTDeviceAdvisor::Endpoint::IoTDeviceAdvisorEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in IoTDeviceAdvisorClient header */

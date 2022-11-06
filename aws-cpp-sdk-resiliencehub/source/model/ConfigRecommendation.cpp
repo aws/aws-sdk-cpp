@@ -124,7 +124,7 @@ ConfigRecommendation& ConfigRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("suggestedChanges"))
   {
-    Array<JsonView> suggestedChangesJsonList = jsonValue.GetArray("suggestedChanges");
+    Aws::Utils::Array<JsonView> suggestedChangesJsonList = jsonValue.GetArray("suggestedChanges");
     for(unsigned suggestedChangesIndex = 0; suggestedChangesIndex < suggestedChangesJsonList.GetLength(); ++suggestedChangesIndex)
     {
       m_suggestedChanges.push_back(suggestedChangesJsonList[suggestedChangesIndex].AsString());
@@ -203,7 +203,7 @@ JsonValue ConfigRecommendation::Jsonize() const
 
   if(m_suggestedChangesHasBeenSet)
   {
-   Array<JsonValue> suggestedChangesJsonList(m_suggestedChanges.size());
+   Aws::Utils::Array<JsonValue> suggestedChangesJsonList(m_suggestedChanges.size());
    for(unsigned suggestedChangesIndex = 0; suggestedChangesIndex < suggestedChangesJsonList.GetLength(); ++suggestedChangesIndex)
    {
      suggestedChangesJsonList[suggestedChangesIndex].AsString(m_suggestedChanges[suggestedChangesIndex]);

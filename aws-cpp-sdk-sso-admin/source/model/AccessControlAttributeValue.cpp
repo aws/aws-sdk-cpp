@@ -33,7 +33,7 @@ AccessControlAttributeValue& AccessControlAttributeValue::operator =(JsonView js
 {
   if(jsonValue.ValueExists("Source"))
   {
-    Array<JsonView> sourceJsonList = jsonValue.GetArray("Source");
+    Aws::Utils::Array<JsonView> sourceJsonList = jsonValue.GetArray("Source");
     for(unsigned sourceIndex = 0; sourceIndex < sourceJsonList.GetLength(); ++sourceIndex)
     {
       m_source.push_back(sourceJsonList[sourceIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue AccessControlAttributeValue::Jsonize() const
 
   if(m_sourceHasBeenSet)
   {
-   Array<JsonValue> sourceJsonList(m_source.size());
+   Aws::Utils::Array<JsonValue> sourceJsonList(m_source.size());
    for(unsigned sourceIndex = 0; sourceIndex < sourceJsonList.GetLength(); ++sourceIndex)
    {
      sourceJsonList[sourceIndex].AsString(m_source[sourceIndex]);

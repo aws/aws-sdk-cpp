@@ -64,7 +64,7 @@ LoggingOptions& LoggingOptions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("detectorDebugOptions"))
   {
-    Array<JsonView> detectorDebugOptionsJsonList = jsonValue.GetArray("detectorDebugOptions");
+    Aws::Utils::Array<JsonView> detectorDebugOptionsJsonList = jsonValue.GetArray("detectorDebugOptions");
     for(unsigned detectorDebugOptionsIndex = 0; detectorDebugOptionsIndex < detectorDebugOptionsJsonList.GetLength(); ++detectorDebugOptionsIndex)
     {
       m_detectorDebugOptions.push_back(detectorDebugOptionsJsonList[detectorDebugOptionsIndex].AsObject());
@@ -98,7 +98,7 @@ JsonValue LoggingOptions::Jsonize() const
 
   if(m_detectorDebugOptionsHasBeenSet)
   {
-   Array<JsonValue> detectorDebugOptionsJsonList(m_detectorDebugOptions.size());
+   Aws::Utils::Array<JsonValue> detectorDebugOptionsJsonList(m_detectorDebugOptions.size());
    for(unsigned detectorDebugOptionsIndex = 0; detectorDebugOptionsIndex < detectorDebugOptionsJsonList.GetLength(); ++detectorDebugOptionsIndex)
    {
      detectorDebugOptionsJsonList[detectorDebugOptionsIndex].AsObject(m_detectorDebugOptions[detectorDebugOptionsIndex].Jsonize());

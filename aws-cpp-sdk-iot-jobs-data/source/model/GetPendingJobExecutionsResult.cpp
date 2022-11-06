@@ -30,7 +30,7 @@ GetPendingJobExecutionsResult& GetPendingJobExecutionsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("inProgressJobs"))
   {
-    Array<JsonView> inProgressJobsJsonList = jsonValue.GetArray("inProgressJobs");
+    Aws::Utils::Array<JsonView> inProgressJobsJsonList = jsonValue.GetArray("inProgressJobs");
     for(unsigned inProgressJobsIndex = 0; inProgressJobsIndex < inProgressJobsJsonList.GetLength(); ++inProgressJobsIndex)
     {
       m_inProgressJobs.push_back(inProgressJobsJsonList[inProgressJobsIndex].AsObject());
@@ -39,7 +39,7 @@ GetPendingJobExecutionsResult& GetPendingJobExecutionsResult::operator =(const A
 
   if(jsonValue.ValueExists("queuedJobs"))
   {
-    Array<JsonView> queuedJobsJsonList = jsonValue.GetArray("queuedJobs");
+    Aws::Utils::Array<JsonView> queuedJobsJsonList = jsonValue.GetArray("queuedJobs");
     for(unsigned queuedJobsIndex = 0; queuedJobsIndex < queuedJobsJsonList.GetLength(); ++queuedJobsIndex)
     {
       m_queuedJobs.push_back(queuedJobsJsonList[queuedJobsIndex].AsObject());

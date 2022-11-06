@@ -80,7 +80,7 @@ AwsAutoScalingLaunchConfigurationDetails& AwsAutoScalingLaunchConfigurationDetai
 
   if(jsonValue.ValueExists("BlockDeviceMappings"))
   {
-    Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("BlockDeviceMappings");
+    Aws::Utils::Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("BlockDeviceMappings");
     for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
     {
       m_blockDeviceMappings.push_back(blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject());
@@ -97,7 +97,7 @@ AwsAutoScalingLaunchConfigurationDetails& AwsAutoScalingLaunchConfigurationDetai
 
   if(jsonValue.ValueExists("ClassicLinkVpcSecurityGroups"))
   {
-    Array<JsonView> classicLinkVpcSecurityGroupsJsonList = jsonValue.GetArray("ClassicLinkVpcSecurityGroups");
+    Aws::Utils::Array<JsonView> classicLinkVpcSecurityGroupsJsonList = jsonValue.GetArray("ClassicLinkVpcSecurityGroups");
     for(unsigned classicLinkVpcSecurityGroupsIndex = 0; classicLinkVpcSecurityGroupsIndex < classicLinkVpcSecurityGroupsJsonList.GetLength(); ++classicLinkVpcSecurityGroupsIndex)
     {
       m_classicLinkVpcSecurityGroups.push_back(classicLinkVpcSecurityGroupsJsonList[classicLinkVpcSecurityGroupsIndex].AsString());
@@ -184,7 +184,7 @@ AwsAutoScalingLaunchConfigurationDetails& AwsAutoScalingLaunchConfigurationDetai
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -228,7 +228,7 @@ JsonValue AwsAutoScalingLaunchConfigurationDetails::Jsonize() const
 
   if(m_blockDeviceMappingsHasBeenSet)
   {
-   Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
+   Aws::Utils::Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
    for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
    {
      blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject(m_blockDeviceMappings[blockDeviceMappingsIndex].Jsonize());
@@ -245,7 +245,7 @@ JsonValue AwsAutoScalingLaunchConfigurationDetails::Jsonize() const
 
   if(m_classicLinkVpcSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> classicLinkVpcSecurityGroupsJsonList(m_classicLinkVpcSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> classicLinkVpcSecurityGroupsJsonList(m_classicLinkVpcSecurityGroups.size());
    for(unsigned classicLinkVpcSecurityGroupsIndex = 0; classicLinkVpcSecurityGroupsIndex < classicLinkVpcSecurityGroupsJsonList.GetLength(); ++classicLinkVpcSecurityGroupsIndex)
    {
      classicLinkVpcSecurityGroupsJsonList[classicLinkVpcSecurityGroupsIndex].AsString(m_classicLinkVpcSecurityGroups[classicLinkVpcSecurityGroupsIndex]);
@@ -322,7 +322,7 @@ JsonValue AwsAutoScalingLaunchConfigurationDetails::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);

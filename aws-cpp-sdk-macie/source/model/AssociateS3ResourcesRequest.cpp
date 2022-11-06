@@ -30,7 +30,7 @@ Aws::String AssociateS3ResourcesRequest::SerializePayload() const
 
   if(m_s3ResourcesHasBeenSet)
   {
-   Array<JsonValue> s3ResourcesJsonList(m_s3Resources.size());
+   Aws::Utils::Array<JsonValue> s3ResourcesJsonList(m_s3Resources.size());
    for(unsigned s3ResourcesIndex = 0; s3ResourcesIndex < s3ResourcesJsonList.GetLength(); ++s3ResourcesIndex)
    {
      s3ResourcesJsonList[s3ResourcesIndex].AsObject(m_s3Resources[s3ResourcesIndex].Jsonize());

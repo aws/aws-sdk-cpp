@@ -45,7 +45,7 @@ Aws::String GetPropertyValueRequest::SerializePayload() const
 
   if(m_selectedPropertiesHasBeenSet)
   {
-   Array<JsonValue> selectedPropertiesJsonList(m_selectedProperties.size());
+   Aws::Utils::Array<JsonValue> selectedPropertiesJsonList(m_selectedProperties.size());
    for(unsigned selectedPropertiesIndex = 0; selectedPropertiesIndex < selectedPropertiesJsonList.GetLength(); ++selectedPropertiesIndex)
    {
      selectedPropertiesJsonList[selectedPropertiesIndex].AsString(m_selectedProperties[selectedPropertiesIndex]);

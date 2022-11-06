@@ -30,7 +30,7 @@ BatchRevokePermissionsResult& BatchRevokePermissionsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

@@ -53,7 +53,7 @@ SalesforceChatterFeedConfiguration& SalesforceChatterFeedConfiguration::operator
 
   if(jsonValue.ValueExists("FieldMappings"))
   {
-    Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
+    Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
     for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
     {
       m_fieldMappings.push_back(fieldMappingsJsonList[fieldMappingsIndex].AsObject());
@@ -63,7 +63,7 @@ SalesforceChatterFeedConfiguration& SalesforceChatterFeedConfiguration::operator
 
   if(jsonValue.ValueExists("IncludeFilterTypes"))
   {
-    Array<JsonView> includeFilterTypesJsonList = jsonValue.GetArray("IncludeFilterTypes");
+    Aws::Utils::Array<JsonView> includeFilterTypesJsonList = jsonValue.GetArray("IncludeFilterTypes");
     for(unsigned includeFilterTypesIndex = 0; includeFilterTypesIndex < includeFilterTypesJsonList.GetLength(); ++includeFilterTypesIndex)
     {
       m_includeFilterTypes.push_back(SalesforceChatterFeedIncludeFilterTypeMapper::GetSalesforceChatterFeedIncludeFilterTypeForName(includeFilterTypesJsonList[includeFilterTypesIndex].AsString()));
@@ -92,7 +92,7 @@ JsonValue SalesforceChatterFeedConfiguration::Jsonize() const
 
   if(m_fieldMappingsHasBeenSet)
   {
-   Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
+   Aws::Utils::Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
    for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
    {
      fieldMappingsJsonList[fieldMappingsIndex].AsObject(m_fieldMappings[fieldMappingsIndex].Jsonize());
@@ -103,7 +103,7 @@ JsonValue SalesforceChatterFeedConfiguration::Jsonize() const
 
   if(m_includeFilterTypesHasBeenSet)
   {
-   Array<JsonValue> includeFilterTypesJsonList(m_includeFilterTypes.size());
+   Aws::Utils::Array<JsonValue> includeFilterTypesJsonList(m_includeFilterTypes.size());
    for(unsigned includeFilterTypesIndex = 0; includeFilterTypesIndex < includeFilterTypesJsonList.GetLength(); ++includeFilterTypesIndex)
    {
      includeFilterTypesJsonList[includeFilterTypesIndex].AsString(SalesforceChatterFeedIncludeFilterTypeMapper::GetNameForSalesforceChatterFeedIncludeFilterType(m_includeFilterTypes[includeFilterTypesIndex]));

@@ -30,7 +30,7 @@ ListCustomRoutingPortMappingsResult& ListCustomRoutingPortMappingsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PortMappings"))
   {
-    Array<JsonView> portMappingsJsonList = jsonValue.GetArray("PortMappings");
+    Aws::Utils::Array<JsonView> portMappingsJsonList = jsonValue.GetArray("PortMappings");
     for(unsigned portMappingsIndex = 0; portMappingsIndex < portMappingsJsonList.GetLength(); ++portMappingsIndex)
     {
       m_portMappings.push_back(portMappingsJsonList[portMappingsIndex].AsObject());

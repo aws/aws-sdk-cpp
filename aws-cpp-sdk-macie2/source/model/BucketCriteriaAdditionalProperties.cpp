@@ -53,7 +53,7 @@ BucketCriteriaAdditionalProperties& BucketCriteriaAdditionalProperties::operator
 {
   if(jsonValue.ValueExists("eq"))
   {
-    Array<JsonView> eqJsonList = jsonValue.GetArray("eq");
+    Aws::Utils::Array<JsonView> eqJsonList = jsonValue.GetArray("eq");
     for(unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex)
     {
       m_eq.push_back(eqJsonList[eqIndex].AsString());
@@ -91,7 +91,7 @@ BucketCriteriaAdditionalProperties& BucketCriteriaAdditionalProperties::operator
 
   if(jsonValue.ValueExists("neq"))
   {
-    Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
+    Aws::Utils::Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
     for(unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex)
     {
       m_neq.push_back(neqJsonList[neqIndex].AsString());
@@ -115,7 +115,7 @@ JsonValue BucketCriteriaAdditionalProperties::Jsonize() const
 
   if(m_eqHasBeenSet)
   {
-   Array<JsonValue> eqJsonList(m_eq.size());
+   Aws::Utils::Array<JsonValue> eqJsonList(m_eq.size());
    for(unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex)
    {
      eqJsonList[eqIndex].AsString(m_eq[eqIndex]);
@@ -150,7 +150,7 @@ JsonValue BucketCriteriaAdditionalProperties::Jsonize() const
 
   if(m_neqHasBeenSet)
   {
-   Array<JsonValue> neqJsonList(m_neq.size());
+   Aws::Utils::Array<JsonValue> neqJsonList(m_neq.size());
    for(unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex)
    {
      neqJsonList[neqIndex].AsString(m_neq[neqIndex]);

@@ -43,7 +43,7 @@ SegmentGroup& SegmentGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
@@ -53,7 +53,7 @@ SegmentGroup& SegmentGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SourceSegments"))
   {
-    Array<JsonView> sourceSegmentsJsonList = jsonValue.GetArray("SourceSegments");
+    Aws::Utils::Array<JsonView> sourceSegmentsJsonList = jsonValue.GetArray("SourceSegments");
     for(unsigned sourceSegmentsIndex = 0; sourceSegmentsIndex < sourceSegmentsJsonList.GetLength(); ++sourceSegmentsIndex)
     {
       m_sourceSegments.push_back(sourceSegmentsJsonList[sourceSegmentsIndex].AsObject());
@@ -84,7 +84,7 @@ JsonValue SegmentGroup::Jsonize() const
 
   if(m_dimensionsHasBeenSet)
   {
-   Array<JsonValue> dimensionsJsonList(m_dimensions.size());
+   Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
    {
      dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
@@ -95,7 +95,7 @@ JsonValue SegmentGroup::Jsonize() const
 
   if(m_sourceSegmentsHasBeenSet)
   {
-   Array<JsonValue> sourceSegmentsJsonList(m_sourceSegments.size());
+   Aws::Utils::Array<JsonValue> sourceSegmentsJsonList(m_sourceSegments.size());
    for(unsigned sourceSegmentsIndex = 0; sourceSegmentsIndex < sourceSegmentsJsonList.GetLength(); ++sourceSegmentsIndex)
    {
      sourceSegmentsJsonList[sourceSegmentsIndex].AsObject(m_sourceSegments[sourceSegmentsIndex].Jsonize());

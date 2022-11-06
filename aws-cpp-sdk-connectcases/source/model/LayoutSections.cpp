@@ -33,7 +33,7 @@ LayoutSections& LayoutSections::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sections"))
   {
-    Array<JsonView> sectionsJsonList = jsonValue.GetArray("sections");
+    Aws::Utils::Array<JsonView> sectionsJsonList = jsonValue.GetArray("sections");
     for(unsigned sectionsIndex = 0; sectionsIndex < sectionsJsonList.GetLength(); ++sectionsIndex)
     {
       m_sections.push_back(sectionsJsonList[sectionsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue LayoutSections::Jsonize() const
 
   if(m_sectionsHasBeenSet)
   {
-   Array<JsonValue> sectionsJsonList(m_sections.size());
+   Aws::Utils::Array<JsonValue> sectionsJsonList(m_sections.size());
    for(unsigned sectionsIndex = 0; sectionsIndex < sectionsJsonList.GetLength(); ++sectionsIndex)
    {
      sectionsJsonList[sectionsIndex].AsObject(m_sections[sectionsIndex].Jsonize());

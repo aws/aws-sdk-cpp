@@ -30,7 +30,7 @@ ListWebhooksResult& ListWebhooksResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("webhooks"))
   {
-    Array<JsonView> webhooksJsonList = jsonValue.GetArray("webhooks");
+    Aws::Utils::Array<JsonView> webhooksJsonList = jsonValue.GetArray("webhooks");
     for(unsigned webhooksIndex = 0; webhooksIndex < webhooksJsonList.GetLength(); ++webhooksIndex)
     {
       m_webhooks.push_back(webhooksJsonList[webhooksIndex].AsObject());

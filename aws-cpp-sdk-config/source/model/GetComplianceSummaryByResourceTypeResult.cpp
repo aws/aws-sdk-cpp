@@ -30,7 +30,7 @@ GetComplianceSummaryByResourceTypeResult& GetComplianceSummaryByResourceTypeResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComplianceSummariesByResourceType"))
   {
-    Array<JsonView> complianceSummariesByResourceTypeJsonList = jsonValue.GetArray("ComplianceSummariesByResourceType");
+    Aws::Utils::Array<JsonView> complianceSummariesByResourceTypeJsonList = jsonValue.GetArray("ComplianceSummariesByResourceType");
     for(unsigned complianceSummariesByResourceTypeIndex = 0; complianceSummariesByResourceTypeIndex < complianceSummariesByResourceTypeJsonList.GetLength(); ++complianceSummariesByResourceTypeIndex)
     {
       m_complianceSummariesByResourceType.push_back(complianceSummariesByResourceTypeJsonList[complianceSummariesByResourceTypeIndex].AsObject());

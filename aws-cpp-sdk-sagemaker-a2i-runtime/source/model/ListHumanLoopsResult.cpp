@@ -30,7 +30,7 @@ ListHumanLoopsResult& ListHumanLoopsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HumanLoopSummaries"))
   {
-    Array<JsonView> humanLoopSummariesJsonList = jsonValue.GetArray("HumanLoopSummaries");
+    Aws::Utils::Array<JsonView> humanLoopSummariesJsonList = jsonValue.GetArray("HumanLoopSummaries");
     for(unsigned humanLoopSummariesIndex = 0; humanLoopSummariesIndex < humanLoopSummariesJsonList.GetLength(); ++humanLoopSummariesIndex)
     {
       m_humanLoopSummaries.push_back(humanLoopSummariesJsonList[humanLoopSummariesIndex].AsObject());

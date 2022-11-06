@@ -23,7 +23,7 @@ Aws::String PutRemediationConfigurationsRequest::SerializePayload() const
 
   if(m_remediationConfigurationsHasBeenSet)
   {
-   Array<JsonValue> remediationConfigurationsJsonList(m_remediationConfigurations.size());
+   Aws::Utils::Array<JsonValue> remediationConfigurationsJsonList(m_remediationConfigurations.size());
    for(unsigned remediationConfigurationsIndex = 0; remediationConfigurationsIndex < remediationConfigurationsJsonList.GetLength(); ++remediationConfigurationsIndex)
    {
      remediationConfigurationsJsonList[remediationConfigurationsIndex].AsObject(m_remediationConfigurations[remediationConfigurationsIndex].Jsonize());

@@ -69,7 +69,7 @@ AttackSummary& AttackSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttackVectors"))
   {
-    Array<JsonView> attackVectorsJsonList = jsonValue.GetArray("AttackVectors");
+    Aws::Utils::Array<JsonView> attackVectorsJsonList = jsonValue.GetArray("AttackVectors");
     for(unsigned attackVectorsIndex = 0; attackVectorsIndex < attackVectorsJsonList.GetLength(); ++attackVectorsIndex)
     {
       m_attackVectors.push_back(attackVectorsJsonList[attackVectorsIndex].AsObject());
@@ -108,7 +108,7 @@ JsonValue AttackSummary::Jsonize() const
 
   if(m_attackVectorsHasBeenSet)
   {
-   Array<JsonValue> attackVectorsJsonList(m_attackVectors.size());
+   Aws::Utils::Array<JsonValue> attackVectorsJsonList(m_attackVectors.size());
    for(unsigned attackVectorsIndex = 0; attackVectorsIndex < attackVectorsJsonList.GetLength(); ++attackVectorsIndex)
    {
      attackVectorsJsonList[attackVectorsIndex].AsObject(m_attackVectors[attackVectorsIndex].Jsonize());

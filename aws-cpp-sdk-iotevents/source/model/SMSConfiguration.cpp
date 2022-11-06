@@ -51,7 +51,7 @@ SMSConfiguration& SMSConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("recipients"))
   {
-    Array<JsonView> recipientsJsonList = jsonValue.GetArray("recipients");
+    Aws::Utils::Array<JsonView> recipientsJsonList = jsonValue.GetArray("recipients");
     for(unsigned recipientsIndex = 0; recipientsIndex < recipientsJsonList.GetLength(); ++recipientsIndex)
     {
       m_recipients.push_back(recipientsJsonList[recipientsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue SMSConfiguration::Jsonize() const
 
   if(m_recipientsHasBeenSet)
   {
-   Array<JsonValue> recipientsJsonList(m_recipients.size());
+   Aws::Utils::Array<JsonValue> recipientsJsonList(m_recipients.size());
    for(unsigned recipientsIndex = 0; recipientsIndex < recipientsJsonList.GetLength(); ++recipientsIndex)
    {
      recipientsJsonList[recipientsIndex].AsObject(m_recipients[recipientsIndex].Jsonize());

@@ -45,7 +45,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -56,7 +56,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_tagListHasBeenSet)
   {
-   Array<JsonValue> tagListJsonList(m_tagList.size());
+   Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
    {
      tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());

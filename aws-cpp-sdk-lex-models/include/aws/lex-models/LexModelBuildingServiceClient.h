@@ -31,22 +31,48 @@ namespace LexModelBuildingService
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexModelBuildingServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LexModelBuildingServiceClient(const Aws::LexModelBuildingService::LexModelBuildingServiceClientConfiguration& clientConfiguration = Aws::LexModelBuildingService::LexModelBuildingServiceClientConfiguration(),
+                                      std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LexModelBuildingServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                      std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG),
+                                      const Aws::LexModelBuildingService::LexModelBuildingServiceClientConfiguration& clientConfiguration = Aws::LexModelBuildingService::LexModelBuildingServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LexModelBuildingServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                      std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG),
+                                      const Aws::LexModelBuildingService::LexModelBuildingServiceClientConfiguration& clientConfiguration = Aws::LexModelBuildingService::LexModelBuildingServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexModelBuildingServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexModelBuildingServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        LexModelBuildingServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~LexModelBuildingServiceClient();
 
 
@@ -1024,12 +1050,13 @@ namespace LexModelBuildingService
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<LexModelBuildingServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const LexModelBuildingServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      LexModelBuildingServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LexModelBuildingService

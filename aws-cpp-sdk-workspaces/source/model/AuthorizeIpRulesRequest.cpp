@@ -30,7 +30,7 @@ Aws::String AuthorizeIpRulesRequest::SerializePayload() const
 
   if(m_userRulesHasBeenSet)
   {
-   Array<JsonValue> userRulesJsonList(m_userRules.size());
+   Aws::Utils::Array<JsonValue> userRulesJsonList(m_userRules.size());
    for(unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex)
    {
      userRulesJsonList[userRulesIndex].AsObject(m_userRules[userRulesIndex].Jsonize());

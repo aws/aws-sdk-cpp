@@ -30,7 +30,7 @@ ListResourcesForWebACLResult& ListResourcesForWebACLResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceArns"))
   {
-    Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("ResourceArns");
+    Aws::Utils::Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("ResourceArns");
     for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
     {
       m_resourceArns.push_back(resourceArnsJsonList[resourceArnsIndex].AsString());

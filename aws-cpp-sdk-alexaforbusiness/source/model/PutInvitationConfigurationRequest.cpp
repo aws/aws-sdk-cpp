@@ -37,7 +37,7 @@ Aws::String PutInvitationConfigurationRequest::SerializePayload() const
 
   if(m_privateSkillIdsHasBeenSet)
   {
-   Array<JsonValue> privateSkillIdsJsonList(m_privateSkillIds.size());
+   Aws::Utils::Array<JsonValue> privateSkillIdsJsonList(m_privateSkillIds.size());
    for(unsigned privateSkillIdsIndex = 0; privateSkillIdsIndex < privateSkillIdsJsonList.GetLength(); ++privateSkillIdsIndex)
    {
      privateSkillIdsJsonList[privateSkillIdsIndex].AsString(m_privateSkillIds[privateSkillIdsIndex]);

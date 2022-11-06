@@ -23,7 +23,7 @@ Aws::String DescribeJobsRequest::SerializePayload() const
 
   if(m_jobsHasBeenSet)
   {
-   Array<JsonValue> jobsJsonList(m_jobs.size());
+   Aws::Utils::Array<JsonValue> jobsJsonList(m_jobs.size());
    for(unsigned jobsIndex = 0; jobsIndex < jobsJsonList.GetLength(); ++jobsIndex)
    {
      jobsJsonList[jobsIndex].AsString(m_jobs[jobsIndex]);

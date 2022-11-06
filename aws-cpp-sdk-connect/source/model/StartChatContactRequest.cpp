@@ -79,7 +79,7 @@ Aws::String StartChatContactRequest::SerializePayload() const
 
   if(m_supportedMessagingContentTypesHasBeenSet)
   {
-   Array<JsonValue> supportedMessagingContentTypesJsonList(m_supportedMessagingContentTypes.size());
+   Aws::Utils::Array<JsonValue> supportedMessagingContentTypesJsonList(m_supportedMessagingContentTypes.size());
    for(unsigned supportedMessagingContentTypesIndex = 0; supportedMessagingContentTypesIndex < supportedMessagingContentTypesJsonList.GetLength(); ++supportedMessagingContentTypesIndex)
    {
      supportedMessagingContentTypesJsonList[supportedMessagingContentTypesIndex].AsString(m_supportedMessagingContentTypes[supportedMessagingContentTypesIndex]);

@@ -70,7 +70,7 @@ ImageDetail& ImageDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("imageTags"))
   {
-    Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
+    Aws::Utils::Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
     for(unsigned imageTagsIndex = 0; imageTagsIndex < imageTagsJsonList.GetLength(); ++imageTagsIndex)
     {
       m_imageTags.push_back(imageTagsJsonList[imageTagsIndex].AsString());
@@ -133,7 +133,7 @@ JsonValue ImageDetail::Jsonize() const
 
   if(m_imageTagsHasBeenSet)
   {
-   Array<JsonValue> imageTagsJsonList(m_imageTags.size());
+   Aws::Utils::Array<JsonValue> imageTagsJsonList(m_imageTags.size());
    for(unsigned imageTagsIndex = 0; imageTagsIndex < imageTagsJsonList.GetLength(); ++imageTagsIndex)
    {
      imageTagsJsonList[imageTagsIndex].AsString(m_imageTags[imageTagsIndex]);

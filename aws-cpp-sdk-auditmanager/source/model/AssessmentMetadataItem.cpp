@@ -77,7 +77,7 @@ AssessmentMetadataItem& AssessmentMetadataItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("roles"))
   {
-    Array<JsonView> rolesJsonList = jsonValue.GetArray("roles");
+    Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("roles");
     for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
     {
       m_roles.push_back(rolesJsonList[rolesIndex].AsObject());
@@ -87,7 +87,7 @@ AssessmentMetadataItem& AssessmentMetadataItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("delegations"))
   {
-    Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");
+    Aws::Utils::Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");
     for(unsigned delegationsIndex = 0; delegationsIndex < delegationsJsonList.GetLength(); ++delegationsIndex)
     {
       m_delegations.push_back(delegationsJsonList[delegationsIndex].AsObject());
@@ -141,7 +141,7 @@ JsonValue AssessmentMetadataItem::Jsonize() const
 
   if(m_rolesHasBeenSet)
   {
-   Array<JsonValue> rolesJsonList(m_roles.size());
+   Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
    for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
    {
      rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
@@ -152,7 +152,7 @@ JsonValue AssessmentMetadataItem::Jsonize() const
 
   if(m_delegationsHasBeenSet)
   {
-   Array<JsonValue> delegationsJsonList(m_delegations.size());
+   Aws::Utils::Array<JsonValue> delegationsJsonList(m_delegations.size());
    for(unsigned delegationsIndex = 0; delegationsIndex < delegationsJsonList.GetLength(); ++delegationsIndex)
    {
      delegationsJsonList[delegationsIndex].AsObject(m_delegations[delegationsIndex].Jsonize());

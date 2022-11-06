@@ -35,7 +35,7 @@ Aws::String PutVoiceConnectorProxyRequest::SerializePayload() const
 
   if(m_phoneNumberPoolCountriesHasBeenSet)
   {
-   Array<JsonValue> phoneNumberPoolCountriesJsonList(m_phoneNumberPoolCountries.size());
+   Aws::Utils::Array<JsonValue> phoneNumberPoolCountriesJsonList(m_phoneNumberPoolCountries.size());
    for(unsigned phoneNumberPoolCountriesIndex = 0; phoneNumberPoolCountriesIndex < phoneNumberPoolCountriesJsonList.GetLength(); ++phoneNumberPoolCountriesIndex)
    {
      phoneNumberPoolCountriesJsonList[phoneNumberPoolCountriesIndex].AsString(m_phoneNumberPoolCountries[phoneNumberPoolCountriesIndex]);

@@ -23,7 +23,7 @@ Aws::String BatchAcknowledgeAlarmRequest::SerializePayload() const
 
   if(m_acknowledgeActionRequestsHasBeenSet)
   {
-   Array<JsonValue> acknowledgeActionRequestsJsonList(m_acknowledgeActionRequests.size());
+   Aws::Utils::Array<JsonValue> acknowledgeActionRequestsJsonList(m_acknowledgeActionRequests.size());
    for(unsigned acknowledgeActionRequestsIndex = 0; acknowledgeActionRequestsIndex < acknowledgeActionRequestsJsonList.GetLength(); ++acknowledgeActionRequestsIndex)
    {
      acknowledgeActionRequestsJsonList[acknowledgeActionRequestsIndex].AsObject(m_acknowledgeActionRequests[acknowledgeActionRequestsIndex].Jsonize());

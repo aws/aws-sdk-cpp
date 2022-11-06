@@ -50,7 +50,7 @@ ListUsersResult& ListUsersResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("users"))
   {
-    Array<JsonView> usersJsonList = jsonValue.GetArray("users");
+    Aws::Utils::Array<JsonView> usersJsonList = jsonValue.GetArray("users");
     for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());

@@ -35,7 +35,7 @@ Aws::String PutLaunchProfileMembersRequest::SerializePayload() const
 
   if(m_membersHasBeenSet)
   {
-   Array<JsonValue> membersJsonList(m_members.size());
+   Aws::Utils::Array<JsonValue> membersJsonList(m_members.size());
    for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
    {
      membersJsonList[membersIndex].AsObject(m_members[membersIndex].Jsonize());

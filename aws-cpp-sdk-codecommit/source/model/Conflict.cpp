@@ -42,7 +42,7 @@ Conflict& Conflict::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mergeHunks"))
   {
-    Array<JsonView> mergeHunksJsonList = jsonValue.GetArray("mergeHunks");
+    Aws::Utils::Array<JsonView> mergeHunksJsonList = jsonValue.GetArray("mergeHunks");
     for(unsigned mergeHunksIndex = 0; mergeHunksIndex < mergeHunksJsonList.GetLength(); ++mergeHunksIndex)
     {
       m_mergeHunks.push_back(mergeHunksJsonList[mergeHunksIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue Conflict::Jsonize() const
 
   if(m_mergeHunksHasBeenSet)
   {
-   Array<JsonValue> mergeHunksJsonList(m_mergeHunks.size());
+   Aws::Utils::Array<JsonValue> mergeHunksJsonList(m_mergeHunks.size());
    for(unsigned mergeHunksIndex = 0; mergeHunksIndex < mergeHunksJsonList.GetLength(); ++mergeHunksIndex)
    {
      mergeHunksJsonList[mergeHunksIndex].AsObject(m_mergeHunks[mergeHunksIndex].Jsonize());

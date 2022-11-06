@@ -38,7 +38,7 @@ GetApplicationComponentDetailsResult& GetApplicationComponentDetailsResult::oper
 
   if(jsonValue.ValueExists("associatedApplications"))
   {
-    Array<JsonView> associatedApplicationsJsonList = jsonValue.GetArray("associatedApplications");
+    Aws::Utils::Array<JsonView> associatedApplicationsJsonList = jsonValue.GetArray("associatedApplications");
     for(unsigned associatedApplicationsIndex = 0; associatedApplicationsIndex < associatedApplicationsJsonList.GetLength(); ++associatedApplicationsIndex)
     {
       m_associatedApplications.push_back(associatedApplicationsJsonList[associatedApplicationsIndex].AsObject());
@@ -47,7 +47,7 @@ GetApplicationComponentDetailsResult& GetApplicationComponentDetailsResult::oper
 
   if(jsonValue.ValueExists("associatedServerIds"))
   {
-    Array<JsonView> associatedServerIdsJsonList = jsonValue.GetArray("associatedServerIds");
+    Aws::Utils::Array<JsonView> associatedServerIdsJsonList = jsonValue.GetArray("associatedServerIds");
     for(unsigned associatedServerIdsIndex = 0; associatedServerIdsIndex < associatedServerIdsJsonList.GetLength(); ++associatedServerIdsIndex)
     {
       m_associatedServerIds.push_back(associatedServerIdsJsonList[associatedServerIdsIndex].AsString());

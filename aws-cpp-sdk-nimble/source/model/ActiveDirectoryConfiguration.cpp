@@ -37,7 +37,7 @@ ActiveDirectoryConfiguration& ActiveDirectoryConfiguration::operator =(JsonView 
 {
   if(jsonValue.ValueExists("computerAttributes"))
   {
-    Array<JsonView> computerAttributesJsonList = jsonValue.GetArray("computerAttributes");
+    Aws::Utils::Array<JsonView> computerAttributesJsonList = jsonValue.GetArray("computerAttributes");
     for(unsigned computerAttributesIndex = 0; computerAttributesIndex < computerAttributesJsonList.GetLength(); ++computerAttributesIndex)
     {
       m_computerAttributes.push_back(computerAttributesJsonList[computerAttributesIndex].AsObject());
@@ -68,7 +68,7 @@ JsonValue ActiveDirectoryConfiguration::Jsonize() const
 
   if(m_computerAttributesHasBeenSet)
   {
-   Array<JsonValue> computerAttributesJsonList(m_computerAttributes.size());
+   Aws::Utils::Array<JsonValue> computerAttributesJsonList(m_computerAttributes.size());
    for(unsigned computerAttributesIndex = 0; computerAttributesIndex < computerAttributesJsonList.GetLength(); ++computerAttributesIndex)
    {
      computerAttributesJsonList[computerAttributesIndex].AsObject(m_computerAttributes[computerAttributesIndex].Jsonize());

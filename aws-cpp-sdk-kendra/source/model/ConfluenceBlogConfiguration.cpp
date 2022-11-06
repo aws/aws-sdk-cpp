@@ -33,7 +33,7 @@ ConfluenceBlogConfiguration& ConfluenceBlogConfiguration::operator =(JsonView js
 {
   if(jsonValue.ValueExists("BlogFieldMappings"))
   {
-    Array<JsonView> blogFieldMappingsJsonList = jsonValue.GetArray("BlogFieldMappings");
+    Aws::Utils::Array<JsonView> blogFieldMappingsJsonList = jsonValue.GetArray("BlogFieldMappings");
     for(unsigned blogFieldMappingsIndex = 0; blogFieldMappingsIndex < blogFieldMappingsJsonList.GetLength(); ++blogFieldMappingsIndex)
     {
       m_blogFieldMappings.push_back(blogFieldMappingsJsonList[blogFieldMappingsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ConfluenceBlogConfiguration::Jsonize() const
 
   if(m_blogFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> blogFieldMappingsJsonList(m_blogFieldMappings.size());
+   Aws::Utils::Array<JsonValue> blogFieldMappingsJsonList(m_blogFieldMappings.size());
    for(unsigned blogFieldMappingsIndex = 0; blogFieldMappingsIndex < blogFieldMappingsJsonList.GetLength(); ++blogFieldMappingsIndex)
    {
      blogFieldMappingsJsonList[blogFieldMappingsIndex].AsObject(m_blogFieldMappings[blogFieldMappingsIndex].Jsonize());

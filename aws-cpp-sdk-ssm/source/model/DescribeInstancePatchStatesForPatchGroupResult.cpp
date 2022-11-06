@@ -30,7 +30,7 @@ DescribeInstancePatchStatesForPatchGroupResult& DescribeInstancePatchStatesForPa
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstancePatchStates"))
   {
-    Array<JsonView> instancePatchStatesJsonList = jsonValue.GetArray("InstancePatchStates");
+    Aws::Utils::Array<JsonView> instancePatchStatesJsonList = jsonValue.GetArray("InstancePatchStates");
     for(unsigned instancePatchStatesIndex = 0; instancePatchStatesIndex < instancePatchStatesJsonList.GetLength(); ++instancePatchStatesIndex)
     {
       m_instancePatchStates.push_back(instancePatchStatesJsonList[instancePatchStatesIndex].AsObject());

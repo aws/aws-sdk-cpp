@@ -36,7 +36,7 @@ ListImagePipelineImagesResult& ListImagePipelineImagesResult::operator =(const A
 
   if(jsonValue.ValueExists("imageSummaryList"))
   {
-    Array<JsonView> imageSummaryListJsonList = jsonValue.GetArray("imageSummaryList");
+    Aws::Utils::Array<JsonView> imageSummaryListJsonList = jsonValue.GetArray("imageSummaryList");
     for(unsigned imageSummaryListIndex = 0; imageSummaryListIndex < imageSummaryListJsonList.GetLength(); ++imageSummaryListIndex)
     {
       m_imageSummaryList.push_back(imageSummaryListJsonList[imageSummaryListIndex].AsObject());

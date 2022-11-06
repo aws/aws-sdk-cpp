@@ -92,7 +92,7 @@ CreateApiResult& CreateApiResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("importInfo"))
   {
-    Array<JsonView> importInfoJsonList = jsonValue.GetArray("importInfo");
+    Aws::Utils::Array<JsonView> importInfoJsonList = jsonValue.GetArray("importInfo");
     for(unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex)
     {
       m_importInfo.push_back(importInfoJsonList[importInfoIndex].AsString());
@@ -134,7 +134,7 @@ CreateApiResult& CreateApiResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());

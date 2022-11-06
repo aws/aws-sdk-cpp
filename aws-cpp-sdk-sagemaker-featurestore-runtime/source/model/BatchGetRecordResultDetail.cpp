@@ -51,7 +51,7 @@ BatchGetRecordResultDetail& BatchGetRecordResultDetail::operator =(JsonView json
 
   if(jsonValue.ValueExists("Record"))
   {
-    Array<JsonView> recordJsonList = jsonValue.GetArray("Record");
+    Aws::Utils::Array<JsonView> recordJsonList = jsonValue.GetArray("Record");
     for(unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex)
     {
       m_record.push_back(recordJsonList[recordIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue BatchGetRecordResultDetail::Jsonize() const
 
   if(m_recordHasBeenSet)
   {
-   Array<JsonValue> recordJsonList(m_record.size());
+   Aws::Utils::Array<JsonValue> recordJsonList(m_record.size());
    for(unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex)
    {
      recordJsonList[recordIndex].AsObject(m_record[recordIndex].Jsonize());

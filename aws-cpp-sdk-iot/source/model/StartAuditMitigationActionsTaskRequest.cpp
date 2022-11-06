@@ -36,7 +36,7 @@ Aws::String StartAuditMitigationActionsTaskRequest::SerializePayload() const
    JsonValue auditCheckToActionsMappingJsonMap;
    for(auto& auditCheckToActionsMappingItem : m_auditCheckToActionsMapping)
    {
-     Array<JsonValue> mitigationActionNameListJsonList(auditCheckToActionsMappingItem.second.size());
+     Aws::Utils::Array<JsonValue> mitigationActionNameListJsonList(auditCheckToActionsMappingItem.second.size());
      for(unsigned mitigationActionNameListIndex = 0; mitigationActionNameListIndex < mitigationActionNameListJsonList.GetLength(); ++mitigationActionNameListIndex)
      {
        mitigationActionNameListJsonList[mitigationActionNameListIndex].AsString(auditCheckToActionsMappingItem.second[mitigationActionNameListIndex]);

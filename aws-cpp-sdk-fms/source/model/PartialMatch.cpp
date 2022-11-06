@@ -42,7 +42,7 @@ PartialMatch& PartialMatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetViolationReasons"))
   {
-    Array<JsonView> targetViolationReasonsJsonList = jsonValue.GetArray("TargetViolationReasons");
+    Aws::Utils::Array<JsonView> targetViolationReasonsJsonList = jsonValue.GetArray("TargetViolationReasons");
     for(unsigned targetViolationReasonsIndex = 0; targetViolationReasonsIndex < targetViolationReasonsJsonList.GetLength(); ++targetViolationReasonsIndex)
     {
       m_targetViolationReasons.push_back(targetViolationReasonsJsonList[targetViolationReasonsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue PartialMatch::Jsonize() const
 
   if(m_targetViolationReasonsHasBeenSet)
   {
-   Array<JsonValue> targetViolationReasonsJsonList(m_targetViolationReasons.size());
+   Aws::Utils::Array<JsonValue> targetViolationReasonsJsonList(m_targetViolationReasons.size());
    for(unsigned targetViolationReasonsIndex = 0; targetViolationReasonsIndex < targetViolationReasonsJsonList.GetLength(); ++targetViolationReasonsIndex)
    {
      targetViolationReasonsJsonList[targetViolationReasonsIndex].AsString(m_targetViolationReasons[targetViolationReasonsIndex]);

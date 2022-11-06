@@ -36,7 +36,7 @@ ListMigrationTasksResult& ListMigrationTasksResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("MigrationTaskSummaryList"))
   {
-    Array<JsonView> migrationTaskSummaryListJsonList = jsonValue.GetArray("MigrationTaskSummaryList");
+    Aws::Utils::Array<JsonView> migrationTaskSummaryListJsonList = jsonValue.GetArray("MigrationTaskSummaryList");
     for(unsigned migrationTaskSummaryListIndex = 0; migrationTaskSummaryListIndex < migrationTaskSummaryListJsonList.GetLength(); ++migrationTaskSummaryListIndex)
     {
       m_migrationTaskSummaryList.push_back(migrationTaskSummaryListJsonList[migrationTaskSummaryListIndex].AsObject());

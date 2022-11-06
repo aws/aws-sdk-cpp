@@ -30,7 +30,7 @@ ListAuthorizersResult& ListAuthorizersResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("authorizers"))
   {
-    Array<JsonView> authorizersJsonList = jsonValue.GetArray("authorizers");
+    Aws::Utils::Array<JsonView> authorizersJsonList = jsonValue.GetArray("authorizers");
     for(unsigned authorizersIndex = 0; authorizersIndex < authorizersJsonList.GetLength(); ++authorizersIndex)
     {
       m_authorizers.push_back(authorizersJsonList[authorizersIndex].AsObject());

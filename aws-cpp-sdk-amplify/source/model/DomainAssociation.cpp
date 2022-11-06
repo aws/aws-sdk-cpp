@@ -74,7 +74,7 @@ DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("autoSubDomainCreationPatterns"))
   {
-    Array<JsonView> autoSubDomainCreationPatternsJsonList = jsonValue.GetArray("autoSubDomainCreationPatterns");
+    Aws::Utils::Array<JsonView> autoSubDomainCreationPatternsJsonList = jsonValue.GetArray("autoSubDomainCreationPatterns");
     for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
     {
       m_autoSubDomainCreationPatterns.push_back(autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString());
@@ -112,7 +112,7 @@ DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("subDomains"))
   {
-    Array<JsonView> subDomainsJsonList = jsonValue.GetArray("subDomains");
+    Aws::Utils::Array<JsonView> subDomainsJsonList = jsonValue.GetArray("subDomains");
     for(unsigned subDomainsIndex = 0; subDomainsIndex < subDomainsJsonList.GetLength(); ++subDomainsIndex)
     {
       m_subDomains.push_back(subDomainsJsonList[subDomainsIndex].AsObject());
@@ -147,7 +147,7 @@ JsonValue DomainAssociation::Jsonize() const
 
   if(m_autoSubDomainCreationPatternsHasBeenSet)
   {
-   Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
+   Aws::Utils::Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
    for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
    {
      autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString(m_autoSubDomainCreationPatterns[autoSubDomainCreationPatternsIndex]);
@@ -181,7 +181,7 @@ JsonValue DomainAssociation::Jsonize() const
 
   if(m_subDomainsHasBeenSet)
   {
-   Array<JsonValue> subDomainsJsonList(m_subDomains.size());
+   Aws::Utils::Array<JsonValue> subDomainsJsonList(m_subDomains.size());
    for(unsigned subDomainsIndex = 0; subDomainsIndex < subDomainsJsonList.GetLength(); ++subDomainsIndex)
    {
      subDomainsJsonList[subDomainsIndex].AsObject(m_subDomains[subDomainsIndex].Jsonize());

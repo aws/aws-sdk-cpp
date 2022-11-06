@@ -104,7 +104,7 @@ TemplateStepSummary& TemplateStepSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("previous"))
   {
-    Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
+    Aws::Utils::Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
     for(unsigned previousIndex = 0; previousIndex < previousJsonList.GetLength(); ++previousIndex)
     {
       m_previous.push_back(previousJsonList[previousIndex].AsString());
@@ -114,7 +114,7 @@ TemplateStepSummary& TemplateStepSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("next"))
   {
-    Array<JsonView> nextJsonList = jsonValue.GetArray("next");
+    Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
     for(unsigned nextIndex = 0; nextIndex < nextJsonList.GetLength(); ++nextIndex)
     {
       m_next.push_back(nextJsonList[nextIndex].AsString());
@@ -170,7 +170,7 @@ JsonValue TemplateStepSummary::Jsonize() const
 
   if(m_previousHasBeenSet)
   {
-   Array<JsonValue> previousJsonList(m_previous.size());
+   Aws::Utils::Array<JsonValue> previousJsonList(m_previous.size());
    for(unsigned previousIndex = 0; previousIndex < previousJsonList.GetLength(); ++previousIndex)
    {
      previousJsonList[previousIndex].AsString(m_previous[previousIndex]);
@@ -181,7 +181,7 @@ JsonValue TemplateStepSummary::Jsonize() const
 
   if(m_nextHasBeenSet)
   {
-   Array<JsonValue> nextJsonList(m_next.size());
+   Aws::Utils::Array<JsonValue> nextJsonList(m_next.size());
    for(unsigned nextIndex = 0; nextIndex < nextJsonList.GetLength(); ++nextIndex)
    {
      nextJsonList[nextIndex].AsString(m_next[nextIndex]);

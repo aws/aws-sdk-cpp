@@ -55,7 +55,7 @@ DocumentReaderConfig& DocumentReaderConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FeatureTypes"))
   {
-    Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
+    Aws::Utils::Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
     for(unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex)
     {
       m_featureTypes.push_back(DocumentReadFeatureTypesMapper::GetDocumentReadFeatureTypesForName(featureTypesJsonList[featureTypesIndex].AsString()));
@@ -82,7 +82,7 @@ JsonValue DocumentReaderConfig::Jsonize() const
 
   if(m_featureTypesHasBeenSet)
   {
-   Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
+   Aws::Utils::Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
    for(unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex)
    {
      featureTypesJsonList[featureTypesIndex].AsString(DocumentReadFeatureTypesMapper::GetNameForDocumentReadFeatureTypes(m_featureTypes[featureTypesIndex]));

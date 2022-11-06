@@ -125,7 +125,7 @@ Trial& Trial::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -135,7 +135,7 @@ Trial& Trial::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TrialComponentSummaries"))
   {
-    Array<JsonView> trialComponentSummariesJsonList = jsonValue.GetArray("TrialComponentSummaries");
+    Aws::Utils::Array<JsonView> trialComponentSummariesJsonList = jsonValue.GetArray("TrialComponentSummaries");
     for(unsigned trialComponentSummariesIndex = 0; trialComponentSummariesIndex < trialComponentSummariesJsonList.GetLength(); ++trialComponentSummariesIndex)
     {
       m_trialComponentSummaries.push_back(trialComponentSummariesJsonList[trialComponentSummariesIndex].AsObject());
@@ -210,7 +210,7 @@ JsonValue Trial::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -221,7 +221,7 @@ JsonValue Trial::Jsonize() const
 
   if(m_trialComponentSummariesHasBeenSet)
   {
-   Array<JsonValue> trialComponentSummariesJsonList(m_trialComponentSummaries.size());
+   Aws::Utils::Array<JsonValue> trialComponentSummariesJsonList(m_trialComponentSummaries.size());
    for(unsigned trialComponentSummariesIndex = 0; trialComponentSummariesIndex < trialComponentSummariesJsonList.GetLength(); ++trialComponentSummariesIndex)
    {
      trialComponentSummariesJsonList[trialComponentSummariesIndex].AsObject(m_trialComponentSummaries[trialComponentSummariesIndex].Jsonize());

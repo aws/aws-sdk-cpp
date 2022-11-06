@@ -30,7 +30,7 @@ ListMeshesResult& ListMeshesResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("meshes"))
   {
-    Array<JsonView> meshesJsonList = jsonValue.GetArray("meshes");
+    Aws::Utils::Array<JsonView> meshesJsonList = jsonValue.GetArray("meshes");
     for(unsigned meshesIndex = 0; meshesIndex < meshesJsonList.GetLength(); ++meshesIndex)
     {
       m_meshes.push_back(meshesJsonList[meshesIndex].AsObject());

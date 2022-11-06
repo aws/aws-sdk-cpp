@@ -35,7 +35,7 @@ WorkflowGraph& WorkflowGraph::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Nodes"))
   {
-    Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
+    Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
     for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
     {
       m_nodes.push_back(nodesJsonList[nodesIndex].AsObject());
@@ -45,7 +45,7 @@ WorkflowGraph& WorkflowGraph::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Edges"))
   {
-    Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
+    Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
     for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
     {
       m_edges.push_back(edgesJsonList[edgesIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue WorkflowGraph::Jsonize() const
 
   if(m_nodesHasBeenSet)
   {
-   Array<JsonValue> nodesJsonList(m_nodes.size());
+   Aws::Utils::Array<JsonValue> nodesJsonList(m_nodes.size());
    for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
    {
      nodesJsonList[nodesIndex].AsObject(m_nodes[nodesIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue WorkflowGraph::Jsonize() const
 
   if(m_edgesHasBeenSet)
   {
-   Array<JsonValue> edgesJsonList(m_edges.size());
+   Aws::Utils::Array<JsonValue> edgesJsonList(m_edges.size());
    for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
    {
      edgesJsonList[edgesIndex].AsObject(m_edges[edgesIndex].Jsonize());

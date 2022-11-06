@@ -30,7 +30,7 @@ GetResourceLFTagsResult& GetResourceLFTagsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LFTagOnDatabase"))
   {
-    Array<JsonView> lFTagOnDatabaseJsonList = jsonValue.GetArray("LFTagOnDatabase");
+    Aws::Utils::Array<JsonView> lFTagOnDatabaseJsonList = jsonValue.GetArray("LFTagOnDatabase");
     for(unsigned lFTagOnDatabaseIndex = 0; lFTagOnDatabaseIndex < lFTagOnDatabaseJsonList.GetLength(); ++lFTagOnDatabaseIndex)
     {
       m_lFTagOnDatabase.push_back(lFTagOnDatabaseJsonList[lFTagOnDatabaseIndex].AsObject());
@@ -39,7 +39,7 @@ GetResourceLFTagsResult& GetResourceLFTagsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("LFTagsOnTable"))
   {
-    Array<JsonView> lFTagsOnTableJsonList = jsonValue.GetArray("LFTagsOnTable");
+    Aws::Utils::Array<JsonView> lFTagsOnTableJsonList = jsonValue.GetArray("LFTagsOnTable");
     for(unsigned lFTagsOnTableIndex = 0; lFTagsOnTableIndex < lFTagsOnTableJsonList.GetLength(); ++lFTagsOnTableIndex)
     {
       m_lFTagsOnTable.push_back(lFTagsOnTableJsonList[lFTagsOnTableIndex].AsObject());
@@ -48,7 +48,7 @@ GetResourceLFTagsResult& GetResourceLFTagsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("LFTagsOnColumns"))
   {
-    Array<JsonView> lFTagsOnColumnsJsonList = jsonValue.GetArray("LFTagsOnColumns");
+    Aws::Utils::Array<JsonView> lFTagsOnColumnsJsonList = jsonValue.GetArray("LFTagsOnColumns");
     for(unsigned lFTagsOnColumnsIndex = 0; lFTagsOnColumnsIndex < lFTagsOnColumnsJsonList.GetLength(); ++lFTagsOnColumnsIndex)
     {
       m_lFTagsOnColumns.push_back(lFTagsOnColumnsJsonList[lFTagsOnColumnsIndex].AsObject());

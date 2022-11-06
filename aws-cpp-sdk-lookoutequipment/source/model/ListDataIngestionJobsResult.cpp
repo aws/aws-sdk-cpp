@@ -36,7 +36,7 @@ ListDataIngestionJobsResult& ListDataIngestionJobsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("DataIngestionJobSummaries"))
   {
-    Array<JsonView> dataIngestionJobSummariesJsonList = jsonValue.GetArray("DataIngestionJobSummaries");
+    Aws::Utils::Array<JsonView> dataIngestionJobSummariesJsonList = jsonValue.GetArray("DataIngestionJobSummaries");
     for(unsigned dataIngestionJobSummariesIndex = 0; dataIngestionJobSummariesIndex < dataIngestionJobSummariesJsonList.GetLength(); ++dataIngestionJobSummariesIndex)
     {
       m_dataIngestionJobSummaries.push_back(dataIngestionJobSummariesJsonList[dataIngestionJobSummariesIndex].AsObject());

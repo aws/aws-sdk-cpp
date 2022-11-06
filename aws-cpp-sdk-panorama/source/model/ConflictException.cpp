@@ -41,7 +41,7 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ErrorArguments"))
   {
-    Array<JsonView> errorArgumentsJsonList = jsonValue.GetArray("ErrorArguments");
+    Aws::Utils::Array<JsonView> errorArgumentsJsonList = jsonValue.GetArray("ErrorArguments");
     for(unsigned errorArgumentsIndex = 0; errorArgumentsIndex < errorArgumentsJsonList.GetLength(); ++errorArgumentsIndex)
     {
       m_errorArguments.push_back(errorArgumentsJsonList[errorArgumentsIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue ConflictException::Jsonize() const
 
   if(m_errorArgumentsHasBeenSet)
   {
-   Array<JsonValue> errorArgumentsJsonList(m_errorArguments.size());
+   Aws::Utils::Array<JsonValue> errorArgumentsJsonList(m_errorArguments.size());
    for(unsigned errorArgumentsIndex = 0; errorArgumentsIndex < errorArgumentsJsonList.GetLength(); ++errorArgumentsIndex)
    {
      errorArgumentsJsonList[errorArgumentsIndex].AsObject(m_errorArguments[errorArgumentsIndex].Jsonize());

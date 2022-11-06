@@ -30,7 +30,7 @@ Aws::String UpdateDomainNameserversRequest::SerializePayload() const
 
   if(m_nameserversHasBeenSet)
   {
-   Array<JsonValue> nameserversJsonList(m_nameservers.size());
+   Aws::Utils::Array<JsonValue> nameserversJsonList(m_nameservers.size());
    for(unsigned nameserversIndex = 0; nameserversIndex < nameserversJsonList.GetLength(); ++nameserversIndex)
    {
      nameserversJsonList[nameserversIndex].AsObject(m_nameservers[nameserversIndex].Jsonize());

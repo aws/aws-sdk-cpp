@@ -37,7 +37,7 @@ Aws::String CreateRepositoryRequest::SerializePayload() const
 
   if(m_upstreamsHasBeenSet)
   {
-   Array<JsonValue> upstreamsJsonList(m_upstreams.size());
+   Aws::Utils::Array<JsonValue> upstreamsJsonList(m_upstreams.size());
    for(unsigned upstreamsIndex = 0; upstreamsIndex < upstreamsJsonList.GetLength(); ++upstreamsIndex)
    {
      upstreamsJsonList[upstreamsIndex].AsObject(m_upstreams[upstreamsIndex].Jsonize());
@@ -48,7 +48,7 @@ Aws::String CreateRepositoryRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

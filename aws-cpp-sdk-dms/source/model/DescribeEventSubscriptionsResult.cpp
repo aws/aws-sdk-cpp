@@ -36,7 +36,7 @@ DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(c
 
   if(jsonValue.ValueExists("EventSubscriptionsList"))
   {
-    Array<JsonView> eventSubscriptionsListJsonList = jsonValue.GetArray("EventSubscriptionsList");
+    Aws::Utils::Array<JsonView> eventSubscriptionsListJsonList = jsonValue.GetArray("EventSubscriptionsList");
     for(unsigned eventSubscriptionsListIndex = 0; eventSubscriptionsListIndex < eventSubscriptionsListJsonList.GetLength(); ++eventSubscriptionsListIndex)
     {
       m_eventSubscriptionsList.push_back(eventSubscriptionsListJsonList[eventSubscriptionsListIndex].AsObject());

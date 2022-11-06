@@ -64,7 +64,7 @@ SearchAssociatedTranscriptsResult& SearchAssociatedTranscriptsResult::operator =
 
   if(jsonValue.ValueExists("associatedTranscripts"))
   {
-    Array<JsonView> associatedTranscriptsJsonList = jsonValue.GetArray("associatedTranscripts");
+    Aws::Utils::Array<JsonView> associatedTranscriptsJsonList = jsonValue.GetArray("associatedTranscripts");
     for(unsigned associatedTranscriptsIndex = 0; associatedTranscriptsIndex < associatedTranscriptsJsonList.GetLength(); ++associatedTranscriptsIndex)
     {
       m_associatedTranscripts.push_back(associatedTranscriptsJsonList[associatedTranscriptsIndex].AsObject());

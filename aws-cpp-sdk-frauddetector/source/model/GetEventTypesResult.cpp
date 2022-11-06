@@ -30,7 +30,7 @@ GetEventTypesResult& GetEventTypesResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eventTypes"))
   {
-    Array<JsonView> eventTypesJsonList = jsonValue.GetArray("eventTypes");
+    Aws::Utils::Array<JsonView> eventTypesJsonList = jsonValue.GetArray("eventTypes");
     for(unsigned eventTypesIndex = 0; eventTypesIndex < eventTypesJsonList.GetLength(); ++eventTypesIndex)
     {
       m_eventTypes.push_back(eventTypesJsonList[eventTypesIndex].AsObject());

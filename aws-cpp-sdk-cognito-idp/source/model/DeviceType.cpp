@@ -48,7 +48,7 @@ DeviceType& DeviceType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DeviceAttributes"))
   {
-    Array<JsonView> deviceAttributesJsonList = jsonValue.GetArray("DeviceAttributes");
+    Aws::Utils::Array<JsonView> deviceAttributesJsonList = jsonValue.GetArray("DeviceAttributes");
     for(unsigned deviceAttributesIndex = 0; deviceAttributesIndex < deviceAttributesJsonList.GetLength(); ++deviceAttributesIndex)
     {
       m_deviceAttributes.push_back(deviceAttributesJsonList[deviceAttributesIndex].AsObject());
@@ -92,7 +92,7 @@ JsonValue DeviceType::Jsonize() const
 
   if(m_deviceAttributesHasBeenSet)
   {
-   Array<JsonValue> deviceAttributesJsonList(m_deviceAttributes.size());
+   Aws::Utils::Array<JsonValue> deviceAttributesJsonList(m_deviceAttributes.size());
    for(unsigned deviceAttributesIndex = 0; deviceAttributesIndex < deviceAttributesJsonList.GetLength(); ++deviceAttributesIndex)
    {
      deviceAttributesJsonList[deviceAttributesIndex].AsObject(m_deviceAttributes[deviceAttributesIndex].Jsonize());

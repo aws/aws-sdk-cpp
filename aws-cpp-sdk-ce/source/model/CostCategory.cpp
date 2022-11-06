@@ -86,7 +86,7 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
@@ -96,7 +96,7 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SplitChargeRules"))
   {
-    Array<JsonView> splitChargeRulesJsonList = jsonValue.GetArray("SplitChargeRules");
+    Aws::Utils::Array<JsonView> splitChargeRulesJsonList = jsonValue.GetArray("SplitChargeRules");
     for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
     {
       m_splitChargeRules.push_back(splitChargeRulesJsonList[splitChargeRulesIndex].AsObject());
@@ -106,7 +106,7 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProcessingStatus"))
   {
-    Array<JsonView> processingStatusJsonList = jsonValue.GetArray("ProcessingStatus");
+    Aws::Utils::Array<JsonView> processingStatusJsonList = jsonValue.GetArray("ProcessingStatus");
     for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
     {
       m_processingStatus.push_back(processingStatusJsonList[processingStatusIndex].AsObject());
@@ -159,7 +159,7 @@ JsonValue CostCategory::Jsonize() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -170,7 +170,7 @@ JsonValue CostCategory::Jsonize() const
 
   if(m_splitChargeRulesHasBeenSet)
   {
-   Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
+   Aws::Utils::Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
    for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
    {
      splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());
@@ -181,7 +181,7 @@ JsonValue CostCategory::Jsonize() const
 
   if(m_processingStatusHasBeenSet)
   {
-   Array<JsonValue> processingStatusJsonList(m_processingStatus.size());
+   Aws::Utils::Array<JsonValue> processingStatusJsonList(m_processingStatus.size());
    for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
    {
      processingStatusJsonList[processingStatusIndex].AsObject(m_processingStatus[processingStatusIndex].Jsonize());

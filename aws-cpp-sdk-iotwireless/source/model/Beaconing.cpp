@@ -44,7 +44,7 @@ Beaconing& Beaconing::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Frequencies"))
   {
-    Array<JsonView> frequenciesJsonList = jsonValue.GetArray("Frequencies");
+    Aws::Utils::Array<JsonView> frequenciesJsonList = jsonValue.GetArray("Frequencies");
     for(unsigned frequenciesIndex = 0; frequenciesIndex < frequenciesJsonList.GetLength(); ++frequenciesIndex)
     {
       m_frequencies.push_back(frequenciesJsonList[frequenciesIndex].AsInteger());
@@ -67,7 +67,7 @@ JsonValue Beaconing::Jsonize() const
 
   if(m_frequenciesHasBeenSet)
   {
-   Array<JsonValue> frequenciesJsonList(m_frequencies.size());
+   Aws::Utils::Array<JsonValue> frequenciesJsonList(m_frequencies.size());
    for(unsigned frequenciesIndex = 0; frequenciesIndex < frequenciesJsonList.GetLength(); ++frequenciesIndex)
    {
      frequenciesJsonList[frequenciesIndex].AsInteger(m_frequencies[frequenciesIndex]);

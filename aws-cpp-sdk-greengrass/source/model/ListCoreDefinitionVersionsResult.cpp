@@ -36,7 +36,7 @@ ListCoreDefinitionVersionsResult& ListCoreDefinitionVersionsResult::operator =(c
 
   if(jsonValue.ValueExists("Versions"))
   {
-    Array<JsonView> versionsJsonList = jsonValue.GetArray("Versions");
+    Aws::Utils::Array<JsonView> versionsJsonList = jsonValue.GetArray("Versions");
     for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
     {
       m_versions.push_back(versionsJsonList[versionsIndex].AsObject());

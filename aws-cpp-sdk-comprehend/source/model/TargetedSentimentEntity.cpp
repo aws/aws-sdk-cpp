@@ -35,7 +35,7 @@ TargetedSentimentEntity& TargetedSentimentEntity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DescriptiveMentionIndex"))
   {
-    Array<JsonView> descriptiveMentionIndexJsonList = jsonValue.GetArray("DescriptiveMentionIndex");
+    Aws::Utils::Array<JsonView> descriptiveMentionIndexJsonList = jsonValue.GetArray("DescriptiveMentionIndex");
     for(unsigned descriptiveMentionIndexIndex = 0; descriptiveMentionIndexIndex < descriptiveMentionIndexJsonList.GetLength(); ++descriptiveMentionIndexIndex)
     {
       m_descriptiveMentionIndex.push_back(descriptiveMentionIndexJsonList[descriptiveMentionIndexIndex].AsInteger());
@@ -45,7 +45,7 @@ TargetedSentimentEntity& TargetedSentimentEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Mentions"))
   {
-    Array<JsonView> mentionsJsonList = jsonValue.GetArray("Mentions");
+    Aws::Utils::Array<JsonView> mentionsJsonList = jsonValue.GetArray("Mentions");
     for(unsigned mentionsIndex = 0; mentionsIndex < mentionsJsonList.GetLength(); ++mentionsIndex)
     {
       m_mentions.push_back(mentionsJsonList[mentionsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue TargetedSentimentEntity::Jsonize() const
 
   if(m_descriptiveMentionIndexHasBeenSet)
   {
-   Array<JsonValue> descriptiveMentionIndexJsonList(m_descriptiveMentionIndex.size());
+   Aws::Utils::Array<JsonValue> descriptiveMentionIndexJsonList(m_descriptiveMentionIndex.size());
    for(unsigned descriptiveMentionIndexIndex = 0; descriptiveMentionIndexIndex < descriptiveMentionIndexJsonList.GetLength(); ++descriptiveMentionIndexIndex)
    {
      descriptiveMentionIndexJsonList[descriptiveMentionIndexIndex].AsInteger(m_descriptiveMentionIndex[descriptiveMentionIndexIndex]);
@@ -73,7 +73,7 @@ JsonValue TargetedSentimentEntity::Jsonize() const
 
   if(m_mentionsHasBeenSet)
   {
-   Array<JsonValue> mentionsJsonList(m_mentions.size());
+   Aws::Utils::Array<JsonValue> mentionsJsonList(m_mentions.size());
    for(unsigned mentionsIndex = 0; mentionsIndex < mentionsJsonList.GetLength(); ++mentionsIndex)
    {
      mentionsJsonList[mentionsIndex].AsObject(m_mentions[mentionsIndex].Jsonize());

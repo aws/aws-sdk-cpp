@@ -35,7 +35,7 @@ MonitoringOutputConfig& MonitoringOutputConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MonitoringOutputs"))
   {
-    Array<JsonView> monitoringOutputsJsonList = jsonValue.GetArray("MonitoringOutputs");
+    Aws::Utils::Array<JsonView> monitoringOutputsJsonList = jsonValue.GetArray("MonitoringOutputs");
     for(unsigned monitoringOutputsIndex = 0; monitoringOutputsIndex < monitoringOutputsJsonList.GetLength(); ++monitoringOutputsIndex)
     {
       m_monitoringOutputs.push_back(monitoringOutputsJsonList[monitoringOutputsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue MonitoringOutputConfig::Jsonize() const
 
   if(m_monitoringOutputsHasBeenSet)
   {
-   Array<JsonValue> monitoringOutputsJsonList(m_monitoringOutputs.size());
+   Aws::Utils::Array<JsonValue> monitoringOutputsJsonList(m_monitoringOutputs.size());
    for(unsigned monitoringOutputsIndex = 0; monitoringOutputsIndex < monitoringOutputsJsonList.GetLength(); ++monitoringOutputsIndex)
    {
      monitoringOutputsJsonList[monitoringOutputsIndex].AsObject(m_monitoringOutputs[monitoringOutputsIndex].Jsonize());

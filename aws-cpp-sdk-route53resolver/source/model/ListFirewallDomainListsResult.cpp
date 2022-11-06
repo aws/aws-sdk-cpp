@@ -36,7 +36,7 @@ ListFirewallDomainListsResult& ListFirewallDomainListsResult::operator =(const A
 
   if(jsonValue.ValueExists("FirewallDomainLists"))
   {
-    Array<JsonView> firewallDomainListsJsonList = jsonValue.GetArray("FirewallDomainLists");
+    Aws::Utils::Array<JsonView> firewallDomainListsJsonList = jsonValue.GetArray("FirewallDomainLists");
     for(unsigned firewallDomainListsIndex = 0; firewallDomainListsIndex < firewallDomainListsJsonList.GetLength(); ++firewallDomainListsIndex)
     {
       m_firewallDomainLists.push_back(firewallDomainListsJsonList[firewallDomainListsIndex].AsObject());

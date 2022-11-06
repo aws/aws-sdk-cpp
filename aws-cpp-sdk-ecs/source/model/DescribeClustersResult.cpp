@@ -30,7 +30,7 @@ DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("clusters"))
   {
-    Array<JsonView> clustersJsonList = jsonValue.GetArray("clusters");
+    Aws::Utils::Array<JsonView> clustersJsonList = jsonValue.GetArray("clusters");
     for(unsigned clustersIndex = 0; clustersIndex < clustersJsonList.GetLength(); ++clustersIndex)
     {
       m_clusters.push_back(clustersJsonList[clustersIndex].AsObject());
@@ -39,7 +39,7 @@ DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

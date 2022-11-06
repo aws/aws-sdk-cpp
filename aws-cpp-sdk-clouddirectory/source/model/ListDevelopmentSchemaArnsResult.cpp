@@ -30,7 +30,7 @@ ListDevelopmentSchemaArnsResult& ListDevelopmentSchemaArnsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SchemaArns"))
   {
-    Array<JsonView> schemaArnsJsonList = jsonValue.GetArray("SchemaArns");
+    Aws::Utils::Array<JsonView> schemaArnsJsonList = jsonValue.GetArray("SchemaArns");
     for(unsigned schemaArnsIndex = 0; schemaArnsIndex < schemaArnsJsonList.GetLength(); ++schemaArnsIndex)
     {
       m_schemaArns.push_back(schemaArnsJsonList[schemaArnsIndex].AsString());

@@ -82,7 +82,7 @@ KubernetesWorkloadDetails& KubernetesWorkloadDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("containers"))
   {
-    Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
+    Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
     for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
     {
       m_containers.push_back(containersJsonList[containersIndex].AsObject());
@@ -92,7 +92,7 @@ KubernetesWorkloadDetails& KubernetesWorkloadDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("volumes"))
   {
-    Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
+    Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
     for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
     {
       m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());
@@ -139,7 +139,7 @@ JsonValue KubernetesWorkloadDetails::Jsonize() const
 
   if(m_containersHasBeenSet)
   {
-   Array<JsonValue> containersJsonList(m_containers.size());
+   Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
    for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
    {
      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
@@ -150,7 +150,7 @@ JsonValue KubernetesWorkloadDetails::Jsonize() const
 
   if(m_volumesHasBeenSet)
   {
-   Array<JsonValue> volumesJsonList(m_volumes.size());
+   Aws::Utils::Array<JsonValue> volumesJsonList(m_volumes.size());
    for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
    {
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());

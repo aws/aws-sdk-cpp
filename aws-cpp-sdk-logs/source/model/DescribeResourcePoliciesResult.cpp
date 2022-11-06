@@ -30,7 +30,7 @@ DescribeResourcePoliciesResult& DescribeResourcePoliciesResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourcePolicies"))
   {
-    Array<JsonView> resourcePoliciesJsonList = jsonValue.GetArray("resourcePolicies");
+    Aws::Utils::Array<JsonView> resourcePoliciesJsonList = jsonValue.GetArray("resourcePolicies");
     for(unsigned resourcePoliciesIndex = 0; resourcePoliciesIndex < resourcePoliciesJsonList.GetLength(); ++resourcePoliciesIndex)
     {
       m_resourcePolicies.push_back(resourcePoliciesJsonList[resourcePoliciesIndex].AsObject());

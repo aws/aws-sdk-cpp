@@ -30,7 +30,7 @@ ListMediaCapturePipelinesResult& ListMediaCapturePipelinesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MediaCapturePipelines"))
   {
-    Array<JsonView> mediaCapturePipelinesJsonList = jsonValue.GetArray("MediaCapturePipelines");
+    Aws::Utils::Array<JsonView> mediaCapturePipelinesJsonList = jsonValue.GetArray("MediaCapturePipelines");
     for(unsigned mediaCapturePipelinesIndex = 0; mediaCapturePipelinesIndex < mediaCapturePipelinesJsonList.GetLength(); ++mediaCapturePipelinesIndex)
     {
       m_mediaCapturePipelines.push_back(mediaCapturePipelinesJsonList[mediaCapturePipelinesIndex].AsObject());

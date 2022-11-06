@@ -48,7 +48,7 @@ PutSecretValueResult& PutSecretValueResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("VersionStages"))
   {
-    Array<JsonView> versionStagesJsonList = jsonValue.GetArray("VersionStages");
+    Aws::Utils::Array<JsonView> versionStagesJsonList = jsonValue.GetArray("VersionStages");
     for(unsigned versionStagesIndex = 0; versionStagesIndex < versionStagesJsonList.GetLength(); ++versionStagesIndex)
     {
       m_versionStages.push_back(versionStagesJsonList[versionStagesIndex].AsString());

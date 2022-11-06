@@ -36,7 +36,7 @@ DescribeScheduleResult& DescribeScheduleResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("scheduleActions"))
   {
-    Array<JsonView> scheduleActionsJsonList = jsonValue.GetArray("scheduleActions");
+    Aws::Utils::Array<JsonView> scheduleActionsJsonList = jsonValue.GetArray("scheduleActions");
     for(unsigned scheduleActionsIndex = 0; scheduleActionsIndex < scheduleActionsJsonList.GetLength(); ++scheduleActionsIndex)
     {
       m_scheduleActions.push_back(scheduleActionsJsonList[scheduleActionsIndex].AsObject());

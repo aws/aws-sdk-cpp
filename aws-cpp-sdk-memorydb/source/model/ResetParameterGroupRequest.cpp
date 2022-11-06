@@ -38,7 +38,7 @@ Aws::String ResetParameterGroupRequest::SerializePayload() const
 
   if(m_parameterNamesHasBeenSet)
   {
-   Array<JsonValue> parameterNamesJsonList(m_parameterNames.size());
+   Aws::Utils::Array<JsonValue> parameterNamesJsonList(m_parameterNames.size());
    for(unsigned parameterNamesIndex = 0; parameterNamesIndex < parameterNamesJsonList.GetLength(); ++parameterNamesIndex)
    {
      parameterNamesJsonList[parameterNamesIndex].AsString(m_parameterNames[parameterNamesIndex]);

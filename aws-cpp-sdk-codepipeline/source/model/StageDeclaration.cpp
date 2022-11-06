@@ -44,7 +44,7 @@ StageDeclaration& StageDeclaration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("blockers"))
   {
-    Array<JsonView> blockersJsonList = jsonValue.GetArray("blockers");
+    Aws::Utils::Array<JsonView> blockersJsonList = jsonValue.GetArray("blockers");
     for(unsigned blockersIndex = 0; blockersIndex < blockersJsonList.GetLength(); ++blockersIndex)
     {
       m_blockers.push_back(blockersJsonList[blockersIndex].AsObject());
@@ -54,7 +54,7 @@ StageDeclaration& StageDeclaration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue StageDeclaration::Jsonize() const
 
   if(m_blockersHasBeenSet)
   {
-   Array<JsonValue> blockersJsonList(m_blockers.size());
+   Aws::Utils::Array<JsonValue> blockersJsonList(m_blockers.size());
    for(unsigned blockersIndex = 0; blockersIndex < blockersJsonList.GetLength(); ++blockersIndex)
    {
      blockersJsonList[blockersIndex].AsObject(m_blockers[blockersIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue StageDeclaration::Jsonize() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());

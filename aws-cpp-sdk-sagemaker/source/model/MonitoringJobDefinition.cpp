@@ -56,7 +56,7 @@ MonitoringJobDefinition& MonitoringJobDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MonitoringInputs"))
   {
-    Array<JsonView> monitoringInputsJsonList = jsonValue.GetArray("MonitoringInputs");
+    Aws::Utils::Array<JsonView> monitoringInputsJsonList = jsonValue.GetArray("MonitoringInputs");
     for(unsigned monitoringInputsIndex = 0; monitoringInputsIndex < monitoringInputsJsonList.GetLength(); ++monitoringInputsIndex)
     {
       m_monitoringInputs.push_back(monitoringInputsJsonList[monitoringInputsIndex].AsObject());
@@ -131,7 +131,7 @@ JsonValue MonitoringJobDefinition::Jsonize() const
 
   if(m_monitoringInputsHasBeenSet)
   {
-   Array<JsonValue> monitoringInputsJsonList(m_monitoringInputs.size());
+   Aws::Utils::Array<JsonValue> monitoringInputsJsonList(m_monitoringInputs.size());
    for(unsigned monitoringInputsIndex = 0; monitoringInputsIndex < monitoringInputsJsonList.GetLength(); ++monitoringInputsIndex)
    {
      monitoringInputsJsonList[monitoringInputsIndex].AsObject(m_monitoringInputs[monitoringInputsIndex].Jsonize());

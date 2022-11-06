@@ -30,7 +30,7 @@ ListVolumeInitiatorsResult& ListVolumeInitiatorsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Initiators"))
   {
-    Array<JsonView> initiatorsJsonList = jsonValue.GetArray("Initiators");
+    Aws::Utils::Array<JsonView> initiatorsJsonList = jsonValue.GetArray("Initiators");
     for(unsigned initiatorsIndex = 0; initiatorsIndex < initiatorsJsonList.GetLength(); ++initiatorsIndex)
     {
       m_initiators.push_back(initiatorsJsonList[initiatorsIndex].AsString());

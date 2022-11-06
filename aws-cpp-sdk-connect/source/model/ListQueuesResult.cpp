@@ -30,7 +30,7 @@ ListQueuesResult& ListQueuesResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("QueueSummaryList"))
   {
-    Array<JsonView> queueSummaryListJsonList = jsonValue.GetArray("QueueSummaryList");
+    Aws::Utils::Array<JsonView> queueSummaryListJsonList = jsonValue.GetArray("QueueSummaryList");
     for(unsigned queueSummaryListIndex = 0; queueSummaryListIndex < queueSummaryListJsonList.GetLength(); ++queueSummaryListIndex)
     {
       m_queueSummaryList.push_back(queueSummaryListJsonList[queueSummaryListIndex].AsObject());

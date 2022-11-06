@@ -90,7 +90,7 @@ SavingsPlansPurchaseRecommendation& SavingsPlansPurchaseRecommendation::operator
 
   if(jsonValue.ValueExists("SavingsPlansPurchaseRecommendationDetails"))
   {
-    Array<JsonView> savingsPlansPurchaseRecommendationDetailsJsonList = jsonValue.GetArray("SavingsPlansPurchaseRecommendationDetails");
+    Aws::Utils::Array<JsonView> savingsPlansPurchaseRecommendationDetailsJsonList = jsonValue.GetArray("SavingsPlansPurchaseRecommendationDetails");
     for(unsigned savingsPlansPurchaseRecommendationDetailsIndex = 0; savingsPlansPurchaseRecommendationDetailsIndex < savingsPlansPurchaseRecommendationDetailsJsonList.GetLength(); ++savingsPlansPurchaseRecommendationDetailsIndex)
     {
       m_savingsPlansPurchaseRecommendationDetails.push_back(savingsPlansPurchaseRecommendationDetailsJsonList[savingsPlansPurchaseRecommendationDetailsIndex].AsObject());
@@ -139,7 +139,7 @@ JsonValue SavingsPlansPurchaseRecommendation::Jsonize() const
 
   if(m_savingsPlansPurchaseRecommendationDetailsHasBeenSet)
   {
-   Array<JsonValue> savingsPlansPurchaseRecommendationDetailsJsonList(m_savingsPlansPurchaseRecommendationDetails.size());
+   Aws::Utils::Array<JsonValue> savingsPlansPurchaseRecommendationDetailsJsonList(m_savingsPlansPurchaseRecommendationDetails.size());
    for(unsigned savingsPlansPurchaseRecommendationDetailsIndex = 0; savingsPlansPurchaseRecommendationDetailsIndex < savingsPlansPurchaseRecommendationDetailsJsonList.GetLength(); ++savingsPlansPurchaseRecommendationDetailsIndex)
    {
      savingsPlansPurchaseRecommendationDetailsJsonList[savingsPlansPurchaseRecommendationDetailsIndex].AsObject(m_savingsPlansPurchaseRecommendationDetails[savingsPlansPurchaseRecommendationDetailsIndex].Jsonize());

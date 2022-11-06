@@ -25,7 +25,7 @@ Aws::String BatchCreateRoomMembershipRequest::SerializePayload() const
 
   if(m_membershipItemListHasBeenSet)
   {
-   Array<JsonValue> membershipItemListJsonList(m_membershipItemList.size());
+   Aws::Utils::Array<JsonValue> membershipItemListJsonList(m_membershipItemList.size());
    for(unsigned membershipItemListIndex = 0; membershipItemListIndex < membershipItemListJsonList.GetLength(); ++membershipItemListIndex)
    {
      membershipItemListJsonList[membershipItemListIndex].AsObject(m_membershipItemList[membershipItemListIndex].Jsonize());

@@ -156,7 +156,7 @@ ClusterConfiguration& ClusterConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Shards"))
   {
-    Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
+    Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
     for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
     {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
@@ -251,7 +251,7 @@ JsonValue ClusterConfiguration::Jsonize() const
 
   if(m_shardsHasBeenSet)
   {
-   Array<JsonValue> shardsJsonList(m_shards.size());
+   Aws::Utils::Array<JsonValue> shardsJsonList(m_shards.size());
    for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
    {
      shardsJsonList[shardsIndex].AsObject(m_shards[shardsIndex].Jsonize());

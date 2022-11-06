@@ -36,7 +36,7 @@ ListResourcesResult& ListResourcesResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("ResourceDescriptions"))
   {
-    Array<JsonView> resourceDescriptionsJsonList = jsonValue.GetArray("ResourceDescriptions");
+    Aws::Utils::Array<JsonView> resourceDescriptionsJsonList = jsonValue.GetArray("ResourceDescriptions");
     for(unsigned resourceDescriptionsIndex = 0; resourceDescriptionsIndex < resourceDescriptionsJsonList.GetLength(); ++resourceDescriptionsIndex)
     {
       m_resourceDescriptions.push_back(resourceDescriptionsJsonList[resourceDescriptionsIndex].AsObject());

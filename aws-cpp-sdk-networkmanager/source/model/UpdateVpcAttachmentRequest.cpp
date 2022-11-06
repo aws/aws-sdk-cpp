@@ -26,7 +26,7 @@ Aws::String UpdateVpcAttachmentRequest::SerializePayload() const
 
   if(m_addSubnetArnsHasBeenSet)
   {
-   Array<JsonValue> addSubnetArnsJsonList(m_addSubnetArns.size());
+   Aws::Utils::Array<JsonValue> addSubnetArnsJsonList(m_addSubnetArns.size());
    for(unsigned addSubnetArnsIndex = 0; addSubnetArnsIndex < addSubnetArnsJsonList.GetLength(); ++addSubnetArnsIndex)
    {
      addSubnetArnsJsonList[addSubnetArnsIndex].AsString(m_addSubnetArns[addSubnetArnsIndex]);
@@ -37,7 +37,7 @@ Aws::String UpdateVpcAttachmentRequest::SerializePayload() const
 
   if(m_removeSubnetArnsHasBeenSet)
   {
-   Array<JsonValue> removeSubnetArnsJsonList(m_removeSubnetArns.size());
+   Aws::Utils::Array<JsonValue> removeSubnetArnsJsonList(m_removeSubnetArns.size());
    for(unsigned removeSubnetArnsIndex = 0; removeSubnetArnsIndex < removeSubnetArnsJsonList.GetLength(); ++removeSubnetArnsIndex)
    {
      removeSubnetArnsJsonList[removeSubnetArnsIndex].AsString(m_removeSubnetArns[removeSubnetArnsIndex]);

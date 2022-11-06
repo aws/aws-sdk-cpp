@@ -38,7 +38,7 @@ EndpointUser& EndpointUser::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> userAttributesJsonMap = jsonValue.GetObject("UserAttributes").GetAllObjects();
     for(auto& userAttributesItem : userAttributesJsonMap)
     {
-      Array<JsonView> listOf__stringJsonList = userAttributesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOf__stringJsonList = userAttributesItem.second.AsArray();
       Aws::Vector<Aws::String> listOf__stringList;
       listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
       for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)
@@ -69,7 +69,7 @@ JsonValue EndpointUser::Jsonize() const
    JsonValue userAttributesJsonMap;
    for(auto& userAttributesItem : m_userAttributes)
    {
-     Array<JsonValue> listOf__stringJsonList(userAttributesItem.second.size());
+     Aws::Utils::Array<JsonValue> listOf__stringJsonList(userAttributesItem.second.size());
      for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)
      {
        listOf__stringJsonList[listOf__stringIndex].AsString(userAttributesItem.second[listOf__stringIndex]);

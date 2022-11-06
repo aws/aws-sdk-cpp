@@ -36,7 +36,7 @@ Aws::String GetEntitlementsRequest::SerializePayload() const
    JsonValue filterJsonMap;
    for(auto& filterItem : m_filter)
    {
-     Array<JsonValue> filterValueListJsonList(filterItem.second.size());
+     Aws::Utils::Array<JsonValue> filterValueListJsonList(filterItem.second.size());
      for(unsigned filterValueListIndex = 0; filterValueListIndex < filterValueListJsonList.GetLength(); ++filterValueListIndex)
      {
        filterValueListJsonList[filterValueListIndex].AsString(filterItem.second[filterValueListIndex]);

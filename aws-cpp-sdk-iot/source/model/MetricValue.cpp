@@ -54,7 +54,7 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("cidrs"))
   {
-    Array<JsonView> cidrsJsonList = jsonValue.GetArray("cidrs");
+    Aws::Utils::Array<JsonView> cidrsJsonList = jsonValue.GetArray("cidrs");
     for(unsigned cidrsIndex = 0; cidrsIndex < cidrsJsonList.GetLength(); ++cidrsIndex)
     {
       m_cidrs.push_back(cidrsJsonList[cidrsIndex].AsString());
@@ -64,7 +64,7 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ports"))
   {
-    Array<JsonView> portsJsonList = jsonValue.GetArray("ports");
+    Aws::Utils::Array<JsonView> portsJsonList = jsonValue.GetArray("ports");
     for(unsigned portsIndex = 0; portsIndex < portsJsonList.GetLength(); ++portsIndex)
     {
       m_ports.push_back(portsJsonList[portsIndex].AsInteger());
@@ -81,7 +81,7 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("numbers"))
   {
-    Array<JsonView> numbersJsonList = jsonValue.GetArray("numbers");
+    Aws::Utils::Array<JsonView> numbersJsonList = jsonValue.GetArray("numbers");
     for(unsigned numbersIndex = 0; numbersIndex < numbersJsonList.GetLength(); ++numbersIndex)
     {
       m_numbers.push_back(numbersJsonList[numbersIndex].AsDouble());
@@ -91,7 +91,7 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("strings"))
   {
-    Array<JsonView> stringsJsonList = jsonValue.GetArray("strings");
+    Aws::Utils::Array<JsonView> stringsJsonList = jsonValue.GetArray("strings");
     for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
     {
       m_strings.push_back(stringsJsonList[stringsIndex].AsString());
@@ -114,7 +114,7 @@ JsonValue MetricValue::Jsonize() const
 
   if(m_cidrsHasBeenSet)
   {
-   Array<JsonValue> cidrsJsonList(m_cidrs.size());
+   Aws::Utils::Array<JsonValue> cidrsJsonList(m_cidrs.size());
    for(unsigned cidrsIndex = 0; cidrsIndex < cidrsJsonList.GetLength(); ++cidrsIndex)
    {
      cidrsJsonList[cidrsIndex].AsString(m_cidrs[cidrsIndex]);
@@ -125,7 +125,7 @@ JsonValue MetricValue::Jsonize() const
 
   if(m_portsHasBeenSet)
   {
-   Array<JsonValue> portsJsonList(m_ports.size());
+   Aws::Utils::Array<JsonValue> portsJsonList(m_ports.size());
    for(unsigned portsIndex = 0; portsIndex < portsJsonList.GetLength(); ++portsIndex)
    {
      portsJsonList[portsIndex].AsInteger(m_ports[portsIndex]);
@@ -142,7 +142,7 @@ JsonValue MetricValue::Jsonize() const
 
   if(m_numbersHasBeenSet)
   {
-   Array<JsonValue> numbersJsonList(m_numbers.size());
+   Aws::Utils::Array<JsonValue> numbersJsonList(m_numbers.size());
    for(unsigned numbersIndex = 0; numbersIndex < numbersJsonList.GetLength(); ++numbersIndex)
    {
      numbersJsonList[numbersIndex].AsDouble(m_numbers[numbersIndex]);
@@ -153,7 +153,7 @@ JsonValue MetricValue::Jsonize() const
 
   if(m_stringsHasBeenSet)
   {
-   Array<JsonValue> stringsJsonList(m_strings.size());
+   Aws::Utils::Array<JsonValue> stringsJsonList(m_strings.size());
    for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
    {
      stringsJsonList[stringsIndex].AsString(m_strings[stringsIndex]);

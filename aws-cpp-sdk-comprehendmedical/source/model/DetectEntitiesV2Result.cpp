@@ -30,7 +30,7 @@ DetectEntitiesV2Result& DetectEntitiesV2Result::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Entities"))
   {
-    Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
+    Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
     for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
@@ -39,7 +39,7 @@ DetectEntitiesV2Result& DetectEntitiesV2Result::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("UnmappedAttributes"))
   {
-    Array<JsonView> unmappedAttributesJsonList = jsonValue.GetArray("UnmappedAttributes");
+    Aws::Utils::Array<JsonView> unmappedAttributesJsonList = jsonValue.GetArray("UnmappedAttributes");
     for(unsigned unmappedAttributesIndex = 0; unmappedAttributesIndex < unmappedAttributesJsonList.GetLength(); ++unmappedAttributesIndex)
     {
       m_unmappedAttributes.push_back(unmappedAttributesJsonList[unmappedAttributesIndex].AsObject());

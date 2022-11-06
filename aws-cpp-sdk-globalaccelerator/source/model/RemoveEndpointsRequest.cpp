@@ -24,7 +24,7 @@ Aws::String RemoveEndpointsRequest::SerializePayload() const
 
   if(m_endpointIdentifiersHasBeenSet)
   {
-   Array<JsonValue> endpointIdentifiersJsonList(m_endpointIdentifiers.size());
+   Aws::Utils::Array<JsonValue> endpointIdentifiersJsonList(m_endpointIdentifiers.size());
    for(unsigned endpointIdentifiersIndex = 0; endpointIdentifiersIndex < endpointIdentifiersJsonList.GetLength(); ++endpointIdentifiersIndex)
    {
      endpointIdentifiersJsonList[endpointIdentifiersIndex].AsObject(m_endpointIdentifiers[endpointIdentifiersIndex].Jsonize());

@@ -30,7 +30,7 @@ ListSupportedPhoneNumberCountriesResult& ListSupportedPhoneNumberCountriesResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PhoneNumberCountries"))
   {
-    Array<JsonView> phoneNumberCountriesJsonList = jsonValue.GetArray("PhoneNumberCountries");
+    Aws::Utils::Array<JsonView> phoneNumberCountriesJsonList = jsonValue.GetArray("PhoneNumberCountries");
     for(unsigned phoneNumberCountriesIndex = 0; phoneNumberCountriesIndex < phoneNumberCountriesJsonList.GetLength(); ++phoneNumberCountriesIndex)
     {
       m_phoneNumberCountries.push_back(phoneNumberCountriesJsonList[phoneNumberCountriesIndex].AsObject());

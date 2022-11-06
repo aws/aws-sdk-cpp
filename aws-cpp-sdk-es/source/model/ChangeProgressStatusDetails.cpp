@@ -70,7 +70,7 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("PendingProperties"))
   {
-    Array<JsonView> pendingPropertiesJsonList = jsonValue.GetArray("PendingProperties");
+    Aws::Utils::Array<JsonView> pendingPropertiesJsonList = jsonValue.GetArray("PendingProperties");
     for(unsigned pendingPropertiesIndex = 0; pendingPropertiesIndex < pendingPropertiesJsonList.GetLength(); ++pendingPropertiesIndex)
     {
       m_pendingProperties.push_back(pendingPropertiesJsonList[pendingPropertiesIndex].AsString());
@@ -80,7 +80,7 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("CompletedProperties"))
   {
-    Array<JsonView> completedPropertiesJsonList = jsonValue.GetArray("CompletedProperties");
+    Aws::Utils::Array<JsonView> completedPropertiesJsonList = jsonValue.GetArray("CompletedProperties");
     for(unsigned completedPropertiesIndex = 0; completedPropertiesIndex < completedPropertiesJsonList.GetLength(); ++completedPropertiesIndex)
     {
       m_completedProperties.push_back(completedPropertiesJsonList[completedPropertiesIndex].AsString());
@@ -97,7 +97,7 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("ChangeProgressStages"))
   {
-    Array<JsonView> changeProgressStagesJsonList = jsonValue.GetArray("ChangeProgressStages");
+    Aws::Utils::Array<JsonView> changeProgressStagesJsonList = jsonValue.GetArray("ChangeProgressStages");
     for(unsigned changeProgressStagesIndex = 0; changeProgressStagesIndex < changeProgressStagesJsonList.GetLength(); ++changeProgressStagesIndex)
     {
       m_changeProgressStages.push_back(changeProgressStagesJsonList[changeProgressStagesIndex].AsObject());
@@ -130,7 +130,7 @@ JsonValue ChangeProgressStatusDetails::Jsonize() const
 
   if(m_pendingPropertiesHasBeenSet)
   {
-   Array<JsonValue> pendingPropertiesJsonList(m_pendingProperties.size());
+   Aws::Utils::Array<JsonValue> pendingPropertiesJsonList(m_pendingProperties.size());
    for(unsigned pendingPropertiesIndex = 0; pendingPropertiesIndex < pendingPropertiesJsonList.GetLength(); ++pendingPropertiesIndex)
    {
      pendingPropertiesJsonList[pendingPropertiesIndex].AsString(m_pendingProperties[pendingPropertiesIndex]);
@@ -141,7 +141,7 @@ JsonValue ChangeProgressStatusDetails::Jsonize() const
 
   if(m_completedPropertiesHasBeenSet)
   {
-   Array<JsonValue> completedPropertiesJsonList(m_completedProperties.size());
+   Aws::Utils::Array<JsonValue> completedPropertiesJsonList(m_completedProperties.size());
    for(unsigned completedPropertiesIndex = 0; completedPropertiesIndex < completedPropertiesJsonList.GetLength(); ++completedPropertiesIndex)
    {
      completedPropertiesJsonList[completedPropertiesIndex].AsString(m_completedProperties[completedPropertiesIndex]);
@@ -158,7 +158,7 @@ JsonValue ChangeProgressStatusDetails::Jsonize() const
 
   if(m_changeProgressStagesHasBeenSet)
   {
-   Array<JsonValue> changeProgressStagesJsonList(m_changeProgressStages.size());
+   Aws::Utils::Array<JsonValue> changeProgressStagesJsonList(m_changeProgressStages.size());
    for(unsigned changeProgressStagesIndex = 0; changeProgressStagesIndex < changeProgressStagesJsonList.GetLength(); ++changeProgressStagesIndex)
    {
      changeProgressStagesJsonList[changeProgressStagesIndex].AsObject(m_changeProgressStages[changeProgressStagesIndex].Jsonize());

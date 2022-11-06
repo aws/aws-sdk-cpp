@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/license-manager/LicenseManagerErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/license-manager/LicenseManagerEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -97,6 +99,10 @@ namespace Aws
 
   namespace LicenseManager
   {
+    using LicenseManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LicenseManagerEndpointProviderBase = Aws::LicenseManager::Endpoint::LicenseManagerEndpointProviderBase;
+    using LicenseManagerEndpointProvider = Aws::LicenseManager::Endpoint::LicenseManagerEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in LicenseManagerClient header */

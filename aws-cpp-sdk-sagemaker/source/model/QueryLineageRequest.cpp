@@ -33,7 +33,7 @@ Aws::String QueryLineageRequest::SerializePayload() const
 
   if(m_startArnsHasBeenSet)
   {
-   Array<JsonValue> startArnsJsonList(m_startArns.size());
+   Aws::Utils::Array<JsonValue> startArnsJsonList(m_startArns.size());
    for(unsigned startArnsIndex = 0; startArnsIndex < startArnsJsonList.GetLength(); ++startArnsIndex)
    {
      startArnsJsonList[startArnsIndex].AsString(m_startArns[startArnsIndex]);

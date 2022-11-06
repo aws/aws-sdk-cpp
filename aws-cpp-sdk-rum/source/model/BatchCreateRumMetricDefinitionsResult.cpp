@@ -30,7 +30,7 @@ BatchCreateRumMetricDefinitionsResult& BatchCreateRumMetricDefinitionsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchCreateRumMetricDefinitionsResult& BatchCreateRumMetricDefinitionsResult::op
 
   if(jsonValue.ValueExists("MetricDefinitions"))
   {
-    Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
+    Aws::Utils::Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
     for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
     {
       m_metricDefinitions.push_back(metricDefinitionsJsonList[metricDefinitionsIndex].AsObject());

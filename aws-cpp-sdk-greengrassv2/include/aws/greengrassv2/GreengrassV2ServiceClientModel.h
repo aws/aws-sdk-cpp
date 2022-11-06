@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/greengrassv2/GreengrassV2Errors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/greengrassv2/GreengrassV2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -76,6 +78,10 @@ namespace Aws
 
   namespace GreengrassV2
   {
+    using GreengrassV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GreengrassV2EndpointProviderBase = Aws::GreengrassV2::Endpoint::GreengrassV2EndpointProviderBase;
+    using GreengrassV2EndpointProvider = Aws::GreengrassV2::Endpoint::GreengrassV2EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in GreengrassV2Client header */

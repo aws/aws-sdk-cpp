@@ -53,7 +53,7 @@ GeoSpatialColumnGroup& GeoSpatialColumnGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Columns"))
   {
-    Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
+    Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
     for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
     {
       m_columns.push_back(columnsJsonList[columnsIndex].AsString());
@@ -81,7 +81,7 @@ JsonValue GeoSpatialColumnGroup::Jsonize() const
 
   if(m_columnsHasBeenSet)
   {
-   Array<JsonValue> columnsJsonList(m_columns.size());
+   Aws::Utils::Array<JsonValue> columnsJsonList(m_columns.size());
    for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
    {
      columnsJsonList[columnsIndex].AsString(m_columns[columnsIndex]);

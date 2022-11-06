@@ -24,7 +24,7 @@ Aws::String PutVoiceConnectorTerminationCredentialsRequest::SerializePayload() c
 
   if(m_credentialsHasBeenSet)
   {
-   Array<JsonValue> credentialsJsonList(m_credentials.size());
+   Aws::Utils::Array<JsonValue> credentialsJsonList(m_credentials.size());
    for(unsigned credentialsIndex = 0; credentialsIndex < credentialsJsonList.GetLength(); ++credentialsIndex)
    {
      credentialsJsonList[credentialsIndex].AsObject(m_credentials[credentialsIndex].Jsonize());

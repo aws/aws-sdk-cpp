@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/waf/WAFErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/waf/WAFEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -126,6 +128,10 @@ namespace Aws
 
   namespace WAF
   {
+    using WAFClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WAFEndpointProviderBase = Aws::WAF::Endpoint::WAFEndpointProviderBase;
+    using WAFEndpointProvider = Aws::WAF::Endpoint::WAFEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in WAFClient header */

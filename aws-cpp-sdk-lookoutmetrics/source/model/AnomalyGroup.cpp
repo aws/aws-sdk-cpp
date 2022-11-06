@@ -80,7 +80,7 @@ AnomalyGroup& AnomalyGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MetricLevelImpactList"))
   {
-    Array<JsonView> metricLevelImpactListJsonList = jsonValue.GetArray("MetricLevelImpactList");
+    Aws::Utils::Array<JsonView> metricLevelImpactListJsonList = jsonValue.GetArray("MetricLevelImpactList");
     for(unsigned metricLevelImpactListIndex = 0; metricLevelImpactListIndex < metricLevelImpactListJsonList.GetLength(); ++metricLevelImpactListIndex)
     {
       m_metricLevelImpactList.push_back(metricLevelImpactListJsonList[metricLevelImpactListIndex].AsObject());
@@ -127,7 +127,7 @@ JsonValue AnomalyGroup::Jsonize() const
 
   if(m_metricLevelImpactListHasBeenSet)
   {
-   Array<JsonValue> metricLevelImpactListJsonList(m_metricLevelImpactList.size());
+   Aws::Utils::Array<JsonValue> metricLevelImpactListJsonList(m_metricLevelImpactList.size());
    for(unsigned metricLevelImpactListIndex = 0; metricLevelImpactListIndex < metricLevelImpactListJsonList.GetLength(); ++metricLevelImpactListIndex)
    {
      metricLevelImpactListJsonList[metricLevelImpactListIndex].AsObject(m_metricLevelImpactList[metricLevelImpactListIndex].Jsonize());

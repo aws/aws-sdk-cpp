@@ -48,7 +48,7 @@ Aws::String UpdateEndpointRequest::SerializePayload() const
 
   if(m_excludeRetainedVariantPropertiesHasBeenSet)
   {
-   Array<JsonValue> excludeRetainedVariantPropertiesJsonList(m_excludeRetainedVariantProperties.size());
+   Aws::Utils::Array<JsonValue> excludeRetainedVariantPropertiesJsonList(m_excludeRetainedVariantProperties.size());
    for(unsigned excludeRetainedVariantPropertiesIndex = 0; excludeRetainedVariantPropertiesIndex < excludeRetainedVariantPropertiesJsonList.GetLength(); ++excludeRetainedVariantPropertiesIndex)
    {
      excludeRetainedVariantPropertiesJsonList[excludeRetainedVariantPropertiesIndex].AsObject(m_excludeRetainedVariantProperties[excludeRetainedVariantPropertiesIndex].Jsonize());

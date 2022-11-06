@@ -80,7 +80,7 @@ DataReplicationInfo& DataReplicationInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("replicatedDisks"))
   {
-    Array<JsonView> replicatedDisksJsonList = jsonValue.GetArray("replicatedDisks");
+    Aws::Utils::Array<JsonView> replicatedDisksJsonList = jsonValue.GetArray("replicatedDisks");
     for(unsigned replicatedDisksIndex = 0; replicatedDisksIndex < replicatedDisksJsonList.GetLength(); ++replicatedDisksIndex)
     {
       m_replicatedDisks.push_back(replicatedDisksJsonList[replicatedDisksIndex].AsObject());
@@ -126,7 +126,7 @@ JsonValue DataReplicationInfo::Jsonize() const
 
   if(m_replicatedDisksHasBeenSet)
   {
-   Array<JsonValue> replicatedDisksJsonList(m_replicatedDisks.size());
+   Aws::Utils::Array<JsonValue> replicatedDisksJsonList(m_replicatedDisks.size());
    for(unsigned replicatedDisksIndex = 0; replicatedDisksIndex < replicatedDisksJsonList.GetLength(); ++replicatedDisksIndex)
    {
      replicatedDisksJsonList[replicatedDisksIndex].AsObject(m_replicatedDisks[replicatedDisksIndex].Jsonize());

@@ -30,7 +30,7 @@ DetectSyntaxResult& DetectSyntaxResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SyntaxTokens"))
   {
-    Array<JsonView> syntaxTokensJsonList = jsonValue.GetArray("SyntaxTokens");
+    Aws::Utils::Array<JsonView> syntaxTokensJsonList = jsonValue.GetArray("SyntaxTokens");
     for(unsigned syntaxTokensIndex = 0; syntaxTokensIndex < syntaxTokensJsonList.GetLength(); ++syntaxTokensIndex)
     {
       m_syntaxTokens.push_back(syntaxTokensJsonList[syntaxTokensIndex].AsObject());

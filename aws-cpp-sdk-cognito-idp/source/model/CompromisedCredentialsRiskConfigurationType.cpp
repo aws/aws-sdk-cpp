@@ -35,7 +35,7 @@ CompromisedCredentialsRiskConfigurationType& CompromisedCredentialsRiskConfigura
 {
   if(jsonValue.ValueExists("EventFilter"))
   {
-    Array<JsonView> eventFilterJsonList = jsonValue.GetArray("EventFilter");
+    Aws::Utils::Array<JsonView> eventFilterJsonList = jsonValue.GetArray("EventFilter");
     for(unsigned eventFilterIndex = 0; eventFilterIndex < eventFilterJsonList.GetLength(); ++eventFilterIndex)
     {
       m_eventFilter.push_back(EventFilterTypeMapper::GetEventFilterTypeForName(eventFilterJsonList[eventFilterIndex].AsString()));
@@ -59,7 +59,7 @@ JsonValue CompromisedCredentialsRiskConfigurationType::Jsonize() const
 
   if(m_eventFilterHasBeenSet)
   {
-   Array<JsonValue> eventFilterJsonList(m_eventFilter.size());
+   Aws::Utils::Array<JsonValue> eventFilterJsonList(m_eventFilter.size());
    for(unsigned eventFilterIndex = 0; eventFilterIndex < eventFilterJsonList.GetLength(); ++eventFilterIndex)
    {
      eventFilterJsonList[eventFilterIndex].AsString(EventFilterTypeMapper::GetNameForEventFilterType(m_eventFilter[eventFilterIndex]));

@@ -78,7 +78,7 @@ BundleDetails& BundleDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("availablePlatforms"))
   {
-    Array<JsonView> availablePlatformsJsonList = jsonValue.GetArray("availablePlatforms");
+    Aws::Utils::Array<JsonView> availablePlatformsJsonList = jsonValue.GetArray("availablePlatforms");
     for(unsigned availablePlatformsIndex = 0; availablePlatformsIndex < availablePlatformsJsonList.GetLength(); ++availablePlatformsIndex)
     {
       m_availablePlatforms.push_back(PlatformMapper::GetPlatformForName(availablePlatformsJsonList[availablePlatformsIndex].AsString()));
@@ -125,7 +125,7 @@ JsonValue BundleDetails::Jsonize() const
 
   if(m_availablePlatformsHasBeenSet)
   {
-   Array<JsonValue> availablePlatformsJsonList(m_availablePlatforms.size());
+   Aws::Utils::Array<JsonValue> availablePlatformsJsonList(m_availablePlatforms.size());
    for(unsigned availablePlatformsIndex = 0; availablePlatformsIndex < availablePlatformsJsonList.GetLength(); ++availablePlatformsIndex)
    {
      availablePlatformsJsonList[availablePlatformsIndex].AsString(PlatformMapper::GetNameForPlatform(m_availablePlatforms[availablePlatformsIndex]));

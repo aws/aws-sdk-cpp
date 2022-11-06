@@ -56,7 +56,7 @@ Aws::String CreateWorkloadRequest::SerializePayload() const
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
@@ -67,7 +67,7 @@ Aws::String CreateWorkloadRequest::SerializePayload() const
 
   if(m_awsRegionsHasBeenSet)
   {
-   Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
+   Aws::Utils::Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
    for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
    {
      awsRegionsJsonList[awsRegionsIndex].AsString(m_awsRegions[awsRegionsIndex]);
@@ -78,7 +78,7 @@ Aws::String CreateWorkloadRequest::SerializePayload() const
 
   if(m_nonAwsRegionsHasBeenSet)
   {
-   Array<JsonValue> nonAwsRegionsJsonList(m_nonAwsRegions.size());
+   Aws::Utils::Array<JsonValue> nonAwsRegionsJsonList(m_nonAwsRegions.size());
    for(unsigned nonAwsRegionsIndex = 0; nonAwsRegionsIndex < nonAwsRegionsJsonList.GetLength(); ++nonAwsRegionsIndex)
    {
      nonAwsRegionsJsonList[nonAwsRegionsIndex].AsString(m_nonAwsRegions[nonAwsRegionsIndex]);
@@ -89,7 +89,7 @@ Aws::String CreateWorkloadRequest::SerializePayload() const
 
   if(m_pillarPrioritiesHasBeenSet)
   {
-   Array<JsonValue> pillarPrioritiesJsonList(m_pillarPriorities.size());
+   Aws::Utils::Array<JsonValue> pillarPrioritiesJsonList(m_pillarPriorities.size());
    for(unsigned pillarPrioritiesIndex = 0; pillarPrioritiesIndex < pillarPrioritiesJsonList.GetLength(); ++pillarPrioritiesIndex)
    {
      pillarPrioritiesJsonList[pillarPrioritiesIndex].AsString(m_pillarPriorities[pillarPrioritiesIndex]);
@@ -124,7 +124,7 @@ Aws::String CreateWorkloadRequest::SerializePayload() const
 
   if(m_lensesHasBeenSet)
   {
-   Array<JsonValue> lensesJsonList(m_lenses.size());
+   Aws::Utils::Array<JsonValue> lensesJsonList(m_lenses.size());
    for(unsigned lensesIndex = 0; lensesIndex < lensesJsonList.GetLength(); ++lensesIndex)
    {
      lensesJsonList[lensesIndex].AsString(m_lenses[lensesIndex]);

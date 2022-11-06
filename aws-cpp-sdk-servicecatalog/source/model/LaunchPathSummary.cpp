@@ -46,7 +46,7 @@ LaunchPathSummary& LaunchPathSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ConstraintSummaries"))
   {
-    Array<JsonView> constraintSummariesJsonList = jsonValue.GetArray("ConstraintSummaries");
+    Aws::Utils::Array<JsonView> constraintSummariesJsonList = jsonValue.GetArray("ConstraintSummaries");
     for(unsigned constraintSummariesIndex = 0; constraintSummariesIndex < constraintSummariesJsonList.GetLength(); ++constraintSummariesIndex)
     {
       m_constraintSummaries.push_back(constraintSummariesJsonList[constraintSummariesIndex].AsObject());
@@ -56,7 +56,7 @@ LaunchPathSummary& LaunchPathSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue LaunchPathSummary::Jsonize() const
 
   if(m_constraintSummariesHasBeenSet)
   {
-   Array<JsonValue> constraintSummariesJsonList(m_constraintSummaries.size());
+   Aws::Utils::Array<JsonValue> constraintSummariesJsonList(m_constraintSummaries.size());
    for(unsigned constraintSummariesIndex = 0; constraintSummariesIndex < constraintSummariesJsonList.GetLength(); ++constraintSummariesIndex)
    {
      constraintSummariesJsonList[constraintSummariesIndex].AsObject(m_constraintSummaries[constraintSummariesIndex].Jsonize());
@@ -97,7 +97,7 @@ JsonValue LaunchPathSummary::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

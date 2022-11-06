@@ -44,7 +44,7 @@ PhysicalConnectionRequirements& PhysicalConnectionRequirements::operator =(JsonV
 
   if(jsonValue.ValueExists("SecurityGroupIdList"))
   {
-    Array<JsonView> securityGroupIdListJsonList = jsonValue.GetArray("SecurityGroupIdList");
+    Aws::Utils::Array<JsonView> securityGroupIdListJsonList = jsonValue.GetArray("SecurityGroupIdList");
     for(unsigned securityGroupIdListIndex = 0; securityGroupIdListIndex < securityGroupIdListJsonList.GetLength(); ++securityGroupIdListIndex)
     {
       m_securityGroupIdList.push_back(securityGroupIdListJsonList[securityGroupIdListIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue PhysicalConnectionRequirements::Jsonize() const
 
   if(m_securityGroupIdListHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdListJsonList(m_securityGroupIdList.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdListJsonList(m_securityGroupIdList.size());
    for(unsigned securityGroupIdListIndex = 0; securityGroupIdListIndex < securityGroupIdListJsonList.GetLength(); ++securityGroupIdListIndex)
    {
      securityGroupIdListJsonList[securityGroupIdListIndex].AsString(m_securityGroupIdList[securityGroupIdListIndex]);

@@ -45,7 +45,7 @@ Aws::String UpdateFeatureMetadataRequest::SerializePayload() const
 
   if(m_parameterAdditionsHasBeenSet)
   {
-   Array<JsonValue> parameterAdditionsJsonList(m_parameterAdditions.size());
+   Aws::Utils::Array<JsonValue> parameterAdditionsJsonList(m_parameterAdditions.size());
    for(unsigned parameterAdditionsIndex = 0; parameterAdditionsIndex < parameterAdditionsJsonList.GetLength(); ++parameterAdditionsIndex)
    {
      parameterAdditionsJsonList[parameterAdditionsIndex].AsObject(m_parameterAdditions[parameterAdditionsIndex].Jsonize());
@@ -56,7 +56,7 @@ Aws::String UpdateFeatureMetadataRequest::SerializePayload() const
 
   if(m_parameterRemovalsHasBeenSet)
   {
-   Array<JsonValue> parameterRemovalsJsonList(m_parameterRemovals.size());
+   Aws::Utils::Array<JsonValue> parameterRemovalsJsonList(m_parameterRemovals.size());
    for(unsigned parameterRemovalsIndex = 0; parameterRemovalsIndex < parameterRemovalsJsonList.GetLength(); ++parameterRemovalsIndex)
    {
      parameterRemovalsJsonList[parameterRemovalsIndex].AsString(m_parameterRemovals[parameterRemovalsIndex]);

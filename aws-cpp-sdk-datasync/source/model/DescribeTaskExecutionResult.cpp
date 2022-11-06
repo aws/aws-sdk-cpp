@@ -62,7 +62,7 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("Excludes"))
   {
-    Array<JsonView> excludesJsonList = jsonValue.GetArray("Excludes");
+    Aws::Utils::Array<JsonView> excludesJsonList = jsonValue.GetArray("Excludes");
     for(unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex)
     {
       m_excludes.push_back(excludesJsonList[excludesIndex].AsObject());
@@ -71,7 +71,7 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("Includes"))
   {
-    Array<JsonView> includesJsonList = jsonValue.GetArray("Includes");
+    Aws::Utils::Array<JsonView> includesJsonList = jsonValue.GetArray("Includes");
     for(unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex)
     {
       m_includes.push_back(includesJsonList[includesIndex].AsObject());

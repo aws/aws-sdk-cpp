@@ -79,7 +79,7 @@ Aws::String UpdateProfileJobRequest::SerializePayload() const
 
   if(m_validationConfigurationsHasBeenSet)
   {
-   Array<JsonValue> validationConfigurationsJsonList(m_validationConfigurations.size());
+   Aws::Utils::Array<JsonValue> validationConfigurationsJsonList(m_validationConfigurations.size());
    for(unsigned validationConfigurationsIndex = 0; validationConfigurationsIndex < validationConfigurationsJsonList.GetLength(); ++validationConfigurationsIndex)
    {
      validationConfigurationsJsonList[validationConfigurationsIndex].AsObject(m_validationConfigurations[validationConfigurationsIndex].Jsonize());

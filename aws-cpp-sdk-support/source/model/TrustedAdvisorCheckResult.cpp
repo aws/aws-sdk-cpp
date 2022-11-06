@@ -78,7 +78,7 @@ TrustedAdvisorCheckResult& TrustedAdvisorCheckResult::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("flaggedResources"))
   {
-    Array<JsonView> flaggedResourcesJsonList = jsonValue.GetArray("flaggedResources");
+    Aws::Utils::Array<JsonView> flaggedResourcesJsonList = jsonValue.GetArray("flaggedResources");
     for(unsigned flaggedResourcesIndex = 0; flaggedResourcesIndex < flaggedResourcesJsonList.GetLength(); ++flaggedResourcesIndex)
     {
       m_flaggedResources.push_back(flaggedResourcesJsonList[flaggedResourcesIndex].AsObject());
@@ -125,7 +125,7 @@ JsonValue TrustedAdvisorCheckResult::Jsonize() const
 
   if(m_flaggedResourcesHasBeenSet)
   {
-   Array<JsonValue> flaggedResourcesJsonList(m_flaggedResources.size());
+   Aws::Utils::Array<JsonValue> flaggedResourcesJsonList(m_flaggedResources.size());
    for(unsigned flaggedResourcesIndex = 0; flaggedResourcesIndex < flaggedResourcesJsonList.GetLength(); ++flaggedResourcesIndex)
    {
      flaggedResourcesJsonList[flaggedResourcesIndex].AsObject(m_flaggedResources[flaggedResourcesIndex].Jsonize());

@@ -177,7 +177,7 @@ Finding& Finding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -187,7 +187,7 @@ Finding& Finding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("userAttributes"))
   {
-    Array<JsonView> userAttributesJsonList = jsonValue.GetArray("userAttributes");
+    Aws::Utils::Array<JsonView> userAttributesJsonList = jsonValue.GetArray("userAttributes");
     for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
     {
       m_userAttributes.push_back(userAttributesJsonList[userAttributesIndex].AsObject());
@@ -300,7 +300,7 @@ JsonValue Finding::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
@@ -311,7 +311,7 @@ JsonValue Finding::Jsonize() const
 
   if(m_userAttributesHasBeenSet)
   {
-   Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
+   Aws::Utils::Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
    for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
    {
      userAttributesJsonList[userAttributesIndex].AsObject(m_userAttributes[userAttributesIndex].Jsonize());

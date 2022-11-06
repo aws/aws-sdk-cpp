@@ -46,7 +46,7 @@ Compatibility& Compatibility::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("platformVersions"))
   {
-    Array<JsonView> platformVersionsJsonList = jsonValue.GetArray("platformVersions");
+    Aws::Utils::Array<JsonView> platformVersionsJsonList = jsonValue.GetArray("platformVersions");
     for(unsigned platformVersionsIndex = 0; platformVersionsIndex < platformVersionsJsonList.GetLength(); ++platformVersionsIndex)
     {
       m_platformVersions.push_back(platformVersionsJsonList[platformVersionsIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue Compatibility::Jsonize() const
 
   if(m_platformVersionsHasBeenSet)
   {
-   Array<JsonValue> platformVersionsJsonList(m_platformVersions.size());
+   Aws::Utils::Array<JsonValue> platformVersionsJsonList(m_platformVersions.size());
    for(unsigned platformVersionsIndex = 0; platformVersionsIndex < platformVersionsJsonList.GetLength(); ++platformVersionsIndex)
    {
      platformVersionsJsonList[platformVersionsIndex].AsString(m_platformVersions[platformVersionsIndex]);

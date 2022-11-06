@@ -24,7 +24,7 @@ Aws::String BatchGetCommitsRequest::SerializePayload() const
 
   if(m_commitIdsHasBeenSet)
   {
-   Array<JsonValue> commitIdsJsonList(m_commitIds.size());
+   Aws::Utils::Array<JsonValue> commitIdsJsonList(m_commitIds.size());
    for(unsigned commitIdsIndex = 0; commitIdsIndex < commitIdsJsonList.GetLength(); ++commitIdsIndex)
    {
      commitIdsJsonList[commitIdsIndex].AsString(m_commitIds[commitIdsIndex]);

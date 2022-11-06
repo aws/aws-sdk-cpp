@@ -44,7 +44,7 @@ Aws::String AssociateSubnetsRequest::SerializePayload() const
 
   if(m_subnetMappingsHasBeenSet)
   {
-   Array<JsonValue> subnetMappingsJsonList(m_subnetMappings.size());
+   Aws::Utils::Array<JsonValue> subnetMappingsJsonList(m_subnetMappings.size());
    for(unsigned subnetMappingsIndex = 0; subnetMappingsIndex < subnetMappingsJsonList.GetLength(); ++subnetMappingsIndex)
    {
      subnetMappingsJsonList[subnetMappingsIndex].AsObject(m_subnetMappings[subnetMappingsIndex].Jsonize());

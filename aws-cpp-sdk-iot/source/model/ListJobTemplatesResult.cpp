@@ -30,7 +30,7 @@ ListJobTemplatesResult& ListJobTemplatesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobTemplates"))
   {
-    Array<JsonView> jobTemplatesJsonList = jsonValue.GetArray("jobTemplates");
+    Aws::Utils::Array<JsonView> jobTemplatesJsonList = jsonValue.GetArray("jobTemplates");
     for(unsigned jobTemplatesIndex = 0; jobTemplatesIndex < jobTemplatesJsonList.GetLength(); ++jobTemplatesIndex)
     {
       m_jobTemplates.push_back(jobTemplatesJsonList[jobTemplatesIndex].AsObject());

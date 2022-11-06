@@ -202,7 +202,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Applications"))
   {
-    Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
+    Aws::Utils::Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
     for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
     {
       m_applications.push_back(applicationsJsonList[applicationsIndex].AsObject());
@@ -212,7 +212,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -243,7 +243,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
@@ -323,7 +323,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlacementGroups"))
   {
-    Array<JsonView> placementGroupsJsonList = jsonValue.GetArray("PlacementGroups");
+    Aws::Utils::Array<JsonView> placementGroupsJsonList = jsonValue.GetArray("PlacementGroups");
     for(unsigned placementGroupsIndex = 0; placementGroupsIndex < placementGroupsJsonList.GetLength(); ++placementGroupsIndex)
     {
       m_placementGroups.push_back(placementGroupsJsonList[placementGroupsIndex].AsObject());
@@ -424,7 +424,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_applicationsHasBeenSet)
   {
-   Array<JsonValue> applicationsJsonList(m_applications.size());
+   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
    for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
    {
      applicationsJsonList[applicationsIndex].AsObject(m_applications[applicationsIndex].Jsonize());
@@ -435,7 +435,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -464,7 +464,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_configurationsHasBeenSet)
   {
-   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
    {
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
@@ -533,7 +533,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_placementGroupsHasBeenSet)
   {
-   Array<JsonValue> placementGroupsJsonList(m_placementGroups.size());
+   Aws::Utils::Array<JsonValue> placementGroupsJsonList(m_placementGroups.size());
    for(unsigned placementGroupsIndex = 0; placementGroupsIndex < placementGroupsJsonList.GetLength(); ++placementGroupsIndex)
    {
      placementGroupsJsonList[placementGroupsIndex].AsObject(m_placementGroups[placementGroupsIndex].Jsonize());

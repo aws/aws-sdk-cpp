@@ -30,7 +30,7 @@ BatchStopResult& BatchStopResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("failed"))
   {
-    Array<JsonView> failedJsonList = jsonValue.GetArray("failed");
+    Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("failed");
     for(unsigned failedIndex = 0; failedIndex < failedJsonList.GetLength(); ++failedIndex)
     {
       m_failed.push_back(failedJsonList[failedIndex].AsObject());
@@ -39,7 +39,7 @@ BatchStopResult& BatchStopResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("successful"))
   {
-    Array<JsonView> successfulJsonList = jsonValue.GetArray("successful");
+    Aws::Utils::Array<JsonView> successfulJsonList = jsonValue.GetArray("successful");
     for(unsigned successfulIndex = 0; successfulIndex < successfulJsonList.GetLength(); ++successfulIndex)
     {
       m_successful.push_back(successfulJsonList[successfulIndex].AsObject());

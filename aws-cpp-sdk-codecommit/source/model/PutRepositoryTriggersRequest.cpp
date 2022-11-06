@@ -30,7 +30,7 @@ Aws::String PutRepositoryTriggersRequest::SerializePayload() const
 
   if(m_triggersHasBeenSet)
   {
-   Array<JsonValue> triggersJsonList(m_triggers.size());
+   Aws::Utils::Array<JsonValue> triggersJsonList(m_triggers.size());
    for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
    {
      triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());

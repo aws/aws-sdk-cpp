@@ -30,7 +30,7 @@ ListDevicesResult& ListDevicesResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeviceSummaries"))
   {
-    Array<JsonView> deviceSummariesJsonList = jsonValue.GetArray("DeviceSummaries");
+    Aws::Utils::Array<JsonView> deviceSummariesJsonList = jsonValue.GetArray("DeviceSummaries");
     for(unsigned deviceSummariesIndex = 0; deviceSummariesIndex < deviceSummariesJsonList.GetLength(); ++deviceSummariesIndex)
     {
       m_deviceSummaries.push_back(deviceSummariesJsonList[deviceSummariesIndex].AsObject());

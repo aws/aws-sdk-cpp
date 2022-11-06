@@ -36,7 +36,7 @@ ListPackagingConfigurationsResult& ListPackagingConfigurationsResult::operator =
 
   if(jsonValue.ValueExists("packagingConfigurations"))
   {
-    Array<JsonView> packagingConfigurationsJsonList = jsonValue.GetArray("packagingConfigurations");
+    Aws::Utils::Array<JsonView> packagingConfigurationsJsonList = jsonValue.GetArray("packagingConfigurations");
     for(unsigned packagingConfigurationsIndex = 0; packagingConfigurationsIndex < packagingConfigurationsJsonList.GetLength(); ++packagingConfigurationsIndex)
     {
       m_packagingConfigurations.push_back(packagingConfigurationsJsonList[packagingConfigurationsIndex].AsObject());

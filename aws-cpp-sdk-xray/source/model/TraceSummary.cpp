@@ -144,7 +144,7 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> annotationsJsonMap = jsonValue.GetObject("Annotations").GetAllObjects();
     for(auto& annotationsItem : annotationsJsonMap)
     {
-      Array<JsonView> valuesWithServiceIdsJsonList = annotationsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> valuesWithServiceIdsJsonList = annotationsItem.second.AsArray();
       Aws::Vector<ValueWithServiceIds> valuesWithServiceIdsList;
       valuesWithServiceIdsList.reserve((size_t)valuesWithServiceIdsJsonList.GetLength());
       for(unsigned valuesWithServiceIdsIndex = 0; valuesWithServiceIdsIndex < valuesWithServiceIdsJsonList.GetLength(); ++valuesWithServiceIdsIndex)
@@ -158,7 +158,7 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Users"))
   {
-    Array<JsonView> usersJsonList = jsonValue.GetArray("Users");
+    Aws::Utils::Array<JsonView> usersJsonList = jsonValue.GetArray("Users");
     for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());
@@ -168,7 +168,7 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ServiceIds"))
   {
-    Array<JsonView> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
+    Aws::Utils::Array<JsonView> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
     for(unsigned serviceIdsIndex = 0; serviceIdsIndex < serviceIdsJsonList.GetLength(); ++serviceIdsIndex)
     {
       m_serviceIds.push_back(serviceIdsJsonList[serviceIdsIndex].AsObject());
@@ -178,7 +178,7 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResourceARNs"))
   {
-    Array<JsonView> resourceARNsJsonList = jsonValue.GetArray("ResourceARNs");
+    Aws::Utils::Array<JsonView> resourceARNsJsonList = jsonValue.GetArray("ResourceARNs");
     for(unsigned resourceARNsIndex = 0; resourceARNsIndex < resourceARNsJsonList.GetLength(); ++resourceARNsIndex)
     {
       m_resourceARNs.push_back(resourceARNsJsonList[resourceARNsIndex].AsObject());
@@ -188,7 +188,7 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceIds"))
   {
-    Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
+    Aws::Utils::Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
     for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
     {
       m_instanceIds.push_back(instanceIdsJsonList[instanceIdsIndex].AsObject());
@@ -198,7 +198,7 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsObject());
@@ -215,7 +215,7 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FaultRootCauses"))
   {
-    Array<JsonView> faultRootCausesJsonList = jsonValue.GetArray("FaultRootCauses");
+    Aws::Utils::Array<JsonView> faultRootCausesJsonList = jsonValue.GetArray("FaultRootCauses");
     for(unsigned faultRootCausesIndex = 0; faultRootCausesIndex < faultRootCausesJsonList.GetLength(); ++faultRootCausesIndex)
     {
       m_faultRootCauses.push_back(faultRootCausesJsonList[faultRootCausesIndex].AsObject());
@@ -225,7 +225,7 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ErrorRootCauses"))
   {
-    Array<JsonView> errorRootCausesJsonList = jsonValue.GetArray("ErrorRootCauses");
+    Aws::Utils::Array<JsonView> errorRootCausesJsonList = jsonValue.GetArray("ErrorRootCauses");
     for(unsigned errorRootCausesIndex = 0; errorRootCausesIndex < errorRootCausesJsonList.GetLength(); ++errorRootCausesIndex)
     {
       m_errorRootCauses.push_back(errorRootCausesJsonList[errorRootCausesIndex].AsObject());
@@ -235,7 +235,7 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResponseTimeRootCauses"))
   {
-    Array<JsonView> responseTimeRootCausesJsonList = jsonValue.GetArray("ResponseTimeRootCauses");
+    Aws::Utils::Array<JsonView> responseTimeRootCausesJsonList = jsonValue.GetArray("ResponseTimeRootCauses");
     for(unsigned responseTimeRootCausesIndex = 0; responseTimeRootCausesIndex < responseTimeRootCausesJsonList.GetLength(); ++responseTimeRootCausesIndex)
     {
       m_responseTimeRootCauses.push_back(responseTimeRootCausesJsonList[responseTimeRootCausesIndex].AsObject());
@@ -317,7 +317,7 @@ JsonValue TraceSummary::Jsonize() const
    JsonValue annotationsJsonMap;
    for(auto& annotationsItem : m_annotations)
    {
-     Array<JsonValue> valuesWithServiceIdsJsonList(annotationsItem.second.size());
+     Aws::Utils::Array<JsonValue> valuesWithServiceIdsJsonList(annotationsItem.second.size());
      for(unsigned valuesWithServiceIdsIndex = 0; valuesWithServiceIdsIndex < valuesWithServiceIdsJsonList.GetLength(); ++valuesWithServiceIdsIndex)
      {
        valuesWithServiceIdsJsonList[valuesWithServiceIdsIndex].AsObject(annotationsItem.second[valuesWithServiceIdsIndex].Jsonize());
@@ -330,7 +330,7 @@ JsonValue TraceSummary::Jsonize() const
 
   if(m_usersHasBeenSet)
   {
-   Array<JsonValue> usersJsonList(m_users.size());
+   Aws::Utils::Array<JsonValue> usersJsonList(m_users.size());
    for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
    {
      usersJsonList[usersIndex].AsObject(m_users[usersIndex].Jsonize());
@@ -341,7 +341,7 @@ JsonValue TraceSummary::Jsonize() const
 
   if(m_serviceIdsHasBeenSet)
   {
-   Array<JsonValue> serviceIdsJsonList(m_serviceIds.size());
+   Aws::Utils::Array<JsonValue> serviceIdsJsonList(m_serviceIds.size());
    for(unsigned serviceIdsIndex = 0; serviceIdsIndex < serviceIdsJsonList.GetLength(); ++serviceIdsIndex)
    {
      serviceIdsJsonList[serviceIdsIndex].AsObject(m_serviceIds[serviceIdsIndex].Jsonize());
@@ -352,7 +352,7 @@ JsonValue TraceSummary::Jsonize() const
 
   if(m_resourceARNsHasBeenSet)
   {
-   Array<JsonValue> resourceARNsJsonList(m_resourceARNs.size());
+   Aws::Utils::Array<JsonValue> resourceARNsJsonList(m_resourceARNs.size());
    for(unsigned resourceARNsIndex = 0; resourceARNsIndex < resourceARNsJsonList.GetLength(); ++resourceARNsIndex)
    {
      resourceARNsJsonList[resourceARNsIndex].AsObject(m_resourceARNs[resourceARNsIndex].Jsonize());
@@ -363,7 +363,7 @@ JsonValue TraceSummary::Jsonize() const
 
   if(m_instanceIdsHasBeenSet)
   {
-   Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
+   Aws::Utils::Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
    for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
    {
      instanceIdsJsonList[instanceIdsIndex].AsObject(m_instanceIds[instanceIdsIndex].Jsonize());
@@ -374,7 +374,7 @@ JsonValue TraceSummary::Jsonize() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsObject(m_availabilityZones[availabilityZonesIndex].Jsonize());
@@ -391,7 +391,7 @@ JsonValue TraceSummary::Jsonize() const
 
   if(m_faultRootCausesHasBeenSet)
   {
-   Array<JsonValue> faultRootCausesJsonList(m_faultRootCauses.size());
+   Aws::Utils::Array<JsonValue> faultRootCausesJsonList(m_faultRootCauses.size());
    for(unsigned faultRootCausesIndex = 0; faultRootCausesIndex < faultRootCausesJsonList.GetLength(); ++faultRootCausesIndex)
    {
      faultRootCausesJsonList[faultRootCausesIndex].AsObject(m_faultRootCauses[faultRootCausesIndex].Jsonize());
@@ -402,7 +402,7 @@ JsonValue TraceSummary::Jsonize() const
 
   if(m_errorRootCausesHasBeenSet)
   {
-   Array<JsonValue> errorRootCausesJsonList(m_errorRootCauses.size());
+   Aws::Utils::Array<JsonValue> errorRootCausesJsonList(m_errorRootCauses.size());
    for(unsigned errorRootCausesIndex = 0; errorRootCausesIndex < errorRootCausesJsonList.GetLength(); ++errorRootCausesIndex)
    {
      errorRootCausesJsonList[errorRootCausesIndex].AsObject(m_errorRootCauses[errorRootCausesIndex].Jsonize());
@@ -413,7 +413,7 @@ JsonValue TraceSummary::Jsonize() const
 
   if(m_responseTimeRootCausesHasBeenSet)
   {
-   Array<JsonValue> responseTimeRootCausesJsonList(m_responseTimeRootCauses.size());
+   Aws::Utils::Array<JsonValue> responseTimeRootCausesJsonList(m_responseTimeRootCauses.size());
    for(unsigned responseTimeRootCausesIndex = 0; responseTimeRootCausesIndex < responseTimeRootCausesJsonList.GetLength(); ++responseTimeRootCausesIndex)
    {
      responseTimeRootCausesJsonList[responseTimeRootCausesIndex].AsObject(m_responseTimeRootCauses[responseTimeRootCausesIndex].Jsonize());

@@ -38,7 +38,7 @@ Aws::String BatchPutDocumentRequest::SerializePayload() const
 
   if(m_documentsHasBeenSet)
   {
-   Array<JsonValue> documentsJsonList(m_documents.size());
+   Aws::Utils::Array<JsonValue> documentsJsonList(m_documents.size());
    for(unsigned documentsIndex = 0; documentsIndex < documentsJsonList.GetLength(); ++documentsIndex)
    {
      documentsJsonList[documentsIndex].AsObject(m_documents[documentsIndex].Jsonize());

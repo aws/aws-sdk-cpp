@@ -116,7 +116,7 @@ AwsApiGatewayStageDetails& AwsApiGatewayStageDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("MethodSettings"))
   {
-    Array<JsonView> methodSettingsJsonList = jsonValue.GetArray("MethodSettings");
+    Aws::Utils::Array<JsonView> methodSettingsJsonList = jsonValue.GetArray("MethodSettings");
     for(unsigned methodSettingsIndex = 0; methodSettingsIndex < methodSettingsJsonList.GetLength(); ++methodSettingsIndex)
     {
       m_methodSettings.push_back(methodSettingsJsonList[methodSettingsIndex].AsObject());
@@ -234,7 +234,7 @@ JsonValue AwsApiGatewayStageDetails::Jsonize() const
 
   if(m_methodSettingsHasBeenSet)
   {
-   Array<JsonValue> methodSettingsJsonList(m_methodSettings.size());
+   Aws::Utils::Array<JsonValue> methodSettingsJsonList(m_methodSettings.size());
    for(unsigned methodSettingsIndex = 0; methodSettingsIndex < methodSettingsJsonList.GetLength(); ++methodSettingsIndex)
    {
      methodSettingsJsonList[methodSettingsIndex].AsObject(m_methodSettings[methodSettingsIndex].Jsonize());

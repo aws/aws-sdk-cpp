@@ -50,7 +50,7 @@ Listener& Listener::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PortRanges"))
   {
-    Array<JsonView> portRangesJsonList = jsonValue.GetArray("PortRanges");
+    Aws::Utils::Array<JsonView> portRangesJsonList = jsonValue.GetArray("PortRanges");
     for(unsigned portRangesIndex = 0; portRangesIndex < portRangesJsonList.GetLength(); ++portRangesIndex)
     {
       m_portRanges.push_back(portRangesJsonList[portRangesIndex].AsObject());
@@ -87,7 +87,7 @@ JsonValue Listener::Jsonize() const
 
   if(m_portRangesHasBeenSet)
   {
-   Array<JsonValue> portRangesJsonList(m_portRanges.size());
+   Aws::Utils::Array<JsonValue> portRangesJsonList(m_portRanges.size());
    for(unsigned portRangesIndex = 0; portRangesIndex < portRangesJsonList.GetLength(); ++portRangesIndex)
    {
      portRangesJsonList[portRangesIndex].AsObject(m_portRanges[portRangesIndex].Jsonize());

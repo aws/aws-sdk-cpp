@@ -44,7 +44,7 @@ UpdateTemplatePermissionsResult& UpdateTemplatePermissionsResult::operator =(con
 
   if(jsonValue.ValueExists("Permissions"))
   {
-    Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
+    Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
     for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());

@@ -44,7 +44,7 @@ ListHITsForQualificationTypeResult& ListHITsForQualificationTypeResult::operator
 
   if(jsonValue.ValueExists("HITs"))
   {
-    Array<JsonView> hITsJsonList = jsonValue.GetArray("HITs");
+    Aws::Utils::Array<JsonView> hITsJsonList = jsonValue.GetArray("HITs");
     for(unsigned hITsIndex = 0; hITsIndex < hITsJsonList.GetLength(); ++hITsIndex)
     {
       m_hITs.push_back(hITsJsonList[hITsIndex].AsObject());

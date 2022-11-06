@@ -30,7 +30,7 @@ DescribeEventAggregatesResult& DescribeEventAggregatesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eventAggregates"))
   {
-    Array<JsonView> eventAggregatesJsonList = jsonValue.GetArray("eventAggregates");
+    Aws::Utils::Array<JsonView> eventAggregatesJsonList = jsonValue.GetArray("eventAggregates");
     for(unsigned eventAggregatesIndex = 0; eventAggregatesIndex < eventAggregatesJsonList.GetLength(); ++eventAggregatesIndex)
     {
       m_eventAggregates.push_back(eventAggregatesJsonList[eventAggregatesIndex].AsObject());

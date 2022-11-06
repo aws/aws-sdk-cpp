@@ -30,7 +30,7 @@ GetTelemetryMetadataResult& GetTelemetryMetadataResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("telemetryMetadata"))
   {
-    Array<JsonView> telemetryMetadataJsonList = jsonValue.GetArray("telemetryMetadata");
+    Aws::Utils::Array<JsonView> telemetryMetadataJsonList = jsonValue.GetArray("telemetryMetadata");
     for(unsigned telemetryMetadataIndex = 0; telemetryMetadataIndex < telemetryMetadataJsonList.GetLength(); ++telemetryMetadataIndex)
     {
       m_telemetryMetadata.push_back(telemetryMetadataJsonList[telemetryMetadataIndex].AsObject());

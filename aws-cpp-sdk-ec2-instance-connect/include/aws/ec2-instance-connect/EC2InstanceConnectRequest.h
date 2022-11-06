@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
+#include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>
@@ -16,6 +17,9 @@ namespace EC2InstanceConnect
   class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
+    using EndpointParameter = Aws::Endpoint::EndpointParameter;
+    using EndpointParameters = Aws::Endpoint::EndpointParameters;
+
     virtual ~EC2InstanceConnectRequest () {}
 
     void AddParametersToRequest(Aws::Http::HttpRequest& httpRequest) const { AWS_UNREFERENCED_PARAM(httpRequest); }

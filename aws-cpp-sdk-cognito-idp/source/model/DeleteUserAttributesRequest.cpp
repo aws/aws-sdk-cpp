@@ -24,7 +24,7 @@ Aws::String DeleteUserAttributesRequest::SerializePayload() const
 
   if(m_userAttributeNamesHasBeenSet)
   {
-   Array<JsonValue> userAttributeNamesJsonList(m_userAttributeNames.size());
+   Aws::Utils::Array<JsonValue> userAttributeNamesJsonList(m_userAttributeNames.size());
    for(unsigned userAttributeNamesIndex = 0; userAttributeNamesIndex < userAttributeNamesJsonList.GetLength(); ++userAttributeNamesIndex)
    {
      userAttributeNamesJsonList[userAttributeNamesIndex].AsString(m_userAttributeNames[userAttributeNamesIndex]);

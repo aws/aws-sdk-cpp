@@ -42,7 +42,7 @@ JupyterServerAppSettings& JupyterServerAppSettings::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("LifecycleConfigArns"))
   {
-    Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
+    Aws::Utils::Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
     for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
     {
       m_lifecycleConfigArns.push_back(lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue JupyterServerAppSettings::Jsonize() const
 
   if(m_lifecycleConfigArnsHasBeenSet)
   {
-   Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
+   Aws::Utils::Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
    for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
    {
      lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString(m_lifecycleConfigArns[lifecycleConfigArnsIndex]);

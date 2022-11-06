@@ -30,7 +30,7 @@ GetCertificatesResult& GetCertificatesResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("certificates"))
   {
-    Array<JsonView> certificatesJsonList = jsonValue.GetArray("certificates");
+    Aws::Utils::Array<JsonView> certificatesJsonList = jsonValue.GetArray("certificates");
     for(unsigned certificatesIndex = 0; certificatesIndex < certificatesJsonList.GetLength(); ++certificatesIndex)
     {
       m_certificates.push_back(certificatesJsonList[certificatesIndex].AsObject());

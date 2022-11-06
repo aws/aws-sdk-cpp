@@ -60,7 +60,7 @@ ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Datasets"))
   {
-    Array<JsonView> datasetsJsonList = jsonValue.GetArray("Datasets");
+    Aws::Utils::Array<JsonView> datasetsJsonList = jsonValue.GetArray("Datasets");
     for(unsigned datasetsIndex = 0; datasetsIndex < datasetsJsonList.GetLength(); ++datasetsIndex)
     {
       m_datasets.push_back(datasetsJsonList[datasetsIndex].AsObject());
@@ -94,7 +94,7 @@ JsonValue ProjectDescription::Jsonize() const
 
   if(m_datasetsHasBeenSet)
   {
-   Array<JsonValue> datasetsJsonList(m_datasets.size());
+   Aws::Utils::Array<JsonValue> datasetsJsonList(m_datasets.size());
    for(unsigned datasetsIndex = 0; datasetsIndex < datasetsJsonList.GetLength(); ++datasetsIndex)
    {
      datasetsJsonList[datasetsIndex].AsObject(m_datasets[datasetsIndex].Jsonize());

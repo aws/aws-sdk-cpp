@@ -51,7 +51,7 @@ RegexMatchStatement& RegexMatchStatement::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TextTransformations"))
   {
-    Array<JsonView> textTransformationsJsonList = jsonValue.GetArray("TextTransformations");
+    Aws::Utils::Array<JsonView> textTransformationsJsonList = jsonValue.GetArray("TextTransformations");
     for(unsigned textTransformationsIndex = 0; textTransformationsIndex < textTransformationsJsonList.GetLength(); ++textTransformationsIndex)
     {
       m_textTransformations.push_back(textTransformationsJsonList[textTransformationsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue RegexMatchStatement::Jsonize() const
 
   if(m_textTransformationsHasBeenSet)
   {
-   Array<JsonValue> textTransformationsJsonList(m_textTransformations.size());
+   Aws::Utils::Array<JsonValue> textTransformationsJsonList(m_textTransformations.size());
    for(unsigned textTransformationsIndex = 0; textTransformationsIndex < textTransformationsJsonList.GetLength(); ++textTransformationsIndex)
    {
      textTransformationsJsonList[textTransformationsIndex].AsObject(m_textTransformations[textTransformationsIndex].Jsonize());

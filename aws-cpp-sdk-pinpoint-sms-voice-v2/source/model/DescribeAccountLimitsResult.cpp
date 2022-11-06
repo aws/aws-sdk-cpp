@@ -30,7 +30,7 @@ DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountLimits"))
   {
-    Array<JsonView> accountLimitsJsonList = jsonValue.GetArray("AccountLimits");
+    Aws::Utils::Array<JsonView> accountLimitsJsonList = jsonValue.GetArray("AccountLimits");
     for(unsigned accountLimitsIndex = 0; accountLimitsIndex < accountLimitsJsonList.GetLength(); ++accountLimitsIndex)
     {
       m_accountLimits.push_back(accountLimitsJsonList[accountLimitsIndex].AsObject());

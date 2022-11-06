@@ -36,7 +36,7 @@ ListEnvironmentsResult& ListEnvironmentsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("environmentIds"))
   {
-    Array<JsonView> environmentIdsJsonList = jsonValue.GetArray("environmentIds");
+    Aws::Utils::Array<JsonView> environmentIdsJsonList = jsonValue.GetArray("environmentIds");
     for(unsigned environmentIdsIndex = 0; environmentIdsIndex < environmentIdsJsonList.GetLength(); ++environmentIdsIndex)
     {
       m_environmentIds.push_back(environmentIdsJsonList[environmentIdsIndex].AsString());

@@ -30,7 +30,7 @@ DescribeGameSessionDetailsResult& DescribeGameSessionDetailsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GameSessionDetails"))
   {
-    Array<JsonView> gameSessionDetailsJsonList = jsonValue.GetArray("GameSessionDetails");
+    Aws::Utils::Array<JsonView> gameSessionDetailsJsonList = jsonValue.GetArray("GameSessionDetails");
     for(unsigned gameSessionDetailsIndex = 0; gameSessionDetailsIndex < gameSessionDetailsJsonList.GetLength(); ++gameSessionDetailsIndex)
     {
       m_gameSessionDetails.push_back(gameSessionDetailsJsonList[gameSessionDetailsIndex].AsObject());

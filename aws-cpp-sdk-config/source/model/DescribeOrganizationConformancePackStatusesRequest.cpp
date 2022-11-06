@@ -26,7 +26,7 @@ Aws::String DescribeOrganizationConformancePackStatusesRequest::SerializePayload
 
   if(m_organizationConformancePackNamesHasBeenSet)
   {
-   Array<JsonValue> organizationConformancePackNamesJsonList(m_organizationConformancePackNames.size());
+   Aws::Utils::Array<JsonValue> organizationConformancePackNamesJsonList(m_organizationConformancePackNames.size());
    for(unsigned organizationConformancePackNamesIndex = 0; organizationConformancePackNamesIndex < organizationConformancePackNamesJsonList.GetLength(); ++organizationConformancePackNamesIndex)
    {
      organizationConformancePackNamesJsonList[organizationConformancePackNamesIndex].AsString(m_organizationConformancePackNames[organizationConformancePackNamesIndex]);

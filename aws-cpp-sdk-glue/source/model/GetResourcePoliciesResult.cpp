@@ -30,7 +30,7 @@ GetResourcePoliciesResult& GetResourcePoliciesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GetResourcePoliciesResponseList"))
   {
-    Array<JsonView> getResourcePoliciesResponseListJsonList = jsonValue.GetArray("GetResourcePoliciesResponseList");
+    Aws::Utils::Array<JsonView> getResourcePoliciesResponseListJsonList = jsonValue.GetArray("GetResourcePoliciesResponseList");
     for(unsigned getResourcePoliciesResponseListIndex = 0; getResourcePoliciesResponseListIndex < getResourcePoliciesResponseListJsonList.GetLength(); ++getResourcePoliciesResponseListIndex)
     {
       m_getResourcePoliciesResponseList.push_back(getResourcePoliciesResponseListJsonList[getResourcePoliciesResponseListIndex].AsObject());

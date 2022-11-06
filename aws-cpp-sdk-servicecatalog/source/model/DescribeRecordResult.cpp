@@ -36,7 +36,7 @@ DescribeRecordResult& DescribeRecordResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("RecordOutputs"))
   {
-    Array<JsonView> recordOutputsJsonList = jsonValue.GetArray("RecordOutputs");
+    Aws::Utils::Array<JsonView> recordOutputsJsonList = jsonValue.GetArray("RecordOutputs");
     for(unsigned recordOutputsIndex = 0; recordOutputsIndex < recordOutputsJsonList.GetLength(); ++recordOutputsIndex)
     {
       m_recordOutputs.push_back(recordOutputsJsonList[recordOutputsIndex].AsObject());

@@ -30,7 +30,7 @@ ListInputRoutingsResult& ListInputRoutingsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("routedResources"))
   {
-    Array<JsonView> routedResourcesJsonList = jsonValue.GetArray("routedResources");
+    Aws::Utils::Array<JsonView> routedResourcesJsonList = jsonValue.GetArray("routedResources");
     for(unsigned routedResourcesIndex = 0; routedResourcesIndex < routedResourcesJsonList.GetLength(); ++routedResourcesIndex)
     {
       m_routedResources.push_back(routedResourcesJsonList[routedResourcesIndex].AsObject());

@@ -37,7 +37,7 @@ Aws::String StartDeviceSyncRequest::SerializePayload() const
 
   if(m_featuresHasBeenSet)
   {
-   Array<JsonValue> featuresJsonList(m_features.size());
+   Aws::Utils::Array<JsonValue> featuresJsonList(m_features.size());
    for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
    {
      featuresJsonList[featuresIndex].AsString(FeatureMapper::GetNameForFeature(m_features[featuresIndex]));

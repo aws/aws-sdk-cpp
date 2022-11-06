@@ -220,7 +220,7 @@ Device& Device::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("instances"))
   {
-    Array<JsonView> instancesJsonList = jsonValue.GetArray("instances");
+    Aws::Utils::Array<JsonView> instancesJsonList = jsonValue.GetArray("instances");
     for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
     {
       m_instances.push_back(instancesJsonList[instancesIndex].AsObject());
@@ -356,7 +356,7 @@ JsonValue Device::Jsonize() const
 
   if(m_instancesHasBeenSet)
   {
-   Array<JsonValue> instancesJsonList(m_instances.size());
+   Aws::Utils::Array<JsonValue> instancesJsonList(m_instances.size());
    for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
    {
      instancesJsonList[instancesIndex].AsObject(m_instances[instancesIndex].Jsonize());

@@ -30,7 +30,7 @@ GetConformancePackComplianceSummaryResult& GetConformancePackComplianceSummaryRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConformancePackComplianceSummaryList"))
   {
-    Array<JsonView> conformancePackComplianceSummaryListJsonList = jsonValue.GetArray("ConformancePackComplianceSummaryList");
+    Aws::Utils::Array<JsonView> conformancePackComplianceSummaryListJsonList = jsonValue.GetArray("ConformancePackComplianceSummaryList");
     for(unsigned conformancePackComplianceSummaryListIndex = 0; conformancePackComplianceSummaryListIndex < conformancePackComplianceSummaryListJsonList.GetLength(); ++conformancePackComplianceSummaryListIndex)
     {
       m_conformancePackComplianceSummaryList.push_back(conformancePackComplianceSummaryListJsonList[conformancePackComplianceSummaryListIndex].AsObject());

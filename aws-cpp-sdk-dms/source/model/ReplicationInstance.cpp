@@ -116,7 +116,7 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VpcSecurityGroups"))
   {
-    Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
+    Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
     for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
     {
       m_vpcSecurityGroups.push_back(vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject());
@@ -189,7 +189,7 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReplicationInstancePublicIpAddresses"))
   {
-    Array<JsonView> replicationInstancePublicIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePublicIpAddresses");
+    Aws::Utils::Array<JsonView> replicationInstancePublicIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePublicIpAddresses");
     for(unsigned replicationInstancePublicIpAddressesIndex = 0; replicationInstancePublicIpAddressesIndex < replicationInstancePublicIpAddressesJsonList.GetLength(); ++replicationInstancePublicIpAddressesIndex)
     {
       m_replicationInstancePublicIpAddresses.push_back(replicationInstancePublicIpAddressesJsonList[replicationInstancePublicIpAddressesIndex].AsString());
@@ -199,7 +199,7 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReplicationInstancePrivateIpAddresses"))
   {
-    Array<JsonView> replicationInstancePrivateIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePrivateIpAddresses");
+    Aws::Utils::Array<JsonView> replicationInstancePrivateIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePrivateIpAddresses");
     for(unsigned replicationInstancePrivateIpAddressesIndex = 0; replicationInstancePrivateIpAddressesIndex < replicationInstancePrivateIpAddressesJsonList.GetLength(); ++replicationInstancePrivateIpAddressesIndex)
     {
       m_replicationInstancePrivateIpAddresses.push_back(replicationInstancePrivateIpAddressesJsonList[replicationInstancePrivateIpAddressesIndex].AsString());
@@ -273,7 +273,7 @@ JsonValue ReplicationInstance::Jsonize() const
 
   if(m_vpcSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
    for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
    {
      vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject(m_vpcSecurityGroups[vpcSecurityGroupsIndex].Jsonize());
@@ -338,7 +338,7 @@ JsonValue ReplicationInstance::Jsonize() const
 
   if(m_replicationInstancePublicIpAddressesHasBeenSet)
   {
-   Array<JsonValue> replicationInstancePublicIpAddressesJsonList(m_replicationInstancePublicIpAddresses.size());
+   Aws::Utils::Array<JsonValue> replicationInstancePublicIpAddressesJsonList(m_replicationInstancePublicIpAddresses.size());
    for(unsigned replicationInstancePublicIpAddressesIndex = 0; replicationInstancePublicIpAddressesIndex < replicationInstancePublicIpAddressesJsonList.GetLength(); ++replicationInstancePublicIpAddressesIndex)
    {
      replicationInstancePublicIpAddressesJsonList[replicationInstancePublicIpAddressesIndex].AsString(m_replicationInstancePublicIpAddresses[replicationInstancePublicIpAddressesIndex]);
@@ -349,7 +349,7 @@ JsonValue ReplicationInstance::Jsonize() const
 
   if(m_replicationInstancePrivateIpAddressesHasBeenSet)
   {
-   Array<JsonValue> replicationInstancePrivateIpAddressesJsonList(m_replicationInstancePrivateIpAddresses.size());
+   Aws::Utils::Array<JsonValue> replicationInstancePrivateIpAddressesJsonList(m_replicationInstancePrivateIpAddresses.size());
    for(unsigned replicationInstancePrivateIpAddressesIndex = 0; replicationInstancePrivateIpAddressesIndex < replicationInstancePrivateIpAddressesJsonList.GetLength(); ++replicationInstancePrivateIpAddressesIndex)
    {
      replicationInstancePrivateIpAddressesJsonList[replicationInstancePrivateIpAddressesIndex].AsString(m_replicationInstancePrivateIpAddresses[replicationInstancePrivateIpAddressesIndex]);

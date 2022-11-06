@@ -272,7 +272,7 @@ AwsRdsDbSnapshotDetails& AwsRdsDbSnapshotDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProcessorFeatures"))
   {
-    Array<JsonView> processorFeaturesJsonList = jsonValue.GetArray("ProcessorFeatures");
+    Aws::Utils::Array<JsonView> processorFeaturesJsonList = jsonValue.GetArray("ProcessorFeatures");
     for(unsigned processorFeaturesIndex = 0; processorFeaturesIndex < processorFeaturesJsonList.GetLength(); ++processorFeaturesIndex)
     {
       m_processorFeatures.push_back(processorFeaturesJsonList[processorFeaturesIndex].AsObject());
@@ -446,7 +446,7 @@ JsonValue AwsRdsDbSnapshotDetails::Jsonize() const
 
   if(m_processorFeaturesHasBeenSet)
   {
-   Array<JsonValue> processorFeaturesJsonList(m_processorFeatures.size());
+   Aws::Utils::Array<JsonValue> processorFeaturesJsonList(m_processorFeatures.size());
    for(unsigned processorFeaturesIndex = 0; processorFeaturesIndex < processorFeaturesJsonList.GetLength(); ++processorFeaturesIndex)
    {
      processorFeaturesJsonList[processorFeaturesIndex].AsObject(m_processorFeatures[processorFeaturesIndex].Jsonize());

@@ -30,7 +30,7 @@ GetResourceSharesResult& GetResourceSharesResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceShares"))
   {
-    Array<JsonView> resourceSharesJsonList = jsonValue.GetArray("resourceShares");
+    Aws::Utils::Array<JsonView> resourceSharesJsonList = jsonValue.GetArray("resourceShares");
     for(unsigned resourceSharesIndex = 0; resourceSharesIndex < resourceSharesJsonList.GetLength(); ++resourceSharesIndex)
     {
       m_resourceShares.push_back(resourceSharesJsonList[resourceSharesIndex].AsObject());

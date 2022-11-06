@@ -60,7 +60,7 @@ TypedLinkSpecifier& TypedLinkSpecifier::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IdentityAttributeValues"))
   {
-    Array<JsonView> identityAttributeValuesJsonList = jsonValue.GetArray("IdentityAttributeValues");
+    Aws::Utils::Array<JsonView> identityAttributeValuesJsonList = jsonValue.GetArray("IdentityAttributeValues");
     for(unsigned identityAttributeValuesIndex = 0; identityAttributeValuesIndex < identityAttributeValuesJsonList.GetLength(); ++identityAttributeValuesIndex)
     {
       m_identityAttributeValues.push_back(identityAttributeValuesJsonList[identityAttributeValuesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue TypedLinkSpecifier::Jsonize() const
 
   if(m_identityAttributeValuesHasBeenSet)
   {
-   Array<JsonValue> identityAttributeValuesJsonList(m_identityAttributeValues.size());
+   Aws::Utils::Array<JsonValue> identityAttributeValuesJsonList(m_identityAttributeValues.size());
    for(unsigned identityAttributeValuesIndex = 0; identityAttributeValuesIndex < identityAttributeValuesJsonList.GetLength(); ++identityAttributeValuesIndex)
    {
      identityAttributeValuesJsonList[identityAttributeValuesIndex].AsObject(m_identityAttributeValues[identityAttributeValuesIndex].Jsonize());

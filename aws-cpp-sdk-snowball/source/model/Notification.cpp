@@ -46,7 +46,7 @@ Notification& Notification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("JobStatesToNotify"))
   {
-    Array<JsonView> jobStatesToNotifyJsonList = jsonValue.GetArray("JobStatesToNotify");
+    Aws::Utils::Array<JsonView> jobStatesToNotifyJsonList = jsonValue.GetArray("JobStatesToNotify");
     for(unsigned jobStatesToNotifyIndex = 0; jobStatesToNotifyIndex < jobStatesToNotifyJsonList.GetLength(); ++jobStatesToNotifyIndex)
     {
       m_jobStatesToNotify.push_back(JobStateMapper::GetJobStateForName(jobStatesToNotifyJsonList[jobStatesToNotifyIndex].AsString()));
@@ -76,7 +76,7 @@ JsonValue Notification::Jsonize() const
 
   if(m_jobStatesToNotifyHasBeenSet)
   {
-   Array<JsonValue> jobStatesToNotifyJsonList(m_jobStatesToNotify.size());
+   Aws::Utils::Array<JsonValue> jobStatesToNotifyJsonList(m_jobStatesToNotify.size());
    for(unsigned jobStatesToNotifyIndex = 0; jobStatesToNotifyIndex < jobStatesToNotifyJsonList.GetLength(); ++jobStatesToNotifyIndex)
    {
      jobStatesToNotifyJsonList[jobStatesToNotifyIndex].AsString(JobStateMapper::GetNameForJobState(m_jobStatesToNotify[jobStatesToNotifyIndex]));

@@ -29,7 +29,7 @@ Aws::String GetEC2InstanceRecommendationsRequest::SerializePayload() const
 
   if(m_instanceArnsHasBeenSet)
   {
-   Array<JsonValue> instanceArnsJsonList(m_instanceArns.size());
+   Aws::Utils::Array<JsonValue> instanceArnsJsonList(m_instanceArns.size());
    for(unsigned instanceArnsIndex = 0; instanceArnsIndex < instanceArnsJsonList.GetLength(); ++instanceArnsIndex)
    {
      instanceArnsJsonList[instanceArnsIndex].AsString(m_instanceArns[instanceArnsIndex]);
@@ -52,7 +52,7 @@ Aws::String GetEC2InstanceRecommendationsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
@@ -63,7 +63,7 @@ Aws::String GetEC2InstanceRecommendationsRequest::SerializePayload() const
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);

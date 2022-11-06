@@ -93,7 +93,7 @@ ThemeVersion& ThemeVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -152,7 +152,7 @@ JsonValue ThemeVersion::Jsonize() const
 
   if(m_errorsHasBeenSet)
   {
-   Array<JsonValue> errorsJsonList(m_errors.size());
+   Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
    {
      errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/globalaccelerator/GlobalAcceleratorErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/globalaccelerator/GlobalAcceleratorEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -89,6 +91,10 @@ namespace Aws
 
   namespace GlobalAccelerator
   {
+    using GlobalAcceleratorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GlobalAcceleratorEndpointProviderBase = Aws::GlobalAccelerator::Endpoint::GlobalAcceleratorEndpointProviderBase;
+    using GlobalAcceleratorEndpointProvider = Aws::GlobalAccelerator::Endpoint::GlobalAcceleratorEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in GlobalAcceleratorClient header */

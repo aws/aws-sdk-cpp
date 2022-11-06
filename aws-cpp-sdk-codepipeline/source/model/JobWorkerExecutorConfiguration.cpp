@@ -35,7 +35,7 @@ JobWorkerExecutorConfiguration& JobWorkerExecutorConfiguration::operator =(JsonV
 {
   if(jsonValue.ValueExists("pollingAccounts"))
   {
-    Array<JsonView> pollingAccountsJsonList = jsonValue.GetArray("pollingAccounts");
+    Aws::Utils::Array<JsonView> pollingAccountsJsonList = jsonValue.GetArray("pollingAccounts");
     for(unsigned pollingAccountsIndex = 0; pollingAccountsIndex < pollingAccountsJsonList.GetLength(); ++pollingAccountsIndex)
     {
       m_pollingAccounts.push_back(pollingAccountsJsonList[pollingAccountsIndex].AsString());
@@ -45,7 +45,7 @@ JobWorkerExecutorConfiguration& JobWorkerExecutorConfiguration::operator =(JsonV
 
   if(jsonValue.ValueExists("pollingServicePrincipals"))
   {
-    Array<JsonView> pollingServicePrincipalsJsonList = jsonValue.GetArray("pollingServicePrincipals");
+    Aws::Utils::Array<JsonView> pollingServicePrincipalsJsonList = jsonValue.GetArray("pollingServicePrincipals");
     for(unsigned pollingServicePrincipalsIndex = 0; pollingServicePrincipalsIndex < pollingServicePrincipalsJsonList.GetLength(); ++pollingServicePrincipalsIndex)
     {
       m_pollingServicePrincipals.push_back(pollingServicePrincipalsJsonList[pollingServicePrincipalsIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue JobWorkerExecutorConfiguration::Jsonize() const
 
   if(m_pollingAccountsHasBeenSet)
   {
-   Array<JsonValue> pollingAccountsJsonList(m_pollingAccounts.size());
+   Aws::Utils::Array<JsonValue> pollingAccountsJsonList(m_pollingAccounts.size());
    for(unsigned pollingAccountsIndex = 0; pollingAccountsIndex < pollingAccountsJsonList.GetLength(); ++pollingAccountsIndex)
    {
      pollingAccountsJsonList[pollingAccountsIndex].AsString(m_pollingAccounts[pollingAccountsIndex]);
@@ -73,7 +73,7 @@ JsonValue JobWorkerExecutorConfiguration::Jsonize() const
 
   if(m_pollingServicePrincipalsHasBeenSet)
   {
-   Array<JsonValue> pollingServicePrincipalsJsonList(m_pollingServicePrincipals.size());
+   Aws::Utils::Array<JsonValue> pollingServicePrincipalsJsonList(m_pollingServicePrincipals.size());
    for(unsigned pollingServicePrincipalsIndex = 0; pollingServicePrincipalsIndex < pollingServicePrincipalsJsonList.GetLength(); ++pollingServicePrincipalsIndex)
    {
      pollingServicePrincipalsJsonList[pollingServicePrincipalsIndex].AsString(m_pollingServicePrincipals[pollingServicePrincipalsIndex]);

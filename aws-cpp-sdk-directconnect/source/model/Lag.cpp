@@ -171,7 +171,7 @@ Lag& Lag::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("connections"))
   {
-    Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
+    Aws::Utils::Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
     for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
     {
       m_connections.push_back(connectionsJsonList[connectionsIndex].AsObject());
@@ -202,7 +202,7 @@ Lag& Lag::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -233,7 +233,7 @@ Lag& Lag::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("macSecKeys"))
   {
-    Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
+    Aws::Utils::Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
     for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
     {
       m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());
@@ -321,7 +321,7 @@ JsonValue Lag::Jsonize() const
 
   if(m_connectionsHasBeenSet)
   {
-   Array<JsonValue> connectionsJsonList(m_connections.size());
+   Aws::Utils::Array<JsonValue> connectionsJsonList(m_connections.size());
    for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
    {
      connectionsJsonList[connectionsIndex].AsObject(m_connections[connectionsIndex].Jsonize());
@@ -349,7 +349,7 @@ JsonValue Lag::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -378,7 +378,7 @@ JsonValue Lag::Jsonize() const
 
   if(m_macSecKeysHasBeenSet)
   {
-   Array<JsonValue> macSecKeysJsonList(m_macSecKeys.size());
+   Aws::Utils::Array<JsonValue> macSecKeysJsonList(m_macSecKeys.size());
    for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
    {
      macSecKeysJsonList[macSecKeysIndex].AsObject(m_macSecKeys[macSecKeysIndex].Jsonize());

@@ -38,7 +38,7 @@ Aws::String BatchCreateRumMetricDefinitionsRequest::SerializePayload() const
 
   if(m_metricDefinitionsHasBeenSet)
   {
-   Array<JsonValue> metricDefinitionsJsonList(m_metricDefinitions.size());
+   Aws::Utils::Array<JsonValue> metricDefinitionsJsonList(m_metricDefinitions.size());
    for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
    {
      metricDefinitionsJsonList[metricDefinitionsIndex].AsObject(m_metricDefinitions[metricDefinitionsIndex].Jsonize());

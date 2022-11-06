@@ -36,7 +36,7 @@ ListStreamProcessorsResult& ListStreamProcessorsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("StreamProcessors"))
   {
-    Array<JsonView> streamProcessorsJsonList = jsonValue.GetArray("StreamProcessors");
+    Aws::Utils::Array<JsonView> streamProcessorsJsonList = jsonValue.GetArray("StreamProcessors");
     for(unsigned streamProcessorsIndex = 0; streamProcessorsIndex < streamProcessorsJsonList.GetLength(); ++streamProcessorsIndex)
     {
       m_streamProcessors.push_back(streamProcessorsJsonList[streamProcessorsIndex].AsObject());

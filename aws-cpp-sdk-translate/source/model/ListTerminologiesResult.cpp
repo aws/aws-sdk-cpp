@@ -30,7 +30,7 @@ ListTerminologiesResult& ListTerminologiesResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TerminologyPropertiesList"))
   {
-    Array<JsonView> terminologyPropertiesListJsonList = jsonValue.GetArray("TerminologyPropertiesList");
+    Aws::Utils::Array<JsonView> terminologyPropertiesListJsonList = jsonValue.GetArray("TerminologyPropertiesList");
     for(unsigned terminologyPropertiesListIndex = 0; terminologyPropertiesListIndex < terminologyPropertiesListJsonList.GetLength(); ++terminologyPropertiesListIndex)
     {
       m_terminologyPropertiesList.push_back(terminologyPropertiesListJsonList[terminologyPropertiesListIndex].AsObject());

@@ -65,7 +65,7 @@ Handshake& Handshake::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Parties"))
   {
-    Array<JsonView> partiesJsonList = jsonValue.GetArray("Parties");
+    Aws::Utils::Array<JsonView> partiesJsonList = jsonValue.GetArray("Parties");
     for(unsigned partiesIndex = 0; partiesIndex < partiesJsonList.GetLength(); ++partiesIndex)
     {
       m_parties.push_back(partiesJsonList[partiesIndex].AsObject());
@@ -103,7 +103,7 @@ Handshake& Handshake::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
@@ -132,7 +132,7 @@ JsonValue Handshake::Jsonize() const
 
   if(m_partiesHasBeenSet)
   {
-   Array<JsonValue> partiesJsonList(m_parties.size());
+   Aws::Utils::Array<JsonValue> partiesJsonList(m_parties.size());
    for(unsigned partiesIndex = 0; partiesIndex < partiesJsonList.GetLength(); ++partiesIndex)
    {
      partiesJsonList[partiesIndex].AsObject(m_parties[partiesIndex].Jsonize());
@@ -163,7 +163,7 @@ JsonValue Handshake::Jsonize() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsObject(m_resources[resourcesIndex].Jsonize());

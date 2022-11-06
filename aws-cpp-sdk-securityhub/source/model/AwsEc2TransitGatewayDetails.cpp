@@ -92,7 +92,7 @@ AwsEc2TransitGatewayDetails& AwsEc2TransitGatewayDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("TransitGatewayCidrBlocks"))
   {
-    Array<JsonView> transitGatewayCidrBlocksJsonList = jsonValue.GetArray("TransitGatewayCidrBlocks");
+    Aws::Utils::Array<JsonView> transitGatewayCidrBlocksJsonList = jsonValue.GetArray("TransitGatewayCidrBlocks");
     for(unsigned transitGatewayCidrBlocksIndex = 0; transitGatewayCidrBlocksIndex < transitGatewayCidrBlocksJsonList.GetLength(); ++transitGatewayCidrBlocksIndex)
     {
       m_transitGatewayCidrBlocks.push_back(transitGatewayCidrBlocksJsonList[transitGatewayCidrBlocksIndex].AsString());
@@ -181,7 +181,7 @@ JsonValue AwsEc2TransitGatewayDetails::Jsonize() const
 
   if(m_transitGatewayCidrBlocksHasBeenSet)
   {
-   Array<JsonValue> transitGatewayCidrBlocksJsonList(m_transitGatewayCidrBlocks.size());
+   Aws::Utils::Array<JsonValue> transitGatewayCidrBlocksJsonList(m_transitGatewayCidrBlocks.size());
    for(unsigned transitGatewayCidrBlocksIndex = 0; transitGatewayCidrBlocksIndex < transitGatewayCidrBlocksJsonList.GetLength(); ++transitGatewayCidrBlocksIndex)
    {
      transitGatewayCidrBlocksJsonList[transitGatewayCidrBlocksIndex].AsString(m_transitGatewayCidrBlocks[transitGatewayCidrBlocksIndex]);

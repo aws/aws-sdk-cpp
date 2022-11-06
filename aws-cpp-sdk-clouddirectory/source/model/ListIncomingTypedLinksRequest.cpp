@@ -38,7 +38,7 @@ Aws::String ListIncomingTypedLinksRequest::SerializePayload() const
 
   if(m_filterAttributeRangesHasBeenSet)
   {
-   Array<JsonValue> filterAttributeRangesJsonList(m_filterAttributeRanges.size());
+   Aws::Utils::Array<JsonValue> filterAttributeRangesJsonList(m_filterAttributeRanges.size());
    for(unsigned filterAttributeRangesIndex = 0; filterAttributeRangesIndex < filterAttributeRangesJsonList.GetLength(); ++filterAttributeRangesIndex)
    {
      filterAttributeRangesJsonList[filterAttributeRangesIndex].AsObject(m_filterAttributeRanges[filterAttributeRangesIndex].Jsonize());

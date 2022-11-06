@@ -37,7 +37,7 @@ Aws::String CreateServiceTemplateVersionRequest::SerializePayload() const
 
   if(m_compatibleEnvironmentTemplatesHasBeenSet)
   {
-   Array<JsonValue> compatibleEnvironmentTemplatesJsonList(m_compatibleEnvironmentTemplates.size());
+   Aws::Utils::Array<JsonValue> compatibleEnvironmentTemplatesJsonList(m_compatibleEnvironmentTemplates.size());
    for(unsigned compatibleEnvironmentTemplatesIndex = 0; compatibleEnvironmentTemplatesIndex < compatibleEnvironmentTemplatesJsonList.GetLength(); ++compatibleEnvironmentTemplatesIndex)
    {
      compatibleEnvironmentTemplatesJsonList[compatibleEnvironmentTemplatesIndex].AsObject(m_compatibleEnvironmentTemplates[compatibleEnvironmentTemplatesIndex].Jsonize());
@@ -66,7 +66,7 @@ Aws::String CreateServiceTemplateVersionRequest::SerializePayload() const
 
   if(m_supportedComponentSourcesHasBeenSet)
   {
-   Array<JsonValue> supportedComponentSourcesJsonList(m_supportedComponentSources.size());
+   Aws::Utils::Array<JsonValue> supportedComponentSourcesJsonList(m_supportedComponentSources.size());
    for(unsigned supportedComponentSourcesIndex = 0; supportedComponentSourcesIndex < supportedComponentSourcesJsonList.GetLength(); ++supportedComponentSourcesIndex)
    {
      supportedComponentSourcesJsonList[supportedComponentSourcesIndex].AsString(ServiceTemplateSupportedComponentSourceTypeMapper::GetNameForServiceTemplateSupportedComponentSourceType(m_supportedComponentSources[supportedComponentSourcesIndex]));
@@ -77,7 +77,7 @@ Aws::String CreateServiceTemplateVersionRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

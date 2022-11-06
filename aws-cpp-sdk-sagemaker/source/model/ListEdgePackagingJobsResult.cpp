@@ -30,7 +30,7 @@ ListEdgePackagingJobsResult& ListEdgePackagingJobsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EdgePackagingJobSummaries"))
   {
-    Array<JsonView> edgePackagingJobSummariesJsonList = jsonValue.GetArray("EdgePackagingJobSummaries");
+    Aws::Utils::Array<JsonView> edgePackagingJobSummariesJsonList = jsonValue.GetArray("EdgePackagingJobSummaries");
     for(unsigned edgePackagingJobSummariesIndex = 0; edgePackagingJobSummariesIndex < edgePackagingJobSummariesJsonList.GetLength(); ++edgePackagingJobSummariesIndex)
     {
       m_edgePackagingJobSummaries.push_back(edgePackagingJobSummariesJsonList[edgePackagingJobSummariesIndex].AsObject());

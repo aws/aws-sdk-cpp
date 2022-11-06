@@ -182,7 +182,7 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExtraArchivedLogDestIds"))
   {
-    Array<JsonView> extraArchivedLogDestIdsJsonList = jsonValue.GetArray("ExtraArchivedLogDestIds");
+    Aws::Utils::Array<JsonView> extraArchivedLogDestIdsJsonList = jsonValue.GetArray("ExtraArchivedLogDestIds");
     for(unsigned extraArchivedLogDestIdsIndex = 0; extraArchivedLogDestIdsIndex < extraArchivedLogDestIdsJsonList.GetLength(); ++extraArchivedLogDestIdsIndex)
     {
       m_extraArchivedLogDestIds.push_back(extraArchivedLogDestIdsJsonList[extraArchivedLogDestIdsIndex].AsInteger());
@@ -476,7 +476,7 @@ JsonValue OracleSettings::Jsonize() const
 
   if(m_extraArchivedLogDestIdsHasBeenSet)
   {
-   Array<JsonValue> extraArchivedLogDestIdsJsonList(m_extraArchivedLogDestIds.size());
+   Aws::Utils::Array<JsonValue> extraArchivedLogDestIdsJsonList(m_extraArchivedLogDestIds.size());
    for(unsigned extraArchivedLogDestIdsIndex = 0; extraArchivedLogDestIdsIndex < extraArchivedLogDestIdsJsonList.GetLength(); ++extraArchivedLogDestIdsIndex)
    {
      extraArchivedLogDestIdsJsonList[extraArchivedLogDestIdsIndex].AsInteger(m_extraArchivedLogDestIds[extraArchivedLogDestIdsIndex]);

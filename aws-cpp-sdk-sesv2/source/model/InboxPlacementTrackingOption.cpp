@@ -44,7 +44,7 @@ InboxPlacementTrackingOption& InboxPlacementTrackingOption::operator =(JsonView 
 
   if(jsonValue.ValueExists("TrackedIsps"))
   {
-    Array<JsonView> trackedIspsJsonList = jsonValue.GetArray("TrackedIsps");
+    Aws::Utils::Array<JsonView> trackedIspsJsonList = jsonValue.GetArray("TrackedIsps");
     for(unsigned trackedIspsIndex = 0; trackedIspsIndex < trackedIspsJsonList.GetLength(); ++trackedIspsIndex)
     {
       m_trackedIsps.push_back(trackedIspsJsonList[trackedIspsIndex].AsString());
@@ -67,7 +67,7 @@ JsonValue InboxPlacementTrackingOption::Jsonize() const
 
   if(m_trackedIspsHasBeenSet)
   {
-   Array<JsonValue> trackedIspsJsonList(m_trackedIsps.size());
+   Aws::Utils::Array<JsonValue> trackedIspsJsonList(m_trackedIsps.size());
    for(unsigned trackedIspsIndex = 0; trackedIspsIndex < trackedIspsJsonList.GetLength(); ++trackedIspsIndex)
    {
      trackedIspsJsonList[trackedIspsIndex].AsString(m_trackedIsps[trackedIspsIndex]);

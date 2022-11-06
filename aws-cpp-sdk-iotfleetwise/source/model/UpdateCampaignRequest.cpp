@@ -39,7 +39,7 @@ Aws::String UpdateCampaignRequest::SerializePayload() const
 
   if(m_dataExtraDimensionsHasBeenSet)
   {
-   Array<JsonValue> dataExtraDimensionsJsonList(m_dataExtraDimensions.size());
+   Aws::Utils::Array<JsonValue> dataExtraDimensionsJsonList(m_dataExtraDimensions.size());
    for(unsigned dataExtraDimensionsIndex = 0; dataExtraDimensionsIndex < dataExtraDimensionsJsonList.GetLength(); ++dataExtraDimensionsIndex)
    {
      dataExtraDimensionsJsonList[dataExtraDimensionsIndex].AsString(m_dataExtraDimensions[dataExtraDimensionsIndex]);

@@ -41,7 +41,7 @@ RenewalSummary& RenewalSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("domainValidationRecords"))
   {
-    Array<JsonView> domainValidationRecordsJsonList = jsonValue.GetArray("domainValidationRecords");
+    Aws::Utils::Array<JsonView> domainValidationRecordsJsonList = jsonValue.GetArray("domainValidationRecords");
     for(unsigned domainValidationRecordsIndex = 0; domainValidationRecordsIndex < domainValidationRecordsJsonList.GetLength(); ++domainValidationRecordsIndex)
     {
       m_domainValidationRecords.push_back(domainValidationRecordsJsonList[domainValidationRecordsIndex].AsObject());
@@ -79,7 +79,7 @@ JsonValue RenewalSummary::Jsonize() const
 
   if(m_domainValidationRecordsHasBeenSet)
   {
-   Array<JsonValue> domainValidationRecordsJsonList(m_domainValidationRecords.size());
+   Aws::Utils::Array<JsonValue> domainValidationRecordsJsonList(m_domainValidationRecords.size());
    for(unsigned domainValidationRecordsIndex = 0; domainValidationRecordsIndex < domainValidationRecordsJsonList.GetLength(); ++domainValidationRecordsIndex)
    {
      domainValidationRecordsJsonList[domainValidationRecordsIndex].AsObject(m_domainValidationRecords[domainValidationRecordsIndex].Jsonize());

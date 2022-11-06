@@ -169,7 +169,7 @@ CallAnalyticsJob& CallAnalyticsJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ChannelDefinitions"))
   {
-    Array<JsonView> channelDefinitionsJsonList = jsonValue.GetArray("ChannelDefinitions");
+    Aws::Utils::Array<JsonView> channelDefinitionsJsonList = jsonValue.GetArray("ChannelDefinitions");
     for(unsigned channelDefinitionsIndex = 0; channelDefinitionsIndex < channelDefinitionsJsonList.GetLength(); ++channelDefinitionsIndex)
     {
       m_channelDefinitions.push_back(channelDefinitionsJsonList[channelDefinitionsIndex].AsObject());
@@ -264,7 +264,7 @@ JsonValue CallAnalyticsJob::Jsonize() const
 
   if(m_channelDefinitionsHasBeenSet)
   {
-   Array<JsonValue> channelDefinitionsJsonList(m_channelDefinitions.size());
+   Aws::Utils::Array<JsonValue> channelDefinitionsJsonList(m_channelDefinitions.size());
    for(unsigned channelDefinitionsIndex = 0; channelDefinitionsIndex < channelDefinitionsJsonList.GetLength(); ++channelDefinitionsIndex)
    {
      channelDefinitionsJsonList[channelDefinitionsIndex].AsObject(m_channelDefinitions[channelDefinitionsIndex].Jsonize());

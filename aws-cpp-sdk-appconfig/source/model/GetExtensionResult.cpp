@@ -65,7 +65,7 @@ GetExtensionResult& GetExtensionResult::operator =(const Aws::AmazonWebServiceRe
     Aws::Map<Aws::String, JsonView> actionsJsonMap = jsonValue.GetObject("Actions").GetAllObjects();
     for(auto& actionsItem : actionsJsonMap)
     {
-      Array<JsonView> actionListJsonList = actionsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> actionListJsonList = actionsItem.second.AsArray();
       Aws::Vector<Action> actionListList;
       actionListList.reserve((size_t)actionListJsonList.GetLength());
       for(unsigned actionListIndex = 0; actionListIndex < actionListJsonList.GetLength(); ++actionListIndex)

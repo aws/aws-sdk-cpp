@@ -42,7 +42,7 @@ VaultNotificationConfig& VaultNotificationConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Events"))
   {
-    Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
+    Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue VaultNotificationConfig::Jsonize() const
 
   if(m_eventsHasBeenSet)
   {
-   Array<JsonValue> eventsJsonList(m_events.size());
+   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
    {
      eventsJsonList[eventsIndex].AsString(m_events[eventsIndex]);

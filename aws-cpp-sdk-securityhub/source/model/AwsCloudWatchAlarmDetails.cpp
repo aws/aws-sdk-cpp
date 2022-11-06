@@ -92,7 +92,7 @@ AwsCloudWatchAlarmDetails& AwsCloudWatchAlarmDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("AlarmActions"))
   {
-    Array<JsonView> alarmActionsJsonList = jsonValue.GetArray("AlarmActions");
+    Aws::Utils::Array<JsonView> alarmActionsJsonList = jsonValue.GetArray("AlarmActions");
     for(unsigned alarmActionsIndex = 0; alarmActionsIndex < alarmActionsJsonList.GetLength(); ++alarmActionsIndex)
     {
       m_alarmActions.push_back(alarmActionsJsonList[alarmActionsIndex].AsString());
@@ -144,7 +144,7 @@ AwsCloudWatchAlarmDetails& AwsCloudWatchAlarmDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
@@ -175,7 +175,7 @@ AwsCloudWatchAlarmDetails& AwsCloudWatchAlarmDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("InsufficientDataActions"))
   {
-    Array<JsonView> insufficientDataActionsJsonList = jsonValue.GetArray("InsufficientDataActions");
+    Aws::Utils::Array<JsonView> insufficientDataActionsJsonList = jsonValue.GetArray("InsufficientDataActions");
     for(unsigned insufficientDataActionsIndex = 0; insufficientDataActionsIndex < insufficientDataActionsJsonList.GetLength(); ++insufficientDataActionsIndex)
     {
       m_insufficientDataActions.push_back(insufficientDataActionsJsonList[insufficientDataActionsIndex].AsString());
@@ -199,7 +199,7 @@ AwsCloudWatchAlarmDetails& AwsCloudWatchAlarmDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("OkActions"))
   {
-    Array<JsonView> okActionsJsonList = jsonValue.GetArray("OkActions");
+    Aws::Utils::Array<JsonView> okActionsJsonList = jsonValue.GetArray("OkActions");
     for(unsigned okActionsIndex = 0; okActionsIndex < okActionsJsonList.GetLength(); ++okActionsIndex)
     {
       m_okActions.push_back(okActionsJsonList[okActionsIndex].AsString());
@@ -264,7 +264,7 @@ JsonValue AwsCloudWatchAlarmDetails::Jsonize() const
 
   if(m_alarmActionsHasBeenSet)
   {
-   Array<JsonValue> alarmActionsJsonList(m_alarmActions.size());
+   Aws::Utils::Array<JsonValue> alarmActionsJsonList(m_alarmActions.size());
    for(unsigned alarmActionsIndex = 0; alarmActionsIndex < alarmActionsJsonList.GetLength(); ++alarmActionsIndex)
    {
      alarmActionsJsonList[alarmActionsIndex].AsString(m_alarmActions[alarmActionsIndex]);
@@ -311,7 +311,7 @@ JsonValue AwsCloudWatchAlarmDetails::Jsonize() const
 
   if(m_dimensionsHasBeenSet)
   {
-   Array<JsonValue> dimensionsJsonList(m_dimensions.size());
+   Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
    {
      dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
@@ -340,7 +340,7 @@ JsonValue AwsCloudWatchAlarmDetails::Jsonize() const
 
   if(m_insufficientDataActionsHasBeenSet)
   {
-   Array<JsonValue> insufficientDataActionsJsonList(m_insufficientDataActions.size());
+   Aws::Utils::Array<JsonValue> insufficientDataActionsJsonList(m_insufficientDataActions.size());
    for(unsigned insufficientDataActionsIndex = 0; insufficientDataActionsIndex < insufficientDataActionsJsonList.GetLength(); ++insufficientDataActionsIndex)
    {
      insufficientDataActionsJsonList[insufficientDataActionsIndex].AsString(m_insufficientDataActions[insufficientDataActionsIndex]);
@@ -363,7 +363,7 @@ JsonValue AwsCloudWatchAlarmDetails::Jsonize() const
 
   if(m_okActionsHasBeenSet)
   {
-   Array<JsonValue> okActionsJsonList(m_okActions.size());
+   Aws::Utils::Array<JsonValue> okActionsJsonList(m_okActions.size());
    for(unsigned okActionsIndex = 0; okActionsIndex < okActionsJsonList.GetLength(); ++okActionsIndex)
    {
      okActionsJsonList[okActionsIndex].AsString(m_okActions[okActionsIndex]);

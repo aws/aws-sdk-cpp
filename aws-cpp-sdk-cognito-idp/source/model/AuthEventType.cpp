@@ -86,7 +86,7 @@ AuthEventType& AuthEventType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ChallengeResponses"))
   {
-    Array<JsonView> challengeResponsesJsonList = jsonValue.GetArray("ChallengeResponses");
+    Aws::Utils::Array<JsonView> challengeResponsesJsonList = jsonValue.GetArray("ChallengeResponses");
     for(unsigned challengeResponsesIndex = 0; challengeResponsesIndex < challengeResponsesJsonList.GetLength(); ++challengeResponsesIndex)
     {
       m_challengeResponses.push_back(challengeResponsesJsonList[challengeResponsesIndex].AsObject());
@@ -144,7 +144,7 @@ JsonValue AuthEventType::Jsonize() const
 
   if(m_challengeResponsesHasBeenSet)
   {
-   Array<JsonValue> challengeResponsesJsonList(m_challengeResponses.size());
+   Aws::Utils::Array<JsonValue> challengeResponsesJsonList(m_challengeResponses.size());
    for(unsigned challengeResponsesIndex = 0; challengeResponsesIndex < challengeResponsesJsonList.GetLength(); ++challengeResponsesIndex)
    {
      challengeResponsesJsonList[challengeResponsesIndex].AsObject(m_challengeResponses[challengeResponsesIndex].Jsonize());

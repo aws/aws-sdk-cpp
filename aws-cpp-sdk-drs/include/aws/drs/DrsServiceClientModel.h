@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/drs/DrsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/drs/DrsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -76,6 +78,10 @@ namespace Aws
 
   namespace drs
   {
+    using DrsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DrsEndpointProviderBase = Aws::drs::Endpoint::DrsEndpointProviderBase;
+    using DrsEndpointProvider = Aws::drs::Endpoint::DrsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in DrsClient header */

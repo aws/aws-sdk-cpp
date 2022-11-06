@@ -73,7 +73,7 @@ Aws::String StartReplicationTaskAssessmentRunRequest::SerializePayload() const
 
   if(m_includeOnlyHasBeenSet)
   {
-   Array<JsonValue> includeOnlyJsonList(m_includeOnly.size());
+   Aws::Utils::Array<JsonValue> includeOnlyJsonList(m_includeOnly.size());
    for(unsigned includeOnlyIndex = 0; includeOnlyIndex < includeOnlyJsonList.GetLength(); ++includeOnlyIndex)
    {
      includeOnlyJsonList[includeOnlyIndex].AsString(m_includeOnly[includeOnlyIndex]);
@@ -84,7 +84,7 @@ Aws::String StartReplicationTaskAssessmentRunRequest::SerializePayload() const
 
   if(m_excludeHasBeenSet)
   {
-   Array<JsonValue> excludeJsonList(m_exclude.size());
+   Aws::Utils::Array<JsonValue> excludeJsonList(m_exclude.size());
    for(unsigned excludeIndex = 0; excludeIndex < excludeJsonList.GetLength(); ++excludeIndex)
    {
      excludeJsonList[excludeIndex].AsString(m_exclude[excludeIndex]);

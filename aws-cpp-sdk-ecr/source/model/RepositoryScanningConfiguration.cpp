@@ -73,7 +73,7 @@ RepositoryScanningConfiguration& RepositoryScanningConfiguration::operator =(Jso
 
   if(jsonValue.ValueExists("appliedScanFilters"))
   {
-    Array<JsonView> appliedScanFiltersJsonList = jsonValue.GetArray("appliedScanFilters");
+    Aws::Utils::Array<JsonView> appliedScanFiltersJsonList = jsonValue.GetArray("appliedScanFilters");
     for(unsigned appliedScanFiltersIndex = 0; appliedScanFiltersIndex < appliedScanFiltersJsonList.GetLength(); ++appliedScanFiltersIndex)
     {
       m_appliedScanFilters.push_back(appliedScanFiltersJsonList[appliedScanFiltersIndex].AsObject());
@@ -113,7 +113,7 @@ JsonValue RepositoryScanningConfiguration::Jsonize() const
 
   if(m_appliedScanFiltersHasBeenSet)
   {
-   Array<JsonValue> appliedScanFiltersJsonList(m_appliedScanFilters.size());
+   Aws::Utils::Array<JsonValue> appliedScanFiltersJsonList(m_appliedScanFilters.size());
    for(unsigned appliedScanFiltersIndex = 0; appliedScanFiltersIndex < appliedScanFiltersJsonList.GetLength(); ++appliedScanFiltersIndex)
    {
      appliedScanFiltersJsonList[appliedScanFiltersIndex].AsObject(m_appliedScanFilters[appliedScanFiltersIndex].Jsonize());

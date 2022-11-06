@@ -44,7 +44,7 @@ VpcAttachment& VpcAttachment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubnetArns"))
   {
-    Array<JsonView> subnetArnsJsonList = jsonValue.GetArray("SubnetArns");
+    Aws::Utils::Array<JsonView> subnetArnsJsonList = jsonValue.GetArray("SubnetArns");
     for(unsigned subnetArnsIndex = 0; subnetArnsIndex < subnetArnsJsonList.GetLength(); ++subnetArnsIndex)
     {
       m_subnetArns.push_back(subnetArnsJsonList[subnetArnsIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue VpcAttachment::Jsonize() const
 
   if(m_subnetArnsHasBeenSet)
   {
-   Array<JsonValue> subnetArnsJsonList(m_subnetArns.size());
+   Aws::Utils::Array<JsonValue> subnetArnsJsonList(m_subnetArns.size());
    for(unsigned subnetArnsIndex = 0; subnetArnsIndex < subnetArnsJsonList.GetLength(); ++subnetArnsIndex)
    {
      subnetArnsJsonList[subnetArnsIndex].AsString(m_subnetArns[subnetArnsIndex]);

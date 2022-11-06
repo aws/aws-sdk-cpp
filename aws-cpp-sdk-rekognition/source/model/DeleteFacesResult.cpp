@@ -30,7 +30,7 @@ DeleteFacesResult& DeleteFacesResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeletedFaces"))
   {
-    Array<JsonView> deletedFacesJsonList = jsonValue.GetArray("DeletedFaces");
+    Aws::Utils::Array<JsonView> deletedFacesJsonList = jsonValue.GetArray("DeletedFaces");
     for(unsigned deletedFacesIndex = 0; deletedFacesIndex < deletedFacesJsonList.GetLength(); ++deletedFacesIndex)
     {
       m_deletedFaces.push_back(deletedFacesJsonList[deletedFacesIndex].AsString());

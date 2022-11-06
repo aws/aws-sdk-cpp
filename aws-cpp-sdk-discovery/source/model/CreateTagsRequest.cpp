@@ -24,7 +24,7 @@ Aws::String CreateTagsRequest::SerializePayload() const
 
   if(m_configurationIdsHasBeenSet)
   {
-   Array<JsonValue> configurationIdsJsonList(m_configurationIds.size());
+   Aws::Utils::Array<JsonValue> configurationIdsJsonList(m_configurationIds.size());
    for(unsigned configurationIdsIndex = 0; configurationIdsIndex < configurationIdsJsonList.GetLength(); ++configurationIdsIndex)
    {
      configurationIdsJsonList[configurationIdsIndex].AsString(m_configurationIds[configurationIdsIndex]);
@@ -35,7 +35,7 @@ Aws::String CreateTagsRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

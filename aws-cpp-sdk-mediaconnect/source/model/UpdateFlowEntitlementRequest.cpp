@@ -46,7 +46,7 @@ Aws::String UpdateFlowEntitlementRequest::SerializePayload() const
 
   if(m_subscribersHasBeenSet)
   {
-   Array<JsonValue> subscribersJsonList(m_subscribers.size());
+   Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
    for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
    {
      subscribersJsonList[subscribersIndex].AsString(m_subscribers[subscribersIndex]);

@@ -30,7 +30,7 @@ ListSensorStatisticsResult& ListSensorStatisticsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SensorStatisticsSummaries"))
   {
-    Array<JsonView> sensorStatisticsSummariesJsonList = jsonValue.GetArray("SensorStatisticsSummaries");
+    Aws::Utils::Array<JsonView> sensorStatisticsSummariesJsonList = jsonValue.GetArray("SensorStatisticsSummaries");
     for(unsigned sensorStatisticsSummariesIndex = 0; sensorStatisticsSummariesIndex < sensorStatisticsSummariesJsonList.GetLength(); ++sensorStatisticsSummariesIndex)
     {
       m_sensorStatisticsSummaries.push_back(sensorStatisticsSummariesJsonList[sensorStatisticsSummariesIndex].AsObject());

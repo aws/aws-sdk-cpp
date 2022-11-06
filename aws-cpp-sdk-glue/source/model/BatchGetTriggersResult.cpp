@@ -30,7 +30,7 @@ BatchGetTriggersResult& BatchGetTriggersResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Triggers"))
   {
-    Array<JsonView> triggersJsonList = jsonValue.GetArray("Triggers");
+    Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("Triggers");
     for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
     {
       m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetTriggersResult& BatchGetTriggersResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("TriggersNotFound"))
   {
-    Array<JsonView> triggersNotFoundJsonList = jsonValue.GetArray("TriggersNotFound");
+    Aws::Utils::Array<JsonView> triggersNotFoundJsonList = jsonValue.GetArray("TriggersNotFound");
     for(unsigned triggersNotFoundIndex = 0; triggersNotFoundIndex < triggersNotFoundJsonList.GetLength(); ++triggersNotFoundIndex)
     {
       m_triggersNotFound.push_back(triggersNotFoundJsonList[triggersNotFoundIndex].AsString());

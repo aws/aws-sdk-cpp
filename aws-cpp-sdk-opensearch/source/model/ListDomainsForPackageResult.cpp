@@ -30,7 +30,7 @@ ListDomainsForPackageResult& ListDomainsForPackageResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DomainPackageDetailsList"))
   {
-    Array<JsonView> domainPackageDetailsListJsonList = jsonValue.GetArray("DomainPackageDetailsList");
+    Aws::Utils::Array<JsonView> domainPackageDetailsListJsonList = jsonValue.GetArray("DomainPackageDetailsList");
     for(unsigned domainPackageDetailsListIndex = 0; domainPackageDetailsListIndex < domainPackageDetailsListJsonList.GetLength(); ++domainPackageDetailsListIndex)
     {
       m_domainPackageDetailsList.push_back(domainPackageDetailsListJsonList[domainPackageDetailsListIndex].AsObject());

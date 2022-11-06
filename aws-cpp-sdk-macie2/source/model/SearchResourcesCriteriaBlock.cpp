@@ -33,7 +33,7 @@ SearchResourcesCriteriaBlock& SearchResourcesCriteriaBlock::operator =(JsonView 
 {
   if(jsonValue.ValueExists("and"))
   {
-    Array<JsonView> andJsonList = jsonValue.GetArray("and");
+    Aws::Utils::Array<JsonView> andJsonList = jsonValue.GetArray("and");
     for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
     {
       m_and.push_back(andJsonList[andIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue SearchResourcesCriteriaBlock::Jsonize() const
 
   if(m_andHasBeenSet)
   {
-   Array<JsonValue> andJsonList(m_and.size());
+   Aws::Utils::Array<JsonValue> andJsonList(m_and.size());
    for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
    {
      andJsonList[andIndex].AsObject(m_and[andIndex].Jsonize());

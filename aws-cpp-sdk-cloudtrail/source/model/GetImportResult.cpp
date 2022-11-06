@@ -38,7 +38,7 @@ GetImportResult& GetImportResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("Destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsString());

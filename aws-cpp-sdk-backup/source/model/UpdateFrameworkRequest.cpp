@@ -33,7 +33,7 @@ Aws::String UpdateFrameworkRequest::SerializePayload() const
 
   if(m_frameworkControlsHasBeenSet)
   {
-   Array<JsonValue> frameworkControlsJsonList(m_frameworkControls.size());
+   Aws::Utils::Array<JsonValue> frameworkControlsJsonList(m_frameworkControls.size());
    for(unsigned frameworkControlsIndex = 0; frameworkControlsIndex < frameworkControlsJsonList.GetLength(); ++frameworkControlsIndex)
    {
      frameworkControlsJsonList[frameworkControlsIndex].AsObject(m_frameworkControls[frameworkControlsIndex].Jsonize());

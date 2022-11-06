@@ -24,7 +24,7 @@ Aws::String PutConfigurationSetSuppressionOptionsRequest::SerializePayload() con
 
   if(m_suppressedReasonsHasBeenSet)
   {
-   Array<JsonValue> suppressedReasonsJsonList(m_suppressedReasons.size());
+   Aws::Utils::Array<JsonValue> suppressedReasonsJsonList(m_suppressedReasons.size());
    for(unsigned suppressedReasonsIndex = 0; suppressedReasonsIndex < suppressedReasonsJsonList.GetLength(); ++suppressedReasonsIndex)
    {
      suppressedReasonsJsonList[suppressedReasonsIndex].AsString(SuppressionListReasonMapper::GetNameForSuppressionListReason(m_suppressedReasons[suppressedReasonsIndex]));

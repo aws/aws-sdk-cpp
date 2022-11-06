@@ -32,22 +32,48 @@ namespace ConnectParticipant
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ConnectParticipantClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ConnectParticipantClient(const Aws::ConnectParticipant::ConnectParticipantClientConfiguration& clientConfiguration = Aws::ConnectParticipant::ConnectParticipantClientConfiguration(),
+                                 std::shared_ptr<ConnectParticipantEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ConnectParticipantClient(const Aws::Auth::AWSCredentials& credentials,
-                                 const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                 std::shared_ptr<ConnectParticipantEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG),
+                                 const Aws::ConnectParticipant::ConnectParticipantClientConfiguration& clientConfiguration = Aws::ConnectParticipant::ConnectParticipantClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ConnectParticipantClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                 const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                 std::shared_ptr<ConnectParticipantEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG),
+                                 const Aws::ConnectParticipant::ConnectParticipantClientConfiguration& clientConfiguration = Aws::ConnectParticipant::ConnectParticipantClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectParticipantClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectParticipantClient(const Aws::Auth::AWSCredentials& credentials,
+                                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ConnectParticipantClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ConnectParticipantClient();
 
 
@@ -241,12 +267,13 @@ namespace ConnectParticipant
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ConnectParticipantEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const ConnectParticipantClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ConnectParticipantClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ConnectParticipantEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConnectParticipant

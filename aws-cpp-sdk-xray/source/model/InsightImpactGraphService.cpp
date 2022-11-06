@@ -66,7 +66,7 @@ InsightImpactGraphService& InsightImpactGraphService::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Names"))
   {
-    Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
+    Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
     for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
     {
       m_names.push_back(namesJsonList[namesIndex].AsString());
@@ -83,7 +83,7 @@ InsightImpactGraphService& InsightImpactGraphService::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Edges"))
   {
-    Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
+    Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
     for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
     {
       m_edges.push_back(edgesJsonList[edgesIndex].AsObject());
@@ -118,7 +118,7 @@ JsonValue InsightImpactGraphService::Jsonize() const
 
   if(m_namesHasBeenSet)
   {
-   Array<JsonValue> namesJsonList(m_names.size());
+   Aws::Utils::Array<JsonValue> namesJsonList(m_names.size());
    for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
    {
      namesJsonList[namesIndex].AsString(m_names[namesIndex]);
@@ -135,7 +135,7 @@ JsonValue InsightImpactGraphService::Jsonize() const
 
   if(m_edgesHasBeenSet)
   {
-   Array<JsonValue> edgesJsonList(m_edges.size());
+   Aws::Utils::Array<JsonValue> edgesJsonList(m_edges.size());
    for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
    {
      edgesJsonList[edgesIndex].AsObject(m_edges[edgesIndex].Jsonize());

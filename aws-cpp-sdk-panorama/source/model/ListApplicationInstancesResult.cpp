@@ -30,7 +30,7 @@ ListApplicationInstancesResult& ListApplicationInstancesResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ApplicationInstances"))
   {
-    Array<JsonView> applicationInstancesJsonList = jsonValue.GetArray("ApplicationInstances");
+    Aws::Utils::Array<JsonView> applicationInstancesJsonList = jsonValue.GetArray("ApplicationInstances");
     for(unsigned applicationInstancesIndex = 0; applicationInstancesIndex < applicationInstancesJsonList.GetLength(); ++applicationInstancesIndex)
     {
       m_applicationInstances.push_back(applicationInstancesJsonList[applicationInstancesIndex].AsObject());

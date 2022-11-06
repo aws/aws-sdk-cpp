@@ -44,7 +44,7 @@ FeaturizationConfig& FeaturizationConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ForecastDimensions"))
   {
-    Array<JsonView> forecastDimensionsJsonList = jsonValue.GetArray("ForecastDimensions");
+    Aws::Utils::Array<JsonView> forecastDimensionsJsonList = jsonValue.GetArray("ForecastDimensions");
     for(unsigned forecastDimensionsIndex = 0; forecastDimensionsIndex < forecastDimensionsJsonList.GetLength(); ++forecastDimensionsIndex)
     {
       m_forecastDimensions.push_back(forecastDimensionsJsonList[forecastDimensionsIndex].AsString());
@@ -54,7 +54,7 @@ FeaturizationConfig& FeaturizationConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Featurizations"))
   {
-    Array<JsonView> featurizationsJsonList = jsonValue.GetArray("Featurizations");
+    Aws::Utils::Array<JsonView> featurizationsJsonList = jsonValue.GetArray("Featurizations");
     for(unsigned featurizationsIndex = 0; featurizationsIndex < featurizationsJsonList.GetLength(); ++featurizationsIndex)
     {
       m_featurizations.push_back(featurizationsJsonList[featurizationsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue FeaturizationConfig::Jsonize() const
 
   if(m_forecastDimensionsHasBeenSet)
   {
-   Array<JsonValue> forecastDimensionsJsonList(m_forecastDimensions.size());
+   Aws::Utils::Array<JsonValue> forecastDimensionsJsonList(m_forecastDimensions.size());
    for(unsigned forecastDimensionsIndex = 0; forecastDimensionsIndex < forecastDimensionsJsonList.GetLength(); ++forecastDimensionsIndex)
    {
      forecastDimensionsJsonList[forecastDimensionsIndex].AsString(m_forecastDimensions[forecastDimensionsIndex]);
@@ -88,7 +88,7 @@ JsonValue FeaturizationConfig::Jsonize() const
 
   if(m_featurizationsHasBeenSet)
   {
-   Array<JsonValue> featurizationsJsonList(m_featurizations.size());
+   Aws::Utils::Array<JsonValue> featurizationsJsonList(m_featurizations.size());
    for(unsigned featurizationsIndex = 0; featurizationsIndex < featurizationsJsonList.GetLength(); ++featurizationsIndex)
    {
      featurizationsJsonList[featurizationsIndex].AsObject(m_featurizations[featurizationsIndex].Jsonize());

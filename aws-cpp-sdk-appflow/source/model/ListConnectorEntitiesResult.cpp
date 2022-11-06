@@ -33,7 +33,7 @@ ListConnectorEntitiesResult& ListConnectorEntitiesResult::operator =(const Aws::
     Aws::Map<Aws::String, JsonView> connectorEntityMapJsonMap = jsonValue.GetObject("connectorEntityMap").GetAllObjects();
     for(auto& connectorEntityMapItem : connectorEntityMapJsonMap)
     {
-      Array<JsonView> connectorEntityListJsonList = connectorEntityMapItem.second.AsArray();
+      Aws::Utils::Array<JsonView> connectorEntityListJsonList = connectorEntityMapItem.second.AsArray();
       Aws::Vector<ConnectorEntity> connectorEntityListList;
       connectorEntityListList.reserve((size_t)connectorEntityListJsonList.GetLength());
       for(unsigned connectorEntityListIndex = 0; connectorEntityListIndex < connectorEntityListJsonList.GetLength(); ++connectorEntityListIndex)

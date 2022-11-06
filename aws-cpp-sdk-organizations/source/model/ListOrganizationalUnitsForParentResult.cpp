@@ -30,7 +30,7 @@ ListOrganizationalUnitsForParentResult& ListOrganizationalUnitsForParentResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OrganizationalUnits"))
   {
-    Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("OrganizationalUnits");
+    Aws::Utils::Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("OrganizationalUnits");
     for(unsigned organizationalUnitsIndex = 0; organizationalUnitsIndex < organizationalUnitsJsonList.GetLength(); ++organizationalUnitsIndex)
     {
       m_organizationalUnits.push_back(organizationalUnitsJsonList[organizationalUnitsIndex].AsObject());

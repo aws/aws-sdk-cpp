@@ -77,7 +77,7 @@ CreateBackendAuthUserPoolConfig& CreateBackendAuthUserPoolConfig::operator =(Jso
 
   if(jsonValue.ValueExists("requiredSignUpAttributes"))
   {
-    Array<JsonView> requiredSignUpAttributesJsonList = jsonValue.GetArray("requiredSignUpAttributes");
+    Aws::Utils::Array<JsonView> requiredSignUpAttributesJsonList = jsonValue.GetArray("requiredSignUpAttributes");
     for(unsigned requiredSignUpAttributesIndex = 0; requiredSignUpAttributesIndex < requiredSignUpAttributesJsonList.GetLength(); ++requiredSignUpAttributesIndex)
     {
       m_requiredSignUpAttributes.push_back(RequiredSignUpAttributesElementMapper::GetRequiredSignUpAttributesElementForName(requiredSignUpAttributesJsonList[requiredSignUpAttributesIndex].AsString()));
@@ -139,7 +139,7 @@ JsonValue CreateBackendAuthUserPoolConfig::Jsonize() const
 
   if(m_requiredSignUpAttributesHasBeenSet)
   {
-   Array<JsonValue> requiredSignUpAttributesJsonList(m_requiredSignUpAttributes.size());
+   Aws::Utils::Array<JsonValue> requiredSignUpAttributesJsonList(m_requiredSignUpAttributes.size());
    for(unsigned requiredSignUpAttributesIndex = 0; requiredSignUpAttributesIndex < requiredSignUpAttributesJsonList.GetLength(); ++requiredSignUpAttributesIndex)
    {
      requiredSignUpAttributesJsonList[requiredSignUpAttributesIndex].AsString(RequiredSignUpAttributesElementMapper::GetNameForRequiredSignUpAttributesElement(m_requiredSignUpAttributes[requiredSignUpAttributesIndex]));

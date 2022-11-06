@@ -84,7 +84,7 @@ DescribeRecipeResult& DescribeRecipeResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Steps"))
   {
-    Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
+    Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
     for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());

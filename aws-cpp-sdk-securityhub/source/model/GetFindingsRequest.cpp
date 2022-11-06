@@ -33,7 +33,7 @@ Aws::String GetFindingsRequest::SerializePayload() const
 
   if(m_sortCriteriaHasBeenSet)
   {
-   Array<JsonValue> sortCriteriaJsonList(m_sortCriteria.size());
+   Aws::Utils::Array<JsonValue> sortCriteriaJsonList(m_sortCriteria.size());
    for(unsigned sortCriteriaIndex = 0; sortCriteriaIndex < sortCriteriaJsonList.GetLength(); ++sortCriteriaIndex)
    {
      sortCriteriaJsonList[sortCriteriaIndex].AsObject(m_sortCriteria[sortCriteriaIndex].Jsonize());

@@ -27,7 +27,7 @@ Aws::String AcceptEulasRequest::SerializePayload() const
 
   if(m_eulaIdsHasBeenSet)
   {
-   Array<JsonValue> eulaIdsJsonList(m_eulaIds.size());
+   Aws::Utils::Array<JsonValue> eulaIdsJsonList(m_eulaIds.size());
    for(unsigned eulaIdsIndex = 0; eulaIdsIndex < eulaIdsJsonList.GetLength(); ++eulaIdsIndex)
    {
      eulaIdsJsonList[eulaIdsIndex].AsString(m_eulaIds[eulaIdsIndex]);

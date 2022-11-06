@@ -52,7 +52,7 @@ AwsCodeBuildProjectEnvironment& AwsCodeBuildProjectEnvironment::operator =(JsonV
 
   if(jsonValue.ValueExists("EnvironmentVariables"))
   {
-    Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("EnvironmentVariables");
+    Aws::Utils::Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("EnvironmentVariables");
     for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
     {
       m_environmentVariables.push_back(environmentVariablesJsonList[environmentVariablesIndex].AsObject());
@@ -103,7 +103,7 @@ JsonValue AwsCodeBuildProjectEnvironment::Jsonize() const
 
   if(m_environmentVariablesHasBeenSet)
   {
-   Array<JsonValue> environmentVariablesJsonList(m_environmentVariables.size());
+   Aws::Utils::Array<JsonValue> environmentVariablesJsonList(m_environmentVariables.size());
    for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
    {
      environmentVariablesJsonList[environmentVariablesIndex].AsObject(m_environmentVariables[environmentVariablesIndex].Jsonize());

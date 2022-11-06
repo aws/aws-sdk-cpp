@@ -30,7 +30,7 @@ ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UploadsList"))
   {
-    Array<JsonView> uploadsListJsonList = jsonValue.GetArray("UploadsList");
+    Aws::Utils::Array<JsonView> uploadsListJsonList = jsonValue.GetArray("UploadsList");
     for(unsigned uploadsListIndex = 0; uploadsListIndex < uploadsListJsonList.GetLength(); ++uploadsListIndex)
     {
       m_uploadsList.push_back(uploadsListJsonList[uploadsListIndex].AsObject());

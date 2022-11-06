@@ -30,7 +30,7 @@ BatchGetCommitsResult& BatchGetCommitsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("commits"))
   {
-    Array<JsonView> commitsJsonList = jsonValue.GetArray("commits");
+    Aws::Utils::Array<JsonView> commitsJsonList = jsonValue.GetArray("commits");
     for(unsigned commitsIndex = 0; commitsIndex < commitsJsonList.GetLength(); ++commitsIndex)
     {
       m_commits.push_back(commitsJsonList[commitsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetCommitsResult& BatchGetCommitsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

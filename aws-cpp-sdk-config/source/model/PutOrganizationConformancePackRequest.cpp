@@ -59,7 +59,7 @@ Aws::String PutOrganizationConformancePackRequest::SerializePayload() const
 
   if(m_conformancePackInputParametersHasBeenSet)
   {
-   Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
+   Aws::Utils::Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
    for(unsigned conformancePackInputParametersIndex = 0; conformancePackInputParametersIndex < conformancePackInputParametersJsonList.GetLength(); ++conformancePackInputParametersIndex)
    {
      conformancePackInputParametersJsonList[conformancePackInputParametersIndex].AsObject(m_conformancePackInputParameters[conformancePackInputParametersIndex].Jsonize());
@@ -70,7 +70,7 @@ Aws::String PutOrganizationConformancePackRequest::SerializePayload() const
 
   if(m_excludedAccountsHasBeenSet)
   {
-   Array<JsonValue> excludedAccountsJsonList(m_excludedAccounts.size());
+   Aws::Utils::Array<JsonValue> excludedAccountsJsonList(m_excludedAccounts.size());
    for(unsigned excludedAccountsIndex = 0; excludedAccountsIndex < excludedAccountsJsonList.GetLength(); ++excludedAccountsIndex)
    {
      excludedAccountsJsonList[excludedAccountsIndex].AsString(m_excludedAccounts[excludedAccountsIndex]);

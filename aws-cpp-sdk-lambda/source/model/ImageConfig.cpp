@@ -37,7 +37,7 @@ ImageConfig& ImageConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EntryPoint"))
   {
-    Array<JsonView> entryPointJsonList = jsonValue.GetArray("EntryPoint");
+    Aws::Utils::Array<JsonView> entryPointJsonList = jsonValue.GetArray("EntryPoint");
     for(unsigned entryPointIndex = 0; entryPointIndex < entryPointJsonList.GetLength(); ++entryPointIndex)
     {
       m_entryPoint.push_back(entryPointJsonList[entryPointIndex].AsString());
@@ -47,7 +47,7 @@ ImageConfig& ImageConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Command"))
   {
-    Array<JsonView> commandJsonList = jsonValue.GetArray("Command");
+    Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("Command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -71,7 +71,7 @@ JsonValue ImageConfig::Jsonize() const
 
   if(m_entryPointHasBeenSet)
   {
-   Array<JsonValue> entryPointJsonList(m_entryPoint.size());
+   Aws::Utils::Array<JsonValue> entryPointJsonList(m_entryPoint.size());
    for(unsigned entryPointIndex = 0; entryPointIndex < entryPointJsonList.GetLength(); ++entryPointIndex)
    {
      entryPointJsonList[entryPointIndex].AsString(m_entryPoint[entryPointIndex]);
@@ -82,7 +82,7 @@ JsonValue ImageConfig::Jsonize() const
 
   if(m_commandHasBeenSet)
   {
-   Array<JsonValue> commandJsonList(m_command.size());
+   Aws::Utils::Array<JsonValue> commandJsonList(m_command.size());
    for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
    {
      commandJsonList[commandIndex].AsString(m_command[commandIndex]);

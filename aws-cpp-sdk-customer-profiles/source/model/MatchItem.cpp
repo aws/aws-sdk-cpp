@@ -46,7 +46,7 @@ MatchItem& MatchItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProfileIds"))
   {
-    Array<JsonView> profileIdsJsonList = jsonValue.GetArray("ProfileIds");
+    Aws::Utils::Array<JsonView> profileIdsJsonList = jsonValue.GetArray("ProfileIds");
     for(unsigned profileIdsIndex = 0; profileIdsIndex < profileIdsJsonList.GetLength(); ++profileIdsIndex)
     {
       m_profileIds.push_back(profileIdsJsonList[profileIdsIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue MatchItem::Jsonize() const
 
   if(m_profileIdsHasBeenSet)
   {
-   Array<JsonValue> profileIdsJsonList(m_profileIds.size());
+   Aws::Utils::Array<JsonValue> profileIdsJsonList(m_profileIds.size());
    for(unsigned profileIdsIndex = 0; profileIdsIndex < profileIdsJsonList.GetLength(); ++profileIdsIndex)
    {
      profileIdsJsonList[profileIdsIndex].AsString(m_profileIds[profileIdsIndex]);

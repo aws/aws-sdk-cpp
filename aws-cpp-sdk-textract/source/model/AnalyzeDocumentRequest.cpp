@@ -32,7 +32,7 @@ Aws::String AnalyzeDocumentRequest::SerializePayload() const
 
   if(m_featureTypesHasBeenSet)
   {
-   Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
+   Aws::Utils::Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
    for(unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex)
    {
      featureTypesJsonList[featureTypesIndex].AsString(FeatureTypeMapper::GetNameForFeatureType(m_featureTypes[featureTypesIndex]));

@@ -30,7 +30,7 @@ UnlabelParameterVersionResult& UnlabelParameterVersionResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RemovedLabels"))
   {
-    Array<JsonView> removedLabelsJsonList = jsonValue.GetArray("RemovedLabels");
+    Aws::Utils::Array<JsonView> removedLabelsJsonList = jsonValue.GetArray("RemovedLabels");
     for(unsigned removedLabelsIndex = 0; removedLabelsIndex < removedLabelsJsonList.GetLength(); ++removedLabelsIndex)
     {
       m_removedLabels.push_back(removedLabelsJsonList[removedLabelsIndex].AsString());
@@ -39,7 +39,7 @@ UnlabelParameterVersionResult& UnlabelParameterVersionResult::operator =(const A
 
   if(jsonValue.ValueExists("InvalidLabels"))
   {
-    Array<JsonView> invalidLabelsJsonList = jsonValue.GetArray("InvalidLabels");
+    Aws::Utils::Array<JsonView> invalidLabelsJsonList = jsonValue.GetArray("InvalidLabels");
     for(unsigned invalidLabelsIndex = 0; invalidLabelsIndex < invalidLabelsJsonList.GetLength(); ++invalidLabelsIndex)
     {
       m_invalidLabels.push_back(invalidLabelsJsonList[invalidLabelsIndex].AsString());

@@ -51,7 +51,7 @@ DeleteObjectInput& DeleteObjectInput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PartitionValues"))
   {
-    Array<JsonView> partitionValuesJsonList = jsonValue.GetArray("PartitionValues");
+    Aws::Utils::Array<JsonView> partitionValuesJsonList = jsonValue.GetArray("PartitionValues");
     for(unsigned partitionValuesIndex = 0; partitionValuesIndex < partitionValuesJsonList.GetLength(); ++partitionValuesIndex)
     {
       m_partitionValues.push_back(partitionValuesJsonList[partitionValuesIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue DeleteObjectInput::Jsonize() const
 
   if(m_partitionValuesHasBeenSet)
   {
-   Array<JsonValue> partitionValuesJsonList(m_partitionValues.size());
+   Aws::Utils::Array<JsonValue> partitionValuesJsonList(m_partitionValues.size());
    for(unsigned partitionValuesIndex = 0; partitionValuesIndex < partitionValuesJsonList.GetLength(); ++partitionValuesIndex)
    {
      partitionValuesJsonList[partitionValuesIndex].AsString(m_partitionValues[partitionValuesIndex]);

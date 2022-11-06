@@ -30,7 +30,7 @@ ListThirdPartyFirewallFirewallPoliciesResult& ListThirdPartyFirewallFirewallPoli
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ThirdPartyFirewallFirewallPolicies"))
   {
-    Array<JsonView> thirdPartyFirewallFirewallPoliciesJsonList = jsonValue.GetArray("ThirdPartyFirewallFirewallPolicies");
+    Aws::Utils::Array<JsonView> thirdPartyFirewallFirewallPoliciesJsonList = jsonValue.GetArray("ThirdPartyFirewallFirewallPolicies");
     for(unsigned thirdPartyFirewallFirewallPoliciesIndex = 0; thirdPartyFirewallFirewallPoliciesIndex < thirdPartyFirewallFirewallPoliciesJsonList.GetLength(); ++thirdPartyFirewallFirewallPoliciesIndex)
     {
       m_thirdPartyFirewallFirewallPolicies.push_back(thirdPartyFirewallFirewallPoliciesJsonList[thirdPartyFirewallFirewallPoliciesIndex].AsObject());

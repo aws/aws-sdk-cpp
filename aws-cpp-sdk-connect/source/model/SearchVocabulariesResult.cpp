@@ -30,7 +30,7 @@ SearchVocabulariesResult& SearchVocabulariesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VocabularySummaryList"))
   {
-    Array<JsonView> vocabularySummaryListJsonList = jsonValue.GetArray("VocabularySummaryList");
+    Aws::Utils::Array<JsonView> vocabularySummaryListJsonList = jsonValue.GetArray("VocabularySummaryList");
     for(unsigned vocabularySummaryListIndex = 0; vocabularySummaryListIndex < vocabularySummaryListJsonList.GetLength(); ++vocabularySummaryListIndex)
     {
       m_vocabularySummaryList.push_back(vocabularySummaryListJsonList[vocabularySummaryListIndex].AsObject());

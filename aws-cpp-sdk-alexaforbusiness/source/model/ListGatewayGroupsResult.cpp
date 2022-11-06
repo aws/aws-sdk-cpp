@@ -30,7 +30,7 @@ ListGatewayGroupsResult& ListGatewayGroupsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayGroups"))
   {
-    Array<JsonView> gatewayGroupsJsonList = jsonValue.GetArray("GatewayGroups");
+    Aws::Utils::Array<JsonView> gatewayGroupsJsonList = jsonValue.GetArray("GatewayGroups");
     for(unsigned gatewayGroupsIndex = 0; gatewayGroupsIndex < gatewayGroupsJsonList.GetLength(); ++gatewayGroupsIndex)
     {
       m_gatewayGroups.push_back(gatewayGroupsJsonList[gatewayGroupsIndex].AsObject());

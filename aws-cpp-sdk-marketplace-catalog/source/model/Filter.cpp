@@ -42,7 +42,7 @@ Filter& Filter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ValueList"))
   {
-    Array<JsonView> valueListJsonList = jsonValue.GetArray("ValueList");
+    Aws::Utils::Array<JsonView> valueListJsonList = jsonValue.GetArray("ValueList");
     for(unsigned valueListIndex = 0; valueListIndex < valueListJsonList.GetLength(); ++valueListIndex)
     {
       m_valueList.push_back(valueListJsonList[valueListIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue Filter::Jsonize() const
 
   if(m_valueListHasBeenSet)
   {
-   Array<JsonValue> valueListJsonList(m_valueList.size());
+   Aws::Utils::Array<JsonValue> valueListJsonList(m_valueList.size());
    for(unsigned valueListIndex = 0; valueListIndex < valueListJsonList.GetLength(); ++valueListIndex)
    {
      valueListJsonList[valueListIndex].AsString(m_valueList[valueListIndex]);

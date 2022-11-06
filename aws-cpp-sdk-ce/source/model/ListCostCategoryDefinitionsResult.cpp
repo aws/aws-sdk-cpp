@@ -30,7 +30,7 @@ ListCostCategoryDefinitionsResult& ListCostCategoryDefinitionsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CostCategoryReferences"))
   {
-    Array<JsonView> costCategoryReferencesJsonList = jsonValue.GetArray("CostCategoryReferences");
+    Aws::Utils::Array<JsonView> costCategoryReferencesJsonList = jsonValue.GetArray("CostCategoryReferences");
     for(unsigned costCategoryReferencesIndex = 0; costCategoryReferencesIndex < costCategoryReferencesJsonList.GetLength(); ++costCategoryReferencesIndex)
     {
       m_costCategoryReferences.push_back(costCategoryReferencesJsonList[costCategoryReferencesIndex].AsObject());

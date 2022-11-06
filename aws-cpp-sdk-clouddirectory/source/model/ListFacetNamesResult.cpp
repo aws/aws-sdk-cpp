@@ -30,7 +30,7 @@ ListFacetNamesResult& ListFacetNamesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FacetNames"))
   {
-    Array<JsonView> facetNamesJsonList = jsonValue.GetArray("FacetNames");
+    Aws::Utils::Array<JsonView> facetNamesJsonList = jsonValue.GetArray("FacetNames");
     for(unsigned facetNamesIndex = 0; facetNamesIndex < facetNamesJsonList.GetLength(); ++facetNamesIndex)
     {
       m_facetNames.push_back(facetNamesJsonList[facetNamesIndex].AsString());

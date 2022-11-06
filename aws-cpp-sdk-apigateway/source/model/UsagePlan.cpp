@@ -68,7 +68,7 @@ UsagePlan& UsagePlan::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("apiStages"))
   {
-    Array<JsonView> apiStagesJsonList = jsonValue.GetArray("apiStages");
+    Aws::Utils::Array<JsonView> apiStagesJsonList = jsonValue.GetArray("apiStages");
     for(unsigned apiStagesIndex = 0; apiStagesIndex < apiStagesJsonList.GetLength(); ++apiStagesIndex)
     {
       m_apiStages.push_back(apiStagesJsonList[apiStagesIndex].AsObject());
@@ -134,7 +134,7 @@ JsonValue UsagePlan::Jsonize() const
 
   if(m_apiStagesHasBeenSet)
   {
-   Array<JsonValue> apiStagesJsonList(m_apiStages.size());
+   Aws::Utils::Array<JsonValue> apiStagesJsonList(m_apiStages.size());
    for(unsigned apiStagesIndex = 0; apiStagesIndex < apiStagesJsonList.GetLength(); ++apiStagesIndex)
    {
      apiStagesJsonList[apiStagesIndex].AsObject(m_apiStages[apiStagesIndex].Jsonize());

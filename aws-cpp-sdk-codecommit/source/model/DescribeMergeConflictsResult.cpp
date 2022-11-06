@@ -36,7 +36,7 @@ DescribeMergeConflictsResult& DescribeMergeConflictsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("mergeHunks"))
   {
-    Array<JsonView> mergeHunksJsonList = jsonValue.GetArray("mergeHunks");
+    Aws::Utils::Array<JsonView> mergeHunksJsonList = jsonValue.GetArray("mergeHunks");
     for(unsigned mergeHunksIndex = 0; mergeHunksIndex < mergeHunksJsonList.GetLength(); ++mergeHunksIndex)
     {
       m_mergeHunks.push_back(mergeHunksJsonList[mergeHunksIndex].AsObject());

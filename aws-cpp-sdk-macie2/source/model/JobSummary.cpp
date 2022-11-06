@@ -53,7 +53,7 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bucketDefinitions"))
   {
-    Array<JsonView> bucketDefinitionsJsonList = jsonValue.GetArray("bucketDefinitions");
+    Aws::Utils::Array<JsonView> bucketDefinitionsJsonList = jsonValue.GetArray("bucketDefinitions");
     for(unsigned bucketDefinitionsIndex = 0; bucketDefinitionsIndex < bucketDefinitionsJsonList.GetLength(); ++bucketDefinitionsIndex)
     {
       m_bucketDefinitions.push_back(bucketDefinitionsJsonList[bucketDefinitionsIndex].AsObject());
@@ -126,7 +126,7 @@ JsonValue JobSummary::Jsonize() const
 
   if(m_bucketDefinitionsHasBeenSet)
   {
-   Array<JsonValue> bucketDefinitionsJsonList(m_bucketDefinitions.size());
+   Aws::Utils::Array<JsonValue> bucketDefinitionsJsonList(m_bucketDefinitions.size());
    for(unsigned bucketDefinitionsIndex = 0; bucketDefinitionsIndex < bucketDefinitionsJsonList.GetLength(); ++bucketDefinitionsIndex)
    {
      bucketDefinitionsJsonList[bucketDefinitionsIndex].AsObject(m_bucketDefinitions[bucketDefinitionsIndex].Jsonize());

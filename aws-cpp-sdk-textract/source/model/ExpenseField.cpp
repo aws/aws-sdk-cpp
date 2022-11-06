@@ -80,7 +80,7 @@ ExpenseField& ExpenseField::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GroupProperties"))
   {
-    Array<JsonView> groupPropertiesJsonList = jsonValue.GetArray("GroupProperties");
+    Aws::Utils::Array<JsonView> groupPropertiesJsonList = jsonValue.GetArray("GroupProperties");
     for(unsigned groupPropertiesIndex = 0; groupPropertiesIndex < groupPropertiesJsonList.GetLength(); ++groupPropertiesIndex)
     {
       m_groupProperties.push_back(groupPropertiesJsonList[groupPropertiesIndex].AsObject());
@@ -127,7 +127,7 @@ JsonValue ExpenseField::Jsonize() const
 
   if(m_groupPropertiesHasBeenSet)
   {
-   Array<JsonValue> groupPropertiesJsonList(m_groupProperties.size());
+   Aws::Utils::Array<JsonValue> groupPropertiesJsonList(m_groupProperties.size());
    for(unsigned groupPropertiesIndex = 0; groupPropertiesIndex < groupPropertiesJsonList.GetLength(); ++groupPropertiesIndex)
    {
      groupPropertiesJsonList[groupPropertiesIndex].AsObject(m_groupProperties[groupPropertiesIndex].Jsonize());

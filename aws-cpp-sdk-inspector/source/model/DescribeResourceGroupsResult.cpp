@@ -30,7 +30,7 @@ DescribeResourceGroupsResult& DescribeResourceGroupsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceGroups"))
   {
-    Array<JsonView> resourceGroupsJsonList = jsonValue.GetArray("resourceGroups");
+    Aws::Utils::Array<JsonView> resourceGroupsJsonList = jsonValue.GetArray("resourceGroups");
     for(unsigned resourceGroupsIndex = 0; resourceGroupsIndex < resourceGroupsJsonList.GetLength(); ++resourceGroupsIndex)
     {
       m_resourceGroups.push_back(resourceGroupsJsonList[resourceGroupsIndex].AsObject());

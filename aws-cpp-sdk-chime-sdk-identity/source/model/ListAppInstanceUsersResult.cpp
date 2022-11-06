@@ -36,7 +36,7 @@ ListAppInstanceUsersResult& ListAppInstanceUsersResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("AppInstanceUsers"))
   {
-    Array<JsonView> appInstanceUsersJsonList = jsonValue.GetArray("AppInstanceUsers");
+    Aws::Utils::Array<JsonView> appInstanceUsersJsonList = jsonValue.GetArray("AppInstanceUsers");
     for(unsigned appInstanceUsersIndex = 0; appInstanceUsersIndex < appInstanceUsersJsonList.GetLength(); ++appInstanceUsersIndex)
     {
       m_appInstanceUsers.push_back(appInstanceUsersJsonList[appInstanceUsersIndex].AsObject());

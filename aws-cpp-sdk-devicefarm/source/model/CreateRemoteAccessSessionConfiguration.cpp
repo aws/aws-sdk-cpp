@@ -44,7 +44,7 @@ CreateRemoteAccessSessionConfiguration& CreateRemoteAccessSessionConfiguration::
 
   if(jsonValue.ValueExists("vpceConfigurationArns"))
   {
-    Array<JsonView> vpceConfigurationArnsJsonList = jsonValue.GetArray("vpceConfigurationArns");
+    Aws::Utils::Array<JsonView> vpceConfigurationArnsJsonList = jsonValue.GetArray("vpceConfigurationArns");
     for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
     {
       m_vpceConfigurationArns.push_back(vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString());
@@ -66,7 +66,7 @@ JsonValue CreateRemoteAccessSessionConfiguration::Jsonize() const
 
   if(m_vpceConfigurationArnsHasBeenSet)
   {
-   Array<JsonValue> vpceConfigurationArnsJsonList(m_vpceConfigurationArns.size());
+   Aws::Utils::Array<JsonValue> vpceConfigurationArnsJsonList(m_vpceConfigurationArns.size());
    for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
    {
      vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString(m_vpceConfigurationArns[vpceConfigurationArnsIndex]);

@@ -82,7 +82,7 @@ DirectConnectGatewayAssociationProposal& DirectConnectGatewayAssociationProposal
 
   if(jsonValue.ValueExists("existingAllowedPrefixesToDirectConnectGateway"))
   {
-    Array<JsonView> existingAllowedPrefixesToDirectConnectGatewayJsonList = jsonValue.GetArray("existingAllowedPrefixesToDirectConnectGateway");
+    Aws::Utils::Array<JsonView> existingAllowedPrefixesToDirectConnectGatewayJsonList = jsonValue.GetArray("existingAllowedPrefixesToDirectConnectGateway");
     for(unsigned existingAllowedPrefixesToDirectConnectGatewayIndex = 0; existingAllowedPrefixesToDirectConnectGatewayIndex < existingAllowedPrefixesToDirectConnectGatewayJsonList.GetLength(); ++existingAllowedPrefixesToDirectConnectGatewayIndex)
     {
       m_existingAllowedPrefixesToDirectConnectGateway.push_back(existingAllowedPrefixesToDirectConnectGatewayJsonList[existingAllowedPrefixesToDirectConnectGatewayIndex].AsObject());
@@ -92,7 +92,7 @@ DirectConnectGatewayAssociationProposal& DirectConnectGatewayAssociationProposal
 
   if(jsonValue.ValueExists("requestedAllowedPrefixesToDirectConnectGateway"))
   {
-    Array<JsonView> requestedAllowedPrefixesToDirectConnectGatewayJsonList = jsonValue.GetArray("requestedAllowedPrefixesToDirectConnectGateway");
+    Aws::Utils::Array<JsonView> requestedAllowedPrefixesToDirectConnectGatewayJsonList = jsonValue.GetArray("requestedAllowedPrefixesToDirectConnectGateway");
     for(unsigned requestedAllowedPrefixesToDirectConnectGatewayIndex = 0; requestedAllowedPrefixesToDirectConnectGatewayIndex < requestedAllowedPrefixesToDirectConnectGatewayJsonList.GetLength(); ++requestedAllowedPrefixesToDirectConnectGatewayIndex)
     {
       m_requestedAllowedPrefixesToDirectConnectGateway.push_back(requestedAllowedPrefixesToDirectConnectGatewayJsonList[requestedAllowedPrefixesToDirectConnectGatewayIndex].AsObject());
@@ -138,7 +138,7 @@ JsonValue DirectConnectGatewayAssociationProposal::Jsonize() const
 
   if(m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet)
   {
-   Array<JsonValue> existingAllowedPrefixesToDirectConnectGatewayJsonList(m_existingAllowedPrefixesToDirectConnectGateway.size());
+   Aws::Utils::Array<JsonValue> existingAllowedPrefixesToDirectConnectGatewayJsonList(m_existingAllowedPrefixesToDirectConnectGateway.size());
    for(unsigned existingAllowedPrefixesToDirectConnectGatewayIndex = 0; existingAllowedPrefixesToDirectConnectGatewayIndex < existingAllowedPrefixesToDirectConnectGatewayJsonList.GetLength(); ++existingAllowedPrefixesToDirectConnectGatewayIndex)
    {
      existingAllowedPrefixesToDirectConnectGatewayJsonList[existingAllowedPrefixesToDirectConnectGatewayIndex].AsObject(m_existingAllowedPrefixesToDirectConnectGateway[existingAllowedPrefixesToDirectConnectGatewayIndex].Jsonize());
@@ -149,7 +149,7 @@ JsonValue DirectConnectGatewayAssociationProposal::Jsonize() const
 
   if(m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet)
   {
-   Array<JsonValue> requestedAllowedPrefixesToDirectConnectGatewayJsonList(m_requestedAllowedPrefixesToDirectConnectGateway.size());
+   Aws::Utils::Array<JsonValue> requestedAllowedPrefixesToDirectConnectGatewayJsonList(m_requestedAllowedPrefixesToDirectConnectGateway.size());
    for(unsigned requestedAllowedPrefixesToDirectConnectGatewayIndex = 0; requestedAllowedPrefixesToDirectConnectGatewayIndex < requestedAllowedPrefixesToDirectConnectGatewayJsonList.GetLength(); ++requestedAllowedPrefixesToDirectConnectGatewayIndex)
    {
      requestedAllowedPrefixesToDirectConnectGatewayJsonList[requestedAllowedPrefixesToDirectConnectGatewayIndex].AsObject(m_requestedAllowedPrefixesToDirectConnectGateway[requestedAllowedPrefixesToDirectConnectGatewayIndex].Jsonize());

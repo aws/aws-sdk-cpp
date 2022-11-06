@@ -30,7 +30,7 @@ DetectCustomLabelsResult& DetectCustomLabelsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CustomLabels"))
   {
-    Array<JsonView> customLabelsJsonList = jsonValue.GetArray("CustomLabels");
+    Aws::Utils::Array<JsonView> customLabelsJsonList = jsonValue.GetArray("CustomLabels");
     for(unsigned customLabelsIndex = 0; customLabelsIndex < customLabelsJsonList.GetLength(); ++customLabelsIndex)
     {
       m_customLabels.push_back(customLabelsJsonList[customLabelsIndex].AsObject());

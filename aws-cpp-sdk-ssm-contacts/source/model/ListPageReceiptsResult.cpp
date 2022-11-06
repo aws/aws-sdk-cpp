@@ -36,7 +36,7 @@ ListPageReceiptsResult& ListPageReceiptsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Receipts"))
   {
-    Array<JsonView> receiptsJsonList = jsonValue.GetArray("Receipts");
+    Aws::Utils::Array<JsonView> receiptsJsonList = jsonValue.GetArray("Receipts");
     for(unsigned receiptsIndex = 0; receiptsIndex < receiptsJsonList.GetLength(); ++receiptsIndex)
     {
       m_receipts.push_back(receiptsJsonList[receiptsIndex].AsObject());

@@ -42,7 +42,7 @@ PhoneNumberCountry& PhoneNumberCountry::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedPhoneNumberTypes"))
   {
-    Array<JsonView> supportedPhoneNumberTypesJsonList = jsonValue.GetArray("SupportedPhoneNumberTypes");
+    Aws::Utils::Array<JsonView> supportedPhoneNumberTypesJsonList = jsonValue.GetArray("SupportedPhoneNumberTypes");
     for(unsigned supportedPhoneNumberTypesIndex = 0; supportedPhoneNumberTypesIndex < supportedPhoneNumberTypesJsonList.GetLength(); ++supportedPhoneNumberTypesIndex)
     {
       m_supportedPhoneNumberTypes.push_back(PhoneNumberTypeMapper::GetPhoneNumberTypeForName(supportedPhoneNumberTypesJsonList[supportedPhoneNumberTypesIndex].AsString()));
@@ -65,7 +65,7 @@ JsonValue PhoneNumberCountry::Jsonize() const
 
   if(m_supportedPhoneNumberTypesHasBeenSet)
   {
-   Array<JsonValue> supportedPhoneNumberTypesJsonList(m_supportedPhoneNumberTypes.size());
+   Aws::Utils::Array<JsonValue> supportedPhoneNumberTypesJsonList(m_supportedPhoneNumberTypes.size());
    for(unsigned supportedPhoneNumberTypesIndex = 0; supportedPhoneNumberTypesIndex < supportedPhoneNumberTypesJsonList.GetLength(); ++supportedPhoneNumberTypesIndex)
    {
      supportedPhoneNumberTypesJsonList[supportedPhoneNumberTypesIndex].AsString(PhoneNumberTypeMapper::GetNameForPhoneNumberType(m_supportedPhoneNumberTypes[supportedPhoneNumberTypesIndex]));

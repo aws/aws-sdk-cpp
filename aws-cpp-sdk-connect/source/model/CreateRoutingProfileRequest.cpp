@@ -47,7 +47,7 @@ Aws::String CreateRoutingProfileRequest::SerializePayload() const
 
   if(m_queueConfigsHasBeenSet)
   {
-   Array<JsonValue> queueConfigsJsonList(m_queueConfigs.size());
+   Aws::Utils::Array<JsonValue> queueConfigsJsonList(m_queueConfigs.size());
    for(unsigned queueConfigsIndex = 0; queueConfigsIndex < queueConfigsJsonList.GetLength(); ++queueConfigsIndex)
    {
      queueConfigsJsonList[queueConfigsIndex].AsObject(m_queueConfigs[queueConfigsIndex].Jsonize());
@@ -58,7 +58,7 @@ Aws::String CreateRoutingProfileRequest::SerializePayload() const
 
   if(m_mediaConcurrenciesHasBeenSet)
   {
-   Array<JsonValue> mediaConcurrenciesJsonList(m_mediaConcurrencies.size());
+   Aws::Utils::Array<JsonValue> mediaConcurrenciesJsonList(m_mediaConcurrencies.size());
    for(unsigned mediaConcurrenciesIndex = 0; mediaConcurrenciesIndex < mediaConcurrenciesJsonList.GetLength(); ++mediaConcurrenciesIndex)
    {
      mediaConcurrenciesJsonList[mediaConcurrenciesIndex].AsObject(m_mediaConcurrencies[mediaConcurrenciesIndex].Jsonize());

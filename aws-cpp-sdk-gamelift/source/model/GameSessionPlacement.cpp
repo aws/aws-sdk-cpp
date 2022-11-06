@@ -94,7 +94,7 @@ GameSessionPlacement& GameSessionPlacement::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GameProperties"))
   {
-    Array<JsonView> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
+    Aws::Utils::Array<JsonView> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
     for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
     {
       m_gameProperties.push_back(gamePropertiesJsonList[gamePropertiesIndex].AsObject());
@@ -139,7 +139,7 @@ GameSessionPlacement& GameSessionPlacement::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlayerLatencies"))
   {
-    Array<JsonView> playerLatenciesJsonList = jsonValue.GetArray("PlayerLatencies");
+    Aws::Utils::Array<JsonView> playerLatenciesJsonList = jsonValue.GetArray("PlayerLatencies");
     for(unsigned playerLatenciesIndex = 0; playerLatenciesIndex < playerLatenciesJsonList.GetLength(); ++playerLatenciesIndex)
     {
       m_playerLatencies.push_back(playerLatenciesJsonList[playerLatenciesIndex].AsObject());
@@ -184,7 +184,7 @@ GameSessionPlacement& GameSessionPlacement::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlacedPlayerSessions"))
   {
-    Array<JsonView> placedPlayerSessionsJsonList = jsonValue.GetArray("PlacedPlayerSessions");
+    Aws::Utils::Array<JsonView> placedPlayerSessionsJsonList = jsonValue.GetArray("PlacedPlayerSessions");
     for(unsigned placedPlayerSessionsIndex = 0; placedPlayerSessionsIndex < placedPlayerSessionsJsonList.GetLength(); ++placedPlayerSessionsIndex)
     {
       m_placedPlayerSessions.push_back(placedPlayerSessionsJsonList[placedPlayerSessionsIndex].AsObject());
@@ -232,7 +232,7 @@ JsonValue GameSessionPlacement::Jsonize() const
 
   if(m_gamePropertiesHasBeenSet)
   {
-   Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
+   Aws::Utils::Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
    for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
    {
      gamePropertiesJsonList[gamePropertiesIndex].AsObject(m_gameProperties[gamePropertiesIndex].Jsonize());
@@ -273,7 +273,7 @@ JsonValue GameSessionPlacement::Jsonize() const
 
   if(m_playerLatenciesHasBeenSet)
   {
-   Array<JsonValue> playerLatenciesJsonList(m_playerLatencies.size());
+   Aws::Utils::Array<JsonValue> playerLatenciesJsonList(m_playerLatencies.size());
    for(unsigned playerLatenciesIndex = 0; playerLatenciesIndex < playerLatenciesJsonList.GetLength(); ++playerLatenciesIndex)
    {
      playerLatenciesJsonList[playerLatenciesIndex].AsObject(m_playerLatencies[playerLatenciesIndex].Jsonize());
@@ -312,7 +312,7 @@ JsonValue GameSessionPlacement::Jsonize() const
 
   if(m_placedPlayerSessionsHasBeenSet)
   {
-   Array<JsonValue> placedPlayerSessionsJsonList(m_placedPlayerSessions.size());
+   Aws::Utils::Array<JsonValue> placedPlayerSessionsJsonList(m_placedPlayerSessions.size());
    for(unsigned placedPlayerSessionsIndex = 0; placedPlayerSessionsIndex < placedPlayerSessionsJsonList.GetLength(); ++placedPlayerSessionsIndex)
    {
      placedPlayerSessionsJsonList[placedPlayerSessionsIndex].AsObject(m_placedPlayerSessions[placedPlayerSessionsIndex].Jsonize());

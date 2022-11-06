@@ -30,7 +30,7 @@ ListRecordHistoryResult& ListRecordHistoryResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RecordDetails"))
   {
-    Array<JsonView> recordDetailsJsonList = jsonValue.GetArray("RecordDetails");
+    Aws::Utils::Array<JsonView> recordDetailsJsonList = jsonValue.GetArray("RecordDetails");
     for(unsigned recordDetailsIndex = 0; recordDetailsIndex < recordDetailsJsonList.GetLength(); ++recordDetailsIndex)
     {
       m_recordDetails.push_back(recordDetailsJsonList[recordDetailsIndex].AsObject());

@@ -30,7 +30,7 @@ ListDomainDeliverabilityCampaignsResult& ListDomainDeliverabilityCampaignsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DomainDeliverabilityCampaigns"))
   {
-    Array<JsonView> domainDeliverabilityCampaignsJsonList = jsonValue.GetArray("DomainDeliverabilityCampaigns");
+    Aws::Utils::Array<JsonView> domainDeliverabilityCampaignsJsonList = jsonValue.GetArray("DomainDeliverabilityCampaigns");
     for(unsigned domainDeliverabilityCampaignsIndex = 0; domainDeliverabilityCampaignsIndex < domainDeliverabilityCampaignsJsonList.GetLength(); ++domainDeliverabilityCampaignsIndex)
     {
       m_domainDeliverabilityCampaigns.push_back(domainDeliverabilityCampaignsJsonList[domainDeliverabilityCampaignsIndex].AsObject());

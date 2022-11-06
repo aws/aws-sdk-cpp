@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/connect/ConnectErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/connect/ConnectEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -158,6 +160,10 @@ namespace Aws
 
   namespace Connect
   {
+    using ConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectEndpointProviderBase = Aws::Connect::Endpoint::ConnectEndpointProviderBase;
+    using ConnectEndpointProvider = Aws::Connect::Endpoint::ConnectEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ConnectClient header */

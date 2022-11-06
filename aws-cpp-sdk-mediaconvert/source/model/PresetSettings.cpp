@@ -39,7 +39,7 @@ PresetSettings& PresetSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioDescriptions"))
   {
-    Array<JsonView> audioDescriptionsJsonList = jsonValue.GetArray("audioDescriptions");
+    Aws::Utils::Array<JsonView> audioDescriptionsJsonList = jsonValue.GetArray("audioDescriptions");
     for(unsigned audioDescriptionsIndex = 0; audioDescriptionsIndex < audioDescriptionsJsonList.GetLength(); ++audioDescriptionsIndex)
     {
       m_audioDescriptions.push_back(audioDescriptionsJsonList[audioDescriptionsIndex].AsObject());
@@ -49,7 +49,7 @@ PresetSettings& PresetSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("captionDescriptions"))
   {
-    Array<JsonView> captionDescriptionsJsonList = jsonValue.GetArray("captionDescriptions");
+    Aws::Utils::Array<JsonView> captionDescriptionsJsonList = jsonValue.GetArray("captionDescriptions");
     for(unsigned captionDescriptionsIndex = 0; captionDescriptionsIndex < captionDescriptionsJsonList.GetLength(); ++captionDescriptionsIndex)
     {
       m_captionDescriptions.push_back(captionDescriptionsJsonList[captionDescriptionsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue PresetSettings::Jsonize() const
 
   if(m_audioDescriptionsHasBeenSet)
   {
-   Array<JsonValue> audioDescriptionsJsonList(m_audioDescriptions.size());
+   Aws::Utils::Array<JsonValue> audioDescriptionsJsonList(m_audioDescriptions.size());
    for(unsigned audioDescriptionsIndex = 0; audioDescriptionsIndex < audioDescriptionsJsonList.GetLength(); ++audioDescriptionsIndex)
    {
      audioDescriptionsJsonList[audioDescriptionsIndex].AsObject(m_audioDescriptions[audioDescriptionsIndex].Jsonize());
@@ -91,7 +91,7 @@ JsonValue PresetSettings::Jsonize() const
 
   if(m_captionDescriptionsHasBeenSet)
   {
-   Array<JsonValue> captionDescriptionsJsonList(m_captionDescriptions.size());
+   Aws::Utils::Array<JsonValue> captionDescriptionsJsonList(m_captionDescriptions.size());
    for(unsigned captionDescriptionsIndex = 0; captionDescriptionsIndex < captionDescriptionsJsonList.GetLength(); ++captionDescriptionsIndex)
    {
      captionDescriptionsJsonList[captionDescriptionsIndex].AsObject(m_captionDescriptions[captionDescriptionsIndex].Jsonize());

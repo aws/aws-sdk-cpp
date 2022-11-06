@@ -36,7 +36,7 @@ ListProfilingGroupsResult& ListProfilingGroupsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("profilingGroupNames"))
   {
-    Array<JsonView> profilingGroupNamesJsonList = jsonValue.GetArray("profilingGroupNames");
+    Aws::Utils::Array<JsonView> profilingGroupNamesJsonList = jsonValue.GetArray("profilingGroupNames");
     for(unsigned profilingGroupNamesIndex = 0; profilingGroupNamesIndex < profilingGroupNamesJsonList.GetLength(); ++profilingGroupNamesIndex)
     {
       m_profilingGroupNames.push_back(profilingGroupNamesJsonList[profilingGroupNamesIndex].AsString());
@@ -45,7 +45,7 @@ ListProfilingGroupsResult& ListProfilingGroupsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("profilingGroups"))
   {
-    Array<JsonView> profilingGroupsJsonList = jsonValue.GetArray("profilingGroups");
+    Aws::Utils::Array<JsonView> profilingGroupsJsonList = jsonValue.GetArray("profilingGroups");
     for(unsigned profilingGroupsIndex = 0; profilingGroupsIndex < profilingGroupsJsonList.GetLength(); ++profilingGroupsIndex)
     {
       m_profilingGroups.push_back(profilingGroupsJsonList[profilingGroupsIndex].AsObject());

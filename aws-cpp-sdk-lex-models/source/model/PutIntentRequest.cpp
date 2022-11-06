@@ -45,7 +45,7 @@ Aws::String PutIntentRequest::SerializePayload() const
 
   if(m_slotsHasBeenSet)
   {
-   Array<JsonValue> slotsJsonList(m_slots.size());
+   Aws::Utils::Array<JsonValue> slotsJsonList(m_slots.size());
    for(unsigned slotsIndex = 0; slotsIndex < slotsJsonList.GetLength(); ++slotsIndex)
    {
      slotsJsonList[slotsIndex].AsObject(m_slots[slotsIndex].Jsonize());
@@ -56,7 +56,7 @@ Aws::String PutIntentRequest::SerializePayload() const
 
   if(m_sampleUtterancesHasBeenSet)
   {
-   Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
+   Aws::Utils::Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
    for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
    {
      sampleUtterancesJsonList[sampleUtterancesIndex].AsString(m_sampleUtterances[sampleUtterancesIndex]);
@@ -127,7 +127,7 @@ Aws::String PutIntentRequest::SerializePayload() const
 
   if(m_inputContextsHasBeenSet)
   {
-   Array<JsonValue> inputContextsJsonList(m_inputContexts.size());
+   Aws::Utils::Array<JsonValue> inputContextsJsonList(m_inputContexts.size());
    for(unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex)
    {
      inputContextsJsonList[inputContextsIndex].AsObject(m_inputContexts[inputContextsIndex].Jsonize());
@@ -138,7 +138,7 @@ Aws::String PutIntentRequest::SerializePayload() const
 
   if(m_outputContextsHasBeenSet)
   {
-   Array<JsonValue> outputContextsJsonList(m_outputContexts.size());
+   Aws::Utils::Array<JsonValue> outputContextsJsonList(m_outputContexts.size());
    for(unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex)
    {
      outputContextsJsonList[outputContextsIndex].AsObject(m_outputContexts[outputContextsIndex].Jsonize());

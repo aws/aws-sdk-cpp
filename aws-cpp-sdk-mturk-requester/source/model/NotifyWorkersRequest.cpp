@@ -37,7 +37,7 @@ Aws::String NotifyWorkersRequest::SerializePayload() const
 
   if(m_workerIdsHasBeenSet)
   {
-   Array<JsonValue> workerIdsJsonList(m_workerIds.size());
+   Aws::Utils::Array<JsonValue> workerIdsJsonList(m_workerIds.size());
    for(unsigned workerIdsIndex = 0; workerIdsIndex < workerIdsJsonList.GetLength(); ++workerIdsIndex)
    {
      workerIdsJsonList[workerIdsIndex].AsString(m_workerIds[workerIdsIndex]);

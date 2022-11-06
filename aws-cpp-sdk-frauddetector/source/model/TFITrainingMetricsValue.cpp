@@ -35,7 +35,7 @@ TFITrainingMetricsValue& TFITrainingMetricsValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("metricDataPoints"))
   {
-    Array<JsonView> metricDataPointsJsonList = jsonValue.GetArray("metricDataPoints");
+    Aws::Utils::Array<JsonView> metricDataPointsJsonList = jsonValue.GetArray("metricDataPoints");
     for(unsigned metricDataPointsIndex = 0; metricDataPointsIndex < metricDataPointsJsonList.GetLength(); ++metricDataPointsIndex)
     {
       m_metricDataPoints.push_back(metricDataPointsJsonList[metricDataPointsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue TFITrainingMetricsValue::Jsonize() const
 
   if(m_metricDataPointsHasBeenSet)
   {
-   Array<JsonValue> metricDataPointsJsonList(m_metricDataPoints.size());
+   Aws::Utils::Array<JsonValue> metricDataPointsJsonList(m_metricDataPoints.size());
    for(unsigned metricDataPointsIndex = 0; metricDataPointsIndex < metricDataPointsJsonList.GetLength(); ++metricDataPointsIndex)
    {
      metricDataPointsJsonList[metricDataPointsIndex].AsObject(m_metricDataPoints[metricDataPointsIndex].Jsonize());

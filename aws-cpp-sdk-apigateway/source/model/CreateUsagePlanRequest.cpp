@@ -40,7 +40,7 @@ Aws::String CreateUsagePlanRequest::SerializePayload() const
 
   if(m_apiStagesHasBeenSet)
   {
-   Array<JsonValue> apiStagesJsonList(m_apiStages.size());
+   Aws::Utils::Array<JsonValue> apiStagesJsonList(m_apiStages.size());
    for(unsigned apiStagesIndex = 0; apiStagesIndex < apiStagesJsonList.GetLength(); ++apiStagesIndex)
    {
      apiStagesJsonList[apiStagesIndex].AsObject(m_apiStages[apiStagesIndex].Jsonize());

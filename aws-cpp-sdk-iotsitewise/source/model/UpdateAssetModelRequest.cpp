@@ -42,7 +42,7 @@ Aws::String UpdateAssetModelRequest::SerializePayload() const
 
   if(m_assetModelPropertiesHasBeenSet)
   {
-   Array<JsonValue> assetModelPropertiesJsonList(m_assetModelProperties.size());
+   Aws::Utils::Array<JsonValue> assetModelPropertiesJsonList(m_assetModelProperties.size());
    for(unsigned assetModelPropertiesIndex = 0; assetModelPropertiesIndex < assetModelPropertiesJsonList.GetLength(); ++assetModelPropertiesIndex)
    {
      assetModelPropertiesJsonList[assetModelPropertiesIndex].AsObject(m_assetModelProperties[assetModelPropertiesIndex].Jsonize());
@@ -53,7 +53,7 @@ Aws::String UpdateAssetModelRequest::SerializePayload() const
 
   if(m_assetModelHierarchiesHasBeenSet)
   {
-   Array<JsonValue> assetModelHierarchiesJsonList(m_assetModelHierarchies.size());
+   Aws::Utils::Array<JsonValue> assetModelHierarchiesJsonList(m_assetModelHierarchies.size());
    for(unsigned assetModelHierarchiesIndex = 0; assetModelHierarchiesIndex < assetModelHierarchiesJsonList.GetLength(); ++assetModelHierarchiesIndex)
    {
      assetModelHierarchiesJsonList[assetModelHierarchiesIndex].AsObject(m_assetModelHierarchies[assetModelHierarchiesIndex].Jsonize());
@@ -64,7 +64,7 @@ Aws::String UpdateAssetModelRequest::SerializePayload() const
 
   if(m_assetModelCompositeModelsHasBeenSet)
   {
-   Array<JsonValue> assetModelCompositeModelsJsonList(m_assetModelCompositeModels.size());
+   Aws::Utils::Array<JsonValue> assetModelCompositeModelsJsonList(m_assetModelCompositeModels.size());
    for(unsigned assetModelCompositeModelsIndex = 0; assetModelCompositeModelsIndex < assetModelCompositeModelsJsonList.GetLength(); ++assetModelCompositeModelsIndex)
    {
      assetModelCompositeModelsJsonList[assetModelCompositeModelsIndex].AsObject(m_assetModelCompositeModels[assetModelCompositeModelsIndex].Jsonize());

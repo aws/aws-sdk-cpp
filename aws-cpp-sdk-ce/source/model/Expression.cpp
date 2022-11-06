@@ -50,7 +50,7 @@ Expression& Expression::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Or"))
   {
-    Array<JsonView> orJsonList = jsonValue.GetArray("Or");
+    Aws::Utils::Array<JsonView> orJsonList = jsonValue.GetArray("Or");
     for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
     {
       m_or.push_back(orJsonList[orIndex].AsObject());
@@ -60,7 +60,7 @@ Expression& Expression::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("And"))
   {
-    Array<JsonView> andJsonList = jsonValue.GetArray("And");
+    Aws::Utils::Array<JsonView> andJsonList = jsonValue.GetArray("And");
     for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
     {
       m_and.push_back(andJsonList[andIndex].AsObject());
@@ -105,7 +105,7 @@ JsonValue Expression::Jsonize() const
 
   if(m_orHasBeenSet)
   {
-   Array<JsonValue> orJsonList(m_or.size());
+   Aws::Utils::Array<JsonValue> orJsonList(m_or.size());
    for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
    {
      orJsonList[orIndex].AsObject(m_or[orIndex].Jsonize());
@@ -116,7 +116,7 @@ JsonValue Expression::Jsonize() const
 
   if(m_andHasBeenSet)
   {
-   Array<JsonValue> andJsonList(m_and.size());
+   Aws::Utils::Array<JsonValue> andJsonList(m_and.size());
    for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
    {
      andJsonList[andIndex].AsObject(m_and[andIndex].Jsonize());

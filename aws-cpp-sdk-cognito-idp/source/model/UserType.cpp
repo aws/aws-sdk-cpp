@@ -56,7 +56,7 @@ UserType& UserType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -94,7 +94,7 @@ UserType& UserType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MFAOptions"))
   {
-    Array<JsonView> mFAOptionsJsonList = jsonValue.GetArray("MFAOptions");
+    Aws::Utils::Array<JsonView> mFAOptionsJsonList = jsonValue.GetArray("MFAOptions");
     for(unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex)
     {
       m_mFAOptions.push_back(mFAOptionsJsonList[mFAOptionsIndex].AsObject());
@@ -117,7 +117,7 @@ JsonValue UserType::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
@@ -149,7 +149,7 @@ JsonValue UserType::Jsonize() const
 
   if(m_mFAOptionsHasBeenSet)
   {
-   Array<JsonValue> mFAOptionsJsonList(m_mFAOptions.size());
+   Aws::Utils::Array<JsonValue> mFAOptionsJsonList(m_mFAOptions.size());
    for(unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex)
    {
      mFAOptionsJsonList[mFAOptionsIndex].AsObject(m_mFAOptions[mFAOptionsIndex].Jsonize());

@@ -42,7 +42,7 @@ InstanceNetworking& InstanceNetworking::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ports"))
   {
-    Array<JsonView> portsJsonList = jsonValue.GetArray("ports");
+    Aws::Utils::Array<JsonView> portsJsonList = jsonValue.GetArray("ports");
     for(unsigned portsIndex = 0; portsIndex < portsJsonList.GetLength(); ++portsIndex)
     {
       m_ports.push_back(portsJsonList[portsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue InstanceNetworking::Jsonize() const
 
   if(m_portsHasBeenSet)
   {
-   Array<JsonValue> portsJsonList(m_ports.size());
+   Aws::Utils::Array<JsonValue> portsJsonList(m_ports.size());
    for(unsigned portsIndex = 0; portsIndex < portsJsonList.GetLength(); ++portsIndex)
    {
      portsJsonList[portsIndex].AsObject(m_ports[portsIndex].Jsonize());

@@ -30,7 +30,7 @@ ListControlPanelsResult& ListControlPanelsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ControlPanels"))
   {
-    Array<JsonView> controlPanelsJsonList = jsonValue.GetArray("ControlPanels");
+    Aws::Utils::Array<JsonView> controlPanelsJsonList = jsonValue.GetArray("ControlPanels");
     for(unsigned controlPanelsIndex = 0; controlPanelsIndex < controlPanelsJsonList.GetLength(); ++controlPanelsIndex)
     {
       m_controlPanels.push_back(controlPanelsJsonList[controlPanelsIndex].AsObject());

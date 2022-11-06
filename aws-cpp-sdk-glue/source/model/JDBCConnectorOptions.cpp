@@ -88,7 +88,7 @@ JDBCConnectorOptions& JDBCConnectorOptions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("JobBookmarkKeys"))
   {
-    Array<JsonView> jobBookmarkKeysJsonList = jsonValue.GetArray("JobBookmarkKeys");
+    Aws::Utils::Array<JsonView> jobBookmarkKeysJsonList = jsonValue.GetArray("JobBookmarkKeys");
     for(unsigned jobBookmarkKeysIndex = 0; jobBookmarkKeysIndex < jobBookmarkKeysJsonList.GetLength(); ++jobBookmarkKeysIndex)
     {
       m_jobBookmarkKeys.push_back(jobBookmarkKeysJsonList[jobBookmarkKeysIndex].AsString());
@@ -152,7 +152,7 @@ JsonValue JDBCConnectorOptions::Jsonize() const
 
   if(m_jobBookmarkKeysHasBeenSet)
   {
-   Array<JsonValue> jobBookmarkKeysJsonList(m_jobBookmarkKeys.size());
+   Aws::Utils::Array<JsonValue> jobBookmarkKeysJsonList(m_jobBookmarkKeys.size());
    for(unsigned jobBookmarkKeysIndex = 0; jobBookmarkKeysIndex < jobBookmarkKeysJsonList.GetLength(); ++jobBookmarkKeysIndex)
    {
      jobBookmarkKeysJsonList[jobBookmarkKeysIndex].AsString(m_jobBookmarkKeys[jobBookmarkKeysIndex]);

@@ -27,7 +27,7 @@ Aws::String DescribeRecommendationExportJobsRequest::SerializePayload() const
 
   if(m_jobIdsHasBeenSet)
   {
-   Array<JsonValue> jobIdsJsonList(m_jobIds.size());
+   Aws::Utils::Array<JsonValue> jobIdsJsonList(m_jobIds.size());
    for(unsigned jobIdsIndex = 0; jobIdsIndex < jobIdsJsonList.GetLength(); ++jobIdsIndex)
    {
      jobIdsJsonList[jobIdsIndex].AsString(m_jobIds[jobIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeRecommendationExportJobsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

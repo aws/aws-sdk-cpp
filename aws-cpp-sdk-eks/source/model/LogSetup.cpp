@@ -37,7 +37,7 @@ LogSetup& LogSetup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("types"))
   {
-    Array<JsonView> typesJsonList = jsonValue.GetArray("types");
+    Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
     for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
     {
       m_types.push_back(LogTypeMapper::GetLogTypeForName(typesJsonList[typesIndex].AsString()));
@@ -61,7 +61,7 @@ JsonValue LogSetup::Jsonize() const
 
   if(m_typesHasBeenSet)
   {
-   Array<JsonValue> typesJsonList(m_types.size());
+   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
    {
      typesJsonList[typesIndex].AsString(LogTypeMapper::GetNameForLogType(m_types[typesIndex]));

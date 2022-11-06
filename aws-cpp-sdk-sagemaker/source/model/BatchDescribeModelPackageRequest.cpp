@@ -23,7 +23,7 @@ Aws::String BatchDescribeModelPackageRequest::SerializePayload() const
 
   if(m_modelPackageArnListHasBeenSet)
   {
-   Array<JsonValue> modelPackageArnListJsonList(m_modelPackageArnList.size());
+   Aws::Utils::Array<JsonValue> modelPackageArnListJsonList(m_modelPackageArnList.size());
    for(unsigned modelPackageArnListIndex = 0; modelPackageArnListIndex < modelPackageArnListJsonList.GetLength(); ++modelPackageArnListIndex)
    {
      modelPackageArnListJsonList[modelPackageArnListIndex].AsString(m_modelPackageArnList[modelPackageArnListIndex]);

@@ -30,7 +30,7 @@ GetBotChannelAssociationsResult& GetBotChannelAssociationsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("botChannelAssociations"))
   {
-    Array<JsonView> botChannelAssociationsJsonList = jsonValue.GetArray("botChannelAssociations");
+    Aws::Utils::Array<JsonView> botChannelAssociationsJsonList = jsonValue.GetArray("botChannelAssociations");
     for(unsigned botChannelAssociationsIndex = 0; botChannelAssociationsIndex < botChannelAssociationsJsonList.GetLength(); ++botChannelAssociationsIndex)
     {
       m_botChannelAssociations.push_back(botChannelAssociationsJsonList[botChannelAssociationsIndex].AsObject());

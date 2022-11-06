@@ -60,7 +60,7 @@ ZeppelinApplicationConfigurationDescription& ZeppelinApplicationConfigurationDes
 
   if(jsonValue.ValueExists("CustomArtifactsConfigurationDescription"))
   {
-    Array<JsonView> customArtifactsConfigurationDescriptionJsonList = jsonValue.GetArray("CustomArtifactsConfigurationDescription");
+    Aws::Utils::Array<JsonView> customArtifactsConfigurationDescriptionJsonList = jsonValue.GetArray("CustomArtifactsConfigurationDescription");
     for(unsigned customArtifactsConfigurationDescriptionIndex = 0; customArtifactsConfigurationDescriptionIndex < customArtifactsConfigurationDescriptionJsonList.GetLength(); ++customArtifactsConfigurationDescriptionIndex)
     {
       m_customArtifactsConfigurationDescription.push_back(customArtifactsConfigurationDescriptionJsonList[customArtifactsConfigurationDescriptionIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue ZeppelinApplicationConfigurationDescription::Jsonize() const
 
   if(m_customArtifactsConfigurationDescriptionHasBeenSet)
   {
-   Array<JsonValue> customArtifactsConfigurationDescriptionJsonList(m_customArtifactsConfigurationDescription.size());
+   Aws::Utils::Array<JsonValue> customArtifactsConfigurationDescriptionJsonList(m_customArtifactsConfigurationDescription.size());
    for(unsigned customArtifactsConfigurationDescriptionIndex = 0; customArtifactsConfigurationDescriptionIndex < customArtifactsConfigurationDescriptionJsonList.GetLength(); ++customArtifactsConfigurationDescriptionIndex)
    {
      customArtifactsConfigurationDescriptionJsonList[customArtifactsConfigurationDescriptionIndex].AsObject(m_customArtifactsConfigurationDescription[customArtifactsConfigurationDescriptionIndex].Jsonize());

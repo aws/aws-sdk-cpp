@@ -31,7 +31,7 @@ Aws::String RespondDecisionTaskCompletedRequest::SerializePayload() const
 
   if(m_decisionsHasBeenSet)
   {
-   Array<JsonValue> decisionsJsonList(m_decisions.size());
+   Aws::Utils::Array<JsonValue> decisionsJsonList(m_decisions.size());
    for(unsigned decisionsIndex = 0; decisionsIndex < decisionsJsonList.GetLength(); ++decisionsIndex)
    {
      decisionsJsonList[decisionsIndex].AsObject(m_decisions[decisionsIndex].Jsonize());

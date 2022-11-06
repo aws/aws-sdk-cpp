@@ -36,7 +36,7 @@ DescribeReplicationTaskIndividualAssessmentsResult& DescribeReplicationTaskIndiv
 
   if(jsonValue.ValueExists("ReplicationTaskIndividualAssessments"))
   {
-    Array<JsonView> replicationTaskIndividualAssessmentsJsonList = jsonValue.GetArray("ReplicationTaskIndividualAssessments");
+    Aws::Utils::Array<JsonView> replicationTaskIndividualAssessmentsJsonList = jsonValue.GetArray("ReplicationTaskIndividualAssessments");
     for(unsigned replicationTaskIndividualAssessmentsIndex = 0; replicationTaskIndividualAssessmentsIndex < replicationTaskIndividualAssessmentsJsonList.GetLength(); ++replicationTaskIndividualAssessmentsIndex)
     {
       m_replicationTaskIndividualAssessments.push_back(replicationTaskIndividualAssessmentsJsonList[replicationTaskIndividualAssessmentsIndex].AsObject());

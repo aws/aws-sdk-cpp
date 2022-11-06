@@ -30,7 +30,7 @@ ListWhatIfForecastExportsResult& ListWhatIfForecastExportsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WhatIfForecastExports"))
   {
-    Array<JsonView> whatIfForecastExportsJsonList = jsonValue.GetArray("WhatIfForecastExports");
+    Aws::Utils::Array<JsonView> whatIfForecastExportsJsonList = jsonValue.GetArray("WhatIfForecastExports");
     for(unsigned whatIfForecastExportsIndex = 0; whatIfForecastExportsIndex < whatIfForecastExportsJsonList.GetLength(); ++whatIfForecastExportsIndex)
     {
       m_whatIfForecastExports.push_back(whatIfForecastExportsJsonList[whatIfForecastExportsIndex].AsObject());

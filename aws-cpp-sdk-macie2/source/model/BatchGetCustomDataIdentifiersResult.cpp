@@ -30,7 +30,7 @@ BatchGetCustomDataIdentifiersResult& BatchGetCustomDataIdentifiersResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("customDataIdentifiers"))
   {
-    Array<JsonView> customDataIdentifiersJsonList = jsonValue.GetArray("customDataIdentifiers");
+    Aws::Utils::Array<JsonView> customDataIdentifiersJsonList = jsonValue.GetArray("customDataIdentifiers");
     for(unsigned customDataIdentifiersIndex = 0; customDataIdentifiersIndex < customDataIdentifiersJsonList.GetLength(); ++customDataIdentifiersIndex)
     {
       m_customDataIdentifiers.push_back(customDataIdentifiersJsonList[customDataIdentifiersIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetCustomDataIdentifiersResult& BatchGetCustomDataIdentifiersResult::operat
 
   if(jsonValue.ValueExists("notFoundIdentifierIds"))
   {
-    Array<JsonView> notFoundIdentifierIdsJsonList = jsonValue.GetArray("notFoundIdentifierIds");
+    Aws::Utils::Array<JsonView> notFoundIdentifierIdsJsonList = jsonValue.GetArray("notFoundIdentifierIds");
     for(unsigned notFoundIdentifierIdsIndex = 0; notFoundIdentifierIdsIndex < notFoundIdentifierIdsJsonList.GetLength(); ++notFoundIdentifierIdsIndex)
     {
       m_notFoundIdentifierIds.push_back(notFoundIdentifierIdsJsonList[notFoundIdentifierIdsIndex].AsString());

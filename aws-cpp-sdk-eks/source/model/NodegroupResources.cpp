@@ -35,7 +35,7 @@ NodegroupResources& NodegroupResources::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("autoScalingGroups"))
   {
-    Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
+    Aws::Utils::Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
     for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
     {
       m_autoScalingGroups.push_back(autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue NodegroupResources::Jsonize() const
 
   if(m_autoScalingGroupsHasBeenSet)
   {
-   Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
+   Aws::Utils::Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
    for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
    {
      autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject(m_autoScalingGroups[autoScalingGroupsIndex].Jsonize());

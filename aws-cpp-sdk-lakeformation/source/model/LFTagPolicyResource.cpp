@@ -53,7 +53,7 @@ LFTagPolicyResource& LFTagPolicyResource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Expression"))
   {
-    Array<JsonView> expressionJsonList = jsonValue.GetArray("Expression");
+    Aws::Utils::Array<JsonView> expressionJsonList = jsonValue.GetArray("Expression");
     for(unsigned expressionIndex = 0; expressionIndex < expressionJsonList.GetLength(); ++expressionIndex)
     {
       m_expression.push_back(expressionJsonList[expressionIndex].AsObject());
@@ -81,7 +81,7 @@ JsonValue LFTagPolicyResource::Jsonize() const
 
   if(m_expressionHasBeenSet)
   {
-   Array<JsonValue> expressionJsonList(m_expression.size());
+   Aws::Utils::Array<JsonValue> expressionJsonList(m_expression.size());
    for(unsigned expressionIndex = 0; expressionIndex < expressionJsonList.GetLength(); ++expressionIndex)
    {
      expressionJsonList[expressionIndex].AsObject(m_expression[expressionIndex].Jsonize());

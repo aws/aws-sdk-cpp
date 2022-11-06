@@ -120,7 +120,7 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("tools"))
   {
-    Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
+    Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
     for(unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex)
     {
       m_tools.push_back(toolsJsonList[toolsIndex].AsObject());

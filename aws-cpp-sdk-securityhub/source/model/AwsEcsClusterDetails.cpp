@@ -71,7 +71,7 @@ AwsEcsClusterDetails& AwsEcsClusterDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CapacityProviders"))
   {
-    Array<JsonView> capacityProvidersJsonList = jsonValue.GetArray("CapacityProviders");
+    Aws::Utils::Array<JsonView> capacityProvidersJsonList = jsonValue.GetArray("CapacityProviders");
     for(unsigned capacityProvidersIndex = 0; capacityProvidersIndex < capacityProvidersJsonList.GetLength(); ++capacityProvidersIndex)
     {
       m_capacityProviders.push_back(capacityProvidersJsonList[capacityProvidersIndex].AsString());
@@ -81,7 +81,7 @@ AwsEcsClusterDetails& AwsEcsClusterDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ClusterSettings"))
   {
-    Array<JsonView> clusterSettingsJsonList = jsonValue.GetArray("ClusterSettings");
+    Aws::Utils::Array<JsonView> clusterSettingsJsonList = jsonValue.GetArray("ClusterSettings");
     for(unsigned clusterSettingsIndex = 0; clusterSettingsIndex < clusterSettingsJsonList.GetLength(); ++clusterSettingsIndex)
     {
       m_clusterSettings.push_back(clusterSettingsJsonList[clusterSettingsIndex].AsObject());
@@ -98,7 +98,7 @@ AwsEcsClusterDetails& AwsEcsClusterDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DefaultCapacityProviderStrategy"))
   {
-    Array<JsonView> defaultCapacityProviderStrategyJsonList = jsonValue.GetArray("DefaultCapacityProviderStrategy");
+    Aws::Utils::Array<JsonView> defaultCapacityProviderStrategyJsonList = jsonValue.GetArray("DefaultCapacityProviderStrategy");
     for(unsigned defaultCapacityProviderStrategyIndex = 0; defaultCapacityProviderStrategyIndex < defaultCapacityProviderStrategyJsonList.GetLength(); ++defaultCapacityProviderStrategyIndex)
     {
       m_defaultCapacityProviderStrategy.push_back(defaultCapacityProviderStrategyJsonList[defaultCapacityProviderStrategyIndex].AsObject());
@@ -155,7 +155,7 @@ JsonValue AwsEcsClusterDetails::Jsonize() const
 
   if(m_capacityProvidersHasBeenSet)
   {
-   Array<JsonValue> capacityProvidersJsonList(m_capacityProviders.size());
+   Aws::Utils::Array<JsonValue> capacityProvidersJsonList(m_capacityProviders.size());
    for(unsigned capacityProvidersIndex = 0; capacityProvidersIndex < capacityProvidersJsonList.GetLength(); ++capacityProvidersIndex)
    {
      capacityProvidersJsonList[capacityProvidersIndex].AsString(m_capacityProviders[capacityProvidersIndex]);
@@ -166,7 +166,7 @@ JsonValue AwsEcsClusterDetails::Jsonize() const
 
   if(m_clusterSettingsHasBeenSet)
   {
-   Array<JsonValue> clusterSettingsJsonList(m_clusterSettings.size());
+   Aws::Utils::Array<JsonValue> clusterSettingsJsonList(m_clusterSettings.size());
    for(unsigned clusterSettingsIndex = 0; clusterSettingsIndex < clusterSettingsJsonList.GetLength(); ++clusterSettingsIndex)
    {
      clusterSettingsJsonList[clusterSettingsIndex].AsObject(m_clusterSettings[clusterSettingsIndex].Jsonize());
@@ -183,7 +183,7 @@ JsonValue AwsEcsClusterDetails::Jsonize() const
 
   if(m_defaultCapacityProviderStrategyHasBeenSet)
   {
-   Array<JsonValue> defaultCapacityProviderStrategyJsonList(m_defaultCapacityProviderStrategy.size());
+   Aws::Utils::Array<JsonValue> defaultCapacityProviderStrategyJsonList(m_defaultCapacityProviderStrategy.size());
    for(unsigned defaultCapacityProviderStrategyIndex = 0; defaultCapacityProviderStrategyIndex < defaultCapacityProviderStrategyJsonList.GetLength(); ++defaultCapacityProviderStrategyIndex)
    {
      defaultCapacityProviderStrategyJsonList[defaultCapacityProviderStrategyIndex].AsObject(m_defaultCapacityProviderStrategy[defaultCapacityProviderStrategyIndex].Jsonize());

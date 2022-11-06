@@ -30,7 +30,7 @@ ListDataSourcesResult& ListDataSourcesResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("dataSources"))
   {
-    Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
+    Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
     for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
     {
       m_dataSources.push_back(dataSourcesJsonList[dataSourcesIndex].AsObject());

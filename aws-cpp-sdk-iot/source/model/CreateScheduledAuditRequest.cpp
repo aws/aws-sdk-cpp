@@ -46,7 +46,7 @@ Aws::String CreateScheduledAuditRequest::SerializePayload() const
 
   if(m_targetCheckNamesHasBeenSet)
   {
-   Array<JsonValue> targetCheckNamesJsonList(m_targetCheckNames.size());
+   Aws::Utils::Array<JsonValue> targetCheckNamesJsonList(m_targetCheckNames.size());
    for(unsigned targetCheckNamesIndex = 0; targetCheckNamesIndex < targetCheckNamesJsonList.GetLength(); ++targetCheckNamesIndex)
    {
      targetCheckNamesJsonList[targetCheckNamesIndex].AsString(m_targetCheckNames[targetCheckNamesIndex]);
@@ -57,7 +57,7 @@ Aws::String CreateScheduledAuditRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -64,7 +64,7 @@ GetCustomDataIdentifierResult& GetCustomDataIdentifierResult::operator =(const A
 
   if(jsonValue.ValueExists("ignoreWords"))
   {
-    Array<JsonView> ignoreWordsJsonList = jsonValue.GetArray("ignoreWords");
+    Aws::Utils::Array<JsonView> ignoreWordsJsonList = jsonValue.GetArray("ignoreWords");
     for(unsigned ignoreWordsIndex = 0; ignoreWordsIndex < ignoreWordsJsonList.GetLength(); ++ignoreWordsIndex)
     {
       m_ignoreWords.push_back(ignoreWordsJsonList[ignoreWordsIndex].AsString());
@@ -73,7 +73,7 @@ GetCustomDataIdentifierResult& GetCustomDataIdentifierResult::operator =(const A
 
   if(jsonValue.ValueExists("keywords"))
   {
-    Array<JsonView> keywordsJsonList = jsonValue.GetArray("keywords");
+    Aws::Utils::Array<JsonView> keywordsJsonList = jsonValue.GetArray("keywords");
     for(unsigned keywordsIndex = 0; keywordsIndex < keywordsJsonList.GetLength(); ++keywordsIndex)
     {
       m_keywords.push_back(keywordsJsonList[keywordsIndex].AsString());
@@ -100,7 +100,7 @@ GetCustomDataIdentifierResult& GetCustomDataIdentifierResult::operator =(const A
 
   if(jsonValue.ValueExists("severityLevels"))
   {
-    Array<JsonView> severityLevelsJsonList = jsonValue.GetArray("severityLevels");
+    Aws::Utils::Array<JsonView> severityLevelsJsonList = jsonValue.GetArray("severityLevels");
     for(unsigned severityLevelsIndex = 0; severityLevelsIndex < severityLevelsJsonList.GetLength(); ++severityLevelsIndex)
     {
       m_severityLevels.push_back(severityLevelsJsonList[severityLevelsIndex].AsObject());

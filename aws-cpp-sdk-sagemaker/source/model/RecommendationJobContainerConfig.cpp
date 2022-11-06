@@ -87,7 +87,7 @@ RecommendationJobContainerConfig& RecommendationJobContainerConfig::operator =(J
 
   if(jsonValue.ValueExists("SupportedInstanceTypes"))
   {
-    Array<JsonView> supportedInstanceTypesJsonList = jsonValue.GetArray("SupportedInstanceTypes");
+    Aws::Utils::Array<JsonView> supportedInstanceTypesJsonList = jsonValue.GetArray("SupportedInstanceTypes");
     for(unsigned supportedInstanceTypesIndex = 0; supportedInstanceTypesIndex < supportedInstanceTypesJsonList.GetLength(); ++supportedInstanceTypesIndex)
     {
       m_supportedInstanceTypes.push_back(supportedInstanceTypesJsonList[supportedInstanceTypesIndex].AsString());
@@ -140,7 +140,7 @@ JsonValue RecommendationJobContainerConfig::Jsonize() const
 
   if(m_supportedInstanceTypesHasBeenSet)
   {
-   Array<JsonValue> supportedInstanceTypesJsonList(m_supportedInstanceTypes.size());
+   Aws::Utils::Array<JsonValue> supportedInstanceTypesJsonList(m_supportedInstanceTypes.size());
    for(unsigned supportedInstanceTypesIndex = 0; supportedInstanceTypesIndex < supportedInstanceTypesJsonList.GetLength(); ++supportedInstanceTypesIndex)
    {
      supportedInstanceTypesJsonList[supportedInstanceTypesIndex].AsString(m_supportedInstanceTypes[supportedInstanceTypesIndex]);

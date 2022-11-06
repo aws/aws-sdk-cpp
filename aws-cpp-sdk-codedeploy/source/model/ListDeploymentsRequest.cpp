@@ -46,7 +46,7 @@ Aws::String ListDeploymentsRequest::SerializePayload() const
 
   if(m_includeOnlyStatusesHasBeenSet)
   {
-   Array<JsonValue> includeOnlyStatusesJsonList(m_includeOnlyStatuses.size());
+   Aws::Utils::Array<JsonValue> includeOnlyStatusesJsonList(m_includeOnlyStatuses.size());
    for(unsigned includeOnlyStatusesIndex = 0; includeOnlyStatusesIndex < includeOnlyStatusesJsonList.GetLength(); ++includeOnlyStatusesIndex)
    {
      includeOnlyStatusesJsonList[includeOnlyStatusesIndex].AsString(DeploymentStatusMapper::GetNameForDeploymentStatus(m_includeOnlyStatuses[includeOnlyStatusesIndex]));

@@ -33,7 +33,7 @@ InAppMessagesResponse& InAppMessagesResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InAppMessageCampaigns"))
   {
-    Array<JsonView> inAppMessageCampaignsJsonList = jsonValue.GetArray("InAppMessageCampaigns");
+    Aws::Utils::Array<JsonView> inAppMessageCampaignsJsonList = jsonValue.GetArray("InAppMessageCampaigns");
     for(unsigned inAppMessageCampaignsIndex = 0; inAppMessageCampaignsIndex < inAppMessageCampaignsJsonList.GetLength(); ++inAppMessageCampaignsIndex)
     {
       m_inAppMessageCampaigns.push_back(inAppMessageCampaignsJsonList[inAppMessageCampaignsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue InAppMessagesResponse::Jsonize() const
 
   if(m_inAppMessageCampaignsHasBeenSet)
   {
-   Array<JsonValue> inAppMessageCampaignsJsonList(m_inAppMessageCampaigns.size());
+   Aws::Utils::Array<JsonValue> inAppMessageCampaignsJsonList(m_inAppMessageCampaigns.size());
    for(unsigned inAppMessageCampaignsIndex = 0; inAppMessageCampaignsIndex < inAppMessageCampaignsJsonList.GetLength(); ++inAppMessageCampaignsIndex)
    {
      inAppMessageCampaignsJsonList[inAppMessageCampaignsIndex].AsObject(m_inAppMessageCampaigns[inAppMessageCampaignsIndex].Jsonize());

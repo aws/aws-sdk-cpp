@@ -35,7 +35,7 @@ PartitionIndex& PartitionIndex::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
+    Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
       m_keys.push_back(keysJsonList[keysIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue PartitionIndex::Jsonize() const
 
   if(m_keysHasBeenSet)
   {
-   Array<JsonValue> keysJsonList(m_keys.size());
+   Aws::Utils::Array<JsonValue> keysJsonList(m_keys.size());
    for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
    {
      keysJsonList[keysIndex].AsString(m_keys[keysIndex]);

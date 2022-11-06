@@ -23,7 +23,7 @@ Aws::String RebuildWorkspacesRequest::SerializePayload() const
 
   if(m_rebuildWorkspaceRequestsHasBeenSet)
   {
-   Array<JsonValue> rebuildWorkspaceRequestsJsonList(m_rebuildWorkspaceRequests.size());
+   Aws::Utils::Array<JsonValue> rebuildWorkspaceRequestsJsonList(m_rebuildWorkspaceRequests.size());
    for(unsigned rebuildWorkspaceRequestsIndex = 0; rebuildWorkspaceRequestsIndex < rebuildWorkspaceRequestsJsonList.GetLength(); ++rebuildWorkspaceRequestsIndex)
    {
      rebuildWorkspaceRequestsJsonList[rebuildWorkspaceRequestsIndex].AsObject(m_rebuildWorkspaceRequests[rebuildWorkspaceRequestsIndex].Jsonize());

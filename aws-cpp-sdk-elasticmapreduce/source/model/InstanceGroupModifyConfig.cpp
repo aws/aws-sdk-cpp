@@ -61,7 +61,7 @@ InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("EC2InstanceIdsToTerminate"))
   {
-    Array<JsonView> eC2InstanceIdsToTerminateJsonList = jsonValue.GetArray("EC2InstanceIdsToTerminate");
+    Aws::Utils::Array<JsonView> eC2InstanceIdsToTerminateJsonList = jsonValue.GetArray("EC2InstanceIdsToTerminate");
     for(unsigned eC2InstanceIdsToTerminateIndex = 0; eC2InstanceIdsToTerminateIndex < eC2InstanceIdsToTerminateJsonList.GetLength(); ++eC2InstanceIdsToTerminateIndex)
     {
       m_eC2InstanceIdsToTerminate.push_back(eC2InstanceIdsToTerminateJsonList[eC2InstanceIdsToTerminateIndex].AsString());
@@ -85,7 +85,7 @@ InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
@@ -114,7 +114,7 @@ JsonValue InstanceGroupModifyConfig::Jsonize() const
 
   if(m_eC2InstanceIdsToTerminateHasBeenSet)
   {
-   Array<JsonValue> eC2InstanceIdsToTerminateJsonList(m_eC2InstanceIdsToTerminate.size());
+   Aws::Utils::Array<JsonValue> eC2InstanceIdsToTerminateJsonList(m_eC2InstanceIdsToTerminate.size());
    for(unsigned eC2InstanceIdsToTerminateIndex = 0; eC2InstanceIdsToTerminateIndex < eC2InstanceIdsToTerminateJsonList.GetLength(); ++eC2InstanceIdsToTerminateIndex)
    {
      eC2InstanceIdsToTerminateJsonList[eC2InstanceIdsToTerminateIndex].AsString(m_eC2InstanceIdsToTerminate[eC2InstanceIdsToTerminateIndex]);
@@ -136,7 +136,7 @@ JsonValue InstanceGroupModifyConfig::Jsonize() const
 
   if(m_configurationsHasBeenSet)
   {
-   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
    {
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());

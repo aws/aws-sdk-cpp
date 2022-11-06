@@ -30,7 +30,7 @@ Aws::String UpdateFeatureGroupRequest::SerializePayload() const
 
   if(m_featureAdditionsHasBeenSet)
   {
-   Array<JsonValue> featureAdditionsJsonList(m_featureAdditions.size());
+   Aws::Utils::Array<JsonValue> featureAdditionsJsonList(m_featureAdditions.size());
    for(unsigned featureAdditionsIndex = 0; featureAdditionsIndex < featureAdditionsJsonList.GetLength(); ++featureAdditionsIndex)
    {
      featureAdditionsJsonList[featureAdditionsIndex].AsObject(m_featureAdditions[featureAdditionsIndex].Jsonize());

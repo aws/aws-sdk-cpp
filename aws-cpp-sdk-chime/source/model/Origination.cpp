@@ -37,7 +37,7 @@ Origination& Origination::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Routes"))
   {
-    Array<JsonView> routesJsonList = jsonValue.GetArray("Routes");
+    Aws::Utils::Array<JsonView> routesJsonList = jsonValue.GetArray("Routes");
     for(unsigned routesIndex = 0; routesIndex < routesJsonList.GetLength(); ++routesIndex)
     {
       m_routes.push_back(routesJsonList[routesIndex].AsObject());
@@ -61,7 +61,7 @@ JsonValue Origination::Jsonize() const
 
   if(m_routesHasBeenSet)
   {
-   Array<JsonValue> routesJsonList(m_routes.size());
+   Aws::Utils::Array<JsonValue> routesJsonList(m_routes.size());
    for(unsigned routesIndex = 0; routesIndex < routesJsonList.GetLength(); ++routesIndex)
    {
      routesJsonList[routesIndex].AsObject(m_routes[routesIndex].Jsonize());

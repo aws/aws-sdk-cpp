@@ -30,7 +30,7 @@ GetCommentsForComparedCommitResult& GetCommentsForComparedCommitResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("commentsForComparedCommitData"))
   {
-    Array<JsonView> commentsForComparedCommitDataJsonList = jsonValue.GetArray("commentsForComparedCommitData");
+    Aws::Utils::Array<JsonView> commentsForComparedCommitDataJsonList = jsonValue.GetArray("commentsForComparedCommitData");
     for(unsigned commentsForComparedCommitDataIndex = 0; commentsForComparedCommitDataIndex < commentsForComparedCommitDataJsonList.GetLength(); ++commentsForComparedCommitDataIndex)
     {
       m_commentsForComparedCommitData.push_back(commentsForComparedCommitDataJsonList[commentsForComparedCommitDataIndex].AsObject());

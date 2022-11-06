@@ -36,7 +36,7 @@ ListComponentBuildVersionsResult& ListComponentBuildVersionsResult::operator =(c
 
   if(jsonValue.ValueExists("componentSummaryList"))
   {
-    Array<JsonView> componentSummaryListJsonList = jsonValue.GetArray("componentSummaryList");
+    Aws::Utils::Array<JsonView> componentSummaryListJsonList = jsonValue.GetArray("componentSummaryList");
     for(unsigned componentSummaryListIndex = 0; componentSummaryListIndex < componentSummaryListJsonList.GetLength(); ++componentSummaryListIndex)
     {
       m_componentSummaryList.push_back(componentSummaryListJsonList[componentSummaryListIndex].AsObject());

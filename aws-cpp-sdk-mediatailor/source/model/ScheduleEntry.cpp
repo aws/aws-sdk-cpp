@@ -97,7 +97,7 @@ ScheduleEntry& ScheduleEntry::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ScheduleAdBreaks"))
   {
-    Array<JsonView> scheduleAdBreaksJsonList = jsonValue.GetArray("ScheduleAdBreaks");
+    Aws::Utils::Array<JsonView> scheduleAdBreaksJsonList = jsonValue.GetArray("ScheduleAdBreaks");
     for(unsigned scheduleAdBreaksIndex = 0; scheduleAdBreaksIndex < scheduleAdBreaksJsonList.GetLength(); ++scheduleAdBreaksIndex)
     {
       m_scheduleAdBreaks.push_back(scheduleAdBreaksJsonList[scheduleAdBreaksIndex].AsObject());
@@ -170,7 +170,7 @@ JsonValue ScheduleEntry::Jsonize() const
 
   if(m_scheduleAdBreaksHasBeenSet)
   {
-   Array<JsonValue> scheduleAdBreaksJsonList(m_scheduleAdBreaks.size());
+   Aws::Utils::Array<JsonValue> scheduleAdBreaksJsonList(m_scheduleAdBreaks.size());
    for(unsigned scheduleAdBreaksIndex = 0; scheduleAdBreaksIndex < scheduleAdBreaksJsonList.GetLength(); ++scheduleAdBreaksIndex)
    {
      scheduleAdBreaksJsonList[scheduleAdBreaksIndex].AsObject(m_scheduleAdBreaks[scheduleAdBreaksIndex].Jsonize());

@@ -68,7 +68,7 @@ Aws::String UpdateDataSetRequest::SerializePayload() const
 
   if(m_columnGroupsHasBeenSet)
   {
-   Array<JsonValue> columnGroupsJsonList(m_columnGroups.size());
+   Aws::Utils::Array<JsonValue> columnGroupsJsonList(m_columnGroups.size());
    for(unsigned columnGroupsIndex = 0; columnGroupsIndex < columnGroupsJsonList.GetLength(); ++columnGroupsIndex)
    {
      columnGroupsJsonList[columnGroupsIndex].AsObject(m_columnGroups[columnGroupsIndex].Jsonize());
@@ -102,7 +102,7 @@ Aws::String UpdateDataSetRequest::SerializePayload() const
 
   if(m_columnLevelPermissionRulesHasBeenSet)
   {
-   Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
+   Aws::Utils::Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
    for(unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength(); ++columnLevelPermissionRulesIndex)
    {
      columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject(m_columnLevelPermissionRules[columnLevelPermissionRulesIndex].Jsonize());

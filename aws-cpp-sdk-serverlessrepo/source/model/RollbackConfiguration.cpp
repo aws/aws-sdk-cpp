@@ -44,7 +44,7 @@ RollbackConfiguration& RollbackConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("rollbackTriggers"))
   {
-    Array<JsonView> rollbackTriggersJsonList = jsonValue.GetArray("rollbackTriggers");
+    Aws::Utils::Array<JsonView> rollbackTriggersJsonList = jsonValue.GetArray("rollbackTriggers");
     for(unsigned rollbackTriggersIndex = 0; rollbackTriggersIndex < rollbackTriggersJsonList.GetLength(); ++rollbackTriggersIndex)
     {
       m_rollbackTriggers.push_back(rollbackTriggersJsonList[rollbackTriggersIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue RollbackConfiguration::Jsonize() const
 
   if(m_rollbackTriggersHasBeenSet)
   {
-   Array<JsonValue> rollbackTriggersJsonList(m_rollbackTriggers.size());
+   Aws::Utils::Array<JsonValue> rollbackTriggersJsonList(m_rollbackTriggers.size());
    for(unsigned rollbackTriggersIndex = 0; rollbackTriggersIndex < rollbackTriggersJsonList.GetLength(); ++rollbackTriggersIndex)
    {
      rollbackTriggersJsonList[rollbackTriggersIndex].AsObject(m_rollbackTriggers[rollbackTriggersIndex].Jsonize());

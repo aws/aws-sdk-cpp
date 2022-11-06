@@ -77,7 +77,7 @@ Product& Product::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Categories"))
   {
-    Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
+    Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
     for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
     {
       m_categories.push_back(categoriesJsonList[categoriesIndex].AsString());
@@ -87,7 +87,7 @@ Product& Product::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IntegrationTypes"))
   {
-    Array<JsonView> integrationTypesJsonList = jsonValue.GetArray("IntegrationTypes");
+    Aws::Utils::Array<JsonView> integrationTypesJsonList = jsonValue.GetArray("IntegrationTypes");
     for(unsigned integrationTypesIndex = 0; integrationTypesIndex < integrationTypesJsonList.GetLength(); ++integrationTypesIndex)
     {
       m_integrationTypes.push_back(IntegrationTypeMapper::GetIntegrationTypeForName(integrationTypesJsonList[integrationTypesIndex].AsString()));
@@ -149,7 +149,7 @@ JsonValue Product::Jsonize() const
 
   if(m_categoriesHasBeenSet)
   {
-   Array<JsonValue> categoriesJsonList(m_categories.size());
+   Aws::Utils::Array<JsonValue> categoriesJsonList(m_categories.size());
    for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
    {
      categoriesJsonList[categoriesIndex].AsString(m_categories[categoriesIndex]);
@@ -160,7 +160,7 @@ JsonValue Product::Jsonize() const
 
   if(m_integrationTypesHasBeenSet)
   {
-   Array<JsonValue> integrationTypesJsonList(m_integrationTypes.size());
+   Aws::Utils::Array<JsonValue> integrationTypesJsonList(m_integrationTypes.size());
    for(unsigned integrationTypesIndex = 0; integrationTypesIndex < integrationTypesJsonList.GetLength(); ++integrationTypesIndex)
    {
      integrationTypesJsonList[integrationTypesIndex].AsString(IntegrationTypeMapper::GetNameForIntegrationType(m_integrationTypes[integrationTypesIndex]));

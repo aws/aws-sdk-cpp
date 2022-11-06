@@ -30,7 +30,7 @@ ListDocumentVersionsResult& ListDocumentVersionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DocumentVersions"))
   {
-    Array<JsonView> documentVersionsJsonList = jsonValue.GetArray("DocumentVersions");
+    Aws::Utils::Array<JsonView> documentVersionsJsonList = jsonValue.GetArray("DocumentVersions");
     for(unsigned documentVersionsIndex = 0; documentVersionsIndex < documentVersionsJsonList.GetLength(); ++documentVersionsIndex)
     {
       m_documentVersions.push_back(documentVersionsJsonList[documentVersionsIndex].AsObject());

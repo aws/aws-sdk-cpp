@@ -42,7 +42,7 @@ EvaluationResult& EvaluationResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TestWindows"))
   {
-    Array<JsonView> testWindowsJsonList = jsonValue.GetArray("TestWindows");
+    Aws::Utils::Array<JsonView> testWindowsJsonList = jsonValue.GetArray("TestWindows");
     for(unsigned testWindowsIndex = 0; testWindowsIndex < testWindowsJsonList.GetLength(); ++testWindowsIndex)
     {
       m_testWindows.push_back(testWindowsJsonList[testWindowsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue EvaluationResult::Jsonize() const
 
   if(m_testWindowsHasBeenSet)
   {
-   Array<JsonValue> testWindowsJsonList(m_testWindows.size());
+   Aws::Utils::Array<JsonValue> testWindowsJsonList(m_testWindows.size());
    for(unsigned testWindowsIndex = 0; testWindowsIndex < testWindowsJsonList.GetLength(); ++testWindowsIndex)
    {
      testWindowsJsonList[testWindowsIndex].AsObject(m_testWindows[testWindowsIndex].Jsonize());

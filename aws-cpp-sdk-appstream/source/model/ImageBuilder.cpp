@@ -178,7 +178,7 @@ ImageBuilder& ImageBuilder::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ImageBuilderErrors"))
   {
-    Array<JsonView> imageBuilderErrorsJsonList = jsonValue.GetArray("ImageBuilderErrors");
+    Aws::Utils::Array<JsonView> imageBuilderErrorsJsonList = jsonValue.GetArray("ImageBuilderErrors");
     for(unsigned imageBuilderErrorsIndex = 0; imageBuilderErrorsIndex < imageBuilderErrorsJsonList.GetLength(); ++imageBuilderErrorsIndex)
     {
       m_imageBuilderErrors.push_back(imageBuilderErrorsJsonList[imageBuilderErrorsIndex].AsObject());
@@ -195,7 +195,7 @@ ImageBuilder& ImageBuilder::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AccessEndpoints"))
   {
-    Array<JsonView> accessEndpointsJsonList = jsonValue.GetArray("AccessEndpoints");
+    Aws::Utils::Array<JsonView> accessEndpointsJsonList = jsonValue.GetArray("AccessEndpoints");
     for(unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex)
     {
       m_accessEndpoints.push_back(accessEndpointsJsonList[accessEndpointsIndex].AsObject());
@@ -299,7 +299,7 @@ JsonValue ImageBuilder::Jsonize() const
 
   if(m_imageBuilderErrorsHasBeenSet)
   {
-   Array<JsonValue> imageBuilderErrorsJsonList(m_imageBuilderErrors.size());
+   Aws::Utils::Array<JsonValue> imageBuilderErrorsJsonList(m_imageBuilderErrors.size());
    for(unsigned imageBuilderErrorsIndex = 0; imageBuilderErrorsIndex < imageBuilderErrorsJsonList.GetLength(); ++imageBuilderErrorsIndex)
    {
      imageBuilderErrorsJsonList[imageBuilderErrorsIndex].AsObject(m_imageBuilderErrors[imageBuilderErrorsIndex].Jsonize());
@@ -316,7 +316,7 @@ JsonValue ImageBuilder::Jsonize() const
 
   if(m_accessEndpointsHasBeenSet)
   {
-   Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
+   Aws::Utils::Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
    for(unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex)
    {
      accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());

@@ -36,7 +36,7 @@ DescribeSnapshotsResult& DescribeSnapshotsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("Snapshots"))
   {
-    Array<JsonView> snapshotsJsonList = jsonValue.GetArray("Snapshots");
+    Aws::Utils::Array<JsonView> snapshotsJsonList = jsonValue.GetArray("Snapshots");
     for(unsigned snapshotsIndex = 0; snapshotsIndex < snapshotsJsonList.GetLength(); ++snapshotsIndex)
     {
       m_snapshots.push_back(snapshotsJsonList[snapshotsIndex].AsObject());

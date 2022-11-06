@@ -52,7 +52,7 @@ EntityRecognizerInputDataConfig& EntityRecognizerInputDataConfig::operator =(Jso
 
   if(jsonValue.ValueExists("EntityTypes"))
   {
-    Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
+    Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
     for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
     {
       m_entityTypes.push_back(entityTypesJsonList[entityTypesIndex].AsObject());
@@ -83,7 +83,7 @@ EntityRecognizerInputDataConfig& EntityRecognizerInputDataConfig::operator =(Jso
 
   if(jsonValue.ValueExists("AugmentedManifests"))
   {
-    Array<JsonView> augmentedManifestsJsonList = jsonValue.GetArray("AugmentedManifests");
+    Aws::Utils::Array<JsonView> augmentedManifestsJsonList = jsonValue.GetArray("AugmentedManifests");
     for(unsigned augmentedManifestsIndex = 0; augmentedManifestsIndex < augmentedManifestsJsonList.GetLength(); ++augmentedManifestsIndex)
     {
       m_augmentedManifests.push_back(augmentedManifestsJsonList[augmentedManifestsIndex].AsObject());
@@ -105,7 +105,7 @@ JsonValue EntityRecognizerInputDataConfig::Jsonize() const
 
   if(m_entityTypesHasBeenSet)
   {
-   Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
+   Aws::Utils::Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
    for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
    {
      entityTypesJsonList[entityTypesIndex].AsObject(m_entityTypes[entityTypesIndex].Jsonize());
@@ -134,7 +134,7 @@ JsonValue EntityRecognizerInputDataConfig::Jsonize() const
 
   if(m_augmentedManifestsHasBeenSet)
   {
-   Array<JsonValue> augmentedManifestsJsonList(m_augmentedManifests.size());
+   Aws::Utils::Array<JsonValue> augmentedManifestsJsonList(m_augmentedManifests.size());
    for(unsigned augmentedManifestsIndex = 0; augmentedManifestsIndex < augmentedManifestsJsonList.GetLength(); ++augmentedManifestsIndex)
    {
      augmentedManifestsJsonList[augmentedManifestsIndex].AsObject(m_augmentedManifests[augmentedManifestsIndex].Jsonize());

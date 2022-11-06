@@ -35,7 +35,7 @@ Categories& Categories::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MatchedCategories"))
   {
-    Array<JsonView> matchedCategoriesJsonList = jsonValue.GetArray("MatchedCategories");
+    Aws::Utils::Array<JsonView> matchedCategoriesJsonList = jsonValue.GetArray("MatchedCategories");
     for(unsigned matchedCategoriesIndex = 0; matchedCategoriesIndex < matchedCategoriesJsonList.GetLength(); ++matchedCategoriesIndex)
     {
       m_matchedCategories.push_back(matchedCategoriesJsonList[matchedCategoriesIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue Categories::Jsonize() const
 
   if(m_matchedCategoriesHasBeenSet)
   {
-   Array<JsonValue> matchedCategoriesJsonList(m_matchedCategories.size());
+   Aws::Utils::Array<JsonValue> matchedCategoriesJsonList(m_matchedCategories.size());
    for(unsigned matchedCategoriesIndex = 0; matchedCategoriesIndex < matchedCategoriesJsonList.GetLength(); ++matchedCategoriesIndex)
    {
      matchedCategoriesJsonList[matchedCategoriesIndex].AsString(m_matchedCategories[matchedCategoriesIndex]);

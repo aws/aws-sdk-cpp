@@ -30,7 +30,7 @@ ListDeploymentsResult& ListDeploymentsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deployments"))
   {
-    Array<JsonView> deploymentsJsonList = jsonValue.GetArray("deployments");
+    Aws::Utils::Array<JsonView> deploymentsJsonList = jsonValue.GetArray("deployments");
     for(unsigned deploymentsIndex = 0; deploymentsIndex < deploymentsJsonList.GetLength(); ++deploymentsIndex)
     {
       m_deployments.push_back(deploymentsJsonList[deploymentsIndex].AsString());

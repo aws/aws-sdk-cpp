@@ -26,7 +26,7 @@ Aws::String DescribeContinuousExportsRequest::SerializePayload() const
 
   if(m_exportIdsHasBeenSet)
   {
-   Array<JsonValue> exportIdsJsonList(m_exportIds.size());
+   Aws::Utils::Array<JsonValue> exportIdsJsonList(m_exportIds.size());
    for(unsigned exportIdsIndex = 0; exportIdsIndex < exportIdsJsonList.GetLength(); ++exportIdsIndex)
    {
      exportIdsJsonList[exportIdsIndex].AsString(m_exportIds[exportIdsIndex]);

@@ -59,7 +59,7 @@ Commit& Commit::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("parents"))
   {
-    Array<JsonView> parentsJsonList = jsonValue.GetArray("parents");
+    Aws::Utils::Array<JsonView> parentsJsonList = jsonValue.GetArray("parents");
     for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
     {
       m_parents.push_back(parentsJsonList[parentsIndex].AsString());
@@ -116,7 +116,7 @@ JsonValue Commit::Jsonize() const
 
   if(m_parentsHasBeenSet)
   {
-   Array<JsonValue> parentsJsonList(m_parents.size());
+   Aws::Utils::Array<JsonValue> parentsJsonList(m_parents.size());
    for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
    {
      parentsJsonList[parentsIndex].AsString(m_parents[parentsIndex]);

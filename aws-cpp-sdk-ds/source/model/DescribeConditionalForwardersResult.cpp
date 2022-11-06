@@ -30,7 +30,7 @@ DescribeConditionalForwardersResult& DescribeConditionalForwardersResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConditionalForwarders"))
   {
-    Array<JsonView> conditionalForwardersJsonList = jsonValue.GetArray("ConditionalForwarders");
+    Aws::Utils::Array<JsonView> conditionalForwardersJsonList = jsonValue.GetArray("ConditionalForwarders");
     for(unsigned conditionalForwardersIndex = 0; conditionalForwardersIndex < conditionalForwardersJsonList.GetLength(); ++conditionalForwardersIndex)
     {
       m_conditionalForwarders.push_back(conditionalForwardersJsonList[conditionalForwardersIndex].AsObject());

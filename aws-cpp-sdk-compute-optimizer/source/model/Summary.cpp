@@ -55,7 +55,7 @@ Summary& Summary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("reasonCodeSummaries"))
   {
-    Array<JsonView> reasonCodeSummariesJsonList = jsonValue.GetArray("reasonCodeSummaries");
+    Aws::Utils::Array<JsonView> reasonCodeSummariesJsonList = jsonValue.GetArray("reasonCodeSummaries");
     for(unsigned reasonCodeSummariesIndex = 0; reasonCodeSummariesIndex < reasonCodeSummariesJsonList.GetLength(); ++reasonCodeSummariesIndex)
     {
       m_reasonCodeSummaries.push_back(reasonCodeSummariesJsonList[reasonCodeSummariesIndex].AsObject());
@@ -83,7 +83,7 @@ JsonValue Summary::Jsonize() const
 
   if(m_reasonCodeSummariesHasBeenSet)
   {
-   Array<JsonValue> reasonCodeSummariesJsonList(m_reasonCodeSummaries.size());
+   Aws::Utils::Array<JsonValue> reasonCodeSummariesJsonList(m_reasonCodeSummaries.size());
    for(unsigned reasonCodeSummariesIndex = 0; reasonCodeSummariesIndex < reasonCodeSummariesJsonList.GetLength(); ++reasonCodeSummariesIndex)
    {
      reasonCodeSummariesJsonList[reasonCodeSummariesIndex].AsObject(m_reasonCodeSummaries[reasonCodeSummariesIndex].Jsonize());

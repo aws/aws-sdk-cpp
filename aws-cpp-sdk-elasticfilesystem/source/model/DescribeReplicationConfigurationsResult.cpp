@@ -30,7 +30,7 @@ DescribeReplicationConfigurationsResult& DescribeReplicationConfigurationsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Replications"))
   {
-    Array<JsonView> replicationsJsonList = jsonValue.GetArray("Replications");
+    Aws::Utils::Array<JsonView> replicationsJsonList = jsonValue.GetArray("Replications");
     for(unsigned replicationsIndex = 0; replicationsIndex < replicationsJsonList.GetLength(); ++replicationsIndex)
     {
       m_replications.push_back(replicationsJsonList[replicationsIndex].AsObject());

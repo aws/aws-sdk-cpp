@@ -33,7 +33,7 @@ HierarchicalPrincipal& HierarchicalPrincipal::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PrincipalList"))
   {
-    Array<JsonView> principalListJsonList = jsonValue.GetArray("PrincipalList");
+    Aws::Utils::Array<JsonView> principalListJsonList = jsonValue.GetArray("PrincipalList");
     for(unsigned principalListIndex = 0; principalListIndex < principalListJsonList.GetLength(); ++principalListIndex)
     {
       m_principalList.push_back(principalListJsonList[principalListIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue HierarchicalPrincipal::Jsonize() const
 
   if(m_principalListHasBeenSet)
   {
-   Array<JsonValue> principalListJsonList(m_principalList.size());
+   Aws::Utils::Array<JsonValue> principalListJsonList(m_principalList.size());
    for(unsigned principalListIndex = 0; principalListIndex < principalListJsonList.GetLength(); ++principalListIndex)
    {
      principalListJsonList[principalListIndex].AsObject(m_principalList[principalListIndex].Jsonize());

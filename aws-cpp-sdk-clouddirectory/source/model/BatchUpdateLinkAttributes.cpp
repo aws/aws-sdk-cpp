@@ -42,7 +42,7 @@ BatchUpdateLinkAttributes& BatchUpdateLinkAttributes::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("AttributeUpdates"))
   {
-    Array<JsonView> attributeUpdatesJsonList = jsonValue.GetArray("AttributeUpdates");
+    Aws::Utils::Array<JsonView> attributeUpdatesJsonList = jsonValue.GetArray("AttributeUpdates");
     for(unsigned attributeUpdatesIndex = 0; attributeUpdatesIndex < attributeUpdatesJsonList.GetLength(); ++attributeUpdatesIndex)
     {
       m_attributeUpdates.push_back(attributeUpdatesJsonList[attributeUpdatesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue BatchUpdateLinkAttributes::Jsonize() const
 
   if(m_attributeUpdatesHasBeenSet)
   {
-   Array<JsonValue> attributeUpdatesJsonList(m_attributeUpdates.size());
+   Aws::Utils::Array<JsonValue> attributeUpdatesJsonList(m_attributeUpdates.size());
    for(unsigned attributeUpdatesIndex = 0; attributeUpdatesIndex < attributeUpdatesJsonList.GetLength(); ++attributeUpdatesIndex)
    {
      attributeUpdatesJsonList[attributeUpdatesIndex].AsObject(m_attributeUpdates[attributeUpdatesIndex].Jsonize());

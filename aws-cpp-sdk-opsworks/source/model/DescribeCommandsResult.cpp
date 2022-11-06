@@ -30,7 +30,7 @@ DescribeCommandsResult& DescribeCommandsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Commands"))
   {
-    Array<JsonView> commandsJsonList = jsonValue.GetArray("Commands");
+    Aws::Utils::Array<JsonView> commandsJsonList = jsonValue.GetArray("Commands");
     for(unsigned commandsIndex = 0; commandsIndex < commandsJsonList.GetLength(); ++commandsIndex)
     {
       m_commands.push_back(commandsJsonList[commandsIndex].AsObject());

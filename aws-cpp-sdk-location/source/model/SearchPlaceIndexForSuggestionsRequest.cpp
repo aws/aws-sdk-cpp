@@ -30,7 +30,7 @@ Aws::String SearchPlaceIndexForSuggestionsRequest::SerializePayload() const
 
   if(m_biasPositionHasBeenSet)
   {
-   Array<JsonValue> biasPositionJsonList(m_biasPosition.size());
+   Aws::Utils::Array<JsonValue> biasPositionJsonList(m_biasPosition.size());
    for(unsigned biasPositionIndex = 0; biasPositionIndex < biasPositionJsonList.GetLength(); ++biasPositionIndex)
    {
      biasPositionJsonList[biasPositionIndex].AsDouble(m_biasPosition[biasPositionIndex]);
@@ -41,7 +41,7 @@ Aws::String SearchPlaceIndexForSuggestionsRequest::SerializePayload() const
 
   if(m_filterBBoxHasBeenSet)
   {
-   Array<JsonValue> filterBBoxJsonList(m_filterBBox.size());
+   Aws::Utils::Array<JsonValue> filterBBoxJsonList(m_filterBBox.size());
    for(unsigned filterBBoxIndex = 0; filterBBoxIndex < filterBBoxJsonList.GetLength(); ++filterBBoxIndex)
    {
      filterBBoxJsonList[filterBBoxIndex].AsDouble(m_filterBBox[filterBBoxIndex]);
@@ -52,7 +52,7 @@ Aws::String SearchPlaceIndexForSuggestionsRequest::SerializePayload() const
 
   if(m_filterCountriesHasBeenSet)
   {
-   Array<JsonValue> filterCountriesJsonList(m_filterCountries.size());
+   Aws::Utils::Array<JsonValue> filterCountriesJsonList(m_filterCountries.size());
    for(unsigned filterCountriesIndex = 0; filterCountriesIndex < filterCountriesJsonList.GetLength(); ++filterCountriesIndex)
    {
      filterCountriesJsonList[filterCountriesIndex].AsString(m_filterCountries[filterCountriesIndex]);

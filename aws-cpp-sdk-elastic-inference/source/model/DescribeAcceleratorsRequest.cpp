@@ -27,7 +27,7 @@ Aws::String DescribeAcceleratorsRequest::SerializePayload() const
 
   if(m_acceleratorIdsHasBeenSet)
   {
-   Array<JsonValue> acceleratorIdsJsonList(m_acceleratorIds.size());
+   Aws::Utils::Array<JsonValue> acceleratorIdsJsonList(m_acceleratorIds.size());
    for(unsigned acceleratorIdsIndex = 0; acceleratorIdsIndex < acceleratorIdsJsonList.GetLength(); ++acceleratorIdsIndex)
    {
      acceleratorIdsJsonList[acceleratorIdsIndex].AsString(m_acceleratorIds[acceleratorIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeAcceleratorsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

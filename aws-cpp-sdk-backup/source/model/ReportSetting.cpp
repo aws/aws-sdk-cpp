@@ -46,7 +46,7 @@ ReportSetting& ReportSetting::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FrameworkArns"))
   {
-    Array<JsonView> frameworkArnsJsonList = jsonValue.GetArray("FrameworkArns");
+    Aws::Utils::Array<JsonView> frameworkArnsJsonList = jsonValue.GetArray("FrameworkArns");
     for(unsigned frameworkArnsIndex = 0; frameworkArnsIndex < frameworkArnsJsonList.GetLength(); ++frameworkArnsIndex)
     {
       m_frameworkArns.push_back(frameworkArnsJsonList[frameworkArnsIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue ReportSetting::Jsonize() const
 
   if(m_frameworkArnsHasBeenSet)
   {
-   Array<JsonValue> frameworkArnsJsonList(m_frameworkArns.size());
+   Aws::Utils::Array<JsonValue> frameworkArnsJsonList(m_frameworkArns.size());
    for(unsigned frameworkArnsIndex = 0; frameworkArnsIndex < frameworkArnsJsonList.GetLength(); ++frameworkArnsIndex)
    {
      frameworkArnsJsonList[frameworkArnsIndex].AsString(m_frameworkArns[frameworkArnsIndex]);

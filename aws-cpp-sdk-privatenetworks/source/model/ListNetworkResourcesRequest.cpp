@@ -30,7 +30,7 @@ Aws::String ListNetworkResourcesRequest::SerializePayload() const
    JsonValue filtersJsonMap;
    for(auto& filtersItem : m_filters)
    {
-     Array<JsonValue> networkResourceFilterValuesJsonList(filtersItem.second.size());
+     Aws::Utils::Array<JsonValue> networkResourceFilterValuesJsonList(filtersItem.second.size());
      for(unsigned networkResourceFilterValuesIndex = 0; networkResourceFilterValuesIndex < networkResourceFilterValuesJsonList.GetLength(); ++networkResourceFilterValuesIndex)
      {
        networkResourceFilterValuesJsonList[networkResourceFilterValuesIndex].AsString(filtersItem.second[networkResourceFilterValuesIndex]);

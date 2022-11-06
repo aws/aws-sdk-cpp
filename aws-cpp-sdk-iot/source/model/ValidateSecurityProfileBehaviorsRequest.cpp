@@ -23,7 +23,7 @@ Aws::String ValidateSecurityProfileBehaviorsRequest::SerializePayload() const
 
   if(m_behaviorsHasBeenSet)
   {
-   Array<JsonValue> behaviorsJsonList(m_behaviors.size());
+   Aws::Utils::Array<JsonValue> behaviorsJsonList(m_behaviors.size());
    for(unsigned behaviorsIndex = 0; behaviorsIndex < behaviorsJsonList.GetLength(); ++behaviorsIndex)
    {
      behaviorsJsonList[behaviorsIndex].AsObject(m_behaviors[behaviorsIndex].Jsonize());

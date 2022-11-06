@@ -78,7 +78,7 @@ ConnectionDetails& ConnectionDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AllowedIps"))
   {
-    Array<JsonView> allowedIpsJsonList = jsonValue.GetArray("AllowedIps");
+    Aws::Utils::Array<JsonView> allowedIpsJsonList = jsonValue.GetArray("AllowedIps");
     for(unsigned allowedIpsIndex = 0; allowedIpsIndex < allowedIpsJsonList.GetLength(); ++allowedIpsIndex)
     {
       m_allowedIps.push_back(allowedIpsJsonList[allowedIpsIndex].AsString());
@@ -125,7 +125,7 @@ JsonValue ConnectionDetails::Jsonize() const
 
   if(m_allowedIpsHasBeenSet)
   {
-   Array<JsonValue> allowedIpsJsonList(m_allowedIps.size());
+   Aws::Utils::Array<JsonValue> allowedIpsJsonList(m_allowedIps.size());
    for(unsigned allowedIpsIndex = 0; allowedIpsIndex < allowedIpsJsonList.GetLength(); ++allowedIpsIndex)
    {
      allowedIpsJsonList[allowedIpsIndex].AsString(m_allowedIps[allowedIpsIndex]);

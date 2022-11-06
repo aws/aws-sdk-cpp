@@ -44,7 +44,7 @@ CoreNetworkSegment& CoreNetworkSegment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EdgeLocations"))
   {
-    Array<JsonView> edgeLocationsJsonList = jsonValue.GetArray("EdgeLocations");
+    Aws::Utils::Array<JsonView> edgeLocationsJsonList = jsonValue.GetArray("EdgeLocations");
     for(unsigned edgeLocationsIndex = 0; edgeLocationsIndex < edgeLocationsJsonList.GetLength(); ++edgeLocationsIndex)
     {
       m_edgeLocations.push_back(edgeLocationsJsonList[edgeLocationsIndex].AsString());
@@ -54,7 +54,7 @@ CoreNetworkSegment& CoreNetworkSegment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SharedSegments"))
   {
-    Array<JsonView> sharedSegmentsJsonList = jsonValue.GetArray("SharedSegments");
+    Aws::Utils::Array<JsonView> sharedSegmentsJsonList = jsonValue.GetArray("SharedSegments");
     for(unsigned sharedSegmentsIndex = 0; sharedSegmentsIndex < sharedSegmentsJsonList.GetLength(); ++sharedSegmentsIndex)
     {
       m_sharedSegments.push_back(sharedSegmentsJsonList[sharedSegmentsIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue CoreNetworkSegment::Jsonize() const
 
   if(m_edgeLocationsHasBeenSet)
   {
-   Array<JsonValue> edgeLocationsJsonList(m_edgeLocations.size());
+   Aws::Utils::Array<JsonValue> edgeLocationsJsonList(m_edgeLocations.size());
    for(unsigned edgeLocationsIndex = 0; edgeLocationsIndex < edgeLocationsJsonList.GetLength(); ++edgeLocationsIndex)
    {
      edgeLocationsJsonList[edgeLocationsIndex].AsString(m_edgeLocations[edgeLocationsIndex]);
@@ -88,7 +88,7 @@ JsonValue CoreNetworkSegment::Jsonize() const
 
   if(m_sharedSegmentsHasBeenSet)
   {
-   Array<JsonValue> sharedSegmentsJsonList(m_sharedSegments.size());
+   Aws::Utils::Array<JsonValue> sharedSegmentsJsonList(m_sharedSegments.size());
    for(unsigned sharedSegmentsIndex = 0; sharedSegmentsIndex < sharedSegmentsJsonList.GetLength(); ++sharedSegmentsIndex)
    {
      sharedSegmentsJsonList[sharedSegmentsIndex].AsString(m_sharedSegments[sharedSegmentsIndex]);

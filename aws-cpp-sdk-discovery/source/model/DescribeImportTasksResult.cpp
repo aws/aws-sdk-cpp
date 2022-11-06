@@ -36,7 +36,7 @@ DescribeImportTasksResult& DescribeImportTasksResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("tasks"))
   {
-    Array<JsonView> tasksJsonList = jsonValue.GetArray("tasks");
+    Aws::Utils::Array<JsonView> tasksJsonList = jsonValue.GetArray("tasks");
     for(unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex)
     {
       m_tasks.push_back(tasksJsonList[tasksIndex].AsObject());

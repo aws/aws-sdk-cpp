@@ -39,7 +39,7 @@ Aws::String CreateExperimentRequest::SerializePayload() const
 
   if(m_metricGoalsHasBeenSet)
   {
-   Array<JsonValue> metricGoalsJsonList(m_metricGoals.size());
+   Aws::Utils::Array<JsonValue> metricGoalsJsonList(m_metricGoals.size());
    for(unsigned metricGoalsIndex = 0; metricGoalsIndex < metricGoalsJsonList.GetLength(); ++metricGoalsIndex)
    {
      metricGoalsJsonList[metricGoalsIndex].AsObject(m_metricGoals[metricGoalsIndex].Jsonize());
@@ -91,7 +91,7 @@ Aws::String CreateExperimentRequest::SerializePayload() const
 
   if(m_treatmentsHasBeenSet)
   {
-   Array<JsonValue> treatmentsJsonList(m_treatments.size());
+   Aws::Utils::Array<JsonValue> treatmentsJsonList(m_treatments.size());
    for(unsigned treatmentsIndex = 0; treatmentsIndex < treatmentsJsonList.GetLength(); ++treatmentsIndex)
    {
      treatmentsJsonList[treatmentsIndex].AsObject(m_treatments[treatmentsIndex].Jsonize());

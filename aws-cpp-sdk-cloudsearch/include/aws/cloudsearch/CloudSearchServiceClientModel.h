@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/cloudsearch/CloudSearchErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/cloudsearch/CloudSearchEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -75,6 +77,10 @@ namespace Aws
 
   namespace CloudSearch
   {
+    using CloudSearchClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudSearchEndpointProviderBase = Aws::CloudSearch::Endpoint::CloudSearchEndpointProviderBase;
+    using CloudSearchEndpointProvider = Aws::CloudSearch::Endpoint::CloudSearchEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CloudSearchClient header */

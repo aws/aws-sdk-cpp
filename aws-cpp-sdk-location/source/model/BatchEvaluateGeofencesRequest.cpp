@@ -24,7 +24,7 @@ Aws::String BatchEvaluateGeofencesRequest::SerializePayload() const
 
   if(m_devicePositionUpdatesHasBeenSet)
   {
-   Array<JsonValue> devicePositionUpdatesJsonList(m_devicePositionUpdates.size());
+   Aws::Utils::Array<JsonValue> devicePositionUpdatesJsonList(m_devicePositionUpdates.size());
    for(unsigned devicePositionUpdatesIndex = 0; devicePositionUpdatesIndex < devicePositionUpdatesJsonList.GetLength(); ++devicePositionUpdatesIndex)
    {
      devicePositionUpdatesJsonList[devicePositionUpdatesIndex].AsObject(m_devicePositionUpdates[devicePositionUpdatesIndex].Jsonize());

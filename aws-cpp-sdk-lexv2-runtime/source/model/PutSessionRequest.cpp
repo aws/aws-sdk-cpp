@@ -31,7 +31,7 @@ Aws::String PutSessionRequest::SerializePayload() const
 
   if(m_messagesHasBeenSet)
   {
-   Array<JsonValue> messagesJsonList(m_messages.size());
+   Aws::Utils::Array<JsonValue> messagesJsonList(m_messages.size());
    for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
    {
      messagesJsonList[messagesIndex].AsObject(m_messages[messagesIndex].Jsonize());

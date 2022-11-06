@@ -30,7 +30,7 @@ DescribeAutomationExecutionsResult& DescribeAutomationExecutionsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AutomationExecutionMetadataList"))
   {
-    Array<JsonView> automationExecutionMetadataListJsonList = jsonValue.GetArray("AutomationExecutionMetadataList");
+    Aws::Utils::Array<JsonView> automationExecutionMetadataListJsonList = jsonValue.GetArray("AutomationExecutionMetadataList");
     for(unsigned automationExecutionMetadataListIndex = 0; automationExecutionMetadataListIndex < automationExecutionMetadataListJsonList.GetLength(); ++automationExecutionMetadataListIndex)
     {
       m_automationExecutionMetadataList.push_back(automationExecutionMetadataListJsonList[automationExecutionMetadataListIndex].AsObject());

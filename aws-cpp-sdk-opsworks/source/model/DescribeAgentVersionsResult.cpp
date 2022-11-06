@@ -30,7 +30,7 @@ DescribeAgentVersionsResult& DescribeAgentVersionsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AgentVersions"))
   {
-    Array<JsonView> agentVersionsJsonList = jsonValue.GetArray("AgentVersions");
+    Aws::Utils::Array<JsonView> agentVersionsJsonList = jsonValue.GetArray("AgentVersions");
     for(unsigned agentVersionsIndex = 0; agentVersionsIndex < agentVersionsJsonList.GetLength(); ++agentVersionsIndex)
     {
       m_agentVersions.push_back(agentVersionsJsonList[agentVersionsIndex].AsObject());

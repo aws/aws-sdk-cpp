@@ -30,7 +30,7 @@ Aws::String UpdateBandwidthRateLimitScheduleRequest::SerializePayload() const
 
   if(m_bandwidthRateLimitIntervalsHasBeenSet)
   {
-   Array<JsonValue> bandwidthRateLimitIntervalsJsonList(m_bandwidthRateLimitIntervals.size());
+   Aws::Utils::Array<JsonValue> bandwidthRateLimitIntervalsJsonList(m_bandwidthRateLimitIntervals.size());
    for(unsigned bandwidthRateLimitIntervalsIndex = 0; bandwidthRateLimitIntervalsIndex < bandwidthRateLimitIntervalsJsonList.GetLength(); ++bandwidthRateLimitIntervalsIndex)
    {
      bandwidthRateLimitIntervalsJsonList[bandwidthRateLimitIntervalsIndex].AsObject(m_bandwidthRateLimitIntervals[bandwidthRateLimitIntervalsIndex].Jsonize());

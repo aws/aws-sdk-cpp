@@ -32,7 +32,7 @@ LabelParameterVersionResult& LabelParameterVersionResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InvalidLabels"))
   {
-    Array<JsonView> invalidLabelsJsonList = jsonValue.GetArray("InvalidLabels");
+    Aws::Utils::Array<JsonView> invalidLabelsJsonList = jsonValue.GetArray("InvalidLabels");
     for(unsigned invalidLabelsIndex = 0; invalidLabelsIndex < invalidLabelsJsonList.GetLength(); ++invalidLabelsIndex)
     {
       m_invalidLabels.push_back(invalidLabelsJsonList[invalidLabelsIndex].AsString());

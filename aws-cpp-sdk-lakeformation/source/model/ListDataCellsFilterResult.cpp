@@ -30,7 +30,7 @@ ListDataCellsFilterResult& ListDataCellsFilterResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DataCellsFilters"))
   {
-    Array<JsonView> dataCellsFiltersJsonList = jsonValue.GetArray("DataCellsFilters");
+    Aws::Utils::Array<JsonView> dataCellsFiltersJsonList = jsonValue.GetArray("DataCellsFilters");
     for(unsigned dataCellsFiltersIndex = 0; dataCellsFiltersIndex < dataCellsFiltersJsonList.GetLength(); ++dataCellsFiltersIndex)
     {
       m_dataCellsFilters.push_back(dataCellsFiltersJsonList[dataCellsFiltersIndex].AsObject());

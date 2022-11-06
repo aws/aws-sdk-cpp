@@ -53,7 +53,7 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RequiredParameters"))
   {
-    Array<JsonView> requiredParametersJsonList = jsonValue.GetArray("RequiredParameters");
+    Aws::Utils::Array<JsonView> requiredParametersJsonList = jsonValue.GetArray("RequiredParameters");
     for(unsigned requiredParametersIndex = 0; requiredParametersIndex < requiredParametersJsonList.GetLength(); ++requiredParametersIndex)
     {
       m_requiredParameters.push_back(requiredParametersJsonList[requiredParametersIndex].AsString());
@@ -63,7 +63,7 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MutuallyExclusiveParameters"))
   {
-    Array<JsonView> mutuallyExclusiveParametersJsonList = jsonValue.GetArray("MutuallyExclusiveParameters");
+    Aws::Utils::Array<JsonView> mutuallyExclusiveParametersJsonList = jsonValue.GetArray("MutuallyExclusiveParameters");
     for(unsigned mutuallyExclusiveParametersIndex = 0; mutuallyExclusiveParametersIndex < mutuallyExclusiveParametersJsonList.GetLength(); ++mutuallyExclusiveParametersIndex)
     {
       m_mutuallyExclusiveParameters.push_back(mutuallyExclusiveParametersJsonList[mutuallyExclusiveParametersIndex].AsString());
@@ -92,7 +92,7 @@ JsonValue InvalidRequestException::Jsonize() const
 
   if(m_requiredParametersHasBeenSet)
   {
-   Array<JsonValue> requiredParametersJsonList(m_requiredParameters.size());
+   Aws::Utils::Array<JsonValue> requiredParametersJsonList(m_requiredParameters.size());
    for(unsigned requiredParametersIndex = 0; requiredParametersIndex < requiredParametersJsonList.GetLength(); ++requiredParametersIndex)
    {
      requiredParametersJsonList[requiredParametersIndex].AsString(m_requiredParameters[requiredParametersIndex]);
@@ -103,7 +103,7 @@ JsonValue InvalidRequestException::Jsonize() const
 
   if(m_mutuallyExclusiveParametersHasBeenSet)
   {
-   Array<JsonValue> mutuallyExclusiveParametersJsonList(m_mutuallyExclusiveParameters.size());
+   Aws::Utils::Array<JsonValue> mutuallyExclusiveParametersJsonList(m_mutuallyExclusiveParameters.size());
    for(unsigned mutuallyExclusiveParametersIndex = 0; mutuallyExclusiveParametersIndex < mutuallyExclusiveParametersJsonList.GetLength(); ++mutuallyExclusiveParametersIndex)
    {
      mutuallyExclusiveParametersJsonList[mutuallyExclusiveParametersIndex].AsString(m_mutuallyExclusiveParameters[mutuallyExclusiveParametersIndex]);

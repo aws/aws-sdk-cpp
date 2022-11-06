@@ -45,7 +45,7 @@ Aws::String GetColumnStatisticsForPartitionRequest::SerializePayload() const
 
   if(m_partitionValuesHasBeenSet)
   {
-   Array<JsonValue> partitionValuesJsonList(m_partitionValues.size());
+   Aws::Utils::Array<JsonValue> partitionValuesJsonList(m_partitionValues.size());
    for(unsigned partitionValuesIndex = 0; partitionValuesIndex < partitionValuesJsonList.GetLength(); ++partitionValuesIndex)
    {
      partitionValuesJsonList[partitionValuesIndex].AsString(m_partitionValues[partitionValuesIndex]);
@@ -56,7 +56,7 @@ Aws::String GetColumnStatisticsForPartitionRequest::SerializePayload() const
 
   if(m_columnNamesHasBeenSet)
   {
-   Array<JsonValue> columnNamesJsonList(m_columnNames.size());
+   Aws::Utils::Array<JsonValue> columnNamesJsonList(m_columnNames.size());
    for(unsigned columnNamesIndex = 0; columnNamesIndex < columnNamesJsonList.GetLength(); ++columnNamesIndex)
    {
      columnNamesJsonList[columnNamesIndex].AsString(m_columnNames[columnNamesIndex]);

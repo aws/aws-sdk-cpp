@@ -30,7 +30,7 @@ BatchDisassociateServiceActionFromProvisioningArtifactResult& BatchDisassociateS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedServiceActionAssociations"))
   {
-    Array<JsonView> failedServiceActionAssociationsJsonList = jsonValue.GetArray("FailedServiceActionAssociations");
+    Aws::Utils::Array<JsonView> failedServiceActionAssociationsJsonList = jsonValue.GetArray("FailedServiceActionAssociations");
     for(unsigned failedServiceActionAssociationsIndex = 0; failedServiceActionAssociationsIndex < failedServiceActionAssociationsJsonList.GetLength(); ++failedServiceActionAssociationsIndex)
     {
       m_failedServiceActionAssociations.push_back(failedServiceActionAssociationsJsonList[failedServiceActionAssociationsIndex].AsObject());

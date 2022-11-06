@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/databrew/GlueDataBrewErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/databrew/GlueDataBrewEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -93,6 +95,10 @@ namespace Aws
 
   namespace GlueDataBrew
   {
+    using GlueDataBrewClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GlueDataBrewEndpointProviderBase = Aws::GlueDataBrew::Endpoint::GlueDataBrewEndpointProviderBase;
+    using GlueDataBrewEndpointProvider = Aws::GlueDataBrew::Endpoint::GlueDataBrewEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in GlueDataBrewClient header */

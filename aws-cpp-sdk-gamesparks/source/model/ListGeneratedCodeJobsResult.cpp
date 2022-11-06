@@ -30,7 +30,7 @@ ListGeneratedCodeJobsResult& ListGeneratedCodeJobsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GeneratedCodeJobs"))
   {
-    Array<JsonView> generatedCodeJobsJsonList = jsonValue.GetArray("GeneratedCodeJobs");
+    Aws::Utils::Array<JsonView> generatedCodeJobsJsonList = jsonValue.GetArray("GeneratedCodeJobs");
     for(unsigned generatedCodeJobsIndex = 0; generatedCodeJobsIndex < generatedCodeJobsJsonList.GetLength(); ++generatedCodeJobsIndex)
     {
       m_generatedCodeJobs.push_back(generatedCodeJobsJsonList[generatedCodeJobsIndex].AsObject());

@@ -30,7 +30,7 @@ StartDataCollectionByAgentIdsResult& StartDataCollectionByAgentIdsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("agentsConfigurationStatus"))
   {
-    Array<JsonView> agentsConfigurationStatusJsonList = jsonValue.GetArray("agentsConfigurationStatus");
+    Aws::Utils::Array<JsonView> agentsConfigurationStatusJsonList = jsonValue.GetArray("agentsConfigurationStatus");
     for(unsigned agentsConfigurationStatusIndex = 0; agentsConfigurationStatusIndex < agentsConfigurationStatusJsonList.GetLength(); ++agentsConfigurationStatusIndex)
     {
       m_agentsConfigurationStatus.push_back(agentsConfigurationStatusJsonList[agentsConfigurationStatusIndex].AsObject());

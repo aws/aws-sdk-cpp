@@ -53,7 +53,7 @@ Permission& Permission::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PermissionValues"))
   {
-    Array<JsonView> permissionValuesJsonList = jsonValue.GetArray("PermissionValues");
+    Aws::Utils::Array<JsonView> permissionValuesJsonList = jsonValue.GetArray("PermissionValues");
     for(unsigned permissionValuesIndex = 0; permissionValuesIndex < permissionValuesJsonList.GetLength(); ++permissionValuesIndex)
     {
       m_permissionValues.push_back(PermissionTypeMapper::GetPermissionTypeForName(permissionValuesJsonList[permissionValuesIndex].AsString()));
@@ -81,7 +81,7 @@ JsonValue Permission::Jsonize() const
 
   if(m_permissionValuesHasBeenSet)
   {
-   Array<JsonValue> permissionValuesJsonList(m_permissionValues.size());
+   Aws::Utils::Array<JsonValue> permissionValuesJsonList(m_permissionValues.size());
    for(unsigned permissionValuesIndex = 0; permissionValuesIndex < permissionValuesJsonList.GetLength(); ++permissionValuesIndex)
    {
      permissionValuesJsonList[permissionValuesIndex].AsString(PermissionTypeMapper::GetNameForPermissionType(m_permissionValues[permissionValuesIndex]));

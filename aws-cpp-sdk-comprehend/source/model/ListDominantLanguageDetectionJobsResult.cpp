@@ -30,7 +30,7 @@ ListDominantLanguageDetectionJobsResult& ListDominantLanguageDetectionJobsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DominantLanguageDetectionJobPropertiesList"))
   {
-    Array<JsonView> dominantLanguageDetectionJobPropertiesListJsonList = jsonValue.GetArray("DominantLanguageDetectionJobPropertiesList");
+    Aws::Utils::Array<JsonView> dominantLanguageDetectionJobPropertiesListJsonList = jsonValue.GetArray("DominantLanguageDetectionJobPropertiesList");
     for(unsigned dominantLanguageDetectionJobPropertiesListIndex = 0; dominantLanguageDetectionJobPropertiesListIndex < dominantLanguageDetectionJobPropertiesListJsonList.GetLength(); ++dominantLanguageDetectionJobPropertiesListIndex)
     {
       m_dominantLanguageDetectionJobPropertiesList.push_back(dominantLanguageDetectionJobPropertiesListJsonList[dominantLanguageDetectionJobPropertiesListIndex].AsObject());

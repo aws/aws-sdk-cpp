@@ -55,7 +55,7 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioDescriptions"))
   {
-    Array<JsonView> audioDescriptionsJsonList = jsonValue.GetArray("audioDescriptions");
+    Aws::Utils::Array<JsonView> audioDescriptionsJsonList = jsonValue.GetArray("audioDescriptions");
     for(unsigned audioDescriptionsIndex = 0; audioDescriptionsIndex < audioDescriptionsJsonList.GetLength(); ++audioDescriptionsIndex)
     {
       m_audioDescriptions.push_back(audioDescriptionsJsonList[audioDescriptionsIndex].AsObject());
@@ -86,7 +86,7 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("captionDescriptions"))
   {
-    Array<JsonView> captionDescriptionsJsonList = jsonValue.GetArray("captionDescriptions");
+    Aws::Utils::Array<JsonView> captionDescriptionsJsonList = jsonValue.GetArray("captionDescriptions");
     for(unsigned captionDescriptionsIndex = 0; captionDescriptionsIndex < captionDescriptionsJsonList.GetLength(); ++captionDescriptionsIndex)
     {
       m_captionDescriptions.push_back(captionDescriptionsJsonList[captionDescriptionsIndex].AsObject());
@@ -124,7 +124,7 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("outputGroups"))
   {
-    Array<JsonView> outputGroupsJsonList = jsonValue.GetArray("outputGroups");
+    Aws::Utils::Array<JsonView> outputGroupsJsonList = jsonValue.GetArray("outputGroups");
     for(unsigned outputGroupsIndex = 0; outputGroupsIndex < outputGroupsJsonList.GetLength(); ++outputGroupsIndex)
     {
       m_outputGroups.push_back(outputGroupsJsonList[outputGroupsIndex].AsObject());
@@ -141,7 +141,7 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("videoDescriptions"))
   {
-    Array<JsonView> videoDescriptionsJsonList = jsonValue.GetArray("videoDescriptions");
+    Aws::Utils::Array<JsonView> videoDescriptionsJsonList = jsonValue.GetArray("videoDescriptions");
     for(unsigned videoDescriptionsIndex = 0; videoDescriptionsIndex < videoDescriptionsJsonList.GetLength(); ++videoDescriptionsIndex)
     {
       m_videoDescriptions.push_back(videoDescriptionsJsonList[videoDescriptionsIndex].AsObject());
@@ -158,7 +158,7 @@ JsonValue EncoderSettings::Jsonize() const
 
   if(m_audioDescriptionsHasBeenSet)
   {
-   Array<JsonValue> audioDescriptionsJsonList(m_audioDescriptions.size());
+   Aws::Utils::Array<JsonValue> audioDescriptionsJsonList(m_audioDescriptions.size());
    for(unsigned audioDescriptionsIndex = 0; audioDescriptionsIndex < audioDescriptionsJsonList.GetLength(); ++audioDescriptionsIndex)
    {
      audioDescriptionsJsonList[audioDescriptionsIndex].AsObject(m_audioDescriptions[audioDescriptionsIndex].Jsonize());
@@ -187,7 +187,7 @@ JsonValue EncoderSettings::Jsonize() const
 
   if(m_captionDescriptionsHasBeenSet)
   {
-   Array<JsonValue> captionDescriptionsJsonList(m_captionDescriptions.size());
+   Aws::Utils::Array<JsonValue> captionDescriptionsJsonList(m_captionDescriptions.size());
    for(unsigned captionDescriptionsIndex = 0; captionDescriptionsIndex < captionDescriptionsJsonList.GetLength(); ++captionDescriptionsIndex)
    {
      captionDescriptionsJsonList[captionDescriptionsIndex].AsObject(m_captionDescriptions[captionDescriptionsIndex].Jsonize());
@@ -222,7 +222,7 @@ JsonValue EncoderSettings::Jsonize() const
 
   if(m_outputGroupsHasBeenSet)
   {
-   Array<JsonValue> outputGroupsJsonList(m_outputGroups.size());
+   Aws::Utils::Array<JsonValue> outputGroupsJsonList(m_outputGroups.size());
    for(unsigned outputGroupsIndex = 0; outputGroupsIndex < outputGroupsJsonList.GetLength(); ++outputGroupsIndex)
    {
      outputGroupsJsonList[outputGroupsIndex].AsObject(m_outputGroups[outputGroupsIndex].Jsonize());
@@ -239,7 +239,7 @@ JsonValue EncoderSettings::Jsonize() const
 
   if(m_videoDescriptionsHasBeenSet)
   {
-   Array<JsonValue> videoDescriptionsJsonList(m_videoDescriptions.size());
+   Aws::Utils::Array<JsonValue> videoDescriptionsJsonList(m_videoDescriptions.size());
    for(unsigned videoDescriptionsIndex = 0; videoDescriptionsIndex < videoDescriptionsJsonList.GetLength(); ++videoDescriptionsIndex)
    {
      videoDescriptionsJsonList[videoDescriptionsIndex].AsObject(m_videoDescriptions[videoDescriptionsIndex].Jsonize());

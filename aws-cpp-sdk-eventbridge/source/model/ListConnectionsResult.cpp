@@ -30,7 +30,7 @@ ListConnectionsResult& ListConnectionsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Connections"))
   {
-    Array<JsonView> connectionsJsonList = jsonValue.GetArray("Connections");
+    Aws::Utils::Array<JsonView> connectionsJsonList = jsonValue.GetArray("Connections");
     for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
     {
       m_connections.push_back(connectionsJsonList[connectionsIndex].AsObject());

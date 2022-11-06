@@ -52,7 +52,7 @@ UpdateAuthorizerResult& UpdateAuthorizerResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("providerARNs"))
   {
-    Array<JsonView> providerARNsJsonList = jsonValue.GetArray("providerARNs");
+    Aws::Utils::Array<JsonView> providerARNsJsonList = jsonValue.GetArray("providerARNs");
     for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
     {
       m_providerARNs.push_back(providerARNsJsonList[providerARNsIndex].AsString());

@@ -37,7 +37,7 @@ Aws::String StartMatchmakingRequest::SerializePayload() const
 
   if(m_playersHasBeenSet)
   {
-   Array<JsonValue> playersJsonList(m_players.size());
+   Aws::Utils::Array<JsonValue> playersJsonList(m_players.size());
    for(unsigned playersIndex = 0; playersIndex < playersJsonList.GetLength(); ++playersIndex)
    {
      playersJsonList[playersIndex].AsObject(m_players[playersIndex].Jsonize());

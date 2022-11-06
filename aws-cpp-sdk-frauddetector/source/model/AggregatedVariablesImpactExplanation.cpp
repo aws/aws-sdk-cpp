@@ -39,7 +39,7 @@ AggregatedVariablesImpactExplanation& AggregatedVariablesImpactExplanation::oper
 {
   if(jsonValue.ValueExists("eventVariableNames"))
   {
-    Array<JsonView> eventVariableNamesJsonList = jsonValue.GetArray("eventVariableNames");
+    Aws::Utils::Array<JsonView> eventVariableNamesJsonList = jsonValue.GetArray("eventVariableNames");
     for(unsigned eventVariableNamesIndex = 0; eventVariableNamesIndex < eventVariableNamesJsonList.GetLength(); ++eventVariableNamesIndex)
     {
       m_eventVariableNames.push_back(eventVariableNamesJsonList[eventVariableNamesIndex].AsString());
@@ -70,7 +70,7 @@ JsonValue AggregatedVariablesImpactExplanation::Jsonize() const
 
   if(m_eventVariableNamesHasBeenSet)
   {
-   Array<JsonValue> eventVariableNamesJsonList(m_eventVariableNames.size());
+   Aws::Utils::Array<JsonValue> eventVariableNamesJsonList(m_eventVariableNames.size());
    for(unsigned eventVariableNamesIndex = 0; eventVariableNamesIndex < eventVariableNamesJsonList.GetLength(); ++eventVariableNamesIndex)
    {
      eventVariableNamesJsonList[eventVariableNamesIndex].AsString(m_eventVariableNames[eventVariableNamesIndex]);

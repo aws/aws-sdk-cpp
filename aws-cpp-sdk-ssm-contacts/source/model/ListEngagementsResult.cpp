@@ -36,7 +36,7 @@ ListEngagementsResult& ListEngagementsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("Engagements"))
   {
-    Array<JsonView> engagementsJsonList = jsonValue.GetArray("Engagements");
+    Aws::Utils::Array<JsonView> engagementsJsonList = jsonValue.GetArray("Engagements");
     for(unsigned engagementsIndex = 0; engagementsIndex < engagementsJsonList.GetLength(); ++engagementsIndex)
     {
       m_engagements.push_back(engagementsJsonList[engagementsIndex].AsObject());

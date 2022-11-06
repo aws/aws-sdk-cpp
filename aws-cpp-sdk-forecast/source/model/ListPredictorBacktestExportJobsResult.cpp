@@ -30,7 +30,7 @@ ListPredictorBacktestExportJobsResult& ListPredictorBacktestExportJobsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PredictorBacktestExportJobs"))
   {
-    Array<JsonView> predictorBacktestExportJobsJsonList = jsonValue.GetArray("PredictorBacktestExportJobs");
+    Aws::Utils::Array<JsonView> predictorBacktestExportJobsJsonList = jsonValue.GetArray("PredictorBacktestExportJobs");
     for(unsigned predictorBacktestExportJobsIndex = 0; predictorBacktestExportJobsIndex < predictorBacktestExportJobsJsonList.GetLength(); ++predictorBacktestExportJobsIndex)
     {
       m_predictorBacktestExportJobs.push_back(predictorBacktestExportJobsJsonList[predictorBacktestExportJobsIndex].AsObject());

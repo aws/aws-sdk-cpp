@@ -30,7 +30,7 @@ ListPublicKeysResult& ListPublicKeysResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PublicKeyList"))
   {
-    Array<JsonView> publicKeyListJsonList = jsonValue.GetArray("PublicKeyList");
+    Aws::Utils::Array<JsonView> publicKeyListJsonList = jsonValue.GetArray("PublicKeyList");
     for(unsigned publicKeyListIndex = 0; publicKeyListIndex < publicKeyListJsonList.GetLength(); ++publicKeyListIndex)
     {
       m_publicKeyList.push_back(publicKeyListJsonList[publicKeyListIndex].AsObject());

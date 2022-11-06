@@ -24,7 +24,7 @@ Aws::String PutApplicationPolicyRequest::SerializePayload() const
 
   if(m_statementsHasBeenSet)
   {
-   Array<JsonValue> statementsJsonList(m_statements.size());
+   Aws::Utils::Array<JsonValue> statementsJsonList(m_statements.size());
    for(unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex)
    {
      statementsJsonList[statementsIndex].AsObject(m_statements[statementsIndex].Jsonize());

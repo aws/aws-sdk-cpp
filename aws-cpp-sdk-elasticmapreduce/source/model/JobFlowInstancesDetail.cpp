@@ -100,7 +100,7 @@ JobFlowInstancesDetail& JobFlowInstancesDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceGroups"))
   {
-    Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
+    Aws::Utils::Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
     for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
     {
       m_instanceGroups.push_back(instanceGroupsJsonList[instanceGroupsIndex].AsObject());
@@ -196,7 +196,7 @@ JsonValue JobFlowInstancesDetail::Jsonize() const
 
   if(m_instanceGroupsHasBeenSet)
   {
-   Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
+   Aws::Utils::Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
    for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
    {
      instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());

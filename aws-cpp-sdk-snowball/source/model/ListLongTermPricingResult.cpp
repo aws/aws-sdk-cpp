@@ -30,7 +30,7 @@ ListLongTermPricingResult& ListLongTermPricingResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LongTermPricingEntries"))
   {
-    Array<JsonView> longTermPricingEntriesJsonList = jsonValue.GetArray("LongTermPricingEntries");
+    Aws::Utils::Array<JsonView> longTermPricingEntriesJsonList = jsonValue.GetArray("LongTermPricingEntries");
     for(unsigned longTermPricingEntriesIndex = 0; longTermPricingEntriesIndex < longTermPricingEntriesJsonList.GetLength(); ++longTermPricingEntriesIndex)
     {
       m_longTermPricingEntries.push_back(longTermPricingEntriesJsonList[longTermPricingEntriesIndex].AsObject());

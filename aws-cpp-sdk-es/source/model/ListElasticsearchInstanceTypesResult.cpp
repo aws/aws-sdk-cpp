@@ -30,7 +30,7 @@ ListElasticsearchInstanceTypesResult& ListElasticsearchInstanceTypesResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ElasticsearchInstanceTypes"))
   {
-    Array<JsonView> elasticsearchInstanceTypesJsonList = jsonValue.GetArray("ElasticsearchInstanceTypes");
+    Aws::Utils::Array<JsonView> elasticsearchInstanceTypesJsonList = jsonValue.GetArray("ElasticsearchInstanceTypes");
     for(unsigned elasticsearchInstanceTypesIndex = 0; elasticsearchInstanceTypesIndex < elasticsearchInstanceTypesJsonList.GetLength(); ++elasticsearchInstanceTypesIndex)
     {
       m_elasticsearchInstanceTypes.push_back(ESPartitionInstanceTypeMapper::GetESPartitionInstanceTypeForName(elasticsearchInstanceTypesJsonList[elasticsearchInstanceTypesIndex].AsString()));

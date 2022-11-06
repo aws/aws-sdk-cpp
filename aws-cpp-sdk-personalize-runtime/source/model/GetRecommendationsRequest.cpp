@@ -90,7 +90,7 @@ Aws::String GetRecommendationsRequest::SerializePayload() const
 
   if(m_promotionsHasBeenSet)
   {
-   Array<JsonValue> promotionsJsonList(m_promotions.size());
+   Aws::Utils::Array<JsonValue> promotionsJsonList(m_promotions.size());
    for(unsigned promotionsIndex = 0; promotionsIndex < promotionsJsonList.GetLength(); ++promotionsIndex)
    {
      promotionsJsonList[promotionsIndex].AsObject(m_promotions[promotionsIndex].Jsonize());

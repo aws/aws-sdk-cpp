@@ -40,7 +40,7 @@ Aws::String GetResourcesRequest::SerializePayload() const
 
   if(m_tagFiltersHasBeenSet)
   {
-   Array<JsonValue> tagFiltersJsonList(m_tagFilters.size());
+   Aws::Utils::Array<JsonValue> tagFiltersJsonList(m_tagFilters.size());
    for(unsigned tagFiltersIndex = 0; tagFiltersIndex < tagFiltersJsonList.GetLength(); ++tagFiltersIndex)
    {
      tagFiltersJsonList[tagFiltersIndex].AsObject(m_tagFilters[tagFiltersIndex].Jsonize());
@@ -63,7 +63,7 @@ Aws::String GetResourcesRequest::SerializePayload() const
 
   if(m_resourceTypeFiltersHasBeenSet)
   {
-   Array<JsonValue> resourceTypeFiltersJsonList(m_resourceTypeFilters.size());
+   Aws::Utils::Array<JsonValue> resourceTypeFiltersJsonList(m_resourceTypeFilters.size());
    for(unsigned resourceTypeFiltersIndex = 0; resourceTypeFiltersIndex < resourceTypeFiltersJsonList.GetLength(); ++resourceTypeFiltersIndex)
    {
      resourceTypeFiltersJsonList[resourceTypeFiltersIndex].AsString(m_resourceTypeFilters[resourceTypeFiltersIndex]);
@@ -86,7 +86,7 @@ Aws::String GetResourcesRequest::SerializePayload() const
 
   if(m_resourceARNListHasBeenSet)
   {
-   Array<JsonValue> resourceARNListJsonList(m_resourceARNList.size());
+   Aws::Utils::Array<JsonValue> resourceARNListJsonList(m_resourceARNList.size());
    for(unsigned resourceARNListIndex = 0; resourceARNListIndex < resourceARNListJsonList.GetLength(); ++resourceARNListIndex)
    {
      resourceARNListJsonList[resourceARNListIndex].AsString(m_resourceARNList[resourceARNListIndex]);

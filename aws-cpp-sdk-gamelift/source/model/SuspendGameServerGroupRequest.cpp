@@ -30,7 +30,7 @@ Aws::String SuspendGameServerGroupRequest::SerializePayload() const
 
   if(m_suspendActionsHasBeenSet)
   {
-   Array<JsonValue> suspendActionsJsonList(m_suspendActions.size());
+   Aws::Utils::Array<JsonValue> suspendActionsJsonList(m_suspendActions.size());
    for(unsigned suspendActionsIndex = 0; suspendActionsIndex < suspendActionsJsonList.GetLength(); ++suspendActionsIndex)
    {
      suspendActionsJsonList[suspendActionsIndex].AsString(GameServerGroupActionMapper::GetNameForGameServerGroupAction(m_suspendActions[suspendActionsIndex]));

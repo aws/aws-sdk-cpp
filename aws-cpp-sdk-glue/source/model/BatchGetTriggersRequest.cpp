@@ -23,7 +23,7 @@ Aws::String BatchGetTriggersRequest::SerializePayload() const
 
   if(m_triggerNamesHasBeenSet)
   {
-   Array<JsonValue> triggerNamesJsonList(m_triggerNames.size());
+   Aws::Utils::Array<JsonValue> triggerNamesJsonList(m_triggerNames.size());
    for(unsigned triggerNamesIndex = 0; triggerNamesIndex < triggerNamesJsonList.GetLength(); ++triggerNamesIndex)
    {
      triggerNamesJsonList[triggerNamesIndex].AsString(m_triggerNames[triggerNamesIndex]);

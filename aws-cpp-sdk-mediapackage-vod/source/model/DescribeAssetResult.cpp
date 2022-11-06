@@ -42,7 +42,7 @@ DescribeAssetResult& DescribeAssetResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("egressEndpoints"))
   {
-    Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
+    Aws::Utils::Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
     for(unsigned egressEndpointsIndex = 0; egressEndpointsIndex < egressEndpointsJsonList.GetLength(); ++egressEndpointsIndex)
     {
       m_egressEndpoints.push_back(egressEndpointsJsonList[egressEndpointsIndex].AsObject());

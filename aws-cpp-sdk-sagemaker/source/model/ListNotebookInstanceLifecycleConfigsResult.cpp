@@ -36,7 +36,7 @@ ListNotebookInstanceLifecycleConfigsResult& ListNotebookInstanceLifecycleConfigs
 
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigs"))
   {
-    Array<JsonView> notebookInstanceLifecycleConfigsJsonList = jsonValue.GetArray("NotebookInstanceLifecycleConfigs");
+    Aws::Utils::Array<JsonView> notebookInstanceLifecycleConfigsJsonList = jsonValue.GetArray("NotebookInstanceLifecycleConfigs");
     for(unsigned notebookInstanceLifecycleConfigsIndex = 0; notebookInstanceLifecycleConfigsIndex < notebookInstanceLifecycleConfigsJsonList.GetLength(); ++notebookInstanceLifecycleConfigsIndex)
     {
       m_notebookInstanceLifecycleConfigs.push_back(notebookInstanceLifecycleConfigsJsonList[notebookInstanceLifecycleConfigsIndex].AsObject());

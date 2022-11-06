@@ -30,7 +30,7 @@ ListAssetModelPropertiesResult& ListAssetModelPropertiesResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assetModelPropertySummaries"))
   {
-    Array<JsonView> assetModelPropertySummariesJsonList = jsonValue.GetArray("assetModelPropertySummaries");
+    Aws::Utils::Array<JsonView> assetModelPropertySummariesJsonList = jsonValue.GetArray("assetModelPropertySummaries");
     for(unsigned assetModelPropertySummariesIndex = 0; assetModelPropertySummariesIndex < assetModelPropertySummariesJsonList.GetLength(); ++assetModelPropertySummariesIndex)
     {
       m_assetModelPropertySummaries.push_back(assetModelPropertySummariesJsonList[assetModelPropertySummariesIndex].AsObject());

@@ -33,7 +33,7 @@ LineItemFields& LineItemFields::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LineItemExpenseFields"))
   {
-    Array<JsonView> lineItemExpenseFieldsJsonList = jsonValue.GetArray("LineItemExpenseFields");
+    Aws::Utils::Array<JsonView> lineItemExpenseFieldsJsonList = jsonValue.GetArray("LineItemExpenseFields");
     for(unsigned lineItemExpenseFieldsIndex = 0; lineItemExpenseFieldsIndex < lineItemExpenseFieldsJsonList.GetLength(); ++lineItemExpenseFieldsIndex)
     {
       m_lineItemExpenseFields.push_back(lineItemExpenseFieldsJsonList[lineItemExpenseFieldsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue LineItemFields::Jsonize() const
 
   if(m_lineItemExpenseFieldsHasBeenSet)
   {
-   Array<JsonValue> lineItemExpenseFieldsJsonList(m_lineItemExpenseFields.size());
+   Aws::Utils::Array<JsonValue> lineItemExpenseFieldsJsonList(m_lineItemExpenseFields.size());
    for(unsigned lineItemExpenseFieldsIndex = 0; lineItemExpenseFieldsIndex < lineItemExpenseFieldsJsonList.GetLength(); ++lineItemExpenseFieldsIndex)
    {
      lineItemExpenseFieldsJsonList[lineItemExpenseFieldsIndex].AsObject(m_lineItemExpenseFields[lineItemExpenseFieldsIndex].Jsonize());

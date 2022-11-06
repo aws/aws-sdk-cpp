@@ -70,7 +70,7 @@ DescribeImportResult& DescribeImportResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("failureReasons"))
   {
-    Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
     for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
     {
       m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());

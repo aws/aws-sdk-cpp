@@ -26,7 +26,7 @@ Aws::String BatchImportEvidenceToAssessmentControlRequest::SerializePayload() co
 
   if(m_manualEvidenceHasBeenSet)
   {
-   Array<JsonValue> manualEvidenceJsonList(m_manualEvidence.size());
+   Aws::Utils::Array<JsonValue> manualEvidenceJsonList(m_manualEvidence.size());
    for(unsigned manualEvidenceIndex = 0; manualEvidenceIndex < manualEvidenceJsonList.GetLength(); ++manualEvidenceIndex)
    {
      manualEvidenceJsonList[manualEvidenceIndex].AsObject(m_manualEvidence[manualEvidenceIndex].Jsonize());

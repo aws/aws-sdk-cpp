@@ -30,7 +30,7 @@ DescribeAssessmentRunsResult& DescribeAssessmentRunsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assessmentRuns"))
   {
-    Array<JsonView> assessmentRunsJsonList = jsonValue.GetArray("assessmentRuns");
+    Aws::Utils::Array<JsonView> assessmentRunsJsonList = jsonValue.GetArray("assessmentRuns");
     for(unsigned assessmentRunsIndex = 0; assessmentRunsIndex < assessmentRunsJsonList.GetLength(); ++assessmentRunsIndex)
     {
       m_assessmentRuns.push_back(assessmentRunsJsonList[assessmentRunsIndex].AsObject());

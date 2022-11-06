@@ -23,7 +23,7 @@ Aws::String BatchDeleteImportDataRequest::SerializePayload() const
 
   if(m_importTaskIdsHasBeenSet)
   {
-   Array<JsonValue> importTaskIdsJsonList(m_importTaskIds.size());
+   Aws::Utils::Array<JsonValue> importTaskIdsJsonList(m_importTaskIds.size());
    for(unsigned importTaskIdsIndex = 0; importTaskIdsIndex < importTaskIdsJsonList.GetLength(); ++importTaskIdsIndex)
    {
      importTaskIdsJsonList[importTaskIdsIndex].AsString(m_importTaskIds[importTaskIdsIndex]);

@@ -33,7 +33,7 @@ Aws::String CreateLabelGroupRequest::SerializePayload() const
 
   if(m_faultCodesHasBeenSet)
   {
-   Array<JsonValue> faultCodesJsonList(m_faultCodes.size());
+   Aws::Utils::Array<JsonValue> faultCodesJsonList(m_faultCodes.size());
    for(unsigned faultCodesIndex = 0; faultCodesIndex < faultCodesJsonList.GetLength(); ++faultCodesIndex)
    {
      faultCodesJsonList[faultCodesIndex].AsString(m_faultCodes[faultCodesIndex]);
@@ -50,7 +50,7 @@ Aws::String CreateLabelGroupRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -36,7 +36,7 @@ ListWorkgroupsResult& ListWorkgroupsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("workgroups"))
   {
-    Array<JsonView> workgroupsJsonList = jsonValue.GetArray("workgroups");
+    Aws::Utils::Array<JsonView> workgroupsJsonList = jsonValue.GetArray("workgroups");
     for(unsigned workgroupsIndex = 0; workgroupsIndex < workgroupsJsonList.GetLength(); ++workgroupsIndex)
     {
       m_workgroups.push_back(workgroupsJsonList[workgroupsIndex].AsObject());

@@ -30,7 +30,7 @@ GetTypedLinkFacetInformationResult& GetTypedLinkFacetInformationResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityAttributeOrder"))
   {
-    Array<JsonView> identityAttributeOrderJsonList = jsonValue.GetArray("IdentityAttributeOrder");
+    Aws::Utils::Array<JsonView> identityAttributeOrderJsonList = jsonValue.GetArray("IdentityAttributeOrder");
     for(unsigned identityAttributeOrderIndex = 0; identityAttributeOrderIndex < identityAttributeOrderJsonList.GetLength(); ++identityAttributeOrderIndex)
     {
       m_identityAttributeOrder.push_back(identityAttributeOrderJsonList[identityAttributeOrderIndex].AsString());

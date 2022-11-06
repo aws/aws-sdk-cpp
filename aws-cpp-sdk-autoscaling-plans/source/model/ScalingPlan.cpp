@@ -72,7 +72,7 @@ ScalingPlan& ScalingPlan::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ScalingInstructions"))
   {
-    Array<JsonView> scalingInstructionsJsonList = jsonValue.GetArray("ScalingInstructions");
+    Aws::Utils::Array<JsonView> scalingInstructionsJsonList = jsonValue.GetArray("ScalingInstructions");
     for(unsigned scalingInstructionsIndex = 0; scalingInstructionsIndex < scalingInstructionsJsonList.GetLength(); ++scalingInstructionsIndex)
     {
       m_scalingInstructions.push_back(scalingInstructionsJsonList[scalingInstructionsIndex].AsObject());
@@ -135,7 +135,7 @@ JsonValue ScalingPlan::Jsonize() const
 
   if(m_scalingInstructionsHasBeenSet)
   {
-   Array<JsonValue> scalingInstructionsJsonList(m_scalingInstructions.size());
+   Aws::Utils::Array<JsonValue> scalingInstructionsJsonList(m_scalingInstructions.size());
    for(unsigned scalingInstructionsIndex = 0; scalingInstructionsIndex < scalingInstructionsJsonList.GetLength(); ++scalingInstructionsIndex)
    {
      scalingInstructionsJsonList[scalingInstructionsIndex].AsObject(m_scalingInstructions[scalingInstructionsIndex].Jsonize());

@@ -80,7 +80,7 @@ DescribeJobRunResult& DescribeJobRunResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("ValidationConfigurations"))
   {
-    Array<JsonView> validationConfigurationsJsonList = jsonValue.GetArray("ValidationConfigurations");
+    Aws::Utils::Array<JsonView> validationConfigurationsJsonList = jsonValue.GetArray("ValidationConfigurations");
     for(unsigned validationConfigurationsIndex = 0; validationConfigurationsIndex < validationConfigurationsJsonList.GetLength(); ++validationConfigurationsIndex)
     {
       m_validationConfigurations.push_back(validationConfigurationsJsonList[validationConfigurationsIndex].AsObject());
@@ -113,7 +113,7 @@ DescribeJobRunResult& DescribeJobRunResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Outputs"))
   {
-    Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
+    Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
@@ -122,7 +122,7 @@ DescribeJobRunResult& DescribeJobRunResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("DataCatalogOutputs"))
   {
-    Array<JsonView> dataCatalogOutputsJsonList = jsonValue.GetArray("DataCatalogOutputs");
+    Aws::Utils::Array<JsonView> dataCatalogOutputsJsonList = jsonValue.GetArray("DataCatalogOutputs");
     for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
     {
       m_dataCatalogOutputs.push_back(dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject());
@@ -131,7 +131,7 @@ DescribeJobRunResult& DescribeJobRunResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("DatabaseOutputs"))
   {
-    Array<JsonView> databaseOutputsJsonList = jsonValue.GetArray("DatabaseOutputs");
+    Aws::Utils::Array<JsonView> databaseOutputsJsonList = jsonValue.GetArray("DatabaseOutputs");
     for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
     {
       m_databaseOutputs.push_back(databaseOutputsJsonList[databaseOutputsIndex].AsObject());

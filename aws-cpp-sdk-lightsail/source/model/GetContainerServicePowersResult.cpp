@@ -30,7 +30,7 @@ GetContainerServicePowersResult& GetContainerServicePowersResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("powers"))
   {
-    Array<JsonView> powersJsonList = jsonValue.GetArray("powers");
+    Aws::Utils::Array<JsonView> powersJsonList = jsonValue.GetArray("powers");
     for(unsigned powersIndex = 0; powersIndex < powersJsonList.GetLength(); ++powersIndex)
     {
       m_powers.push_back(powersJsonList[powersIndex].AsObject());

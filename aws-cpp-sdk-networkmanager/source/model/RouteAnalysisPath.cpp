@@ -42,7 +42,7 @@ RouteAnalysisPath& RouteAnalysisPath::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Path"))
   {
-    Array<JsonView> pathJsonList = jsonValue.GetArray("Path");
+    Aws::Utils::Array<JsonView> pathJsonList = jsonValue.GetArray("Path");
     for(unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex)
     {
       m_path.push_back(pathJsonList[pathIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue RouteAnalysisPath::Jsonize() const
 
   if(m_pathHasBeenSet)
   {
-   Array<JsonValue> pathJsonList(m_path.size());
+   Aws::Utils::Array<JsonValue> pathJsonList(m_path.size());
    for(unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex)
    {
      pathJsonList[pathIndex].AsObject(m_path[pathIndex].Jsonize());

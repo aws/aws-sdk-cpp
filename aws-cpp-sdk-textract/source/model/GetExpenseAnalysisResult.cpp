@@ -50,7 +50,7 @@ GetExpenseAnalysisResult& GetExpenseAnalysisResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("ExpenseDocuments"))
   {
-    Array<JsonView> expenseDocumentsJsonList = jsonValue.GetArray("ExpenseDocuments");
+    Aws::Utils::Array<JsonView> expenseDocumentsJsonList = jsonValue.GetArray("ExpenseDocuments");
     for(unsigned expenseDocumentsIndex = 0; expenseDocumentsIndex < expenseDocumentsJsonList.GetLength(); ++expenseDocumentsIndex)
     {
       m_expenseDocuments.push_back(expenseDocumentsJsonList[expenseDocumentsIndex].AsObject());
@@ -59,7 +59,7 @@ GetExpenseAnalysisResult& GetExpenseAnalysisResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("Warnings"))
   {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());

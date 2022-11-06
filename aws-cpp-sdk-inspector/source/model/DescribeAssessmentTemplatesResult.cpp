@@ -30,7 +30,7 @@ DescribeAssessmentTemplatesResult& DescribeAssessmentTemplatesResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assessmentTemplates"))
   {
-    Array<JsonView> assessmentTemplatesJsonList = jsonValue.GetArray("assessmentTemplates");
+    Aws::Utils::Array<JsonView> assessmentTemplatesJsonList = jsonValue.GetArray("assessmentTemplates");
     for(unsigned assessmentTemplatesIndex = 0; assessmentTemplatesIndex < assessmentTemplatesJsonList.GetLength(); ++assessmentTemplatesIndex)
     {
       m_assessmentTemplates.push_back(assessmentTemplatesJsonList[assessmentTemplatesIndex].AsObject());

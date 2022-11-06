@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/servicediscovery/ServiceDiscoveryErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/servicediscovery/ServiceDiscoveryEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -75,6 +77,10 @@ namespace Aws
 
   namespace ServiceDiscovery
   {
+    using ServiceDiscoveryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ServiceDiscoveryEndpointProviderBase = Aws::ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProviderBase;
+    using ServiceDiscoveryEndpointProvider = Aws::ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ServiceDiscoveryClient header */

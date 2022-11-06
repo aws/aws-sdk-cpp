@@ -29,7 +29,7 @@ Aws::String DescribeImagesRequest::SerializePayload() const
 
   if(m_namesHasBeenSet)
   {
-   Array<JsonValue> namesJsonList(m_names.size());
+   Aws::Utils::Array<JsonValue> namesJsonList(m_names.size());
    for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
    {
      namesJsonList[namesIndex].AsString(m_names[namesIndex]);
@@ -40,7 +40,7 @@ Aws::String DescribeImagesRequest::SerializePayload() const
 
   if(m_arnsHasBeenSet)
   {
-   Array<JsonValue> arnsJsonList(m_arns.size());
+   Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
    for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
    {
      arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);

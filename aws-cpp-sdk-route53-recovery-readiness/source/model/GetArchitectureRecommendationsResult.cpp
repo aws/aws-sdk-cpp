@@ -42,7 +42,7 @@ GetArchitectureRecommendationsResult& GetArchitectureRecommendationsResult::oper
 
   if(jsonValue.ValueExists("recommendations"))
   {
-    Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
+    Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
     for(unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex)
     {
       m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());

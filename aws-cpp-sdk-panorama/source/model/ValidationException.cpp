@@ -43,7 +43,7 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ErrorArguments"))
   {
-    Array<JsonView> errorArgumentsJsonList = jsonValue.GetArray("ErrorArguments");
+    Aws::Utils::Array<JsonView> errorArgumentsJsonList = jsonValue.GetArray("ErrorArguments");
     for(unsigned errorArgumentsIndex = 0; errorArgumentsIndex < errorArgumentsJsonList.GetLength(); ++errorArgumentsIndex)
     {
       m_errorArguments.push_back(errorArgumentsJsonList[errorArgumentsIndex].AsObject());
@@ -60,7 +60,7 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Fields"))
   {
-    Array<JsonView> fieldsJsonList = jsonValue.GetArray("Fields");
+    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("Fields");
     for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
     {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
@@ -91,7 +91,7 @@ JsonValue ValidationException::Jsonize() const
 
   if(m_errorArgumentsHasBeenSet)
   {
-   Array<JsonValue> errorArgumentsJsonList(m_errorArguments.size());
+   Aws::Utils::Array<JsonValue> errorArgumentsJsonList(m_errorArguments.size());
    for(unsigned errorArgumentsIndex = 0; errorArgumentsIndex < errorArgumentsJsonList.GetLength(); ++errorArgumentsIndex)
    {
      errorArgumentsJsonList[errorArgumentsIndex].AsObject(m_errorArguments[errorArgumentsIndex].Jsonize());
@@ -108,7 +108,7 @@ JsonValue ValidationException::Jsonize() const
 
   if(m_fieldsHasBeenSet)
   {
-   Array<JsonValue> fieldsJsonList(m_fields.size());
+   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
    for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
    {
      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());

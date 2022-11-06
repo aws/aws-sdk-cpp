@@ -201,7 +201,7 @@ HIT& HIT::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("QualificationRequirements"))
   {
-    Array<JsonView> qualificationRequirementsJsonList = jsonValue.GetArray("QualificationRequirements");
+    Aws::Utils::Array<JsonView> qualificationRequirementsJsonList = jsonValue.GetArray("QualificationRequirements");
     for(unsigned qualificationRequirementsIndex = 0; qualificationRequirementsIndex < qualificationRequirementsJsonList.GetLength(); ++qualificationRequirementsIndex)
     {
       m_qualificationRequirements.push_back(qualificationRequirementsJsonList[qualificationRequirementsIndex].AsObject());
@@ -339,7 +339,7 @@ JsonValue HIT::Jsonize() const
 
   if(m_qualificationRequirementsHasBeenSet)
   {
-   Array<JsonValue> qualificationRequirementsJsonList(m_qualificationRequirements.size());
+   Aws::Utils::Array<JsonValue> qualificationRequirementsJsonList(m_qualificationRequirements.size());
    for(unsigned qualificationRequirementsIndex = 0; qualificationRequirementsIndex < qualificationRequirementsJsonList.GetLength(); ++qualificationRequirementsIndex)
    {
      qualificationRequirementsJsonList[qualificationRequirementsIndex].AsObject(m_qualificationRequirements[qualificationRequirementsIndex].Jsonize());

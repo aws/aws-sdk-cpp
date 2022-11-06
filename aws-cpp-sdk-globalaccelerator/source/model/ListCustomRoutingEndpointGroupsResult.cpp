@@ -30,7 +30,7 @@ ListCustomRoutingEndpointGroupsResult& ListCustomRoutingEndpointGroupsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EndpointGroups"))
   {
-    Array<JsonView> endpointGroupsJsonList = jsonValue.GetArray("EndpointGroups");
+    Aws::Utils::Array<JsonView> endpointGroupsJsonList = jsonValue.GetArray("EndpointGroups");
     for(unsigned endpointGroupsIndex = 0; endpointGroupsIndex < endpointGroupsJsonList.GetLength(); ++endpointGroupsIndex)
     {
       m_endpointGroups.push_back(endpointGroupsJsonList[endpointGroupsIndex].AsObject());

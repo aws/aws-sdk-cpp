@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/snow-device-management/SnowDeviceManagementErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/snow-device-management/SnowDeviceManagementEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -61,6 +63,10 @@ namespace Aws
 
   namespace SnowDeviceManagement
   {
+    using SnowDeviceManagementClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SnowDeviceManagementEndpointProviderBase = Aws::SnowDeviceManagement::Endpoint::SnowDeviceManagementEndpointProviderBase;
+    using SnowDeviceManagementEndpointProvider = Aws::SnowDeviceManagement::Endpoint::SnowDeviceManagementEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in SnowDeviceManagementClient header */

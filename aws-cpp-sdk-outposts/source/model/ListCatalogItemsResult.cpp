@@ -30,7 +30,7 @@ ListCatalogItemsResult& ListCatalogItemsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CatalogItems"))
   {
-    Array<JsonView> catalogItemsJsonList = jsonValue.GetArray("CatalogItems");
+    Aws::Utils::Array<JsonView> catalogItemsJsonList = jsonValue.GetArray("CatalogItems");
     for(unsigned catalogItemsIndex = 0; catalogItemsIndex < catalogItemsJsonList.GetLength(); ++catalogItemsIndex)
     {
       m_catalogItems.push_back(catalogItemsJsonList[catalogItemsIndex].AsObject());

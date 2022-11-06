@@ -30,7 +30,7 @@ ListResourcesForTagOptionResult& ListResourcesForTagOptionResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceDetails"))
   {
-    Array<JsonView> resourceDetailsJsonList = jsonValue.GetArray("ResourceDetails");
+    Aws::Utils::Array<JsonView> resourceDetailsJsonList = jsonValue.GetArray("ResourceDetails");
     for(unsigned resourceDetailsIndex = 0; resourceDetailsIndex < resourceDetailsJsonList.GetLength(); ++resourceDetailsIndex)
     {
       m_resourceDetails.push_back(resourceDetailsJsonList[resourceDetailsIndex].AsObject());

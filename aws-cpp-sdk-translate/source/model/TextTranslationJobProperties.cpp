@@ -98,7 +98,7 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
 
   if(jsonValue.ValueExists("TargetLanguageCodes"))
   {
-    Array<JsonView> targetLanguageCodesJsonList = jsonValue.GetArray("TargetLanguageCodes");
+    Aws::Utils::Array<JsonView> targetLanguageCodesJsonList = jsonValue.GetArray("TargetLanguageCodes");
     for(unsigned targetLanguageCodesIndex = 0; targetLanguageCodesIndex < targetLanguageCodesJsonList.GetLength(); ++targetLanguageCodesIndex)
     {
       m_targetLanguageCodes.push_back(targetLanguageCodesJsonList[targetLanguageCodesIndex].AsString());
@@ -108,7 +108,7 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
 
   if(jsonValue.ValueExists("TerminologyNames"))
   {
-    Array<JsonView> terminologyNamesJsonList = jsonValue.GetArray("TerminologyNames");
+    Aws::Utils::Array<JsonView> terminologyNamesJsonList = jsonValue.GetArray("TerminologyNames");
     for(unsigned terminologyNamesIndex = 0; terminologyNamesIndex < terminologyNamesJsonList.GetLength(); ++terminologyNamesIndex)
     {
       m_terminologyNames.push_back(terminologyNamesJsonList[terminologyNamesIndex].AsString());
@@ -118,7 +118,7 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
 
   if(jsonValue.ValueExists("ParallelDataNames"))
   {
-    Array<JsonView> parallelDataNamesJsonList = jsonValue.GetArray("ParallelDataNames");
+    Aws::Utils::Array<JsonView> parallelDataNamesJsonList = jsonValue.GetArray("ParallelDataNames");
     for(unsigned parallelDataNamesIndex = 0; parallelDataNamesIndex < parallelDataNamesJsonList.GetLength(); ++parallelDataNamesIndex)
     {
       m_parallelDataNames.push_back(parallelDataNamesJsonList[parallelDataNamesIndex].AsString());
@@ -213,7 +213,7 @@ JsonValue TextTranslationJobProperties::Jsonize() const
 
   if(m_targetLanguageCodesHasBeenSet)
   {
-   Array<JsonValue> targetLanguageCodesJsonList(m_targetLanguageCodes.size());
+   Aws::Utils::Array<JsonValue> targetLanguageCodesJsonList(m_targetLanguageCodes.size());
    for(unsigned targetLanguageCodesIndex = 0; targetLanguageCodesIndex < targetLanguageCodesJsonList.GetLength(); ++targetLanguageCodesIndex)
    {
      targetLanguageCodesJsonList[targetLanguageCodesIndex].AsString(m_targetLanguageCodes[targetLanguageCodesIndex]);
@@ -224,7 +224,7 @@ JsonValue TextTranslationJobProperties::Jsonize() const
 
   if(m_terminologyNamesHasBeenSet)
   {
-   Array<JsonValue> terminologyNamesJsonList(m_terminologyNames.size());
+   Aws::Utils::Array<JsonValue> terminologyNamesJsonList(m_terminologyNames.size());
    for(unsigned terminologyNamesIndex = 0; terminologyNamesIndex < terminologyNamesJsonList.GetLength(); ++terminologyNamesIndex)
    {
      terminologyNamesJsonList[terminologyNamesIndex].AsString(m_terminologyNames[terminologyNamesIndex]);
@@ -235,7 +235,7 @@ JsonValue TextTranslationJobProperties::Jsonize() const
 
   if(m_parallelDataNamesHasBeenSet)
   {
-   Array<JsonValue> parallelDataNamesJsonList(m_parallelDataNames.size());
+   Aws::Utils::Array<JsonValue> parallelDataNamesJsonList(m_parallelDataNames.size());
    for(unsigned parallelDataNamesIndex = 0; parallelDataNamesIndex < parallelDataNamesJsonList.GetLength(); ++parallelDataNamesIndex)
    {
      parallelDataNamesJsonList[parallelDataNamesIndex].AsString(m_parallelDataNames[parallelDataNamesIndex]);

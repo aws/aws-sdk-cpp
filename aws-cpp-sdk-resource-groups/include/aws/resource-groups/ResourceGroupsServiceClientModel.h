@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/resource-groups/ResourceGroupsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/resource-groups/ResourceGroupsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -65,6 +67,10 @@ namespace Aws
 
   namespace ResourceGroups
   {
+    using ResourceGroupsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ResourceGroupsEndpointProviderBase = Aws::ResourceGroups::Endpoint::ResourceGroupsEndpointProviderBase;
+    using ResourceGroupsEndpointProvider = Aws::ResourceGroups::Endpoint::ResourceGroupsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ResourceGroupsClient header */

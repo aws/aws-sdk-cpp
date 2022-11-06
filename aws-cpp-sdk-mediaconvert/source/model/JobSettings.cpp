@@ -85,7 +85,7 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
@@ -123,7 +123,7 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("outputGroups"))
   {
-    Array<JsonView> outputGroupsJsonList = jsonValue.GetArray("outputGroups");
+    Aws::Utils::Array<JsonView> outputGroupsJsonList = jsonValue.GetArray("outputGroups");
     for(unsigned outputGroupsIndex = 0; outputGroupsIndex < outputGroupsJsonList.GetLength(); ++outputGroupsIndex)
     {
       m_outputGroups.push_back(outputGroupsJsonList[outputGroupsIndex].AsObject());
@@ -178,7 +178,7 @@ JsonValue JobSettings::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
@@ -213,7 +213,7 @@ JsonValue JobSettings::Jsonize() const
 
   if(m_outputGroupsHasBeenSet)
   {
-   Array<JsonValue> outputGroupsJsonList(m_outputGroups.size());
+   Aws::Utils::Array<JsonValue> outputGroupsJsonList(m_outputGroups.size());
    for(unsigned outputGroupsIndex = 0; outputGroupsIndex < outputGroupsJsonList.GetLength(); ++outputGroupsIndex)
    {
      outputGroupsJsonList[outputGroupsIndex].AsObject(m_outputGroups[outputGroupsIndex].Jsonize());

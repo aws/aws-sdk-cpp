@@ -30,7 +30,7 @@ ListInputSecurityGroupsResult& ListInputSecurityGroupsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("inputSecurityGroups"))
   {
-    Array<JsonView> inputSecurityGroupsJsonList = jsonValue.GetArray("inputSecurityGroups");
+    Aws::Utils::Array<JsonView> inputSecurityGroupsJsonList = jsonValue.GetArray("inputSecurityGroups");
     for(unsigned inputSecurityGroupsIndex = 0; inputSecurityGroupsIndex < inputSecurityGroupsJsonList.GetLength(); ++inputSecurityGroupsIndex)
     {
       m_inputSecurityGroups.push_back(inputSecurityGroupsJsonList[inputSecurityGroupsIndex].AsObject());

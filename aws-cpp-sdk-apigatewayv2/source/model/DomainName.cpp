@@ -55,7 +55,7 @@ DomainName& DomainName::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("domainNameConfigurations"))
   {
-    Array<JsonView> domainNameConfigurationsJsonList = jsonValue.GetArray("domainNameConfigurations");
+    Aws::Utils::Array<JsonView> domainNameConfigurationsJsonList = jsonValue.GetArray("domainNameConfigurations");
     for(unsigned domainNameConfigurationsIndex = 0; domainNameConfigurationsIndex < domainNameConfigurationsJsonList.GetLength(); ++domainNameConfigurationsIndex)
     {
       m_domainNameConfigurations.push_back(domainNameConfigurationsJsonList[domainNameConfigurationsIndex].AsObject());
@@ -101,7 +101,7 @@ JsonValue DomainName::Jsonize() const
 
   if(m_domainNameConfigurationsHasBeenSet)
   {
-   Array<JsonValue> domainNameConfigurationsJsonList(m_domainNameConfigurations.size());
+   Aws::Utils::Array<JsonValue> domainNameConfigurationsJsonList(m_domainNameConfigurations.size());
    for(unsigned domainNameConfigurationsIndex = 0; domainNameConfigurationsIndex < domainNameConfigurationsJsonList.GetLength(); ++domainNameConfigurationsIndex)
    {
      domainNameConfigurationsJsonList[domainNameConfigurationsIndex].AsObject(m_domainNameConfigurations[domainNameConfigurationsIndex].Jsonize());

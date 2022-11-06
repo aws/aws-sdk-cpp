@@ -38,7 +38,7 @@ GetUsageTotalsResult& GetUsageTotalsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("usageTotals"))
   {
-    Array<JsonView> usageTotalsJsonList = jsonValue.GetArray("usageTotals");
+    Aws::Utils::Array<JsonView> usageTotalsJsonList = jsonValue.GetArray("usageTotals");
     for(unsigned usageTotalsIndex = 0; usageTotalsIndex < usageTotalsJsonList.GetLength(); ++usageTotalsIndex)
     {
       m_usageTotals.push_back(usageTotalsJsonList[usageTotalsIndex].AsObject());

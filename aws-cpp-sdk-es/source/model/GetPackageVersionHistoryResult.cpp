@@ -36,7 +36,7 @@ GetPackageVersionHistoryResult& GetPackageVersionHistoryResult::operator =(const
 
   if(jsonValue.ValueExists("PackageVersionHistoryList"))
   {
-    Array<JsonView> packageVersionHistoryListJsonList = jsonValue.GetArray("PackageVersionHistoryList");
+    Aws::Utils::Array<JsonView> packageVersionHistoryListJsonList = jsonValue.GetArray("PackageVersionHistoryList");
     for(unsigned packageVersionHistoryListIndex = 0; packageVersionHistoryListIndex < packageVersionHistoryListJsonList.GetLength(); ++packageVersionHistoryListIndex)
     {
       m_packageVersionHistoryList.push_back(packageVersionHistoryListJsonList[packageVersionHistoryListIndex].AsObject());

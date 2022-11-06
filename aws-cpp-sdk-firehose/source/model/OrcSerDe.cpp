@@ -111,7 +111,7 @@ OrcSerDe& OrcSerDe::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("BloomFilterColumns"))
   {
-    Array<JsonView> bloomFilterColumnsJsonList = jsonValue.GetArray("BloomFilterColumns");
+    Aws::Utils::Array<JsonView> bloomFilterColumnsJsonList = jsonValue.GetArray("BloomFilterColumns");
     for(unsigned bloomFilterColumnsIndex = 0; bloomFilterColumnsIndex < bloomFilterColumnsJsonList.GetLength(); ++bloomFilterColumnsIndex)
     {
       m_bloomFilterColumns.push_back(bloomFilterColumnsJsonList[bloomFilterColumnsIndex].AsString());
@@ -184,7 +184,7 @@ JsonValue OrcSerDe::Jsonize() const
 
   if(m_bloomFilterColumnsHasBeenSet)
   {
-   Array<JsonValue> bloomFilterColumnsJsonList(m_bloomFilterColumns.size());
+   Aws::Utils::Array<JsonValue> bloomFilterColumnsJsonList(m_bloomFilterColumns.size());
    for(unsigned bloomFilterColumnsIndex = 0; bloomFilterColumnsIndex < bloomFilterColumnsJsonList.GetLength(); ++bloomFilterColumnsIndex)
    {
      bloomFilterColumnsJsonList[bloomFilterColumnsIndex].AsString(m_bloomFilterColumns[bloomFilterColumnsIndex]);

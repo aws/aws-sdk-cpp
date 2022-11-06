@@ -48,7 +48,7 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
 
   if(m_eventCategoriesHasBeenSet)
   {
-   Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
+   Aws::Utils::Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
    for(unsigned eventCategoriesIndex = 0; eventCategoriesIndex < eventCategoriesJsonList.GetLength(); ++eventCategoriesIndex)
    {
      eventCategoriesJsonList[eventCategoriesIndex].AsString(m_eventCategories[eventCategoriesIndex]);
@@ -59,7 +59,7 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
 
   if(m_sourceIdsHasBeenSet)
   {
-   Array<JsonValue> sourceIdsJsonList(m_sourceIds.size());
+   Aws::Utils::Array<JsonValue> sourceIdsJsonList(m_sourceIds.size());
    for(unsigned sourceIdsIndex = 0; sourceIdsIndex < sourceIdsJsonList.GetLength(); ++sourceIdsIndex)
    {
      sourceIdsJsonList[sourceIdsIndex].AsString(m_sourceIds[sourceIdsIndex]);
@@ -76,7 +76,7 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

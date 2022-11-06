@@ -60,7 +60,7 @@ Aws::String CreateRestApiRequest::SerializePayload() const
 
   if(m_binaryMediaTypesHasBeenSet)
   {
-   Array<JsonValue> binaryMediaTypesJsonList(m_binaryMediaTypes.size());
+   Aws::Utils::Array<JsonValue> binaryMediaTypesJsonList(m_binaryMediaTypes.size());
    for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
    {
      binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString(m_binaryMediaTypes[binaryMediaTypesIndex]);

@@ -36,7 +36,7 @@ ListRecoveryGroupsResult& ListRecoveryGroupsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("recoveryGroups"))
   {
-    Array<JsonView> recoveryGroupsJsonList = jsonValue.GetArray("recoveryGroups");
+    Aws::Utils::Array<JsonView> recoveryGroupsJsonList = jsonValue.GetArray("recoveryGroups");
     for(unsigned recoveryGroupsIndex = 0; recoveryGroupsIndex < recoveryGroupsJsonList.GetLength(); ++recoveryGroupsIndex)
     {
       m_recoveryGroups.push_back(recoveryGroupsJsonList[recoveryGroupsIndex].AsObject());

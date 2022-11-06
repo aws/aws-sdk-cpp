@@ -30,7 +30,7 @@ ListSchemasResult& ListSchemasResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("schemas"))
   {
-    Array<JsonView> schemasJsonList = jsonValue.GetArray("schemas");
+    Aws::Utils::Array<JsonView> schemasJsonList = jsonValue.GetArray("schemas");
     for(unsigned schemasIndex = 0; schemasIndex < schemasJsonList.GetLength(); ++schemasIndex)
     {
       m_schemas.push_back(schemasJsonList[schemasIndex].AsObject());

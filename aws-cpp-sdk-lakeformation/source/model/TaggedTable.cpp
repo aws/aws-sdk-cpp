@@ -46,7 +46,7 @@ TaggedTable& TaggedTable::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LFTagOnDatabase"))
   {
-    Array<JsonView> lFTagOnDatabaseJsonList = jsonValue.GetArray("LFTagOnDatabase");
+    Aws::Utils::Array<JsonView> lFTagOnDatabaseJsonList = jsonValue.GetArray("LFTagOnDatabase");
     for(unsigned lFTagOnDatabaseIndex = 0; lFTagOnDatabaseIndex < lFTagOnDatabaseJsonList.GetLength(); ++lFTagOnDatabaseIndex)
     {
       m_lFTagOnDatabase.push_back(lFTagOnDatabaseJsonList[lFTagOnDatabaseIndex].AsObject());
@@ -56,7 +56,7 @@ TaggedTable& TaggedTable::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LFTagsOnTable"))
   {
-    Array<JsonView> lFTagsOnTableJsonList = jsonValue.GetArray("LFTagsOnTable");
+    Aws::Utils::Array<JsonView> lFTagsOnTableJsonList = jsonValue.GetArray("LFTagsOnTable");
     for(unsigned lFTagsOnTableIndex = 0; lFTagsOnTableIndex < lFTagsOnTableJsonList.GetLength(); ++lFTagsOnTableIndex)
     {
       m_lFTagsOnTable.push_back(lFTagsOnTableJsonList[lFTagsOnTableIndex].AsObject());
@@ -66,7 +66,7 @@ TaggedTable& TaggedTable::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LFTagsOnColumns"))
   {
-    Array<JsonView> lFTagsOnColumnsJsonList = jsonValue.GetArray("LFTagsOnColumns");
+    Aws::Utils::Array<JsonView> lFTagsOnColumnsJsonList = jsonValue.GetArray("LFTagsOnColumns");
     for(unsigned lFTagsOnColumnsIndex = 0; lFTagsOnColumnsIndex < lFTagsOnColumnsJsonList.GetLength(); ++lFTagsOnColumnsIndex)
     {
       m_lFTagsOnColumns.push_back(lFTagsOnColumnsJsonList[lFTagsOnColumnsIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue TaggedTable::Jsonize() const
 
   if(m_lFTagOnDatabaseHasBeenSet)
   {
-   Array<JsonValue> lFTagOnDatabaseJsonList(m_lFTagOnDatabase.size());
+   Aws::Utils::Array<JsonValue> lFTagOnDatabaseJsonList(m_lFTagOnDatabase.size());
    for(unsigned lFTagOnDatabaseIndex = 0; lFTagOnDatabaseIndex < lFTagOnDatabaseJsonList.GetLength(); ++lFTagOnDatabaseIndex)
    {
      lFTagOnDatabaseJsonList[lFTagOnDatabaseIndex].AsObject(m_lFTagOnDatabase[lFTagOnDatabaseIndex].Jsonize());
@@ -100,7 +100,7 @@ JsonValue TaggedTable::Jsonize() const
 
   if(m_lFTagsOnTableHasBeenSet)
   {
-   Array<JsonValue> lFTagsOnTableJsonList(m_lFTagsOnTable.size());
+   Aws::Utils::Array<JsonValue> lFTagsOnTableJsonList(m_lFTagsOnTable.size());
    for(unsigned lFTagsOnTableIndex = 0; lFTagsOnTableIndex < lFTagsOnTableJsonList.GetLength(); ++lFTagsOnTableIndex)
    {
      lFTagsOnTableJsonList[lFTagsOnTableIndex].AsObject(m_lFTagsOnTable[lFTagsOnTableIndex].Jsonize());
@@ -111,7 +111,7 @@ JsonValue TaggedTable::Jsonize() const
 
   if(m_lFTagsOnColumnsHasBeenSet)
   {
-   Array<JsonValue> lFTagsOnColumnsJsonList(m_lFTagsOnColumns.size());
+   Aws::Utils::Array<JsonValue> lFTagsOnColumnsJsonList(m_lFTagsOnColumns.size());
    for(unsigned lFTagsOnColumnsIndex = 0; lFTagsOnColumnsIndex < lFTagsOnColumnsJsonList.GetLength(); ++lFTagsOnColumnsIndex)
    {
      lFTagsOnColumnsJsonList[lFTagsOnColumnsIndex].AsObject(m_lFTagsOnColumns[lFTagsOnColumnsIndex].Jsonize());

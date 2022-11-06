@@ -53,7 +53,7 @@ StorageConnector& StorageConnector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Domains"))
   {
-    Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
+    Aws::Utils::Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
     for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
     {
       m_domains.push_back(domainsJsonList[domainsIndex].AsString());
@@ -81,7 +81,7 @@ JsonValue StorageConnector::Jsonize() const
 
   if(m_domainsHasBeenSet)
   {
-   Array<JsonValue> domainsJsonList(m_domains.size());
+   Aws::Utils::Array<JsonValue> domainsJsonList(m_domains.size());
    for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
    {
      domainsJsonList[domainsIndex].AsString(m_domains[domainsIndex]);

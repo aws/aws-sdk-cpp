@@ -25,7 +25,7 @@ Aws::String UpdateRoutingProfileConcurrencyRequest::SerializePayload() const
 
   if(m_mediaConcurrenciesHasBeenSet)
   {
-   Array<JsonValue> mediaConcurrenciesJsonList(m_mediaConcurrencies.size());
+   Aws::Utils::Array<JsonValue> mediaConcurrenciesJsonList(m_mediaConcurrencies.size());
    for(unsigned mediaConcurrenciesIndex = 0; mediaConcurrenciesIndex < mediaConcurrenciesJsonList.GetLength(); ++mediaConcurrenciesIndex)
    {
      mediaConcurrenciesJsonList[mediaConcurrenciesIndex].AsObject(m_mediaConcurrencies[mediaConcurrenciesIndex].Jsonize());

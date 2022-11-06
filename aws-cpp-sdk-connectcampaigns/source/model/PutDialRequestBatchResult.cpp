@@ -30,7 +30,7 @@ PutDialRequestBatchResult& PutDialRequestBatchResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("failedRequests"))
   {
-    Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("failedRequests");
+    Aws::Utils::Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("failedRequests");
     for(unsigned failedRequestsIndex = 0; failedRequestsIndex < failedRequestsJsonList.GetLength(); ++failedRequestsIndex)
     {
       m_failedRequests.push_back(failedRequestsJsonList[failedRequestsIndex].AsObject());
@@ -39,7 +39,7 @@ PutDialRequestBatchResult& PutDialRequestBatchResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("successfulRequests"))
   {
-    Array<JsonView> successfulRequestsJsonList = jsonValue.GetArray("successfulRequests");
+    Aws::Utils::Array<JsonView> successfulRequestsJsonList = jsonValue.GetArray("successfulRequests");
     for(unsigned successfulRequestsIndex = 0; successfulRequestsIndex < successfulRequestsJsonList.GetLength(); ++successfulRequestsIndex)
     {
       m_successfulRequests.push_back(successfulRequestsJsonList[successfulRequestsIndex].AsObject());

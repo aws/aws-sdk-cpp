@@ -53,7 +53,7 @@ UserContext& UserContext::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Groups"))
   {
-    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
+    Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());
@@ -63,7 +63,7 @@ UserContext& UserContext::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DataSourceGroups"))
   {
-    Array<JsonView> dataSourceGroupsJsonList = jsonValue.GetArray("DataSourceGroups");
+    Aws::Utils::Array<JsonView> dataSourceGroupsJsonList = jsonValue.GetArray("DataSourceGroups");
     for(unsigned dataSourceGroupsIndex = 0; dataSourceGroupsIndex < dataSourceGroupsJsonList.GetLength(); ++dataSourceGroupsIndex)
     {
       m_dataSourceGroups.push_back(dataSourceGroupsJsonList[dataSourceGroupsIndex].AsObject());
@@ -92,7 +92,7 @@ JsonValue UserContext::Jsonize() const
 
   if(m_groupsHasBeenSet)
   {
-   Array<JsonValue> groupsJsonList(m_groups.size());
+   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
    {
      groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);
@@ -103,7 +103,7 @@ JsonValue UserContext::Jsonize() const
 
   if(m_dataSourceGroupsHasBeenSet)
   {
-   Array<JsonValue> dataSourceGroupsJsonList(m_dataSourceGroups.size());
+   Aws::Utils::Array<JsonValue> dataSourceGroupsJsonList(m_dataSourceGroups.size());
    for(unsigned dataSourceGroupsIndex = 0; dataSourceGroupsIndex < dataSourceGroupsJsonList.GetLength(); ++dataSourceGroupsIndex)
    {
      dataSourceGroupsJsonList[dataSourceGroupsIndex].AsObject(m_dataSourceGroups[dataSourceGroupsIndex].Jsonize());

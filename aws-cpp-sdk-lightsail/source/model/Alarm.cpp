@@ -214,7 +214,7 @@ Alarm& Alarm::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("contactProtocols"))
   {
-    Array<JsonView> contactProtocolsJsonList = jsonValue.GetArray("contactProtocols");
+    Aws::Utils::Array<JsonView> contactProtocolsJsonList = jsonValue.GetArray("contactProtocols");
     for(unsigned contactProtocolsIndex = 0; contactProtocolsIndex < contactProtocolsJsonList.GetLength(); ++contactProtocolsIndex)
     {
       m_contactProtocols.push_back(ContactProtocolMapper::GetContactProtocolForName(contactProtocolsJsonList[contactProtocolsIndex].AsString()));
@@ -224,7 +224,7 @@ Alarm& Alarm::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("notificationTriggers"))
   {
-    Array<JsonView> notificationTriggersJsonList = jsonValue.GetArray("notificationTriggers");
+    Aws::Utils::Array<JsonView> notificationTriggersJsonList = jsonValue.GetArray("notificationTriggers");
     for(unsigned notificationTriggersIndex = 0; notificationTriggersIndex < notificationTriggersJsonList.GetLength(); ++notificationTriggersIndex)
     {
       m_notificationTriggers.push_back(AlarmStateMapper::GetAlarmStateForName(notificationTriggersJsonList[notificationTriggersIndex].AsString()));
@@ -342,7 +342,7 @@ JsonValue Alarm::Jsonize() const
 
   if(m_contactProtocolsHasBeenSet)
   {
-   Array<JsonValue> contactProtocolsJsonList(m_contactProtocols.size());
+   Aws::Utils::Array<JsonValue> contactProtocolsJsonList(m_contactProtocols.size());
    for(unsigned contactProtocolsIndex = 0; contactProtocolsIndex < contactProtocolsJsonList.GetLength(); ++contactProtocolsIndex)
    {
      contactProtocolsJsonList[contactProtocolsIndex].AsString(ContactProtocolMapper::GetNameForContactProtocol(m_contactProtocols[contactProtocolsIndex]));
@@ -353,7 +353,7 @@ JsonValue Alarm::Jsonize() const
 
   if(m_notificationTriggersHasBeenSet)
   {
-   Array<JsonValue> notificationTriggersJsonList(m_notificationTriggers.size());
+   Aws::Utils::Array<JsonValue> notificationTriggersJsonList(m_notificationTriggers.size());
    for(unsigned notificationTriggersIndex = 0; notificationTriggersIndex < notificationTriggersJsonList.GetLength(); ++notificationTriggersIndex)
    {
      notificationTriggersJsonList[notificationTriggersIndex].AsString(AlarmStateMapper::GetNameForAlarmState(m_notificationTriggers[notificationTriggersIndex]));

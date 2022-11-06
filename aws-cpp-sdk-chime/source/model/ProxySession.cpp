@@ -100,7 +100,7 @@ ProxySession& ProxySession::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Capabilities"))
   {
-    Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("Capabilities");
+    Aws::Utils::Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("Capabilities");
     for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
     {
       m_capabilities.push_back(CapabilityMapper::GetCapabilityForName(capabilitiesJsonList[capabilitiesIndex].AsString()));
@@ -131,7 +131,7 @@ ProxySession& ProxySession::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Participants"))
   {
-    Array<JsonView> participantsJsonList = jsonValue.GetArray("Participants");
+    Aws::Utils::Array<JsonView> participantsJsonList = jsonValue.GetArray("Participants");
     for(unsigned participantsIndex = 0; participantsIndex < participantsJsonList.GetLength(); ++participantsIndex)
     {
       m_participants.push_back(participantsJsonList[participantsIndex].AsObject());
@@ -198,7 +198,7 @@ JsonValue ProxySession::Jsonize() const
 
   if(m_capabilitiesHasBeenSet)
   {
-   Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+   Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
    for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
    {
      capabilitiesJsonList[capabilitiesIndex].AsString(CapabilityMapper::GetNameForCapability(m_capabilities[capabilitiesIndex]));
@@ -224,7 +224,7 @@ JsonValue ProxySession::Jsonize() const
 
   if(m_participantsHasBeenSet)
   {
-   Array<JsonValue> participantsJsonList(m_participants.size());
+   Aws::Utils::Array<JsonValue> participantsJsonList(m_participants.size());
    for(unsigned participantsIndex = 0; participantsIndex < participantsJsonList.GetLength(); ++participantsIndex)
    {
      participantsJsonList[participantsIndex].AsObject(m_participants[participantsIndex].Jsonize());

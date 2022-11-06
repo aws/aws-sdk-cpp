@@ -46,7 +46,7 @@ Container& Container::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
+    Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -89,7 +89,7 @@ JsonValue Container::Jsonize() const
 
   if(m_commandHasBeenSet)
   {
-   Array<JsonValue> commandJsonList(m_command.size());
+   Aws::Utils::Array<JsonValue> commandJsonList(m_command.size());
    for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
    {
      commandJsonList[commandIndex].AsString(m_command[commandIndex]);

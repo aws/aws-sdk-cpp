@@ -30,7 +30,7 @@ Aws::String AddAttachmentsToSetRequest::SerializePayload() const
 
   if(m_attachmentsHasBeenSet)
   {
-   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
    {
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());

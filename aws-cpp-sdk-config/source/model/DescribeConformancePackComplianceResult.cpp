@@ -36,7 +36,7 @@ DescribeConformancePackComplianceResult& DescribeConformancePackComplianceResult
 
   if(jsonValue.ValueExists("ConformancePackRuleComplianceList"))
   {
-    Array<JsonView> conformancePackRuleComplianceListJsonList = jsonValue.GetArray("ConformancePackRuleComplianceList");
+    Aws::Utils::Array<JsonView> conformancePackRuleComplianceListJsonList = jsonValue.GetArray("ConformancePackRuleComplianceList");
     for(unsigned conformancePackRuleComplianceListIndex = 0; conformancePackRuleComplianceListIndex < conformancePackRuleComplianceListJsonList.GetLength(); ++conformancePackRuleComplianceListIndex)
     {
       m_conformancePackRuleComplianceList.push_back(conformancePackRuleComplianceListJsonList[conformancePackRuleComplianceListIndex].AsObject());

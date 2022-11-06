@@ -89,7 +89,7 @@ StreamingImage& StreamingImage::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("eulaIds"))
   {
-    Array<JsonView> eulaIdsJsonList = jsonValue.GetArray("eulaIds");
+    Aws::Utils::Array<JsonView> eulaIdsJsonList = jsonValue.GetArray("eulaIds");
     for(unsigned eulaIdsIndex = 0; eulaIdsIndex < eulaIdsJsonList.GetLength(); ++eulaIdsIndex)
     {
       m_eulaIds.push_back(eulaIdsJsonList[eulaIdsIndex].AsString());
@@ -189,7 +189,7 @@ JsonValue StreamingImage::Jsonize() const
 
   if(m_eulaIdsHasBeenSet)
   {
-   Array<JsonValue> eulaIdsJsonList(m_eulaIds.size());
+   Aws::Utils::Array<JsonValue> eulaIdsJsonList(m_eulaIds.size());
    for(unsigned eulaIdsIndex = 0; eulaIdsIndex < eulaIdsJsonList.GetLength(); ++eulaIdsIndex)
    {
      eulaIdsJsonList[eulaIdsIndex].AsString(m_eulaIds[eulaIdsIndex]);

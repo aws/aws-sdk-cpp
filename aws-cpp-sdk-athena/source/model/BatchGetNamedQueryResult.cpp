@@ -30,7 +30,7 @@ BatchGetNamedQueryResult& BatchGetNamedQueryResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NamedQueries"))
   {
-    Array<JsonView> namedQueriesJsonList = jsonValue.GetArray("NamedQueries");
+    Aws::Utils::Array<JsonView> namedQueriesJsonList = jsonValue.GetArray("NamedQueries");
     for(unsigned namedQueriesIndex = 0; namedQueriesIndex < namedQueriesJsonList.GetLength(); ++namedQueriesIndex)
     {
       m_namedQueries.push_back(namedQueriesJsonList[namedQueriesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetNamedQueryResult& BatchGetNamedQueryResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("UnprocessedNamedQueryIds"))
   {
-    Array<JsonView> unprocessedNamedQueryIdsJsonList = jsonValue.GetArray("UnprocessedNamedQueryIds");
+    Aws::Utils::Array<JsonView> unprocessedNamedQueryIdsJsonList = jsonValue.GetArray("UnprocessedNamedQueryIds");
     for(unsigned unprocessedNamedQueryIdsIndex = 0; unprocessedNamedQueryIdsIndex < unprocessedNamedQueryIdsJsonList.GetLength(); ++unprocessedNamedQueryIdsIndex)
     {
       m_unprocessedNamedQueryIds.push_back(unprocessedNamedQueryIdsJsonList[unprocessedNamedQueryIdsIndex].AsObject());

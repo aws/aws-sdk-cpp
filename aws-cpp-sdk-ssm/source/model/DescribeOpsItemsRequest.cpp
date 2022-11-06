@@ -26,7 +26,7 @@ Aws::String DescribeOpsItemsRequest::SerializePayload() const
 
   if(m_opsItemFiltersHasBeenSet)
   {
-   Array<JsonValue> opsItemFiltersJsonList(m_opsItemFilters.size());
+   Aws::Utils::Array<JsonValue> opsItemFiltersJsonList(m_opsItemFilters.size());
    for(unsigned opsItemFiltersIndex = 0; opsItemFiltersIndex < opsItemFiltersJsonList.GetLength(); ++opsItemFiltersIndex)
    {
      opsItemFiltersJsonList[opsItemFiltersIndex].AsObject(m_opsItemFilters[opsItemFiltersIndex].Jsonize());

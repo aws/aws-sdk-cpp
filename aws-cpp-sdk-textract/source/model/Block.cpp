@@ -149,7 +149,7 @@ Block& Block::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Relationships"))
   {
-    Array<JsonView> relationshipsJsonList = jsonValue.GetArray("Relationships");
+    Aws::Utils::Array<JsonView> relationshipsJsonList = jsonValue.GetArray("Relationships");
     for(unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex)
     {
       m_relationships.push_back(relationshipsJsonList[relationshipsIndex].AsObject());
@@ -159,7 +159,7 @@ Block& Block::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EntityTypes"))
   {
-    Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
+    Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
     for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
     {
       m_entityTypes.push_back(EntityTypeMapper::GetEntityTypeForName(entityTypesJsonList[entityTypesIndex].AsString()));
@@ -255,7 +255,7 @@ JsonValue Block::Jsonize() const
 
   if(m_relationshipsHasBeenSet)
   {
-   Array<JsonValue> relationshipsJsonList(m_relationships.size());
+   Aws::Utils::Array<JsonValue> relationshipsJsonList(m_relationships.size());
    for(unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex)
    {
      relationshipsJsonList[relationshipsIndex].AsObject(m_relationships[relationshipsIndex].Jsonize());
@@ -266,7 +266,7 @@ JsonValue Block::Jsonize() const
 
   if(m_entityTypesHasBeenSet)
   {
-   Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
+   Aws::Utils::Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
    for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
    {
      entityTypesJsonList[entityTypesIndex].AsString(EntityTypeMapper::GetNameForEntityType(m_entityTypes[entityTypesIndex]));

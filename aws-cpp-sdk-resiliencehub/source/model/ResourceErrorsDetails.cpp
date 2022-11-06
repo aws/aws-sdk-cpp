@@ -44,7 +44,7 @@ ResourceErrorsDetails& ResourceErrorsDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourceErrors"))
   {
-    Array<JsonView> resourceErrorsJsonList = jsonValue.GetArray("resourceErrors");
+    Aws::Utils::Array<JsonView> resourceErrorsJsonList = jsonValue.GetArray("resourceErrors");
     for(unsigned resourceErrorsIndex = 0; resourceErrorsIndex < resourceErrorsJsonList.GetLength(); ++resourceErrorsIndex)
     {
       m_resourceErrors.push_back(resourceErrorsJsonList[resourceErrorsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue ResourceErrorsDetails::Jsonize() const
 
   if(m_resourceErrorsHasBeenSet)
   {
-   Array<JsonValue> resourceErrorsJsonList(m_resourceErrors.size());
+   Aws::Utils::Array<JsonValue> resourceErrorsJsonList(m_resourceErrors.size());
    for(unsigned resourceErrorsIndex = 0; resourceErrorsIndex < resourceErrorsJsonList.GetLength(); ++resourceErrorsIndex)
    {
      resourceErrorsJsonList[resourceErrorsIndex].AsObject(m_resourceErrors[resourceErrorsIndex].Jsonize());

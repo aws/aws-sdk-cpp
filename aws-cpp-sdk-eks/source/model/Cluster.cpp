@@ -181,7 +181,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("encryptionConfig"))
   {
-    Array<JsonView> encryptionConfigJsonList = jsonValue.GetArray("encryptionConfig");
+    Aws::Utils::Array<JsonView> encryptionConfigJsonList = jsonValue.GetArray("encryptionConfig");
     for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
     {
       m_encryptionConfig.push_back(encryptionConfigJsonList[encryptionConfigIndex].AsObject());
@@ -319,7 +319,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_encryptionConfigHasBeenSet)
   {
-   Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
+   Aws::Utils::Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
    for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
    {
      encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());

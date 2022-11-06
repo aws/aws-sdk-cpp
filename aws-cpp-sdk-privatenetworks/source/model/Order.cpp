@@ -89,7 +89,7 @@ Order& Order::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("trackingInformation"))
   {
-    Array<JsonView> trackingInformationJsonList = jsonValue.GetArray("trackingInformation");
+    Aws::Utils::Array<JsonView> trackingInformationJsonList = jsonValue.GetArray("trackingInformation");
     for(unsigned trackingInformationIndex = 0; trackingInformationIndex < trackingInformationJsonList.GetLength(); ++trackingInformationIndex)
     {
       m_trackingInformation.push_back(trackingInformationJsonList[trackingInformationIndex].AsObject());
@@ -140,7 +140,7 @@ JsonValue Order::Jsonize() const
 
   if(m_trackingInformationHasBeenSet)
   {
-   Array<JsonValue> trackingInformationJsonList(m_trackingInformation.size());
+   Aws::Utils::Array<JsonValue> trackingInformationJsonList(m_trackingInformation.size());
    for(unsigned trackingInformationIndex = 0; trackingInformationIndex < trackingInformationJsonList.GetLength(); ++trackingInformationIndex)
    {
      trackingInformationJsonList[trackingInformationIndex].AsObject(m_trackingInformation[trackingInformationIndex].Jsonize());

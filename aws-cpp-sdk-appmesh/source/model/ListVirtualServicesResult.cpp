@@ -36,7 +36,7 @@ ListVirtualServicesResult& ListVirtualServicesResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("virtualServices"))
   {
-    Array<JsonView> virtualServicesJsonList = jsonValue.GetArray("virtualServices");
+    Aws::Utils::Array<JsonView> virtualServicesJsonList = jsonValue.GetArray("virtualServices");
     for(unsigned virtualServicesIndex = 0; virtualServicesIndex < virtualServicesJsonList.GetLength(); ++virtualServicesIndex)
     {
       m_virtualServices.push_back(virtualServicesJsonList[virtualServicesIndex].AsObject());

@@ -30,7 +30,7 @@ ListPortfoliosResult& ListPortfoliosResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PortfolioDetails"))
   {
-    Array<JsonView> portfolioDetailsJsonList = jsonValue.GetArray("PortfolioDetails");
+    Aws::Utils::Array<JsonView> portfolioDetailsJsonList = jsonValue.GetArray("PortfolioDetails");
     for(unsigned portfolioDetailsIndex = 0; portfolioDetailsIndex < portfolioDetailsJsonList.GetLength(); ++portfolioDetailsIndex)
     {
       m_portfolioDetails.push_back(portfolioDetailsJsonList[portfolioDetailsIndex].AsObject());

@@ -30,7 +30,7 @@ GetActiveNamesResult& GetActiveNamesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("activeNames"))
   {
-    Array<JsonView> activeNamesJsonList = jsonValue.GetArray("activeNames");
+    Aws::Utils::Array<JsonView> activeNamesJsonList = jsonValue.GetArray("activeNames");
     for(unsigned activeNamesIndex = 0; activeNamesIndex < activeNamesJsonList.GetLength(); ++activeNamesIndex)
     {
       m_activeNames.push_back(activeNamesJsonList[activeNamesIndex].AsString());

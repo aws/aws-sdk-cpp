@@ -37,7 +37,7 @@ Aws::String DescribeServiceErrorsRequest::SerializePayload() const
 
   if(m_serviceErrorIdsHasBeenSet)
   {
-   Array<JsonValue> serviceErrorIdsJsonList(m_serviceErrorIds.size());
+   Aws::Utils::Array<JsonValue> serviceErrorIdsJsonList(m_serviceErrorIds.size());
    for(unsigned serviceErrorIdsIndex = 0; serviceErrorIdsIndex < serviceErrorIdsJsonList.GetLength(); ++serviceErrorIdsIndex)
    {
      serviceErrorIdsJsonList[serviceErrorIdsIndex].AsString(m_serviceErrorIds[serviceErrorIdsIndex]);

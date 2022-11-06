@@ -33,7 +33,7 @@ ReportContext& ReportContext::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("licenseConfigurationArns"))
   {
-    Array<JsonView> licenseConfigurationArnsJsonList = jsonValue.GetArray("licenseConfigurationArns");
+    Aws::Utils::Array<JsonView> licenseConfigurationArnsJsonList = jsonValue.GetArray("licenseConfigurationArns");
     for(unsigned licenseConfigurationArnsIndex = 0; licenseConfigurationArnsIndex < licenseConfigurationArnsJsonList.GetLength(); ++licenseConfigurationArnsIndex)
     {
       m_licenseConfigurationArns.push_back(licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue ReportContext::Jsonize() const
 
   if(m_licenseConfigurationArnsHasBeenSet)
   {
-   Array<JsonValue> licenseConfigurationArnsJsonList(m_licenseConfigurationArns.size());
+   Aws::Utils::Array<JsonValue> licenseConfigurationArnsJsonList(m_licenseConfigurationArns.size());
    for(unsigned licenseConfigurationArnsIndex = 0; licenseConfigurationArnsIndex < licenseConfigurationArnsJsonList.GetLength(); ++licenseConfigurationArnsIndex)
    {
      licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString(m_licenseConfigurationArns[licenseConfigurationArnsIndex]);

@@ -36,7 +36,7 @@ ListBotVersionsResult& ListBotVersionsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("botVersionSummaries"))
   {
-    Array<JsonView> botVersionSummariesJsonList = jsonValue.GetArray("botVersionSummaries");
+    Aws::Utils::Array<JsonView> botVersionSummariesJsonList = jsonValue.GetArray("botVersionSummaries");
     for(unsigned botVersionSummariesIndex = 0; botVersionSummariesIndex < botVersionSummariesJsonList.GetLength(); ++botVersionSummariesIndex)
     {
       m_botVersionSummaries.push_back(botVersionSummariesJsonList[botVersionSummariesIndex].AsObject());

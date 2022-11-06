@@ -57,7 +57,7 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("approvalRulesSatisfied"))
   {
-    Array<JsonView> approvalRulesSatisfiedJsonList = jsonValue.GetArray("approvalRulesSatisfied");
+    Aws::Utils::Array<JsonView> approvalRulesSatisfiedJsonList = jsonValue.GetArray("approvalRulesSatisfied");
     for(unsigned approvalRulesSatisfiedIndex = 0; approvalRulesSatisfiedIndex < approvalRulesSatisfiedJsonList.GetLength(); ++approvalRulesSatisfiedIndex)
     {
       m_approvalRulesSatisfied.push_back(approvalRulesSatisfiedJsonList[approvalRulesSatisfiedIndex].AsString());
@@ -67,7 +67,7 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("approvalRulesNotSatisfied"))
   {
-    Array<JsonView> approvalRulesNotSatisfiedJsonList = jsonValue.GetArray("approvalRulesNotSatisfied");
+    Aws::Utils::Array<JsonView> approvalRulesNotSatisfiedJsonList = jsonValue.GetArray("approvalRulesNotSatisfied");
     for(unsigned approvalRulesNotSatisfiedIndex = 0; approvalRulesNotSatisfiedIndex < approvalRulesNotSatisfiedJsonList.GetLength(); ++approvalRulesNotSatisfiedIndex)
     {
       m_approvalRulesNotSatisfied.push_back(approvalRulesNotSatisfiedJsonList[approvalRulesNotSatisfiedIndex].AsString());
@@ -96,7 +96,7 @@ JsonValue Evaluation::Jsonize() const
 
   if(m_approvalRulesSatisfiedHasBeenSet)
   {
-   Array<JsonValue> approvalRulesSatisfiedJsonList(m_approvalRulesSatisfied.size());
+   Aws::Utils::Array<JsonValue> approvalRulesSatisfiedJsonList(m_approvalRulesSatisfied.size());
    for(unsigned approvalRulesSatisfiedIndex = 0; approvalRulesSatisfiedIndex < approvalRulesSatisfiedJsonList.GetLength(); ++approvalRulesSatisfiedIndex)
    {
      approvalRulesSatisfiedJsonList[approvalRulesSatisfiedIndex].AsString(m_approvalRulesSatisfied[approvalRulesSatisfiedIndex]);
@@ -107,7 +107,7 @@ JsonValue Evaluation::Jsonize() const
 
   if(m_approvalRulesNotSatisfiedHasBeenSet)
   {
-   Array<JsonValue> approvalRulesNotSatisfiedJsonList(m_approvalRulesNotSatisfied.size());
+   Aws::Utils::Array<JsonValue> approvalRulesNotSatisfiedJsonList(m_approvalRulesNotSatisfied.size());
    for(unsigned approvalRulesNotSatisfiedIndex = 0; approvalRulesNotSatisfiedIndex < approvalRulesNotSatisfiedJsonList.GetLength(); ++approvalRulesNotSatisfiedIndex)
    {
      approvalRulesNotSatisfiedJsonList[approvalRulesNotSatisfiedIndex].AsString(m_approvalRulesNotSatisfied[approvalRulesNotSatisfiedIndex]);

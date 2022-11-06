@@ -36,7 +36,7 @@ DescribeDetectorResult& DescribeDetectorResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("detectorVersionSummaries"))
   {
-    Array<JsonView> detectorVersionSummariesJsonList = jsonValue.GetArray("detectorVersionSummaries");
+    Aws::Utils::Array<JsonView> detectorVersionSummariesJsonList = jsonValue.GetArray("detectorVersionSummaries");
     for(unsigned detectorVersionSummariesIndex = 0; detectorVersionSummariesIndex < detectorVersionSummariesJsonList.GetLength(); ++detectorVersionSummariesIndex)
     {
       m_detectorVersionSummaries.push_back(detectorVersionSummariesJsonList[detectorVersionSummariesIndex].AsObject());

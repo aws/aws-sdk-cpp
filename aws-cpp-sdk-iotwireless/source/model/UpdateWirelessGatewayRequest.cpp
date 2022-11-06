@@ -39,10 +39,10 @@ Aws::String UpdateWirelessGatewayRequest::SerializePayload() const
 
   if(m_joinEuiFiltersHasBeenSet)
   {
-   Array<JsonValue> joinEuiFiltersJsonList(m_joinEuiFilters.size());
+   Aws::Utils::Array<JsonValue> joinEuiFiltersJsonList(m_joinEuiFilters.size());
    for(unsigned joinEuiFiltersIndex = 0; joinEuiFiltersIndex < joinEuiFiltersJsonList.GetLength(); ++joinEuiFiltersIndex)
    {
-     Array<JsonValue> joinEuiRangeJsonList(m_joinEuiFilters[joinEuiFiltersIndex].size());
+     Aws::Utils::Array<JsonValue> joinEuiRangeJsonList(m_joinEuiFilters[joinEuiFiltersIndex].size());
      for(unsigned joinEuiRangeIndex = 0; joinEuiRangeIndex < joinEuiRangeJsonList.GetLength(); ++joinEuiRangeIndex)
      {
        joinEuiRangeJsonList[joinEuiRangeIndex].AsString(m_joinEuiFilters[joinEuiFiltersIndex][joinEuiRangeIndex]);
@@ -55,7 +55,7 @@ Aws::String UpdateWirelessGatewayRequest::SerializePayload() const
 
   if(m_netIdFiltersHasBeenSet)
   {
-   Array<JsonValue> netIdFiltersJsonList(m_netIdFilters.size());
+   Aws::Utils::Array<JsonValue> netIdFiltersJsonList(m_netIdFilters.size());
    for(unsigned netIdFiltersIndex = 0; netIdFiltersIndex < netIdFiltersJsonList.GetLength(); ++netIdFiltersIndex)
    {
      netIdFiltersJsonList[netIdFiltersIndex].AsString(m_netIdFilters[netIdFiltersIndex]);

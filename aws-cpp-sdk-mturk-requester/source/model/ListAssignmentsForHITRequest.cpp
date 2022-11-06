@@ -45,7 +45,7 @@ Aws::String ListAssignmentsForHITRequest::SerializePayload() const
 
   if(m_assignmentStatusesHasBeenSet)
   {
-   Array<JsonValue> assignmentStatusesJsonList(m_assignmentStatuses.size());
+   Aws::Utils::Array<JsonValue> assignmentStatusesJsonList(m_assignmentStatuses.size());
    for(unsigned assignmentStatusesIndex = 0; assignmentStatusesIndex < assignmentStatusesJsonList.GetLength(); ++assignmentStatusesIndex)
    {
      assignmentStatusesJsonList[assignmentStatusesIndex].AsString(AssignmentStatusMapper::GetNameForAssignmentStatus(m_assignmentStatuses[assignmentStatusesIndex]));

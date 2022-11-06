@@ -107,7 +107,7 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ec2TagFilters"))
   {
-    Array<JsonView> ec2TagFiltersJsonList = jsonValue.GetArray("ec2TagFilters");
+    Aws::Utils::Array<JsonView> ec2TagFiltersJsonList = jsonValue.GetArray("ec2TagFilters");
     for(unsigned ec2TagFiltersIndex = 0; ec2TagFiltersIndex < ec2TagFiltersJsonList.GetLength(); ++ec2TagFiltersIndex)
     {
       m_ec2TagFilters.push_back(ec2TagFiltersJsonList[ec2TagFiltersIndex].AsObject());
@@ -117,7 +117,7 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("onPremisesInstanceTagFilters"))
   {
-    Array<JsonView> onPremisesInstanceTagFiltersJsonList = jsonValue.GetArray("onPremisesInstanceTagFilters");
+    Aws::Utils::Array<JsonView> onPremisesInstanceTagFiltersJsonList = jsonValue.GetArray("onPremisesInstanceTagFilters");
     for(unsigned onPremisesInstanceTagFiltersIndex = 0; onPremisesInstanceTagFiltersIndex < onPremisesInstanceTagFiltersJsonList.GetLength(); ++onPremisesInstanceTagFiltersIndex)
     {
       m_onPremisesInstanceTagFilters.push_back(onPremisesInstanceTagFiltersJsonList[onPremisesInstanceTagFiltersIndex].AsObject());
@@ -127,7 +127,7 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("autoScalingGroups"))
   {
-    Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
+    Aws::Utils::Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
     for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
     {
       m_autoScalingGroups.push_back(autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject());
@@ -151,7 +151,7 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("triggerConfigurations"))
   {
-    Array<JsonView> triggerConfigurationsJsonList = jsonValue.GetArray("triggerConfigurations");
+    Aws::Utils::Array<JsonView> triggerConfigurationsJsonList = jsonValue.GetArray("triggerConfigurations");
     for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
     {
       m_triggerConfigurations.push_back(triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject());
@@ -238,7 +238,7 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ecsServices"))
   {
-    Array<JsonView> ecsServicesJsonList = jsonValue.GetArray("ecsServices");
+    Aws::Utils::Array<JsonView> ecsServicesJsonList = jsonValue.GetArray("ecsServices");
     for(unsigned ecsServicesIndex = 0; ecsServicesIndex < ecsServicesJsonList.GetLength(); ++ecsServicesIndex)
     {
       m_ecsServices.push_back(ecsServicesJsonList[ecsServicesIndex].AsObject());
@@ -279,7 +279,7 @@ JsonValue DeploymentGroupInfo::Jsonize() const
 
   if(m_ec2TagFiltersHasBeenSet)
   {
-   Array<JsonValue> ec2TagFiltersJsonList(m_ec2TagFilters.size());
+   Aws::Utils::Array<JsonValue> ec2TagFiltersJsonList(m_ec2TagFilters.size());
    for(unsigned ec2TagFiltersIndex = 0; ec2TagFiltersIndex < ec2TagFiltersJsonList.GetLength(); ++ec2TagFiltersIndex)
    {
      ec2TagFiltersJsonList[ec2TagFiltersIndex].AsObject(m_ec2TagFilters[ec2TagFiltersIndex].Jsonize());
@@ -290,7 +290,7 @@ JsonValue DeploymentGroupInfo::Jsonize() const
 
   if(m_onPremisesInstanceTagFiltersHasBeenSet)
   {
-   Array<JsonValue> onPremisesInstanceTagFiltersJsonList(m_onPremisesInstanceTagFilters.size());
+   Aws::Utils::Array<JsonValue> onPremisesInstanceTagFiltersJsonList(m_onPremisesInstanceTagFilters.size());
    for(unsigned onPremisesInstanceTagFiltersIndex = 0; onPremisesInstanceTagFiltersIndex < onPremisesInstanceTagFiltersJsonList.GetLength(); ++onPremisesInstanceTagFiltersIndex)
    {
      onPremisesInstanceTagFiltersJsonList[onPremisesInstanceTagFiltersIndex].AsObject(m_onPremisesInstanceTagFilters[onPremisesInstanceTagFiltersIndex].Jsonize());
@@ -301,7 +301,7 @@ JsonValue DeploymentGroupInfo::Jsonize() const
 
   if(m_autoScalingGroupsHasBeenSet)
   {
-   Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
+   Aws::Utils::Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
    for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
    {
      autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject(m_autoScalingGroups[autoScalingGroupsIndex].Jsonize());
@@ -324,7 +324,7 @@ JsonValue DeploymentGroupInfo::Jsonize() const
 
   if(m_triggerConfigurationsHasBeenSet)
   {
-   Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
+   Aws::Utils::Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
    for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
    {
      triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
@@ -399,7 +399,7 @@ JsonValue DeploymentGroupInfo::Jsonize() const
 
   if(m_ecsServicesHasBeenSet)
   {
-   Array<JsonValue> ecsServicesJsonList(m_ecsServices.size());
+   Aws::Utils::Array<JsonValue> ecsServicesJsonList(m_ecsServices.size());
    for(unsigned ecsServicesIndex = 0; ecsServicesIndex < ecsServicesJsonList.GetLength(); ++ecsServicesIndex)
    {
      ecsServicesJsonList[ecsServicesIndex].AsObject(m_ecsServices[ecsServicesIndex].Jsonize());

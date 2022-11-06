@@ -30,7 +30,7 @@ AddCustomRoutingEndpointsResult& AddCustomRoutingEndpointsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EndpointDescriptions"))
   {
-    Array<JsonView> endpointDescriptionsJsonList = jsonValue.GetArray("EndpointDescriptions");
+    Aws::Utils::Array<JsonView> endpointDescriptionsJsonList = jsonValue.GetArray("EndpointDescriptions");
     for(unsigned endpointDescriptionsIndex = 0; endpointDescriptionsIndex < endpointDescriptionsJsonList.GetLength(); ++endpointDescriptionsIndex)
     {
       m_endpointDescriptions.push_back(endpointDescriptionsJsonList[endpointDescriptionsIndex].AsObject());

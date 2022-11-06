@@ -168,7 +168,7 @@ JobDefinition& JobDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("platformCapabilities"))
   {
-    Array<JsonView> platformCapabilitiesJsonList = jsonValue.GetArray("platformCapabilities");
+    Aws::Utils::Array<JsonView> platformCapabilitiesJsonList = jsonValue.GetArray("platformCapabilities");
     for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
     {
       m_platformCapabilities.push_back(PlatformCapabilityMapper::GetPlatformCapabilityForName(platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString()));
@@ -287,7 +287,7 @@ JsonValue JobDefinition::Jsonize() const
 
   if(m_platformCapabilitiesHasBeenSet)
   {
-   Array<JsonValue> platformCapabilitiesJsonList(m_platformCapabilities.size());
+   Aws::Utils::Array<JsonValue> platformCapabilitiesJsonList(m_platformCapabilities.size());
    for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
    {
      platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString(PlatformCapabilityMapper::GetNameForPlatformCapability(m_platformCapabilities[platformCapabilitiesIndex]));

@@ -30,7 +30,7 @@ ListFunctionEventInvokeConfigsResult& ListFunctionEventInvokeConfigsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FunctionEventInvokeConfigs"))
   {
-    Array<JsonView> functionEventInvokeConfigsJsonList = jsonValue.GetArray("FunctionEventInvokeConfigs");
+    Aws::Utils::Array<JsonView> functionEventInvokeConfigsJsonList = jsonValue.GetArray("FunctionEventInvokeConfigs");
     for(unsigned functionEventInvokeConfigsIndex = 0; functionEventInvokeConfigsIndex < functionEventInvokeConfigsJsonList.GetLength(); ++functionEventInvokeConfigsIndex)
     {
       m_functionEventInvokeConfigs.push_back(functionEventInvokeConfigsJsonList[functionEventInvokeConfigsIndex].AsObject());

@@ -30,7 +30,7 @@ ListVoiceConnectorTerminationCredentialsResult& ListVoiceConnectorTerminationCre
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Usernames"))
   {
-    Array<JsonView> usernamesJsonList = jsonValue.GetArray("Usernames");
+    Aws::Utils::Array<JsonView> usernamesJsonList = jsonValue.GetArray("Usernames");
     for(unsigned usernamesIndex = 0; usernamesIndex < usernamesJsonList.GetLength(); ++usernamesIndex)
     {
       m_usernames.push_back(usernamesJsonList[usernamesIndex].AsString());

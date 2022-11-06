@@ -36,7 +36,7 @@ GetNetworkAnalyzerConfigurationResult& GetNetworkAnalyzerConfigurationResult::op
 
   if(jsonValue.ValueExists("WirelessDevices"))
   {
-    Array<JsonView> wirelessDevicesJsonList = jsonValue.GetArray("WirelessDevices");
+    Aws::Utils::Array<JsonView> wirelessDevicesJsonList = jsonValue.GetArray("WirelessDevices");
     for(unsigned wirelessDevicesIndex = 0; wirelessDevicesIndex < wirelessDevicesJsonList.GetLength(); ++wirelessDevicesIndex)
     {
       m_wirelessDevices.push_back(wirelessDevicesJsonList[wirelessDevicesIndex].AsString());
@@ -45,7 +45,7 @@ GetNetworkAnalyzerConfigurationResult& GetNetworkAnalyzerConfigurationResult::op
 
   if(jsonValue.ValueExists("WirelessGateways"))
   {
-    Array<JsonView> wirelessGatewaysJsonList = jsonValue.GetArray("WirelessGateways");
+    Aws::Utils::Array<JsonView> wirelessGatewaysJsonList = jsonValue.GetArray("WirelessGateways");
     for(unsigned wirelessGatewaysIndex = 0; wirelessGatewaysIndex < wirelessGatewaysJsonList.GetLength(); ++wirelessGatewaysIndex)
     {
       m_wirelessGateways.push_back(wirelessGatewaysJsonList[wirelessGatewaysIndex].AsString());

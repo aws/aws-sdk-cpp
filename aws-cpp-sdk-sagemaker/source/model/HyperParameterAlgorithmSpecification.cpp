@@ -62,7 +62,7 @@ HyperParameterAlgorithmSpecification& HyperParameterAlgorithmSpecification::oper
 
   if(jsonValue.ValueExists("MetricDefinitions"))
   {
-    Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
+    Aws::Utils::Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
     for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
     {
       m_metricDefinitions.push_back(metricDefinitionsJsonList[metricDefinitionsIndex].AsObject());
@@ -96,7 +96,7 @@ JsonValue HyperParameterAlgorithmSpecification::Jsonize() const
 
   if(m_metricDefinitionsHasBeenSet)
   {
-   Array<JsonValue> metricDefinitionsJsonList(m_metricDefinitions.size());
+   Aws::Utils::Array<JsonValue> metricDefinitionsJsonList(m_metricDefinitions.size());
    for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
    {
      metricDefinitionsJsonList[metricDefinitionsIndex].AsObject(m_metricDefinitions[metricDefinitionsIndex].Jsonize());

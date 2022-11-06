@@ -30,7 +30,7 @@ ListWorkloadsResult& ListWorkloadsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WorkloadSummaries"))
   {
-    Array<JsonView> workloadSummariesJsonList = jsonValue.GetArray("WorkloadSummaries");
+    Aws::Utils::Array<JsonView> workloadSummariesJsonList = jsonValue.GetArray("WorkloadSummaries");
     for(unsigned workloadSummariesIndex = 0; workloadSummariesIndex < workloadSummariesJsonList.GetLength(); ++workloadSummariesIndex)
     {
       m_workloadSummaries.push_back(workloadSummariesJsonList[workloadSummariesIndex].AsObject());

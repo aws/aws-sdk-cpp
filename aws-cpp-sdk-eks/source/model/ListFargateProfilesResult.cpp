@@ -30,7 +30,7 @@ ListFargateProfilesResult& ListFargateProfilesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("fargateProfileNames"))
   {
-    Array<JsonView> fargateProfileNamesJsonList = jsonValue.GetArray("fargateProfileNames");
+    Aws::Utils::Array<JsonView> fargateProfileNamesJsonList = jsonValue.GetArray("fargateProfileNames");
     for(unsigned fargateProfileNamesIndex = 0; fargateProfileNamesIndex < fargateProfileNamesJsonList.GetLength(); ++fargateProfileNamesIndex)
     {
       m_fargateProfileNames.push_back(fargateProfileNamesJsonList[fargateProfileNamesIndex].AsString());

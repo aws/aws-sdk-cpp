@@ -64,7 +64,7 @@ Hits& Hits::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("hit"))
   {
-    Array<JsonView> hitJsonList = jsonValue.GetArray("hit");
+    Aws::Utils::Array<JsonView> hitJsonList = jsonValue.GetArray("hit");
     for(unsigned hitIndex = 0; hitIndex < hitJsonList.GetLength(); ++hitIndex)
     {
       m_hit.push_back(hitJsonList[hitIndex].AsObject());
@@ -99,7 +99,7 @@ JsonValue Hits::Jsonize() const
 
   if(m_hitHasBeenSet)
   {
-   Array<JsonValue> hitJsonList(m_hit.size());
+   Aws::Utils::Array<JsonValue> hitJsonList(m_hit.size());
    for(unsigned hitIndex = 0; hitIndex < hitJsonList.GetLength(); ++hitIndex)
    {
      hitJsonList[hitIndex].AsObject(m_hit[hitIndex].Jsonize());

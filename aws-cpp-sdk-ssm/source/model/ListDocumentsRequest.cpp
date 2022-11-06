@@ -27,7 +27,7 @@ Aws::String ListDocumentsRequest::SerializePayload() const
 
   if(m_documentFilterListHasBeenSet)
   {
-   Array<JsonValue> documentFilterListJsonList(m_documentFilterList.size());
+   Aws::Utils::Array<JsonValue> documentFilterListJsonList(m_documentFilterList.size());
    for(unsigned documentFilterListIndex = 0; documentFilterListIndex < documentFilterListJsonList.GetLength(); ++documentFilterListIndex)
    {
      documentFilterListJsonList[documentFilterListIndex].AsObject(m_documentFilterList[documentFilterListIndex].Jsonize());
@@ -38,7 +38,7 @@ Aws::String ListDocumentsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

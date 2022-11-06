@@ -33,7 +33,7 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LogDestinationConfigs"))
   {
-    Array<JsonView> logDestinationConfigsJsonList = jsonValue.GetArray("LogDestinationConfigs");
+    Aws::Utils::Array<JsonView> logDestinationConfigsJsonList = jsonValue.GetArray("LogDestinationConfigs");
     for(unsigned logDestinationConfigsIndex = 0; logDestinationConfigsIndex < logDestinationConfigsJsonList.GetLength(); ++logDestinationConfigsIndex)
     {
       m_logDestinationConfigs.push_back(logDestinationConfigsJsonList[logDestinationConfigsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue LoggingConfiguration::Jsonize() const
 
   if(m_logDestinationConfigsHasBeenSet)
   {
-   Array<JsonValue> logDestinationConfigsJsonList(m_logDestinationConfigs.size());
+   Aws::Utils::Array<JsonValue> logDestinationConfigsJsonList(m_logDestinationConfigs.size());
    for(unsigned logDestinationConfigsIndex = 0; logDestinationConfigsIndex < logDestinationConfigsJsonList.GetLength(); ++logDestinationConfigsIndex)
    {
      logDestinationConfigsJsonList[logDestinationConfigsIndex].AsObject(m_logDestinationConfigs[logDestinationConfigsIndex].Jsonize());

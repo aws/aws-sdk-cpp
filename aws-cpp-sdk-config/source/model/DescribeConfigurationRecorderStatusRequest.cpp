@@ -23,7 +23,7 @@ Aws::String DescribeConfigurationRecorderStatusRequest::SerializePayload() const
 
   if(m_configurationRecorderNamesHasBeenSet)
   {
-   Array<JsonValue> configurationRecorderNamesJsonList(m_configurationRecorderNames.size());
+   Aws::Utils::Array<JsonValue> configurationRecorderNamesJsonList(m_configurationRecorderNames.size());
    for(unsigned configurationRecorderNamesIndex = 0; configurationRecorderNamesIndex < configurationRecorderNamesJsonList.GetLength(); ++configurationRecorderNamesIndex)
    {
      configurationRecorderNamesJsonList[configurationRecorderNamesIndex].AsString(m_configurationRecorderNames[configurationRecorderNamesIndex]);

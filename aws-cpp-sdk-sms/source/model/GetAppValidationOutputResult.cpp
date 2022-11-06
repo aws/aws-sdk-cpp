@@ -30,7 +30,7 @@ GetAppValidationOutputResult& GetAppValidationOutputResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("validationOutputList"))
   {
-    Array<JsonView> validationOutputListJsonList = jsonValue.GetArray("validationOutputList");
+    Aws::Utils::Array<JsonView> validationOutputListJsonList = jsonValue.GetArray("validationOutputList");
     for(unsigned validationOutputListIndex = 0; validationOutputListIndex < validationOutputListJsonList.GetLength(); ++validationOutputListIndex)
     {
       m_validationOutputList.push_back(validationOutputListJsonList[validationOutputListIndex].AsObject());

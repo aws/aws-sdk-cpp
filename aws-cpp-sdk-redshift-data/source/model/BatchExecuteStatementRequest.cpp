@@ -55,7 +55,7 @@ Aws::String BatchExecuteStatementRequest::SerializePayload() const
 
   if(m_sqlsHasBeenSet)
   {
-   Array<JsonValue> sqlsJsonList(m_sqls.size());
+   Aws::Utils::Array<JsonValue> sqlsJsonList(m_sqls.size());
    for(unsigned sqlsIndex = 0; sqlsIndex < sqlsJsonList.GetLength(); ++sqlsIndex)
    {
      sqlsJsonList[sqlsIndex].AsString(m_sqls[sqlsIndex]);

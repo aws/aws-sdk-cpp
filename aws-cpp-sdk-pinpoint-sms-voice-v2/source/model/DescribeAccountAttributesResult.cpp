@@ -30,7 +30,7 @@ DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountAttributes"))
   {
-    Array<JsonView> accountAttributesJsonList = jsonValue.GetArray("AccountAttributes");
+    Aws::Utils::Array<JsonView> accountAttributesJsonList = jsonValue.GetArray("AccountAttributes");
     for(unsigned accountAttributesIndex = 0; accountAttributesIndex < accountAttributesJsonList.GetLength(); ++accountAttributesIndex)
     {
       m_accountAttributes.push_back(accountAttributesJsonList[accountAttributesIndex].AsObject());

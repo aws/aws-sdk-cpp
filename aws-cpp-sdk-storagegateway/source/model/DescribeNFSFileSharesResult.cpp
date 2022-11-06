@@ -30,7 +30,7 @@ DescribeNFSFileSharesResult& DescribeNFSFileSharesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NFSFileShareInfoList"))
   {
-    Array<JsonView> nFSFileShareInfoListJsonList = jsonValue.GetArray("NFSFileShareInfoList");
+    Aws::Utils::Array<JsonView> nFSFileShareInfoListJsonList = jsonValue.GetArray("NFSFileShareInfoList");
     for(unsigned nFSFileShareInfoListIndex = 0; nFSFileShareInfoListIndex < nFSFileShareInfoListJsonList.GetLength(); ++nFSFileShareInfoListIndex)
     {
       m_nFSFileShareInfoList.push_back(nFSFileShareInfoListJsonList[nFSFileShareInfoListIndex].AsObject());

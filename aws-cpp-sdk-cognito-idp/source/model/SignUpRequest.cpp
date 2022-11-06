@@ -55,7 +55,7 @@ Aws::String SignUpRequest::SerializePayload() const
 
   if(m_userAttributesHasBeenSet)
   {
-   Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
+   Aws::Utils::Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
    for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
    {
      userAttributesJsonList[userAttributesIndex].AsObject(m_userAttributes[userAttributesIndex].Jsonize());
@@ -66,7 +66,7 @@ Aws::String SignUpRequest::SerializePayload() const
 
   if(m_validationDataHasBeenSet)
   {
-   Array<JsonValue> validationDataJsonList(m_validationData.size());
+   Aws::Utils::Array<JsonValue> validationDataJsonList(m_validationData.size());
    for(unsigned validationDataIndex = 0; validationDataIndex < validationDataJsonList.GetLength(); ++validationDataIndex)
    {
      validationDataJsonList[validationDataIndex].AsObject(m_validationData[validationDataIndex].Jsonize());

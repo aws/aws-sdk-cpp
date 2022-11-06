@@ -44,7 +44,7 @@ BatchDetectKeyPhrasesItemResult& BatchDetectKeyPhrasesItemResult::operator =(Jso
 
   if(jsonValue.ValueExists("KeyPhrases"))
   {
-    Array<JsonView> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
+    Aws::Utils::Array<JsonView> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
     for(unsigned keyPhrasesIndex = 0; keyPhrasesIndex < keyPhrasesJsonList.GetLength(); ++keyPhrasesIndex)
     {
       m_keyPhrases.push_back(keyPhrasesJsonList[keyPhrasesIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue BatchDetectKeyPhrasesItemResult::Jsonize() const
 
   if(m_keyPhrasesHasBeenSet)
   {
-   Array<JsonValue> keyPhrasesJsonList(m_keyPhrases.size());
+   Aws::Utils::Array<JsonValue> keyPhrasesJsonList(m_keyPhrases.size());
    for(unsigned keyPhrasesIndex = 0; keyPhrasesIndex < keyPhrasesJsonList.GetLength(); ++keyPhrasesIndex)
    {
      keyPhrasesJsonList[keyPhrasesIndex].AsObject(m_keyPhrases[keyPhrasesIndex].Jsonize());

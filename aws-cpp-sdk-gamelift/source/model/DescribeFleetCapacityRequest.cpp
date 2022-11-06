@@ -26,7 +26,7 @@ Aws::String DescribeFleetCapacityRequest::SerializePayload() const
 
   if(m_fleetIdsHasBeenSet)
   {
-   Array<JsonValue> fleetIdsJsonList(m_fleetIds.size());
+   Aws::Utils::Array<JsonValue> fleetIdsJsonList(m_fleetIds.size());
    for(unsigned fleetIdsIndex = 0; fleetIdsIndex < fleetIdsJsonList.GetLength(); ++fleetIdsIndex)
    {
      fleetIdsJsonList[fleetIdsIndex].AsString(m_fleetIds[fleetIdsIndex]);

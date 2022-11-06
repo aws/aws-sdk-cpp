@@ -30,7 +30,7 @@ BatchGetCrawlersResult& BatchGetCrawlersResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Crawlers"))
   {
-    Array<JsonView> crawlersJsonList = jsonValue.GetArray("Crawlers");
+    Aws::Utils::Array<JsonView> crawlersJsonList = jsonValue.GetArray("Crawlers");
     for(unsigned crawlersIndex = 0; crawlersIndex < crawlersJsonList.GetLength(); ++crawlersIndex)
     {
       m_crawlers.push_back(crawlersJsonList[crawlersIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetCrawlersResult& BatchGetCrawlersResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("CrawlersNotFound"))
   {
-    Array<JsonView> crawlersNotFoundJsonList = jsonValue.GetArray("CrawlersNotFound");
+    Aws::Utils::Array<JsonView> crawlersNotFoundJsonList = jsonValue.GetArray("CrawlersNotFound");
     for(unsigned crawlersNotFoundIndex = 0; crawlersNotFoundIndex < crawlersNotFoundJsonList.GetLength(); ++crawlersNotFoundIndex)
     {
       m_crawlersNotFound.push_back(crawlersNotFoundJsonList[crawlersNotFoundIndex].AsString());

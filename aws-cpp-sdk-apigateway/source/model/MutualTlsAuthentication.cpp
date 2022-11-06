@@ -51,7 +51,7 @@ MutualTlsAuthentication& MutualTlsAuthentication::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("truststoreWarnings"))
   {
-    Array<JsonView> truststoreWarningsJsonList = jsonValue.GetArray("truststoreWarnings");
+    Aws::Utils::Array<JsonView> truststoreWarningsJsonList = jsonValue.GetArray("truststoreWarnings");
     for(unsigned truststoreWarningsIndex = 0; truststoreWarningsIndex < truststoreWarningsJsonList.GetLength(); ++truststoreWarningsIndex)
     {
       m_truststoreWarnings.push_back(truststoreWarningsJsonList[truststoreWarningsIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue MutualTlsAuthentication::Jsonize() const
 
   if(m_truststoreWarningsHasBeenSet)
   {
-   Array<JsonValue> truststoreWarningsJsonList(m_truststoreWarnings.size());
+   Aws::Utils::Array<JsonValue> truststoreWarningsJsonList(m_truststoreWarnings.size());
    for(unsigned truststoreWarningsIndex = 0; truststoreWarningsIndex < truststoreWarningsJsonList.GetLength(); ++truststoreWarningsIndex)
    {
      truststoreWarningsJsonList[truststoreWarningsIndex].AsString(m_truststoreWarnings[truststoreWarningsIndex]);

@@ -30,7 +30,7 @@ ListThreatIntelSetsResult& ListThreatIntelSetsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("threatIntelSetIds"))
   {
-    Array<JsonView> threatIntelSetIdsJsonList = jsonValue.GetArray("threatIntelSetIds");
+    Aws::Utils::Array<JsonView> threatIntelSetIdsJsonList = jsonValue.GetArray("threatIntelSetIds");
     for(unsigned threatIntelSetIdsIndex = 0; threatIntelSetIdsIndex < threatIntelSetIdsJsonList.GetLength(); ++threatIntelSetIdsIndex)
     {
       m_threatIntelSetIds.push_back(threatIntelSetIdsJsonList[threatIntelSetIdsIndex].AsString());

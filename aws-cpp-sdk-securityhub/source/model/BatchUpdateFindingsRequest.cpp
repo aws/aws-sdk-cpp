@@ -35,7 +35,7 @@ Aws::String BatchUpdateFindingsRequest::SerializePayload() const
 
   if(m_findingIdentifiersHasBeenSet)
   {
-   Array<JsonValue> findingIdentifiersJsonList(m_findingIdentifiers.size());
+   Aws::Utils::Array<JsonValue> findingIdentifiersJsonList(m_findingIdentifiers.size());
    for(unsigned findingIdentifiersIndex = 0; findingIdentifiersIndex < findingIdentifiersJsonList.GetLength(); ++findingIdentifiersIndex)
    {
      findingIdentifiersJsonList[findingIdentifiersIndex].AsObject(m_findingIdentifiers[findingIdentifiersIndex].Jsonize());
@@ -75,7 +75,7 @@ Aws::String BatchUpdateFindingsRequest::SerializePayload() const
 
   if(m_typesHasBeenSet)
   {
-   Array<JsonValue> typesJsonList(m_types.size());
+   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
    {
      typesJsonList[typesIndex].AsString(m_types[typesIndex]);
@@ -103,7 +103,7 @@ Aws::String BatchUpdateFindingsRequest::SerializePayload() const
 
   if(m_relatedFindingsHasBeenSet)
   {
-   Array<JsonValue> relatedFindingsJsonList(m_relatedFindings.size());
+   Aws::Utils::Array<JsonValue> relatedFindingsJsonList(m_relatedFindings.size());
    for(unsigned relatedFindingsIndex = 0; relatedFindingsIndex < relatedFindingsJsonList.GetLength(); ++relatedFindingsIndex)
    {
      relatedFindingsJsonList[relatedFindingsIndex].AsObject(m_relatedFindings[relatedFindingsIndex].Jsonize());

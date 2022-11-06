@@ -55,7 +55,7 @@ MsSmoothGroupSettings& MsSmoothGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("additionalManifests"))
   {
-    Array<JsonView> additionalManifestsJsonList = jsonValue.GetArray("additionalManifests");
+    Aws::Utils::Array<JsonView> additionalManifestsJsonList = jsonValue.GetArray("additionalManifests");
     for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
     {
       m_additionalManifests.push_back(additionalManifestsJsonList[additionalManifestsIndex].AsObject());
@@ -121,7 +121,7 @@ JsonValue MsSmoothGroupSettings::Jsonize() const
 
   if(m_additionalManifestsHasBeenSet)
   {
-   Array<JsonValue> additionalManifestsJsonList(m_additionalManifests.size());
+   Aws::Utils::Array<JsonValue> additionalManifestsJsonList(m_additionalManifests.size());
    for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
    {
      additionalManifestsJsonList[additionalManifestsIndex].AsObject(m_additionalManifests[additionalManifestsIndex].Jsonize());

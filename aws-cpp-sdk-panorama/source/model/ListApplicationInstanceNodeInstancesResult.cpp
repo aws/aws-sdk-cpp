@@ -36,7 +36,7 @@ ListApplicationInstanceNodeInstancesResult& ListApplicationInstanceNodeInstances
 
   if(jsonValue.ValueExists("NodeInstances"))
   {
-    Array<JsonView> nodeInstancesJsonList = jsonValue.GetArray("NodeInstances");
+    Aws::Utils::Array<JsonView> nodeInstancesJsonList = jsonValue.GetArray("NodeInstances");
     for(unsigned nodeInstancesIndex = 0; nodeInstancesIndex < nodeInstancesJsonList.GetLength(); ++nodeInstancesIndex)
     {
       m_nodeInstances.push_back(nodeInstancesJsonList[nodeInstancesIndex].AsObject());

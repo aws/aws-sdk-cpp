@@ -109,7 +109,7 @@ TransformFilterCriteria& TransformFilterCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Schema"))
   {
-    Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
+    Aws::Utils::Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
     for(unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex)
     {
       m_schema.push_back(schemaJsonList[schemaIndex].AsObject());
@@ -168,7 +168,7 @@ JsonValue TransformFilterCriteria::Jsonize() const
 
   if(m_schemaHasBeenSet)
   {
-   Array<JsonValue> schemaJsonList(m_schema.size());
+   Aws::Utils::Array<JsonValue> schemaJsonList(m_schema.size());
    for(unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex)
    {
      schemaJsonList[schemaIndex].AsObject(m_schema[schemaIndex].Jsonize());

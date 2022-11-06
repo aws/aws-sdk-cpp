@@ -58,7 +58,7 @@ UpdateEventDataStoreResult& UpdateEventDataStoreResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("AdvancedEventSelectors"))
   {
-    Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
+    Aws::Utils::Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
     for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
     {
       m_advancedEventSelectors.push_back(advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject());

@@ -56,7 +56,7 @@ Resource& Resource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("s3BucketDetails"))
   {
-    Array<JsonView> s3BucketDetailsJsonList = jsonValue.GetArray("s3BucketDetails");
+    Aws::Utils::Array<JsonView> s3BucketDetailsJsonList = jsonValue.GetArray("s3BucketDetails");
     for(unsigned s3BucketDetailsIndex = 0; s3BucketDetailsIndex < s3BucketDetailsJsonList.GetLength(); ++s3BucketDetailsIndex)
     {
       m_s3BucketDetails.push_back(s3BucketDetailsJsonList[s3BucketDetailsIndex].AsObject());
@@ -128,7 +128,7 @@ JsonValue Resource::Jsonize() const
 
   if(m_s3BucketDetailsHasBeenSet)
   {
-   Array<JsonValue> s3BucketDetailsJsonList(m_s3BucketDetails.size());
+   Aws::Utils::Array<JsonValue> s3BucketDetailsJsonList(m_s3BucketDetails.size());
    for(unsigned s3BucketDetailsIndex = 0; s3BucketDetailsIndex < s3BucketDetailsJsonList.GetLength(); ++s3BucketDetailsIndex)
    {
      s3BucketDetailsJsonList[s3BucketDetailsIndex].AsObject(m_s3BucketDetails[s3BucketDetailsIndex].Jsonize());

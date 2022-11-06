@@ -30,7 +30,7 @@ ListEnvironmentVpcsResult& ListEnvironmentVpcsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EnvironmentVpcList"))
   {
-    Array<JsonView> environmentVpcListJsonList = jsonValue.GetArray("EnvironmentVpcList");
+    Aws::Utils::Array<JsonView> environmentVpcListJsonList = jsonValue.GetArray("EnvironmentVpcList");
     for(unsigned environmentVpcListIndex = 0; environmentVpcListIndex < environmentVpcListJsonList.GetLength(); ++environmentVpcListIndex)
     {
       m_environmentVpcList.push_back(environmentVpcListJsonList[environmentVpcListIndex].AsObject());

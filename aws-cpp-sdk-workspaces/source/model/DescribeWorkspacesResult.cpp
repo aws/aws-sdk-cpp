@@ -30,7 +30,7 @@ DescribeWorkspacesResult& DescribeWorkspacesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Workspaces"))
   {
-    Array<JsonView> workspacesJsonList = jsonValue.GetArray("Workspaces");
+    Aws::Utils::Array<JsonView> workspacesJsonList = jsonValue.GetArray("Workspaces");
     for(unsigned workspacesIndex = 0; workspacesIndex < workspacesJsonList.GetLength(); ++workspacesIndex)
     {
       m_workspaces.push_back(workspacesJsonList[workspacesIndex].AsObject());

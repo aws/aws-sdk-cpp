@@ -41,7 +41,7 @@ SearchExpression& SearchExpression::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Filters"))
   {
-    Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
+    Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
     for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
     {
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());
@@ -51,7 +51,7 @@ SearchExpression& SearchExpression::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NestedFilters"))
   {
-    Array<JsonView> nestedFiltersJsonList = jsonValue.GetArray("NestedFilters");
+    Aws::Utils::Array<JsonView> nestedFiltersJsonList = jsonValue.GetArray("NestedFilters");
     for(unsigned nestedFiltersIndex = 0; nestedFiltersIndex < nestedFiltersJsonList.GetLength(); ++nestedFiltersIndex)
     {
       m_nestedFilters.push_back(nestedFiltersJsonList[nestedFiltersIndex].AsObject());
@@ -61,7 +61,7 @@ SearchExpression& SearchExpression::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubExpressions"))
   {
-    Array<JsonView> subExpressionsJsonList = jsonValue.GetArray("SubExpressions");
+    Aws::Utils::Array<JsonView> subExpressionsJsonList = jsonValue.GetArray("SubExpressions");
     for(unsigned subExpressionsIndex = 0; subExpressionsIndex < subExpressionsJsonList.GetLength(); ++subExpressionsIndex)
     {
       m_subExpressions.push_back(subExpressionsJsonList[subExpressionsIndex].AsObject());
@@ -85,7 +85,7 @@ JsonValue SearchExpression::Jsonize() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue SearchExpression::Jsonize() const
 
   if(m_nestedFiltersHasBeenSet)
   {
-   Array<JsonValue> nestedFiltersJsonList(m_nestedFilters.size());
+   Aws::Utils::Array<JsonValue> nestedFiltersJsonList(m_nestedFilters.size());
    for(unsigned nestedFiltersIndex = 0; nestedFiltersIndex < nestedFiltersJsonList.GetLength(); ++nestedFiltersIndex)
    {
      nestedFiltersJsonList[nestedFiltersIndex].AsObject(m_nestedFilters[nestedFiltersIndex].Jsonize());
@@ -107,7 +107,7 @@ JsonValue SearchExpression::Jsonize() const
 
   if(m_subExpressionsHasBeenSet)
   {
-   Array<JsonValue> subExpressionsJsonList(m_subExpressions.size());
+   Aws::Utils::Array<JsonValue> subExpressionsJsonList(m_subExpressions.size());
    for(unsigned subExpressionsIndex = 0; subExpressionsIndex < subExpressionsJsonList.GetLength(); ++subExpressionsIndex)
    {
      subExpressionsJsonList[subExpressionsIndex].AsObject(m_subExpressions[subExpressionsIndex].Jsonize());

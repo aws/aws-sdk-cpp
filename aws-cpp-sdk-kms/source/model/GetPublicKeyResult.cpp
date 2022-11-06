@@ -58,7 +58,7 @@ GetPublicKeyResult& GetPublicKeyResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("EncryptionAlgorithms"))
   {
-    Array<JsonView> encryptionAlgorithmsJsonList = jsonValue.GetArray("EncryptionAlgorithms");
+    Aws::Utils::Array<JsonView> encryptionAlgorithmsJsonList = jsonValue.GetArray("EncryptionAlgorithms");
     for(unsigned encryptionAlgorithmsIndex = 0; encryptionAlgorithmsIndex < encryptionAlgorithmsJsonList.GetLength(); ++encryptionAlgorithmsIndex)
     {
       m_encryptionAlgorithms.push_back(EncryptionAlgorithmSpecMapper::GetEncryptionAlgorithmSpecForName(encryptionAlgorithmsJsonList[encryptionAlgorithmsIndex].AsString()));
@@ -67,7 +67,7 @@ GetPublicKeyResult& GetPublicKeyResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("SigningAlgorithms"))
   {
-    Array<JsonView> signingAlgorithmsJsonList = jsonValue.GetArray("SigningAlgorithms");
+    Aws::Utils::Array<JsonView> signingAlgorithmsJsonList = jsonValue.GetArray("SigningAlgorithms");
     for(unsigned signingAlgorithmsIndex = 0; signingAlgorithmsIndex < signingAlgorithmsJsonList.GetLength(); ++signingAlgorithmsIndex)
     {
       m_signingAlgorithms.push_back(SigningAlgorithmSpecMapper::GetSigningAlgorithmSpecForName(signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString()));

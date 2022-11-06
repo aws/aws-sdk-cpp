@@ -91,7 +91,7 @@ AssessmentRunAgent& AssessmentRunAgent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("telemetryMetadata"))
   {
-    Array<JsonView> telemetryMetadataJsonList = jsonValue.GetArray("telemetryMetadata");
+    Aws::Utils::Array<JsonView> telemetryMetadataJsonList = jsonValue.GetArray("telemetryMetadata");
     for(unsigned telemetryMetadataIndex = 0; telemetryMetadataIndex < telemetryMetadataJsonList.GetLength(); ++telemetryMetadataIndex)
     {
       m_telemetryMetadata.push_back(telemetryMetadataJsonList[telemetryMetadataIndex].AsObject());
@@ -142,7 +142,7 @@ JsonValue AssessmentRunAgent::Jsonize() const
 
   if(m_telemetryMetadataHasBeenSet)
   {
-   Array<JsonValue> telemetryMetadataJsonList(m_telemetryMetadata.size());
+   Aws::Utils::Array<JsonValue> telemetryMetadataJsonList(m_telemetryMetadata.size());
    for(unsigned telemetryMetadataIndex = 0; telemetryMetadataIndex < telemetryMetadataJsonList.GetLength(); ++telemetryMetadataIndex)
    {
      telemetryMetadataJsonList[telemetryMetadataIndex].AsObject(m_telemetryMetadata[telemetryMetadataIndex].Jsonize());

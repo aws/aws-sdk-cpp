@@ -23,7 +23,7 @@ Aws::String BatchDetectDominantLanguageRequest::SerializePayload() const
 
   if(m_textListHasBeenSet)
   {
-   Array<JsonValue> textListJsonList(m_textList.size());
+   Aws::Utils::Array<JsonValue> textListJsonList(m_textList.size());
    for(unsigned textListIndex = 0; textListIndex < textListJsonList.GetLength(); ++textListIndex)
    {
      textListJsonList[textListIndex].AsString(m_textList[textListIndex]);

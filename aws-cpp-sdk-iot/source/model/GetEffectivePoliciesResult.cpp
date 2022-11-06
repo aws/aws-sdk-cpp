@@ -30,7 +30,7 @@ GetEffectivePoliciesResult& GetEffectivePoliciesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("effectivePolicies"))
   {
-    Array<JsonView> effectivePoliciesJsonList = jsonValue.GetArray("effectivePolicies");
+    Aws::Utils::Array<JsonView> effectivePoliciesJsonList = jsonValue.GetArray("effectivePolicies");
     for(unsigned effectivePoliciesIndex = 0; effectivePoliciesIndex < effectivePoliciesJsonList.GetLength(); ++effectivePoliciesIndex)
     {
       m_effectivePolicies.push_back(effectivePoliciesJsonList[effectivePoliciesIndex].AsObject());

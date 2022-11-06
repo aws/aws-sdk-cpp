@@ -24,7 +24,7 @@ Aws::String UpdatePermissionsRequest::SerializePayload() const
 
   if(m_updateInstructionBatchHasBeenSet)
   {
-   Array<JsonValue> updateInstructionBatchJsonList(m_updateInstructionBatch.size());
+   Aws::Utils::Array<JsonValue> updateInstructionBatchJsonList(m_updateInstructionBatch.size());
    for(unsigned updateInstructionBatchIndex = 0; updateInstructionBatchIndex < updateInstructionBatchJsonList.GetLength(); ++updateInstructionBatchIndex)
    {
      updateInstructionBatchJsonList[updateInstructionBatchIndex].AsObject(m_updateInstructionBatch[updateInstructionBatchIndex].Jsonize());

@@ -45,7 +45,7 @@ UpdateLabelsPayload& UpdateLabelsPayload::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("removeLabels"))
   {
-    Array<JsonView> removeLabelsJsonList = jsonValue.GetArray("removeLabels");
+    Aws::Utils::Array<JsonView> removeLabelsJsonList = jsonValue.GetArray("removeLabels");
     for(unsigned removeLabelsIndex = 0; removeLabelsIndex < removeLabelsJsonList.GetLength(); ++removeLabelsIndex)
     {
       m_removeLabels.push_back(removeLabelsJsonList[removeLabelsIndex].AsString());
@@ -73,7 +73,7 @@ JsonValue UpdateLabelsPayload::Jsonize() const
 
   if(m_removeLabelsHasBeenSet)
   {
-   Array<JsonValue> removeLabelsJsonList(m_removeLabels.size());
+   Aws::Utils::Array<JsonValue> removeLabelsJsonList(m_removeLabels.size());
    for(unsigned removeLabelsIndex = 0; removeLabelsIndex < removeLabelsJsonList.GetLength(); ++removeLabelsIndex)
    {
      removeLabelsJsonList[removeLabelsIndex].AsString(m_removeLabels[removeLabelsIndex]);

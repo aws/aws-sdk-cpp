@@ -30,7 +30,7 @@ ListIncomingTypedLinksResult& ListIncomingTypedLinksResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LinkSpecifiers"))
   {
-    Array<JsonView> linkSpecifiersJsonList = jsonValue.GetArray("LinkSpecifiers");
+    Aws::Utils::Array<JsonView> linkSpecifiersJsonList = jsonValue.GetArray("LinkSpecifiers");
     for(unsigned linkSpecifiersIndex = 0; linkSpecifiersIndex < linkSpecifiersJsonList.GetLength(); ++linkSpecifiersIndex)
     {
       m_linkSpecifiers.push_back(linkSpecifiersJsonList[linkSpecifiersIndex].AsObject());

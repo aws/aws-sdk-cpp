@@ -72,7 +72,7 @@ Aws::String BatchDescribeMergeConflictsRequest::SerializePayload() const
 
   if(m_filePathsHasBeenSet)
   {
-   Array<JsonValue> filePathsJsonList(m_filePaths.size());
+   Aws::Utils::Array<JsonValue> filePathsJsonList(m_filePaths.size());
    for(unsigned filePathsIndex = 0; filePathsIndex < filePathsJsonList.GetLength(); ++filePathsIndex)
    {
      filePathsJsonList[filePathsIndex].AsString(m_filePaths[filePathsIndex]);

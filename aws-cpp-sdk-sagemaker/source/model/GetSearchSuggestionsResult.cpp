@@ -30,7 +30,7 @@ GetSearchSuggestionsResult& GetSearchSuggestionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PropertyNameSuggestions"))
   {
-    Array<JsonView> propertyNameSuggestionsJsonList = jsonValue.GetArray("PropertyNameSuggestions");
+    Aws::Utils::Array<JsonView> propertyNameSuggestionsJsonList = jsonValue.GetArray("PropertyNameSuggestions");
     for(unsigned propertyNameSuggestionsIndex = 0; propertyNameSuggestionsIndex < propertyNameSuggestionsJsonList.GetLength(); ++propertyNameSuggestionsIndex)
     {
       m_propertyNameSuggestions.push_back(propertyNameSuggestionsJsonList[propertyNameSuggestionsIndex].AsObject());

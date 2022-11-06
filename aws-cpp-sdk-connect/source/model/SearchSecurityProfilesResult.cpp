@@ -32,7 +32,7 @@ SearchSecurityProfilesResult& SearchSecurityProfilesResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SecurityProfiles"))
   {
-    Array<JsonView> securityProfilesJsonList = jsonValue.GetArray("SecurityProfiles");
+    Aws::Utils::Array<JsonView> securityProfilesJsonList = jsonValue.GetArray("SecurityProfiles");
     for(unsigned securityProfilesIndex = 0; securityProfilesIndex < securityProfilesJsonList.GetLength(); ++securityProfilesIndex)
     {
       m_securityProfiles.push_back(securityProfilesJsonList[securityProfilesIndex].AsObject());

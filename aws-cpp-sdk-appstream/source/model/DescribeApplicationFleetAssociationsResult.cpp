@@ -30,7 +30,7 @@ DescribeApplicationFleetAssociationsResult& DescribeApplicationFleetAssociations
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ApplicationFleetAssociations"))
   {
-    Array<JsonView> applicationFleetAssociationsJsonList = jsonValue.GetArray("ApplicationFleetAssociations");
+    Aws::Utils::Array<JsonView> applicationFleetAssociationsJsonList = jsonValue.GetArray("ApplicationFleetAssociations");
     for(unsigned applicationFleetAssociationsIndex = 0; applicationFleetAssociationsIndex < applicationFleetAssociationsJsonList.GetLength(); ++applicationFleetAssociationsIndex)
     {
       m_applicationFleetAssociations.push_back(applicationFleetAssociationsJsonList[applicationFleetAssociationsIndex].AsObject());

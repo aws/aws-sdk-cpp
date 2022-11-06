@@ -102,7 +102,7 @@ ClusterOperationInfo& ClusterOperationInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("operationSteps"))
   {
-    Array<JsonView> operationStepsJsonList = jsonValue.GetArray("operationSteps");
+    Aws::Utils::Array<JsonView> operationStepsJsonList = jsonValue.GetArray("operationSteps");
     for(unsigned operationStepsIndex = 0; operationStepsIndex < operationStepsJsonList.GetLength(); ++operationStepsIndex)
     {
       m_operationSteps.push_back(operationStepsJsonList[operationStepsIndex].AsObject());
@@ -180,7 +180,7 @@ JsonValue ClusterOperationInfo::Jsonize() const
 
   if(m_operationStepsHasBeenSet)
   {
-   Array<JsonValue> operationStepsJsonList(m_operationSteps.size());
+   Aws::Utils::Array<JsonValue> operationStepsJsonList(m_operationSteps.size());
    for(unsigned operationStepsIndex = 0; operationStepsIndex < operationStepsJsonList.GetLength(); ++operationStepsIndex)
    {
      operationStepsJsonList[operationStepsIndex].AsObject(m_operationSteps[operationStepsIndex].Jsonize());

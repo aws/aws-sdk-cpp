@@ -30,7 +30,7 @@ ListEntityPersonasResult& ListEntityPersonasResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SummaryItems"))
   {
-    Array<JsonView> summaryItemsJsonList = jsonValue.GetArray("SummaryItems");
+    Aws::Utils::Array<JsonView> summaryItemsJsonList = jsonValue.GetArray("SummaryItems");
     for(unsigned summaryItemsIndex = 0; summaryItemsIndex < summaryItemsJsonList.GetLength(); ++summaryItemsIndex)
     {
       m_summaryItems.push_back(summaryItemsJsonList[summaryItemsIndex].AsObject());

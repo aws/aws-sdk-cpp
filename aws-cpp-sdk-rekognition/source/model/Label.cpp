@@ -55,7 +55,7 @@ Label& Label::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Instances"))
   {
-    Array<JsonView> instancesJsonList = jsonValue.GetArray("Instances");
+    Aws::Utils::Array<JsonView> instancesJsonList = jsonValue.GetArray("Instances");
     for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
     {
       m_instances.push_back(instancesJsonList[instancesIndex].AsObject());
@@ -65,7 +65,7 @@ Label& Label::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Parents"))
   {
-    Array<JsonView> parentsJsonList = jsonValue.GetArray("Parents");
+    Aws::Utils::Array<JsonView> parentsJsonList = jsonValue.GetArray("Parents");
     for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
     {
       m_parents.push_back(parentsJsonList[parentsIndex].AsObject());
@@ -94,7 +94,7 @@ JsonValue Label::Jsonize() const
 
   if(m_instancesHasBeenSet)
   {
-   Array<JsonValue> instancesJsonList(m_instances.size());
+   Aws::Utils::Array<JsonValue> instancesJsonList(m_instances.size());
    for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
    {
      instancesJsonList[instancesIndex].AsObject(m_instances[instancesIndex].Jsonize());
@@ -105,7 +105,7 @@ JsonValue Label::Jsonize() const
 
   if(m_parentsHasBeenSet)
   {
-   Array<JsonValue> parentsJsonList(m_parents.size());
+   Aws::Utils::Array<JsonValue> parentsJsonList(m_parents.size());
    for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
    {
      parentsJsonList[parentsIndex].AsObject(m_parents[parentsIndex].Jsonize());

@@ -27,7 +27,7 @@ Aws::String DescribeStorageVirtualMachinesRequest::SerializePayload() const
 
   if(m_storageVirtualMachineIdsHasBeenSet)
   {
-   Array<JsonValue> storageVirtualMachineIdsJsonList(m_storageVirtualMachineIds.size());
+   Aws::Utils::Array<JsonValue> storageVirtualMachineIdsJsonList(m_storageVirtualMachineIds.size());
    for(unsigned storageVirtualMachineIdsIndex = 0; storageVirtualMachineIdsIndex < storageVirtualMachineIdsJsonList.GetLength(); ++storageVirtualMachineIdsIndex)
    {
      storageVirtualMachineIdsJsonList[storageVirtualMachineIdsIndex].AsString(m_storageVirtualMachineIds[storageVirtualMachineIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeStorageVirtualMachinesRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

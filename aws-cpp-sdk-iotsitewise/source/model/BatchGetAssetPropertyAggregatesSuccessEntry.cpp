@@ -42,7 +42,7 @@ BatchGetAssetPropertyAggregatesSuccessEntry& BatchGetAssetPropertyAggregatesSucc
 
   if(jsonValue.ValueExists("aggregatedValues"))
   {
-    Array<JsonView> aggregatedValuesJsonList = jsonValue.GetArray("aggregatedValues");
+    Aws::Utils::Array<JsonView> aggregatedValuesJsonList = jsonValue.GetArray("aggregatedValues");
     for(unsigned aggregatedValuesIndex = 0; aggregatedValuesIndex < aggregatedValuesJsonList.GetLength(); ++aggregatedValuesIndex)
     {
       m_aggregatedValues.push_back(aggregatedValuesJsonList[aggregatedValuesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue BatchGetAssetPropertyAggregatesSuccessEntry::Jsonize() const
 
   if(m_aggregatedValuesHasBeenSet)
   {
-   Array<JsonValue> aggregatedValuesJsonList(m_aggregatedValues.size());
+   Aws::Utils::Array<JsonValue> aggregatedValuesJsonList(m_aggregatedValues.size());
    for(unsigned aggregatedValuesIndex = 0; aggregatedValuesIndex < aggregatedValuesJsonList.GetLength(); ++aggregatedValuesIndex)
    {
      aggregatedValuesJsonList[aggregatedValuesIndex].AsObject(m_aggregatedValues[aggregatedValuesIndex].Jsonize());

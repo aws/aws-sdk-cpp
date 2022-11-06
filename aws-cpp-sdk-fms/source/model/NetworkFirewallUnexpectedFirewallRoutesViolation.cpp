@@ -48,7 +48,7 @@ NetworkFirewallUnexpectedFirewallRoutesViolation& NetworkFirewallUnexpectedFirew
 
   if(jsonValue.ValueExists("ViolatingRoutes"))
   {
-    Array<JsonView> violatingRoutesJsonList = jsonValue.GetArray("ViolatingRoutes");
+    Aws::Utils::Array<JsonView> violatingRoutesJsonList = jsonValue.GetArray("ViolatingRoutes");
     for(unsigned violatingRoutesIndex = 0; violatingRoutesIndex < violatingRoutesJsonList.GetLength(); ++violatingRoutesIndex)
     {
       m_violatingRoutes.push_back(violatingRoutesJsonList[violatingRoutesIndex].AsObject());
@@ -92,7 +92,7 @@ JsonValue NetworkFirewallUnexpectedFirewallRoutesViolation::Jsonize() const
 
   if(m_violatingRoutesHasBeenSet)
   {
-   Array<JsonValue> violatingRoutesJsonList(m_violatingRoutes.size());
+   Aws::Utils::Array<JsonValue> violatingRoutesJsonList(m_violatingRoutes.size());
    for(unsigned violatingRoutesIndex = 0; violatingRoutesIndex < violatingRoutesJsonList.GetLength(); ++violatingRoutesIndex)
    {
      violatingRoutesJsonList[violatingRoutesIndex].AsObject(m_violatingRoutes[violatingRoutesIndex].Jsonize());

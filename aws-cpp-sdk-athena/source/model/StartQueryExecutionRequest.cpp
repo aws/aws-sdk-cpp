@@ -59,7 +59,7 @@ Aws::String StartQueryExecutionRequest::SerializePayload() const
 
   if(m_executionParametersHasBeenSet)
   {
-   Array<JsonValue> executionParametersJsonList(m_executionParameters.size());
+   Aws::Utils::Array<JsonValue> executionParametersJsonList(m_executionParameters.size());
    for(unsigned executionParametersIndex = 0; executionParametersIndex < executionParametersJsonList.GetLength(); ++executionParametersIndex)
    {
      executionParametersJsonList[executionParametersIndex].AsString(m_executionParameters[executionParametersIndex]);

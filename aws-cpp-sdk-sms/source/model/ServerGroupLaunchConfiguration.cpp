@@ -53,7 +53,7 @@ ServerGroupLaunchConfiguration& ServerGroupLaunchConfiguration::operator =(JsonV
 
   if(jsonValue.ValueExists("serverLaunchConfigurations"))
   {
-    Array<JsonView> serverLaunchConfigurationsJsonList = jsonValue.GetArray("serverLaunchConfigurations");
+    Aws::Utils::Array<JsonView> serverLaunchConfigurationsJsonList = jsonValue.GetArray("serverLaunchConfigurations");
     for(unsigned serverLaunchConfigurationsIndex = 0; serverLaunchConfigurationsIndex < serverLaunchConfigurationsJsonList.GetLength(); ++serverLaunchConfigurationsIndex)
     {
       m_serverLaunchConfigurations.push_back(serverLaunchConfigurationsJsonList[serverLaunchConfigurationsIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue ServerGroupLaunchConfiguration::Jsonize() const
 
   if(m_serverLaunchConfigurationsHasBeenSet)
   {
-   Array<JsonValue> serverLaunchConfigurationsJsonList(m_serverLaunchConfigurations.size());
+   Aws::Utils::Array<JsonValue> serverLaunchConfigurationsJsonList(m_serverLaunchConfigurations.size());
    for(unsigned serverLaunchConfigurationsIndex = 0; serverLaunchConfigurationsIndex < serverLaunchConfigurationsJsonList.GetLength(); ++serverLaunchConfigurationsIndex)
    {
      serverLaunchConfigurationsJsonList[serverLaunchConfigurationsIndex].AsObject(m_serverLaunchConfigurations[serverLaunchConfigurationsIndex].Jsonize());

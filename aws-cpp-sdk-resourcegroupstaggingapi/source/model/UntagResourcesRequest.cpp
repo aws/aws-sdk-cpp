@@ -24,7 +24,7 @@ Aws::String UntagResourcesRequest::SerializePayload() const
 
   if(m_resourceARNListHasBeenSet)
   {
-   Array<JsonValue> resourceARNListJsonList(m_resourceARNList.size());
+   Aws::Utils::Array<JsonValue> resourceARNListJsonList(m_resourceARNList.size());
    for(unsigned resourceARNListIndex = 0; resourceARNListIndex < resourceARNListJsonList.GetLength(); ++resourceARNListIndex)
    {
      resourceARNListJsonList[resourceARNListIndex].AsString(m_resourceARNList[resourceARNListIndex]);
@@ -35,7 +35,7 @@ Aws::String UntagResourcesRequest::SerializePayload() const
 
   if(m_tagKeysHasBeenSet)
   {
-   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
    for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
    {
      tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);

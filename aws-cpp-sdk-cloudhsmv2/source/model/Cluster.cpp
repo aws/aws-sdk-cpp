@@ -93,7 +93,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Hsms"))
   {
-    Array<JsonView> hsmsJsonList = jsonValue.GetArray("Hsms");
+    Aws::Utils::Array<JsonView> hsmsJsonList = jsonValue.GetArray("Hsms");
     for(unsigned hsmsIndex = 0; hsmsIndex < hsmsJsonList.GetLength(); ++hsmsIndex)
     {
       m_hsms.push_back(hsmsJsonList[hsmsIndex].AsObject());
@@ -169,7 +169,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TagList"))
   {
-    Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
+    Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
     for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
     {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
@@ -208,7 +208,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_hsmsHasBeenSet)
   {
-   Array<JsonValue> hsmsJsonList(m_hsms.size());
+   Aws::Utils::Array<JsonValue> hsmsJsonList(m_hsms.size());
    for(unsigned hsmsIndex = 0; hsmsIndex < hsmsJsonList.GetLength(); ++hsmsIndex)
    {
      hsmsJsonList[hsmsIndex].AsObject(m_hsms[hsmsIndex].Jsonize());
@@ -277,7 +277,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_tagListHasBeenSet)
   {
-   Array<JsonValue> tagListJsonList(m_tagList.size());
+   Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
    {
      tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());

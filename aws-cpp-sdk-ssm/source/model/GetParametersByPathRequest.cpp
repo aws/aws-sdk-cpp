@@ -43,7 +43,7 @@ Aws::String GetParametersByPathRequest::SerializePayload() const
 
   if(m_parameterFiltersHasBeenSet)
   {
-   Array<JsonValue> parameterFiltersJsonList(m_parameterFilters.size());
+   Aws::Utils::Array<JsonValue> parameterFiltersJsonList(m_parameterFilters.size());
    for(unsigned parameterFiltersIndex = 0; parameterFiltersIndex < parameterFiltersJsonList.GetLength(); ++parameterFiltersIndex)
    {
      parameterFiltersJsonList[parameterFiltersIndex].AsObject(m_parameterFilters[parameterFiltersIndex].Jsonize());

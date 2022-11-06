@@ -30,7 +30,7 @@ ListTaskTemplatesResult& ListTaskTemplatesResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TaskTemplates"))
   {
-    Array<JsonView> taskTemplatesJsonList = jsonValue.GetArray("TaskTemplates");
+    Aws::Utils::Array<JsonView> taskTemplatesJsonList = jsonValue.GetArray("TaskTemplates");
     for(unsigned taskTemplatesIndex = 0; taskTemplatesIndex < taskTemplatesJsonList.GetLength(); ++taskTemplatesIndex)
     {
       m_taskTemplates.push_back(taskTemplatesJsonList[taskTemplatesIndex].AsObject());

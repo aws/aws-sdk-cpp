@@ -46,7 +46,7 @@ Aws::String CreateAssessmentTemplateRequest::SerializePayload() const
 
   if(m_rulesPackageArnsHasBeenSet)
   {
-   Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
+   Aws::Utils::Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
    for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
    {
      rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString(m_rulesPackageArns[rulesPackageArnsIndex]);
@@ -57,7 +57,7 @@ Aws::String CreateAssessmentTemplateRequest::SerializePayload() const
 
   if(m_userAttributesForFindingsHasBeenSet)
   {
-   Array<JsonValue> userAttributesForFindingsJsonList(m_userAttributesForFindings.size());
+   Aws::Utils::Array<JsonValue> userAttributesForFindingsJsonList(m_userAttributesForFindings.size());
    for(unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength(); ++userAttributesForFindingsIndex)
    {
      userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject(m_userAttributesForFindings[userAttributesForFindingsIndex].Jsonize());

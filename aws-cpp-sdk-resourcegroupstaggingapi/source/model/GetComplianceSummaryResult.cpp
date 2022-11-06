@@ -30,7 +30,7 @@ GetComplianceSummaryResult& GetComplianceSummaryResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SummaryList"))
   {
-    Array<JsonView> summaryListJsonList = jsonValue.GetArray("SummaryList");
+    Aws::Utils::Array<JsonView> summaryListJsonList = jsonValue.GetArray("SummaryList");
     for(unsigned summaryListIndex = 0; summaryListIndex < summaryListJsonList.GetLength(); ++summaryListIndex)
     {
       m_summaryList.push_back(summaryListJsonList[summaryListIndex].AsObject());

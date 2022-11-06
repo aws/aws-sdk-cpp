@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/gamelift/GameLiftErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/gamelift/GameLiftEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -139,6 +141,10 @@ namespace Aws
 
   namespace GameLift
   {
+    using GameLiftClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GameLiftEndpointProviderBase = Aws::GameLift::Endpoint::GameLiftEndpointProviderBase;
+    using GameLiftEndpointProvider = Aws::GameLift::Endpoint::GameLiftEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in GameLiftClient header */

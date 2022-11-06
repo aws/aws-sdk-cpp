@@ -51,7 +51,7 @@ Subscription& Subscription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("eventSubscriptions"))
   {
-    Array<JsonView> eventSubscriptionsJsonList = jsonValue.GetArray("eventSubscriptions");
+    Aws::Utils::Array<JsonView> eventSubscriptionsJsonList = jsonValue.GetArray("eventSubscriptions");
     for(unsigned eventSubscriptionsIndex = 0; eventSubscriptionsIndex < eventSubscriptionsJsonList.GetLength(); ++eventSubscriptionsIndex)
     {
       m_eventSubscriptions.push_back(eventSubscriptionsJsonList[eventSubscriptionsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue Subscription::Jsonize() const
 
   if(m_eventSubscriptionsHasBeenSet)
   {
-   Array<JsonValue> eventSubscriptionsJsonList(m_eventSubscriptions.size());
+   Aws::Utils::Array<JsonValue> eventSubscriptionsJsonList(m_eventSubscriptions.size());
    for(unsigned eventSubscriptionsIndex = 0; eventSubscriptionsIndex < eventSubscriptionsJsonList.GetLength(); ++eventSubscriptionsIndex)
    {
      eventSubscriptionsJsonList[eventSubscriptionsIndex].AsObject(m_eventSubscriptions[eventSubscriptionsIndex].Jsonize());

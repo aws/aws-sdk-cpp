@@ -52,7 +52,7 @@ CreateRuleResult& CreateRuleResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -67,7 +67,7 @@ CreateRuleResult& CreateRuleResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("ResourceTags"))
   {
-    Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
     for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
     {
       m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());

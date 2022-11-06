@@ -37,7 +37,7 @@ PrefetchConsumption& PrefetchConsumption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AvailMatchingCriteria"))
   {
-    Array<JsonView> availMatchingCriteriaJsonList = jsonValue.GetArray("AvailMatchingCriteria");
+    Aws::Utils::Array<JsonView> availMatchingCriteriaJsonList = jsonValue.GetArray("AvailMatchingCriteria");
     for(unsigned availMatchingCriteriaIndex = 0; availMatchingCriteriaIndex < availMatchingCriteriaJsonList.GetLength(); ++availMatchingCriteriaIndex)
     {
       m_availMatchingCriteria.push_back(availMatchingCriteriaJsonList[availMatchingCriteriaIndex].AsObject());
@@ -68,7 +68,7 @@ JsonValue PrefetchConsumption::Jsonize() const
 
   if(m_availMatchingCriteriaHasBeenSet)
   {
-   Array<JsonValue> availMatchingCriteriaJsonList(m_availMatchingCriteria.size());
+   Aws::Utils::Array<JsonValue> availMatchingCriteriaJsonList(m_availMatchingCriteria.size());
    for(unsigned availMatchingCriteriaIndex = 0; availMatchingCriteriaIndex < availMatchingCriteriaJsonList.GetLength(); ++availMatchingCriteriaIndex)
    {
      availMatchingCriteriaJsonList[availMatchingCriteriaIndex].AsObject(m_availMatchingCriteria[availMatchingCriteriaIndex].Jsonize());

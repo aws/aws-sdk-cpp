@@ -30,7 +30,7 @@ DescribeScheduledActionsResult& DescribeScheduledActionsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScheduledActions"))
   {
-    Array<JsonView> scheduledActionsJsonList = jsonValue.GetArray("ScheduledActions");
+    Aws::Utils::Array<JsonView> scheduledActionsJsonList = jsonValue.GetArray("ScheduledActions");
     for(unsigned scheduledActionsIndex = 0; scheduledActionsIndex < scheduledActionsJsonList.GetLength(); ++scheduledActionsIndex)
     {
       m_scheduledActions.push_back(scheduledActionsJsonList[scheduledActionsIndex].AsObject());

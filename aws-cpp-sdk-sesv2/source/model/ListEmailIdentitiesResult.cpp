@@ -30,7 +30,7 @@ ListEmailIdentitiesResult& ListEmailIdentitiesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EmailIdentities"))
   {
-    Array<JsonView> emailIdentitiesJsonList = jsonValue.GetArray("EmailIdentities");
+    Aws::Utils::Array<JsonView> emailIdentitiesJsonList = jsonValue.GetArray("EmailIdentities");
     for(unsigned emailIdentitiesIndex = 0; emailIdentitiesIndex < emailIdentitiesJsonList.GetLength(); ++emailIdentitiesIndex)
     {
       m_emailIdentities.push_back(emailIdentitiesJsonList[emailIdentitiesIndex].AsObject());

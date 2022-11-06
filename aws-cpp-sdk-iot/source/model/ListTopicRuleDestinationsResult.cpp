@@ -30,7 +30,7 @@ ListTopicRuleDestinationsResult& ListTopicRuleDestinationsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("destinationSummaries"))
   {
-    Array<JsonView> destinationSummariesJsonList = jsonValue.GetArray("destinationSummaries");
+    Aws::Utils::Array<JsonView> destinationSummariesJsonList = jsonValue.GetArray("destinationSummaries");
     for(unsigned destinationSummariesIndex = 0; destinationSummariesIndex < destinationSummariesJsonList.GetLength(); ++destinationSummariesIndex)
     {
       m_destinationSummaries.push_back(destinationSummariesJsonList[destinationSummariesIndex].AsObject());

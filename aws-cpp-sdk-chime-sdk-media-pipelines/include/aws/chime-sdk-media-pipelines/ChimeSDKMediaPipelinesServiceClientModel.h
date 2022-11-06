@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -60,6 +62,10 @@ namespace Aws
 
   namespace ChimeSDKMediaPipelines
   {
+    using ChimeSDKMediaPipelinesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeSDKMediaPipelinesEndpointProviderBase = Aws::ChimeSDKMediaPipelines::Endpoint::ChimeSDKMediaPipelinesEndpointProviderBase;
+    using ChimeSDKMediaPipelinesEndpointProvider = Aws::ChimeSDKMediaPipelines::Endpoint::ChimeSDKMediaPipelinesEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ChimeSDKMediaPipelinesClient header */

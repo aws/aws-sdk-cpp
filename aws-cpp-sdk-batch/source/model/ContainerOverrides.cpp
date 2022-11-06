@@ -39,7 +39,7 @@ ContainerOverrides& ContainerOverrides::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
+    Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -56,7 +56,7 @@ ContainerOverrides& ContainerOverrides::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("environment"))
   {
-    Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
+    Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
     for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
     {
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());
@@ -66,7 +66,7 @@ ContainerOverrides& ContainerOverrides::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourceRequirements"))
   {
-    Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
+    Aws::Utils::Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
     for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
     {
       m_resourceRequirements.push_back(resourceRequirementsJsonList[resourceRequirementsIndex].AsObject());
@@ -83,7 +83,7 @@ JsonValue ContainerOverrides::Jsonize() const
 
   if(m_commandHasBeenSet)
   {
-   Array<JsonValue> commandJsonList(m_command.size());
+   Aws::Utils::Array<JsonValue> commandJsonList(m_command.size());
    for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
    {
      commandJsonList[commandIndex].AsString(m_command[commandIndex]);
@@ -100,7 +100,7 @@ JsonValue ContainerOverrides::Jsonize() const
 
   if(m_environmentHasBeenSet)
   {
-   Array<JsonValue> environmentJsonList(m_environment.size());
+   Aws::Utils::Array<JsonValue> environmentJsonList(m_environment.size());
    for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
    {
      environmentJsonList[environmentIndex].AsObject(m_environment[environmentIndex].Jsonize());
@@ -111,7 +111,7 @@ JsonValue ContainerOverrides::Jsonize() const
 
   if(m_resourceRequirementsHasBeenSet)
   {
-   Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
+   Aws::Utils::Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
    for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
    {
      resourceRequirementsJsonList[resourceRequirementsIndex].AsObject(m_resourceRequirements[resourceRequirementsIndex].Jsonize());

@@ -45,7 +45,7 @@ Aws::String CreateExtensionRequest::SerializePayload() const
    JsonValue actionsJsonMap;
    for(auto& actionsItem : m_actions)
    {
-     Array<JsonValue> actionListJsonList(actionsItem.second.size());
+     Aws::Utils::Array<JsonValue> actionListJsonList(actionsItem.second.size());
      for(unsigned actionListIndex = 0; actionListIndex < actionListJsonList.GetLength(); ++actionListIndex)
      {
        actionListJsonList[actionListIndex].AsObject(actionsItem.second[actionListIndex].Jsonize());

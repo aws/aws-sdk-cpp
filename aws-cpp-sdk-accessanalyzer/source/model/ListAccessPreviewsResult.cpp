@@ -30,7 +30,7 @@ ListAccessPreviewsResult& ListAccessPreviewsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("accessPreviews"))
   {
-    Array<JsonView> accessPreviewsJsonList = jsonValue.GetArray("accessPreviews");
+    Aws::Utils::Array<JsonView> accessPreviewsJsonList = jsonValue.GetArray("accessPreviews");
     for(unsigned accessPreviewsIndex = 0; accessPreviewsIndex < accessPreviewsJsonList.GetLength(); ++accessPreviewsIndex)
     {
       m_accessPreviews.push_back(accessPreviewsJsonList[accessPreviewsIndex].AsObject());

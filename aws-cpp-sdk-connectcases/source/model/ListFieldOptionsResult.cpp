@@ -36,7 +36,7 @@ ListFieldOptionsResult& ListFieldOptionsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("options"))
   {
-    Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
+    Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
     for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
     {
       m_options.push_back(optionsJsonList[optionsIndex].AsObject());

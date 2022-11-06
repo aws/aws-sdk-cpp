@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/cloudhsm/CloudHSMErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/cloudhsm/CloudHSMEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -69,6 +71,10 @@ namespace Aws
 
   namespace CloudHSM
   {
+    using CloudHSMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudHSMEndpointProviderBase = Aws::CloudHSM::Endpoint::CloudHSMEndpointProviderBase;
+    using CloudHSMEndpointProvider = Aws::CloudHSM::Endpoint::CloudHSMEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CloudHSMClient header */

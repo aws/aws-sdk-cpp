@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/cloudtrail/CloudTrailErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/cloudtrail/CloudTrailEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -85,6 +87,10 @@ namespace Aws
 
   namespace CloudTrail
   {
+    using CloudTrailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudTrailEndpointProviderBase = Aws::CloudTrail::Endpoint::CloudTrailEndpointProviderBase;
+    using CloudTrailEndpointProvider = Aws::CloudTrail::Endpoint::CloudTrailEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CloudTrailClient header */

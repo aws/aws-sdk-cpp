@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/redshift-serverless/RedshiftServerlessErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/redshift-serverless/RedshiftServerlessEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -86,6 +88,10 @@ namespace Aws
 
   namespace RedshiftServerless
   {
+    using RedshiftServerlessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RedshiftServerlessEndpointProviderBase = Aws::RedshiftServerless::Endpoint::RedshiftServerlessEndpointProviderBase;
+    using RedshiftServerlessEndpointProvider = Aws::RedshiftServerless::Endpoint::RedshiftServerlessEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in RedshiftServerlessClient header */

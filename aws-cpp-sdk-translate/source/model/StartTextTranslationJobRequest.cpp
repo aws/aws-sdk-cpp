@@ -63,7 +63,7 @@ Aws::String StartTextTranslationJobRequest::SerializePayload() const
 
   if(m_targetLanguageCodesHasBeenSet)
   {
-   Array<JsonValue> targetLanguageCodesJsonList(m_targetLanguageCodes.size());
+   Aws::Utils::Array<JsonValue> targetLanguageCodesJsonList(m_targetLanguageCodes.size());
    for(unsigned targetLanguageCodesIndex = 0; targetLanguageCodesIndex < targetLanguageCodesJsonList.GetLength(); ++targetLanguageCodesIndex)
    {
      targetLanguageCodesJsonList[targetLanguageCodesIndex].AsString(m_targetLanguageCodes[targetLanguageCodesIndex]);
@@ -74,7 +74,7 @@ Aws::String StartTextTranslationJobRequest::SerializePayload() const
 
   if(m_terminologyNamesHasBeenSet)
   {
-   Array<JsonValue> terminologyNamesJsonList(m_terminologyNames.size());
+   Aws::Utils::Array<JsonValue> terminologyNamesJsonList(m_terminologyNames.size());
    for(unsigned terminologyNamesIndex = 0; terminologyNamesIndex < terminologyNamesJsonList.GetLength(); ++terminologyNamesIndex)
    {
      terminologyNamesJsonList[terminologyNamesIndex].AsString(m_terminologyNames[terminologyNamesIndex]);
@@ -85,7 +85,7 @@ Aws::String StartTextTranslationJobRequest::SerializePayload() const
 
   if(m_parallelDataNamesHasBeenSet)
   {
-   Array<JsonValue> parallelDataNamesJsonList(m_parallelDataNames.size());
+   Aws::Utils::Array<JsonValue> parallelDataNamesJsonList(m_parallelDataNames.size());
    for(unsigned parallelDataNamesIndex = 0; parallelDataNamesIndex < parallelDataNamesJsonList.GetLength(); ++parallelDataNamesIndex)
    {
      parallelDataNamesJsonList[parallelDataNamesIndex].AsString(m_parallelDataNames[parallelDataNamesIndex]);

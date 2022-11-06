@@ -80,7 +80,7 @@ RightsizingRecommendation& RightsizingRecommendation::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FindingReasonCodes"))
   {
-    Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("FindingReasonCodes");
+    Aws::Utils::Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("FindingReasonCodes");
     for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
     {
       m_findingReasonCodes.push_back(FindingReasonCodeMapper::GetFindingReasonCodeForName(findingReasonCodesJsonList[findingReasonCodesIndex].AsString()));
@@ -126,7 +126,7 @@ JsonValue RightsizingRecommendation::Jsonize() const
 
   if(m_findingReasonCodesHasBeenSet)
   {
-   Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
+   Aws::Utils::Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
    for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
    {
      findingReasonCodesJsonList[findingReasonCodesIndex].AsString(FindingReasonCodeMapper::GetNameForFindingReasonCode(m_findingReasonCodes[findingReasonCodesIndex]));

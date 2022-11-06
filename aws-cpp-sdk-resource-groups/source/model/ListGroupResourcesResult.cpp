@@ -30,7 +30,7 @@ ListGroupResourcesResult& ListGroupResourcesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
@@ -45,7 +45,7 @@ ListGroupResourcesResult& ListGroupResourcesResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("QueryErrors"))
   {
-    Array<JsonView> queryErrorsJsonList = jsonValue.GetArray("QueryErrors");
+    Aws::Utils::Array<JsonView> queryErrorsJsonList = jsonValue.GetArray("QueryErrors");
     for(unsigned queryErrorsIndex = 0; queryErrorsIndex < queryErrorsJsonList.GetLength(); ++queryErrorsIndex)
     {
       m_queryErrors.push_back(queryErrorsJsonList[queryErrorsIndex].AsObject());

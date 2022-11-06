@@ -30,7 +30,7 @@ ListApprovedOriginsResult& ListApprovedOriginsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Origins"))
   {
-    Array<JsonView> originsJsonList = jsonValue.GetArray("Origins");
+    Aws::Utils::Array<JsonView> originsJsonList = jsonValue.GetArray("Origins");
     for(unsigned originsIndex = 0; originsIndex < originsJsonList.GetLength(); ++originsIndex)
     {
       m_origins.push_back(originsJsonList[originsIndex].AsString());

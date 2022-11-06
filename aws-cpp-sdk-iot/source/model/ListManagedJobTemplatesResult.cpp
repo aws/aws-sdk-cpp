@@ -30,7 +30,7 @@ ListManagedJobTemplatesResult& ListManagedJobTemplatesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("managedJobTemplates"))
   {
-    Array<JsonView> managedJobTemplatesJsonList = jsonValue.GetArray("managedJobTemplates");
+    Aws::Utils::Array<JsonView> managedJobTemplatesJsonList = jsonValue.GetArray("managedJobTemplates");
     for(unsigned managedJobTemplatesIndex = 0; managedJobTemplatesIndex < managedJobTemplatesJsonList.GetLength(); ++managedJobTemplatesIndex)
     {
       m_managedJobTemplates.push_back(managedJobTemplatesJsonList[managedJobTemplatesIndex].AsObject());

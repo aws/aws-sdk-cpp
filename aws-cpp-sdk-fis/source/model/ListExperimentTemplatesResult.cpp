@@ -30,7 +30,7 @@ ListExperimentTemplatesResult& ListExperimentTemplatesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("experimentTemplates"))
   {
-    Array<JsonView> experimentTemplatesJsonList = jsonValue.GetArray("experimentTemplates");
+    Aws::Utils::Array<JsonView> experimentTemplatesJsonList = jsonValue.GetArray("experimentTemplates");
     for(unsigned experimentTemplatesIndex = 0; experimentTemplatesIndex < experimentTemplatesJsonList.GetLength(); ++experimentTemplatesIndex)
     {
       m_experimentTemplates.push_back(experimentTemplatesJsonList[experimentTemplatesIndex].AsObject());

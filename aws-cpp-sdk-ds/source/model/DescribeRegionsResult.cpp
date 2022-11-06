@@ -30,7 +30,7 @@ DescribeRegionsResult& DescribeRegionsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RegionsDescription"))
   {
-    Array<JsonView> regionsDescriptionJsonList = jsonValue.GetArray("RegionsDescription");
+    Aws::Utils::Array<JsonView> regionsDescriptionJsonList = jsonValue.GetArray("RegionsDescription");
     for(unsigned regionsDescriptionIndex = 0; regionsDescriptionIndex < regionsDescriptionJsonList.GetLength(); ++regionsDescriptionIndex)
     {
       m_regionsDescription.push_back(regionsDescriptionJsonList[regionsDescriptionIndex].AsObject());

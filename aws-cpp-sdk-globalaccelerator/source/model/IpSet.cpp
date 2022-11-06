@@ -37,7 +37,7 @@ IpSet& IpSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IpAddresses"))
   {
-    Array<JsonView> ipAddressesJsonList = jsonValue.GetArray("IpAddresses");
+    Aws::Utils::Array<JsonView> ipAddressesJsonList = jsonValue.GetArray("IpAddresses");
     for(unsigned ipAddressesIndex = 0; ipAddressesIndex < ipAddressesJsonList.GetLength(); ++ipAddressesIndex)
     {
       m_ipAddresses.push_back(ipAddressesJsonList[ipAddressesIndex].AsString());
@@ -61,7 +61,7 @@ JsonValue IpSet::Jsonize() const
 
   if(m_ipAddressesHasBeenSet)
   {
-   Array<JsonValue> ipAddressesJsonList(m_ipAddresses.size());
+   Aws::Utils::Array<JsonValue> ipAddressesJsonList(m_ipAddresses.size());
    for(unsigned ipAddressesIndex = 0; ipAddressesIndex < ipAddressesJsonList.GetLength(); ++ipAddressesIndex)
    {
      ipAddressesJsonList[ipAddressesIndex].AsString(m_ipAddresses[ipAddressesIndex]);

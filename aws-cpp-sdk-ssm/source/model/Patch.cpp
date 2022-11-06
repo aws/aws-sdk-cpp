@@ -170,7 +170,7 @@ Patch& Patch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdvisoryIds"))
   {
-    Array<JsonView> advisoryIdsJsonList = jsonValue.GetArray("AdvisoryIds");
+    Aws::Utils::Array<JsonView> advisoryIdsJsonList = jsonValue.GetArray("AdvisoryIds");
     for(unsigned advisoryIdsIndex = 0; advisoryIdsIndex < advisoryIdsJsonList.GetLength(); ++advisoryIdsIndex)
     {
       m_advisoryIds.push_back(advisoryIdsJsonList[advisoryIdsIndex].AsString());
@@ -180,7 +180,7 @@ Patch& Patch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("BugzillaIds"))
   {
-    Array<JsonView> bugzillaIdsJsonList = jsonValue.GetArray("BugzillaIds");
+    Aws::Utils::Array<JsonView> bugzillaIdsJsonList = jsonValue.GetArray("BugzillaIds");
     for(unsigned bugzillaIdsIndex = 0; bugzillaIdsIndex < bugzillaIdsJsonList.GetLength(); ++bugzillaIdsIndex)
     {
       m_bugzillaIds.push_back(bugzillaIdsJsonList[bugzillaIdsIndex].AsString());
@@ -190,7 +190,7 @@ Patch& Patch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CVEIds"))
   {
-    Array<JsonView> cVEIdsJsonList = jsonValue.GetArray("CVEIds");
+    Aws::Utils::Array<JsonView> cVEIdsJsonList = jsonValue.GetArray("CVEIds");
     for(unsigned cVEIdsIndex = 0; cVEIdsIndex < cVEIdsJsonList.GetLength(); ++cVEIdsIndex)
     {
       m_cVEIds.push_back(cVEIdsJsonList[cVEIdsIndex].AsString());
@@ -333,7 +333,7 @@ JsonValue Patch::Jsonize() const
 
   if(m_advisoryIdsHasBeenSet)
   {
-   Array<JsonValue> advisoryIdsJsonList(m_advisoryIds.size());
+   Aws::Utils::Array<JsonValue> advisoryIdsJsonList(m_advisoryIds.size());
    for(unsigned advisoryIdsIndex = 0; advisoryIdsIndex < advisoryIdsJsonList.GetLength(); ++advisoryIdsIndex)
    {
      advisoryIdsJsonList[advisoryIdsIndex].AsString(m_advisoryIds[advisoryIdsIndex]);
@@ -344,7 +344,7 @@ JsonValue Patch::Jsonize() const
 
   if(m_bugzillaIdsHasBeenSet)
   {
-   Array<JsonValue> bugzillaIdsJsonList(m_bugzillaIds.size());
+   Aws::Utils::Array<JsonValue> bugzillaIdsJsonList(m_bugzillaIds.size());
    for(unsigned bugzillaIdsIndex = 0; bugzillaIdsIndex < bugzillaIdsJsonList.GetLength(); ++bugzillaIdsIndex)
    {
      bugzillaIdsJsonList[bugzillaIdsIndex].AsString(m_bugzillaIds[bugzillaIdsIndex]);
@@ -355,7 +355,7 @@ JsonValue Patch::Jsonize() const
 
   if(m_cVEIdsHasBeenSet)
   {
-   Array<JsonValue> cVEIdsJsonList(m_cVEIds.size());
+   Aws::Utils::Array<JsonValue> cVEIdsJsonList(m_cVEIds.size());
    for(unsigned cVEIdsIndex = 0; cVEIdsIndex < cVEIdsJsonList.GetLength(); ++cVEIdsIndex)
    {
      cVEIdsJsonList[cVEIdsIndex].AsString(m_cVEIds[cVEIdsIndex]);

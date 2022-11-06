@@ -26,7 +26,7 @@ Aws::String DescribeActionTargetsRequest::SerializePayload() const
 
   if(m_actionTargetArnsHasBeenSet)
   {
-   Array<JsonValue> actionTargetArnsJsonList(m_actionTargetArns.size());
+   Aws::Utils::Array<JsonValue> actionTargetArnsJsonList(m_actionTargetArns.size());
    for(unsigned actionTargetArnsIndex = 0; actionTargetArnsIndex < actionTargetArnsJsonList.GetLength(); ++actionTargetArnsIndex)
    {
      actionTargetArnsJsonList[actionTargetArnsIndex].AsString(m_actionTargetArns[actionTargetArnsIndex]);

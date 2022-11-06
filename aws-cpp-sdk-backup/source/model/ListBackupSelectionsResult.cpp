@@ -36,7 +36,7 @@ ListBackupSelectionsResult& ListBackupSelectionsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("BackupSelectionsList"))
   {
-    Array<JsonView> backupSelectionsListJsonList = jsonValue.GetArray("BackupSelectionsList");
+    Aws::Utils::Array<JsonView> backupSelectionsListJsonList = jsonValue.GetArray("BackupSelectionsList");
     for(unsigned backupSelectionsListIndex = 0; backupSelectionsListIndex < backupSelectionsListJsonList.GetLength(); ++backupSelectionsListIndex)
     {
       m_backupSelectionsList.push_back(backupSelectionsListJsonList[backupSelectionsListIndex].AsObject());

@@ -30,7 +30,7 @@ DescribeConnectionsResult& DescribeConnectionsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("connections"))
   {
-    Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
+    Aws::Utils::Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
     for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
     {
       m_connections.push_back(connectionsJsonList[connectionsIndex].AsObject());

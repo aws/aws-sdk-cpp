@@ -48,7 +48,7 @@ DescribeLocationHdfsResult& DescribeLocationHdfsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("NameNodes"))
   {
-    Array<JsonView> nameNodesJsonList = jsonValue.GetArray("NameNodes");
+    Aws::Utils::Array<JsonView> nameNodesJsonList = jsonValue.GetArray("NameNodes");
     for(unsigned nameNodesIndex = 0; nameNodesIndex < nameNodesJsonList.GetLength(); ++nameNodesIndex)
     {
       m_nameNodes.push_back(nameNodesJsonList[nameNodesIndex].AsObject());
@@ -99,7 +99,7 @@ DescribeLocationHdfsResult& DescribeLocationHdfsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("AgentArns"))
   {
-    Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
+    Aws::Utils::Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
     for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
     {
       m_agentArns.push_back(agentArnsJsonList[agentArnsIndex].AsString());

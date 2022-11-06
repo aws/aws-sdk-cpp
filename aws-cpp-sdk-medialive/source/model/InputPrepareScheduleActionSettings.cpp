@@ -51,7 +51,7 @@ InputPrepareScheduleActionSettings& InputPrepareScheduleActionSettings::operator
 
   if(jsonValue.ValueExists("urlPath"))
   {
-    Array<JsonView> urlPathJsonList = jsonValue.GetArray("urlPath");
+    Aws::Utils::Array<JsonView> urlPathJsonList = jsonValue.GetArray("urlPath");
     for(unsigned urlPathIndex = 0; urlPathIndex < urlPathJsonList.GetLength(); ++urlPathIndex)
     {
       m_urlPath.push_back(urlPathJsonList[urlPathIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue InputPrepareScheduleActionSettings::Jsonize() const
 
   if(m_urlPathHasBeenSet)
   {
-   Array<JsonValue> urlPathJsonList(m_urlPath.size());
+   Aws::Utils::Array<JsonValue> urlPathJsonList(m_urlPath.size());
    for(unsigned urlPathIndex = 0; urlPathIndex < urlPathJsonList.GetLength(); ++urlPathIndex)
    {
      urlPathJsonList[urlPathIndex].AsString(m_urlPath[urlPathIndex]);

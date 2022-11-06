@@ -45,7 +45,7 @@ SentimentFilter& SentimentFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Sentiments"))
   {
-    Array<JsonView> sentimentsJsonList = jsonValue.GetArray("Sentiments");
+    Aws::Utils::Array<JsonView> sentimentsJsonList = jsonValue.GetArray("Sentiments");
     for(unsigned sentimentsIndex = 0; sentimentsIndex < sentimentsJsonList.GetLength(); ++sentimentsIndex)
     {
       m_sentiments.push_back(SentimentValueMapper::GetSentimentValueForName(sentimentsJsonList[sentimentsIndex].AsString()));
@@ -90,7 +90,7 @@ JsonValue SentimentFilter::Jsonize() const
 
   if(m_sentimentsHasBeenSet)
   {
-   Array<JsonValue> sentimentsJsonList(m_sentiments.size());
+   Aws::Utils::Array<JsonValue> sentimentsJsonList(m_sentiments.size());
    for(unsigned sentimentsIndex = 0; sentimentsIndex < sentimentsJsonList.GetLength(); ++sentimentsIndex)
    {
      sentimentsJsonList[sentimentsIndex].AsString(SentimentValueMapper::GetNameForSentimentValue(m_sentiments[sentimentsIndex]));

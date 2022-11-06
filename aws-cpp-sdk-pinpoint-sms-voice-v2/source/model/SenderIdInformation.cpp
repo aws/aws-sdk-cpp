@@ -62,7 +62,7 @@ SenderIdInformation& SenderIdInformation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MessageTypes"))
   {
-    Array<JsonView> messageTypesJsonList = jsonValue.GetArray("MessageTypes");
+    Aws::Utils::Array<JsonView> messageTypesJsonList = jsonValue.GetArray("MessageTypes");
     for(unsigned messageTypesIndex = 0; messageTypesIndex < messageTypesJsonList.GetLength(); ++messageTypesIndex)
     {
       m_messageTypes.push_back(MessageTypeMapper::GetMessageTypeForName(messageTypesJsonList[messageTypesIndex].AsString()));
@@ -104,7 +104,7 @@ JsonValue SenderIdInformation::Jsonize() const
 
   if(m_messageTypesHasBeenSet)
   {
-   Array<JsonValue> messageTypesJsonList(m_messageTypes.size());
+   Aws::Utils::Array<JsonValue> messageTypesJsonList(m_messageTypes.size());
    for(unsigned messageTypesIndex = 0; messageTypesIndex < messageTypesJsonList.GetLength(); ++messageTypesIndex)
    {
      messageTypesJsonList[messageTypesIndex].AsString(MessageTypeMapper::GetNameForMessageType(m_messageTypes[messageTypesIndex]));

@@ -39,22 +39,48 @@ namespace DeviceFarm
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DeviceFarmClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DeviceFarmClient(const Aws::DeviceFarm::DeviceFarmClientConfiguration& clientConfiguration = Aws::DeviceFarm::DeviceFarmClientConfiguration(),
+                         std::shared_ptr<DeviceFarmEndpointProviderBase> endpointProvider = Aws::MakeShared<DeviceFarmEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DeviceFarmClient(const Aws::Auth::AWSCredentials& credentials,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<DeviceFarmEndpointProviderBase> endpointProvider = Aws::MakeShared<DeviceFarmEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::DeviceFarm::DeviceFarmClientConfiguration& clientConfiguration = Aws::DeviceFarm::DeviceFarmClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         DeviceFarmClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<DeviceFarmEndpointProviderBase> endpointProvider = Aws::MakeShared<DeviceFarmEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::DeviceFarm::DeviceFarmClientConfiguration& clientConfiguration = Aws::DeviceFarm::DeviceFarmClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DeviceFarmClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DeviceFarmClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        DeviceFarmClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~DeviceFarmClient();
 
 
@@ -1471,12 +1497,13 @@ namespace DeviceFarm
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<DeviceFarmEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const DeviceFarmClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      DeviceFarmClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<DeviceFarmEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DeviceFarm

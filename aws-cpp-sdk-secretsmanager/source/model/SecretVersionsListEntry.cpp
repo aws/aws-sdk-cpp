@@ -48,7 +48,7 @@ SecretVersionsListEntry& SecretVersionsListEntry::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VersionStages"))
   {
-    Array<JsonView> versionStagesJsonList = jsonValue.GetArray("VersionStages");
+    Aws::Utils::Array<JsonView> versionStagesJsonList = jsonValue.GetArray("VersionStages");
     for(unsigned versionStagesIndex = 0; versionStagesIndex < versionStagesJsonList.GetLength(); ++versionStagesIndex)
     {
       m_versionStages.push_back(versionStagesJsonList[versionStagesIndex].AsString());
@@ -72,7 +72,7 @@ SecretVersionsListEntry& SecretVersionsListEntry::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("KmsKeyIds"))
   {
-    Array<JsonView> kmsKeyIdsJsonList = jsonValue.GetArray("KmsKeyIds");
+    Aws::Utils::Array<JsonView> kmsKeyIdsJsonList = jsonValue.GetArray("KmsKeyIds");
     for(unsigned kmsKeyIdsIndex = 0; kmsKeyIdsIndex < kmsKeyIdsJsonList.GetLength(); ++kmsKeyIdsIndex)
     {
       m_kmsKeyIds.push_back(kmsKeyIdsJsonList[kmsKeyIdsIndex].AsString());
@@ -95,7 +95,7 @@ JsonValue SecretVersionsListEntry::Jsonize() const
 
   if(m_versionStagesHasBeenSet)
   {
-   Array<JsonValue> versionStagesJsonList(m_versionStages.size());
+   Aws::Utils::Array<JsonValue> versionStagesJsonList(m_versionStages.size());
    for(unsigned versionStagesIndex = 0; versionStagesIndex < versionStagesJsonList.GetLength(); ++versionStagesIndex)
    {
      versionStagesJsonList[versionStagesIndex].AsString(m_versionStages[versionStagesIndex]);
@@ -116,7 +116,7 @@ JsonValue SecretVersionsListEntry::Jsonize() const
 
   if(m_kmsKeyIdsHasBeenSet)
   {
-   Array<JsonValue> kmsKeyIdsJsonList(m_kmsKeyIds.size());
+   Aws::Utils::Array<JsonValue> kmsKeyIdsJsonList(m_kmsKeyIds.size());
    for(unsigned kmsKeyIdsIndex = 0; kmsKeyIdsIndex < kmsKeyIdsJsonList.GetLength(); ++kmsKeyIdsIndex)
    {
      kmsKeyIdsJsonList[kmsKeyIdsIndex].AsString(m_kmsKeyIds[kmsKeyIdsIndex]);

@@ -36,7 +36,7 @@ ListNodeFromTemplateJobsResult& ListNodeFromTemplateJobsResult::operator =(const
 
   if(jsonValue.ValueExists("NodeFromTemplateJobs"))
   {
-    Array<JsonView> nodeFromTemplateJobsJsonList = jsonValue.GetArray("NodeFromTemplateJobs");
+    Aws::Utils::Array<JsonView> nodeFromTemplateJobsJsonList = jsonValue.GetArray("NodeFromTemplateJobs");
     for(unsigned nodeFromTemplateJobsIndex = 0; nodeFromTemplateJobsIndex < nodeFromTemplateJobsJsonList.GetLength(); ++nodeFromTemplateJobsIndex)
     {
       m_nodeFromTemplateJobs.push_back(nodeFromTemplateJobsJsonList[nodeFromTemplateJobsIndex].AsObject());

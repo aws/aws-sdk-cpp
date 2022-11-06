@@ -30,7 +30,7 @@ DescribeElasticLoadBalancersResult& DescribeElasticLoadBalancersResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ElasticLoadBalancers"))
   {
-    Array<JsonView> elasticLoadBalancersJsonList = jsonValue.GetArray("ElasticLoadBalancers");
+    Aws::Utils::Array<JsonView> elasticLoadBalancersJsonList = jsonValue.GetArray("ElasticLoadBalancers");
     for(unsigned elasticLoadBalancersIndex = 0; elasticLoadBalancersIndex < elasticLoadBalancersJsonList.GetLength(); ++elasticLoadBalancersIndex)
     {
       m_elasticLoadBalancers.push_back(elasticLoadBalancersJsonList[elasticLoadBalancersIndex].AsObject());

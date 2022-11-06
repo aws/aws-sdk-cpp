@@ -175,7 +175,7 @@ JobRun& JobRun::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PredecessorRuns"))
   {
-    Array<JsonView> predecessorRunsJsonList = jsonValue.GetArray("PredecessorRuns");
+    Aws::Utils::Array<JsonView> predecessorRunsJsonList = jsonValue.GetArray("PredecessorRuns");
     for(unsigned predecessorRunsIndex = 0; predecessorRunsIndex < predecessorRunsJsonList.GetLength(); ++predecessorRunsIndex)
     {
       m_predecessorRuns.push_back(predecessorRunsJsonList[predecessorRunsIndex].AsObject());
@@ -336,7 +336,7 @@ JsonValue JobRun::Jsonize() const
 
   if(m_predecessorRunsHasBeenSet)
   {
-   Array<JsonValue> predecessorRunsJsonList(m_predecessorRuns.size());
+   Aws::Utils::Array<JsonValue> predecessorRunsJsonList(m_predecessorRuns.size());
    for(unsigned predecessorRunsIndex = 0; predecessorRunsIndex < predecessorRunsJsonList.GetLength(); ++predecessorRunsIndex)
    {
      predecessorRunsJsonList[predecessorRunsIndex].AsObject(m_predecessorRuns[predecessorRunsIndex].Jsonize());

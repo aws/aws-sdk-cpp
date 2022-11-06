@@ -30,7 +30,7 @@ GetConnectivityInfoResult& GetConnectivityInfoResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConnectivityInfo"))
   {
-    Array<JsonView> connectivityInfoJsonList = jsonValue.GetArray("ConnectivityInfo");
+    Aws::Utils::Array<JsonView> connectivityInfoJsonList = jsonValue.GetArray("ConnectivityInfo");
     for(unsigned connectivityInfoIndex = 0; connectivityInfoIndex < connectivityInfoJsonList.GetLength(); ++connectivityInfoIndex)
     {
       m_connectivityInfo.push_back(connectivityInfoJsonList[connectivityInfoIndex].AsObject());

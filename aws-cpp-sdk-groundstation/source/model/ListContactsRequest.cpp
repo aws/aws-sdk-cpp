@@ -71,7 +71,7 @@ Aws::String ListContactsRequest::SerializePayload() const
 
   if(m_statusListHasBeenSet)
   {
-   Array<JsonValue> statusListJsonList(m_statusList.size());
+   Aws::Utils::Array<JsonValue> statusListJsonList(m_statusList.size());
    for(unsigned statusListIndex = 0; statusListIndex < statusListJsonList.GetLength(); ++statusListIndex)
    {
      statusListJsonList[statusListIndex].AsString(ContactStatusMapper::GetNameForContactStatus(m_statusList[statusListIndex]));

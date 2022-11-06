@@ -30,7 +30,7 @@ Aws::String DetectFacesRequest::SerializePayload() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsString(AttributeMapper::GetNameForAttribute(m_attributes[attributesIndex]));

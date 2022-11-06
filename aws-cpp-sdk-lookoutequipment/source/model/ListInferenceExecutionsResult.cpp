@@ -36,7 +36,7 @@ ListInferenceExecutionsResult& ListInferenceExecutionsResult::operator =(const A
 
   if(jsonValue.ValueExists("InferenceExecutionSummaries"))
   {
-    Array<JsonView> inferenceExecutionSummariesJsonList = jsonValue.GetArray("InferenceExecutionSummaries");
+    Aws::Utils::Array<JsonView> inferenceExecutionSummariesJsonList = jsonValue.GetArray("InferenceExecutionSummaries");
     for(unsigned inferenceExecutionSummariesIndex = 0; inferenceExecutionSummariesIndex < inferenceExecutionSummariesJsonList.GetLength(); ++inferenceExecutionSummariesIndex)
     {
       m_inferenceExecutionSummaries.push_back(inferenceExecutionSummariesJsonList[inferenceExecutionSummariesIndex].AsObject());

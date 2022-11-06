@@ -33,7 +33,7 @@ Logging& Logging::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("clusterLogging"))
   {
-    Array<JsonView> clusterLoggingJsonList = jsonValue.GetArray("clusterLogging");
+    Aws::Utils::Array<JsonView> clusterLoggingJsonList = jsonValue.GetArray("clusterLogging");
     for(unsigned clusterLoggingIndex = 0; clusterLoggingIndex < clusterLoggingJsonList.GetLength(); ++clusterLoggingIndex)
     {
       m_clusterLogging.push_back(clusterLoggingJsonList[clusterLoggingIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue Logging::Jsonize() const
 
   if(m_clusterLoggingHasBeenSet)
   {
-   Array<JsonValue> clusterLoggingJsonList(m_clusterLogging.size());
+   Aws::Utils::Array<JsonValue> clusterLoggingJsonList(m_clusterLogging.size());
    for(unsigned clusterLoggingIndex = 0; clusterLoggingIndex < clusterLoggingJsonList.GetLength(); ++clusterLoggingIndex)
    {
      clusterLoggingJsonList[clusterLoggingIndex].AsObject(m_clusterLogging[clusterLoggingIndex].Jsonize());

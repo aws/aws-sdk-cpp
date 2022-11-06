@@ -75,7 +75,7 @@ ECSTarget& ECSTarget::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("lifecycleEvents"))
   {
-    Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
+    Aws::Utils::Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
     for(unsigned lifecycleEventsIndex = 0; lifecycleEventsIndex < lifecycleEventsJsonList.GetLength(); ++lifecycleEventsIndex)
     {
       m_lifecycleEvents.push_back(lifecycleEventsJsonList[lifecycleEventsIndex].AsObject());
@@ -92,7 +92,7 @@ ECSTarget& ECSTarget::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("taskSetsInfo"))
   {
-    Array<JsonView> taskSetsInfoJsonList = jsonValue.GetArray("taskSetsInfo");
+    Aws::Utils::Array<JsonView> taskSetsInfoJsonList = jsonValue.GetArray("taskSetsInfo");
     for(unsigned taskSetsInfoIndex = 0; taskSetsInfoIndex < taskSetsInfoJsonList.GetLength(); ++taskSetsInfoIndex)
     {
       m_taskSetsInfo.push_back(taskSetsInfoJsonList[taskSetsInfoIndex].AsObject());
@@ -132,7 +132,7 @@ JsonValue ECSTarget::Jsonize() const
 
   if(m_lifecycleEventsHasBeenSet)
   {
-   Array<JsonValue> lifecycleEventsJsonList(m_lifecycleEvents.size());
+   Aws::Utils::Array<JsonValue> lifecycleEventsJsonList(m_lifecycleEvents.size());
    for(unsigned lifecycleEventsIndex = 0; lifecycleEventsIndex < lifecycleEventsJsonList.GetLength(); ++lifecycleEventsIndex)
    {
      lifecycleEventsJsonList[lifecycleEventsIndex].AsObject(m_lifecycleEvents[lifecycleEventsIndex].Jsonize());
@@ -148,7 +148,7 @@ JsonValue ECSTarget::Jsonize() const
 
   if(m_taskSetsInfoHasBeenSet)
   {
-   Array<JsonValue> taskSetsInfoJsonList(m_taskSetsInfo.size());
+   Aws::Utils::Array<JsonValue> taskSetsInfoJsonList(m_taskSetsInfo.size());
    for(unsigned taskSetsInfoIndex = 0; taskSetsInfoIndex < taskSetsInfoJsonList.GetLength(); ++taskSetsInfoIndex)
    {
      taskSetsInfoJsonList[taskSetsInfoIndex].AsObject(m_taskSetsInfo[taskSetsInfoIndex].Jsonize());

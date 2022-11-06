@@ -83,7 +83,7 @@ Aws::String GetPropertyValueHistoryRequest::SerializePayload() const
 
   if(m_propertyFiltersHasBeenSet)
   {
-   Array<JsonValue> propertyFiltersJsonList(m_propertyFilters.size());
+   Aws::Utils::Array<JsonValue> propertyFiltersJsonList(m_propertyFilters.size());
    for(unsigned propertyFiltersIndex = 0; propertyFiltersIndex < propertyFiltersJsonList.GetLength(); ++propertyFiltersIndex)
    {
      propertyFiltersJsonList[propertyFiltersIndex].AsObject(m_propertyFilters[propertyFiltersIndex].Jsonize());
@@ -94,7 +94,7 @@ Aws::String GetPropertyValueHistoryRequest::SerializePayload() const
 
   if(m_selectedPropertiesHasBeenSet)
   {
-   Array<JsonValue> selectedPropertiesJsonList(m_selectedProperties.size());
+   Aws::Utils::Array<JsonValue> selectedPropertiesJsonList(m_selectedProperties.size());
    for(unsigned selectedPropertiesIndex = 0; selectedPropertiesIndex < selectedPropertiesJsonList.GetLength(); ++selectedPropertiesIndex)
    {
      selectedPropertiesJsonList[selectedPropertiesIndex].AsString(m_selectedProperties[selectedPropertiesIndex]);

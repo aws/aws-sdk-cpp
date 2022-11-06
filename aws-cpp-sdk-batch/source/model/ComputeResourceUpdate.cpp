@@ -100,7 +100,7 @@ ComputeResourceUpdate& ComputeResourceUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("subnets"))
   {
-    Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
+    Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
@@ -110,7 +110,7 @@ ComputeResourceUpdate& ComputeResourceUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("securityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -127,7 +127,7 @@ ComputeResourceUpdate& ComputeResourceUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("instanceTypes"))
   {
-    Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
+    Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
     for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
     {
       m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
@@ -182,7 +182,7 @@ ComputeResourceUpdate& ComputeResourceUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ec2Configuration"))
   {
-    Array<JsonView> ec2ConfigurationJsonList = jsonValue.GetArray("ec2Configuration");
+    Aws::Utils::Array<JsonView> ec2ConfigurationJsonList = jsonValue.GetArray("ec2Configuration");
     for(unsigned ec2ConfigurationIndex = 0; ec2ConfigurationIndex < ec2ConfigurationJsonList.GetLength(); ++ec2ConfigurationIndex)
     {
       m_ec2Configuration.push_back(ec2ConfigurationJsonList[ec2ConfigurationIndex].AsObject());
@@ -238,7 +238,7 @@ JsonValue ComputeResourceUpdate::Jsonize() const
 
   if(m_subnetsHasBeenSet)
   {
-   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
    {
      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
@@ -249,7 +249,7 @@ JsonValue ComputeResourceUpdate::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -265,7 +265,7 @@ JsonValue ComputeResourceUpdate::Jsonize() const
 
   if(m_instanceTypesHasBeenSet)
   {
-   Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
+   Aws::Utils::Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
    for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
    {
      instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
@@ -317,7 +317,7 @@ JsonValue ComputeResourceUpdate::Jsonize() const
 
   if(m_ec2ConfigurationHasBeenSet)
   {
-   Array<JsonValue> ec2ConfigurationJsonList(m_ec2Configuration.size());
+   Aws::Utils::Array<JsonValue> ec2ConfigurationJsonList(m_ec2Configuration.size());
    for(unsigned ec2ConfigurationIndex = 0; ec2ConfigurationIndex < ec2ConfigurationJsonList.GetLength(); ++ec2ConfigurationIndex)
    {
      ec2ConfigurationJsonList[ec2ConfigurationIndex].AsObject(m_ec2Configuration[ec2ConfigurationIndex].Jsonize());

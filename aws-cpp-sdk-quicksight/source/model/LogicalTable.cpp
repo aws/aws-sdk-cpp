@@ -44,7 +44,7 @@ LogicalTable& LogicalTable::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DataTransforms"))
   {
-    Array<JsonView> dataTransformsJsonList = jsonValue.GetArray("DataTransforms");
+    Aws::Utils::Array<JsonView> dataTransformsJsonList = jsonValue.GetArray("DataTransforms");
     for(unsigned dataTransformsIndex = 0; dataTransformsIndex < dataTransformsJsonList.GetLength(); ++dataTransformsIndex)
     {
       m_dataTransforms.push_back(dataTransformsJsonList[dataTransformsIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue LogicalTable::Jsonize() const
 
   if(m_dataTransformsHasBeenSet)
   {
-   Array<JsonValue> dataTransformsJsonList(m_dataTransforms.size());
+   Aws::Utils::Array<JsonValue> dataTransformsJsonList(m_dataTransforms.size());
    for(unsigned dataTransformsIndex = 0; dataTransformsIndex < dataTransformsJsonList.GetLength(); ++dataTransformsIndex)
    {
      dataTransformsJsonList[dataTransformsIndex].AsObject(m_dataTransforms[dataTransformsIndex].Jsonize());

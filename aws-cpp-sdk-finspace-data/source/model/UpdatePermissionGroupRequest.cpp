@@ -40,7 +40,7 @@ Aws::String UpdatePermissionGroupRequest::SerializePayload() const
 
   if(m_applicationPermissionsHasBeenSet)
   {
-   Array<JsonValue> applicationPermissionsJsonList(m_applicationPermissions.size());
+   Aws::Utils::Array<JsonValue> applicationPermissionsJsonList(m_applicationPermissions.size());
    for(unsigned applicationPermissionsIndex = 0; applicationPermissionsIndex < applicationPermissionsJsonList.GetLength(); ++applicationPermissionsIndex)
    {
      applicationPermissionsJsonList[applicationPermissionsIndex].AsString(ApplicationPermissionMapper::GetNameForApplicationPermission(m_applicationPermissions[applicationPermissionsIndex]));

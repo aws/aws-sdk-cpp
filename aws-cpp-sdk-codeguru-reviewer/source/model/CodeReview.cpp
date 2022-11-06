@@ -169,7 +169,7 @@ CodeReview& CodeReview::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AnalysisTypes"))
   {
-    Array<JsonView> analysisTypesJsonList = jsonValue.GetArray("AnalysisTypes");
+    Aws::Utils::Array<JsonView> analysisTypesJsonList = jsonValue.GetArray("AnalysisTypes");
     for(unsigned analysisTypesIndex = 0; analysisTypesIndex < analysisTypesJsonList.GetLength(); ++analysisTypesIndex)
     {
       m_analysisTypes.push_back(AnalysisTypeMapper::GetAnalysisTypeForName(analysisTypesJsonList[analysisTypesIndex].AsString()));
@@ -272,7 +272,7 @@ JsonValue CodeReview::Jsonize() const
 
   if(m_analysisTypesHasBeenSet)
   {
-   Array<JsonValue> analysisTypesJsonList(m_analysisTypes.size());
+   Aws::Utils::Array<JsonValue> analysisTypesJsonList(m_analysisTypes.size());
    for(unsigned analysisTypesIndex = 0; analysisTypesIndex < analysisTypesJsonList.GetLength(); ++analysisTypesIndex)
    {
      analysisTypesJsonList[analysisTypesIndex].AsString(AnalysisTypeMapper::GetNameForAnalysisType(m_analysisTypes[analysisTypesIndex]));

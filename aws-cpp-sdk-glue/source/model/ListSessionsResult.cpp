@@ -30,7 +30,7 @@ ListSessionsResult& ListSessionsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Ids"))
   {
-    Array<JsonView> idsJsonList = jsonValue.GetArray("Ids");
+    Aws::Utils::Array<JsonView> idsJsonList = jsonValue.GetArray("Ids");
     for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
     {
       m_ids.push_back(idsJsonList[idsIndex].AsString());
@@ -39,7 +39,7 @@ ListSessionsResult& ListSessionsResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("Sessions"))
   {
-    Array<JsonView> sessionsJsonList = jsonValue.GetArray("Sessions");
+    Aws::Utils::Array<JsonView> sessionsJsonList = jsonValue.GetArray("Sessions");
     for(unsigned sessionsIndex = 0; sessionsIndex < sessionsJsonList.GetLength(); ++sessionsIndex)
     {
       m_sessions.push_back(sessionsJsonList[sessionsIndex].AsObject());

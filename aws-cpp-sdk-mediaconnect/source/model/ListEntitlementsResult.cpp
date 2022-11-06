@@ -30,7 +30,7 @@ ListEntitlementsResult& ListEntitlementsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("entitlements"))
   {
-    Array<JsonView> entitlementsJsonList = jsonValue.GetArray("entitlements");
+    Aws::Utils::Array<JsonView> entitlementsJsonList = jsonValue.GetArray("entitlements");
     for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
     {
       m_entitlements.push_back(entitlementsJsonList[entitlementsIndex].AsObject());

@@ -44,7 +44,7 @@ RecommendationJobStoppingConditions& RecommendationJobStoppingConditions::operat
 
   if(jsonValue.ValueExists("ModelLatencyThresholds"))
   {
-    Array<JsonView> modelLatencyThresholdsJsonList = jsonValue.GetArray("ModelLatencyThresholds");
+    Aws::Utils::Array<JsonView> modelLatencyThresholdsJsonList = jsonValue.GetArray("ModelLatencyThresholds");
     for(unsigned modelLatencyThresholdsIndex = 0; modelLatencyThresholdsIndex < modelLatencyThresholdsJsonList.GetLength(); ++modelLatencyThresholdsIndex)
     {
       m_modelLatencyThresholds.push_back(modelLatencyThresholdsJsonList[modelLatencyThresholdsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue RecommendationJobStoppingConditions::Jsonize() const
 
   if(m_modelLatencyThresholdsHasBeenSet)
   {
-   Array<JsonValue> modelLatencyThresholdsJsonList(m_modelLatencyThresholds.size());
+   Aws::Utils::Array<JsonValue> modelLatencyThresholdsJsonList(m_modelLatencyThresholds.size());
    for(unsigned modelLatencyThresholdsIndex = 0; modelLatencyThresholdsIndex < modelLatencyThresholdsJsonList.GetLength(); ++modelLatencyThresholdsIndex)
    {
      modelLatencyThresholdsJsonList[modelLatencyThresholdsIndex].AsObject(m_modelLatencyThresholds[modelLatencyThresholdsIndex].Jsonize());

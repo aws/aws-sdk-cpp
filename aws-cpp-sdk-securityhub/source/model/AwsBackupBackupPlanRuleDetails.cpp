@@ -104,7 +104,7 @@ AwsBackupBackupPlanRuleDetails& AwsBackupBackupPlanRuleDetails::operator =(JsonV
 
   if(jsonValue.ValueExists("CopyActions"))
   {
-    Array<JsonView> copyActionsJsonList = jsonValue.GetArray("CopyActions");
+    Aws::Utils::Array<JsonView> copyActionsJsonList = jsonValue.GetArray("CopyActions");
     for(unsigned copyActionsIndex = 0; copyActionsIndex < copyActionsJsonList.GetLength(); ++copyActionsIndex)
     {
       m_copyActions.push_back(copyActionsJsonList[copyActionsIndex].AsObject());
@@ -170,7 +170,7 @@ JsonValue AwsBackupBackupPlanRuleDetails::Jsonize() const
 
   if(m_copyActionsHasBeenSet)
   {
-   Array<JsonValue> copyActionsJsonList(m_copyActions.size());
+   Aws::Utils::Array<JsonValue> copyActionsJsonList(m_copyActions.size());
    for(unsigned copyActionsIndex = 0; copyActionsIndex < copyActionsJsonList.GetLength(); ++copyActionsIndex)
    {
      copyActionsJsonList[copyActionsIndex].AsObject(m_copyActions[copyActionsIndex].Jsonize());

@@ -25,7 +25,7 @@ Aws::String AssociateRoutingProfileQueuesRequest::SerializePayload() const
 
   if(m_queueConfigsHasBeenSet)
   {
-   Array<JsonValue> queueConfigsJsonList(m_queueConfigs.size());
+   Aws::Utils::Array<JsonValue> queueConfigsJsonList(m_queueConfigs.size());
    for(unsigned queueConfigsIndex = 0; queueConfigsIndex < queueConfigsJsonList.GetLength(); ++queueConfigsIndex)
    {
      queueConfigsJsonList[queueConfigsIndex].AsObject(m_queueConfigs[queueConfigsIndex].Jsonize());

@@ -98,7 +98,7 @@ S3CsvSource& S3CsvSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Paths"))
   {
-    Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
+    Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
     for(unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex)
     {
       m_paths.push_back(pathsJsonList[pathsIndex].AsString());
@@ -115,7 +115,7 @@ S3CsvSource& S3CsvSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Exclusions"))
   {
-    Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
+    Aws::Utils::Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
     for(unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex)
     {
       m_exclusions.push_back(exclusionsJsonList[exclusionsIndex].AsString());
@@ -223,7 +223,7 @@ S3CsvSource& S3CsvSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OutputSchemas"))
   {
-    Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
+    Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
     for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
     {
       m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
@@ -246,7 +246,7 @@ JsonValue S3CsvSource::Jsonize() const
 
   if(m_pathsHasBeenSet)
   {
-   Array<JsonValue> pathsJsonList(m_paths.size());
+   Aws::Utils::Array<JsonValue> pathsJsonList(m_paths.size());
    for(unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex)
    {
      pathsJsonList[pathsIndex].AsString(m_paths[pathsIndex]);
@@ -262,7 +262,7 @@ JsonValue S3CsvSource::Jsonize() const
 
   if(m_exclusionsHasBeenSet)
   {
-   Array<JsonValue> exclusionsJsonList(m_exclusions.size());
+   Aws::Utils::Array<JsonValue> exclusionsJsonList(m_exclusions.size());
    for(unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex)
    {
      exclusionsJsonList[exclusionsIndex].AsString(m_exclusions[exclusionsIndex]);
@@ -355,7 +355,7 @@ JsonValue S3CsvSource::Jsonize() const
 
   if(m_outputSchemasHasBeenSet)
   {
-   Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
    {
      outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());

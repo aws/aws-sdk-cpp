@@ -30,7 +30,7 @@ ListLFTagsResult& ListLFTagsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LFTags"))
   {
-    Array<JsonView> lFTagsJsonList = jsonValue.GetArray("LFTags");
+    Aws::Utils::Array<JsonView> lFTagsJsonList = jsonValue.GetArray("LFTags");
     for(unsigned lFTagsIndex = 0; lFTagsIndex < lFTagsJsonList.GetLength(); ++lFTagsIndex)
     {
       m_lFTags.push_back(lFTagsJsonList[lFTagsIndex].AsObject());

@@ -33,10 +33,10 @@ OnPremisesTagSet& OnPremisesTagSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("onPremisesTagSetList"))
   {
-    Array<JsonView> onPremisesTagSetListJsonList = jsonValue.GetArray("onPremisesTagSetList");
+    Aws::Utils::Array<JsonView> onPremisesTagSetListJsonList = jsonValue.GetArray("onPremisesTagSetList");
     for(unsigned onPremisesTagSetListIndex = 0; onPremisesTagSetListIndex < onPremisesTagSetListJsonList.GetLength(); ++onPremisesTagSetListIndex)
     {
-      Array<JsonView> tagFilterListJsonList = onPremisesTagSetListJsonList[onPremisesTagSetListIndex].AsArray();
+      Aws::Utils::Array<JsonView> tagFilterListJsonList = onPremisesTagSetListJsonList[onPremisesTagSetListIndex].AsArray();
       Aws::Vector<TagFilter> tagFilterListList;
       tagFilterListList.reserve((size_t)tagFilterListJsonList.GetLength());
       for(unsigned tagFilterListIndex = 0; tagFilterListIndex < tagFilterListJsonList.GetLength(); ++tagFilterListIndex)
@@ -57,10 +57,10 @@ JsonValue OnPremisesTagSet::Jsonize() const
 
   if(m_onPremisesTagSetListHasBeenSet)
   {
-   Array<JsonValue> onPremisesTagSetListJsonList(m_onPremisesTagSetList.size());
+   Aws::Utils::Array<JsonValue> onPremisesTagSetListJsonList(m_onPremisesTagSetList.size());
    for(unsigned onPremisesTagSetListIndex = 0; onPremisesTagSetListIndex < onPremisesTagSetListJsonList.GetLength(); ++onPremisesTagSetListIndex)
    {
-     Array<JsonValue> tagFilterListJsonList(m_onPremisesTagSetList[onPremisesTagSetListIndex].size());
+     Aws::Utils::Array<JsonValue> tagFilterListJsonList(m_onPremisesTagSetList[onPremisesTagSetListIndex].size());
      for(unsigned tagFilterListIndex = 0; tagFilterListIndex < tagFilterListJsonList.GetLength(); ++tagFilterListIndex)
      {
        tagFilterListJsonList[tagFilterListIndex].AsObject(m_onPremisesTagSetList[onPremisesTagSetListIndex][tagFilterListIndex].Jsonize());

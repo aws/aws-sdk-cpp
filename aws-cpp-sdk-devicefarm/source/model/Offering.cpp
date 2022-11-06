@@ -73,7 +73,7 @@ Offering& Offering::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("recurringCharges"))
   {
-    Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("recurringCharges");
+    Aws::Utils::Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("recurringCharges");
     for(unsigned recurringChargesIndex = 0; recurringChargesIndex < recurringChargesJsonList.GetLength(); ++recurringChargesIndex)
     {
       m_recurringCharges.push_back(recurringChargesJsonList[recurringChargesIndex].AsObject());
@@ -112,7 +112,7 @@ JsonValue Offering::Jsonize() const
 
   if(m_recurringChargesHasBeenSet)
   {
-   Array<JsonValue> recurringChargesJsonList(m_recurringCharges.size());
+   Aws::Utils::Array<JsonValue> recurringChargesJsonList(m_recurringCharges.size());
    for(unsigned recurringChargesIndex = 0; recurringChargesIndex < recurringChargesJsonList.GetLength(); ++recurringChargesIndex)
    {
      recurringChargesJsonList[recurringChargesIndex].AsObject(m_recurringCharges[recurringChargesIndex].Jsonize());

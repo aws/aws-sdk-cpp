@@ -62,7 +62,7 @@ ManagedJobTemplateSummary& ManagedJobTemplateSummary::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("environments"))
   {
-    Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");
+    Aws::Utils::Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");
     for(unsigned environmentsIndex = 0; environmentsIndex < environmentsJsonList.GetLength(); ++environmentsIndex)
     {
       m_environments.push_back(environmentsJsonList[environmentsIndex].AsString());
@@ -104,7 +104,7 @@ JsonValue ManagedJobTemplateSummary::Jsonize() const
 
   if(m_environmentsHasBeenSet)
   {
-   Array<JsonValue> environmentsJsonList(m_environments.size());
+   Aws::Utils::Array<JsonValue> environmentsJsonList(m_environments.size());
    for(unsigned environmentsIndex = 0; environmentsIndex < environmentsJsonList.GetLength(); ++environmentsIndex)
    {
      environmentsJsonList[environmentsIndex].AsString(m_environments[environmentsIndex]);

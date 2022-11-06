@@ -27,7 +27,7 @@ Aws::String DescribePhoneNumbersRequest::SerializePayload() const
 
   if(m_phoneNumberIdsHasBeenSet)
   {
-   Array<JsonValue> phoneNumberIdsJsonList(m_phoneNumberIds.size());
+   Aws::Utils::Array<JsonValue> phoneNumberIdsJsonList(m_phoneNumberIds.size());
    for(unsigned phoneNumberIdsIndex = 0; phoneNumberIdsIndex < phoneNumberIdsJsonList.GetLength(); ++phoneNumberIdsIndex)
    {
      phoneNumberIdsJsonList[phoneNumberIdsIndex].AsString(m_phoneNumberIds[phoneNumberIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribePhoneNumbersRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

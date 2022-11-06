@@ -44,7 +44,7 @@ Predicate& Predicate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Conditions"))
   {
-    Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
+    Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
     for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
     {
       m_conditions.push_back(conditionsJsonList[conditionsIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue Predicate::Jsonize() const
 
   if(m_conditionsHasBeenSet)
   {
-   Array<JsonValue> conditionsJsonList(m_conditions.size());
+   Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
    for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
    {
      conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());

@@ -30,7 +30,7 @@ ListAppComponentRecommendationsResult& ListAppComponentRecommendationsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("componentRecommendations"))
   {
-    Array<JsonView> componentRecommendationsJsonList = jsonValue.GetArray("componentRecommendations");
+    Aws::Utils::Array<JsonView> componentRecommendationsJsonList = jsonValue.GetArray("componentRecommendations");
     for(unsigned componentRecommendationsIndex = 0; componentRecommendationsIndex < componentRecommendationsJsonList.GetLength(); ++componentRecommendationsIndex)
     {
       m_componentRecommendations.push_back(componentRecommendationsJsonList[componentRecommendationsIndex].AsObject());

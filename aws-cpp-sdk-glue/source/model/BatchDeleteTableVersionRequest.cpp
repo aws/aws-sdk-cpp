@@ -44,7 +44,7 @@ Aws::String BatchDeleteTableVersionRequest::SerializePayload() const
 
   if(m_versionIdsHasBeenSet)
   {
-   Array<JsonValue> versionIdsJsonList(m_versionIds.size());
+   Aws::Utils::Array<JsonValue> versionIdsJsonList(m_versionIds.size());
    for(unsigned versionIdsIndex = 0; versionIdsIndex < versionIdsJsonList.GetLength(); ++versionIdsIndex)
    {
      versionIdsJsonList[versionIdsIndex].AsString(m_versionIds[versionIdsIndex]);

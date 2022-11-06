@@ -36,7 +36,7 @@ ListRequestedServiceQuotaChangeHistoryByQuotaResult& ListRequestedServiceQuotaCh
 
   if(jsonValue.ValueExists("RequestedQuotas"))
   {
-    Array<JsonView> requestedQuotasJsonList = jsonValue.GetArray("RequestedQuotas");
+    Aws::Utils::Array<JsonView> requestedQuotasJsonList = jsonValue.GetArray("RequestedQuotas");
     for(unsigned requestedQuotasIndex = 0; requestedQuotasIndex < requestedQuotasJsonList.GetLength(); ++requestedQuotasIndex)
     {
       m_requestedQuotas.push_back(requestedQuotasJsonList[requestedQuotasIndex].AsObject());

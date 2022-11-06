@@ -42,7 +42,7 @@ LambdaStepMetadata& LambdaStepMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OutputParameters"))
   {
-    Array<JsonView> outputParametersJsonList = jsonValue.GetArray("OutputParameters");
+    Aws::Utils::Array<JsonView> outputParametersJsonList = jsonValue.GetArray("OutputParameters");
     for(unsigned outputParametersIndex = 0; outputParametersIndex < outputParametersJsonList.GetLength(); ++outputParametersIndex)
     {
       m_outputParameters.push_back(outputParametersJsonList[outputParametersIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue LambdaStepMetadata::Jsonize() const
 
   if(m_outputParametersHasBeenSet)
   {
-   Array<JsonValue> outputParametersJsonList(m_outputParameters.size());
+   Aws::Utils::Array<JsonValue> outputParametersJsonList(m_outputParameters.size());
    for(unsigned outputParametersIndex = 0; outputParametersIndex < outputParametersJsonList.GetLength(); ++outputParametersIndex)
    {
      outputParametersJsonList[outputParametersIndex].AsObject(m_outputParameters[outputParametersIndex].Jsonize());

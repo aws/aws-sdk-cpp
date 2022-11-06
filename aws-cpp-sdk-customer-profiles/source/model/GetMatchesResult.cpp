@@ -50,7 +50,7 @@ GetMatchesResult& GetMatchesResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("Matches"))
   {
-    Array<JsonView> matchesJsonList = jsonValue.GetArray("Matches");
+    Aws::Utils::Array<JsonView> matchesJsonList = jsonValue.GetArray("Matches");
     for(unsigned matchesIndex = 0; matchesIndex < matchesJsonList.GetLength(); ++matchesIndex)
     {
       m_matches.push_back(matchesJsonList[matchesIndex].AsObject());

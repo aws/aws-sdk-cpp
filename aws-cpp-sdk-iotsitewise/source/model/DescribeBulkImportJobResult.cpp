@@ -56,7 +56,7 @@ DescribeBulkImportJobResult& DescribeBulkImportJobResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("files"))
   {
-    Array<JsonView> filesJsonList = jsonValue.GetArray("files");
+    Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
     for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
     {
       m_files.push_back(filesJsonList[filesIndex].AsObject());

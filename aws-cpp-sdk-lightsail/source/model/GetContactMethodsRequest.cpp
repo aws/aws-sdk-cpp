@@ -23,7 +23,7 @@ Aws::String GetContactMethodsRequest::SerializePayload() const
 
   if(m_protocolsHasBeenSet)
   {
-   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
    {
      protocolsJsonList[protocolsIndex].AsString(ContactProtocolMapper::GetNameForContactProtocol(m_protocols[protocolsIndex]));

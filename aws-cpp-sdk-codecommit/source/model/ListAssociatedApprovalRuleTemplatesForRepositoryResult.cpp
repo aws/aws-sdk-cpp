@@ -30,7 +30,7 @@ ListAssociatedApprovalRuleTemplatesForRepositoryResult& ListAssociatedApprovalRu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("approvalRuleTemplateNames"))
   {
-    Array<JsonView> approvalRuleTemplateNamesJsonList = jsonValue.GetArray("approvalRuleTemplateNames");
+    Aws::Utils::Array<JsonView> approvalRuleTemplateNamesJsonList = jsonValue.GetArray("approvalRuleTemplateNames");
     for(unsigned approvalRuleTemplateNamesIndex = 0; approvalRuleTemplateNamesIndex < approvalRuleTemplateNamesJsonList.GetLength(); ++approvalRuleTemplateNamesIndex)
     {
       m_approvalRuleTemplateNames.push_back(approvalRuleTemplateNamesJsonList[approvalRuleTemplateNamesIndex].AsString());

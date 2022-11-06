@@ -33,7 +33,7 @@ BadRequestDetails& BadRequestDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InvalidConfiguration"))
   {
-    Array<JsonView> invalidConfigurationJsonList = jsonValue.GetArray("InvalidConfiguration");
+    Aws::Utils::Array<JsonView> invalidConfigurationJsonList = jsonValue.GetArray("InvalidConfiguration");
     for(unsigned invalidConfigurationIndex = 0; invalidConfigurationIndex < invalidConfigurationJsonList.GetLength(); ++invalidConfigurationIndex)
     {
       m_invalidConfiguration.push_back(invalidConfigurationJsonList[invalidConfigurationIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue BadRequestDetails::Jsonize() const
 
   if(m_invalidConfigurationHasBeenSet)
   {
-   Array<JsonValue> invalidConfigurationJsonList(m_invalidConfiguration.size());
+   Aws::Utils::Array<JsonValue> invalidConfigurationJsonList(m_invalidConfiguration.size());
    for(unsigned invalidConfigurationIndex = 0; invalidConfigurationIndex < invalidConfigurationJsonList.GetLength(); ++invalidConfigurationIndex)
    {
      invalidConfigurationJsonList[invalidConfigurationIndex].AsObject(m_invalidConfiguration[invalidConfigurationIndex].Jsonize());

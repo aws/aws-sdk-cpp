@@ -114,7 +114,7 @@ ScalingInstruction& ScalingInstruction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetTrackingConfigurations"))
   {
-    Array<JsonView> targetTrackingConfigurationsJsonList = jsonValue.GetArray("TargetTrackingConfigurations");
+    Aws::Utils::Array<JsonView> targetTrackingConfigurationsJsonList = jsonValue.GetArray("TargetTrackingConfigurations");
     for(unsigned targetTrackingConfigurationsIndex = 0; targetTrackingConfigurationsIndex < targetTrackingConfigurationsJsonList.GetLength(); ++targetTrackingConfigurationsIndex)
     {
       m_targetTrackingConfigurations.push_back(targetTrackingConfigurationsJsonList[targetTrackingConfigurationsIndex].AsObject());
@@ -215,7 +215,7 @@ JsonValue ScalingInstruction::Jsonize() const
 
   if(m_targetTrackingConfigurationsHasBeenSet)
   {
-   Array<JsonValue> targetTrackingConfigurationsJsonList(m_targetTrackingConfigurations.size());
+   Aws::Utils::Array<JsonValue> targetTrackingConfigurationsJsonList(m_targetTrackingConfigurations.size());
    for(unsigned targetTrackingConfigurationsIndex = 0; targetTrackingConfigurationsIndex < targetTrackingConfigurationsJsonList.GetLength(); ++targetTrackingConfigurationsIndex)
    {
      targetTrackingConfigurationsJsonList[targetTrackingConfigurationsIndex].AsObject(m_targetTrackingConfigurations[targetTrackingConfigurationsIndex].Jsonize());

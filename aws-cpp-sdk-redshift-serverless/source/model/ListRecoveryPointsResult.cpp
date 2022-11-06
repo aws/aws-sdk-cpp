@@ -36,7 +36,7 @@ ListRecoveryPointsResult& ListRecoveryPointsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("recoveryPoints"))
   {
-    Array<JsonView> recoveryPointsJsonList = jsonValue.GetArray("recoveryPoints");
+    Aws::Utils::Array<JsonView> recoveryPointsJsonList = jsonValue.GetArray("recoveryPoints");
     for(unsigned recoveryPointsIndex = 0; recoveryPointsIndex < recoveryPointsJsonList.GetLength(); ++recoveryPointsIndex)
     {
       m_recoveryPoints.push_back(recoveryPointsJsonList[recoveryPointsIndex].AsObject());

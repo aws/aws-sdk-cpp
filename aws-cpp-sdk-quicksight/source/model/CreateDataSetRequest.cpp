@@ -76,7 +76,7 @@ Aws::String CreateDataSetRequest::SerializePayload() const
 
   if(m_columnGroupsHasBeenSet)
   {
-   Array<JsonValue> columnGroupsJsonList(m_columnGroups.size());
+   Aws::Utils::Array<JsonValue> columnGroupsJsonList(m_columnGroups.size());
    for(unsigned columnGroupsIndex = 0; columnGroupsIndex < columnGroupsJsonList.GetLength(); ++columnGroupsIndex)
    {
      columnGroupsJsonList[columnGroupsIndex].AsObject(m_columnGroups[columnGroupsIndex].Jsonize());
@@ -98,7 +98,7 @@ Aws::String CreateDataSetRequest::SerializePayload() const
 
   if(m_permissionsHasBeenSet)
   {
-   Array<JsonValue> permissionsJsonList(m_permissions.size());
+   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
    {
      permissionsJsonList[permissionsIndex].AsObject(m_permissions[permissionsIndex].Jsonize());
@@ -121,7 +121,7 @@ Aws::String CreateDataSetRequest::SerializePayload() const
 
   if(m_columnLevelPermissionRulesHasBeenSet)
   {
-   Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
+   Aws::Utils::Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
    for(unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength(); ++columnLevelPermissionRulesIndex)
    {
      columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject(m_columnLevelPermissionRules[columnLevelPermissionRulesIndex].Jsonize());
@@ -132,7 +132,7 @@ Aws::String CreateDataSetRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

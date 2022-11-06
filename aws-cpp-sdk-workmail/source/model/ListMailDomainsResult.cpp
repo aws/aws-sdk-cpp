@@ -30,7 +30,7 @@ ListMailDomainsResult& ListMailDomainsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MailDomains"))
   {
-    Array<JsonView> mailDomainsJsonList = jsonValue.GetArray("MailDomains");
+    Aws::Utils::Array<JsonView> mailDomainsJsonList = jsonValue.GetArray("MailDomains");
     for(unsigned mailDomainsIndex = 0; mailDomainsIndex < mailDomainsJsonList.GetLength(); ++mailDomainsIndex)
     {
       m_mailDomains.push_back(mailDomainsJsonList[mailDomainsIndex].AsObject());

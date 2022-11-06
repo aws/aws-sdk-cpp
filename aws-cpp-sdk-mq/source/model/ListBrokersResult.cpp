@@ -30,7 +30,7 @@ ListBrokersResult& ListBrokersResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("brokerSummaries"))
   {
-    Array<JsonView> brokerSummariesJsonList = jsonValue.GetArray("brokerSummaries");
+    Aws::Utils::Array<JsonView> brokerSummariesJsonList = jsonValue.GetArray("brokerSummaries");
     for(unsigned brokerSummariesIndex = 0; brokerSummariesIndex < brokerSummariesJsonList.GetLength(); ++brokerSummariesIndex)
     {
       m_brokerSummaries.push_back(brokerSummariesJsonList[brokerSummariesIndex].AsObject());

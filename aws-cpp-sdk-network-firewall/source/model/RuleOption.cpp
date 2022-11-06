@@ -42,7 +42,7 @@ RuleOption& RuleOption::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Settings"))
   {
-    Array<JsonView> settingsJsonList = jsonValue.GetArray("Settings");
+    Aws::Utils::Array<JsonView> settingsJsonList = jsonValue.GetArray("Settings");
     for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
     {
       m_settings.push_back(settingsJsonList[settingsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue RuleOption::Jsonize() const
 
   if(m_settingsHasBeenSet)
   {
-   Array<JsonValue> settingsJsonList(m_settings.size());
+   Aws::Utils::Array<JsonValue> settingsJsonList(m_settings.size());
    for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
    {
      settingsJsonList[settingsIndex].AsString(m_settings[settingsIndex]);

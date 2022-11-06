@@ -52,7 +52,7 @@ Aws::String UpdateEndpointRequest::SerializePayload() const
 
   if(m_eventBusesHasBeenSet)
   {
-   Array<JsonValue> eventBusesJsonList(m_eventBuses.size());
+   Aws::Utils::Array<JsonValue> eventBusesJsonList(m_eventBuses.size());
    for(unsigned eventBusesIndex = 0; eventBusesIndex < eventBusesJsonList.GetLength(); ++eventBusesIndex)
    {
      eventBusesJsonList[eventBusesIndex].AsObject(m_eventBuses[eventBusesIndex].Jsonize());

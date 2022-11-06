@@ -30,7 +30,7 @@ DescribeScalableTargetsResult& DescribeScalableTargetsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScalableTargets"))
   {
-    Array<JsonView> scalableTargetsJsonList = jsonValue.GetArray("ScalableTargets");
+    Aws::Utils::Array<JsonView> scalableTargetsJsonList = jsonValue.GetArray("ScalableTargets");
     for(unsigned scalableTargetsIndex = 0; scalableTargetsIndex < scalableTargetsJsonList.GetLength(); ++scalableTargetsIndex)
     {
       m_scalableTargets.push_back(scalableTargetsJsonList[scalableTargetsIndex].AsObject());

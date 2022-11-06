@@ -31,7 +31,7 @@ Aws::String BatchAssociateAssessmentReportEvidenceRequest::SerializePayload() co
 
   if(m_evidenceIdsHasBeenSet)
   {
-   Array<JsonValue> evidenceIdsJsonList(m_evidenceIds.size());
+   Aws::Utils::Array<JsonValue> evidenceIdsJsonList(m_evidenceIds.size());
    for(unsigned evidenceIdsIndex = 0; evidenceIdsIndex < evidenceIdsJsonList.GetLength(); ++evidenceIdsIndex)
    {
      evidenceIdsJsonList[evidenceIdsIndex].AsString(m_evidenceIds[evidenceIdsIndex]);

@@ -30,7 +30,7 @@ ListModelManifestNodesResult& ListModelManifestNodesResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("nodes"))
   {
-    Array<JsonView> nodesJsonList = jsonValue.GetArray("nodes");
+    Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("nodes");
     for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
     {
       m_nodes.push_back(nodesJsonList[nodesIndex].AsObject());

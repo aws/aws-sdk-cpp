@@ -25,7 +25,7 @@ Aws::String DescribeRulesPackagesRequest::SerializePayload() const
 
   if(m_rulesPackageArnsHasBeenSet)
   {
-   Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
+   Aws::Utils::Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
    for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
    {
      rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString(m_rulesPackageArns[rulesPackageArnsIndex]);

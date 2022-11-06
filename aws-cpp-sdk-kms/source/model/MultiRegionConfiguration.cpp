@@ -53,7 +53,7 @@ MultiRegionConfiguration& MultiRegionConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ReplicaKeys"))
   {
-    Array<JsonView> replicaKeysJsonList = jsonValue.GetArray("ReplicaKeys");
+    Aws::Utils::Array<JsonView> replicaKeysJsonList = jsonValue.GetArray("ReplicaKeys");
     for(unsigned replicaKeysIndex = 0; replicaKeysIndex < replicaKeysJsonList.GetLength(); ++replicaKeysIndex)
     {
       m_replicaKeys.push_back(replicaKeysJsonList[replicaKeysIndex].AsObject());
@@ -81,7 +81,7 @@ JsonValue MultiRegionConfiguration::Jsonize() const
 
   if(m_replicaKeysHasBeenSet)
   {
-   Array<JsonValue> replicaKeysJsonList(m_replicaKeys.size());
+   Aws::Utils::Array<JsonValue> replicaKeysJsonList(m_replicaKeys.size());
    for(unsigned replicaKeysIndex = 0; replicaKeysIndex < replicaKeysJsonList.GetLength(); ++replicaKeysIndex)
    {
      replicaKeysJsonList[replicaKeysIndex].AsObject(m_replicaKeys[replicaKeysIndex].Jsonize());

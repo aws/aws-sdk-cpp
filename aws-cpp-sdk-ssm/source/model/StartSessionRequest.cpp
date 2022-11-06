@@ -47,7 +47,7 @@ Aws::String StartSessionRequest::SerializePayload() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> sessionManagerParameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> sessionManagerParameterValueListJsonList(parametersItem.second.size());
      for(unsigned sessionManagerParameterValueListIndex = 0; sessionManagerParameterValueListIndex < sessionManagerParameterValueListJsonList.GetLength(); ++sessionManagerParameterValueListIndex)
      {
        sessionManagerParameterValueListJsonList[sessionManagerParameterValueListIndex].AsString(parametersItem.second[sessionManagerParameterValueListIndex]);

@@ -37,7 +37,7 @@ ErrorRootCause& ErrorRootCause::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Services"))
   {
-    Array<JsonView> servicesJsonList = jsonValue.GetArray("Services");
+    Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("Services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsObject());
@@ -61,7 +61,7 @@ JsonValue ErrorRootCause::Jsonize() const
 
   if(m_servicesHasBeenSet)
   {
-   Array<JsonValue> servicesJsonList(m_services.size());
+   Aws::Utils::Array<JsonValue> servicesJsonList(m_services.size());
    for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
    {
      servicesJsonList[servicesIndex].AsObject(m_services[servicesIndex].Jsonize());

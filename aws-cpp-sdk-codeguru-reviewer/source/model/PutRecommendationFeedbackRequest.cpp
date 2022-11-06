@@ -37,7 +37,7 @@ Aws::String PutRecommendationFeedbackRequest::SerializePayload() const
 
   if(m_reactionsHasBeenSet)
   {
-   Array<JsonValue> reactionsJsonList(m_reactions.size());
+   Aws::Utils::Array<JsonValue> reactionsJsonList(m_reactions.size());
    for(unsigned reactionsIndex = 0; reactionsIndex < reactionsJsonList.GetLength(); ++reactionsIndex)
    {
      reactionsJsonList[reactionsIndex].AsString(ReactionMapper::GetNameForReaction(m_reactions[reactionsIndex]));

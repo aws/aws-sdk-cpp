@@ -80,7 +80,7 @@ ProtocolsListData& ProtocolsListData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProtocolsList"))
   {
-    Array<JsonView> protocolsListJsonList = jsonValue.GetArray("ProtocolsList");
+    Aws::Utils::Array<JsonView> protocolsListJsonList = jsonValue.GetArray("ProtocolsList");
     for(unsigned protocolsListIndex = 0; protocolsListIndex < protocolsListJsonList.GetLength(); ++protocolsListIndex)
     {
       m_protocolsList.push_back(protocolsListJsonList[protocolsListIndex].AsString());
@@ -93,7 +93,7 @@ ProtocolsListData& ProtocolsListData::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> previousProtocolsListJsonMap = jsonValue.GetObject("PreviousProtocolsList").GetAllObjects();
     for(auto& previousProtocolsListItem : previousProtocolsListJsonMap)
     {
-      Array<JsonView> protocolsListJsonList = previousProtocolsListItem.second.AsArray();
+      Aws::Utils::Array<JsonView> protocolsListJsonList = previousProtocolsListItem.second.AsArray();
       Aws::Vector<Aws::String> protocolsListList;
       protocolsListList.reserve((size_t)protocolsListJsonList.GetLength());
       for(unsigned protocolsListIndex = 0; protocolsListIndex < protocolsListJsonList.GetLength(); ++protocolsListIndex)
@@ -142,7 +142,7 @@ JsonValue ProtocolsListData::Jsonize() const
 
   if(m_protocolsListHasBeenSet)
   {
-   Array<JsonValue> protocolsListJsonList(m_protocolsList.size());
+   Aws::Utils::Array<JsonValue> protocolsListJsonList(m_protocolsList.size());
    for(unsigned protocolsListIndex = 0; protocolsListIndex < protocolsListJsonList.GetLength(); ++protocolsListIndex)
    {
      protocolsListJsonList[protocolsListIndex].AsString(m_protocolsList[protocolsListIndex]);
@@ -156,7 +156,7 @@ JsonValue ProtocolsListData::Jsonize() const
    JsonValue previousProtocolsListJsonMap;
    for(auto& previousProtocolsListItem : m_previousProtocolsList)
    {
-     Array<JsonValue> protocolsListJsonList(previousProtocolsListItem.second.size());
+     Aws::Utils::Array<JsonValue> protocolsListJsonList(previousProtocolsListItem.second.size());
      for(unsigned protocolsListIndex = 0; protocolsListIndex < protocolsListJsonList.GetLength(); ++protocolsListIndex)
      {
        protocolsListJsonList[protocolsListIndex].AsString(previousProtocolsListItem.second[protocolsListIndex]);

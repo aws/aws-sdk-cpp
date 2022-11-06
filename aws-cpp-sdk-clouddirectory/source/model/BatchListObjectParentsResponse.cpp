@@ -35,7 +35,7 @@ BatchListObjectParentsResponse& BatchListObjectParentsResponse::operator =(JsonV
 {
   if(jsonValue.ValueExists("ParentLinks"))
   {
-    Array<JsonView> parentLinksJsonList = jsonValue.GetArray("ParentLinks");
+    Aws::Utils::Array<JsonView> parentLinksJsonList = jsonValue.GetArray("ParentLinks");
     for(unsigned parentLinksIndex = 0; parentLinksIndex < parentLinksJsonList.GetLength(); ++parentLinksIndex)
     {
       m_parentLinks.push_back(parentLinksJsonList[parentLinksIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue BatchListObjectParentsResponse::Jsonize() const
 
   if(m_parentLinksHasBeenSet)
   {
-   Array<JsonValue> parentLinksJsonList(m_parentLinks.size());
+   Aws::Utils::Array<JsonValue> parentLinksJsonList(m_parentLinks.size());
    for(unsigned parentLinksIndex = 0; parentLinksIndex < parentLinksJsonList.GetLength(); ++parentLinksIndex)
    {
      parentLinksJsonList[parentLinksIndex].AsObject(m_parentLinks[parentLinksIndex].Jsonize());

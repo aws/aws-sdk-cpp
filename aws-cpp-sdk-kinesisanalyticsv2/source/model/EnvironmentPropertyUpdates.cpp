@@ -33,7 +33,7 @@ EnvironmentPropertyUpdates& EnvironmentPropertyUpdates::operator =(JsonView json
 {
   if(jsonValue.ValueExists("PropertyGroups"))
   {
-    Array<JsonView> propertyGroupsJsonList = jsonValue.GetArray("PropertyGroups");
+    Aws::Utils::Array<JsonView> propertyGroupsJsonList = jsonValue.GetArray("PropertyGroups");
     for(unsigned propertyGroupsIndex = 0; propertyGroupsIndex < propertyGroupsJsonList.GetLength(); ++propertyGroupsIndex)
     {
       m_propertyGroups.push_back(propertyGroupsJsonList[propertyGroupsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue EnvironmentPropertyUpdates::Jsonize() const
 
   if(m_propertyGroupsHasBeenSet)
   {
-   Array<JsonValue> propertyGroupsJsonList(m_propertyGroups.size());
+   Aws::Utils::Array<JsonValue> propertyGroupsJsonList(m_propertyGroups.size());
    for(unsigned propertyGroupsIndex = 0; propertyGroupsIndex < propertyGroupsJsonList.GetLength(); ++propertyGroupsIndex)
    {
      propertyGroupsJsonList[propertyGroupsIndex].AsObject(m_propertyGroups[propertyGroupsIndex].Jsonize());

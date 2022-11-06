@@ -33,7 +33,7 @@ FilterConfiguration& FilterConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AllowedLocations"))
   {
-    Array<JsonView> allowedLocationsJsonList = jsonValue.GetArray("AllowedLocations");
+    Aws::Utils::Array<JsonView> allowedLocationsJsonList = jsonValue.GetArray("AllowedLocations");
     for(unsigned allowedLocationsIndex = 0; allowedLocationsIndex < allowedLocationsJsonList.GetLength(); ++allowedLocationsIndex)
     {
       m_allowedLocations.push_back(allowedLocationsJsonList[allowedLocationsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue FilterConfiguration::Jsonize() const
 
   if(m_allowedLocationsHasBeenSet)
   {
-   Array<JsonValue> allowedLocationsJsonList(m_allowedLocations.size());
+   Aws::Utils::Array<JsonValue> allowedLocationsJsonList(m_allowedLocations.size());
    for(unsigned allowedLocationsIndex = 0; allowedLocationsIndex < allowedLocationsJsonList.GetLength(); ++allowedLocationsIndex)
    {
      allowedLocationsJsonList[allowedLocationsIndex].AsString(m_allowedLocations[allowedLocationsIndex]);

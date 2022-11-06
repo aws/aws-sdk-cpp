@@ -32,7 +32,7 @@ DescribeProcessingJobResult& DescribeProcessingJobResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProcessingInputs"))
   {
-    Array<JsonView> processingInputsJsonList = jsonValue.GetArray("ProcessingInputs");
+    Aws::Utils::Array<JsonView> processingInputsJsonList = jsonValue.GetArray("ProcessingInputs");
     for(unsigned processingInputsIndex = 0; processingInputsIndex < processingInputsJsonList.GetLength(); ++processingInputsIndex)
     {
       m_processingInputs.push_back(processingInputsJsonList[processingInputsIndex].AsObject());

@@ -30,7 +30,7 @@ GetCustomerGatewayAssociationsResult& GetCustomerGatewayAssociationsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CustomerGatewayAssociations"))
   {
-    Array<JsonView> customerGatewayAssociationsJsonList = jsonValue.GetArray("CustomerGatewayAssociations");
+    Aws::Utils::Array<JsonView> customerGatewayAssociationsJsonList = jsonValue.GetArray("CustomerGatewayAssociations");
     for(unsigned customerGatewayAssociationsIndex = 0; customerGatewayAssociationsIndex < customerGatewayAssociationsJsonList.GetLength(); ++customerGatewayAssociationsIndex)
     {
       m_customerGatewayAssociations.push_back(customerGatewayAssociationsJsonList[customerGatewayAssociationsIndex].AsObject());

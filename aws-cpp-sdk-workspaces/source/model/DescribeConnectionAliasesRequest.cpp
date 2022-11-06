@@ -27,7 +27,7 @@ Aws::String DescribeConnectionAliasesRequest::SerializePayload() const
 
   if(m_aliasIdsHasBeenSet)
   {
-   Array<JsonValue> aliasIdsJsonList(m_aliasIds.size());
+   Aws::Utils::Array<JsonValue> aliasIdsJsonList(m_aliasIds.size());
    for(unsigned aliasIdsIndex = 0; aliasIdsIndex < aliasIdsJsonList.GetLength(); ++aliasIdsIndex)
    {
      aliasIdsJsonList[aliasIdsIndex].AsString(m_aliasIds[aliasIdsIndex]);

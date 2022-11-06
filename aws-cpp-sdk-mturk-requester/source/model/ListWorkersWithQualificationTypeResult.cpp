@@ -44,7 +44,7 @@ ListWorkersWithQualificationTypeResult& ListWorkersWithQualificationTypeResult::
 
   if(jsonValue.ValueExists("Qualifications"))
   {
-    Array<JsonView> qualificationsJsonList = jsonValue.GetArray("Qualifications");
+    Aws::Utils::Array<JsonView> qualificationsJsonList = jsonValue.GetArray("Qualifications");
     for(unsigned qualificationsIndex = 0; qualificationsIndex < qualificationsJsonList.GetLength(); ++qualificationsIndex)
     {
       m_qualifications.push_back(qualificationsJsonList[qualificationsIndex].AsObject());

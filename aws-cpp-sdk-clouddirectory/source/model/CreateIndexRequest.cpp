@@ -29,7 +29,7 @@ Aws::String CreateIndexRequest::SerializePayload() const
 
   if(m_orderedIndexedAttributeListHasBeenSet)
   {
-   Array<JsonValue> orderedIndexedAttributeListJsonList(m_orderedIndexedAttributeList.size());
+   Aws::Utils::Array<JsonValue> orderedIndexedAttributeListJsonList(m_orderedIndexedAttributeList.size());
    for(unsigned orderedIndexedAttributeListIndex = 0; orderedIndexedAttributeListIndex < orderedIndexedAttributeListJsonList.GetLength(); ++orderedIndexedAttributeListIndex)
    {
      orderedIndexedAttributeListJsonList[orderedIndexedAttributeListIndex].AsObject(m_orderedIndexedAttributeList[orderedIndexedAttributeListIndex].Jsonize());

@@ -44,10 +44,10 @@ Aws::String CreateMissionProfileRequest::SerializePayload() const
 
   if(m_dataflowEdgesHasBeenSet)
   {
-   Array<JsonValue> dataflowEdgesJsonList(m_dataflowEdges.size());
+   Aws::Utils::Array<JsonValue> dataflowEdgesJsonList(m_dataflowEdges.size());
    for(unsigned dataflowEdgesIndex = 0; dataflowEdgesIndex < dataflowEdgesJsonList.GetLength(); ++dataflowEdgesIndex)
    {
-     Array<JsonValue> dataflowEdgeJsonList(m_dataflowEdges[dataflowEdgesIndex].size());
+     Aws::Utils::Array<JsonValue> dataflowEdgeJsonList(m_dataflowEdges[dataflowEdgesIndex].size());
      for(unsigned dataflowEdgeIndex = 0; dataflowEdgeIndex < dataflowEdgeJsonList.GetLength(); ++dataflowEdgeIndex)
      {
        dataflowEdgeJsonList[dataflowEdgeIndex].AsString(m_dataflowEdges[dataflowEdgesIndex][dataflowEdgeIndex]);

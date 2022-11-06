@@ -36,7 +36,7 @@ DescribeVTLDevicesResult& DescribeVTLDevicesResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("VTLDevices"))
   {
-    Array<JsonView> vTLDevicesJsonList = jsonValue.GetArray("VTLDevices");
+    Aws::Utils::Array<JsonView> vTLDevicesJsonList = jsonValue.GetArray("VTLDevices");
     for(unsigned vTLDevicesIndex = 0; vTLDevicesIndex < vTLDevicesJsonList.GetLength(); ++vTLDevicesIndex)
     {
       m_vTLDevices.push_back(vTLDevicesJsonList[vTLDevicesIndex].AsObject());

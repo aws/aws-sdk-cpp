@@ -38,7 +38,7 @@ Aws::String CreateRobotApplicationVersionRequest::SerializePayload() const
 
   if(m_s3EtagsHasBeenSet)
   {
-   Array<JsonValue> s3EtagsJsonList(m_s3Etags.size());
+   Aws::Utils::Array<JsonValue> s3EtagsJsonList(m_s3Etags.size());
    for(unsigned s3EtagsIndex = 0; s3EtagsIndex < s3EtagsJsonList.GetLength(); ++s3EtagsIndex)
    {
      s3EtagsJsonList[s3EtagsIndex].AsString(m_s3Etags[s3EtagsIndex]);

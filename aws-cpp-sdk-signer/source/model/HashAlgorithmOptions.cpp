@@ -37,7 +37,7 @@ HashAlgorithmOptions& HashAlgorithmOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allowedValues"))
   {
-    Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
+    Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
     for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
     {
       m_allowedValues.push_back(HashAlgorithmMapper::GetHashAlgorithmForName(allowedValuesJsonList[allowedValuesIndex].AsString()));
@@ -61,7 +61,7 @@ JsonValue HashAlgorithmOptions::Jsonize() const
 
   if(m_allowedValuesHasBeenSet)
   {
-   Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
+   Aws::Utils::Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
    for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
    {
      allowedValuesJsonList[allowedValuesIndex].AsString(HashAlgorithmMapper::GetNameForHashAlgorithm(m_allowedValues[allowedValuesIndex]));

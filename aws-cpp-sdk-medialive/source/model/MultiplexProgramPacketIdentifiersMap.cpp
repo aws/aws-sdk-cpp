@@ -75,7 +75,7 @@ MultiplexProgramPacketIdentifiersMap& MultiplexProgramPacketIdentifiersMap::oper
 {
   if(jsonValue.ValueExists("audioPids"))
   {
-    Array<JsonView> audioPidsJsonList = jsonValue.GetArray("audioPids");
+    Aws::Utils::Array<JsonView> audioPidsJsonList = jsonValue.GetArray("audioPids");
     for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
     {
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
@@ -85,7 +85,7 @@ MultiplexProgramPacketIdentifiersMap& MultiplexProgramPacketIdentifiersMap::oper
 
   if(jsonValue.ValueExists("dvbSubPids"))
   {
-    Array<JsonView> dvbSubPidsJsonList = jsonValue.GetArray("dvbSubPids");
+    Aws::Utils::Array<JsonView> dvbSubPidsJsonList = jsonValue.GetArray("dvbSubPids");
     for(unsigned dvbSubPidsIndex = 0; dvbSubPidsIndex < dvbSubPidsJsonList.GetLength(); ++dvbSubPidsIndex)
     {
       m_dvbSubPids.push_back(dvbSubPidsJsonList[dvbSubPidsIndex].AsInteger());
@@ -116,7 +116,7 @@ MultiplexProgramPacketIdentifiersMap& MultiplexProgramPacketIdentifiersMap::oper
 
   if(jsonValue.ValueExists("klvDataPids"))
   {
-    Array<JsonView> klvDataPidsJsonList = jsonValue.GetArray("klvDataPids");
+    Aws::Utils::Array<JsonView> klvDataPidsJsonList = jsonValue.GetArray("klvDataPids");
     for(unsigned klvDataPidsIndex = 0; klvDataPidsIndex < klvDataPidsJsonList.GetLength(); ++klvDataPidsIndex)
     {
       m_klvDataPids.push_back(klvDataPidsJsonList[klvDataPidsIndex].AsInteger());
@@ -147,7 +147,7 @@ MultiplexProgramPacketIdentifiersMap& MultiplexProgramPacketIdentifiersMap::oper
 
   if(jsonValue.ValueExists("scte27Pids"))
   {
-    Array<JsonView> scte27PidsJsonList = jsonValue.GetArray("scte27Pids");
+    Aws::Utils::Array<JsonView> scte27PidsJsonList = jsonValue.GetArray("scte27Pids");
     for(unsigned scte27PidsIndex = 0; scte27PidsIndex < scte27PidsJsonList.GetLength(); ++scte27PidsIndex)
     {
       m_scte27Pids.push_back(scte27PidsJsonList[scte27PidsIndex].AsInteger());
@@ -185,7 +185,7 @@ JsonValue MultiplexProgramPacketIdentifiersMap::Jsonize() const
 
   if(m_audioPidsHasBeenSet)
   {
-   Array<JsonValue> audioPidsJsonList(m_audioPids.size());
+   Aws::Utils::Array<JsonValue> audioPidsJsonList(m_audioPids.size());
    for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
    {
      audioPidsJsonList[audioPidsIndex].AsInteger(m_audioPids[audioPidsIndex]);
@@ -196,7 +196,7 @@ JsonValue MultiplexProgramPacketIdentifiersMap::Jsonize() const
 
   if(m_dvbSubPidsHasBeenSet)
   {
-   Array<JsonValue> dvbSubPidsJsonList(m_dvbSubPids.size());
+   Aws::Utils::Array<JsonValue> dvbSubPidsJsonList(m_dvbSubPids.size());
    for(unsigned dvbSubPidsIndex = 0; dvbSubPidsIndex < dvbSubPidsJsonList.GetLength(); ++dvbSubPidsIndex)
    {
      dvbSubPidsJsonList[dvbSubPidsIndex].AsInteger(m_dvbSubPids[dvbSubPidsIndex]);
@@ -225,7 +225,7 @@ JsonValue MultiplexProgramPacketIdentifiersMap::Jsonize() const
 
   if(m_klvDataPidsHasBeenSet)
   {
-   Array<JsonValue> klvDataPidsJsonList(m_klvDataPids.size());
+   Aws::Utils::Array<JsonValue> klvDataPidsJsonList(m_klvDataPids.size());
    for(unsigned klvDataPidsIndex = 0; klvDataPidsIndex < klvDataPidsJsonList.GetLength(); ++klvDataPidsIndex)
    {
      klvDataPidsJsonList[klvDataPidsIndex].AsInteger(m_klvDataPids[klvDataPidsIndex]);
@@ -254,7 +254,7 @@ JsonValue MultiplexProgramPacketIdentifiersMap::Jsonize() const
 
   if(m_scte27PidsHasBeenSet)
   {
-   Array<JsonValue> scte27PidsJsonList(m_scte27Pids.size());
+   Aws::Utils::Array<JsonValue> scte27PidsJsonList(m_scte27Pids.size());
    for(unsigned scte27PidsIndex = 0; scte27PidsIndex < scte27PidsJsonList.GetLength(); ++scte27PidsIndex)
    {
      scte27PidsJsonList[scte27PidsIndex].AsInteger(m_scte27Pids[scte27PidsIndex]);

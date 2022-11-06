@@ -42,7 +42,7 @@ ListChannelBansResult& ListChannelBansResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("ChannelBans"))
   {
-    Array<JsonView> channelBansJsonList = jsonValue.GetArray("ChannelBans");
+    Aws::Utils::Array<JsonView> channelBansJsonList = jsonValue.GetArray("ChannelBans");
     for(unsigned channelBansIndex = 0; channelBansIndex < channelBansJsonList.GetLength(); ++channelBansIndex)
     {
       m_channelBans.push_back(channelBansJsonList[channelBansIndex].AsObject());

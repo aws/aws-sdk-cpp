@@ -37,7 +37,7 @@ CreateBackendAuthPasswordPolicyConfig& CreateBackendAuthPasswordPolicyConfig::op
 {
   if(jsonValue.ValueExists("additionalConstraints"))
   {
-    Array<JsonView> additionalConstraintsJsonList = jsonValue.GetArray("additionalConstraints");
+    Aws::Utils::Array<JsonView> additionalConstraintsJsonList = jsonValue.GetArray("additionalConstraints");
     for(unsigned additionalConstraintsIndex = 0; additionalConstraintsIndex < additionalConstraintsJsonList.GetLength(); ++additionalConstraintsIndex)
     {
       m_additionalConstraints.push_back(AdditionalConstraintsElementMapper::GetAdditionalConstraintsElementForName(additionalConstraintsJsonList[additionalConstraintsIndex].AsString()));
@@ -61,7 +61,7 @@ JsonValue CreateBackendAuthPasswordPolicyConfig::Jsonize() const
 
   if(m_additionalConstraintsHasBeenSet)
   {
-   Array<JsonValue> additionalConstraintsJsonList(m_additionalConstraints.size());
+   Aws::Utils::Array<JsonValue> additionalConstraintsJsonList(m_additionalConstraints.size());
    for(unsigned additionalConstraintsIndex = 0; additionalConstraintsIndex < additionalConstraintsJsonList.GetLength(); ++additionalConstraintsIndex)
    {
      additionalConstraintsJsonList[additionalConstraintsIndex].AsString(AdditionalConstraintsElementMapper::GetNameForAdditionalConstraintsElement(m_additionalConstraints[additionalConstraintsIndex]));

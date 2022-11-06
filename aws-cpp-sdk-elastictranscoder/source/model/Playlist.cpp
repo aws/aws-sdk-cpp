@@ -59,7 +59,7 @@ Playlist& Playlist::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OutputKeys"))
   {
-    Array<JsonView> outputKeysJsonList = jsonValue.GetArray("OutputKeys");
+    Aws::Utils::Array<JsonView> outputKeysJsonList = jsonValue.GetArray("OutputKeys");
     for(unsigned outputKeysIndex = 0; outputKeysIndex < outputKeysJsonList.GetLength(); ++outputKeysIndex)
     {
       m_outputKeys.push_back(outputKeysJsonList[outputKeysIndex].AsString());
@@ -116,7 +116,7 @@ JsonValue Playlist::Jsonize() const
 
   if(m_outputKeysHasBeenSet)
   {
-   Array<JsonValue> outputKeysJsonList(m_outputKeys.size());
+   Aws::Utils::Array<JsonValue> outputKeysJsonList(m_outputKeys.size());
    for(unsigned outputKeysIndex = 0; outputKeysIndex < outputKeysJsonList.GetLength(); ++outputKeysIndex)
    {
      outputKeysJsonList[outputKeysIndex].AsString(m_outputKeys[outputKeysIndex]);

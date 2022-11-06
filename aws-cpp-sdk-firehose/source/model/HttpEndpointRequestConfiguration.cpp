@@ -44,7 +44,7 @@ HttpEndpointRequestConfiguration& HttpEndpointRequestConfiguration::operator =(J
 
   if(jsonValue.ValueExists("CommonAttributes"))
   {
-    Array<JsonView> commonAttributesJsonList = jsonValue.GetArray("CommonAttributes");
+    Aws::Utils::Array<JsonView> commonAttributesJsonList = jsonValue.GetArray("CommonAttributes");
     for(unsigned commonAttributesIndex = 0; commonAttributesIndex < commonAttributesJsonList.GetLength(); ++commonAttributesIndex)
     {
       m_commonAttributes.push_back(commonAttributesJsonList[commonAttributesIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue HttpEndpointRequestConfiguration::Jsonize() const
 
   if(m_commonAttributesHasBeenSet)
   {
-   Array<JsonValue> commonAttributesJsonList(m_commonAttributes.size());
+   Aws::Utils::Array<JsonValue> commonAttributesJsonList(m_commonAttributes.size());
    for(unsigned commonAttributesIndex = 0; commonAttributesIndex < commonAttributesJsonList.GetLength(); ++commonAttributesIndex)
    {
      commonAttributesJsonList[commonAttributesIndex].AsObject(m_commonAttributes[commonAttributesIndex].Jsonize());

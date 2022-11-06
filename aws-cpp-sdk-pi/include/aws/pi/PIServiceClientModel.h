@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/pi/PIErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/pi/PIEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -55,6 +57,10 @@ namespace Aws
 
   namespace PI
   {
+    using PIClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PIEndpointProviderBase = Aws::PI::Endpoint::PIEndpointProviderBase;
+    using PIEndpointProvider = Aws::PI::Endpoint::PIEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in PIClient header */

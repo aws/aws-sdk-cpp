@@ -30,7 +30,7 @@ ListLabelingJobsForWorkteamResult& ListLabelingJobsForWorkteamResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LabelingJobSummaryList"))
   {
-    Array<JsonView> labelingJobSummaryListJsonList = jsonValue.GetArray("LabelingJobSummaryList");
+    Aws::Utils::Array<JsonView> labelingJobSummaryListJsonList = jsonValue.GetArray("LabelingJobSummaryList");
     for(unsigned labelingJobSummaryListIndex = 0; labelingJobSummaryListIndex < labelingJobSummaryListJsonList.GetLength(); ++labelingJobSummaryListIndex)
     {
       m_labelingJobSummaryList.push_back(labelingJobSummaryListJsonList[labelingJobSummaryListIndex].AsObject());

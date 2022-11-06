@@ -44,7 +44,7 @@ TimeSeries& TimeSeries::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DimensionList"))
   {
-    Array<JsonView> dimensionListJsonList = jsonValue.GetArray("DimensionList");
+    Aws::Utils::Array<JsonView> dimensionListJsonList = jsonValue.GetArray("DimensionList");
     for(unsigned dimensionListIndex = 0; dimensionListIndex < dimensionListJsonList.GetLength(); ++dimensionListIndex)
     {
       m_dimensionList.push_back(dimensionListJsonList[dimensionListIndex].AsObject());
@@ -54,7 +54,7 @@ TimeSeries& TimeSeries::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MetricValueList"))
   {
-    Array<JsonView> metricValueListJsonList = jsonValue.GetArray("MetricValueList");
+    Aws::Utils::Array<JsonView> metricValueListJsonList = jsonValue.GetArray("MetricValueList");
     for(unsigned metricValueListIndex = 0; metricValueListIndex < metricValueListJsonList.GetLength(); ++metricValueListIndex)
     {
       m_metricValueList.push_back(metricValueListJsonList[metricValueListIndex].AsDouble());
@@ -77,7 +77,7 @@ JsonValue TimeSeries::Jsonize() const
 
   if(m_dimensionListHasBeenSet)
   {
-   Array<JsonValue> dimensionListJsonList(m_dimensionList.size());
+   Aws::Utils::Array<JsonValue> dimensionListJsonList(m_dimensionList.size());
    for(unsigned dimensionListIndex = 0; dimensionListIndex < dimensionListJsonList.GetLength(); ++dimensionListIndex)
    {
      dimensionListJsonList[dimensionListIndex].AsObject(m_dimensionList[dimensionListIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue TimeSeries::Jsonize() const
 
   if(m_metricValueListHasBeenSet)
   {
-   Array<JsonValue> metricValueListJsonList(m_metricValueList.size());
+   Aws::Utils::Array<JsonValue> metricValueListJsonList(m_metricValueList.size());
    for(unsigned metricValueListIndex = 0; metricValueListIndex < metricValueListJsonList.GetLength(); ++metricValueListIndex)
    {
      metricValueListJsonList[metricValueListIndex].AsDouble(m_metricValueList[metricValueListIndex]);

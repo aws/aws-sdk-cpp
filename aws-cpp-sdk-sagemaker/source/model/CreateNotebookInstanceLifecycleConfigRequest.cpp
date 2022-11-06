@@ -31,7 +31,7 @@ Aws::String CreateNotebookInstanceLifecycleConfigRequest::SerializePayload() con
 
   if(m_onCreateHasBeenSet)
   {
-   Array<JsonValue> onCreateJsonList(m_onCreate.size());
+   Aws::Utils::Array<JsonValue> onCreateJsonList(m_onCreate.size());
    for(unsigned onCreateIndex = 0; onCreateIndex < onCreateJsonList.GetLength(); ++onCreateIndex)
    {
      onCreateJsonList[onCreateIndex].AsObject(m_onCreate[onCreateIndex].Jsonize());
@@ -42,7 +42,7 @@ Aws::String CreateNotebookInstanceLifecycleConfigRequest::SerializePayload() con
 
   if(m_onStartHasBeenSet)
   {
-   Array<JsonValue> onStartJsonList(m_onStart.size());
+   Aws::Utils::Array<JsonValue> onStartJsonList(m_onStart.size());
    for(unsigned onStartIndex = 0; onStartIndex < onStartJsonList.GetLength(); ++onStartIndex)
    {
      onStartJsonList[onStartIndex].AsObject(m_onStart[onStartIndex].Jsonize());

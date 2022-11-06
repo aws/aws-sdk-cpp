@@ -30,7 +30,7 @@ GetRelationalDatabasesResult& GetRelationalDatabasesResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("relationalDatabases"))
   {
-    Array<JsonView> relationalDatabasesJsonList = jsonValue.GetArray("relationalDatabases");
+    Aws::Utils::Array<JsonView> relationalDatabasesJsonList = jsonValue.GetArray("relationalDatabases");
     for(unsigned relationalDatabasesIndex = 0; relationalDatabasesIndex < relationalDatabasesJsonList.GetLength(); ++relationalDatabasesIndex)
     {
       m_relationalDatabases.push_back(relationalDatabasesJsonList[relationalDatabasesIndex].AsObject());

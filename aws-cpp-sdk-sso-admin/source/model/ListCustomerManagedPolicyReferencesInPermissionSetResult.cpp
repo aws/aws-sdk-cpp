@@ -30,7 +30,7 @@ ListCustomerManagedPolicyReferencesInPermissionSetResult& ListCustomerManagedPol
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CustomerManagedPolicyReferences"))
   {
-    Array<JsonView> customerManagedPolicyReferencesJsonList = jsonValue.GetArray("CustomerManagedPolicyReferences");
+    Aws::Utils::Array<JsonView> customerManagedPolicyReferencesJsonList = jsonValue.GetArray("CustomerManagedPolicyReferences");
     for(unsigned customerManagedPolicyReferencesIndex = 0; customerManagedPolicyReferencesIndex < customerManagedPolicyReferencesJsonList.GetLength(); ++customerManagedPolicyReferencesIndex)
     {
       m_customerManagedPolicyReferences.push_back(customerManagedPolicyReferencesJsonList[customerManagedPolicyReferencesIndex].AsObject());

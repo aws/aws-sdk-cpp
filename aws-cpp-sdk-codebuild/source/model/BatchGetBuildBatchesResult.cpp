@@ -30,7 +30,7 @@ BatchGetBuildBatchesResult& BatchGetBuildBatchesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("buildBatches"))
   {
-    Array<JsonView> buildBatchesJsonList = jsonValue.GetArray("buildBatches");
+    Aws::Utils::Array<JsonView> buildBatchesJsonList = jsonValue.GetArray("buildBatches");
     for(unsigned buildBatchesIndex = 0; buildBatchesIndex < buildBatchesJsonList.GetLength(); ++buildBatchesIndex)
     {
       m_buildBatches.push_back(buildBatchesJsonList[buildBatchesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetBuildBatchesResult& BatchGetBuildBatchesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("buildBatchesNotFound"))
   {
-    Array<JsonView> buildBatchesNotFoundJsonList = jsonValue.GetArray("buildBatchesNotFound");
+    Aws::Utils::Array<JsonView> buildBatchesNotFoundJsonList = jsonValue.GetArray("buildBatchesNotFound");
     for(unsigned buildBatchesNotFoundIndex = 0; buildBatchesNotFoundIndex < buildBatchesNotFoundJsonList.GetLength(); ++buildBatchesNotFoundIndex)
     {
       m_buildBatchesNotFound.push_back(buildBatchesNotFoundJsonList[buildBatchesNotFoundIndex].AsString());

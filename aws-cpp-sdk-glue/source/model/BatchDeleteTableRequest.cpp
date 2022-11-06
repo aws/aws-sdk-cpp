@@ -38,7 +38,7 @@ Aws::String BatchDeleteTableRequest::SerializePayload() const
 
   if(m_tablesToDeleteHasBeenSet)
   {
-   Array<JsonValue> tablesToDeleteJsonList(m_tablesToDelete.size());
+   Aws::Utils::Array<JsonValue> tablesToDeleteJsonList(m_tablesToDelete.size());
    for(unsigned tablesToDeleteIndex = 0; tablesToDeleteIndex < tablesToDeleteJsonList.GetLength(); ++tablesToDeleteIndex)
    {
      tablesToDeleteJsonList[tablesToDeleteIndex].AsString(m_tablesToDelete[tablesToDeleteIndex]);

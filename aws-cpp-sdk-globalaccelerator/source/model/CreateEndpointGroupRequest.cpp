@@ -51,7 +51,7 @@ Aws::String CreateEndpointGroupRequest::SerializePayload() const
 
   if(m_endpointConfigurationsHasBeenSet)
   {
-   Array<JsonValue> endpointConfigurationsJsonList(m_endpointConfigurations.size());
+   Aws::Utils::Array<JsonValue> endpointConfigurationsJsonList(m_endpointConfigurations.size());
    for(unsigned endpointConfigurationsIndex = 0; endpointConfigurationsIndex < endpointConfigurationsJsonList.GetLength(); ++endpointConfigurationsIndex)
    {
      endpointConfigurationsJsonList[endpointConfigurationsIndex].AsObject(m_endpointConfigurations[endpointConfigurationsIndex].Jsonize());
@@ -103,7 +103,7 @@ Aws::String CreateEndpointGroupRequest::SerializePayload() const
 
   if(m_portOverridesHasBeenSet)
   {
-   Array<JsonValue> portOverridesJsonList(m_portOverrides.size());
+   Aws::Utils::Array<JsonValue> portOverridesJsonList(m_portOverrides.size());
    for(unsigned portOverridesIndex = 0; portOverridesIndex < portOverridesJsonList.GetLength(); ++portOverridesIndex)
    {
      portOverridesJsonList[portOverridesIndex].AsObject(m_portOverrides[portOverridesIndex].Jsonize());

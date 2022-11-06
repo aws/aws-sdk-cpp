@@ -87,7 +87,7 @@ StreamSession& StreamSession::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("truncatedEvents"))
   {
-    Array<JsonView> truncatedEventsJsonList = jsonValue.GetArray("truncatedEvents");
+    Aws::Utils::Array<JsonView> truncatedEventsJsonList = jsonValue.GetArray("truncatedEvents");
     for(unsigned truncatedEventsIndex = 0; truncatedEventsIndex < truncatedEventsJsonList.GetLength(); ++truncatedEventsIndex)
     {
       m_truncatedEvents.push_back(truncatedEventsJsonList[truncatedEventsIndex].AsObject());
@@ -138,7 +138,7 @@ JsonValue StreamSession::Jsonize() const
 
   if(m_truncatedEventsHasBeenSet)
   {
-   Array<JsonValue> truncatedEventsJsonList(m_truncatedEvents.size());
+   Aws::Utils::Array<JsonValue> truncatedEventsJsonList(m_truncatedEvents.size());
    for(unsigned truncatedEventsIndex = 0; truncatedEventsIndex < truncatedEventsJsonList.GetLength(); ++truncatedEventsIndex)
    {
      truncatedEventsJsonList[truncatedEventsIndex].AsObject(m_truncatedEvents[truncatedEventsIndex].Jsonize());

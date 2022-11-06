@@ -75,7 +75,7 @@ SkillsStoreSkill& SkillsStoreSkill::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SampleUtterances"))
   {
-    Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("SampleUtterances");
+    Aws::Utils::Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("SampleUtterances");
     for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
     {
       m_sampleUtterances.push_back(sampleUtterancesJsonList[sampleUtterancesIndex].AsString());
@@ -130,7 +130,7 @@ JsonValue SkillsStoreSkill::Jsonize() const
 
   if(m_sampleUtterancesHasBeenSet)
   {
-   Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
+   Aws::Utils::Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
    for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
    {
      sampleUtterancesJsonList[sampleUtterancesIndex].AsString(m_sampleUtterances[sampleUtterancesIndex]);

@@ -48,7 +48,7 @@ InstanceHardware& InstanceHardware::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("disks"))
   {
-    Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
+    Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
     for(unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex)
     {
       m_disks.push_back(disksJsonList[disksIndex].AsObject());
@@ -78,7 +78,7 @@ JsonValue InstanceHardware::Jsonize() const
 
   if(m_disksHasBeenSet)
   {
-   Array<JsonValue> disksJsonList(m_disks.size());
+   Aws::Utils::Array<JsonValue> disksJsonList(m_disks.size());
    for(unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex)
    {
      disksJsonList[disksIndex].AsObject(m_disks[disksIndex].Jsonize());

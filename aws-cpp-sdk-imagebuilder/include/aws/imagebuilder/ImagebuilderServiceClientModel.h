@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/imagebuilder/ImagebuilderErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/imagebuilder/ImagebuilderEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -99,6 +101,10 @@ namespace Aws
 
   namespace imagebuilder
   {
+    using ImagebuilderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ImagebuilderEndpointProviderBase = Aws::imagebuilder::Endpoint::ImagebuilderEndpointProviderBase;
+    using ImagebuilderEndpointProvider = Aws::imagebuilder::Endpoint::ImagebuilderEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ImagebuilderClient header */

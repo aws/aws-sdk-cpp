@@ -33,7 +33,7 @@ GrpcRouteAction& GrpcRouteAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("weightedTargets"))
   {
-    Array<JsonView> weightedTargetsJsonList = jsonValue.GetArray("weightedTargets");
+    Aws::Utils::Array<JsonView> weightedTargetsJsonList = jsonValue.GetArray("weightedTargets");
     for(unsigned weightedTargetsIndex = 0; weightedTargetsIndex < weightedTargetsJsonList.GetLength(); ++weightedTargetsIndex)
     {
       m_weightedTargets.push_back(weightedTargetsJsonList[weightedTargetsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue GrpcRouteAction::Jsonize() const
 
   if(m_weightedTargetsHasBeenSet)
   {
-   Array<JsonValue> weightedTargetsJsonList(m_weightedTargets.size());
+   Aws::Utils::Array<JsonValue> weightedTargetsJsonList(m_weightedTargets.size());
    for(unsigned weightedTargetsIndex = 0; weightedTargetsIndex < weightedTargetsJsonList.GetLength(); ++weightedTargetsIndex)
    {
      weightedTargetsJsonList[weightedTargetsIndex].AsObject(m_weightedTargets[weightedTargetsIndex].Jsonize());

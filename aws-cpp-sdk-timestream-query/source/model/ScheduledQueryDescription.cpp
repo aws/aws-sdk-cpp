@@ -161,7 +161,7 @@ ScheduledQueryDescription& ScheduledQueryDescription::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("RecentlyFailedRuns"))
   {
-    Array<JsonView> recentlyFailedRunsJsonList = jsonValue.GetArray("RecentlyFailedRuns");
+    Aws::Utils::Array<JsonView> recentlyFailedRunsJsonList = jsonValue.GetArray("RecentlyFailedRuns");
     for(unsigned recentlyFailedRunsIndex = 0; recentlyFailedRunsIndex < recentlyFailedRunsJsonList.GetLength(); ++recentlyFailedRunsIndex)
     {
       m_recentlyFailedRuns.push_back(recentlyFailedRunsJsonList[recentlyFailedRunsIndex].AsObject());
@@ -258,7 +258,7 @@ JsonValue ScheduledQueryDescription::Jsonize() const
 
   if(m_recentlyFailedRunsHasBeenSet)
   {
-   Array<JsonValue> recentlyFailedRunsJsonList(m_recentlyFailedRuns.size());
+   Aws::Utils::Array<JsonValue> recentlyFailedRunsJsonList(m_recentlyFailedRuns.size());
    for(unsigned recentlyFailedRunsIndex = 0; recentlyFailedRunsIndex < recentlyFailedRunsJsonList.GetLength(); ++recentlyFailedRunsIndex)
    {
      recentlyFailedRunsJsonList[recentlyFailedRunsIndex].AsObject(m_recentlyFailedRuns[recentlyFailedRunsIndex].Jsonize());

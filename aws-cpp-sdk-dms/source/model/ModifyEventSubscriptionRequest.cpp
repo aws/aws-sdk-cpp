@@ -46,7 +46,7 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
 
   if(m_eventCategoriesHasBeenSet)
   {
-   Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
+   Aws::Utils::Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
    for(unsigned eventCategoriesIndex = 0; eventCategoriesIndex < eventCategoriesJsonList.GetLength(); ++eventCategoriesIndex)
    {
      eventCategoriesJsonList[eventCategoriesIndex].AsString(m_eventCategories[eventCategoriesIndex]);

@@ -30,7 +30,7 @@ DescribeFleetAdvisorCollectorsResult& DescribeFleetAdvisorCollectorsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Collectors"))
   {
-    Array<JsonView> collectorsJsonList = jsonValue.GetArray("Collectors");
+    Aws::Utils::Array<JsonView> collectorsJsonList = jsonValue.GetArray("Collectors");
     for(unsigned collectorsIndex = 0; collectorsIndex < collectorsJsonList.GetLength(); ++collectorsIndex)
     {
       m_collectors.push_back(collectorsJsonList[collectorsIndex].AsObject());

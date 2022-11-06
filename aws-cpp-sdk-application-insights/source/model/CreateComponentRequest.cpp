@@ -37,7 +37,7 @@ Aws::String CreateComponentRequest::SerializePayload() const
 
   if(m_resourceListHasBeenSet)
   {
-   Array<JsonValue> resourceListJsonList(m_resourceList.size());
+   Aws::Utils::Array<JsonValue> resourceListJsonList(m_resourceList.size());
    for(unsigned resourceListIndex = 0; resourceListIndex < resourceListJsonList.GetLength(); ++resourceListIndex)
    {
      resourceListJsonList[resourceListIndex].AsString(m_resourceList[resourceListIndex]);

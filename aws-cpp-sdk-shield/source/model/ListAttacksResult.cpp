@@ -30,7 +30,7 @@ ListAttacksResult& ListAttacksResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AttackSummaries"))
   {
-    Array<JsonView> attackSummariesJsonList = jsonValue.GetArray("AttackSummaries");
+    Aws::Utils::Array<JsonView> attackSummariesJsonList = jsonValue.GetArray("AttackSummaries");
     for(unsigned attackSummariesIndex = 0; attackSummariesIndex < attackSummariesJsonList.GetLength(); ++attackSummariesIndex)
     {
       m_attackSummaries.push_back(attackSummariesJsonList[attackSummariesIndex].AsObject());

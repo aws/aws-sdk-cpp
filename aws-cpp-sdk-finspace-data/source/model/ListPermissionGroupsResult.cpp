@@ -30,7 +30,7 @@ ListPermissionGroupsResult& ListPermissionGroupsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("permissionGroups"))
   {
-    Array<JsonView> permissionGroupsJsonList = jsonValue.GetArray("permissionGroups");
+    Aws::Utils::Array<JsonView> permissionGroupsJsonList = jsonValue.GetArray("permissionGroups");
     for(unsigned permissionGroupsIndex = 0; permissionGroupsIndex < permissionGroupsJsonList.GetLength(); ++permissionGroupsIndex)
     {
       m_permissionGroups.push_back(permissionGroupsJsonList[permissionGroupsIndex].AsObject());

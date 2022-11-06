@@ -24,7 +24,7 @@ Aws::String DescribeRetentionConfigurationsRequest::SerializePayload() const
 
   if(m_retentionConfigurationNamesHasBeenSet)
   {
-   Array<JsonValue> retentionConfigurationNamesJsonList(m_retentionConfigurationNames.size());
+   Aws::Utils::Array<JsonValue> retentionConfigurationNamesJsonList(m_retentionConfigurationNames.size());
    for(unsigned retentionConfigurationNamesIndex = 0; retentionConfigurationNamesIndex < retentionConfigurationNamesJsonList.GetLength(); ++retentionConfigurationNamesIndex)
    {
      retentionConfigurationNamesJsonList[retentionConfigurationNamesIndex].AsString(m_retentionConfigurationNames[retentionConfigurationNamesIndex]);

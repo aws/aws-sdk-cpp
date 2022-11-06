@@ -124,7 +124,7 @@ PackageVersionDescription& PackageVersionDescription::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("licenses"))
   {
-    Array<JsonView> licensesJsonList = jsonValue.GetArray("licenses");
+    Aws::Utils::Array<JsonView> licensesJsonList = jsonValue.GetArray("licenses");
     for(unsigned licensesIndex = 0; licensesIndex < licensesJsonList.GetLength(); ++licensesIndex)
     {
       m_licenses.push_back(licensesJsonList[licensesIndex].AsObject());
@@ -214,7 +214,7 @@ JsonValue PackageVersionDescription::Jsonize() const
 
   if(m_licensesHasBeenSet)
   {
-   Array<JsonValue> licensesJsonList(m_licenses.size());
+   Aws::Utils::Array<JsonValue> licensesJsonList(m_licenses.size());
    for(unsigned licensesIndex = 0; licensesIndex < licensesJsonList.GetLength(); ++licensesIndex)
    {
      licensesJsonList[licensesIndex].AsObject(m_licenses[licensesIndex].Jsonize());

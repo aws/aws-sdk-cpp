@@ -30,7 +30,7 @@ ListTapePoolsResult& ListTapePoolsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PoolInfos"))
   {
-    Array<JsonView> poolInfosJsonList = jsonValue.GetArray("PoolInfos");
+    Aws::Utils::Array<JsonView> poolInfosJsonList = jsonValue.GetArray("PoolInfos");
     for(unsigned poolInfosIndex = 0; poolInfosIndex < poolInfosJsonList.GetLength(); ++poolInfosIndex)
     {
       m_poolInfos.push_back(poolInfosJsonList[poolInfosIndex].AsObject());

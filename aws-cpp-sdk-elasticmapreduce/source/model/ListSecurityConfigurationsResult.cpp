@@ -30,7 +30,7 @@ ListSecurityConfigurationsResult& ListSecurityConfigurationsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SecurityConfigurations"))
   {
-    Array<JsonView> securityConfigurationsJsonList = jsonValue.GetArray("SecurityConfigurations");
+    Aws::Utils::Array<JsonView> securityConfigurationsJsonList = jsonValue.GetArray("SecurityConfigurations");
     for(unsigned securityConfigurationsIndex = 0; securityConfigurationsIndex < securityConfigurationsJsonList.GetLength(); ++securityConfigurationsIndex)
     {
       m_securityConfigurations.push_back(securityConfigurationsJsonList[securityConfigurationsIndex].AsObject());

@@ -36,7 +36,7 @@ ListStreamingImagesResult& ListStreamingImagesResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("streamingImages"))
   {
-    Array<JsonView> streamingImagesJsonList = jsonValue.GetArray("streamingImages");
+    Aws::Utils::Array<JsonView> streamingImagesJsonList = jsonValue.GetArray("streamingImages");
     for(unsigned streamingImagesIndex = 0; streamingImagesIndex < streamingImagesJsonList.GetLength(); ++streamingImagesIndex)
     {
       m_streamingImages.push_back(streamingImagesJsonList[streamingImagesIndex].AsObject());

@@ -33,7 +33,7 @@ SourceAlgorithmSpecification& SourceAlgorithmSpecification::operator =(JsonView 
 {
   if(jsonValue.ValueExists("SourceAlgorithms"))
   {
-    Array<JsonView> sourceAlgorithmsJsonList = jsonValue.GetArray("SourceAlgorithms");
+    Aws::Utils::Array<JsonView> sourceAlgorithmsJsonList = jsonValue.GetArray("SourceAlgorithms");
     for(unsigned sourceAlgorithmsIndex = 0; sourceAlgorithmsIndex < sourceAlgorithmsJsonList.GetLength(); ++sourceAlgorithmsIndex)
     {
       m_sourceAlgorithms.push_back(sourceAlgorithmsJsonList[sourceAlgorithmsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue SourceAlgorithmSpecification::Jsonize() const
 
   if(m_sourceAlgorithmsHasBeenSet)
   {
-   Array<JsonValue> sourceAlgorithmsJsonList(m_sourceAlgorithms.size());
+   Aws::Utils::Array<JsonValue> sourceAlgorithmsJsonList(m_sourceAlgorithms.size());
    for(unsigned sourceAlgorithmsIndex = 0; sourceAlgorithmsIndex < sourceAlgorithmsJsonList.GetLength(); ++sourceAlgorithmsIndex)
    {
      sourceAlgorithmsJsonList[sourceAlgorithmsIndex].AsObject(m_sourceAlgorithms[sourceAlgorithmsIndex].Jsonize());

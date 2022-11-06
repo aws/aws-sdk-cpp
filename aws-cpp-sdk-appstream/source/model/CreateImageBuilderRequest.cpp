@@ -113,7 +113,7 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const
 
   if(m_accessEndpointsHasBeenSet)
   {
-   Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
+   Aws::Utils::Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
    for(unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex)
    {
      accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());

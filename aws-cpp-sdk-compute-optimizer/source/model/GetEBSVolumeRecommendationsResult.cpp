@@ -36,7 +36,7 @@ GetEBSVolumeRecommendationsResult& GetEBSVolumeRecommendationsResult::operator =
 
   if(jsonValue.ValueExists("volumeRecommendations"))
   {
-    Array<JsonView> volumeRecommendationsJsonList = jsonValue.GetArray("volumeRecommendations");
+    Aws::Utils::Array<JsonView> volumeRecommendationsJsonList = jsonValue.GetArray("volumeRecommendations");
     for(unsigned volumeRecommendationsIndex = 0; volumeRecommendationsIndex < volumeRecommendationsJsonList.GetLength(); ++volumeRecommendationsIndex)
     {
       m_volumeRecommendations.push_back(volumeRecommendationsJsonList[volumeRecommendationsIndex].AsObject());
@@ -45,7 +45,7 @@ GetEBSVolumeRecommendationsResult& GetEBSVolumeRecommendationsResult::operator =
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

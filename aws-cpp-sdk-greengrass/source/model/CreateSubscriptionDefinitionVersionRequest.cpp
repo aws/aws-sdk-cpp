@@ -26,7 +26,7 @@ Aws::String CreateSubscriptionDefinitionVersionRequest::SerializePayload() const
 
   if(m_subscriptionsHasBeenSet)
   {
-   Array<JsonValue> subscriptionsJsonList(m_subscriptions.size());
+   Aws::Utils::Array<JsonValue> subscriptionsJsonList(m_subscriptions.size());
    for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
    {
      subscriptionsJsonList[subscriptionsIndex].AsObject(m_subscriptions[subscriptionsIndex].Jsonize());

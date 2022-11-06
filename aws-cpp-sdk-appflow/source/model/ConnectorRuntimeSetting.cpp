@@ -89,7 +89,7 @@ ConnectorRuntimeSetting& ConnectorRuntimeSetting::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("connectorSuppliedValueOptions"))
   {
-    Array<JsonView> connectorSuppliedValueOptionsJsonList = jsonValue.GetArray("connectorSuppliedValueOptions");
+    Aws::Utils::Array<JsonView> connectorSuppliedValueOptionsJsonList = jsonValue.GetArray("connectorSuppliedValueOptions");
     for(unsigned connectorSuppliedValueOptionsIndex = 0; connectorSuppliedValueOptionsIndex < connectorSuppliedValueOptionsJsonList.GetLength(); ++connectorSuppliedValueOptionsIndex)
     {
       m_connectorSuppliedValueOptions.push_back(connectorSuppliedValueOptionsJsonList[connectorSuppliedValueOptionsIndex].AsString());
@@ -142,7 +142,7 @@ JsonValue ConnectorRuntimeSetting::Jsonize() const
 
   if(m_connectorSuppliedValueOptionsHasBeenSet)
   {
-   Array<JsonValue> connectorSuppliedValueOptionsJsonList(m_connectorSuppliedValueOptions.size());
+   Aws::Utils::Array<JsonValue> connectorSuppliedValueOptionsJsonList(m_connectorSuppliedValueOptions.size());
    for(unsigned connectorSuppliedValueOptionsIndex = 0; connectorSuppliedValueOptionsIndex < connectorSuppliedValueOptionsJsonList.GetLength(); ++connectorSuppliedValueOptionsIndex)
    {
      connectorSuppliedValueOptionsJsonList[connectorSuppliedValueOptionsIndex].AsString(m_connectorSuppliedValueOptions[connectorSuppliedValueOptionsIndex]);

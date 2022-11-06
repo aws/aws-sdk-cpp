@@ -44,7 +44,7 @@ Transform& Transform::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("variables"))
   {
-    Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
+    Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
     for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
     {
       m_variables.push_back(variablesJsonList[variablesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue Transform::Jsonize() const
 
   if(m_variablesHasBeenSet)
   {
-   Array<JsonValue> variablesJsonList(m_variables.size());
+   Aws::Utils::Array<JsonValue> variablesJsonList(m_variables.size());
    for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
    {
      variablesJsonList[variablesIndex].AsObject(m_variables[variablesIndex].Jsonize());

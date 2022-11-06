@@ -56,7 +56,7 @@ Aws::String UpdateIndexRequest::SerializePayload() const
 
   if(m_documentMetadataConfigurationUpdatesHasBeenSet)
   {
-   Array<JsonValue> documentMetadataConfigurationUpdatesJsonList(m_documentMetadataConfigurationUpdates.size());
+   Aws::Utils::Array<JsonValue> documentMetadataConfigurationUpdatesJsonList(m_documentMetadataConfigurationUpdates.size());
    for(unsigned documentMetadataConfigurationUpdatesIndex = 0; documentMetadataConfigurationUpdatesIndex < documentMetadataConfigurationUpdatesJsonList.GetLength(); ++documentMetadataConfigurationUpdatesIndex)
    {
      documentMetadataConfigurationUpdatesJsonList[documentMetadataConfigurationUpdatesIndex].AsObject(m_documentMetadataConfigurationUpdates[documentMetadataConfigurationUpdatesIndex].Jsonize());
@@ -73,7 +73,7 @@ Aws::String UpdateIndexRequest::SerializePayload() const
 
   if(m_userTokenConfigurationsHasBeenSet)
   {
-   Array<JsonValue> userTokenConfigurationsJsonList(m_userTokenConfigurations.size());
+   Aws::Utils::Array<JsonValue> userTokenConfigurationsJsonList(m_userTokenConfigurations.size());
    for(unsigned userTokenConfigurationsIndex = 0; userTokenConfigurationsIndex < userTokenConfigurationsJsonList.GetLength(); ++userTokenConfigurationsIndex)
    {
      userTokenConfigurationsJsonList[userTokenConfigurationsIndex].AsObject(m_userTokenConfigurations[userTokenConfigurationsIndex].Jsonize());

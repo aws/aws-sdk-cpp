@@ -33,7 +33,7 @@ Aws::String StartChangeSetRequest::SerializePayload() const
 
   if(m_changeSetHasBeenSet)
   {
-   Array<JsonValue> changeSetJsonList(m_changeSet.size());
+   Aws::Utils::Array<JsonValue> changeSetJsonList(m_changeSet.size());
    for(unsigned changeSetIndex = 0; changeSetIndex < changeSetJsonList.GetLength(); ++changeSetIndex)
    {
      changeSetJsonList[changeSetIndex].AsObject(m_changeSet[changeSetIndex].Jsonize());

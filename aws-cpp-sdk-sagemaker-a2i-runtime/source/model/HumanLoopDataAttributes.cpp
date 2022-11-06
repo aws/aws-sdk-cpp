@@ -33,7 +33,7 @@ HumanLoopDataAttributes& HumanLoopDataAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ContentClassifiers"))
   {
-    Array<JsonView> contentClassifiersJsonList = jsonValue.GetArray("ContentClassifiers");
+    Aws::Utils::Array<JsonView> contentClassifiersJsonList = jsonValue.GetArray("ContentClassifiers");
     for(unsigned contentClassifiersIndex = 0; contentClassifiersIndex < contentClassifiersJsonList.GetLength(); ++contentClassifiersIndex)
     {
       m_contentClassifiers.push_back(ContentClassifierMapper::GetContentClassifierForName(contentClassifiersJsonList[contentClassifiersIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue HumanLoopDataAttributes::Jsonize() const
 
   if(m_contentClassifiersHasBeenSet)
   {
-   Array<JsonValue> contentClassifiersJsonList(m_contentClassifiers.size());
+   Aws::Utils::Array<JsonValue> contentClassifiersJsonList(m_contentClassifiers.size());
    for(unsigned contentClassifiersIndex = 0; contentClassifiersIndex < contentClassifiersJsonList.GetLength(); ++contentClassifiersIndex)
    {
      contentClassifiersJsonList[contentClassifiersIndex].AsString(ContentClassifierMapper::GetNameForContentClassifier(m_contentClassifiers[contentClassifiersIndex]));

@@ -58,7 +58,7 @@ SuiteDefinitionConfiguration& SuiteDefinitionConfiguration::operator =(JsonView 
 
   if(jsonValue.ValueExists("devices"))
   {
-    Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
+    Aws::Utils::Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
     for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
     {
       m_devices.push_back(devicesJsonList[devicesIndex].AsObject());
@@ -116,7 +116,7 @@ JsonValue SuiteDefinitionConfiguration::Jsonize() const
 
   if(m_devicesHasBeenSet)
   {
-   Array<JsonValue> devicesJsonList(m_devices.size());
+   Aws::Utils::Array<JsonValue> devicesJsonList(m_devices.size());
    for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
    {
      devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());

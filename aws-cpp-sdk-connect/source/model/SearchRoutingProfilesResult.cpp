@@ -32,7 +32,7 @@ SearchRoutingProfilesResult& SearchRoutingProfilesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RoutingProfiles"))
   {
-    Array<JsonView> routingProfilesJsonList = jsonValue.GetArray("RoutingProfiles");
+    Aws::Utils::Array<JsonView> routingProfilesJsonList = jsonValue.GetArray("RoutingProfiles");
     for(unsigned routingProfilesIndex = 0; routingProfilesIndex < routingProfilesJsonList.GetLength(); ++routingProfilesIndex)
     {
       m_routingProfiles.push_back(routingProfilesJsonList[routingProfilesIndex].AsObject());

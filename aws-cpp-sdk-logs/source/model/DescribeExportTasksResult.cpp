@@ -30,7 +30,7 @@ DescribeExportTasksResult& DescribeExportTasksResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("exportTasks"))
   {
-    Array<JsonView> exportTasksJsonList = jsonValue.GetArray("exportTasks");
+    Aws::Utils::Array<JsonView> exportTasksJsonList = jsonValue.GetArray("exportTasks");
     for(unsigned exportTasksIndex = 0; exportTasksIndex < exportTasksJsonList.GetLength(); ++exportTasksIndex)
     {
       m_exportTasks.push_back(exportTasksJsonList[exportTasksIndex].AsObject());

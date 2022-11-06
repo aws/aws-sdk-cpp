@@ -39,7 +39,7 @@ ExportAssetsToS3RequestDetails& ExportAssetsToS3RequestDetails::operator =(JsonV
 {
   if(jsonValue.ValueExists("AssetDestinations"))
   {
-    Array<JsonView> assetDestinationsJsonList = jsonValue.GetArray("AssetDestinations");
+    Aws::Utils::Array<JsonView> assetDestinationsJsonList = jsonValue.GetArray("AssetDestinations");
     for(unsigned assetDestinationsIndex = 0; assetDestinationsIndex < assetDestinationsJsonList.GetLength(); ++assetDestinationsIndex)
     {
       m_assetDestinations.push_back(assetDestinationsJsonList[assetDestinationsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue ExportAssetsToS3RequestDetails::Jsonize() const
 
   if(m_assetDestinationsHasBeenSet)
   {
-   Array<JsonValue> assetDestinationsJsonList(m_assetDestinations.size());
+   Aws::Utils::Array<JsonValue> assetDestinationsJsonList(m_assetDestinations.size());
    for(unsigned assetDestinationsIndex = 0; assetDestinationsIndex < assetDestinationsJsonList.GetLength(); ++assetDestinationsIndex)
    {
      assetDestinationsJsonList[assetDestinationsIndex].AsObject(m_assetDestinations[assetDestinationsIndex].Jsonize());

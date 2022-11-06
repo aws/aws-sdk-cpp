@@ -30,7 +30,7 @@ ListMonitoringSchedulesResult& ListMonitoringSchedulesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MonitoringScheduleSummaries"))
   {
-    Array<JsonView> monitoringScheduleSummariesJsonList = jsonValue.GetArray("MonitoringScheduleSummaries");
+    Aws::Utils::Array<JsonView> monitoringScheduleSummariesJsonList = jsonValue.GetArray("MonitoringScheduleSummaries");
     for(unsigned monitoringScheduleSummariesIndex = 0; monitoringScheduleSummariesIndex < monitoringScheduleSummariesJsonList.GetLength(); ++monitoringScheduleSummariesIndex)
     {
       m_monitoringScheduleSummaries.push_back(monitoringScheduleSummariesJsonList[monitoringScheduleSummariesIndex].AsObject());

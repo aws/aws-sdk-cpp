@@ -30,7 +30,7 @@ ListEventPredictionsResult& ListEventPredictionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eventPredictionSummaries"))
   {
-    Array<JsonView> eventPredictionSummariesJsonList = jsonValue.GetArray("eventPredictionSummaries");
+    Aws::Utils::Array<JsonView> eventPredictionSummariesJsonList = jsonValue.GetArray("eventPredictionSummaries");
     for(unsigned eventPredictionSummariesIndex = 0; eventPredictionSummariesIndex < eventPredictionSummariesJsonList.GetLength(); ++eventPredictionSummariesIndex)
     {
       m_eventPredictionSummaries.push_back(eventPredictionSummariesJsonList[eventPredictionSummariesIndex].AsObject());

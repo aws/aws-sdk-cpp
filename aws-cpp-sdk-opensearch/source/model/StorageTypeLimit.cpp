@@ -42,7 +42,7 @@ StorageTypeLimit& StorageTypeLimit::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LimitValues"))
   {
-    Array<JsonView> limitValuesJsonList = jsonValue.GetArray("LimitValues");
+    Aws::Utils::Array<JsonView> limitValuesJsonList = jsonValue.GetArray("LimitValues");
     for(unsigned limitValuesIndex = 0; limitValuesIndex < limitValuesJsonList.GetLength(); ++limitValuesIndex)
     {
       m_limitValues.push_back(limitValuesJsonList[limitValuesIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue StorageTypeLimit::Jsonize() const
 
   if(m_limitValuesHasBeenSet)
   {
-   Array<JsonValue> limitValuesJsonList(m_limitValues.size());
+   Aws::Utils::Array<JsonValue> limitValuesJsonList(m_limitValues.size());
    for(unsigned limitValuesIndex = 0; limitValuesIndex < limitValuesJsonList.GetLength(); ++limitValuesIndex)
    {
      limitValuesJsonList[limitValuesIndex].AsString(m_limitValues[limitValuesIndex]);

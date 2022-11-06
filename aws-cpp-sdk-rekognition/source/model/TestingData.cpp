@@ -37,7 +37,7 @@ TestingData& TestingData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Assets"))
   {
-    Array<JsonView> assetsJsonList = jsonValue.GetArray("Assets");
+    Aws::Utils::Array<JsonView> assetsJsonList = jsonValue.GetArray("Assets");
     for(unsigned assetsIndex = 0; assetsIndex < assetsJsonList.GetLength(); ++assetsIndex)
     {
       m_assets.push_back(assetsJsonList[assetsIndex].AsObject());
@@ -61,7 +61,7 @@ JsonValue TestingData::Jsonize() const
 
   if(m_assetsHasBeenSet)
   {
-   Array<JsonValue> assetsJsonList(m_assets.size());
+   Aws::Utils::Array<JsonValue> assetsJsonList(m_assets.size());
    for(unsigned assetsIndex = 0; assetsIndex < assetsJsonList.GetLength(); ++assetsIndex)
    {
      assetsJsonList[assetsIndex].AsObject(m_assets[assetsIndex].Jsonize());

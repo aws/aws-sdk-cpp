@@ -36,7 +36,7 @@ ListStudioComponentsResult& ListStudioComponentsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("studioComponents"))
   {
-    Array<JsonView> studioComponentsJsonList = jsonValue.GetArray("studioComponents");
+    Aws::Utils::Array<JsonView> studioComponentsJsonList = jsonValue.GetArray("studioComponents");
     for(unsigned studioComponentsIndex = 0; studioComponentsIndex < studioComponentsJsonList.GetLength(); ++studioComponentsIndex)
     {
       m_studioComponents.push_back(studioComponentsJsonList[studioComponentsIndex].AsObject());

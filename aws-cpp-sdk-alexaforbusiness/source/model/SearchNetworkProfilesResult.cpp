@@ -32,7 +32,7 @@ SearchNetworkProfilesResult& SearchNetworkProfilesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NetworkProfiles"))
   {
-    Array<JsonView> networkProfilesJsonList = jsonValue.GetArray("NetworkProfiles");
+    Aws::Utils::Array<JsonView> networkProfilesJsonList = jsonValue.GetArray("NetworkProfiles");
     for(unsigned networkProfilesIndex = 0; networkProfilesIndex < networkProfilesJsonList.GetLength(); ++networkProfilesIndex)
     {
       m_networkProfiles.push_back(networkProfilesJsonList[networkProfilesIndex].AsObject());

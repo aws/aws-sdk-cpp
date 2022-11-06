@@ -30,7 +30,7 @@ ListRoleAliasesResult& ListRoleAliasesResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("roleAliases"))
   {
-    Array<JsonView> roleAliasesJsonList = jsonValue.GetArray("roleAliases");
+    Aws::Utils::Array<JsonView> roleAliasesJsonList = jsonValue.GetArray("roleAliases");
     for(unsigned roleAliasesIndex = 0; roleAliasesIndex < roleAliasesJsonList.GetLength(); ++roleAliasesIndex)
     {
       m_roleAliases.push_back(roleAliasesJsonList[roleAliasesIndex].AsString());

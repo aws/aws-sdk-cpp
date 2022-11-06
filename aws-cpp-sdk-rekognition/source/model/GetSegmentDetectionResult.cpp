@@ -44,7 +44,7 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("VideoMetadata"))
   {
-    Array<JsonView> videoMetadataJsonList = jsonValue.GetArray("VideoMetadata");
+    Aws::Utils::Array<JsonView> videoMetadataJsonList = jsonValue.GetArray("VideoMetadata");
     for(unsigned videoMetadataIndex = 0; videoMetadataIndex < videoMetadataJsonList.GetLength(); ++videoMetadataIndex)
     {
       m_videoMetadata.push_back(videoMetadataJsonList[videoMetadataIndex].AsObject());
@@ -53,7 +53,7 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("AudioMetadata"))
   {
-    Array<JsonView> audioMetadataJsonList = jsonValue.GetArray("AudioMetadata");
+    Aws::Utils::Array<JsonView> audioMetadataJsonList = jsonValue.GetArray("AudioMetadata");
     for(unsigned audioMetadataIndex = 0; audioMetadataIndex < audioMetadataJsonList.GetLength(); ++audioMetadataIndex)
     {
       m_audioMetadata.push_back(audioMetadataJsonList[audioMetadataIndex].AsObject());
@@ -68,7 +68,7 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("Segments"))
   {
-    Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
+    Aws::Utils::Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
     for(unsigned segmentsIndex = 0; segmentsIndex < segmentsJsonList.GetLength(); ++segmentsIndex)
     {
       m_segments.push_back(segmentsJsonList[segmentsIndex].AsObject());
@@ -77,7 +77,7 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("SelectedSegmentTypes"))
   {
-    Array<JsonView> selectedSegmentTypesJsonList = jsonValue.GetArray("SelectedSegmentTypes");
+    Aws::Utils::Array<JsonView> selectedSegmentTypesJsonList = jsonValue.GetArray("SelectedSegmentTypes");
     for(unsigned selectedSegmentTypesIndex = 0; selectedSegmentTypesIndex < selectedSegmentTypesJsonList.GetLength(); ++selectedSegmentTypesIndex)
     {
       m_selectedSegmentTypes.push_back(selectedSegmentTypesJsonList[selectedSegmentTypesIndex].AsObject());

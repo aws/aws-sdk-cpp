@@ -90,7 +90,7 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MediaConcurrencies"))
   {
-    Array<JsonView> mediaConcurrenciesJsonList = jsonValue.GetArray("MediaConcurrencies");
+    Aws::Utils::Array<JsonView> mediaConcurrenciesJsonList = jsonValue.GetArray("MediaConcurrencies");
     for(unsigned mediaConcurrenciesIndex = 0; mediaConcurrenciesIndex < mediaConcurrenciesJsonList.GetLength(); ++mediaConcurrenciesIndex)
     {
       m_mediaConcurrencies.push_back(mediaConcurrenciesJsonList[mediaConcurrenciesIndex].AsObject());
@@ -168,7 +168,7 @@ JsonValue RoutingProfile::Jsonize() const
 
   if(m_mediaConcurrenciesHasBeenSet)
   {
-   Array<JsonValue> mediaConcurrenciesJsonList(m_mediaConcurrencies.size());
+   Aws::Utils::Array<JsonValue> mediaConcurrenciesJsonList(m_mediaConcurrencies.size());
    for(unsigned mediaConcurrenciesIndex = 0; mediaConcurrenciesIndex < mediaConcurrenciesJsonList.GetLength(); ++mediaConcurrenciesIndex)
    {
      mediaConcurrenciesJsonList[mediaConcurrenciesIndex].AsObject(m_mediaConcurrencies[mediaConcurrenciesIndex].Jsonize());

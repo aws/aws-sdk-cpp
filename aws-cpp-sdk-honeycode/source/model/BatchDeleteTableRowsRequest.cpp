@@ -26,7 +26,7 @@ Aws::String BatchDeleteTableRowsRequest::SerializePayload() const
 
   if(m_rowIdsHasBeenSet)
   {
-   Array<JsonValue> rowIdsJsonList(m_rowIds.size());
+   Aws::Utils::Array<JsonValue> rowIdsJsonList(m_rowIds.size());
    for(unsigned rowIdsIndex = 0; rowIdsIndex < rowIdsJsonList.GetLength(); ++rowIdsIndex)
    {
      rowIdsJsonList[rowIdsIndex].AsString(m_rowIds[rowIdsIndex]);

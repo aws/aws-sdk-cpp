@@ -35,7 +35,7 @@ EntityDetectorConfiguration& EntityDetectorConfiguration::operator =(JsonView js
 {
   if(jsonValue.ValueExists("EntityTypes"))
   {
-    Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
+    Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
     for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
     {
       m_entityTypes.push_back(entityTypesJsonList[entityTypesIndex].AsString());
@@ -45,7 +45,7 @@ EntityDetectorConfiguration& EntityDetectorConfiguration::operator =(JsonView js
 
   if(jsonValue.ValueExists("AllowedStatistics"))
   {
-    Array<JsonView> allowedStatisticsJsonList = jsonValue.GetArray("AllowedStatistics");
+    Aws::Utils::Array<JsonView> allowedStatisticsJsonList = jsonValue.GetArray("AllowedStatistics");
     for(unsigned allowedStatisticsIndex = 0; allowedStatisticsIndex < allowedStatisticsJsonList.GetLength(); ++allowedStatisticsIndex)
     {
       m_allowedStatistics.push_back(allowedStatisticsJsonList[allowedStatisticsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue EntityDetectorConfiguration::Jsonize() const
 
   if(m_entityTypesHasBeenSet)
   {
-   Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
+   Aws::Utils::Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
    for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
    {
      entityTypesJsonList[entityTypesIndex].AsString(m_entityTypes[entityTypesIndex]);
@@ -73,7 +73,7 @@ JsonValue EntityDetectorConfiguration::Jsonize() const
 
   if(m_allowedStatisticsHasBeenSet)
   {
-   Array<JsonValue> allowedStatisticsJsonList(m_allowedStatistics.size());
+   Aws::Utils::Array<JsonValue> allowedStatisticsJsonList(m_allowedStatistics.size());
    for(unsigned allowedStatisticsIndex = 0; allowedStatisticsIndex < allowedStatisticsJsonList.GetLength(); ++allowedStatisticsIndex)
    {
      allowedStatisticsJsonList[allowedStatisticsIndex].AsObject(m_allowedStatistics[allowedStatisticsIndex].Jsonize());

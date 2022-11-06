@@ -43,7 +43,7 @@ Task& Task::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sourceFields"))
   {
-    Array<JsonView> sourceFieldsJsonList = jsonValue.GetArray("sourceFields");
+    Aws::Utils::Array<JsonView> sourceFieldsJsonList = jsonValue.GetArray("sourceFields");
     for(unsigned sourceFieldsIndex = 0; sourceFieldsIndex < sourceFieldsJsonList.GetLength(); ++sourceFieldsIndex)
     {
       m_sourceFields.push_back(sourceFieldsJsonList[sourceFieldsIndex].AsString());
@@ -91,7 +91,7 @@ JsonValue Task::Jsonize() const
 
   if(m_sourceFieldsHasBeenSet)
   {
-   Array<JsonValue> sourceFieldsJsonList(m_sourceFields.size());
+   Aws::Utils::Array<JsonValue> sourceFieldsJsonList(m_sourceFields.size());
    for(unsigned sourceFieldsIndex = 0; sourceFieldsIndex < sourceFieldsJsonList.GetLength(); ++sourceFieldsIndex)
    {
      sourceFieldsJsonList[sourceFieldsIndex].AsString(m_sourceFields[sourceFieldsIndex]);

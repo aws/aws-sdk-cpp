@@ -68,7 +68,7 @@ Aws::String UpdateLocationObjectStorageRequest::SerializePayload() const
 
   if(m_agentArnsHasBeenSet)
   {
-   Array<JsonValue> agentArnsJsonList(m_agentArns.size());
+   Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
    for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
    {
      agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);

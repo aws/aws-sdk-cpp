@@ -24,7 +24,7 @@ Aws::String DeleteVoiceConnectorTerminationCredentialsRequest::SerializePayload(
 
   if(m_usernamesHasBeenSet)
   {
-   Array<JsonValue> usernamesJsonList(m_usernames.size());
+   Aws::Utils::Array<JsonValue> usernamesJsonList(m_usernames.size());
    for(unsigned usernamesIndex = 0; usernamesIndex < usernamesJsonList.GetLength(); ++usernamesIndex)
    {
      usernamesJsonList[usernamesIndex].AsString(m_usernames[usernamesIndex]);

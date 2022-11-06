@@ -24,7 +24,7 @@ Aws::String DescribeServicesRequest::SerializePayload() const
 
   if(m_serviceCodeListHasBeenSet)
   {
-   Array<JsonValue> serviceCodeListJsonList(m_serviceCodeList.size());
+   Aws::Utils::Array<JsonValue> serviceCodeListJsonList(m_serviceCodeList.size());
    for(unsigned serviceCodeListIndex = 0; serviceCodeListIndex < serviceCodeListJsonList.GetLength(); ++serviceCodeListIndex)
    {
      serviceCodeListJsonList[serviceCodeListIndex].AsString(m_serviceCodeList[serviceCodeListIndex]);

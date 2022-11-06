@@ -61,7 +61,7 @@ Leg& Leg::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EndPosition"))
   {
-    Array<JsonView> endPositionJsonList = jsonValue.GetArray("EndPosition");
+    Aws::Utils::Array<JsonView> endPositionJsonList = jsonValue.GetArray("EndPosition");
     for(unsigned endPositionIndex = 0; endPositionIndex < endPositionJsonList.GetLength(); ++endPositionIndex)
     {
       m_endPosition.push_back(endPositionJsonList[endPositionIndex].AsDouble());
@@ -78,7 +78,7 @@ Leg& Leg::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StartPosition"))
   {
-    Array<JsonView> startPositionJsonList = jsonValue.GetArray("StartPosition");
+    Aws::Utils::Array<JsonView> startPositionJsonList = jsonValue.GetArray("StartPosition");
     for(unsigned startPositionIndex = 0; startPositionIndex < startPositionJsonList.GetLength(); ++startPositionIndex)
     {
       m_startPosition.push_back(startPositionJsonList[startPositionIndex].AsDouble());
@@ -88,7 +88,7 @@ Leg& Leg::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Steps"))
   {
-    Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
+    Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
     for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
@@ -117,7 +117,7 @@ JsonValue Leg::Jsonize() const
 
   if(m_endPositionHasBeenSet)
   {
-   Array<JsonValue> endPositionJsonList(m_endPosition.size());
+   Aws::Utils::Array<JsonValue> endPositionJsonList(m_endPosition.size());
    for(unsigned endPositionIndex = 0; endPositionIndex < endPositionJsonList.GetLength(); ++endPositionIndex)
    {
      endPositionJsonList[endPositionIndex].AsDouble(m_endPosition[endPositionIndex]);
@@ -134,7 +134,7 @@ JsonValue Leg::Jsonize() const
 
   if(m_startPositionHasBeenSet)
   {
-   Array<JsonValue> startPositionJsonList(m_startPosition.size());
+   Aws::Utils::Array<JsonValue> startPositionJsonList(m_startPosition.size());
    for(unsigned startPositionIndex = 0; startPositionIndex < startPositionJsonList.GetLength(); ++startPositionIndex)
    {
      startPositionJsonList[startPositionIndex].AsDouble(m_startPosition[startPositionIndex]);
@@ -145,7 +145,7 @@ JsonValue Leg::Jsonize() const
 
   if(m_stepsHasBeenSet)
   {
-   Array<JsonValue> stepsJsonList(m_steps.size());
+   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
    {
      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());

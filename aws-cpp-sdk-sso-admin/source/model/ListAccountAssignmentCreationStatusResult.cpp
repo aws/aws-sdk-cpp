@@ -30,7 +30,7 @@ ListAccountAssignmentCreationStatusResult& ListAccountAssignmentCreationStatusRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountAssignmentsCreationStatus"))
   {
-    Array<JsonView> accountAssignmentsCreationStatusJsonList = jsonValue.GetArray("AccountAssignmentsCreationStatus");
+    Aws::Utils::Array<JsonView> accountAssignmentsCreationStatusJsonList = jsonValue.GetArray("AccountAssignmentsCreationStatus");
     for(unsigned accountAssignmentsCreationStatusIndex = 0; accountAssignmentsCreationStatusIndex < accountAssignmentsCreationStatusJsonList.GetLength(); ++accountAssignmentsCreationStatusIndex)
     {
       m_accountAssignmentsCreationStatus.push_back(accountAssignmentsCreationStatusJsonList[accountAssignmentsCreationStatusIndex].AsObject());

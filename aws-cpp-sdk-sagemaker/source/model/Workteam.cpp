@@ -58,7 +58,7 @@ Workteam& Workteam::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MemberDefinitions"))
   {
-    Array<JsonView> memberDefinitionsJsonList = jsonValue.GetArray("MemberDefinitions");
+    Aws::Utils::Array<JsonView> memberDefinitionsJsonList = jsonValue.GetArray("MemberDefinitions");
     for(unsigned memberDefinitionsIndex = 0; memberDefinitionsIndex < memberDefinitionsJsonList.GetLength(); ++memberDefinitionsIndex)
     {
       m_memberDefinitions.push_back(memberDefinitionsJsonList[memberDefinitionsIndex].AsObject());
@@ -82,7 +82,7 @@ Workteam& Workteam::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProductListingIds"))
   {
-    Array<JsonView> productListingIdsJsonList = jsonValue.GetArray("ProductListingIds");
+    Aws::Utils::Array<JsonView> productListingIdsJsonList = jsonValue.GetArray("ProductListingIds");
     for(unsigned productListingIdsIndex = 0; productListingIdsIndex < productListingIdsJsonList.GetLength(); ++productListingIdsIndex)
     {
       m_productListingIds.push_back(productListingIdsJsonList[productListingIdsIndex].AsString());
@@ -140,7 +140,7 @@ JsonValue Workteam::Jsonize() const
 
   if(m_memberDefinitionsHasBeenSet)
   {
-   Array<JsonValue> memberDefinitionsJsonList(m_memberDefinitions.size());
+   Aws::Utils::Array<JsonValue> memberDefinitionsJsonList(m_memberDefinitions.size());
    for(unsigned memberDefinitionsIndex = 0; memberDefinitionsIndex < memberDefinitionsJsonList.GetLength(); ++memberDefinitionsIndex)
    {
      memberDefinitionsJsonList[memberDefinitionsIndex].AsObject(m_memberDefinitions[memberDefinitionsIndex].Jsonize());
@@ -163,7 +163,7 @@ JsonValue Workteam::Jsonize() const
 
   if(m_productListingIdsHasBeenSet)
   {
-   Array<JsonValue> productListingIdsJsonList(m_productListingIds.size());
+   Aws::Utils::Array<JsonValue> productListingIdsJsonList(m_productListingIds.size());
    for(unsigned productListingIdsIndex = 0; productListingIdsIndex < productListingIdsJsonList.GetLength(); ++productListingIdsIndex)
    {
      productListingIdsJsonList[productListingIdsIndex].AsString(m_productListingIds[productListingIdsIndex]);

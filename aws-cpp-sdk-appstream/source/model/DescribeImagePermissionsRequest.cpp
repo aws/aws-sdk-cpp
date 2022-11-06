@@ -39,7 +39,7 @@ Aws::String DescribeImagePermissionsRequest::SerializePayload() const
 
   if(m_sharedAwsAccountIdsHasBeenSet)
   {
-   Array<JsonValue> sharedAwsAccountIdsJsonList(m_sharedAwsAccountIds.size());
+   Aws::Utils::Array<JsonValue> sharedAwsAccountIdsJsonList(m_sharedAwsAccountIds.size());
    for(unsigned sharedAwsAccountIdsIndex = 0; sharedAwsAccountIdsIndex < sharedAwsAccountIdsJsonList.GetLength(); ++sharedAwsAccountIdsIndex)
    {
      sharedAwsAccountIdsJsonList[sharedAwsAccountIdsIndex].AsString(m_sharedAwsAccountIds[sharedAwsAccountIdsIndex]);

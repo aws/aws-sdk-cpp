@@ -30,7 +30,7 @@ DescribeConnectorEntityResult& DescribeConnectorEntityResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("connectorEntityFields"))
   {
-    Array<JsonView> connectorEntityFieldsJsonList = jsonValue.GetArray("connectorEntityFields");
+    Aws::Utils::Array<JsonView> connectorEntityFieldsJsonList = jsonValue.GetArray("connectorEntityFields");
     for(unsigned connectorEntityFieldsIndex = 0; connectorEntityFieldsIndex < connectorEntityFieldsJsonList.GetLength(); ++connectorEntityFieldsIndex)
     {
       m_connectorEntityFields.push_back(connectorEntityFieldsJsonList[connectorEntityFieldsIndex].AsObject());

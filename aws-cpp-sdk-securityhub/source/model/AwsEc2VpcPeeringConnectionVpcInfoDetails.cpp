@@ -52,7 +52,7 @@ AwsEc2VpcPeeringConnectionVpcInfoDetails& AwsEc2VpcPeeringConnectionVpcInfoDetai
 
   if(jsonValue.ValueExists("CidrBlockSet"))
   {
-    Array<JsonView> cidrBlockSetJsonList = jsonValue.GetArray("CidrBlockSet");
+    Aws::Utils::Array<JsonView> cidrBlockSetJsonList = jsonValue.GetArray("CidrBlockSet");
     for(unsigned cidrBlockSetIndex = 0; cidrBlockSetIndex < cidrBlockSetJsonList.GetLength(); ++cidrBlockSetIndex)
     {
       m_cidrBlockSet.push_back(cidrBlockSetJsonList[cidrBlockSetIndex].AsObject());
@@ -62,7 +62,7 @@ AwsEc2VpcPeeringConnectionVpcInfoDetails& AwsEc2VpcPeeringConnectionVpcInfoDetai
 
   if(jsonValue.ValueExists("Ipv6CidrBlockSet"))
   {
-    Array<JsonView> ipv6CidrBlockSetJsonList = jsonValue.GetArray("Ipv6CidrBlockSet");
+    Aws::Utils::Array<JsonView> ipv6CidrBlockSetJsonList = jsonValue.GetArray("Ipv6CidrBlockSet");
     for(unsigned ipv6CidrBlockSetIndex = 0; ipv6CidrBlockSetIndex < ipv6CidrBlockSetJsonList.GetLength(); ++ipv6CidrBlockSetIndex)
     {
       m_ipv6CidrBlockSet.push_back(ipv6CidrBlockSetJsonList[ipv6CidrBlockSetIndex].AsObject());
@@ -113,7 +113,7 @@ JsonValue AwsEc2VpcPeeringConnectionVpcInfoDetails::Jsonize() const
 
   if(m_cidrBlockSetHasBeenSet)
   {
-   Array<JsonValue> cidrBlockSetJsonList(m_cidrBlockSet.size());
+   Aws::Utils::Array<JsonValue> cidrBlockSetJsonList(m_cidrBlockSet.size());
    for(unsigned cidrBlockSetIndex = 0; cidrBlockSetIndex < cidrBlockSetJsonList.GetLength(); ++cidrBlockSetIndex)
    {
      cidrBlockSetJsonList[cidrBlockSetIndex].AsObject(m_cidrBlockSet[cidrBlockSetIndex].Jsonize());
@@ -124,7 +124,7 @@ JsonValue AwsEc2VpcPeeringConnectionVpcInfoDetails::Jsonize() const
 
   if(m_ipv6CidrBlockSetHasBeenSet)
   {
-   Array<JsonValue> ipv6CidrBlockSetJsonList(m_ipv6CidrBlockSet.size());
+   Aws::Utils::Array<JsonValue> ipv6CidrBlockSetJsonList(m_ipv6CidrBlockSet.size());
    for(unsigned ipv6CidrBlockSetIndex = 0; ipv6CidrBlockSetIndex < ipv6CidrBlockSetJsonList.GetLength(); ++ipv6CidrBlockSetIndex)
    {
      ipv6CidrBlockSetJsonList[ipv6CidrBlockSetIndex].AsObject(m_ipv6CidrBlockSet[ipv6CidrBlockSetIndex].Jsonize());

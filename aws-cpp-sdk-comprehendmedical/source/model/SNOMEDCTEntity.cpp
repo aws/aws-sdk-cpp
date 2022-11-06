@@ -112,7 +112,7 @@ SNOMEDCTEntity& SNOMEDCTEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -122,7 +122,7 @@ SNOMEDCTEntity& SNOMEDCTEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Traits"))
   {
-    Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
+    Aws::Utils::Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
     for(unsigned traitsIndex = 0; traitsIndex < traitsJsonList.GetLength(); ++traitsIndex)
     {
       m_traits.push_back(traitsJsonList[traitsIndex].AsObject());
@@ -132,7 +132,7 @@ SNOMEDCTEntity& SNOMEDCTEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SNOMEDCTConcepts"))
   {
-    Array<JsonView> sNOMEDCTConceptsJsonList = jsonValue.GetArray("SNOMEDCTConcepts");
+    Aws::Utils::Array<JsonView> sNOMEDCTConceptsJsonList = jsonValue.GetArray("SNOMEDCTConcepts");
     for(unsigned sNOMEDCTConceptsIndex = 0; sNOMEDCTConceptsIndex < sNOMEDCTConceptsJsonList.GetLength(); ++sNOMEDCTConceptsIndex)
     {
       m_sNOMEDCTConcepts.push_back(sNOMEDCTConceptsJsonList[sNOMEDCTConceptsIndex].AsObject());
@@ -189,7 +189,7 @@ JsonValue SNOMEDCTEntity::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
@@ -200,7 +200,7 @@ JsonValue SNOMEDCTEntity::Jsonize() const
 
   if(m_traitsHasBeenSet)
   {
-   Array<JsonValue> traitsJsonList(m_traits.size());
+   Aws::Utils::Array<JsonValue> traitsJsonList(m_traits.size());
    for(unsigned traitsIndex = 0; traitsIndex < traitsJsonList.GetLength(); ++traitsIndex)
    {
      traitsJsonList[traitsIndex].AsObject(m_traits[traitsIndex].Jsonize());
@@ -211,7 +211,7 @@ JsonValue SNOMEDCTEntity::Jsonize() const
 
   if(m_sNOMEDCTConceptsHasBeenSet)
   {
-   Array<JsonValue> sNOMEDCTConceptsJsonList(m_sNOMEDCTConcepts.size());
+   Aws::Utils::Array<JsonValue> sNOMEDCTConceptsJsonList(m_sNOMEDCTConcepts.size());
    for(unsigned sNOMEDCTConceptsIndex = 0; sNOMEDCTConceptsIndex < sNOMEDCTConceptsJsonList.GetLength(); ++sNOMEDCTConceptsIndex)
    {
      sNOMEDCTConceptsJsonList[sNOMEDCTConceptsIndex].AsObject(m_sNOMEDCTConcepts[sNOMEDCTConceptsIndex].Jsonize());

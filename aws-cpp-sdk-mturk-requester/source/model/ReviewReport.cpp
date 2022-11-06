@@ -35,7 +35,7 @@ ReviewReport& ReviewReport::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReviewResults"))
   {
-    Array<JsonView> reviewResultsJsonList = jsonValue.GetArray("ReviewResults");
+    Aws::Utils::Array<JsonView> reviewResultsJsonList = jsonValue.GetArray("ReviewResults");
     for(unsigned reviewResultsIndex = 0; reviewResultsIndex < reviewResultsJsonList.GetLength(); ++reviewResultsIndex)
     {
       m_reviewResults.push_back(reviewResultsJsonList[reviewResultsIndex].AsObject());
@@ -45,7 +45,7 @@ ReviewReport& ReviewReport::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReviewActions"))
   {
-    Array<JsonView> reviewActionsJsonList = jsonValue.GetArray("ReviewActions");
+    Aws::Utils::Array<JsonView> reviewActionsJsonList = jsonValue.GetArray("ReviewActions");
     for(unsigned reviewActionsIndex = 0; reviewActionsIndex < reviewActionsJsonList.GetLength(); ++reviewActionsIndex)
     {
       m_reviewActions.push_back(reviewActionsJsonList[reviewActionsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue ReviewReport::Jsonize() const
 
   if(m_reviewResultsHasBeenSet)
   {
-   Array<JsonValue> reviewResultsJsonList(m_reviewResults.size());
+   Aws::Utils::Array<JsonValue> reviewResultsJsonList(m_reviewResults.size());
    for(unsigned reviewResultsIndex = 0; reviewResultsIndex < reviewResultsJsonList.GetLength(); ++reviewResultsIndex)
    {
      reviewResultsJsonList[reviewResultsIndex].AsObject(m_reviewResults[reviewResultsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue ReviewReport::Jsonize() const
 
   if(m_reviewActionsHasBeenSet)
   {
-   Array<JsonValue> reviewActionsJsonList(m_reviewActions.size());
+   Aws::Utils::Array<JsonValue> reviewActionsJsonList(m_reviewActions.size());
    for(unsigned reviewActionsIndex = 0; reviewActionsIndex < reviewActionsJsonList.GetLength(); ++reviewActionsIndex)
    {
      reviewActionsJsonList[reviewActionsIndex].AsObject(m_reviewActions[reviewActionsIndex].Jsonize());

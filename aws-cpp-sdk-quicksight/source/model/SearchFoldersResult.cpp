@@ -32,7 +32,7 @@ SearchFoldersResult& SearchFoldersResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FolderSummaryList"))
   {
-    Array<JsonView> folderSummaryListJsonList = jsonValue.GetArray("FolderSummaryList");
+    Aws::Utils::Array<JsonView> folderSummaryListJsonList = jsonValue.GetArray("FolderSummaryList");
     for(unsigned folderSummaryListIndex = 0; folderSummaryListIndex < folderSummaryListJsonList.GetLength(); ++folderSummaryListIndex)
     {
       m_folderSummaryList.push_back(folderSummaryListJsonList[folderSummaryListIndex].AsObject());

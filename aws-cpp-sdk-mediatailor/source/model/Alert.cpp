@@ -62,7 +62,7 @@ Alert& Alert::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RelatedResourceArns"))
   {
-    Array<JsonView> relatedResourceArnsJsonList = jsonValue.GetArray("RelatedResourceArns");
+    Aws::Utils::Array<JsonView> relatedResourceArnsJsonList = jsonValue.GetArray("RelatedResourceArns");
     for(unsigned relatedResourceArnsIndex = 0; relatedResourceArnsIndex < relatedResourceArnsJsonList.GetLength(); ++relatedResourceArnsIndex)
     {
       m_relatedResourceArns.push_back(relatedResourceArnsJsonList[relatedResourceArnsIndex].AsString());
@@ -103,7 +103,7 @@ JsonValue Alert::Jsonize() const
 
   if(m_relatedResourceArnsHasBeenSet)
   {
-   Array<JsonValue> relatedResourceArnsJsonList(m_relatedResourceArns.size());
+   Aws::Utils::Array<JsonValue> relatedResourceArnsJsonList(m_relatedResourceArns.size());
    for(unsigned relatedResourceArnsIndex = 0; relatedResourceArnsIndex < relatedResourceArnsJsonList.GetLength(); ++relatedResourceArnsIndex)
    {
      relatedResourceArnsJsonList[relatedResourceArnsIndex].AsString(m_relatedResourceArns[relatedResourceArnsIndex]);

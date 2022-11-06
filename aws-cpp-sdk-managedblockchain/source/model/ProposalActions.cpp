@@ -35,7 +35,7 @@ ProposalActions& ProposalActions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Invitations"))
   {
-    Array<JsonView> invitationsJsonList = jsonValue.GetArray("Invitations");
+    Aws::Utils::Array<JsonView> invitationsJsonList = jsonValue.GetArray("Invitations");
     for(unsigned invitationsIndex = 0; invitationsIndex < invitationsJsonList.GetLength(); ++invitationsIndex)
     {
       m_invitations.push_back(invitationsJsonList[invitationsIndex].AsObject());
@@ -45,7 +45,7 @@ ProposalActions& ProposalActions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Removals"))
   {
-    Array<JsonView> removalsJsonList = jsonValue.GetArray("Removals");
+    Aws::Utils::Array<JsonView> removalsJsonList = jsonValue.GetArray("Removals");
     for(unsigned removalsIndex = 0; removalsIndex < removalsJsonList.GetLength(); ++removalsIndex)
     {
       m_removals.push_back(removalsJsonList[removalsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue ProposalActions::Jsonize() const
 
   if(m_invitationsHasBeenSet)
   {
-   Array<JsonValue> invitationsJsonList(m_invitations.size());
+   Aws::Utils::Array<JsonValue> invitationsJsonList(m_invitations.size());
    for(unsigned invitationsIndex = 0; invitationsIndex < invitationsJsonList.GetLength(); ++invitationsIndex)
    {
      invitationsJsonList[invitationsIndex].AsObject(m_invitations[invitationsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue ProposalActions::Jsonize() const
 
   if(m_removalsHasBeenSet)
   {
-   Array<JsonValue> removalsJsonList(m_removals.size());
+   Aws::Utils::Array<JsonValue> removalsJsonList(m_removals.size());
    for(unsigned removalsIndex = 0; removalsIndex < removalsJsonList.GetLength(); ++removalsIndex)
    {
      removalsJsonList[removalsIndex].AsObject(m_removals[removalsIndex].Jsonize());

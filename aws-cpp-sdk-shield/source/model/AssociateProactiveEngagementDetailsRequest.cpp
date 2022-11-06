@@ -23,7 +23,7 @@ Aws::String AssociateProactiveEngagementDetailsRequest::SerializePayload() const
 
   if(m_emergencyContactListHasBeenSet)
   {
-   Array<JsonValue> emergencyContactListJsonList(m_emergencyContactList.size());
+   Aws::Utils::Array<JsonValue> emergencyContactListJsonList(m_emergencyContactList.size());
    for(unsigned emergencyContactListIndex = 0; emergencyContactListIndex < emergencyContactListJsonList.GetLength(); ++emergencyContactListIndex)
    {
      emergencyContactListJsonList[emergencyContactListIndex].AsObject(m_emergencyContactList[emergencyContactListIndex].Jsonize());

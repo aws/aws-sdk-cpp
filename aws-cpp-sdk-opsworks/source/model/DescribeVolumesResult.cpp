@@ -30,7 +30,7 @@ DescribeVolumesResult& DescribeVolumesResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Volumes"))
   {
-    Array<JsonView> volumesJsonList = jsonValue.GetArray("Volumes");
+    Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("Volumes");
     for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
     {
       m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());

@@ -36,7 +36,7 @@ DescribeTapeRecoveryPointsResult& DescribeTapeRecoveryPointsResult::operator =(c
 
   if(jsonValue.ValueExists("TapeRecoveryPointInfos"))
   {
-    Array<JsonView> tapeRecoveryPointInfosJsonList = jsonValue.GetArray("TapeRecoveryPointInfos");
+    Aws::Utils::Array<JsonView> tapeRecoveryPointInfosJsonList = jsonValue.GetArray("TapeRecoveryPointInfos");
     for(unsigned tapeRecoveryPointInfosIndex = 0; tapeRecoveryPointInfosIndex < tapeRecoveryPointInfosJsonList.GetLength(); ++tapeRecoveryPointInfosIndex)
     {
       m_tapeRecoveryPointInfos.push_back(tapeRecoveryPointInfosJsonList[tapeRecoveryPointInfosIndex].AsObject());

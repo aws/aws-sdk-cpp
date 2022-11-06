@@ -38,7 +38,7 @@ GetMailDomainResult& GetMailDomainResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Records"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());

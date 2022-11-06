@@ -56,7 +56,7 @@ GetFaceDetectionResult& GetFaceDetectionResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Faces"))
   {
-    Array<JsonView> facesJsonList = jsonValue.GetArray("Faces");
+    Aws::Utils::Array<JsonView> facesJsonList = jsonValue.GetArray("Faces");
     for(unsigned facesIndex = 0; facesIndex < facesJsonList.GetLength(); ++facesIndex)
     {
       m_faces.push_back(facesJsonList[facesIndex].AsObject());

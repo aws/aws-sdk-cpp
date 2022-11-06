@@ -31,7 +31,7 @@ Aws::String ImportResourcesToDraftAppVersionRequest::SerializePayload() const
 
   if(m_sourceArnsHasBeenSet)
   {
-   Array<JsonValue> sourceArnsJsonList(m_sourceArns.size());
+   Aws::Utils::Array<JsonValue> sourceArnsJsonList(m_sourceArns.size());
    for(unsigned sourceArnsIndex = 0; sourceArnsIndex < sourceArnsJsonList.GetLength(); ++sourceArnsIndex)
    {
      sourceArnsJsonList[sourceArnsIndex].AsString(m_sourceArns[sourceArnsIndex]);
@@ -42,7 +42,7 @@ Aws::String ImportResourcesToDraftAppVersionRequest::SerializePayload() const
 
   if(m_terraformSourcesHasBeenSet)
   {
-   Array<JsonValue> terraformSourcesJsonList(m_terraformSources.size());
+   Aws::Utils::Array<JsonValue> terraformSourcesJsonList(m_terraformSources.size());
    for(unsigned terraformSourcesIndex = 0; terraformSourcesIndex < terraformSourcesJsonList.GetLength(); ++terraformSourcesIndex)
    {
      terraformSourcesJsonList[terraformSourcesIndex].AsObject(m_terraformSources[terraformSourcesIndex].Jsonize());

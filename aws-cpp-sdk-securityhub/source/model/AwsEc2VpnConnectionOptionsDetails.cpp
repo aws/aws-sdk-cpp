@@ -44,7 +44,7 @@ AwsEc2VpnConnectionOptionsDetails& AwsEc2VpnConnectionOptionsDetails::operator =
 
   if(jsonValue.ValueExists("TunnelOptions"))
   {
-    Array<JsonView> tunnelOptionsJsonList = jsonValue.GetArray("TunnelOptions");
+    Aws::Utils::Array<JsonView> tunnelOptionsJsonList = jsonValue.GetArray("TunnelOptions");
     for(unsigned tunnelOptionsIndex = 0; tunnelOptionsIndex < tunnelOptionsJsonList.GetLength(); ++tunnelOptionsIndex)
     {
       m_tunnelOptions.push_back(tunnelOptionsJsonList[tunnelOptionsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue AwsEc2VpnConnectionOptionsDetails::Jsonize() const
 
   if(m_tunnelOptionsHasBeenSet)
   {
-   Array<JsonValue> tunnelOptionsJsonList(m_tunnelOptions.size());
+   Aws::Utils::Array<JsonValue> tunnelOptionsJsonList(m_tunnelOptions.size());
    for(unsigned tunnelOptionsIndex = 0; tunnelOptionsIndex < tunnelOptionsJsonList.GetLength(); ++tunnelOptionsIndex)
    {
      tunnelOptionsJsonList[tunnelOptionsIndex].AsObject(m_tunnelOptions[tunnelOptionsIndex].Jsonize());

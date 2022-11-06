@@ -30,7 +30,7 @@ DescribeEcsClustersResult& DescribeEcsClustersResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EcsClusters"))
   {
-    Array<JsonView> ecsClustersJsonList = jsonValue.GetArray("EcsClusters");
+    Aws::Utils::Array<JsonView> ecsClustersJsonList = jsonValue.GetArray("EcsClusters");
     for(unsigned ecsClustersIndex = 0; ecsClustersIndex < ecsClustersJsonList.GetLength(); ++ecsClustersIndex)
     {
       m_ecsClusters.push_back(ecsClustersJsonList[ecsClustersIndex].AsObject());

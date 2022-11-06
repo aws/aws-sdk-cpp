@@ -138,7 +138,7 @@ FileCacheCreating& FileCacheCreating::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -148,7 +148,7 @@ FileCacheCreating& FileCacheCreating::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NetworkInterfaceIds"))
   {
-    Array<JsonView> networkInterfaceIdsJsonList = jsonValue.GetArray("NetworkInterfaceIds");
+    Aws::Utils::Array<JsonView> networkInterfaceIdsJsonList = jsonValue.GetArray("NetworkInterfaceIds");
     for(unsigned networkInterfaceIdsIndex = 0; networkInterfaceIdsIndex < networkInterfaceIdsJsonList.GetLength(); ++networkInterfaceIdsIndex)
     {
       m_networkInterfaceIds.push_back(networkInterfaceIdsJsonList[networkInterfaceIdsIndex].AsString());
@@ -179,7 +179,7 @@ FileCacheCreating& FileCacheCreating::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -203,7 +203,7 @@ FileCacheCreating& FileCacheCreating::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DataRepositoryAssociationIds"))
   {
-    Array<JsonView> dataRepositoryAssociationIdsJsonList = jsonValue.GetArray("DataRepositoryAssociationIds");
+    Aws::Utils::Array<JsonView> dataRepositoryAssociationIdsJsonList = jsonValue.GetArray("DataRepositoryAssociationIds");
     for(unsigned dataRepositoryAssociationIdsIndex = 0; dataRepositoryAssociationIdsIndex < dataRepositoryAssociationIdsJsonList.GetLength(); ++dataRepositoryAssociationIdsIndex)
     {
       m_dataRepositoryAssociationIds.push_back(dataRepositoryAssociationIdsJsonList[dataRepositoryAssociationIdsIndex].AsString());
@@ -271,7 +271,7 @@ JsonValue FileCacheCreating::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -282,7 +282,7 @@ JsonValue FileCacheCreating::Jsonize() const
 
   if(m_networkInterfaceIdsHasBeenSet)
   {
-   Array<JsonValue> networkInterfaceIdsJsonList(m_networkInterfaceIds.size());
+   Aws::Utils::Array<JsonValue> networkInterfaceIdsJsonList(m_networkInterfaceIds.size());
    for(unsigned networkInterfaceIdsIndex = 0; networkInterfaceIdsIndex < networkInterfaceIdsJsonList.GetLength(); ++networkInterfaceIdsIndex)
    {
      networkInterfaceIdsJsonList[networkInterfaceIdsIndex].AsString(m_networkInterfaceIds[networkInterfaceIdsIndex]);
@@ -311,7 +311,7 @@ JsonValue FileCacheCreating::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -334,7 +334,7 @@ JsonValue FileCacheCreating::Jsonize() const
 
   if(m_dataRepositoryAssociationIdsHasBeenSet)
   {
-   Array<JsonValue> dataRepositoryAssociationIdsJsonList(m_dataRepositoryAssociationIds.size());
+   Aws::Utils::Array<JsonValue> dataRepositoryAssociationIdsJsonList(m_dataRepositoryAssociationIds.size());
    for(unsigned dataRepositoryAssociationIdsIndex = 0; dataRepositoryAssociationIdsIndex < dataRepositoryAssociationIdsJsonList.GetLength(); ++dataRepositoryAssociationIdsIndex)
    {
      dataRepositoryAssociationIdsJsonList[dataRepositoryAssociationIdsIndex].AsString(m_dataRepositoryAssociationIds[dataRepositoryAssociationIdsIndex]);

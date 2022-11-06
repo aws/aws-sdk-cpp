@@ -35,7 +35,7 @@ Aws::String UpdateProfileRequest::SerializePayload() const
 
   if(m_managedPolicyArnsHasBeenSet)
   {
-   Array<JsonValue> managedPolicyArnsJsonList(m_managedPolicyArns.size());
+   Aws::Utils::Array<JsonValue> managedPolicyArnsJsonList(m_managedPolicyArns.size());
    for(unsigned managedPolicyArnsIndex = 0; managedPolicyArnsIndex < managedPolicyArnsJsonList.GetLength(); ++managedPolicyArnsIndex)
    {
      managedPolicyArnsJsonList[managedPolicyArnsIndex].AsString(m_managedPolicyArns[managedPolicyArnsIndex]);
@@ -52,7 +52,7 @@ Aws::String UpdateProfileRequest::SerializePayload() const
 
   if(m_roleArnsHasBeenSet)
   {
-   Array<JsonValue> roleArnsJsonList(m_roleArns.size());
+   Aws::Utils::Array<JsonValue> roleArnsJsonList(m_roleArns.size());
    for(unsigned roleArnsIndex = 0; roleArnsIndex < roleArnsJsonList.GetLength(); ++roleArnsIndex)
    {
      roleArnsJsonList[roleArnsIndex].AsString(m_roleArns[roleArnsIndex]);

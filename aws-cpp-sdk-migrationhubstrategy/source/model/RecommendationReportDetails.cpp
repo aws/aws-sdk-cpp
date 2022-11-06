@@ -59,7 +59,7 @@ RecommendationReportDetails& RecommendationReportDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("s3Keys"))
   {
-    Array<JsonView> s3KeysJsonList = jsonValue.GetArray("s3Keys");
+    Aws::Utils::Array<JsonView> s3KeysJsonList = jsonValue.GetArray("s3Keys");
     for(unsigned s3KeysIndex = 0; s3KeysIndex < s3KeysJsonList.GetLength(); ++s3KeysIndex)
     {
       m_s3Keys.push_back(s3KeysJsonList[s3KeysIndex].AsString());
@@ -108,7 +108,7 @@ JsonValue RecommendationReportDetails::Jsonize() const
 
   if(m_s3KeysHasBeenSet)
   {
-   Array<JsonValue> s3KeysJsonList(m_s3Keys.size());
+   Aws::Utils::Array<JsonValue> s3KeysJsonList(m_s3Keys.size());
    for(unsigned s3KeysIndex = 0; s3KeysIndex < s3KeysJsonList.GetLength(); ++s3KeysIndex)
    {
      s3KeysJsonList[s3KeysIndex].AsString(m_s3Keys[s3KeysIndex]);

@@ -165,7 +165,7 @@ Workspace& Workspace::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ModificationStates"))
   {
-    Array<JsonView> modificationStatesJsonList = jsonValue.GetArray("ModificationStates");
+    Aws::Utils::Array<JsonView> modificationStatesJsonList = jsonValue.GetArray("ModificationStates");
     for(unsigned modificationStatesIndex = 0; modificationStatesIndex < modificationStatesJsonList.GetLength(); ++modificationStatesIndex)
     {
       m_modificationStates.push_back(modificationStatesJsonList[modificationStatesIndex].AsObject());
@@ -265,7 +265,7 @@ JsonValue Workspace::Jsonize() const
 
   if(m_modificationStatesHasBeenSet)
   {
-   Array<JsonValue> modificationStatesJsonList(m_modificationStates.size());
+   Aws::Utils::Array<JsonValue> modificationStatesJsonList(m_modificationStates.size());
    for(unsigned modificationStatesIndex = 0; modificationStatesIndex < modificationStatesJsonList.GetLength(); ++modificationStatesIndex)
    {
      modificationStatesJsonList[modificationStatesIndex].AsObject(m_modificationStates[modificationStatesIndex].Jsonize());

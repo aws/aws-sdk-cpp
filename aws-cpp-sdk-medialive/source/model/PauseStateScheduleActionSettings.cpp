@@ -33,7 +33,7 @@ PauseStateScheduleActionSettings& PauseStateScheduleActionSettings::operator =(J
 {
   if(jsonValue.ValueExists("pipelines"))
   {
-    Array<JsonView> pipelinesJsonList = jsonValue.GetArray("pipelines");
+    Aws::Utils::Array<JsonView> pipelinesJsonList = jsonValue.GetArray("pipelines");
     for(unsigned pipelinesIndex = 0; pipelinesIndex < pipelinesJsonList.GetLength(); ++pipelinesIndex)
     {
       m_pipelines.push_back(pipelinesJsonList[pipelinesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue PauseStateScheduleActionSettings::Jsonize() const
 
   if(m_pipelinesHasBeenSet)
   {
-   Array<JsonValue> pipelinesJsonList(m_pipelines.size());
+   Aws::Utils::Array<JsonValue> pipelinesJsonList(m_pipelines.size());
    for(unsigned pipelinesIndex = 0; pipelinesIndex < pipelinesJsonList.GetLength(); ++pipelinesIndex)
    {
      pipelinesJsonList[pipelinesIndex].AsObject(m_pipelines[pipelinesIndex].Jsonize());

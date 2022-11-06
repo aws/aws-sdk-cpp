@@ -30,7 +30,7 @@ GetSupportedResourceTypesResult& GetSupportedResourceTypesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceTypes"))
   {
-    Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
+    Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
     for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
     {
       m_resourceTypes.push_back(resourceTypesJsonList[resourceTypesIndex].AsString());

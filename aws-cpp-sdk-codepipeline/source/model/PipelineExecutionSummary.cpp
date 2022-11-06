@@ -75,7 +75,7 @@ PipelineExecutionSummary& PipelineExecutionSummary::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("sourceRevisions"))
   {
-    Array<JsonView> sourceRevisionsJsonList = jsonValue.GetArray("sourceRevisions");
+    Aws::Utils::Array<JsonView> sourceRevisionsJsonList = jsonValue.GetArray("sourceRevisions");
     for(unsigned sourceRevisionsIndex = 0; sourceRevisionsIndex < sourceRevisionsJsonList.GetLength(); ++sourceRevisionsIndex)
     {
       m_sourceRevisions.push_back(sourceRevisionsJsonList[sourceRevisionsIndex].AsObject());
@@ -127,7 +127,7 @@ JsonValue PipelineExecutionSummary::Jsonize() const
 
   if(m_sourceRevisionsHasBeenSet)
   {
-   Array<JsonValue> sourceRevisionsJsonList(m_sourceRevisions.size());
+   Aws::Utils::Array<JsonValue> sourceRevisionsJsonList(m_sourceRevisions.size());
    for(unsigned sourceRevisionsIndex = 0; sourceRevisionsIndex < sourceRevisionsJsonList.GetLength(); ++sourceRevisionsIndex)
    {
      sourceRevisionsJsonList[sourceRevisionsIndex].AsObject(m_sourceRevisions[sourceRevisionsIndex].Jsonize());

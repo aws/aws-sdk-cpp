@@ -42,7 +42,7 @@ TeletextDestinationSettings& TeletextDestinationSettings::operator =(JsonView js
 
   if(jsonValue.ValueExists("pageTypes"))
   {
-    Array<JsonView> pageTypesJsonList = jsonValue.GetArray("pageTypes");
+    Aws::Utils::Array<JsonView> pageTypesJsonList = jsonValue.GetArray("pageTypes");
     for(unsigned pageTypesIndex = 0; pageTypesIndex < pageTypesJsonList.GetLength(); ++pageTypesIndex)
     {
       m_pageTypes.push_back(TeletextPageTypeMapper::GetTeletextPageTypeForName(pageTypesJsonList[pageTypesIndex].AsString()));
@@ -65,7 +65,7 @@ JsonValue TeletextDestinationSettings::Jsonize() const
 
   if(m_pageTypesHasBeenSet)
   {
-   Array<JsonValue> pageTypesJsonList(m_pageTypes.size());
+   Aws::Utils::Array<JsonValue> pageTypesJsonList(m_pageTypes.size());
    for(unsigned pageTypesIndex = 0; pageTypesIndex < pageTypesJsonList.GetLength(); ++pageTypesIndex)
    {
      pageTypesJsonList[pageTypesIndex].AsString(TeletextPageTypeMapper::GetNameForTeletextPageType(m_pageTypes[pageTypesIndex]));

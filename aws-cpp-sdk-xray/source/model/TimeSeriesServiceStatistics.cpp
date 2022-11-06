@@ -69,7 +69,7 @@ TimeSeriesServiceStatistics& TimeSeriesServiceStatistics::operator =(JsonView js
 
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
   {
-    Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
+    Aws::Utils::Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
     for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
     {
       m_responseTimeHistogram.push_back(responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject());
@@ -109,7 +109,7 @@ JsonValue TimeSeriesServiceStatistics::Jsonize() const
 
   if(m_responseTimeHistogramHasBeenSet)
   {
-   Array<JsonValue> responseTimeHistogramJsonList(m_responseTimeHistogram.size());
+   Aws::Utils::Array<JsonValue> responseTimeHistogramJsonList(m_responseTimeHistogram.size());
    for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
    {
      responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject(m_responseTimeHistogram[responseTimeHistogramIndex].Jsonize());

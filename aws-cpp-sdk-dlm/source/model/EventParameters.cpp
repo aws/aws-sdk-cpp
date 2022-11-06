@@ -46,7 +46,7 @@ EventParameters& EventParameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SnapshotOwner"))
   {
-    Array<JsonView> snapshotOwnerJsonList = jsonValue.GetArray("SnapshotOwner");
+    Aws::Utils::Array<JsonView> snapshotOwnerJsonList = jsonValue.GetArray("SnapshotOwner");
     for(unsigned snapshotOwnerIndex = 0; snapshotOwnerIndex < snapshotOwnerJsonList.GetLength(); ++snapshotOwnerIndex)
     {
       m_snapshotOwner.push_back(snapshotOwnerJsonList[snapshotOwnerIndex].AsString());
@@ -75,7 +75,7 @@ JsonValue EventParameters::Jsonize() const
 
   if(m_snapshotOwnerHasBeenSet)
   {
-   Array<JsonValue> snapshotOwnerJsonList(m_snapshotOwner.size());
+   Aws::Utils::Array<JsonValue> snapshotOwnerJsonList(m_snapshotOwner.size());
    for(unsigned snapshotOwnerIndex = 0; snapshotOwnerIndex < snapshotOwnerJsonList.GetLength(); ++snapshotOwnerIndex)
    {
      snapshotOwnerJsonList[snapshotOwnerIndex].AsString(m_snapshotOwner[snapshotOwnerIndex]);

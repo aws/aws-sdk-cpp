@@ -62,7 +62,7 @@ Aws::String CreateUserRequest::SerializePayload() const
 
   if(m_securityProfileIdsHasBeenSet)
   {
-   Array<JsonValue> securityProfileIdsJsonList(m_securityProfileIds.size());
+   Aws::Utils::Array<JsonValue> securityProfileIdsJsonList(m_securityProfileIds.size());
    for(unsigned securityProfileIdsIndex = 0; securityProfileIdsIndex < securityProfileIdsJsonList.GetLength(); ++securityProfileIdsIndex)
    {
      securityProfileIdsJsonList[securityProfileIdsIndex].AsString(m_securityProfileIds[securityProfileIdsIndex]);

@@ -52,7 +52,7 @@ AdvancedFieldSelector& AdvancedFieldSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Equals"))
   {
-    Array<JsonView> equalsJsonList = jsonValue.GetArray("Equals");
+    Aws::Utils::Array<JsonView> equalsJsonList = jsonValue.GetArray("Equals");
     for(unsigned equalsIndex = 0; equalsIndex < equalsJsonList.GetLength(); ++equalsIndex)
     {
       m_equals.push_back(equalsJsonList[equalsIndex].AsString());
@@ -62,7 +62,7 @@ AdvancedFieldSelector& AdvancedFieldSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StartsWith"))
   {
-    Array<JsonView> startsWithJsonList = jsonValue.GetArray("StartsWith");
+    Aws::Utils::Array<JsonView> startsWithJsonList = jsonValue.GetArray("StartsWith");
     for(unsigned startsWithIndex = 0; startsWithIndex < startsWithJsonList.GetLength(); ++startsWithIndex)
     {
       m_startsWith.push_back(startsWithJsonList[startsWithIndex].AsString());
@@ -72,7 +72,7 @@ AdvancedFieldSelector& AdvancedFieldSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EndsWith"))
   {
-    Array<JsonView> endsWithJsonList = jsonValue.GetArray("EndsWith");
+    Aws::Utils::Array<JsonView> endsWithJsonList = jsonValue.GetArray("EndsWith");
     for(unsigned endsWithIndex = 0; endsWithIndex < endsWithJsonList.GetLength(); ++endsWithIndex)
     {
       m_endsWith.push_back(endsWithJsonList[endsWithIndex].AsString());
@@ -82,7 +82,7 @@ AdvancedFieldSelector& AdvancedFieldSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NotEquals"))
   {
-    Array<JsonView> notEqualsJsonList = jsonValue.GetArray("NotEquals");
+    Aws::Utils::Array<JsonView> notEqualsJsonList = jsonValue.GetArray("NotEquals");
     for(unsigned notEqualsIndex = 0; notEqualsIndex < notEqualsJsonList.GetLength(); ++notEqualsIndex)
     {
       m_notEquals.push_back(notEqualsJsonList[notEqualsIndex].AsString());
@@ -92,7 +92,7 @@ AdvancedFieldSelector& AdvancedFieldSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NotStartsWith"))
   {
-    Array<JsonView> notStartsWithJsonList = jsonValue.GetArray("NotStartsWith");
+    Aws::Utils::Array<JsonView> notStartsWithJsonList = jsonValue.GetArray("NotStartsWith");
     for(unsigned notStartsWithIndex = 0; notStartsWithIndex < notStartsWithJsonList.GetLength(); ++notStartsWithIndex)
     {
       m_notStartsWith.push_back(notStartsWithJsonList[notStartsWithIndex].AsString());
@@ -102,7 +102,7 @@ AdvancedFieldSelector& AdvancedFieldSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NotEndsWith"))
   {
-    Array<JsonView> notEndsWithJsonList = jsonValue.GetArray("NotEndsWith");
+    Aws::Utils::Array<JsonView> notEndsWithJsonList = jsonValue.GetArray("NotEndsWith");
     for(unsigned notEndsWithIndex = 0; notEndsWithIndex < notEndsWithJsonList.GetLength(); ++notEndsWithIndex)
     {
       m_notEndsWith.push_back(notEndsWithJsonList[notEndsWithIndex].AsString());
@@ -125,7 +125,7 @@ JsonValue AdvancedFieldSelector::Jsonize() const
 
   if(m_equalsHasBeenSet)
   {
-   Array<JsonValue> equalsJsonList(m_equals.size());
+   Aws::Utils::Array<JsonValue> equalsJsonList(m_equals.size());
    for(unsigned equalsIndex = 0; equalsIndex < equalsJsonList.GetLength(); ++equalsIndex)
    {
      equalsJsonList[equalsIndex].AsString(m_equals[equalsIndex]);
@@ -136,7 +136,7 @@ JsonValue AdvancedFieldSelector::Jsonize() const
 
   if(m_startsWithHasBeenSet)
   {
-   Array<JsonValue> startsWithJsonList(m_startsWith.size());
+   Aws::Utils::Array<JsonValue> startsWithJsonList(m_startsWith.size());
    for(unsigned startsWithIndex = 0; startsWithIndex < startsWithJsonList.GetLength(); ++startsWithIndex)
    {
      startsWithJsonList[startsWithIndex].AsString(m_startsWith[startsWithIndex]);
@@ -147,7 +147,7 @@ JsonValue AdvancedFieldSelector::Jsonize() const
 
   if(m_endsWithHasBeenSet)
   {
-   Array<JsonValue> endsWithJsonList(m_endsWith.size());
+   Aws::Utils::Array<JsonValue> endsWithJsonList(m_endsWith.size());
    for(unsigned endsWithIndex = 0; endsWithIndex < endsWithJsonList.GetLength(); ++endsWithIndex)
    {
      endsWithJsonList[endsWithIndex].AsString(m_endsWith[endsWithIndex]);
@@ -158,7 +158,7 @@ JsonValue AdvancedFieldSelector::Jsonize() const
 
   if(m_notEqualsHasBeenSet)
   {
-   Array<JsonValue> notEqualsJsonList(m_notEquals.size());
+   Aws::Utils::Array<JsonValue> notEqualsJsonList(m_notEquals.size());
    for(unsigned notEqualsIndex = 0; notEqualsIndex < notEqualsJsonList.GetLength(); ++notEqualsIndex)
    {
      notEqualsJsonList[notEqualsIndex].AsString(m_notEquals[notEqualsIndex]);
@@ -169,7 +169,7 @@ JsonValue AdvancedFieldSelector::Jsonize() const
 
   if(m_notStartsWithHasBeenSet)
   {
-   Array<JsonValue> notStartsWithJsonList(m_notStartsWith.size());
+   Aws::Utils::Array<JsonValue> notStartsWithJsonList(m_notStartsWith.size());
    for(unsigned notStartsWithIndex = 0; notStartsWithIndex < notStartsWithJsonList.GetLength(); ++notStartsWithIndex)
    {
      notStartsWithJsonList[notStartsWithIndex].AsString(m_notStartsWith[notStartsWithIndex]);
@@ -180,7 +180,7 @@ JsonValue AdvancedFieldSelector::Jsonize() const
 
   if(m_notEndsWithHasBeenSet)
   {
-   Array<JsonValue> notEndsWithJsonList(m_notEndsWith.size());
+   Aws::Utils::Array<JsonValue> notEndsWithJsonList(m_notEndsWith.size());
    for(unsigned notEndsWithIndex = 0; notEndsWithIndex < notEndsWithJsonList.GetLength(); ++notEndsWithIndex)
    {
      notEndsWithJsonList[notEndsWithIndex].AsString(m_notEndsWith[notEndsWithIndex]);

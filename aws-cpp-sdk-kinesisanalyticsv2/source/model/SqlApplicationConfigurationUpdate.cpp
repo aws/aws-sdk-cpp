@@ -37,7 +37,7 @@ SqlApplicationConfigurationUpdate& SqlApplicationConfigurationUpdate::operator =
 {
   if(jsonValue.ValueExists("InputUpdates"))
   {
-    Array<JsonView> inputUpdatesJsonList = jsonValue.GetArray("InputUpdates");
+    Aws::Utils::Array<JsonView> inputUpdatesJsonList = jsonValue.GetArray("InputUpdates");
     for(unsigned inputUpdatesIndex = 0; inputUpdatesIndex < inputUpdatesJsonList.GetLength(); ++inputUpdatesIndex)
     {
       m_inputUpdates.push_back(inputUpdatesJsonList[inputUpdatesIndex].AsObject());
@@ -47,7 +47,7 @@ SqlApplicationConfigurationUpdate& SqlApplicationConfigurationUpdate::operator =
 
   if(jsonValue.ValueExists("OutputUpdates"))
   {
-    Array<JsonView> outputUpdatesJsonList = jsonValue.GetArray("OutputUpdates");
+    Aws::Utils::Array<JsonView> outputUpdatesJsonList = jsonValue.GetArray("OutputUpdates");
     for(unsigned outputUpdatesIndex = 0; outputUpdatesIndex < outputUpdatesJsonList.GetLength(); ++outputUpdatesIndex)
     {
       m_outputUpdates.push_back(outputUpdatesJsonList[outputUpdatesIndex].AsObject());
@@ -57,7 +57,7 @@ SqlApplicationConfigurationUpdate& SqlApplicationConfigurationUpdate::operator =
 
   if(jsonValue.ValueExists("ReferenceDataSourceUpdates"))
   {
-    Array<JsonView> referenceDataSourceUpdatesJsonList = jsonValue.GetArray("ReferenceDataSourceUpdates");
+    Aws::Utils::Array<JsonView> referenceDataSourceUpdatesJsonList = jsonValue.GetArray("ReferenceDataSourceUpdates");
     for(unsigned referenceDataSourceUpdatesIndex = 0; referenceDataSourceUpdatesIndex < referenceDataSourceUpdatesJsonList.GetLength(); ++referenceDataSourceUpdatesIndex)
     {
       m_referenceDataSourceUpdates.push_back(referenceDataSourceUpdatesJsonList[referenceDataSourceUpdatesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue SqlApplicationConfigurationUpdate::Jsonize() const
 
   if(m_inputUpdatesHasBeenSet)
   {
-   Array<JsonValue> inputUpdatesJsonList(m_inputUpdates.size());
+   Aws::Utils::Array<JsonValue> inputUpdatesJsonList(m_inputUpdates.size());
    for(unsigned inputUpdatesIndex = 0; inputUpdatesIndex < inputUpdatesJsonList.GetLength(); ++inputUpdatesIndex)
    {
      inputUpdatesJsonList[inputUpdatesIndex].AsObject(m_inputUpdates[inputUpdatesIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue SqlApplicationConfigurationUpdate::Jsonize() const
 
   if(m_outputUpdatesHasBeenSet)
   {
-   Array<JsonValue> outputUpdatesJsonList(m_outputUpdates.size());
+   Aws::Utils::Array<JsonValue> outputUpdatesJsonList(m_outputUpdates.size());
    for(unsigned outputUpdatesIndex = 0; outputUpdatesIndex < outputUpdatesJsonList.GetLength(); ++outputUpdatesIndex)
    {
      outputUpdatesJsonList[outputUpdatesIndex].AsObject(m_outputUpdates[outputUpdatesIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue SqlApplicationConfigurationUpdate::Jsonize() const
 
   if(m_referenceDataSourceUpdatesHasBeenSet)
   {
-   Array<JsonValue> referenceDataSourceUpdatesJsonList(m_referenceDataSourceUpdates.size());
+   Aws::Utils::Array<JsonValue> referenceDataSourceUpdatesJsonList(m_referenceDataSourceUpdates.size());
    for(unsigned referenceDataSourceUpdatesIndex = 0; referenceDataSourceUpdatesIndex < referenceDataSourceUpdatesJsonList.GetLength(); ++referenceDataSourceUpdatesIndex)
    {
      referenceDataSourceUpdatesJsonList[referenceDataSourceUpdatesIndex].AsObject(m_referenceDataSourceUpdates[referenceDataSourceUpdatesIndex].Jsonize());

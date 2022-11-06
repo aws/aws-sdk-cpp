@@ -23,7 +23,7 @@ Aws::String DescribeStacksRequest::SerializePayload() const
 
   if(m_stackIdsHasBeenSet)
   {
-   Array<JsonValue> stackIdsJsonList(m_stackIds.size());
+   Aws::Utils::Array<JsonValue> stackIdsJsonList(m_stackIds.size());
    for(unsigned stackIdsIndex = 0; stackIdsIndex < stackIdsJsonList.GetLength(); ++stackIdsIndex)
    {
      stackIdsJsonList[stackIdsIndex].AsString(m_stackIds[stackIdsIndex]);

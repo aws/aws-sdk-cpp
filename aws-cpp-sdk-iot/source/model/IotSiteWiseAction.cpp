@@ -35,7 +35,7 @@ IotSiteWiseAction& IotSiteWiseAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("putAssetPropertyValueEntries"))
   {
-    Array<JsonView> putAssetPropertyValueEntriesJsonList = jsonValue.GetArray("putAssetPropertyValueEntries");
+    Aws::Utils::Array<JsonView> putAssetPropertyValueEntriesJsonList = jsonValue.GetArray("putAssetPropertyValueEntries");
     for(unsigned putAssetPropertyValueEntriesIndex = 0; putAssetPropertyValueEntriesIndex < putAssetPropertyValueEntriesJsonList.GetLength(); ++putAssetPropertyValueEntriesIndex)
     {
       m_putAssetPropertyValueEntries.push_back(putAssetPropertyValueEntriesJsonList[putAssetPropertyValueEntriesIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue IotSiteWiseAction::Jsonize() const
 
   if(m_putAssetPropertyValueEntriesHasBeenSet)
   {
-   Array<JsonValue> putAssetPropertyValueEntriesJsonList(m_putAssetPropertyValueEntries.size());
+   Aws::Utils::Array<JsonValue> putAssetPropertyValueEntriesJsonList(m_putAssetPropertyValueEntries.size());
    for(unsigned putAssetPropertyValueEntriesIndex = 0; putAssetPropertyValueEntriesIndex < putAssetPropertyValueEntriesJsonList.GetLength(); ++putAssetPropertyValueEntriesIndex)
    {
      putAssetPropertyValueEntriesJsonList[putAssetPropertyValueEntriesIndex].AsObject(m_putAssetPropertyValueEntries[putAssetPropertyValueEntriesIndex].Jsonize());

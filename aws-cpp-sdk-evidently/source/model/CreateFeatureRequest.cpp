@@ -76,7 +76,7 @@ Aws::String CreateFeatureRequest::SerializePayload() const
 
   if(m_variationsHasBeenSet)
   {
-   Array<JsonValue> variationsJsonList(m_variations.size());
+   Aws::Utils::Array<JsonValue> variationsJsonList(m_variations.size());
    for(unsigned variationsIndex = 0; variationsIndex < variationsJsonList.GetLength(); ++variationsIndex)
    {
      variationsJsonList[variationsIndex].AsObject(m_variations[variationsIndex].Jsonize());

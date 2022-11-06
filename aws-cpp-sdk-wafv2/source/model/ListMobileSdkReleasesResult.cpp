@@ -30,7 +30,7 @@ ListMobileSdkReleasesResult& ListMobileSdkReleasesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReleaseSummaries"))
   {
-    Array<JsonView> releaseSummariesJsonList = jsonValue.GetArray("ReleaseSummaries");
+    Aws::Utils::Array<JsonView> releaseSummariesJsonList = jsonValue.GetArray("ReleaseSummaries");
     for(unsigned releaseSummariesIndex = 0; releaseSummariesIndex < releaseSummariesJsonList.GetLength(); ++releaseSummariesIndex)
     {
       m_releaseSummaries.push_back(releaseSummariesJsonList[releaseSummariesIndex].AsObject());

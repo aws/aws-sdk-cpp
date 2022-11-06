@@ -30,7 +30,7 @@ DescribeWorkspaceBundlesResult& DescribeWorkspaceBundlesResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Bundles"))
   {
-    Array<JsonView> bundlesJsonList = jsonValue.GetArray("Bundles");
+    Aws::Utils::Array<JsonView> bundlesJsonList = jsonValue.GetArray("Bundles");
     for(unsigned bundlesIndex = 0; bundlesIndex < bundlesJsonList.GetLength(); ++bundlesIndex)
     {
       m_bundles.push_back(bundlesJsonList[bundlesIndex].AsObject());

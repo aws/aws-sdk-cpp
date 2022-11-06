@@ -36,7 +36,7 @@ ListMulticastGroupsByFuotaTaskResult& ListMulticastGroupsByFuotaTaskResult::oper
 
   if(jsonValue.ValueExists("MulticastGroupList"))
   {
-    Array<JsonView> multicastGroupListJsonList = jsonValue.GetArray("MulticastGroupList");
+    Aws::Utils::Array<JsonView> multicastGroupListJsonList = jsonValue.GetArray("MulticastGroupList");
     for(unsigned multicastGroupListIndex = 0; multicastGroupListIndex < multicastGroupListJsonList.GetLength(); ++multicastGroupListIndex)
     {
       m_multicastGroupList.push_back(multicastGroupListJsonList[multicastGroupListIndex].AsObject());

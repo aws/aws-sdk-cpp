@@ -142,7 +142,7 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(JsonVie
 
   if(jsonValue.ValueExists("NotificationArns"))
   {
-    Array<JsonView> notificationArnsJsonList = jsonValue.GetArray("NotificationArns");
+    Aws::Utils::Array<JsonView> notificationArnsJsonList = jsonValue.GetArray("NotificationArns");
     for(unsigned notificationArnsIndex = 0; notificationArnsIndex < notificationArnsJsonList.GetLength(); ++notificationArnsIndex)
     {
       m_notificationArns.push_back(notificationArnsJsonList[notificationArnsIndex].AsString());
@@ -152,7 +152,7 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(JsonVie
 
   if(jsonValue.ValueExists("ProvisioningParameters"))
   {
-    Array<JsonView> provisioningParametersJsonList = jsonValue.GetArray("ProvisioningParameters");
+    Aws::Utils::Array<JsonView> provisioningParametersJsonList = jsonValue.GetArray("ProvisioningParameters");
     for(unsigned provisioningParametersIndex = 0; provisioningParametersIndex < provisioningParametersJsonList.GetLength(); ++provisioningParametersIndex)
     {
       m_provisioningParameters.push_back(provisioningParametersJsonList[provisioningParametersIndex].AsObject());
@@ -162,7 +162,7 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(JsonVie
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -248,7 +248,7 @@ JsonValue ProvisionedProductPlanDetails::Jsonize() const
 
   if(m_notificationArnsHasBeenSet)
   {
-   Array<JsonValue> notificationArnsJsonList(m_notificationArns.size());
+   Aws::Utils::Array<JsonValue> notificationArnsJsonList(m_notificationArns.size());
    for(unsigned notificationArnsIndex = 0; notificationArnsIndex < notificationArnsJsonList.GetLength(); ++notificationArnsIndex)
    {
      notificationArnsJsonList[notificationArnsIndex].AsString(m_notificationArns[notificationArnsIndex]);
@@ -259,7 +259,7 @@ JsonValue ProvisionedProductPlanDetails::Jsonize() const
 
   if(m_provisioningParametersHasBeenSet)
   {
-   Array<JsonValue> provisioningParametersJsonList(m_provisioningParameters.size());
+   Aws::Utils::Array<JsonValue> provisioningParametersJsonList(m_provisioningParameters.size());
    for(unsigned provisioningParametersIndex = 0; provisioningParametersIndex < provisioningParametersJsonList.GetLength(); ++provisioningParametersIndex)
    {
      provisioningParametersJsonList[provisioningParametersIndex].AsObject(m_provisioningParameters[provisioningParametersIndex].Jsonize());
@@ -270,7 +270,7 @@ JsonValue ProvisionedProductPlanDetails::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

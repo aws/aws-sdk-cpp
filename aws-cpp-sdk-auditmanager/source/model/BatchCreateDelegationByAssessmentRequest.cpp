@@ -24,7 +24,7 @@ Aws::String BatchCreateDelegationByAssessmentRequest::SerializePayload() const
 
   if(m_createDelegationRequestsHasBeenSet)
   {
-   Array<JsonValue> createDelegationRequestsJsonList(m_createDelegationRequests.size());
+   Aws::Utils::Array<JsonValue> createDelegationRequestsJsonList(m_createDelegationRequests.size());
    for(unsigned createDelegationRequestsIndex = 0; createDelegationRequestsIndex < createDelegationRequestsJsonList.GetLength(); ++createDelegationRequestsIndex)
    {
      createDelegationRequestsJsonList[createDelegationRequestsIndex].AsObject(m_createDelegationRequests[createDelegationRequestsIndex].Jsonize());

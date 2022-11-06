@@ -30,7 +30,7 @@ ListTokensResult& ListTokensResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Tokens"))
   {
-    Array<JsonView> tokensJsonList = jsonValue.GetArray("Tokens");
+    Aws::Utils::Array<JsonView> tokensJsonList = jsonValue.GetArray("Tokens");
     for(unsigned tokensIndex = 0; tokensIndex < tokensJsonList.GetLength(); ++tokensIndex)
     {
       m_tokens.push_back(tokensJsonList[tokensIndex].AsObject());

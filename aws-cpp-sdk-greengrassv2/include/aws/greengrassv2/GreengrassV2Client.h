@@ -41,22 +41,48 @@ namespace GreengrassV2
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        GreengrassV2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        GreengrassV2Client(const Aws::GreengrassV2::GreengrassV2ClientConfiguration& clientConfiguration = Aws::GreengrassV2::GreengrassV2ClientConfiguration(),
+                           std::shared_ptr<GreengrassV2EndpointProviderBase> endpointProvider = Aws::MakeShared<GreengrassV2EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         GreengrassV2Client(const Aws::Auth::AWSCredentials& credentials,
-                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<GreengrassV2EndpointProviderBase> endpointProvider = Aws::MakeShared<GreengrassV2EndpointProvider>(ALLOCATION_TAG),
+                           const Aws::GreengrassV2::GreengrassV2ClientConfiguration& clientConfiguration = Aws::GreengrassV2::GreengrassV2ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         GreengrassV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<GreengrassV2EndpointProviderBase> endpointProvider = Aws::MakeShared<GreengrassV2EndpointProvider>(ALLOCATION_TAG),
+                           const Aws::GreengrassV2::GreengrassV2ClientConfiguration& clientConfiguration = Aws::GreengrassV2::GreengrassV2ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        GreengrassV2Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        GreengrassV2Client(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        GreengrassV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~GreengrassV2Client();
 
 
@@ -742,12 +768,13 @@ namespace GreengrassV2
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<GreengrassV2EndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const GreengrassV2ClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      GreengrassV2ClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<GreengrassV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GreengrassV2

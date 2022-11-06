@@ -44,7 +44,7 @@ BatchAddFacetToObject& BatchAddFacetToObject::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ObjectAttributeList"))
   {
-    Array<JsonView> objectAttributeListJsonList = jsonValue.GetArray("ObjectAttributeList");
+    Aws::Utils::Array<JsonView> objectAttributeListJsonList = jsonValue.GetArray("ObjectAttributeList");
     for(unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength(); ++objectAttributeListIndex)
     {
       m_objectAttributeList.push_back(objectAttributeListJsonList[objectAttributeListIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue BatchAddFacetToObject::Jsonize() const
 
   if(m_objectAttributeListHasBeenSet)
   {
-   Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
+   Aws::Utils::Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
    for(unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength(); ++objectAttributeListIndex)
    {
      objectAttributeListJsonList[objectAttributeListIndex].AsObject(m_objectAttributeList[objectAttributeListIndex].Jsonize());

@@ -35,7 +35,7 @@ NetworkPathComponentDetails& NetworkPathComponentDetails::operator =(JsonView js
 {
   if(jsonValue.ValueExists("Address"))
   {
-    Array<JsonView> addressJsonList = jsonValue.GetArray("Address");
+    Aws::Utils::Array<JsonView> addressJsonList = jsonValue.GetArray("Address");
     for(unsigned addressIndex = 0; addressIndex < addressJsonList.GetLength(); ++addressIndex)
     {
       m_address.push_back(addressJsonList[addressIndex].AsString());
@@ -45,7 +45,7 @@ NetworkPathComponentDetails& NetworkPathComponentDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("PortRanges"))
   {
-    Array<JsonView> portRangesJsonList = jsonValue.GetArray("PortRanges");
+    Aws::Utils::Array<JsonView> portRangesJsonList = jsonValue.GetArray("PortRanges");
     for(unsigned portRangesIndex = 0; portRangesIndex < portRangesJsonList.GetLength(); ++portRangesIndex)
     {
       m_portRanges.push_back(portRangesJsonList[portRangesIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue NetworkPathComponentDetails::Jsonize() const
 
   if(m_addressHasBeenSet)
   {
-   Array<JsonValue> addressJsonList(m_address.size());
+   Aws::Utils::Array<JsonValue> addressJsonList(m_address.size());
    for(unsigned addressIndex = 0; addressIndex < addressJsonList.GetLength(); ++addressIndex)
    {
      addressJsonList[addressIndex].AsString(m_address[addressIndex]);
@@ -73,7 +73,7 @@ JsonValue NetworkPathComponentDetails::Jsonize() const
 
   if(m_portRangesHasBeenSet)
   {
-   Array<JsonValue> portRangesJsonList(m_portRanges.size());
+   Aws::Utils::Array<JsonValue> portRangesJsonList(m_portRanges.size());
    for(unsigned portRangesIndex = 0; portRangesIndex < portRangesJsonList.GetLength(); ++portRangesIndex)
    {
      portRangesJsonList[portRangesIndex].AsObject(m_portRanges[portRangesIndex].Jsonize());

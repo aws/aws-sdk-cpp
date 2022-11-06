@@ -30,7 +30,7 @@ GetDomainSuggestionsResult& GetDomainSuggestionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SuggestionsList"))
   {
-    Array<JsonView> suggestionsListJsonList = jsonValue.GetArray("SuggestionsList");
+    Aws::Utils::Array<JsonView> suggestionsListJsonList = jsonValue.GetArray("SuggestionsList");
     for(unsigned suggestionsListIndex = 0; suggestionsListIndex < suggestionsListJsonList.GetLength(); ++suggestionsListIndex)
     {
       m_suggestionsList.push_back(suggestionsListJsonList[suggestionsListIndex].AsObject());

@@ -36,7 +36,7 @@ ListWirelessGatewaysResult& ListWirelessGatewaysResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("WirelessGatewayList"))
   {
-    Array<JsonView> wirelessGatewayListJsonList = jsonValue.GetArray("WirelessGatewayList");
+    Aws::Utils::Array<JsonView> wirelessGatewayListJsonList = jsonValue.GetArray("WirelessGatewayList");
     for(unsigned wirelessGatewayListIndex = 0; wirelessGatewayListIndex < wirelessGatewayListJsonList.GetLength(); ++wirelessGatewayListIndex)
     {
       m_wirelessGatewayList.push_back(wirelessGatewayListJsonList[wirelessGatewayListIndex].AsObject());

@@ -44,7 +44,7 @@ SourceConfig& SourceConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdvancedEventSelectors"))
   {
-    Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
+    Aws::Utils::Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
     for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
     {
       m_advancedEventSelectors.push_back(advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue SourceConfig::Jsonize() const
 
   if(m_advancedEventSelectorsHasBeenSet)
   {
-   Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
+   Aws::Utils::Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
    for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
    {
      advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject(m_advancedEventSelectors[advancedEventSelectorsIndex].Jsonize());

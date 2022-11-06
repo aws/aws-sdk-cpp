@@ -92,7 +92,7 @@ UpdateReplicationConfigurationTemplateResult& UpdateReplicationConfigurationTemp
 
   if(jsonValue.ValueExists("pitPolicy"))
   {
-    Array<JsonView> pitPolicyJsonList = jsonValue.GetArray("pitPolicy");
+    Aws::Utils::Array<JsonView> pitPolicyJsonList = jsonValue.GetArray("pitPolicy");
     for(unsigned pitPolicyIndex = 0; pitPolicyIndex < pitPolicyJsonList.GetLength(); ++pitPolicyIndex)
     {
       m_pitPolicy.push_back(pitPolicyJsonList[pitPolicyIndex].AsObject());
@@ -113,7 +113,7 @@ UpdateReplicationConfigurationTemplateResult& UpdateReplicationConfigurationTemp
 
   if(jsonValue.ValueExists("replicationServersSecurityGroupsIDs"))
   {
-    Array<JsonView> replicationServersSecurityGroupsIDsJsonList = jsonValue.GetArray("replicationServersSecurityGroupsIDs");
+    Aws::Utils::Array<JsonView> replicationServersSecurityGroupsIDsJsonList = jsonValue.GetArray("replicationServersSecurityGroupsIDs");
     for(unsigned replicationServersSecurityGroupsIDsIndex = 0; replicationServersSecurityGroupsIDsIndex < replicationServersSecurityGroupsIDsJsonList.GetLength(); ++replicationServersSecurityGroupsIDsIndex)
     {
       m_replicationServersSecurityGroupsIDs.push_back(replicationServersSecurityGroupsIDsJsonList[replicationServersSecurityGroupsIDsIndex].AsString());

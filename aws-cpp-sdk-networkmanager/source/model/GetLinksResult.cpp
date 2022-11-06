@@ -30,7 +30,7 @@ GetLinksResult& GetLinksResult::operator =(const Aws::AmazonWebServiceResult<Jso
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Links"))
   {
-    Array<JsonView> linksJsonList = jsonValue.GetArray("Links");
+    Aws::Utils::Array<JsonView> linksJsonList = jsonValue.GetArray("Links");
     for(unsigned linksIndex = 0; linksIndex < linksJsonList.GetLength(); ++linksIndex)
     {
       m_links.push_back(linksJsonList[linksIndex].AsObject());

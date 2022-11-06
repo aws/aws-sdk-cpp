@@ -60,7 +60,7 @@ Attachment& Attachment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("details"))
   {
-    Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
+    Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
     for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
     {
       m_details.push_back(detailsJsonList[detailsIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue Attachment::Jsonize() const
 
   if(m_detailsHasBeenSet)
   {
-   Array<JsonValue> detailsJsonList(m_details.size());
+   Aws::Utils::Array<JsonValue> detailsJsonList(m_details.size());
    for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
    {
      detailsJsonList[detailsIndex].AsObject(m_details[detailsIndex].Jsonize());

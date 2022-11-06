@@ -30,7 +30,7 @@ ListGroundStationsResult& ListGroundStationsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("groundStationList"))
   {
-    Array<JsonView> groundStationListJsonList = jsonValue.GetArray("groundStationList");
+    Aws::Utils::Array<JsonView> groundStationListJsonList = jsonValue.GetArray("groundStationList");
     for(unsigned groundStationListIndex = 0; groundStationListIndex < groundStationListJsonList.GetLength(); ++groundStationListIndex)
     {
       m_groundStationList.push_back(groundStationListJsonList[groundStationListIndex].AsObject());

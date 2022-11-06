@@ -52,7 +52,7 @@ S3Target& S3Target::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Exclusions"))
   {
-    Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
+    Aws::Utils::Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
     for(unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex)
     {
       m_exclusions.push_back(exclusionsJsonList[exclusionsIndex].AsString());
@@ -103,7 +103,7 @@ JsonValue S3Target::Jsonize() const
 
   if(m_exclusionsHasBeenSet)
   {
-   Array<JsonValue> exclusionsJsonList(m_exclusions.size());
+   Aws::Utils::Array<JsonValue> exclusionsJsonList(m_exclusions.size());
    for(unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex)
    {
      exclusionsJsonList[exclusionsIndex].AsString(m_exclusions[exclusionsIndex]);

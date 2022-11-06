@@ -30,7 +30,7 @@ DescribeVoicesResult& DescribeVoicesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Voices"))
   {
-    Array<JsonView> voicesJsonList = jsonValue.GetArray("Voices");
+    Aws::Utils::Array<JsonView> voicesJsonList = jsonValue.GetArray("Voices");
     for(unsigned voicesIndex = 0; voicesIndex < voicesJsonList.GetLength(); ++voicesIndex)
     {
       m_voices.push_back(voicesJsonList[voicesIndex].AsObject());

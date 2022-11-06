@@ -27,7 +27,7 @@ Aws::String DescribeInstanceInformationRequest::SerializePayload() const
 
   if(m_instanceInformationFilterListHasBeenSet)
   {
-   Array<JsonValue> instanceInformationFilterListJsonList(m_instanceInformationFilterList.size());
+   Aws::Utils::Array<JsonValue> instanceInformationFilterListJsonList(m_instanceInformationFilterList.size());
    for(unsigned instanceInformationFilterListIndex = 0; instanceInformationFilterListIndex < instanceInformationFilterListJsonList.GetLength(); ++instanceInformationFilterListIndex)
    {
      instanceInformationFilterListJsonList[instanceInformationFilterListIndex].AsObject(m_instanceInformationFilterList[instanceInformationFilterListIndex].Jsonize());
@@ -38,7 +38,7 @@ Aws::String DescribeInstanceInformationRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

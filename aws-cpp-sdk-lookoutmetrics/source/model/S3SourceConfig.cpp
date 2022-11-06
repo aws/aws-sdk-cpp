@@ -46,7 +46,7 @@ S3SourceConfig& S3SourceConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TemplatedPathList"))
   {
-    Array<JsonView> templatedPathListJsonList = jsonValue.GetArray("TemplatedPathList");
+    Aws::Utils::Array<JsonView> templatedPathListJsonList = jsonValue.GetArray("TemplatedPathList");
     for(unsigned templatedPathListIndex = 0; templatedPathListIndex < templatedPathListJsonList.GetLength(); ++templatedPathListIndex)
     {
       m_templatedPathList.push_back(templatedPathListJsonList[templatedPathListIndex].AsString());
@@ -56,7 +56,7 @@ S3SourceConfig& S3SourceConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("HistoricalDataPathList"))
   {
-    Array<JsonView> historicalDataPathListJsonList = jsonValue.GetArray("HistoricalDataPathList");
+    Aws::Utils::Array<JsonView> historicalDataPathListJsonList = jsonValue.GetArray("HistoricalDataPathList");
     for(unsigned historicalDataPathListIndex = 0; historicalDataPathListIndex < historicalDataPathListJsonList.GetLength(); ++historicalDataPathListIndex)
     {
       m_historicalDataPathList.push_back(historicalDataPathListJsonList[historicalDataPathListIndex].AsString());
@@ -86,7 +86,7 @@ JsonValue S3SourceConfig::Jsonize() const
 
   if(m_templatedPathListHasBeenSet)
   {
-   Array<JsonValue> templatedPathListJsonList(m_templatedPathList.size());
+   Aws::Utils::Array<JsonValue> templatedPathListJsonList(m_templatedPathList.size());
    for(unsigned templatedPathListIndex = 0; templatedPathListIndex < templatedPathListJsonList.GetLength(); ++templatedPathListIndex)
    {
      templatedPathListJsonList[templatedPathListIndex].AsString(m_templatedPathList[templatedPathListIndex]);
@@ -97,7 +97,7 @@ JsonValue S3SourceConfig::Jsonize() const
 
   if(m_historicalDataPathListHasBeenSet)
   {
-   Array<JsonValue> historicalDataPathListJsonList(m_historicalDataPathList.size());
+   Aws::Utils::Array<JsonValue> historicalDataPathListJsonList(m_historicalDataPathList.size());
    for(unsigned historicalDataPathListIndex = 0; historicalDataPathListIndex < historicalDataPathListJsonList.GetLength(); ++historicalDataPathListIndex)
    {
      historicalDataPathListJsonList[historicalDataPathListIndex].AsString(m_historicalDataPathList[historicalDataPathListIndex]);

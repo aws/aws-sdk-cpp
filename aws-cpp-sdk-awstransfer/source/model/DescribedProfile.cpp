@@ -73,7 +73,7 @@ DescribedProfile& DescribedProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CertificateIds"))
   {
-    Array<JsonView> certificateIdsJsonList = jsonValue.GetArray("CertificateIds");
+    Aws::Utils::Array<JsonView> certificateIdsJsonList = jsonValue.GetArray("CertificateIds");
     for(unsigned certificateIdsIndex = 0; certificateIdsIndex < certificateIdsJsonList.GetLength(); ++certificateIdsIndex)
     {
       m_certificateIds.push_back(certificateIdsJsonList[certificateIdsIndex].AsString());
@@ -83,7 +83,7 @@ DescribedProfile& DescribedProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue DescribedProfile::Jsonize() const
 
   if(m_certificateIdsHasBeenSet)
   {
-   Array<JsonValue> certificateIdsJsonList(m_certificateIds.size());
+   Aws::Utils::Array<JsonValue> certificateIdsJsonList(m_certificateIds.size());
    for(unsigned certificateIdsIndex = 0; certificateIdsIndex < certificateIdsJsonList.GetLength(); ++certificateIdsIndex)
    {
      certificateIdsJsonList[certificateIdsIndex].AsString(m_certificateIds[certificateIdsIndex]);
@@ -134,7 +134,7 @@ JsonValue DescribedProfile::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

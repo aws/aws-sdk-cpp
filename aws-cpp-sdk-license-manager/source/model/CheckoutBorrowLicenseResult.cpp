@@ -42,7 +42,7 @@ CheckoutBorrowLicenseResult& CheckoutBorrowLicenseResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("EntitlementsAllowed"))
   {
-    Array<JsonView> entitlementsAllowedJsonList = jsonValue.GetArray("EntitlementsAllowed");
+    Aws::Utils::Array<JsonView> entitlementsAllowedJsonList = jsonValue.GetArray("EntitlementsAllowed");
     for(unsigned entitlementsAllowedIndex = 0; entitlementsAllowedIndex < entitlementsAllowedJsonList.GetLength(); ++entitlementsAllowedIndex)
     {
       m_entitlementsAllowed.push_back(entitlementsAllowedJsonList[entitlementsAllowedIndex].AsObject());
@@ -75,7 +75,7 @@ CheckoutBorrowLicenseResult& CheckoutBorrowLicenseResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("CheckoutMetadata"))
   {
-    Array<JsonView> checkoutMetadataJsonList = jsonValue.GetArray("CheckoutMetadata");
+    Aws::Utils::Array<JsonView> checkoutMetadataJsonList = jsonValue.GetArray("CheckoutMetadata");
     for(unsigned checkoutMetadataIndex = 0; checkoutMetadataIndex < checkoutMetadataJsonList.GetLength(); ++checkoutMetadataIndex)
     {
       m_checkoutMetadata.push_back(checkoutMetadataJsonList[checkoutMetadataIndex].AsObject());

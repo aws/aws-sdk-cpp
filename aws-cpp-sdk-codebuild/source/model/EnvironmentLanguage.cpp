@@ -44,7 +44,7 @@ EnvironmentLanguage& EnvironmentLanguage::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("images"))
   {
-    Array<JsonView> imagesJsonList = jsonValue.GetArray("images");
+    Aws::Utils::Array<JsonView> imagesJsonList = jsonValue.GetArray("images");
     for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
     {
       m_images.push_back(imagesJsonList[imagesIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue EnvironmentLanguage::Jsonize() const
 
   if(m_imagesHasBeenSet)
   {
-   Array<JsonValue> imagesJsonList(m_images.size());
+   Aws::Utils::Array<JsonValue> imagesJsonList(m_images.size());
    for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
    {
      imagesJsonList[imagesIndex].AsObject(m_images[imagesIndex].Jsonize());

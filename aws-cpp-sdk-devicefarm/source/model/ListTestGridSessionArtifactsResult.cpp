@@ -30,7 +30,7 @@ ListTestGridSessionArtifactsResult& ListTestGridSessionArtifactsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("artifacts"))
   {
-    Array<JsonView> artifactsJsonList = jsonValue.GetArray("artifacts");
+    Aws::Utils::Array<JsonView> artifactsJsonList = jsonValue.GetArray("artifacts");
     for(unsigned artifactsIndex = 0; artifactsIndex < artifactsJsonList.GetLength(); ++artifactsIndex)
     {
       m_artifacts.push_back(artifactsJsonList[artifactsIndex].AsObject());

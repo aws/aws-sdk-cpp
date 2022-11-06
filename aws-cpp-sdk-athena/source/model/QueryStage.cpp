@@ -117,7 +117,7 @@ QueryStage& QueryStage::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubStages"))
   {
-    Array<JsonView> subStagesJsonList = jsonValue.GetArray("SubStages");
+    Aws::Utils::Array<JsonView> subStagesJsonList = jsonValue.GetArray("SubStages");
     for(unsigned subStagesIndex = 0; subStagesIndex < subStagesJsonList.GetLength(); ++subStagesIndex)
     {
       m_subStages.push_back(subStagesJsonList[subStagesIndex].AsObject());
@@ -182,7 +182,7 @@ JsonValue QueryStage::Jsonize() const
 
   if(m_subStagesHasBeenSet)
   {
-   Array<JsonValue> subStagesJsonList(m_subStages.size());
+   Aws::Utils::Array<JsonValue> subStagesJsonList(m_subStages.size());
    for(unsigned subStagesIndex = 0; subStagesIndex < subStagesJsonList.GetLength(); ++subStagesIndex)
    {
      subStagesJsonList[subStagesIndex].AsObject(m_subStages[subStagesIndex].Jsonize());

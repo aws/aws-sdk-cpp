@@ -30,7 +30,7 @@ Aws::String PutUsersRequest::SerializePayload() const
 
   if(m_usersHasBeenSet)
   {
-   Array<JsonValue> usersJsonList(m_users.size());
+   Aws::Utils::Array<JsonValue> usersJsonList(m_users.size());
    for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
    {
      usersJsonList[usersIndex].AsObject(m_users[usersIndex].Jsonize());

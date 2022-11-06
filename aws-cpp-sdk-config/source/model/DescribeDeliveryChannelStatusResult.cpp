@@ -30,7 +30,7 @@ DescribeDeliveryChannelStatusResult& DescribeDeliveryChannelStatusResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeliveryChannelsStatus"))
   {
-    Array<JsonView> deliveryChannelsStatusJsonList = jsonValue.GetArray("DeliveryChannelsStatus");
+    Aws::Utils::Array<JsonView> deliveryChannelsStatusJsonList = jsonValue.GetArray("DeliveryChannelsStatus");
     for(unsigned deliveryChannelsStatusIndex = 0; deliveryChannelsStatusIndex < deliveryChannelsStatusJsonList.GetLength(); ++deliveryChannelsStatusIndex)
     {
       m_deliveryChannelsStatus.push_back(deliveryChannelsStatusJsonList[deliveryChannelsStatusIndex].AsObject());

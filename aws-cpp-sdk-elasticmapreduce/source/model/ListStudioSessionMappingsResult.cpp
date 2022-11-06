@@ -30,7 +30,7 @@ ListStudioSessionMappingsResult& ListStudioSessionMappingsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SessionMappings"))
   {
-    Array<JsonView> sessionMappingsJsonList = jsonValue.GetArray("SessionMappings");
+    Aws::Utils::Array<JsonView> sessionMappingsJsonList = jsonValue.GetArray("SessionMappings");
     for(unsigned sessionMappingsIndex = 0; sessionMappingsIndex < sessionMappingsJsonList.GetLength(); ++sessionMappingsIndex)
     {
       m_sessionMappings.push_back(sessionMappingsJsonList[sessionMappingsIndex].AsObject());

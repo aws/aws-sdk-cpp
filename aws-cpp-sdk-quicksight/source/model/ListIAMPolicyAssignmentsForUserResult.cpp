@@ -32,7 +32,7 @@ ListIAMPolicyAssignmentsForUserResult& ListIAMPolicyAssignmentsForUserResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ActiveAssignments"))
   {
-    Array<JsonView> activeAssignmentsJsonList = jsonValue.GetArray("ActiveAssignments");
+    Aws::Utils::Array<JsonView> activeAssignmentsJsonList = jsonValue.GetArray("ActiveAssignments");
     for(unsigned activeAssignmentsIndex = 0; activeAssignmentsIndex < activeAssignmentsJsonList.GetLength(); ++activeAssignmentsIndex)
     {
       m_activeAssignments.push_back(activeAssignmentsJsonList[activeAssignmentsIndex].AsObject());

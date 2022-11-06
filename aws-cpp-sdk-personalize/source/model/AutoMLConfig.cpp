@@ -42,7 +42,7 @@ AutoMLConfig& AutoMLConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("recipeList"))
   {
-    Array<JsonView> recipeListJsonList = jsonValue.GetArray("recipeList");
+    Aws::Utils::Array<JsonView> recipeListJsonList = jsonValue.GetArray("recipeList");
     for(unsigned recipeListIndex = 0; recipeListIndex < recipeListJsonList.GetLength(); ++recipeListIndex)
     {
       m_recipeList.push_back(recipeListJsonList[recipeListIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue AutoMLConfig::Jsonize() const
 
   if(m_recipeListHasBeenSet)
   {
-   Array<JsonValue> recipeListJsonList(m_recipeList.size());
+   Aws::Utils::Array<JsonValue> recipeListJsonList(m_recipeList.size());
    for(unsigned recipeListIndex = 0; recipeListIndex < recipeListJsonList.GetLength(); ++recipeListIndex)
    {
      recipeListJsonList[recipeListIndex].AsString(m_recipeList[recipeListIndex]);

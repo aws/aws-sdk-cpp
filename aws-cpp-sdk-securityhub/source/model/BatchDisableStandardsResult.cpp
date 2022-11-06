@@ -30,7 +30,7 @@ BatchDisableStandardsResult& BatchDisableStandardsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StandardsSubscriptions"))
   {
-    Array<JsonView> standardsSubscriptionsJsonList = jsonValue.GetArray("StandardsSubscriptions");
+    Aws::Utils::Array<JsonView> standardsSubscriptionsJsonList = jsonValue.GetArray("StandardsSubscriptions");
     for(unsigned standardsSubscriptionsIndex = 0; standardsSubscriptionsIndex < standardsSubscriptionsJsonList.GetLength(); ++standardsSubscriptionsIndex)
     {
       m_standardsSubscriptions.push_back(standardsSubscriptionsJsonList[standardsSubscriptionsIndex].AsObject());

@@ -58,7 +58,7 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AndAllFilters"))
   {
-    Array<JsonView> andAllFiltersJsonList = jsonValue.GetArray("AndAllFilters");
+    Aws::Utils::Array<JsonView> andAllFiltersJsonList = jsonValue.GetArray("AndAllFilters");
     for(unsigned andAllFiltersIndex = 0; andAllFiltersIndex < andAllFiltersJsonList.GetLength(); ++andAllFiltersIndex)
     {
       m_andAllFilters.push_back(andAllFiltersJsonList[andAllFiltersIndex].AsObject());
@@ -68,7 +68,7 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OrAllFilters"))
   {
-    Array<JsonView> orAllFiltersJsonList = jsonValue.GetArray("OrAllFilters");
+    Aws::Utils::Array<JsonView> orAllFiltersJsonList = jsonValue.GetArray("OrAllFilters");
     for(unsigned orAllFiltersIndex = 0; orAllFiltersIndex < orAllFiltersJsonList.GetLength(); ++orAllFiltersIndex)
     {
       m_orAllFilters.push_back(orAllFiltersJsonList[orAllFiltersIndex].AsObject());
@@ -141,7 +141,7 @@ JsonValue AttributeFilter::Jsonize() const
 
   if(m_andAllFiltersHasBeenSet)
   {
-   Array<JsonValue> andAllFiltersJsonList(m_andAllFilters.size());
+   Aws::Utils::Array<JsonValue> andAllFiltersJsonList(m_andAllFilters.size());
    for(unsigned andAllFiltersIndex = 0; andAllFiltersIndex < andAllFiltersJsonList.GetLength(); ++andAllFiltersIndex)
    {
      andAllFiltersJsonList[andAllFiltersIndex].AsObject(m_andAllFilters[andAllFiltersIndex].Jsonize());
@@ -152,7 +152,7 @@ JsonValue AttributeFilter::Jsonize() const
 
   if(m_orAllFiltersHasBeenSet)
   {
-   Array<JsonValue> orAllFiltersJsonList(m_orAllFilters.size());
+   Aws::Utils::Array<JsonValue> orAllFiltersJsonList(m_orAllFilters.size());
    for(unsigned orAllFiltersIndex = 0; orAllFiltersIndex < orAllFiltersJsonList.GetLength(); ++orAllFiltersIndex)
    {
      orAllFiltersJsonList[orAllFiltersIndex].AsObject(m_orAllFilters[orAllFiltersIndex].Jsonize());

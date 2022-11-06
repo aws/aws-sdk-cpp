@@ -30,7 +30,7 @@ DescribePatchPropertiesResult& DescribePatchPropertiesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Properties"))
   {
-    Array<JsonView> propertiesJsonList = jsonValue.GetArray("Properties");
+    Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("Properties");
     for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
     {
       Aws::Map<Aws::String, JsonView> patchPropertyEntryJsonMap = propertiesJsonList[propertiesIndex].GetAllObjects();

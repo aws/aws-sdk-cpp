@@ -30,7 +30,7 @@ Aws::String DescribeConditionalForwardersRequest::SerializePayload() const
 
   if(m_remoteDomainNamesHasBeenSet)
   {
-   Array<JsonValue> remoteDomainNamesJsonList(m_remoteDomainNames.size());
+   Aws::Utils::Array<JsonValue> remoteDomainNamesJsonList(m_remoteDomainNames.size());
    for(unsigned remoteDomainNamesIndex = 0; remoteDomainNamesIndex < remoteDomainNamesJsonList.GetLength(); ++remoteDomainNamesIndex)
    {
      remoteDomainNamesJsonList[remoteDomainNamesIndex].AsString(m_remoteDomainNames[remoteDomainNamesIndex]);

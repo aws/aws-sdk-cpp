@@ -30,7 +30,7 @@ DescribeBudgetActionsForAccountResult& DescribeBudgetActionsForAccountResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());

@@ -29,7 +29,7 @@ Aws::String CreateProgramRequest::SerializePayload() const
 
   if(m_adBreaksHasBeenSet)
   {
-   Array<JsonValue> adBreaksJsonList(m_adBreaks.size());
+   Aws::Utils::Array<JsonValue> adBreaksJsonList(m_adBreaks.size());
    for(unsigned adBreaksIndex = 0; adBreaksIndex < adBreaksJsonList.GetLength(); ++adBreaksIndex)
    {
      adBreaksJsonList[adBreaksIndex].AsObject(m_adBreaks[adBreaksIndex].Jsonize());

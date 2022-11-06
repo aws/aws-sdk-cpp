@@ -33,7 +33,7 @@ PathFormat& PathFormat::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("objectPrefixes"))
   {
-    Array<JsonView> objectPrefixesJsonList = jsonValue.GetArray("objectPrefixes");
+    Aws::Utils::Array<JsonView> objectPrefixesJsonList = jsonValue.GetArray("objectPrefixes");
     for(unsigned objectPrefixesIndex = 0; objectPrefixesIndex < objectPrefixesJsonList.GetLength(); ++objectPrefixesIndex)
     {
       m_objectPrefixes.push_back(objectPrefixesJsonList[objectPrefixesIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue PathFormat::Jsonize() const
 
   if(m_objectPrefixesHasBeenSet)
   {
-   Array<JsonValue> objectPrefixesJsonList(m_objectPrefixes.size());
+   Aws::Utils::Array<JsonValue> objectPrefixesJsonList(m_objectPrefixes.size());
    for(unsigned objectPrefixesIndex = 0; objectPrefixesIndex < objectPrefixesJsonList.GetLength(); ++objectPrefixesIndex)
    {
      objectPrefixesJsonList[objectPrefixesIndex].AsString(m_objectPrefixes[objectPrefixesIndex]);

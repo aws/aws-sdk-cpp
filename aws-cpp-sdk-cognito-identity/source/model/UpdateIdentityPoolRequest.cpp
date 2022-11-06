@@ -75,7 +75,7 @@ Aws::String UpdateIdentityPoolRequest::SerializePayload() const
 
   if(m_openIdConnectProviderARNsHasBeenSet)
   {
-   Array<JsonValue> openIdConnectProviderARNsJsonList(m_openIdConnectProviderARNs.size());
+   Aws::Utils::Array<JsonValue> openIdConnectProviderARNsJsonList(m_openIdConnectProviderARNs.size());
    for(unsigned openIdConnectProviderARNsIndex = 0; openIdConnectProviderARNsIndex < openIdConnectProviderARNsJsonList.GetLength(); ++openIdConnectProviderARNsIndex)
    {
      openIdConnectProviderARNsJsonList[openIdConnectProviderARNsIndex].AsString(m_openIdConnectProviderARNs[openIdConnectProviderARNsIndex]);
@@ -86,7 +86,7 @@ Aws::String UpdateIdentityPoolRequest::SerializePayload() const
 
   if(m_cognitoIdentityProvidersHasBeenSet)
   {
-   Array<JsonValue> cognitoIdentityProvidersJsonList(m_cognitoIdentityProviders.size());
+   Aws::Utils::Array<JsonValue> cognitoIdentityProvidersJsonList(m_cognitoIdentityProviders.size());
    for(unsigned cognitoIdentityProvidersIndex = 0; cognitoIdentityProvidersIndex < cognitoIdentityProvidersJsonList.GetLength(); ++cognitoIdentityProvidersIndex)
    {
      cognitoIdentityProvidersJsonList[cognitoIdentityProvidersIndex].AsObject(m_cognitoIdentityProviders[cognitoIdentityProvidersIndex].Jsonize());
@@ -97,7 +97,7 @@ Aws::String UpdateIdentityPoolRequest::SerializePayload() const
 
   if(m_samlProviderARNsHasBeenSet)
   {
-   Array<JsonValue> samlProviderARNsJsonList(m_samlProviderARNs.size());
+   Aws::Utils::Array<JsonValue> samlProviderARNsJsonList(m_samlProviderARNs.size());
    for(unsigned samlProviderARNsIndex = 0; samlProviderARNsIndex < samlProviderARNsJsonList.GetLength(); ++samlProviderARNsIndex)
    {
      samlProviderARNsJsonList[samlProviderARNsIndex].AsString(m_samlProviderARNs[samlProviderARNsIndex]);

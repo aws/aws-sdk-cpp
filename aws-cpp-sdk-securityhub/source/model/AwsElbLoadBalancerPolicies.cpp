@@ -37,7 +37,7 @@ AwsElbLoadBalancerPolicies& AwsElbLoadBalancerPolicies::operator =(JsonView json
 {
   if(jsonValue.ValueExists("AppCookieStickinessPolicies"))
   {
-    Array<JsonView> appCookieStickinessPoliciesJsonList = jsonValue.GetArray("AppCookieStickinessPolicies");
+    Aws::Utils::Array<JsonView> appCookieStickinessPoliciesJsonList = jsonValue.GetArray("AppCookieStickinessPolicies");
     for(unsigned appCookieStickinessPoliciesIndex = 0; appCookieStickinessPoliciesIndex < appCookieStickinessPoliciesJsonList.GetLength(); ++appCookieStickinessPoliciesIndex)
     {
       m_appCookieStickinessPolicies.push_back(appCookieStickinessPoliciesJsonList[appCookieStickinessPoliciesIndex].AsObject());
@@ -47,7 +47,7 @@ AwsElbLoadBalancerPolicies& AwsElbLoadBalancerPolicies::operator =(JsonView json
 
   if(jsonValue.ValueExists("LbCookieStickinessPolicies"))
   {
-    Array<JsonView> lbCookieStickinessPoliciesJsonList = jsonValue.GetArray("LbCookieStickinessPolicies");
+    Aws::Utils::Array<JsonView> lbCookieStickinessPoliciesJsonList = jsonValue.GetArray("LbCookieStickinessPolicies");
     for(unsigned lbCookieStickinessPoliciesIndex = 0; lbCookieStickinessPoliciesIndex < lbCookieStickinessPoliciesJsonList.GetLength(); ++lbCookieStickinessPoliciesIndex)
     {
       m_lbCookieStickinessPolicies.push_back(lbCookieStickinessPoliciesJsonList[lbCookieStickinessPoliciesIndex].AsObject());
@@ -57,7 +57,7 @@ AwsElbLoadBalancerPolicies& AwsElbLoadBalancerPolicies::operator =(JsonView json
 
   if(jsonValue.ValueExists("OtherPolicies"))
   {
-    Array<JsonView> otherPoliciesJsonList = jsonValue.GetArray("OtherPolicies");
+    Aws::Utils::Array<JsonView> otherPoliciesJsonList = jsonValue.GetArray("OtherPolicies");
     for(unsigned otherPoliciesIndex = 0; otherPoliciesIndex < otherPoliciesJsonList.GetLength(); ++otherPoliciesIndex)
     {
       m_otherPolicies.push_back(otherPoliciesJsonList[otherPoliciesIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue AwsElbLoadBalancerPolicies::Jsonize() const
 
   if(m_appCookieStickinessPoliciesHasBeenSet)
   {
-   Array<JsonValue> appCookieStickinessPoliciesJsonList(m_appCookieStickinessPolicies.size());
+   Aws::Utils::Array<JsonValue> appCookieStickinessPoliciesJsonList(m_appCookieStickinessPolicies.size());
    for(unsigned appCookieStickinessPoliciesIndex = 0; appCookieStickinessPoliciesIndex < appCookieStickinessPoliciesJsonList.GetLength(); ++appCookieStickinessPoliciesIndex)
    {
      appCookieStickinessPoliciesJsonList[appCookieStickinessPoliciesIndex].AsObject(m_appCookieStickinessPolicies[appCookieStickinessPoliciesIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue AwsElbLoadBalancerPolicies::Jsonize() const
 
   if(m_lbCookieStickinessPoliciesHasBeenSet)
   {
-   Array<JsonValue> lbCookieStickinessPoliciesJsonList(m_lbCookieStickinessPolicies.size());
+   Aws::Utils::Array<JsonValue> lbCookieStickinessPoliciesJsonList(m_lbCookieStickinessPolicies.size());
    for(unsigned lbCookieStickinessPoliciesIndex = 0; lbCookieStickinessPoliciesIndex < lbCookieStickinessPoliciesJsonList.GetLength(); ++lbCookieStickinessPoliciesIndex)
    {
      lbCookieStickinessPoliciesJsonList[lbCookieStickinessPoliciesIndex].AsObject(m_lbCookieStickinessPolicies[lbCookieStickinessPoliciesIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue AwsElbLoadBalancerPolicies::Jsonize() const
 
   if(m_otherPoliciesHasBeenSet)
   {
-   Array<JsonValue> otherPoliciesJsonList(m_otherPolicies.size());
+   Aws::Utils::Array<JsonValue> otherPoliciesJsonList(m_otherPolicies.size());
    for(unsigned otherPoliciesIndex = 0; otherPoliciesIndex < otherPoliciesJsonList.GetLength(); ++otherPoliciesIndex)
    {
      otherPoliciesJsonList[otherPoliciesIndex].AsString(m_otherPolicies[otherPoliciesIndex]);

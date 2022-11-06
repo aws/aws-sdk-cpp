@@ -36,7 +36,7 @@ GetCostForecastResult& GetCostForecastResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("ForecastResultsByTime"))
   {
-    Array<JsonView> forecastResultsByTimeJsonList = jsonValue.GetArray("ForecastResultsByTime");
+    Aws::Utils::Array<JsonView> forecastResultsByTimeJsonList = jsonValue.GetArray("ForecastResultsByTime");
     for(unsigned forecastResultsByTimeIndex = 0; forecastResultsByTimeIndex < forecastResultsByTimeJsonList.GetLength(); ++forecastResultsByTimeIndex)
     {
       m_forecastResultsByTime.push_back(forecastResultsByTimeJsonList[forecastResultsByTimeIndex].AsObject());

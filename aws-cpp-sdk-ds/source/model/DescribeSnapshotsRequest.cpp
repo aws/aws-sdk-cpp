@@ -33,7 +33,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
 
   if(m_snapshotIdsHasBeenSet)
   {
-   Array<JsonValue> snapshotIdsJsonList(m_snapshotIds.size());
+   Aws::Utils::Array<JsonValue> snapshotIdsJsonList(m_snapshotIds.size());
    for(unsigned snapshotIdsIndex = 0; snapshotIdsIndex < snapshotIdsJsonList.GetLength(); ++snapshotIdsIndex)
    {
      snapshotIdsJsonList[snapshotIdsIndex].AsString(m_snapshotIds[snapshotIdsIndex]);

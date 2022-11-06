@@ -44,7 +44,7 @@ ListMonitoredResourcesFilters& ListMonitoredResourcesFilters::operator =(JsonVie
 
   if(jsonValue.ValueExists("ResourceTypeFilters"))
   {
-    Array<JsonView> resourceTypeFiltersJsonList = jsonValue.GetArray("ResourceTypeFilters");
+    Aws::Utils::Array<JsonView> resourceTypeFiltersJsonList = jsonValue.GetArray("ResourceTypeFilters");
     for(unsigned resourceTypeFiltersIndex = 0; resourceTypeFiltersIndex < resourceTypeFiltersJsonList.GetLength(); ++resourceTypeFiltersIndex)
     {
       m_resourceTypeFilters.push_back(ResourceTypeFilterMapper::GetResourceTypeFilterForName(resourceTypeFiltersJsonList[resourceTypeFiltersIndex].AsString()));
@@ -66,7 +66,7 @@ JsonValue ListMonitoredResourcesFilters::Jsonize() const
 
   if(m_resourceTypeFiltersHasBeenSet)
   {
-   Array<JsonValue> resourceTypeFiltersJsonList(m_resourceTypeFilters.size());
+   Aws::Utils::Array<JsonValue> resourceTypeFiltersJsonList(m_resourceTypeFilters.size());
    for(unsigned resourceTypeFiltersIndex = 0; resourceTypeFiltersIndex < resourceTypeFiltersJsonList.GetLength(); ++resourceTypeFiltersIndex)
    {
      resourceTypeFiltersJsonList[resourceTypeFiltersIndex].AsString(ResourceTypeFilterMapper::GetNameForResourceTypeFilter(m_resourceTypeFilters[resourceTypeFiltersIndex]));

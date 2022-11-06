@@ -42,7 +42,7 @@ ComponentConfigurationUpdate& ComponentConfigurationUpdate::operator =(JsonView 
 
   if(jsonValue.ValueExists("reset"))
   {
-    Array<JsonView> resetJsonList = jsonValue.GetArray("reset");
+    Aws::Utils::Array<JsonView> resetJsonList = jsonValue.GetArray("reset");
     for(unsigned resetIndex = 0; resetIndex < resetJsonList.GetLength(); ++resetIndex)
     {
       m_reset.push_back(resetJsonList[resetIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue ComponentConfigurationUpdate::Jsonize() const
 
   if(m_resetHasBeenSet)
   {
-   Array<JsonValue> resetJsonList(m_reset.size());
+   Aws::Utils::Array<JsonValue> resetJsonList(m_reset.size());
    for(unsigned resetIndex = 0; resetIndex < resetJsonList.GetLength(); ++resetIndex)
    {
      resetJsonList[resetIndex].AsString(m_reset[resetIndex]);

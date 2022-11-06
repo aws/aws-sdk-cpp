@@ -38,7 +38,7 @@ ValidateResourcePolicyResult& ValidateResourcePolicyResult::operator =(const Aws
 
   if(jsonValue.ValueExists("ValidationErrors"))
   {
-    Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("ValidationErrors");
+    Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("ValidationErrors");
     for(unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex)
     {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());

@@ -50,7 +50,7 @@ GetDocumentAnalysisResult& GetDocumentAnalysisResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("Blocks"))
   {
-    Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
+    Aws::Utils::Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
     for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
     {
       m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());
@@ -59,7 +59,7 @@ GetDocumentAnalysisResult& GetDocumentAnalysisResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("Warnings"))
   {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());

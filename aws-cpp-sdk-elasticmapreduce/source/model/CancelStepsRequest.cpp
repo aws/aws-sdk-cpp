@@ -32,7 +32,7 @@ Aws::String CancelStepsRequest::SerializePayload() const
 
   if(m_stepIdsHasBeenSet)
   {
-   Array<JsonValue> stepIdsJsonList(m_stepIds.size());
+   Aws::Utils::Array<JsonValue> stepIdsJsonList(m_stepIds.size());
    for(unsigned stepIdsIndex = 0; stepIdsIndex < stepIdsJsonList.GetLength(); ++stepIdsIndex)
    {
      stepIdsJsonList[stepIdsIndex].AsString(m_stepIds[stepIdsIndex]);

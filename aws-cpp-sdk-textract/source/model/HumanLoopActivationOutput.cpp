@@ -44,7 +44,7 @@ HumanLoopActivationOutput& HumanLoopActivationOutput::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("HumanLoopActivationReasons"))
   {
-    Array<JsonView> humanLoopActivationReasonsJsonList = jsonValue.GetArray("HumanLoopActivationReasons");
+    Aws::Utils::Array<JsonView> humanLoopActivationReasonsJsonList = jsonValue.GetArray("HumanLoopActivationReasons");
     for(unsigned humanLoopActivationReasonsIndex = 0; humanLoopActivationReasonsIndex < humanLoopActivationReasonsJsonList.GetLength(); ++humanLoopActivationReasonsIndex)
     {
       m_humanLoopActivationReasons.push_back(humanLoopActivationReasonsJsonList[humanLoopActivationReasonsIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue HumanLoopActivationOutput::Jsonize() const
 
   if(m_humanLoopActivationReasonsHasBeenSet)
   {
-   Array<JsonValue> humanLoopActivationReasonsJsonList(m_humanLoopActivationReasons.size());
+   Aws::Utils::Array<JsonValue> humanLoopActivationReasonsJsonList(m_humanLoopActivationReasons.size());
    for(unsigned humanLoopActivationReasonsIndex = 0; humanLoopActivationReasonsIndex < humanLoopActivationReasonsJsonList.GetLength(); ++humanLoopActivationReasonsIndex)
    {
      humanLoopActivationReasonsJsonList[humanLoopActivationReasonsIndex].AsString(m_humanLoopActivationReasons[humanLoopActivationReasonsIndex]);

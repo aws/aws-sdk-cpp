@@ -30,7 +30,7 @@ ListSkillsResult& ListSkillsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SkillSummaries"))
   {
-    Array<JsonView> skillSummariesJsonList = jsonValue.GetArray("SkillSummaries");
+    Aws::Utils::Array<JsonView> skillSummariesJsonList = jsonValue.GetArray("SkillSummaries");
     for(unsigned skillSummariesIndex = 0; skillSummariesIndex < skillSummariesJsonList.GetLength(); ++skillSummariesIndex)
     {
       m_skillSummaries.push_back(skillSummariesJsonList[skillSummariesIndex].AsObject());

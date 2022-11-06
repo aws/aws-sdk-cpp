@@ -24,7 +24,7 @@ Aws::String UpdateConnectivityInfoRequest::SerializePayload() const
 
   if(m_connectivityInfoHasBeenSet)
   {
-   Array<JsonValue> connectivityInfoJsonList(m_connectivityInfo.size());
+   Aws::Utils::Array<JsonValue> connectivityInfoJsonList(m_connectivityInfo.size());
    for(unsigned connectivityInfoIndex = 0; connectivityInfoIndex < connectivityInfoJsonList.GetLength(); ++connectivityInfoIndex)
    {
      connectivityInfoJsonList[connectivityInfoIndex].AsObject(m_connectivityInfo[connectivityInfoIndex].Jsonize());

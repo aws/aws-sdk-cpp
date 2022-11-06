@@ -51,7 +51,7 @@ Value& Value::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resolvedValues"))
   {
-    Array<JsonView> resolvedValuesJsonList = jsonValue.GetArray("resolvedValues");
+    Aws::Utils::Array<JsonView> resolvedValuesJsonList = jsonValue.GetArray("resolvedValues");
     for(unsigned resolvedValuesIndex = 0; resolvedValuesIndex < resolvedValuesJsonList.GetLength(); ++resolvedValuesIndex)
     {
       m_resolvedValues.push_back(resolvedValuesJsonList[resolvedValuesIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue Value::Jsonize() const
 
   if(m_resolvedValuesHasBeenSet)
   {
-   Array<JsonValue> resolvedValuesJsonList(m_resolvedValues.size());
+   Aws::Utils::Array<JsonValue> resolvedValuesJsonList(m_resolvedValues.size());
    for(unsigned resolvedValuesIndex = 0; resolvedValuesIndex < resolvedValuesJsonList.GetLength(); ++resolvedValuesIndex)
    {
      resolvedValuesJsonList[resolvedValuesIndex].AsString(m_resolvedValues[resolvedValuesIndex]);

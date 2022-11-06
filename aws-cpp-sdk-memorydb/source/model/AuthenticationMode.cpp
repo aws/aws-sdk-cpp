@@ -44,7 +44,7 @@ AuthenticationMode& AuthenticationMode::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Passwords"))
   {
-    Array<JsonView> passwordsJsonList = jsonValue.GetArray("Passwords");
+    Aws::Utils::Array<JsonView> passwordsJsonList = jsonValue.GetArray("Passwords");
     for(unsigned passwordsIndex = 0; passwordsIndex < passwordsJsonList.GetLength(); ++passwordsIndex)
     {
       m_passwords.push_back(passwordsJsonList[passwordsIndex].AsString());
@@ -66,7 +66,7 @@ JsonValue AuthenticationMode::Jsonize() const
 
   if(m_passwordsHasBeenSet)
   {
-   Array<JsonValue> passwordsJsonList(m_passwords.size());
+   Aws::Utils::Array<JsonValue> passwordsJsonList(m_passwords.size());
    for(unsigned passwordsIndex = 0; passwordsIndex < passwordsJsonList.GetLength(); ++passwordsIndex)
    {
      passwordsJsonList[passwordsIndex].AsString(m_passwords[passwordsIndex]);

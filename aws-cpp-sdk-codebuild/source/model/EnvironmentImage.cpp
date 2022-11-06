@@ -51,7 +51,7 @@ EnvironmentImage& EnvironmentImage::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("versions"))
   {
-    Array<JsonView> versionsJsonList = jsonValue.GetArray("versions");
+    Aws::Utils::Array<JsonView> versionsJsonList = jsonValue.GetArray("versions");
     for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
     {
       m_versions.push_back(versionsJsonList[versionsIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue EnvironmentImage::Jsonize() const
 
   if(m_versionsHasBeenSet)
   {
-   Array<JsonValue> versionsJsonList(m_versions.size());
+   Aws::Utils::Array<JsonValue> versionsJsonList(m_versions.size());
    for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
    {
      versionsJsonList[versionsIndex].AsString(m_versions[versionsIndex]);

@@ -30,7 +30,7 @@ GetPartitionsResult& GetPartitionsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Partitions"))
   {
-    Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
+    Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
     for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
     {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsObject());

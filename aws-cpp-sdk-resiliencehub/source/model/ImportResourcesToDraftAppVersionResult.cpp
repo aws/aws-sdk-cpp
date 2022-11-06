@@ -44,7 +44,7 @@ ImportResourcesToDraftAppVersionResult& ImportResourcesToDraftAppVersionResult::
 
   if(jsonValue.ValueExists("sourceArns"))
   {
-    Array<JsonView> sourceArnsJsonList = jsonValue.GetArray("sourceArns");
+    Aws::Utils::Array<JsonView> sourceArnsJsonList = jsonValue.GetArray("sourceArns");
     for(unsigned sourceArnsIndex = 0; sourceArnsIndex < sourceArnsJsonList.GetLength(); ++sourceArnsIndex)
     {
       m_sourceArns.push_back(sourceArnsJsonList[sourceArnsIndex].AsString());
@@ -59,7 +59,7 @@ ImportResourcesToDraftAppVersionResult& ImportResourcesToDraftAppVersionResult::
 
   if(jsonValue.ValueExists("terraformSources"))
   {
-    Array<JsonView> terraformSourcesJsonList = jsonValue.GetArray("terraformSources");
+    Aws::Utils::Array<JsonView> terraformSourcesJsonList = jsonValue.GetArray("terraformSources");
     for(unsigned terraformSourcesIndex = 0; terraformSourcesIndex < terraformSourcesJsonList.GetLength(); ++terraformSourcesIndex)
     {
       m_terraformSources.push_back(terraformSourcesJsonList[terraformSourcesIndex].AsObject());

@@ -62,7 +62,7 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Monitors"))
   {
-    Array<JsonView> monitorsJsonList = jsonValue.GetArray("Monitors");
+    Aws::Utils::Array<JsonView> monitorsJsonList = jsonValue.GetArray("Monitors");
     for(unsigned monitorsIndex = 0; monitorsIndex < monitorsJsonList.GetLength(); ++monitorsIndex)
     {
       m_monitors.push_back(monitorsJsonList[monitorsIndex].AsObject());

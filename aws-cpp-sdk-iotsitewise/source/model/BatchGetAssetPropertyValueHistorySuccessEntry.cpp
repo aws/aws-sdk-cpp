@@ -42,7 +42,7 @@ BatchGetAssetPropertyValueHistorySuccessEntry& BatchGetAssetPropertyValueHistory
 
   if(jsonValue.ValueExists("assetPropertyValueHistory"))
   {
-    Array<JsonView> assetPropertyValueHistoryJsonList = jsonValue.GetArray("assetPropertyValueHistory");
+    Aws::Utils::Array<JsonView> assetPropertyValueHistoryJsonList = jsonValue.GetArray("assetPropertyValueHistory");
     for(unsigned assetPropertyValueHistoryIndex = 0; assetPropertyValueHistoryIndex < assetPropertyValueHistoryJsonList.GetLength(); ++assetPropertyValueHistoryIndex)
     {
       m_assetPropertyValueHistory.push_back(assetPropertyValueHistoryJsonList[assetPropertyValueHistoryIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue BatchGetAssetPropertyValueHistorySuccessEntry::Jsonize() const
 
   if(m_assetPropertyValueHistoryHasBeenSet)
   {
-   Array<JsonValue> assetPropertyValueHistoryJsonList(m_assetPropertyValueHistory.size());
+   Aws::Utils::Array<JsonValue> assetPropertyValueHistoryJsonList(m_assetPropertyValueHistory.size());
    for(unsigned assetPropertyValueHistoryIndex = 0; assetPropertyValueHistoryIndex < assetPropertyValueHistoryJsonList.GetLength(); ++assetPropertyValueHistoryIndex)
    {
      assetPropertyValueHistoryJsonList[assetPropertyValueHistoryIndex].AsObject(m_assetPropertyValueHistory[assetPropertyValueHistoryIndex].Jsonize());

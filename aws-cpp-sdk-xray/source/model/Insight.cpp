@@ -85,7 +85,7 @@ Insight& Insight::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Categories"))
   {
-    Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
+    Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
     for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
     {
       m_categories.push_back(InsightCategoryMapper::GetInsightCategoryForName(categoriesJsonList[categoriesIndex].AsString()));
@@ -137,7 +137,7 @@ Insight& Insight::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TopAnomalousServices"))
   {
-    Array<JsonView> topAnomalousServicesJsonList = jsonValue.GetArray("TopAnomalousServices");
+    Aws::Utils::Array<JsonView> topAnomalousServicesJsonList = jsonValue.GetArray("TopAnomalousServices");
     for(unsigned topAnomalousServicesIndex = 0; topAnomalousServicesIndex < topAnomalousServicesJsonList.GetLength(); ++topAnomalousServicesIndex)
     {
       m_topAnomalousServices.push_back(topAnomalousServicesJsonList[topAnomalousServicesIndex].AsObject());
@@ -178,7 +178,7 @@ JsonValue Insight::Jsonize() const
 
   if(m_categoriesHasBeenSet)
   {
-   Array<JsonValue> categoriesJsonList(m_categories.size());
+   Aws::Utils::Array<JsonValue> categoriesJsonList(m_categories.size());
    for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
    {
      categoriesJsonList[categoriesIndex].AsString(InsightCategoryMapper::GetNameForInsightCategory(m_categories[categoriesIndex]));
@@ -222,7 +222,7 @@ JsonValue Insight::Jsonize() const
 
   if(m_topAnomalousServicesHasBeenSet)
   {
-   Array<JsonValue> topAnomalousServicesJsonList(m_topAnomalousServices.size());
+   Aws::Utils::Array<JsonValue> topAnomalousServicesJsonList(m_topAnomalousServices.size());
    for(unsigned topAnomalousServicesIndex = 0; topAnomalousServicesIndex < topAnomalousServicesJsonList.GetLength(); ++topAnomalousServicesIndex)
    {
      topAnomalousServicesJsonList[topAnomalousServicesIndex].AsObject(m_topAnomalousServices[topAnomalousServicesIndex].Jsonize());

@@ -30,7 +30,7 @@ GetDistributionsResult& GetDistributionsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("distributions"))
   {
-    Array<JsonView> distributionsJsonList = jsonValue.GetArray("distributions");
+    Aws::Utils::Array<JsonView> distributionsJsonList = jsonValue.GetArray("distributions");
     for(unsigned distributionsIndex = 0; distributionsIndex < distributionsJsonList.GetLength(); ++distributionsIndex)
     {
       m_distributions.push_back(distributionsJsonList[distributionsIndex].AsObject());

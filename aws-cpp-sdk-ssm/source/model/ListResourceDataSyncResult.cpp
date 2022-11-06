@@ -30,7 +30,7 @@ ListResourceDataSyncResult& ListResourceDataSyncResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceDataSyncItems"))
   {
-    Array<JsonView> resourceDataSyncItemsJsonList = jsonValue.GetArray("ResourceDataSyncItems");
+    Aws::Utils::Array<JsonView> resourceDataSyncItemsJsonList = jsonValue.GetArray("ResourceDataSyncItems");
     for(unsigned resourceDataSyncItemsIndex = 0; resourceDataSyncItemsIndex < resourceDataSyncItemsJsonList.GetLength(); ++resourceDataSyncItemsIndex)
     {
       m_resourceDataSyncItems.push_back(resourceDataSyncItemsJsonList[resourceDataSyncItemsIndex].AsObject());

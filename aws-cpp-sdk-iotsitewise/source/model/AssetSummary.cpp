@@ -98,7 +98,7 @@ AssetSummary& AssetSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("hierarchies"))
   {
-    Array<JsonView> hierarchiesJsonList = jsonValue.GetArray("hierarchies");
+    Aws::Utils::Array<JsonView> hierarchiesJsonList = jsonValue.GetArray("hierarchies");
     for(unsigned hierarchiesIndex = 0; hierarchiesIndex < hierarchiesJsonList.GetLength(); ++hierarchiesIndex)
     {
       m_hierarchies.push_back(hierarchiesJsonList[hierarchiesIndex].AsObject());
@@ -162,7 +162,7 @@ JsonValue AssetSummary::Jsonize() const
 
   if(m_hierarchiesHasBeenSet)
   {
-   Array<JsonValue> hierarchiesJsonList(m_hierarchies.size());
+   Aws::Utils::Array<JsonValue> hierarchiesJsonList(m_hierarchies.size());
    for(unsigned hierarchiesIndex = 0; hierarchiesIndex < hierarchiesJsonList.GetLength(); ++hierarchiesIndex)
    {
      hierarchiesJsonList[hierarchiesIndex].AsObject(m_hierarchies[hierarchiesIndex].Jsonize());

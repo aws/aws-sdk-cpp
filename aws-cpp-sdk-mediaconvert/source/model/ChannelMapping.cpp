@@ -33,7 +33,7 @@ ChannelMapping& ChannelMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("outputChannels"))
   {
-    Array<JsonView> outputChannelsJsonList = jsonValue.GetArray("outputChannels");
+    Aws::Utils::Array<JsonView> outputChannelsJsonList = jsonValue.GetArray("outputChannels");
     for(unsigned outputChannelsIndex = 0; outputChannelsIndex < outputChannelsJsonList.GetLength(); ++outputChannelsIndex)
     {
       m_outputChannels.push_back(outputChannelsJsonList[outputChannelsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ChannelMapping::Jsonize() const
 
   if(m_outputChannelsHasBeenSet)
   {
-   Array<JsonValue> outputChannelsJsonList(m_outputChannels.size());
+   Aws::Utils::Array<JsonValue> outputChannelsJsonList(m_outputChannels.size());
    for(unsigned outputChannelsIndex = 0; outputChannelsIndex < outputChannelsJsonList.GetLength(); ++outputChannelsIndex)
    {
      outputChannelsJsonList[outputChannelsIndex].AsObject(m_outputChannels[outputChannelsIndex].Jsonize());

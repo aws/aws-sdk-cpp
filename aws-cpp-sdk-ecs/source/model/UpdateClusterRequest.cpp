@@ -31,7 +31,7 @@ Aws::String UpdateClusterRequest::SerializePayload() const
 
   if(m_settingsHasBeenSet)
   {
-   Array<JsonValue> settingsJsonList(m_settings.size());
+   Aws::Utils::Array<JsonValue> settingsJsonList(m_settings.size());
    for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
    {
      settingsJsonList[settingsIndex].AsObject(m_settings[settingsIndex].Jsonize());

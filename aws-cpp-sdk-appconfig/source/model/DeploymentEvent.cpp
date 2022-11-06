@@ -66,7 +66,7 @@ DeploymentEvent& DeploymentEvent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ActionInvocations"))
   {
-    Array<JsonView> actionInvocationsJsonList = jsonValue.GetArray("ActionInvocations");
+    Aws::Utils::Array<JsonView> actionInvocationsJsonList = jsonValue.GetArray("ActionInvocations");
     for(unsigned actionInvocationsIndex = 0; actionInvocationsIndex < actionInvocationsJsonList.GetLength(); ++actionInvocationsIndex)
     {
       m_actionInvocations.push_back(actionInvocationsJsonList[actionInvocationsIndex].AsObject());
@@ -106,7 +106,7 @@ JsonValue DeploymentEvent::Jsonize() const
 
   if(m_actionInvocationsHasBeenSet)
   {
-   Array<JsonValue> actionInvocationsJsonList(m_actionInvocations.size());
+   Aws::Utils::Array<JsonValue> actionInvocationsJsonList(m_actionInvocations.size());
    for(unsigned actionInvocationsIndex = 0; actionInvocationsIndex < actionInvocationsJsonList.GetLength(); ++actionInvocationsIndex)
    {
      actionInvocationsJsonList[actionInvocationsIndex].AsObject(m_actionInvocations[actionInvocationsIndex].Jsonize());

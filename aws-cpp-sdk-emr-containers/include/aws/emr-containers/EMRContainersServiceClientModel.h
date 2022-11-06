@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/emr-containers/EMRContainersErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/emr-containers/EMRContainersEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -68,6 +70,10 @@ namespace Aws
 
   namespace EMRContainers
   {
+    using EMRContainersClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EMRContainersEndpointProviderBase = Aws::EMRContainers::Endpoint::EMRContainersEndpointProviderBase;
+    using EMRContainersEndpointProvider = Aws::EMRContainers::Endpoint::EMRContainersEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in EMRContainersClient header */

@@ -48,7 +48,7 @@ GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("requiredFields"))
   {
-    Array<JsonView> requiredFieldsJsonList = jsonValue.GetArray("requiredFields");
+    Aws::Utils::Array<JsonView> requiredFieldsJsonList = jsonValue.GetArray("requiredFields");
     for(unsigned requiredFieldsIndex = 0; requiredFieldsIndex < requiredFieldsJsonList.GetLength(); ++requiredFieldsIndex)
     {
       m_requiredFields.push_back(requiredFieldsJsonList[requiredFieldsIndex].AsObject());

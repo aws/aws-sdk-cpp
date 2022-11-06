@@ -43,7 +43,7 @@ BatchCreateIndex& BatchCreateIndex::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OrderedIndexedAttributeList"))
   {
-    Array<JsonView> orderedIndexedAttributeListJsonList = jsonValue.GetArray("OrderedIndexedAttributeList");
+    Aws::Utils::Array<JsonView> orderedIndexedAttributeListJsonList = jsonValue.GetArray("OrderedIndexedAttributeList");
     for(unsigned orderedIndexedAttributeListIndex = 0; orderedIndexedAttributeListIndex < orderedIndexedAttributeListJsonList.GetLength(); ++orderedIndexedAttributeListIndex)
     {
       m_orderedIndexedAttributeList.push_back(orderedIndexedAttributeListJsonList[orderedIndexedAttributeListIndex].AsObject());
@@ -88,7 +88,7 @@ JsonValue BatchCreateIndex::Jsonize() const
 
   if(m_orderedIndexedAttributeListHasBeenSet)
   {
-   Array<JsonValue> orderedIndexedAttributeListJsonList(m_orderedIndexedAttributeList.size());
+   Aws::Utils::Array<JsonValue> orderedIndexedAttributeListJsonList(m_orderedIndexedAttributeList.size());
    for(unsigned orderedIndexedAttributeListIndex = 0; orderedIndexedAttributeListIndex < orderedIndexedAttributeListJsonList.GetLength(); ++orderedIndexedAttributeListIndex)
    {
      orderedIndexedAttributeListJsonList[orderedIndexedAttributeListIndex].AsObject(m_orderedIndexedAttributeList[orderedIndexedAttributeListIndex].Jsonize());

@@ -24,7 +24,7 @@ Aws::String PutAppInstanceStreamingConfigurationsRequest::SerializePayload() con
 
   if(m_appInstanceStreamingConfigurationsHasBeenSet)
   {
-   Array<JsonValue> appInstanceStreamingConfigurationsJsonList(m_appInstanceStreamingConfigurations.size());
+   Aws::Utils::Array<JsonValue> appInstanceStreamingConfigurationsJsonList(m_appInstanceStreamingConfigurations.size());
    for(unsigned appInstanceStreamingConfigurationsIndex = 0; appInstanceStreamingConfigurationsIndex < appInstanceStreamingConfigurationsJsonList.GetLength(); ++appInstanceStreamingConfigurationsIndex)
    {
      appInstanceStreamingConfigurationsJsonList[appInstanceStreamingConfigurationsIndex].AsObject(m_appInstanceStreamingConfigurations[appInstanceStreamingConfigurationsIndex].Jsonize());

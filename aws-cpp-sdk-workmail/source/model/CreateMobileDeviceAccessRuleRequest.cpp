@@ -66,7 +66,7 @@ Aws::String CreateMobileDeviceAccessRuleRequest::SerializePayload() const
 
   if(m_deviceTypesHasBeenSet)
   {
-   Array<JsonValue> deviceTypesJsonList(m_deviceTypes.size());
+   Aws::Utils::Array<JsonValue> deviceTypesJsonList(m_deviceTypes.size());
    for(unsigned deviceTypesIndex = 0; deviceTypesIndex < deviceTypesJsonList.GetLength(); ++deviceTypesIndex)
    {
      deviceTypesJsonList[deviceTypesIndex].AsString(m_deviceTypes[deviceTypesIndex]);
@@ -77,7 +77,7 @@ Aws::String CreateMobileDeviceAccessRuleRequest::SerializePayload() const
 
   if(m_notDeviceTypesHasBeenSet)
   {
-   Array<JsonValue> notDeviceTypesJsonList(m_notDeviceTypes.size());
+   Aws::Utils::Array<JsonValue> notDeviceTypesJsonList(m_notDeviceTypes.size());
    for(unsigned notDeviceTypesIndex = 0; notDeviceTypesIndex < notDeviceTypesJsonList.GetLength(); ++notDeviceTypesIndex)
    {
      notDeviceTypesJsonList[notDeviceTypesIndex].AsString(m_notDeviceTypes[notDeviceTypesIndex]);
@@ -88,7 +88,7 @@ Aws::String CreateMobileDeviceAccessRuleRequest::SerializePayload() const
 
   if(m_deviceModelsHasBeenSet)
   {
-   Array<JsonValue> deviceModelsJsonList(m_deviceModels.size());
+   Aws::Utils::Array<JsonValue> deviceModelsJsonList(m_deviceModels.size());
    for(unsigned deviceModelsIndex = 0; deviceModelsIndex < deviceModelsJsonList.GetLength(); ++deviceModelsIndex)
    {
      deviceModelsJsonList[deviceModelsIndex].AsString(m_deviceModels[deviceModelsIndex]);
@@ -99,7 +99,7 @@ Aws::String CreateMobileDeviceAccessRuleRequest::SerializePayload() const
 
   if(m_notDeviceModelsHasBeenSet)
   {
-   Array<JsonValue> notDeviceModelsJsonList(m_notDeviceModels.size());
+   Aws::Utils::Array<JsonValue> notDeviceModelsJsonList(m_notDeviceModels.size());
    for(unsigned notDeviceModelsIndex = 0; notDeviceModelsIndex < notDeviceModelsJsonList.GetLength(); ++notDeviceModelsIndex)
    {
      notDeviceModelsJsonList[notDeviceModelsIndex].AsString(m_notDeviceModels[notDeviceModelsIndex]);
@@ -110,7 +110,7 @@ Aws::String CreateMobileDeviceAccessRuleRequest::SerializePayload() const
 
   if(m_deviceOperatingSystemsHasBeenSet)
   {
-   Array<JsonValue> deviceOperatingSystemsJsonList(m_deviceOperatingSystems.size());
+   Aws::Utils::Array<JsonValue> deviceOperatingSystemsJsonList(m_deviceOperatingSystems.size());
    for(unsigned deviceOperatingSystemsIndex = 0; deviceOperatingSystemsIndex < deviceOperatingSystemsJsonList.GetLength(); ++deviceOperatingSystemsIndex)
    {
      deviceOperatingSystemsJsonList[deviceOperatingSystemsIndex].AsString(m_deviceOperatingSystems[deviceOperatingSystemsIndex]);
@@ -121,7 +121,7 @@ Aws::String CreateMobileDeviceAccessRuleRequest::SerializePayload() const
 
   if(m_notDeviceOperatingSystemsHasBeenSet)
   {
-   Array<JsonValue> notDeviceOperatingSystemsJsonList(m_notDeviceOperatingSystems.size());
+   Aws::Utils::Array<JsonValue> notDeviceOperatingSystemsJsonList(m_notDeviceOperatingSystems.size());
    for(unsigned notDeviceOperatingSystemsIndex = 0; notDeviceOperatingSystemsIndex < notDeviceOperatingSystemsJsonList.GetLength(); ++notDeviceOperatingSystemsIndex)
    {
      notDeviceOperatingSystemsJsonList[notDeviceOperatingSystemsIndex].AsString(m_notDeviceOperatingSystems[notDeviceOperatingSystemsIndex]);
@@ -132,7 +132,7 @@ Aws::String CreateMobileDeviceAccessRuleRequest::SerializePayload() const
 
   if(m_deviceUserAgentsHasBeenSet)
   {
-   Array<JsonValue> deviceUserAgentsJsonList(m_deviceUserAgents.size());
+   Aws::Utils::Array<JsonValue> deviceUserAgentsJsonList(m_deviceUserAgents.size());
    for(unsigned deviceUserAgentsIndex = 0; deviceUserAgentsIndex < deviceUserAgentsJsonList.GetLength(); ++deviceUserAgentsIndex)
    {
      deviceUserAgentsJsonList[deviceUserAgentsIndex].AsString(m_deviceUserAgents[deviceUserAgentsIndex]);
@@ -143,7 +143,7 @@ Aws::String CreateMobileDeviceAccessRuleRequest::SerializePayload() const
 
   if(m_notDeviceUserAgentsHasBeenSet)
   {
-   Array<JsonValue> notDeviceUserAgentsJsonList(m_notDeviceUserAgents.size());
+   Aws::Utils::Array<JsonValue> notDeviceUserAgentsJsonList(m_notDeviceUserAgents.size());
    for(unsigned notDeviceUserAgentsIndex = 0; notDeviceUserAgentsIndex < notDeviceUserAgentsJsonList.GetLength(); ++notDeviceUserAgentsIndex)
    {
      notDeviceUserAgentsJsonList[notDeviceUserAgentsIndex].AsString(m_notDeviceUserAgents[notDeviceUserAgentsIndex]);

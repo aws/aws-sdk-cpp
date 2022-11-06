@@ -36,7 +36,7 @@ ListWirelessDevicesResult& ListWirelessDevicesResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("WirelessDeviceList"))
   {
-    Array<JsonView> wirelessDeviceListJsonList = jsonValue.GetArray("WirelessDeviceList");
+    Aws::Utils::Array<JsonView> wirelessDeviceListJsonList = jsonValue.GetArray("WirelessDeviceList");
     for(unsigned wirelessDeviceListIndex = 0; wirelessDeviceListIndex < wirelessDeviceListJsonList.GetLength(); ++wirelessDeviceListIndex)
     {
       m_wirelessDeviceList.push_back(wirelessDeviceListJsonList[wirelessDeviceListIndex].AsObject());

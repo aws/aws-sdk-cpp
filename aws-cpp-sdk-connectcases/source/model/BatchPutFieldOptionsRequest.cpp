@@ -25,7 +25,7 @@ Aws::String BatchPutFieldOptionsRequest::SerializePayload() const
 
   if(m_optionsHasBeenSet)
   {
-   Array<JsonValue> optionsJsonList(m_options.size());
+   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
    {
      optionsJsonList[optionsIndex].AsObject(m_options[optionsIndex].Jsonize());

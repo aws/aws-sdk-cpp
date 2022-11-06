@@ -46,7 +46,7 @@ PipelineSummary& PipelineSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("reprocessingSummaries"))
   {
-    Array<JsonView> reprocessingSummariesJsonList = jsonValue.GetArray("reprocessingSummaries");
+    Aws::Utils::Array<JsonView> reprocessingSummariesJsonList = jsonValue.GetArray("reprocessingSummaries");
     for(unsigned reprocessingSummariesIndex = 0; reprocessingSummariesIndex < reprocessingSummariesJsonList.GetLength(); ++reprocessingSummariesIndex)
     {
       m_reprocessingSummaries.push_back(reprocessingSummariesJsonList[reprocessingSummariesIndex].AsObject());
@@ -83,7 +83,7 @@ JsonValue PipelineSummary::Jsonize() const
 
   if(m_reprocessingSummariesHasBeenSet)
   {
-   Array<JsonValue> reprocessingSummariesJsonList(m_reprocessingSummaries.size());
+   Aws::Utils::Array<JsonValue> reprocessingSummariesJsonList(m_reprocessingSummaries.size());
    for(unsigned reprocessingSummariesIndex = 0; reprocessingSummariesIndex < reprocessingSummariesJsonList.GetLength(); ++reprocessingSummariesIndex)
    {
      reprocessingSummariesJsonList[reprocessingSummariesIndex].AsObject(m_reprocessingSummaries[reprocessingSummariesIndex].Jsonize());

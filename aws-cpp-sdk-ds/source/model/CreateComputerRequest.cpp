@@ -51,7 +51,7 @@ Aws::String CreateComputerRequest::SerializePayload() const
 
   if(m_computerAttributesHasBeenSet)
   {
-   Array<JsonValue> computerAttributesJsonList(m_computerAttributes.size());
+   Aws::Utils::Array<JsonValue> computerAttributesJsonList(m_computerAttributes.size());
    for(unsigned computerAttributesIndex = 0; computerAttributesIndex < computerAttributesJsonList.GetLength(); ++computerAttributesIndex)
    {
      computerAttributesJsonList[computerAttributesIndex].AsObject(m_computerAttributes[computerAttributesIndex].Jsonize());

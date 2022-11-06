@@ -54,7 +54,7 @@ Aws::String CreateCustomActionTypeRequest::SerializePayload() const
 
   if(m_configurationPropertiesHasBeenSet)
   {
-   Array<JsonValue> configurationPropertiesJsonList(m_configurationProperties.size());
+   Aws::Utils::Array<JsonValue> configurationPropertiesJsonList(m_configurationProperties.size());
    for(unsigned configurationPropertiesIndex = 0; configurationPropertiesIndex < configurationPropertiesJsonList.GetLength(); ++configurationPropertiesIndex)
    {
      configurationPropertiesJsonList[configurationPropertiesIndex].AsObject(m_configurationProperties[configurationPropertiesIndex].Jsonize());
@@ -77,7 +77,7 @@ Aws::String CreateCustomActionTypeRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

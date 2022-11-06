@@ -36,7 +36,7 @@ GetExperimentResultsResult& GetExperimentResultsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("reports"))
   {
-    Array<JsonView> reportsJsonList = jsonValue.GetArray("reports");
+    Aws::Utils::Array<JsonView> reportsJsonList = jsonValue.GetArray("reports");
     for(unsigned reportsIndex = 0; reportsIndex < reportsJsonList.GetLength(); ++reportsIndex)
     {
       m_reports.push_back(reportsJsonList[reportsIndex].AsObject());
@@ -45,7 +45,7 @@ GetExperimentResultsResult& GetExperimentResultsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("resultsData"))
   {
-    Array<JsonView> resultsDataJsonList = jsonValue.GetArray("resultsData");
+    Aws::Utils::Array<JsonView> resultsDataJsonList = jsonValue.GetArray("resultsData");
     for(unsigned resultsDataIndex = 0; resultsDataIndex < resultsDataJsonList.GetLength(); ++resultsDataIndex)
     {
       m_resultsData.push_back(resultsDataJsonList[resultsDataIndex].AsObject());
@@ -54,7 +54,7 @@ GetExperimentResultsResult& GetExperimentResultsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("timestamps"))
   {
-    Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
+    Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
     for(unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex)
     {
       m_timestamps.push_back(timestampsJsonList[timestampsIndex].AsDouble());

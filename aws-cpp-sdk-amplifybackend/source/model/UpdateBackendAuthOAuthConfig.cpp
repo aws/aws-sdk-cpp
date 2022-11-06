@@ -59,7 +59,7 @@ UpdateBackendAuthOAuthConfig& UpdateBackendAuthOAuthConfig::operator =(JsonView 
 
   if(jsonValue.ValueExists("oAuthScopes"))
   {
-    Array<JsonView> oAuthScopesJsonList = jsonValue.GetArray("oAuthScopes");
+    Aws::Utils::Array<JsonView> oAuthScopesJsonList = jsonValue.GetArray("oAuthScopes");
     for(unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex)
     {
       m_oAuthScopes.push_back(OAuthScopesElementMapper::GetOAuthScopesElementForName(oAuthScopesJsonList[oAuthScopesIndex].AsString()));
@@ -69,7 +69,7 @@ UpdateBackendAuthOAuthConfig& UpdateBackendAuthOAuthConfig::operator =(JsonView 
 
   if(jsonValue.ValueExists("redirectSignInURIs"))
   {
-    Array<JsonView> redirectSignInURIsJsonList = jsonValue.GetArray("redirectSignInURIs");
+    Aws::Utils::Array<JsonView> redirectSignInURIsJsonList = jsonValue.GetArray("redirectSignInURIs");
     for(unsigned redirectSignInURIsIndex = 0; redirectSignInURIsIndex < redirectSignInURIsJsonList.GetLength(); ++redirectSignInURIsIndex)
     {
       m_redirectSignInURIs.push_back(redirectSignInURIsJsonList[redirectSignInURIsIndex].AsString());
@@ -79,7 +79,7 @@ UpdateBackendAuthOAuthConfig& UpdateBackendAuthOAuthConfig::operator =(JsonView 
 
   if(jsonValue.ValueExists("redirectSignOutURIs"))
   {
-    Array<JsonView> redirectSignOutURIsJsonList = jsonValue.GetArray("redirectSignOutURIs");
+    Aws::Utils::Array<JsonView> redirectSignOutURIsJsonList = jsonValue.GetArray("redirectSignOutURIs");
     for(unsigned redirectSignOutURIsIndex = 0; redirectSignOutURIsIndex < redirectSignOutURIsJsonList.GetLength(); ++redirectSignOutURIsIndex)
     {
       m_redirectSignOutURIs.push_back(redirectSignOutURIsJsonList[redirectSignOutURIsIndex].AsString());
@@ -114,7 +114,7 @@ JsonValue UpdateBackendAuthOAuthConfig::Jsonize() const
 
   if(m_oAuthScopesHasBeenSet)
   {
-   Array<JsonValue> oAuthScopesJsonList(m_oAuthScopes.size());
+   Aws::Utils::Array<JsonValue> oAuthScopesJsonList(m_oAuthScopes.size());
    for(unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex)
    {
      oAuthScopesJsonList[oAuthScopesIndex].AsString(OAuthScopesElementMapper::GetNameForOAuthScopesElement(m_oAuthScopes[oAuthScopesIndex]));
@@ -125,7 +125,7 @@ JsonValue UpdateBackendAuthOAuthConfig::Jsonize() const
 
   if(m_redirectSignInURIsHasBeenSet)
   {
-   Array<JsonValue> redirectSignInURIsJsonList(m_redirectSignInURIs.size());
+   Aws::Utils::Array<JsonValue> redirectSignInURIsJsonList(m_redirectSignInURIs.size());
    for(unsigned redirectSignInURIsIndex = 0; redirectSignInURIsIndex < redirectSignInURIsJsonList.GetLength(); ++redirectSignInURIsIndex)
    {
      redirectSignInURIsJsonList[redirectSignInURIsIndex].AsString(m_redirectSignInURIs[redirectSignInURIsIndex]);
@@ -136,7 +136,7 @@ JsonValue UpdateBackendAuthOAuthConfig::Jsonize() const
 
   if(m_redirectSignOutURIsHasBeenSet)
   {
-   Array<JsonValue> redirectSignOutURIsJsonList(m_redirectSignOutURIs.size());
+   Aws::Utils::Array<JsonValue> redirectSignOutURIsJsonList(m_redirectSignOutURIs.size());
    for(unsigned redirectSignOutURIsIndex = 0; redirectSignOutURIsIndex < redirectSignOutURIsJsonList.GetLength(); ++redirectSignOutURIsIndex)
    {
      redirectSignOutURIsJsonList[redirectSignOutURIsIndex].AsString(m_redirectSignOutURIs[redirectSignOutURIsIndex]);

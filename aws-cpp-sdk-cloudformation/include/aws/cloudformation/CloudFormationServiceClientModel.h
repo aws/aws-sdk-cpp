@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/cloudformation/CloudFormationErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/cloudformation/CloudFormationEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -112,6 +114,10 @@ namespace Aws
 
   namespace CloudFormation
   {
+    using CloudFormationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudFormationEndpointProviderBase = Aws::CloudFormation::Endpoint::CloudFormationEndpointProviderBase;
+    using CloudFormationEndpointProvider = Aws::CloudFormation::Endpoint::CloudFormationEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CloudFormationClient header */

@@ -30,7 +30,7 @@ ListTopicsDetectionJobsResult& ListTopicsDetectionJobsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TopicsDetectionJobPropertiesList"))
   {
-    Array<JsonView> topicsDetectionJobPropertiesListJsonList = jsonValue.GetArray("TopicsDetectionJobPropertiesList");
+    Aws::Utils::Array<JsonView> topicsDetectionJobPropertiesListJsonList = jsonValue.GetArray("TopicsDetectionJobPropertiesList");
     for(unsigned topicsDetectionJobPropertiesListIndex = 0; topicsDetectionJobPropertiesListIndex < topicsDetectionJobPropertiesListJsonList.GetLength(); ++topicsDetectionJobPropertiesListIndex)
     {
       m_topicsDetectionJobPropertiesList.push_back(topicsDetectionJobPropertiesListJsonList[topicsDetectionJobPropertiesListIndex].AsObject());

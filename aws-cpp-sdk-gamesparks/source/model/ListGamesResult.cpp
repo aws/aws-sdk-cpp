@@ -30,7 +30,7 @@ ListGamesResult& ListGamesResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Games"))
   {
-    Array<JsonView> gamesJsonList = jsonValue.GetArray("Games");
+    Aws::Utils::Array<JsonView> gamesJsonList = jsonValue.GetArray("Games");
     for(unsigned gamesIndex = 0; gamesIndex < gamesJsonList.GetLength(); ++gamesIndex)
     {
       m_games.push_back(gamesJsonList[gamesIndex].AsObject());

@@ -26,7 +26,7 @@ Aws::String ListApplicationStatesRequest::SerializePayload() const
 
   if(m_applicationIdsHasBeenSet)
   {
-   Array<JsonValue> applicationIdsJsonList(m_applicationIds.size());
+   Aws::Utils::Array<JsonValue> applicationIdsJsonList(m_applicationIds.size());
    for(unsigned applicationIdsIndex = 0; applicationIdsIndex < applicationIdsJsonList.GetLength(); ++applicationIdsIndex)
    {
      applicationIdsJsonList[applicationIdsIndex].AsString(m_applicationIds[applicationIdsIndex]);

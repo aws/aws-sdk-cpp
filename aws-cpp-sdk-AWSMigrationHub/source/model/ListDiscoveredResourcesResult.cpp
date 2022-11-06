@@ -36,7 +36,7 @@ ListDiscoveredResourcesResult& ListDiscoveredResourcesResult::operator =(const A
 
   if(jsonValue.ValueExists("DiscoveredResourceList"))
   {
-    Array<JsonView> discoveredResourceListJsonList = jsonValue.GetArray("DiscoveredResourceList");
+    Aws::Utils::Array<JsonView> discoveredResourceListJsonList = jsonValue.GetArray("DiscoveredResourceList");
     for(unsigned discoveredResourceListIndex = 0; discoveredResourceListIndex < discoveredResourceListJsonList.GetLength(); ++discoveredResourceListIndex)
     {
       m_discoveredResourceList.push_back(discoveredResourceListJsonList[discoveredResourceListIndex].AsObject());

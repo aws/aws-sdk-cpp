@@ -33,7 +33,7 @@ DataSetSchema& DataSetSchema::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ColumnSchemaList"))
   {
-    Array<JsonView> columnSchemaListJsonList = jsonValue.GetArray("ColumnSchemaList");
+    Aws::Utils::Array<JsonView> columnSchemaListJsonList = jsonValue.GetArray("ColumnSchemaList");
     for(unsigned columnSchemaListIndex = 0; columnSchemaListIndex < columnSchemaListJsonList.GetLength(); ++columnSchemaListIndex)
     {
       m_columnSchemaList.push_back(columnSchemaListJsonList[columnSchemaListIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue DataSetSchema::Jsonize() const
 
   if(m_columnSchemaListHasBeenSet)
   {
-   Array<JsonValue> columnSchemaListJsonList(m_columnSchemaList.size());
+   Aws::Utils::Array<JsonValue> columnSchemaListJsonList(m_columnSchemaList.size());
    for(unsigned columnSchemaListIndex = 0; columnSchemaListIndex < columnSchemaListJsonList.GetLength(); ++columnSchemaListIndex)
    {
      columnSchemaListJsonList[columnSchemaListIndex].AsObject(m_columnSchemaList[columnSchemaListIndex].Jsonize());

@@ -30,7 +30,7 @@ ListDetectorsResult& ListDetectorsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("detectorIds"))
   {
-    Array<JsonView> detectorIdsJsonList = jsonValue.GetArray("detectorIds");
+    Aws::Utils::Array<JsonView> detectorIdsJsonList = jsonValue.GetArray("detectorIds");
     for(unsigned detectorIdsIndex = 0; detectorIdsIndex < detectorIdsJsonList.GetLength(); ++detectorIdsIndex)
     {
       m_detectorIds.push_back(detectorIdsJsonList[detectorIdsIndex].AsString());

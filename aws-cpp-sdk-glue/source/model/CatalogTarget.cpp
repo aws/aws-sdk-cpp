@@ -48,7 +48,7 @@ CatalogTarget& CatalogTarget::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tables"))
   {
-    Array<JsonView> tablesJsonList = jsonValue.GetArray("Tables");
+    Aws::Utils::Array<JsonView> tablesJsonList = jsonValue.GetArray("Tables");
     for(unsigned tablesIndex = 0; tablesIndex < tablesJsonList.GetLength(); ++tablesIndex)
     {
       m_tables.push_back(tablesJsonList[tablesIndex].AsString());
@@ -92,7 +92,7 @@ JsonValue CatalogTarget::Jsonize() const
 
   if(m_tablesHasBeenSet)
   {
-   Array<JsonValue> tablesJsonList(m_tables.size());
+   Aws::Utils::Array<JsonValue> tablesJsonList(m_tables.size());
    for(unsigned tablesIndex = 0; tablesIndex < tablesJsonList.GetLength(); ++tablesIndex)
    {
      tablesJsonList[tablesIndex].AsString(m_tables[tablesIndex]);

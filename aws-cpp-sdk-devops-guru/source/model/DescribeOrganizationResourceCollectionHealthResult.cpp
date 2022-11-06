@@ -30,7 +30,7 @@ DescribeOrganizationResourceCollectionHealthResult& DescribeOrganizationResource
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CloudFormation"))
   {
-    Array<JsonView> cloudFormationJsonList = jsonValue.GetArray("CloudFormation");
+    Aws::Utils::Array<JsonView> cloudFormationJsonList = jsonValue.GetArray("CloudFormation");
     for(unsigned cloudFormationIndex = 0; cloudFormationIndex < cloudFormationJsonList.GetLength(); ++cloudFormationIndex)
     {
       m_cloudFormation.push_back(cloudFormationJsonList[cloudFormationIndex].AsObject());
@@ -39,7 +39,7 @@ DescribeOrganizationResourceCollectionHealthResult& DescribeOrganizationResource
 
   if(jsonValue.ValueExists("Service"))
   {
-    Array<JsonView> serviceJsonList = jsonValue.GetArray("Service");
+    Aws::Utils::Array<JsonView> serviceJsonList = jsonValue.GetArray("Service");
     for(unsigned serviceIndex = 0; serviceIndex < serviceJsonList.GetLength(); ++serviceIndex)
     {
       m_service.push_back(serviceJsonList[serviceIndex].AsObject());
@@ -48,7 +48,7 @@ DescribeOrganizationResourceCollectionHealthResult& DescribeOrganizationResource
 
   if(jsonValue.ValueExists("Account"))
   {
-    Array<JsonView> accountJsonList = jsonValue.GetArray("Account");
+    Aws::Utils::Array<JsonView> accountJsonList = jsonValue.GetArray("Account");
     for(unsigned accountIndex = 0; accountIndex < accountJsonList.GetLength(); ++accountIndex)
     {
       m_account.push_back(accountJsonList[accountIndex].AsObject());
@@ -63,7 +63,7 @@ DescribeOrganizationResourceCollectionHealthResult& DescribeOrganizationResource
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

@@ -23,7 +23,7 @@ Aws::String BatchGetQueryExecutionRequest::SerializePayload() const
 
   if(m_queryExecutionIdsHasBeenSet)
   {
-   Array<JsonValue> queryExecutionIdsJsonList(m_queryExecutionIds.size());
+   Aws::Utils::Array<JsonValue> queryExecutionIdsJsonList(m_queryExecutionIds.size());
    for(unsigned queryExecutionIdsIndex = 0; queryExecutionIdsIndex < queryExecutionIdsJsonList.GetLength(); ++queryExecutionIdsIndex)
    {
      queryExecutionIdsJsonList[queryExecutionIdsIndex].AsString(m_queryExecutionIds[queryExecutionIdsIndex]);

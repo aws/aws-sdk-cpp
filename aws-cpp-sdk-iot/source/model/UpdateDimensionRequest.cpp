@@ -24,7 +24,7 @@ Aws::String UpdateDimensionRequest::SerializePayload() const
 
   if(m_stringValuesHasBeenSet)
   {
-   Array<JsonValue> stringValuesJsonList(m_stringValues.size());
+   Aws::Utils::Array<JsonValue> stringValuesJsonList(m_stringValues.size());
    for(unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex)
    {
      stringValuesJsonList[stringValuesIndex].AsString(m_stringValues[stringValuesIndex]);

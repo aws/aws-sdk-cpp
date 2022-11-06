@@ -36,7 +36,7 @@ GetUtterancesViewResult& GetUtterancesViewResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("utterances"))
   {
-    Array<JsonView> utterancesJsonList = jsonValue.GetArray("utterances");
+    Aws::Utils::Array<JsonView> utterancesJsonList = jsonValue.GetArray("utterances");
     for(unsigned utterancesIndex = 0; utterancesIndex < utterancesJsonList.GetLength(); ++utterancesIndex)
     {
       m_utterances.push_back(utterancesJsonList[utterancesIndex].AsObject());

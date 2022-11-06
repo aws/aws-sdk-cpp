@@ -30,7 +30,7 @@ ListLambdaFunctionsResult& ListLambdaFunctionsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LambdaFunctions"))
   {
-    Array<JsonView> lambdaFunctionsJsonList = jsonValue.GetArray("LambdaFunctions");
+    Aws::Utils::Array<JsonView> lambdaFunctionsJsonList = jsonValue.GetArray("LambdaFunctions");
     for(unsigned lambdaFunctionsIndex = 0; lambdaFunctionsIndex < lambdaFunctionsJsonList.GetLength(); ++lambdaFunctionsIndex)
     {
       m_lambdaFunctions.push_back(lambdaFunctionsJsonList[lambdaFunctionsIndex].AsString());

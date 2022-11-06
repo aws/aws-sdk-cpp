@@ -36,7 +36,7 @@ GetProductsResult& GetProductsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("PriceList"))
   {
-    Array<JsonView> priceListJsonList = jsonValue.GetArray("PriceList");
+    Aws::Utils::Array<JsonView> priceListJsonList = jsonValue.GetArray("PriceList");
     for(unsigned priceListIndex = 0; priceListIndex < priceListJsonList.GetLength(); ++priceListIndex)
     {
       m_priceList.push_back(priceListJsonList[priceListIndex].AsString());

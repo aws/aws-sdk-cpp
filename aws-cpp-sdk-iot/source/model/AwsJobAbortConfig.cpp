@@ -33,7 +33,7 @@ AwsJobAbortConfig& AwsJobAbortConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("abortCriteriaList"))
   {
-    Array<JsonView> abortCriteriaListJsonList = jsonValue.GetArray("abortCriteriaList");
+    Aws::Utils::Array<JsonView> abortCriteriaListJsonList = jsonValue.GetArray("abortCriteriaList");
     for(unsigned abortCriteriaListIndex = 0; abortCriteriaListIndex < abortCriteriaListJsonList.GetLength(); ++abortCriteriaListIndex)
     {
       m_abortCriteriaList.push_back(abortCriteriaListJsonList[abortCriteriaListIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AwsJobAbortConfig::Jsonize() const
 
   if(m_abortCriteriaListHasBeenSet)
   {
-   Array<JsonValue> abortCriteriaListJsonList(m_abortCriteriaList.size());
+   Aws::Utils::Array<JsonValue> abortCriteriaListJsonList(m_abortCriteriaList.size());
    for(unsigned abortCriteriaListIndex = 0; abortCriteriaListIndex < abortCriteriaListJsonList.GetLength(); ++abortCriteriaListIndex)
    {
      abortCriteriaListJsonList[abortCriteriaListIndex].AsObject(m_abortCriteriaList[abortCriteriaListIndex].Jsonize());

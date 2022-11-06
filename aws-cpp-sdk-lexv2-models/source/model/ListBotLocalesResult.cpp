@@ -48,7 +48,7 @@ ListBotLocalesResult& ListBotLocalesResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("botLocaleSummaries"))
   {
-    Array<JsonView> botLocaleSummariesJsonList = jsonValue.GetArray("botLocaleSummaries");
+    Aws::Utils::Array<JsonView> botLocaleSummariesJsonList = jsonValue.GetArray("botLocaleSummaries");
     for(unsigned botLocaleSummariesIndex = 0; botLocaleSummariesIndex < botLocaleSummariesJsonList.GetLength(); ++botLocaleSummariesIndex)
     {
       m_botLocaleSummaries.push_back(botLocaleSummariesJsonList[botLocaleSummariesIndex].AsObject());

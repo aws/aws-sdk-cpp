@@ -30,7 +30,7 @@ ListProtectionsResult& ListProtectionsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Protections"))
   {
-    Array<JsonView> protectionsJsonList = jsonValue.GetArray("Protections");
+    Aws::Utils::Array<JsonView> protectionsJsonList = jsonValue.GetArray("Protections");
     for(unsigned protectionsIndex = 0; protectionsIndex < protectionsJsonList.GetLength(); ++protectionsIndex)
     {
       m_protections.push_back(protectionsJsonList[protectionsIndex].AsObject());

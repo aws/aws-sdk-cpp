@@ -33,7 +33,7 @@ DetailsMap& DetailsMap::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceShare"))
   {
-    Array<JsonView> resourceShareJsonList = jsonValue.GetArray("ResourceShare");
+    Aws::Utils::Array<JsonView> resourceShareJsonList = jsonValue.GetArray("ResourceShare");
     for(unsigned resourceShareIndex = 0; resourceShareIndex < resourceShareJsonList.GetLength(); ++resourceShareIndex)
     {
       m_resourceShare.push_back(resourceShareJsonList[resourceShareIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue DetailsMap::Jsonize() const
 
   if(m_resourceShareHasBeenSet)
   {
-   Array<JsonValue> resourceShareJsonList(m_resourceShare.size());
+   Aws::Utils::Array<JsonValue> resourceShareJsonList(m_resourceShare.size());
    for(unsigned resourceShareIndex = 0; resourceShareIndex < resourceShareJsonList.GetLength(); ++resourceShareIndex)
    {
      resourceShareJsonList[resourceShareIndex].AsString(m_resourceShare[resourceShareIndex]);

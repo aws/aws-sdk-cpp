@@ -30,7 +30,7 @@ ListArchiveRulesResult& ListArchiveRulesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("archiveRules"))
   {
-    Array<JsonView> archiveRulesJsonList = jsonValue.GetArray("archiveRules");
+    Aws::Utils::Array<JsonView> archiveRulesJsonList = jsonValue.GetArray("archiveRules");
     for(unsigned archiveRulesIndex = 0; archiveRulesIndex < archiveRulesJsonList.GetLength(); ++archiveRulesIndex)
     {
       m_archiveRules.push_back(archiveRulesJsonList[archiveRulesIndex].AsObject());

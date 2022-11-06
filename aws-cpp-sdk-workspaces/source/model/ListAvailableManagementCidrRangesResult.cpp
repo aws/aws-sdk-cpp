@@ -30,7 +30,7 @@ ListAvailableManagementCidrRangesResult& ListAvailableManagementCidrRangesResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ManagementCidrRanges"))
   {
-    Array<JsonView> managementCidrRangesJsonList = jsonValue.GetArray("ManagementCidrRanges");
+    Aws::Utils::Array<JsonView> managementCidrRangesJsonList = jsonValue.GetArray("ManagementCidrRanges");
     for(unsigned managementCidrRangesIndex = 0; managementCidrRangesIndex < managementCidrRangesJsonList.GetLength(); ++managementCidrRangesIndex)
     {
       m_managementCidrRanges.push_back(managementCidrRangesJsonList[managementCidrRangesIndex].AsString());

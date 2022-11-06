@@ -30,7 +30,7 @@ DescribeTrustedAdvisorCheckRefreshStatusesResult& DescribeTrustedAdvisorCheckRef
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("statuses"))
   {
-    Array<JsonView> statusesJsonList = jsonValue.GetArray("statuses");
+    Aws::Utils::Array<JsonView> statusesJsonList = jsonValue.GetArray("statuses");
     for(unsigned statusesIndex = 0; statusesIndex < statusesJsonList.GetLength(); ++statusesIndex)
     {
       m_statuses.push_back(statusesJsonList[statusesIndex].AsObject());

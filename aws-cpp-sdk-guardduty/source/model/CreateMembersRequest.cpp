@@ -24,7 +24,7 @@ Aws::String CreateMembersRequest::SerializePayload() const
 
   if(m_accountDetailsHasBeenSet)
   {
-   Array<JsonValue> accountDetailsJsonList(m_accountDetails.size());
+   Aws::Utils::Array<JsonValue> accountDetailsJsonList(m_accountDetails.size());
    for(unsigned accountDetailsIndex = 0; accountDetailsIndex < accountDetailsJsonList.GetLength(); ++accountDetailsIndex)
    {
      accountDetailsJsonList[accountDetailsIndex].AsObject(m_accountDetails[accountDetailsIndex].Jsonize());

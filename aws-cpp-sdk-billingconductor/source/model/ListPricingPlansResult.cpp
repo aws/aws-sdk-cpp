@@ -36,7 +36,7 @@ ListPricingPlansResult& ListPricingPlansResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("PricingPlans"))
   {
-    Array<JsonView> pricingPlansJsonList = jsonValue.GetArray("PricingPlans");
+    Aws::Utils::Array<JsonView> pricingPlansJsonList = jsonValue.GetArray("PricingPlans");
     for(unsigned pricingPlansIndex = 0; pricingPlansIndex < pricingPlansJsonList.GetLength(); ++pricingPlansIndex)
     {
       m_pricingPlans.push_back(pricingPlansJsonList[pricingPlansIndex].AsObject());

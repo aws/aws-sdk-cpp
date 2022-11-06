@@ -42,7 +42,7 @@ InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupplementaryFeatures"))
   {
-    Array<JsonView> supplementaryFeaturesJsonList = jsonValue.GetArray("SupplementaryFeatures");
+    Aws::Utils::Array<JsonView> supplementaryFeaturesJsonList = jsonValue.GetArray("SupplementaryFeatures");
     for(unsigned supplementaryFeaturesIndex = 0; supplementaryFeaturesIndex < supplementaryFeaturesJsonList.GetLength(); ++supplementaryFeaturesIndex)
     {
       m_supplementaryFeatures.push_back(supplementaryFeaturesJsonList[supplementaryFeaturesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue InputDataConfig::Jsonize() const
 
   if(m_supplementaryFeaturesHasBeenSet)
   {
-   Array<JsonValue> supplementaryFeaturesJsonList(m_supplementaryFeatures.size());
+   Aws::Utils::Array<JsonValue> supplementaryFeaturesJsonList(m_supplementaryFeatures.size());
    for(unsigned supplementaryFeaturesIndex = 0; supplementaryFeaturesIndex < supplementaryFeaturesJsonList.GetLength(); ++supplementaryFeaturesIndex)
    {
      supplementaryFeaturesJsonList[supplementaryFeaturesIndex].AsObject(m_supplementaryFeatures[supplementaryFeaturesIndex].Jsonize());

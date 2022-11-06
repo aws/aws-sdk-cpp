@@ -55,7 +55,7 @@ ProtectiveEquipmentBodyPart& ProtectiveEquipmentBodyPart::operator =(JsonView js
 
   if(jsonValue.ValueExists("EquipmentDetections"))
   {
-    Array<JsonView> equipmentDetectionsJsonList = jsonValue.GetArray("EquipmentDetections");
+    Aws::Utils::Array<JsonView> equipmentDetectionsJsonList = jsonValue.GetArray("EquipmentDetections");
     for(unsigned equipmentDetectionsIndex = 0; equipmentDetectionsIndex < equipmentDetectionsJsonList.GetLength(); ++equipmentDetectionsIndex)
     {
       m_equipmentDetections.push_back(equipmentDetectionsJsonList[equipmentDetectionsIndex].AsObject());
@@ -83,7 +83,7 @@ JsonValue ProtectiveEquipmentBodyPart::Jsonize() const
 
   if(m_equipmentDetectionsHasBeenSet)
   {
-   Array<JsonValue> equipmentDetectionsJsonList(m_equipmentDetections.size());
+   Aws::Utils::Array<JsonValue> equipmentDetectionsJsonList(m_equipmentDetections.size());
    for(unsigned equipmentDetectionsIndex = 0; equipmentDetectionsIndex < equipmentDetectionsJsonList.GetLength(); ++equipmentDetectionsIndex)
    {
      equipmentDetectionsJsonList[equipmentDetectionsIndex].AsObject(m_equipmentDetections[equipmentDetectionsIndex].Jsonize());

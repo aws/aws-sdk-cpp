@@ -82,7 +82,7 @@ Aws::String CreateNetworkProfileRequest::SerializePayload() const
 
   if(m_trustAnchorsHasBeenSet)
   {
-   Array<JsonValue> trustAnchorsJsonList(m_trustAnchors.size());
+   Aws::Utils::Array<JsonValue> trustAnchorsJsonList(m_trustAnchors.size());
    for(unsigned trustAnchorsIndex = 0; trustAnchorsIndex < trustAnchorsJsonList.GetLength(); ++trustAnchorsIndex)
    {
      trustAnchorsJsonList[trustAnchorsIndex].AsString(m_trustAnchors[trustAnchorsIndex]);
@@ -99,7 +99,7 @@ Aws::String CreateNetworkProfileRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -30,7 +30,7 @@ ListApplicationComponentsResult& ListApplicationComponentsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("applicationComponentInfos"))
   {
-    Array<JsonView> applicationComponentInfosJsonList = jsonValue.GetArray("applicationComponentInfos");
+    Aws::Utils::Array<JsonView> applicationComponentInfosJsonList = jsonValue.GetArray("applicationComponentInfos");
     for(unsigned applicationComponentInfosIndex = 0; applicationComponentInfosIndex < applicationComponentInfosJsonList.GetLength(); ++applicationComponentInfosIndex)
     {
       m_applicationComponentInfos.push_back(applicationComponentInfosJsonList[applicationComponentInfosIndex].AsObject());

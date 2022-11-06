@@ -111,7 +111,7 @@ ImportJobResponse& ImportJobResponse::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsString());
@@ -206,7 +206,7 @@ JsonValue ImportJobResponse::Jsonize() const
 
   if(m_failuresHasBeenSet)
   {
-   Array<JsonValue> failuresJsonList(m_failures.size());
+   Aws::Utils::Array<JsonValue> failuresJsonList(m_failures.size());
    for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
    {
      failuresJsonList[failuresIndex].AsString(m_failures[failuresIndex]);

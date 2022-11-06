@@ -33,7 +33,7 @@ ScheduledSplitsLaunchDefinition& ScheduledSplitsLaunchDefinition::operator =(Jso
 {
   if(jsonValue.ValueExists("steps"))
   {
-    Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
+    Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
     for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ScheduledSplitsLaunchDefinition::Jsonize() const
 
   if(m_stepsHasBeenSet)
   {
-   Array<JsonValue> stepsJsonList(m_steps.size());
+   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
    {
      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());

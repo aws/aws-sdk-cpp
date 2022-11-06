@@ -44,7 +44,7 @@ ListMedicalVocabulariesResult& ListMedicalVocabulariesResult::operator =(const A
 
   if(jsonValue.ValueExists("Vocabularies"))
   {
-    Array<JsonView> vocabulariesJsonList = jsonValue.GetArray("Vocabularies");
+    Aws::Utils::Array<JsonView> vocabulariesJsonList = jsonValue.GetArray("Vocabularies");
     for(unsigned vocabulariesIndex = 0; vocabulariesIndex < vocabulariesJsonList.GetLength(); ++vocabulariesIndex)
     {
       m_vocabularies.push_back(vocabulariesJsonList[vocabulariesIndex].AsObject());

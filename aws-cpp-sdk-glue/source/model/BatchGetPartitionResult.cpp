@@ -30,7 +30,7 @@ BatchGetPartitionResult& BatchGetPartitionResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Partitions"))
   {
-    Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
+    Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
     for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
     {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetPartitionResult& BatchGetPartitionResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("UnprocessedKeys"))
   {
-    Array<JsonView> unprocessedKeysJsonList = jsonValue.GetArray("UnprocessedKeys");
+    Aws::Utils::Array<JsonView> unprocessedKeysJsonList = jsonValue.GetArray("UnprocessedKeys");
     for(unsigned unprocessedKeysIndex = 0; unprocessedKeysIndex < unprocessedKeysJsonList.GetLength(); ++unprocessedKeysIndex)
     {
       m_unprocessedKeys.push_back(unprocessedKeysJsonList[unprocessedKeysIndex].AsObject());

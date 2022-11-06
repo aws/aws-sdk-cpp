@@ -30,7 +30,7 @@ ListGroupsOlderThanOrderingIdResult& ListGroupsOlderThanOrderingIdResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GroupsSummaries"))
   {
-    Array<JsonView> groupsSummariesJsonList = jsonValue.GetArray("GroupsSummaries");
+    Aws::Utils::Array<JsonView> groupsSummariesJsonList = jsonValue.GetArray("GroupsSummaries");
     for(unsigned groupsSummariesIndex = 0; groupsSummariesIndex < groupsSummariesJsonList.GetLength(); ++groupsSummariesIndex)
     {
       m_groupsSummaries.push_back(groupsSummariesJsonList[groupsSummariesIndex].AsObject());

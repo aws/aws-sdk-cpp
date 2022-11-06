@@ -30,7 +30,7 @@ ListUpdatesResult& ListUpdatesResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("updateIds"))
   {
-    Array<JsonView> updateIdsJsonList = jsonValue.GetArray("updateIds");
+    Aws::Utils::Array<JsonView> updateIdsJsonList = jsonValue.GetArray("updateIds");
     for(unsigned updateIdsIndex = 0; updateIdsIndex < updateIdsJsonList.GetLength(); ++updateIdsIndex)
     {
       m_updateIds.push_back(updateIdsJsonList[updateIdsIndex].AsString());

@@ -57,7 +57,7 @@ Aws::String UpdateContainerServiceRequest::SerializePayload() const
    JsonValue publicDomainNamesJsonMap;
    for(auto& publicDomainNamesItem : m_publicDomainNames)
    {
-     Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
+     Aws::Utils::Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
      for(unsigned containerServicePublicDomainsListIndex = 0; containerServicePublicDomainsListIndex < containerServicePublicDomainsListJsonList.GetLength(); ++containerServicePublicDomainsListIndex)
      {
        containerServicePublicDomainsListJsonList[containerServicePublicDomainsListIndex].AsString(publicDomainNamesItem.second[containerServicePublicDomainsListIndex]);

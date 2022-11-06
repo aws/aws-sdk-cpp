@@ -44,7 +44,7 @@ ResourceIdPreference& ResourceIdPreference::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(ResourceMapper::GetResourceForName(resourcesJsonList[resourcesIndex].AsString()));
@@ -66,7 +66,7 @@ JsonValue ResourceIdPreference::Jsonize() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsString(ResourceMapper::GetNameForResource(m_resources[resourcesIndex]));

@@ -30,7 +30,7 @@ ListFunctionUrlConfigsResult& ListFunctionUrlConfigsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FunctionUrlConfigs"))
   {
-    Array<JsonView> functionUrlConfigsJsonList = jsonValue.GetArray("FunctionUrlConfigs");
+    Aws::Utils::Array<JsonView> functionUrlConfigsJsonList = jsonValue.GetArray("FunctionUrlConfigs");
     for(unsigned functionUrlConfigsIndex = 0; functionUrlConfigsIndex < functionUrlConfigsJsonList.GetLength(); ++functionUrlConfigsIndex)
     {
       m_functionUrlConfigs.push_back(functionUrlConfigsJsonList[functionUrlConfigsIndex].AsObject());

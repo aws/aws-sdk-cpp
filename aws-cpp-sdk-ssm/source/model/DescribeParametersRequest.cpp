@@ -27,7 +27,7 @@ Aws::String DescribeParametersRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
@@ -38,7 +38,7 @@ Aws::String DescribeParametersRequest::SerializePayload() const
 
   if(m_parameterFiltersHasBeenSet)
   {
-   Array<JsonValue> parameterFiltersJsonList(m_parameterFilters.size());
+   Aws::Utils::Array<JsonValue> parameterFiltersJsonList(m_parameterFilters.size());
    for(unsigned parameterFiltersIndex = 0; parameterFiltersIndex < parameterFiltersJsonList.GetLength(); ++parameterFiltersIndex)
    {
      parameterFiltersJsonList[parameterFiltersIndex].AsObject(m_parameterFilters[parameterFiltersIndex].Jsonize());

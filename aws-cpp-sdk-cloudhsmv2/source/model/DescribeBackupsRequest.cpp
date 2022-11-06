@@ -43,7 +43,7 @@ Aws::String DescribeBackupsRequest::SerializePayload() const
    JsonValue filtersJsonMap;
    for(auto& filtersItem : m_filters)
    {
-     Array<JsonValue> stringsJsonList(filtersItem.second.size());
+     Aws::Utils::Array<JsonValue> stringsJsonList(filtersItem.second.size());
      for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
      {
        stringsJsonList[stringsIndex].AsString(filtersItem.second[stringsIndex]);

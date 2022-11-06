@@ -30,7 +30,7 @@ DescribeLoadBasedAutoScalingResult& DescribeLoadBasedAutoScalingResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LoadBasedAutoScalingConfigurations"))
   {
-    Array<JsonView> loadBasedAutoScalingConfigurationsJsonList = jsonValue.GetArray("LoadBasedAutoScalingConfigurations");
+    Aws::Utils::Array<JsonView> loadBasedAutoScalingConfigurationsJsonList = jsonValue.GetArray("LoadBasedAutoScalingConfigurations");
     for(unsigned loadBasedAutoScalingConfigurationsIndex = 0; loadBasedAutoScalingConfigurationsIndex < loadBasedAutoScalingConfigurationsJsonList.GetLength(); ++loadBasedAutoScalingConfigurationsIndex)
     {
       m_loadBasedAutoScalingConfigurations.push_back(loadBasedAutoScalingConfigurationsJsonList[loadBasedAutoScalingConfigurationsIndex].AsObject());

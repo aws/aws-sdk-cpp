@@ -35,7 +35,7 @@ OutputResources& OutputResources::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("amis"))
   {
-    Array<JsonView> amisJsonList = jsonValue.GetArray("amis");
+    Aws::Utils::Array<JsonView> amisJsonList = jsonValue.GetArray("amis");
     for(unsigned amisIndex = 0; amisIndex < amisJsonList.GetLength(); ++amisIndex)
     {
       m_amis.push_back(amisJsonList[amisIndex].AsObject());
@@ -45,7 +45,7 @@ OutputResources& OutputResources::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("containers"))
   {
-    Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
+    Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
     for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
     {
       m_containers.push_back(containersJsonList[containersIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue OutputResources::Jsonize() const
 
   if(m_amisHasBeenSet)
   {
-   Array<JsonValue> amisJsonList(m_amis.size());
+   Aws::Utils::Array<JsonValue> amisJsonList(m_amis.size());
    for(unsigned amisIndex = 0; amisIndex < amisJsonList.GetLength(); ++amisIndex)
    {
      amisJsonList[amisIndex].AsObject(m_amis[amisIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue OutputResources::Jsonize() const
 
   if(m_containersHasBeenSet)
   {
-   Array<JsonValue> containersJsonList(m_containers.size());
+   Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
    for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
    {
      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());

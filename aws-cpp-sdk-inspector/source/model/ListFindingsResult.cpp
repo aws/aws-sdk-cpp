@@ -30,7 +30,7 @@ ListFindingsResult& ListFindingsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("findingArns"))
   {
-    Array<JsonView> findingArnsJsonList = jsonValue.GetArray("findingArns");
+    Aws::Utils::Array<JsonView> findingArnsJsonList = jsonValue.GetArray("findingArns");
     for(unsigned findingArnsIndex = 0; findingArnsIndex < findingArnsJsonList.GetLength(); ++findingArnsIndex)
     {
       m_findingArns.push_back(findingArnsJsonList[findingArnsIndex].AsString());

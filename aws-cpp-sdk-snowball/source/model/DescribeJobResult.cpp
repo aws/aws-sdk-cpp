@@ -36,7 +36,7 @@ DescribeJobResult& DescribeJobResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("SubJobMetadata"))
   {
-    Array<JsonView> subJobMetadataJsonList = jsonValue.GetArray("SubJobMetadata");
+    Aws::Utils::Array<JsonView> subJobMetadataJsonList = jsonValue.GetArray("SubJobMetadata");
     for(unsigned subJobMetadataIndex = 0; subJobMetadataIndex < subJobMetadataJsonList.GetLength(); ++subJobMetadataIndex)
     {
       m_subJobMetadata.push_back(subJobMetadataJsonList[subJobMetadataIndex].AsObject());

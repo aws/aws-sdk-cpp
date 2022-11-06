@@ -37,7 +37,7 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3Encryption"))
   {
-    Array<JsonView> s3EncryptionJsonList = jsonValue.GetArray("S3Encryption");
+    Aws::Utils::Array<JsonView> s3EncryptionJsonList = jsonValue.GetArray("S3Encryption");
     for(unsigned s3EncryptionIndex = 0; s3EncryptionIndex < s3EncryptionJsonList.GetLength(); ++s3EncryptionIndex)
     {
       m_s3Encryption.push_back(s3EncryptionJsonList[s3EncryptionIndex].AsObject());
@@ -68,7 +68,7 @@ JsonValue EncryptionConfiguration::Jsonize() const
 
   if(m_s3EncryptionHasBeenSet)
   {
-   Array<JsonValue> s3EncryptionJsonList(m_s3Encryption.size());
+   Aws::Utils::Array<JsonValue> s3EncryptionJsonList(m_s3Encryption.size());
    for(unsigned s3EncryptionIndex = 0; s3EncryptionIndex < s3EncryptionJsonList.GetLength(); ++s3EncryptionIndex)
    {
      s3EncryptionJsonList[s3EncryptionIndex].AsObject(m_s3Encryption[s3EncryptionIndex].Jsonize());

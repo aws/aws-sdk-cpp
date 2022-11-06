@@ -30,7 +30,7 @@ DescribeAggregateComplianceByConformancePacksResult& DescribeAggregateCompliance
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AggregateComplianceByConformancePacks"))
   {
-    Array<JsonView> aggregateComplianceByConformancePacksJsonList = jsonValue.GetArray("AggregateComplianceByConformancePacks");
+    Aws::Utils::Array<JsonView> aggregateComplianceByConformancePacksJsonList = jsonValue.GetArray("AggregateComplianceByConformancePacks");
     for(unsigned aggregateComplianceByConformancePacksIndex = 0; aggregateComplianceByConformancePacksIndex < aggregateComplianceByConformancePacksJsonList.GetLength(); ++aggregateComplianceByConformancePacksIndex)
     {
       m_aggregateComplianceByConformancePacks.push_back(aggregateComplianceByConformancePacksJsonList[aggregateComplianceByConformancePacksIndex].AsObject());

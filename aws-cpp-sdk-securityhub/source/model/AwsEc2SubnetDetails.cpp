@@ -149,7 +149,7 @@ AwsEc2SubnetDetails& AwsEc2SubnetDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Ipv6CidrBlockAssociationSet"))
   {
-    Array<JsonView> ipv6CidrBlockAssociationSetJsonList = jsonValue.GetArray("Ipv6CidrBlockAssociationSet");
+    Aws::Utils::Array<JsonView> ipv6CidrBlockAssociationSetJsonList = jsonValue.GetArray("Ipv6CidrBlockAssociationSet");
     for(unsigned ipv6CidrBlockAssociationSetIndex = 0; ipv6CidrBlockAssociationSetIndex < ipv6CidrBlockAssociationSetJsonList.GetLength(); ++ipv6CidrBlockAssociationSetIndex)
     {
       m_ipv6CidrBlockAssociationSet.push_back(ipv6CidrBlockAssociationSetJsonList[ipv6CidrBlockAssociationSetIndex].AsObject());
@@ -238,7 +238,7 @@ JsonValue AwsEc2SubnetDetails::Jsonize() const
 
   if(m_ipv6CidrBlockAssociationSetHasBeenSet)
   {
-   Array<JsonValue> ipv6CidrBlockAssociationSetJsonList(m_ipv6CidrBlockAssociationSet.size());
+   Aws::Utils::Array<JsonValue> ipv6CidrBlockAssociationSetJsonList(m_ipv6CidrBlockAssociationSet.size());
    for(unsigned ipv6CidrBlockAssociationSetIndex = 0; ipv6CidrBlockAssociationSetIndex < ipv6CidrBlockAssociationSetJsonList.GetLength(); ++ipv6CidrBlockAssociationSetIndex)
    {
      ipv6CidrBlockAssociationSetJsonList[ipv6CidrBlockAssociationSetIndex].AsObject(m_ipv6CidrBlockAssociationSet[ipv6CidrBlockAssociationSetIndex].Jsonize());

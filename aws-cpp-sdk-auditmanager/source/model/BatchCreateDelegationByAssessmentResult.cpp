@@ -30,7 +30,7 @@ BatchCreateDelegationByAssessmentResult& BatchCreateDelegationByAssessmentResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("delegations"))
   {
-    Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");
+    Aws::Utils::Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");
     for(unsigned delegationsIndex = 0; delegationsIndex < delegationsJsonList.GetLength(); ++delegationsIndex)
     {
       m_delegations.push_back(delegationsJsonList[delegationsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchCreateDelegationByAssessmentResult& BatchCreateDelegationByAssessmentResult
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

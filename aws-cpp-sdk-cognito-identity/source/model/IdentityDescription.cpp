@@ -46,7 +46,7 @@ IdentityDescription& IdentityDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Logins"))
   {
-    Array<JsonView> loginsJsonList = jsonValue.GetArray("Logins");
+    Aws::Utils::Array<JsonView> loginsJsonList = jsonValue.GetArray("Logins");
     for(unsigned loginsIndex = 0; loginsIndex < loginsJsonList.GetLength(); ++loginsIndex)
     {
       m_logins.push_back(loginsJsonList[loginsIndex].AsString());
@@ -83,7 +83,7 @@ JsonValue IdentityDescription::Jsonize() const
 
   if(m_loginsHasBeenSet)
   {
-   Array<JsonValue> loginsJsonList(m_logins.size());
+   Aws::Utils::Array<JsonValue> loginsJsonList(m_logins.size());
    for(unsigned loginsIndex = 0; loginsIndex < loginsJsonList.GetLength(); ++loginsIndex)
    {
      loginsJsonList[loginsIndex].AsString(m_logins[loginsIndex]);

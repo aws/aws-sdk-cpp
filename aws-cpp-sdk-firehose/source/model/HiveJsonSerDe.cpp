@@ -33,7 +33,7 @@ HiveJsonSerDe& HiveJsonSerDe::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TimestampFormats"))
   {
-    Array<JsonView> timestampFormatsJsonList = jsonValue.GetArray("TimestampFormats");
+    Aws::Utils::Array<JsonView> timestampFormatsJsonList = jsonValue.GetArray("TimestampFormats");
     for(unsigned timestampFormatsIndex = 0; timestampFormatsIndex < timestampFormatsJsonList.GetLength(); ++timestampFormatsIndex)
     {
       m_timestampFormats.push_back(timestampFormatsJsonList[timestampFormatsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue HiveJsonSerDe::Jsonize() const
 
   if(m_timestampFormatsHasBeenSet)
   {
-   Array<JsonValue> timestampFormatsJsonList(m_timestampFormats.size());
+   Aws::Utils::Array<JsonValue> timestampFormatsJsonList(m_timestampFormats.size());
    for(unsigned timestampFormatsIndex = 0; timestampFormatsIndex < timestampFormatsJsonList.GetLength(); ++timestampFormatsIndex)
    {
      timestampFormatsJsonList[timestampFormatsIndex].AsString(m_timestampFormats[timestampFormatsIndex]);

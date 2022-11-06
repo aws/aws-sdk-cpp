@@ -64,7 +64,7 @@ Location& Location::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("availablePortSpeeds"))
   {
-    Array<JsonView> availablePortSpeedsJsonList = jsonValue.GetArray("availablePortSpeeds");
+    Aws::Utils::Array<JsonView> availablePortSpeedsJsonList = jsonValue.GetArray("availablePortSpeeds");
     for(unsigned availablePortSpeedsIndex = 0; availablePortSpeedsIndex < availablePortSpeedsJsonList.GetLength(); ++availablePortSpeedsIndex)
     {
       m_availablePortSpeeds.push_back(availablePortSpeedsJsonList[availablePortSpeedsIndex].AsString());
@@ -74,7 +74,7 @@ Location& Location::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("availableProviders"))
   {
-    Array<JsonView> availableProvidersJsonList = jsonValue.GetArray("availableProviders");
+    Aws::Utils::Array<JsonView> availableProvidersJsonList = jsonValue.GetArray("availableProviders");
     for(unsigned availableProvidersIndex = 0; availableProvidersIndex < availableProvidersJsonList.GetLength(); ++availableProvidersIndex)
     {
       m_availableProviders.push_back(availableProvidersJsonList[availableProvidersIndex].AsString());
@@ -84,7 +84,7 @@ Location& Location::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("availableMacSecPortSpeeds"))
   {
-    Array<JsonView> availableMacSecPortSpeedsJsonList = jsonValue.GetArray("availableMacSecPortSpeeds");
+    Aws::Utils::Array<JsonView> availableMacSecPortSpeedsJsonList = jsonValue.GetArray("availableMacSecPortSpeeds");
     for(unsigned availableMacSecPortSpeedsIndex = 0; availableMacSecPortSpeedsIndex < availableMacSecPortSpeedsJsonList.GetLength(); ++availableMacSecPortSpeedsIndex)
     {
       m_availableMacSecPortSpeeds.push_back(availableMacSecPortSpeedsJsonList[availableMacSecPortSpeedsIndex].AsString());
@@ -119,7 +119,7 @@ JsonValue Location::Jsonize() const
 
   if(m_availablePortSpeedsHasBeenSet)
   {
-   Array<JsonValue> availablePortSpeedsJsonList(m_availablePortSpeeds.size());
+   Aws::Utils::Array<JsonValue> availablePortSpeedsJsonList(m_availablePortSpeeds.size());
    for(unsigned availablePortSpeedsIndex = 0; availablePortSpeedsIndex < availablePortSpeedsJsonList.GetLength(); ++availablePortSpeedsIndex)
    {
      availablePortSpeedsJsonList[availablePortSpeedsIndex].AsString(m_availablePortSpeeds[availablePortSpeedsIndex]);
@@ -130,7 +130,7 @@ JsonValue Location::Jsonize() const
 
   if(m_availableProvidersHasBeenSet)
   {
-   Array<JsonValue> availableProvidersJsonList(m_availableProviders.size());
+   Aws::Utils::Array<JsonValue> availableProvidersJsonList(m_availableProviders.size());
    for(unsigned availableProvidersIndex = 0; availableProvidersIndex < availableProvidersJsonList.GetLength(); ++availableProvidersIndex)
    {
      availableProvidersJsonList[availableProvidersIndex].AsString(m_availableProviders[availableProvidersIndex]);
@@ -141,7 +141,7 @@ JsonValue Location::Jsonize() const
 
   if(m_availableMacSecPortSpeedsHasBeenSet)
   {
-   Array<JsonValue> availableMacSecPortSpeedsJsonList(m_availableMacSecPortSpeeds.size());
+   Aws::Utils::Array<JsonValue> availableMacSecPortSpeedsJsonList(m_availableMacSecPortSpeeds.size());
    for(unsigned availableMacSecPortSpeedsIndex = 0; availableMacSecPortSpeedsIndex < availableMacSecPortSpeedsJsonList.GetLength(); ++availableMacSecPortSpeedsIndex)
    {
      availableMacSecPortSpeedsJsonList[availableMacSecPortSpeedsIndex].AsString(m_availableMacSecPortSpeeds[availableMacSecPortSpeedsIndex]);

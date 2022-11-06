@@ -30,7 +30,7 @@ BatchDeleteDocumentResult& BatchDeleteDocumentResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedDocuments"))
   {
-    Array<JsonView> failedDocumentsJsonList = jsonValue.GetArray("FailedDocuments");
+    Aws::Utils::Array<JsonView> failedDocumentsJsonList = jsonValue.GetArray("FailedDocuments");
     for(unsigned failedDocumentsIndex = 0; failedDocumentsIndex < failedDocumentsJsonList.GetLength(); ++failedDocumentsIndex)
     {
       m_failedDocuments.push_back(failedDocumentsJsonList[failedDocumentsIndex].AsObject());

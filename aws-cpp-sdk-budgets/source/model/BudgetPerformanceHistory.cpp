@@ -64,7 +64,7 @@ BudgetPerformanceHistory& BudgetPerformanceHistory::operator =(JsonView jsonValu
     Aws::Map<Aws::String, JsonView> costFiltersJsonMap = jsonValue.GetObject("CostFilters").GetAllObjects();
     for(auto& costFiltersItem : costFiltersJsonMap)
     {
-      Array<JsonView> dimensionValuesJsonList = costFiltersItem.second.AsArray();
+      Aws::Utils::Array<JsonView> dimensionValuesJsonList = costFiltersItem.second.AsArray();
       Aws::Vector<Aws::String> dimensionValuesList;
       dimensionValuesList.reserve((size_t)dimensionValuesJsonList.GetLength());
       for(unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex)
@@ -92,7 +92,7 @@ BudgetPerformanceHistory& BudgetPerformanceHistory::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("BudgetedAndActualAmountsList"))
   {
-    Array<JsonView> budgetedAndActualAmountsListJsonList = jsonValue.GetArray("BudgetedAndActualAmountsList");
+    Aws::Utils::Array<JsonView> budgetedAndActualAmountsListJsonList = jsonValue.GetArray("BudgetedAndActualAmountsList");
     for(unsigned budgetedAndActualAmountsListIndex = 0; budgetedAndActualAmountsListIndex < budgetedAndActualAmountsListJsonList.GetLength(); ++budgetedAndActualAmountsListIndex)
     {
       m_budgetedAndActualAmountsList.push_back(budgetedAndActualAmountsListJsonList[budgetedAndActualAmountsListIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue BudgetPerformanceHistory::Jsonize() const
    JsonValue costFiltersJsonMap;
    for(auto& costFiltersItem : m_costFilters)
    {
-     Array<JsonValue> dimensionValuesJsonList(costFiltersItem.second.size());
+     Aws::Utils::Array<JsonValue> dimensionValuesJsonList(costFiltersItem.second.size());
      for(unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex)
      {
        dimensionValuesJsonList[dimensionValuesIndex].AsString(costFiltersItem.second[dimensionValuesIndex]);
@@ -147,7 +147,7 @@ JsonValue BudgetPerformanceHistory::Jsonize() const
 
   if(m_budgetedAndActualAmountsListHasBeenSet)
   {
-   Array<JsonValue> budgetedAndActualAmountsListJsonList(m_budgetedAndActualAmountsList.size());
+   Aws::Utils::Array<JsonValue> budgetedAndActualAmountsListJsonList(m_budgetedAndActualAmountsList.size());
    for(unsigned budgetedAndActualAmountsListIndex = 0; budgetedAndActualAmountsListIndex < budgetedAndActualAmountsListJsonList.GetLength(); ++budgetedAndActualAmountsListIndex)
    {
      budgetedAndActualAmountsListJsonList[budgetedAndActualAmountsListIndex].AsObject(m_budgetedAndActualAmountsList[budgetedAndActualAmountsListIndex].Jsonize());

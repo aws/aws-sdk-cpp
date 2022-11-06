@@ -30,7 +30,7 @@ ListMultiplexProgramsResult& ListMultiplexProgramsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("multiplexPrograms"))
   {
-    Array<JsonView> multiplexProgramsJsonList = jsonValue.GetArray("multiplexPrograms");
+    Aws::Utils::Array<JsonView> multiplexProgramsJsonList = jsonValue.GetArray("multiplexPrograms");
     for(unsigned multiplexProgramsIndex = 0; multiplexProgramsIndex < multiplexProgramsJsonList.GetLength(); ++multiplexProgramsIndex)
     {
       m_multiplexPrograms.push_back(multiplexProgramsJsonList[multiplexProgramsIndex].AsObject());

@@ -44,7 +44,7 @@ DescribeFleetPortSettingsResult& DescribeFleetPortSettingsResult::operator =(con
 
   if(jsonValue.ValueExists("InboundPermissions"))
   {
-    Array<JsonView> inboundPermissionsJsonList = jsonValue.GetArray("InboundPermissions");
+    Aws::Utils::Array<JsonView> inboundPermissionsJsonList = jsonValue.GetArray("InboundPermissions");
     for(unsigned inboundPermissionsIndex = 0; inboundPermissionsIndex < inboundPermissionsJsonList.GetLength(); ++inboundPermissionsIndex)
     {
       m_inboundPermissions.push_back(inboundPermissionsJsonList[inboundPermissionsIndex].AsObject());

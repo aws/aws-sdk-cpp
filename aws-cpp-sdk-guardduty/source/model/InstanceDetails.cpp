@@ -120,7 +120,7 @@ InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("networkInterfaces"))
   {
-    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
     for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
     {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
@@ -137,7 +137,7 @@ InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("productCodes"))
   {
-    Array<JsonView> productCodesJsonList = jsonValue.GetArray("productCodes");
+    Aws::Utils::Array<JsonView> productCodesJsonList = jsonValue.GetArray("productCodes");
     for(unsigned productCodesIndex = 0; productCodesIndex < productCodesJsonList.GetLength(); ++productCodesIndex)
     {
       m_productCodes.push_back(productCodesJsonList[productCodesIndex].AsObject());
@@ -147,7 +147,7 @@ InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -218,7 +218,7 @@ JsonValue InstanceDetails::Jsonize() const
 
   if(m_networkInterfacesHasBeenSet)
   {
-   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   Aws::Utils::Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
    {
      networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
@@ -235,7 +235,7 @@ JsonValue InstanceDetails::Jsonize() const
 
   if(m_productCodesHasBeenSet)
   {
-   Array<JsonValue> productCodesJsonList(m_productCodes.size());
+   Aws::Utils::Array<JsonValue> productCodesJsonList(m_productCodes.size());
    for(unsigned productCodesIndex = 0; productCodesIndex < productCodesJsonList.GetLength(); ++productCodesIndex)
    {
      productCodesJsonList[productCodesIndex].AsObject(m_productCodes[productCodesIndex].Jsonize());
@@ -246,7 +246,7 @@ JsonValue InstanceDetails::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

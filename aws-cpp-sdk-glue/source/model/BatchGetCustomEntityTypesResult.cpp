@@ -30,7 +30,7 @@ BatchGetCustomEntityTypesResult& BatchGetCustomEntityTypesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CustomEntityTypes"))
   {
-    Array<JsonView> customEntityTypesJsonList = jsonValue.GetArray("CustomEntityTypes");
+    Aws::Utils::Array<JsonView> customEntityTypesJsonList = jsonValue.GetArray("CustomEntityTypes");
     for(unsigned customEntityTypesIndex = 0; customEntityTypesIndex < customEntityTypesJsonList.GetLength(); ++customEntityTypesIndex)
     {
       m_customEntityTypes.push_back(customEntityTypesJsonList[customEntityTypesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetCustomEntityTypesResult& BatchGetCustomEntityTypesResult::operator =(con
 
   if(jsonValue.ValueExists("CustomEntityTypesNotFound"))
   {
-    Array<JsonView> customEntityTypesNotFoundJsonList = jsonValue.GetArray("CustomEntityTypesNotFound");
+    Aws::Utils::Array<JsonView> customEntityTypesNotFoundJsonList = jsonValue.GetArray("CustomEntityTypesNotFound");
     for(unsigned customEntityTypesNotFoundIndex = 0; customEntityTypesNotFoundIndex < customEntityTypesNotFoundJsonList.GetLength(); ++customEntityTypesNotFoundIndex)
     {
       m_customEntityTypesNotFound.push_back(customEntityTypesNotFoundJsonList[customEntityTypesNotFoundIndex].AsString());

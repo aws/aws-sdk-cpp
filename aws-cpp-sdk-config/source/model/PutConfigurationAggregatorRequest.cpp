@@ -32,7 +32,7 @@ Aws::String PutConfigurationAggregatorRequest::SerializePayload() const
 
   if(m_accountAggregationSourcesHasBeenSet)
   {
-   Array<JsonValue> accountAggregationSourcesJsonList(m_accountAggregationSources.size());
+   Aws::Utils::Array<JsonValue> accountAggregationSourcesJsonList(m_accountAggregationSources.size());
    for(unsigned accountAggregationSourcesIndex = 0; accountAggregationSourcesIndex < accountAggregationSourcesJsonList.GetLength(); ++accountAggregationSourcesIndex)
    {
      accountAggregationSourcesJsonList[accountAggregationSourcesIndex].AsObject(m_accountAggregationSources[accountAggregationSourcesIndex].Jsonize());
@@ -49,7 +49,7 @@ Aws::String PutConfigurationAggregatorRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

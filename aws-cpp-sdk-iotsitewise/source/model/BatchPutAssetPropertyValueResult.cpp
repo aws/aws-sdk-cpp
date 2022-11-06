@@ -30,7 +30,7 @@ BatchPutAssetPropertyValueResult& BatchPutAssetPropertyValueResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("errorEntries"))
   {
-    Array<JsonView> errorEntriesJsonList = jsonValue.GetArray("errorEntries");
+    Aws::Utils::Array<JsonView> errorEntriesJsonList = jsonValue.GetArray("errorEntries");
     for(unsigned errorEntriesIndex = 0; errorEntriesIndex < errorEntriesJsonList.GetLength(); ++errorEntriesIndex)
     {
       m_errorEntries.push_back(errorEntriesJsonList[errorEntriesIndex].AsObject());

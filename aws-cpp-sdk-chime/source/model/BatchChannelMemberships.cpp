@@ -55,7 +55,7 @@ BatchChannelMemberships& BatchChannelMemberships::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Members"))
   {
-    Array<JsonView> membersJsonList = jsonValue.GetArray("Members");
+    Aws::Utils::Array<JsonView> membersJsonList = jsonValue.GetArray("Members");
     for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
     {
       m_members.push_back(membersJsonList[membersIndex].AsObject());
@@ -90,7 +90,7 @@ JsonValue BatchChannelMemberships::Jsonize() const
 
   if(m_membersHasBeenSet)
   {
-   Array<JsonValue> membersJsonList(m_members.size());
+   Aws::Utils::Array<JsonValue> membersJsonList(m_members.size());
    for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
    {
      membersJsonList[membersIndex].AsObject(m_members[membersIndex].Jsonize());

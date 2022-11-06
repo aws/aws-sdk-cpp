@@ -54,7 +54,7 @@ DescribePackageResult& DescribePackageResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("ReadAccessPrincipalArns"))
   {
-    Array<JsonView> readAccessPrincipalArnsJsonList = jsonValue.GetArray("ReadAccessPrincipalArns");
+    Aws::Utils::Array<JsonView> readAccessPrincipalArnsJsonList = jsonValue.GetArray("ReadAccessPrincipalArns");
     for(unsigned readAccessPrincipalArnsIndex = 0; readAccessPrincipalArnsIndex < readAccessPrincipalArnsJsonList.GetLength(); ++readAccessPrincipalArnsIndex)
     {
       m_readAccessPrincipalArns.push_back(readAccessPrincipalArnsJsonList[readAccessPrincipalArnsIndex].AsString());
@@ -78,7 +78,7 @@ DescribePackageResult& DescribePackageResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("WriteAccessPrincipalArns"))
   {
-    Array<JsonView> writeAccessPrincipalArnsJsonList = jsonValue.GetArray("WriteAccessPrincipalArns");
+    Aws::Utils::Array<JsonView> writeAccessPrincipalArnsJsonList = jsonValue.GetArray("WriteAccessPrincipalArns");
     for(unsigned writeAccessPrincipalArnsIndex = 0; writeAccessPrincipalArnsIndex < writeAccessPrincipalArnsJsonList.GetLength(); ++writeAccessPrincipalArnsIndex)
     {
       m_writeAccessPrincipalArns.push_back(writeAccessPrincipalArnsJsonList[writeAccessPrincipalArnsIndex].AsString());

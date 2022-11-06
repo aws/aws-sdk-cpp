@@ -30,7 +30,7 @@ GetUnfilteredPartitionsMetadataResult& GetUnfilteredPartitionsMetadataResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UnfilteredPartitions"))
   {
-    Array<JsonView> unfilteredPartitionsJsonList = jsonValue.GetArray("UnfilteredPartitions");
+    Aws::Utils::Array<JsonView> unfilteredPartitionsJsonList = jsonValue.GetArray("UnfilteredPartitions");
     for(unsigned unfilteredPartitionsIndex = 0; unfilteredPartitionsIndex < unfilteredPartitionsJsonList.GetLength(); ++unfilteredPartitionsIndex)
     {
       m_unfilteredPartitions.push_back(unfilteredPartitionsJsonList[unfilteredPartitionsIndex].AsObject());

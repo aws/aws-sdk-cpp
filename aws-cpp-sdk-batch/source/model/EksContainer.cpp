@@ -70,7 +70,7 @@ EksContainer& EksContainer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
+    Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -80,7 +80,7 @@ EksContainer& EksContainer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("args"))
   {
-    Array<JsonView> argsJsonList = jsonValue.GetArray("args");
+    Aws::Utils::Array<JsonView> argsJsonList = jsonValue.GetArray("args");
     for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
     {
       m_args.push_back(argsJsonList[argsIndex].AsString());
@@ -90,7 +90,7 @@ EksContainer& EksContainer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("env"))
   {
-    Array<JsonView> envJsonList = jsonValue.GetArray("env");
+    Aws::Utils::Array<JsonView> envJsonList = jsonValue.GetArray("env");
     for(unsigned envIndex = 0; envIndex < envJsonList.GetLength(); ++envIndex)
     {
       m_env.push_back(envJsonList[envIndex].AsObject());
@@ -107,7 +107,7 @@ EksContainer& EksContainer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("volumeMounts"))
   {
-    Array<JsonView> volumeMountsJsonList = jsonValue.GetArray("volumeMounts");
+    Aws::Utils::Array<JsonView> volumeMountsJsonList = jsonValue.GetArray("volumeMounts");
     for(unsigned volumeMountsIndex = 0; volumeMountsIndex < volumeMountsJsonList.GetLength(); ++volumeMountsIndex)
     {
       m_volumeMounts.push_back(volumeMountsJsonList[volumeMountsIndex].AsObject());
@@ -149,7 +149,7 @@ JsonValue EksContainer::Jsonize() const
 
   if(m_commandHasBeenSet)
   {
-   Array<JsonValue> commandJsonList(m_command.size());
+   Aws::Utils::Array<JsonValue> commandJsonList(m_command.size());
    for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
    {
      commandJsonList[commandIndex].AsString(m_command[commandIndex]);
@@ -160,7 +160,7 @@ JsonValue EksContainer::Jsonize() const
 
   if(m_argsHasBeenSet)
   {
-   Array<JsonValue> argsJsonList(m_args.size());
+   Aws::Utils::Array<JsonValue> argsJsonList(m_args.size());
    for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
    {
      argsJsonList[argsIndex].AsString(m_args[argsIndex]);
@@ -171,7 +171,7 @@ JsonValue EksContainer::Jsonize() const
 
   if(m_envHasBeenSet)
   {
-   Array<JsonValue> envJsonList(m_env.size());
+   Aws::Utils::Array<JsonValue> envJsonList(m_env.size());
    for(unsigned envIndex = 0; envIndex < envJsonList.GetLength(); ++envIndex)
    {
      envJsonList[envIndex].AsObject(m_env[envIndex].Jsonize());
@@ -188,7 +188,7 @@ JsonValue EksContainer::Jsonize() const
 
   if(m_volumeMountsHasBeenSet)
   {
-   Array<JsonValue> volumeMountsJsonList(m_volumeMounts.size());
+   Aws::Utils::Array<JsonValue> volumeMountsJsonList(m_volumeMounts.size());
    for(unsigned volumeMountsIndex = 0; volumeMountsIndex < volumeMountsJsonList.GetLength(); ++volumeMountsIndex)
    {
      volumeMountsJsonList[volumeMountsIndex].AsObject(m_volumeMounts[volumeMountsIndex].Jsonize());

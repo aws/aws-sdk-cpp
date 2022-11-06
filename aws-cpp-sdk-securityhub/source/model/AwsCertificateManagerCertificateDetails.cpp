@@ -98,7 +98,7 @@ AwsCertificateManagerCertificateDetails& AwsCertificateManagerCertificateDetails
 
   if(jsonValue.ValueExists("DomainValidationOptions"))
   {
-    Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("DomainValidationOptions");
+    Aws::Utils::Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("DomainValidationOptions");
     for(unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength(); ++domainValidationOptionsIndex)
     {
       m_domainValidationOptions.push_back(domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject());
@@ -108,7 +108,7 @@ AwsCertificateManagerCertificateDetails& AwsCertificateManagerCertificateDetails
 
   if(jsonValue.ValueExists("ExtendedKeyUsages"))
   {
-    Array<JsonView> extendedKeyUsagesJsonList = jsonValue.GetArray("ExtendedKeyUsages");
+    Aws::Utils::Array<JsonView> extendedKeyUsagesJsonList = jsonValue.GetArray("ExtendedKeyUsages");
     for(unsigned extendedKeyUsagesIndex = 0; extendedKeyUsagesIndex < extendedKeyUsagesJsonList.GetLength(); ++extendedKeyUsagesIndex)
     {
       m_extendedKeyUsages.push_back(extendedKeyUsagesJsonList[extendedKeyUsagesIndex].AsObject());
@@ -132,7 +132,7 @@ AwsCertificateManagerCertificateDetails& AwsCertificateManagerCertificateDetails
 
   if(jsonValue.ValueExists("InUseBy"))
   {
-    Array<JsonView> inUseByJsonList = jsonValue.GetArray("InUseBy");
+    Aws::Utils::Array<JsonView> inUseByJsonList = jsonValue.GetArray("InUseBy");
     for(unsigned inUseByIndex = 0; inUseByIndex < inUseByJsonList.GetLength(); ++inUseByIndex)
     {
       m_inUseBy.push_back(inUseByJsonList[inUseByIndex].AsString());
@@ -163,7 +163,7 @@ AwsCertificateManagerCertificateDetails& AwsCertificateManagerCertificateDetails
 
   if(jsonValue.ValueExists("KeyUsages"))
   {
-    Array<JsonView> keyUsagesJsonList = jsonValue.GetArray("KeyUsages");
+    Aws::Utils::Array<JsonView> keyUsagesJsonList = jsonValue.GetArray("KeyUsages");
     for(unsigned keyUsagesIndex = 0; keyUsagesIndex < keyUsagesJsonList.GetLength(); ++keyUsagesIndex)
     {
       m_keyUsages.push_back(keyUsagesJsonList[keyUsagesIndex].AsObject());
@@ -236,7 +236,7 @@ AwsCertificateManagerCertificateDetails& AwsCertificateManagerCertificateDetails
 
   if(jsonValue.ValueExists("SubjectAlternativeNames"))
   {
-    Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("SubjectAlternativeNames");
+    Aws::Utils::Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("SubjectAlternativeNames");
     for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
     {
       m_subjectAlternativeNames.push_back(subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsString());
@@ -278,7 +278,7 @@ JsonValue AwsCertificateManagerCertificateDetails::Jsonize() const
 
   if(m_domainValidationOptionsHasBeenSet)
   {
-   Array<JsonValue> domainValidationOptionsJsonList(m_domainValidationOptions.size());
+   Aws::Utils::Array<JsonValue> domainValidationOptionsJsonList(m_domainValidationOptions.size());
    for(unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength(); ++domainValidationOptionsIndex)
    {
      domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject(m_domainValidationOptions[domainValidationOptionsIndex].Jsonize());
@@ -289,7 +289,7 @@ JsonValue AwsCertificateManagerCertificateDetails::Jsonize() const
 
   if(m_extendedKeyUsagesHasBeenSet)
   {
-   Array<JsonValue> extendedKeyUsagesJsonList(m_extendedKeyUsages.size());
+   Aws::Utils::Array<JsonValue> extendedKeyUsagesJsonList(m_extendedKeyUsages.size());
    for(unsigned extendedKeyUsagesIndex = 0; extendedKeyUsagesIndex < extendedKeyUsagesJsonList.GetLength(); ++extendedKeyUsagesIndex)
    {
      extendedKeyUsagesJsonList[extendedKeyUsagesIndex].AsObject(m_extendedKeyUsages[extendedKeyUsagesIndex].Jsonize());
@@ -312,7 +312,7 @@ JsonValue AwsCertificateManagerCertificateDetails::Jsonize() const
 
   if(m_inUseByHasBeenSet)
   {
-   Array<JsonValue> inUseByJsonList(m_inUseBy.size());
+   Aws::Utils::Array<JsonValue> inUseByJsonList(m_inUseBy.size());
    for(unsigned inUseByIndex = 0; inUseByIndex < inUseByJsonList.GetLength(); ++inUseByIndex)
    {
      inUseByJsonList[inUseByIndex].AsString(m_inUseBy[inUseByIndex]);
@@ -341,7 +341,7 @@ JsonValue AwsCertificateManagerCertificateDetails::Jsonize() const
 
   if(m_keyUsagesHasBeenSet)
   {
-   Array<JsonValue> keyUsagesJsonList(m_keyUsages.size());
+   Aws::Utils::Array<JsonValue> keyUsagesJsonList(m_keyUsages.size());
    for(unsigned keyUsagesIndex = 0; keyUsagesIndex < keyUsagesJsonList.GetLength(); ++keyUsagesIndex)
    {
      keyUsagesJsonList[keyUsagesIndex].AsObject(m_keyUsages[keyUsagesIndex].Jsonize());
@@ -406,7 +406,7 @@ JsonValue AwsCertificateManagerCertificateDetails::Jsonize() const
 
   if(m_subjectAlternativeNamesHasBeenSet)
   {
-   Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
+   Aws::Utils::Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
    for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
    {
      subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsString(m_subjectAlternativeNames[subjectAlternativeNamesIndex]);

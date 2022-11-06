@@ -80,7 +80,7 @@ Environment& Environment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Monitors"))
   {
-    Array<JsonView> monitorsJsonList = jsonValue.GetArray("Monitors");
+    Aws::Utils::Array<JsonView> monitorsJsonList = jsonValue.GetArray("Monitors");
     for(unsigned monitorsIndex = 0; monitorsIndex < monitorsJsonList.GetLength(); ++monitorsIndex)
     {
       m_monitors.push_back(monitorsJsonList[monitorsIndex].AsObject());
@@ -126,7 +126,7 @@ JsonValue Environment::Jsonize() const
 
   if(m_monitorsHasBeenSet)
   {
-   Array<JsonValue> monitorsJsonList(m_monitors.size());
+   Aws::Utils::Array<JsonValue> monitorsJsonList(m_monitors.size());
    for(unsigned monitorsIndex = 0; monitorsIndex < monitorsJsonList.GetLength(); ++monitorsIndex)
    {
      monitorsJsonList[monitorsIndex].AsObject(m_monitors[monitorsIndex].Jsonize());

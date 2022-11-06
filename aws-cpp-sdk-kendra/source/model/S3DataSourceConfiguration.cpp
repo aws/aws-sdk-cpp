@@ -50,7 +50,7 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("InclusionPrefixes"))
   {
-    Array<JsonView> inclusionPrefixesJsonList = jsonValue.GetArray("InclusionPrefixes");
+    Aws::Utils::Array<JsonView> inclusionPrefixesJsonList = jsonValue.GetArray("InclusionPrefixes");
     for(unsigned inclusionPrefixesIndex = 0; inclusionPrefixesIndex < inclusionPrefixesJsonList.GetLength(); ++inclusionPrefixesIndex)
     {
       m_inclusionPrefixes.push_back(inclusionPrefixesJsonList[inclusionPrefixesIndex].AsString());
@@ -60,7 +60,7 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
-    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
     for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
     {
       m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
@@ -70,7 +70,7 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
-    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
     for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
     {
       m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
@@ -107,7 +107,7 @@ JsonValue S3DataSourceConfiguration::Jsonize() const
 
   if(m_inclusionPrefixesHasBeenSet)
   {
-   Array<JsonValue> inclusionPrefixesJsonList(m_inclusionPrefixes.size());
+   Aws::Utils::Array<JsonValue> inclusionPrefixesJsonList(m_inclusionPrefixes.size());
    for(unsigned inclusionPrefixesIndex = 0; inclusionPrefixesIndex < inclusionPrefixesJsonList.GetLength(); ++inclusionPrefixesIndex)
    {
      inclusionPrefixesJsonList[inclusionPrefixesIndex].AsString(m_inclusionPrefixes[inclusionPrefixesIndex]);
@@ -118,7 +118,7 @@ JsonValue S3DataSourceConfiguration::Jsonize() const
 
   if(m_inclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
    {
      inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
@@ -129,7 +129,7 @@ JsonValue S3DataSourceConfiguration::Jsonize() const
 
   if(m_exclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
    {
      exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);

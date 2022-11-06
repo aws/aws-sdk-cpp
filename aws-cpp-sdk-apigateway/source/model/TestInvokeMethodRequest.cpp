@@ -40,7 +40,7 @@ Aws::String TestInvokeMethodRequest::SerializePayload() const
    JsonValue multiValueHeadersJsonMap;
    for(auto& multiValueHeadersItem : m_multiValueHeaders)
    {
-     Array<JsonValue> listOfStringJsonList(multiValueHeadersItem.second.size());
+     Aws::Utils::Array<JsonValue> listOfStringJsonList(multiValueHeadersItem.second.size());
      for(unsigned listOfStringIndex = 0; listOfStringIndex < listOfStringJsonList.GetLength(); ++listOfStringIndex)
      {
        listOfStringJsonList[listOfStringIndex].AsString(multiValueHeadersItem.second[listOfStringIndex]);

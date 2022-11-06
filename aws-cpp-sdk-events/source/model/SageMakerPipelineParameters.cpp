@@ -33,7 +33,7 @@ SageMakerPipelineParameters& SageMakerPipelineParameters::operator =(JsonView js
 {
   if(jsonValue.ValueExists("PipelineParameterList"))
   {
-    Array<JsonView> pipelineParameterListJsonList = jsonValue.GetArray("PipelineParameterList");
+    Aws::Utils::Array<JsonView> pipelineParameterListJsonList = jsonValue.GetArray("PipelineParameterList");
     for(unsigned pipelineParameterListIndex = 0; pipelineParameterListIndex < pipelineParameterListJsonList.GetLength(); ++pipelineParameterListIndex)
     {
       m_pipelineParameterList.push_back(pipelineParameterListJsonList[pipelineParameterListIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue SageMakerPipelineParameters::Jsonize() const
 
   if(m_pipelineParameterListHasBeenSet)
   {
-   Array<JsonValue> pipelineParameterListJsonList(m_pipelineParameterList.size());
+   Aws::Utils::Array<JsonValue> pipelineParameterListJsonList(m_pipelineParameterList.size());
    for(unsigned pipelineParameterListIndex = 0; pipelineParameterListIndex < pipelineParameterListJsonList.GetLength(); ++pipelineParameterListIndex)
    {
      pipelineParameterListJsonList[pipelineParameterListIndex].AsObject(m_pipelineParameterList[pipelineParameterListIndex].Jsonize());

@@ -60,7 +60,7 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails& AwsEcsTaskDefini
 
   if(jsonValue.ValueExists("Devices"))
   {
-    Array<JsonView> devicesJsonList = jsonValue.GetArray("Devices");
+    Aws::Utils::Array<JsonView> devicesJsonList = jsonValue.GetArray("Devices");
     for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
     {
       m_devices.push_back(devicesJsonList[devicesIndex].AsObject());
@@ -98,7 +98,7 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails& AwsEcsTaskDefini
 
   if(jsonValue.ValueExists("Tmpfs"))
   {
-    Array<JsonView> tmpfsJsonList = jsonValue.GetArray("Tmpfs");
+    Aws::Utils::Array<JsonView> tmpfsJsonList = jsonValue.GetArray("Tmpfs");
     for(unsigned tmpfsIndex = 0; tmpfsIndex < tmpfsJsonList.GetLength(); ++tmpfsIndex)
     {
       m_tmpfs.push_back(tmpfsJsonList[tmpfsIndex].AsObject());
@@ -121,7 +121,7 @@ JsonValue AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails::Jsoniz
 
   if(m_devicesHasBeenSet)
   {
-   Array<JsonValue> devicesJsonList(m_devices.size());
+   Aws::Utils::Array<JsonValue> devicesJsonList(m_devices.size());
    for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
    {
      devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());
@@ -156,7 +156,7 @@ JsonValue AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails::Jsoniz
 
   if(m_tmpfsHasBeenSet)
   {
-   Array<JsonValue> tmpfsJsonList(m_tmpfs.size());
+   Aws::Utils::Array<JsonValue> tmpfsJsonList(m_tmpfs.size());
    for(unsigned tmpfsIndex = 0; tmpfsIndex < tmpfsJsonList.GetLength(); ++tmpfsIndex)
    {
      tmpfsJsonList[tmpfsIndex].AsObject(m_tmpfs[tmpfsIndex].Jsonize());

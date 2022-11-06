@@ -30,7 +30,7 @@ ListGitHubAccountTokenNamesResult& ListGitHubAccountTokenNamesResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tokenNameList"))
   {
-    Array<JsonView> tokenNameListJsonList = jsonValue.GetArray("tokenNameList");
+    Aws::Utils::Array<JsonView> tokenNameListJsonList = jsonValue.GetArray("tokenNameList");
     for(unsigned tokenNameListIndex = 0; tokenNameListIndex < tokenNameListJsonList.GetLength(); ++tokenNameListIndex)
     {
       m_tokenNameList.push_back(tokenNameListJsonList[tokenNameListIndex].AsString());

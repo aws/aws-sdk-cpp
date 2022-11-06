@@ -32,7 +32,7 @@ GetSatelliteResult& GetSatelliteResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("groundStations"))
   {
-    Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
+    Aws::Utils::Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
     for(unsigned groundStationsIndex = 0; groundStationsIndex < groundStationsJsonList.GetLength(); ++groundStationsIndex)
     {
       m_groundStations.push_back(groundStationsJsonList[groundStationsIndex].AsString());

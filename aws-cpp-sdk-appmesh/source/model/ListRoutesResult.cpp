@@ -36,7 +36,7 @@ ListRoutesResult& ListRoutesResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("routes"))
   {
-    Array<JsonView> routesJsonList = jsonValue.GetArray("routes");
+    Aws::Utils::Array<JsonView> routesJsonList = jsonValue.GetArray("routes");
     for(unsigned routesIndex = 0; routesIndex < routesJsonList.GetLength(); ++routesIndex)
     {
       m_routes.push_back(routesJsonList[routesIndex].AsObject());

@@ -37,7 +37,7 @@ ConnectionHttpParameters& ConnectionHttpParameters::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("HeaderParameters"))
   {
-    Array<JsonView> headerParametersJsonList = jsonValue.GetArray("HeaderParameters");
+    Aws::Utils::Array<JsonView> headerParametersJsonList = jsonValue.GetArray("HeaderParameters");
     for(unsigned headerParametersIndex = 0; headerParametersIndex < headerParametersJsonList.GetLength(); ++headerParametersIndex)
     {
       m_headerParameters.push_back(headerParametersJsonList[headerParametersIndex].AsObject());
@@ -47,7 +47,7 @@ ConnectionHttpParameters& ConnectionHttpParameters::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("QueryStringParameters"))
   {
-    Array<JsonView> queryStringParametersJsonList = jsonValue.GetArray("QueryStringParameters");
+    Aws::Utils::Array<JsonView> queryStringParametersJsonList = jsonValue.GetArray("QueryStringParameters");
     for(unsigned queryStringParametersIndex = 0; queryStringParametersIndex < queryStringParametersJsonList.GetLength(); ++queryStringParametersIndex)
     {
       m_queryStringParameters.push_back(queryStringParametersJsonList[queryStringParametersIndex].AsObject());
@@ -57,7 +57,7 @@ ConnectionHttpParameters& ConnectionHttpParameters::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("BodyParameters"))
   {
-    Array<JsonView> bodyParametersJsonList = jsonValue.GetArray("BodyParameters");
+    Aws::Utils::Array<JsonView> bodyParametersJsonList = jsonValue.GetArray("BodyParameters");
     for(unsigned bodyParametersIndex = 0; bodyParametersIndex < bodyParametersJsonList.GetLength(); ++bodyParametersIndex)
     {
       m_bodyParameters.push_back(bodyParametersJsonList[bodyParametersIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue ConnectionHttpParameters::Jsonize() const
 
   if(m_headerParametersHasBeenSet)
   {
-   Array<JsonValue> headerParametersJsonList(m_headerParameters.size());
+   Aws::Utils::Array<JsonValue> headerParametersJsonList(m_headerParameters.size());
    for(unsigned headerParametersIndex = 0; headerParametersIndex < headerParametersJsonList.GetLength(); ++headerParametersIndex)
    {
      headerParametersJsonList[headerParametersIndex].AsObject(m_headerParameters[headerParametersIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue ConnectionHttpParameters::Jsonize() const
 
   if(m_queryStringParametersHasBeenSet)
   {
-   Array<JsonValue> queryStringParametersJsonList(m_queryStringParameters.size());
+   Aws::Utils::Array<JsonValue> queryStringParametersJsonList(m_queryStringParameters.size());
    for(unsigned queryStringParametersIndex = 0; queryStringParametersIndex < queryStringParametersJsonList.GetLength(); ++queryStringParametersIndex)
    {
      queryStringParametersJsonList[queryStringParametersIndex].AsObject(m_queryStringParameters[queryStringParametersIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue ConnectionHttpParameters::Jsonize() const
 
   if(m_bodyParametersHasBeenSet)
   {
-   Array<JsonValue> bodyParametersJsonList(m_bodyParameters.size());
+   Aws::Utils::Array<JsonValue> bodyParametersJsonList(m_bodyParameters.size());
    for(unsigned bodyParametersIndex = 0; bodyParametersIndex < bodyParametersJsonList.GetLength(); ++bodyParametersIndex)
    {
      bodyParametersJsonList[bodyParametersIndex].AsObject(m_bodyParameters[bodyParametersIndex].Jsonize());

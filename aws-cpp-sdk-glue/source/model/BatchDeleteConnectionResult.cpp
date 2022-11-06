@@ -30,7 +30,7 @@ BatchDeleteConnectionResult& BatchDeleteConnectionResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Succeeded"))
   {
-    Array<JsonView> succeededJsonList = jsonValue.GetArray("Succeeded");
+    Aws::Utils::Array<JsonView> succeededJsonList = jsonValue.GetArray("Succeeded");
     for(unsigned succeededIndex = 0; succeededIndex < succeededJsonList.GetLength(); ++succeededIndex)
     {
       m_succeeded.push_back(succeededJsonList[succeededIndex].AsString());

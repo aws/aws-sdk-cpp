@@ -23,7 +23,7 @@ Aws::String UpdateCostAllocationTagsStatusRequest::SerializePayload() const
 
   if(m_costAllocationTagsStatusHasBeenSet)
   {
-   Array<JsonValue> costAllocationTagsStatusJsonList(m_costAllocationTagsStatus.size());
+   Aws::Utils::Array<JsonValue> costAllocationTagsStatusJsonList(m_costAllocationTagsStatus.size());
    for(unsigned costAllocationTagsStatusIndex = 0; costAllocationTagsStatusIndex < costAllocationTagsStatusJsonList.GetLength(); ++costAllocationTagsStatusIndex)
    {
      costAllocationTagsStatusJsonList[costAllocationTagsStatusIndex].AsObject(m_costAllocationTagsStatus[costAllocationTagsStatusIndex].Jsonize());

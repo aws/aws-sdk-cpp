@@ -35,7 +35,7 @@ VisualReferenceInput& VisualReferenceInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BaseScreenshots"))
   {
-    Array<JsonView> baseScreenshotsJsonList = jsonValue.GetArray("BaseScreenshots");
+    Aws::Utils::Array<JsonView> baseScreenshotsJsonList = jsonValue.GetArray("BaseScreenshots");
     for(unsigned baseScreenshotsIndex = 0; baseScreenshotsIndex < baseScreenshotsJsonList.GetLength(); ++baseScreenshotsIndex)
     {
       m_baseScreenshots.push_back(baseScreenshotsJsonList[baseScreenshotsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue VisualReferenceInput::Jsonize() const
 
   if(m_baseScreenshotsHasBeenSet)
   {
-   Array<JsonValue> baseScreenshotsJsonList(m_baseScreenshots.size());
+   Aws::Utils::Array<JsonValue> baseScreenshotsJsonList(m_baseScreenshots.size());
    for(unsigned baseScreenshotsIndex = 0; baseScreenshotsIndex < baseScreenshotsJsonList.GetLength(); ++baseScreenshotsIndex)
    {
      baseScreenshotsJsonList[baseScreenshotsIndex].AsObject(m_baseScreenshots[baseScreenshotsIndex].Jsonize());

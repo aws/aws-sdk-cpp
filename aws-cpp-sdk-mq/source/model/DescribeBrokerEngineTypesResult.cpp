@@ -32,7 +32,7 @@ DescribeBrokerEngineTypesResult& DescribeBrokerEngineTypesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("brokerEngineTypes"))
   {
-    Array<JsonView> brokerEngineTypesJsonList = jsonValue.GetArray("brokerEngineTypes");
+    Aws::Utils::Array<JsonView> brokerEngineTypesJsonList = jsonValue.GetArray("brokerEngineTypes");
     for(unsigned brokerEngineTypesIndex = 0; brokerEngineTypesIndex < brokerEngineTypesJsonList.GetLength(); ++brokerEngineTypesIndex)
     {
       m_brokerEngineTypes.push_back(brokerEngineTypesJsonList[brokerEngineTypesIndex].AsObject());

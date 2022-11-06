@@ -71,7 +71,7 @@ Permission& Permission::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(ActionTypeMapper::GetActionTypeForName(actionsJsonList[actionsIndex].AsString()));
@@ -118,7 +118,7 @@ JsonValue Permission::Jsonize() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsString(ActionTypeMapper::GetNameForActionType(m_actions[actionsIndex]));

@@ -23,7 +23,7 @@ Aws::String GetSamplingTargetsRequest::SerializePayload() const
 
   if(m_samplingStatisticsDocumentsHasBeenSet)
   {
-   Array<JsonValue> samplingStatisticsDocumentsJsonList(m_samplingStatisticsDocuments.size());
+   Aws::Utils::Array<JsonValue> samplingStatisticsDocumentsJsonList(m_samplingStatisticsDocuments.size());
    for(unsigned samplingStatisticsDocumentsIndex = 0; samplingStatisticsDocumentsIndex < samplingStatisticsDocumentsJsonList.GetLength(); ++samplingStatisticsDocumentsIndex)
    {
      samplingStatisticsDocumentsJsonList[samplingStatisticsDocumentsIndex].AsObject(m_samplingStatisticsDocuments[samplingStatisticsDocumentsIndex].Jsonize());

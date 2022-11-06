@@ -46,7 +46,7 @@ PossibleRemediationAction& PossibleRemediationAction::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("OrderedRemediationActions"))
   {
-    Array<JsonView> orderedRemediationActionsJsonList = jsonValue.GetArray("OrderedRemediationActions");
+    Aws::Utils::Array<JsonView> orderedRemediationActionsJsonList = jsonValue.GetArray("OrderedRemediationActions");
     for(unsigned orderedRemediationActionsIndex = 0; orderedRemediationActionsIndex < orderedRemediationActionsJsonList.GetLength(); ++orderedRemediationActionsIndex)
     {
       m_orderedRemediationActions.push_back(orderedRemediationActionsJsonList[orderedRemediationActionsIndex].AsObject());
@@ -76,7 +76,7 @@ JsonValue PossibleRemediationAction::Jsonize() const
 
   if(m_orderedRemediationActionsHasBeenSet)
   {
-   Array<JsonValue> orderedRemediationActionsJsonList(m_orderedRemediationActions.size());
+   Aws::Utils::Array<JsonValue> orderedRemediationActionsJsonList(m_orderedRemediationActions.size());
    for(unsigned orderedRemediationActionsIndex = 0; orderedRemediationActionsIndex < orderedRemediationActionsJsonList.GetLength(); ++orderedRemediationActionsIndex)
    {
      orderedRemediationActionsJsonList[orderedRemediationActionsIndex].AsObject(m_orderedRemediationActions[orderedRemediationActionsIndex].Jsonize());

@@ -33,7 +33,7 @@ AutoExportPolicy& AutoExportPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Events"))
   {
-    Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
+    Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(EventTypeMapper::GetEventTypeForName(eventsJsonList[eventsIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue AutoExportPolicy::Jsonize() const
 
   if(m_eventsHasBeenSet)
   {
-   Array<JsonValue> eventsJsonList(m_events.size());
+   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
    {
      eventsJsonList[eventsIndex].AsString(EventTypeMapper::GetNameForEventType(m_events[eventsIndex]));

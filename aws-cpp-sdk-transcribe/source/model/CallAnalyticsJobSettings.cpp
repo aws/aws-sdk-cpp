@@ -82,7 +82,7 @@ CallAnalyticsJobSettings& CallAnalyticsJobSettings::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("LanguageOptions"))
   {
-    Array<JsonView> languageOptionsJsonList = jsonValue.GetArray("LanguageOptions");
+    Aws::Utils::Array<JsonView> languageOptionsJsonList = jsonValue.GetArray("LanguageOptions");
     for(unsigned languageOptionsIndex = 0; languageOptionsIndex < languageOptionsJsonList.GetLength(); ++languageOptionsIndex)
     {
       m_languageOptions.push_back(LanguageCodeMapper::GetLanguageCodeForName(languageOptionsJsonList[languageOptionsIndex].AsString()));
@@ -138,7 +138,7 @@ JsonValue CallAnalyticsJobSettings::Jsonize() const
 
   if(m_languageOptionsHasBeenSet)
   {
-   Array<JsonValue> languageOptionsJsonList(m_languageOptions.size());
+   Aws::Utils::Array<JsonValue> languageOptionsJsonList(m_languageOptions.size());
    for(unsigned languageOptionsIndex = 0; languageOptionsIndex < languageOptionsJsonList.GetLength(); ++languageOptionsIndex)
    {
      languageOptionsJsonList[languageOptionsIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_languageOptions[languageOptionsIndex]));

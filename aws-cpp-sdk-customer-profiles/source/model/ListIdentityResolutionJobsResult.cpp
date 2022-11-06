@@ -30,7 +30,7 @@ ListIdentityResolutionJobsResult& ListIdentityResolutionJobsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityResolutionJobsList"))
   {
-    Array<JsonView> identityResolutionJobsListJsonList = jsonValue.GetArray("IdentityResolutionJobsList");
+    Aws::Utils::Array<JsonView> identityResolutionJobsListJsonList = jsonValue.GetArray("IdentityResolutionJobsList");
     for(unsigned identityResolutionJobsListIndex = 0; identityResolutionJobsListIndex < identityResolutionJobsListJsonList.GetLength(); ++identityResolutionJobsListIndex)
     {
       m_identityResolutionJobsList.push_back(identityResolutionJobsListJsonList[identityResolutionJobsListIndex].AsObject());

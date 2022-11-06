@@ -36,7 +36,7 @@ DescribeOpsItemsResult& DescribeOpsItemsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("OpsItemSummaries"))
   {
-    Array<JsonView> opsItemSummariesJsonList = jsonValue.GetArray("OpsItemSummaries");
+    Aws::Utils::Array<JsonView> opsItemSummariesJsonList = jsonValue.GetArray("OpsItemSummaries");
     for(unsigned opsItemSummariesIndex = 0; opsItemSummariesIndex < opsItemSummariesJsonList.GetLength(); ++opsItemSummariesIndex)
     {
       m_opsItemSummaries.push_back(opsItemSummariesJsonList[opsItemSummariesIndex].AsObject());

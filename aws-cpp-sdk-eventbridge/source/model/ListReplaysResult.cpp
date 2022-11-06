@@ -30,7 +30,7 @@ ListReplaysResult& ListReplaysResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Replays"))
   {
-    Array<JsonView> replaysJsonList = jsonValue.GetArray("Replays");
+    Aws::Utils::Array<JsonView> replaysJsonList = jsonValue.GetArray("Replays");
     for(unsigned replaysIndex = 0; replaysIndex < replaysJsonList.GetLength(); ++replaysIndex)
     {
       m_replays.push_back(replaysJsonList[replaysIndex].AsObject());

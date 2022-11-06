@@ -53,7 +53,7 @@ CriterionAdditionalProperties& CriterionAdditionalProperties::operator =(JsonVie
 {
   if(jsonValue.ValueExists("eq"))
   {
-    Array<JsonView> eqJsonList = jsonValue.GetArray("eq");
+    Aws::Utils::Array<JsonView> eqJsonList = jsonValue.GetArray("eq");
     for(unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex)
     {
       m_eq.push_back(eqJsonList[eqIndex].AsString());
@@ -63,7 +63,7 @@ CriterionAdditionalProperties& CriterionAdditionalProperties::operator =(JsonVie
 
   if(jsonValue.ValueExists("eqExactMatch"))
   {
-    Array<JsonView> eqExactMatchJsonList = jsonValue.GetArray("eqExactMatch");
+    Aws::Utils::Array<JsonView> eqExactMatchJsonList = jsonValue.GetArray("eqExactMatch");
     for(unsigned eqExactMatchIndex = 0; eqExactMatchIndex < eqExactMatchJsonList.GetLength(); ++eqExactMatchIndex)
     {
       m_eqExactMatch.push_back(eqExactMatchJsonList[eqExactMatchIndex].AsString());
@@ -101,7 +101,7 @@ CriterionAdditionalProperties& CriterionAdditionalProperties::operator =(JsonVie
 
   if(jsonValue.ValueExists("neq"))
   {
-    Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
+    Aws::Utils::Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
     for(unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex)
     {
       m_neq.push_back(neqJsonList[neqIndex].AsString());
@@ -118,7 +118,7 @@ JsonValue CriterionAdditionalProperties::Jsonize() const
 
   if(m_eqHasBeenSet)
   {
-   Array<JsonValue> eqJsonList(m_eq.size());
+   Aws::Utils::Array<JsonValue> eqJsonList(m_eq.size());
    for(unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex)
    {
      eqJsonList[eqIndex].AsString(m_eq[eqIndex]);
@@ -129,7 +129,7 @@ JsonValue CriterionAdditionalProperties::Jsonize() const
 
   if(m_eqExactMatchHasBeenSet)
   {
-   Array<JsonValue> eqExactMatchJsonList(m_eqExactMatch.size());
+   Aws::Utils::Array<JsonValue> eqExactMatchJsonList(m_eqExactMatch.size());
    for(unsigned eqExactMatchIndex = 0; eqExactMatchIndex < eqExactMatchJsonList.GetLength(); ++eqExactMatchIndex)
    {
      eqExactMatchJsonList[eqExactMatchIndex].AsString(m_eqExactMatch[eqExactMatchIndex]);
@@ -164,7 +164,7 @@ JsonValue CriterionAdditionalProperties::Jsonize() const
 
   if(m_neqHasBeenSet)
   {
-   Array<JsonValue> neqJsonList(m_neq.size());
+   Aws::Utils::Array<JsonValue> neqJsonList(m_neq.size());
    for(unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex)
    {
      neqJsonList[neqIndex].AsString(m_neq[neqIndex]);

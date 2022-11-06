@@ -41,7 +41,7 @@ Aws::String CreateVpcAttachmentRequest::SerializePayload() const
 
   if(m_subnetArnsHasBeenSet)
   {
-   Array<JsonValue> subnetArnsJsonList(m_subnetArns.size());
+   Aws::Utils::Array<JsonValue> subnetArnsJsonList(m_subnetArns.size());
    for(unsigned subnetArnsIndex = 0; subnetArnsIndex < subnetArnsJsonList.GetLength(); ++subnetArnsIndex)
    {
      subnetArnsJsonList[subnetArnsIndex].AsString(m_subnetArns[subnetArnsIndex]);
@@ -58,7 +58,7 @@ Aws::String CreateVpcAttachmentRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

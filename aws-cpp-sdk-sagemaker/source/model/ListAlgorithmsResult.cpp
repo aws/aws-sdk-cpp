@@ -30,7 +30,7 @@ ListAlgorithmsResult& ListAlgorithmsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AlgorithmSummaryList"))
   {
-    Array<JsonView> algorithmSummaryListJsonList = jsonValue.GetArray("AlgorithmSummaryList");
+    Aws::Utils::Array<JsonView> algorithmSummaryListJsonList = jsonValue.GetArray("AlgorithmSummaryList");
     for(unsigned algorithmSummaryListIndex = 0; algorithmSummaryListIndex < algorithmSummaryListJsonList.GetLength(); ++algorithmSummaryListIndex)
     {
       m_algorithmSummaryList.push_back(algorithmSummaryListJsonList[algorithmSummaryListIndex].AsObject());

@@ -30,7 +30,7 @@ ListV2LoggingLevelsResult& ListV2LoggingLevelsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("logTargetConfigurations"))
   {
-    Array<JsonView> logTargetConfigurationsJsonList = jsonValue.GetArray("logTargetConfigurations");
+    Aws::Utils::Array<JsonView> logTargetConfigurationsJsonList = jsonValue.GetArray("logTargetConfigurations");
     for(unsigned logTargetConfigurationsIndex = 0; logTargetConfigurationsIndex < logTargetConfigurationsJsonList.GetLength(); ++logTargetConfigurationsIndex)
     {
       m_logTargetConfigurations.push_back(logTargetConfigurationsJsonList[logTargetConfigurationsIndex].AsObject());

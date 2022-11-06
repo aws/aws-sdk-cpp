@@ -33,7 +33,7 @@ Aws::String DescribeFleetLocationAttributesRequest::SerializePayload() const
 
   if(m_locationsHasBeenSet)
   {
-   Array<JsonValue> locationsJsonList(m_locations.size());
+   Aws::Utils::Array<JsonValue> locationsJsonList(m_locations.size());
    for(unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex)
    {
      locationsJsonList[locationsIndex].AsString(m_locations[locationsIndex]);

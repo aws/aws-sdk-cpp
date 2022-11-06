@@ -23,7 +23,7 @@ Aws::String GetCampaignStateBatchRequest::SerializePayload() const
 
   if(m_campaignIdsHasBeenSet)
   {
-   Array<JsonValue> campaignIdsJsonList(m_campaignIds.size());
+   Aws::Utils::Array<JsonValue> campaignIdsJsonList(m_campaignIds.size());
    for(unsigned campaignIdsIndex = 0; campaignIdsIndex < campaignIdsJsonList.GetLength(); ++campaignIdsIndex)
    {
      campaignIdsJsonList[campaignIdsIndex].AsString(m_campaignIds[campaignIdsIndex]);

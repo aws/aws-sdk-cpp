@@ -54,7 +54,7 @@ ListInventoryEntriesResult& ListInventoryEntriesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("Entries"))
   {
-    Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
+    Aws::Utils::Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
     for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
     {
       Aws::Map<Aws::String, JsonView> inventoryItemEntryJsonMap = entriesJsonList[entriesIndex].GetAllObjects();

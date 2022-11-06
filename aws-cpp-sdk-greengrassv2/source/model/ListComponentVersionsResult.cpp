@@ -30,7 +30,7 @@ ListComponentVersionsResult& ListComponentVersionsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("componentVersions"))
   {
-    Array<JsonView> componentVersionsJsonList = jsonValue.GetArray("componentVersions");
+    Aws::Utils::Array<JsonView> componentVersionsJsonList = jsonValue.GetArray("componentVersions");
     for(unsigned componentVersionsIndex = 0; componentVersionsIndex < componentVersionsJsonList.GetLength(); ++componentVersionsIndex)
     {
       m_componentVersions.push_back(componentVersionsJsonList[componentVersionsIndex].AsObject());

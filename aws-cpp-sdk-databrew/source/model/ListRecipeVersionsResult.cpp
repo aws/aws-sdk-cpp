@@ -36,7 +36,7 @@ ListRecipeVersionsResult& ListRecipeVersionsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("Recipes"))
   {
-    Array<JsonView> recipesJsonList = jsonValue.GetArray("Recipes");
+    Aws::Utils::Array<JsonView> recipesJsonList = jsonValue.GetArray("Recipes");
     for(unsigned recipesIndex = 0; recipesIndex < recipesJsonList.GetLength(); ++recipesIndex)
     {
       m_recipes.push_back(recipesJsonList[recipesIndex].AsObject());

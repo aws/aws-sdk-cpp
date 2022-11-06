@@ -68,7 +68,7 @@ DescribeAuditMitigationActionsTaskResult& DescribeAuditMitigationActionsTaskResu
     Aws::Map<Aws::String, JsonView> auditCheckToActionsMappingJsonMap = jsonValue.GetObject("auditCheckToActionsMapping").GetAllObjects();
     for(auto& auditCheckToActionsMappingItem : auditCheckToActionsMappingJsonMap)
     {
-      Array<JsonView> mitigationActionNameListJsonList = auditCheckToActionsMappingItem.second.AsArray();
+      Aws::Utils::Array<JsonView> mitigationActionNameListJsonList = auditCheckToActionsMappingItem.second.AsArray();
       Aws::Vector<Aws::String> mitigationActionNameListList;
       mitigationActionNameListList.reserve((size_t)mitigationActionNameListJsonList.GetLength());
       for(unsigned mitigationActionNameListIndex = 0; mitigationActionNameListIndex < mitigationActionNameListJsonList.GetLength(); ++mitigationActionNameListIndex)
@@ -81,7 +81,7 @@ DescribeAuditMitigationActionsTaskResult& DescribeAuditMitigationActionsTaskResu
 
   if(jsonValue.ValueExists("actionsDefinition"))
   {
-    Array<JsonView> actionsDefinitionJsonList = jsonValue.GetArray("actionsDefinition");
+    Aws::Utils::Array<JsonView> actionsDefinitionJsonList = jsonValue.GetArray("actionsDefinition");
     for(unsigned actionsDefinitionIndex = 0; actionsDefinitionIndex < actionsDefinitionJsonList.GetLength(); ++actionsDefinitionIndex)
     {
       m_actionsDefinition.push_back(actionsDefinitionJsonList[actionsDefinitionIndex].AsObject());

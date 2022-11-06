@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/macie2/Macie2Errors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/macie2/Macie2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -115,6 +117,10 @@ namespace Aws
 
   namespace Macie2
   {
+    using Macie2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Macie2EndpointProviderBase = Aws::Macie2::Endpoint::Macie2EndpointProviderBase;
+    using Macie2EndpointProvider = Aws::Macie2::Endpoint::Macie2EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in Macie2Client header */

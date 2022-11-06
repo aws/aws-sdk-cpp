@@ -35,7 +35,7 @@ ObjectTypeKey& ObjectTypeKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StandardIdentifiers"))
   {
-    Array<JsonView> standardIdentifiersJsonList = jsonValue.GetArray("StandardIdentifiers");
+    Aws::Utils::Array<JsonView> standardIdentifiersJsonList = jsonValue.GetArray("StandardIdentifiers");
     for(unsigned standardIdentifiersIndex = 0; standardIdentifiersIndex < standardIdentifiersJsonList.GetLength(); ++standardIdentifiersIndex)
     {
       m_standardIdentifiers.push_back(StandardIdentifierMapper::GetStandardIdentifierForName(standardIdentifiersJsonList[standardIdentifiersIndex].AsString()));
@@ -45,7 +45,7 @@ ObjectTypeKey& ObjectTypeKey::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FieldNames"))
   {
-    Array<JsonView> fieldNamesJsonList = jsonValue.GetArray("FieldNames");
+    Aws::Utils::Array<JsonView> fieldNamesJsonList = jsonValue.GetArray("FieldNames");
     for(unsigned fieldNamesIndex = 0; fieldNamesIndex < fieldNamesJsonList.GetLength(); ++fieldNamesIndex)
     {
       m_fieldNames.push_back(fieldNamesJsonList[fieldNamesIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue ObjectTypeKey::Jsonize() const
 
   if(m_standardIdentifiersHasBeenSet)
   {
-   Array<JsonValue> standardIdentifiersJsonList(m_standardIdentifiers.size());
+   Aws::Utils::Array<JsonValue> standardIdentifiersJsonList(m_standardIdentifiers.size());
    for(unsigned standardIdentifiersIndex = 0; standardIdentifiersIndex < standardIdentifiersJsonList.GetLength(); ++standardIdentifiersIndex)
    {
      standardIdentifiersJsonList[standardIdentifiersIndex].AsString(StandardIdentifierMapper::GetNameForStandardIdentifier(m_standardIdentifiers[standardIdentifiersIndex]));
@@ -73,7 +73,7 @@ JsonValue ObjectTypeKey::Jsonize() const
 
   if(m_fieldNamesHasBeenSet)
   {
-   Array<JsonValue> fieldNamesJsonList(m_fieldNames.size());
+   Aws::Utils::Array<JsonValue> fieldNamesJsonList(m_fieldNames.size());
    for(unsigned fieldNamesIndex = 0; fieldNamesIndex < fieldNamesJsonList.GetLength(); ++fieldNamesIndex)
    {
      fieldNamesJsonList[fieldNamesIndex].AsString(m_fieldNames[fieldNamesIndex]);

@@ -36,7 +36,7 @@ UntagResult& UntagResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
+    Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
       m_keys.push_back(keysJsonList[keysIndex].AsString());

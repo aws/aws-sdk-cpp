@@ -49,7 +49,7 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
 {
   if(jsonValue.ValueExists("BiasPosition"))
   {
-    Array<JsonView> biasPositionJsonList = jsonValue.GetArray("BiasPosition");
+    Aws::Utils::Array<JsonView> biasPositionJsonList = jsonValue.GetArray("BiasPosition");
     for(unsigned biasPositionIndex = 0; biasPositionIndex < biasPositionJsonList.GetLength(); ++biasPositionIndex)
     {
       m_biasPosition.push_back(biasPositionJsonList[biasPositionIndex].AsDouble());
@@ -66,7 +66,7 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
 
   if(jsonValue.ValueExists("FilterBBox"))
   {
-    Array<JsonView> filterBBoxJsonList = jsonValue.GetArray("FilterBBox");
+    Aws::Utils::Array<JsonView> filterBBoxJsonList = jsonValue.GetArray("FilterBBox");
     for(unsigned filterBBoxIndex = 0; filterBBoxIndex < filterBBoxJsonList.GetLength(); ++filterBBoxIndex)
     {
       m_filterBBox.push_back(filterBBoxJsonList[filterBBoxIndex].AsDouble());
@@ -76,7 +76,7 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
 
   if(jsonValue.ValueExists("FilterCountries"))
   {
-    Array<JsonView> filterCountriesJsonList = jsonValue.GetArray("FilterCountries");
+    Aws::Utils::Array<JsonView> filterCountriesJsonList = jsonValue.GetArray("FilterCountries");
     for(unsigned filterCountriesIndex = 0; filterCountriesIndex < filterCountriesJsonList.GetLength(); ++filterCountriesIndex)
     {
       m_filterCountries.push_back(filterCountriesJsonList[filterCountriesIndex].AsString());
@@ -100,7 +100,7 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
 
   if(jsonValue.ValueExists("ResultBBox"))
   {
-    Array<JsonView> resultBBoxJsonList = jsonValue.GetArray("ResultBBox");
+    Aws::Utils::Array<JsonView> resultBBoxJsonList = jsonValue.GetArray("ResultBBox");
     for(unsigned resultBBoxIndex = 0; resultBBoxIndex < resultBBoxJsonList.GetLength(); ++resultBBoxIndex)
     {
       m_resultBBox.push_back(resultBBoxJsonList[resultBBoxIndex].AsDouble());
@@ -124,7 +124,7 @@ JsonValue SearchPlaceIndexForTextSummary::Jsonize() const
 
   if(m_biasPositionHasBeenSet)
   {
-   Array<JsonValue> biasPositionJsonList(m_biasPosition.size());
+   Aws::Utils::Array<JsonValue> biasPositionJsonList(m_biasPosition.size());
    for(unsigned biasPositionIndex = 0; biasPositionIndex < biasPositionJsonList.GetLength(); ++biasPositionIndex)
    {
      biasPositionJsonList[biasPositionIndex].AsDouble(m_biasPosition[biasPositionIndex]);
@@ -141,7 +141,7 @@ JsonValue SearchPlaceIndexForTextSummary::Jsonize() const
 
   if(m_filterBBoxHasBeenSet)
   {
-   Array<JsonValue> filterBBoxJsonList(m_filterBBox.size());
+   Aws::Utils::Array<JsonValue> filterBBoxJsonList(m_filterBBox.size());
    for(unsigned filterBBoxIndex = 0; filterBBoxIndex < filterBBoxJsonList.GetLength(); ++filterBBoxIndex)
    {
      filterBBoxJsonList[filterBBoxIndex].AsDouble(m_filterBBox[filterBBoxIndex]);
@@ -152,7 +152,7 @@ JsonValue SearchPlaceIndexForTextSummary::Jsonize() const
 
   if(m_filterCountriesHasBeenSet)
   {
-   Array<JsonValue> filterCountriesJsonList(m_filterCountries.size());
+   Aws::Utils::Array<JsonValue> filterCountriesJsonList(m_filterCountries.size());
    for(unsigned filterCountriesIndex = 0; filterCountriesIndex < filterCountriesJsonList.GetLength(); ++filterCountriesIndex)
    {
      filterCountriesJsonList[filterCountriesIndex].AsString(m_filterCountries[filterCountriesIndex]);
@@ -175,7 +175,7 @@ JsonValue SearchPlaceIndexForTextSummary::Jsonize() const
 
   if(m_resultBBoxHasBeenSet)
   {
-   Array<JsonValue> resultBBoxJsonList(m_resultBBox.size());
+   Aws::Utils::Array<JsonValue> resultBBoxJsonList(m_resultBBox.size());
    for(unsigned resultBBoxIndex = 0; resultBBoxIndex < resultBBoxJsonList.GetLength(); ++resultBBoxIndex)
    {
      resultBBoxJsonList[resultBBoxIndex].AsDouble(m_resultBBox[resultBBoxIndex]);

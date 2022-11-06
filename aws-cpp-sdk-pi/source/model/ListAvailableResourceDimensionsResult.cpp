@@ -30,7 +30,7 @@ ListAvailableResourceDimensionsResult& ListAvailableResourceDimensionsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MetricDimensions"))
   {
-    Array<JsonView> metricDimensionsJsonList = jsonValue.GetArray("MetricDimensions");
+    Aws::Utils::Array<JsonView> metricDimensionsJsonList = jsonValue.GetArray("MetricDimensions");
     for(unsigned metricDimensionsIndex = 0; metricDimensionsIndex < metricDimensionsJsonList.GetLength(); ++metricDimensionsIndex)
     {
       m_metricDimensions.push_back(metricDimensionsJsonList[metricDimensionsIndex].AsObject());

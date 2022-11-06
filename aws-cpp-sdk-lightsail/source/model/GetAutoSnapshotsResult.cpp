@@ -44,7 +44,7 @@ GetAutoSnapshotsResult& GetAutoSnapshotsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("autoSnapshots"))
   {
-    Array<JsonView> autoSnapshotsJsonList = jsonValue.GetArray("autoSnapshots");
+    Aws::Utils::Array<JsonView> autoSnapshotsJsonList = jsonValue.GetArray("autoSnapshots");
     for(unsigned autoSnapshotsIndex = 0; autoSnapshotsIndex < autoSnapshotsJsonList.GetLength(); ++autoSnapshotsIndex)
     {
       m_autoSnapshots.push_back(autoSnapshotsJsonList[autoSnapshotsIndex].AsObject());

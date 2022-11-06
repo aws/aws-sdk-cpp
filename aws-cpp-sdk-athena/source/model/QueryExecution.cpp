@@ -116,7 +116,7 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExecutionParameters"))
   {
-    Array<JsonView> executionParametersJsonList = jsonValue.GetArray("ExecutionParameters");
+    Aws::Utils::Array<JsonView> executionParametersJsonList = jsonValue.GetArray("ExecutionParameters");
     for(unsigned executionParametersIndex = 0; executionParametersIndex < executionParametersJsonList.GetLength(); ++executionParametersIndex)
     {
       m_executionParameters.push_back(executionParametersJsonList[executionParametersIndex].AsString());
@@ -186,7 +186,7 @@ JsonValue QueryExecution::Jsonize() const
 
   if(m_executionParametersHasBeenSet)
   {
-   Array<JsonValue> executionParametersJsonList(m_executionParameters.size());
+   Aws::Utils::Array<JsonValue> executionParametersJsonList(m_executionParameters.size());
    for(unsigned executionParametersIndex = 0; executionParametersIndex < executionParametersJsonList.GetLength(); ++executionParametersIndex)
    {
      executionParametersJsonList[executionParametersIndex].AsString(m_executionParameters[executionParametersIndex]);

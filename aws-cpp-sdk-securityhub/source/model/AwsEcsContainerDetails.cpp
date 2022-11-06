@@ -55,7 +55,7 @@ AwsEcsContainerDetails& AwsEcsContainerDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MountPoints"))
   {
-    Array<JsonView> mountPointsJsonList = jsonValue.GetArray("MountPoints");
+    Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("MountPoints");
     for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
     {
       m_mountPoints.push_back(mountPointsJsonList[mountPointsIndex].AsObject());
@@ -91,7 +91,7 @@ JsonValue AwsEcsContainerDetails::Jsonize() const
 
   if(m_mountPointsHasBeenSet)
   {
-   Array<JsonValue> mountPointsJsonList(m_mountPoints.size());
+   Aws::Utils::Array<JsonValue> mountPointsJsonList(m_mountPoints.size());
    for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
    {
      mountPointsJsonList[mountPointsIndex].AsObject(m_mountPoints[mountPointsIndex].Jsonize());

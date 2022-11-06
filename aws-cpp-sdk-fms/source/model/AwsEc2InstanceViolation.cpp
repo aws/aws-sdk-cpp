@@ -42,7 +42,7 @@ AwsEc2InstanceViolation& AwsEc2InstanceViolation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AwsEc2NetworkInterfaceViolations"))
   {
-    Array<JsonView> awsEc2NetworkInterfaceViolationsJsonList = jsonValue.GetArray("AwsEc2NetworkInterfaceViolations");
+    Aws::Utils::Array<JsonView> awsEc2NetworkInterfaceViolationsJsonList = jsonValue.GetArray("AwsEc2NetworkInterfaceViolations");
     for(unsigned awsEc2NetworkInterfaceViolationsIndex = 0; awsEc2NetworkInterfaceViolationsIndex < awsEc2NetworkInterfaceViolationsJsonList.GetLength(); ++awsEc2NetworkInterfaceViolationsIndex)
     {
       m_awsEc2NetworkInterfaceViolations.push_back(awsEc2NetworkInterfaceViolationsJsonList[awsEc2NetworkInterfaceViolationsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue AwsEc2InstanceViolation::Jsonize() const
 
   if(m_awsEc2NetworkInterfaceViolationsHasBeenSet)
   {
-   Array<JsonValue> awsEc2NetworkInterfaceViolationsJsonList(m_awsEc2NetworkInterfaceViolations.size());
+   Aws::Utils::Array<JsonValue> awsEc2NetworkInterfaceViolationsJsonList(m_awsEc2NetworkInterfaceViolations.size());
    for(unsigned awsEc2NetworkInterfaceViolationsIndex = 0; awsEc2NetworkInterfaceViolationsIndex < awsEc2NetworkInterfaceViolationsJsonList.GetLength(); ++awsEc2NetworkInterfaceViolationsIndex)
    {
      awsEc2NetworkInterfaceViolationsJsonList[awsEc2NetworkInterfaceViolationsIndex].AsObject(m_awsEc2NetworkInterfaceViolations[awsEc2NetworkInterfaceViolationsIndex].Jsonize());

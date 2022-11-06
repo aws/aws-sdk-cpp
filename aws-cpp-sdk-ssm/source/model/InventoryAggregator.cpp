@@ -44,7 +44,7 @@ InventoryAggregator& InventoryAggregator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Aggregators"))
   {
-    Array<JsonView> aggregatorsJsonList = jsonValue.GetArray("Aggregators");
+    Aws::Utils::Array<JsonView> aggregatorsJsonList = jsonValue.GetArray("Aggregators");
     for(unsigned aggregatorsIndex = 0; aggregatorsIndex < aggregatorsJsonList.GetLength(); ++aggregatorsIndex)
     {
       m_aggregators.push_back(aggregatorsJsonList[aggregatorsIndex].AsObject());
@@ -54,7 +54,7 @@ InventoryAggregator& InventoryAggregator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Groups"))
   {
-    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
+    Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue InventoryAggregator::Jsonize() const
 
   if(m_aggregatorsHasBeenSet)
   {
-   Array<JsonValue> aggregatorsJsonList(m_aggregators.size());
+   Aws::Utils::Array<JsonValue> aggregatorsJsonList(m_aggregators.size());
    for(unsigned aggregatorsIndex = 0; aggregatorsIndex < aggregatorsJsonList.GetLength(); ++aggregatorsIndex)
    {
      aggregatorsJsonList[aggregatorsIndex].AsObject(m_aggregators[aggregatorsIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue InventoryAggregator::Jsonize() const
 
   if(m_groupsHasBeenSet)
   {
-   Array<JsonValue> groupsJsonList(m_groups.size());
+   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
    {
      groupsJsonList[groupsIndex].AsObject(m_groups[groupsIndex].Jsonize());

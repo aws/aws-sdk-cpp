@@ -195,7 +195,7 @@ Fleet& Fleet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FleetErrors"))
   {
-    Array<JsonView> fleetErrorsJsonList = jsonValue.GetArray("FleetErrors");
+    Aws::Utils::Array<JsonView> fleetErrorsJsonList = jsonValue.GetArray("FleetErrors");
     for(unsigned fleetErrorsIndex = 0; fleetErrorsIndex < fleetErrorsJsonList.GetLength(); ++fleetErrorsIndex)
     {
       m_fleetErrors.push_back(fleetErrorsJsonList[fleetErrorsIndex].AsObject());
@@ -254,7 +254,7 @@ Fleet& Fleet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("UsbDeviceFilterStrings"))
   {
-    Array<JsonView> usbDeviceFilterStringsJsonList = jsonValue.GetArray("UsbDeviceFilterStrings");
+    Aws::Utils::Array<JsonView> usbDeviceFilterStringsJsonList = jsonValue.GetArray("UsbDeviceFilterStrings");
     for(unsigned usbDeviceFilterStringsIndex = 0; usbDeviceFilterStringsIndex < usbDeviceFilterStringsJsonList.GetLength(); ++usbDeviceFilterStringsIndex)
     {
       m_usbDeviceFilterStrings.push_back(usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString());
@@ -359,7 +359,7 @@ JsonValue Fleet::Jsonize() const
 
   if(m_fleetErrorsHasBeenSet)
   {
-   Array<JsonValue> fleetErrorsJsonList(m_fleetErrors.size());
+   Aws::Utils::Array<JsonValue> fleetErrorsJsonList(m_fleetErrors.size());
    for(unsigned fleetErrorsIndex = 0; fleetErrorsIndex < fleetErrorsJsonList.GetLength(); ++fleetErrorsIndex)
    {
      fleetErrorsJsonList[fleetErrorsIndex].AsObject(m_fleetErrors[fleetErrorsIndex].Jsonize());
@@ -410,7 +410,7 @@ JsonValue Fleet::Jsonize() const
 
   if(m_usbDeviceFilterStringsHasBeenSet)
   {
-   Array<JsonValue> usbDeviceFilterStringsJsonList(m_usbDeviceFilterStrings.size());
+   Aws::Utils::Array<JsonValue> usbDeviceFilterStringsJsonList(m_usbDeviceFilterStrings.size());
    for(unsigned usbDeviceFilterStringsIndex = 0; usbDeviceFilterStringsIndex < usbDeviceFilterStringsJsonList.GetLength(); ++usbDeviceFilterStringsIndex)
    {
      usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString(m_usbDeviceFilterStrings[usbDeviceFilterStringsIndex]);

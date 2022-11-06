@@ -42,7 +42,7 @@ AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& AwsAuto
 
   if(jsonValue.ValueExists("Overrides"))
   {
-    Array<JsonView> overridesJsonList = jsonValue.GetArray("Overrides");
+    Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("Overrides");
     for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
     {
       m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetail
 
   if(m_overridesHasBeenSet)
   {
-   Array<JsonValue> overridesJsonList(m_overrides.size());
+   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
    {
      overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());

@@ -48,7 +48,7 @@ Aws::String PutSessionRequest::SerializePayload() const
 
   if(m_recentIntentSummaryViewHasBeenSet)
   {
-   Array<JsonValue> recentIntentSummaryViewJsonList(m_recentIntentSummaryView.size());
+   Aws::Utils::Array<JsonValue> recentIntentSummaryViewJsonList(m_recentIntentSummaryView.size());
    for(unsigned recentIntentSummaryViewIndex = 0; recentIntentSummaryViewIndex < recentIntentSummaryViewJsonList.GetLength(); ++recentIntentSummaryViewIndex)
    {
      recentIntentSummaryViewJsonList[recentIntentSummaryViewIndex].AsObject(m_recentIntentSummaryView[recentIntentSummaryViewIndex].Jsonize());
@@ -59,7 +59,7 @@ Aws::String PutSessionRequest::SerializePayload() const
 
   if(m_activeContextsHasBeenSet)
   {
-   Array<JsonValue> activeContextsJsonList(m_activeContexts.size());
+   Aws::Utils::Array<JsonValue> activeContextsJsonList(m_activeContexts.size());
    for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
    {
      activeContextsJsonList[activeContextsIndex].AsObject(m_activeContexts[activeContextsIndex].Jsonize());

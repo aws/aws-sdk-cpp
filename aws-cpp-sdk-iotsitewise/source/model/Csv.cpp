@@ -33,7 +33,7 @@ Csv& Csv::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("columnNames"))
   {
-    Array<JsonView> columnNamesJsonList = jsonValue.GetArray("columnNames");
+    Aws::Utils::Array<JsonView> columnNamesJsonList = jsonValue.GetArray("columnNames");
     for(unsigned columnNamesIndex = 0; columnNamesIndex < columnNamesJsonList.GetLength(); ++columnNamesIndex)
     {
       m_columnNames.push_back(ColumnNameMapper::GetColumnNameForName(columnNamesJsonList[columnNamesIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue Csv::Jsonize() const
 
   if(m_columnNamesHasBeenSet)
   {
-   Array<JsonValue> columnNamesJsonList(m_columnNames.size());
+   Aws::Utils::Array<JsonValue> columnNamesJsonList(m_columnNames.size());
    for(unsigned columnNamesIndex = 0; columnNamesIndex < columnNamesJsonList.GetLength(); ++columnNamesIndex)
    {
      columnNamesJsonList[columnNamesIndex].AsString(ColumnNameMapper::GetNameForColumnName(m_columnNames[columnNamesIndex]));

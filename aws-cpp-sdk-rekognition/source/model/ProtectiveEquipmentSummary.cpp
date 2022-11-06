@@ -37,7 +37,7 @@ ProtectiveEquipmentSummary& ProtectiveEquipmentSummary::operator =(JsonView json
 {
   if(jsonValue.ValueExists("PersonsWithRequiredEquipment"))
   {
-    Array<JsonView> personsWithRequiredEquipmentJsonList = jsonValue.GetArray("PersonsWithRequiredEquipment");
+    Aws::Utils::Array<JsonView> personsWithRequiredEquipmentJsonList = jsonValue.GetArray("PersonsWithRequiredEquipment");
     for(unsigned personsWithRequiredEquipmentIndex = 0; personsWithRequiredEquipmentIndex < personsWithRequiredEquipmentJsonList.GetLength(); ++personsWithRequiredEquipmentIndex)
     {
       m_personsWithRequiredEquipment.push_back(personsWithRequiredEquipmentJsonList[personsWithRequiredEquipmentIndex].AsInteger());
@@ -47,7 +47,7 @@ ProtectiveEquipmentSummary& ProtectiveEquipmentSummary::operator =(JsonView json
 
   if(jsonValue.ValueExists("PersonsWithoutRequiredEquipment"))
   {
-    Array<JsonView> personsWithoutRequiredEquipmentJsonList = jsonValue.GetArray("PersonsWithoutRequiredEquipment");
+    Aws::Utils::Array<JsonView> personsWithoutRequiredEquipmentJsonList = jsonValue.GetArray("PersonsWithoutRequiredEquipment");
     for(unsigned personsWithoutRequiredEquipmentIndex = 0; personsWithoutRequiredEquipmentIndex < personsWithoutRequiredEquipmentJsonList.GetLength(); ++personsWithoutRequiredEquipmentIndex)
     {
       m_personsWithoutRequiredEquipment.push_back(personsWithoutRequiredEquipmentJsonList[personsWithoutRequiredEquipmentIndex].AsInteger());
@@ -57,7 +57,7 @@ ProtectiveEquipmentSummary& ProtectiveEquipmentSummary::operator =(JsonView json
 
   if(jsonValue.ValueExists("PersonsIndeterminate"))
   {
-    Array<JsonView> personsIndeterminateJsonList = jsonValue.GetArray("PersonsIndeterminate");
+    Aws::Utils::Array<JsonView> personsIndeterminateJsonList = jsonValue.GetArray("PersonsIndeterminate");
     for(unsigned personsIndeterminateIndex = 0; personsIndeterminateIndex < personsIndeterminateJsonList.GetLength(); ++personsIndeterminateIndex)
     {
       m_personsIndeterminate.push_back(personsIndeterminateJsonList[personsIndeterminateIndex].AsInteger());
@@ -74,7 +74,7 @@ JsonValue ProtectiveEquipmentSummary::Jsonize() const
 
   if(m_personsWithRequiredEquipmentHasBeenSet)
   {
-   Array<JsonValue> personsWithRequiredEquipmentJsonList(m_personsWithRequiredEquipment.size());
+   Aws::Utils::Array<JsonValue> personsWithRequiredEquipmentJsonList(m_personsWithRequiredEquipment.size());
    for(unsigned personsWithRequiredEquipmentIndex = 0; personsWithRequiredEquipmentIndex < personsWithRequiredEquipmentJsonList.GetLength(); ++personsWithRequiredEquipmentIndex)
    {
      personsWithRequiredEquipmentJsonList[personsWithRequiredEquipmentIndex].AsInteger(m_personsWithRequiredEquipment[personsWithRequiredEquipmentIndex]);
@@ -85,7 +85,7 @@ JsonValue ProtectiveEquipmentSummary::Jsonize() const
 
   if(m_personsWithoutRequiredEquipmentHasBeenSet)
   {
-   Array<JsonValue> personsWithoutRequiredEquipmentJsonList(m_personsWithoutRequiredEquipment.size());
+   Aws::Utils::Array<JsonValue> personsWithoutRequiredEquipmentJsonList(m_personsWithoutRequiredEquipment.size());
    for(unsigned personsWithoutRequiredEquipmentIndex = 0; personsWithoutRequiredEquipmentIndex < personsWithoutRequiredEquipmentJsonList.GetLength(); ++personsWithoutRequiredEquipmentIndex)
    {
      personsWithoutRequiredEquipmentJsonList[personsWithoutRequiredEquipmentIndex].AsInteger(m_personsWithoutRequiredEquipment[personsWithoutRequiredEquipmentIndex]);
@@ -96,7 +96,7 @@ JsonValue ProtectiveEquipmentSummary::Jsonize() const
 
   if(m_personsIndeterminateHasBeenSet)
   {
-   Array<JsonValue> personsIndeterminateJsonList(m_personsIndeterminate.size());
+   Aws::Utils::Array<JsonValue> personsIndeterminateJsonList(m_personsIndeterminate.size());
    for(unsigned personsIndeterminateIndex = 0; personsIndeterminateIndex < personsIndeterminateJsonList.GetLength(); ++personsIndeterminateIndex)
    {
      personsIndeterminateJsonList[personsIndeterminateIndex].AsInteger(m_personsIndeterminate[personsIndeterminateIndex]);

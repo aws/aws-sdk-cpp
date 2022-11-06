@@ -51,7 +51,7 @@ IPSet& IPSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IPSetDescriptors"))
   {
-    Array<JsonView> iPSetDescriptorsJsonList = jsonValue.GetArray("IPSetDescriptors");
+    Aws::Utils::Array<JsonView> iPSetDescriptorsJsonList = jsonValue.GetArray("IPSetDescriptors");
     for(unsigned iPSetDescriptorsIndex = 0; iPSetDescriptorsIndex < iPSetDescriptorsJsonList.GetLength(); ++iPSetDescriptorsIndex)
     {
       m_iPSetDescriptors.push_back(iPSetDescriptorsJsonList[iPSetDescriptorsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue IPSet::Jsonize() const
 
   if(m_iPSetDescriptorsHasBeenSet)
   {
-   Array<JsonValue> iPSetDescriptorsJsonList(m_iPSetDescriptors.size());
+   Aws::Utils::Array<JsonValue> iPSetDescriptorsJsonList(m_iPSetDescriptors.size());
    for(unsigned iPSetDescriptorsIndex = 0; iPSetDescriptorsIndex < iPSetDescriptorsJsonList.GetLength(); ++iPSetDescriptorsIndex)
    {
      iPSetDescriptorsJsonList[iPSetDescriptorsIndex].AsObject(m_iPSetDescriptors[iPSetDescriptorsIndex].Jsonize());

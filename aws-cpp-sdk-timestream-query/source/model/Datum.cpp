@@ -58,7 +58,7 @@ Datum& Datum::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TimeSeriesValue"))
   {
-    Array<JsonView> timeSeriesValueJsonList = jsonValue.GetArray("TimeSeriesValue");
+    Aws::Utils::Array<JsonView> timeSeriesValueJsonList = jsonValue.GetArray("TimeSeriesValue");
     for(unsigned timeSeriesValueIndex = 0; timeSeriesValueIndex < timeSeriesValueJsonList.GetLength(); ++timeSeriesValueIndex)
     {
       m_timeSeriesValue.push_back(timeSeriesValueJsonList[timeSeriesValueIndex].AsObject());
@@ -68,7 +68,7 @@ Datum& Datum::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ArrayValue"))
   {
-    Array<JsonView> arrayValueJsonList = jsonValue.GetArray("ArrayValue");
+    Aws::Utils::Array<JsonView> arrayValueJsonList = jsonValue.GetArray("ArrayValue");
     for(unsigned arrayValueIndex = 0; arrayValueIndex < arrayValueJsonList.GetLength(); ++arrayValueIndex)
     {
       m_arrayValue.push_back(arrayValueJsonList[arrayValueIndex].AsObject());
@@ -105,7 +105,7 @@ JsonValue Datum::Jsonize() const
 
   if(m_timeSeriesValueHasBeenSet)
   {
-   Array<JsonValue> timeSeriesValueJsonList(m_timeSeriesValue.size());
+   Aws::Utils::Array<JsonValue> timeSeriesValueJsonList(m_timeSeriesValue.size());
    for(unsigned timeSeriesValueIndex = 0; timeSeriesValueIndex < timeSeriesValueJsonList.GetLength(); ++timeSeriesValueIndex)
    {
      timeSeriesValueJsonList[timeSeriesValueIndex].AsObject(m_timeSeriesValue[timeSeriesValueIndex].Jsonize());
@@ -116,7 +116,7 @@ JsonValue Datum::Jsonize() const
 
   if(m_arrayValueHasBeenSet)
   {
-   Array<JsonValue> arrayValueJsonList(m_arrayValue.size());
+   Aws::Utils::Array<JsonValue> arrayValueJsonList(m_arrayValue.size());
    for(unsigned arrayValueIndex = 0; arrayValueIndex < arrayValueJsonList.GetLength(); ++arrayValueIndex)
    {
      arrayValueJsonList[arrayValueIndex].AsObject(m_arrayValue[arrayValueIndex].Jsonize());

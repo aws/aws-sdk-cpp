@@ -30,7 +30,7 @@ BatchGetQueryExecutionResult& BatchGetQueryExecutionResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("QueryExecutions"))
   {
-    Array<JsonView> queryExecutionsJsonList = jsonValue.GetArray("QueryExecutions");
+    Aws::Utils::Array<JsonView> queryExecutionsJsonList = jsonValue.GetArray("QueryExecutions");
     for(unsigned queryExecutionsIndex = 0; queryExecutionsIndex < queryExecutionsJsonList.GetLength(); ++queryExecutionsIndex)
     {
       m_queryExecutions.push_back(queryExecutionsJsonList[queryExecutionsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetQueryExecutionResult& BatchGetQueryExecutionResult::operator =(const Aws
 
   if(jsonValue.ValueExists("UnprocessedQueryExecutionIds"))
   {
-    Array<JsonView> unprocessedQueryExecutionIdsJsonList = jsonValue.GetArray("UnprocessedQueryExecutionIds");
+    Aws::Utils::Array<JsonView> unprocessedQueryExecutionIdsJsonList = jsonValue.GetArray("UnprocessedQueryExecutionIds");
     for(unsigned unprocessedQueryExecutionIdsIndex = 0; unprocessedQueryExecutionIdsIndex < unprocessedQueryExecutionIdsJsonList.GetLength(); ++unprocessedQueryExecutionIdsIndex)
     {
       m_unprocessedQueryExecutionIds.push_back(unprocessedQueryExecutionIdsJsonList[unprocessedQueryExecutionIdsIndex].AsObject());

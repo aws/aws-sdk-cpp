@@ -30,7 +30,7 @@ ListKafkaVersionsResult& ListKafkaVersionsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("kafkaVersions"))
   {
-    Array<JsonView> kafkaVersionsJsonList = jsonValue.GetArray("kafkaVersions");
+    Aws::Utils::Array<JsonView> kafkaVersionsJsonList = jsonValue.GetArray("kafkaVersions");
     for(unsigned kafkaVersionsIndex = 0; kafkaVersionsIndex < kafkaVersionsJsonList.GetLength(); ++kafkaVersionsIndex)
     {
       m_kafkaVersions.push_back(kafkaVersionsJsonList[kafkaVersionsIndex].AsObject());

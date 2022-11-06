@@ -24,7 +24,7 @@ Aws::String TagResourcesRequest::SerializePayload() const
 
   if(m_resourceARNListHasBeenSet)
   {
-   Array<JsonValue> resourceARNListJsonList(m_resourceARNList.size());
+   Aws::Utils::Array<JsonValue> resourceARNListJsonList(m_resourceARNList.size());
    for(unsigned resourceARNListIndex = 0; resourceARNListIndex < resourceARNListJsonList.GetLength(); ++resourceARNListIndex)
    {
      resourceARNListJsonList[resourceARNListIndex].AsString(m_resourceARNList[resourceARNListIndex]);

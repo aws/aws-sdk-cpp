@@ -42,7 +42,7 @@ FreeTrialAccountInfo& FreeTrialAccountInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("freeTrialInfo"))
   {
-    Array<JsonView> freeTrialInfoJsonList = jsonValue.GetArray("freeTrialInfo");
+    Aws::Utils::Array<JsonView> freeTrialInfoJsonList = jsonValue.GetArray("freeTrialInfo");
     for(unsigned freeTrialInfoIndex = 0; freeTrialInfoIndex < freeTrialInfoJsonList.GetLength(); ++freeTrialInfoIndex)
     {
       m_freeTrialInfo.push_back(freeTrialInfoJsonList[freeTrialInfoIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue FreeTrialAccountInfo::Jsonize() const
 
   if(m_freeTrialInfoHasBeenSet)
   {
-   Array<JsonValue> freeTrialInfoJsonList(m_freeTrialInfo.size());
+   Aws::Utils::Array<JsonValue> freeTrialInfoJsonList(m_freeTrialInfo.size());
    for(unsigned freeTrialInfoIndex = 0; freeTrialInfoIndex < freeTrialInfoJsonList.GetLength(); ++freeTrialInfoIndex)
    {
      freeTrialInfoJsonList[freeTrialInfoIndex].AsObject(m_freeTrialInfo[freeTrialInfoIndex].Jsonize());

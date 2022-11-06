@@ -76,7 +76,7 @@ Authorizer& Authorizer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("providerARNs"))
   {
-    Array<JsonView> providerARNsJsonList = jsonValue.GetArray("providerARNs");
+    Aws::Utils::Array<JsonView> providerARNsJsonList = jsonValue.GetArray("providerARNs");
     for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
     {
       m_providerARNs.push_back(providerARNsJsonList[providerARNsIndex].AsString());
@@ -152,7 +152,7 @@ JsonValue Authorizer::Jsonize() const
 
   if(m_providerARNsHasBeenSet)
   {
-   Array<JsonValue> providerARNsJsonList(m_providerARNs.size());
+   Aws::Utils::Array<JsonValue> providerARNsJsonList(m_providerARNs.size());
    for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
    {
      providerARNsJsonList[providerARNsIndex].AsString(m_providerARNs[providerARNsIndex]);

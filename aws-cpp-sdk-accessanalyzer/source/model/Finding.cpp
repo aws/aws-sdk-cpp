@@ -82,7 +82,7 @@ Finding& Finding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("action"))
   {
-    Array<JsonView> actionJsonList = jsonValue.GetArray("action");
+    Aws::Utils::Array<JsonView> actionJsonList = jsonValue.GetArray("action");
     for(unsigned actionIndex = 0; actionIndex < actionJsonList.GetLength(); ++actionIndex)
     {
       m_action.push_back(actionJsonList[actionIndex].AsString());
@@ -165,7 +165,7 @@ Finding& Finding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
@@ -199,7 +199,7 @@ JsonValue Finding::Jsonize() const
 
   if(m_actionHasBeenSet)
   {
-   Array<JsonValue> actionJsonList(m_action.size());
+   Aws::Utils::Array<JsonValue> actionJsonList(m_action.size());
    for(unsigned actionIndex = 0; actionIndex < actionJsonList.GetLength(); ++actionIndex)
    {
      actionJsonList[actionIndex].AsString(m_action[actionIndex]);
@@ -270,7 +270,7 @@ JsonValue Finding::Jsonize() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());

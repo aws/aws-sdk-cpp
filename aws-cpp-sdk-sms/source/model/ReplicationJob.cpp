@@ -200,7 +200,7 @@ ReplicationJob& ReplicationJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("replicationRunList"))
   {
-    Array<JsonView> replicationRunListJsonList = jsonValue.GetArray("replicationRunList");
+    Aws::Utils::Array<JsonView> replicationRunListJsonList = jsonValue.GetArray("replicationRunList");
     for(unsigned replicationRunListIndex = 0; replicationRunListIndex < replicationRunListJsonList.GetLength(); ++replicationRunListIndex)
     {
       m_replicationRunList.push_back(replicationRunListJsonList[replicationRunListIndex].AsObject());
@@ -314,7 +314,7 @@ JsonValue ReplicationJob::Jsonize() const
 
   if(m_replicationRunListHasBeenSet)
   {
-   Array<JsonValue> replicationRunListJsonList(m_replicationRunList.size());
+   Aws::Utils::Array<JsonValue> replicationRunListJsonList(m_replicationRunList.size());
    for(unsigned replicationRunListIndex = 0; replicationRunListIndex < replicationRunListJsonList.GetLength(); ++replicationRunListIndex)
    {
      replicationRunListJsonList[replicationRunListIndex].AsObject(m_replicationRunList[replicationRunListIndex].Jsonize());

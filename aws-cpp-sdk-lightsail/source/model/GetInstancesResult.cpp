@@ -30,7 +30,7 @@ GetInstancesResult& GetInstancesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instances"))
   {
-    Array<JsonView> instancesJsonList = jsonValue.GetArray("instances");
+    Aws::Utils::Array<JsonView> instancesJsonList = jsonValue.GetArray("instances");
     for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
     {
       m_instances.push_back(instancesJsonList[instancesIndex].AsObject());

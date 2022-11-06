@@ -34,7 +34,7 @@ Aws::String DescribeServiceUpdatesRequest::SerializePayload() const
 
   if(m_clusterNamesHasBeenSet)
   {
-   Array<JsonValue> clusterNamesJsonList(m_clusterNames.size());
+   Aws::Utils::Array<JsonValue> clusterNamesJsonList(m_clusterNames.size());
    for(unsigned clusterNamesIndex = 0; clusterNamesIndex < clusterNamesJsonList.GetLength(); ++clusterNamesIndex)
    {
      clusterNamesJsonList[clusterNamesIndex].AsString(m_clusterNames[clusterNamesIndex]);
@@ -45,7 +45,7 @@ Aws::String DescribeServiceUpdatesRequest::SerializePayload() const
 
   if(m_statusHasBeenSet)
   {
-   Array<JsonValue> statusJsonList(m_status.size());
+   Aws::Utils::Array<JsonValue> statusJsonList(m_status.size());
    for(unsigned statusIndex = 0; statusIndex < statusJsonList.GetLength(); ++statusIndex)
    {
      statusJsonList[statusIndex].AsString(ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(m_status[statusIndex]));

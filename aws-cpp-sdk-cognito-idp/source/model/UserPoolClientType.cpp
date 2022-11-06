@@ -167,7 +167,7 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReadAttributes"))
   {
-    Array<JsonView> readAttributesJsonList = jsonValue.GetArray("ReadAttributes");
+    Aws::Utils::Array<JsonView> readAttributesJsonList = jsonValue.GetArray("ReadAttributes");
     for(unsigned readAttributesIndex = 0; readAttributesIndex < readAttributesJsonList.GetLength(); ++readAttributesIndex)
     {
       m_readAttributes.push_back(readAttributesJsonList[readAttributesIndex].AsString());
@@ -177,7 +177,7 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("WriteAttributes"))
   {
-    Array<JsonView> writeAttributesJsonList = jsonValue.GetArray("WriteAttributes");
+    Aws::Utils::Array<JsonView> writeAttributesJsonList = jsonValue.GetArray("WriteAttributes");
     for(unsigned writeAttributesIndex = 0; writeAttributesIndex < writeAttributesJsonList.GetLength(); ++writeAttributesIndex)
     {
       m_writeAttributes.push_back(writeAttributesJsonList[writeAttributesIndex].AsString());
@@ -187,7 +187,7 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExplicitAuthFlows"))
   {
-    Array<JsonView> explicitAuthFlowsJsonList = jsonValue.GetArray("ExplicitAuthFlows");
+    Aws::Utils::Array<JsonView> explicitAuthFlowsJsonList = jsonValue.GetArray("ExplicitAuthFlows");
     for(unsigned explicitAuthFlowsIndex = 0; explicitAuthFlowsIndex < explicitAuthFlowsJsonList.GetLength(); ++explicitAuthFlowsIndex)
     {
       m_explicitAuthFlows.push_back(ExplicitAuthFlowsTypeMapper::GetExplicitAuthFlowsTypeForName(explicitAuthFlowsJsonList[explicitAuthFlowsIndex].AsString()));
@@ -197,7 +197,7 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedIdentityProviders"))
   {
-    Array<JsonView> supportedIdentityProvidersJsonList = jsonValue.GetArray("SupportedIdentityProviders");
+    Aws::Utils::Array<JsonView> supportedIdentityProvidersJsonList = jsonValue.GetArray("SupportedIdentityProviders");
     for(unsigned supportedIdentityProvidersIndex = 0; supportedIdentityProvidersIndex < supportedIdentityProvidersJsonList.GetLength(); ++supportedIdentityProvidersIndex)
     {
       m_supportedIdentityProviders.push_back(supportedIdentityProvidersJsonList[supportedIdentityProvidersIndex].AsString());
@@ -207,7 +207,7 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CallbackURLs"))
   {
-    Array<JsonView> callbackURLsJsonList = jsonValue.GetArray("CallbackURLs");
+    Aws::Utils::Array<JsonView> callbackURLsJsonList = jsonValue.GetArray("CallbackURLs");
     for(unsigned callbackURLsIndex = 0; callbackURLsIndex < callbackURLsJsonList.GetLength(); ++callbackURLsIndex)
     {
       m_callbackURLs.push_back(callbackURLsJsonList[callbackURLsIndex].AsString());
@@ -217,7 +217,7 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LogoutURLs"))
   {
-    Array<JsonView> logoutURLsJsonList = jsonValue.GetArray("LogoutURLs");
+    Aws::Utils::Array<JsonView> logoutURLsJsonList = jsonValue.GetArray("LogoutURLs");
     for(unsigned logoutURLsIndex = 0; logoutURLsIndex < logoutURLsJsonList.GetLength(); ++logoutURLsIndex)
     {
       m_logoutURLs.push_back(logoutURLsJsonList[logoutURLsIndex].AsString());
@@ -234,7 +234,7 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AllowedOAuthFlows"))
   {
-    Array<JsonView> allowedOAuthFlowsJsonList = jsonValue.GetArray("AllowedOAuthFlows");
+    Aws::Utils::Array<JsonView> allowedOAuthFlowsJsonList = jsonValue.GetArray("AllowedOAuthFlows");
     for(unsigned allowedOAuthFlowsIndex = 0; allowedOAuthFlowsIndex < allowedOAuthFlowsJsonList.GetLength(); ++allowedOAuthFlowsIndex)
     {
       m_allowedOAuthFlows.push_back(OAuthFlowTypeMapper::GetOAuthFlowTypeForName(allowedOAuthFlowsJsonList[allowedOAuthFlowsIndex].AsString()));
@@ -244,7 +244,7 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AllowedOAuthScopes"))
   {
-    Array<JsonView> allowedOAuthScopesJsonList = jsonValue.GetArray("AllowedOAuthScopes");
+    Aws::Utils::Array<JsonView> allowedOAuthScopesJsonList = jsonValue.GetArray("AllowedOAuthScopes");
     for(unsigned allowedOAuthScopesIndex = 0; allowedOAuthScopesIndex < allowedOAuthScopesJsonList.GetLength(); ++allowedOAuthScopesIndex)
     {
       m_allowedOAuthScopes.push_back(allowedOAuthScopesJsonList[allowedOAuthScopesIndex].AsString());
@@ -361,7 +361,7 @@ JsonValue UserPoolClientType::Jsonize() const
 
   if(m_readAttributesHasBeenSet)
   {
-   Array<JsonValue> readAttributesJsonList(m_readAttributes.size());
+   Aws::Utils::Array<JsonValue> readAttributesJsonList(m_readAttributes.size());
    for(unsigned readAttributesIndex = 0; readAttributesIndex < readAttributesJsonList.GetLength(); ++readAttributesIndex)
    {
      readAttributesJsonList[readAttributesIndex].AsString(m_readAttributes[readAttributesIndex]);
@@ -372,7 +372,7 @@ JsonValue UserPoolClientType::Jsonize() const
 
   if(m_writeAttributesHasBeenSet)
   {
-   Array<JsonValue> writeAttributesJsonList(m_writeAttributes.size());
+   Aws::Utils::Array<JsonValue> writeAttributesJsonList(m_writeAttributes.size());
    for(unsigned writeAttributesIndex = 0; writeAttributesIndex < writeAttributesJsonList.GetLength(); ++writeAttributesIndex)
    {
      writeAttributesJsonList[writeAttributesIndex].AsString(m_writeAttributes[writeAttributesIndex]);
@@ -383,7 +383,7 @@ JsonValue UserPoolClientType::Jsonize() const
 
   if(m_explicitAuthFlowsHasBeenSet)
   {
-   Array<JsonValue> explicitAuthFlowsJsonList(m_explicitAuthFlows.size());
+   Aws::Utils::Array<JsonValue> explicitAuthFlowsJsonList(m_explicitAuthFlows.size());
    for(unsigned explicitAuthFlowsIndex = 0; explicitAuthFlowsIndex < explicitAuthFlowsJsonList.GetLength(); ++explicitAuthFlowsIndex)
    {
      explicitAuthFlowsJsonList[explicitAuthFlowsIndex].AsString(ExplicitAuthFlowsTypeMapper::GetNameForExplicitAuthFlowsType(m_explicitAuthFlows[explicitAuthFlowsIndex]));
@@ -394,7 +394,7 @@ JsonValue UserPoolClientType::Jsonize() const
 
   if(m_supportedIdentityProvidersHasBeenSet)
   {
-   Array<JsonValue> supportedIdentityProvidersJsonList(m_supportedIdentityProviders.size());
+   Aws::Utils::Array<JsonValue> supportedIdentityProvidersJsonList(m_supportedIdentityProviders.size());
    for(unsigned supportedIdentityProvidersIndex = 0; supportedIdentityProvidersIndex < supportedIdentityProvidersJsonList.GetLength(); ++supportedIdentityProvidersIndex)
    {
      supportedIdentityProvidersJsonList[supportedIdentityProvidersIndex].AsString(m_supportedIdentityProviders[supportedIdentityProvidersIndex]);
@@ -405,7 +405,7 @@ JsonValue UserPoolClientType::Jsonize() const
 
   if(m_callbackURLsHasBeenSet)
   {
-   Array<JsonValue> callbackURLsJsonList(m_callbackURLs.size());
+   Aws::Utils::Array<JsonValue> callbackURLsJsonList(m_callbackURLs.size());
    for(unsigned callbackURLsIndex = 0; callbackURLsIndex < callbackURLsJsonList.GetLength(); ++callbackURLsIndex)
    {
      callbackURLsJsonList[callbackURLsIndex].AsString(m_callbackURLs[callbackURLsIndex]);
@@ -416,7 +416,7 @@ JsonValue UserPoolClientType::Jsonize() const
 
   if(m_logoutURLsHasBeenSet)
   {
-   Array<JsonValue> logoutURLsJsonList(m_logoutURLs.size());
+   Aws::Utils::Array<JsonValue> logoutURLsJsonList(m_logoutURLs.size());
    for(unsigned logoutURLsIndex = 0; logoutURLsIndex < logoutURLsJsonList.GetLength(); ++logoutURLsIndex)
    {
      logoutURLsJsonList[logoutURLsIndex].AsString(m_logoutURLs[logoutURLsIndex]);
@@ -433,7 +433,7 @@ JsonValue UserPoolClientType::Jsonize() const
 
   if(m_allowedOAuthFlowsHasBeenSet)
   {
-   Array<JsonValue> allowedOAuthFlowsJsonList(m_allowedOAuthFlows.size());
+   Aws::Utils::Array<JsonValue> allowedOAuthFlowsJsonList(m_allowedOAuthFlows.size());
    for(unsigned allowedOAuthFlowsIndex = 0; allowedOAuthFlowsIndex < allowedOAuthFlowsJsonList.GetLength(); ++allowedOAuthFlowsIndex)
    {
      allowedOAuthFlowsJsonList[allowedOAuthFlowsIndex].AsString(OAuthFlowTypeMapper::GetNameForOAuthFlowType(m_allowedOAuthFlows[allowedOAuthFlowsIndex]));
@@ -444,7 +444,7 @@ JsonValue UserPoolClientType::Jsonize() const
 
   if(m_allowedOAuthScopesHasBeenSet)
   {
-   Array<JsonValue> allowedOAuthScopesJsonList(m_allowedOAuthScopes.size());
+   Aws::Utils::Array<JsonValue> allowedOAuthScopesJsonList(m_allowedOAuthScopes.size());
    for(unsigned allowedOAuthScopesIndex = 0; allowedOAuthScopesIndex < allowedOAuthScopesJsonList.GetLength(); ++allowedOAuthScopesIndex)
    {
      allowedOAuthScopesJsonList[allowedOAuthScopesIndex].AsString(m_allowedOAuthScopes[allowedOAuthScopesIndex]);

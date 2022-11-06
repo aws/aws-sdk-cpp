@@ -39,7 +39,7 @@ InstanceResizePolicy& InstanceResizePolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstancesToTerminate"))
   {
-    Array<JsonView> instancesToTerminateJsonList = jsonValue.GetArray("InstancesToTerminate");
+    Aws::Utils::Array<JsonView> instancesToTerminateJsonList = jsonValue.GetArray("InstancesToTerminate");
     for(unsigned instancesToTerminateIndex = 0; instancesToTerminateIndex < instancesToTerminateJsonList.GetLength(); ++instancesToTerminateIndex)
     {
       m_instancesToTerminate.push_back(instancesToTerminateJsonList[instancesToTerminateIndex].AsString());
@@ -49,7 +49,7 @@ InstanceResizePolicy& InstanceResizePolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstancesToProtect"))
   {
-    Array<JsonView> instancesToProtectJsonList = jsonValue.GetArray("InstancesToProtect");
+    Aws::Utils::Array<JsonView> instancesToProtectJsonList = jsonValue.GetArray("InstancesToProtect");
     for(unsigned instancesToProtectIndex = 0; instancesToProtectIndex < instancesToProtectJsonList.GetLength(); ++instancesToProtectIndex)
     {
       m_instancesToProtect.push_back(instancesToProtectJsonList[instancesToProtectIndex].AsString());
@@ -73,7 +73,7 @@ JsonValue InstanceResizePolicy::Jsonize() const
 
   if(m_instancesToTerminateHasBeenSet)
   {
-   Array<JsonValue> instancesToTerminateJsonList(m_instancesToTerminate.size());
+   Aws::Utils::Array<JsonValue> instancesToTerminateJsonList(m_instancesToTerminate.size());
    for(unsigned instancesToTerminateIndex = 0; instancesToTerminateIndex < instancesToTerminateJsonList.GetLength(); ++instancesToTerminateIndex)
    {
      instancesToTerminateJsonList[instancesToTerminateIndex].AsString(m_instancesToTerminate[instancesToTerminateIndex]);
@@ -84,7 +84,7 @@ JsonValue InstanceResizePolicy::Jsonize() const
 
   if(m_instancesToProtectHasBeenSet)
   {
-   Array<JsonValue> instancesToProtectJsonList(m_instancesToProtect.size());
+   Aws::Utils::Array<JsonValue> instancesToProtectJsonList(m_instancesToProtect.size());
    for(unsigned instancesToProtectIndex = 0; instancesToProtectIndex < instancesToProtectJsonList.GetLength(); ++instancesToProtectIndex)
    {
      instancesToProtectJsonList[instancesToProtectIndex].AsString(m_instancesToProtect[instancesToProtectIndex]);

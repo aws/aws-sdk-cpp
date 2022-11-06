@@ -95,7 +95,7 @@ RuleDetail& RuleDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("outcomes"))
   {
-    Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
+    Aws::Utils::Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
     for(unsigned outcomesIndex = 0; outcomesIndex < outcomesJsonList.GetLength(); ++outcomesIndex)
     {
       m_outcomes.push_back(outcomesJsonList[outcomesIndex].AsString());
@@ -168,7 +168,7 @@ JsonValue RuleDetail::Jsonize() const
 
   if(m_outcomesHasBeenSet)
   {
-   Array<JsonValue> outcomesJsonList(m_outcomes.size());
+   Aws::Utils::Array<JsonValue> outcomesJsonList(m_outcomes.size());
    for(unsigned outcomesIndex = 0; outcomesIndex < outcomesJsonList.GetLength(); ++outcomesIndex)
    {
      outcomesJsonList[outcomesIndex].AsString(m_outcomes[outcomesIndex]);

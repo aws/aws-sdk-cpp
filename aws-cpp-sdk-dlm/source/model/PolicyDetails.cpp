@@ -56,7 +56,7 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResourceTypes"))
   {
-    Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
+    Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
     for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
     {
       m_resourceTypes.push_back(ResourceTypeValuesMapper::GetResourceTypeValuesForName(resourceTypesJsonList[resourceTypesIndex].AsString()));
@@ -66,7 +66,7 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResourceLocations"))
   {
-    Array<JsonView> resourceLocationsJsonList = jsonValue.GetArray("ResourceLocations");
+    Aws::Utils::Array<JsonView> resourceLocationsJsonList = jsonValue.GetArray("ResourceLocations");
     for(unsigned resourceLocationsIndex = 0; resourceLocationsIndex < resourceLocationsJsonList.GetLength(); ++resourceLocationsIndex)
     {
       m_resourceLocations.push_back(ResourceLocationValuesMapper::GetResourceLocationValuesForName(resourceLocationsJsonList[resourceLocationsIndex].AsString()));
@@ -76,7 +76,7 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetTags"))
   {
-    Array<JsonView> targetTagsJsonList = jsonValue.GetArray("TargetTags");
+    Aws::Utils::Array<JsonView> targetTagsJsonList = jsonValue.GetArray("TargetTags");
     for(unsigned targetTagsIndex = 0; targetTagsIndex < targetTagsJsonList.GetLength(); ++targetTagsIndex)
     {
       m_targetTags.push_back(targetTagsJsonList[targetTagsIndex].AsObject());
@@ -86,7 +86,7 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Schedules"))
   {
-    Array<JsonView> schedulesJsonList = jsonValue.GetArray("Schedules");
+    Aws::Utils::Array<JsonView> schedulesJsonList = jsonValue.GetArray("Schedules");
     for(unsigned schedulesIndex = 0; schedulesIndex < schedulesJsonList.GetLength(); ++schedulesIndex)
     {
       m_schedules.push_back(schedulesJsonList[schedulesIndex].AsObject());
@@ -110,7 +110,7 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
@@ -132,7 +132,7 @@ JsonValue PolicyDetails::Jsonize() const
 
   if(m_resourceTypesHasBeenSet)
   {
-   Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
    {
      resourceTypesJsonList[resourceTypesIndex].AsString(ResourceTypeValuesMapper::GetNameForResourceTypeValues(m_resourceTypes[resourceTypesIndex]));
@@ -143,7 +143,7 @@ JsonValue PolicyDetails::Jsonize() const
 
   if(m_resourceLocationsHasBeenSet)
   {
-   Array<JsonValue> resourceLocationsJsonList(m_resourceLocations.size());
+   Aws::Utils::Array<JsonValue> resourceLocationsJsonList(m_resourceLocations.size());
    for(unsigned resourceLocationsIndex = 0; resourceLocationsIndex < resourceLocationsJsonList.GetLength(); ++resourceLocationsIndex)
    {
      resourceLocationsJsonList[resourceLocationsIndex].AsString(ResourceLocationValuesMapper::GetNameForResourceLocationValues(m_resourceLocations[resourceLocationsIndex]));
@@ -154,7 +154,7 @@ JsonValue PolicyDetails::Jsonize() const
 
   if(m_targetTagsHasBeenSet)
   {
-   Array<JsonValue> targetTagsJsonList(m_targetTags.size());
+   Aws::Utils::Array<JsonValue> targetTagsJsonList(m_targetTags.size());
    for(unsigned targetTagsIndex = 0; targetTagsIndex < targetTagsJsonList.GetLength(); ++targetTagsIndex)
    {
      targetTagsJsonList[targetTagsIndex].AsObject(m_targetTags[targetTagsIndex].Jsonize());
@@ -165,7 +165,7 @@ JsonValue PolicyDetails::Jsonize() const
 
   if(m_schedulesHasBeenSet)
   {
-   Array<JsonValue> schedulesJsonList(m_schedules.size());
+   Aws::Utils::Array<JsonValue> schedulesJsonList(m_schedules.size());
    for(unsigned schedulesIndex = 0; schedulesIndex < schedulesJsonList.GetLength(); ++schedulesIndex)
    {
      schedulesJsonList[schedulesIndex].AsObject(m_schedules[schedulesIndex].Jsonize());
@@ -188,7 +188,7 @@ JsonValue PolicyDetails::Jsonize() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());

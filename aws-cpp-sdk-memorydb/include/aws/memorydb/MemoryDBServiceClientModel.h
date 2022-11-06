@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/memorydb/MemoryDBErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/memorydb/MemoryDBEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -84,6 +86,10 @@ namespace Aws
 
   namespace MemoryDB
   {
+    using MemoryDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MemoryDBEndpointProviderBase = Aws::MemoryDB::Endpoint::MemoryDBEndpointProviderBase;
+    using MemoryDBEndpointProvider = Aws::MemoryDB::Endpoint::MemoryDBEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in MemoryDBClient header */

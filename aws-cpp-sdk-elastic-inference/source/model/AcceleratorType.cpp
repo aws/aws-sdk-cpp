@@ -51,7 +51,7 @@ AcceleratorType& AcceleratorType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("throughputInfo"))
   {
-    Array<JsonView> throughputInfoJsonList = jsonValue.GetArray("throughputInfo");
+    Aws::Utils::Array<JsonView> throughputInfoJsonList = jsonValue.GetArray("throughputInfo");
     for(unsigned throughputInfoIndex = 0; throughputInfoIndex < throughputInfoJsonList.GetLength(); ++throughputInfoIndex)
     {
       m_throughputInfo.push_back(throughputInfoJsonList[throughputInfoIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue AcceleratorType::Jsonize() const
 
   if(m_throughputInfoHasBeenSet)
   {
-   Array<JsonValue> throughputInfoJsonList(m_throughputInfo.size());
+   Aws::Utils::Array<JsonValue> throughputInfoJsonList(m_throughputInfo.size());
    for(unsigned throughputInfoIndex = 0; throughputInfoIndex < throughputInfoJsonList.GetLength(); ++throughputInfoIndex)
    {
      throughputInfoJsonList[throughputInfoIndex].AsObject(m_throughputInfo[throughputInfoIndex].Jsonize());

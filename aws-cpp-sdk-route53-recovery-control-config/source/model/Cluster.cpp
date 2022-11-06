@@ -48,7 +48,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ClusterEndpoints"))
   {
-    Array<JsonView> clusterEndpointsJsonList = jsonValue.GetArray("ClusterEndpoints");
+    Aws::Utils::Array<JsonView> clusterEndpointsJsonList = jsonValue.GetArray("ClusterEndpoints");
     for(unsigned clusterEndpointsIndex = 0; clusterEndpointsIndex < clusterEndpointsJsonList.GetLength(); ++clusterEndpointsIndex)
     {
       m_clusterEndpoints.push_back(clusterEndpointsJsonList[clusterEndpointsIndex].AsObject());
@@ -85,7 +85,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_clusterEndpointsHasBeenSet)
   {
-   Array<JsonValue> clusterEndpointsJsonList(m_clusterEndpoints.size());
+   Aws::Utils::Array<JsonValue> clusterEndpointsJsonList(m_clusterEndpoints.size());
    for(unsigned clusterEndpointsIndex = 0; clusterEndpointsIndex < clusterEndpointsJsonList.GetLength(); ++clusterEndpointsIndex)
    {
      clusterEndpointsJsonList[clusterEndpointsIndex].AsObject(m_clusterEndpoints[clusterEndpointsIndex].Jsonize());

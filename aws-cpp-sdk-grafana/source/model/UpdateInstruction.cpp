@@ -55,7 +55,7 @@ UpdateInstruction& UpdateInstruction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("users"))
   {
-    Array<JsonView> usersJsonList = jsonValue.GetArray("users");
+    Aws::Utils::Array<JsonView> usersJsonList = jsonValue.GetArray("users");
     for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue UpdateInstruction::Jsonize() const
 
   if(m_usersHasBeenSet)
   {
-   Array<JsonValue> usersJsonList(m_users.size());
+   Aws::Utils::Array<JsonValue> usersJsonList(m_users.size());
    for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
    {
      usersJsonList[usersIndex].AsObject(m_users[usersIndex].Jsonize());

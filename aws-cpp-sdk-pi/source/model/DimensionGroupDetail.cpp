@@ -42,7 +42,7 @@ DimensionGroupDetail& DimensionGroupDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue DimensionGroupDetail::Jsonize() const
 
   if(m_dimensionsHasBeenSet)
   {
-   Array<JsonValue> dimensionsJsonList(m_dimensions.size());
+   Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
    {
      dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());

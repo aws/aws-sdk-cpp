@@ -41,7 +41,7 @@ SatelliteListItem& SatelliteListItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("groundStations"))
   {
-    Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
+    Aws::Utils::Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
     for(unsigned groundStationsIndex = 0; groundStationsIndex < groundStationsJsonList.GetLength(); ++groundStationsIndex)
     {
       m_groundStations.push_back(groundStationsJsonList[groundStationsIndex].AsString());
@@ -79,7 +79,7 @@ JsonValue SatelliteListItem::Jsonize() const
 
   if(m_groundStationsHasBeenSet)
   {
-   Array<JsonValue> groundStationsJsonList(m_groundStations.size());
+   Aws::Utils::Array<JsonValue> groundStationsJsonList(m_groundStations.size());
    for(unsigned groundStationsIndex = 0; groundStationsIndex < groundStationsJsonList.GetLength(); ++groundStationsIndex)
    {
      groundStationsJsonList[groundStationsIndex].AsString(m_groundStations[groundStationsIndex]);

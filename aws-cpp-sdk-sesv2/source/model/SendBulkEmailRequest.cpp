@@ -43,7 +43,7 @@ Aws::String SendBulkEmailRequest::SerializePayload() const
 
   if(m_replyToAddressesHasBeenSet)
   {
-   Array<JsonValue> replyToAddressesJsonList(m_replyToAddresses.size());
+   Aws::Utils::Array<JsonValue> replyToAddressesJsonList(m_replyToAddresses.size());
    for(unsigned replyToAddressesIndex = 0; replyToAddressesIndex < replyToAddressesJsonList.GetLength(); ++replyToAddressesIndex)
    {
      replyToAddressesJsonList[replyToAddressesIndex].AsString(m_replyToAddresses[replyToAddressesIndex]);
@@ -66,7 +66,7 @@ Aws::String SendBulkEmailRequest::SerializePayload() const
 
   if(m_defaultEmailTagsHasBeenSet)
   {
-   Array<JsonValue> defaultEmailTagsJsonList(m_defaultEmailTags.size());
+   Aws::Utils::Array<JsonValue> defaultEmailTagsJsonList(m_defaultEmailTags.size());
    for(unsigned defaultEmailTagsIndex = 0; defaultEmailTagsIndex < defaultEmailTagsJsonList.GetLength(); ++defaultEmailTagsIndex)
    {
      defaultEmailTagsJsonList[defaultEmailTagsIndex].AsObject(m_defaultEmailTags[defaultEmailTagsIndex].Jsonize());
@@ -83,7 +83,7 @@ Aws::String SendBulkEmailRequest::SerializePayload() const
 
   if(m_bulkEmailEntriesHasBeenSet)
   {
-   Array<JsonValue> bulkEmailEntriesJsonList(m_bulkEmailEntries.size());
+   Aws::Utils::Array<JsonValue> bulkEmailEntriesJsonList(m_bulkEmailEntries.size());
    for(unsigned bulkEmailEntriesIndex = 0; bulkEmailEntriesIndex < bulkEmailEntriesJsonList.GetLength(); ++bulkEmailEntriesIndex)
    {
      bulkEmailEntriesJsonList[bulkEmailEntriesIndex].AsObject(m_bulkEmailEntries[bulkEmailEntriesIndex].Jsonize());

@@ -33,7 +33,7 @@ ConformancePackComplianceScoresFilters& ConformancePackComplianceScoresFilters::
 {
   if(jsonValue.ValueExists("ConformancePackNames"))
   {
-    Array<JsonView> conformancePackNamesJsonList = jsonValue.GetArray("ConformancePackNames");
+    Aws::Utils::Array<JsonView> conformancePackNamesJsonList = jsonValue.GetArray("ConformancePackNames");
     for(unsigned conformancePackNamesIndex = 0; conformancePackNamesIndex < conformancePackNamesJsonList.GetLength(); ++conformancePackNamesIndex)
     {
       m_conformancePackNames.push_back(conformancePackNamesJsonList[conformancePackNamesIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue ConformancePackComplianceScoresFilters::Jsonize() const
 
   if(m_conformancePackNamesHasBeenSet)
   {
-   Array<JsonValue> conformancePackNamesJsonList(m_conformancePackNames.size());
+   Aws::Utils::Array<JsonValue> conformancePackNamesJsonList(m_conformancePackNames.size());
    for(unsigned conformancePackNamesIndex = 0; conformancePackNamesIndex < conformancePackNamesJsonList.GetLength(); ++conformancePackNamesIndex)
    {
      conformancePackNamesJsonList[conformancePackNamesIndex].AsString(m_conformancePackNames[conformancePackNamesIndex]);

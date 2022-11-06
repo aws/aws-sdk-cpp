@@ -84,7 +84,7 @@ Resource& Resource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("stringSetValue"))
   {
-    Array<JsonView> stringSetValueJsonList = jsonValue.GetArray("stringSetValue");
+    Aws::Utils::Array<JsonView> stringSetValueJsonList = jsonValue.GetArray("stringSetValue");
     for(unsigned stringSetValueIndex = 0; stringSetValueIndex < stringSetValueJsonList.GetLength(); ++stringSetValueIndex)
     {
       m_stringSetValue.push_back(stringSetValueJsonList[stringSetValueIndex].AsString());
@@ -131,7 +131,7 @@ JsonValue Resource::Jsonize() const
 
   if(m_stringSetValueHasBeenSet)
   {
-   Array<JsonValue> stringSetValueJsonList(m_stringSetValue.size());
+   Aws::Utils::Array<JsonValue> stringSetValueJsonList(m_stringSetValue.size());
    for(unsigned stringSetValueIndex = 0; stringSetValueIndex < stringSetValueJsonList.GetLength(); ++stringSetValueIndex)
    {
      stringSetValueJsonList[stringSetValueIndex].AsString(m_stringSetValue[stringSetValueIndex]);

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -87,6 +89,10 @@ namespace Aws
 
   namespace ChimeSDKMessaging
   {
+    using ChimeSDKMessagingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeSDKMessagingEndpointProviderBase = Aws::ChimeSDKMessaging::Endpoint::ChimeSDKMessagingEndpointProviderBase;
+    using ChimeSDKMessagingEndpointProvider = Aws::ChimeSDKMessaging::Endpoint::ChimeSDKMessagingEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ChimeSDKMessagingClient header */

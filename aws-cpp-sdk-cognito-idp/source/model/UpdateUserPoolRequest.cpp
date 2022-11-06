@@ -66,7 +66,7 @@ Aws::String UpdateUserPoolRequest::SerializePayload() const
 
   if(m_autoVerifiedAttributesHasBeenSet)
   {
-   Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
+   Aws::Utils::Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
    for(unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength(); ++autoVerifiedAttributesIndex)
    {
      autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString(VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(m_autoVerifiedAttributes[autoVerifiedAttributesIndex]));

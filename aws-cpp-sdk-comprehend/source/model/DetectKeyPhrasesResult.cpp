@@ -30,7 +30,7 @@ DetectKeyPhrasesResult& DetectKeyPhrasesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("KeyPhrases"))
   {
-    Array<JsonView> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
+    Aws::Utils::Array<JsonView> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
     for(unsigned keyPhrasesIndex = 0; keyPhrasesIndex < keyPhrasesJsonList.GetLength(); ++keyPhrasesIndex)
     {
       m_keyPhrases.push_back(keyPhrasesJsonList[keyPhrasesIndex].AsObject());

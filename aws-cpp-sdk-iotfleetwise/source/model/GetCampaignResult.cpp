@@ -120,7 +120,7 @@ GetCampaignResult& GetCampaignResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("signalsToCollect"))
   {
-    Array<JsonView> signalsToCollectJsonList = jsonValue.GetArray("signalsToCollect");
+    Aws::Utils::Array<JsonView> signalsToCollectJsonList = jsonValue.GetArray("signalsToCollect");
     for(unsigned signalsToCollectIndex = 0; signalsToCollectIndex < signalsToCollectJsonList.GetLength(); ++signalsToCollectIndex)
     {
       m_signalsToCollect.push_back(signalsToCollectJsonList[signalsToCollectIndex].AsObject());
@@ -135,7 +135,7 @@ GetCampaignResult& GetCampaignResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("dataExtraDimensions"))
   {
-    Array<JsonView> dataExtraDimensionsJsonList = jsonValue.GetArray("dataExtraDimensions");
+    Aws::Utils::Array<JsonView> dataExtraDimensionsJsonList = jsonValue.GetArray("dataExtraDimensions");
     for(unsigned dataExtraDimensionsIndex = 0; dataExtraDimensionsIndex < dataExtraDimensionsJsonList.GetLength(); ++dataExtraDimensionsIndex)
     {
       m_dataExtraDimensions.push_back(dataExtraDimensionsJsonList[dataExtraDimensionsIndex].AsString());

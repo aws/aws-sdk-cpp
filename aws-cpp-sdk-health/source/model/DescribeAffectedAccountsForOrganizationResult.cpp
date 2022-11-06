@@ -32,7 +32,7 @@ DescribeAffectedAccountsForOrganizationResult& DescribeAffectedAccountsForOrgani
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("affectedAccounts"))
   {
-    Array<JsonView> affectedAccountsJsonList = jsonValue.GetArray("affectedAccounts");
+    Aws::Utils::Array<JsonView> affectedAccountsJsonList = jsonValue.GetArray("affectedAccounts");
     for(unsigned affectedAccountsIndex = 0; affectedAccountsIndex < affectedAccountsJsonList.GetLength(); ++affectedAccountsIndex)
     {
       m_affectedAccounts.push_back(affectedAccountsJsonList[affectedAccountsIndex].AsString());

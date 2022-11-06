@@ -45,7 +45,7 @@ Aws::String RestoreVolumeFromSnapshotRequest::SerializePayload() const
 
   if(m_optionsHasBeenSet)
   {
-   Array<JsonValue> optionsJsonList(m_options.size());
+   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
    {
      optionsJsonList[optionsIndex].AsString(RestoreOpenZFSVolumeOptionMapper::GetNameForRestoreOpenZFSVolumeOption(m_options[optionsIndex]));

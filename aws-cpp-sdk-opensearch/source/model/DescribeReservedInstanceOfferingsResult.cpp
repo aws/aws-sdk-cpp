@@ -36,7 +36,7 @@ DescribeReservedInstanceOfferingsResult& DescribeReservedInstanceOfferingsResult
 
   if(jsonValue.ValueExists("ReservedInstanceOfferings"))
   {
-    Array<JsonView> reservedInstanceOfferingsJsonList = jsonValue.GetArray("ReservedInstanceOfferings");
+    Aws::Utils::Array<JsonView> reservedInstanceOfferingsJsonList = jsonValue.GetArray("ReservedInstanceOfferings");
     for(unsigned reservedInstanceOfferingsIndex = 0; reservedInstanceOfferingsIndex < reservedInstanceOfferingsJsonList.GetLength(); ++reservedInstanceOfferingsIndex)
     {
       m_reservedInstanceOfferings.push_back(reservedInstanceOfferingsJsonList[reservedInstanceOfferingsIndex].AsObject());

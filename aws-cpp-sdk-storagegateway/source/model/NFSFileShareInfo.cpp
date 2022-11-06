@@ -173,7 +173,7 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ClientList"))
   {
-    Array<JsonView> clientListJsonList = jsonValue.GetArray("ClientList");
+    Aws::Utils::Array<JsonView> clientListJsonList = jsonValue.GetArray("ClientList");
     for(unsigned clientListIndex = 0; clientListIndex < clientListJsonList.GetLength(); ++clientListIndex)
     {
       m_clientList.push_back(clientListJsonList[clientListIndex].AsString());
@@ -211,7 +211,7 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -341,7 +341,7 @@ JsonValue NFSFileShareInfo::Jsonize() const
 
   if(m_clientListHasBeenSet)
   {
-   Array<JsonValue> clientListJsonList(m_clientList.size());
+   Aws::Utils::Array<JsonValue> clientListJsonList(m_clientList.size());
    for(unsigned clientListIndex = 0; clientListIndex < clientListJsonList.GetLength(); ++clientListIndex)
    {
      clientListJsonList[clientListIndex].AsString(m_clientList[clientListIndex]);
@@ -376,7 +376,7 @@ JsonValue NFSFileShareInfo::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

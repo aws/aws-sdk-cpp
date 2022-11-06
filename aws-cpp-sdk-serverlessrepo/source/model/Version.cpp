@@ -65,7 +65,7 @@ Version& Version::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("parameterDefinitions"))
   {
-    Array<JsonView> parameterDefinitionsJsonList = jsonValue.GetArray("parameterDefinitions");
+    Aws::Utils::Array<JsonView> parameterDefinitionsJsonList = jsonValue.GetArray("parameterDefinitions");
     for(unsigned parameterDefinitionsIndex = 0; parameterDefinitionsIndex < parameterDefinitionsJsonList.GetLength(); ++parameterDefinitionsIndex)
     {
       m_parameterDefinitions.push_back(parameterDefinitionsJsonList[parameterDefinitionsIndex].AsObject());
@@ -75,7 +75,7 @@ Version& Version::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("requiredCapabilities"))
   {
-    Array<JsonView> requiredCapabilitiesJsonList = jsonValue.GetArray("requiredCapabilities");
+    Aws::Utils::Array<JsonView> requiredCapabilitiesJsonList = jsonValue.GetArray("requiredCapabilities");
     for(unsigned requiredCapabilitiesIndex = 0; requiredCapabilitiesIndex < requiredCapabilitiesJsonList.GetLength(); ++requiredCapabilitiesIndex)
     {
       m_requiredCapabilities.push_back(CapabilityMapper::GetCapabilityForName(requiredCapabilitiesJsonList[requiredCapabilitiesIndex].AsString()));
@@ -139,7 +139,7 @@ JsonValue Version::Jsonize() const
 
   if(m_parameterDefinitionsHasBeenSet)
   {
-   Array<JsonValue> parameterDefinitionsJsonList(m_parameterDefinitions.size());
+   Aws::Utils::Array<JsonValue> parameterDefinitionsJsonList(m_parameterDefinitions.size());
    for(unsigned parameterDefinitionsIndex = 0; parameterDefinitionsIndex < parameterDefinitionsJsonList.GetLength(); ++parameterDefinitionsIndex)
    {
      parameterDefinitionsJsonList[parameterDefinitionsIndex].AsObject(m_parameterDefinitions[parameterDefinitionsIndex].Jsonize());
@@ -150,7 +150,7 @@ JsonValue Version::Jsonize() const
 
   if(m_requiredCapabilitiesHasBeenSet)
   {
-   Array<JsonValue> requiredCapabilitiesJsonList(m_requiredCapabilities.size());
+   Aws::Utils::Array<JsonValue> requiredCapabilitiesJsonList(m_requiredCapabilities.size());
    for(unsigned requiredCapabilitiesIndex = 0; requiredCapabilitiesIndex < requiredCapabilitiesJsonList.GetLength(); ++requiredCapabilitiesIndex)
    {
      requiredCapabilitiesJsonList[requiredCapabilitiesIndex].AsString(CapabilityMapper::GetNameForCapability(m_requiredCapabilities[requiredCapabilitiesIndex]));

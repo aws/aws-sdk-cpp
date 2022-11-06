@@ -30,7 +30,7 @@ DescribeAutomationStepExecutionsResult& DescribeAutomationStepExecutionsResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StepExecutions"))
   {
-    Array<JsonView> stepExecutionsJsonList = jsonValue.GetArray("StepExecutions");
+    Aws::Utils::Array<JsonView> stepExecutionsJsonList = jsonValue.GetArray("StepExecutions");
     for(unsigned stepExecutionsIndex = 0; stepExecutionsIndex < stepExecutionsJsonList.GetLength(); ++stepExecutionsIndex)
     {
       m_stepExecutions.push_back(stepExecutionsJsonList[stepExecutionsIndex].AsObject());

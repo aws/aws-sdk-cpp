@@ -40,22 +40,48 @@ namespace TimestreamWrite
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        TimestreamWriteClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        TimestreamWriteClient(const Aws::TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration = Aws::TimestreamWrite::TimestreamWriteClientConfiguration(),
+                              std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider = Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         TimestreamWriteClient(const Aws::Auth::AWSCredentials& credentials,
-                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider = Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration = Aws::TimestreamWrite::TimestreamWriteClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         TimestreamWriteClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider = Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration = Aws::TimestreamWrite::TimestreamWriteClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TimestreamWriteClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TimestreamWriteClient(const Aws::Auth::AWSCredentials& credentials,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        TimestreamWriteClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~TimestreamWriteClient();
 
 
@@ -434,15 +460,14 @@ namespace TimestreamWrite
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<TimestreamWriteEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-      void LoadTimestreamWriteSpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const TimestreamWriteClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-      bool m_enableEndpointDiscovery = false;
-      Aws::String m_configScheme;
+      TimestreamWriteClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<TimestreamWriteEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace TimestreamWrite

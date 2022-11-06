@@ -30,7 +30,7 @@ ListAppComponentCompliancesResult& ListAppComponentCompliancesResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("componentCompliances"))
   {
-    Array<JsonView> componentCompliancesJsonList = jsonValue.GetArray("componentCompliances");
+    Aws::Utils::Array<JsonView> componentCompliancesJsonList = jsonValue.GetArray("componentCompliances");
     for(unsigned componentCompliancesIndex = 0; componentCompliancesIndex < componentCompliancesJsonList.GetLength(); ++componentCompliancesIndex)
     {
       m_componentCompliances.push_back(componentCompliancesJsonList[componentCompliancesIndex].AsObject());

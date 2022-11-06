@@ -44,7 +44,7 @@ ListResolverRulesResult& ListResolverRulesResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("ResolverRules"))
   {
-    Array<JsonView> resolverRulesJsonList = jsonValue.GetArray("ResolverRules");
+    Aws::Utils::Array<JsonView> resolverRulesJsonList = jsonValue.GetArray("ResolverRules");
     for(unsigned resolverRulesIndex = 0; resolverRulesIndex < resolverRulesJsonList.GetLength(); ++resolverRulesIndex)
     {
       m_resolverRules.push_back(resolverRulesJsonList[resolverRulesIndex].AsObject());

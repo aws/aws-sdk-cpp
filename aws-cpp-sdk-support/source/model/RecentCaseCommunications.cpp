@@ -35,7 +35,7 @@ RecentCaseCommunications& RecentCaseCommunications::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("communications"))
   {
-    Array<JsonView> communicationsJsonList = jsonValue.GetArray("communications");
+    Aws::Utils::Array<JsonView> communicationsJsonList = jsonValue.GetArray("communications");
     for(unsigned communicationsIndex = 0; communicationsIndex < communicationsJsonList.GetLength(); ++communicationsIndex)
     {
       m_communications.push_back(communicationsJsonList[communicationsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue RecentCaseCommunications::Jsonize() const
 
   if(m_communicationsHasBeenSet)
   {
-   Array<JsonValue> communicationsJsonList(m_communications.size());
+   Aws::Utils::Array<JsonValue> communicationsJsonList(m_communications.size());
    for(unsigned communicationsIndex = 0; communicationsIndex < communicationsJsonList.GetLength(); ++communicationsIndex)
    {
      communicationsJsonList[communicationsIndex].AsObject(m_communications[communicationsIndex].Jsonize());

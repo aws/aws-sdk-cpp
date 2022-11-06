@@ -51,7 +51,7 @@ AddonInfo& AddonInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("addonVersions"))
   {
-    Array<JsonView> addonVersionsJsonList = jsonValue.GetArray("addonVersions");
+    Aws::Utils::Array<JsonView> addonVersionsJsonList = jsonValue.GetArray("addonVersions");
     for(unsigned addonVersionsIndex = 0; addonVersionsIndex < addonVersionsJsonList.GetLength(); ++addonVersionsIndex)
     {
       m_addonVersions.push_back(addonVersionsJsonList[addonVersionsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue AddonInfo::Jsonize() const
 
   if(m_addonVersionsHasBeenSet)
   {
-   Array<JsonValue> addonVersionsJsonList(m_addonVersions.size());
+   Aws::Utils::Array<JsonValue> addonVersionsJsonList(m_addonVersions.size());
    for(unsigned addonVersionsIndex = 0; addonVersionsIndex < addonVersionsJsonList.GetLength(); ++addonVersionsIndex)
    {
      addonVersionsJsonList[addonVersionsIndex].AsObject(m_addonVersions[addonVersionsIndex].Jsonize());

@@ -30,7 +30,7 @@ ListPortalsResult& ListPortalsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("portalSummaries"))
   {
-    Array<JsonView> portalSummariesJsonList = jsonValue.GetArray("portalSummaries");
+    Aws::Utils::Array<JsonView> portalSummariesJsonList = jsonValue.GetArray("portalSummaries");
     for(unsigned portalSummariesIndex = 0; portalSummariesIndex < portalSummariesJsonList.GetLength(); ++portalSummariesIndex)
     {
       m_portalSummaries.push_back(portalSummariesJsonList[portalSummariesIndex].AsObject());

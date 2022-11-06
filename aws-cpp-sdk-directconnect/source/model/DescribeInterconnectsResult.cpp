@@ -30,7 +30,7 @@ DescribeInterconnectsResult& DescribeInterconnectsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("interconnects"))
   {
-    Array<JsonView> interconnectsJsonList = jsonValue.GetArray("interconnects");
+    Aws::Utils::Array<JsonView> interconnectsJsonList = jsonValue.GetArray("interconnects");
     for(unsigned interconnectsIndex = 0; interconnectsIndex < interconnectsJsonList.GetLength(); ++interconnectsIndex)
     {
       m_interconnects.push_back(interconnectsJsonList[interconnectsIndex].AsObject());

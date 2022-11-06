@@ -30,7 +30,7 @@ ListContactReferencesResult& ListContactReferencesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReferenceSummaryList"))
   {
-    Array<JsonView> referenceSummaryListJsonList = jsonValue.GetArray("ReferenceSummaryList");
+    Aws::Utils::Array<JsonView> referenceSummaryListJsonList = jsonValue.GetArray("ReferenceSummaryList");
     for(unsigned referenceSummaryListIndex = 0; referenceSummaryListIndex < referenceSummaryListJsonList.GetLength(); ++referenceSummaryListIndex)
     {
       m_referenceSummaryList.push_back(referenceSummaryListJsonList[referenceSummaryListIndex].AsObject());

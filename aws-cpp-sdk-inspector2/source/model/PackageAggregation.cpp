@@ -41,7 +41,7 @@ PackageAggregation& PackageAggregation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("packageNames"))
   {
-    Array<JsonView> packageNamesJsonList = jsonValue.GetArray("packageNames");
+    Aws::Utils::Array<JsonView> packageNamesJsonList = jsonValue.GetArray("packageNames");
     for(unsigned packageNamesIndex = 0; packageNamesIndex < packageNamesJsonList.GetLength(); ++packageNamesIndex)
     {
       m_packageNames.push_back(packageNamesJsonList[packageNamesIndex].AsObject());
@@ -72,7 +72,7 @@ JsonValue PackageAggregation::Jsonize() const
 
   if(m_packageNamesHasBeenSet)
   {
-   Array<JsonValue> packageNamesJsonList(m_packageNames.size());
+   Aws::Utils::Array<JsonValue> packageNamesJsonList(m_packageNames.size());
    for(unsigned packageNamesIndex = 0; packageNamesIndex < packageNamesJsonList.GetLength(); ++packageNamesIndex)
    {
      packageNamesJsonList[packageNamesIndex].AsObject(m_packageNames[packageNamesIndex].Jsonize());

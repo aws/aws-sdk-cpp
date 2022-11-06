@@ -30,7 +30,7 @@ DescribeAssociationExecutionTargetsResult& DescribeAssociationExecutionTargetsRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AssociationExecutionTargets"))
   {
-    Array<JsonView> associationExecutionTargetsJsonList = jsonValue.GetArray("AssociationExecutionTargets");
+    Aws::Utils::Array<JsonView> associationExecutionTargetsJsonList = jsonValue.GetArray("AssociationExecutionTargets");
     for(unsigned associationExecutionTargetsIndex = 0; associationExecutionTargetsIndex < associationExecutionTargetsJsonList.GetLength(); ++associationExecutionTargetsIndex)
     {
       m_associationExecutionTargets.push_back(associationExecutionTargetsJsonList[associationExecutionTargetsIndex].AsObject());

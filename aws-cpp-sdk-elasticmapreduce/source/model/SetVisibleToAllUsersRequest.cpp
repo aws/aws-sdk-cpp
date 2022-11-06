@@ -25,7 +25,7 @@ Aws::String SetVisibleToAllUsersRequest::SerializePayload() const
 
   if(m_jobFlowIdsHasBeenSet)
   {
-   Array<JsonValue> jobFlowIdsJsonList(m_jobFlowIds.size());
+   Aws::Utils::Array<JsonValue> jobFlowIdsJsonList(m_jobFlowIds.size());
    for(unsigned jobFlowIdsIndex = 0; jobFlowIdsIndex < jobFlowIdsJsonList.GetLength(); ++jobFlowIdsIndex)
    {
      jobFlowIdsJsonList[jobFlowIdsIndex].AsString(m_jobFlowIds[jobFlowIdsIndex]);

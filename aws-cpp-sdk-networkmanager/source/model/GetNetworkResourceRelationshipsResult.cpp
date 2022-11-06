@@ -30,7 +30,7 @@ GetNetworkResourceRelationshipsResult& GetNetworkResourceRelationshipsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Relationships"))
   {
-    Array<JsonView> relationshipsJsonList = jsonValue.GetArray("Relationships");
+    Aws::Utils::Array<JsonView> relationshipsJsonList = jsonValue.GetArray("Relationships");
     for(unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex)
     {
       m_relationships.push_back(relationshipsJsonList[relationshipsIndex].AsObject());

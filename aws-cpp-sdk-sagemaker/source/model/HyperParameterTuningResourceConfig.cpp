@@ -86,7 +86,7 @@ HyperParameterTuningResourceConfig& HyperParameterTuningResourceConfig::operator
 
   if(jsonValue.ValueExists("InstanceConfigs"))
   {
-    Array<JsonView> instanceConfigsJsonList = jsonValue.GetArray("InstanceConfigs");
+    Aws::Utils::Array<JsonView> instanceConfigsJsonList = jsonValue.GetArray("InstanceConfigs");
     for(unsigned instanceConfigsIndex = 0; instanceConfigsIndex < instanceConfigsJsonList.GetLength(); ++instanceConfigsIndex)
     {
       m_instanceConfigs.push_back(instanceConfigsJsonList[instanceConfigsIndex].AsObject());
@@ -131,7 +131,7 @@ JsonValue HyperParameterTuningResourceConfig::Jsonize() const
 
   if(m_instanceConfigsHasBeenSet)
   {
-   Array<JsonValue> instanceConfigsJsonList(m_instanceConfigs.size());
+   Aws::Utils::Array<JsonValue> instanceConfigsJsonList(m_instanceConfigs.size());
    for(unsigned instanceConfigsIndex = 0; instanceConfigsIndex < instanceConfigsJsonList.GetLength(); ++instanceConfigsIndex)
    {
      instanceConfigsJsonList[instanceConfigsIndex].AsObject(m_instanceConfigs[instanceConfigsIndex].Jsonize());

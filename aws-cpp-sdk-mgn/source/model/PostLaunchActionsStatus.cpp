@@ -35,7 +35,7 @@ PostLaunchActionsStatus& PostLaunchActionsStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("postLaunchActionsLaunchStatusList"))
   {
-    Array<JsonView> postLaunchActionsLaunchStatusListJsonList = jsonValue.GetArray("postLaunchActionsLaunchStatusList");
+    Aws::Utils::Array<JsonView> postLaunchActionsLaunchStatusListJsonList = jsonValue.GetArray("postLaunchActionsLaunchStatusList");
     for(unsigned postLaunchActionsLaunchStatusListIndex = 0; postLaunchActionsLaunchStatusListIndex < postLaunchActionsLaunchStatusListJsonList.GetLength(); ++postLaunchActionsLaunchStatusListIndex)
     {
       m_postLaunchActionsLaunchStatusList.push_back(postLaunchActionsLaunchStatusListJsonList[postLaunchActionsLaunchStatusListIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue PostLaunchActionsStatus::Jsonize() const
 
   if(m_postLaunchActionsLaunchStatusListHasBeenSet)
   {
-   Array<JsonValue> postLaunchActionsLaunchStatusListJsonList(m_postLaunchActionsLaunchStatusList.size());
+   Aws::Utils::Array<JsonValue> postLaunchActionsLaunchStatusListJsonList(m_postLaunchActionsLaunchStatusList.size());
    for(unsigned postLaunchActionsLaunchStatusListIndex = 0; postLaunchActionsLaunchStatusListIndex < postLaunchActionsLaunchStatusListJsonList.GetLength(); ++postLaunchActionsLaunchStatusListIndex)
    {
      postLaunchActionsLaunchStatusListJsonList[postLaunchActionsLaunchStatusListIndex].AsObject(m_postLaunchActionsLaunchStatusList[postLaunchActionsLaunchStatusListIndex].Jsonize());

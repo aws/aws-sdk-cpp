@@ -37,7 +37,7 @@ UpsertRowsResult& UpsertRowsResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("rowIds"))
   {
-    Array<JsonView> rowIdsJsonList = jsonValue.GetArray("rowIds");
+    Aws::Utils::Array<JsonView> rowIdsJsonList = jsonValue.GetArray("rowIds");
     for(unsigned rowIdsIndex = 0; rowIdsIndex < rowIdsJsonList.GetLength(); ++rowIdsIndex)
     {
       m_rowIds.push_back(rowIdsJsonList[rowIdsIndex].AsString());
@@ -61,7 +61,7 @@ JsonValue UpsertRowsResult::Jsonize() const
 
   if(m_rowIdsHasBeenSet)
   {
-   Array<JsonValue> rowIdsJsonList(m_rowIds.size());
+   Aws::Utils::Array<JsonValue> rowIdsJsonList(m_rowIds.size());
    for(unsigned rowIdsIndex = 0; rowIdsIndex < rowIdsJsonList.GetLength(); ++rowIdsIndex)
    {
      rowIdsJsonList[rowIdsIndex].AsString(m_rowIds[rowIdsIndex]);

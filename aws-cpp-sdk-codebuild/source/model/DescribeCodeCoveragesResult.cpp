@@ -36,7 +36,7 @@ DescribeCodeCoveragesResult& DescribeCodeCoveragesResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("codeCoverages"))
   {
-    Array<JsonView> codeCoveragesJsonList = jsonValue.GetArray("codeCoverages");
+    Aws::Utils::Array<JsonView> codeCoveragesJsonList = jsonValue.GetArray("codeCoverages");
     for(unsigned codeCoveragesIndex = 0; codeCoveragesIndex < codeCoveragesJsonList.GetLength(); ++codeCoveragesIndex)
     {
       m_codeCoverages.push_back(codeCoveragesJsonList[codeCoveragesIndex].AsObject());

@@ -36,7 +36,7 @@ DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("SupportedEndpointTypes"))
   {
-    Array<JsonView> supportedEndpointTypesJsonList = jsonValue.GetArray("SupportedEndpointTypes");
+    Aws::Utils::Array<JsonView> supportedEndpointTypesJsonList = jsonValue.GetArray("SupportedEndpointTypes");
     for(unsigned supportedEndpointTypesIndex = 0; supportedEndpointTypesIndex < supportedEndpointTypesJsonList.GetLength(); ++supportedEndpointTypesIndex)
     {
       m_supportedEndpointTypes.push_back(supportedEndpointTypesJsonList[supportedEndpointTypesIndex].AsObject());

@@ -42,7 +42,7 @@ DescribeDimensionKeysResult& DescribeDimensionKeysResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("PartitionKeys"))
   {
-    Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
+    Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
     for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
     {
       m_partitionKeys.push_back(partitionKeysJsonList[partitionKeysIndex].AsObject());
@@ -51,7 +51,7 @@ DescribeDimensionKeysResult& DescribeDimensionKeysResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
+    Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
       m_keys.push_back(keysJsonList[keysIndex].AsObject());

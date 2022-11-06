@@ -35,22 +35,48 @@ namespace LookoutforVision
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LookoutforVisionClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LookoutforVisionClient(const Aws::LookoutforVision::LookoutforVisionClientConfiguration& clientConfiguration = Aws::LookoutforVision::LookoutforVisionClientConfiguration(),
+                               std::shared_ptr<LookoutforVisionEndpointProviderBase> endpointProvider = Aws::MakeShared<LookoutforVisionEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LookoutforVisionClient(const Aws::Auth::AWSCredentials& credentials,
-                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               std::shared_ptr<LookoutforVisionEndpointProviderBase> endpointProvider = Aws::MakeShared<LookoutforVisionEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::LookoutforVision::LookoutforVisionClientConfiguration& clientConfiguration = Aws::LookoutforVision::LookoutforVisionClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LookoutforVisionClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               std::shared_ptr<LookoutforVisionEndpointProviderBase> endpointProvider = Aws::MakeShared<LookoutforVisionEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::LookoutforVision::LookoutforVisionClientConfiguration& clientConfiguration = Aws::LookoutforVision::LookoutforVisionClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LookoutforVisionClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LookoutforVisionClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        LookoutforVisionClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~LookoutforVisionClient();
 
 
@@ -576,12 +602,13 @@ namespace LookoutforVision
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<LookoutforVisionEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const LookoutforVisionClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      LookoutforVisionClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<LookoutforVisionEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LookoutforVision

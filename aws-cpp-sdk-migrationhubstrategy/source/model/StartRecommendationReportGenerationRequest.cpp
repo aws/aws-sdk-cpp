@@ -25,7 +25,7 @@ Aws::String StartRecommendationReportGenerationRequest::SerializePayload() const
 
   if(m_groupIdFilterHasBeenSet)
   {
-   Array<JsonValue> groupIdFilterJsonList(m_groupIdFilter.size());
+   Aws::Utils::Array<JsonValue> groupIdFilterJsonList(m_groupIdFilter.size());
    for(unsigned groupIdFilterIndex = 0; groupIdFilterIndex < groupIdFilterJsonList.GetLength(); ++groupIdFilterIndex)
    {
      groupIdFilterJsonList[groupIdFilterIndex].AsObject(m_groupIdFilter[groupIdFilterIndex].Jsonize());

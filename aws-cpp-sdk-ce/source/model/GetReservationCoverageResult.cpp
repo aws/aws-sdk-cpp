@@ -30,7 +30,7 @@ GetReservationCoverageResult& GetReservationCoverageResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CoveragesByTime"))
   {
-    Array<JsonView> coveragesByTimeJsonList = jsonValue.GetArray("CoveragesByTime");
+    Aws::Utils::Array<JsonView> coveragesByTimeJsonList = jsonValue.GetArray("CoveragesByTime");
     for(unsigned coveragesByTimeIndex = 0; coveragesByTimeIndex < coveragesByTimeJsonList.GetLength(); ++coveragesByTimeIndex)
     {
       m_coveragesByTime.push_back(coveragesByTimeJsonList[coveragesByTimeIndex].AsObject());

@@ -74,7 +74,7 @@ ParameterDefinition& ParameterDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("allowedValues"))
   {
-    Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
+    Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
     for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
     {
       m_allowedValues.push_back(allowedValuesJsonList[allowedValuesIndex].AsString());
@@ -147,7 +147,7 @@ ParameterDefinition& ParameterDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("referencedByResources"))
   {
-    Array<JsonView> referencedByResourcesJsonList = jsonValue.GetArray("referencedByResources");
+    Aws::Utils::Array<JsonView> referencedByResourcesJsonList = jsonValue.GetArray("referencedByResources");
     for(unsigned referencedByResourcesIndex = 0; referencedByResourcesIndex < referencedByResourcesJsonList.GetLength(); ++referencedByResourcesIndex)
     {
       m_referencedByResources.push_back(referencedByResourcesJsonList[referencedByResourcesIndex].AsString());
@@ -177,7 +177,7 @@ JsonValue ParameterDefinition::Jsonize() const
 
   if(m_allowedValuesHasBeenSet)
   {
-   Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
+   Aws::Utils::Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
    for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
    {
      allowedValuesJsonList[allowedValuesIndex].AsString(m_allowedValues[allowedValuesIndex]);
@@ -242,7 +242,7 @@ JsonValue ParameterDefinition::Jsonize() const
 
   if(m_referencedByResourcesHasBeenSet)
   {
-   Array<JsonValue> referencedByResourcesJsonList(m_referencedByResources.size());
+   Aws::Utils::Array<JsonValue> referencedByResourcesJsonList(m_referencedByResources.size());
    for(unsigned referencedByResourcesIndex = 0; referencedByResourcesIndex < referencedByResourcesJsonList.GetLength(); ++referencedByResourcesIndex)
    {
      referencedByResourcesJsonList[referencedByResourcesIndex].AsString(m_referencedByResources[referencedByResourcesIndex]);

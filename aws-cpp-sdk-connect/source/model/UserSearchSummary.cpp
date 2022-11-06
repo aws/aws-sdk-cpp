@@ -100,7 +100,7 @@ UserSearchSummary& UserSearchSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityProfileIds"))
   {
-    Array<JsonView> securityProfileIdsJsonList = jsonValue.GetArray("SecurityProfileIds");
+    Aws::Utils::Array<JsonView> securityProfileIdsJsonList = jsonValue.GetArray("SecurityProfileIds");
     for(unsigned securityProfileIdsIndex = 0; securityProfileIdsIndex < securityProfileIdsJsonList.GetLength(); ++securityProfileIdsIndex)
     {
       m_securityProfileIds.push_back(securityProfileIdsJsonList[securityProfileIdsIndex].AsString());
@@ -176,7 +176,7 @@ JsonValue UserSearchSummary::Jsonize() const
 
   if(m_securityProfileIdsHasBeenSet)
   {
-   Array<JsonValue> securityProfileIdsJsonList(m_securityProfileIds.size());
+   Aws::Utils::Array<JsonValue> securityProfileIdsJsonList(m_securityProfileIds.size());
    for(unsigned securityProfileIdsIndex = 0; securityProfileIdsIndex < securityProfileIdsJsonList.GetLength(); ++securityProfileIdsIndex)
    {
      securityProfileIdsJsonList[securityProfileIdsIndex].AsString(m_securityProfileIds[securityProfileIdsIndex]);

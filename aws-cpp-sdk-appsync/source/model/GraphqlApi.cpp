@@ -130,7 +130,7 @@ GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("additionalAuthenticationProviders"))
   {
-    Array<JsonView> additionalAuthenticationProvidersJsonList = jsonValue.GetArray("additionalAuthenticationProviders");
+    Aws::Utils::Array<JsonView> additionalAuthenticationProvidersJsonList = jsonValue.GetArray("additionalAuthenticationProviders");
     for(unsigned additionalAuthenticationProvidersIndex = 0; additionalAuthenticationProvidersIndex < additionalAuthenticationProvidersJsonList.GetLength(); ++additionalAuthenticationProvidersIndex)
     {
       m_additionalAuthenticationProviders.push_back(additionalAuthenticationProvidersJsonList[additionalAuthenticationProvidersIndex].AsObject());
@@ -231,7 +231,7 @@ JsonValue GraphqlApi::Jsonize() const
 
   if(m_additionalAuthenticationProvidersHasBeenSet)
   {
-   Array<JsonValue> additionalAuthenticationProvidersJsonList(m_additionalAuthenticationProviders.size());
+   Aws::Utils::Array<JsonValue> additionalAuthenticationProvidersJsonList(m_additionalAuthenticationProviders.size());
    for(unsigned additionalAuthenticationProvidersIndex = 0; additionalAuthenticationProvidersIndex < additionalAuthenticationProvidersJsonList.GetLength(); ++additionalAuthenticationProvidersIndex)
    {
      additionalAuthenticationProvidersJsonList[additionalAuthenticationProvidersIndex].AsObject(m_additionalAuthenticationProviders[additionalAuthenticationProvidersIndex].Jsonize());

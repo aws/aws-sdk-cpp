@@ -30,7 +30,7 @@ ListBootstrapActionsResult& ListBootstrapActionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BootstrapActions"))
   {
-    Array<JsonView> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");
+    Aws::Utils::Array<JsonView> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");
     for(unsigned bootstrapActionsIndex = 0; bootstrapActionsIndex < bootstrapActionsJsonList.GetLength(); ++bootstrapActionsIndex)
     {
       m_bootstrapActions.push_back(bootstrapActionsJsonList[bootstrapActionsIndex].AsObject());

@@ -35,7 +35,7 @@ AttributeValueList& AttributeValueList::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("integerValues"))
   {
-    Array<JsonView> integerValuesJsonList = jsonValue.GetArray("integerValues");
+    Aws::Utils::Array<JsonView> integerValuesJsonList = jsonValue.GetArray("integerValues");
     for(unsigned integerValuesIndex = 0; integerValuesIndex < integerValuesJsonList.GetLength(); ++integerValuesIndex)
     {
       m_integerValues.push_back(integerValuesJsonList[integerValuesIndex].AsInteger());
@@ -45,7 +45,7 @@ AttributeValueList& AttributeValueList::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("stringValues"))
   {
-    Array<JsonView> stringValuesJsonList = jsonValue.GetArray("stringValues");
+    Aws::Utils::Array<JsonView> stringValuesJsonList = jsonValue.GetArray("stringValues");
     for(unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex)
     {
       m_stringValues.push_back(stringValuesJsonList[stringValuesIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue AttributeValueList::Jsonize() const
 
   if(m_integerValuesHasBeenSet)
   {
-   Array<JsonValue> integerValuesJsonList(m_integerValues.size());
+   Aws::Utils::Array<JsonValue> integerValuesJsonList(m_integerValues.size());
    for(unsigned integerValuesIndex = 0; integerValuesIndex < integerValuesJsonList.GetLength(); ++integerValuesIndex)
    {
      integerValuesJsonList[integerValuesIndex].AsInteger(m_integerValues[integerValuesIndex]);
@@ -73,7 +73,7 @@ JsonValue AttributeValueList::Jsonize() const
 
   if(m_stringValuesHasBeenSet)
   {
-   Array<JsonValue> stringValuesJsonList(m_stringValues.size());
+   Aws::Utils::Array<JsonValue> stringValuesJsonList(m_stringValues.size());
    for(unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex)
    {
      stringValuesJsonList[stringValuesIndex].AsString(m_stringValues[stringValuesIndex]);

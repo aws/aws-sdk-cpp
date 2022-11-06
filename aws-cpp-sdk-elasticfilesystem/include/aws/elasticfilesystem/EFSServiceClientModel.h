@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/elasticfilesystem/EFSErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/elasticfilesystem/EFSEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -69,6 +71,10 @@ namespace Aws
 
   namespace EFS
   {
+    using EFSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EFSEndpointProviderBase = Aws::EFS::Endpoint::EFSEndpointProviderBase;
+    using EFSEndpointProvider = Aws::EFS::Endpoint::EFSEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in EFSClient header */

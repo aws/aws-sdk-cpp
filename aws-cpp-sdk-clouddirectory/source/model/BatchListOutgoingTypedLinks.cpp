@@ -50,7 +50,7 @@ BatchListOutgoingTypedLinks& BatchListOutgoingTypedLinks::operator =(JsonView js
 
   if(jsonValue.ValueExists("FilterAttributeRanges"))
   {
-    Array<JsonView> filterAttributeRangesJsonList = jsonValue.GetArray("FilterAttributeRanges");
+    Aws::Utils::Array<JsonView> filterAttributeRangesJsonList = jsonValue.GetArray("FilterAttributeRanges");
     for(unsigned filterAttributeRangesIndex = 0; filterAttributeRangesIndex < filterAttributeRangesJsonList.GetLength(); ++filterAttributeRangesIndex)
     {
       m_filterAttributeRanges.push_back(filterAttributeRangesJsonList[filterAttributeRangesIndex].AsObject());
@@ -94,7 +94,7 @@ JsonValue BatchListOutgoingTypedLinks::Jsonize() const
 
   if(m_filterAttributeRangesHasBeenSet)
   {
-   Array<JsonValue> filterAttributeRangesJsonList(m_filterAttributeRanges.size());
+   Aws::Utils::Array<JsonValue> filterAttributeRangesJsonList(m_filterAttributeRanges.size());
    for(unsigned filterAttributeRangesIndex = 0; filterAttributeRangesIndex < filterAttributeRangesJsonList.GetLength(); ++filterAttributeRangesIndex)
    {
      filterAttributeRangesJsonList[filterAttributeRangesIndex].AsObject(m_filterAttributeRanges[filterAttributeRangesIndex].Jsonize());

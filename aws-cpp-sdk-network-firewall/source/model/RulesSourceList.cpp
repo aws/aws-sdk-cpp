@@ -39,7 +39,7 @@ RulesSourceList& RulesSourceList::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
@@ -49,7 +49,7 @@ RulesSourceList& RulesSourceList::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetTypes"))
   {
-    Array<JsonView> targetTypesJsonList = jsonValue.GetArray("TargetTypes");
+    Aws::Utils::Array<JsonView> targetTypesJsonList = jsonValue.GetArray("TargetTypes");
     for(unsigned targetTypesIndex = 0; targetTypesIndex < targetTypesJsonList.GetLength(); ++targetTypesIndex)
     {
       m_targetTypes.push_back(TargetTypeMapper::GetTargetTypeForName(targetTypesJsonList[targetTypesIndex].AsString()));
@@ -73,7 +73,7 @@ JsonValue RulesSourceList::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
@@ -84,7 +84,7 @@ JsonValue RulesSourceList::Jsonize() const
 
   if(m_targetTypesHasBeenSet)
   {
-   Array<JsonValue> targetTypesJsonList(m_targetTypes.size());
+   Aws::Utils::Array<JsonValue> targetTypesJsonList(m_targetTypes.size());
    for(unsigned targetTypesIndex = 0; targetTypesIndex < targetTypesJsonList.GetLength(); ++targetTypesIndex)
    {
      targetTypesJsonList[targetTypesIndex].AsString(TargetTypeMapper::GetNameForTargetType(m_targetTypes[targetTypesIndex]));

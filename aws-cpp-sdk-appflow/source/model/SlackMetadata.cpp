@@ -33,7 +33,7 @@ SlackMetadata& SlackMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("oAuthScopes"))
   {
-    Array<JsonView> oAuthScopesJsonList = jsonValue.GetArray("oAuthScopes");
+    Aws::Utils::Array<JsonView> oAuthScopesJsonList = jsonValue.GetArray("oAuthScopes");
     for(unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex)
     {
       m_oAuthScopes.push_back(oAuthScopesJsonList[oAuthScopesIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue SlackMetadata::Jsonize() const
 
   if(m_oAuthScopesHasBeenSet)
   {
-   Array<JsonValue> oAuthScopesJsonList(m_oAuthScopes.size());
+   Aws::Utils::Array<JsonValue> oAuthScopesJsonList(m_oAuthScopes.size());
    for(unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex)
    {
      oAuthScopesJsonList[oAuthScopesIndex].AsString(m_oAuthScopes[oAuthScopesIndex]);

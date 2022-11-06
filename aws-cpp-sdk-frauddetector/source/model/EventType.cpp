@@ -67,7 +67,7 @@ EventType& EventType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("eventVariables"))
   {
-    Array<JsonView> eventVariablesJsonList = jsonValue.GetArray("eventVariables");
+    Aws::Utils::Array<JsonView> eventVariablesJsonList = jsonValue.GetArray("eventVariables");
     for(unsigned eventVariablesIndex = 0; eventVariablesIndex < eventVariablesJsonList.GetLength(); ++eventVariablesIndex)
     {
       m_eventVariables.push_back(eventVariablesJsonList[eventVariablesIndex].AsString());
@@ -77,7 +77,7 @@ EventType& EventType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("labels"))
   {
-    Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
+    Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());
@@ -87,7 +87,7 @@ EventType& EventType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("entityTypes"))
   {
-    Array<JsonView> entityTypesJsonList = jsonValue.GetArray("entityTypes");
+    Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("entityTypes");
     for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
     {
       m_entityTypes.push_back(entityTypesJsonList[entityTypesIndex].AsString());
@@ -151,7 +151,7 @@ JsonValue EventType::Jsonize() const
 
   if(m_eventVariablesHasBeenSet)
   {
-   Array<JsonValue> eventVariablesJsonList(m_eventVariables.size());
+   Aws::Utils::Array<JsonValue> eventVariablesJsonList(m_eventVariables.size());
    for(unsigned eventVariablesIndex = 0; eventVariablesIndex < eventVariablesJsonList.GetLength(); ++eventVariablesIndex)
    {
      eventVariablesJsonList[eventVariablesIndex].AsString(m_eventVariables[eventVariablesIndex]);
@@ -162,7 +162,7 @@ JsonValue EventType::Jsonize() const
 
   if(m_labelsHasBeenSet)
   {
-   Array<JsonValue> labelsJsonList(m_labels.size());
+   Aws::Utils::Array<JsonValue> labelsJsonList(m_labels.size());
    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
    {
      labelsJsonList[labelsIndex].AsString(m_labels[labelsIndex]);
@@ -173,7 +173,7 @@ JsonValue EventType::Jsonize() const
 
   if(m_entityTypesHasBeenSet)
   {
-   Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
+   Aws::Utils::Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
    for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
    {
      entityTypesJsonList[entityTypesIndex].AsString(m_entityTypes[entityTypesIndex]);

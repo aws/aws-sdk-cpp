@@ -209,7 +209,7 @@ App& App::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("customRules"))
   {
-    Array<JsonView> customRulesJsonList = jsonValue.GetArray("customRules");
+    Aws::Utils::Array<JsonView> customRulesJsonList = jsonValue.GetArray("customRules");
     for(unsigned customRulesIndex = 0; customRulesIndex < customRulesJsonList.GetLength(); ++customRulesIndex)
     {
       m_customRules.push_back(customRulesJsonList[customRulesIndex].AsObject());
@@ -247,7 +247,7 @@ App& App::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("autoBranchCreationPatterns"))
   {
-    Array<JsonView> autoBranchCreationPatternsJsonList = jsonValue.GetArray("autoBranchCreationPatterns");
+    Aws::Utils::Array<JsonView> autoBranchCreationPatternsJsonList = jsonValue.GetArray("autoBranchCreationPatterns");
     for(unsigned autoBranchCreationPatternsIndex = 0; autoBranchCreationPatternsIndex < autoBranchCreationPatternsJsonList.GetLength(); ++autoBranchCreationPatternsIndex)
     {
       m_autoBranchCreationPatterns.push_back(autoBranchCreationPatternsJsonList[autoBranchCreationPatternsIndex].AsString());
@@ -381,7 +381,7 @@ JsonValue App::Jsonize() const
 
   if(m_customRulesHasBeenSet)
   {
-   Array<JsonValue> customRulesJsonList(m_customRules.size());
+   Aws::Utils::Array<JsonValue> customRulesJsonList(m_customRules.size());
    for(unsigned customRulesIndex = 0; customRulesIndex < customRulesJsonList.GetLength(); ++customRulesIndex)
    {
      customRulesJsonList[customRulesIndex].AsObject(m_customRules[customRulesIndex].Jsonize());
@@ -416,7 +416,7 @@ JsonValue App::Jsonize() const
 
   if(m_autoBranchCreationPatternsHasBeenSet)
   {
-   Array<JsonValue> autoBranchCreationPatternsJsonList(m_autoBranchCreationPatterns.size());
+   Aws::Utils::Array<JsonValue> autoBranchCreationPatternsJsonList(m_autoBranchCreationPatterns.size());
    for(unsigned autoBranchCreationPatternsIndex = 0; autoBranchCreationPatternsIndex < autoBranchCreationPatternsJsonList.GetLength(); ++autoBranchCreationPatternsIndex)
    {
      autoBranchCreationPatternsJsonList[autoBranchCreationPatternsIndex].AsString(m_autoBranchCreationPatterns[autoBranchCreationPatternsIndex]);

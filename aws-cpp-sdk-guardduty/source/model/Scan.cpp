@@ -156,7 +156,7 @@ Scan& Scan::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attachedVolumes"))
   {
-    Array<JsonView> attachedVolumesJsonList = jsonValue.GetArray("attachedVolumes");
+    Aws::Utils::Array<JsonView> attachedVolumesJsonList = jsonValue.GetArray("attachedVolumes");
     for(unsigned attachedVolumesIndex = 0; attachedVolumesIndex < attachedVolumesJsonList.GetLength(); ++attachedVolumesIndex)
     {
       m_attachedVolumes.push_back(attachedVolumesJsonList[attachedVolumesIndex].AsObject());
@@ -248,7 +248,7 @@ JsonValue Scan::Jsonize() const
 
   if(m_attachedVolumesHasBeenSet)
   {
-   Array<JsonValue> attachedVolumesJsonList(m_attachedVolumes.size());
+   Aws::Utils::Array<JsonValue> attachedVolumesJsonList(m_attachedVolumes.size());
    for(unsigned attachedVolumesIndex = 0; attachedVolumesIndex < attachedVolumesJsonList.GetLength(); ++attachedVolumesIndex)
    {
      attachedVolumesJsonList[attachedVolumesIndex].AsObject(m_attachedVolumes[attachedVolumesIndex].Jsonize());

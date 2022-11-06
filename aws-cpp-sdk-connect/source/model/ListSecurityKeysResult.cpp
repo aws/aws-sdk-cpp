@@ -30,7 +30,7 @@ ListSecurityKeysResult& ListSecurityKeysResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SecurityKeys"))
   {
-    Array<JsonView> securityKeysJsonList = jsonValue.GetArray("SecurityKeys");
+    Aws::Utils::Array<JsonView> securityKeysJsonList = jsonValue.GetArray("SecurityKeys");
     for(unsigned securityKeysIndex = 0; securityKeysIndex < securityKeysJsonList.GetLength(); ++securityKeysIndex)
     {
       m_securityKeys.push_back(securityKeysJsonList[securityKeysIndex].AsObject());

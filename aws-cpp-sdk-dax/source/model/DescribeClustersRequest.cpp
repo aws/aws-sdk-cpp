@@ -26,7 +26,7 @@ Aws::String DescribeClustersRequest::SerializePayload() const
 
   if(m_clusterNamesHasBeenSet)
   {
-   Array<JsonValue> clusterNamesJsonList(m_clusterNames.size());
+   Aws::Utils::Array<JsonValue> clusterNamesJsonList(m_clusterNames.size());
    for(unsigned clusterNamesIndex = 0; clusterNamesIndex < clusterNamesJsonList.GetLength(); ++clusterNamesIndex)
    {
      clusterNamesJsonList[clusterNamesIndex].AsString(m_clusterNames[clusterNamesIndex]);

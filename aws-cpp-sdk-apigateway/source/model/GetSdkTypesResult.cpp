@@ -36,7 +36,7 @@ GetSdkTypesResult& GetSdkTypesResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("item"))
   {
-    Array<JsonView> itemJsonList = jsonValue.GetArray("item");
+    Aws::Utils::Array<JsonView> itemJsonList = jsonValue.GetArray("item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_items.push_back(itemJsonList[itemIndex].AsObject());

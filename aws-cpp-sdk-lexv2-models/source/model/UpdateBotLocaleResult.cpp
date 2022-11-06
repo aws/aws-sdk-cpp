@@ -82,7 +82,7 @@ UpdateBotLocaleResult& UpdateBotLocaleResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("failureReasons"))
   {
-    Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
     for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
     {
       m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());
@@ -103,7 +103,7 @@ UpdateBotLocaleResult& UpdateBotLocaleResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("recommendedActions"))
   {
-    Array<JsonView> recommendedActionsJsonList = jsonValue.GetArray("recommendedActions");
+    Aws::Utils::Array<JsonView> recommendedActionsJsonList = jsonValue.GetArray("recommendedActions");
     for(unsigned recommendedActionsIndex = 0; recommendedActionsIndex < recommendedActionsJsonList.GetLength(); ++recommendedActionsIndex)
     {
       m_recommendedActions.push_back(recommendedActionsJsonList[recommendedActionsIndex].AsString());

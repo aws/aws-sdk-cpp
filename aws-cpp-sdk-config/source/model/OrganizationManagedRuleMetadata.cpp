@@ -77,7 +77,7 @@ OrganizationManagedRuleMetadata& OrganizationManagedRuleMetadata::operator =(Jso
 
   if(jsonValue.ValueExists("ResourceTypesScope"))
   {
-    Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
+    Aws::Utils::Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
     for(unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength(); ++resourceTypesScopeIndex)
     {
       m_resourceTypesScope.push_back(resourceTypesScopeJsonList[resourceTypesScopeIndex].AsString());
@@ -138,7 +138,7 @@ JsonValue OrganizationManagedRuleMetadata::Jsonize() const
 
   if(m_resourceTypesScopeHasBeenSet)
   {
-   Array<JsonValue> resourceTypesScopeJsonList(m_resourceTypesScope.size());
+   Aws::Utils::Array<JsonValue> resourceTypesScopeJsonList(m_resourceTypesScope.size());
    for(unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength(); ++resourceTypesScopeIndex)
    {
      resourceTypesScopeJsonList[resourceTypesScopeIndex].AsString(m_resourceTypesScope[resourceTypesScopeIndex]);

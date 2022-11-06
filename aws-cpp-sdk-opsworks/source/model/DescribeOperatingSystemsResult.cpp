@@ -30,7 +30,7 @@ DescribeOperatingSystemsResult& DescribeOperatingSystemsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OperatingSystems"))
   {
-    Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("OperatingSystems");
+    Aws::Utils::Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("OperatingSystems");
     for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
     {
       m_operatingSystems.push_back(operatingSystemsJsonList[operatingSystemsIndex].AsObject());

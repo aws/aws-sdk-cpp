@@ -30,7 +30,7 @@ ListTimelineEventsResult& ListTimelineEventsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eventSummaries"))
   {
-    Array<JsonView> eventSummariesJsonList = jsonValue.GetArray("eventSummaries");
+    Aws::Utils::Array<JsonView> eventSummariesJsonList = jsonValue.GetArray("eventSummaries");
     for(unsigned eventSummariesIndex = 0; eventSummariesIndex < eventSummariesJsonList.GetLength(); ++eventSummariesIndex)
     {
       m_eventSummaries.push_back(eventSummariesJsonList[eventSummariesIndex].AsObject());

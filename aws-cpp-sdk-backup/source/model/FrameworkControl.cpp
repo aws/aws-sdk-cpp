@@ -44,7 +44,7 @@ FrameworkControl& FrameworkControl::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ControlInputParameters"))
   {
-    Array<JsonView> controlInputParametersJsonList = jsonValue.GetArray("ControlInputParameters");
+    Aws::Utils::Array<JsonView> controlInputParametersJsonList = jsonValue.GetArray("ControlInputParameters");
     for(unsigned controlInputParametersIndex = 0; controlInputParametersIndex < controlInputParametersJsonList.GetLength(); ++controlInputParametersIndex)
     {
       m_controlInputParameters.push_back(controlInputParametersJsonList[controlInputParametersIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue FrameworkControl::Jsonize() const
 
   if(m_controlInputParametersHasBeenSet)
   {
-   Array<JsonValue> controlInputParametersJsonList(m_controlInputParameters.size());
+   Aws::Utils::Array<JsonValue> controlInputParametersJsonList(m_controlInputParameters.size());
    for(unsigned controlInputParametersIndex = 0; controlInputParametersIndex < controlInputParametersJsonList.GetLength(); ++controlInputParametersIndex)
    {
      controlInputParametersJsonList[controlInputParametersIndex].AsObject(m_controlInputParameters[controlInputParametersIndex].Jsonize());

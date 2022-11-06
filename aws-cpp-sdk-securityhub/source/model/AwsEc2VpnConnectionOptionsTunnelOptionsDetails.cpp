@@ -82,7 +82,7 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
 
   if(jsonValue.ValueExists("IkeVersions"))
   {
-    Array<JsonView> ikeVersionsJsonList = jsonValue.GetArray("IkeVersions");
+    Aws::Utils::Array<JsonView> ikeVersionsJsonList = jsonValue.GetArray("IkeVersions");
     for(unsigned ikeVersionsIndex = 0; ikeVersionsIndex < ikeVersionsJsonList.GetLength(); ++ikeVersionsIndex)
     {
       m_ikeVersions.push_back(ikeVersionsJsonList[ikeVersionsIndex].AsString());
@@ -99,7 +99,7 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
 
   if(jsonValue.ValueExists("Phase1DhGroupNumbers"))
   {
-    Array<JsonView> phase1DhGroupNumbersJsonList = jsonValue.GetArray("Phase1DhGroupNumbers");
+    Aws::Utils::Array<JsonView> phase1DhGroupNumbersJsonList = jsonValue.GetArray("Phase1DhGroupNumbers");
     for(unsigned phase1DhGroupNumbersIndex = 0; phase1DhGroupNumbersIndex < phase1DhGroupNumbersJsonList.GetLength(); ++phase1DhGroupNumbersIndex)
     {
       m_phase1DhGroupNumbers.push_back(phase1DhGroupNumbersJsonList[phase1DhGroupNumbersIndex].AsInteger());
@@ -109,7 +109,7 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
 
   if(jsonValue.ValueExists("Phase1EncryptionAlgorithms"))
   {
-    Array<JsonView> phase1EncryptionAlgorithmsJsonList = jsonValue.GetArray("Phase1EncryptionAlgorithms");
+    Aws::Utils::Array<JsonView> phase1EncryptionAlgorithmsJsonList = jsonValue.GetArray("Phase1EncryptionAlgorithms");
     for(unsigned phase1EncryptionAlgorithmsIndex = 0; phase1EncryptionAlgorithmsIndex < phase1EncryptionAlgorithmsJsonList.GetLength(); ++phase1EncryptionAlgorithmsIndex)
     {
       m_phase1EncryptionAlgorithms.push_back(phase1EncryptionAlgorithmsJsonList[phase1EncryptionAlgorithmsIndex].AsString());
@@ -119,7 +119,7 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
 
   if(jsonValue.ValueExists("Phase1IntegrityAlgorithms"))
   {
-    Array<JsonView> phase1IntegrityAlgorithmsJsonList = jsonValue.GetArray("Phase1IntegrityAlgorithms");
+    Aws::Utils::Array<JsonView> phase1IntegrityAlgorithmsJsonList = jsonValue.GetArray("Phase1IntegrityAlgorithms");
     for(unsigned phase1IntegrityAlgorithmsIndex = 0; phase1IntegrityAlgorithmsIndex < phase1IntegrityAlgorithmsJsonList.GetLength(); ++phase1IntegrityAlgorithmsIndex)
     {
       m_phase1IntegrityAlgorithms.push_back(phase1IntegrityAlgorithmsJsonList[phase1IntegrityAlgorithmsIndex].AsString());
@@ -136,7 +136,7 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
 
   if(jsonValue.ValueExists("Phase2DhGroupNumbers"))
   {
-    Array<JsonView> phase2DhGroupNumbersJsonList = jsonValue.GetArray("Phase2DhGroupNumbers");
+    Aws::Utils::Array<JsonView> phase2DhGroupNumbersJsonList = jsonValue.GetArray("Phase2DhGroupNumbers");
     for(unsigned phase2DhGroupNumbersIndex = 0; phase2DhGroupNumbersIndex < phase2DhGroupNumbersJsonList.GetLength(); ++phase2DhGroupNumbersIndex)
     {
       m_phase2DhGroupNumbers.push_back(phase2DhGroupNumbersJsonList[phase2DhGroupNumbersIndex].AsInteger());
@@ -146,7 +146,7 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
 
   if(jsonValue.ValueExists("Phase2EncryptionAlgorithms"))
   {
-    Array<JsonView> phase2EncryptionAlgorithmsJsonList = jsonValue.GetArray("Phase2EncryptionAlgorithms");
+    Aws::Utils::Array<JsonView> phase2EncryptionAlgorithmsJsonList = jsonValue.GetArray("Phase2EncryptionAlgorithms");
     for(unsigned phase2EncryptionAlgorithmsIndex = 0; phase2EncryptionAlgorithmsIndex < phase2EncryptionAlgorithmsJsonList.GetLength(); ++phase2EncryptionAlgorithmsIndex)
     {
       m_phase2EncryptionAlgorithms.push_back(phase2EncryptionAlgorithmsJsonList[phase2EncryptionAlgorithmsIndex].AsString());
@@ -156,7 +156,7 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
 
   if(jsonValue.ValueExists("Phase2IntegrityAlgorithms"))
   {
-    Array<JsonView> phase2IntegrityAlgorithmsJsonList = jsonValue.GetArray("Phase2IntegrityAlgorithms");
+    Aws::Utils::Array<JsonView> phase2IntegrityAlgorithmsJsonList = jsonValue.GetArray("Phase2IntegrityAlgorithms");
     for(unsigned phase2IntegrityAlgorithmsIndex = 0; phase2IntegrityAlgorithmsIndex < phase2IntegrityAlgorithmsJsonList.GetLength(); ++phase2IntegrityAlgorithmsIndex)
     {
       m_phase2IntegrityAlgorithms.push_back(phase2IntegrityAlgorithmsJsonList[phase2IntegrityAlgorithmsIndex].AsString());
@@ -221,7 +221,7 @@ JsonValue AwsEc2VpnConnectionOptionsTunnelOptionsDetails::Jsonize() const
 
   if(m_ikeVersionsHasBeenSet)
   {
-   Array<JsonValue> ikeVersionsJsonList(m_ikeVersions.size());
+   Aws::Utils::Array<JsonValue> ikeVersionsJsonList(m_ikeVersions.size());
    for(unsigned ikeVersionsIndex = 0; ikeVersionsIndex < ikeVersionsJsonList.GetLength(); ++ikeVersionsIndex)
    {
      ikeVersionsJsonList[ikeVersionsIndex].AsString(m_ikeVersions[ikeVersionsIndex]);
@@ -238,7 +238,7 @@ JsonValue AwsEc2VpnConnectionOptionsTunnelOptionsDetails::Jsonize() const
 
   if(m_phase1DhGroupNumbersHasBeenSet)
   {
-   Array<JsonValue> phase1DhGroupNumbersJsonList(m_phase1DhGroupNumbers.size());
+   Aws::Utils::Array<JsonValue> phase1DhGroupNumbersJsonList(m_phase1DhGroupNumbers.size());
    for(unsigned phase1DhGroupNumbersIndex = 0; phase1DhGroupNumbersIndex < phase1DhGroupNumbersJsonList.GetLength(); ++phase1DhGroupNumbersIndex)
    {
      phase1DhGroupNumbersJsonList[phase1DhGroupNumbersIndex].AsInteger(m_phase1DhGroupNumbers[phase1DhGroupNumbersIndex]);
@@ -249,7 +249,7 @@ JsonValue AwsEc2VpnConnectionOptionsTunnelOptionsDetails::Jsonize() const
 
   if(m_phase1EncryptionAlgorithmsHasBeenSet)
   {
-   Array<JsonValue> phase1EncryptionAlgorithmsJsonList(m_phase1EncryptionAlgorithms.size());
+   Aws::Utils::Array<JsonValue> phase1EncryptionAlgorithmsJsonList(m_phase1EncryptionAlgorithms.size());
    for(unsigned phase1EncryptionAlgorithmsIndex = 0; phase1EncryptionAlgorithmsIndex < phase1EncryptionAlgorithmsJsonList.GetLength(); ++phase1EncryptionAlgorithmsIndex)
    {
      phase1EncryptionAlgorithmsJsonList[phase1EncryptionAlgorithmsIndex].AsString(m_phase1EncryptionAlgorithms[phase1EncryptionAlgorithmsIndex]);
@@ -260,7 +260,7 @@ JsonValue AwsEc2VpnConnectionOptionsTunnelOptionsDetails::Jsonize() const
 
   if(m_phase1IntegrityAlgorithmsHasBeenSet)
   {
-   Array<JsonValue> phase1IntegrityAlgorithmsJsonList(m_phase1IntegrityAlgorithms.size());
+   Aws::Utils::Array<JsonValue> phase1IntegrityAlgorithmsJsonList(m_phase1IntegrityAlgorithms.size());
    for(unsigned phase1IntegrityAlgorithmsIndex = 0; phase1IntegrityAlgorithmsIndex < phase1IntegrityAlgorithmsJsonList.GetLength(); ++phase1IntegrityAlgorithmsIndex)
    {
      phase1IntegrityAlgorithmsJsonList[phase1IntegrityAlgorithmsIndex].AsString(m_phase1IntegrityAlgorithms[phase1IntegrityAlgorithmsIndex]);
@@ -277,7 +277,7 @@ JsonValue AwsEc2VpnConnectionOptionsTunnelOptionsDetails::Jsonize() const
 
   if(m_phase2DhGroupNumbersHasBeenSet)
   {
-   Array<JsonValue> phase2DhGroupNumbersJsonList(m_phase2DhGroupNumbers.size());
+   Aws::Utils::Array<JsonValue> phase2DhGroupNumbersJsonList(m_phase2DhGroupNumbers.size());
    for(unsigned phase2DhGroupNumbersIndex = 0; phase2DhGroupNumbersIndex < phase2DhGroupNumbersJsonList.GetLength(); ++phase2DhGroupNumbersIndex)
    {
      phase2DhGroupNumbersJsonList[phase2DhGroupNumbersIndex].AsInteger(m_phase2DhGroupNumbers[phase2DhGroupNumbersIndex]);
@@ -288,7 +288,7 @@ JsonValue AwsEc2VpnConnectionOptionsTunnelOptionsDetails::Jsonize() const
 
   if(m_phase2EncryptionAlgorithmsHasBeenSet)
   {
-   Array<JsonValue> phase2EncryptionAlgorithmsJsonList(m_phase2EncryptionAlgorithms.size());
+   Aws::Utils::Array<JsonValue> phase2EncryptionAlgorithmsJsonList(m_phase2EncryptionAlgorithms.size());
    for(unsigned phase2EncryptionAlgorithmsIndex = 0; phase2EncryptionAlgorithmsIndex < phase2EncryptionAlgorithmsJsonList.GetLength(); ++phase2EncryptionAlgorithmsIndex)
    {
      phase2EncryptionAlgorithmsJsonList[phase2EncryptionAlgorithmsIndex].AsString(m_phase2EncryptionAlgorithms[phase2EncryptionAlgorithmsIndex]);
@@ -299,7 +299,7 @@ JsonValue AwsEc2VpnConnectionOptionsTunnelOptionsDetails::Jsonize() const
 
   if(m_phase2IntegrityAlgorithmsHasBeenSet)
   {
-   Array<JsonValue> phase2IntegrityAlgorithmsJsonList(m_phase2IntegrityAlgorithms.size());
+   Aws::Utils::Array<JsonValue> phase2IntegrityAlgorithmsJsonList(m_phase2IntegrityAlgorithms.size());
    for(unsigned phase2IntegrityAlgorithmsIndex = 0; phase2IntegrityAlgorithmsIndex < phase2IntegrityAlgorithmsJsonList.GetLength(); ++phase2IntegrityAlgorithmsIndex)
    {
      phase2IntegrityAlgorithmsJsonList[phase2IntegrityAlgorithmsIndex].AsString(m_phase2IntegrityAlgorithms[phase2IntegrityAlgorithmsIndex]);

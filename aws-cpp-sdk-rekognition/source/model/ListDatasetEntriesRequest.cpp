@@ -38,7 +38,7 @@ Aws::String ListDatasetEntriesRequest::SerializePayload() const
 
   if(m_containsLabelsHasBeenSet)
   {
-   Array<JsonValue> containsLabelsJsonList(m_containsLabels.size());
+   Aws::Utils::Array<JsonValue> containsLabelsJsonList(m_containsLabels.size());
    for(unsigned containsLabelsIndex = 0; containsLabelsIndex < containsLabelsJsonList.GetLength(); ++containsLabelsIndex)
    {
      containsLabelsJsonList[containsLabelsIndex].AsString(m_containsLabels[containsLabelsIndex]);

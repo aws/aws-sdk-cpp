@@ -47,7 +47,7 @@ Aws::String RequestPhoneNumberRequest::SerializePayload() const
 
   if(m_numberCapabilitiesHasBeenSet)
   {
-   Array<JsonValue> numberCapabilitiesJsonList(m_numberCapabilities.size());
+   Aws::Utils::Array<JsonValue> numberCapabilitiesJsonList(m_numberCapabilities.size());
    for(unsigned numberCapabilitiesIndex = 0; numberCapabilitiesIndex < numberCapabilitiesJsonList.GetLength(); ++numberCapabilitiesIndex)
    {
      numberCapabilitiesJsonList[numberCapabilitiesIndex].AsString(NumberCapabilityMapper::GetNameForNumberCapability(m_numberCapabilities[numberCapabilitiesIndex]));
@@ -87,7 +87,7 @@ Aws::String RequestPhoneNumberRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

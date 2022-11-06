@@ -30,7 +30,7 @@ GetObjectInformationResult& GetObjectInformationResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SchemaFacets"))
   {
-    Array<JsonView> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");
+    Aws::Utils::Array<JsonView> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");
     for(unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex)
     {
       m_schemaFacets.push_back(schemaFacetsJsonList[schemaFacetsIndex].AsObject());

@@ -54,7 +54,7 @@ GetBackendResult& GetBackendResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("backendEnvironmentList"))
   {
-    Array<JsonView> backendEnvironmentListJsonList = jsonValue.GetArray("backendEnvironmentList");
+    Aws::Utils::Array<JsonView> backendEnvironmentListJsonList = jsonValue.GetArray("backendEnvironmentList");
     for(unsigned backendEnvironmentListIndex = 0; backendEnvironmentListIndex < backendEnvironmentListJsonList.GetLength(); ++backendEnvironmentListIndex)
     {
       m_backendEnvironmentList.push_back(backendEnvironmentListJsonList[backendEnvironmentListIndex].AsString());

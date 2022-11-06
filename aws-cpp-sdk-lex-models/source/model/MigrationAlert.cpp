@@ -55,7 +55,7 @@ MigrationAlert& MigrationAlert::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("details"))
   {
-    Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
+    Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
     for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
     {
       m_details.push_back(detailsJsonList[detailsIndex].AsString());
@@ -65,7 +65,7 @@ MigrationAlert& MigrationAlert::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("referenceURLs"))
   {
-    Array<JsonView> referenceURLsJsonList = jsonValue.GetArray("referenceURLs");
+    Aws::Utils::Array<JsonView> referenceURLsJsonList = jsonValue.GetArray("referenceURLs");
     for(unsigned referenceURLsIndex = 0; referenceURLsIndex < referenceURLsJsonList.GetLength(); ++referenceURLsIndex)
     {
       m_referenceURLs.push_back(referenceURLsJsonList[referenceURLsIndex].AsString());
@@ -93,7 +93,7 @@ JsonValue MigrationAlert::Jsonize() const
 
   if(m_detailsHasBeenSet)
   {
-   Array<JsonValue> detailsJsonList(m_details.size());
+   Aws::Utils::Array<JsonValue> detailsJsonList(m_details.size());
    for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
    {
      detailsJsonList[detailsIndex].AsString(m_details[detailsIndex]);
@@ -104,7 +104,7 @@ JsonValue MigrationAlert::Jsonize() const
 
   if(m_referenceURLsHasBeenSet)
   {
-   Array<JsonValue> referenceURLsJsonList(m_referenceURLs.size());
+   Aws::Utils::Array<JsonValue> referenceURLsJsonList(m_referenceURLs.size());
    for(unsigned referenceURLsIndex = 0; referenceURLsIndex < referenceURLsJsonList.GetLength(); ++referenceURLsIndex)
    {
      referenceURLsJsonList[referenceURLsIndex].AsString(m_referenceURLs[referenceURLsIndex]);

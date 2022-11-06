@@ -30,7 +30,7 @@ PutEvaluationsResult& PutEvaluationsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedEvaluations"))
   {
-    Array<JsonView> failedEvaluationsJsonList = jsonValue.GetArray("FailedEvaluations");
+    Aws::Utils::Array<JsonView> failedEvaluationsJsonList = jsonValue.GetArray("FailedEvaluations");
     for(unsigned failedEvaluationsIndex = 0; failedEvaluationsIndex < failedEvaluationsJsonList.GetLength(); ++failedEvaluationsIndex)
     {
       m_failedEvaluations.push_back(failedEvaluationsJsonList[failedEvaluationsIndex].AsObject());

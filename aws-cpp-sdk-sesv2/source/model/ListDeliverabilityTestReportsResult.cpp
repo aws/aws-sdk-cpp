@@ -30,7 +30,7 @@ ListDeliverabilityTestReportsResult& ListDeliverabilityTestReportsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeliverabilityTestReports"))
   {
-    Array<JsonView> deliverabilityTestReportsJsonList = jsonValue.GetArray("DeliverabilityTestReports");
+    Aws::Utils::Array<JsonView> deliverabilityTestReportsJsonList = jsonValue.GetArray("DeliverabilityTestReports");
     for(unsigned deliverabilityTestReportsIndex = 0; deliverabilityTestReportsIndex < deliverabilityTestReportsJsonList.GetLength(); ++deliverabilityTestReportsIndex)
     {
       m_deliverabilityTestReports.push_back(deliverabilityTestReportsJsonList[deliverabilityTestReportsIndex].AsObject());

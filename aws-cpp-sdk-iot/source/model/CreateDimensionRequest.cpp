@@ -34,7 +34,7 @@ Aws::String CreateDimensionRequest::SerializePayload() const
 
   if(m_stringValuesHasBeenSet)
   {
-   Array<JsonValue> stringValuesJsonList(m_stringValues.size());
+   Aws::Utils::Array<JsonValue> stringValuesJsonList(m_stringValues.size());
    for(unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex)
    {
      stringValuesJsonList[stringValuesIndex].AsString(m_stringValues[stringValuesIndex]);
@@ -45,7 +45,7 @@ Aws::String CreateDimensionRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

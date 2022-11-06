@@ -33,7 +33,7 @@ SubscriptionDefinitionVersion& SubscriptionDefinitionVersion::operator =(JsonVie
 {
   if(jsonValue.ValueExists("Subscriptions"))
   {
-    Array<JsonView> subscriptionsJsonList = jsonValue.GetArray("Subscriptions");
+    Aws::Utils::Array<JsonView> subscriptionsJsonList = jsonValue.GetArray("Subscriptions");
     for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
     {
       m_subscriptions.push_back(subscriptionsJsonList[subscriptionsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue SubscriptionDefinitionVersion::Jsonize() const
 
   if(m_subscriptionsHasBeenSet)
   {
-   Array<JsonValue> subscriptionsJsonList(m_subscriptions.size());
+   Aws::Utils::Array<JsonValue> subscriptionsJsonList(m_subscriptions.size());
    for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
    {
      subscriptionsJsonList[subscriptionsIndex].AsObject(m_subscriptions[subscriptionsIndex].Jsonize());

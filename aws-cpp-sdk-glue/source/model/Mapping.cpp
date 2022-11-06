@@ -52,7 +52,7 @@ Mapping& Mapping::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FromPath"))
   {
-    Array<JsonView> fromPathJsonList = jsonValue.GetArray("FromPath");
+    Aws::Utils::Array<JsonView> fromPathJsonList = jsonValue.GetArray("FromPath");
     for(unsigned fromPathIndex = 0; fromPathIndex < fromPathJsonList.GetLength(); ++fromPathIndex)
     {
       m_fromPath.push_back(fromPathJsonList[fromPathIndex].AsString());
@@ -83,7 +83,7 @@ Mapping& Mapping::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Children"))
   {
-    Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
+    Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
     for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
     {
       m_children.push_back(childrenJsonList[childrenIndex].AsObject());
@@ -106,7 +106,7 @@ JsonValue Mapping::Jsonize() const
 
   if(m_fromPathHasBeenSet)
   {
-   Array<JsonValue> fromPathJsonList(m_fromPath.size());
+   Aws::Utils::Array<JsonValue> fromPathJsonList(m_fromPath.size());
    for(unsigned fromPathIndex = 0; fromPathIndex < fromPathJsonList.GetLength(); ++fromPathIndex)
    {
      fromPathJsonList[fromPathIndex].AsString(m_fromPath[fromPathIndex]);
@@ -135,7 +135,7 @@ JsonValue Mapping::Jsonize() const
 
   if(m_childrenHasBeenSet)
   {
-   Array<JsonValue> childrenJsonList(m_children.size());
+   Aws::Utils::Array<JsonValue> childrenJsonList(m_children.size());
    for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
    {
      childrenJsonList[childrenIndex].AsObject(m_children[childrenIndex].Jsonize());

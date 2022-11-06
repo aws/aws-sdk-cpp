@@ -43,7 +43,7 @@ GrpcRetryPolicy& GrpcRetryPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("grpcRetryEvents"))
   {
-    Array<JsonView> grpcRetryEventsJsonList = jsonValue.GetArray("grpcRetryEvents");
+    Aws::Utils::Array<JsonView> grpcRetryEventsJsonList = jsonValue.GetArray("grpcRetryEvents");
     for(unsigned grpcRetryEventsIndex = 0; grpcRetryEventsIndex < grpcRetryEventsJsonList.GetLength(); ++grpcRetryEventsIndex)
     {
       m_grpcRetryEvents.push_back(GrpcRetryPolicyEventMapper::GetGrpcRetryPolicyEventForName(grpcRetryEventsJsonList[grpcRetryEventsIndex].AsString()));
@@ -53,7 +53,7 @@ GrpcRetryPolicy& GrpcRetryPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("httpRetryEvents"))
   {
-    Array<JsonView> httpRetryEventsJsonList = jsonValue.GetArray("httpRetryEvents");
+    Aws::Utils::Array<JsonView> httpRetryEventsJsonList = jsonValue.GetArray("httpRetryEvents");
     for(unsigned httpRetryEventsIndex = 0; httpRetryEventsIndex < httpRetryEventsJsonList.GetLength(); ++httpRetryEventsIndex)
     {
       m_httpRetryEvents.push_back(httpRetryEventsJsonList[httpRetryEventsIndex].AsString());
@@ -77,7 +77,7 @@ GrpcRetryPolicy& GrpcRetryPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tcpRetryEvents"))
   {
-    Array<JsonView> tcpRetryEventsJsonList = jsonValue.GetArray("tcpRetryEvents");
+    Aws::Utils::Array<JsonView> tcpRetryEventsJsonList = jsonValue.GetArray("tcpRetryEvents");
     for(unsigned tcpRetryEventsIndex = 0; tcpRetryEventsIndex < tcpRetryEventsJsonList.GetLength(); ++tcpRetryEventsIndex)
     {
       m_tcpRetryEvents.push_back(TcpRetryPolicyEventMapper::GetTcpRetryPolicyEventForName(tcpRetryEventsJsonList[tcpRetryEventsIndex].AsString()));
@@ -94,7 +94,7 @@ JsonValue GrpcRetryPolicy::Jsonize() const
 
   if(m_grpcRetryEventsHasBeenSet)
   {
-   Array<JsonValue> grpcRetryEventsJsonList(m_grpcRetryEvents.size());
+   Aws::Utils::Array<JsonValue> grpcRetryEventsJsonList(m_grpcRetryEvents.size());
    for(unsigned grpcRetryEventsIndex = 0; grpcRetryEventsIndex < grpcRetryEventsJsonList.GetLength(); ++grpcRetryEventsIndex)
    {
      grpcRetryEventsJsonList[grpcRetryEventsIndex].AsString(GrpcRetryPolicyEventMapper::GetNameForGrpcRetryPolicyEvent(m_grpcRetryEvents[grpcRetryEventsIndex]));
@@ -105,7 +105,7 @@ JsonValue GrpcRetryPolicy::Jsonize() const
 
   if(m_httpRetryEventsHasBeenSet)
   {
-   Array<JsonValue> httpRetryEventsJsonList(m_httpRetryEvents.size());
+   Aws::Utils::Array<JsonValue> httpRetryEventsJsonList(m_httpRetryEvents.size());
    for(unsigned httpRetryEventsIndex = 0; httpRetryEventsIndex < httpRetryEventsJsonList.GetLength(); ++httpRetryEventsIndex)
    {
      httpRetryEventsJsonList[httpRetryEventsIndex].AsString(m_httpRetryEvents[httpRetryEventsIndex]);
@@ -128,7 +128,7 @@ JsonValue GrpcRetryPolicy::Jsonize() const
 
   if(m_tcpRetryEventsHasBeenSet)
   {
-   Array<JsonValue> tcpRetryEventsJsonList(m_tcpRetryEvents.size());
+   Aws::Utils::Array<JsonValue> tcpRetryEventsJsonList(m_tcpRetryEvents.size());
    for(unsigned tcpRetryEventsIndex = 0; tcpRetryEventsIndex < tcpRetryEventsJsonList.GetLength(); ++tcpRetryEventsIndex)
    {
      tcpRetryEventsJsonList[tcpRetryEventsIndex].AsString(TcpRetryPolicyEventMapper::GetNameForTcpRetryPolicyEvent(m_tcpRetryEvents[tcpRetryEventsIndex]));

@@ -30,7 +30,7 @@ GetAppReplicationConfigurationResult& GetAppReplicationConfigurationResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("serverGroupReplicationConfigurations"))
   {
-    Array<JsonView> serverGroupReplicationConfigurationsJsonList = jsonValue.GetArray("serverGroupReplicationConfigurations");
+    Aws::Utils::Array<JsonView> serverGroupReplicationConfigurationsJsonList = jsonValue.GetArray("serverGroupReplicationConfigurations");
     for(unsigned serverGroupReplicationConfigurationsIndex = 0; serverGroupReplicationConfigurationsIndex < serverGroupReplicationConfigurationsJsonList.GetLength(); ++serverGroupReplicationConfigurationsIndex)
     {
       m_serverGroupReplicationConfigurations.push_back(serverGroupReplicationConfigurationsJsonList[serverGroupReplicationConfigurationsIndex].AsObject());

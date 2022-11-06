@@ -36,7 +36,7 @@ SelfManagedEventSource& SelfManagedEventSource::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
     for(auto& endpointsItem : endpointsJsonMap)
     {
-      Array<JsonView> endpointListsJsonList = endpointsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> endpointListsJsonList = endpointsItem.second.AsArray();
       Aws::Vector<Aws::String> endpointListsList;
       endpointListsList.reserve((size_t)endpointListsJsonList.GetLength());
       for(unsigned endpointListsIndex = 0; endpointListsIndex < endpointListsJsonList.GetLength(); ++endpointListsIndex)
@@ -60,7 +60,7 @@ JsonValue SelfManagedEventSource::Jsonize() const
    JsonValue endpointsJsonMap;
    for(auto& endpointsItem : m_endpoints)
    {
-     Array<JsonValue> endpointListsJsonList(endpointsItem.second.size());
+     Aws::Utils::Array<JsonValue> endpointListsJsonList(endpointsItem.second.size());
      for(unsigned endpointListsIndex = 0; endpointListsIndex < endpointListsJsonList.GetLength(); ++endpointListsIndex)
      {
        endpointListsJsonList[endpointListsIndex].AsString(endpointsItem.second[endpointListsIndex]);

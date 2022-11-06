@@ -35,7 +35,7 @@ ACLPendingChanges& ACLPendingChanges::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserNamesToRemove"))
   {
-    Array<JsonView> userNamesToRemoveJsonList = jsonValue.GetArray("UserNamesToRemove");
+    Aws::Utils::Array<JsonView> userNamesToRemoveJsonList = jsonValue.GetArray("UserNamesToRemove");
     for(unsigned userNamesToRemoveIndex = 0; userNamesToRemoveIndex < userNamesToRemoveJsonList.GetLength(); ++userNamesToRemoveIndex)
     {
       m_userNamesToRemove.push_back(userNamesToRemoveJsonList[userNamesToRemoveIndex].AsString());
@@ -45,7 +45,7 @@ ACLPendingChanges& ACLPendingChanges::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("UserNamesToAdd"))
   {
-    Array<JsonView> userNamesToAddJsonList = jsonValue.GetArray("UserNamesToAdd");
+    Aws::Utils::Array<JsonView> userNamesToAddJsonList = jsonValue.GetArray("UserNamesToAdd");
     for(unsigned userNamesToAddIndex = 0; userNamesToAddIndex < userNamesToAddJsonList.GetLength(); ++userNamesToAddIndex)
     {
       m_userNamesToAdd.push_back(userNamesToAddJsonList[userNamesToAddIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue ACLPendingChanges::Jsonize() const
 
   if(m_userNamesToRemoveHasBeenSet)
   {
-   Array<JsonValue> userNamesToRemoveJsonList(m_userNamesToRemove.size());
+   Aws::Utils::Array<JsonValue> userNamesToRemoveJsonList(m_userNamesToRemove.size());
    for(unsigned userNamesToRemoveIndex = 0; userNamesToRemoveIndex < userNamesToRemoveJsonList.GetLength(); ++userNamesToRemoveIndex)
    {
      userNamesToRemoveJsonList[userNamesToRemoveIndex].AsString(m_userNamesToRemove[userNamesToRemoveIndex]);
@@ -73,7 +73,7 @@ JsonValue ACLPendingChanges::Jsonize() const
 
   if(m_userNamesToAddHasBeenSet)
   {
-   Array<JsonValue> userNamesToAddJsonList(m_userNamesToAdd.size());
+   Aws::Utils::Array<JsonValue> userNamesToAddJsonList(m_userNamesToAdd.size());
    for(unsigned userNamesToAddIndex = 0; userNamesToAddIndex < userNamesToAddJsonList.GetLength(); ++userNamesToAddIndex)
    {
      userNamesToAddJsonList[userNamesToAddIndex].AsString(m_userNamesToAdd[userNamesToAddIndex]);

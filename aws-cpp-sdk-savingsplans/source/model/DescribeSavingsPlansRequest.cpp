@@ -29,7 +29,7 @@ Aws::String DescribeSavingsPlansRequest::SerializePayload() const
 
   if(m_savingsPlanArnsHasBeenSet)
   {
-   Array<JsonValue> savingsPlanArnsJsonList(m_savingsPlanArns.size());
+   Aws::Utils::Array<JsonValue> savingsPlanArnsJsonList(m_savingsPlanArns.size());
    for(unsigned savingsPlanArnsIndex = 0; savingsPlanArnsIndex < savingsPlanArnsJsonList.GetLength(); ++savingsPlanArnsIndex)
    {
      savingsPlanArnsJsonList[savingsPlanArnsIndex].AsString(m_savingsPlanArns[savingsPlanArnsIndex]);
@@ -40,7 +40,7 @@ Aws::String DescribeSavingsPlansRequest::SerializePayload() const
 
   if(m_savingsPlanIdsHasBeenSet)
   {
-   Array<JsonValue> savingsPlanIdsJsonList(m_savingsPlanIds.size());
+   Aws::Utils::Array<JsonValue> savingsPlanIdsJsonList(m_savingsPlanIds.size());
    for(unsigned savingsPlanIdsIndex = 0; savingsPlanIdsIndex < savingsPlanIdsJsonList.GetLength(); ++savingsPlanIdsIndex)
    {
      savingsPlanIdsJsonList[savingsPlanIdsIndex].AsString(m_savingsPlanIds[savingsPlanIdsIndex]);
@@ -63,7 +63,7 @@ Aws::String DescribeSavingsPlansRequest::SerializePayload() const
 
   if(m_statesHasBeenSet)
   {
-   Array<JsonValue> statesJsonList(m_states.size());
+   Aws::Utils::Array<JsonValue> statesJsonList(m_states.size());
    for(unsigned statesIndex = 0; statesIndex < statesJsonList.GetLength(); ++statesIndex)
    {
      statesJsonList[statesIndex].AsString(SavingsPlanStateMapper::GetNameForSavingsPlanState(m_states[statesIndex]));
@@ -74,7 +74,7 @@ Aws::String DescribeSavingsPlansRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

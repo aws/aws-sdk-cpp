@@ -36,7 +36,7 @@ GetAggregateConfigRuleComplianceSummaryResult& GetAggregateConfigRuleComplianceS
 
   if(jsonValue.ValueExists("AggregateComplianceCounts"))
   {
-    Array<JsonView> aggregateComplianceCountsJsonList = jsonValue.GetArray("AggregateComplianceCounts");
+    Aws::Utils::Array<JsonView> aggregateComplianceCountsJsonList = jsonValue.GetArray("AggregateComplianceCounts");
     for(unsigned aggregateComplianceCountsIndex = 0; aggregateComplianceCountsIndex < aggregateComplianceCountsJsonList.GetLength(); ++aggregateComplianceCountsIndex)
     {
       m_aggregateComplianceCounts.push_back(aggregateComplianceCountsJsonList[aggregateComplianceCountsIndex].AsObject());

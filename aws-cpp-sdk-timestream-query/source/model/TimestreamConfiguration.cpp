@@ -66,7 +66,7 @@ TimestreamConfiguration& TimestreamConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DimensionMappings"))
   {
-    Array<JsonView> dimensionMappingsJsonList = jsonValue.GetArray("DimensionMappings");
+    Aws::Utils::Array<JsonView> dimensionMappingsJsonList = jsonValue.GetArray("DimensionMappings");
     for(unsigned dimensionMappingsIndex = 0; dimensionMappingsIndex < dimensionMappingsJsonList.GetLength(); ++dimensionMappingsIndex)
     {
       m_dimensionMappings.push_back(dimensionMappingsJsonList[dimensionMappingsIndex].AsObject());
@@ -83,7 +83,7 @@ TimestreamConfiguration& TimestreamConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MixedMeasureMappings"))
   {
-    Array<JsonView> mixedMeasureMappingsJsonList = jsonValue.GetArray("MixedMeasureMappings");
+    Aws::Utils::Array<JsonView> mixedMeasureMappingsJsonList = jsonValue.GetArray("MixedMeasureMappings");
     for(unsigned mixedMeasureMappingsIndex = 0; mixedMeasureMappingsIndex < mixedMeasureMappingsJsonList.GetLength(); ++mixedMeasureMappingsIndex)
     {
       m_mixedMeasureMappings.push_back(mixedMeasureMappingsJsonList[mixedMeasureMappingsIndex].AsObject());
@@ -125,7 +125,7 @@ JsonValue TimestreamConfiguration::Jsonize() const
 
   if(m_dimensionMappingsHasBeenSet)
   {
-   Array<JsonValue> dimensionMappingsJsonList(m_dimensionMappings.size());
+   Aws::Utils::Array<JsonValue> dimensionMappingsJsonList(m_dimensionMappings.size());
    for(unsigned dimensionMappingsIndex = 0; dimensionMappingsIndex < dimensionMappingsJsonList.GetLength(); ++dimensionMappingsIndex)
    {
      dimensionMappingsJsonList[dimensionMappingsIndex].AsObject(m_dimensionMappings[dimensionMappingsIndex].Jsonize());
@@ -142,7 +142,7 @@ JsonValue TimestreamConfiguration::Jsonize() const
 
   if(m_mixedMeasureMappingsHasBeenSet)
   {
-   Array<JsonValue> mixedMeasureMappingsJsonList(m_mixedMeasureMappings.size());
+   Aws::Utils::Array<JsonValue> mixedMeasureMappingsJsonList(m_mixedMeasureMappings.size());
    for(unsigned mixedMeasureMappingsIndex = 0; mixedMeasureMappingsIndex < mixedMeasureMappingsJsonList.GetLength(); ++mixedMeasureMappingsIndex)
    {
      mixedMeasureMappingsJsonList[mixedMeasureMappingsIndex].AsObject(m_mixedMeasureMappings[mixedMeasureMappingsIndex].Jsonize());

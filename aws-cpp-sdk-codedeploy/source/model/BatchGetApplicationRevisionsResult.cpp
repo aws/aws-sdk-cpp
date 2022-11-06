@@ -42,7 +42,7 @@ BatchGetApplicationRevisionsResult& BatchGetApplicationRevisionsResult::operator
 
   if(jsonValue.ValueExists("revisions"))
   {
-    Array<JsonView> revisionsJsonList = jsonValue.GetArray("revisions");
+    Aws::Utils::Array<JsonView> revisionsJsonList = jsonValue.GetArray("revisions");
     for(unsigned revisionsIndex = 0; revisionsIndex < revisionsJsonList.GetLength(); ++revisionsIndex)
     {
       m_revisions.push_back(revisionsJsonList[revisionsIndex].AsObject());

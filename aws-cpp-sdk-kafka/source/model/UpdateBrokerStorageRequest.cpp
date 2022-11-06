@@ -31,7 +31,7 @@ Aws::String UpdateBrokerStorageRequest::SerializePayload() const
 
   if(m_targetBrokerEBSVolumeInfoHasBeenSet)
   {
-   Array<JsonValue> targetBrokerEBSVolumeInfoJsonList(m_targetBrokerEBSVolumeInfo.size());
+   Aws::Utils::Array<JsonValue> targetBrokerEBSVolumeInfoJsonList(m_targetBrokerEBSVolumeInfo.size());
    for(unsigned targetBrokerEBSVolumeInfoIndex = 0; targetBrokerEBSVolumeInfoIndex < targetBrokerEBSVolumeInfoJsonList.GetLength(); ++targetBrokerEBSVolumeInfoIndex)
    {
      targetBrokerEBSVolumeInfoJsonList[targetBrokerEBSVolumeInfoIndex].AsObject(m_targetBrokerEBSVolumeInfo[targetBrokerEBSVolumeInfoIndex].Jsonize());

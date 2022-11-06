@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/timestream-query/TimestreamQueryErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/timestream-query/TimestreamQueryEndpointProvider.h>
 #include <aws/core/utils/ConcurrentCache.h>
 #include <future>
 #include <functional>
@@ -61,6 +63,10 @@ namespace Aws
 
   namespace TimestreamQuery
   {
+    using TimestreamQueryClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
+    using TimestreamQueryEndpointProviderBase = Aws::TimestreamQuery::Endpoint::TimestreamQueryEndpointProviderBase;
+    using TimestreamQueryEndpointProvider = Aws::TimestreamQuery::Endpoint::TimestreamQueryEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in TimestreamQueryClient header */

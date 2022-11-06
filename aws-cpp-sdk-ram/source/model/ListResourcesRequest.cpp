@@ -50,7 +50,7 @@ Aws::String ListResourcesRequest::SerializePayload() const
 
   if(m_resourceArnsHasBeenSet)
   {
-   Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
    for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
    {
      resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
@@ -61,7 +61,7 @@ Aws::String ListResourcesRequest::SerializePayload() const
 
   if(m_resourceShareArnsHasBeenSet)
   {
-   Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
+   Aws::Utils::Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
    for(unsigned resourceShareArnsIndex = 0; resourceShareArnsIndex < resourceShareArnsJsonList.GetLength(); ++resourceShareArnsIndex)
    {
      resourceShareArnsJsonList[resourceShareArnsIndex].AsString(m_resourceShareArns[resourceShareArnsIndex]);

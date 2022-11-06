@@ -36,7 +36,7 @@ ListServicePipelineOutputsResult& ListServicePipelineOutputsResult::operator =(c
 
   if(jsonValue.ValueExists("outputs"))
   {
-    Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
+    Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());

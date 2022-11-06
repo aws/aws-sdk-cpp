@@ -82,7 +82,7 @@ FraudDetectionResult& FraudDetectionResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Reasons"))
   {
-    Array<JsonView> reasonsJsonList = jsonValue.GetArray("Reasons");
+    Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("Reasons");
     for(unsigned reasonsIndex = 0; reasonsIndex < reasonsJsonList.GetLength(); ++reasonsIndex)
     {
       m_reasons.push_back(FraudDetectionReasonMapper::GetFraudDetectionReasonForName(reasonsJsonList[reasonsIndex].AsString()));
@@ -133,7 +133,7 @@ JsonValue FraudDetectionResult::Jsonize() const
 
   if(m_reasonsHasBeenSet)
   {
-   Array<JsonValue> reasonsJsonList(m_reasons.size());
+   Aws::Utils::Array<JsonValue> reasonsJsonList(m_reasons.size());
    for(unsigned reasonsIndex = 0; reasonsIndex < reasonsJsonList.GetLength(); ++reasonsIndex)
    {
      reasonsJsonList[reasonsIndex].AsString(FraudDetectionReasonMapper::GetNameForFraudDetectionReason(m_reasons[reasonsIndex]));

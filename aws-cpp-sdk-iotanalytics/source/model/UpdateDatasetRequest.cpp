@@ -29,7 +29,7 @@ Aws::String UpdateDatasetRequest::SerializePayload() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
@@ -40,7 +40,7 @@ Aws::String UpdateDatasetRequest::SerializePayload() const
 
   if(m_triggersHasBeenSet)
   {
-   Array<JsonValue> triggersJsonList(m_triggers.size());
+   Aws::Utils::Array<JsonValue> triggersJsonList(m_triggers.size());
    for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
    {
      triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
@@ -51,7 +51,7 @@ Aws::String UpdateDatasetRequest::SerializePayload() const
 
   if(m_contentDeliveryRulesHasBeenSet)
   {
-   Array<JsonValue> contentDeliveryRulesJsonList(m_contentDeliveryRules.size());
+   Aws::Utils::Array<JsonValue> contentDeliveryRulesJsonList(m_contentDeliveryRules.size());
    for(unsigned contentDeliveryRulesIndex = 0; contentDeliveryRulesIndex < contentDeliveryRulesJsonList.GetLength(); ++contentDeliveryRulesIndex)
    {
      contentDeliveryRulesJsonList[contentDeliveryRulesIndex].AsObject(m_contentDeliveryRules[contentDeliveryRulesIndex].Jsonize());
@@ -74,7 +74,7 @@ Aws::String UpdateDatasetRequest::SerializePayload() const
 
   if(m_lateDataRulesHasBeenSet)
   {
-   Array<JsonValue> lateDataRulesJsonList(m_lateDataRules.size());
+   Aws::Utils::Array<JsonValue> lateDataRulesJsonList(m_lateDataRules.size());
    for(unsigned lateDataRulesIndex = 0; lateDataRulesIndex < lateDataRulesJsonList.GetLength(); ++lateDataRulesIndex)
    {
      lateDataRulesJsonList[lateDataRulesIndex].AsObject(m_lateDataRules[lateDataRulesIndex].Jsonize());

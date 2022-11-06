@@ -33,7 +33,7 @@ Aws::String CreateFunctionDefinitionVersionRequest::SerializePayload() const
 
   if(m_functionsHasBeenSet)
   {
-   Array<JsonValue> functionsJsonList(m_functions.size());
+   Aws::Utils::Array<JsonValue> functionsJsonList(m_functions.size());
    for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
    {
      functionsJsonList[functionsIndex].AsObject(m_functions[functionsIndex].Jsonize());

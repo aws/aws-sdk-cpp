@@ -30,7 +30,7 @@ DescribeDocumentPermissionResult& DescribeDocumentPermissionResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountIds"))
   {
-    Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
+    Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
     for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
     {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());
@@ -39,7 +39,7 @@ DescribeDocumentPermissionResult& DescribeDocumentPermissionResult::operator =(c
 
   if(jsonValue.ValueExists("AccountSharingInfoList"))
   {
-    Array<JsonView> accountSharingInfoListJsonList = jsonValue.GetArray("AccountSharingInfoList");
+    Aws::Utils::Array<JsonView> accountSharingInfoListJsonList = jsonValue.GetArray("AccountSharingInfoList");
     for(unsigned accountSharingInfoListIndex = 0; accountSharingInfoListIndex < accountSharingInfoListJsonList.GetLength(); ++accountSharingInfoListIndex)
     {
       m_accountSharingInfoList.push_back(accountSharingInfoListJsonList[accountSharingInfoListIndex].AsObject());

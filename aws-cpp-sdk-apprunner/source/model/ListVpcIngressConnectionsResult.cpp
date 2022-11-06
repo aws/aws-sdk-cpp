@@ -30,7 +30,7 @@ ListVpcIngressConnectionsResult& ListVpcIngressConnectionsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VpcIngressConnectionSummaryList"))
   {
-    Array<JsonView> vpcIngressConnectionSummaryListJsonList = jsonValue.GetArray("VpcIngressConnectionSummaryList");
+    Aws::Utils::Array<JsonView> vpcIngressConnectionSummaryListJsonList = jsonValue.GetArray("VpcIngressConnectionSummaryList");
     for(unsigned vpcIngressConnectionSummaryListIndex = 0; vpcIngressConnectionSummaryListIndex < vpcIngressConnectionSummaryListJsonList.GetLength(); ++vpcIngressConnectionSummaryListIndex)
     {
       m_vpcIngressConnectionSummaryList.push_back(vpcIngressConnectionSummaryListJsonList[vpcIngressConnectionSummaryListIndex].AsObject());

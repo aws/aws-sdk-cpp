@@ -33,7 +33,7 @@ RelatedObservations& RelatedObservations::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObservationList"))
   {
-    Array<JsonView> observationListJsonList = jsonValue.GetArray("ObservationList");
+    Aws::Utils::Array<JsonView> observationListJsonList = jsonValue.GetArray("ObservationList");
     for(unsigned observationListIndex = 0; observationListIndex < observationListJsonList.GetLength(); ++observationListIndex)
     {
       m_observationList.push_back(observationListJsonList[observationListIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue RelatedObservations::Jsonize() const
 
   if(m_observationListHasBeenSet)
   {
-   Array<JsonValue> observationListJsonList(m_observationList.size());
+   Aws::Utils::Array<JsonValue> observationListJsonList(m_observationList.size());
    for(unsigned observationListIndex = 0; observationListIndex < observationListJsonList.GetLength(); ++observationListIndex)
    {
      observationListJsonList[observationListIndex].AsObject(m_observationList[observationListIndex].Jsonize());

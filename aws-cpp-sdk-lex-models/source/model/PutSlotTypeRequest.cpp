@@ -38,7 +38,7 @@ Aws::String PutSlotTypeRequest::SerializePayload() const
 
   if(m_enumerationValuesHasBeenSet)
   {
-   Array<JsonValue> enumerationValuesJsonList(m_enumerationValues.size());
+   Aws::Utils::Array<JsonValue> enumerationValuesJsonList(m_enumerationValues.size());
    for(unsigned enumerationValuesIndex = 0; enumerationValuesIndex < enumerationValuesJsonList.GetLength(); ++enumerationValuesIndex)
    {
      enumerationValuesJsonList[enumerationValuesIndex].AsObject(m_enumerationValues[enumerationValuesIndex].Jsonize());
@@ -72,7 +72,7 @@ Aws::String PutSlotTypeRequest::SerializePayload() const
 
   if(m_slotTypeConfigurationsHasBeenSet)
   {
-   Array<JsonValue> slotTypeConfigurationsJsonList(m_slotTypeConfigurations.size());
+   Aws::Utils::Array<JsonValue> slotTypeConfigurationsJsonList(m_slotTypeConfigurations.size());
    for(unsigned slotTypeConfigurationsIndex = 0; slotTypeConfigurationsIndex < slotTypeConfigurationsJsonList.GetLength(); ++slotTypeConfigurationsIndex)
    {
      slotTypeConfigurationsJsonList[slotTypeConfigurationsIndex].AsObject(m_slotTypeConfigurations[slotTypeConfigurationsIndex].Jsonize());

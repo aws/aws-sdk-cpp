@@ -60,7 +60,7 @@ RelationalDatabaseEvent& RelationalDatabaseEvent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("eventCategories"))
   {
-    Array<JsonView> eventCategoriesJsonList = jsonValue.GetArray("eventCategories");
+    Aws::Utils::Array<JsonView> eventCategoriesJsonList = jsonValue.GetArray("eventCategories");
     for(unsigned eventCategoriesIndex = 0; eventCategoriesIndex < eventCategoriesJsonList.GetLength(); ++eventCategoriesIndex)
     {
       m_eventCategories.push_back(eventCategoriesJsonList[eventCategoriesIndex].AsString());
@@ -94,7 +94,7 @@ JsonValue RelationalDatabaseEvent::Jsonize() const
 
   if(m_eventCategoriesHasBeenSet)
   {
-   Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
+   Aws::Utils::Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
    for(unsigned eventCategoriesIndex = 0; eventCategoriesIndex < eventCategoriesJsonList.GetLength(); ++eventCategoriesIndex)
    {
      eventCategoriesJsonList[eventCategoriesIndex].AsString(m_eventCategories[eventCategoriesIndex]);

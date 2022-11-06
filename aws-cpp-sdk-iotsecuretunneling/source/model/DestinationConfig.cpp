@@ -42,7 +42,7 @@ DestinationConfig& DestinationConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("services"))
   {
-    Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
+    Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue DestinationConfig::Jsonize() const
 
   if(m_servicesHasBeenSet)
   {
-   Array<JsonValue> servicesJsonList(m_services.size());
+   Aws::Utils::Array<JsonValue> servicesJsonList(m_services.size());
    for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
    {
      servicesJsonList[servicesIndex].AsString(m_services[servicesIndex]);

@@ -143,7 +143,7 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PipelineParameters"))
   {
-    Array<JsonView> pipelineParametersJsonList = jsonValue.GetArray("PipelineParameters");
+    Aws::Utils::Array<JsonView> pipelineParametersJsonList = jsonValue.GetArray("PipelineParameters");
     for(unsigned pipelineParametersIndex = 0; pipelineParametersIndex < pipelineParametersJsonList.GetLength(); ++pipelineParametersIndex)
     {
       m_pipelineParameters.push_back(pipelineParametersJsonList[pipelineParametersIndex].AsObject());
@@ -229,7 +229,7 @@ JsonValue PipelineExecution::Jsonize() const
 
   if(m_pipelineParametersHasBeenSet)
   {
-   Array<JsonValue> pipelineParametersJsonList(m_pipelineParameters.size());
+   Aws::Utils::Array<JsonValue> pipelineParametersJsonList(m_pipelineParameters.size());
    for(unsigned pipelineParametersIndex = 0; pipelineParametersIndex < pipelineParametersJsonList.GetLength(); ++pipelineParametersIndex)
    {
      pipelineParametersJsonList[pipelineParametersIndex].AsObject(m_pipelineParameters[pipelineParametersIndex].Jsonize());

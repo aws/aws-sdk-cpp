@@ -30,7 +30,7 @@ DescribeRecommendationExportJobsResult& DescribeRecommendationExportJobsResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("recommendationExportJobs"))
   {
-    Array<JsonView> recommendationExportJobsJsonList = jsonValue.GetArray("recommendationExportJobs");
+    Aws::Utils::Array<JsonView> recommendationExportJobsJsonList = jsonValue.GetArray("recommendationExportJobs");
     for(unsigned recommendationExportJobsIndex = 0; recommendationExportJobsIndex < recommendationExportJobsJsonList.GetLength(); ++recommendationExportJobsIndex)
     {
       m_recommendationExportJobs.push_back(recommendationExportJobsJsonList[recommendationExportJobsIndex].AsObject());

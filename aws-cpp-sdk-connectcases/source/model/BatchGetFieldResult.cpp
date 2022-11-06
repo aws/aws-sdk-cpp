@@ -30,7 +30,7 @@ BatchGetFieldResult& BatchGetFieldResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetFieldResult& BatchGetFieldResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("fields"))
   {
-    Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
+    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
     for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
     {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());

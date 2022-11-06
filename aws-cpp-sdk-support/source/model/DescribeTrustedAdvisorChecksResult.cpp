@@ -30,7 +30,7 @@ DescribeTrustedAdvisorChecksResult& DescribeTrustedAdvisorChecksResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("checks"))
   {
-    Array<JsonView> checksJsonList = jsonValue.GetArray("checks");
+    Aws::Utils::Array<JsonView> checksJsonList = jsonValue.GetArray("checks");
     for(unsigned checksIndex = 0; checksIndex < checksJsonList.GetLength(); ++checksIndex)
     {
       m_checks.push_back(checksJsonList[checksIndex].AsObject());

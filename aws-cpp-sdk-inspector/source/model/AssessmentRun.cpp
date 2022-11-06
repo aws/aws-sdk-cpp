@@ -102,7 +102,7 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
-    Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
+    Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
     for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
     {
       m_rulesPackageArns.push_back(rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString());
@@ -112,7 +112,7 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("userAttributesForFindings"))
   {
-    Array<JsonView> userAttributesForFindingsJsonList = jsonValue.GetArray("userAttributesForFindings");
+    Aws::Utils::Array<JsonView> userAttributesForFindingsJsonList = jsonValue.GetArray("userAttributesForFindings");
     for(unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength(); ++userAttributesForFindingsIndex)
     {
       m_userAttributesForFindings.push_back(userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject());
@@ -157,7 +157,7 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("stateChanges"))
   {
-    Array<JsonView> stateChangesJsonList = jsonValue.GetArray("stateChanges");
+    Aws::Utils::Array<JsonView> stateChangesJsonList = jsonValue.GetArray("stateChanges");
     for(unsigned stateChangesIndex = 0; stateChangesIndex < stateChangesJsonList.GetLength(); ++stateChangesIndex)
     {
       m_stateChanges.push_back(stateChangesJsonList[stateChangesIndex].AsObject());
@@ -167,7 +167,7 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("notifications"))
   {
-    Array<JsonView> notificationsJsonList = jsonValue.GetArray("notifications");
+    Aws::Utils::Array<JsonView> notificationsJsonList = jsonValue.GetArray("notifications");
     for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
     {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());
@@ -223,7 +223,7 @@ JsonValue AssessmentRun::Jsonize() const
 
   if(m_rulesPackageArnsHasBeenSet)
   {
-   Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
+   Aws::Utils::Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
    for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
    {
      rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString(m_rulesPackageArns[rulesPackageArnsIndex]);
@@ -234,7 +234,7 @@ JsonValue AssessmentRun::Jsonize() const
 
   if(m_userAttributesForFindingsHasBeenSet)
   {
-   Array<JsonValue> userAttributesForFindingsJsonList(m_userAttributesForFindings.size());
+   Aws::Utils::Array<JsonValue> userAttributesForFindingsJsonList(m_userAttributesForFindings.size());
    for(unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength(); ++userAttributesForFindingsIndex)
    {
      userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject(m_userAttributesForFindings[userAttributesForFindingsIndex].Jsonize());
@@ -271,7 +271,7 @@ JsonValue AssessmentRun::Jsonize() const
 
   if(m_stateChangesHasBeenSet)
   {
-   Array<JsonValue> stateChangesJsonList(m_stateChanges.size());
+   Aws::Utils::Array<JsonValue> stateChangesJsonList(m_stateChanges.size());
    for(unsigned stateChangesIndex = 0; stateChangesIndex < stateChangesJsonList.GetLength(); ++stateChangesIndex)
    {
      stateChangesJsonList[stateChangesIndex].AsObject(m_stateChanges[stateChangesIndex].Jsonize());
@@ -282,7 +282,7 @@ JsonValue AssessmentRun::Jsonize() const
 
   if(m_notificationsHasBeenSet)
   {
-   Array<JsonValue> notificationsJsonList(m_notifications.size());
+   Aws::Utils::Array<JsonValue> notificationsJsonList(m_notifications.size());
    for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
    {
      notificationsJsonList[notificationsIndex].AsObject(m_notifications[notificationsIndex].Jsonize());

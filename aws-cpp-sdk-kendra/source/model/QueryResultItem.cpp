@@ -67,7 +67,7 @@ QueryResultItem& QueryResultItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalAttributes"))
   {
-    Array<JsonView> additionalAttributesJsonList = jsonValue.GetArray("AdditionalAttributes");
+    Aws::Utils::Array<JsonView> additionalAttributesJsonList = jsonValue.GetArray("AdditionalAttributes");
     for(unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength(); ++additionalAttributesIndex)
     {
       m_additionalAttributes.push_back(additionalAttributesJsonList[additionalAttributesIndex].AsObject());
@@ -105,7 +105,7 @@ QueryResultItem& QueryResultItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DocumentAttributes"))
   {
-    Array<JsonView> documentAttributesJsonList = jsonValue.GetArray("DocumentAttributes");
+    Aws::Utils::Array<JsonView> documentAttributesJsonList = jsonValue.GetArray("DocumentAttributes");
     for(unsigned documentAttributesIndex = 0; documentAttributesIndex < documentAttributesJsonList.GetLength(); ++documentAttributesIndex)
     {
       m_documentAttributes.push_back(documentAttributesJsonList[documentAttributesIndex].AsObject());
@@ -147,7 +147,7 @@ JsonValue QueryResultItem::Jsonize() const
 
   if(m_additionalAttributesHasBeenSet)
   {
-   Array<JsonValue> additionalAttributesJsonList(m_additionalAttributes.size());
+   Aws::Utils::Array<JsonValue> additionalAttributesJsonList(m_additionalAttributes.size());
    for(unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength(); ++additionalAttributesIndex)
    {
      additionalAttributesJsonList[additionalAttributesIndex].AsObject(m_additionalAttributes[additionalAttributesIndex].Jsonize());
@@ -182,7 +182,7 @@ JsonValue QueryResultItem::Jsonize() const
 
   if(m_documentAttributesHasBeenSet)
   {
-   Array<JsonValue> documentAttributesJsonList(m_documentAttributes.size());
+   Aws::Utils::Array<JsonValue> documentAttributesJsonList(m_documentAttributes.size());
    for(unsigned documentAttributesIndex = 0; documentAttributesIndex < documentAttributesJsonList.GetLength(); ++documentAttributesIndex)
    {
      documentAttributesJsonList[documentAttributesIndex].AsObject(m_documentAttributes[documentAttributesIndex].Jsonize());

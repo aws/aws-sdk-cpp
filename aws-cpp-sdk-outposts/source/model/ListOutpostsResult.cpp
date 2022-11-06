@@ -30,7 +30,7 @@ ListOutpostsResult& ListOutpostsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Outposts"))
   {
-    Array<JsonView> outpostsJsonList = jsonValue.GetArray("Outposts");
+    Aws::Utils::Array<JsonView> outpostsJsonList = jsonValue.GetArray("Outposts");
     for(unsigned outpostsIndex = 0; outpostsIndex < outpostsJsonList.GetLength(); ++outpostsIndex)
     {
       m_outposts.push_back(outpostsJsonList[outpostsIndex].AsObject());

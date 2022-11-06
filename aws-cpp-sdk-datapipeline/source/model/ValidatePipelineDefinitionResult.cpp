@@ -32,7 +32,7 @@ ValidatePipelineDefinitionResult& ValidatePipelineDefinitionResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("validationErrors"))
   {
-    Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
+    Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
     for(unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex)
     {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());
@@ -41,7 +41,7 @@ ValidatePipelineDefinitionResult& ValidatePipelineDefinitionResult::operator =(c
 
   if(jsonValue.ValueExists("validationWarnings"))
   {
-    Array<JsonView> validationWarningsJsonList = jsonValue.GetArray("validationWarnings");
+    Aws::Utils::Array<JsonView> validationWarningsJsonList = jsonValue.GetArray("validationWarnings");
     for(unsigned validationWarningsIndex = 0; validationWarningsIndex < validationWarningsJsonList.GetLength(); ++validationWarningsIndex)
     {
       m_validationWarnings.push_back(validationWarningsJsonList[validationWarningsIndex].AsObject());

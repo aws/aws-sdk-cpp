@@ -30,7 +30,7 @@ ListPredictorsResult& ListPredictorsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Predictors"))
   {
-    Array<JsonView> predictorsJsonList = jsonValue.GetArray("Predictors");
+    Aws::Utils::Array<JsonView> predictorsJsonList = jsonValue.GetArray("Predictors");
     for(unsigned predictorsIndex = 0; predictorsIndex < predictorsJsonList.GetLength(); ++predictorsIndex)
     {
       m_predictors.push_back(predictorsJsonList[predictorsIndex].AsObject());

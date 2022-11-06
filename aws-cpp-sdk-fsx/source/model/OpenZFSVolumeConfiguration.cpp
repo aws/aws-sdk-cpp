@@ -128,7 +128,7 @@ OpenZFSVolumeConfiguration& OpenZFSVolumeConfiguration::operator =(JsonView json
 
   if(jsonValue.ValueExists("NfsExports"))
   {
-    Array<JsonView> nfsExportsJsonList = jsonValue.GetArray("NfsExports");
+    Aws::Utils::Array<JsonView> nfsExportsJsonList = jsonValue.GetArray("NfsExports");
     for(unsigned nfsExportsIndex = 0; nfsExportsIndex < nfsExportsJsonList.GetLength(); ++nfsExportsIndex)
     {
       m_nfsExports.push_back(nfsExportsJsonList[nfsExportsIndex].AsObject());
@@ -138,7 +138,7 @@ OpenZFSVolumeConfiguration& OpenZFSVolumeConfiguration::operator =(JsonView json
 
   if(jsonValue.ValueExists("UserAndGroupQuotas"))
   {
-    Array<JsonView> userAndGroupQuotasJsonList = jsonValue.GetArray("UserAndGroupQuotas");
+    Aws::Utils::Array<JsonView> userAndGroupQuotasJsonList = jsonValue.GetArray("UserAndGroupQuotas");
     for(unsigned userAndGroupQuotasIndex = 0; userAndGroupQuotasIndex < userAndGroupQuotasJsonList.GetLength(); ++userAndGroupQuotasIndex)
     {
       m_userAndGroupQuotas.push_back(userAndGroupQuotasJsonList[userAndGroupQuotasIndex].AsObject());
@@ -208,7 +208,7 @@ JsonValue OpenZFSVolumeConfiguration::Jsonize() const
 
   if(m_nfsExportsHasBeenSet)
   {
-   Array<JsonValue> nfsExportsJsonList(m_nfsExports.size());
+   Aws::Utils::Array<JsonValue> nfsExportsJsonList(m_nfsExports.size());
    for(unsigned nfsExportsIndex = 0; nfsExportsIndex < nfsExportsJsonList.GetLength(); ++nfsExportsIndex)
    {
      nfsExportsJsonList[nfsExportsIndex].AsObject(m_nfsExports[nfsExportsIndex].Jsonize());
@@ -219,7 +219,7 @@ JsonValue OpenZFSVolumeConfiguration::Jsonize() const
 
   if(m_userAndGroupQuotasHasBeenSet)
   {
-   Array<JsonValue> userAndGroupQuotasJsonList(m_userAndGroupQuotas.size());
+   Aws::Utils::Array<JsonValue> userAndGroupQuotasJsonList(m_userAndGroupQuotas.size());
    for(unsigned userAndGroupQuotasIndex = 0; userAndGroupQuotasIndex < userAndGroupQuotasJsonList.GetLength(); ++userAndGroupQuotasIndex)
    {
      userAndGroupQuotasJsonList[userAndGroupQuotasIndex].AsObject(m_userAndGroupQuotas[userAndGroupQuotasIndex].Jsonize());

@@ -64,7 +64,7 @@ ExpectedRoute& ExpectedRoute::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ContributingSubnets"))
   {
-    Array<JsonView> contributingSubnetsJsonList = jsonValue.GetArray("ContributingSubnets");
+    Aws::Utils::Array<JsonView> contributingSubnetsJsonList = jsonValue.GetArray("ContributingSubnets");
     for(unsigned contributingSubnetsIndex = 0; contributingSubnetsIndex < contributingSubnetsJsonList.GetLength(); ++contributingSubnetsIndex)
     {
       m_contributingSubnets.push_back(contributingSubnetsJsonList[contributingSubnetsIndex].AsString());
@@ -74,7 +74,7 @@ ExpectedRoute& ExpectedRoute::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AllowedTargets"))
   {
-    Array<JsonView> allowedTargetsJsonList = jsonValue.GetArray("AllowedTargets");
+    Aws::Utils::Array<JsonView> allowedTargetsJsonList = jsonValue.GetArray("AllowedTargets");
     for(unsigned allowedTargetsIndex = 0; allowedTargetsIndex < allowedTargetsJsonList.GetLength(); ++allowedTargetsIndex)
     {
       m_allowedTargets.push_back(allowedTargetsJsonList[allowedTargetsIndex].AsString());
@@ -116,7 +116,7 @@ JsonValue ExpectedRoute::Jsonize() const
 
   if(m_contributingSubnetsHasBeenSet)
   {
-   Array<JsonValue> contributingSubnetsJsonList(m_contributingSubnets.size());
+   Aws::Utils::Array<JsonValue> contributingSubnetsJsonList(m_contributingSubnets.size());
    for(unsigned contributingSubnetsIndex = 0; contributingSubnetsIndex < contributingSubnetsJsonList.GetLength(); ++contributingSubnetsIndex)
    {
      contributingSubnetsJsonList[contributingSubnetsIndex].AsString(m_contributingSubnets[contributingSubnetsIndex]);
@@ -127,7 +127,7 @@ JsonValue ExpectedRoute::Jsonize() const
 
   if(m_allowedTargetsHasBeenSet)
   {
-   Array<JsonValue> allowedTargetsJsonList(m_allowedTargets.size());
+   Aws::Utils::Array<JsonValue> allowedTargetsJsonList(m_allowedTargets.size());
    for(unsigned allowedTargetsIndex = 0; allowedTargetsIndex < allowedTargetsJsonList.GetLength(); ++allowedTargetsIndex)
    {
      allowedTargetsJsonList[allowedTargetsIndex].AsString(m_allowedTargets[allowedTargetsIndex]);

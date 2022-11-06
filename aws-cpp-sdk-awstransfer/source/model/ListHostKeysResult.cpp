@@ -42,7 +42,7 @@ ListHostKeysResult& ListHostKeysResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("HostKeys"))
   {
-    Array<JsonView> hostKeysJsonList = jsonValue.GetArray("HostKeys");
+    Aws::Utils::Array<JsonView> hostKeysJsonList = jsonValue.GetArray("HostKeys");
     for(unsigned hostKeysIndex = 0; hostKeysIndex < hostKeysJsonList.GetLength(); ++hostKeysIndex)
     {
       m_hostKeys.push_back(hostKeysJsonList[hostKeysIndex].AsObject());

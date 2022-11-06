@@ -43,7 +43,7 @@ AwsIamGroupDetails& AwsIamGroupDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttachedManagedPolicies"))
   {
-    Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");
+    Aws::Utils::Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");
     for(unsigned attachedManagedPoliciesIndex = 0; attachedManagedPoliciesIndex < attachedManagedPoliciesJsonList.GetLength(); ++attachedManagedPoliciesIndex)
     {
       m_attachedManagedPolicies.push_back(attachedManagedPoliciesJsonList[attachedManagedPoliciesIndex].AsObject());
@@ -74,7 +74,7 @@ AwsIamGroupDetails& AwsIamGroupDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GroupPolicyList"))
   {
-    Array<JsonView> groupPolicyListJsonList = jsonValue.GetArray("GroupPolicyList");
+    Aws::Utils::Array<JsonView> groupPolicyListJsonList = jsonValue.GetArray("GroupPolicyList");
     for(unsigned groupPolicyListIndex = 0; groupPolicyListIndex < groupPolicyListJsonList.GetLength(); ++groupPolicyListIndex)
     {
       m_groupPolicyList.push_back(groupPolicyListJsonList[groupPolicyListIndex].AsObject());
@@ -98,7 +98,7 @@ JsonValue AwsIamGroupDetails::Jsonize() const
 
   if(m_attachedManagedPoliciesHasBeenSet)
   {
-   Array<JsonValue> attachedManagedPoliciesJsonList(m_attachedManagedPolicies.size());
+   Aws::Utils::Array<JsonValue> attachedManagedPoliciesJsonList(m_attachedManagedPolicies.size());
    for(unsigned attachedManagedPoliciesIndex = 0; attachedManagedPoliciesIndex < attachedManagedPoliciesJsonList.GetLength(); ++attachedManagedPoliciesIndex)
    {
      attachedManagedPoliciesJsonList[attachedManagedPoliciesIndex].AsObject(m_attachedManagedPolicies[attachedManagedPoliciesIndex].Jsonize());
@@ -127,7 +127,7 @@ JsonValue AwsIamGroupDetails::Jsonize() const
 
   if(m_groupPolicyListHasBeenSet)
   {
-   Array<JsonValue> groupPolicyListJsonList(m_groupPolicyList.size());
+   Aws::Utils::Array<JsonValue> groupPolicyListJsonList(m_groupPolicyList.size());
    for(unsigned groupPolicyListIndex = 0; groupPolicyListIndex < groupPolicyListJsonList.GetLength(); ++groupPolicyListIndex)
    {
      groupPolicyListJsonList[groupPolicyListIndex].AsObject(m_groupPolicyList[groupPolicyListIndex].Jsonize());

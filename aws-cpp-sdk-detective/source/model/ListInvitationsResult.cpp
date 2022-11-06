@@ -30,7 +30,7 @@ ListInvitationsResult& ListInvitationsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Invitations"))
   {
-    Array<JsonView> invitationsJsonList = jsonValue.GetArray("Invitations");
+    Aws::Utils::Array<JsonView> invitationsJsonList = jsonValue.GetArray("Invitations");
     for(unsigned invitationsIndex = 0; invitationsIndex < invitationsJsonList.GetLength(); ++invitationsIndex)
     {
       m_invitations.push_back(invitationsJsonList[invitationsIndex].AsObject());

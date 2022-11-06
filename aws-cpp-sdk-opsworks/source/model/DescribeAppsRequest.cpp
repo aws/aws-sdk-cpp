@@ -30,7 +30,7 @@ Aws::String DescribeAppsRequest::SerializePayload() const
 
   if(m_appIdsHasBeenSet)
   {
-   Array<JsonValue> appIdsJsonList(m_appIds.size());
+   Aws::Utils::Array<JsonValue> appIdsJsonList(m_appIds.size());
    for(unsigned appIdsIndex = 0; appIdsIndex < appIdsJsonList.GetLength(); ++appIdsIndex)
    {
      appIdsJsonList[appIdsIndex].AsString(m_appIds[appIdsIndex]);

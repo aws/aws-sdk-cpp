@@ -30,7 +30,7 @@ ListAssetModelsResult& ListAssetModelsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assetModelSummaries"))
   {
-    Array<JsonView> assetModelSummariesJsonList = jsonValue.GetArray("assetModelSummaries");
+    Aws::Utils::Array<JsonView> assetModelSummariesJsonList = jsonValue.GetArray("assetModelSummaries");
     for(unsigned assetModelSummariesIndex = 0; assetModelSummariesIndex < assetModelSummariesJsonList.GetLength(); ++assetModelSummariesIndex)
     {
       m_assetModelSummaries.push_back(assetModelSummariesJsonList[assetModelSummariesIndex].AsObject());

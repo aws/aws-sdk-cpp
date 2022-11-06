@@ -31,7 +31,7 @@ Aws::String DescribeTasksRequest::SerializePayload() const
 
   if(m_tasksHasBeenSet)
   {
-   Array<JsonValue> tasksJsonList(m_tasks.size());
+   Aws::Utils::Array<JsonValue> tasksJsonList(m_tasks.size());
    for(unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex)
    {
      tasksJsonList[tasksIndex].AsString(m_tasks[tasksIndex]);
@@ -42,7 +42,7 @@ Aws::String DescribeTasksRequest::SerializePayload() const
 
   if(m_includeHasBeenSet)
   {
-   Array<JsonValue> includeJsonList(m_include.size());
+   Aws::Utils::Array<JsonValue> includeJsonList(m_include.size());
    for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
    {
      includeJsonList[includeIndex].AsString(TaskFieldMapper::GetNameForTaskField(m_include[includeIndex]));

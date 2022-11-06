@@ -70,7 +70,7 @@ IncidentRecord& IncidentRecord::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("automationExecutions"))
   {
-    Array<JsonView> automationExecutionsJsonList = jsonValue.GetArray("automationExecutions");
+    Aws::Utils::Array<JsonView> automationExecutionsJsonList = jsonValue.GetArray("automationExecutions");
     for(unsigned automationExecutionsIndex = 0; automationExecutionsIndex < automationExecutionsJsonList.GetLength(); ++automationExecutionsIndex)
     {
       m_automationExecutions.push_back(automationExecutionsJsonList[automationExecutionsIndex].AsObject());
@@ -129,7 +129,7 @@ IncidentRecord& IncidentRecord::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("notificationTargets"))
   {
-    Array<JsonView> notificationTargetsJsonList = jsonValue.GetArray("notificationTargets");
+    Aws::Utils::Array<JsonView> notificationTargetsJsonList = jsonValue.GetArray("notificationTargets");
     for(unsigned notificationTargetsIndex = 0; notificationTargetsIndex < notificationTargetsJsonList.GetLength(); ++notificationTargetsIndex)
     {
       m_notificationTargets.push_back(notificationTargetsJsonList[notificationTargetsIndex].AsObject());
@@ -180,7 +180,7 @@ JsonValue IncidentRecord::Jsonize() const
 
   if(m_automationExecutionsHasBeenSet)
   {
-   Array<JsonValue> automationExecutionsJsonList(m_automationExecutions.size());
+   Aws::Utils::Array<JsonValue> automationExecutionsJsonList(m_automationExecutions.size());
    for(unsigned automationExecutionsIndex = 0; automationExecutionsIndex < automationExecutionsJsonList.GetLength(); ++automationExecutionsIndex)
    {
      automationExecutionsJsonList[automationExecutionsIndex].AsObject(m_automationExecutions[automationExecutionsIndex].Jsonize());
@@ -231,7 +231,7 @@ JsonValue IncidentRecord::Jsonize() const
 
   if(m_notificationTargetsHasBeenSet)
   {
-   Array<JsonValue> notificationTargetsJsonList(m_notificationTargets.size());
+   Aws::Utils::Array<JsonValue> notificationTargetsJsonList(m_notificationTargets.size());
    for(unsigned notificationTargetsIndex = 0; notificationTargetsIndex < notificationTargetsJsonList.GetLength(); ++notificationTargetsIndex)
    {
      notificationTargetsJsonList[notificationTargetsIndex].AsObject(m_notificationTargets[notificationTargetsIndex].Jsonize());

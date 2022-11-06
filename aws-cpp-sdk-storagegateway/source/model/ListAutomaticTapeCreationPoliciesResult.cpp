@@ -30,7 +30,7 @@ ListAutomaticTapeCreationPoliciesResult& ListAutomaticTapeCreationPoliciesResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AutomaticTapeCreationPolicyInfos"))
   {
-    Array<JsonView> automaticTapeCreationPolicyInfosJsonList = jsonValue.GetArray("AutomaticTapeCreationPolicyInfos");
+    Aws::Utils::Array<JsonView> automaticTapeCreationPolicyInfosJsonList = jsonValue.GetArray("AutomaticTapeCreationPolicyInfos");
     for(unsigned automaticTapeCreationPolicyInfosIndex = 0; automaticTapeCreationPolicyInfosIndex < automaticTapeCreationPolicyInfosJsonList.GetLength(); ++automaticTapeCreationPolicyInfosIndex)
     {
       m_automaticTapeCreationPolicyInfos.push_back(automaticTapeCreationPolicyInfosJsonList[automaticTapeCreationPolicyInfosIndex].AsObject());

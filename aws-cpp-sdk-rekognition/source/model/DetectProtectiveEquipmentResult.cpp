@@ -36,7 +36,7 @@ DetectProtectiveEquipmentResult& DetectProtectiveEquipmentResult::operator =(con
 
   if(jsonValue.ValueExists("Persons"))
   {
-    Array<JsonView> personsJsonList = jsonValue.GetArray("Persons");
+    Aws::Utils::Array<JsonView> personsJsonList = jsonValue.GetArray("Persons");
     for(unsigned personsIndex = 0; personsIndex < personsJsonList.GetLength(); ++personsIndex)
     {
       m_persons.push_back(personsJsonList[personsIndex].AsObject());

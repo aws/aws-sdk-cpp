@@ -60,7 +60,7 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   if(m_destinationFlowConfigListHasBeenSet)
   {
-   Array<JsonValue> destinationFlowConfigListJsonList(m_destinationFlowConfigList.size());
+   Aws::Utils::Array<JsonValue> destinationFlowConfigListJsonList(m_destinationFlowConfigList.size());
    for(unsigned destinationFlowConfigListIndex = 0; destinationFlowConfigListIndex < destinationFlowConfigListJsonList.GetLength(); ++destinationFlowConfigListIndex)
    {
      destinationFlowConfigListJsonList[destinationFlowConfigListIndex].AsObject(m_destinationFlowConfigList[destinationFlowConfigListIndex].Jsonize());
@@ -71,7 +71,7 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   if(m_tasksHasBeenSet)
   {
-   Array<JsonValue> tasksJsonList(m_tasks.size());
+   Aws::Utils::Array<JsonValue> tasksJsonList(m_tasks.size());
    for(unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex)
    {
      tasksJsonList[tasksIndex].AsObject(m_tasks[tasksIndex].Jsonize());

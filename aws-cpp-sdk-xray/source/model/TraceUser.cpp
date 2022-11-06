@@ -42,7 +42,7 @@ TraceUser& TraceUser::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ServiceIds"))
   {
-    Array<JsonView> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
+    Aws::Utils::Array<JsonView> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
     for(unsigned serviceIdsIndex = 0; serviceIdsIndex < serviceIdsJsonList.GetLength(); ++serviceIdsIndex)
     {
       m_serviceIds.push_back(serviceIdsJsonList[serviceIdsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue TraceUser::Jsonize() const
 
   if(m_serviceIdsHasBeenSet)
   {
-   Array<JsonValue> serviceIdsJsonList(m_serviceIds.size());
+   Aws::Utils::Array<JsonValue> serviceIdsJsonList(m_serviceIds.size());
    for(unsigned serviceIdsIndex = 0; serviceIdsIndex < serviceIdsJsonList.GetLength(); ++serviceIdsIndex)
    {
      serviceIdsJsonList[serviceIdsIndex].AsObject(m_serviceIds[serviceIdsIndex].Jsonize());

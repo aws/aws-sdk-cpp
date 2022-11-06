@@ -36,7 +36,7 @@ GetCurrentUserDataResult& GetCurrentUserDataResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("UserDataList"))
   {
-    Array<JsonView> userDataListJsonList = jsonValue.GetArray("UserDataList");
+    Aws::Utils::Array<JsonView> userDataListJsonList = jsonValue.GetArray("UserDataList");
     for(unsigned userDataListIndex = 0; userDataListIndex < userDataListJsonList.GetLength(); ++userDataListIndex)
     {
       m_userDataList.push_back(userDataListJsonList[userDataListIndex].AsObject());

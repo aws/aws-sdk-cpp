@@ -30,7 +30,7 @@ DescribeDirectoryConfigsResult& DescribeDirectoryConfigsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DirectoryConfigs"))
   {
-    Array<JsonView> directoryConfigsJsonList = jsonValue.GetArray("DirectoryConfigs");
+    Aws::Utils::Array<JsonView> directoryConfigsJsonList = jsonValue.GetArray("DirectoryConfigs");
     for(unsigned directoryConfigsIndex = 0; directoryConfigsIndex < directoryConfigsJsonList.GetLength(); ++directoryConfigsIndex)
     {
       m_directoryConfigs.push_back(directoryConfigsJsonList[directoryConfigsIndex].AsObject());

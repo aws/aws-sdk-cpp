@@ -85,7 +85,7 @@ Aws::String PutProfileObjectTypeRequest::SerializePayload() const
    JsonValue keysJsonMap;
    for(auto& keysItem : m_keys)
    {
-     Array<JsonValue> objectTypeKeyListJsonList(keysItem.second.size());
+     Aws::Utils::Array<JsonValue> objectTypeKeyListJsonList(keysItem.second.size());
      for(unsigned objectTypeKeyListIndex = 0; objectTypeKeyListIndex < objectTypeKeyListJsonList.GetLength(); ++objectTypeKeyListIndex)
      {
        objectTypeKeyListJsonList[objectTypeKeyListIndex].AsObject(keysItem.second[objectTypeKeyListIndex].Jsonize());

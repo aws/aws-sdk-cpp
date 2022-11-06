@@ -129,7 +129,7 @@ StartChildWorkflowExecutionInitiatedEventAttributes& StartChildWorkflowExecution
 
   if(jsonValue.ValueExists("tagList"))
   {
-    Array<JsonView> tagListJsonList = jsonValue.GetArray("tagList");
+    Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("tagList");
     for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
     {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsString());
@@ -212,7 +212,7 @@ JsonValue StartChildWorkflowExecutionInitiatedEventAttributes::Jsonize() const
 
   if(m_tagListHasBeenSet)
   {
-   Array<JsonValue> tagListJsonList(m_tagList.size());
+   Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
    {
      tagListJsonList[tagListIndex].AsString(m_tagList[tagListIndex]);

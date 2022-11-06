@@ -76,7 +76,7 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
 
   if(m_inputDataConfigHasBeenSet)
   {
-   Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
+   Aws::Utils::Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
    for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
    {
      inputDataConfigJsonList[inputDataConfigIndex].AsObject(m_inputDataConfig[inputDataConfigIndex].Jsonize());
@@ -111,7 +111,7 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -152,7 +152,7 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
 
   if(m_debugRuleConfigurationsHasBeenSet)
   {
-   Array<JsonValue> debugRuleConfigurationsJsonList(m_debugRuleConfigurations.size());
+   Aws::Utils::Array<JsonValue> debugRuleConfigurationsJsonList(m_debugRuleConfigurations.size());
    for(unsigned debugRuleConfigurationsIndex = 0; debugRuleConfigurationsIndex < debugRuleConfigurationsJsonList.GetLength(); ++debugRuleConfigurationsIndex)
    {
      debugRuleConfigurationsJsonList[debugRuleConfigurationsIndex].AsObject(m_debugRuleConfigurations[debugRuleConfigurationsIndex].Jsonize());
@@ -181,7 +181,7 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
 
   if(m_profilerRuleConfigurationsHasBeenSet)
   {
-   Array<JsonValue> profilerRuleConfigurationsJsonList(m_profilerRuleConfigurations.size());
+   Aws::Utils::Array<JsonValue> profilerRuleConfigurationsJsonList(m_profilerRuleConfigurations.size());
    for(unsigned profilerRuleConfigurationsIndex = 0; profilerRuleConfigurationsIndex < profilerRuleConfigurationsJsonList.GetLength(); ++profilerRuleConfigurationsIndex)
    {
      profilerRuleConfigurationsJsonList[profilerRuleConfigurationsIndex].AsObject(m_profilerRuleConfigurations[profilerRuleConfigurationsIndex].Jsonize());

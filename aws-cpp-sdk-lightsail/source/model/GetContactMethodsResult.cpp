@@ -30,7 +30,7 @@ GetContactMethodsResult& GetContactMethodsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("contactMethods"))
   {
-    Array<JsonView> contactMethodsJsonList = jsonValue.GetArray("contactMethods");
+    Aws::Utils::Array<JsonView> contactMethodsJsonList = jsonValue.GetArray("contactMethods");
     for(unsigned contactMethodsIndex = 0; contactMethodsIndex < contactMethodsJsonList.GetLength(); ++contactMethodsIndex)
     {
       m_contactMethods.push_back(contactMethodsJsonList[contactMethodsIndex].AsObject());

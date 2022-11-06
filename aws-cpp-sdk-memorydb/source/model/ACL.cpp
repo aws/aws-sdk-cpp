@@ -59,7 +59,7 @@ ACL& ACL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("UserNames"))
   {
-    Array<JsonView> userNamesJsonList = jsonValue.GetArray("UserNames");
+    Aws::Utils::Array<JsonView> userNamesJsonList = jsonValue.GetArray("UserNames");
     for(unsigned userNamesIndex = 0; userNamesIndex < userNamesJsonList.GetLength(); ++userNamesIndex)
     {
       m_userNames.push_back(userNamesJsonList[userNamesIndex].AsString());
@@ -83,7 +83,7 @@ ACL& ACL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Clusters"))
   {
-    Array<JsonView> clustersJsonList = jsonValue.GetArray("Clusters");
+    Aws::Utils::Array<JsonView> clustersJsonList = jsonValue.GetArray("Clusters");
     for(unsigned clustersIndex = 0; clustersIndex < clustersJsonList.GetLength(); ++clustersIndex)
     {
       m_clusters.push_back(clustersJsonList[clustersIndex].AsString());
@@ -119,7 +119,7 @@ JsonValue ACL::Jsonize() const
 
   if(m_userNamesHasBeenSet)
   {
-   Array<JsonValue> userNamesJsonList(m_userNames.size());
+   Aws::Utils::Array<JsonValue> userNamesJsonList(m_userNames.size());
    for(unsigned userNamesIndex = 0; userNamesIndex < userNamesJsonList.GetLength(); ++userNamesIndex)
    {
      userNamesJsonList[userNamesIndex].AsString(m_userNames[userNamesIndex]);
@@ -142,7 +142,7 @@ JsonValue ACL::Jsonize() const
 
   if(m_clustersHasBeenSet)
   {
-   Array<JsonValue> clustersJsonList(m_clusters.size());
+   Aws::Utils::Array<JsonValue> clustersJsonList(m_clusters.size());
    for(unsigned clustersIndex = 0; clustersIndex < clustersJsonList.GetLength(); ++clustersIndex)
    {
      clustersJsonList[clustersIndex].AsString(m_clusters[clustersIndex]);

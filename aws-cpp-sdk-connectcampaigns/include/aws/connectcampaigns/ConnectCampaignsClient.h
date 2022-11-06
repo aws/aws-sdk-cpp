@@ -28,22 +28,48 @@ namespace ConnectCampaigns
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ConnectCampaignsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ConnectCampaignsClient(const Aws::ConnectCampaigns::ConnectCampaignsClientConfiguration& clientConfiguration = Aws::ConnectCampaigns::ConnectCampaignsClientConfiguration(),
+                               std::shared_ptr<ConnectCampaignsEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCampaignsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ConnectCampaignsClient(const Aws::Auth::AWSCredentials& credentials,
-                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               std::shared_ptr<ConnectCampaignsEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCampaignsEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::ConnectCampaigns::ConnectCampaignsClientConfiguration& clientConfiguration = Aws::ConnectCampaigns::ConnectCampaignsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ConnectCampaignsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               std::shared_ptr<ConnectCampaignsEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCampaignsEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::ConnectCampaigns::ConnectCampaignsClientConfiguration& clientConfiguration = Aws::ConnectCampaigns::ConnectCampaignsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectCampaignsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectCampaignsClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ConnectCampaignsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ConnectCampaignsClient();
 
 
@@ -440,12 +466,13 @@ namespace ConnectCampaigns
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ConnectCampaignsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const ConnectCampaignsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ConnectCampaignsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ConnectCampaignsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConnectCampaigns

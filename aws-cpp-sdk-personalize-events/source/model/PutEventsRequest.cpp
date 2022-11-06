@@ -44,7 +44,7 @@ Aws::String PutEventsRequest::SerializePayload() const
 
   if(m_eventListHasBeenSet)
   {
-   Array<JsonValue> eventListJsonList(m_eventList.size());
+   Aws::Utils::Array<JsonValue> eventListJsonList(m_eventList.size());
    for(unsigned eventListIndex = 0; eventListIndex < eventListJsonList.GetLength(); ++eventListIndex)
    {
      eventListJsonList[eventListIndex].AsObject(m_eventList[eventListIndex].Jsonize());

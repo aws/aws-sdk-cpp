@@ -38,7 +38,7 @@ Aws::String CreateSignalCatalogRequest::SerializePayload() const
 
   if(m_nodesHasBeenSet)
   {
-   Array<JsonValue> nodesJsonList(m_nodes.size());
+   Aws::Utils::Array<JsonValue> nodesJsonList(m_nodes.size());
    for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
    {
      nodesJsonList[nodesIndex].AsObject(m_nodes[nodesIndex].Jsonize());
@@ -49,7 +49,7 @@ Aws::String CreateSignalCatalogRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

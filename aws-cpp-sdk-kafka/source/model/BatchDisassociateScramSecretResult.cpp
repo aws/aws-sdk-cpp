@@ -36,7 +36,7 @@ BatchDisassociateScramSecretResult& BatchDisassociateScramSecretResult::operator
 
   if(jsonValue.ValueExists("unprocessedScramSecrets"))
   {
-    Array<JsonView> unprocessedScramSecretsJsonList = jsonValue.GetArray("unprocessedScramSecrets");
+    Aws::Utils::Array<JsonView> unprocessedScramSecretsJsonList = jsonValue.GetArray("unprocessedScramSecrets");
     for(unsigned unprocessedScramSecretsIndex = 0; unprocessedScramSecretsIndex < unprocessedScramSecretsJsonList.GetLength(); ++unprocessedScramSecretsIndex)
     {
       m_unprocessedScramSecrets.push_back(unprocessedScramSecretsJsonList[unprocessedScramSecretsIndex].AsObject());

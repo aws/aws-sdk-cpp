@@ -30,7 +30,7 @@ DescribeMaintenanceWindowScheduleResult& DescribeMaintenanceWindowScheduleResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScheduledWindowExecutions"))
   {
-    Array<JsonView> scheduledWindowExecutionsJsonList = jsonValue.GetArray("ScheduledWindowExecutions");
+    Aws::Utils::Array<JsonView> scheduledWindowExecutionsJsonList = jsonValue.GetArray("ScheduledWindowExecutions");
     for(unsigned scheduledWindowExecutionsIndex = 0; scheduledWindowExecutionsIndex < scheduledWindowExecutionsJsonList.GetLength(); ++scheduledWindowExecutionsIndex)
     {
       m_scheduledWindowExecutions.push_back(scheduledWindowExecutionsJsonList[scheduledWindowExecutionsIndex].AsObject());

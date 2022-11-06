@@ -129,7 +129,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NodeIdsToRemove"))
   {
-    Array<JsonView> nodeIdsToRemoveJsonList = jsonValue.GetArray("NodeIdsToRemove");
+    Aws::Utils::Array<JsonView> nodeIdsToRemoveJsonList = jsonValue.GetArray("NodeIdsToRemove");
     for(unsigned nodeIdsToRemoveIndex = 0; nodeIdsToRemoveIndex < nodeIdsToRemoveJsonList.GetLength(); ++nodeIdsToRemoveIndex)
     {
       m_nodeIdsToRemove.push_back(nodeIdsToRemoveJsonList[nodeIdsToRemoveIndex].AsString());
@@ -139,7 +139,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Nodes"))
   {
-    Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
+    Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
     for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
     {
       m_nodes.push_back(nodesJsonList[nodesIndex].AsObject());
@@ -170,7 +170,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsObject());
@@ -263,7 +263,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_nodeIdsToRemoveHasBeenSet)
   {
-   Array<JsonValue> nodeIdsToRemoveJsonList(m_nodeIdsToRemove.size());
+   Aws::Utils::Array<JsonValue> nodeIdsToRemoveJsonList(m_nodeIdsToRemove.size());
    for(unsigned nodeIdsToRemoveIndex = 0; nodeIdsToRemoveIndex < nodeIdsToRemoveJsonList.GetLength(); ++nodeIdsToRemoveIndex)
    {
      nodeIdsToRemoveJsonList[nodeIdsToRemoveIndex].AsString(m_nodeIdsToRemove[nodeIdsToRemoveIndex]);
@@ -274,7 +274,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_nodesHasBeenSet)
   {
-   Array<JsonValue> nodesJsonList(m_nodes.size());
+   Aws::Utils::Array<JsonValue> nodesJsonList(m_nodes.size());
    for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
    {
      nodesJsonList[nodesIndex].AsObject(m_nodes[nodesIndex].Jsonize());
@@ -303,7 +303,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsObject(m_securityGroups[securityGroupsIndex].Jsonize());

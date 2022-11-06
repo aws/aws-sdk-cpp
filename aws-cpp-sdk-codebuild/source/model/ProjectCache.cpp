@@ -53,7 +53,7 @@ ProjectCache& ProjectCache::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("modes"))
   {
-    Array<JsonView> modesJsonList = jsonValue.GetArray("modes");
+    Aws::Utils::Array<JsonView> modesJsonList = jsonValue.GetArray("modes");
     for(unsigned modesIndex = 0; modesIndex < modesJsonList.GetLength(); ++modesIndex)
     {
       m_modes.push_back(CacheModeMapper::GetCacheModeForName(modesJsonList[modesIndex].AsString()));
@@ -81,7 +81,7 @@ JsonValue ProjectCache::Jsonize() const
 
   if(m_modesHasBeenSet)
   {
-   Array<JsonValue> modesJsonList(m_modes.size());
+   Aws::Utils::Array<JsonValue> modesJsonList(m_modes.size());
    for(unsigned modesIndex = 0; modesIndex < modesJsonList.GetLength(); ++modesIndex)
    {
      modesJsonList[modesIndex].AsString(CacheModeMapper::GetNameForCacheMode(m_modes[modesIndex]));

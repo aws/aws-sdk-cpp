@@ -36,7 +36,7 @@ PrepareQueryResult& PrepareQueryResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("Columns"))
   {
-    Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
+    Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
     for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
     {
       m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
@@ -45,7 +45,7 @@ PrepareQueryResult& PrepareQueryResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());

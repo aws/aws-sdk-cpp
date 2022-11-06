@@ -108,7 +108,7 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LicenseRules"))
   {
-    Array<JsonView> licenseRulesJsonList = jsonValue.GetArray("LicenseRules");
+    Aws::Utils::Array<JsonView> licenseRulesJsonList = jsonValue.GetArray("LicenseRules");
     for(unsigned licenseRulesIndex = 0; licenseRulesIndex < licenseRulesJsonList.GetLength(); ++licenseRulesIndex)
     {
       m_licenseRules.push_back(licenseRulesJsonList[licenseRulesIndex].AsString());
@@ -160,7 +160,7 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ConsumedLicenseSummaryList"))
   {
-    Array<JsonView> consumedLicenseSummaryListJsonList = jsonValue.GetArray("ConsumedLicenseSummaryList");
+    Aws::Utils::Array<JsonView> consumedLicenseSummaryListJsonList = jsonValue.GetArray("ConsumedLicenseSummaryList");
     for(unsigned consumedLicenseSummaryListIndex = 0; consumedLicenseSummaryListIndex < consumedLicenseSummaryListJsonList.GetLength(); ++consumedLicenseSummaryListIndex)
     {
       m_consumedLicenseSummaryList.push_back(consumedLicenseSummaryListJsonList[consumedLicenseSummaryListIndex].AsObject());
@@ -170,7 +170,7 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ManagedResourceSummaryList"))
   {
-    Array<JsonView> managedResourceSummaryListJsonList = jsonValue.GetArray("ManagedResourceSummaryList");
+    Aws::Utils::Array<JsonView> managedResourceSummaryListJsonList = jsonValue.GetArray("ManagedResourceSummaryList");
     for(unsigned managedResourceSummaryListIndex = 0; managedResourceSummaryListIndex < managedResourceSummaryListJsonList.GetLength(); ++managedResourceSummaryListIndex)
     {
       m_managedResourceSummaryList.push_back(managedResourceSummaryListJsonList[managedResourceSummaryListIndex].AsObject());
@@ -180,7 +180,7 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProductInformationList"))
   {
-    Array<JsonView> productInformationListJsonList = jsonValue.GetArray("ProductInformationList");
+    Aws::Utils::Array<JsonView> productInformationListJsonList = jsonValue.GetArray("ProductInformationList");
     for(unsigned productInformationListIndex = 0; productInformationListIndex < productInformationListJsonList.GetLength(); ++productInformationListIndex)
     {
       m_productInformationList.push_back(productInformationListJsonList[productInformationListIndex].AsObject());
@@ -233,7 +233,7 @@ JsonValue LicenseConfiguration::Jsonize() const
 
   if(m_licenseRulesHasBeenSet)
   {
-   Array<JsonValue> licenseRulesJsonList(m_licenseRules.size());
+   Aws::Utils::Array<JsonValue> licenseRulesJsonList(m_licenseRules.size());
    for(unsigned licenseRulesIndex = 0; licenseRulesIndex < licenseRulesJsonList.GetLength(); ++licenseRulesIndex)
    {
      licenseRulesJsonList[licenseRulesIndex].AsString(m_licenseRules[licenseRulesIndex]);
@@ -280,7 +280,7 @@ JsonValue LicenseConfiguration::Jsonize() const
 
   if(m_consumedLicenseSummaryListHasBeenSet)
   {
-   Array<JsonValue> consumedLicenseSummaryListJsonList(m_consumedLicenseSummaryList.size());
+   Aws::Utils::Array<JsonValue> consumedLicenseSummaryListJsonList(m_consumedLicenseSummaryList.size());
    for(unsigned consumedLicenseSummaryListIndex = 0; consumedLicenseSummaryListIndex < consumedLicenseSummaryListJsonList.GetLength(); ++consumedLicenseSummaryListIndex)
    {
      consumedLicenseSummaryListJsonList[consumedLicenseSummaryListIndex].AsObject(m_consumedLicenseSummaryList[consumedLicenseSummaryListIndex].Jsonize());
@@ -291,7 +291,7 @@ JsonValue LicenseConfiguration::Jsonize() const
 
   if(m_managedResourceSummaryListHasBeenSet)
   {
-   Array<JsonValue> managedResourceSummaryListJsonList(m_managedResourceSummaryList.size());
+   Aws::Utils::Array<JsonValue> managedResourceSummaryListJsonList(m_managedResourceSummaryList.size());
    for(unsigned managedResourceSummaryListIndex = 0; managedResourceSummaryListIndex < managedResourceSummaryListJsonList.GetLength(); ++managedResourceSummaryListIndex)
    {
      managedResourceSummaryListJsonList[managedResourceSummaryListIndex].AsObject(m_managedResourceSummaryList[managedResourceSummaryListIndex].Jsonize());
@@ -302,7 +302,7 @@ JsonValue LicenseConfiguration::Jsonize() const
 
   if(m_productInformationListHasBeenSet)
   {
-   Array<JsonValue> productInformationListJsonList(m_productInformationList.size());
+   Aws::Utils::Array<JsonValue> productInformationListJsonList(m_productInformationList.size());
    for(unsigned productInformationListIndex = 0; productInformationListIndex < productInformationListJsonList.GetLength(); ++productInformationListIndex)
    {
      productInformationListJsonList[productInformationListIndex].AsObject(m_productInformationList[productInformationListIndex].Jsonize());

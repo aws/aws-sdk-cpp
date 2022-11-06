@@ -30,7 +30,7 @@ ListPullRequestsResult& ListPullRequestsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pullRequestIds"))
   {
-    Array<JsonView> pullRequestIdsJsonList = jsonValue.GetArray("pullRequestIds");
+    Aws::Utils::Array<JsonView> pullRequestIdsJsonList = jsonValue.GetArray("pullRequestIds");
     for(unsigned pullRequestIdsIndex = 0; pullRequestIdsIndex < pullRequestIdsJsonList.GetLength(); ++pullRequestIdsIndex)
     {
       m_pullRequestIds.push_back(pullRequestIdsJsonList[pullRequestIdsIndex].AsString());

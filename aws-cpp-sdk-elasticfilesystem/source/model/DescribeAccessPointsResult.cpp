@@ -30,7 +30,7 @@ DescribeAccessPointsResult& DescribeAccessPointsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccessPoints"))
   {
-    Array<JsonView> accessPointsJsonList = jsonValue.GetArray("AccessPoints");
+    Aws::Utils::Array<JsonView> accessPointsJsonList = jsonValue.GetArray("AccessPoints");
     for(unsigned accessPointsIndex = 0; accessPointsIndex < accessPointsJsonList.GetLength(); ++accessPointsIndex)
     {
       m_accessPoints.push_back(accessPointsJsonList[accessPointsIndex].AsObject());

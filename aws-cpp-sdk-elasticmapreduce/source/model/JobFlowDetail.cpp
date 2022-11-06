@@ -114,7 +114,7 @@ JobFlowDetail& JobFlowDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Steps"))
   {
-    Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
+    Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
     for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
@@ -124,7 +124,7 @@ JobFlowDetail& JobFlowDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("BootstrapActions"))
   {
-    Array<JsonView> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");
+    Aws::Utils::Array<JsonView> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");
     for(unsigned bootstrapActionsIndex = 0; bootstrapActionsIndex < bootstrapActionsJsonList.GetLength(); ++bootstrapActionsIndex)
     {
       m_bootstrapActions.push_back(bootstrapActionsJsonList[bootstrapActionsIndex].AsObject());
@@ -134,7 +134,7 @@ JobFlowDetail& JobFlowDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedProducts"))
   {
-    Array<JsonView> supportedProductsJsonList = jsonValue.GetArray("SupportedProducts");
+    Aws::Utils::Array<JsonView> supportedProductsJsonList = jsonValue.GetArray("SupportedProducts");
     for(unsigned supportedProductsIndex = 0; supportedProductsIndex < supportedProductsJsonList.GetLength(); ++supportedProductsIndex)
     {
       m_supportedProducts.push_back(supportedProductsJsonList[supportedProductsIndex].AsString());
@@ -228,7 +228,7 @@ JsonValue JobFlowDetail::Jsonize() const
 
   if(m_stepsHasBeenSet)
   {
-   Array<JsonValue> stepsJsonList(m_steps.size());
+   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
    {
      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
@@ -239,7 +239,7 @@ JsonValue JobFlowDetail::Jsonize() const
 
   if(m_bootstrapActionsHasBeenSet)
   {
-   Array<JsonValue> bootstrapActionsJsonList(m_bootstrapActions.size());
+   Aws::Utils::Array<JsonValue> bootstrapActionsJsonList(m_bootstrapActions.size());
    for(unsigned bootstrapActionsIndex = 0; bootstrapActionsIndex < bootstrapActionsJsonList.GetLength(); ++bootstrapActionsIndex)
    {
      bootstrapActionsJsonList[bootstrapActionsIndex].AsObject(m_bootstrapActions[bootstrapActionsIndex].Jsonize());
@@ -250,7 +250,7 @@ JsonValue JobFlowDetail::Jsonize() const
 
   if(m_supportedProductsHasBeenSet)
   {
-   Array<JsonValue> supportedProductsJsonList(m_supportedProducts.size());
+   Aws::Utils::Array<JsonValue> supportedProductsJsonList(m_supportedProducts.size());
    for(unsigned supportedProductsIndex = 0; supportedProductsIndex < supportedProductsJsonList.GetLength(); ++supportedProductsIndex)
    {
      supportedProductsJsonList[supportedProductsIndex].AsString(m_supportedProducts[supportedProductsIndex]);

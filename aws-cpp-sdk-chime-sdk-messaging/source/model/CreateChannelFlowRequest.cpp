@@ -33,7 +33,7 @@ Aws::String CreateChannelFlowRequest::SerializePayload() const
 
   if(m_processorsHasBeenSet)
   {
-   Array<JsonValue> processorsJsonList(m_processors.size());
+   Aws::Utils::Array<JsonValue> processorsJsonList(m_processors.size());
    for(unsigned processorsIndex = 0; processorsIndex < processorsJsonList.GetLength(); ++processorsIndex)
    {
      processorsJsonList[processorsIndex].AsObject(m_processors[processorsIndex].Jsonize());
@@ -50,7 +50,7 @@ Aws::String CreateChannelFlowRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

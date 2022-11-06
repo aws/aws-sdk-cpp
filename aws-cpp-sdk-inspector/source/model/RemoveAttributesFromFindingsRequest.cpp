@@ -24,7 +24,7 @@ Aws::String RemoveAttributesFromFindingsRequest::SerializePayload() const
 
   if(m_findingArnsHasBeenSet)
   {
-   Array<JsonValue> findingArnsJsonList(m_findingArns.size());
+   Aws::Utils::Array<JsonValue> findingArnsJsonList(m_findingArns.size());
    for(unsigned findingArnsIndex = 0; findingArnsIndex < findingArnsJsonList.GetLength(); ++findingArnsIndex)
    {
      findingArnsJsonList[findingArnsIndex].AsString(m_findingArns[findingArnsIndex]);
@@ -35,7 +35,7 @@ Aws::String RemoveAttributesFromFindingsRequest::SerializePayload() const
 
   if(m_attributeKeysHasBeenSet)
   {
-   Array<JsonValue> attributeKeysJsonList(m_attributeKeys.size());
+   Aws::Utils::Array<JsonValue> attributeKeysJsonList(m_attributeKeys.size());
    for(unsigned attributeKeysIndex = 0; attributeKeysIndex < attributeKeysJsonList.GetLength(); ++attributeKeysIndex)
    {
      attributeKeysJsonList[attributeKeysIndex].AsString(m_attributeKeys[attributeKeysIndex]);

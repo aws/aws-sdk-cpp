@@ -30,7 +30,7 @@ ListExclusionsResult& ListExclusionsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("exclusionArns"))
   {
-    Array<JsonView> exclusionArnsJsonList = jsonValue.GetArray("exclusionArns");
+    Aws::Utils::Array<JsonView> exclusionArnsJsonList = jsonValue.GetArray("exclusionArns");
     for(unsigned exclusionArnsIndex = 0; exclusionArnsIndex < exclusionArnsJsonList.GetLength(); ++exclusionArnsIndex)
     {
       m_exclusionArns.push_back(exclusionArnsJsonList[exclusionArnsIndex].AsString());

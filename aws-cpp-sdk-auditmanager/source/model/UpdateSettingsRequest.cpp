@@ -38,7 +38,7 @@ Aws::String UpdateSettingsRequest::SerializePayload() const
 
   if(m_defaultProcessOwnersHasBeenSet)
   {
-   Array<JsonValue> defaultProcessOwnersJsonList(m_defaultProcessOwners.size());
+   Aws::Utils::Array<JsonValue> defaultProcessOwnersJsonList(m_defaultProcessOwners.size());
    for(unsigned defaultProcessOwnersIndex = 0; defaultProcessOwnersIndex < defaultProcessOwnersJsonList.GetLength(); ++defaultProcessOwnersIndex)
    {
      defaultProcessOwnersJsonList[defaultProcessOwnersIndex].AsObject(m_defaultProcessOwners[defaultProcessOwnersIndex].Jsonize());

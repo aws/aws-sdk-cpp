@@ -30,7 +30,7 @@ DescribeVpcPeeringConnectionsResult& DescribeVpcPeeringConnectionsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VpcPeeringConnections"))
   {
-    Array<JsonView> vpcPeeringConnectionsJsonList = jsonValue.GetArray("VpcPeeringConnections");
+    Aws::Utils::Array<JsonView> vpcPeeringConnectionsJsonList = jsonValue.GetArray("VpcPeeringConnections");
     for(unsigned vpcPeeringConnectionsIndex = 0; vpcPeeringConnectionsIndex < vpcPeeringConnectionsJsonList.GetLength(); ++vpcPeeringConnectionsIndex)
     {
       m_vpcPeeringConnections.push_back(vpcPeeringConnectionsJsonList[vpcPeeringConnectionsIndex].AsObject());

@@ -46,7 +46,7 @@ FinishedWorldsSummary& FinishedWorldsSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("succeededWorlds"))
   {
-    Array<JsonView> succeededWorldsJsonList = jsonValue.GetArray("succeededWorlds");
+    Aws::Utils::Array<JsonView> succeededWorldsJsonList = jsonValue.GetArray("succeededWorlds");
     for(unsigned succeededWorldsIndex = 0; succeededWorldsIndex < succeededWorldsJsonList.GetLength(); ++succeededWorldsIndex)
     {
       m_succeededWorlds.push_back(succeededWorldsJsonList[succeededWorldsIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue FinishedWorldsSummary::Jsonize() const
 
   if(m_succeededWorldsHasBeenSet)
   {
-   Array<JsonValue> succeededWorldsJsonList(m_succeededWorlds.size());
+   Aws::Utils::Array<JsonValue> succeededWorldsJsonList(m_succeededWorlds.size());
    for(unsigned succeededWorldsIndex = 0; succeededWorldsIndex < succeededWorldsJsonList.GetLength(); ++succeededWorldsIndex)
    {
      succeededWorldsJsonList[succeededWorldsIndex].AsString(m_succeededWorlds[succeededWorldsIndex]);

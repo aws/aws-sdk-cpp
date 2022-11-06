@@ -36,7 +36,7 @@ ListServiceInstancesResult& ListServiceInstancesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("serviceInstances"))
   {
-    Array<JsonView> serviceInstancesJsonList = jsonValue.GetArray("serviceInstances");
+    Aws::Utils::Array<JsonView> serviceInstancesJsonList = jsonValue.GetArray("serviceInstances");
     for(unsigned serviceInstancesIndex = 0; serviceInstancesIndex < serviceInstancesJsonList.GetLength(); ++serviceInstancesIndex)
     {
       m_serviceInstances.push_back(serviceInstancesJsonList[serviceInstancesIndex].AsObject());

@@ -42,7 +42,7 @@ Aws::String StartIncidentRequest::SerializePayload() const
 
   if(m_relatedItemsHasBeenSet)
   {
-   Array<JsonValue> relatedItemsJsonList(m_relatedItems.size());
+   Aws::Utils::Array<JsonValue> relatedItemsJsonList(m_relatedItems.size());
    for(unsigned relatedItemsIndex = 0; relatedItemsIndex < relatedItemsJsonList.GetLength(); ++relatedItemsIndex)
    {
      relatedItemsJsonList[relatedItemsIndex].AsObject(m_relatedItems[relatedItemsIndex].Jsonize());

@@ -30,7 +30,7 @@ ListMediaPipelinesResult& ListMediaPipelinesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MediaPipelines"))
   {
-    Array<JsonView> mediaPipelinesJsonList = jsonValue.GetArray("MediaPipelines");
+    Aws::Utils::Array<JsonView> mediaPipelinesJsonList = jsonValue.GetArray("MediaPipelines");
     for(unsigned mediaPipelinesIndex = 0; mediaPipelinesIndex < mediaPipelinesJsonList.GetLength(); ++mediaPipelinesIndex)
     {
       m_mediaPipelines.push_back(mediaPipelinesJsonList[mediaPipelinesIndex].AsObject());

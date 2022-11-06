@@ -55,7 +55,7 @@ Source& Source::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SourceDetails"))
   {
-    Array<JsonView> sourceDetailsJsonList = jsonValue.GetArray("SourceDetails");
+    Aws::Utils::Array<JsonView> sourceDetailsJsonList = jsonValue.GetArray("SourceDetails");
     for(unsigned sourceDetailsIndex = 0; sourceDetailsIndex < sourceDetailsJsonList.GetLength(); ++sourceDetailsIndex)
     {
       m_sourceDetails.push_back(sourceDetailsJsonList[sourceDetailsIndex].AsObject());
@@ -90,7 +90,7 @@ JsonValue Source::Jsonize() const
 
   if(m_sourceDetailsHasBeenSet)
   {
-   Array<JsonValue> sourceDetailsJsonList(m_sourceDetails.size());
+   Aws::Utils::Array<JsonValue> sourceDetailsJsonList(m_sourceDetails.size());
    for(unsigned sourceDetailsIndex = 0; sourceDetailsIndex < sourceDetailsJsonList.GetLength(); ++sourceDetailsIndex)
    {
      sourceDetailsJsonList[sourceDetailsIndex].AsObject(m_sourceDetails[sourceDetailsIndex].Jsonize());

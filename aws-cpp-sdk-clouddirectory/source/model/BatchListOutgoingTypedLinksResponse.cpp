@@ -35,7 +35,7 @@ BatchListOutgoingTypedLinksResponse& BatchListOutgoingTypedLinksResponse::operat
 {
   if(jsonValue.ValueExists("TypedLinkSpecifiers"))
   {
-    Array<JsonView> typedLinkSpecifiersJsonList = jsonValue.GetArray("TypedLinkSpecifiers");
+    Aws::Utils::Array<JsonView> typedLinkSpecifiersJsonList = jsonValue.GetArray("TypedLinkSpecifiers");
     for(unsigned typedLinkSpecifiersIndex = 0; typedLinkSpecifiersIndex < typedLinkSpecifiersJsonList.GetLength(); ++typedLinkSpecifiersIndex)
     {
       m_typedLinkSpecifiers.push_back(typedLinkSpecifiersJsonList[typedLinkSpecifiersIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue BatchListOutgoingTypedLinksResponse::Jsonize() const
 
   if(m_typedLinkSpecifiersHasBeenSet)
   {
-   Array<JsonValue> typedLinkSpecifiersJsonList(m_typedLinkSpecifiers.size());
+   Aws::Utils::Array<JsonValue> typedLinkSpecifiersJsonList(m_typedLinkSpecifiers.size());
    for(unsigned typedLinkSpecifiersIndex = 0; typedLinkSpecifiersIndex < typedLinkSpecifiersJsonList.GetLength(); ++typedLinkSpecifiersIndex)
    {
      typedLinkSpecifiersJsonList[typedLinkSpecifiersIndex].AsObject(m_typedLinkSpecifiers[typedLinkSpecifiersIndex].Jsonize());

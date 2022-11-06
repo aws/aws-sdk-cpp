@@ -33,7 +33,7 @@ PipelineConfig& PipelineConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("functions"))
   {
-    Array<JsonView> functionsJsonList = jsonValue.GetArray("functions");
+    Aws::Utils::Array<JsonView> functionsJsonList = jsonValue.GetArray("functions");
     for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
     {
       m_functions.push_back(functionsJsonList[functionsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue PipelineConfig::Jsonize() const
 
   if(m_functionsHasBeenSet)
   {
-   Array<JsonValue> functionsJsonList(m_functions.size());
+   Aws::Utils::Array<JsonValue> functionsJsonList(m_functions.size());
    for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
    {
      functionsJsonList[functionsIndex].AsString(m_functions[functionsIndex]);

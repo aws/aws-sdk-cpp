@@ -37,7 +37,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_offeringIdsHasBeenSet)
   {
-   Array<JsonValue> offeringIdsJsonList(m_offeringIds.size());
+   Aws::Utils::Array<JsonValue> offeringIdsJsonList(m_offeringIds.size());
    for(unsigned offeringIdsIndex = 0; offeringIdsIndex < offeringIdsJsonList.GetLength(); ++offeringIdsIndex)
    {
      offeringIdsJsonList[offeringIdsIndex].AsString(m_offeringIds[offeringIdsIndex]);
@@ -48,7 +48,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_paymentOptionsHasBeenSet)
   {
-   Array<JsonValue> paymentOptionsJsonList(m_paymentOptions.size());
+   Aws::Utils::Array<JsonValue> paymentOptionsJsonList(m_paymentOptions.size());
    for(unsigned paymentOptionsIndex = 0; paymentOptionsIndex < paymentOptionsJsonList.GetLength(); ++paymentOptionsIndex)
    {
      paymentOptionsJsonList[paymentOptionsIndex].AsString(SavingsPlanPaymentOptionMapper::GetNameForSavingsPlanPaymentOption(m_paymentOptions[paymentOptionsIndex]));
@@ -64,7 +64,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_planTypesHasBeenSet)
   {
-   Array<JsonValue> planTypesJsonList(m_planTypes.size());
+   Aws::Utils::Array<JsonValue> planTypesJsonList(m_planTypes.size());
    for(unsigned planTypesIndex = 0; planTypesIndex < planTypesJsonList.GetLength(); ++planTypesIndex)
    {
      planTypesJsonList[planTypesIndex].AsString(SavingsPlanTypeMapper::GetNameForSavingsPlanType(m_planTypes[planTypesIndex]));
@@ -75,7 +75,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_durationsHasBeenSet)
   {
-   Array<JsonValue> durationsJsonList(m_durations.size());
+   Aws::Utils::Array<JsonValue> durationsJsonList(m_durations.size());
    for(unsigned durationsIndex = 0; durationsIndex < durationsJsonList.GetLength(); ++durationsIndex)
    {
      durationsJsonList[durationsIndex].AsInt64(m_durations[durationsIndex]);
@@ -86,7 +86,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_currenciesHasBeenSet)
   {
-   Array<JsonValue> currenciesJsonList(m_currencies.size());
+   Aws::Utils::Array<JsonValue> currenciesJsonList(m_currencies.size());
    for(unsigned currenciesIndex = 0; currenciesIndex < currenciesJsonList.GetLength(); ++currenciesIndex)
    {
      currenciesJsonList[currenciesIndex].AsString(CurrencyCodeMapper::GetNameForCurrencyCode(m_currencies[currenciesIndex]));
@@ -97,7 +97,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_descriptionsHasBeenSet)
   {
-   Array<JsonValue> descriptionsJsonList(m_descriptions.size());
+   Aws::Utils::Array<JsonValue> descriptionsJsonList(m_descriptions.size());
    for(unsigned descriptionsIndex = 0; descriptionsIndex < descriptionsJsonList.GetLength(); ++descriptionsIndex)
    {
      descriptionsJsonList[descriptionsIndex].AsString(m_descriptions[descriptionsIndex]);
@@ -108,7 +108,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_serviceCodesHasBeenSet)
   {
-   Array<JsonValue> serviceCodesJsonList(m_serviceCodes.size());
+   Aws::Utils::Array<JsonValue> serviceCodesJsonList(m_serviceCodes.size());
    for(unsigned serviceCodesIndex = 0; serviceCodesIndex < serviceCodesJsonList.GetLength(); ++serviceCodesIndex)
    {
      serviceCodesJsonList[serviceCodesIndex].AsString(m_serviceCodes[serviceCodesIndex]);
@@ -119,7 +119,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_usageTypesHasBeenSet)
   {
-   Array<JsonValue> usageTypesJsonList(m_usageTypes.size());
+   Aws::Utils::Array<JsonValue> usageTypesJsonList(m_usageTypes.size());
    for(unsigned usageTypesIndex = 0; usageTypesIndex < usageTypesJsonList.GetLength(); ++usageTypesIndex)
    {
      usageTypesJsonList[usageTypesIndex].AsString(m_usageTypes[usageTypesIndex]);
@@ -130,7 +130,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_operationsHasBeenSet)
   {
-   Array<JsonValue> operationsJsonList(m_operations.size());
+   Aws::Utils::Array<JsonValue> operationsJsonList(m_operations.size());
    for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
    {
      operationsJsonList[operationsIndex].AsString(m_operations[operationsIndex]);
@@ -141,7 +141,7 @@ Aws::String DescribeSavingsPlansOfferingsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

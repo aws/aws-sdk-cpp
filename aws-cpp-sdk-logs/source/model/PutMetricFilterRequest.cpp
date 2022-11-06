@@ -44,7 +44,7 @@ Aws::String PutMetricFilterRequest::SerializePayload() const
 
   if(m_metricTransformationsHasBeenSet)
   {
-   Array<JsonValue> metricTransformationsJsonList(m_metricTransformations.size());
+   Aws::Utils::Array<JsonValue> metricTransformationsJsonList(m_metricTransformations.size());
    for(unsigned metricTransformationsIndex = 0; metricTransformationsIndex < metricTransformationsJsonList.GetLength(); ++metricTransformationsIndex)
    {
      metricTransformationsJsonList[metricTransformationsIndex].AsObject(m_metricTransformations[metricTransformationsIndex].Jsonize());

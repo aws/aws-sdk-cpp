@@ -30,7 +30,7 @@ BatchGetAssetPropertyValueResult& BatchGetAssetPropertyValueResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("errorEntries"))
   {
-    Array<JsonView> errorEntriesJsonList = jsonValue.GetArray("errorEntries");
+    Aws::Utils::Array<JsonView> errorEntriesJsonList = jsonValue.GetArray("errorEntries");
     for(unsigned errorEntriesIndex = 0; errorEntriesIndex < errorEntriesJsonList.GetLength(); ++errorEntriesIndex)
     {
       m_errorEntries.push_back(errorEntriesJsonList[errorEntriesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetAssetPropertyValueResult& BatchGetAssetPropertyValueResult::operator =(c
 
   if(jsonValue.ValueExists("successEntries"))
   {
-    Array<JsonView> successEntriesJsonList = jsonValue.GetArray("successEntries");
+    Aws::Utils::Array<JsonView> successEntriesJsonList = jsonValue.GetArray("successEntries");
     for(unsigned successEntriesIndex = 0; successEntriesIndex < successEntriesJsonList.GetLength(); ++successEntriesIndex)
     {
       m_successEntries.push_back(successEntriesJsonList[successEntriesIndex].AsObject());
@@ -48,7 +48,7 @@ BatchGetAssetPropertyValueResult& BatchGetAssetPropertyValueResult::operator =(c
 
   if(jsonValue.ValueExists("skippedEntries"))
   {
-    Array<JsonView> skippedEntriesJsonList = jsonValue.GetArray("skippedEntries");
+    Aws::Utils::Array<JsonView> skippedEntriesJsonList = jsonValue.GetArray("skippedEntries");
     for(unsigned skippedEntriesIndex = 0; skippedEntriesIndex < skippedEntriesJsonList.GetLength(); ++skippedEntriesIndex)
     {
       m_skippedEntries.push_back(skippedEntriesJsonList[skippedEntriesIndex].AsObject());

@@ -64,7 +64,7 @@ TestRecommendation& TestRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dependsOnAlarms"))
   {
-    Array<JsonView> dependsOnAlarmsJsonList = jsonValue.GetArray("dependsOnAlarms");
+    Aws::Utils::Array<JsonView> dependsOnAlarmsJsonList = jsonValue.GetArray("dependsOnAlarms");
     for(unsigned dependsOnAlarmsIndex = 0; dependsOnAlarmsIndex < dependsOnAlarmsJsonList.GetLength(); ++dependsOnAlarmsIndex)
     {
       m_dependsOnAlarms.push_back(dependsOnAlarmsJsonList[dependsOnAlarmsIndex].AsString());
@@ -88,7 +88,7 @@ TestRecommendation& TestRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("items"))
   {
-    Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
+    Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
     for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
@@ -153,7 +153,7 @@ JsonValue TestRecommendation::Jsonize() const
 
   if(m_dependsOnAlarmsHasBeenSet)
   {
-   Array<JsonValue> dependsOnAlarmsJsonList(m_dependsOnAlarms.size());
+   Aws::Utils::Array<JsonValue> dependsOnAlarmsJsonList(m_dependsOnAlarms.size());
    for(unsigned dependsOnAlarmsIndex = 0; dependsOnAlarmsIndex < dependsOnAlarmsJsonList.GetLength(); ++dependsOnAlarmsIndex)
    {
      dependsOnAlarmsJsonList[dependsOnAlarmsIndex].AsString(m_dependsOnAlarms[dependsOnAlarmsIndex]);
@@ -176,7 +176,7 @@ JsonValue TestRecommendation::Jsonize() const
 
   if(m_itemsHasBeenSet)
   {
-   Array<JsonValue> itemsJsonList(m_items.size());
+   Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
    {
      itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());

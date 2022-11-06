@@ -30,7 +30,7 @@ ListThingsInThingGroupResult& ListThingsInThingGroupResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("things"))
   {
-    Array<JsonView> thingsJsonList = jsonValue.GetArray("things");
+    Aws::Utils::Array<JsonView> thingsJsonList = jsonValue.GetArray("things");
     for(unsigned thingsIndex = 0; thingsIndex < thingsJsonList.GetLength(); ++thingsIndex)
     {
       m_things.push_back(thingsJsonList[thingsIndex].AsString());

@@ -53,7 +53,7 @@ ConformancePackRuleCompliance& ConformancePackRuleCompliance::operator =(JsonVie
 
   if(jsonValue.ValueExists("Controls"))
   {
-    Array<JsonView> controlsJsonList = jsonValue.GetArray("Controls");
+    Aws::Utils::Array<JsonView> controlsJsonList = jsonValue.GetArray("Controls");
     for(unsigned controlsIndex = 0; controlsIndex < controlsJsonList.GetLength(); ++controlsIndex)
     {
       m_controls.push_back(controlsJsonList[controlsIndex].AsString());
@@ -81,7 +81,7 @@ JsonValue ConformancePackRuleCompliance::Jsonize() const
 
   if(m_controlsHasBeenSet)
   {
-   Array<JsonValue> controlsJsonList(m_controls.size());
+   Aws::Utils::Array<JsonValue> controlsJsonList(m_controls.size());
    for(unsigned controlsIndex = 0; controlsIndex < controlsJsonList.GetLength(); ++controlsIndex)
    {
      controlsJsonList[controlsIndex].AsString(m_controls[controlsIndex]);

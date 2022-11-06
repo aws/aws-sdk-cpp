@@ -30,7 +30,7 @@ ListResourcesResult& ListResourcesResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceInfoList"))
   {
-    Array<JsonView> resourceInfoListJsonList = jsonValue.GetArray("ResourceInfoList");
+    Aws::Utils::Array<JsonView> resourceInfoListJsonList = jsonValue.GetArray("ResourceInfoList");
     for(unsigned resourceInfoListIndex = 0; resourceInfoListIndex < resourceInfoListJsonList.GetLength(); ++resourceInfoListIndex)
     {
       m_resourceInfoList.push_back(resourceInfoListJsonList[resourceInfoListIndex].AsObject());

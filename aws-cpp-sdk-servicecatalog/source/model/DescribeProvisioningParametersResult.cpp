@@ -30,7 +30,7 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisioningArtifactParameters"))
   {
-    Array<JsonView> provisioningArtifactParametersJsonList = jsonValue.GetArray("ProvisioningArtifactParameters");
+    Aws::Utils::Array<JsonView> provisioningArtifactParametersJsonList = jsonValue.GetArray("ProvisioningArtifactParameters");
     for(unsigned provisioningArtifactParametersIndex = 0; provisioningArtifactParametersIndex < provisioningArtifactParametersJsonList.GetLength(); ++provisioningArtifactParametersIndex)
     {
       m_provisioningArtifactParameters.push_back(provisioningArtifactParametersJsonList[provisioningArtifactParametersIndex].AsObject());
@@ -39,7 +39,7 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
 
   if(jsonValue.ValueExists("ConstraintSummaries"))
   {
-    Array<JsonView> constraintSummariesJsonList = jsonValue.GetArray("ConstraintSummaries");
+    Aws::Utils::Array<JsonView> constraintSummariesJsonList = jsonValue.GetArray("ConstraintSummaries");
     for(unsigned constraintSummariesIndex = 0; constraintSummariesIndex < constraintSummariesJsonList.GetLength(); ++constraintSummariesIndex)
     {
       m_constraintSummaries.push_back(constraintSummariesJsonList[constraintSummariesIndex].AsObject());
@@ -48,7 +48,7 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
 
   if(jsonValue.ValueExists("UsageInstructions"))
   {
-    Array<JsonView> usageInstructionsJsonList = jsonValue.GetArray("UsageInstructions");
+    Aws::Utils::Array<JsonView> usageInstructionsJsonList = jsonValue.GetArray("UsageInstructions");
     for(unsigned usageInstructionsIndex = 0; usageInstructionsIndex < usageInstructionsJsonList.GetLength(); ++usageInstructionsIndex)
     {
       m_usageInstructions.push_back(usageInstructionsJsonList[usageInstructionsIndex].AsObject());
@@ -57,7 +57,7 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
 
   if(jsonValue.ValueExists("TagOptions"))
   {
-    Array<JsonView> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
+    Aws::Utils::Array<JsonView> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
     for(unsigned tagOptionsIndex = 0; tagOptionsIndex < tagOptionsJsonList.GetLength(); ++tagOptionsIndex)
     {
       m_tagOptions.push_back(tagOptionsJsonList[tagOptionsIndex].AsObject());
@@ -72,7 +72,7 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
 
   if(jsonValue.ValueExists("ProvisioningArtifactOutputKeys"))
   {
-    Array<JsonView> provisioningArtifactOutputKeysJsonList = jsonValue.GetArray("ProvisioningArtifactOutputKeys");
+    Aws::Utils::Array<JsonView> provisioningArtifactOutputKeysJsonList = jsonValue.GetArray("ProvisioningArtifactOutputKeys");
     for(unsigned provisioningArtifactOutputKeysIndex = 0; provisioningArtifactOutputKeysIndex < provisioningArtifactOutputKeysJsonList.GetLength(); ++provisioningArtifactOutputKeysIndex)
     {
       m_provisioningArtifactOutputKeys.push_back(provisioningArtifactOutputKeysJsonList[provisioningArtifactOutputKeysIndex].AsObject());

@@ -97,7 +97,7 @@ TerminologyProperties& TerminologyProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetLanguageCodes"))
   {
-    Array<JsonView> targetLanguageCodesJsonList = jsonValue.GetArray("TargetLanguageCodes");
+    Aws::Utils::Array<JsonView> targetLanguageCodesJsonList = jsonValue.GetArray("TargetLanguageCodes");
     for(unsigned targetLanguageCodesIndex = 0; targetLanguageCodesIndex < targetLanguageCodesJsonList.GetLength(); ++targetLanguageCodesIndex)
     {
       m_targetLanguageCodes.push_back(targetLanguageCodesJsonList[targetLanguageCodesIndex].AsString());
@@ -201,7 +201,7 @@ JsonValue TerminologyProperties::Jsonize() const
 
   if(m_targetLanguageCodesHasBeenSet)
   {
-   Array<JsonValue> targetLanguageCodesJsonList(m_targetLanguageCodes.size());
+   Aws::Utils::Array<JsonValue> targetLanguageCodesJsonList(m_targetLanguageCodes.size());
    for(unsigned targetLanguageCodesIndex = 0; targetLanguageCodesIndex < targetLanguageCodesJsonList.GetLength(); ++targetLanguageCodesIndex)
    {
      targetLanguageCodesJsonList[targetLanguageCodesIndex].AsString(m_targetLanguageCodes[targetLanguageCodesIndex]);

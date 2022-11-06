@@ -41,7 +41,7 @@ ApplicationUpdate& ApplicationUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InputUpdates"))
   {
-    Array<JsonView> inputUpdatesJsonList = jsonValue.GetArray("InputUpdates");
+    Aws::Utils::Array<JsonView> inputUpdatesJsonList = jsonValue.GetArray("InputUpdates");
     for(unsigned inputUpdatesIndex = 0; inputUpdatesIndex < inputUpdatesJsonList.GetLength(); ++inputUpdatesIndex)
     {
       m_inputUpdates.push_back(inputUpdatesJsonList[inputUpdatesIndex].AsObject());
@@ -58,7 +58,7 @@ ApplicationUpdate& ApplicationUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OutputUpdates"))
   {
-    Array<JsonView> outputUpdatesJsonList = jsonValue.GetArray("OutputUpdates");
+    Aws::Utils::Array<JsonView> outputUpdatesJsonList = jsonValue.GetArray("OutputUpdates");
     for(unsigned outputUpdatesIndex = 0; outputUpdatesIndex < outputUpdatesJsonList.GetLength(); ++outputUpdatesIndex)
     {
       m_outputUpdates.push_back(outputUpdatesJsonList[outputUpdatesIndex].AsObject());
@@ -68,7 +68,7 @@ ApplicationUpdate& ApplicationUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReferenceDataSourceUpdates"))
   {
-    Array<JsonView> referenceDataSourceUpdatesJsonList = jsonValue.GetArray("ReferenceDataSourceUpdates");
+    Aws::Utils::Array<JsonView> referenceDataSourceUpdatesJsonList = jsonValue.GetArray("ReferenceDataSourceUpdates");
     for(unsigned referenceDataSourceUpdatesIndex = 0; referenceDataSourceUpdatesIndex < referenceDataSourceUpdatesJsonList.GetLength(); ++referenceDataSourceUpdatesIndex)
     {
       m_referenceDataSourceUpdates.push_back(referenceDataSourceUpdatesJsonList[referenceDataSourceUpdatesIndex].AsObject());
@@ -78,7 +78,7 @@ ApplicationUpdate& ApplicationUpdate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CloudWatchLoggingOptionUpdates"))
   {
-    Array<JsonView> cloudWatchLoggingOptionUpdatesJsonList = jsonValue.GetArray("CloudWatchLoggingOptionUpdates");
+    Aws::Utils::Array<JsonView> cloudWatchLoggingOptionUpdatesJsonList = jsonValue.GetArray("CloudWatchLoggingOptionUpdates");
     for(unsigned cloudWatchLoggingOptionUpdatesIndex = 0; cloudWatchLoggingOptionUpdatesIndex < cloudWatchLoggingOptionUpdatesJsonList.GetLength(); ++cloudWatchLoggingOptionUpdatesIndex)
     {
       m_cloudWatchLoggingOptionUpdates.push_back(cloudWatchLoggingOptionUpdatesJsonList[cloudWatchLoggingOptionUpdatesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue ApplicationUpdate::Jsonize() const
 
   if(m_inputUpdatesHasBeenSet)
   {
-   Array<JsonValue> inputUpdatesJsonList(m_inputUpdates.size());
+   Aws::Utils::Array<JsonValue> inputUpdatesJsonList(m_inputUpdates.size());
    for(unsigned inputUpdatesIndex = 0; inputUpdatesIndex < inputUpdatesJsonList.GetLength(); ++inputUpdatesIndex)
    {
      inputUpdatesJsonList[inputUpdatesIndex].AsObject(m_inputUpdates[inputUpdatesIndex].Jsonize());
@@ -112,7 +112,7 @@ JsonValue ApplicationUpdate::Jsonize() const
 
   if(m_outputUpdatesHasBeenSet)
   {
-   Array<JsonValue> outputUpdatesJsonList(m_outputUpdates.size());
+   Aws::Utils::Array<JsonValue> outputUpdatesJsonList(m_outputUpdates.size());
    for(unsigned outputUpdatesIndex = 0; outputUpdatesIndex < outputUpdatesJsonList.GetLength(); ++outputUpdatesIndex)
    {
      outputUpdatesJsonList[outputUpdatesIndex].AsObject(m_outputUpdates[outputUpdatesIndex].Jsonize());
@@ -123,7 +123,7 @@ JsonValue ApplicationUpdate::Jsonize() const
 
   if(m_referenceDataSourceUpdatesHasBeenSet)
   {
-   Array<JsonValue> referenceDataSourceUpdatesJsonList(m_referenceDataSourceUpdates.size());
+   Aws::Utils::Array<JsonValue> referenceDataSourceUpdatesJsonList(m_referenceDataSourceUpdates.size());
    for(unsigned referenceDataSourceUpdatesIndex = 0; referenceDataSourceUpdatesIndex < referenceDataSourceUpdatesJsonList.GetLength(); ++referenceDataSourceUpdatesIndex)
    {
      referenceDataSourceUpdatesJsonList[referenceDataSourceUpdatesIndex].AsObject(m_referenceDataSourceUpdates[referenceDataSourceUpdatesIndex].Jsonize());
@@ -134,7 +134,7 @@ JsonValue ApplicationUpdate::Jsonize() const
 
   if(m_cloudWatchLoggingOptionUpdatesHasBeenSet)
   {
-   Array<JsonValue> cloudWatchLoggingOptionUpdatesJsonList(m_cloudWatchLoggingOptionUpdates.size());
+   Aws::Utils::Array<JsonValue> cloudWatchLoggingOptionUpdatesJsonList(m_cloudWatchLoggingOptionUpdates.size());
    for(unsigned cloudWatchLoggingOptionUpdatesIndex = 0; cloudWatchLoggingOptionUpdatesIndex < cloudWatchLoggingOptionUpdatesJsonList.GetLength(); ++cloudWatchLoggingOptionUpdatesIndex)
    {
      cloudWatchLoggingOptionUpdatesJsonList[cloudWatchLoggingOptionUpdatesIndex].AsObject(m_cloudWatchLoggingOptionUpdates[cloudWatchLoggingOptionUpdatesIndex].Jsonize());

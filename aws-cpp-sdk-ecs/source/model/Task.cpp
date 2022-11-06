@@ -115,7 +115,7 @@ Task& Task::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attachments"))
   {
-    Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
+    Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
     for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
     {
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
@@ -125,7 +125,7 @@ Task& Task::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -177,7 +177,7 @@ Task& Task::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("containers"))
   {
-    Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
+    Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
     for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
     {
       m_containers.push_back(containersJsonList[containersIndex].AsObject());
@@ -236,7 +236,7 @@ Task& Task::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inferenceAccelerators"))
   {
-    Array<JsonView> inferenceAcceleratorsJsonList = jsonValue.GetArray("inferenceAccelerators");
+    Aws::Utils::Array<JsonView> inferenceAcceleratorsJsonList = jsonValue.GetArray("inferenceAccelerators");
     for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
     {
       m_inferenceAccelerators.push_back(inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject());
@@ -344,7 +344,7 @@ Task& Task::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -389,7 +389,7 @@ JsonValue Task::Jsonize() const
 
   if(m_attachmentsHasBeenSet)
   {
-   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
    {
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
@@ -400,7 +400,7 @@ JsonValue Task::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
@@ -445,7 +445,7 @@ JsonValue Task::Jsonize() const
 
   if(m_containersHasBeenSet)
   {
-   Array<JsonValue> containersJsonList(m_containers.size());
+   Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
    for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
    {
      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
@@ -495,7 +495,7 @@ JsonValue Task::Jsonize() const
 
   if(m_inferenceAcceleratorsHasBeenSet)
   {
-   Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
+   Aws::Utils::Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
    for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
    {
      inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject(m_inferenceAccelerators[inferenceAcceleratorsIndex].Jsonize());
@@ -583,7 +583,7 @@ JsonValue Task::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

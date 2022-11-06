@@ -37,7 +37,7 @@ UsageCriteria& UsageCriteria::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountIds"))
   {
-    Array<JsonView> accountIdsJsonList = jsonValue.GetArray("accountIds");
+    Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("accountIds");
     for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
     {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());
@@ -47,7 +47,7 @@ UsageCriteria& UsageCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dataSources"))
   {
-    Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
+    Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
     for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
     {
       m_dataSources.push_back(DataSourceMapper::GetDataSourceForName(dataSourcesJsonList[dataSourcesIndex].AsString()));
@@ -57,7 +57,7 @@ UsageCriteria& UsageCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue UsageCriteria::Jsonize() const
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
@@ -85,7 +85,7 @@ JsonValue UsageCriteria::Jsonize() const
 
   if(m_dataSourcesHasBeenSet)
   {
-   Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
+   Aws::Utils::Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
    for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
    {
      dataSourcesJsonList[dataSourcesIndex].AsString(DataSourceMapper::GetNameForDataSource(m_dataSources[dataSourcesIndex]));
@@ -96,7 +96,7 @@ JsonValue UsageCriteria::Jsonize() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsString(m_resources[resourcesIndex]);

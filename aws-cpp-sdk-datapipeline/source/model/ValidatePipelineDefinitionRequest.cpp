@@ -32,7 +32,7 @@ Aws::String ValidatePipelineDefinitionRequest::SerializePayload() const
 
   if(m_pipelineObjectsHasBeenSet)
   {
-   Array<JsonValue> pipelineObjectsJsonList(m_pipelineObjects.size());
+   Aws::Utils::Array<JsonValue> pipelineObjectsJsonList(m_pipelineObjects.size());
    for(unsigned pipelineObjectsIndex = 0; pipelineObjectsIndex < pipelineObjectsJsonList.GetLength(); ++pipelineObjectsIndex)
    {
      pipelineObjectsJsonList[pipelineObjectsIndex].AsObject(m_pipelineObjects[pipelineObjectsIndex].Jsonize());
@@ -43,7 +43,7 @@ Aws::String ValidatePipelineDefinitionRequest::SerializePayload() const
 
   if(m_parameterObjectsHasBeenSet)
   {
-   Array<JsonValue> parameterObjectsJsonList(m_parameterObjects.size());
+   Aws::Utils::Array<JsonValue> parameterObjectsJsonList(m_parameterObjects.size());
    for(unsigned parameterObjectsIndex = 0; parameterObjectsIndex < parameterObjectsJsonList.GetLength(); ++parameterObjectsIndex)
    {
      parameterObjectsJsonList[parameterObjectsIndex].AsObject(m_parameterObjects[parameterObjectsIndex].Jsonize());
@@ -54,7 +54,7 @@ Aws::String ValidatePipelineDefinitionRequest::SerializePayload() const
 
   if(m_parameterValuesHasBeenSet)
   {
-   Array<JsonValue> parameterValuesJsonList(m_parameterValues.size());
+   Aws::Utils::Array<JsonValue> parameterValuesJsonList(m_parameterValues.size());
    for(unsigned parameterValuesIndex = 0; parameterValuesIndex < parameterValuesJsonList.GetLength(); ++parameterValuesIndex)
    {
      parameterValuesJsonList[parameterValuesIndex].AsObject(m_parameterValues[parameterValuesIndex].Jsonize());

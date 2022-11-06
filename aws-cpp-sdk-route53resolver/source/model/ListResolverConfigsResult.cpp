@@ -36,7 +36,7 @@ ListResolverConfigsResult& ListResolverConfigsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ResolverConfigs"))
   {
-    Array<JsonView> resolverConfigsJsonList = jsonValue.GetArray("ResolverConfigs");
+    Aws::Utils::Array<JsonView> resolverConfigsJsonList = jsonValue.GetArray("ResolverConfigs");
     for(unsigned resolverConfigsIndex = 0; resolverConfigsIndex < resolverConfigsJsonList.GetLength(); ++resolverConfigsIndex)
     {
       m_resolverConfigs.push_back(resolverConfigsJsonList[resolverConfigsIndex].AsObject());

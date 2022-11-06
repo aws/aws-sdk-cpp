@@ -51,7 +51,7 @@ Aws::String DeleteObjectsOnCancelRequest::SerializePayload() const
 
   if(m_objectsHasBeenSet)
   {
-   Array<JsonValue> objectsJsonList(m_objects.size());
+   Aws::Utils::Array<JsonValue> objectsJsonList(m_objects.size());
    for(unsigned objectsIndex = 0; objectsIndex < objectsJsonList.GetLength(); ++objectsIndex)
    {
      objectsJsonList[objectsIndex].AsObject(m_objects[objectsIndex].Jsonize());

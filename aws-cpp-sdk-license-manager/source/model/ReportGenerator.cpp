@@ -64,7 +64,7 @@ ReportGenerator& ReportGenerator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReportType"))
   {
-    Array<JsonView> reportTypeJsonList = jsonValue.GetArray("ReportType");
+    Aws::Utils::Array<JsonView> reportTypeJsonList = jsonValue.GetArray("ReportType");
     for(unsigned reportTypeIndex = 0; reportTypeIndex < reportTypeJsonList.GetLength(); ++reportTypeIndex)
     {
       m_reportType.push_back(ReportTypeMapper::GetReportTypeForName(reportTypeJsonList[reportTypeIndex].AsString()));
@@ -144,7 +144,7 @@ ReportGenerator& ReportGenerator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -167,7 +167,7 @@ JsonValue ReportGenerator::Jsonize() const
 
   if(m_reportTypeHasBeenSet)
   {
-   Array<JsonValue> reportTypeJsonList(m_reportType.size());
+   Aws::Utils::Array<JsonValue> reportTypeJsonList(m_reportType.size());
    for(unsigned reportTypeIndex = 0; reportTypeIndex < reportTypeJsonList.GetLength(); ++reportTypeIndex)
    {
      reportTypeJsonList[reportTypeIndex].AsString(ReportTypeMapper::GetNameForReportType(m_reportType[reportTypeIndex]));
@@ -238,7 +238,7 @@ JsonValue ReportGenerator::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

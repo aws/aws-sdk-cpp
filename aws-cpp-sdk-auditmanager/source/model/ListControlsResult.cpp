@@ -30,7 +30,7 @@ ListControlsResult& ListControlsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("controlMetadataList"))
   {
-    Array<JsonView> controlMetadataListJsonList = jsonValue.GetArray("controlMetadataList");
+    Aws::Utils::Array<JsonView> controlMetadataListJsonList = jsonValue.GetArray("controlMetadataList");
     for(unsigned controlMetadataListIndex = 0; controlMetadataListIndex < controlMetadataListJsonList.GetLength(); ++controlMetadataListIndex)
     {
       m_controlMetadataList.push_back(controlMetadataListJsonList[controlMetadataListIndex].AsObject());

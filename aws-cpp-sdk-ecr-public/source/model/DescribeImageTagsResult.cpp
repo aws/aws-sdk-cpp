@@ -30,7 +30,7 @@ DescribeImageTagsResult& DescribeImageTagsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("imageTagDetails"))
   {
-    Array<JsonView> imageTagDetailsJsonList = jsonValue.GetArray("imageTagDetails");
+    Aws::Utils::Array<JsonView> imageTagDetailsJsonList = jsonValue.GetArray("imageTagDetails");
     for(unsigned imageTagDetailsIndex = 0; imageTagDetailsIndex < imageTagDetailsJsonList.GetLength(); ++imageTagDetailsIndex)
     {
       m_imageTagDetails.push_back(imageTagDetailsJsonList[imageTagDetailsIndex].AsObject());

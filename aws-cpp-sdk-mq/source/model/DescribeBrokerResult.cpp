@@ -46,7 +46,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("actionsRequired"))
   {
-    Array<JsonView> actionsRequiredJsonList = jsonValue.GetArray("actionsRequired");
+    Aws::Utils::Array<JsonView> actionsRequiredJsonList = jsonValue.GetArray("actionsRequired");
     for(unsigned actionsRequiredIndex = 0; actionsRequiredIndex < actionsRequiredJsonList.GetLength(); ++actionsRequiredIndex)
     {
       m_actionsRequired.push_back(actionsRequiredJsonList[actionsRequiredIndex].AsObject());
@@ -79,7 +79,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("brokerInstances"))
   {
-    Array<JsonView> brokerInstancesJsonList = jsonValue.GetArray("brokerInstances");
+    Aws::Utils::Array<JsonView> brokerInstancesJsonList = jsonValue.GetArray("brokerInstances");
     for(unsigned brokerInstancesIndex = 0; brokerInstancesIndex < brokerInstancesJsonList.GetLength(); ++brokerInstancesIndex)
     {
       m_brokerInstances.push_back(brokerInstancesJsonList[brokerInstancesIndex].AsObject());
@@ -184,7 +184,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("pendingSecurityGroups"))
   {
-    Array<JsonView> pendingSecurityGroupsJsonList = jsonValue.GetArray("pendingSecurityGroups");
+    Aws::Utils::Array<JsonView> pendingSecurityGroupsJsonList = jsonValue.GetArray("pendingSecurityGroups");
     for(unsigned pendingSecurityGroupsIndex = 0; pendingSecurityGroupsIndex < pendingSecurityGroupsJsonList.GetLength(); ++pendingSecurityGroupsIndex)
     {
       m_pendingSecurityGroups.push_back(pendingSecurityGroupsJsonList[pendingSecurityGroupsIndex].AsString());
@@ -199,7 +199,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -214,7 +214,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("subnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -232,7 +232,7 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("users"))
   {
-    Array<JsonView> usersJsonList = jsonValue.GetArray("users");
+    Aws::Utils::Array<JsonView> usersJsonList = jsonValue.GetArray("users");
     for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());

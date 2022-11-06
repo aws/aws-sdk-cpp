@@ -30,7 +30,7 @@ ListBuiltInIntentsResult& ListBuiltInIntentsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("builtInIntentSummaries"))
   {
-    Array<JsonView> builtInIntentSummariesJsonList = jsonValue.GetArray("builtInIntentSummaries");
+    Aws::Utils::Array<JsonView> builtInIntentSummariesJsonList = jsonValue.GetArray("builtInIntentSummaries");
     for(unsigned builtInIntentSummariesIndex = 0; builtInIntentSummariesIndex < builtInIntentSummariesJsonList.GetLength(); ++builtInIntentSummariesIndex)
     {
       m_builtInIntentSummaries.push_back(builtInIntentSummariesJsonList[builtInIntentSummariesIndex].AsObject());

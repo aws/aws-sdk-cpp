@@ -48,7 +48,7 @@ CustomCode& CustomCode::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -72,7 +72,7 @@ CustomCode& CustomCode::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OutputSchemas"))
   {
-    Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
+    Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
     for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
     {
       m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue CustomCode::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
@@ -118,7 +118,7 @@ JsonValue CustomCode::Jsonize() const
 
   if(m_outputSchemasHasBeenSet)
   {
-   Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
    {
      outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());

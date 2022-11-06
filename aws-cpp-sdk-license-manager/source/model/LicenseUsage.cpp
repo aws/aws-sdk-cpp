@@ -33,7 +33,7 @@ LicenseUsage& LicenseUsage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EntitlementUsages"))
   {
-    Array<JsonView> entitlementUsagesJsonList = jsonValue.GetArray("EntitlementUsages");
+    Aws::Utils::Array<JsonView> entitlementUsagesJsonList = jsonValue.GetArray("EntitlementUsages");
     for(unsigned entitlementUsagesIndex = 0; entitlementUsagesIndex < entitlementUsagesJsonList.GetLength(); ++entitlementUsagesIndex)
     {
       m_entitlementUsages.push_back(entitlementUsagesJsonList[entitlementUsagesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue LicenseUsage::Jsonize() const
 
   if(m_entitlementUsagesHasBeenSet)
   {
-   Array<JsonValue> entitlementUsagesJsonList(m_entitlementUsages.size());
+   Aws::Utils::Array<JsonValue> entitlementUsagesJsonList(m_entitlementUsages.size());
    for(unsigned entitlementUsagesIndex = 0; entitlementUsagesIndex < entitlementUsagesJsonList.GetLength(); ++entitlementUsagesIndex)
    {
      entitlementUsagesJsonList[entitlementUsagesIndex].AsObject(m_entitlementUsages[entitlementUsagesIndex].Jsonize());

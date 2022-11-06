@@ -30,7 +30,7 @@ Aws::String PutCorsPolicyRequest::SerializePayload() const
 
   if(m_corsPolicyHasBeenSet)
   {
-   Array<JsonValue> corsPolicyJsonList(m_corsPolicy.size());
+   Aws::Utils::Array<JsonValue> corsPolicyJsonList(m_corsPolicy.size());
    for(unsigned corsPolicyIndex = 0; corsPolicyIndex < corsPolicyJsonList.GetLength(); ++corsPolicyIndex)
    {
      corsPolicyJsonList[corsPolicyIndex].AsObject(m_corsPolicy[corsPolicyIndex].Jsonize());

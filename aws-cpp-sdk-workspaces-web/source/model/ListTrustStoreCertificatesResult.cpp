@@ -30,7 +30,7 @@ ListTrustStoreCertificatesResult& ListTrustStoreCertificatesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("certificateList"))
   {
-    Array<JsonView> certificateListJsonList = jsonValue.GetArray("certificateList");
+    Aws::Utils::Array<JsonView> certificateListJsonList = jsonValue.GetArray("certificateList");
     for(unsigned certificateListIndex = 0; certificateListIndex < certificateListJsonList.GetLength(); ++certificateListIndex)
     {
       m_certificateList.push_back(certificateListJsonList[certificateListIndex].AsObject());

@@ -35,7 +35,7 @@ ColumnStatisticsConfiguration& ColumnStatisticsConfiguration::operator =(JsonVie
 {
   if(jsonValue.ValueExists("Selectors"))
   {
-    Array<JsonView> selectorsJsonList = jsonValue.GetArray("Selectors");
+    Aws::Utils::Array<JsonView> selectorsJsonList = jsonValue.GetArray("Selectors");
     for(unsigned selectorsIndex = 0; selectorsIndex < selectorsJsonList.GetLength(); ++selectorsIndex)
     {
       m_selectors.push_back(selectorsJsonList[selectorsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue ColumnStatisticsConfiguration::Jsonize() const
 
   if(m_selectorsHasBeenSet)
   {
-   Array<JsonValue> selectorsJsonList(m_selectors.size());
+   Aws::Utils::Array<JsonValue> selectorsJsonList(m_selectors.size());
    for(unsigned selectorsIndex = 0; selectorsIndex < selectorsJsonList.GetLength(); ++selectorsIndex)
    {
      selectorsJsonList[selectorsIndex].AsObject(m_selectors[selectorsIndex].Jsonize());

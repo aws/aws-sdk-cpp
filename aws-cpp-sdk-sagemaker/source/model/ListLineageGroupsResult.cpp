@@ -30,7 +30,7 @@ ListLineageGroupsResult& ListLineageGroupsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LineageGroupSummaries"))
   {
-    Array<JsonView> lineageGroupSummariesJsonList = jsonValue.GetArray("LineageGroupSummaries");
+    Aws::Utils::Array<JsonView> lineageGroupSummariesJsonList = jsonValue.GetArray("LineageGroupSummaries");
     for(unsigned lineageGroupSummariesIndex = 0; lineageGroupSummariesIndex < lineageGroupSummariesJsonList.GetLength(); ++lineageGroupSummariesIndex)
     {
       m_lineageGroupSummaries.push_back(lineageGroupSummariesJsonList[lineageGroupSummariesIndex].AsObject());

@@ -39,7 +39,7 @@ Aws::String UpdateStreamProcessorRequest::SerializePayload() const
 
   if(m_regionsOfInterestForUpdateHasBeenSet)
   {
-   Array<JsonValue> regionsOfInterestForUpdateJsonList(m_regionsOfInterestForUpdate.size());
+   Aws::Utils::Array<JsonValue> regionsOfInterestForUpdateJsonList(m_regionsOfInterestForUpdate.size());
    for(unsigned regionsOfInterestForUpdateIndex = 0; regionsOfInterestForUpdateIndex < regionsOfInterestForUpdateJsonList.GetLength(); ++regionsOfInterestForUpdateIndex)
    {
      regionsOfInterestForUpdateJsonList[regionsOfInterestForUpdateIndex].AsObject(m_regionsOfInterestForUpdate[regionsOfInterestForUpdateIndex].Jsonize());
@@ -56,7 +56,7 @@ Aws::String UpdateStreamProcessorRequest::SerializePayload() const
 
   if(m_parametersToDeleteHasBeenSet)
   {
-   Array<JsonValue> parametersToDeleteJsonList(m_parametersToDelete.size());
+   Aws::Utils::Array<JsonValue> parametersToDeleteJsonList(m_parametersToDelete.size());
    for(unsigned parametersToDeleteIndex = 0; parametersToDeleteIndex < parametersToDeleteJsonList.GetLength(); ++parametersToDeleteIndex)
    {
      parametersToDeleteJsonList[parametersToDeleteIndex].AsString(StreamProcessorParameterToDeleteMapper::GetNameForStreamProcessorParameterToDelete(m_parametersToDelete[parametersToDeleteIndex]));

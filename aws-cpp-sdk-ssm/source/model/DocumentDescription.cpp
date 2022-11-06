@@ -185,7 +185,7 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
@@ -195,7 +195,7 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlatformTypes"))
   {
-    Array<JsonView> platformTypesJsonList = jsonValue.GetArray("PlatformTypes");
+    Aws::Utils::Array<JsonView> platformTypesJsonList = jsonValue.GetArray("PlatformTypes");
     for(unsigned platformTypesIndex = 0; platformTypesIndex < platformTypesJsonList.GetLength(); ++platformTypesIndex)
     {
       m_platformTypes.push_back(PlatformTypeMapper::GetPlatformTypeForName(platformTypesJsonList[platformTypesIndex].AsString()));
@@ -247,7 +247,7 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -257,7 +257,7 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttachmentsInformation"))
   {
-    Array<JsonView> attachmentsInformationJsonList = jsonValue.GetArray("AttachmentsInformation");
+    Aws::Utils::Array<JsonView> attachmentsInformationJsonList = jsonValue.GetArray("AttachmentsInformation");
     for(unsigned attachmentsInformationIndex = 0; attachmentsInformationIndex < attachmentsInformationJsonList.GetLength(); ++attachmentsInformationIndex)
     {
       m_attachmentsInformation.push_back(attachmentsInformationJsonList[attachmentsInformationIndex].AsObject());
@@ -267,7 +267,7 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Requires"))
   {
-    Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
+    Aws::Utils::Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
     for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
     {
       m_requires.push_back(requiresJsonList[requiresIndex].AsObject());
@@ -284,7 +284,7 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReviewInformation"))
   {
-    Array<JsonView> reviewInformationJsonList = jsonValue.GetArray("ReviewInformation");
+    Aws::Utils::Array<JsonView> reviewInformationJsonList = jsonValue.GetArray("ReviewInformation");
     for(unsigned reviewInformationIndex = 0; reviewInformationIndex < reviewInformationJsonList.GetLength(); ++reviewInformationIndex)
     {
       m_reviewInformation.push_back(reviewInformationJsonList[reviewInformationIndex].AsObject());
@@ -315,7 +315,7 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Category"))
   {
-    Array<JsonView> categoryJsonList = jsonValue.GetArray("Category");
+    Aws::Utils::Array<JsonView> categoryJsonList = jsonValue.GetArray("Category");
     for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
     {
       m_category.push_back(categoryJsonList[categoryIndex].AsString());
@@ -325,7 +325,7 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CategoryEnum"))
   {
-    Array<JsonView> categoryEnumJsonList = jsonValue.GetArray("CategoryEnum");
+    Aws::Utils::Array<JsonView> categoryEnumJsonList = jsonValue.GetArray("CategoryEnum");
     for(unsigned categoryEnumIndex = 0; categoryEnumIndex < categoryEnumJsonList.GetLength(); ++categoryEnumIndex)
     {
       m_categoryEnum.push_back(categoryEnumJsonList[categoryEnumIndex].AsString());
@@ -411,7 +411,7 @@ JsonValue DocumentDescription::Jsonize() const
 
   if(m_parametersHasBeenSet)
   {
-   Array<JsonValue> parametersJsonList(m_parameters.size());
+   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
    {
      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
@@ -422,7 +422,7 @@ JsonValue DocumentDescription::Jsonize() const
 
   if(m_platformTypesHasBeenSet)
   {
-   Array<JsonValue> platformTypesJsonList(m_platformTypes.size());
+   Aws::Utils::Array<JsonValue> platformTypesJsonList(m_platformTypes.size());
    for(unsigned platformTypesIndex = 0; platformTypesIndex < platformTypesJsonList.GetLength(); ++platformTypesIndex)
    {
      platformTypesJsonList[platformTypesIndex].AsString(PlatformTypeMapper::GetNameForPlatformType(m_platformTypes[platformTypesIndex]));
@@ -467,7 +467,7 @@ JsonValue DocumentDescription::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -478,7 +478,7 @@ JsonValue DocumentDescription::Jsonize() const
 
   if(m_attachmentsInformationHasBeenSet)
   {
-   Array<JsonValue> attachmentsInformationJsonList(m_attachmentsInformation.size());
+   Aws::Utils::Array<JsonValue> attachmentsInformationJsonList(m_attachmentsInformation.size());
    for(unsigned attachmentsInformationIndex = 0; attachmentsInformationIndex < attachmentsInformationJsonList.GetLength(); ++attachmentsInformationIndex)
    {
      attachmentsInformationJsonList[attachmentsInformationIndex].AsObject(m_attachmentsInformation[attachmentsInformationIndex].Jsonize());
@@ -489,7 +489,7 @@ JsonValue DocumentDescription::Jsonize() const
 
   if(m_requiresHasBeenSet)
   {
-   Array<JsonValue> requiresJsonList(m_requires.size());
+   Aws::Utils::Array<JsonValue> requiresJsonList(m_requires.size());
    for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
    {
      requiresJsonList[requiresIndex].AsObject(m_requires[requiresIndex].Jsonize());
@@ -506,7 +506,7 @@ JsonValue DocumentDescription::Jsonize() const
 
   if(m_reviewInformationHasBeenSet)
   {
-   Array<JsonValue> reviewInformationJsonList(m_reviewInformation.size());
+   Aws::Utils::Array<JsonValue> reviewInformationJsonList(m_reviewInformation.size());
    for(unsigned reviewInformationIndex = 0; reviewInformationIndex < reviewInformationJsonList.GetLength(); ++reviewInformationIndex)
    {
      reviewInformationJsonList[reviewInformationIndex].AsObject(m_reviewInformation[reviewInformationIndex].Jsonize());
@@ -534,7 +534,7 @@ JsonValue DocumentDescription::Jsonize() const
 
   if(m_categoryHasBeenSet)
   {
-   Array<JsonValue> categoryJsonList(m_category.size());
+   Aws::Utils::Array<JsonValue> categoryJsonList(m_category.size());
    for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
    {
      categoryJsonList[categoryIndex].AsString(m_category[categoryIndex]);
@@ -545,7 +545,7 @@ JsonValue DocumentDescription::Jsonize() const
 
   if(m_categoryEnumHasBeenSet)
   {
-   Array<JsonValue> categoryEnumJsonList(m_categoryEnum.size());
+   Aws::Utils::Array<JsonValue> categoryEnumJsonList(m_categoryEnum.size());
    for(unsigned categoryEnumIndex = 0; categoryEnumIndex < categoryEnumJsonList.GetLength(); ++categoryEnumIndex)
    {
      categoryEnumJsonList[categoryEnumIndex].AsString(m_categoryEnum[categoryEnumIndex]);

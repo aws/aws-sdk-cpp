@@ -42,7 +42,7 @@ EntityNotExistsException& EntityNotExistsException::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("EntityIds"))
   {
-    Array<JsonView> entityIdsJsonList = jsonValue.GetArray("EntityIds");
+    Aws::Utils::Array<JsonView> entityIdsJsonList = jsonValue.GetArray("EntityIds");
     for(unsigned entityIdsIndex = 0; entityIdsIndex < entityIdsJsonList.GetLength(); ++entityIdsIndex)
     {
       m_entityIds.push_back(entityIdsJsonList[entityIdsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue EntityNotExistsException::Jsonize() const
 
   if(m_entityIdsHasBeenSet)
   {
-   Array<JsonValue> entityIdsJsonList(m_entityIds.size());
+   Aws::Utils::Array<JsonValue> entityIdsJsonList(m_entityIds.size());
    for(unsigned entityIdsIndex = 0; entityIdsIndex < entityIdsJsonList.GetLength(); ++entityIdsIndex)
    {
      entityIdsJsonList[entityIdsIndex].AsString(m_entityIds[entityIdsIndex]);

@@ -30,7 +30,7 @@ ListLicenseConversionTasksResult& ListLicenseConversionTasksResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LicenseConversionTasks"))
   {
-    Array<JsonView> licenseConversionTasksJsonList = jsonValue.GetArray("LicenseConversionTasks");
+    Aws::Utils::Array<JsonView> licenseConversionTasksJsonList = jsonValue.GetArray("LicenseConversionTasks");
     for(unsigned licenseConversionTasksIndex = 0; licenseConversionTasksIndex < licenseConversionTasksJsonList.GetLength(); ++licenseConversionTasksIndex)
     {
       m_licenseConversionTasks.push_back(licenseConversionTasksJsonList[licenseConversionTasksIndex].AsObject());

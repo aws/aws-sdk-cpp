@@ -121,7 +121,7 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("alternativeDomainNames"))
   {
-    Array<JsonView> alternativeDomainNamesJsonList = jsonValue.GetArray("alternativeDomainNames");
+    Aws::Utils::Array<JsonView> alternativeDomainNamesJsonList = jsonValue.GetArray("alternativeDomainNames");
     for(unsigned alternativeDomainNamesIndex = 0; alternativeDomainNamesIndex < alternativeDomainNamesJsonList.GetLength(); ++alternativeDomainNamesIndex)
     {
       m_alternativeDomainNames.push_back(alternativeDomainNamesJsonList[alternativeDomainNamesIndex].AsString());
@@ -194,7 +194,7 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("cacheBehaviors"))
   {
-    Array<JsonView> cacheBehaviorsJsonList = jsonValue.GetArray("cacheBehaviors");
+    Aws::Utils::Array<JsonView> cacheBehaviorsJsonList = jsonValue.GetArray("cacheBehaviors");
     for(unsigned cacheBehaviorsIndex = 0; cacheBehaviorsIndex < cacheBehaviorsJsonList.GetLength(); ++cacheBehaviorsIndex)
     {
       m_cacheBehaviors.push_back(cacheBehaviorsJsonList[cacheBehaviorsIndex].AsObject());
@@ -218,7 +218,7 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -269,7 +269,7 @@ JsonValue LightsailDistribution::Jsonize() const
 
   if(m_alternativeDomainNamesHasBeenSet)
   {
-   Array<JsonValue> alternativeDomainNamesJsonList(m_alternativeDomainNames.size());
+   Aws::Utils::Array<JsonValue> alternativeDomainNamesJsonList(m_alternativeDomainNames.size());
    for(unsigned alternativeDomainNamesIndex = 0; alternativeDomainNamesIndex < alternativeDomainNamesJsonList.GetLength(); ++alternativeDomainNamesIndex)
    {
      alternativeDomainNamesJsonList[alternativeDomainNamesIndex].AsString(m_alternativeDomainNames[alternativeDomainNamesIndex]);
@@ -334,7 +334,7 @@ JsonValue LightsailDistribution::Jsonize() const
 
   if(m_cacheBehaviorsHasBeenSet)
   {
-   Array<JsonValue> cacheBehaviorsJsonList(m_cacheBehaviors.size());
+   Aws::Utils::Array<JsonValue> cacheBehaviorsJsonList(m_cacheBehaviors.size());
    for(unsigned cacheBehaviorsIndex = 0; cacheBehaviorsIndex < cacheBehaviorsJsonList.GetLength(); ++cacheBehaviorsIndex)
    {
      cacheBehaviorsJsonList[cacheBehaviorsIndex].AsObject(m_cacheBehaviors[cacheBehaviorsIndex].Jsonize());
@@ -356,7 +356,7 @@ JsonValue LightsailDistribution::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

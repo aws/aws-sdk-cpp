@@ -29,7 +29,7 @@ Aws::String UpdatePositionRequest::SerializePayload() const
 
   if(m_positionHasBeenSet)
   {
-   Array<JsonValue> positionJsonList(m_position.size());
+   Aws::Utils::Array<JsonValue> positionJsonList(m_position.size());
    for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
    {
      positionJsonList[positionIndex].AsDouble(m_position[positionIndex]);

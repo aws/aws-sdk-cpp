@@ -35,7 +35,7 @@ BudgetNotificationsForAccount& BudgetNotificationsForAccount::operator =(JsonVie
 {
   if(jsonValue.ValueExists("Notifications"))
   {
-    Array<JsonView> notificationsJsonList = jsonValue.GetArray("Notifications");
+    Aws::Utils::Array<JsonView> notificationsJsonList = jsonValue.GetArray("Notifications");
     for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
     {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue BudgetNotificationsForAccount::Jsonize() const
 
   if(m_notificationsHasBeenSet)
   {
-   Array<JsonValue> notificationsJsonList(m_notifications.size());
+   Aws::Utils::Array<JsonValue> notificationsJsonList(m_notifications.size());
    for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
    {
      notificationsJsonList[notificationsIndex].AsObject(m_notifications[notificationsIndex].Jsonize());

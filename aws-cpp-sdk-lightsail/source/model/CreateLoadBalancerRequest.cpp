@@ -63,7 +63,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   if(m_certificateAlternativeNamesHasBeenSet)
   {
-   Array<JsonValue> certificateAlternativeNamesJsonList(m_certificateAlternativeNames.size());
+   Aws::Utils::Array<JsonValue> certificateAlternativeNamesJsonList(m_certificateAlternativeNames.size());
    for(unsigned certificateAlternativeNamesIndex = 0; certificateAlternativeNamesIndex < certificateAlternativeNamesJsonList.GetLength(); ++certificateAlternativeNamesIndex)
    {
      certificateAlternativeNamesJsonList[certificateAlternativeNamesIndex].AsString(m_certificateAlternativeNames[certificateAlternativeNamesIndex]);
@@ -74,7 +74,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

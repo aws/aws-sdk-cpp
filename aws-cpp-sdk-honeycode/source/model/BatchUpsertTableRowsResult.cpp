@@ -47,7 +47,7 @@ BatchUpsertTableRowsResult& BatchUpsertTableRowsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("failedBatchItems"))
   {
-    Array<JsonView> failedBatchItemsJsonList = jsonValue.GetArray("failedBatchItems");
+    Aws::Utils::Array<JsonView> failedBatchItemsJsonList = jsonValue.GetArray("failedBatchItems");
     for(unsigned failedBatchItemsIndex = 0; failedBatchItemsIndex < failedBatchItemsJsonList.GetLength(); ++failedBatchItemsIndex)
     {
       m_failedBatchItems.push_back(failedBatchItemsJsonList[failedBatchItemsIndex].AsObject());

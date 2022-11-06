@@ -38,7 +38,7 @@ Aws::String AssociateFileSystemAliasesRequest::SerializePayload() const
 
   if(m_aliasesHasBeenSet)
   {
-   Array<JsonValue> aliasesJsonList(m_aliases.size());
+   Aws::Utils::Array<JsonValue> aliasesJsonList(m_aliases.size());
    for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
    {
      aliasesJsonList[aliasesIndex].AsString(m_aliases[aliasesIndex]);

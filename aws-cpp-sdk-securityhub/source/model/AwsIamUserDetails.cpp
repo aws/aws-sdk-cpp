@@ -47,7 +47,7 @@ AwsIamUserDetails& AwsIamUserDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttachedManagedPolicies"))
   {
-    Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");
+    Aws::Utils::Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");
     for(unsigned attachedManagedPoliciesIndex = 0; attachedManagedPoliciesIndex < attachedManagedPoliciesJsonList.GetLength(); ++attachedManagedPoliciesIndex)
     {
       m_attachedManagedPolicies.push_back(attachedManagedPoliciesJsonList[attachedManagedPoliciesIndex].AsObject());
@@ -64,7 +64,7 @@ AwsIamUserDetails& AwsIamUserDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GroupList"))
   {
-    Array<JsonView> groupListJsonList = jsonValue.GetArray("GroupList");
+    Aws::Utils::Array<JsonView> groupListJsonList = jsonValue.GetArray("GroupList");
     for(unsigned groupListIndex = 0; groupListIndex < groupListJsonList.GetLength(); ++groupListIndex)
     {
       m_groupList.push_back(groupListJsonList[groupListIndex].AsString());
@@ -102,7 +102,7 @@ AwsIamUserDetails& AwsIamUserDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("UserPolicyList"))
   {
-    Array<JsonView> userPolicyListJsonList = jsonValue.GetArray("UserPolicyList");
+    Aws::Utils::Array<JsonView> userPolicyListJsonList = jsonValue.GetArray("UserPolicyList");
     for(unsigned userPolicyListIndex = 0; userPolicyListIndex < userPolicyListJsonList.GetLength(); ++userPolicyListIndex)
     {
       m_userPolicyList.push_back(userPolicyListJsonList[userPolicyListIndex].AsObject());
@@ -119,7 +119,7 @@ JsonValue AwsIamUserDetails::Jsonize() const
 
   if(m_attachedManagedPoliciesHasBeenSet)
   {
-   Array<JsonValue> attachedManagedPoliciesJsonList(m_attachedManagedPolicies.size());
+   Aws::Utils::Array<JsonValue> attachedManagedPoliciesJsonList(m_attachedManagedPolicies.size());
    for(unsigned attachedManagedPoliciesIndex = 0; attachedManagedPoliciesIndex < attachedManagedPoliciesJsonList.GetLength(); ++attachedManagedPoliciesIndex)
    {
      attachedManagedPoliciesJsonList[attachedManagedPoliciesIndex].AsObject(m_attachedManagedPolicies[attachedManagedPoliciesIndex].Jsonize());
@@ -136,7 +136,7 @@ JsonValue AwsIamUserDetails::Jsonize() const
 
   if(m_groupListHasBeenSet)
   {
-   Array<JsonValue> groupListJsonList(m_groupList.size());
+   Aws::Utils::Array<JsonValue> groupListJsonList(m_groupList.size());
    for(unsigned groupListIndex = 0; groupListIndex < groupListJsonList.GetLength(); ++groupListIndex)
    {
      groupListJsonList[groupListIndex].AsString(m_groupList[groupListIndex]);
@@ -171,7 +171,7 @@ JsonValue AwsIamUserDetails::Jsonize() const
 
   if(m_userPolicyListHasBeenSet)
   {
-   Array<JsonValue> userPolicyListJsonList(m_userPolicyList.size());
+   Aws::Utils::Array<JsonValue> userPolicyListJsonList(m_userPolicyList.size());
    for(unsigned userPolicyListIndex = 0; userPolicyListIndex < userPolicyListJsonList.GetLength(); ++userPolicyListIndex)
    {
      userPolicyListJsonList[userPolicyListIndex].AsObject(m_userPolicyList[userPolicyListIndex].Jsonize());

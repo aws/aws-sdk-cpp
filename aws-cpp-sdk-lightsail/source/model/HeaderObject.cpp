@@ -44,7 +44,7 @@ HeaderObject& HeaderObject::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("headersAllowList"))
   {
-    Array<JsonView> headersAllowListJsonList = jsonValue.GetArray("headersAllowList");
+    Aws::Utils::Array<JsonView> headersAllowListJsonList = jsonValue.GetArray("headersAllowList");
     for(unsigned headersAllowListIndex = 0; headersAllowListIndex < headersAllowListJsonList.GetLength(); ++headersAllowListIndex)
     {
       m_headersAllowList.push_back(HeaderEnumMapper::GetHeaderEnumForName(headersAllowListJsonList[headersAllowListIndex].AsString()));
@@ -66,7 +66,7 @@ JsonValue HeaderObject::Jsonize() const
 
   if(m_headersAllowListHasBeenSet)
   {
-   Array<JsonValue> headersAllowListJsonList(m_headersAllowList.size());
+   Aws::Utils::Array<JsonValue> headersAllowListJsonList(m_headersAllowList.size());
    for(unsigned headersAllowListIndex = 0; headersAllowListIndex < headersAllowListJsonList.GetLength(); ++headersAllowListIndex)
    {
      headersAllowListJsonList[headersAllowListIndex].AsString(HeaderEnumMapper::GetNameForHeaderEnum(m_headersAllowList[headersAllowListIndex]));

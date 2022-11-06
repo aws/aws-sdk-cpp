@@ -30,7 +30,7 @@ DescribeSchedulingPoliciesResult& DescribeSchedulingPoliciesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("schedulingPolicies"))
   {
-    Array<JsonView> schedulingPoliciesJsonList = jsonValue.GetArray("schedulingPolicies");
+    Aws::Utils::Array<JsonView> schedulingPoliciesJsonList = jsonValue.GetArray("schedulingPolicies");
     for(unsigned schedulingPoliciesIndex = 0; schedulingPoliciesIndex < schedulingPoliciesJsonList.GetLength(); ++schedulingPoliciesIndex)
     {
       m_schedulingPolicies.push_back(schedulingPoliciesJsonList[schedulingPoliciesIndex].AsObject());

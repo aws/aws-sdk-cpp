@@ -71,7 +71,7 @@ AnomalousLogGroup& AnomalousLogGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LogAnomalyShowcases"))
   {
-    Array<JsonView> logAnomalyShowcasesJsonList = jsonValue.GetArray("LogAnomalyShowcases");
+    Aws::Utils::Array<JsonView> logAnomalyShowcasesJsonList = jsonValue.GetArray("LogAnomalyShowcases");
     for(unsigned logAnomalyShowcasesIndex = 0; logAnomalyShowcasesIndex < logAnomalyShowcasesJsonList.GetLength(); ++logAnomalyShowcasesIndex)
     {
       m_logAnomalyShowcases.push_back(logAnomalyShowcasesJsonList[logAnomalyShowcasesIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue AnomalousLogGroup::Jsonize() const
 
   if(m_logAnomalyShowcasesHasBeenSet)
   {
-   Array<JsonValue> logAnomalyShowcasesJsonList(m_logAnomalyShowcases.size());
+   Aws::Utils::Array<JsonValue> logAnomalyShowcasesJsonList(m_logAnomalyShowcases.size());
    for(unsigned logAnomalyShowcasesIndex = 0; logAnomalyShowcasesIndex < logAnomalyShowcasesJsonList.GetLength(); ++logAnomalyShowcasesIndex)
    {
      logAnomalyShowcasesJsonList[logAnomalyShowcasesIndex].AsObject(m_logAnomalyShowcases[logAnomalyShowcasesIndex].Jsonize());

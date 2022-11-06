@@ -66,7 +66,7 @@ Aws::String CreateTaskSetRequest::SerializePayload() const
 
   if(m_loadBalancersHasBeenSet)
   {
-   Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
+   Aws::Utils::Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
    for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
    {
      loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
@@ -77,7 +77,7 @@ Aws::String CreateTaskSetRequest::SerializePayload() const
 
   if(m_serviceRegistriesHasBeenSet)
   {
-   Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+   Aws::Utils::Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
    for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
    {
      serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
@@ -93,7 +93,7 @@ Aws::String CreateTaskSetRequest::SerializePayload() const
 
   if(m_capacityProviderStrategyHasBeenSet)
   {
-   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
    {
      capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
@@ -122,7 +122,7 @@ Aws::String CreateTaskSetRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

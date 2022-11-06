@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -51,6 +53,10 @@ namespace Aws
 
   namespace KinesisVideoSignalingChannels
   {
+    using KinesisVideoSignalingChannelsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisVideoSignalingChannelsEndpointProviderBase = Aws::KinesisVideoSignalingChannels::Endpoint::KinesisVideoSignalingChannelsEndpointProviderBase;
+    using KinesisVideoSignalingChannelsEndpointProvider = Aws::KinesisVideoSignalingChannels::Endpoint::KinesisVideoSignalingChannelsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in KinesisVideoSignalingChannelsClient header */

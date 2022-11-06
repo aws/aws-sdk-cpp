@@ -77,7 +77,7 @@ User& User::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExternalIds"))
   {
-    Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
+    Aws::Utils::Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
     for(unsigned externalIdsIndex = 0; externalIdsIndex < externalIdsJsonList.GetLength(); ++externalIdsIndex)
     {
       m_externalIds.push_back(externalIdsJsonList[externalIdsIndex].AsObject());
@@ -115,7 +115,7 @@ User& User::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Emails"))
   {
-    Array<JsonView> emailsJsonList = jsonValue.GetArray("Emails");
+    Aws::Utils::Array<JsonView> emailsJsonList = jsonValue.GetArray("Emails");
     for(unsigned emailsIndex = 0; emailsIndex < emailsJsonList.GetLength(); ++emailsIndex)
     {
       m_emails.push_back(emailsJsonList[emailsIndex].AsObject());
@@ -125,7 +125,7 @@ User& User::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Addresses"))
   {
-    Array<JsonView> addressesJsonList = jsonValue.GetArray("Addresses");
+    Aws::Utils::Array<JsonView> addressesJsonList = jsonValue.GetArray("Addresses");
     for(unsigned addressesIndex = 0; addressesIndex < addressesJsonList.GetLength(); ++addressesIndex)
     {
       m_addresses.push_back(addressesJsonList[addressesIndex].AsObject());
@@ -135,7 +135,7 @@ User& User::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PhoneNumbers"))
   {
-    Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("PhoneNumbers");
+    Aws::Utils::Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("PhoneNumbers");
     for(unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex)
     {
       m_phoneNumbers.push_back(phoneNumbersJsonList[phoneNumbersIndex].AsObject());
@@ -206,7 +206,7 @@ JsonValue User::Jsonize() const
 
   if(m_externalIdsHasBeenSet)
   {
-   Array<JsonValue> externalIdsJsonList(m_externalIds.size());
+   Aws::Utils::Array<JsonValue> externalIdsJsonList(m_externalIds.size());
    for(unsigned externalIdsIndex = 0; externalIdsIndex < externalIdsJsonList.GetLength(); ++externalIdsIndex)
    {
      externalIdsJsonList[externalIdsIndex].AsObject(m_externalIds[externalIdsIndex].Jsonize());
@@ -241,7 +241,7 @@ JsonValue User::Jsonize() const
 
   if(m_emailsHasBeenSet)
   {
-   Array<JsonValue> emailsJsonList(m_emails.size());
+   Aws::Utils::Array<JsonValue> emailsJsonList(m_emails.size());
    for(unsigned emailsIndex = 0; emailsIndex < emailsJsonList.GetLength(); ++emailsIndex)
    {
      emailsJsonList[emailsIndex].AsObject(m_emails[emailsIndex].Jsonize());
@@ -252,7 +252,7 @@ JsonValue User::Jsonize() const
 
   if(m_addressesHasBeenSet)
   {
-   Array<JsonValue> addressesJsonList(m_addresses.size());
+   Aws::Utils::Array<JsonValue> addressesJsonList(m_addresses.size());
    for(unsigned addressesIndex = 0; addressesIndex < addressesJsonList.GetLength(); ++addressesIndex)
    {
      addressesJsonList[addressesIndex].AsObject(m_addresses[addressesIndex].Jsonize());
@@ -263,7 +263,7 @@ JsonValue User::Jsonize() const
 
   if(m_phoneNumbersHasBeenSet)
   {
-   Array<JsonValue> phoneNumbersJsonList(m_phoneNumbers.size());
+   Aws::Utils::Array<JsonValue> phoneNumbersJsonList(m_phoneNumbers.size());
    for(unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex)
    {
      phoneNumbersJsonList[phoneNumbersIndex].AsObject(m_phoneNumbers[phoneNumbersIndex].Jsonize());

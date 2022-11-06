@@ -30,7 +30,7 @@ Aws::String RemoveTagsFromResourceRequest::SerializePayload() const
 
   if(m_tagKeyListHasBeenSet)
   {
-   Array<JsonValue> tagKeyListJsonList(m_tagKeyList.size());
+   Aws::Utils::Array<JsonValue> tagKeyListJsonList(m_tagKeyList.size());
    for(unsigned tagKeyListIndex = 0; tagKeyListIndex < tagKeyListJsonList.GetLength(); ++tagKeyListIndex)
    {
      tagKeyListJsonList[tagKeyListIndex].AsString(m_tagKeyList[tagKeyListIndex]);

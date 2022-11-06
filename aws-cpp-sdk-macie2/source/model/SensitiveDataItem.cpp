@@ -48,7 +48,7 @@ SensitiveDataItem& SensitiveDataItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("detections"))
   {
-    Array<JsonView> detectionsJsonList = jsonValue.GetArray("detections");
+    Aws::Utils::Array<JsonView> detectionsJsonList = jsonValue.GetArray("detections");
     for(unsigned detectionsIndex = 0; detectionsIndex < detectionsJsonList.GetLength(); ++detectionsIndex)
     {
       m_detections.push_back(detectionsJsonList[detectionsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue SensitiveDataItem::Jsonize() const
 
   if(m_detectionsHasBeenSet)
   {
-   Array<JsonValue> detectionsJsonList(m_detections.size());
+   Aws::Utils::Array<JsonValue> detectionsJsonList(m_detections.size());
    for(unsigned detectionsIndex = 0; detectionsIndex < detectionsJsonList.GetLength(); ++detectionsIndex)
    {
      detectionsJsonList[detectionsIndex].AsObject(m_detections[detectionsIndex].Jsonize());

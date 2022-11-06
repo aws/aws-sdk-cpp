@@ -35,7 +35,7 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
 
   if(m_productionVariantsHasBeenSet)
   {
-   Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
+   Aws::Utils::Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
    for(unsigned productionVariantsIndex = 0; productionVariantsIndex < productionVariantsJsonList.GetLength(); ++productionVariantsIndex)
    {
      productionVariantsJsonList[productionVariantsIndex].AsObject(m_productionVariants[productionVariantsIndex].Jsonize());
@@ -52,7 +52,7 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

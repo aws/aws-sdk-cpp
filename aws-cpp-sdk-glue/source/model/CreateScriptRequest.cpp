@@ -26,7 +26,7 @@ Aws::String CreateScriptRequest::SerializePayload() const
 
   if(m_dagNodesHasBeenSet)
   {
-   Array<JsonValue> dagNodesJsonList(m_dagNodes.size());
+   Aws::Utils::Array<JsonValue> dagNodesJsonList(m_dagNodes.size());
    for(unsigned dagNodesIndex = 0; dagNodesIndex < dagNodesJsonList.GetLength(); ++dagNodesIndex)
    {
      dagNodesJsonList[dagNodesIndex].AsObject(m_dagNodes[dagNodesIndex].Jsonize());
@@ -37,7 +37,7 @@ Aws::String CreateScriptRequest::SerializePayload() const
 
   if(m_dagEdgesHasBeenSet)
   {
-   Array<JsonValue> dagEdgesJsonList(m_dagEdges.size());
+   Aws::Utils::Array<JsonValue> dagEdgesJsonList(m_dagEdges.size());
    for(unsigned dagEdgesIndex = 0; dagEdgesIndex < dagEdgesJsonList.GetLength(); ++dagEdgesIndex)
    {
      dagEdgesJsonList[dagEdgesIndex].AsObject(m_dagEdges[dagEdgesIndex].Jsonize());

@@ -62,7 +62,7 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -100,7 +100,7 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DataSetArns"))
   {
-    Array<JsonView> dataSetArnsJsonList = jsonValue.GetArray("DataSetArns");
+    Aws::Utils::Array<JsonView> dataSetArnsJsonList = jsonValue.GetArray("DataSetArns");
     for(unsigned dataSetArnsIndex = 0; dataSetArnsIndex < dataSetArnsJsonList.GetLength(); ++dataSetArnsIndex)
     {
       m_dataSetArns.push_back(dataSetArnsJsonList[dataSetArnsIndex].AsString());
@@ -124,7 +124,7 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Sheets"))
   {
-    Array<JsonView> sheetsJsonList = jsonValue.GetArray("Sheets");
+    Aws::Utils::Array<JsonView> sheetsJsonList = jsonValue.GetArray("Sheets");
     for(unsigned sheetsIndex = 0; sheetsIndex < sheetsJsonList.GetLength(); ++sheetsIndex)
     {
       m_sheets.push_back(sheetsJsonList[sheetsIndex].AsObject());
@@ -146,7 +146,7 @@ JsonValue DashboardVersion::Jsonize() const
 
   if(m_errorsHasBeenSet)
   {
-   Array<JsonValue> errorsJsonList(m_errors.size());
+   Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
    {
      errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
@@ -180,7 +180,7 @@ JsonValue DashboardVersion::Jsonize() const
 
   if(m_dataSetArnsHasBeenSet)
   {
-   Array<JsonValue> dataSetArnsJsonList(m_dataSetArns.size());
+   Aws::Utils::Array<JsonValue> dataSetArnsJsonList(m_dataSetArns.size());
    for(unsigned dataSetArnsIndex = 0; dataSetArnsIndex < dataSetArnsJsonList.GetLength(); ++dataSetArnsIndex)
    {
      dataSetArnsJsonList[dataSetArnsIndex].AsString(m_dataSetArns[dataSetArnsIndex]);
@@ -203,7 +203,7 @@ JsonValue DashboardVersion::Jsonize() const
 
   if(m_sheetsHasBeenSet)
   {
-   Array<JsonValue> sheetsJsonList(m_sheets.size());
+   Aws::Utils::Array<JsonValue> sheetsJsonList(m_sheets.size());
    for(unsigned sheetsIndex = 0; sheetsIndex < sheetsJsonList.GetLength(); ++sheetsIndex)
    {
      sheetsJsonList[sheetsIndex].AsObject(m_sheets[sheetsIndex].Jsonize());

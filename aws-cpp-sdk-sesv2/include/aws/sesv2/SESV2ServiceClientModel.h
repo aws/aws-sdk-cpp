@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/sesv2/SESV2Errors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/sesv2/SESV2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -135,6 +137,10 @@ namespace Aws
 
   namespace SESV2
   {
+    using SESV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SESV2EndpointProviderBase = Aws::SESV2::Endpoint::SESV2EndpointProviderBase;
+    using SESV2EndpointProvider = Aws::SESV2::Endpoint::SESV2EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in SESV2Client header */

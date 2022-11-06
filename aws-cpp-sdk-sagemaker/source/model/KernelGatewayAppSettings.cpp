@@ -44,7 +44,7 @@ KernelGatewayAppSettings& KernelGatewayAppSettings::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("CustomImages"))
   {
-    Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
+    Aws::Utils::Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
     for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
     {
       m_customImages.push_back(customImagesJsonList[customImagesIndex].AsObject());
@@ -54,7 +54,7 @@ KernelGatewayAppSettings& KernelGatewayAppSettings::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("LifecycleConfigArns"))
   {
-    Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
+    Aws::Utils::Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
     for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
     {
       m_lifecycleConfigArns.push_back(lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue KernelGatewayAppSettings::Jsonize() const
 
   if(m_customImagesHasBeenSet)
   {
-   Array<JsonValue> customImagesJsonList(m_customImages.size());
+   Aws::Utils::Array<JsonValue> customImagesJsonList(m_customImages.size());
    for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
    {
      customImagesJsonList[customImagesIndex].AsObject(m_customImages[customImagesIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue KernelGatewayAppSettings::Jsonize() const
 
   if(m_lifecycleConfigArnsHasBeenSet)
   {
-   Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
+   Aws::Utils::Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
    for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
    {
      lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString(m_lifecycleConfigArns[lifecycleConfigArnsIndex]);

@@ -36,7 +36,7 @@ ListServiceTemplateVersionsResult& ListServiceTemplateVersionsResult::operator =
 
   if(jsonValue.ValueExists("templateVersions"))
   {
-    Array<JsonView> templateVersionsJsonList = jsonValue.GetArray("templateVersions");
+    Aws::Utils::Array<JsonView> templateVersionsJsonList = jsonValue.GetArray("templateVersions");
     for(unsigned templateVersionsIndex = 0; templateVersionsIndex < templateVersionsJsonList.GetLength(); ++templateVersionsIndex)
     {
       m_templateVersions.push_back(templateVersionsJsonList[templateVersionsIndex].AsObject());

@@ -50,7 +50,7 @@ GetTextDetectionResult& GetTextDetectionResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("TextDetections"))
   {
-    Array<JsonView> textDetectionsJsonList = jsonValue.GetArray("TextDetections");
+    Aws::Utils::Array<JsonView> textDetectionsJsonList = jsonValue.GetArray("TextDetections");
     for(unsigned textDetectionsIndex = 0; textDetectionsIndex < textDetectionsJsonList.GetLength(); ++textDetectionsIndex)
     {
       m_textDetections.push_back(textDetectionsJsonList[textDetectionsIndex].AsObject());

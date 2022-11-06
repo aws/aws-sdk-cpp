@@ -30,7 +30,7 @@ SendBulkEmailResult& SendBulkEmailResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BulkEmailEntryResults"))
   {
-    Array<JsonView> bulkEmailEntryResultsJsonList = jsonValue.GetArray("BulkEmailEntryResults");
+    Aws::Utils::Array<JsonView> bulkEmailEntryResultsJsonList = jsonValue.GetArray("BulkEmailEntryResults");
     for(unsigned bulkEmailEntryResultsIndex = 0; bulkEmailEntryResultsIndex < bulkEmailEntryResultsJsonList.GetLength(); ++bulkEmailEntryResultsIndex)
     {
       m_bulkEmailEntryResults.push_back(bulkEmailEntryResultsJsonList[bulkEmailEntryResultsIndex].AsObject());

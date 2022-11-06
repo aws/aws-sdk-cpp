@@ -109,7 +109,7 @@ Item& Item::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Attachments"))
   {
-    Array<JsonView> attachmentsJsonList = jsonValue.GetArray("Attachments");
+    Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("Attachments");
     for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
     {
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
@@ -172,7 +172,7 @@ JsonValue Item::Jsonize() const
 
   if(m_attachmentsHasBeenSet)
   {
-   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
    {
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());

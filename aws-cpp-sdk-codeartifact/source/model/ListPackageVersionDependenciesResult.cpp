@@ -68,7 +68,7 @@ ListPackageVersionDependenciesResult& ListPackageVersionDependenciesResult::oper
 
   if(jsonValue.ValueExists("dependencies"))
   {
-    Array<JsonView> dependenciesJsonList = jsonValue.GetArray("dependencies");
+    Aws::Utils::Array<JsonView> dependenciesJsonList = jsonValue.GetArray("dependencies");
     for(unsigned dependenciesIndex = 0; dependenciesIndex < dependenciesJsonList.GetLength(); ++dependenciesIndex)
     {
       m_dependencies.push_back(dependenciesJsonList[dependenciesIndex].AsObject());

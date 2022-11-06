@@ -30,7 +30,7 @@ GetContainerAPIMetadataResult& GetContainerAPIMetadataResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("metadata"))
   {
-    Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
+    Aws::Utils::Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
     for(unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex)
     {
       Aws::Map<Aws::String, JsonView> containerServiceMetadataEntryJsonMap = metadataJsonList[metadataIndex].GetAllObjects();

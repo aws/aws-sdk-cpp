@@ -36,7 +36,7 @@ ListLocalDisksResult& ListLocalDisksResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Disks"))
   {
-    Array<JsonView> disksJsonList = jsonValue.GetArray("Disks");
+    Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("Disks");
     for(unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex)
     {
       m_disks.push_back(disksJsonList[disksIndex].AsObject());

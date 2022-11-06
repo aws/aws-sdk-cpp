@@ -23,7 +23,7 @@ Aws::String StopWorkspacesRequest::SerializePayload() const
 
   if(m_stopWorkspaceRequestsHasBeenSet)
   {
-   Array<JsonValue> stopWorkspaceRequestsJsonList(m_stopWorkspaceRequests.size());
+   Aws::Utils::Array<JsonValue> stopWorkspaceRequestsJsonList(m_stopWorkspaceRequests.size());
    for(unsigned stopWorkspaceRequestsIndex = 0; stopWorkspaceRequestsIndex < stopWorkspaceRequestsJsonList.GetLength(); ++stopWorkspaceRequestsIndex)
    {
      stopWorkspaceRequestsJsonList[stopWorkspaceRequestsIndex].AsObject(m_stopWorkspaceRequests[stopWorkspaceRequestsIndex].Jsonize());

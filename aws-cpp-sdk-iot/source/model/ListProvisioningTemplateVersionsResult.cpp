@@ -30,7 +30,7 @@ ListProvisioningTemplateVersionsResult& ListProvisioningTemplateVersionsResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("versions"))
   {
-    Array<JsonView> versionsJsonList = jsonValue.GetArray("versions");
+    Aws::Utils::Array<JsonView> versionsJsonList = jsonValue.GetArray("versions");
     for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
     {
       m_versions.push_back(versionsJsonList[versionsIndex].AsObject());

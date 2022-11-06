@@ -109,7 +109,7 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedDestinationConnectors"))
   {
-    Array<JsonView> supportedDestinationConnectorsJsonList = jsonValue.GetArray("supportedDestinationConnectors");
+    Aws::Utils::Array<JsonView> supportedDestinationConnectorsJsonList = jsonValue.GetArray("supportedDestinationConnectors");
     for(unsigned supportedDestinationConnectorsIndex = 0; supportedDestinationConnectorsIndex < supportedDestinationConnectorsJsonList.GetLength(); ++supportedDestinationConnectorsIndex)
     {
       m_supportedDestinationConnectors.push_back(ConnectorTypeMapper::GetConnectorTypeForName(supportedDestinationConnectorsJsonList[supportedDestinationConnectorsIndex].AsString()));
@@ -119,7 +119,7 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedSchedulingFrequencies"))
   {
-    Array<JsonView> supportedSchedulingFrequenciesJsonList = jsonValue.GetArray("supportedSchedulingFrequencies");
+    Aws::Utils::Array<JsonView> supportedSchedulingFrequenciesJsonList = jsonValue.GetArray("supportedSchedulingFrequencies");
     for(unsigned supportedSchedulingFrequenciesIndex = 0; supportedSchedulingFrequenciesIndex < supportedSchedulingFrequenciesJsonList.GetLength(); ++supportedSchedulingFrequenciesIndex)
     {
       m_supportedSchedulingFrequencies.push_back(ScheduleFrequencyTypeMapper::GetScheduleFrequencyTypeForName(supportedSchedulingFrequenciesJsonList[supportedSchedulingFrequenciesIndex].AsString()));
@@ -143,7 +143,7 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedTriggerTypes"))
   {
-    Array<JsonView> supportedTriggerTypesJsonList = jsonValue.GetArray("supportedTriggerTypes");
+    Aws::Utils::Array<JsonView> supportedTriggerTypesJsonList = jsonValue.GetArray("supportedTriggerTypes");
     for(unsigned supportedTriggerTypesIndex = 0; supportedTriggerTypesIndex < supportedTriggerTypesJsonList.GetLength(); ++supportedTriggerTypesIndex)
     {
       m_supportedTriggerTypes.push_back(TriggerTypeMapper::GetTriggerTypeForName(supportedTriggerTypesJsonList[supportedTriggerTypesIndex].AsString()));
@@ -209,7 +209,7 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("connectorModes"))
   {
-    Array<JsonView> connectorModesJsonList = jsonValue.GetArray("connectorModes");
+    Aws::Utils::Array<JsonView> connectorModesJsonList = jsonValue.GetArray("connectorModes");
     for(unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex)
     {
       m_connectorModes.push_back(connectorModesJsonList[connectorModesIndex].AsString());
@@ -226,7 +226,7 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("connectorRuntimeSettings"))
   {
-    Array<JsonView> connectorRuntimeSettingsJsonList = jsonValue.GetArray("connectorRuntimeSettings");
+    Aws::Utils::Array<JsonView> connectorRuntimeSettingsJsonList = jsonValue.GetArray("connectorRuntimeSettings");
     for(unsigned connectorRuntimeSettingsIndex = 0; connectorRuntimeSettingsIndex < connectorRuntimeSettingsJsonList.GetLength(); ++connectorRuntimeSettingsIndex)
     {
       m_connectorRuntimeSettings.push_back(connectorRuntimeSettingsJsonList[connectorRuntimeSettingsIndex].AsObject());
@@ -236,7 +236,7 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedApiVersions"))
   {
-    Array<JsonView> supportedApiVersionsJsonList = jsonValue.GetArray("supportedApiVersions");
+    Aws::Utils::Array<JsonView> supportedApiVersionsJsonList = jsonValue.GetArray("supportedApiVersions");
     for(unsigned supportedApiVersionsIndex = 0; supportedApiVersionsIndex < supportedApiVersionsJsonList.GetLength(); ++supportedApiVersionsIndex)
     {
       m_supportedApiVersions.push_back(supportedApiVersionsJsonList[supportedApiVersionsIndex].AsString());
@@ -246,7 +246,7 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedOperators"))
   {
-    Array<JsonView> supportedOperatorsJsonList = jsonValue.GetArray("supportedOperators");
+    Aws::Utils::Array<JsonView> supportedOperatorsJsonList = jsonValue.GetArray("supportedOperators");
     for(unsigned supportedOperatorsIndex = 0; supportedOperatorsIndex < supportedOperatorsJsonList.GetLength(); ++supportedOperatorsIndex)
     {
       m_supportedOperators.push_back(OperatorsMapper::GetOperatorsForName(supportedOperatorsJsonList[supportedOperatorsIndex].AsString()));
@@ -256,7 +256,7 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedWriteOperations"))
   {
-    Array<JsonView> supportedWriteOperationsJsonList = jsonValue.GetArray("supportedWriteOperations");
+    Aws::Utils::Array<JsonView> supportedWriteOperationsJsonList = jsonValue.GetArray("supportedWriteOperations");
     for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
     {
       m_supportedWriteOperations.push_back(WriteOperationTypeMapper::GetWriteOperationTypeForName(supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString()));
@@ -320,7 +320,7 @@ JsonValue ConnectorConfiguration::Jsonize() const
 
   if(m_supportedDestinationConnectorsHasBeenSet)
   {
-   Array<JsonValue> supportedDestinationConnectorsJsonList(m_supportedDestinationConnectors.size());
+   Aws::Utils::Array<JsonValue> supportedDestinationConnectorsJsonList(m_supportedDestinationConnectors.size());
    for(unsigned supportedDestinationConnectorsIndex = 0; supportedDestinationConnectorsIndex < supportedDestinationConnectorsJsonList.GetLength(); ++supportedDestinationConnectorsIndex)
    {
      supportedDestinationConnectorsJsonList[supportedDestinationConnectorsIndex].AsString(ConnectorTypeMapper::GetNameForConnectorType(m_supportedDestinationConnectors[supportedDestinationConnectorsIndex]));
@@ -331,7 +331,7 @@ JsonValue ConnectorConfiguration::Jsonize() const
 
   if(m_supportedSchedulingFrequenciesHasBeenSet)
   {
-   Array<JsonValue> supportedSchedulingFrequenciesJsonList(m_supportedSchedulingFrequencies.size());
+   Aws::Utils::Array<JsonValue> supportedSchedulingFrequenciesJsonList(m_supportedSchedulingFrequencies.size());
    for(unsigned supportedSchedulingFrequenciesIndex = 0; supportedSchedulingFrequenciesIndex < supportedSchedulingFrequenciesJsonList.GetLength(); ++supportedSchedulingFrequenciesIndex)
    {
      supportedSchedulingFrequenciesJsonList[supportedSchedulingFrequenciesIndex].AsString(ScheduleFrequencyTypeMapper::GetNameForScheduleFrequencyType(m_supportedSchedulingFrequencies[supportedSchedulingFrequenciesIndex]));
@@ -354,7 +354,7 @@ JsonValue ConnectorConfiguration::Jsonize() const
 
   if(m_supportedTriggerTypesHasBeenSet)
   {
-   Array<JsonValue> supportedTriggerTypesJsonList(m_supportedTriggerTypes.size());
+   Aws::Utils::Array<JsonValue> supportedTriggerTypesJsonList(m_supportedTriggerTypes.size());
    for(unsigned supportedTriggerTypesIndex = 0; supportedTriggerTypesIndex < supportedTriggerTypesJsonList.GetLength(); ++supportedTriggerTypesIndex)
    {
      supportedTriggerTypesJsonList[supportedTriggerTypesIndex].AsString(TriggerTypeMapper::GetNameForTriggerType(m_supportedTriggerTypes[supportedTriggerTypesIndex]));
@@ -412,7 +412,7 @@ JsonValue ConnectorConfiguration::Jsonize() const
 
   if(m_connectorModesHasBeenSet)
   {
-   Array<JsonValue> connectorModesJsonList(m_connectorModes.size());
+   Aws::Utils::Array<JsonValue> connectorModesJsonList(m_connectorModes.size());
    for(unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex)
    {
      connectorModesJsonList[connectorModesIndex].AsString(m_connectorModes[connectorModesIndex]);
@@ -429,7 +429,7 @@ JsonValue ConnectorConfiguration::Jsonize() const
 
   if(m_connectorRuntimeSettingsHasBeenSet)
   {
-   Array<JsonValue> connectorRuntimeSettingsJsonList(m_connectorRuntimeSettings.size());
+   Aws::Utils::Array<JsonValue> connectorRuntimeSettingsJsonList(m_connectorRuntimeSettings.size());
    for(unsigned connectorRuntimeSettingsIndex = 0; connectorRuntimeSettingsIndex < connectorRuntimeSettingsJsonList.GetLength(); ++connectorRuntimeSettingsIndex)
    {
      connectorRuntimeSettingsJsonList[connectorRuntimeSettingsIndex].AsObject(m_connectorRuntimeSettings[connectorRuntimeSettingsIndex].Jsonize());
@@ -440,7 +440,7 @@ JsonValue ConnectorConfiguration::Jsonize() const
 
   if(m_supportedApiVersionsHasBeenSet)
   {
-   Array<JsonValue> supportedApiVersionsJsonList(m_supportedApiVersions.size());
+   Aws::Utils::Array<JsonValue> supportedApiVersionsJsonList(m_supportedApiVersions.size());
    for(unsigned supportedApiVersionsIndex = 0; supportedApiVersionsIndex < supportedApiVersionsJsonList.GetLength(); ++supportedApiVersionsIndex)
    {
      supportedApiVersionsJsonList[supportedApiVersionsIndex].AsString(m_supportedApiVersions[supportedApiVersionsIndex]);
@@ -451,7 +451,7 @@ JsonValue ConnectorConfiguration::Jsonize() const
 
   if(m_supportedOperatorsHasBeenSet)
   {
-   Array<JsonValue> supportedOperatorsJsonList(m_supportedOperators.size());
+   Aws::Utils::Array<JsonValue> supportedOperatorsJsonList(m_supportedOperators.size());
    for(unsigned supportedOperatorsIndex = 0; supportedOperatorsIndex < supportedOperatorsJsonList.GetLength(); ++supportedOperatorsIndex)
    {
      supportedOperatorsJsonList[supportedOperatorsIndex].AsString(OperatorsMapper::GetNameForOperators(m_supportedOperators[supportedOperatorsIndex]));
@@ -462,7 +462,7 @@ JsonValue ConnectorConfiguration::Jsonize() const
 
   if(m_supportedWriteOperationsHasBeenSet)
   {
-   Array<JsonValue> supportedWriteOperationsJsonList(m_supportedWriteOperations.size());
+   Aws::Utils::Array<JsonValue> supportedWriteOperationsJsonList(m_supportedWriteOperations.size());
    for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
    {
      supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString(WriteOperationTypeMapper::GetNameForWriteOperationType(m_supportedWriteOperations[supportedWriteOperationsIndex]));

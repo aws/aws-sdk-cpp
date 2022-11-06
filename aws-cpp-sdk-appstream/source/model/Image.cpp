@@ -150,7 +150,7 @@ Image& Image::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Applications"))
   {
-    Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
+    Aws::Utils::Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
     for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
     {
       m_applications.push_back(applicationsJsonList[applicationsIndex].AsObject());
@@ -188,7 +188,7 @@ Image& Image::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ImageErrors"))
   {
-    Array<JsonView> imageErrorsJsonList = jsonValue.GetArray("ImageErrors");
+    Aws::Utils::Array<JsonView> imageErrorsJsonList = jsonValue.GetArray("ImageErrors");
     for(unsigned imageErrorsIndex = 0; imageErrorsIndex < imageErrorsJsonList.GetLength(); ++imageErrorsIndex)
     {
       m_imageErrors.push_back(imageErrorsJsonList[imageErrorsIndex].AsObject());
@@ -268,7 +268,7 @@ JsonValue Image::Jsonize() const
 
   if(m_applicationsHasBeenSet)
   {
-   Array<JsonValue> applicationsJsonList(m_applications.size());
+   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
    for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
    {
      applicationsJsonList[applicationsIndex].AsObject(m_applications[applicationsIndex].Jsonize());
@@ -301,7 +301,7 @@ JsonValue Image::Jsonize() const
 
   if(m_imageErrorsHasBeenSet)
   {
-   Array<JsonValue> imageErrorsJsonList(m_imageErrors.size());
+   Aws::Utils::Array<JsonValue> imageErrorsJsonList(m_imageErrors.size());
    for(unsigned imageErrorsIndex = 0; imageErrorsIndex < imageErrorsJsonList.GetLength(); ++imageErrorsIndex)
    {
      imageErrorsJsonList[imageErrorsIndex].AsObject(m_imageErrors[imageErrorsIndex].Jsonize());

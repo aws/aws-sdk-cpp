@@ -26,7 +26,7 @@ Aws::String DescribeConfigurationAggregatorsRequest::SerializePayload() const
 
   if(m_configurationAggregatorNamesHasBeenSet)
   {
-   Array<JsonValue> configurationAggregatorNamesJsonList(m_configurationAggregatorNames.size());
+   Aws::Utils::Array<JsonValue> configurationAggregatorNamesJsonList(m_configurationAggregatorNames.size());
    for(unsigned configurationAggregatorNamesIndex = 0; configurationAggregatorNamesIndex < configurationAggregatorNamesJsonList.GetLength(); ++configurationAggregatorNamesIndex)
    {
      configurationAggregatorNamesJsonList[configurationAggregatorNamesIndex].AsString(m_configurationAggregatorNames[configurationAggregatorNamesIndex]);

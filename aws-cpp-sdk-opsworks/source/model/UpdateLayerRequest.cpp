@@ -91,7 +91,7 @@ Aws::String UpdateLayerRequest::SerializePayload() const
 
   if(m_customSecurityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> customSecurityGroupIdsJsonList(m_customSecurityGroupIds.size());
+   Aws::Utils::Array<JsonValue> customSecurityGroupIdsJsonList(m_customSecurityGroupIds.size());
    for(unsigned customSecurityGroupIdsIndex = 0; customSecurityGroupIdsIndex < customSecurityGroupIdsJsonList.GetLength(); ++customSecurityGroupIdsIndex)
    {
      customSecurityGroupIdsJsonList[customSecurityGroupIdsIndex].AsString(m_customSecurityGroupIds[customSecurityGroupIdsIndex]);
@@ -102,7 +102,7 @@ Aws::String UpdateLayerRequest::SerializePayload() const
 
   if(m_packagesHasBeenSet)
   {
-   Array<JsonValue> packagesJsonList(m_packages.size());
+   Aws::Utils::Array<JsonValue> packagesJsonList(m_packages.size());
    for(unsigned packagesIndex = 0; packagesIndex < packagesJsonList.GetLength(); ++packagesIndex)
    {
      packagesJsonList[packagesIndex].AsString(m_packages[packagesIndex]);
@@ -113,7 +113,7 @@ Aws::String UpdateLayerRequest::SerializePayload() const
 
   if(m_volumeConfigurationsHasBeenSet)
   {
-   Array<JsonValue> volumeConfigurationsJsonList(m_volumeConfigurations.size());
+   Aws::Utils::Array<JsonValue> volumeConfigurationsJsonList(m_volumeConfigurations.size());
    for(unsigned volumeConfigurationsIndex = 0; volumeConfigurationsIndex < volumeConfigurationsJsonList.GetLength(); ++volumeConfigurationsIndex)
    {
      volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject(m_volumeConfigurations[volumeConfigurationsIndex].Jsonize());

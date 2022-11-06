@@ -61,7 +61,7 @@ Aws::String UpdateIdentityProviderRequest::SerializePayload() const
 
   if(m_idpIdentifiersHasBeenSet)
   {
-   Array<JsonValue> idpIdentifiersJsonList(m_idpIdentifiers.size());
+   Aws::Utils::Array<JsonValue> idpIdentifiersJsonList(m_idpIdentifiers.size());
    for(unsigned idpIdentifiersIndex = 0; idpIdentifiersIndex < idpIdentifiersJsonList.GetLength(); ++idpIdentifiersIndex)
    {
      idpIdentifiersJsonList[idpIdentifiersIndex].AsString(m_idpIdentifiers[idpIdentifiersIndex]);

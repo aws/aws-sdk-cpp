@@ -30,7 +30,7 @@ ListAccountsForParentResult& ListAccountsForParentResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Accounts"))
   {
-    Array<JsonView> accountsJsonList = jsonValue.GetArray("Accounts");
+    Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("Accounts");
     for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
     {
       m_accounts.push_back(accountsJsonList[accountsIndex].AsObject());

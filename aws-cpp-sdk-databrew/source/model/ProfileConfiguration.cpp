@@ -46,7 +46,7 @@ ProfileConfiguration& ProfileConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProfileColumns"))
   {
-    Array<JsonView> profileColumnsJsonList = jsonValue.GetArray("ProfileColumns");
+    Aws::Utils::Array<JsonView> profileColumnsJsonList = jsonValue.GetArray("ProfileColumns");
     for(unsigned profileColumnsIndex = 0; profileColumnsIndex < profileColumnsJsonList.GetLength(); ++profileColumnsIndex)
     {
       m_profileColumns.push_back(profileColumnsJsonList[profileColumnsIndex].AsObject());
@@ -56,7 +56,7 @@ ProfileConfiguration& ProfileConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ColumnStatisticsConfigurations"))
   {
-    Array<JsonView> columnStatisticsConfigurationsJsonList = jsonValue.GetArray("ColumnStatisticsConfigurations");
+    Aws::Utils::Array<JsonView> columnStatisticsConfigurationsJsonList = jsonValue.GetArray("ColumnStatisticsConfigurations");
     for(unsigned columnStatisticsConfigurationsIndex = 0; columnStatisticsConfigurationsIndex < columnStatisticsConfigurationsJsonList.GetLength(); ++columnStatisticsConfigurationsIndex)
     {
       m_columnStatisticsConfigurations.push_back(columnStatisticsConfigurationsJsonList[columnStatisticsConfigurationsIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue ProfileConfiguration::Jsonize() const
 
   if(m_profileColumnsHasBeenSet)
   {
-   Array<JsonValue> profileColumnsJsonList(m_profileColumns.size());
+   Aws::Utils::Array<JsonValue> profileColumnsJsonList(m_profileColumns.size());
    for(unsigned profileColumnsIndex = 0; profileColumnsIndex < profileColumnsJsonList.GetLength(); ++profileColumnsIndex)
    {
      profileColumnsJsonList[profileColumnsIndex].AsObject(m_profileColumns[profileColumnsIndex].Jsonize());
@@ -97,7 +97,7 @@ JsonValue ProfileConfiguration::Jsonize() const
 
   if(m_columnStatisticsConfigurationsHasBeenSet)
   {
-   Array<JsonValue> columnStatisticsConfigurationsJsonList(m_columnStatisticsConfigurations.size());
+   Aws::Utils::Array<JsonValue> columnStatisticsConfigurationsJsonList(m_columnStatisticsConfigurations.size());
    for(unsigned columnStatisticsConfigurationsIndex = 0; columnStatisticsConfigurationsIndex < columnStatisticsConfigurationsJsonList.GetLength(); ++columnStatisticsConfigurationsIndex)
    {
      columnStatisticsConfigurationsJsonList[columnStatisticsConfigurationsIndex].AsObject(m_columnStatisticsConfigurations[columnStatisticsConfigurationsIndex].Jsonize());

@@ -30,7 +30,7 @@ DescribeQueriesResult& DescribeQueriesResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("queries"))
   {
-    Array<JsonView> queriesJsonList = jsonValue.GetArray("queries");
+    Aws::Utils::Array<JsonView> queriesJsonList = jsonValue.GetArray("queries");
     for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
     {
       m_queries.push_back(queriesJsonList[queriesIndex].AsObject());

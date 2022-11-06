@@ -34,7 +34,7 @@ Aws::String RemoveDraftAppVersionResourceMappingsRequest::SerializePayload() con
 
   if(m_appRegistryAppNamesHasBeenSet)
   {
-   Array<JsonValue> appRegistryAppNamesJsonList(m_appRegistryAppNames.size());
+   Aws::Utils::Array<JsonValue> appRegistryAppNamesJsonList(m_appRegistryAppNames.size());
    for(unsigned appRegistryAppNamesIndex = 0; appRegistryAppNamesIndex < appRegistryAppNamesJsonList.GetLength(); ++appRegistryAppNamesIndex)
    {
      appRegistryAppNamesJsonList[appRegistryAppNamesIndex].AsString(m_appRegistryAppNames[appRegistryAppNamesIndex]);
@@ -45,7 +45,7 @@ Aws::String RemoveDraftAppVersionResourceMappingsRequest::SerializePayload() con
 
   if(m_logicalStackNamesHasBeenSet)
   {
-   Array<JsonValue> logicalStackNamesJsonList(m_logicalStackNames.size());
+   Aws::Utils::Array<JsonValue> logicalStackNamesJsonList(m_logicalStackNames.size());
    for(unsigned logicalStackNamesIndex = 0; logicalStackNamesIndex < logicalStackNamesJsonList.GetLength(); ++logicalStackNamesIndex)
    {
      logicalStackNamesJsonList[logicalStackNamesIndex].AsString(m_logicalStackNames[logicalStackNamesIndex]);
@@ -56,7 +56,7 @@ Aws::String RemoveDraftAppVersionResourceMappingsRequest::SerializePayload() con
 
   if(m_resourceGroupNamesHasBeenSet)
   {
-   Array<JsonValue> resourceGroupNamesJsonList(m_resourceGroupNames.size());
+   Aws::Utils::Array<JsonValue> resourceGroupNamesJsonList(m_resourceGroupNames.size());
    for(unsigned resourceGroupNamesIndex = 0; resourceGroupNamesIndex < resourceGroupNamesJsonList.GetLength(); ++resourceGroupNamesIndex)
    {
      resourceGroupNamesJsonList[resourceGroupNamesIndex].AsString(m_resourceGroupNames[resourceGroupNamesIndex]);
@@ -67,7 +67,7 @@ Aws::String RemoveDraftAppVersionResourceMappingsRequest::SerializePayload() con
 
   if(m_resourceNamesHasBeenSet)
   {
-   Array<JsonValue> resourceNamesJsonList(m_resourceNames.size());
+   Aws::Utils::Array<JsonValue> resourceNamesJsonList(m_resourceNames.size());
    for(unsigned resourceNamesIndex = 0; resourceNamesIndex < resourceNamesJsonList.GetLength(); ++resourceNamesIndex)
    {
      resourceNamesJsonList[resourceNamesIndex].AsString(m_resourceNames[resourceNamesIndex]);
@@ -78,7 +78,7 @@ Aws::String RemoveDraftAppVersionResourceMappingsRequest::SerializePayload() con
 
   if(m_terraformSourceNamesHasBeenSet)
   {
-   Array<JsonValue> terraformSourceNamesJsonList(m_terraformSourceNames.size());
+   Aws::Utils::Array<JsonValue> terraformSourceNamesJsonList(m_terraformSourceNames.size());
    for(unsigned terraformSourceNamesIndex = 0; terraformSourceNamesIndex < terraformSourceNamesJsonList.GetLength(); ++terraformSourceNamesIndex)
    {
      terraformSourceNamesJsonList[terraformSourceNamesIndex].AsString(m_terraformSourceNames[terraformSourceNamesIndex]);

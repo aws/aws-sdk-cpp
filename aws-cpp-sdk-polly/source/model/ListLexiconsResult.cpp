@@ -30,7 +30,7 @@ ListLexiconsResult& ListLexiconsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Lexicons"))
   {
-    Array<JsonView> lexiconsJsonList = jsonValue.GetArray("Lexicons");
+    Aws::Utils::Array<JsonView> lexiconsJsonList = jsonValue.GetArray("Lexicons");
     for(unsigned lexiconsIndex = 0; lexiconsIndex < lexiconsJsonList.GetLength(); ++lexiconsIndex)
     {
       m_lexicons.push_back(lexiconsJsonList[lexiconsIndex].AsObject());

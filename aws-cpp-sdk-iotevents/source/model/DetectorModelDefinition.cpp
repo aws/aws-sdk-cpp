@@ -35,7 +35,7 @@ DetectorModelDefinition& DetectorModelDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("states"))
   {
-    Array<JsonView> statesJsonList = jsonValue.GetArray("states");
+    Aws::Utils::Array<JsonView> statesJsonList = jsonValue.GetArray("states");
     for(unsigned statesIndex = 0; statesIndex < statesJsonList.GetLength(); ++statesIndex)
     {
       m_states.push_back(statesJsonList[statesIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue DetectorModelDefinition::Jsonize() const
 
   if(m_statesHasBeenSet)
   {
-   Array<JsonValue> statesJsonList(m_states.size());
+   Aws::Utils::Array<JsonValue> statesJsonList(m_states.size());
    for(unsigned statesIndex = 0; statesIndex < statesJsonList.GetLength(); ++statesIndex)
    {
      statesJsonList[statesIndex].AsObject(m_states[statesIndex].Jsonize());

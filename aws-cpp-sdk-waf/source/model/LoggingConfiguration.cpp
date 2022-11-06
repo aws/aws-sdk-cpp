@@ -44,7 +44,7 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LogDestinationConfigs"))
   {
-    Array<JsonView> logDestinationConfigsJsonList = jsonValue.GetArray("LogDestinationConfigs");
+    Aws::Utils::Array<JsonView> logDestinationConfigsJsonList = jsonValue.GetArray("LogDestinationConfigs");
     for(unsigned logDestinationConfigsIndex = 0; logDestinationConfigsIndex < logDestinationConfigsJsonList.GetLength(); ++logDestinationConfigsIndex)
     {
       m_logDestinationConfigs.push_back(logDestinationConfigsJsonList[logDestinationConfigsIndex].AsString());
@@ -54,7 +54,7 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RedactedFields"))
   {
-    Array<JsonView> redactedFieldsJsonList = jsonValue.GetArray("RedactedFields");
+    Aws::Utils::Array<JsonView> redactedFieldsJsonList = jsonValue.GetArray("RedactedFields");
     for(unsigned redactedFieldsIndex = 0; redactedFieldsIndex < redactedFieldsJsonList.GetLength(); ++redactedFieldsIndex)
     {
       m_redactedFields.push_back(redactedFieldsJsonList[redactedFieldsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue LoggingConfiguration::Jsonize() const
 
   if(m_logDestinationConfigsHasBeenSet)
   {
-   Array<JsonValue> logDestinationConfigsJsonList(m_logDestinationConfigs.size());
+   Aws::Utils::Array<JsonValue> logDestinationConfigsJsonList(m_logDestinationConfigs.size());
    for(unsigned logDestinationConfigsIndex = 0; logDestinationConfigsIndex < logDestinationConfigsJsonList.GetLength(); ++logDestinationConfigsIndex)
    {
      logDestinationConfigsJsonList[logDestinationConfigsIndex].AsString(m_logDestinationConfigs[logDestinationConfigsIndex]);
@@ -88,7 +88,7 @@ JsonValue LoggingConfiguration::Jsonize() const
 
   if(m_redactedFieldsHasBeenSet)
   {
-   Array<JsonValue> redactedFieldsJsonList(m_redactedFields.size());
+   Aws::Utils::Array<JsonValue> redactedFieldsJsonList(m_redactedFields.size());
    for(unsigned redactedFieldsIndex = 0; redactedFieldsIndex < redactedFieldsJsonList.GetLength(); ++redactedFieldsIndex)
    {
      redactedFieldsJsonList[redactedFieldsIndex].AsObject(m_redactedFields[redactedFieldsIndex].Jsonize());

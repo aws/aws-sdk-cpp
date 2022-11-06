@@ -43,7 +43,7 @@ Aws::String TestAuthorizationRequest::SerializePayload() const
 
   if(m_authInfosHasBeenSet)
   {
-   Array<JsonValue> authInfosJsonList(m_authInfos.size());
+   Aws::Utils::Array<JsonValue> authInfosJsonList(m_authInfos.size());
    for(unsigned authInfosIndex = 0; authInfosIndex < authInfosJsonList.GetLength(); ++authInfosIndex)
    {
      authInfosJsonList[authInfosIndex].AsObject(m_authInfos[authInfosIndex].Jsonize());
@@ -54,7 +54,7 @@ Aws::String TestAuthorizationRequest::SerializePayload() const
 
   if(m_policyNamesToAddHasBeenSet)
   {
-   Array<JsonValue> policyNamesToAddJsonList(m_policyNamesToAdd.size());
+   Aws::Utils::Array<JsonValue> policyNamesToAddJsonList(m_policyNamesToAdd.size());
    for(unsigned policyNamesToAddIndex = 0; policyNamesToAddIndex < policyNamesToAddJsonList.GetLength(); ++policyNamesToAddIndex)
    {
      policyNamesToAddJsonList[policyNamesToAddIndex].AsString(m_policyNamesToAdd[policyNamesToAddIndex]);
@@ -65,7 +65,7 @@ Aws::String TestAuthorizationRequest::SerializePayload() const
 
   if(m_policyNamesToSkipHasBeenSet)
   {
-   Array<JsonValue> policyNamesToSkipJsonList(m_policyNamesToSkip.size());
+   Aws::Utils::Array<JsonValue> policyNamesToSkipJsonList(m_policyNamesToSkip.size());
    for(unsigned policyNamesToSkipIndex = 0; policyNamesToSkipIndex < policyNamesToSkipJsonList.GetLength(); ++policyNamesToSkipIndex)
    {
      policyNamesToSkipJsonList[policyNamesToSkipIndex].AsString(m_policyNamesToSkip[policyNamesToSkipIndex]);

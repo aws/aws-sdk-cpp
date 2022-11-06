@@ -42,7 +42,7 @@ ReplayDestination& ReplayDestination::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FilterArns"))
   {
-    Array<JsonView> filterArnsJsonList = jsonValue.GetArray("FilterArns");
+    Aws::Utils::Array<JsonView> filterArnsJsonList = jsonValue.GetArray("FilterArns");
     for(unsigned filterArnsIndex = 0; filterArnsIndex < filterArnsJsonList.GetLength(); ++filterArnsIndex)
     {
       m_filterArns.push_back(filterArnsJsonList[filterArnsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue ReplayDestination::Jsonize() const
 
   if(m_filterArnsHasBeenSet)
   {
-   Array<JsonValue> filterArnsJsonList(m_filterArns.size());
+   Aws::Utils::Array<JsonValue> filterArnsJsonList(m_filterArns.size());
    for(unsigned filterArnsIndex = 0; filterArnsIndex < filterArnsJsonList.GetLength(); ++filterArnsIndex)
    {
      filterArnsJsonList[filterArnsIndex].AsString(m_filterArns[filterArnsIndex]);

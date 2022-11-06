@@ -30,7 +30,7 @@ ListDataIntegrationAssociationsResult& ListDataIntegrationAssociationsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DataIntegrationAssociations"))
   {
-    Array<JsonView> dataIntegrationAssociationsJsonList = jsonValue.GetArray("DataIntegrationAssociations");
+    Aws::Utils::Array<JsonView> dataIntegrationAssociationsJsonList = jsonValue.GetArray("DataIntegrationAssociations");
     for(unsigned dataIntegrationAssociationsIndex = 0; dataIntegrationAssociationsIndex < dataIntegrationAssociationsJsonList.GetLength(); ++dataIntegrationAssociationsIndex)
     {
       m_dataIntegrationAssociations.push_back(dataIntegrationAssociationsJsonList[dataIntegrationAssociationsIndex].AsObject());

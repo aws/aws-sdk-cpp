@@ -30,7 +30,7 @@ ListTestGridSessionActionsResult& ListTestGridSessionActionsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());

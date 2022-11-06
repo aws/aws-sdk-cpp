@@ -90,7 +90,7 @@ Event& Event::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("entities"))
   {
-    Array<JsonView> entitiesJsonList = jsonValue.GetArray("entities");
+    Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("entities");
     for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
@@ -148,7 +148,7 @@ JsonValue Event::Jsonize() const
 
   if(m_entitiesHasBeenSet)
   {
-   Array<JsonValue> entitiesJsonList(m_entities.size());
+   Aws::Utils::Array<JsonValue> entitiesJsonList(m_entities.size());
    for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
    {
      entitiesJsonList[entitiesIndex].AsObject(m_entities[entitiesIndex].Jsonize());

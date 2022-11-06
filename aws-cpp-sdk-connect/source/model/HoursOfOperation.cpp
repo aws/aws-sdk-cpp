@@ -80,7 +80,7 @@ HoursOfOperation& HoursOfOperation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Config"))
   {
-    Array<JsonView> configJsonList = jsonValue.GetArray("Config");
+    Aws::Utils::Array<JsonView> configJsonList = jsonValue.GetArray("Config");
     for(unsigned configIndex = 0; configIndex < configJsonList.GetLength(); ++configIndex)
     {
       m_config.push_back(configJsonList[configIndex].AsObject());
@@ -137,7 +137,7 @@ JsonValue HoursOfOperation::Jsonize() const
 
   if(m_configHasBeenSet)
   {
-   Array<JsonValue> configJsonList(m_config.size());
+   Aws::Utils::Array<JsonValue> configJsonList(m_config.size());
    for(unsigned configIndex = 0; configIndex < configJsonList.GetLength(); ++configIndex)
    {
      configJsonList[configIndex].AsObject(m_config[configIndex].Jsonize());

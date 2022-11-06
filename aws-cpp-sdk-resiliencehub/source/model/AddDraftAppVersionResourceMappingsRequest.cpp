@@ -30,7 +30,7 @@ Aws::String AddDraftAppVersionResourceMappingsRequest::SerializePayload() const
 
   if(m_resourceMappingsHasBeenSet)
   {
-   Array<JsonValue> resourceMappingsJsonList(m_resourceMappings.size());
+   Aws::Utils::Array<JsonValue> resourceMappingsJsonList(m_resourceMappings.size());
    for(unsigned resourceMappingsIndex = 0; resourceMappingsIndex < resourceMappingsJsonList.GetLength(); ++resourceMappingsIndex)
    {
      resourceMappingsJsonList[resourceMappingsIndex].AsObject(m_resourceMappings[resourceMappingsIndex].Jsonize());

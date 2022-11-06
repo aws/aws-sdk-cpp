@@ -47,7 +47,7 @@ Aws::String CreateCostCategoryDefinitionRequest::SerializePayload() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -64,7 +64,7 @@ Aws::String CreateCostCategoryDefinitionRequest::SerializePayload() const
 
   if(m_splitChargeRulesHasBeenSet)
   {
-   Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
+   Aws::Utils::Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
    for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
    {
      splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());
@@ -75,7 +75,7 @@ Aws::String CreateCostCategoryDefinitionRequest::SerializePayload() const
 
   if(m_resourceTagsHasBeenSet)
   {
-   Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
    for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
    {
      resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());

@@ -44,7 +44,7 @@ RetryStrategy& RetryStrategy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("evaluateOnExit"))
   {
-    Array<JsonView> evaluateOnExitJsonList = jsonValue.GetArray("evaluateOnExit");
+    Aws::Utils::Array<JsonView> evaluateOnExitJsonList = jsonValue.GetArray("evaluateOnExit");
     for(unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex)
     {
       m_evaluateOnExit.push_back(evaluateOnExitJsonList[evaluateOnExitIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue RetryStrategy::Jsonize() const
 
   if(m_evaluateOnExitHasBeenSet)
   {
-   Array<JsonValue> evaluateOnExitJsonList(m_evaluateOnExit.size());
+   Aws::Utils::Array<JsonValue> evaluateOnExitJsonList(m_evaluateOnExit.size());
    for(unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex)
    {
      evaluateOnExitJsonList[evaluateOnExitIndex].AsObject(m_evaluateOnExit[evaluateOnExitIndex].Jsonize());

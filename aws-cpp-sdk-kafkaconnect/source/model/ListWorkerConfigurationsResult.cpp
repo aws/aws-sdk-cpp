@@ -36,7 +36,7 @@ ListWorkerConfigurationsResult& ListWorkerConfigurationsResult::operator =(const
 
   if(jsonValue.ValueExists("workerConfigurations"))
   {
-    Array<JsonView> workerConfigurationsJsonList = jsonValue.GetArray("workerConfigurations");
+    Aws::Utils::Array<JsonView> workerConfigurationsJsonList = jsonValue.GetArray("workerConfigurations");
     for(unsigned workerConfigurationsIndex = 0; workerConfigurationsIndex < workerConfigurationsJsonList.GetLength(); ++workerConfigurationsIndex)
     {
       m_workerConfigurations.push_back(workerConfigurationsJsonList[workerConfigurationsIndex].AsObject());

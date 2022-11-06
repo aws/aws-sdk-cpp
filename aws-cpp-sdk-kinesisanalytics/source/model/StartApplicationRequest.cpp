@@ -30,7 +30,7 @@ Aws::String StartApplicationRequest::SerializePayload() const
 
   if(m_inputConfigurationsHasBeenSet)
   {
-   Array<JsonValue> inputConfigurationsJsonList(m_inputConfigurations.size());
+   Aws::Utils::Array<JsonValue> inputConfigurationsJsonList(m_inputConfigurations.size());
    for(unsigned inputConfigurationsIndex = 0; inputConfigurationsIndex < inputConfigurationsJsonList.GetLength(); ++inputConfigurationsIndex)
    {
      inputConfigurationsJsonList[inputConfigurationsIndex].AsObject(m_inputConfigurations[inputConfigurationsIndex].Jsonize());

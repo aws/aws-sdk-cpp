@@ -43,7 +43,7 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("summaries"))
   {
-    Array<JsonView> summariesJsonList = jsonValue.GetArray("summaries");
+    Aws::Utils::Array<JsonView> summariesJsonList = jsonValue.GetArray("summaries");
     for(unsigned summariesIndex = 0; summariesIndex < summariesJsonList.GetLength(); ++summariesIndex)
     {
       m_summaries.push_back(summariesJsonList[summariesIndex].AsObject());
@@ -88,7 +88,7 @@ JsonValue RecommendationSummary::Jsonize() const
 
   if(m_summariesHasBeenSet)
   {
-   Array<JsonValue> summariesJsonList(m_summaries.size());
+   Aws::Utils::Array<JsonValue> summariesJsonList(m_summaries.size());
    for(unsigned summariesIndex = 0; summariesIndex < summariesJsonList.GetLength(); ++summariesIndex)
    {
      summariesJsonList[summariesIndex].AsObject(m_summaries[summariesIndex].Jsonize());

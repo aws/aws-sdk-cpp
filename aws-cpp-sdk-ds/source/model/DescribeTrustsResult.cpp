@@ -30,7 +30,7 @@ DescribeTrustsResult& DescribeTrustsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Trusts"))
   {
-    Array<JsonView> trustsJsonList = jsonValue.GetArray("Trusts");
+    Aws::Utils::Array<JsonView> trustsJsonList = jsonValue.GetArray("Trusts");
     for(unsigned trustsIndex = 0; trustsIndex < trustsJsonList.GetLength(); ++trustsIndex)
     {
       m_trusts.push_back(trustsJsonList[trustsIndex].AsObject());

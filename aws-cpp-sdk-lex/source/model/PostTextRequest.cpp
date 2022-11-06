@@ -57,7 +57,7 @@ Aws::String PostTextRequest::SerializePayload() const
 
   if(m_activeContextsHasBeenSet)
   {
-   Array<JsonValue> activeContextsJsonList(m_activeContexts.size());
+   Aws::Utils::Array<JsonValue> activeContextsJsonList(m_activeContexts.size());
    for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
    {
      activeContextsJsonList[activeContextsIndex].AsObject(m_activeContexts[activeContextsIndex].Jsonize());

@@ -69,7 +69,7 @@ AwsElbLoadBalancerAttributes& AwsElbLoadBalancerAttributes::operator =(JsonView 
 
   if(jsonValue.ValueExists("AdditionalAttributes"))
   {
-    Array<JsonView> additionalAttributesJsonList = jsonValue.GetArray("AdditionalAttributes");
+    Aws::Utils::Array<JsonView> additionalAttributesJsonList = jsonValue.GetArray("AdditionalAttributes");
     for(unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength(); ++additionalAttributesIndex)
     {
       m_additionalAttributes.push_back(additionalAttributesJsonList[additionalAttributesIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue AwsElbLoadBalancerAttributes::Jsonize() const
 
   if(m_additionalAttributesHasBeenSet)
   {
-   Array<JsonValue> additionalAttributesJsonList(m_additionalAttributes.size());
+   Aws::Utils::Array<JsonValue> additionalAttributesJsonList(m_additionalAttributes.size());
    for(unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength(); ++additionalAttributesIndex)
    {
      additionalAttributesJsonList[additionalAttributesIndex].AsObject(m_additionalAttributes[additionalAttributesIndex].Jsonize());

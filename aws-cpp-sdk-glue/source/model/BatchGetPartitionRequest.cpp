@@ -44,7 +44,7 @@ Aws::String BatchGetPartitionRequest::SerializePayload() const
 
   if(m_partitionsToGetHasBeenSet)
   {
-   Array<JsonValue> partitionsToGetJsonList(m_partitionsToGet.size());
+   Aws::Utils::Array<JsonValue> partitionsToGetJsonList(m_partitionsToGet.size());
    for(unsigned partitionsToGetIndex = 0; partitionsToGetIndex < partitionsToGetJsonList.GetLength(); ++partitionsToGetIndex)
    {
      partitionsToGetJsonList[partitionsToGetIndex].AsObject(m_partitionsToGet[partitionsToGetIndex].Jsonize());

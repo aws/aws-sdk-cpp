@@ -30,7 +30,7 @@ ListAvailabilityConfigurationsResult& ListAvailabilityConfigurationsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AvailabilityConfigurations"))
   {
-    Array<JsonView> availabilityConfigurationsJsonList = jsonValue.GetArray("AvailabilityConfigurations");
+    Aws::Utils::Array<JsonView> availabilityConfigurationsJsonList = jsonValue.GetArray("AvailabilityConfigurations");
     for(unsigned availabilityConfigurationsIndex = 0; availabilityConfigurationsIndex < availabilityConfigurationsJsonList.GetLength(); ++availabilityConfigurationsIndex)
     {
       m_availabilityConfigurations.push_back(availabilityConfigurationsJsonList[availabilityConfigurationsIndex].AsObject());

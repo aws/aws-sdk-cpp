@@ -76,7 +76,7 @@ ReleasePhoneNumberResult& ReleasePhoneNumberResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("NumberCapabilities"))
   {
-    Array<JsonView> numberCapabilitiesJsonList = jsonValue.GetArray("NumberCapabilities");
+    Aws::Utils::Array<JsonView> numberCapabilitiesJsonList = jsonValue.GetArray("NumberCapabilities");
     for(unsigned numberCapabilitiesIndex = 0; numberCapabilitiesIndex < numberCapabilitiesJsonList.GetLength(); ++numberCapabilitiesIndex)
     {
       m_numberCapabilities.push_back(NumberCapabilityMapper::GetNumberCapabilityForName(numberCapabilitiesJsonList[numberCapabilitiesIndex].AsString()));

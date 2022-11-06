@@ -36,7 +36,7 @@ ListPartnerAccountsResult& ListPartnerAccountsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("Sidewalk"))
   {
-    Array<JsonView> sidewalkJsonList = jsonValue.GetArray("Sidewalk");
+    Aws::Utils::Array<JsonView> sidewalkJsonList = jsonValue.GetArray("Sidewalk");
     for(unsigned sidewalkIndex = 0; sidewalkIndex < sidewalkJsonList.GetLength(); ++sidewalkIndex)
     {
       m_sidewalk.push_back(sidewalkJsonList[sidewalkIndex].AsObject());

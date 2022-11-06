@@ -30,7 +30,7 @@ ListLaunchesResult& ListLaunchesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("launches"))
   {
-    Array<JsonView> launchesJsonList = jsonValue.GetArray("launches");
+    Aws::Utils::Array<JsonView> launchesJsonList = jsonValue.GetArray("launches");
     for(unsigned launchesIndex = 0; launchesIndex < launchesJsonList.GetLength(); ++launchesIndex)
     {
       m_launches.push_back(launchesJsonList[launchesIndex].AsObject());

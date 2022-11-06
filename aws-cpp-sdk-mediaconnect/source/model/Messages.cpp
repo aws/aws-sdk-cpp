@@ -33,7 +33,7 @@ Messages& Messages::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue Messages::Jsonize() const
 
   if(m_errorsHasBeenSet)
   {
-   Array<JsonValue> errorsJsonList(m_errors.size());
+   Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
    {
      errorsJsonList[errorsIndex].AsString(m_errors[errorsIndex]);

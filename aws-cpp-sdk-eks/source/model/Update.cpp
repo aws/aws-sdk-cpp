@@ -68,7 +68,7 @@ Update& Update::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("params"))
   {
-    Array<JsonView> paramsJsonList = jsonValue.GetArray("params");
+    Aws::Utils::Array<JsonView> paramsJsonList = jsonValue.GetArray("params");
     for(unsigned paramsIndex = 0; paramsIndex < paramsJsonList.GetLength(); ++paramsIndex)
     {
       m_params.push_back(paramsJsonList[paramsIndex].AsObject());
@@ -85,7 +85,7 @@ Update& Update::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -118,7 +118,7 @@ JsonValue Update::Jsonize() const
 
   if(m_paramsHasBeenSet)
   {
-   Array<JsonValue> paramsJsonList(m_params.size());
+   Aws::Utils::Array<JsonValue> paramsJsonList(m_params.size());
    for(unsigned paramsIndex = 0; paramsIndex < paramsJsonList.GetLength(); ++paramsIndex)
    {
      paramsJsonList[paramsIndex].AsObject(m_params[paramsIndex].Jsonize());
@@ -134,7 +134,7 @@ JsonValue Update::Jsonize() const
 
   if(m_errorsHasBeenSet)
   {
-   Array<JsonValue> errorsJsonList(m_errors.size());
+   Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
    {
      errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());

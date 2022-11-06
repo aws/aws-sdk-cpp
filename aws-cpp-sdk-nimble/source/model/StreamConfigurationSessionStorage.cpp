@@ -35,7 +35,7 @@ StreamConfigurationSessionStorage& StreamConfigurationSessionStorage::operator =
 {
   if(jsonValue.ValueExists("mode"))
   {
-    Array<JsonView> modeJsonList = jsonValue.GetArray("mode");
+    Aws::Utils::Array<JsonView> modeJsonList = jsonValue.GetArray("mode");
     for(unsigned modeIndex = 0; modeIndex < modeJsonList.GetLength(); ++modeIndex)
     {
       m_mode.push_back(StreamingSessionStorageModeMapper::GetStreamingSessionStorageModeForName(modeJsonList[modeIndex].AsString()));
@@ -59,7 +59,7 @@ JsonValue StreamConfigurationSessionStorage::Jsonize() const
 
   if(m_modeHasBeenSet)
   {
-   Array<JsonValue> modeJsonList(m_mode.size());
+   Aws::Utils::Array<JsonValue> modeJsonList(m_mode.size());
    for(unsigned modeIndex = 0; modeIndex < modeJsonList.GetLength(); ++modeIndex)
    {
      modeJsonList[modeIndex].AsString(StreamingSessionStorageModeMapper::GetNameForStreamingSessionStorageMode(m_mode[modeIndex]));

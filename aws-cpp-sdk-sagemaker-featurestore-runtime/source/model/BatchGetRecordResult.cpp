@@ -30,7 +30,7 @@ BatchGetRecordResult& BatchGetRecordResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Records"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetRecordResult& BatchGetRecordResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -48,7 +48,7 @@ BatchGetRecordResult& BatchGetRecordResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("UnprocessedIdentifiers"))
   {
-    Array<JsonView> unprocessedIdentifiersJsonList = jsonValue.GetArray("UnprocessedIdentifiers");
+    Aws::Utils::Array<JsonView> unprocessedIdentifiersJsonList = jsonValue.GetArray("UnprocessedIdentifiers");
     for(unsigned unprocessedIdentifiersIndex = 0; unprocessedIdentifiersIndex < unprocessedIdentifiersJsonList.GetLength(); ++unprocessedIdentifiersIndex)
     {
       m_unprocessedIdentifiers.push_back(unprocessedIdentifiersJsonList[unprocessedIdentifiersIndex].AsObject());

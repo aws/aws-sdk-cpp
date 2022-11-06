@@ -30,7 +30,7 @@ AssociateS3ResourcesResult& AssociateS3ResourcesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("failedS3Resources"))
   {
-    Array<JsonView> failedS3ResourcesJsonList = jsonValue.GetArray("failedS3Resources");
+    Aws::Utils::Array<JsonView> failedS3ResourcesJsonList = jsonValue.GetArray("failedS3Resources");
     for(unsigned failedS3ResourcesIndex = 0; failedS3ResourcesIndex < failedS3ResourcesJsonList.GetLength(); ++failedS3ResourcesIndex)
     {
       m_failedS3Resources.push_back(failedS3ResourcesJsonList[failedS3ResourcesIndex].AsObject());

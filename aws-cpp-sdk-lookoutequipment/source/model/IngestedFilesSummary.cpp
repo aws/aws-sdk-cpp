@@ -55,7 +55,7 @@ IngestedFilesSummary& IngestedFilesSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DiscardedFiles"))
   {
-    Array<JsonView> discardedFilesJsonList = jsonValue.GetArray("DiscardedFiles");
+    Aws::Utils::Array<JsonView> discardedFilesJsonList = jsonValue.GetArray("DiscardedFiles");
     for(unsigned discardedFilesIndex = 0; discardedFilesIndex < discardedFilesJsonList.GetLength(); ++discardedFilesIndex)
     {
       m_discardedFiles.push_back(discardedFilesJsonList[discardedFilesIndex].AsObject());
@@ -84,7 +84,7 @@ JsonValue IngestedFilesSummary::Jsonize() const
 
   if(m_discardedFilesHasBeenSet)
   {
-   Array<JsonValue> discardedFilesJsonList(m_discardedFiles.size());
+   Aws::Utils::Array<JsonValue> discardedFilesJsonList(m_discardedFiles.size());
    for(unsigned discardedFilesIndex = 0; discardedFilesIndex < discardedFilesJsonList.GetLength(); ++discardedFilesIndex)
    {
      discardedFilesJsonList[discardedFilesIndex].AsObject(m_discardedFiles[discardedFilesIndex].Jsonize());

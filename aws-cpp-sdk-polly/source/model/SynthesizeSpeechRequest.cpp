@@ -47,7 +47,7 @@ Aws::String SynthesizeSpeechRequest::SerializePayload() const
 
   if(m_lexiconNamesHasBeenSet)
   {
-   Array<JsonValue> lexiconNamesJsonList(m_lexiconNames.size());
+   Aws::Utils::Array<JsonValue> lexiconNamesJsonList(m_lexiconNames.size());
    for(unsigned lexiconNamesIndex = 0; lexiconNamesIndex < lexiconNamesJsonList.GetLength(); ++lexiconNamesIndex)
    {
      lexiconNamesJsonList[lexiconNamesIndex].AsString(m_lexiconNames[lexiconNamesIndex]);
@@ -69,7 +69,7 @@ Aws::String SynthesizeSpeechRequest::SerializePayload() const
 
   if(m_speechMarkTypesHasBeenSet)
   {
-   Array<JsonValue> speechMarkTypesJsonList(m_speechMarkTypes.size());
+   Aws::Utils::Array<JsonValue> speechMarkTypesJsonList(m_speechMarkTypes.size());
    for(unsigned speechMarkTypesIndex = 0; speechMarkTypesIndex < speechMarkTypesJsonList.GetLength(); ++speechMarkTypesIndex)
    {
      speechMarkTypesJsonList[speechMarkTypesIndex].AsString(SpeechMarkTypeMapper::GetNameForSpeechMarkType(m_speechMarkTypes[speechMarkTypesIndex]));

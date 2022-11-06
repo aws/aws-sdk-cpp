@@ -32,7 +32,7 @@ Aws::String ListStepsRequest::SerializePayload() const
 
   if(m_stepStatesHasBeenSet)
   {
-   Array<JsonValue> stepStatesJsonList(m_stepStates.size());
+   Aws::Utils::Array<JsonValue> stepStatesJsonList(m_stepStates.size());
    for(unsigned stepStatesIndex = 0; stepStatesIndex < stepStatesJsonList.GetLength(); ++stepStatesIndex)
    {
      stepStatesJsonList[stepStatesIndex].AsString(StepStateMapper::GetNameForStepState(m_stepStates[stepStatesIndex]));
@@ -43,7 +43,7 @@ Aws::String ListStepsRequest::SerializePayload() const
 
   if(m_stepIdsHasBeenSet)
   {
-   Array<JsonValue> stepIdsJsonList(m_stepIds.size());
+   Aws::Utils::Array<JsonValue> stepIdsJsonList(m_stepIds.size());
    for(unsigned stepIdsIndex = 0; stepIdsIndex < stepIdsJsonList.GetLength(); ++stepIdsIndex)
    {
      stepIdsJsonList[stepIdsIndex].AsString(m_stepIds[stepIdsIndex]);

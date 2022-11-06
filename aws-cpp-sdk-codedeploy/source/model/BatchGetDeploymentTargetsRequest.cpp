@@ -30,7 +30,7 @@ Aws::String BatchGetDeploymentTargetsRequest::SerializePayload() const
 
   if(m_targetIdsHasBeenSet)
   {
-   Array<JsonValue> targetIdsJsonList(m_targetIds.size());
+   Aws::Utils::Array<JsonValue> targetIdsJsonList(m_targetIds.size());
    for(unsigned targetIdsIndex = 0; targetIdsIndex < targetIdsJsonList.GetLength(); ++targetIdsIndex)
    {
      targetIdsJsonList[targetIdsIndex].AsString(m_targetIds[targetIdsIndex]);

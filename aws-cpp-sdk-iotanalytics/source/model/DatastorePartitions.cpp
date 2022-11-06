@@ -33,7 +33,7 @@ DatastorePartitions& DatastorePartitions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("partitions"))
   {
-    Array<JsonView> partitionsJsonList = jsonValue.GetArray("partitions");
+    Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("partitions");
     for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
     {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue DatastorePartitions::Jsonize() const
 
   if(m_partitionsHasBeenSet)
   {
-   Array<JsonValue> partitionsJsonList(m_partitions.size());
+   Aws::Utils::Array<JsonValue> partitionsJsonList(m_partitions.size());
    for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
    {
      partitionsJsonList[partitionsIndex].AsObject(m_partitions[partitionsIndex].Jsonize());

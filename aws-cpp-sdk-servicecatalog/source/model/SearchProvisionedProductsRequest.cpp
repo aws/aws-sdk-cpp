@@ -46,7 +46,7 @@ Aws::String SearchProvisionedProductsRequest::SerializePayload() const
    JsonValue filtersJsonMap;
    for(auto& filtersItem : m_filters)
    {
-     Array<JsonValue> provisionedProductViewFilterValuesJsonList(filtersItem.second.size());
+     Aws::Utils::Array<JsonValue> provisionedProductViewFilterValuesJsonList(filtersItem.second.size());
      for(unsigned provisionedProductViewFilterValuesIndex = 0; provisionedProductViewFilterValuesIndex < provisionedProductViewFilterValuesJsonList.GetLength(); ++provisionedProductViewFilterValuesIndex)
      {
        provisionedProductViewFilterValuesJsonList[provisionedProductViewFilterValuesIndex].AsString(filtersItem.second[provisionedProductViewFilterValuesIndex]);

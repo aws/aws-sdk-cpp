@@ -35,7 +35,7 @@ Location& Location::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("path"))
   {
-    Array<JsonView> pathJsonList = jsonValue.GetArray("path");
+    Aws::Utils::Array<JsonView> pathJsonList = jsonValue.GetArray("path");
     for(unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex)
     {
       m_path.push_back(pathJsonList[pathIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue Location::Jsonize() const
 
   if(m_pathHasBeenSet)
   {
-   Array<JsonValue> pathJsonList(m_path.size());
+   Aws::Utils::Array<JsonValue> pathJsonList(m_path.size());
    for(unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex)
    {
      pathJsonList[pathIndex].AsObject(m_path[pathIndex].Jsonize());

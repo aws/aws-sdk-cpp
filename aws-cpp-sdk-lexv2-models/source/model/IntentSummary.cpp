@@ -73,7 +73,7 @@ IntentSummary& IntentSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputContexts"))
   {
-    Array<JsonView> inputContextsJsonList = jsonValue.GetArray("inputContexts");
+    Aws::Utils::Array<JsonView> inputContextsJsonList = jsonValue.GetArray("inputContexts");
     for(unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex)
     {
       m_inputContexts.push_back(inputContextsJsonList[inputContextsIndex].AsObject());
@@ -83,7 +83,7 @@ IntentSummary& IntentSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("outputContexts"))
   {
-    Array<JsonView> outputContextsJsonList = jsonValue.GetArray("outputContexts");
+    Aws::Utils::Array<JsonView> outputContextsJsonList = jsonValue.GetArray("outputContexts");
     for(unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex)
     {
       m_outputContexts.push_back(outputContextsJsonList[outputContextsIndex].AsObject());
@@ -131,7 +131,7 @@ JsonValue IntentSummary::Jsonize() const
 
   if(m_inputContextsHasBeenSet)
   {
-   Array<JsonValue> inputContextsJsonList(m_inputContexts.size());
+   Aws::Utils::Array<JsonValue> inputContextsJsonList(m_inputContexts.size());
    for(unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex)
    {
      inputContextsJsonList[inputContextsIndex].AsObject(m_inputContexts[inputContextsIndex].Jsonize());
@@ -142,7 +142,7 @@ JsonValue IntentSummary::Jsonize() const
 
   if(m_outputContextsHasBeenSet)
   {
-   Array<JsonValue> outputContextsJsonList(m_outputContexts.size());
+   Aws::Utils::Array<JsonValue> outputContextsJsonList(m_outputContexts.size());
    for(unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex)
    {
      outputContextsJsonList[outputContextsIndex].AsObject(m_outputContexts[outputContextsIndex].Jsonize());

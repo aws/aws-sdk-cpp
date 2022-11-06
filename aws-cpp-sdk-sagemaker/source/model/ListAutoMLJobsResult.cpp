@@ -30,7 +30,7 @@ ListAutoMLJobsResult& ListAutoMLJobsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AutoMLJobSummaries"))
   {
-    Array<JsonView> autoMLJobSummariesJsonList = jsonValue.GetArray("AutoMLJobSummaries");
+    Aws::Utils::Array<JsonView> autoMLJobSummariesJsonList = jsonValue.GetArray("AutoMLJobSummaries");
     for(unsigned autoMLJobSummariesIndex = 0; autoMLJobSummariesIndex < autoMLJobSummariesJsonList.GetLength(); ++autoMLJobSummariesIndex)
     {
       m_autoMLJobSummaries.push_back(autoMLJobSummariesJsonList[autoMLJobSummariesIndex].AsObject());

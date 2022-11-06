@@ -82,7 +82,7 @@ StatementOutput& StatementOutput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Traceback"))
   {
-    Array<JsonView> tracebackJsonList = jsonValue.GetArray("Traceback");
+    Aws::Utils::Array<JsonView> tracebackJsonList = jsonValue.GetArray("Traceback");
     for(unsigned tracebackIndex = 0; tracebackIndex < tracebackJsonList.GetLength(); ++tracebackIndex)
     {
       m_traceback.push_back(tracebackJsonList[tracebackIndex].AsString());
@@ -128,7 +128,7 @@ JsonValue StatementOutput::Jsonize() const
 
   if(m_tracebackHasBeenSet)
   {
-   Array<JsonValue> tracebackJsonList(m_traceback.size());
+   Aws::Utils::Array<JsonValue> tracebackJsonList(m_traceback.size());
    for(unsigned tracebackIndex = 0; tracebackIndex < tracebackJsonList.GetLength(); ++tracebackIndex)
    {
      tracebackJsonList[tracebackIndex].AsString(m_traceback[tracebackIndex]);

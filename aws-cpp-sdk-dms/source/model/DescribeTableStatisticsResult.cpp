@@ -36,7 +36,7 @@ DescribeTableStatisticsResult& DescribeTableStatisticsResult::operator =(const A
 
   if(jsonValue.ValueExists("TableStatistics"))
   {
-    Array<JsonView> tableStatisticsJsonList = jsonValue.GetArray("TableStatistics");
+    Aws::Utils::Array<JsonView> tableStatisticsJsonList = jsonValue.GetArray("TableStatistics");
     for(unsigned tableStatisticsIndex = 0; tableStatisticsIndex < tableStatisticsJsonList.GetLength(); ++tableStatisticsIndex)
     {
       m_tableStatistics.push_back(tableStatisticsJsonList[tableStatisticsIndex].AsObject());

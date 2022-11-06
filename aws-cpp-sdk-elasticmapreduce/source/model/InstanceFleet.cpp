@@ -117,7 +117,7 @@ InstanceFleet& InstanceFleet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceTypeSpecifications"))
   {
-    Array<JsonView> instanceTypeSpecificationsJsonList = jsonValue.GetArray("InstanceTypeSpecifications");
+    Aws::Utils::Array<JsonView> instanceTypeSpecificationsJsonList = jsonValue.GetArray("InstanceTypeSpecifications");
     for(unsigned instanceTypeSpecificationsIndex = 0; instanceTypeSpecificationsIndex < instanceTypeSpecificationsJsonList.GetLength(); ++instanceTypeSpecificationsIndex)
     {
       m_instanceTypeSpecifications.push_back(instanceTypeSpecificationsJsonList[instanceTypeSpecificationsIndex].AsObject());
@@ -188,7 +188,7 @@ JsonValue InstanceFleet::Jsonize() const
 
   if(m_instanceTypeSpecificationsHasBeenSet)
   {
-   Array<JsonValue> instanceTypeSpecificationsJsonList(m_instanceTypeSpecifications.size());
+   Aws::Utils::Array<JsonValue> instanceTypeSpecificationsJsonList(m_instanceTypeSpecifications.size());
    for(unsigned instanceTypeSpecificationsIndex = 0; instanceTypeSpecificationsIndex < instanceTypeSpecificationsJsonList.GetLength(); ++instanceTypeSpecificationsIndex)
    {
      instanceTypeSpecificationsJsonList[instanceTypeSpecificationsIndex].AsObject(m_instanceTypeSpecifications[instanceTypeSpecificationsIndex].Jsonize());

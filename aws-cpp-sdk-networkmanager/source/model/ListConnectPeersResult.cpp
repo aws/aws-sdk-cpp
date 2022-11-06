@@ -30,7 +30,7 @@ ListConnectPeersResult& ListConnectPeersResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConnectPeers"))
   {
-    Array<JsonView> connectPeersJsonList = jsonValue.GetArray("ConnectPeers");
+    Aws::Utils::Array<JsonView> connectPeersJsonList = jsonValue.GetArray("ConnectPeers");
     for(unsigned connectPeersIndex = 0; connectPeersIndex < connectPeersJsonList.GetLength(); ++connectPeersIndex)
     {
       m_connectPeers.push_back(connectPeersJsonList[connectPeersIndex].AsObject());

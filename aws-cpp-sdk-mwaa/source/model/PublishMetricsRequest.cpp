@@ -24,7 +24,7 @@ Aws::String PublishMetricsRequest::SerializePayload() const
 
   if(m_metricDataHasBeenSet)
   {
-   Array<JsonValue> metricDataJsonList(m_metricData.size());
+   Aws::Utils::Array<JsonValue> metricDataJsonList(m_metricData.size());
    for(unsigned metricDataIndex = 0; metricDataIndex < metricDataJsonList.GetLength(); ++metricDataIndex)
    {
      metricDataJsonList[metricDataIndex].AsObject(m_metricData[metricDataIndex].Jsonize());

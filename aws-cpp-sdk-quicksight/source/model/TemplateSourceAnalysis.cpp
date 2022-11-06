@@ -42,7 +42,7 @@ TemplateSourceAnalysis& TemplateSourceAnalysis::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DataSetReferences"))
   {
-    Array<JsonView> dataSetReferencesJsonList = jsonValue.GetArray("DataSetReferences");
+    Aws::Utils::Array<JsonView> dataSetReferencesJsonList = jsonValue.GetArray("DataSetReferences");
     for(unsigned dataSetReferencesIndex = 0; dataSetReferencesIndex < dataSetReferencesJsonList.GetLength(); ++dataSetReferencesIndex)
     {
       m_dataSetReferences.push_back(dataSetReferencesJsonList[dataSetReferencesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue TemplateSourceAnalysis::Jsonize() const
 
   if(m_dataSetReferencesHasBeenSet)
   {
-   Array<JsonValue> dataSetReferencesJsonList(m_dataSetReferences.size());
+   Aws::Utils::Array<JsonValue> dataSetReferencesJsonList(m_dataSetReferences.size());
    for(unsigned dataSetReferencesIndex = 0; dataSetReferencesIndex < dataSetReferencesJsonList.GetLength(); ++dataSetReferencesIndex)
    {
      dataSetReferencesJsonList[dataSetReferencesIndex].AsObject(m_dataSetReferences[dataSetReferencesIndex].Jsonize());

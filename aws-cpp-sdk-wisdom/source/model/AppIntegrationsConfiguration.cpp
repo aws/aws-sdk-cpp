@@ -42,7 +42,7 @@ AppIntegrationsConfiguration& AppIntegrationsConfiguration::operator =(JsonView 
 
   if(jsonValue.ValueExists("objectFields"))
   {
-    Array<JsonView> objectFieldsJsonList = jsonValue.GetArray("objectFields");
+    Aws::Utils::Array<JsonView> objectFieldsJsonList = jsonValue.GetArray("objectFields");
     for(unsigned objectFieldsIndex = 0; objectFieldsIndex < objectFieldsJsonList.GetLength(); ++objectFieldsIndex)
     {
       m_objectFields.push_back(objectFieldsJsonList[objectFieldsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue AppIntegrationsConfiguration::Jsonize() const
 
   if(m_objectFieldsHasBeenSet)
   {
-   Array<JsonValue> objectFieldsJsonList(m_objectFields.size());
+   Aws::Utils::Array<JsonValue> objectFieldsJsonList(m_objectFields.size());
    for(unsigned objectFieldsIndex = 0; objectFieldsIndex < objectFieldsJsonList.GetLength(); ++objectFieldsIndex)
    {
      objectFieldsJsonList[objectFieldsIndex].AsString(m_objectFields[objectFieldsIndex]);

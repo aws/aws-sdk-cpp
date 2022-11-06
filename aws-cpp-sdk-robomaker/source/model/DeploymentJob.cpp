@@ -72,7 +72,7 @@ DeploymentJob& DeploymentJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("deploymentApplicationConfigs"))
   {
-    Array<JsonView> deploymentApplicationConfigsJsonList = jsonValue.GetArray("deploymentApplicationConfigs");
+    Aws::Utils::Array<JsonView> deploymentApplicationConfigsJsonList = jsonValue.GetArray("deploymentApplicationConfigs");
     for(unsigned deploymentApplicationConfigsIndex = 0; deploymentApplicationConfigsIndex < deploymentApplicationConfigsJsonList.GetLength(); ++deploymentApplicationConfigsIndex)
     {
       m_deploymentApplicationConfigs.push_back(deploymentApplicationConfigsJsonList[deploymentApplicationConfigsIndex].AsObject());
@@ -134,7 +134,7 @@ JsonValue DeploymentJob::Jsonize() const
 
   if(m_deploymentApplicationConfigsHasBeenSet)
   {
-   Array<JsonValue> deploymentApplicationConfigsJsonList(m_deploymentApplicationConfigs.size());
+   Aws::Utils::Array<JsonValue> deploymentApplicationConfigsJsonList(m_deploymentApplicationConfigs.size());
    for(unsigned deploymentApplicationConfigsIndex = 0; deploymentApplicationConfigsIndex < deploymentApplicationConfigsJsonList.GetLength(); ++deploymentApplicationConfigsIndex)
    {
      deploymentApplicationConfigsJsonList[deploymentApplicationConfigsIndex].AsObject(m_deploymentApplicationConfigs[deploymentApplicationConfigsIndex].Jsonize());

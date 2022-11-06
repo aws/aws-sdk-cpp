@@ -30,7 +30,7 @@ GetParametersResult& GetParametersResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Parameters"))
   {
-    Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
@@ -39,7 +39,7 @@ GetParametersResult& GetParametersResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("InvalidParameters"))
   {
-    Array<JsonView> invalidParametersJsonList = jsonValue.GetArray("InvalidParameters");
+    Aws::Utils::Array<JsonView> invalidParametersJsonList = jsonValue.GetArray("InvalidParameters");
     for(unsigned invalidParametersIndex = 0; invalidParametersIndex < invalidParametersJsonList.GetLength(); ++invalidParametersIndex)
     {
       m_invalidParameters.push_back(invalidParametersJsonList[invalidParametersIndex].AsString());

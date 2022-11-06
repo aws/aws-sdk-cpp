@@ -36,7 +36,7 @@ ListLayerVersionsResult& ListLayerVersionsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("LayerVersions"))
   {
-    Array<JsonView> layerVersionsJsonList = jsonValue.GetArray("LayerVersions");
+    Aws::Utils::Array<JsonView> layerVersionsJsonList = jsonValue.GetArray("LayerVersions");
     for(unsigned layerVersionsIndex = 0; layerVersionsIndex < layerVersionsJsonList.GetLength(); ++layerVersionsIndex)
     {
       m_layerVersions.push_back(layerVersionsJsonList[layerVersionsIndex].AsObject());

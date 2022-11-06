@@ -44,7 +44,7 @@ AwsEksClusterLoggingClusterLoggingDetails& AwsEksClusterLoggingClusterLoggingDet
 
   if(jsonValue.ValueExists("Types"))
   {
-    Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
+    Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
     for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
     {
       m_types.push_back(typesJsonList[typesIndex].AsString());
@@ -67,7 +67,7 @@ JsonValue AwsEksClusterLoggingClusterLoggingDetails::Jsonize() const
 
   if(m_typesHasBeenSet)
   {
-   Array<JsonValue> typesJsonList(m_types.size());
+   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
    {
      typesJsonList[typesIndex].AsString(m_types[typesIndex]);

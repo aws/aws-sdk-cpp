@@ -46,7 +46,7 @@ Compliance& Compliance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RelatedRequirements"))
   {
-    Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
+    Aws::Utils::Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
     for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
     {
       m_relatedRequirements.push_back(relatedRequirementsJsonList[relatedRequirementsIndex].AsString());
@@ -56,7 +56,7 @@ Compliance& Compliance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StatusReasons"))
   {
-    Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("StatusReasons");
+    Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("StatusReasons");
     for(unsigned statusReasonsIndex = 0; statusReasonsIndex < statusReasonsJsonList.GetLength(); ++statusReasonsIndex)
     {
       m_statusReasons.push_back(statusReasonsJsonList[statusReasonsIndex].AsObject());
@@ -78,7 +78,7 @@ JsonValue Compliance::Jsonize() const
 
   if(m_relatedRequirementsHasBeenSet)
   {
-   Array<JsonValue> relatedRequirementsJsonList(m_relatedRequirements.size());
+   Aws::Utils::Array<JsonValue> relatedRequirementsJsonList(m_relatedRequirements.size());
    for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
    {
      relatedRequirementsJsonList[relatedRequirementsIndex].AsString(m_relatedRequirements[relatedRequirementsIndex]);
@@ -89,7 +89,7 @@ JsonValue Compliance::Jsonize() const
 
   if(m_statusReasonsHasBeenSet)
   {
-   Array<JsonValue> statusReasonsJsonList(m_statusReasons.size());
+   Aws::Utils::Array<JsonValue> statusReasonsJsonList(m_statusReasons.size());
    for(unsigned statusReasonsIndex = 0; statusReasonsIndex < statusReasonsJsonList.GetLength(); ++statusReasonsIndex)
    {
      statusReasonsJsonList[statusReasonsIndex].AsObject(m_statusReasons[statusReasonsIndex].Jsonize());

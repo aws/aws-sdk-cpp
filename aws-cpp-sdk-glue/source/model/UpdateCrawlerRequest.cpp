@@ -72,7 +72,7 @@ Aws::String UpdateCrawlerRequest::SerializePayload() const
 
   if(m_classifiersHasBeenSet)
   {
-   Array<JsonValue> classifiersJsonList(m_classifiers.size());
+   Aws::Utils::Array<JsonValue> classifiersJsonList(m_classifiers.size());
    for(unsigned classifiersIndex = 0; classifiersIndex < classifiersJsonList.GetLength(); ++classifiersIndex)
    {
      classifiersJsonList[classifiersIndex].AsString(m_classifiers[classifiersIndex]);

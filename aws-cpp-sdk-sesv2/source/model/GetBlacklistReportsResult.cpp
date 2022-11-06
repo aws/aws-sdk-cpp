@@ -33,7 +33,7 @@ GetBlacklistReportsResult& GetBlacklistReportsResult::operator =(const Aws::Amaz
     Aws::Map<Aws::String, JsonView> blacklistReportJsonMap = jsonValue.GetObject("BlacklistReport").GetAllObjects();
     for(auto& blacklistReportItem : blacklistReportJsonMap)
     {
-      Array<JsonView> blacklistEntriesJsonList = blacklistReportItem.second.AsArray();
+      Aws::Utils::Array<JsonView> blacklistEntriesJsonList = blacklistReportItem.second.AsArray();
       Aws::Vector<BlacklistEntry> blacklistEntriesList;
       blacklistEntriesList.reserve((size_t)blacklistEntriesJsonList.GetLength());
       for(unsigned blacklistEntriesIndex = 0; blacklistEntriesIndex < blacklistEntriesJsonList.GetLength(); ++blacklistEntriesIndex)

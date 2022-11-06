@@ -26,7 +26,7 @@ Aws::String DescribeFileCachesRequest::SerializePayload() const
 
   if(m_fileCacheIdsHasBeenSet)
   {
-   Array<JsonValue> fileCacheIdsJsonList(m_fileCacheIds.size());
+   Aws::Utils::Array<JsonValue> fileCacheIdsJsonList(m_fileCacheIds.size());
    for(unsigned fileCacheIdsIndex = 0; fileCacheIdsIndex < fileCacheIdsJsonList.GetLength(); ++fileCacheIdsIndex)
    {
      fileCacheIdsJsonList[fileCacheIdsIndex].AsString(m_fileCacheIds[fileCacheIdsIndex]);

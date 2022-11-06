@@ -65,7 +65,7 @@ ImageScanFindings& ImageScanFindings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("findings"))
   {
-    Array<JsonView> findingsJsonList = jsonValue.GetArray("findings");
+    Aws::Utils::Array<JsonView> findingsJsonList = jsonValue.GetArray("findings");
     for(unsigned findingsIndex = 0; findingsIndex < findingsJsonList.GetLength(); ++findingsIndex)
     {
       m_findings.push_back(findingsJsonList[findingsIndex].AsObject());
@@ -75,7 +75,7 @@ ImageScanFindings& ImageScanFindings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("enhancedFindings"))
   {
-    Array<JsonView> enhancedFindingsJsonList = jsonValue.GetArray("enhancedFindings");
+    Aws::Utils::Array<JsonView> enhancedFindingsJsonList = jsonValue.GetArray("enhancedFindings");
     for(unsigned enhancedFindingsIndex = 0; enhancedFindingsIndex < enhancedFindingsJsonList.GetLength(); ++enhancedFindingsIndex)
     {
       m_enhancedFindings.push_back(enhancedFindingsJsonList[enhancedFindingsIndex].AsObject());
@@ -113,7 +113,7 @@ JsonValue ImageScanFindings::Jsonize() const
 
   if(m_findingsHasBeenSet)
   {
-   Array<JsonValue> findingsJsonList(m_findings.size());
+   Aws::Utils::Array<JsonValue> findingsJsonList(m_findings.size());
    for(unsigned findingsIndex = 0; findingsIndex < findingsJsonList.GetLength(); ++findingsIndex)
    {
      findingsJsonList[findingsIndex].AsObject(m_findings[findingsIndex].Jsonize());
@@ -124,7 +124,7 @@ JsonValue ImageScanFindings::Jsonize() const
 
   if(m_enhancedFindingsHasBeenSet)
   {
-   Array<JsonValue> enhancedFindingsJsonList(m_enhancedFindings.size());
+   Aws::Utils::Array<JsonValue> enhancedFindingsJsonList(m_enhancedFindings.size());
    for(unsigned enhancedFindingsIndex = 0; enhancedFindingsIndex < enhancedFindingsJsonList.GetLength(); ++enhancedFindingsIndex)
    {
      enhancedFindingsJsonList[enhancedFindingsIndex].AsObject(m_enhancedFindings[enhancedFindingsIndex].Jsonize());

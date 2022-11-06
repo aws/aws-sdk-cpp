@@ -63,7 +63,7 @@ AttackProperty& AttackProperty::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TopContributors"))
   {
-    Array<JsonView> topContributorsJsonList = jsonValue.GetArray("TopContributors");
+    Aws::Utils::Array<JsonView> topContributorsJsonList = jsonValue.GetArray("TopContributors");
     for(unsigned topContributorsIndex = 0; topContributorsIndex < topContributorsJsonList.GetLength(); ++topContributorsIndex)
     {
       m_topContributors.push_back(topContributorsJsonList[topContributorsIndex].AsObject());
@@ -104,7 +104,7 @@ JsonValue AttackProperty::Jsonize() const
 
   if(m_topContributorsHasBeenSet)
   {
-   Array<JsonValue> topContributorsJsonList(m_topContributors.size());
+   Aws::Utils::Array<JsonValue> topContributorsJsonList(m_topContributors.size());
    for(unsigned topContributorsIndex = 0; topContributorsIndex < topContributorsJsonList.GetLength(); ++topContributorsIndex)
    {
      topContributorsJsonList[topContributorsIndex].AsObject(m_topContributors[topContributorsIndex].Jsonize());

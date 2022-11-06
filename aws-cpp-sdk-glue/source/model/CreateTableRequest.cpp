@@ -45,7 +45,7 @@ Aws::String CreateTableRequest::SerializePayload() const
 
   if(m_partitionIndexesHasBeenSet)
   {
-   Array<JsonValue> partitionIndexesJsonList(m_partitionIndexes.size());
+   Aws::Utils::Array<JsonValue> partitionIndexesJsonList(m_partitionIndexes.size());
    for(unsigned partitionIndexesIndex = 0; partitionIndexesIndex < partitionIndexesJsonList.GetLength(); ++partitionIndexesIndex)
    {
      partitionIndexesJsonList[partitionIndexesIndex].AsObject(m_partitionIndexes[partitionIndexesIndex].Jsonize());

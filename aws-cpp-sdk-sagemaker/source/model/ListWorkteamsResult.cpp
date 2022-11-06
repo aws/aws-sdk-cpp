@@ -30,7 +30,7 @@ ListWorkteamsResult& ListWorkteamsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Workteams"))
   {
-    Array<JsonView> workteamsJsonList = jsonValue.GetArray("Workteams");
+    Aws::Utils::Array<JsonView> workteamsJsonList = jsonValue.GetArray("Workteams");
     for(unsigned workteamsIndex = 0; workteamsIndex < workteamsJsonList.GetLength(); ++workteamsIndex)
     {
       m_workteams.push_back(workteamsJsonList[workteamsIndex].AsObject());

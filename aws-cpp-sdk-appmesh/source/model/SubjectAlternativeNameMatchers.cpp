@@ -33,7 +33,7 @@ SubjectAlternativeNameMatchers& SubjectAlternativeNameMatchers::operator =(JsonV
 {
   if(jsonValue.ValueExists("exact"))
   {
-    Array<JsonView> exactJsonList = jsonValue.GetArray("exact");
+    Aws::Utils::Array<JsonView> exactJsonList = jsonValue.GetArray("exact");
     for(unsigned exactIndex = 0; exactIndex < exactJsonList.GetLength(); ++exactIndex)
     {
       m_exact.push_back(exactJsonList[exactIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue SubjectAlternativeNameMatchers::Jsonize() const
 
   if(m_exactHasBeenSet)
   {
-   Array<JsonValue> exactJsonList(m_exact.size());
+   Aws::Utils::Array<JsonValue> exactJsonList(m_exact.size());
    for(unsigned exactIndex = 0; exactIndex < exactJsonList.GetLength(); ++exactIndex)
    {
      exactJsonList[exactIndex].AsString(m_exact[exactIndex]);

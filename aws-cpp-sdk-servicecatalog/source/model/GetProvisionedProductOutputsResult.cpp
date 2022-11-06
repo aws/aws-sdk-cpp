@@ -30,7 +30,7 @@ GetProvisionedProductOutputsResult& GetProvisionedProductOutputsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Outputs"))
   {
-    Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
+    Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());

@@ -30,7 +30,7 @@ ListFlowDefinitionsResult& ListFlowDefinitionsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FlowDefinitionSummaries"))
   {
-    Array<JsonView> flowDefinitionSummariesJsonList = jsonValue.GetArray("FlowDefinitionSummaries");
+    Aws::Utils::Array<JsonView> flowDefinitionSummariesJsonList = jsonValue.GetArray("FlowDefinitionSummaries");
     for(unsigned flowDefinitionSummariesIndex = 0; flowDefinitionSummariesIndex < flowDefinitionSummariesJsonList.GetLength(); ++flowDefinitionSummariesIndex)
     {
       m_flowDefinitionSummaries.push_back(flowDefinitionSummariesJsonList[flowDefinitionSummariesIndex].AsObject());

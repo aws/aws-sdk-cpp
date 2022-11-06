@@ -150,7 +150,7 @@ Application& Application::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Platforms"))
   {
-    Array<JsonView> platformsJsonList = jsonValue.GetArray("Platforms");
+    Aws::Utils::Array<JsonView> platformsJsonList = jsonValue.GetArray("Platforms");
     for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
     {
       m_platforms.push_back(PlatformTypeMapper::GetPlatformTypeForName(platformsJsonList[platformsIndex].AsString()));
@@ -160,7 +160,7 @@ Application& Application::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceFamilies"))
   {
-    Array<JsonView> instanceFamiliesJsonList = jsonValue.GetArray("InstanceFamilies");
+    Aws::Utils::Array<JsonView> instanceFamiliesJsonList = jsonValue.GetArray("InstanceFamilies");
     for(unsigned instanceFamiliesIndex = 0; instanceFamiliesIndex < instanceFamiliesJsonList.GetLength(); ++instanceFamiliesIndex)
     {
       m_instanceFamilies.push_back(instanceFamiliesJsonList[instanceFamiliesIndex].AsString());
@@ -261,7 +261,7 @@ JsonValue Application::Jsonize() const
 
   if(m_platformsHasBeenSet)
   {
-   Array<JsonValue> platformsJsonList(m_platforms.size());
+   Aws::Utils::Array<JsonValue> platformsJsonList(m_platforms.size());
    for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
    {
      platformsJsonList[platformsIndex].AsString(PlatformTypeMapper::GetNameForPlatformType(m_platforms[platformsIndex]));
@@ -272,7 +272,7 @@ JsonValue Application::Jsonize() const
 
   if(m_instanceFamiliesHasBeenSet)
   {
-   Array<JsonValue> instanceFamiliesJsonList(m_instanceFamilies.size());
+   Aws::Utils::Array<JsonValue> instanceFamiliesJsonList(m_instanceFamilies.size());
    for(unsigned instanceFamiliesIndex = 0; instanceFamiliesIndex < instanceFamiliesJsonList.GetLength(); ++instanceFamiliesIndex)
    {
      instanceFamiliesJsonList[instanceFamiliesIndex].AsString(m_instanceFamilies[instanceFamiliesIndex]);

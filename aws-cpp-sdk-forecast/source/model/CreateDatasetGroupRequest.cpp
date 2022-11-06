@@ -38,7 +38,7 @@ Aws::String CreateDatasetGroupRequest::SerializePayload() const
 
   if(m_datasetArnsHasBeenSet)
   {
-   Array<JsonValue> datasetArnsJsonList(m_datasetArns.size());
+   Aws::Utils::Array<JsonValue> datasetArnsJsonList(m_datasetArns.size());
    for(unsigned datasetArnsIndex = 0; datasetArnsIndex < datasetArnsJsonList.GetLength(); ++datasetArnsIndex)
    {
      datasetArnsJsonList[datasetArnsIndex].AsString(m_datasetArns[datasetArnsIndex]);
@@ -49,7 +49,7 @@ Aws::String CreateDatasetGroupRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -117,7 +117,7 @@ DataSource& DataSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AlternateDataSourceParameters"))
   {
-    Array<JsonView> alternateDataSourceParametersJsonList = jsonValue.GetArray("AlternateDataSourceParameters");
+    Aws::Utils::Array<JsonView> alternateDataSourceParametersJsonList = jsonValue.GetArray("AlternateDataSourceParameters");
     for(unsigned alternateDataSourceParametersIndex = 0; alternateDataSourceParametersIndex < alternateDataSourceParametersJsonList.GetLength(); ++alternateDataSourceParametersIndex)
     {
       m_alternateDataSourceParameters.push_back(alternateDataSourceParametersJsonList[alternateDataSourceParametersIndex].AsObject());
@@ -206,7 +206,7 @@ JsonValue DataSource::Jsonize() const
 
   if(m_alternateDataSourceParametersHasBeenSet)
   {
-   Array<JsonValue> alternateDataSourceParametersJsonList(m_alternateDataSourceParameters.size());
+   Aws::Utils::Array<JsonValue> alternateDataSourceParametersJsonList(m_alternateDataSourceParameters.size());
    for(unsigned alternateDataSourceParametersIndex = 0; alternateDataSourceParametersIndex < alternateDataSourceParametersJsonList.GetLength(); ++alternateDataSourceParametersIndex)
    {
      alternateDataSourceParametersJsonList[alternateDataSourceParametersIndex].AsObject(m_alternateDataSourceParameters[alternateDataSourceParametersIndex].Jsonize());

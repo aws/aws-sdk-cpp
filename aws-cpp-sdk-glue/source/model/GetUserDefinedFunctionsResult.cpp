@@ -30,7 +30,7 @@ GetUserDefinedFunctionsResult& GetUserDefinedFunctionsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserDefinedFunctions"))
   {
-    Array<JsonView> userDefinedFunctionsJsonList = jsonValue.GetArray("UserDefinedFunctions");
+    Aws::Utils::Array<JsonView> userDefinedFunctionsJsonList = jsonValue.GetArray("UserDefinedFunctions");
     for(unsigned userDefinedFunctionsIndex = 0; userDefinedFunctionsIndex < userDefinedFunctionsJsonList.GetLength(); ++userDefinedFunctionsIndex)
     {
       m_userDefinedFunctions.push_back(userDefinedFunctionsJsonList[userDefinedFunctionsIndex].AsObject());

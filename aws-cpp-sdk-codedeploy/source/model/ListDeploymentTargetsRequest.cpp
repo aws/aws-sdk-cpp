@@ -40,7 +40,7 @@ Aws::String ListDeploymentTargetsRequest::SerializePayload() const
    JsonValue targetFiltersJsonMap;
    for(auto& targetFiltersItem : m_targetFilters)
    {
-     Array<JsonValue> filterValueListJsonList(targetFiltersItem.second.size());
+     Aws::Utils::Array<JsonValue> filterValueListJsonList(targetFiltersItem.second.size());
      for(unsigned filterValueListIndex = 0; filterValueListIndex < filterValueListJsonList.GetLength(); ++filterValueListIndex)
      {
        filterValueListJsonList[filterValueListIndex].AsString(targetFiltersItem.second[filterValueListIndex]);

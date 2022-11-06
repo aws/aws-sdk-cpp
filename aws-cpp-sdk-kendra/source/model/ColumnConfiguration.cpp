@@ -62,7 +62,7 @@ ColumnConfiguration& ColumnConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FieldMappings"))
   {
-    Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
+    Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
     for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
     {
       m_fieldMappings.push_back(fieldMappingsJsonList[fieldMappingsIndex].AsObject());
@@ -72,7 +72,7 @@ ColumnConfiguration& ColumnConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ChangeDetectingColumns"))
   {
-    Array<JsonView> changeDetectingColumnsJsonList = jsonValue.GetArray("ChangeDetectingColumns");
+    Aws::Utils::Array<JsonView> changeDetectingColumnsJsonList = jsonValue.GetArray("ChangeDetectingColumns");
     for(unsigned changeDetectingColumnsIndex = 0; changeDetectingColumnsIndex < changeDetectingColumnsJsonList.GetLength(); ++changeDetectingColumnsIndex)
     {
       m_changeDetectingColumns.push_back(changeDetectingColumnsJsonList[changeDetectingColumnsIndex].AsString());
@@ -107,7 +107,7 @@ JsonValue ColumnConfiguration::Jsonize() const
 
   if(m_fieldMappingsHasBeenSet)
   {
-   Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
+   Aws::Utils::Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
    for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
    {
      fieldMappingsJsonList[fieldMappingsIndex].AsObject(m_fieldMappings[fieldMappingsIndex].Jsonize());
@@ -118,7 +118,7 @@ JsonValue ColumnConfiguration::Jsonize() const
 
   if(m_changeDetectingColumnsHasBeenSet)
   {
-   Array<JsonValue> changeDetectingColumnsJsonList(m_changeDetectingColumns.size());
+   Aws::Utils::Array<JsonValue> changeDetectingColumnsJsonList(m_changeDetectingColumns.size());
    for(unsigned changeDetectingColumnsIndex = 0; changeDetectingColumnsIndex < changeDetectingColumnsJsonList.GetLength(); ++changeDetectingColumnsIndex)
    {
      changeDetectingColumnsJsonList[changeDetectingColumnsIndex].AsString(m_changeDetectingColumns[changeDetectingColumnsIndex]);

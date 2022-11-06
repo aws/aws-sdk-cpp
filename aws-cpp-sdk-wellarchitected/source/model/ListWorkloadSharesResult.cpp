@@ -36,7 +36,7 @@ ListWorkloadSharesResult& ListWorkloadSharesResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("WorkloadShareSummaries"))
   {
-    Array<JsonView> workloadShareSummariesJsonList = jsonValue.GetArray("WorkloadShareSummaries");
+    Aws::Utils::Array<JsonView> workloadShareSummariesJsonList = jsonValue.GetArray("WorkloadShareSummaries");
     for(unsigned workloadShareSummariesIndex = 0; workloadShareSummariesIndex < workloadShareSummariesJsonList.GetLength(); ++workloadShareSummariesIndex)
     {
       m_workloadShareSummaries.push_back(workloadShareSummariesJsonList[workloadShareSummariesIndex].AsObject());

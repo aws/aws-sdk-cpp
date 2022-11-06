@@ -30,7 +30,7 @@ Aws::String PutAppReplicationConfigurationRequest::SerializePayload() const
 
   if(m_serverGroupReplicationConfigurationsHasBeenSet)
   {
-   Array<JsonValue> serverGroupReplicationConfigurationsJsonList(m_serverGroupReplicationConfigurations.size());
+   Aws::Utils::Array<JsonValue> serverGroupReplicationConfigurationsJsonList(m_serverGroupReplicationConfigurations.size());
    for(unsigned serverGroupReplicationConfigurationsIndex = 0; serverGroupReplicationConfigurationsIndex < serverGroupReplicationConfigurationsJsonList.GetLength(); ++serverGroupReplicationConfigurationsIndex)
    {
      serverGroupReplicationConfigurationsJsonList[serverGroupReplicationConfigurationsIndex].AsObject(m_serverGroupReplicationConfigurations[serverGroupReplicationConfigurationsIndex].Jsonize());

@@ -89,7 +89,7 @@ Organization& Organization::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AvailablePolicyTypes"))
   {
-    Array<JsonView> availablePolicyTypesJsonList = jsonValue.GetArray("AvailablePolicyTypes");
+    Aws::Utils::Array<JsonView> availablePolicyTypesJsonList = jsonValue.GetArray("AvailablePolicyTypes");
     for(unsigned availablePolicyTypesIndex = 0; availablePolicyTypesIndex < availablePolicyTypesJsonList.GetLength(); ++availablePolicyTypesIndex)
     {
       m_availablePolicyTypes.push_back(availablePolicyTypesJsonList[availablePolicyTypesIndex].AsObject());
@@ -141,7 +141,7 @@ JsonValue Organization::Jsonize() const
 
   if(m_availablePolicyTypesHasBeenSet)
   {
-   Array<JsonValue> availablePolicyTypesJsonList(m_availablePolicyTypes.size());
+   Aws::Utils::Array<JsonValue> availablePolicyTypesJsonList(m_availablePolicyTypes.size());
    for(unsigned availablePolicyTypesIndex = 0; availablePolicyTypesIndex < availablePolicyTypesJsonList.GetLength(); ++availablePolicyTypesIndex)
    {
      availablePolicyTypesJsonList[availablePolicyTypesIndex].AsObject(m_availablePolicyTypes[availablePolicyTypesIndex].Jsonize());

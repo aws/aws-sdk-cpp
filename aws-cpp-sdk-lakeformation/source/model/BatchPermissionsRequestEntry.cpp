@@ -62,7 +62,7 @@ BatchPermissionsRequestEntry& BatchPermissionsRequestEntry::operator =(JsonView 
 
   if(jsonValue.ValueExists("Permissions"))
   {
-    Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
+    Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
     for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
     {
       m_permissions.push_back(PermissionMapper::GetPermissionForName(permissionsJsonList[permissionsIndex].AsString()));
@@ -72,7 +72,7 @@ BatchPermissionsRequestEntry& BatchPermissionsRequestEntry::operator =(JsonView 
 
   if(jsonValue.ValueExists("PermissionsWithGrantOption"))
   {
-    Array<JsonView> permissionsWithGrantOptionJsonList = jsonValue.GetArray("PermissionsWithGrantOption");
+    Aws::Utils::Array<JsonView> permissionsWithGrantOptionJsonList = jsonValue.GetArray("PermissionsWithGrantOption");
     for(unsigned permissionsWithGrantOptionIndex = 0; permissionsWithGrantOptionIndex < permissionsWithGrantOptionJsonList.GetLength(); ++permissionsWithGrantOptionIndex)
     {
       m_permissionsWithGrantOption.push_back(PermissionMapper::GetPermissionForName(permissionsWithGrantOptionJsonList[permissionsWithGrantOptionIndex].AsString()));
@@ -107,7 +107,7 @@ JsonValue BatchPermissionsRequestEntry::Jsonize() const
 
   if(m_permissionsHasBeenSet)
   {
-   Array<JsonValue> permissionsJsonList(m_permissions.size());
+   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
    {
      permissionsJsonList[permissionsIndex].AsString(PermissionMapper::GetNameForPermission(m_permissions[permissionsIndex]));
@@ -118,7 +118,7 @@ JsonValue BatchPermissionsRequestEntry::Jsonize() const
 
   if(m_permissionsWithGrantOptionHasBeenSet)
   {
-   Array<JsonValue> permissionsWithGrantOptionJsonList(m_permissionsWithGrantOption.size());
+   Aws::Utils::Array<JsonValue> permissionsWithGrantOptionJsonList(m_permissionsWithGrantOption.size());
    for(unsigned permissionsWithGrantOptionIndex = 0; permissionsWithGrantOptionIndex < permissionsWithGrantOptionJsonList.GetLength(); ++permissionsWithGrantOptionIndex)
    {
      permissionsWithGrantOptionJsonList[permissionsWithGrantOptionIndex].AsString(PermissionMapper::GetNameForPermission(m_permissionsWithGrantOption[permissionsWithGrantOptionIndex]));

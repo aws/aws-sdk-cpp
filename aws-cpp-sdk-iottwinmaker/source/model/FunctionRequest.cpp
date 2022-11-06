@@ -46,7 +46,7 @@ FunctionRequest& FunctionRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("requiredProperties"))
   {
-    Array<JsonView> requiredPropertiesJsonList = jsonValue.GetArray("requiredProperties");
+    Aws::Utils::Array<JsonView> requiredPropertiesJsonList = jsonValue.GetArray("requiredProperties");
     for(unsigned requiredPropertiesIndex = 0; requiredPropertiesIndex < requiredPropertiesJsonList.GetLength(); ++requiredPropertiesIndex)
     {
       m_requiredProperties.push_back(requiredPropertiesJsonList[requiredPropertiesIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue FunctionRequest::Jsonize() const
 
   if(m_requiredPropertiesHasBeenSet)
   {
-   Array<JsonValue> requiredPropertiesJsonList(m_requiredProperties.size());
+   Aws::Utils::Array<JsonValue> requiredPropertiesJsonList(m_requiredProperties.size());
    for(unsigned requiredPropertiesIndex = 0; requiredPropertiesIndex < requiredPropertiesJsonList.GetLength(); ++requiredPropertiesIndex)
    {
      requiredPropertiesJsonList[requiredPropertiesIndex].AsString(m_requiredProperties[requiredPropertiesIndex]);

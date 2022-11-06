@@ -33,7 +33,7 @@ ServiceCollection& ServiceCollection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServiceNames"))
   {
-    Array<JsonView> serviceNamesJsonList = jsonValue.GetArray("ServiceNames");
+    Aws::Utils::Array<JsonView> serviceNamesJsonList = jsonValue.GetArray("ServiceNames");
     for(unsigned serviceNamesIndex = 0; serviceNamesIndex < serviceNamesJsonList.GetLength(); ++serviceNamesIndex)
     {
       m_serviceNames.push_back(ServiceNameMapper::GetServiceNameForName(serviceNamesJsonList[serviceNamesIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue ServiceCollection::Jsonize() const
 
   if(m_serviceNamesHasBeenSet)
   {
-   Array<JsonValue> serviceNamesJsonList(m_serviceNames.size());
+   Aws::Utils::Array<JsonValue> serviceNamesJsonList(m_serviceNames.size());
    for(unsigned serviceNamesIndex = 0; serviceNamesIndex < serviceNamesJsonList.GetLength(); ++serviceNamesIndex)
    {
      serviceNamesJsonList[serviceNamesIndex].AsString(ServiceNameMapper::GetNameForServiceName(m_serviceNames[serviceNamesIndex]));

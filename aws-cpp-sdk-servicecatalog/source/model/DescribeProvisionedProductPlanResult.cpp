@@ -36,7 +36,7 @@ DescribeProvisionedProductPlanResult& DescribeProvisionedProductPlanResult::oper
 
   if(jsonValue.ValueExists("ResourceChanges"))
   {
-    Array<JsonView> resourceChangesJsonList = jsonValue.GetArray("ResourceChanges");
+    Aws::Utils::Array<JsonView> resourceChangesJsonList = jsonValue.GetArray("ResourceChanges");
     for(unsigned resourceChangesIndex = 0; resourceChangesIndex < resourceChangesJsonList.GetLength(); ++resourceChangesIndex)
     {
       m_resourceChanges.push_back(resourceChangesJsonList[resourceChangesIndex].AsObject());

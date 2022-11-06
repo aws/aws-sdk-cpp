@@ -30,7 +30,7 @@ DeleteIdentitiesResult& DeleteIdentitiesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UnprocessedIdentityIds"))
   {
-    Array<JsonView> unprocessedIdentityIdsJsonList = jsonValue.GetArray("UnprocessedIdentityIds");
+    Aws::Utils::Array<JsonView> unprocessedIdentityIdsJsonList = jsonValue.GetArray("UnprocessedIdentityIds");
     for(unsigned unprocessedIdentityIdsIndex = 0; unprocessedIdentityIdsIndex < unprocessedIdentityIdsJsonList.GetLength(); ++unprocessedIdentityIdsIndex)
     {
       m_unprocessedIdentityIds.push_back(unprocessedIdentityIdsJsonList[unprocessedIdentityIdsIndex].AsObject());

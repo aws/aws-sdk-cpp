@@ -40,7 +40,7 @@ Aws::String CreateClassificationJobRequest::SerializePayload() const
 
   if(m_allowListIdsHasBeenSet)
   {
-   Array<JsonValue> allowListIdsJsonList(m_allowListIds.size());
+   Aws::Utils::Array<JsonValue> allowListIdsJsonList(m_allowListIds.size());
    for(unsigned allowListIdsIndex = 0; allowListIdsIndex < allowListIdsJsonList.GetLength(); ++allowListIdsIndex)
    {
      allowListIdsJsonList[allowListIdsIndex].AsString(m_allowListIds[allowListIdsIndex]);
@@ -57,7 +57,7 @@ Aws::String CreateClassificationJobRequest::SerializePayload() const
 
   if(m_customDataIdentifierIdsHasBeenSet)
   {
-   Array<JsonValue> customDataIdentifierIdsJsonList(m_customDataIdentifierIds.size());
+   Aws::Utils::Array<JsonValue> customDataIdentifierIdsJsonList(m_customDataIdentifierIds.size());
    for(unsigned customDataIdentifierIdsIndex = 0; customDataIdentifierIdsIndex < customDataIdentifierIdsJsonList.GetLength(); ++customDataIdentifierIdsIndex)
    {
      customDataIdentifierIdsJsonList[customDataIdentifierIdsIndex].AsString(m_customDataIdentifierIds[customDataIdentifierIdsIndex]);
@@ -85,7 +85,7 @@ Aws::String CreateClassificationJobRequest::SerializePayload() const
 
   if(m_managedDataIdentifierIdsHasBeenSet)
   {
-   Array<JsonValue> managedDataIdentifierIdsJsonList(m_managedDataIdentifierIds.size());
+   Aws::Utils::Array<JsonValue> managedDataIdentifierIdsJsonList(m_managedDataIdentifierIds.size());
    for(unsigned managedDataIdentifierIdsIndex = 0; managedDataIdentifierIdsIndex < managedDataIdentifierIdsJsonList.GetLength(); ++managedDataIdentifierIdsIndex)
    {
      managedDataIdentifierIdsJsonList[managedDataIdentifierIdsIndex].AsString(m_managedDataIdentifierIds[managedDataIdentifierIdsIndex]);

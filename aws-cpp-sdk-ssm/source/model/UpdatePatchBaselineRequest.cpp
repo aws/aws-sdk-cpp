@@ -62,7 +62,7 @@ Aws::String UpdatePatchBaselineRequest::SerializePayload() const
 
   if(m_approvedPatchesHasBeenSet)
   {
-   Array<JsonValue> approvedPatchesJsonList(m_approvedPatches.size());
+   Aws::Utils::Array<JsonValue> approvedPatchesJsonList(m_approvedPatches.size());
    for(unsigned approvedPatchesIndex = 0; approvedPatchesIndex < approvedPatchesJsonList.GetLength(); ++approvedPatchesIndex)
    {
      approvedPatchesJsonList[approvedPatchesIndex].AsString(m_approvedPatches[approvedPatchesIndex]);
@@ -84,7 +84,7 @@ Aws::String UpdatePatchBaselineRequest::SerializePayload() const
 
   if(m_rejectedPatchesHasBeenSet)
   {
-   Array<JsonValue> rejectedPatchesJsonList(m_rejectedPatches.size());
+   Aws::Utils::Array<JsonValue> rejectedPatchesJsonList(m_rejectedPatches.size());
    for(unsigned rejectedPatchesIndex = 0; rejectedPatchesIndex < rejectedPatchesJsonList.GetLength(); ++rejectedPatchesIndex)
    {
      rejectedPatchesJsonList[rejectedPatchesIndex].AsString(m_rejectedPatches[rejectedPatchesIndex]);
@@ -106,7 +106,7 @@ Aws::String UpdatePatchBaselineRequest::SerializePayload() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());

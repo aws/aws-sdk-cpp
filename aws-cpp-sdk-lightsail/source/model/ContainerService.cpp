@@ -114,7 +114,7 @@ ContainerService& ContainerService::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -197,7 +197,7 @@ ContainerService& ContainerService::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> publicDomainNamesJsonMap = jsonValue.GetObject("publicDomainNames").GetAllObjects();
     for(auto& publicDomainNamesItem : publicDomainNamesJsonMap)
     {
-      Array<JsonView> containerServicePublicDomainsListJsonList = publicDomainNamesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> containerServicePublicDomainsListJsonList = publicDomainNamesItem.second.AsArray();
       Aws::Vector<Aws::String> containerServicePublicDomainsListList;
       containerServicePublicDomainsListList.reserve((size_t)containerServicePublicDomainsListJsonList.GetLength());
       for(unsigned containerServicePublicDomainsListIndex = 0; containerServicePublicDomainsListIndex < containerServicePublicDomainsListJsonList.GetLength(); ++containerServicePublicDomainsListIndex)
@@ -260,7 +260,7 @@ JsonValue ContainerService::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -332,7 +332,7 @@ JsonValue ContainerService::Jsonize() const
    JsonValue publicDomainNamesJsonMap;
    for(auto& publicDomainNamesItem : m_publicDomainNames)
    {
-     Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
+     Aws::Utils::Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
      for(unsigned containerServicePublicDomainsListIndex = 0; containerServicePublicDomainsListIndex < containerServicePublicDomainsListJsonList.GetLength(); ++containerServicePublicDomainsListIndex)
      {
        containerServicePublicDomainsListJsonList[containerServicePublicDomainsListIndex].AsString(publicDomainNamesItem.second[containerServicePublicDomainsListIndex]);

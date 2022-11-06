@@ -33,7 +33,7 @@ CrawlerNodeDetails& CrawlerNodeDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Crawls"))
   {
-    Array<JsonView> crawlsJsonList = jsonValue.GetArray("Crawls");
+    Aws::Utils::Array<JsonView> crawlsJsonList = jsonValue.GetArray("Crawls");
     for(unsigned crawlsIndex = 0; crawlsIndex < crawlsJsonList.GetLength(); ++crawlsIndex)
     {
       m_crawls.push_back(crawlsJsonList[crawlsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue CrawlerNodeDetails::Jsonize() const
 
   if(m_crawlsHasBeenSet)
   {
-   Array<JsonValue> crawlsJsonList(m_crawls.size());
+   Aws::Utils::Array<JsonValue> crawlsJsonList(m_crawls.size());
    for(unsigned crawlsIndex = 0; crawlsIndex < crawlsJsonList.GetLength(); ++crawlsIndex)
    {
      crawlsJsonList[crawlsIndex].AsObject(m_crawls[crawlsIndex].Jsonize());

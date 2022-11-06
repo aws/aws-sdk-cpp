@@ -57,7 +57,7 @@ Aws::String UpdateModelPackageRequest::SerializePayload() const
 
   if(m_customerMetadataPropertiesToRemoveHasBeenSet)
   {
-   Array<JsonValue> customerMetadataPropertiesToRemoveJsonList(m_customerMetadataPropertiesToRemove.size());
+   Aws::Utils::Array<JsonValue> customerMetadataPropertiesToRemoveJsonList(m_customerMetadataPropertiesToRemove.size());
    for(unsigned customerMetadataPropertiesToRemoveIndex = 0; customerMetadataPropertiesToRemoveIndex < customerMetadataPropertiesToRemoveJsonList.GetLength(); ++customerMetadataPropertiesToRemoveIndex)
    {
      customerMetadataPropertiesToRemoveJsonList[customerMetadataPropertiesToRemoveIndex].AsString(m_customerMetadataPropertiesToRemove[customerMetadataPropertiesToRemoveIndex]);
@@ -68,7 +68,7 @@ Aws::String UpdateModelPackageRequest::SerializePayload() const
 
   if(m_additionalInferenceSpecificationsToAddHasBeenSet)
   {
-   Array<JsonValue> additionalInferenceSpecificationsToAddJsonList(m_additionalInferenceSpecificationsToAdd.size());
+   Aws::Utils::Array<JsonValue> additionalInferenceSpecificationsToAddJsonList(m_additionalInferenceSpecificationsToAdd.size());
    for(unsigned additionalInferenceSpecificationsToAddIndex = 0; additionalInferenceSpecificationsToAddIndex < additionalInferenceSpecificationsToAddJsonList.GetLength(); ++additionalInferenceSpecificationsToAddIndex)
    {
      additionalInferenceSpecificationsToAddJsonList[additionalInferenceSpecificationsToAddIndex].AsObject(m_additionalInferenceSpecificationsToAdd[additionalInferenceSpecificationsToAddIndex].Jsonize());

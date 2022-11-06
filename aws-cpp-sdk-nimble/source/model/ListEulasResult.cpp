@@ -30,7 +30,7 @@ ListEulasResult& ListEulasResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eulas"))
   {
-    Array<JsonView> eulasJsonList = jsonValue.GetArray("eulas");
+    Aws::Utils::Array<JsonView> eulasJsonList = jsonValue.GetArray("eulas");
     for(unsigned eulasIndex = 0; eulasIndex < eulasJsonList.GetLength(); ++eulasIndex)
     {
       m_eulas.push_back(eulasJsonList[eulasIndex].AsObject());

@@ -66,7 +66,7 @@ Distribution& Distribution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("licenseConfigurationArns"))
   {
-    Array<JsonView> licenseConfigurationArnsJsonList = jsonValue.GetArray("licenseConfigurationArns");
+    Aws::Utils::Array<JsonView> licenseConfigurationArnsJsonList = jsonValue.GetArray("licenseConfigurationArns");
     for(unsigned licenseConfigurationArnsIndex = 0; licenseConfigurationArnsIndex < licenseConfigurationArnsJsonList.GetLength(); ++licenseConfigurationArnsIndex)
     {
       m_licenseConfigurationArns.push_back(licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString());
@@ -76,7 +76,7 @@ Distribution& Distribution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("launchTemplateConfigurations"))
   {
-    Array<JsonView> launchTemplateConfigurationsJsonList = jsonValue.GetArray("launchTemplateConfigurations");
+    Aws::Utils::Array<JsonView> launchTemplateConfigurationsJsonList = jsonValue.GetArray("launchTemplateConfigurations");
     for(unsigned launchTemplateConfigurationsIndex = 0; launchTemplateConfigurationsIndex < launchTemplateConfigurationsJsonList.GetLength(); ++launchTemplateConfigurationsIndex)
     {
       m_launchTemplateConfigurations.push_back(launchTemplateConfigurationsJsonList[launchTemplateConfigurationsIndex].AsObject());
@@ -93,7 +93,7 @@ Distribution& Distribution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("fastLaunchConfigurations"))
   {
-    Array<JsonView> fastLaunchConfigurationsJsonList = jsonValue.GetArray("fastLaunchConfigurations");
+    Aws::Utils::Array<JsonView> fastLaunchConfigurationsJsonList = jsonValue.GetArray("fastLaunchConfigurations");
     for(unsigned fastLaunchConfigurationsIndex = 0; fastLaunchConfigurationsIndex < fastLaunchConfigurationsJsonList.GetLength(); ++fastLaunchConfigurationsIndex)
     {
       m_fastLaunchConfigurations.push_back(fastLaunchConfigurationsJsonList[fastLaunchConfigurationsIndex].AsObject());
@@ -128,7 +128,7 @@ JsonValue Distribution::Jsonize() const
 
   if(m_licenseConfigurationArnsHasBeenSet)
   {
-   Array<JsonValue> licenseConfigurationArnsJsonList(m_licenseConfigurationArns.size());
+   Aws::Utils::Array<JsonValue> licenseConfigurationArnsJsonList(m_licenseConfigurationArns.size());
    for(unsigned licenseConfigurationArnsIndex = 0; licenseConfigurationArnsIndex < licenseConfigurationArnsJsonList.GetLength(); ++licenseConfigurationArnsIndex)
    {
      licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString(m_licenseConfigurationArns[licenseConfigurationArnsIndex]);
@@ -139,7 +139,7 @@ JsonValue Distribution::Jsonize() const
 
   if(m_launchTemplateConfigurationsHasBeenSet)
   {
-   Array<JsonValue> launchTemplateConfigurationsJsonList(m_launchTemplateConfigurations.size());
+   Aws::Utils::Array<JsonValue> launchTemplateConfigurationsJsonList(m_launchTemplateConfigurations.size());
    for(unsigned launchTemplateConfigurationsIndex = 0; launchTemplateConfigurationsIndex < launchTemplateConfigurationsJsonList.GetLength(); ++launchTemplateConfigurationsIndex)
    {
      launchTemplateConfigurationsJsonList[launchTemplateConfigurationsIndex].AsObject(m_launchTemplateConfigurations[launchTemplateConfigurationsIndex].Jsonize());
@@ -156,7 +156,7 @@ JsonValue Distribution::Jsonize() const
 
   if(m_fastLaunchConfigurationsHasBeenSet)
   {
-   Array<JsonValue> fastLaunchConfigurationsJsonList(m_fastLaunchConfigurations.size());
+   Aws::Utils::Array<JsonValue> fastLaunchConfigurationsJsonList(m_fastLaunchConfigurations.size());
    for(unsigned fastLaunchConfigurationsIndex = 0; fastLaunchConfigurationsIndex < fastLaunchConfigurationsJsonList.GetLength(); ++fastLaunchConfigurationsIndex)
    {
      fastLaunchConfigurationsJsonList[fastLaunchConfigurationsIndex].AsObject(m_fastLaunchConfigurations[fastLaunchConfigurationsIndex].Jsonize());

@@ -36,7 +36,7 @@ ViewBillingResult& ViewBillingResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("BillingRecords"))
   {
-    Array<JsonView> billingRecordsJsonList = jsonValue.GetArray("BillingRecords");
+    Aws::Utils::Array<JsonView> billingRecordsJsonList = jsonValue.GetArray("BillingRecords");
     for(unsigned billingRecordsIndex = 0; billingRecordsIndex < billingRecordsJsonList.GetLength(); ++billingRecordsIndex)
     {
       m_billingRecords.push_back(billingRecordsJsonList[billingRecordsIndex].AsObject());

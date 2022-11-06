@@ -83,7 +83,7 @@ CustomRoutingAccelerator& CustomRoutingAccelerator::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("IpSets"))
   {
-    Array<JsonView> ipSetsJsonList = jsonValue.GetArray("IpSets");
+    Aws::Utils::Array<JsonView> ipSetsJsonList = jsonValue.GetArray("IpSets");
     for(unsigned ipSetsIndex = 0; ipSetsIndex < ipSetsJsonList.GetLength(); ++ipSetsIndex)
     {
       m_ipSets.push_back(ipSetsJsonList[ipSetsIndex].AsObject());
@@ -151,7 +151,7 @@ JsonValue CustomRoutingAccelerator::Jsonize() const
 
   if(m_ipSetsHasBeenSet)
   {
-   Array<JsonValue> ipSetsJsonList(m_ipSets.size());
+   Aws::Utils::Array<JsonValue> ipSetsJsonList(m_ipSets.size());
    for(unsigned ipSetsIndex = 0; ipSetsIndex < ipSetsJsonList.GetLength(); ++ipSetsIndex)
    {
      ipSetsJsonList[ipSetsIndex].AsObject(m_ipSets[ipSetsIndex].Jsonize());

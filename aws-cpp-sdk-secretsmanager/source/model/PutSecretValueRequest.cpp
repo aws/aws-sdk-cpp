@@ -52,7 +52,7 @@ Aws::String PutSecretValueRequest::SerializePayload() const
 
   if(m_versionStagesHasBeenSet)
   {
-   Array<JsonValue> versionStagesJsonList(m_versionStages.size());
+   Aws::Utils::Array<JsonValue> versionStagesJsonList(m_versionStages.size());
    for(unsigned versionStagesIndex = 0; versionStagesIndex < versionStagesJsonList.GetLength(); ++versionStagesIndex)
    {
      versionStagesJsonList[versionStagesIndex].AsString(m_versionStages[versionStagesIndex]);

@@ -30,7 +30,7 @@ BatchGetChannelResult& BatchGetChannelResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("channels"))
   {
-    Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
+    Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
     for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
     {
       m_channels.push_back(channelsJsonList[channelsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetChannelResult& BatchGetChannelResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

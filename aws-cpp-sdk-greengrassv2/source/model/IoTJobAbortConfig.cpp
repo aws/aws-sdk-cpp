@@ -33,7 +33,7 @@ IoTJobAbortConfig& IoTJobAbortConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("criteriaList"))
   {
-    Array<JsonView> criteriaListJsonList = jsonValue.GetArray("criteriaList");
+    Aws::Utils::Array<JsonView> criteriaListJsonList = jsonValue.GetArray("criteriaList");
     for(unsigned criteriaListIndex = 0; criteriaListIndex < criteriaListJsonList.GetLength(); ++criteriaListIndex)
     {
       m_criteriaList.push_back(criteriaListJsonList[criteriaListIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue IoTJobAbortConfig::Jsonize() const
 
   if(m_criteriaListHasBeenSet)
   {
-   Array<JsonValue> criteriaListJsonList(m_criteriaList.size());
+   Aws::Utils::Array<JsonValue> criteriaListJsonList(m_criteriaList.size());
    for(unsigned criteriaListIndex = 0; criteriaListIndex < criteriaListJsonList.GetLength(); ++criteriaListIndex)
    {
      criteriaListJsonList[criteriaListIndex].AsObject(m_criteriaList[criteriaListIndex].Jsonize());

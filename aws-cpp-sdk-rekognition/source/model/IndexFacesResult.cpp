@@ -32,7 +32,7 @@ IndexFacesResult& IndexFacesResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FaceRecords"))
   {
-    Array<JsonView> faceRecordsJsonList = jsonValue.GetArray("FaceRecords");
+    Aws::Utils::Array<JsonView> faceRecordsJsonList = jsonValue.GetArray("FaceRecords");
     for(unsigned faceRecordsIndex = 0; faceRecordsIndex < faceRecordsJsonList.GetLength(); ++faceRecordsIndex)
     {
       m_faceRecords.push_back(faceRecordsJsonList[faceRecordsIndex].AsObject());
@@ -53,7 +53,7 @@ IndexFacesResult& IndexFacesResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("UnindexedFaces"))
   {
-    Array<JsonView> unindexedFacesJsonList = jsonValue.GetArray("UnindexedFaces");
+    Aws::Utils::Array<JsonView> unindexedFacesJsonList = jsonValue.GetArray("UnindexedFaces");
     for(unsigned unindexedFacesIndex = 0; unindexedFacesIndex < unindexedFacesJsonList.GetLength(); ++unindexedFacesIndex)
     {
       m_unindexedFaces.push_back(unindexedFacesJsonList[unindexedFacesIndex].AsObject());

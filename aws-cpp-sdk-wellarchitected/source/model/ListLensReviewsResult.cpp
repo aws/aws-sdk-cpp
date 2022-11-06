@@ -44,7 +44,7 @@ ListLensReviewsResult& ListLensReviewsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("LensReviewSummaries"))
   {
-    Array<JsonView> lensReviewSummariesJsonList = jsonValue.GetArray("LensReviewSummaries");
+    Aws::Utils::Array<JsonView> lensReviewSummariesJsonList = jsonValue.GetArray("LensReviewSummaries");
     for(unsigned lensReviewSummariesIndex = 0; lensReviewSummariesIndex < lensReviewSummariesJsonList.GetLength(); ++lensReviewSummariesIndex)
     {
       m_lensReviewSummaries.push_back(lensReviewSummariesJsonList[lensReviewSummariesIndex].AsObject());

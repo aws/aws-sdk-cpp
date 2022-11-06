@@ -23,7 +23,7 @@ Aws::String DescribeUserProfilesRequest::SerializePayload() const
 
   if(m_iamUserArnsHasBeenSet)
   {
-   Array<JsonValue> iamUserArnsJsonList(m_iamUserArns.size());
+   Aws::Utils::Array<JsonValue> iamUserArnsJsonList(m_iamUserArns.size());
    for(unsigned iamUserArnsIndex = 0; iamUserArnsIndex < iamUserArnsJsonList.GetLength(); ++iamUserArnsIndex)
    {
      iamUserArnsJsonList[iamUserArnsIndex].AsString(m_iamUserArns[iamUserArnsIndex]);

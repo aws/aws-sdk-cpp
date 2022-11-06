@@ -30,7 +30,7 @@ GetSamplingTargetsResult& GetSamplingTargetsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SamplingTargetDocuments"))
   {
-    Array<JsonView> samplingTargetDocumentsJsonList = jsonValue.GetArray("SamplingTargetDocuments");
+    Aws::Utils::Array<JsonView> samplingTargetDocumentsJsonList = jsonValue.GetArray("SamplingTargetDocuments");
     for(unsigned samplingTargetDocumentsIndex = 0; samplingTargetDocumentsIndex < samplingTargetDocumentsJsonList.GetLength(); ++samplingTargetDocumentsIndex)
     {
       m_samplingTargetDocuments.push_back(samplingTargetDocumentsJsonList[samplingTargetDocumentsIndex].AsObject());
@@ -45,7 +45,7 @@ GetSamplingTargetsResult& GetSamplingTargetsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("UnprocessedStatistics"))
   {
-    Array<JsonView> unprocessedStatisticsJsonList = jsonValue.GetArray("UnprocessedStatistics");
+    Aws::Utils::Array<JsonView> unprocessedStatisticsJsonList = jsonValue.GetArray("UnprocessedStatistics");
     for(unsigned unprocessedStatisticsIndex = 0; unprocessedStatisticsIndex < unprocessedStatisticsJsonList.GetLength(); ++unprocessedStatisticsIndex)
     {
       m_unprocessedStatistics.push_back(unprocessedStatisticsJsonList[unprocessedStatisticsIndex].AsObject());

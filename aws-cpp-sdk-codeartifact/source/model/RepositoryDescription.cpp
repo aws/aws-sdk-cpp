@@ -89,7 +89,7 @@ RepositoryDescription& RepositoryDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("upstreams"))
   {
-    Array<JsonView> upstreamsJsonList = jsonValue.GetArray("upstreams");
+    Aws::Utils::Array<JsonView> upstreamsJsonList = jsonValue.GetArray("upstreams");
     for(unsigned upstreamsIndex = 0; upstreamsIndex < upstreamsJsonList.GetLength(); ++upstreamsIndex)
     {
       m_upstreams.push_back(upstreamsJsonList[upstreamsIndex].AsObject());
@@ -99,7 +99,7 @@ RepositoryDescription& RepositoryDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("externalConnections"))
   {
-    Array<JsonView> externalConnectionsJsonList = jsonValue.GetArray("externalConnections");
+    Aws::Utils::Array<JsonView> externalConnectionsJsonList = jsonValue.GetArray("externalConnections");
     for(unsigned externalConnectionsIndex = 0; externalConnectionsIndex < externalConnectionsJsonList.GetLength(); ++externalConnectionsIndex)
     {
       m_externalConnections.push_back(externalConnectionsJsonList[externalConnectionsIndex].AsObject());
@@ -152,7 +152,7 @@ JsonValue RepositoryDescription::Jsonize() const
 
   if(m_upstreamsHasBeenSet)
   {
-   Array<JsonValue> upstreamsJsonList(m_upstreams.size());
+   Aws::Utils::Array<JsonValue> upstreamsJsonList(m_upstreams.size());
    for(unsigned upstreamsIndex = 0; upstreamsIndex < upstreamsJsonList.GetLength(); ++upstreamsIndex)
    {
      upstreamsJsonList[upstreamsIndex].AsObject(m_upstreams[upstreamsIndex].Jsonize());
@@ -163,7 +163,7 @@ JsonValue RepositoryDescription::Jsonize() const
 
   if(m_externalConnectionsHasBeenSet)
   {
-   Array<JsonValue> externalConnectionsJsonList(m_externalConnections.size());
+   Aws::Utils::Array<JsonValue> externalConnectionsJsonList(m_externalConnections.size());
    for(unsigned externalConnectionsIndex = 0; externalConnectionsIndex < externalConnectionsJsonList.GetLength(); ++externalConnectionsIndex)
    {
      externalConnectionsJsonList[externalConnectionsIndex].AsObject(m_externalConnections[externalConnectionsIndex].Jsonize());

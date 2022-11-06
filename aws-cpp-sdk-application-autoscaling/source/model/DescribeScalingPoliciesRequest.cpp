@@ -31,7 +31,7 @@ Aws::String DescribeScalingPoliciesRequest::SerializePayload() const
 
   if(m_policyNamesHasBeenSet)
   {
-   Array<JsonValue> policyNamesJsonList(m_policyNames.size());
+   Aws::Utils::Array<JsonValue> policyNamesJsonList(m_policyNames.size());
    for(unsigned policyNamesIndex = 0; policyNamesIndex < policyNamesJsonList.GetLength(); ++policyNamesIndex)
    {
      policyNamesJsonList[policyNamesIndex].AsString(m_policyNames[policyNamesIndex]);

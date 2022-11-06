@@ -76,7 +76,7 @@ Connector& Connector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("capabilityList"))
   {
-    Array<JsonView> capabilityListJsonList = jsonValue.GetArray("capabilityList");
+    Aws::Utils::Array<JsonView> capabilityListJsonList = jsonValue.GetArray("capabilityList");
     for(unsigned capabilityListIndex = 0; capabilityListIndex < capabilityListJsonList.GetLength(); ++capabilityListIndex)
     {
       m_capabilityList.push_back(ConnectorCapabilityMapper::GetConnectorCapabilityForName(capabilityListJsonList[capabilityListIndex].AsString()));
@@ -152,7 +152,7 @@ JsonValue Connector::Jsonize() const
 
   if(m_capabilityListHasBeenSet)
   {
-   Array<JsonValue> capabilityListJsonList(m_capabilityList.size());
+   Aws::Utils::Array<JsonValue> capabilityListJsonList(m_capabilityList.size());
    for(unsigned capabilityListIndex = 0; capabilityListIndex < capabilityListJsonList.GetLength(); ++capabilityListIndex)
    {
      capabilityListJsonList[capabilityListIndex].AsString(ConnectorCapabilityMapper::GetNameForConnectorCapability(m_capabilityList[capabilityListIndex]));

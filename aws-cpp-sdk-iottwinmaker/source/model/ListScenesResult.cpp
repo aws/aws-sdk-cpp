@@ -36,7 +36,7 @@ ListScenesResult& ListScenesResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("sceneSummaries"))
   {
-    Array<JsonView> sceneSummariesJsonList = jsonValue.GetArray("sceneSummaries");
+    Aws::Utils::Array<JsonView> sceneSummariesJsonList = jsonValue.GetArray("sceneSummaries");
     for(unsigned sceneSummariesIndex = 0; sceneSummariesIndex < sceneSummariesJsonList.GetLength(); ++sceneSummariesIndex)
     {
       m_sceneSummaries.push_back(sceneSummariesJsonList[sceneSummariesIndex].AsObject());

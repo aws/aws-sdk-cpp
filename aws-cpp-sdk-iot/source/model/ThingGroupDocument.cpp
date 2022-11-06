@@ -72,7 +72,7 @@ ThingGroupDocument& ThingGroupDocument::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("parentGroupNames"))
   {
-    Array<JsonView> parentGroupNamesJsonList = jsonValue.GetArray("parentGroupNames");
+    Aws::Utils::Array<JsonView> parentGroupNamesJsonList = jsonValue.GetArray("parentGroupNames");
     for(unsigned parentGroupNamesIndex = 0; parentGroupNamesIndex < parentGroupNamesJsonList.GetLength(); ++parentGroupNamesIndex)
     {
       m_parentGroupNames.push_back(parentGroupNamesJsonList[parentGroupNamesIndex].AsString());
@@ -118,7 +118,7 @@ JsonValue ThingGroupDocument::Jsonize() const
 
   if(m_parentGroupNamesHasBeenSet)
   {
-   Array<JsonValue> parentGroupNamesJsonList(m_parentGroupNames.size());
+   Aws::Utils::Array<JsonValue> parentGroupNamesJsonList(m_parentGroupNames.size());
    for(unsigned parentGroupNamesIndex = 0; parentGroupNamesIndex < parentGroupNamesJsonList.GetLength(); ++parentGroupNamesIndex)
    {
      parentGroupNamesJsonList[parentGroupNamesIndex].AsString(m_parentGroupNames[parentGroupNamesIndex]);

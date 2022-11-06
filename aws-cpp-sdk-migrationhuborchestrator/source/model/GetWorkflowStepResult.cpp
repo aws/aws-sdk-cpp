@@ -90,7 +90,7 @@ GetWorkflowStepResult& GetWorkflowStepResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("stepTarget"))
   {
-    Array<JsonView> stepTargetJsonList = jsonValue.GetArray("stepTarget");
+    Aws::Utils::Array<JsonView> stepTargetJsonList = jsonValue.GetArray("stepTarget");
     for(unsigned stepTargetIndex = 0; stepTargetIndex < stepTargetJsonList.GetLength(); ++stepTargetIndex)
     {
       m_stepTarget.push_back(stepTargetJsonList[stepTargetIndex].AsString());
@@ -99,7 +99,7 @@ GetWorkflowStepResult& GetWorkflowStepResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("outputs"))
   {
-    Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
+    Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
@@ -108,7 +108,7 @@ GetWorkflowStepResult& GetWorkflowStepResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("previous"))
   {
-    Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
+    Aws::Utils::Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
     for(unsigned previousIndex = 0; previousIndex < previousJsonList.GetLength(); ++previousIndex)
     {
       m_previous.push_back(previousJsonList[previousIndex].AsString());
@@ -117,7 +117,7 @@ GetWorkflowStepResult& GetWorkflowStepResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("next"))
   {
-    Array<JsonView> nextJsonList = jsonValue.GetArray("next");
+    Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
     for(unsigned nextIndex = 0; nextIndex < nextJsonList.GetLength(); ++nextIndex)
     {
       m_next.push_back(nextJsonList[nextIndex].AsString());

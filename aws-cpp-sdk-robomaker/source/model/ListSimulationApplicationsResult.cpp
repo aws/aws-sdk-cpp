@@ -30,7 +30,7 @@ ListSimulationApplicationsResult& ListSimulationApplicationsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("simulationApplicationSummaries"))
   {
-    Array<JsonView> simulationApplicationSummariesJsonList = jsonValue.GetArray("simulationApplicationSummaries");
+    Aws::Utils::Array<JsonView> simulationApplicationSummariesJsonList = jsonValue.GetArray("simulationApplicationSummaries");
     for(unsigned simulationApplicationSummariesIndex = 0; simulationApplicationSummariesIndex < simulationApplicationSummariesJsonList.GetLength(); ++simulationApplicationSummariesIndex)
     {
       m_simulationApplicationSummaries.push_back(simulationApplicationSummariesJsonList[simulationApplicationSummariesIndex].AsObject());

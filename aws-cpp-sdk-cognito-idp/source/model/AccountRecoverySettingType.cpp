@@ -33,7 +33,7 @@ AccountRecoverySettingType& AccountRecoverySettingType::operator =(JsonView json
 {
   if(jsonValue.ValueExists("RecoveryMechanisms"))
   {
-    Array<JsonView> recoveryMechanismsJsonList = jsonValue.GetArray("RecoveryMechanisms");
+    Aws::Utils::Array<JsonView> recoveryMechanismsJsonList = jsonValue.GetArray("RecoveryMechanisms");
     for(unsigned recoveryMechanismsIndex = 0; recoveryMechanismsIndex < recoveryMechanismsJsonList.GetLength(); ++recoveryMechanismsIndex)
     {
       m_recoveryMechanisms.push_back(recoveryMechanismsJsonList[recoveryMechanismsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AccountRecoverySettingType::Jsonize() const
 
   if(m_recoveryMechanismsHasBeenSet)
   {
-   Array<JsonValue> recoveryMechanismsJsonList(m_recoveryMechanisms.size());
+   Aws::Utils::Array<JsonValue> recoveryMechanismsJsonList(m_recoveryMechanisms.size());
    for(unsigned recoveryMechanismsIndex = 0; recoveryMechanismsIndex < recoveryMechanismsJsonList.GetLength(); ++recoveryMechanismsIndex)
    {
      recoveryMechanismsJsonList[recoveryMechanismsIndex].AsObject(m_recoveryMechanisms[recoveryMechanismsIndex].Jsonize());

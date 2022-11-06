@@ -82,7 +82,7 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("ChangeSet"))
   {
-    Array<JsonView> changeSetJsonList = jsonValue.GetArray("ChangeSet");
+    Aws::Utils::Array<JsonView> changeSetJsonList = jsonValue.GetArray("ChangeSet");
     for(unsigned changeSetIndex = 0; changeSetIndex < changeSetJsonList.GetLength(); ++changeSetIndex)
     {
       m_changeSet.push_back(changeSetJsonList[changeSetIndex].AsObject());

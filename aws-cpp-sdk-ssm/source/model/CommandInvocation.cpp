@@ -149,7 +149,7 @@ CommandInvocation& CommandInvocation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CommandPlugins"))
   {
-    Array<JsonView> commandPluginsJsonList = jsonValue.GetArray("CommandPlugins");
+    Aws::Utils::Array<JsonView> commandPluginsJsonList = jsonValue.GetArray("CommandPlugins");
     for(unsigned commandPluginsIndex = 0; commandPluginsIndex < commandPluginsJsonList.GetLength(); ++commandPluginsIndex)
     {
       m_commandPlugins.push_back(commandPluginsJsonList[commandPluginsIndex].AsObject());
@@ -257,7 +257,7 @@ JsonValue CommandInvocation::Jsonize() const
 
   if(m_commandPluginsHasBeenSet)
   {
-   Array<JsonValue> commandPluginsJsonList(m_commandPlugins.size());
+   Aws::Utils::Array<JsonValue> commandPluginsJsonList(m_commandPlugins.size());
    for(unsigned commandPluginsIndex = 0; commandPluginsIndex < commandPluginsJsonList.GetLength(); ++commandPluginsIndex)
    {
      commandPluginsJsonList[commandPluginsIndex].AsObject(m_commandPlugins[commandPluginsIndex].Jsonize());

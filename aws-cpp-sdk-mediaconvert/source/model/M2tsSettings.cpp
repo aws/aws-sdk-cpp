@@ -196,7 +196,7 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("audioPids"))
   {
-    Array<JsonView> audioPidsJsonList = jsonValue.GetArray("audioPids");
+    Aws::Utils::Array<JsonView> audioPidsJsonList = jsonValue.GetArray("audioPids");
     for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
     {
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
@@ -241,7 +241,7 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dvbSubPids"))
   {
-    Array<JsonView> dvbSubPidsJsonList = jsonValue.GetArray("dvbSubPids");
+    Aws::Utils::Array<JsonView> dvbSubPidsJsonList = jsonValue.GetArray("dvbSubPids");
     for(unsigned dvbSubPidsIndex = 0; dvbSubPidsIndex < dvbSubPidsJsonList.GetLength(); ++dvbSubPidsIndex)
     {
       m_dvbSubPids.push_back(dvbSubPidsJsonList[dvbSubPidsIndex].AsInteger());
@@ -477,7 +477,7 @@ JsonValue M2tsSettings::Jsonize() const
 
   if(m_audioPidsHasBeenSet)
   {
-   Array<JsonValue> audioPidsJsonList(m_audioPids.size());
+   Aws::Utils::Array<JsonValue> audioPidsJsonList(m_audioPids.size());
    for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
    {
      audioPidsJsonList[audioPidsIndex].AsInteger(m_audioPids[audioPidsIndex]);
@@ -516,7 +516,7 @@ JsonValue M2tsSettings::Jsonize() const
 
   if(m_dvbSubPidsHasBeenSet)
   {
-   Array<JsonValue> dvbSubPidsJsonList(m_dvbSubPids.size());
+   Aws::Utils::Array<JsonValue> dvbSubPidsJsonList(m_dvbSubPids.size());
    for(unsigned dvbSubPidsIndex = 0; dvbSubPidsIndex < dvbSubPidsJsonList.GetLength(); ++dvbSubPidsIndex)
    {
      dvbSubPidsJsonList[dvbSubPidsIndex].AsInteger(m_dvbSubPids[dvbSubPidsIndex]);

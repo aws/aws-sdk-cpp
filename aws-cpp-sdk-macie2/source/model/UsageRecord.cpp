@@ -51,7 +51,7 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("usage"))
   {
-    Array<JsonView> usageJsonList = jsonValue.GetArray("usage");
+    Aws::Utils::Array<JsonView> usageJsonList = jsonValue.GetArray("usage");
     for(unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex)
     {
       m_usage.push_back(usageJsonList[usageIndex].AsObject());
@@ -79,7 +79,7 @@ JsonValue UsageRecord::Jsonize() const
 
   if(m_usageHasBeenSet)
   {
-   Array<JsonValue> usageJsonList(m_usage.size());
+   Aws::Utils::Array<JsonValue> usageJsonList(m_usage.size());
    for(unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex)
    {
      usageJsonList[usageIndex].AsObject(m_usage[usageIndex].Jsonize());

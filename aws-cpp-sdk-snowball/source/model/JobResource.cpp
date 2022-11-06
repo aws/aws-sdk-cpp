@@ -37,7 +37,7 @@ JobResource& JobResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3Resources"))
   {
-    Array<JsonView> s3ResourcesJsonList = jsonValue.GetArray("S3Resources");
+    Aws::Utils::Array<JsonView> s3ResourcesJsonList = jsonValue.GetArray("S3Resources");
     for(unsigned s3ResourcesIndex = 0; s3ResourcesIndex < s3ResourcesJsonList.GetLength(); ++s3ResourcesIndex)
     {
       m_s3Resources.push_back(s3ResourcesJsonList[s3ResourcesIndex].AsObject());
@@ -47,7 +47,7 @@ JobResource& JobResource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LambdaResources"))
   {
-    Array<JsonView> lambdaResourcesJsonList = jsonValue.GetArray("LambdaResources");
+    Aws::Utils::Array<JsonView> lambdaResourcesJsonList = jsonValue.GetArray("LambdaResources");
     for(unsigned lambdaResourcesIndex = 0; lambdaResourcesIndex < lambdaResourcesJsonList.GetLength(); ++lambdaResourcesIndex)
     {
       m_lambdaResources.push_back(lambdaResourcesJsonList[lambdaResourcesIndex].AsObject());
@@ -57,7 +57,7 @@ JobResource& JobResource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Ec2AmiResources"))
   {
-    Array<JsonView> ec2AmiResourcesJsonList = jsonValue.GetArray("Ec2AmiResources");
+    Aws::Utils::Array<JsonView> ec2AmiResourcesJsonList = jsonValue.GetArray("Ec2AmiResources");
     for(unsigned ec2AmiResourcesIndex = 0; ec2AmiResourcesIndex < ec2AmiResourcesJsonList.GetLength(); ++ec2AmiResourcesIndex)
     {
       m_ec2AmiResources.push_back(ec2AmiResourcesJsonList[ec2AmiResourcesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue JobResource::Jsonize() const
 
   if(m_s3ResourcesHasBeenSet)
   {
-   Array<JsonValue> s3ResourcesJsonList(m_s3Resources.size());
+   Aws::Utils::Array<JsonValue> s3ResourcesJsonList(m_s3Resources.size());
    for(unsigned s3ResourcesIndex = 0; s3ResourcesIndex < s3ResourcesJsonList.GetLength(); ++s3ResourcesIndex)
    {
      s3ResourcesJsonList[s3ResourcesIndex].AsObject(m_s3Resources[s3ResourcesIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue JobResource::Jsonize() const
 
   if(m_lambdaResourcesHasBeenSet)
   {
-   Array<JsonValue> lambdaResourcesJsonList(m_lambdaResources.size());
+   Aws::Utils::Array<JsonValue> lambdaResourcesJsonList(m_lambdaResources.size());
    for(unsigned lambdaResourcesIndex = 0; lambdaResourcesIndex < lambdaResourcesJsonList.GetLength(); ++lambdaResourcesIndex)
    {
      lambdaResourcesJsonList[lambdaResourcesIndex].AsObject(m_lambdaResources[lambdaResourcesIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue JobResource::Jsonize() const
 
   if(m_ec2AmiResourcesHasBeenSet)
   {
-   Array<JsonValue> ec2AmiResourcesJsonList(m_ec2AmiResources.size());
+   Aws::Utils::Array<JsonValue> ec2AmiResourcesJsonList(m_ec2AmiResources.size());
    for(unsigned ec2AmiResourcesIndex = 0; ec2AmiResourcesIndex < ec2AmiResourcesJsonList.GetLength(); ++ec2AmiResourcesIndex)
    {
      ec2AmiResourcesJsonList[ec2AmiResourcesIndex].AsObject(m_ec2AmiResources[ec2AmiResourcesIndex].Jsonize());

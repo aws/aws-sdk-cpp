@@ -42,7 +42,7 @@ RSessionAppSettings& RSessionAppSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CustomImages"))
   {
-    Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
+    Aws::Utils::Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
     for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
     {
       m_customImages.push_back(customImagesJsonList[customImagesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue RSessionAppSettings::Jsonize() const
 
   if(m_customImagesHasBeenSet)
   {
-   Array<JsonValue> customImagesJsonList(m_customImages.size());
+   Aws::Utils::Array<JsonValue> customImagesJsonList(m_customImages.size());
    for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
    {
      customImagesJsonList[customImagesIndex].AsObject(m_customImages[customImagesIndex].Jsonize());

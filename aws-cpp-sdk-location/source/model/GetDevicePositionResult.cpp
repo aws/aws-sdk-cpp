@@ -42,7 +42,7 @@ GetDevicePositionResult& GetDevicePositionResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("Position"))
   {
-    Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
+    Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
     for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
     {
       m_position.push_back(positionJsonList[positionIndex].AsDouble());

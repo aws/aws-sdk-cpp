@@ -24,7 +24,7 @@ Aws::String BatchDeleteDelegationByAssessmentRequest::SerializePayload() const
 
   if(m_delegationIdsHasBeenSet)
   {
-   Array<JsonValue> delegationIdsJsonList(m_delegationIds.size());
+   Aws::Utils::Array<JsonValue> delegationIdsJsonList(m_delegationIds.size());
    for(unsigned delegationIdsIndex = 0; delegationIdsIndex < delegationIdsJsonList.GetLength(); ++delegationIdsIndex)
    {
      delegationIdsJsonList[delegationIdsIndex].AsString(m_delegationIds[delegationIdsIndex]);

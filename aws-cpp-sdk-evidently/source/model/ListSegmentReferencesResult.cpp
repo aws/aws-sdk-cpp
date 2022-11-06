@@ -36,7 +36,7 @@ ListSegmentReferencesResult& ListSegmentReferencesResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("referencedBy"))
   {
-    Array<JsonView> referencedByJsonList = jsonValue.GetArray("referencedBy");
+    Aws::Utils::Array<JsonView> referencedByJsonList = jsonValue.GetArray("referencedBy");
     for(unsigned referencedByIndex = 0; referencedByIndex < referencedByJsonList.GetLength(); ++referencedByIndex)
     {
       m_referencedBy.push_back(referencedByJsonList[referencedByIndex].AsObject());

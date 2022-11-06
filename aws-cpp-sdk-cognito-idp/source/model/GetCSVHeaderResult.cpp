@@ -36,7 +36,7 @@ GetCSVHeaderResult& GetCSVHeaderResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("CSVHeader"))
   {
-    Array<JsonView> cSVHeaderJsonList = jsonValue.GetArray("CSVHeader");
+    Aws::Utils::Array<JsonView> cSVHeaderJsonList = jsonValue.GetArray("CSVHeader");
     for(unsigned cSVHeaderIndex = 0; cSVHeaderIndex < cSVHeaderJsonList.GetLength(); ++cSVHeaderIndex)
     {
       m_cSVHeader.push_back(cSVHeaderJsonList[cSVHeaderIndex].AsString());

@@ -30,7 +30,7 @@ ListOutgoingCertificatesResult& ListOutgoingCertificatesResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("outgoingCertificates"))
   {
-    Array<JsonView> outgoingCertificatesJsonList = jsonValue.GetArray("outgoingCertificates");
+    Aws::Utils::Array<JsonView> outgoingCertificatesJsonList = jsonValue.GetArray("outgoingCertificates");
     for(unsigned outgoingCertificatesIndex = 0; outgoingCertificatesIndex < outgoingCertificatesJsonList.GetLength(); ++outgoingCertificatesIndex)
     {
       m_outgoingCertificates.push_back(outgoingCertificatesJsonList[outgoingCertificatesIndex].AsObject());

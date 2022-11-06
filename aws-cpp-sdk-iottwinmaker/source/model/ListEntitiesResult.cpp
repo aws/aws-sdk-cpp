@@ -30,7 +30,7 @@ ListEntitiesResult& ListEntitiesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("entitySummaries"))
   {
-    Array<JsonView> entitySummariesJsonList = jsonValue.GetArray("entitySummaries");
+    Aws::Utils::Array<JsonView> entitySummariesJsonList = jsonValue.GetArray("entitySummaries");
     for(unsigned entitySummariesIndex = 0; entitySummariesIndex < entitySummariesJsonList.GetLength(); ++entitySummariesIndex)
     {
       m_entitySummaries.push_back(entitySummariesJsonList[entitySummariesIndex].AsObject());

@@ -30,7 +30,7 @@ DescribeTrailsResult& DescribeTrailsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("trailList"))
   {
-    Array<JsonView> trailListJsonList = jsonValue.GetArray("trailList");
+    Aws::Utils::Array<JsonView> trailListJsonList = jsonValue.GetArray("trailList");
     for(unsigned trailListIndex = 0; trailListIndex < trailListJsonList.GetLength(); ++trailListIndex)
     {
       m_trailList.push_back(trailListJsonList[trailListIndex].AsObject());

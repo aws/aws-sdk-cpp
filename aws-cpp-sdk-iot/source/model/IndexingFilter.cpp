@@ -33,7 +33,7 @@ IndexingFilter& IndexingFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("namedShadowNames"))
   {
-    Array<JsonView> namedShadowNamesJsonList = jsonValue.GetArray("namedShadowNames");
+    Aws::Utils::Array<JsonView> namedShadowNamesJsonList = jsonValue.GetArray("namedShadowNames");
     for(unsigned namedShadowNamesIndex = 0; namedShadowNamesIndex < namedShadowNamesJsonList.GetLength(); ++namedShadowNamesIndex)
     {
       m_namedShadowNames.push_back(namedShadowNamesJsonList[namedShadowNamesIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue IndexingFilter::Jsonize() const
 
   if(m_namedShadowNamesHasBeenSet)
   {
-   Array<JsonValue> namedShadowNamesJsonList(m_namedShadowNames.size());
+   Aws::Utils::Array<JsonValue> namedShadowNamesJsonList(m_namedShadowNames.size());
    for(unsigned namedShadowNamesIndex = 0; namedShadowNamesIndex < namedShadowNamesJsonList.GetLength(); ++namedShadowNamesIndex)
    {
      namedShadowNamesJsonList[namedShadowNamesIndex].AsString(m_namedShadowNames[namedShadowNamesIndex]);

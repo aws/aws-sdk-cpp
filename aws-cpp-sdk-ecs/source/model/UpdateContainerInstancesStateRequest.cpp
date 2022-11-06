@@ -32,7 +32,7 @@ Aws::String UpdateContainerInstancesStateRequest::SerializePayload() const
 
   if(m_containerInstancesHasBeenSet)
   {
-   Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
+   Aws::Utils::Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
    for(unsigned containerInstancesIndex = 0; containerInstancesIndex < containerInstancesJsonList.GetLength(); ++containerInstancesIndex)
    {
      containerInstancesJsonList[containerInstancesIndex].AsString(m_containerInstances[containerInstancesIndex]);

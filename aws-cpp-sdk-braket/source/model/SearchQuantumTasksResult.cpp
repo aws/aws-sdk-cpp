@@ -36,7 +36,7 @@ SearchQuantumTasksResult& SearchQuantumTasksResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("quantumTasks"))
   {
-    Array<JsonView> quantumTasksJsonList = jsonValue.GetArray("quantumTasks");
+    Aws::Utils::Array<JsonView> quantumTasksJsonList = jsonValue.GetArray("quantumTasks");
     for(unsigned quantumTasksIndex = 0; quantumTasksIndex < quantumTasksJsonList.GetLength(); ++quantumTasksIndex)
     {
       m_quantumTasks.push_back(quantumTasksJsonList[quantumTasksIndex].AsObject());

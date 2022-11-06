@@ -51,7 +51,7 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& AwsEcsTas
 
   if(jsonValue.ValueExists("Permissions"))
   {
-    Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
+    Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
     for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails:
 
   if(m_permissionsHasBeenSet)
   {
-   Array<JsonValue> permissionsJsonList(m_permissions.size());
+   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
    {
      permissionsJsonList[permissionsIndex].AsString(m_permissions[permissionsIndex]);

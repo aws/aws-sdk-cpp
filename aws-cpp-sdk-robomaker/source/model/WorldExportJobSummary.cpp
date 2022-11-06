@@ -64,7 +64,7 @@ WorldExportJobSummary& WorldExportJobSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("worlds"))
   {
-    Array<JsonView> worldsJsonList = jsonValue.GetArray("worlds");
+    Aws::Utils::Array<JsonView> worldsJsonList = jsonValue.GetArray("worlds");
     for(unsigned worldsIndex = 0; worldsIndex < worldsJsonList.GetLength(); ++worldsIndex)
     {
       m_worlds.push_back(worldsJsonList[worldsIndex].AsString());
@@ -104,7 +104,7 @@ JsonValue WorldExportJobSummary::Jsonize() const
 
   if(m_worldsHasBeenSet)
   {
-   Array<JsonValue> worldsJsonList(m_worlds.size());
+   Aws::Utils::Array<JsonValue> worldsJsonList(m_worlds.size());
    for(unsigned worldsIndex = 0; worldsIndex < worldsJsonList.GetLength(); ++worldsIndex)
    {
      worldsJsonList[worldsIndex].AsString(m_worlds[worldsIndex]);

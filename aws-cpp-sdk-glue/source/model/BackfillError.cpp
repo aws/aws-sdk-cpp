@@ -44,7 +44,7 @@ BackfillError& BackfillError::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Partitions"))
   {
-    Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
+    Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
     for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
     {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue BackfillError::Jsonize() const
 
   if(m_partitionsHasBeenSet)
   {
-   Array<JsonValue> partitionsJsonList(m_partitions.size());
+   Aws::Utils::Array<JsonValue> partitionsJsonList(m_partitions.size());
    for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
    {
      partitionsJsonList[partitionsIndex].AsObject(m_partitions[partitionsIndex].Jsonize());

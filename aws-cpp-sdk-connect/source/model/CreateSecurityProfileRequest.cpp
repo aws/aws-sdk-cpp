@@ -39,7 +39,7 @@ Aws::String CreateSecurityProfileRequest::SerializePayload() const
 
   if(m_permissionsHasBeenSet)
   {
-   Array<JsonValue> permissionsJsonList(m_permissions.size());
+   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
    {
      permissionsJsonList[permissionsIndex].AsString(m_permissions[permissionsIndex]);

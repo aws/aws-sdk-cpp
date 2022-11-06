@@ -41,7 +41,7 @@ IceServer& IceServer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Uris"))
   {
-    Array<JsonView> urisJsonList = jsonValue.GetArray("Uris");
+    Aws::Utils::Array<JsonView> urisJsonList = jsonValue.GetArray("Uris");
     for(unsigned urisIndex = 0; urisIndex < urisJsonList.GetLength(); ++urisIndex)
     {
       m_uris.push_back(urisJsonList[urisIndex].AsString());
@@ -79,7 +79,7 @@ JsonValue IceServer::Jsonize() const
 
   if(m_urisHasBeenSet)
   {
-   Array<JsonValue> urisJsonList(m_uris.size());
+   Aws::Utils::Array<JsonValue> urisJsonList(m_uris.size());
    for(unsigned urisIndex = 0; urisIndex < urisJsonList.GetLength(); ++urisIndex)
    {
      urisJsonList[urisIndex].AsString(m_uris[urisIndex]);

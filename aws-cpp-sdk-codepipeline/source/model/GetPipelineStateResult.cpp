@@ -44,7 +44,7 @@ GetPipelineStateResult& GetPipelineStateResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("stageStates"))
   {
-    Array<JsonView> stageStatesJsonList = jsonValue.GetArray("stageStates");
+    Aws::Utils::Array<JsonView> stageStatesJsonList = jsonValue.GetArray("stageStates");
     for(unsigned stageStatesIndex = 0; stageStatesIndex < stageStatesJsonList.GetLength(); ++stageStatesIndex)
     {
       m_stageStates.push_back(stageStatesJsonList[stageStatesIndex].AsObject());

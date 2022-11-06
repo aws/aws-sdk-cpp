@@ -30,7 +30,7 @@ ListPositionConfigurationsResult& ListPositionConfigurationsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PositionConfigurationList"))
   {
-    Array<JsonView> positionConfigurationListJsonList = jsonValue.GetArray("PositionConfigurationList");
+    Aws::Utils::Array<JsonView> positionConfigurationListJsonList = jsonValue.GetArray("PositionConfigurationList");
     for(unsigned positionConfigurationListIndex = 0; positionConfigurationListIndex < positionConfigurationListJsonList.GetLength(); ++positionConfigurationListIndex)
     {
       m_positionConfigurationList.push_back(positionConfigurationListJsonList[positionConfigurationListIndex].AsObject());

@@ -30,7 +30,7 @@ ListInputDeviceTransfersResult& ListInputDeviceTransfersResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("inputDeviceTransfers"))
   {
-    Array<JsonView> inputDeviceTransfersJsonList = jsonValue.GetArray("inputDeviceTransfers");
+    Aws::Utils::Array<JsonView> inputDeviceTransfersJsonList = jsonValue.GetArray("inputDeviceTransfers");
     for(unsigned inputDeviceTransfersIndex = 0; inputDeviceTransfersIndex < inputDeviceTransfersJsonList.GetLength(); ++inputDeviceTransfersIndex)
     {
       m_inputDeviceTransfers.push_back(inputDeviceTransfersJsonList[inputDeviceTransfersIndex].AsObject());

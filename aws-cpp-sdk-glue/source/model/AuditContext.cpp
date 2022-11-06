@@ -46,7 +46,7 @@ AuditContext& AuditContext::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RequestedColumns"))
   {
-    Array<JsonView> requestedColumnsJsonList = jsonValue.GetArray("RequestedColumns");
+    Aws::Utils::Array<JsonView> requestedColumnsJsonList = jsonValue.GetArray("RequestedColumns");
     for(unsigned requestedColumnsIndex = 0; requestedColumnsIndex < requestedColumnsJsonList.GetLength(); ++requestedColumnsIndex)
     {
       m_requestedColumns.push_back(requestedColumnsJsonList[requestedColumnsIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue AuditContext::Jsonize() const
 
   if(m_requestedColumnsHasBeenSet)
   {
-   Array<JsonValue> requestedColumnsJsonList(m_requestedColumns.size());
+   Aws::Utils::Array<JsonValue> requestedColumnsJsonList(m_requestedColumns.size());
    for(unsigned requestedColumnsIndex = 0; requestedColumnsIndex < requestedColumnsJsonList.GetLength(); ++requestedColumnsIndex)
    {
      requestedColumnsJsonList[requestedColumnsIndex].AsString(m_requestedColumns[requestedColumnsIndex]);

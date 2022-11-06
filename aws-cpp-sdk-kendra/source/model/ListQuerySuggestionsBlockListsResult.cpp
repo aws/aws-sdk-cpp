@@ -30,7 +30,7 @@ ListQuerySuggestionsBlockListsResult& ListQuerySuggestionsBlockListsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BlockListSummaryItems"))
   {
-    Array<JsonView> blockListSummaryItemsJsonList = jsonValue.GetArray("BlockListSummaryItems");
+    Aws::Utils::Array<JsonView> blockListSummaryItemsJsonList = jsonValue.GetArray("BlockListSummaryItems");
     for(unsigned blockListSummaryItemsIndex = 0; blockListSummaryItemsIndex < blockListSummaryItemsJsonList.GetLength(); ++blockListSummaryItemsIndex)
     {
       m_blockListSummaryItems.push_back(blockListSummaryItemsJsonList[blockListSummaryItemsIndex].AsObject());

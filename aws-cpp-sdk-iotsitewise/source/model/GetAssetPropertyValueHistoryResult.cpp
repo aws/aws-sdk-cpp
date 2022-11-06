@@ -30,7 +30,7 @@ GetAssetPropertyValueHistoryResult& GetAssetPropertyValueHistoryResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assetPropertyValueHistory"))
   {
-    Array<JsonView> assetPropertyValueHistoryJsonList = jsonValue.GetArray("assetPropertyValueHistory");
+    Aws::Utils::Array<JsonView> assetPropertyValueHistoryJsonList = jsonValue.GetArray("assetPropertyValueHistory");
     for(unsigned assetPropertyValueHistoryIndex = 0; assetPropertyValueHistoryIndex < assetPropertyValueHistoryJsonList.GetLength(); ++assetPropertyValueHistoryIndex)
     {
       m_assetPropertyValueHistory.push_back(assetPropertyValueHistoryJsonList[assetPropertyValueHistoryIndex].AsObject());

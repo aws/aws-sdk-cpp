@@ -24,7 +24,7 @@ Aws::String DescribeWorkspacesConnectionStatusRequest::SerializePayload() const
 
   if(m_workspaceIdsHasBeenSet)
   {
-   Array<JsonValue> workspaceIdsJsonList(m_workspaceIds.size());
+   Aws::Utils::Array<JsonValue> workspaceIdsJsonList(m_workspaceIds.size());
    for(unsigned workspaceIdsIndex = 0; workspaceIdsIndex < workspaceIdsJsonList.GetLength(); ++workspaceIdsIndex)
    {
      workspaceIdsJsonList[workspaceIdsIndex].AsString(m_workspaceIds[workspaceIdsIndex]);

@@ -32,7 +32,7 @@ DetectFacesResult& DetectFacesResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FaceDetails"))
   {
-    Array<JsonView> faceDetailsJsonList = jsonValue.GetArray("FaceDetails");
+    Aws::Utils::Array<JsonView> faceDetailsJsonList = jsonValue.GetArray("FaceDetails");
     for(unsigned faceDetailsIndex = 0; faceDetailsIndex < faceDetailsJsonList.GetLength(); ++faceDetailsIndex)
     {
       m_faceDetails.push_back(faceDetailsJsonList[faceDetailsIndex].AsObject());

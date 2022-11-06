@@ -30,7 +30,7 @@ ListPermissionsResult& ListPermissionsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PrincipalResourcePermissions"))
   {
-    Array<JsonView> principalResourcePermissionsJsonList = jsonValue.GetArray("PrincipalResourcePermissions");
+    Aws::Utils::Array<JsonView> principalResourcePermissionsJsonList = jsonValue.GetArray("PrincipalResourcePermissions");
     for(unsigned principalResourcePermissionsIndex = 0; principalResourcePermissionsIndex < principalResourcePermissionsJsonList.GetLength(); ++principalResourcePermissionsIndex)
     {
       m_principalResourcePermissions.push_back(principalResourcePermissionsJsonList[principalResourcePermissionsIndex].AsObject());

@@ -37,7 +37,7 @@ Circle& Circle::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Center"))
   {
-    Array<JsonView> centerJsonList = jsonValue.GetArray("Center");
+    Aws::Utils::Array<JsonView> centerJsonList = jsonValue.GetArray("Center");
     for(unsigned centerIndex = 0; centerIndex < centerJsonList.GetLength(); ++centerIndex)
     {
       m_center.push_back(centerJsonList[centerIndex].AsDouble());
@@ -61,7 +61,7 @@ JsonValue Circle::Jsonize() const
 
   if(m_centerHasBeenSet)
   {
-   Array<JsonValue> centerJsonList(m_center.size());
+   Aws::Utils::Array<JsonValue> centerJsonList(m_center.size());
    for(unsigned centerIndex = 0; centerIndex < centerJsonList.GetLength(); ++centerIndex)
    {
      centerJsonList[centerIndex].AsDouble(m_center[centerIndex]);

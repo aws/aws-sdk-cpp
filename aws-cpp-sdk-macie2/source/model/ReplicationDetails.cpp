@@ -55,7 +55,7 @@ ReplicationDetails& ReplicationDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("replicationAccounts"))
   {
-    Array<JsonView> replicationAccountsJsonList = jsonValue.GetArray("replicationAccounts");
+    Aws::Utils::Array<JsonView> replicationAccountsJsonList = jsonValue.GetArray("replicationAccounts");
     for(unsigned replicationAccountsIndex = 0; replicationAccountsIndex < replicationAccountsJsonList.GetLength(); ++replicationAccountsIndex)
     {
       m_replicationAccounts.push_back(replicationAccountsJsonList[replicationAccountsIndex].AsString());
@@ -84,7 +84,7 @@ JsonValue ReplicationDetails::Jsonize() const
 
   if(m_replicationAccountsHasBeenSet)
   {
-   Array<JsonValue> replicationAccountsJsonList(m_replicationAccounts.size());
+   Aws::Utils::Array<JsonValue> replicationAccountsJsonList(m_replicationAccounts.size());
    for(unsigned replicationAccountsIndex = 0; replicationAccountsIndex < replicationAccountsJsonList.GetLength(); ++replicationAccountsIndex)
    {
      replicationAccountsJsonList[replicationAccountsIndex].AsString(m_replicationAccounts[replicationAccountsIndex]);

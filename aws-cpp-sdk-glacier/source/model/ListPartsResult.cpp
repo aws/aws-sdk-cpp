@@ -62,7 +62,7 @@ ListPartsResult& ListPartsResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("Parts"))
   {
-    Array<JsonView> partsJsonList = jsonValue.GetArray("Parts");
+    Aws::Utils::Array<JsonView> partsJsonList = jsonValue.GetArray("Parts");
     for(unsigned partsIndex = 0; partsIndex < partsJsonList.GetLength(); ++partsIndex)
     {
       m_parts.push_back(partsJsonList[partsIndex].AsObject());

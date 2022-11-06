@@ -31,7 +31,7 @@ Aws::String DescribeServicesRequest::SerializePayload() const
 
   if(m_servicesHasBeenSet)
   {
-   Array<JsonValue> servicesJsonList(m_services.size());
+   Aws::Utils::Array<JsonValue> servicesJsonList(m_services.size());
    for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
    {
      servicesJsonList[servicesIndex].AsString(m_services[servicesIndex]);
@@ -42,7 +42,7 @@ Aws::String DescribeServicesRequest::SerializePayload() const
 
   if(m_includeHasBeenSet)
   {
-   Array<JsonValue> includeJsonList(m_include.size());
+   Aws::Utils::Array<JsonValue> includeJsonList(m_include.size());
    for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
    {
      includeJsonList[includeIndex].AsString(ServiceFieldMapper::GetNameForServiceField(m_include[includeIndex]));

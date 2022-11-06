@@ -30,7 +30,7 @@ GetExternalModelsResult& GetExternalModelsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("externalModels"))
   {
-    Array<JsonView> externalModelsJsonList = jsonValue.GetArray("externalModels");
+    Aws::Utils::Array<JsonView> externalModelsJsonList = jsonValue.GetArray("externalModels");
     for(unsigned externalModelsIndex = 0; externalModelsIndex < externalModelsJsonList.GetLength(); ++externalModelsIndex)
     {
       m_externalModels.push_back(externalModelsJsonList[externalModelsIndex].AsObject());

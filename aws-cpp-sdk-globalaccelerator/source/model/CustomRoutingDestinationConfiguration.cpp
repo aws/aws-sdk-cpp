@@ -55,7 +55,7 @@ CustomRoutingDestinationConfiguration& CustomRoutingDestinationConfiguration::op
 
   if(jsonValue.ValueExists("Protocols"))
   {
-    Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
+    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
     for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
     {
       m_protocols.push_back(CustomRoutingProtocolMapper::GetCustomRoutingProtocolForName(protocolsJsonList[protocolsIndex].AsString()));
@@ -84,7 +84,7 @@ JsonValue CustomRoutingDestinationConfiguration::Jsonize() const
 
   if(m_protocolsHasBeenSet)
   {
-   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
    {
      protocolsJsonList[protocolsIndex].AsString(CustomRoutingProtocolMapper::GetNameForCustomRoutingProtocol(m_protocols[protocolsIndex]));

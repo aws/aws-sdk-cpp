@@ -30,7 +30,7 @@ DescribeEntitlementsResult& DescribeEntitlementsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Entitlements"))
   {
-    Array<JsonView> entitlementsJsonList = jsonValue.GetArray("Entitlements");
+    Aws::Utils::Array<JsonView> entitlementsJsonList = jsonValue.GetArray("Entitlements");
     for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
     {
       m_entitlements.push_back(entitlementsJsonList[entitlementsIndex].AsObject());

@@ -30,7 +30,7 @@ ListProvisioningArtifactsResult& ListProvisioningArtifactsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisioningArtifactDetails"))
   {
-    Array<JsonView> provisioningArtifactDetailsJsonList = jsonValue.GetArray("ProvisioningArtifactDetails");
+    Aws::Utils::Array<JsonView> provisioningArtifactDetailsJsonList = jsonValue.GetArray("ProvisioningArtifactDetails");
     for(unsigned provisioningArtifactDetailsIndex = 0; provisioningArtifactDetailsIndex < provisioningArtifactDetailsJsonList.GetLength(); ++provisioningArtifactDetailsIndex)
     {
       m_provisioningArtifactDetails.push_back(provisioningArtifactDetailsJsonList[provisioningArtifactDetailsIndex].AsObject());

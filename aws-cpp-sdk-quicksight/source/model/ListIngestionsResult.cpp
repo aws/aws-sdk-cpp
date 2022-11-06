@@ -32,7 +32,7 @@ ListIngestionsResult& ListIngestionsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Ingestions"))
   {
-    Array<JsonView> ingestionsJsonList = jsonValue.GetArray("Ingestions");
+    Aws::Utils::Array<JsonView> ingestionsJsonList = jsonValue.GetArray("Ingestions");
     for(unsigned ingestionsIndex = 0; ingestionsIndex < ingestionsJsonList.GetLength(); ++ingestionsIndex)
     {
       m_ingestions.push_back(ingestionsJsonList[ingestionsIndex].AsObject());

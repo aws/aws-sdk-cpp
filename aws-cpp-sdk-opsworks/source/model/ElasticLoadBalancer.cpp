@@ -91,7 +91,7 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
@@ -101,7 +101,7 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -111,7 +111,7 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Ec2InstanceIds"))
   {
-    Array<JsonView> ec2InstanceIdsJsonList = jsonValue.GetArray("Ec2InstanceIds");
+    Aws::Utils::Array<JsonView> ec2InstanceIdsJsonList = jsonValue.GetArray("Ec2InstanceIds");
     for(unsigned ec2InstanceIdsIndex = 0; ec2InstanceIdsIndex < ec2InstanceIdsJsonList.GetLength(); ++ec2InstanceIdsIndex)
     {
       m_ec2InstanceIds.push_back(ec2InstanceIdsJsonList[ec2InstanceIdsIndex].AsString());
@@ -164,7 +164,7 @@ JsonValue ElasticLoadBalancer::Jsonize() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
@@ -175,7 +175,7 @@ JsonValue ElasticLoadBalancer::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -186,7 +186,7 @@ JsonValue ElasticLoadBalancer::Jsonize() const
 
   if(m_ec2InstanceIdsHasBeenSet)
   {
-   Array<JsonValue> ec2InstanceIdsJsonList(m_ec2InstanceIds.size());
+   Aws::Utils::Array<JsonValue> ec2InstanceIdsJsonList(m_ec2InstanceIds.size());
    for(unsigned ec2InstanceIdsIndex = 0; ec2InstanceIdsIndex < ec2InstanceIdsJsonList.GetLength(); ++ec2InstanceIdsIndex)
    {
      ec2InstanceIdsJsonList[ec2InstanceIdsIndex].AsString(m_ec2InstanceIds[ec2InstanceIdsIndex]);

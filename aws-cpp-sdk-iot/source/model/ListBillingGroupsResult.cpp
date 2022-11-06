@@ -30,7 +30,7 @@ ListBillingGroupsResult& ListBillingGroupsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("billingGroups"))
   {
-    Array<JsonView> billingGroupsJsonList = jsonValue.GetArray("billingGroups");
+    Aws::Utils::Array<JsonView> billingGroupsJsonList = jsonValue.GetArray("billingGroups");
     for(unsigned billingGroupsIndex = 0; billingGroupsIndex < billingGroupsJsonList.GetLength(); ++billingGroupsIndex)
     {
       m_billingGroups.push_back(billingGroupsJsonList[billingGroupsIndex].AsObject());

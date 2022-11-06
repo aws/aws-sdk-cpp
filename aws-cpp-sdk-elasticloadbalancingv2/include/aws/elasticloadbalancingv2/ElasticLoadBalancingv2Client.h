@@ -50,22 +50,48 @@ namespace ElasticLoadBalancingv2
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ElasticLoadBalancingv2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ElasticLoadBalancingv2Client(const Aws::ElasticLoadBalancingv2::ElasticLoadBalancingv2ClientConfiguration& clientConfiguration = Aws::ElasticLoadBalancingv2::ElasticLoadBalancingv2ClientConfiguration(),
+                                     std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticLoadBalancingv2EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ElasticLoadBalancingv2Client(const Aws::Auth::AWSCredentials& credentials,
-                                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                     std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticLoadBalancingv2EndpointProvider>(ALLOCATION_TAG),
+                                     const Aws::ElasticLoadBalancingv2::ElasticLoadBalancingv2ClientConfiguration& clientConfiguration = Aws::ElasticLoadBalancingv2::ElasticLoadBalancingv2ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ElasticLoadBalancingv2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                     std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticLoadBalancingv2EndpointProvider>(ALLOCATION_TAG),
+                                     const Aws::ElasticLoadBalancingv2::ElasticLoadBalancingv2ClientConfiguration& clientConfiguration = Aws::ElasticLoadBalancingv2::ElasticLoadBalancingv2ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ElasticLoadBalancingv2Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ElasticLoadBalancingv2Client(const Aws::Auth::AWSCredentials& credentials,
+                                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ElasticLoadBalancingv2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ElasticLoadBalancingv2Client();
 
 
@@ -825,12 +851,13 @@ namespace ElasticLoadBalancingv2
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void init(const ElasticLoadBalancingv2ClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        ElasticLoadBalancingv2ClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ElasticLoadBalancingv2

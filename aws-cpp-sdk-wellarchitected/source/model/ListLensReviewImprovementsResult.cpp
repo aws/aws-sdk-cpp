@@ -56,7 +56,7 @@ ListLensReviewImprovementsResult& ListLensReviewImprovementsResult::operator =(c
 
   if(jsonValue.ValueExists("ImprovementSummaries"))
   {
-    Array<JsonView> improvementSummariesJsonList = jsonValue.GetArray("ImprovementSummaries");
+    Aws::Utils::Array<JsonView> improvementSummariesJsonList = jsonValue.GetArray("ImprovementSummaries");
     for(unsigned improvementSummariesIndex = 0; improvementSummariesIndex < improvementSummariesJsonList.GetLength(); ++improvementSummariesIndex)
     {
       m_improvementSummaries.push_back(improvementSummariesJsonList[improvementSummariesIndex].AsObject());

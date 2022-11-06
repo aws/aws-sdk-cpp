@@ -33,7 +33,7 @@ AllowedStatistics& AllowedStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Statistics"))
   {
-    Array<JsonView> statisticsJsonList = jsonValue.GetArray("Statistics");
+    Aws::Utils::Array<JsonView> statisticsJsonList = jsonValue.GetArray("Statistics");
     for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
     {
       m_statistics.push_back(statisticsJsonList[statisticsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue AllowedStatistics::Jsonize() const
 
   if(m_statisticsHasBeenSet)
   {
-   Array<JsonValue> statisticsJsonList(m_statistics.size());
+   Aws::Utils::Array<JsonValue> statisticsJsonList(m_statistics.size());
    for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
    {
      statisticsJsonList[statisticsIndex].AsString(m_statistics[statisticsIndex]);

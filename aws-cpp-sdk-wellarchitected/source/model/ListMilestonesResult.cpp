@@ -36,7 +36,7 @@ ListMilestonesResult& ListMilestonesResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("MilestoneSummaries"))
   {
-    Array<JsonView> milestoneSummariesJsonList = jsonValue.GetArray("MilestoneSummaries");
+    Aws::Utils::Array<JsonView> milestoneSummariesJsonList = jsonValue.GetArray("MilestoneSummaries");
     for(unsigned milestoneSummariesIndex = 0; milestoneSummariesIndex < milestoneSummariesJsonList.GetLength(); ++milestoneSummariesIndex)
     {
       m_milestoneSummaries.push_back(milestoneSummariesJsonList[milestoneSummariesIndex].AsObject());

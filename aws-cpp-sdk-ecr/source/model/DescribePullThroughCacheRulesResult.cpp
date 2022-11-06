@@ -30,7 +30,7 @@ DescribePullThroughCacheRulesResult& DescribePullThroughCacheRulesResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pullThroughCacheRules"))
   {
-    Array<JsonView> pullThroughCacheRulesJsonList = jsonValue.GetArray("pullThroughCacheRules");
+    Aws::Utils::Array<JsonView> pullThroughCacheRulesJsonList = jsonValue.GetArray("pullThroughCacheRules");
     for(unsigned pullThroughCacheRulesIndex = 0; pullThroughCacheRulesIndex < pullThroughCacheRulesJsonList.GetLength(); ++pullThroughCacheRulesIndex)
     {
       m_pullThroughCacheRules.push_back(pullThroughCacheRulesJsonList[pullThroughCacheRulesIndex].AsObject());

@@ -30,7 +30,7 @@ DescribeAffectedEntitiesForOrganizationResult& DescribeAffectedEntitiesForOrgani
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("entities"))
   {
-    Array<JsonView> entitiesJsonList = jsonValue.GetArray("entities");
+    Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("entities");
     for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
@@ -39,7 +39,7 @@ DescribeAffectedEntitiesForOrganizationResult& DescribeAffectedEntitiesForOrgani
 
   if(jsonValue.ValueExists("failedSet"))
   {
-    Array<JsonView> failedSetJsonList = jsonValue.GetArray("failedSet");
+    Aws::Utils::Array<JsonView> failedSetJsonList = jsonValue.GetArray("failedSet");
     for(unsigned failedSetIndex = 0; failedSetIndex < failedSetJsonList.GetLength(); ++failedSetIndex)
     {
       m_failedSet.push_back(failedSetJsonList[failedSetIndex].AsObject());

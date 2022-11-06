@@ -56,7 +56,7 @@ Aws::String QueryRequest::SerializePayload() const
 
   if(m_facetsHasBeenSet)
   {
-   Array<JsonValue> facetsJsonList(m_facets.size());
+   Aws::Utils::Array<JsonValue> facetsJsonList(m_facets.size());
    for(unsigned facetsIndex = 0; facetsIndex < facetsJsonList.GetLength(); ++facetsIndex)
    {
      facetsJsonList[facetsIndex].AsObject(m_facets[facetsIndex].Jsonize());
@@ -67,7 +67,7 @@ Aws::String QueryRequest::SerializePayload() const
 
   if(m_requestedDocumentAttributesHasBeenSet)
   {
-   Array<JsonValue> requestedDocumentAttributesJsonList(m_requestedDocumentAttributes.size());
+   Aws::Utils::Array<JsonValue> requestedDocumentAttributesJsonList(m_requestedDocumentAttributes.size());
    for(unsigned requestedDocumentAttributesIndex = 0; requestedDocumentAttributesIndex < requestedDocumentAttributesJsonList.GetLength(); ++requestedDocumentAttributesIndex)
    {
      requestedDocumentAttributesJsonList[requestedDocumentAttributesIndex].AsString(m_requestedDocumentAttributes[requestedDocumentAttributesIndex]);
@@ -83,7 +83,7 @@ Aws::String QueryRequest::SerializePayload() const
 
   if(m_documentRelevanceOverrideConfigurationsHasBeenSet)
   {
-   Array<JsonValue> documentRelevanceOverrideConfigurationsJsonList(m_documentRelevanceOverrideConfigurations.size());
+   Aws::Utils::Array<JsonValue> documentRelevanceOverrideConfigurationsJsonList(m_documentRelevanceOverrideConfigurations.size());
    for(unsigned documentRelevanceOverrideConfigurationsIndex = 0; documentRelevanceOverrideConfigurationsIndex < documentRelevanceOverrideConfigurationsJsonList.GetLength(); ++documentRelevanceOverrideConfigurationsIndex)
    {
      documentRelevanceOverrideConfigurationsJsonList[documentRelevanceOverrideConfigurationsIndex].AsObject(m_documentRelevanceOverrideConfigurations[documentRelevanceOverrideConfigurationsIndex].Jsonize());

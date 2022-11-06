@@ -35,7 +35,7 @@ WorkflowDetails& WorkflowDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OnUpload"))
   {
-    Array<JsonView> onUploadJsonList = jsonValue.GetArray("OnUpload");
+    Aws::Utils::Array<JsonView> onUploadJsonList = jsonValue.GetArray("OnUpload");
     for(unsigned onUploadIndex = 0; onUploadIndex < onUploadJsonList.GetLength(); ++onUploadIndex)
     {
       m_onUpload.push_back(onUploadJsonList[onUploadIndex].AsObject());
@@ -45,7 +45,7 @@ WorkflowDetails& WorkflowDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OnPartialUpload"))
   {
-    Array<JsonView> onPartialUploadJsonList = jsonValue.GetArray("OnPartialUpload");
+    Aws::Utils::Array<JsonView> onPartialUploadJsonList = jsonValue.GetArray("OnPartialUpload");
     for(unsigned onPartialUploadIndex = 0; onPartialUploadIndex < onPartialUploadJsonList.GetLength(); ++onPartialUploadIndex)
     {
       m_onPartialUpload.push_back(onPartialUploadJsonList[onPartialUploadIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue WorkflowDetails::Jsonize() const
 
   if(m_onUploadHasBeenSet)
   {
-   Array<JsonValue> onUploadJsonList(m_onUpload.size());
+   Aws::Utils::Array<JsonValue> onUploadJsonList(m_onUpload.size());
    for(unsigned onUploadIndex = 0; onUploadIndex < onUploadJsonList.GetLength(); ++onUploadIndex)
    {
      onUploadJsonList[onUploadIndex].AsObject(m_onUpload[onUploadIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue WorkflowDetails::Jsonize() const
 
   if(m_onPartialUploadHasBeenSet)
   {
-   Array<JsonValue> onPartialUploadJsonList(m_onPartialUpload.size());
+   Aws::Utils::Array<JsonValue> onPartialUploadJsonList(m_onPartialUpload.size());
    for(unsigned onPartialUploadIndex = 0; onPartialUploadIndex < onPartialUploadJsonList.GetLength(); ++onPartialUploadIndex)
    {
      onPartialUploadJsonList[onPartialUploadIndex].AsObject(m_onPartialUpload[onPartialUploadIndex].Jsonize());

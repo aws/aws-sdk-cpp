@@ -51,7 +51,7 @@ ReportDeliveryChannel& ReportDeliveryChannel::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Formats"))
   {
-    Array<JsonView> formatsJsonList = jsonValue.GetArray("Formats");
+    Aws::Utils::Array<JsonView> formatsJsonList = jsonValue.GetArray("Formats");
     for(unsigned formatsIndex = 0; formatsIndex < formatsJsonList.GetLength(); ++formatsIndex)
     {
       m_formats.push_back(formatsJsonList[formatsIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue ReportDeliveryChannel::Jsonize() const
 
   if(m_formatsHasBeenSet)
   {
-   Array<JsonValue> formatsJsonList(m_formats.size());
+   Aws::Utils::Array<JsonValue> formatsJsonList(m_formats.size());
    for(unsigned formatsIndex = 0; formatsIndex < formatsJsonList.GetLength(); ++formatsIndex)
    {
      formatsJsonList[formatsIndex].AsString(m_formats[formatsIndex]);

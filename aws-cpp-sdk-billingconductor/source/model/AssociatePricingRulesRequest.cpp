@@ -30,7 +30,7 @@ Aws::String AssociatePricingRulesRequest::SerializePayload() const
 
   if(m_pricingRuleArnsHasBeenSet)
   {
-   Array<JsonValue> pricingRuleArnsJsonList(m_pricingRuleArns.size());
+   Aws::Utils::Array<JsonValue> pricingRuleArnsJsonList(m_pricingRuleArns.size());
    for(unsigned pricingRuleArnsIndex = 0; pricingRuleArnsIndex < pricingRuleArnsJsonList.GetLength(); ++pricingRuleArnsIndex)
    {
      pricingRuleArnsJsonList[pricingRuleArnsIndex].AsString(m_pricingRuleArns[pricingRuleArnsIndex]);

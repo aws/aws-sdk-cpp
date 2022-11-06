@@ -62,7 +62,7 @@ RobotApplicationConfig& RobotApplicationConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("uploadConfigurations"))
   {
-    Array<JsonView> uploadConfigurationsJsonList = jsonValue.GetArray("uploadConfigurations");
+    Aws::Utils::Array<JsonView> uploadConfigurationsJsonList = jsonValue.GetArray("uploadConfigurations");
     for(unsigned uploadConfigurationsIndex = 0; uploadConfigurationsIndex < uploadConfigurationsJsonList.GetLength(); ++uploadConfigurationsIndex)
     {
       m_uploadConfigurations.push_back(uploadConfigurationsJsonList[uploadConfigurationsIndex].AsObject());
@@ -72,7 +72,7 @@ RobotApplicationConfig& RobotApplicationConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tools"))
   {
-    Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
+    Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
     for(unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex)
     {
       m_tools.push_back(toolsJsonList[toolsIndex].AsObject());
@@ -107,7 +107,7 @@ JsonValue RobotApplicationConfig::Jsonize() const
 
   if(m_uploadConfigurationsHasBeenSet)
   {
-   Array<JsonValue> uploadConfigurationsJsonList(m_uploadConfigurations.size());
+   Aws::Utils::Array<JsonValue> uploadConfigurationsJsonList(m_uploadConfigurations.size());
    for(unsigned uploadConfigurationsIndex = 0; uploadConfigurationsIndex < uploadConfigurationsJsonList.GetLength(); ++uploadConfigurationsIndex)
    {
      uploadConfigurationsJsonList[uploadConfigurationsIndex].AsObject(m_uploadConfigurations[uploadConfigurationsIndex].Jsonize());
@@ -118,7 +118,7 @@ JsonValue RobotApplicationConfig::Jsonize() const
 
   if(m_toolsHasBeenSet)
   {
-   Array<JsonValue> toolsJsonList(m_tools.size());
+   Aws::Utils::Array<JsonValue> toolsJsonList(m_tools.size());
    for(unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex)
    {
      toolsJsonList[toolsIndex].AsObject(m_tools[toolsIndex].Jsonize());

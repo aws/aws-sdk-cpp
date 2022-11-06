@@ -92,7 +92,7 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceGroups"))
   {
-    Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
+    Aws::Utils::Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
     for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
     {
       m_instanceGroups.push_back(instanceGroupsJsonList[instanceGroupsIndex].AsObject());
@@ -102,7 +102,7 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceFleets"))
   {
-    Array<JsonView> instanceFleetsJsonList = jsonValue.GetArray("InstanceFleets");
+    Aws::Utils::Array<JsonView> instanceFleetsJsonList = jsonValue.GetArray("InstanceFleets");
     for(unsigned instanceFleetsIndex = 0; instanceFleetsIndex < instanceFleetsJsonList.GetLength(); ++instanceFleetsIndex)
     {
       m_instanceFleets.push_back(instanceFleetsJsonList[instanceFleetsIndex].AsObject());
@@ -154,7 +154,7 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Ec2SubnetIds"))
   {
-    Array<JsonView> ec2SubnetIdsJsonList = jsonValue.GetArray("Ec2SubnetIds");
+    Aws::Utils::Array<JsonView> ec2SubnetIdsJsonList = jsonValue.GetArray("Ec2SubnetIds");
     for(unsigned ec2SubnetIdsIndex = 0; ec2SubnetIdsIndex < ec2SubnetIdsJsonList.GetLength(); ++ec2SubnetIdsIndex)
     {
       m_ec2SubnetIds.push_back(ec2SubnetIdsJsonList[ec2SubnetIdsIndex].AsString());
@@ -185,7 +185,7 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalMasterSecurityGroups"))
   {
-    Array<JsonView> additionalMasterSecurityGroupsJsonList = jsonValue.GetArray("AdditionalMasterSecurityGroups");
+    Aws::Utils::Array<JsonView> additionalMasterSecurityGroupsJsonList = jsonValue.GetArray("AdditionalMasterSecurityGroups");
     for(unsigned additionalMasterSecurityGroupsIndex = 0; additionalMasterSecurityGroupsIndex < additionalMasterSecurityGroupsJsonList.GetLength(); ++additionalMasterSecurityGroupsIndex)
     {
       m_additionalMasterSecurityGroups.push_back(additionalMasterSecurityGroupsJsonList[additionalMasterSecurityGroupsIndex].AsString());
@@ -195,7 +195,7 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalSlaveSecurityGroups"))
   {
-    Array<JsonView> additionalSlaveSecurityGroupsJsonList = jsonValue.GetArray("AdditionalSlaveSecurityGroups");
+    Aws::Utils::Array<JsonView> additionalSlaveSecurityGroupsJsonList = jsonValue.GetArray("AdditionalSlaveSecurityGroups");
     for(unsigned additionalSlaveSecurityGroupsIndex = 0; additionalSlaveSecurityGroupsIndex < additionalSlaveSecurityGroupsJsonList.GetLength(); ++additionalSlaveSecurityGroupsIndex)
     {
       m_additionalSlaveSecurityGroups.push_back(additionalSlaveSecurityGroupsJsonList[additionalSlaveSecurityGroupsIndex].AsString());
@@ -230,7 +230,7 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
 
   if(m_instanceGroupsHasBeenSet)
   {
-   Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
+   Aws::Utils::Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
    for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
    {
      instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
@@ -241,7 +241,7 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
 
   if(m_instanceFleetsHasBeenSet)
   {
-   Array<JsonValue> instanceFleetsJsonList(m_instanceFleets.size());
+   Aws::Utils::Array<JsonValue> instanceFleetsJsonList(m_instanceFleets.size());
    for(unsigned instanceFleetsIndex = 0; instanceFleetsIndex < instanceFleetsJsonList.GetLength(); ++instanceFleetsIndex)
    {
      instanceFleetsJsonList[instanceFleetsIndex].AsObject(m_instanceFleets[instanceFleetsIndex].Jsonize());
@@ -288,7 +288,7 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
 
   if(m_ec2SubnetIdsHasBeenSet)
   {
-   Array<JsonValue> ec2SubnetIdsJsonList(m_ec2SubnetIds.size());
+   Aws::Utils::Array<JsonValue> ec2SubnetIdsJsonList(m_ec2SubnetIds.size());
    for(unsigned ec2SubnetIdsIndex = 0; ec2SubnetIdsIndex < ec2SubnetIdsJsonList.GetLength(); ++ec2SubnetIdsIndex)
    {
      ec2SubnetIdsJsonList[ec2SubnetIdsIndex].AsString(m_ec2SubnetIds[ec2SubnetIdsIndex]);
@@ -317,7 +317,7 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
 
   if(m_additionalMasterSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> additionalMasterSecurityGroupsJsonList(m_additionalMasterSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> additionalMasterSecurityGroupsJsonList(m_additionalMasterSecurityGroups.size());
    for(unsigned additionalMasterSecurityGroupsIndex = 0; additionalMasterSecurityGroupsIndex < additionalMasterSecurityGroupsJsonList.GetLength(); ++additionalMasterSecurityGroupsIndex)
    {
      additionalMasterSecurityGroupsJsonList[additionalMasterSecurityGroupsIndex].AsString(m_additionalMasterSecurityGroups[additionalMasterSecurityGroupsIndex]);
@@ -328,7 +328,7 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
 
   if(m_additionalSlaveSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> additionalSlaveSecurityGroupsJsonList(m_additionalSlaveSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> additionalSlaveSecurityGroupsJsonList(m_additionalSlaveSecurityGroups.size());
    for(unsigned additionalSlaveSecurityGroupsIndex = 0; additionalSlaveSecurityGroupsIndex < additionalSlaveSecurityGroupsJsonList.GetLength(); ++additionalSlaveSecurityGroupsIndex)
    {
      additionalSlaveSecurityGroupsJsonList[additionalSlaveSecurityGroupsIndex].AsString(m_additionalSlaveSecurityGroups[additionalSlaveSecurityGroupsIndex]);

@@ -44,7 +44,7 @@ DescribeDatasetGroupResult& DescribeDatasetGroupResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("DatasetArns"))
   {
-    Array<JsonView> datasetArnsJsonList = jsonValue.GetArray("DatasetArns");
+    Aws::Utils::Array<JsonView> datasetArnsJsonList = jsonValue.GetArray("DatasetArns");
     for(unsigned datasetArnsIndex = 0; datasetArnsIndex < datasetArnsJsonList.GetLength(); ++datasetArnsIndex)
     {
       m_datasetArns.push_back(datasetArnsJsonList[datasetArnsIndex].AsString());

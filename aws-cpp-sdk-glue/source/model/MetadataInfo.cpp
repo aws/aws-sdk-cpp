@@ -51,7 +51,7 @@ MetadataInfo& MetadataInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OtherMetadataValueList"))
   {
-    Array<JsonView> otherMetadataValueListJsonList = jsonValue.GetArray("OtherMetadataValueList");
+    Aws::Utils::Array<JsonView> otherMetadataValueListJsonList = jsonValue.GetArray("OtherMetadataValueList");
     for(unsigned otherMetadataValueListIndex = 0; otherMetadataValueListIndex < otherMetadataValueListJsonList.GetLength(); ++otherMetadataValueListIndex)
     {
       m_otherMetadataValueList.push_back(otherMetadataValueListJsonList[otherMetadataValueListIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue MetadataInfo::Jsonize() const
 
   if(m_otherMetadataValueListHasBeenSet)
   {
-   Array<JsonValue> otherMetadataValueListJsonList(m_otherMetadataValueList.size());
+   Aws::Utils::Array<JsonValue> otherMetadataValueListJsonList(m_otherMetadataValueList.size());
    for(unsigned otherMetadataValueListIndex = 0; otherMetadataValueListIndex < otherMetadataValueListJsonList.GetLength(); ++otherMetadataValueListIndex)
    {
      otherMetadataValueListJsonList[otherMetadataValueListIndex].AsObject(m_otherMetadataValueList[otherMetadataValueListIndex].Jsonize());

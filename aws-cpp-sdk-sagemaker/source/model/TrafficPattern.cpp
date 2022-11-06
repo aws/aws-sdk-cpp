@@ -44,7 +44,7 @@ TrafficPattern& TrafficPattern::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Phases"))
   {
-    Array<JsonView> phasesJsonList = jsonValue.GetArray("Phases");
+    Aws::Utils::Array<JsonView> phasesJsonList = jsonValue.GetArray("Phases");
     for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
     {
       m_phases.push_back(phasesJsonList[phasesIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue TrafficPattern::Jsonize() const
 
   if(m_phasesHasBeenSet)
   {
-   Array<JsonValue> phasesJsonList(m_phases.size());
+   Aws::Utils::Array<JsonValue> phasesJsonList(m_phases.size());
    for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
    {
      phasesJsonList[phasesIndex].AsObject(m_phases[phasesIndex].Jsonize());

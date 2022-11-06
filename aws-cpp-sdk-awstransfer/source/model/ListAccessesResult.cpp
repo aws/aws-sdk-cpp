@@ -42,7 +42,7 @@ ListAccessesResult& ListAccessesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("Accesses"))
   {
-    Array<JsonView> accessesJsonList = jsonValue.GetArray("Accesses");
+    Aws::Utils::Array<JsonView> accessesJsonList = jsonValue.GetArray("Accesses");
     for(unsigned accessesIndex = 0; accessesIndex < accessesJsonList.GetLength(); ++accessesIndex)
     {
       m_accesses.push_back(accessesJsonList[accessesIndex].AsObject());

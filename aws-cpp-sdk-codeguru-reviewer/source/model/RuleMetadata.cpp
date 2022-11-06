@@ -69,7 +69,7 @@ RuleMetadata& RuleMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RuleTags"))
   {
-    Array<JsonView> ruleTagsJsonList = jsonValue.GetArray("RuleTags");
+    Aws::Utils::Array<JsonView> ruleTagsJsonList = jsonValue.GetArray("RuleTags");
     for(unsigned ruleTagsIndex = 0; ruleTagsIndex < ruleTagsJsonList.GetLength(); ++ruleTagsIndex)
     {
       m_ruleTags.push_back(ruleTagsJsonList[ruleTagsIndex].AsString());
@@ -110,7 +110,7 @@ JsonValue RuleMetadata::Jsonize() const
 
   if(m_ruleTagsHasBeenSet)
   {
-   Array<JsonValue> ruleTagsJsonList(m_ruleTags.size());
+   Aws::Utils::Array<JsonValue> ruleTagsJsonList(m_ruleTags.size());
    for(unsigned ruleTagsIndex = 0; ruleTagsIndex < ruleTagsJsonList.GetLength(); ++ruleTagsIndex)
    {
      ruleTagsJsonList[ruleTagsIndex].AsString(m_ruleTags[ruleTagsIndex]);

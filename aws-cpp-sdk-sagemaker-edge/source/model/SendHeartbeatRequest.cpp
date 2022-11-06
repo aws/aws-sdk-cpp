@@ -28,7 +28,7 @@ Aws::String SendHeartbeatRequest::SerializePayload() const
 
   if(m_agentMetricsHasBeenSet)
   {
-   Array<JsonValue> agentMetricsJsonList(m_agentMetrics.size());
+   Aws::Utils::Array<JsonValue> agentMetricsJsonList(m_agentMetrics.size());
    for(unsigned agentMetricsIndex = 0; agentMetricsIndex < agentMetricsJsonList.GetLength(); ++agentMetricsIndex)
    {
      agentMetricsJsonList[agentMetricsIndex].AsObject(m_agentMetrics[agentMetricsIndex].Jsonize());
@@ -39,7 +39,7 @@ Aws::String SendHeartbeatRequest::SerializePayload() const
 
   if(m_modelsHasBeenSet)
   {
-   Array<JsonValue> modelsJsonList(m_models.size());
+   Aws::Utils::Array<JsonValue> modelsJsonList(m_models.size());
    for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
    {
      modelsJsonList[modelsIndex].AsObject(m_models[modelsIndex].Jsonize());

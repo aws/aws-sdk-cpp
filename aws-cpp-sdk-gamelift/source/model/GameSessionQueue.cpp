@@ -72,7 +72,7 @@ GameSessionQueue& GameSessionQueue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlayerLatencyPolicies"))
   {
-    Array<JsonView> playerLatencyPoliciesJsonList = jsonValue.GetArray("PlayerLatencyPolicies");
+    Aws::Utils::Array<JsonView> playerLatencyPoliciesJsonList = jsonValue.GetArray("PlayerLatencyPolicies");
     for(unsigned playerLatencyPoliciesIndex = 0; playerLatencyPoliciesIndex < playerLatencyPoliciesJsonList.GetLength(); ++playerLatencyPoliciesIndex)
     {
       m_playerLatencyPolicies.push_back(playerLatencyPoliciesJsonList[playerLatencyPoliciesIndex].AsObject());
@@ -82,7 +82,7 @@ GameSessionQueue& GameSessionQueue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -145,7 +145,7 @@ JsonValue GameSessionQueue::Jsonize() const
 
   if(m_playerLatencyPoliciesHasBeenSet)
   {
-   Array<JsonValue> playerLatencyPoliciesJsonList(m_playerLatencyPolicies.size());
+   Aws::Utils::Array<JsonValue> playerLatencyPoliciesJsonList(m_playerLatencyPolicies.size());
    for(unsigned playerLatencyPoliciesIndex = 0; playerLatencyPoliciesIndex < playerLatencyPoliciesJsonList.GetLength(); ++playerLatencyPoliciesIndex)
    {
      playerLatencyPoliciesJsonList[playerLatencyPoliciesIndex].AsObject(m_playerLatencyPolicies[playerLatencyPoliciesIndex].Jsonize());
@@ -156,7 +156,7 @@ JsonValue GameSessionQueue::Jsonize() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());

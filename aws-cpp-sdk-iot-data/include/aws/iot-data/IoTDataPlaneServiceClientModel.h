@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/iot-data/IoTDataPlaneErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/iot-data/IoTDataPlaneEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -56,6 +58,10 @@ namespace Aws
 
   namespace IoTDataPlane
   {
+    using IoTDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTDataPlaneEndpointProviderBase = Aws::IoTDataPlane::Endpoint::IoTDataPlaneEndpointProviderBase;
+    using IoTDataPlaneEndpointProvider = Aws::IoTDataPlane::Endpoint::IoTDataPlaneEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in IoTDataPlaneClient header */

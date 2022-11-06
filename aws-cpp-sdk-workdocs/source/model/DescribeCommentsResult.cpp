@@ -30,7 +30,7 @@ DescribeCommentsResult& DescribeCommentsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Comments"))
   {
-    Array<JsonView> commentsJsonList = jsonValue.GetArray("Comments");
+    Aws::Utils::Array<JsonView> commentsJsonList = jsonValue.GetArray("Comments");
     for(unsigned commentsIndex = 0; commentsIndex < commentsJsonList.GetLength(); ++commentsIndex)
     {
       m_comments.push_back(commentsJsonList[commentsIndex].AsObject());

@@ -35,7 +35,7 @@ ProcessingOutputConfig& ProcessingOutputConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Outputs"))
   {
-    Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
+    Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue ProcessingOutputConfig::Jsonize() const
 
   if(m_outputsHasBeenSet)
   {
-   Array<JsonValue> outputsJsonList(m_outputs.size());
+   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
    for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
    {
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());

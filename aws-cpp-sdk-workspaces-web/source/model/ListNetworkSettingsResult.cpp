@@ -30,7 +30,7 @@ ListNetworkSettingsResult& ListNetworkSettingsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("networkSettings"))
   {
-    Array<JsonView> networkSettingsJsonList = jsonValue.GetArray("networkSettings");
+    Aws::Utils::Array<JsonView> networkSettingsJsonList = jsonValue.GetArray("networkSettings");
     for(unsigned networkSettingsIndex = 0; networkSettingsIndex < networkSettingsJsonList.GetLength(); ++networkSettingsIndex)
     {
       m_networkSettings.push_back(networkSettingsJsonList[networkSettingsIndex].AsObject());

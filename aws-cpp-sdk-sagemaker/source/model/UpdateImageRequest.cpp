@@ -27,7 +27,7 @@ Aws::String UpdateImageRequest::SerializePayload() const
 
   if(m_deletePropertiesHasBeenSet)
   {
-   Array<JsonValue> deletePropertiesJsonList(m_deleteProperties.size());
+   Aws::Utils::Array<JsonValue> deletePropertiesJsonList(m_deleteProperties.size());
    for(unsigned deletePropertiesIndex = 0; deletePropertiesIndex < deletePropertiesJsonList.GetLength(); ++deletePropertiesIndex)
    {
      deletePropertiesJsonList[deletePropertiesIndex].AsString(m_deleteProperties[deletePropertiesIndex]);

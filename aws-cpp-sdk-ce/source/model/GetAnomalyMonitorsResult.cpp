@@ -30,7 +30,7 @@ GetAnomalyMonitorsResult& GetAnomalyMonitorsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AnomalyMonitors"))
   {
-    Array<JsonView> anomalyMonitorsJsonList = jsonValue.GetArray("AnomalyMonitors");
+    Aws::Utils::Array<JsonView> anomalyMonitorsJsonList = jsonValue.GetArray("AnomalyMonitors");
     for(unsigned anomalyMonitorsIndex = 0; anomalyMonitorsIndex < anomalyMonitorsJsonList.GetLength(); ++anomalyMonitorsIndex)
     {
       m_anomalyMonitors.push_back(anomalyMonitorsJsonList[anomalyMonitorsIndex].AsObject());

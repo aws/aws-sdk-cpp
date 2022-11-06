@@ -31,7 +31,7 @@ Aws::String PutClusterCapacityProvidersRequest::SerializePayload() const
 
   if(m_capacityProvidersHasBeenSet)
   {
-   Array<JsonValue> capacityProvidersJsonList(m_capacityProviders.size());
+   Aws::Utils::Array<JsonValue> capacityProvidersJsonList(m_capacityProviders.size());
    for(unsigned capacityProvidersIndex = 0; capacityProvidersIndex < capacityProvidersJsonList.GetLength(); ++capacityProvidersIndex)
    {
      capacityProvidersJsonList[capacityProvidersIndex].AsString(m_capacityProviders[capacityProvidersIndex]);
@@ -42,7 +42,7 @@ Aws::String PutClusterCapacityProvidersRequest::SerializePayload() const
 
   if(m_defaultCapacityProviderStrategyHasBeenSet)
   {
-   Array<JsonValue> defaultCapacityProviderStrategyJsonList(m_defaultCapacityProviderStrategy.size());
+   Aws::Utils::Array<JsonValue> defaultCapacityProviderStrategyJsonList(m_defaultCapacityProviderStrategy.size());
    for(unsigned defaultCapacityProviderStrategyIndex = 0; defaultCapacityProviderStrategyIndex < defaultCapacityProviderStrategyJsonList.GetLength(); ++defaultCapacityProviderStrategyIndex)
    {
      defaultCapacityProviderStrategyJsonList[defaultCapacityProviderStrategyIndex].AsObject(m_defaultCapacityProviderStrategy[defaultCapacityProviderStrategyIndex].Jsonize());

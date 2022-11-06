@@ -54,7 +54,7 @@ DescribeAutoPredictorResult& DescribeAutoPredictorResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("ForecastTypes"))
   {
-    Array<JsonView> forecastTypesJsonList = jsonValue.GetArray("ForecastTypes");
+    Aws::Utils::Array<JsonView> forecastTypesJsonList = jsonValue.GetArray("ForecastTypes");
     for(unsigned forecastTypesIndex = 0; forecastTypesIndex < forecastTypesJsonList.GetLength(); ++forecastTypesIndex)
     {
       m_forecastTypes.push_back(forecastTypesJsonList[forecastTypesIndex].AsString());
@@ -69,7 +69,7 @@ DescribeAutoPredictorResult& DescribeAutoPredictorResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("ForecastDimensions"))
   {
-    Array<JsonView> forecastDimensionsJsonList = jsonValue.GetArray("ForecastDimensions");
+    Aws::Utils::Array<JsonView> forecastDimensionsJsonList = jsonValue.GetArray("ForecastDimensions");
     for(unsigned forecastDimensionsIndex = 0; forecastDimensionsIndex < forecastDimensionsJsonList.GetLength(); ++forecastDimensionsIndex)
     {
       m_forecastDimensions.push_back(forecastDimensionsJsonList[forecastDimensionsIndex].AsString());
@@ -78,7 +78,7 @@ DescribeAutoPredictorResult& DescribeAutoPredictorResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("DatasetImportJobArns"))
   {
-    Array<JsonView> datasetImportJobArnsJsonList = jsonValue.GetArray("DatasetImportJobArns");
+    Aws::Utils::Array<JsonView> datasetImportJobArnsJsonList = jsonValue.GetArray("DatasetImportJobArns");
     for(unsigned datasetImportJobArnsIndex = 0; datasetImportJobArnsIndex < datasetImportJobArnsJsonList.GetLength(); ++datasetImportJobArnsIndex)
     {
       m_datasetImportJobArns.push_back(datasetImportJobArnsJsonList[datasetImportJobArnsIndex].AsString());

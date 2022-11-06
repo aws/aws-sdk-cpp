@@ -59,7 +59,7 @@ UpgradeStepItem& UpgradeStepItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Issues"))
   {
-    Array<JsonView> issuesJsonList = jsonValue.GetArray("Issues");
+    Aws::Utils::Array<JsonView> issuesJsonList = jsonValue.GetArray("Issues");
     for(unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex)
     {
       m_issues.push_back(issuesJsonList[issuesIndex].AsString());
@@ -93,7 +93,7 @@ JsonValue UpgradeStepItem::Jsonize() const
 
   if(m_issuesHasBeenSet)
   {
-   Array<JsonValue> issuesJsonList(m_issues.size());
+   Aws::Utils::Array<JsonValue> issuesJsonList(m_issues.size());
    for(unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex)
    {
      issuesJsonList[issuesIndex].AsString(m_issues[issuesIndex]);

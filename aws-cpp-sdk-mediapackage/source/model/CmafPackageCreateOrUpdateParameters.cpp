@@ -50,7 +50,7 @@ CmafPackageCreateOrUpdateParameters& CmafPackageCreateOrUpdateParameters::operat
 
   if(jsonValue.ValueExists("hlsManifests"))
   {
-    Array<JsonView> hlsManifestsJsonList = jsonValue.GetArray("hlsManifests");
+    Aws::Utils::Array<JsonView> hlsManifestsJsonList = jsonValue.GetArray("hlsManifests");
     for(unsigned hlsManifestsIndex = 0; hlsManifestsIndex < hlsManifestsJsonList.GetLength(); ++hlsManifestsIndex)
     {
       m_hlsManifests.push_back(hlsManifestsJsonList[hlsManifestsIndex].AsObject());
@@ -94,7 +94,7 @@ JsonValue CmafPackageCreateOrUpdateParameters::Jsonize() const
 
   if(m_hlsManifestsHasBeenSet)
   {
-   Array<JsonValue> hlsManifestsJsonList(m_hlsManifests.size());
+   Aws::Utils::Array<JsonValue> hlsManifestsJsonList(m_hlsManifests.size());
    for(unsigned hlsManifestsIndex = 0; hlsManifestsIndex < hlsManifestsJsonList.GetLength(); ++hlsManifestsIndex)
    {
      hlsManifestsJsonList[hlsManifestsIndex].AsObject(m_hlsManifests[hlsManifestsIndex].Jsonize());

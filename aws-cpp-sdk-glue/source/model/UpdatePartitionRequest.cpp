@@ -45,7 +45,7 @@ Aws::String UpdatePartitionRequest::SerializePayload() const
 
   if(m_partitionValueListHasBeenSet)
   {
-   Array<JsonValue> partitionValueListJsonList(m_partitionValueList.size());
+   Aws::Utils::Array<JsonValue> partitionValueListJsonList(m_partitionValueList.size());
    for(unsigned partitionValueListIndex = 0; partitionValueListIndex < partitionValueListJsonList.GetLength(); ++partitionValueListIndex)
    {
      partitionValueListJsonList[partitionValueListIndex].AsString(m_partitionValueList[partitionValueListIndex]);

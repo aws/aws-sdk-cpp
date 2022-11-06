@@ -30,7 +30,7 @@ ListBulkDeploymentDetailedReportsResult& ListBulkDeploymentDetailedReportsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Deployments"))
   {
-    Array<JsonView> deploymentsJsonList = jsonValue.GetArray("Deployments");
+    Aws::Utils::Array<JsonView> deploymentsJsonList = jsonValue.GetArray("Deployments");
     for(unsigned deploymentsIndex = 0; deploymentsIndex < deploymentsJsonList.GetLength(); ++deploymentsIndex)
     {
       m_deployments.push_back(deploymentsJsonList[deploymentsIndex].AsObject());

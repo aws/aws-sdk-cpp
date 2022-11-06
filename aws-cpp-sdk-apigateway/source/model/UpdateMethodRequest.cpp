@@ -26,7 +26,7 @@ Aws::String UpdateMethodRequest::SerializePayload() const
 
   if(m_patchOperationsHasBeenSet)
   {
-   Array<JsonValue> patchOperationsJsonList(m_patchOperations.size());
+   Aws::Utils::Array<JsonValue> patchOperationsJsonList(m_patchOperations.size());
    for(unsigned patchOperationsIndex = 0; patchOperationsIndex < patchOperationsJsonList.GetLength(); ++patchOperationsIndex)
    {
      patchOperationsJsonList[patchOperationsIndex].AsObject(m_patchOperations[patchOperationsIndex].Jsonize());

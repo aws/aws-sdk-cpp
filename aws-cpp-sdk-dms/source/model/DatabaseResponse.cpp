@@ -89,7 +89,7 @@ DatabaseResponse& DatabaseResponse::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Collectors"))
   {
-    Array<JsonView> collectorsJsonList = jsonValue.GetArray("Collectors");
+    Aws::Utils::Array<JsonView> collectorsJsonList = jsonValue.GetArray("Collectors");
     for(unsigned collectorsIndex = 0; collectorsIndex < collectorsJsonList.GetLength(); ++collectorsIndex)
     {
       m_collectors.push_back(collectorsJsonList[collectorsIndex].AsObject());
@@ -142,7 +142,7 @@ JsonValue DatabaseResponse::Jsonize() const
 
   if(m_collectorsHasBeenSet)
   {
-   Array<JsonValue> collectorsJsonList(m_collectors.size());
+   Aws::Utils::Array<JsonValue> collectorsJsonList(m_collectors.size());
    for(unsigned collectorsIndex = 0; collectorsIndex < collectorsJsonList.GetLength(); ++collectorsIndex)
    {
      collectorsJsonList[collectorsIndex].AsObject(m_collectors[collectorsIndex].Jsonize());

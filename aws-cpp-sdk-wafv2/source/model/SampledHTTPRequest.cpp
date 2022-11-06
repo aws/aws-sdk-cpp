@@ -92,7 +92,7 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RequestHeadersInserted"))
   {
-    Array<JsonView> requestHeadersInsertedJsonList = jsonValue.GetArray("RequestHeadersInserted");
+    Aws::Utils::Array<JsonView> requestHeadersInsertedJsonList = jsonValue.GetArray("RequestHeadersInserted");
     for(unsigned requestHeadersInsertedIndex = 0; requestHeadersInsertedIndex < requestHeadersInsertedJsonList.GetLength(); ++requestHeadersInsertedIndex)
     {
       m_requestHeadersInserted.push_back(requestHeadersInsertedJsonList[requestHeadersInsertedIndex].AsObject());
@@ -109,7 +109,7 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Labels"))
   {
-    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
+    Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
@@ -176,7 +176,7 @@ JsonValue SampledHTTPRequest::Jsonize() const
 
   if(m_requestHeadersInsertedHasBeenSet)
   {
-   Array<JsonValue> requestHeadersInsertedJsonList(m_requestHeadersInserted.size());
+   Aws::Utils::Array<JsonValue> requestHeadersInsertedJsonList(m_requestHeadersInserted.size());
    for(unsigned requestHeadersInsertedIndex = 0; requestHeadersInsertedIndex < requestHeadersInsertedJsonList.GetLength(); ++requestHeadersInsertedIndex)
    {
      requestHeadersInsertedJsonList[requestHeadersInsertedIndex].AsObject(m_requestHeadersInserted[requestHeadersInsertedIndex].Jsonize());
@@ -193,7 +193,7 @@ JsonValue SampledHTTPRequest::Jsonize() const
 
   if(m_labelsHasBeenSet)
   {
-   Array<JsonValue> labelsJsonList(m_labels.size());
+   Aws::Utils::Array<JsonValue> labelsJsonList(m_labels.size());
    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
    {
      labelsJsonList[labelsIndex].AsObject(m_labels[labelsIndex].Jsonize());

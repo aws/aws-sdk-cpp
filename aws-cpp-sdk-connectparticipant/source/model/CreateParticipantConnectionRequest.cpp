@@ -27,7 +27,7 @@ Aws::String CreateParticipantConnectionRequest::SerializePayload() const
 
   if(m_typeHasBeenSet)
   {
-   Array<JsonValue> typeJsonList(m_type.size());
+   Aws::Utils::Array<JsonValue> typeJsonList(m_type.size());
    for(unsigned typeIndex = 0; typeIndex < typeJsonList.GetLength(); ++typeIndex)
    {
      typeJsonList[typeIndex].AsString(ConnectionTypeMapper::GetNameForConnectionType(m_type[typeIndex]));

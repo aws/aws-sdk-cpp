@@ -32,7 +32,7 @@ ListThemeAliasesResult& ListThemeAliasesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ThemeAliasList"))
   {
-    Array<JsonView> themeAliasListJsonList = jsonValue.GetArray("ThemeAliasList");
+    Aws::Utils::Array<JsonView> themeAliasListJsonList = jsonValue.GetArray("ThemeAliasList");
     for(unsigned themeAliasListIndex = 0; themeAliasListIndex < themeAliasListJsonList.GetLength(); ++themeAliasListIndex)
     {
       m_themeAliasList.push_back(themeAliasListJsonList[themeAliasListIndex].AsObject());

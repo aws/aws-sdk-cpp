@@ -37,7 +37,7 @@ ControlScope& ControlScope::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComplianceResourceIds"))
   {
-    Array<JsonView> complianceResourceIdsJsonList = jsonValue.GetArray("ComplianceResourceIds");
+    Aws::Utils::Array<JsonView> complianceResourceIdsJsonList = jsonValue.GetArray("ComplianceResourceIds");
     for(unsigned complianceResourceIdsIndex = 0; complianceResourceIdsIndex < complianceResourceIdsJsonList.GetLength(); ++complianceResourceIdsIndex)
     {
       m_complianceResourceIds.push_back(complianceResourceIdsJsonList[complianceResourceIdsIndex].AsString());
@@ -47,7 +47,7 @@ ControlScope& ControlScope::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ComplianceResourceTypes"))
   {
-    Array<JsonView> complianceResourceTypesJsonList = jsonValue.GetArray("ComplianceResourceTypes");
+    Aws::Utils::Array<JsonView> complianceResourceTypesJsonList = jsonValue.GetArray("ComplianceResourceTypes");
     for(unsigned complianceResourceTypesIndex = 0; complianceResourceTypesIndex < complianceResourceTypesJsonList.GetLength(); ++complianceResourceTypesIndex)
     {
       m_complianceResourceTypes.push_back(complianceResourceTypesJsonList[complianceResourceTypesIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue ControlScope::Jsonize() const
 
   if(m_complianceResourceIdsHasBeenSet)
   {
-   Array<JsonValue> complianceResourceIdsJsonList(m_complianceResourceIds.size());
+   Aws::Utils::Array<JsonValue> complianceResourceIdsJsonList(m_complianceResourceIds.size());
    for(unsigned complianceResourceIdsIndex = 0; complianceResourceIdsIndex < complianceResourceIdsJsonList.GetLength(); ++complianceResourceIdsIndex)
    {
      complianceResourceIdsJsonList[complianceResourceIdsIndex].AsString(m_complianceResourceIds[complianceResourceIdsIndex]);
@@ -85,7 +85,7 @@ JsonValue ControlScope::Jsonize() const
 
   if(m_complianceResourceTypesHasBeenSet)
   {
-   Array<JsonValue> complianceResourceTypesJsonList(m_complianceResourceTypes.size());
+   Aws::Utils::Array<JsonValue> complianceResourceTypesJsonList(m_complianceResourceTypes.size());
    for(unsigned complianceResourceTypesIndex = 0; complianceResourceTypesIndex < complianceResourceTypesJsonList.GetLength(); ++complianceResourceTypesIndex)
    {
      complianceResourceTypesJsonList[complianceResourceTypesIndex].AsString(m_complianceResourceTypes[complianceResourceTypesIndex]);

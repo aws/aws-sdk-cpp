@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/neptune/NeptuneErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/neptune/NeptuneEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -112,6 +114,10 @@ namespace Aws
 
   namespace Neptune
   {
+    using NeptuneClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NeptuneEndpointProviderBase = Aws::Neptune::Endpoint::NeptuneEndpointProviderBase;
+    using NeptuneEndpointProvider = Aws::Neptune::Endpoint::NeptuneEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in NeptuneClient header */

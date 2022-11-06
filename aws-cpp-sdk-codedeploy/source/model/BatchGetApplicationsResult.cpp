@@ -30,7 +30,7 @@ BatchGetApplicationsResult& BatchGetApplicationsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("applicationsInfo"))
   {
-    Array<JsonView> applicationsInfoJsonList = jsonValue.GetArray("applicationsInfo");
+    Aws::Utils::Array<JsonView> applicationsInfoJsonList = jsonValue.GetArray("applicationsInfo");
     for(unsigned applicationsInfoIndex = 0; applicationsInfoIndex < applicationsInfoJsonList.GetLength(); ++applicationsInfoIndex)
     {
       m_applicationsInfo.push_back(applicationsInfoJsonList[applicationsInfoIndex].AsObject());

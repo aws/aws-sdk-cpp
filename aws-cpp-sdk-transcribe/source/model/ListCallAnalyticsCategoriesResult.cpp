@@ -36,7 +36,7 @@ ListCallAnalyticsCategoriesResult& ListCallAnalyticsCategoriesResult::operator =
 
   if(jsonValue.ValueExists("Categories"))
   {
-    Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
+    Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
     for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
     {
       m_categories.push_back(categoriesJsonList[categoriesIndex].AsObject());

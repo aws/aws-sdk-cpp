@@ -30,7 +30,7 @@ DescribeConfigurationAggregatorsResult& DescribeConfigurationAggregatorsResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigurationAggregators"))
   {
-    Array<JsonView> configurationAggregatorsJsonList = jsonValue.GetArray("ConfigurationAggregators");
+    Aws::Utils::Array<JsonView> configurationAggregatorsJsonList = jsonValue.GetArray("ConfigurationAggregators");
     for(unsigned configurationAggregatorsIndex = 0; configurationAggregatorsIndex < configurationAggregatorsJsonList.GetLength(); ++configurationAggregatorsIndex)
     {
       m_configurationAggregators.push_back(configurationAggregatorsJsonList[configurationAggregatorsIndex].AsObject());

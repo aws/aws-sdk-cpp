@@ -99,7 +99,7 @@ InstanceGroupConfig& InstanceGroupConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
@@ -171,7 +171,7 @@ JsonValue InstanceGroupConfig::Jsonize() const
 
   if(m_configurationsHasBeenSet)
   {
-   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
    {
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());

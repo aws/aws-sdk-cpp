@@ -37,7 +37,7 @@ Aws::String CreateSipMediaApplicationRequest::SerializePayload() const
 
   if(m_endpointsHasBeenSet)
   {
-   Array<JsonValue> endpointsJsonList(m_endpoints.size());
+   Aws::Utils::Array<JsonValue> endpointsJsonList(m_endpoints.size());
    for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
    {
      endpointsJsonList[endpointsIndex].AsObject(m_endpoints[endpointsIndex].Jsonize());

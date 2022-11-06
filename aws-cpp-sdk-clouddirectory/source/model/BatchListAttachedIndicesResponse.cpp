@@ -35,7 +35,7 @@ BatchListAttachedIndicesResponse& BatchListAttachedIndicesResponse::operator =(J
 {
   if(jsonValue.ValueExists("IndexAttachments"))
   {
-    Array<JsonView> indexAttachmentsJsonList = jsonValue.GetArray("IndexAttachments");
+    Aws::Utils::Array<JsonView> indexAttachmentsJsonList = jsonValue.GetArray("IndexAttachments");
     for(unsigned indexAttachmentsIndex = 0; indexAttachmentsIndex < indexAttachmentsJsonList.GetLength(); ++indexAttachmentsIndex)
     {
       m_indexAttachments.push_back(indexAttachmentsJsonList[indexAttachmentsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue BatchListAttachedIndicesResponse::Jsonize() const
 
   if(m_indexAttachmentsHasBeenSet)
   {
-   Array<JsonValue> indexAttachmentsJsonList(m_indexAttachments.size());
+   Aws::Utils::Array<JsonValue> indexAttachmentsJsonList(m_indexAttachments.size());
    for(unsigned indexAttachmentsIndex = 0; indexAttachmentsIndex < indexAttachmentsJsonList.GetLength(); ++indexAttachmentsIndex)
    {
      indexAttachmentsJsonList[indexAttachmentsIndex].AsObject(m_indexAttachments[indexAttachmentsIndex].Jsonize());

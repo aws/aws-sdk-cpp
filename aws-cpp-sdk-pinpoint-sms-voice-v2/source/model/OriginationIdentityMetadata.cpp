@@ -60,7 +60,7 @@ OriginationIdentityMetadata& OriginationIdentityMetadata::operator =(JsonView js
 
   if(jsonValue.ValueExists("NumberCapabilities"))
   {
-    Array<JsonView> numberCapabilitiesJsonList = jsonValue.GetArray("NumberCapabilities");
+    Aws::Utils::Array<JsonView> numberCapabilitiesJsonList = jsonValue.GetArray("NumberCapabilities");
     for(unsigned numberCapabilitiesIndex = 0; numberCapabilitiesIndex < numberCapabilitiesJsonList.GetLength(); ++numberCapabilitiesIndex)
     {
       m_numberCapabilities.push_back(NumberCapabilityMapper::GetNumberCapabilityForName(numberCapabilitiesJsonList[numberCapabilitiesIndex].AsString()));
@@ -95,7 +95,7 @@ JsonValue OriginationIdentityMetadata::Jsonize() const
 
   if(m_numberCapabilitiesHasBeenSet)
   {
-   Array<JsonValue> numberCapabilitiesJsonList(m_numberCapabilities.size());
+   Aws::Utils::Array<JsonValue> numberCapabilitiesJsonList(m_numberCapabilities.size());
    for(unsigned numberCapabilitiesIndex = 0; numberCapabilitiesIndex < numberCapabilitiesJsonList.GetLength(); ++numberCapabilitiesIndex)
    {
      numberCapabilitiesJsonList[numberCapabilitiesIndex].AsString(NumberCapabilityMapper::GetNameForNumberCapability(m_numberCapabilities[numberCapabilitiesIndex]));

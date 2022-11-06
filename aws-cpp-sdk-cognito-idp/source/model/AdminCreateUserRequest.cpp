@@ -45,7 +45,7 @@ Aws::String AdminCreateUserRequest::SerializePayload() const
 
   if(m_userAttributesHasBeenSet)
   {
-   Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
+   Aws::Utils::Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
    for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
    {
      userAttributesJsonList[userAttributesIndex].AsObject(m_userAttributes[userAttributesIndex].Jsonize());
@@ -56,7 +56,7 @@ Aws::String AdminCreateUserRequest::SerializePayload() const
 
   if(m_validationDataHasBeenSet)
   {
-   Array<JsonValue> validationDataJsonList(m_validationData.size());
+   Aws::Utils::Array<JsonValue> validationDataJsonList(m_validationData.size());
    for(unsigned validationDataIndex = 0; validationDataIndex < validationDataJsonList.GetLength(); ++validationDataIndex)
    {
      validationDataJsonList[validationDataIndex].AsObject(m_validationData[validationDataIndex].Jsonize());
@@ -84,7 +84,7 @@ Aws::String AdminCreateUserRequest::SerializePayload() const
 
   if(m_desiredDeliveryMediumsHasBeenSet)
   {
-   Array<JsonValue> desiredDeliveryMediumsJsonList(m_desiredDeliveryMediums.size());
+   Aws::Utils::Array<JsonValue> desiredDeliveryMediumsJsonList(m_desiredDeliveryMediums.size());
    for(unsigned desiredDeliveryMediumsIndex = 0; desiredDeliveryMediumsIndex < desiredDeliveryMediumsJsonList.GetLength(); ++desiredDeliveryMediumsIndex)
    {
      desiredDeliveryMediumsJsonList[desiredDeliveryMediumsIndex].AsString(DeliveryMediumTypeMapper::GetNameForDeliveryMediumType(m_desiredDeliveryMediums[desiredDeliveryMediumsIndex]));

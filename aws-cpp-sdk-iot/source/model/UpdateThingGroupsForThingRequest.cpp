@@ -33,7 +33,7 @@ Aws::String UpdateThingGroupsForThingRequest::SerializePayload() const
 
   if(m_thingGroupsToAddHasBeenSet)
   {
-   Array<JsonValue> thingGroupsToAddJsonList(m_thingGroupsToAdd.size());
+   Aws::Utils::Array<JsonValue> thingGroupsToAddJsonList(m_thingGroupsToAdd.size());
    for(unsigned thingGroupsToAddIndex = 0; thingGroupsToAddIndex < thingGroupsToAddJsonList.GetLength(); ++thingGroupsToAddIndex)
    {
      thingGroupsToAddJsonList[thingGroupsToAddIndex].AsString(m_thingGroupsToAdd[thingGroupsToAddIndex]);
@@ -44,7 +44,7 @@ Aws::String UpdateThingGroupsForThingRequest::SerializePayload() const
 
   if(m_thingGroupsToRemoveHasBeenSet)
   {
-   Array<JsonValue> thingGroupsToRemoveJsonList(m_thingGroupsToRemove.size());
+   Aws::Utils::Array<JsonValue> thingGroupsToRemoveJsonList(m_thingGroupsToRemove.size());
    for(unsigned thingGroupsToRemoveIndex = 0; thingGroupsToRemoveIndex < thingGroupsToRemoveJsonList.GetLength(); ++thingGroupsToRemoveIndex)
    {
      thingGroupsToRemoveJsonList[thingGroupsToRemoveIndex].AsString(m_thingGroupsToRemove[thingGroupsToRemoveIndex]);

@@ -43,7 +43,7 @@ Aws::String UpdateTableRequest::SerializePayload() const
 
   if(m_addColumnsHasBeenSet)
   {
-   Array<JsonValue> addColumnsJsonList(m_addColumns.size());
+   Aws::Utils::Array<JsonValue> addColumnsJsonList(m_addColumns.size());
    for(unsigned addColumnsIndex = 0; addColumnsIndex < addColumnsJsonList.GetLength(); ++addColumnsIndex)
    {
      addColumnsJsonList[addColumnsIndex].AsObject(m_addColumns[addColumnsIndex].Jsonize());

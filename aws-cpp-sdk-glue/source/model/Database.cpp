@@ -85,7 +85,7 @@ Database& Database::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CreateTableDefaultPermissions"))
   {
-    Array<JsonView> createTableDefaultPermissionsJsonList = jsonValue.GetArray("CreateTableDefaultPermissions");
+    Aws::Utils::Array<JsonView> createTableDefaultPermissionsJsonList = jsonValue.GetArray("CreateTableDefaultPermissions");
     for(unsigned createTableDefaultPermissionsIndex = 0; createTableDefaultPermissionsIndex < createTableDefaultPermissionsJsonList.GetLength(); ++createTableDefaultPermissionsIndex)
     {
       m_createTableDefaultPermissions.push_back(createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject());
@@ -150,7 +150,7 @@ JsonValue Database::Jsonize() const
 
   if(m_createTableDefaultPermissionsHasBeenSet)
   {
-   Array<JsonValue> createTableDefaultPermissionsJsonList(m_createTableDefaultPermissions.size());
+   Aws::Utils::Array<JsonValue> createTableDefaultPermissionsJsonList(m_createTableDefaultPermissions.size());
    for(unsigned createTableDefaultPermissionsIndex = 0; createTableDefaultPermissionsIndex < createTableDefaultPermissionsJsonList.GetLength(); ++createTableDefaultPermissionsIndex)
    {
      createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());

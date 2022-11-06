@@ -46,7 +46,7 @@ UnfilteredPartition& UnfilteredPartition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AuthorizedColumns"))
   {
-    Array<JsonView> authorizedColumnsJsonList = jsonValue.GetArray("AuthorizedColumns");
+    Aws::Utils::Array<JsonView> authorizedColumnsJsonList = jsonValue.GetArray("AuthorizedColumns");
     for(unsigned authorizedColumnsIndex = 0; authorizedColumnsIndex < authorizedColumnsJsonList.GetLength(); ++authorizedColumnsIndex)
     {
       m_authorizedColumns.push_back(authorizedColumnsJsonList[authorizedColumnsIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue UnfilteredPartition::Jsonize() const
 
   if(m_authorizedColumnsHasBeenSet)
   {
-   Array<JsonValue> authorizedColumnsJsonList(m_authorizedColumns.size());
+   Aws::Utils::Array<JsonValue> authorizedColumnsJsonList(m_authorizedColumns.size());
    for(unsigned authorizedColumnsIndex = 0; authorizedColumnsIndex < authorizedColumnsJsonList.GetLength(); ++authorizedColumnsIndex)
    {
      authorizedColumnsJsonList[authorizedColumnsIndex].AsString(m_authorizedColumns[authorizedColumnsIndex]);

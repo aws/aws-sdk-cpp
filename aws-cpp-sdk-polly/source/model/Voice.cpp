@@ -86,7 +86,7 @@ Voice& Voice::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalLanguageCodes"))
   {
-    Array<JsonView> additionalLanguageCodesJsonList = jsonValue.GetArray("AdditionalLanguageCodes");
+    Aws::Utils::Array<JsonView> additionalLanguageCodesJsonList = jsonValue.GetArray("AdditionalLanguageCodes");
     for(unsigned additionalLanguageCodesIndex = 0; additionalLanguageCodesIndex < additionalLanguageCodesJsonList.GetLength(); ++additionalLanguageCodesIndex)
     {
       m_additionalLanguageCodes.push_back(LanguageCodeMapper::GetLanguageCodeForName(additionalLanguageCodesJsonList[additionalLanguageCodesIndex].AsString()));
@@ -96,7 +96,7 @@ Voice& Voice::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedEngines"))
   {
-    Array<JsonView> supportedEnginesJsonList = jsonValue.GetArray("SupportedEngines");
+    Aws::Utils::Array<JsonView> supportedEnginesJsonList = jsonValue.GetArray("SupportedEngines");
     for(unsigned supportedEnginesIndex = 0; supportedEnginesIndex < supportedEnginesJsonList.GetLength(); ++supportedEnginesIndex)
     {
       m_supportedEngines.push_back(EngineMapper::GetEngineForName(supportedEnginesJsonList[supportedEnginesIndex].AsString()));
@@ -140,7 +140,7 @@ JsonValue Voice::Jsonize() const
 
   if(m_additionalLanguageCodesHasBeenSet)
   {
-   Array<JsonValue> additionalLanguageCodesJsonList(m_additionalLanguageCodes.size());
+   Aws::Utils::Array<JsonValue> additionalLanguageCodesJsonList(m_additionalLanguageCodes.size());
    for(unsigned additionalLanguageCodesIndex = 0; additionalLanguageCodesIndex < additionalLanguageCodesJsonList.GetLength(); ++additionalLanguageCodesIndex)
    {
      additionalLanguageCodesJsonList[additionalLanguageCodesIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_additionalLanguageCodes[additionalLanguageCodesIndex]));
@@ -151,7 +151,7 @@ JsonValue Voice::Jsonize() const
 
   if(m_supportedEnginesHasBeenSet)
   {
-   Array<JsonValue> supportedEnginesJsonList(m_supportedEngines.size());
+   Aws::Utils::Array<JsonValue> supportedEnginesJsonList(m_supportedEngines.size());
    for(unsigned supportedEnginesIndex = 0; supportedEnginesIndex < supportedEnginesJsonList.GetLength(); ++supportedEnginesIndex)
    {
      supportedEnginesJsonList[supportedEnginesIndex].AsString(EngineMapper::GetNameForEngine(m_supportedEngines[supportedEnginesIndex]));

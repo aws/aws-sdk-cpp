@@ -38,7 +38,7 @@ Aws::String DescribeProjectsRequest::SerializePayload() const
 
   if(m_projectNamesHasBeenSet)
   {
-   Array<JsonValue> projectNamesJsonList(m_projectNames.size());
+   Aws::Utils::Array<JsonValue> projectNamesJsonList(m_projectNames.size());
    for(unsigned projectNamesIndex = 0; projectNamesIndex < projectNamesJsonList.GetLength(); ++projectNamesIndex)
    {
      projectNamesJsonList[projectNamesIndex].AsString(m_projectNames[projectNamesIndex]);

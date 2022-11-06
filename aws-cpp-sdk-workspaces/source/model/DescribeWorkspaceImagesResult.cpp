@@ -30,7 +30,7 @@ DescribeWorkspaceImagesResult& DescribeWorkspaceImagesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Images"))
   {
-    Array<JsonView> imagesJsonList = jsonValue.GetArray("Images");
+    Aws::Utils::Array<JsonView> imagesJsonList = jsonValue.GetArray("Images");
     for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
     {
       m_images.push_back(imagesJsonList[imagesIndex].AsObject());

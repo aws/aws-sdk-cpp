@@ -30,7 +30,7 @@ Aws::String BatchGetApplicationRevisionsRequest::SerializePayload() const
 
   if(m_revisionsHasBeenSet)
   {
-   Array<JsonValue> revisionsJsonList(m_revisions.size());
+   Aws::Utils::Array<JsonValue> revisionsJsonList(m_revisions.size());
    for(unsigned revisionsIndex = 0; revisionsIndex < revisionsJsonList.GetLength(); ++revisionsIndex)
    {
      revisionsJsonList[revisionsIndex].AsObject(m_revisions[revisionsIndex].Jsonize());

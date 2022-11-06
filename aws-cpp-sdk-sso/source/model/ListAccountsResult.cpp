@@ -36,7 +36,7 @@ ListAccountsResult& ListAccountsResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("accountList"))
   {
-    Array<JsonView> accountListJsonList = jsonValue.GetArray("accountList");
+    Aws::Utils::Array<JsonView> accountListJsonList = jsonValue.GetArray("accountList");
     for(unsigned accountListIndex = 0; accountListIndex < accountListJsonList.GetLength(); ++accountListIndex)
     {
       m_accountList.push_back(accountListJsonList[accountListIndex].AsObject());

@@ -33,7 +33,7 @@ PortForwardingConfig& PortForwardingConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("portMappings"))
   {
-    Array<JsonView> portMappingsJsonList = jsonValue.GetArray("portMappings");
+    Aws::Utils::Array<JsonView> portMappingsJsonList = jsonValue.GetArray("portMappings");
     for(unsigned portMappingsIndex = 0; portMappingsIndex < portMappingsJsonList.GetLength(); ++portMappingsIndex)
     {
       m_portMappings.push_back(portMappingsJsonList[portMappingsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue PortForwardingConfig::Jsonize() const
 
   if(m_portMappingsHasBeenSet)
   {
-   Array<JsonValue> portMappingsJsonList(m_portMappings.size());
+   Aws::Utils::Array<JsonValue> portMappingsJsonList(m_portMappings.size());
    for(unsigned portMappingsIndex = 0; portMappingsIndex < portMappingsJsonList.GetLength(); ++portMappingsIndex)
    {
      portMappingsJsonList[portMappingsIndex].AsObject(m_portMappings[portMappingsIndex].Jsonize());

@@ -33,7 +33,7 @@ Aws::String DescribeGameServerInstancesRequest::SerializePayload() const
 
   if(m_instanceIdsHasBeenSet)
   {
-   Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
+   Aws::Utils::Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
    for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
    {
      instanceIdsJsonList[instanceIdsIndex].AsString(m_instanceIds[instanceIdsIndex]);

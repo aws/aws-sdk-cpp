@@ -36,7 +36,7 @@ ListSizeConstraintSetsResult& ListSizeConstraintSetsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("SizeConstraintSets"))
   {
-    Array<JsonView> sizeConstraintSetsJsonList = jsonValue.GetArray("SizeConstraintSets");
+    Aws::Utils::Array<JsonView> sizeConstraintSetsJsonList = jsonValue.GetArray("SizeConstraintSets");
     for(unsigned sizeConstraintSetsIndex = 0; sizeConstraintSetsIndex < sizeConstraintSetsJsonList.GetLength(); ++sizeConstraintSetsIndex)
     {
       m_sizeConstraintSets.push_back(sizeConstraintSetsJsonList[sizeConstraintSetsIndex].AsObject());

@@ -30,7 +30,7 @@ Aws::String UntagResourceRequest::SerializePayload() const
 
   if(m_resourceTagKeysHasBeenSet)
   {
-   Array<JsonValue> resourceTagKeysJsonList(m_resourceTagKeys.size());
+   Aws::Utils::Array<JsonValue> resourceTagKeysJsonList(m_resourceTagKeys.size());
    for(unsigned resourceTagKeysIndex = 0; resourceTagKeysIndex < resourceTagKeysJsonList.GetLength(); ++resourceTagKeysIndex)
    {
      resourceTagKeysJsonList[resourceTagKeysIndex].AsString(m_resourceTagKeys[resourceTagKeysIndex]);

@@ -33,7 +33,7 @@ AwsS3BucketNotificationConfigurationS3KeyFilter& AwsS3BucketNotificationConfigur
 {
   if(jsonValue.ValueExists("FilterRules"))
   {
-    Array<JsonView> filterRulesJsonList = jsonValue.GetArray("FilterRules");
+    Aws::Utils::Array<JsonView> filterRulesJsonList = jsonValue.GetArray("FilterRules");
     for(unsigned filterRulesIndex = 0; filterRulesIndex < filterRulesJsonList.GetLength(); ++filterRulesIndex)
     {
       m_filterRules.push_back(filterRulesJsonList[filterRulesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AwsS3BucketNotificationConfigurationS3KeyFilter::Jsonize() const
 
   if(m_filterRulesHasBeenSet)
   {
-   Array<JsonValue> filterRulesJsonList(m_filterRules.size());
+   Aws::Utils::Array<JsonValue> filterRulesJsonList(m_filterRules.size());
    for(unsigned filterRulesIndex = 0; filterRulesIndex < filterRulesJsonList.GetLength(); ++filterRulesIndex)
    {
      filterRulesJsonList[filterRulesIndex].AsObject(m_filterRules[filterRulesIndex].Jsonize());

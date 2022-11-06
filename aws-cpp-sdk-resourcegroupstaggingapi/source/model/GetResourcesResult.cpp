@@ -36,7 +36,7 @@ GetResourcesResult& GetResourcesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("ResourceTagMappingList"))
   {
-    Array<JsonView> resourceTagMappingListJsonList = jsonValue.GetArray("ResourceTagMappingList");
+    Aws::Utils::Array<JsonView> resourceTagMappingListJsonList = jsonValue.GetArray("ResourceTagMappingList");
     for(unsigned resourceTagMappingListIndex = 0; resourceTagMappingListIndex < resourceTagMappingListJsonList.GetLength(); ++resourceTagMappingListIndex)
     {
       m_resourceTagMappingList.push_back(resourceTagMappingListJsonList[resourceTagMappingListIndex].AsObject());

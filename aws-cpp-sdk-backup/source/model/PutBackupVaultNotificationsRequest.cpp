@@ -31,7 +31,7 @@ Aws::String PutBackupVaultNotificationsRequest::SerializePayload() const
 
   if(m_backupVaultEventsHasBeenSet)
   {
-   Array<JsonValue> backupVaultEventsJsonList(m_backupVaultEvents.size());
+   Aws::Utils::Array<JsonValue> backupVaultEventsJsonList(m_backupVaultEvents.size());
    for(unsigned backupVaultEventsIndex = 0; backupVaultEventsIndex < backupVaultEventsJsonList.GetLength(); ++backupVaultEventsIndex)
    {
      backupVaultEventsJsonList[backupVaultEventsIndex].AsString(BackupVaultEventMapper::GetNameForBackupVaultEvent(m_backupVaultEvents[backupVaultEventsIndex]));

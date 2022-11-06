@@ -98,7 +98,7 @@ GetDocumentResult& GetDocumentResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("Requires"))
   {
-    Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
+    Aws::Utils::Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
     for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
     {
       m_requires.push_back(requiresJsonList[requiresIndex].AsObject());
@@ -107,7 +107,7 @@ GetDocumentResult& GetDocumentResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("AttachmentsContent"))
   {
-    Array<JsonView> attachmentsContentJsonList = jsonValue.GetArray("AttachmentsContent");
+    Aws::Utils::Array<JsonView> attachmentsContentJsonList = jsonValue.GetArray("AttachmentsContent");
     for(unsigned attachmentsContentIndex = 0; attachmentsContentIndex < attachmentsContentJsonList.GetLength(); ++attachmentsContentIndex)
     {
       m_attachmentsContent.push_back(attachmentsContentJsonList[attachmentsContentIndex].AsObject());

@@ -41,7 +41,7 @@ Output& Output::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioDescriptionNames"))
   {
-    Array<JsonView> audioDescriptionNamesJsonList = jsonValue.GetArray("audioDescriptionNames");
+    Aws::Utils::Array<JsonView> audioDescriptionNamesJsonList = jsonValue.GetArray("audioDescriptionNames");
     for(unsigned audioDescriptionNamesIndex = 0; audioDescriptionNamesIndex < audioDescriptionNamesJsonList.GetLength(); ++audioDescriptionNamesIndex)
     {
       m_audioDescriptionNames.push_back(audioDescriptionNamesJsonList[audioDescriptionNamesIndex].AsString());
@@ -51,7 +51,7 @@ Output& Output::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("captionDescriptionNames"))
   {
-    Array<JsonView> captionDescriptionNamesJsonList = jsonValue.GetArray("captionDescriptionNames");
+    Aws::Utils::Array<JsonView> captionDescriptionNamesJsonList = jsonValue.GetArray("captionDescriptionNames");
     for(unsigned captionDescriptionNamesIndex = 0; captionDescriptionNamesIndex < captionDescriptionNamesJsonList.GetLength(); ++captionDescriptionNamesIndex)
     {
       m_captionDescriptionNames.push_back(captionDescriptionNamesJsonList[captionDescriptionNamesIndex].AsString());
@@ -89,7 +89,7 @@ JsonValue Output::Jsonize() const
 
   if(m_audioDescriptionNamesHasBeenSet)
   {
-   Array<JsonValue> audioDescriptionNamesJsonList(m_audioDescriptionNames.size());
+   Aws::Utils::Array<JsonValue> audioDescriptionNamesJsonList(m_audioDescriptionNames.size());
    for(unsigned audioDescriptionNamesIndex = 0; audioDescriptionNamesIndex < audioDescriptionNamesJsonList.GetLength(); ++audioDescriptionNamesIndex)
    {
      audioDescriptionNamesJsonList[audioDescriptionNamesIndex].AsString(m_audioDescriptionNames[audioDescriptionNamesIndex]);
@@ -100,7 +100,7 @@ JsonValue Output::Jsonize() const
 
   if(m_captionDescriptionNamesHasBeenSet)
   {
-   Array<JsonValue> captionDescriptionNamesJsonList(m_captionDescriptionNames.size());
+   Aws::Utils::Array<JsonValue> captionDescriptionNamesJsonList(m_captionDescriptionNames.size());
    for(unsigned captionDescriptionNamesIndex = 0; captionDescriptionNamesIndex < captionDescriptionNamesJsonList.GetLength(); ++captionDescriptionNamesIndex)
    {
      captionDescriptionNamesJsonList[captionDescriptionNamesIndex].AsString(m_captionDescriptionNames[captionDescriptionNamesIndex]);

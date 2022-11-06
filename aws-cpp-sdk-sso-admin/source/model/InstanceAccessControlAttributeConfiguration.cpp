@@ -33,7 +33,7 @@ InstanceAccessControlAttributeConfiguration& InstanceAccessControlAttributeConfi
 {
   if(jsonValue.ValueExists("AccessControlAttributes"))
   {
-    Array<JsonView> accessControlAttributesJsonList = jsonValue.GetArray("AccessControlAttributes");
+    Aws::Utils::Array<JsonView> accessControlAttributesJsonList = jsonValue.GetArray("AccessControlAttributes");
     for(unsigned accessControlAttributesIndex = 0; accessControlAttributesIndex < accessControlAttributesJsonList.GetLength(); ++accessControlAttributesIndex)
     {
       m_accessControlAttributes.push_back(accessControlAttributesJsonList[accessControlAttributesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue InstanceAccessControlAttributeConfiguration::Jsonize() const
 
   if(m_accessControlAttributesHasBeenSet)
   {
-   Array<JsonValue> accessControlAttributesJsonList(m_accessControlAttributes.size());
+   Aws::Utils::Array<JsonValue> accessControlAttributesJsonList(m_accessControlAttributes.size());
    for(unsigned accessControlAttributesIndex = 0; accessControlAttributesIndex < accessControlAttributesJsonList.GetLength(); ++accessControlAttributesIndex)
    {
      accessControlAttributesJsonList[accessControlAttributesIndex].AsObject(m_accessControlAttributes[accessControlAttributesIndex].Jsonize());

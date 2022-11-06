@@ -30,7 +30,7 @@ ListTeamMembersResult& ListTeamMembersResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("teamMembers"))
   {
-    Array<JsonView> teamMembersJsonList = jsonValue.GetArray("teamMembers");
+    Aws::Utils::Array<JsonView> teamMembersJsonList = jsonValue.GetArray("teamMembers");
     for(unsigned teamMembersIndex = 0; teamMembersIndex < teamMembersJsonList.GetLength(); ++teamMembersIndex)
     {
       m_teamMembers.push_back(teamMembersJsonList[teamMembersIndex].AsObject());

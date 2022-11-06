@@ -44,7 +44,7 @@ VirtualGatewaySpec& VirtualGatewaySpec::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("listeners"))
   {
-    Array<JsonView> listenersJsonList = jsonValue.GetArray("listeners");
+    Aws::Utils::Array<JsonView> listenersJsonList = jsonValue.GetArray("listeners");
     for(unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex)
     {
       m_listeners.push_back(listenersJsonList[listenersIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue VirtualGatewaySpec::Jsonize() const
 
   if(m_listenersHasBeenSet)
   {
-   Array<JsonValue> listenersJsonList(m_listeners.size());
+   Aws::Utils::Array<JsonValue> listenersJsonList(m_listeners.size());
    for(unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex)
    {
      listenersJsonList[listenersIndex].AsObject(m_listeners[listenersIndex].Jsonize());

@@ -30,7 +30,7 @@ ListLedgersResult& ListLedgersResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Ledgers"))
   {
-    Array<JsonView> ledgersJsonList = jsonValue.GetArray("Ledgers");
+    Aws::Utils::Array<JsonView> ledgersJsonList = jsonValue.GetArray("Ledgers");
     for(unsigned ledgersIndex = 0; ledgersIndex < ledgersJsonList.GetLength(); ++ledgersIndex)
     {
       m_ledgers.push_back(ledgersJsonList[ledgersIndex].AsObject());

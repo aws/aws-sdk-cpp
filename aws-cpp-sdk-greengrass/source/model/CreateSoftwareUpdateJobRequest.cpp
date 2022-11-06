@@ -50,7 +50,7 @@ Aws::String CreateSoftwareUpdateJobRequest::SerializePayload() const
 
   if(m_updateTargetsHasBeenSet)
   {
-   Array<JsonValue> updateTargetsJsonList(m_updateTargets.size());
+   Aws::Utils::Array<JsonValue> updateTargetsJsonList(m_updateTargets.size());
    for(unsigned updateTargetsIndex = 0; updateTargetsIndex < updateTargetsJsonList.GetLength(); ++updateTargetsIndex)
    {
      updateTargetsJsonList[updateTargetsIndex].AsString(m_updateTargets[updateTargetsIndex]);

@@ -30,7 +30,7 @@ ListJournalKinesisStreamsForLedgerResult& ListJournalKinesisStreamsForLedgerResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Streams"))
   {
-    Array<JsonView> streamsJsonList = jsonValue.GetArray("Streams");
+    Aws::Utils::Array<JsonView> streamsJsonList = jsonValue.GetArray("Streams");
     for(unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex)
     {
       m_streams.push_back(streamsJsonList[streamsIndex].AsObject());

@@ -65,7 +65,7 @@ SuiteDefinitionInformation& SuiteDefinitionInformation::operator =(JsonView json
 
   if(jsonValue.ValueExists("defaultDevices"))
   {
-    Array<JsonView> defaultDevicesJsonList = jsonValue.GetArray("defaultDevices");
+    Aws::Utils::Array<JsonView> defaultDevicesJsonList = jsonValue.GetArray("defaultDevices");
     for(unsigned defaultDevicesIndex = 0; defaultDevicesIndex < defaultDevicesJsonList.GetLength(); ++defaultDevicesIndex)
     {
       m_defaultDevices.push_back(defaultDevicesJsonList[defaultDevicesIndex].AsObject());
@@ -122,7 +122,7 @@ JsonValue SuiteDefinitionInformation::Jsonize() const
 
   if(m_defaultDevicesHasBeenSet)
   {
-   Array<JsonValue> defaultDevicesJsonList(m_defaultDevices.size());
+   Aws::Utils::Array<JsonValue> defaultDevicesJsonList(m_defaultDevices.size());
    for(unsigned defaultDevicesIndex = 0; defaultDevicesIndex < defaultDevicesJsonList.GetLength(); ++defaultDevicesIndex)
    {
      defaultDevicesJsonList[defaultDevicesIndex].AsObject(m_defaultDevices[defaultDevicesIndex].Jsonize());

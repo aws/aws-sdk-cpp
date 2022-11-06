@@ -30,7 +30,7 @@ DescribeStorediSCSIVolumesResult& DescribeStorediSCSIVolumesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StorediSCSIVolumes"))
   {
-    Array<JsonView> storediSCSIVolumesJsonList = jsonValue.GetArray("StorediSCSIVolumes");
+    Aws::Utils::Array<JsonView> storediSCSIVolumesJsonList = jsonValue.GetArray("StorediSCSIVolumes");
     for(unsigned storediSCSIVolumesIndex = 0; storediSCSIVolumesIndex < storediSCSIVolumesJsonList.GetLength(); ++storediSCSIVolumesIndex)
     {
       m_storediSCSIVolumes.push_back(storediSCSIVolumesJsonList[storediSCSIVolumesIndex].AsObject());

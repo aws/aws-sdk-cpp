@@ -35,7 +35,7 @@ DocumentText& DocumentText::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("highlights"))
   {
-    Array<JsonView> highlightsJsonList = jsonValue.GetArray("highlights");
+    Aws::Utils::Array<JsonView> highlightsJsonList = jsonValue.GetArray("highlights");
     for(unsigned highlightsIndex = 0; highlightsIndex < highlightsJsonList.GetLength(); ++highlightsIndex)
     {
       m_highlights.push_back(highlightsJsonList[highlightsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue DocumentText::Jsonize() const
 
   if(m_highlightsHasBeenSet)
   {
-   Array<JsonValue> highlightsJsonList(m_highlights.size());
+   Aws::Utils::Array<JsonValue> highlightsJsonList(m_highlights.size());
    for(unsigned highlightsIndex = 0; highlightsIndex < highlightsJsonList.GetLength(); ++highlightsIndex)
    {
      highlightsJsonList[highlightsIndex].AsObject(m_highlights[highlightsIndex].Jsonize());

@@ -36,7 +36,7 @@ ListAccountRolesResult& ListAccountRolesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("roleList"))
   {
-    Array<JsonView> roleListJsonList = jsonValue.GetArray("roleList");
+    Aws::Utils::Array<JsonView> roleListJsonList = jsonValue.GetArray("roleList");
     for(unsigned roleListIndex = 0; roleListIndex < roleListJsonList.GetLength(); ++roleListIndex)
     {
       m_roleList.push_back(roleListJsonList[roleListIndex].AsObject());

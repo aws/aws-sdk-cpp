@@ -44,7 +44,7 @@ Aws::String GetExperimentResultsRequest::SerializePayload() const
 
   if(m_metricNamesHasBeenSet)
   {
-   Array<JsonValue> metricNamesJsonList(m_metricNames.size());
+   Aws::Utils::Array<JsonValue> metricNamesJsonList(m_metricNames.size());
    for(unsigned metricNamesIndex = 0; metricNamesIndex < metricNamesJsonList.GetLength(); ++metricNamesIndex)
    {
      metricNamesJsonList[metricNamesIndex].AsString(m_metricNames[metricNamesIndex]);
@@ -61,7 +61,7 @@ Aws::String GetExperimentResultsRequest::SerializePayload() const
 
   if(m_reportNamesHasBeenSet)
   {
-   Array<JsonValue> reportNamesJsonList(m_reportNames.size());
+   Aws::Utils::Array<JsonValue> reportNamesJsonList(m_reportNames.size());
    for(unsigned reportNamesIndex = 0; reportNamesIndex < reportNamesJsonList.GetLength(); ++reportNamesIndex)
    {
      reportNamesJsonList[reportNamesIndex].AsString(ExperimentReportNameMapper::GetNameForExperimentReportName(m_reportNames[reportNamesIndex]));
@@ -72,7 +72,7 @@ Aws::String GetExperimentResultsRequest::SerializePayload() const
 
   if(m_resultStatsHasBeenSet)
   {
-   Array<JsonValue> resultStatsJsonList(m_resultStats.size());
+   Aws::Utils::Array<JsonValue> resultStatsJsonList(m_resultStats.size());
    for(unsigned resultStatsIndex = 0; resultStatsIndex < resultStatsJsonList.GetLength(); ++resultStatsIndex)
    {
      resultStatsJsonList[resultStatsIndex].AsString(ExperimentResultRequestTypeMapper::GetNameForExperimentResultRequestType(m_resultStats[resultStatsIndex]));
@@ -88,7 +88,7 @@ Aws::String GetExperimentResultsRequest::SerializePayload() const
 
   if(m_treatmentNamesHasBeenSet)
   {
-   Array<JsonValue> treatmentNamesJsonList(m_treatmentNames.size());
+   Aws::Utils::Array<JsonValue> treatmentNamesJsonList(m_treatmentNames.size());
    for(unsigned treatmentNamesIndex = 0; treatmentNamesIndex < treatmentNamesJsonList.GetLength(); ++treatmentNamesIndex)
    {
      treatmentNamesJsonList[treatmentNamesIndex].AsString(m_treatmentNames[treatmentNamesIndex]);

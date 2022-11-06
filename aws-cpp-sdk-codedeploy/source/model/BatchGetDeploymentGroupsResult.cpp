@@ -30,7 +30,7 @@ BatchGetDeploymentGroupsResult& BatchGetDeploymentGroupsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentGroupsInfo"))
   {
-    Array<JsonView> deploymentGroupsInfoJsonList = jsonValue.GetArray("deploymentGroupsInfo");
+    Aws::Utils::Array<JsonView> deploymentGroupsInfoJsonList = jsonValue.GetArray("deploymentGroupsInfo");
     for(unsigned deploymentGroupsInfoIndex = 0; deploymentGroupsInfoIndex < deploymentGroupsInfoJsonList.GetLength(); ++deploymentGroupsInfoIndex)
     {
       m_deploymentGroupsInfo.push_back(deploymentGroupsInfoJsonList[deploymentGroupsInfoIndex].AsObject());

@@ -96,7 +96,7 @@ Policy& Policy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResourceTypeList"))
   {
-    Array<JsonView> resourceTypeListJsonList = jsonValue.GetArray("ResourceTypeList");
+    Aws::Utils::Array<JsonView> resourceTypeListJsonList = jsonValue.GetArray("ResourceTypeList");
     for(unsigned resourceTypeListIndex = 0; resourceTypeListIndex < resourceTypeListJsonList.GetLength(); ++resourceTypeListIndex)
     {
       m_resourceTypeList.push_back(resourceTypeListJsonList[resourceTypeListIndex].AsString());
@@ -106,7 +106,7 @@ Policy& Policy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResourceTags"))
   {
-    Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
     for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
     {
       m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());
@@ -140,7 +140,7 @@ Policy& Policy::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> includeMapJsonMap = jsonValue.GetObject("IncludeMap").GetAllObjects();
     for(auto& includeMapItem : includeMapJsonMap)
     {
-      Array<JsonView> customerPolicyScopeIdListJsonList = includeMapItem.second.AsArray();
+      Aws::Utils::Array<JsonView> customerPolicyScopeIdListJsonList = includeMapItem.second.AsArray();
       Aws::Vector<Aws::String> customerPolicyScopeIdListList;
       customerPolicyScopeIdListList.reserve((size_t)customerPolicyScopeIdListJsonList.GetLength());
       for(unsigned customerPolicyScopeIdListIndex = 0; customerPolicyScopeIdListIndex < customerPolicyScopeIdListJsonList.GetLength(); ++customerPolicyScopeIdListIndex)
@@ -157,7 +157,7 @@ Policy& Policy::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> excludeMapJsonMap = jsonValue.GetObject("ExcludeMap").GetAllObjects();
     for(auto& excludeMapItem : excludeMapJsonMap)
     {
-      Array<JsonView> customerPolicyScopeIdListJsonList = excludeMapItem.second.AsArray();
+      Aws::Utils::Array<JsonView> customerPolicyScopeIdListJsonList = excludeMapItem.second.AsArray();
       Aws::Vector<Aws::String> customerPolicyScopeIdListList;
       customerPolicyScopeIdListList.reserve((size_t)customerPolicyScopeIdListJsonList.GetLength());
       for(unsigned customerPolicyScopeIdListIndex = 0; customerPolicyScopeIdListIndex < customerPolicyScopeIdListJsonList.GetLength(); ++customerPolicyScopeIdListIndex)
@@ -208,7 +208,7 @@ JsonValue Policy::Jsonize() const
 
   if(m_resourceTypeListHasBeenSet)
   {
-   Array<JsonValue> resourceTypeListJsonList(m_resourceTypeList.size());
+   Aws::Utils::Array<JsonValue> resourceTypeListJsonList(m_resourceTypeList.size());
    for(unsigned resourceTypeListIndex = 0; resourceTypeListIndex < resourceTypeListJsonList.GetLength(); ++resourceTypeListIndex)
    {
      resourceTypeListJsonList[resourceTypeListIndex].AsString(m_resourceTypeList[resourceTypeListIndex]);
@@ -219,7 +219,7 @@ JsonValue Policy::Jsonize() const
 
   if(m_resourceTagsHasBeenSet)
   {
-   Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
    for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
    {
      resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
@@ -251,7 +251,7 @@ JsonValue Policy::Jsonize() const
    JsonValue includeMapJsonMap;
    for(auto& includeMapItem : m_includeMap)
    {
-     Array<JsonValue> customerPolicyScopeIdListJsonList(includeMapItem.second.size());
+     Aws::Utils::Array<JsonValue> customerPolicyScopeIdListJsonList(includeMapItem.second.size());
      for(unsigned customerPolicyScopeIdListIndex = 0; customerPolicyScopeIdListIndex < customerPolicyScopeIdListJsonList.GetLength(); ++customerPolicyScopeIdListIndex)
      {
        customerPolicyScopeIdListJsonList[customerPolicyScopeIdListIndex].AsString(includeMapItem.second[customerPolicyScopeIdListIndex]);
@@ -267,7 +267,7 @@ JsonValue Policy::Jsonize() const
    JsonValue excludeMapJsonMap;
    for(auto& excludeMapItem : m_excludeMap)
    {
-     Array<JsonValue> customerPolicyScopeIdListJsonList(excludeMapItem.second.size());
+     Aws::Utils::Array<JsonValue> customerPolicyScopeIdListJsonList(excludeMapItem.second.size());
      for(unsigned customerPolicyScopeIdListIndex = 0; customerPolicyScopeIdListIndex < customerPolicyScopeIdListJsonList.GetLength(); ++customerPolicyScopeIdListIndex)
      {
        customerPolicyScopeIdListJsonList[customerPolicyScopeIdListIndex].AsString(excludeMapItem.second[customerPolicyScopeIdListIndex]);

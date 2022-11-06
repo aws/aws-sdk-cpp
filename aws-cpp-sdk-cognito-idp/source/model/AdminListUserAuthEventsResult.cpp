@@ -30,7 +30,7 @@ AdminListUserAuthEventsResult& AdminListUserAuthEventsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AuthEvents"))
   {
-    Array<JsonView> authEventsJsonList = jsonValue.GetArray("AuthEvents");
+    Aws::Utils::Array<JsonView> authEventsJsonList = jsonValue.GetArray("AuthEvents");
     for(unsigned authEventsIndex = 0; authEventsIndex < authEventsJsonList.GetLength(); ++authEventsIndex)
     {
       m_authEvents.push_back(authEventsJsonList[authEventsIndex].AsObject());

@@ -52,7 +52,7 @@ Aws::String UpdateAccessControlConfigurationRequest::SerializePayload() const
 
   if(m_accessControlListHasBeenSet)
   {
-   Array<JsonValue> accessControlListJsonList(m_accessControlList.size());
+   Aws::Utils::Array<JsonValue> accessControlListJsonList(m_accessControlList.size());
    for(unsigned accessControlListIndex = 0; accessControlListIndex < accessControlListJsonList.GetLength(); ++accessControlListIndex)
    {
      accessControlListJsonList[accessControlListIndex].AsObject(m_accessControlList[accessControlListIndex].Jsonize());
@@ -63,7 +63,7 @@ Aws::String UpdateAccessControlConfigurationRequest::SerializePayload() const
 
   if(m_hierarchicalAccessControlListHasBeenSet)
   {
-   Array<JsonValue> hierarchicalAccessControlListJsonList(m_hierarchicalAccessControlList.size());
+   Aws::Utils::Array<JsonValue> hierarchicalAccessControlListJsonList(m_hierarchicalAccessControlList.size());
    for(unsigned hierarchicalAccessControlListIndex = 0; hierarchicalAccessControlListIndex < hierarchicalAccessControlListJsonList.GetLength(); ++hierarchicalAccessControlListIndex)
    {
      hierarchicalAccessControlListJsonList[hierarchicalAccessControlListIndex].AsObject(m_hierarchicalAccessControlList[hierarchicalAccessControlListIndex].Jsonize());

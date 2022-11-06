@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/elastic-inference/ElasticInferenceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/elastic-inference/ElasticInferenceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -55,6 +57,10 @@ namespace Aws
 
   namespace ElasticInference
   {
+    using ElasticInferenceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticInferenceEndpointProviderBase = Aws::ElasticInference::Endpoint::ElasticInferenceEndpointProviderBase;
+    using ElasticInferenceEndpointProvider = Aws::ElasticInference::Endpoint::ElasticInferenceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ElasticInferenceClient header */

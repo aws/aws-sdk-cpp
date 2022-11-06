@@ -36,7 +36,7 @@ ListRoutingProfileQueuesResult& ListRoutingProfileQueuesResult::operator =(const
 
   if(jsonValue.ValueExists("RoutingProfileQueueConfigSummaryList"))
   {
-    Array<JsonView> routingProfileQueueConfigSummaryListJsonList = jsonValue.GetArray("RoutingProfileQueueConfigSummaryList");
+    Aws::Utils::Array<JsonView> routingProfileQueueConfigSummaryListJsonList = jsonValue.GetArray("RoutingProfileQueueConfigSummaryList");
     for(unsigned routingProfileQueueConfigSummaryListIndex = 0; routingProfileQueueConfigSummaryListIndex < routingProfileQueueConfigSummaryListJsonList.GetLength(); ++routingProfileQueueConfigSummaryListIndex)
     {
       m_routingProfileQueueConfigSummaryList.push_back(routingProfileQueueConfigSummaryListJsonList[routingProfileQueueConfigSummaryListIndex].AsObject());

@@ -213,7 +213,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("ProductArn"))
   {
-    Array<JsonView> productArnJsonList = jsonValue.GetArray("ProductArn");
+    Aws::Utils::Array<JsonView> productArnJsonList = jsonValue.GetArray("ProductArn");
     for(unsigned productArnIndex = 0; productArnIndex < productArnJsonList.GetLength(); ++productArnIndex)
     {
       m_productArn.push_back(productArnJsonList[productArnIndex].AsObject());
@@ -223,7 +223,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("AwsAccountId"))
   {
-    Array<JsonView> awsAccountIdJsonList = jsonValue.GetArray("AwsAccountId");
+    Aws::Utils::Array<JsonView> awsAccountIdJsonList = jsonValue.GetArray("AwsAccountId");
     for(unsigned awsAccountIdIndex = 0; awsAccountIdIndex < awsAccountIdJsonList.GetLength(); ++awsAccountIdIndex)
     {
       m_awsAccountId.push_back(awsAccountIdJsonList[awsAccountIdIndex].AsObject());
@@ -233,7 +233,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Id"))
   {
-    Array<JsonView> idJsonList = jsonValue.GetArray("Id");
+    Aws::Utils::Array<JsonView> idJsonList = jsonValue.GetArray("Id");
     for(unsigned idIndex = 0; idIndex < idJsonList.GetLength(); ++idIndex)
     {
       m_id.push_back(idJsonList[idIndex].AsObject());
@@ -243,7 +243,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("GeneratorId"))
   {
-    Array<JsonView> generatorIdJsonList = jsonValue.GetArray("GeneratorId");
+    Aws::Utils::Array<JsonView> generatorIdJsonList = jsonValue.GetArray("GeneratorId");
     for(unsigned generatorIdIndex = 0; generatorIdIndex < generatorIdJsonList.GetLength(); ++generatorIdIndex)
     {
       m_generatorId.push_back(generatorIdJsonList[generatorIdIndex].AsObject());
@@ -253,7 +253,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Region"))
   {
-    Array<JsonView> regionJsonList = jsonValue.GetArray("Region");
+    Aws::Utils::Array<JsonView> regionJsonList = jsonValue.GetArray("Region");
     for(unsigned regionIndex = 0; regionIndex < regionJsonList.GetLength(); ++regionIndex)
     {
       m_region.push_back(regionJsonList[regionIndex].AsObject());
@@ -263,7 +263,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Type"))
   {
-    Array<JsonView> typeJsonList = jsonValue.GetArray("Type");
+    Aws::Utils::Array<JsonView> typeJsonList = jsonValue.GetArray("Type");
     for(unsigned typeIndex = 0; typeIndex < typeJsonList.GetLength(); ++typeIndex)
     {
       m_type.push_back(typeJsonList[typeIndex].AsObject());
@@ -273,7 +273,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FirstObservedAt"))
   {
-    Array<JsonView> firstObservedAtJsonList = jsonValue.GetArray("FirstObservedAt");
+    Aws::Utils::Array<JsonView> firstObservedAtJsonList = jsonValue.GetArray("FirstObservedAt");
     for(unsigned firstObservedAtIndex = 0; firstObservedAtIndex < firstObservedAtJsonList.GetLength(); ++firstObservedAtIndex)
     {
       m_firstObservedAt.push_back(firstObservedAtJsonList[firstObservedAtIndex].AsObject());
@@ -283,7 +283,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("LastObservedAt"))
   {
-    Array<JsonView> lastObservedAtJsonList = jsonValue.GetArray("LastObservedAt");
+    Aws::Utils::Array<JsonView> lastObservedAtJsonList = jsonValue.GetArray("LastObservedAt");
     for(unsigned lastObservedAtIndex = 0; lastObservedAtIndex < lastObservedAtJsonList.GetLength(); ++lastObservedAtIndex)
     {
       m_lastObservedAt.push_back(lastObservedAtJsonList[lastObservedAtIndex].AsObject());
@@ -293,7 +293,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("CreatedAt"))
   {
-    Array<JsonView> createdAtJsonList = jsonValue.GetArray("CreatedAt");
+    Aws::Utils::Array<JsonView> createdAtJsonList = jsonValue.GetArray("CreatedAt");
     for(unsigned createdAtIndex = 0; createdAtIndex < createdAtJsonList.GetLength(); ++createdAtIndex)
     {
       m_createdAt.push_back(createdAtJsonList[createdAtIndex].AsObject());
@@ -303,7 +303,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("UpdatedAt"))
   {
-    Array<JsonView> updatedAtJsonList = jsonValue.GetArray("UpdatedAt");
+    Aws::Utils::Array<JsonView> updatedAtJsonList = jsonValue.GetArray("UpdatedAt");
     for(unsigned updatedAtIndex = 0; updatedAtIndex < updatedAtJsonList.GetLength(); ++updatedAtIndex)
     {
       m_updatedAt.push_back(updatedAtJsonList[updatedAtIndex].AsObject());
@@ -313,7 +313,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("SeverityLabel"))
   {
-    Array<JsonView> severityLabelJsonList = jsonValue.GetArray("SeverityLabel");
+    Aws::Utils::Array<JsonView> severityLabelJsonList = jsonValue.GetArray("SeverityLabel");
     for(unsigned severityLabelIndex = 0; severityLabelIndex < severityLabelJsonList.GetLength(); ++severityLabelIndex)
     {
       m_severityLabel.push_back(severityLabelJsonList[severityLabelIndex].AsObject());
@@ -323,7 +323,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Confidence"))
   {
-    Array<JsonView> confidenceJsonList = jsonValue.GetArray("Confidence");
+    Aws::Utils::Array<JsonView> confidenceJsonList = jsonValue.GetArray("Confidence");
     for(unsigned confidenceIndex = 0; confidenceIndex < confidenceJsonList.GetLength(); ++confidenceIndex)
     {
       m_confidence.push_back(confidenceJsonList[confidenceIndex].AsObject());
@@ -333,7 +333,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Criticality"))
   {
-    Array<JsonView> criticalityJsonList = jsonValue.GetArray("Criticality");
+    Aws::Utils::Array<JsonView> criticalityJsonList = jsonValue.GetArray("Criticality");
     for(unsigned criticalityIndex = 0; criticalityIndex < criticalityJsonList.GetLength(); ++criticalityIndex)
     {
       m_criticality.push_back(criticalityJsonList[criticalityIndex].AsObject());
@@ -343,7 +343,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Title"))
   {
-    Array<JsonView> titleJsonList = jsonValue.GetArray("Title");
+    Aws::Utils::Array<JsonView> titleJsonList = jsonValue.GetArray("Title");
     for(unsigned titleIndex = 0; titleIndex < titleJsonList.GetLength(); ++titleIndex)
     {
       m_title.push_back(titleJsonList[titleIndex].AsObject());
@@ -353,7 +353,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Description"))
   {
-    Array<JsonView> descriptionJsonList = jsonValue.GetArray("Description");
+    Aws::Utils::Array<JsonView> descriptionJsonList = jsonValue.GetArray("Description");
     for(unsigned descriptionIndex = 0; descriptionIndex < descriptionJsonList.GetLength(); ++descriptionIndex)
     {
       m_description.push_back(descriptionJsonList[descriptionIndex].AsObject());
@@ -363,7 +363,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("RecommendationText"))
   {
-    Array<JsonView> recommendationTextJsonList = jsonValue.GetArray("RecommendationText");
+    Aws::Utils::Array<JsonView> recommendationTextJsonList = jsonValue.GetArray("RecommendationText");
     for(unsigned recommendationTextIndex = 0; recommendationTextIndex < recommendationTextJsonList.GetLength(); ++recommendationTextIndex)
     {
       m_recommendationText.push_back(recommendationTextJsonList[recommendationTextIndex].AsObject());
@@ -373,7 +373,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("SourceUrl"))
   {
-    Array<JsonView> sourceUrlJsonList = jsonValue.GetArray("SourceUrl");
+    Aws::Utils::Array<JsonView> sourceUrlJsonList = jsonValue.GetArray("SourceUrl");
     for(unsigned sourceUrlIndex = 0; sourceUrlIndex < sourceUrlJsonList.GetLength(); ++sourceUrlIndex)
     {
       m_sourceUrl.push_back(sourceUrlJsonList[sourceUrlIndex].AsObject());
@@ -383,7 +383,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ProductFields"))
   {
-    Array<JsonView> productFieldsJsonList = jsonValue.GetArray("ProductFields");
+    Aws::Utils::Array<JsonView> productFieldsJsonList = jsonValue.GetArray("ProductFields");
     for(unsigned productFieldsIndex = 0; productFieldsIndex < productFieldsJsonList.GetLength(); ++productFieldsIndex)
     {
       m_productFields.push_back(productFieldsJsonList[productFieldsIndex].AsObject());
@@ -393,7 +393,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ProductName"))
   {
-    Array<JsonView> productNameJsonList = jsonValue.GetArray("ProductName");
+    Aws::Utils::Array<JsonView> productNameJsonList = jsonValue.GetArray("ProductName");
     for(unsigned productNameIndex = 0; productNameIndex < productNameJsonList.GetLength(); ++productNameIndex)
     {
       m_productName.push_back(productNameJsonList[productNameIndex].AsObject());
@@ -403,7 +403,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("CompanyName"))
   {
-    Array<JsonView> companyNameJsonList = jsonValue.GetArray("CompanyName");
+    Aws::Utils::Array<JsonView> companyNameJsonList = jsonValue.GetArray("CompanyName");
     for(unsigned companyNameIndex = 0; companyNameIndex < companyNameJsonList.GetLength(); ++companyNameIndex)
     {
       m_companyName.push_back(companyNameJsonList[companyNameIndex].AsObject());
@@ -413,7 +413,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("UserDefinedFields"))
   {
-    Array<JsonView> userDefinedFieldsJsonList = jsonValue.GetArray("UserDefinedFields");
+    Aws::Utils::Array<JsonView> userDefinedFieldsJsonList = jsonValue.GetArray("UserDefinedFields");
     for(unsigned userDefinedFieldsIndex = 0; userDefinedFieldsIndex < userDefinedFieldsJsonList.GetLength(); ++userDefinedFieldsIndex)
     {
       m_userDefinedFields.push_back(userDefinedFieldsJsonList[userDefinedFieldsIndex].AsObject());
@@ -423,7 +423,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("MalwareName"))
   {
-    Array<JsonView> malwareNameJsonList = jsonValue.GetArray("MalwareName");
+    Aws::Utils::Array<JsonView> malwareNameJsonList = jsonValue.GetArray("MalwareName");
     for(unsigned malwareNameIndex = 0; malwareNameIndex < malwareNameJsonList.GetLength(); ++malwareNameIndex)
     {
       m_malwareName.push_back(malwareNameJsonList[malwareNameIndex].AsObject());
@@ -433,7 +433,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("MalwareType"))
   {
-    Array<JsonView> malwareTypeJsonList = jsonValue.GetArray("MalwareType");
+    Aws::Utils::Array<JsonView> malwareTypeJsonList = jsonValue.GetArray("MalwareType");
     for(unsigned malwareTypeIndex = 0; malwareTypeIndex < malwareTypeJsonList.GetLength(); ++malwareTypeIndex)
     {
       m_malwareType.push_back(malwareTypeJsonList[malwareTypeIndex].AsObject());
@@ -443,7 +443,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("MalwarePath"))
   {
-    Array<JsonView> malwarePathJsonList = jsonValue.GetArray("MalwarePath");
+    Aws::Utils::Array<JsonView> malwarePathJsonList = jsonValue.GetArray("MalwarePath");
     for(unsigned malwarePathIndex = 0; malwarePathIndex < malwarePathJsonList.GetLength(); ++malwarePathIndex)
     {
       m_malwarePath.push_back(malwarePathJsonList[malwarePathIndex].AsObject());
@@ -453,7 +453,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("MalwareState"))
   {
-    Array<JsonView> malwareStateJsonList = jsonValue.GetArray("MalwareState");
+    Aws::Utils::Array<JsonView> malwareStateJsonList = jsonValue.GetArray("MalwareState");
     for(unsigned malwareStateIndex = 0; malwareStateIndex < malwareStateJsonList.GetLength(); ++malwareStateIndex)
     {
       m_malwareState.push_back(malwareStateJsonList[malwareStateIndex].AsObject());
@@ -463,7 +463,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkDirection"))
   {
-    Array<JsonView> networkDirectionJsonList = jsonValue.GetArray("NetworkDirection");
+    Aws::Utils::Array<JsonView> networkDirectionJsonList = jsonValue.GetArray("NetworkDirection");
     for(unsigned networkDirectionIndex = 0; networkDirectionIndex < networkDirectionJsonList.GetLength(); ++networkDirectionIndex)
     {
       m_networkDirection.push_back(networkDirectionJsonList[networkDirectionIndex].AsObject());
@@ -473,7 +473,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkProtocol"))
   {
-    Array<JsonView> networkProtocolJsonList = jsonValue.GetArray("NetworkProtocol");
+    Aws::Utils::Array<JsonView> networkProtocolJsonList = jsonValue.GetArray("NetworkProtocol");
     for(unsigned networkProtocolIndex = 0; networkProtocolIndex < networkProtocolJsonList.GetLength(); ++networkProtocolIndex)
     {
       m_networkProtocol.push_back(networkProtocolJsonList[networkProtocolIndex].AsObject());
@@ -483,7 +483,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkSourceIpV4"))
   {
-    Array<JsonView> networkSourceIpV4JsonList = jsonValue.GetArray("NetworkSourceIpV4");
+    Aws::Utils::Array<JsonView> networkSourceIpV4JsonList = jsonValue.GetArray("NetworkSourceIpV4");
     for(unsigned networkSourceIpV4Index = 0; networkSourceIpV4Index < networkSourceIpV4JsonList.GetLength(); ++networkSourceIpV4Index)
     {
       m_networkSourceIpV4.push_back(networkSourceIpV4JsonList[networkSourceIpV4Index].AsObject());
@@ -493,7 +493,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkSourceIpV6"))
   {
-    Array<JsonView> networkSourceIpV6JsonList = jsonValue.GetArray("NetworkSourceIpV6");
+    Aws::Utils::Array<JsonView> networkSourceIpV6JsonList = jsonValue.GetArray("NetworkSourceIpV6");
     for(unsigned networkSourceIpV6Index = 0; networkSourceIpV6Index < networkSourceIpV6JsonList.GetLength(); ++networkSourceIpV6Index)
     {
       m_networkSourceIpV6.push_back(networkSourceIpV6JsonList[networkSourceIpV6Index].AsObject());
@@ -503,7 +503,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkSourcePort"))
   {
-    Array<JsonView> networkSourcePortJsonList = jsonValue.GetArray("NetworkSourcePort");
+    Aws::Utils::Array<JsonView> networkSourcePortJsonList = jsonValue.GetArray("NetworkSourcePort");
     for(unsigned networkSourcePortIndex = 0; networkSourcePortIndex < networkSourcePortJsonList.GetLength(); ++networkSourcePortIndex)
     {
       m_networkSourcePort.push_back(networkSourcePortJsonList[networkSourcePortIndex].AsObject());
@@ -513,7 +513,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkSourceDomain"))
   {
-    Array<JsonView> networkSourceDomainJsonList = jsonValue.GetArray("NetworkSourceDomain");
+    Aws::Utils::Array<JsonView> networkSourceDomainJsonList = jsonValue.GetArray("NetworkSourceDomain");
     for(unsigned networkSourceDomainIndex = 0; networkSourceDomainIndex < networkSourceDomainJsonList.GetLength(); ++networkSourceDomainIndex)
     {
       m_networkSourceDomain.push_back(networkSourceDomainJsonList[networkSourceDomainIndex].AsObject());
@@ -523,7 +523,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkSourceMac"))
   {
-    Array<JsonView> networkSourceMacJsonList = jsonValue.GetArray("NetworkSourceMac");
+    Aws::Utils::Array<JsonView> networkSourceMacJsonList = jsonValue.GetArray("NetworkSourceMac");
     for(unsigned networkSourceMacIndex = 0; networkSourceMacIndex < networkSourceMacJsonList.GetLength(); ++networkSourceMacIndex)
     {
       m_networkSourceMac.push_back(networkSourceMacJsonList[networkSourceMacIndex].AsObject());
@@ -533,7 +533,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkDestinationIpV4"))
   {
-    Array<JsonView> networkDestinationIpV4JsonList = jsonValue.GetArray("NetworkDestinationIpV4");
+    Aws::Utils::Array<JsonView> networkDestinationIpV4JsonList = jsonValue.GetArray("NetworkDestinationIpV4");
     for(unsigned networkDestinationIpV4Index = 0; networkDestinationIpV4Index < networkDestinationIpV4JsonList.GetLength(); ++networkDestinationIpV4Index)
     {
       m_networkDestinationIpV4.push_back(networkDestinationIpV4JsonList[networkDestinationIpV4Index].AsObject());
@@ -543,7 +543,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkDestinationIpV6"))
   {
-    Array<JsonView> networkDestinationIpV6JsonList = jsonValue.GetArray("NetworkDestinationIpV6");
+    Aws::Utils::Array<JsonView> networkDestinationIpV6JsonList = jsonValue.GetArray("NetworkDestinationIpV6");
     for(unsigned networkDestinationIpV6Index = 0; networkDestinationIpV6Index < networkDestinationIpV6JsonList.GetLength(); ++networkDestinationIpV6Index)
     {
       m_networkDestinationIpV6.push_back(networkDestinationIpV6JsonList[networkDestinationIpV6Index].AsObject());
@@ -553,7 +553,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkDestinationPort"))
   {
-    Array<JsonView> networkDestinationPortJsonList = jsonValue.GetArray("NetworkDestinationPort");
+    Aws::Utils::Array<JsonView> networkDestinationPortJsonList = jsonValue.GetArray("NetworkDestinationPort");
     for(unsigned networkDestinationPortIndex = 0; networkDestinationPortIndex < networkDestinationPortJsonList.GetLength(); ++networkDestinationPortIndex)
     {
       m_networkDestinationPort.push_back(networkDestinationPortJsonList[networkDestinationPortIndex].AsObject());
@@ -563,7 +563,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NetworkDestinationDomain"))
   {
-    Array<JsonView> networkDestinationDomainJsonList = jsonValue.GetArray("NetworkDestinationDomain");
+    Aws::Utils::Array<JsonView> networkDestinationDomainJsonList = jsonValue.GetArray("NetworkDestinationDomain");
     for(unsigned networkDestinationDomainIndex = 0; networkDestinationDomainIndex < networkDestinationDomainJsonList.GetLength(); ++networkDestinationDomainIndex)
     {
       m_networkDestinationDomain.push_back(networkDestinationDomainJsonList[networkDestinationDomainIndex].AsObject());
@@ -573,7 +573,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ProcessName"))
   {
-    Array<JsonView> processNameJsonList = jsonValue.GetArray("ProcessName");
+    Aws::Utils::Array<JsonView> processNameJsonList = jsonValue.GetArray("ProcessName");
     for(unsigned processNameIndex = 0; processNameIndex < processNameJsonList.GetLength(); ++processNameIndex)
     {
       m_processName.push_back(processNameJsonList[processNameIndex].AsObject());
@@ -583,7 +583,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ProcessPath"))
   {
-    Array<JsonView> processPathJsonList = jsonValue.GetArray("ProcessPath");
+    Aws::Utils::Array<JsonView> processPathJsonList = jsonValue.GetArray("ProcessPath");
     for(unsigned processPathIndex = 0; processPathIndex < processPathJsonList.GetLength(); ++processPathIndex)
     {
       m_processPath.push_back(processPathJsonList[processPathIndex].AsObject());
@@ -593,7 +593,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ProcessPid"))
   {
-    Array<JsonView> processPidJsonList = jsonValue.GetArray("ProcessPid");
+    Aws::Utils::Array<JsonView> processPidJsonList = jsonValue.GetArray("ProcessPid");
     for(unsigned processPidIndex = 0; processPidIndex < processPidJsonList.GetLength(); ++processPidIndex)
     {
       m_processPid.push_back(processPidJsonList[processPidIndex].AsObject());
@@ -603,7 +603,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ProcessParentPid"))
   {
-    Array<JsonView> processParentPidJsonList = jsonValue.GetArray("ProcessParentPid");
+    Aws::Utils::Array<JsonView> processParentPidJsonList = jsonValue.GetArray("ProcessParentPid");
     for(unsigned processParentPidIndex = 0; processParentPidIndex < processParentPidJsonList.GetLength(); ++processParentPidIndex)
     {
       m_processParentPid.push_back(processParentPidJsonList[processParentPidIndex].AsObject());
@@ -613,7 +613,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ProcessLaunchedAt"))
   {
-    Array<JsonView> processLaunchedAtJsonList = jsonValue.GetArray("ProcessLaunchedAt");
+    Aws::Utils::Array<JsonView> processLaunchedAtJsonList = jsonValue.GetArray("ProcessLaunchedAt");
     for(unsigned processLaunchedAtIndex = 0; processLaunchedAtIndex < processLaunchedAtJsonList.GetLength(); ++processLaunchedAtIndex)
     {
       m_processLaunchedAt.push_back(processLaunchedAtJsonList[processLaunchedAtIndex].AsObject());
@@ -623,7 +623,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ProcessTerminatedAt"))
   {
-    Array<JsonView> processTerminatedAtJsonList = jsonValue.GetArray("ProcessTerminatedAt");
+    Aws::Utils::Array<JsonView> processTerminatedAtJsonList = jsonValue.GetArray("ProcessTerminatedAt");
     for(unsigned processTerminatedAtIndex = 0; processTerminatedAtIndex < processTerminatedAtJsonList.GetLength(); ++processTerminatedAtIndex)
     {
       m_processTerminatedAt.push_back(processTerminatedAtJsonList[processTerminatedAtIndex].AsObject());
@@ -633,7 +633,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ThreatIntelIndicatorType"))
   {
-    Array<JsonView> threatIntelIndicatorTypeJsonList = jsonValue.GetArray("ThreatIntelIndicatorType");
+    Aws::Utils::Array<JsonView> threatIntelIndicatorTypeJsonList = jsonValue.GetArray("ThreatIntelIndicatorType");
     for(unsigned threatIntelIndicatorTypeIndex = 0; threatIntelIndicatorTypeIndex < threatIntelIndicatorTypeJsonList.GetLength(); ++threatIntelIndicatorTypeIndex)
     {
       m_threatIntelIndicatorType.push_back(threatIntelIndicatorTypeJsonList[threatIntelIndicatorTypeIndex].AsObject());
@@ -643,7 +643,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ThreatIntelIndicatorValue"))
   {
-    Array<JsonView> threatIntelIndicatorValueJsonList = jsonValue.GetArray("ThreatIntelIndicatorValue");
+    Aws::Utils::Array<JsonView> threatIntelIndicatorValueJsonList = jsonValue.GetArray("ThreatIntelIndicatorValue");
     for(unsigned threatIntelIndicatorValueIndex = 0; threatIntelIndicatorValueIndex < threatIntelIndicatorValueJsonList.GetLength(); ++threatIntelIndicatorValueIndex)
     {
       m_threatIntelIndicatorValue.push_back(threatIntelIndicatorValueJsonList[threatIntelIndicatorValueIndex].AsObject());
@@ -653,7 +653,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ThreatIntelIndicatorCategory"))
   {
-    Array<JsonView> threatIntelIndicatorCategoryJsonList = jsonValue.GetArray("ThreatIntelIndicatorCategory");
+    Aws::Utils::Array<JsonView> threatIntelIndicatorCategoryJsonList = jsonValue.GetArray("ThreatIntelIndicatorCategory");
     for(unsigned threatIntelIndicatorCategoryIndex = 0; threatIntelIndicatorCategoryIndex < threatIntelIndicatorCategoryJsonList.GetLength(); ++threatIntelIndicatorCategoryIndex)
     {
       m_threatIntelIndicatorCategory.push_back(threatIntelIndicatorCategoryJsonList[threatIntelIndicatorCategoryIndex].AsObject());
@@ -663,7 +663,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ThreatIntelIndicatorLastObservedAt"))
   {
-    Array<JsonView> threatIntelIndicatorLastObservedAtJsonList = jsonValue.GetArray("ThreatIntelIndicatorLastObservedAt");
+    Aws::Utils::Array<JsonView> threatIntelIndicatorLastObservedAtJsonList = jsonValue.GetArray("ThreatIntelIndicatorLastObservedAt");
     for(unsigned threatIntelIndicatorLastObservedAtIndex = 0; threatIntelIndicatorLastObservedAtIndex < threatIntelIndicatorLastObservedAtJsonList.GetLength(); ++threatIntelIndicatorLastObservedAtIndex)
     {
       m_threatIntelIndicatorLastObservedAt.push_back(threatIntelIndicatorLastObservedAtJsonList[threatIntelIndicatorLastObservedAtIndex].AsObject());
@@ -673,7 +673,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ThreatIntelIndicatorSource"))
   {
-    Array<JsonView> threatIntelIndicatorSourceJsonList = jsonValue.GetArray("ThreatIntelIndicatorSource");
+    Aws::Utils::Array<JsonView> threatIntelIndicatorSourceJsonList = jsonValue.GetArray("ThreatIntelIndicatorSource");
     for(unsigned threatIntelIndicatorSourceIndex = 0; threatIntelIndicatorSourceIndex < threatIntelIndicatorSourceJsonList.GetLength(); ++threatIntelIndicatorSourceIndex)
     {
       m_threatIntelIndicatorSource.push_back(threatIntelIndicatorSourceJsonList[threatIntelIndicatorSourceIndex].AsObject());
@@ -683,7 +683,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ThreatIntelIndicatorSourceUrl"))
   {
-    Array<JsonView> threatIntelIndicatorSourceUrlJsonList = jsonValue.GetArray("ThreatIntelIndicatorSourceUrl");
+    Aws::Utils::Array<JsonView> threatIntelIndicatorSourceUrlJsonList = jsonValue.GetArray("ThreatIntelIndicatorSourceUrl");
     for(unsigned threatIntelIndicatorSourceUrlIndex = 0; threatIntelIndicatorSourceUrlIndex < threatIntelIndicatorSourceUrlJsonList.GetLength(); ++threatIntelIndicatorSourceUrlIndex)
     {
       m_threatIntelIndicatorSourceUrl.push_back(threatIntelIndicatorSourceUrlJsonList[threatIntelIndicatorSourceUrlIndex].AsObject());
@@ -693,7 +693,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceType"))
   {
-    Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("ResourceType");
+    Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("ResourceType");
     for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
     {
       m_resourceType.push_back(resourceTypeJsonList[resourceTypeIndex].AsObject());
@@ -703,7 +703,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceId"))
   {
-    Array<JsonView> resourceIdJsonList = jsonValue.GetArray("ResourceId");
+    Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("ResourceId");
     for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
     {
       m_resourceId.push_back(resourceIdJsonList[resourceIdIndex].AsObject());
@@ -713,7 +713,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourcePartition"))
   {
-    Array<JsonView> resourcePartitionJsonList = jsonValue.GetArray("ResourcePartition");
+    Aws::Utils::Array<JsonView> resourcePartitionJsonList = jsonValue.GetArray("ResourcePartition");
     for(unsigned resourcePartitionIndex = 0; resourcePartitionIndex < resourcePartitionJsonList.GetLength(); ++resourcePartitionIndex)
     {
       m_resourcePartition.push_back(resourcePartitionJsonList[resourcePartitionIndex].AsObject());
@@ -723,7 +723,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceRegion"))
   {
-    Array<JsonView> resourceRegionJsonList = jsonValue.GetArray("ResourceRegion");
+    Aws::Utils::Array<JsonView> resourceRegionJsonList = jsonValue.GetArray("ResourceRegion");
     for(unsigned resourceRegionIndex = 0; resourceRegionIndex < resourceRegionJsonList.GetLength(); ++resourceRegionIndex)
     {
       m_resourceRegion.push_back(resourceRegionJsonList[resourceRegionIndex].AsObject());
@@ -733,7 +733,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceTags"))
   {
-    Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
     for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
     {
       m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());
@@ -743,7 +743,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsEc2InstanceType"))
   {
-    Array<JsonView> resourceAwsEc2InstanceTypeJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceType");
+    Aws::Utils::Array<JsonView> resourceAwsEc2InstanceTypeJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceType");
     for(unsigned resourceAwsEc2InstanceTypeIndex = 0; resourceAwsEc2InstanceTypeIndex < resourceAwsEc2InstanceTypeJsonList.GetLength(); ++resourceAwsEc2InstanceTypeIndex)
     {
       m_resourceAwsEc2InstanceType.push_back(resourceAwsEc2InstanceTypeJsonList[resourceAwsEc2InstanceTypeIndex].AsObject());
@@ -753,7 +753,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsEc2InstanceImageId"))
   {
-    Array<JsonView> resourceAwsEc2InstanceImageIdJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceImageId");
+    Aws::Utils::Array<JsonView> resourceAwsEc2InstanceImageIdJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceImageId");
     for(unsigned resourceAwsEc2InstanceImageIdIndex = 0; resourceAwsEc2InstanceImageIdIndex < resourceAwsEc2InstanceImageIdJsonList.GetLength(); ++resourceAwsEc2InstanceImageIdIndex)
     {
       m_resourceAwsEc2InstanceImageId.push_back(resourceAwsEc2InstanceImageIdJsonList[resourceAwsEc2InstanceImageIdIndex].AsObject());
@@ -763,7 +763,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsEc2InstanceIpV4Addresses"))
   {
-    Array<JsonView> resourceAwsEc2InstanceIpV4AddressesJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceIpV4Addresses");
+    Aws::Utils::Array<JsonView> resourceAwsEc2InstanceIpV4AddressesJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceIpV4Addresses");
     for(unsigned resourceAwsEc2InstanceIpV4AddressesIndex = 0; resourceAwsEc2InstanceIpV4AddressesIndex < resourceAwsEc2InstanceIpV4AddressesJsonList.GetLength(); ++resourceAwsEc2InstanceIpV4AddressesIndex)
     {
       m_resourceAwsEc2InstanceIpV4Addresses.push_back(resourceAwsEc2InstanceIpV4AddressesJsonList[resourceAwsEc2InstanceIpV4AddressesIndex].AsObject());
@@ -773,7 +773,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsEc2InstanceIpV6Addresses"))
   {
-    Array<JsonView> resourceAwsEc2InstanceIpV6AddressesJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceIpV6Addresses");
+    Aws::Utils::Array<JsonView> resourceAwsEc2InstanceIpV6AddressesJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceIpV6Addresses");
     for(unsigned resourceAwsEc2InstanceIpV6AddressesIndex = 0; resourceAwsEc2InstanceIpV6AddressesIndex < resourceAwsEc2InstanceIpV6AddressesJsonList.GetLength(); ++resourceAwsEc2InstanceIpV6AddressesIndex)
     {
       m_resourceAwsEc2InstanceIpV6Addresses.push_back(resourceAwsEc2InstanceIpV6AddressesJsonList[resourceAwsEc2InstanceIpV6AddressesIndex].AsObject());
@@ -783,7 +783,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsEc2InstanceKeyName"))
   {
-    Array<JsonView> resourceAwsEc2InstanceKeyNameJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceKeyName");
+    Aws::Utils::Array<JsonView> resourceAwsEc2InstanceKeyNameJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceKeyName");
     for(unsigned resourceAwsEc2InstanceKeyNameIndex = 0; resourceAwsEc2InstanceKeyNameIndex < resourceAwsEc2InstanceKeyNameJsonList.GetLength(); ++resourceAwsEc2InstanceKeyNameIndex)
     {
       m_resourceAwsEc2InstanceKeyName.push_back(resourceAwsEc2InstanceKeyNameJsonList[resourceAwsEc2InstanceKeyNameIndex].AsObject());
@@ -793,7 +793,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsEc2InstanceIamInstanceProfileArn"))
   {
-    Array<JsonView> resourceAwsEc2InstanceIamInstanceProfileArnJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceIamInstanceProfileArn");
+    Aws::Utils::Array<JsonView> resourceAwsEc2InstanceIamInstanceProfileArnJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceIamInstanceProfileArn");
     for(unsigned resourceAwsEc2InstanceIamInstanceProfileArnIndex = 0; resourceAwsEc2InstanceIamInstanceProfileArnIndex < resourceAwsEc2InstanceIamInstanceProfileArnJsonList.GetLength(); ++resourceAwsEc2InstanceIamInstanceProfileArnIndex)
     {
       m_resourceAwsEc2InstanceIamInstanceProfileArn.push_back(resourceAwsEc2InstanceIamInstanceProfileArnJsonList[resourceAwsEc2InstanceIamInstanceProfileArnIndex].AsObject());
@@ -803,7 +803,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsEc2InstanceVpcId"))
   {
-    Array<JsonView> resourceAwsEc2InstanceVpcIdJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceVpcId");
+    Aws::Utils::Array<JsonView> resourceAwsEc2InstanceVpcIdJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceVpcId");
     for(unsigned resourceAwsEc2InstanceVpcIdIndex = 0; resourceAwsEc2InstanceVpcIdIndex < resourceAwsEc2InstanceVpcIdJsonList.GetLength(); ++resourceAwsEc2InstanceVpcIdIndex)
     {
       m_resourceAwsEc2InstanceVpcId.push_back(resourceAwsEc2InstanceVpcIdJsonList[resourceAwsEc2InstanceVpcIdIndex].AsObject());
@@ -813,7 +813,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsEc2InstanceSubnetId"))
   {
-    Array<JsonView> resourceAwsEc2InstanceSubnetIdJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceSubnetId");
+    Aws::Utils::Array<JsonView> resourceAwsEc2InstanceSubnetIdJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceSubnetId");
     for(unsigned resourceAwsEc2InstanceSubnetIdIndex = 0; resourceAwsEc2InstanceSubnetIdIndex < resourceAwsEc2InstanceSubnetIdJsonList.GetLength(); ++resourceAwsEc2InstanceSubnetIdIndex)
     {
       m_resourceAwsEc2InstanceSubnetId.push_back(resourceAwsEc2InstanceSubnetIdJsonList[resourceAwsEc2InstanceSubnetIdIndex].AsObject());
@@ -823,7 +823,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsEc2InstanceLaunchedAt"))
   {
-    Array<JsonView> resourceAwsEc2InstanceLaunchedAtJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceLaunchedAt");
+    Aws::Utils::Array<JsonView> resourceAwsEc2InstanceLaunchedAtJsonList = jsonValue.GetArray("ResourceAwsEc2InstanceLaunchedAt");
     for(unsigned resourceAwsEc2InstanceLaunchedAtIndex = 0; resourceAwsEc2InstanceLaunchedAtIndex < resourceAwsEc2InstanceLaunchedAtJsonList.GetLength(); ++resourceAwsEc2InstanceLaunchedAtIndex)
     {
       m_resourceAwsEc2InstanceLaunchedAt.push_back(resourceAwsEc2InstanceLaunchedAtJsonList[resourceAwsEc2InstanceLaunchedAtIndex].AsObject());
@@ -833,7 +833,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsS3BucketOwnerId"))
   {
-    Array<JsonView> resourceAwsS3BucketOwnerIdJsonList = jsonValue.GetArray("ResourceAwsS3BucketOwnerId");
+    Aws::Utils::Array<JsonView> resourceAwsS3BucketOwnerIdJsonList = jsonValue.GetArray("ResourceAwsS3BucketOwnerId");
     for(unsigned resourceAwsS3BucketOwnerIdIndex = 0; resourceAwsS3BucketOwnerIdIndex < resourceAwsS3BucketOwnerIdJsonList.GetLength(); ++resourceAwsS3BucketOwnerIdIndex)
     {
       m_resourceAwsS3BucketOwnerId.push_back(resourceAwsS3BucketOwnerIdJsonList[resourceAwsS3BucketOwnerIdIndex].AsObject());
@@ -843,7 +843,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsS3BucketOwnerName"))
   {
-    Array<JsonView> resourceAwsS3BucketOwnerNameJsonList = jsonValue.GetArray("ResourceAwsS3BucketOwnerName");
+    Aws::Utils::Array<JsonView> resourceAwsS3BucketOwnerNameJsonList = jsonValue.GetArray("ResourceAwsS3BucketOwnerName");
     for(unsigned resourceAwsS3BucketOwnerNameIndex = 0; resourceAwsS3BucketOwnerNameIndex < resourceAwsS3BucketOwnerNameJsonList.GetLength(); ++resourceAwsS3BucketOwnerNameIndex)
     {
       m_resourceAwsS3BucketOwnerName.push_back(resourceAwsS3BucketOwnerNameJsonList[resourceAwsS3BucketOwnerNameIndex].AsObject());
@@ -853,7 +853,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsIamAccessKeyPrincipalName"))
   {
-    Array<JsonView> resourceAwsIamAccessKeyPrincipalNameJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyPrincipalName");
+    Aws::Utils::Array<JsonView> resourceAwsIamAccessKeyPrincipalNameJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyPrincipalName");
     for(unsigned resourceAwsIamAccessKeyPrincipalNameIndex = 0; resourceAwsIamAccessKeyPrincipalNameIndex < resourceAwsIamAccessKeyPrincipalNameJsonList.GetLength(); ++resourceAwsIamAccessKeyPrincipalNameIndex)
     {
       m_resourceAwsIamAccessKeyPrincipalName.push_back(resourceAwsIamAccessKeyPrincipalNameJsonList[resourceAwsIamAccessKeyPrincipalNameIndex].AsObject());
@@ -863,7 +863,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsIamAccessKeyStatus"))
   {
-    Array<JsonView> resourceAwsIamAccessKeyStatusJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyStatus");
+    Aws::Utils::Array<JsonView> resourceAwsIamAccessKeyStatusJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyStatus");
     for(unsigned resourceAwsIamAccessKeyStatusIndex = 0; resourceAwsIamAccessKeyStatusIndex < resourceAwsIamAccessKeyStatusJsonList.GetLength(); ++resourceAwsIamAccessKeyStatusIndex)
     {
       m_resourceAwsIamAccessKeyStatus.push_back(resourceAwsIamAccessKeyStatusJsonList[resourceAwsIamAccessKeyStatusIndex].AsObject());
@@ -873,7 +873,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsIamAccessKeyCreatedAt"))
   {
-    Array<JsonView> resourceAwsIamAccessKeyCreatedAtJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyCreatedAt");
+    Aws::Utils::Array<JsonView> resourceAwsIamAccessKeyCreatedAtJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyCreatedAt");
     for(unsigned resourceAwsIamAccessKeyCreatedAtIndex = 0; resourceAwsIamAccessKeyCreatedAtIndex < resourceAwsIamAccessKeyCreatedAtJsonList.GetLength(); ++resourceAwsIamAccessKeyCreatedAtIndex)
     {
       m_resourceAwsIamAccessKeyCreatedAt.push_back(resourceAwsIamAccessKeyCreatedAtJsonList[resourceAwsIamAccessKeyCreatedAtIndex].AsObject());
@@ -883,7 +883,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceAwsIamUserUserName"))
   {
-    Array<JsonView> resourceAwsIamUserUserNameJsonList = jsonValue.GetArray("ResourceAwsIamUserUserName");
+    Aws::Utils::Array<JsonView> resourceAwsIamUserUserNameJsonList = jsonValue.GetArray("ResourceAwsIamUserUserName");
     for(unsigned resourceAwsIamUserUserNameIndex = 0; resourceAwsIamUserUserNameIndex < resourceAwsIamUserUserNameJsonList.GetLength(); ++resourceAwsIamUserUserNameIndex)
     {
       m_resourceAwsIamUserUserName.push_back(resourceAwsIamUserUserNameJsonList[resourceAwsIamUserUserNameIndex].AsObject());
@@ -893,7 +893,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceContainerName"))
   {
-    Array<JsonView> resourceContainerNameJsonList = jsonValue.GetArray("ResourceContainerName");
+    Aws::Utils::Array<JsonView> resourceContainerNameJsonList = jsonValue.GetArray("ResourceContainerName");
     for(unsigned resourceContainerNameIndex = 0; resourceContainerNameIndex < resourceContainerNameJsonList.GetLength(); ++resourceContainerNameIndex)
     {
       m_resourceContainerName.push_back(resourceContainerNameJsonList[resourceContainerNameIndex].AsObject());
@@ -903,7 +903,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceContainerImageId"))
   {
-    Array<JsonView> resourceContainerImageIdJsonList = jsonValue.GetArray("ResourceContainerImageId");
+    Aws::Utils::Array<JsonView> resourceContainerImageIdJsonList = jsonValue.GetArray("ResourceContainerImageId");
     for(unsigned resourceContainerImageIdIndex = 0; resourceContainerImageIdIndex < resourceContainerImageIdJsonList.GetLength(); ++resourceContainerImageIdIndex)
     {
       m_resourceContainerImageId.push_back(resourceContainerImageIdJsonList[resourceContainerImageIdIndex].AsObject());
@@ -913,7 +913,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceContainerImageName"))
   {
-    Array<JsonView> resourceContainerImageNameJsonList = jsonValue.GetArray("ResourceContainerImageName");
+    Aws::Utils::Array<JsonView> resourceContainerImageNameJsonList = jsonValue.GetArray("ResourceContainerImageName");
     for(unsigned resourceContainerImageNameIndex = 0; resourceContainerImageNameIndex < resourceContainerImageNameJsonList.GetLength(); ++resourceContainerImageNameIndex)
     {
       m_resourceContainerImageName.push_back(resourceContainerImageNameJsonList[resourceContainerImageNameIndex].AsObject());
@@ -923,7 +923,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceContainerLaunchedAt"))
   {
-    Array<JsonView> resourceContainerLaunchedAtJsonList = jsonValue.GetArray("ResourceContainerLaunchedAt");
+    Aws::Utils::Array<JsonView> resourceContainerLaunchedAtJsonList = jsonValue.GetArray("ResourceContainerLaunchedAt");
     for(unsigned resourceContainerLaunchedAtIndex = 0; resourceContainerLaunchedAtIndex < resourceContainerLaunchedAtJsonList.GetLength(); ++resourceContainerLaunchedAtIndex)
     {
       m_resourceContainerLaunchedAt.push_back(resourceContainerLaunchedAtJsonList[resourceContainerLaunchedAtIndex].AsObject());
@@ -933,7 +933,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceDetailsOther"))
   {
-    Array<JsonView> resourceDetailsOtherJsonList = jsonValue.GetArray("ResourceDetailsOther");
+    Aws::Utils::Array<JsonView> resourceDetailsOtherJsonList = jsonValue.GetArray("ResourceDetailsOther");
     for(unsigned resourceDetailsOtherIndex = 0; resourceDetailsOtherIndex < resourceDetailsOtherJsonList.GetLength(); ++resourceDetailsOtherIndex)
     {
       m_resourceDetailsOther.push_back(resourceDetailsOtherJsonList[resourceDetailsOtherIndex].AsObject());
@@ -943,7 +943,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ComplianceStatus"))
   {
-    Array<JsonView> complianceStatusJsonList = jsonValue.GetArray("ComplianceStatus");
+    Aws::Utils::Array<JsonView> complianceStatusJsonList = jsonValue.GetArray("ComplianceStatus");
     for(unsigned complianceStatusIndex = 0; complianceStatusIndex < complianceStatusJsonList.GetLength(); ++complianceStatusIndex)
     {
       m_complianceStatus.push_back(complianceStatusJsonList[complianceStatusIndex].AsObject());
@@ -953,7 +953,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("VerificationState"))
   {
-    Array<JsonView> verificationStateJsonList = jsonValue.GetArray("VerificationState");
+    Aws::Utils::Array<JsonView> verificationStateJsonList = jsonValue.GetArray("VerificationState");
     for(unsigned verificationStateIndex = 0; verificationStateIndex < verificationStateJsonList.GetLength(); ++verificationStateIndex)
     {
       m_verificationState.push_back(verificationStateJsonList[verificationStateIndex].AsObject());
@@ -963,7 +963,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("WorkflowState"))
   {
-    Array<JsonView> workflowStateJsonList = jsonValue.GetArray("WorkflowState");
+    Aws::Utils::Array<JsonView> workflowStateJsonList = jsonValue.GetArray("WorkflowState");
     for(unsigned workflowStateIndex = 0; workflowStateIndex < workflowStateJsonList.GetLength(); ++workflowStateIndex)
     {
       m_workflowState.push_back(workflowStateJsonList[workflowStateIndex].AsObject());
@@ -973,7 +973,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("WorkflowStatus"))
   {
-    Array<JsonView> workflowStatusJsonList = jsonValue.GetArray("WorkflowStatus");
+    Aws::Utils::Array<JsonView> workflowStatusJsonList = jsonValue.GetArray("WorkflowStatus");
     for(unsigned workflowStatusIndex = 0; workflowStatusIndex < workflowStatusJsonList.GetLength(); ++workflowStatusIndex)
     {
       m_workflowStatus.push_back(workflowStatusJsonList[workflowStatusIndex].AsObject());
@@ -983,7 +983,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("RecordState"))
   {
-    Array<JsonView> recordStateJsonList = jsonValue.GetArray("RecordState");
+    Aws::Utils::Array<JsonView> recordStateJsonList = jsonValue.GetArray("RecordState");
     for(unsigned recordStateIndex = 0; recordStateIndex < recordStateJsonList.GetLength(); ++recordStateIndex)
     {
       m_recordState.push_back(recordStateJsonList[recordStateIndex].AsObject());
@@ -993,7 +993,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("RelatedFindingsProductArn"))
   {
-    Array<JsonView> relatedFindingsProductArnJsonList = jsonValue.GetArray("RelatedFindingsProductArn");
+    Aws::Utils::Array<JsonView> relatedFindingsProductArnJsonList = jsonValue.GetArray("RelatedFindingsProductArn");
     for(unsigned relatedFindingsProductArnIndex = 0; relatedFindingsProductArnIndex < relatedFindingsProductArnJsonList.GetLength(); ++relatedFindingsProductArnIndex)
     {
       m_relatedFindingsProductArn.push_back(relatedFindingsProductArnJsonList[relatedFindingsProductArnIndex].AsObject());
@@ -1003,7 +1003,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("RelatedFindingsId"))
   {
-    Array<JsonView> relatedFindingsIdJsonList = jsonValue.GetArray("RelatedFindingsId");
+    Aws::Utils::Array<JsonView> relatedFindingsIdJsonList = jsonValue.GetArray("RelatedFindingsId");
     for(unsigned relatedFindingsIdIndex = 0; relatedFindingsIdIndex < relatedFindingsIdJsonList.GetLength(); ++relatedFindingsIdIndex)
     {
       m_relatedFindingsId.push_back(relatedFindingsIdJsonList[relatedFindingsIdIndex].AsObject());
@@ -1013,7 +1013,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NoteText"))
   {
-    Array<JsonView> noteTextJsonList = jsonValue.GetArray("NoteText");
+    Aws::Utils::Array<JsonView> noteTextJsonList = jsonValue.GetArray("NoteText");
     for(unsigned noteTextIndex = 0; noteTextIndex < noteTextJsonList.GetLength(); ++noteTextIndex)
     {
       m_noteText.push_back(noteTextJsonList[noteTextIndex].AsObject());
@@ -1023,7 +1023,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NoteUpdatedAt"))
   {
-    Array<JsonView> noteUpdatedAtJsonList = jsonValue.GetArray("NoteUpdatedAt");
+    Aws::Utils::Array<JsonView> noteUpdatedAtJsonList = jsonValue.GetArray("NoteUpdatedAt");
     for(unsigned noteUpdatedAtIndex = 0; noteUpdatedAtIndex < noteUpdatedAtJsonList.GetLength(); ++noteUpdatedAtIndex)
     {
       m_noteUpdatedAt.push_back(noteUpdatedAtJsonList[noteUpdatedAtIndex].AsObject());
@@ -1033,7 +1033,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("NoteUpdatedBy"))
   {
-    Array<JsonView> noteUpdatedByJsonList = jsonValue.GetArray("NoteUpdatedBy");
+    Aws::Utils::Array<JsonView> noteUpdatedByJsonList = jsonValue.GetArray("NoteUpdatedBy");
     for(unsigned noteUpdatedByIndex = 0; noteUpdatedByIndex < noteUpdatedByJsonList.GetLength(); ++noteUpdatedByIndex)
     {
       m_noteUpdatedBy.push_back(noteUpdatedByJsonList[noteUpdatedByIndex].AsObject());
@@ -1043,7 +1043,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FindingProviderFieldsConfidence"))
   {
-    Array<JsonView> findingProviderFieldsConfidenceJsonList = jsonValue.GetArray("FindingProviderFieldsConfidence");
+    Aws::Utils::Array<JsonView> findingProviderFieldsConfidenceJsonList = jsonValue.GetArray("FindingProviderFieldsConfidence");
     for(unsigned findingProviderFieldsConfidenceIndex = 0; findingProviderFieldsConfidenceIndex < findingProviderFieldsConfidenceJsonList.GetLength(); ++findingProviderFieldsConfidenceIndex)
     {
       m_findingProviderFieldsConfidence.push_back(findingProviderFieldsConfidenceJsonList[findingProviderFieldsConfidenceIndex].AsObject());
@@ -1053,7 +1053,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FindingProviderFieldsCriticality"))
   {
-    Array<JsonView> findingProviderFieldsCriticalityJsonList = jsonValue.GetArray("FindingProviderFieldsCriticality");
+    Aws::Utils::Array<JsonView> findingProviderFieldsCriticalityJsonList = jsonValue.GetArray("FindingProviderFieldsCriticality");
     for(unsigned findingProviderFieldsCriticalityIndex = 0; findingProviderFieldsCriticalityIndex < findingProviderFieldsCriticalityJsonList.GetLength(); ++findingProviderFieldsCriticalityIndex)
     {
       m_findingProviderFieldsCriticality.push_back(findingProviderFieldsCriticalityJsonList[findingProviderFieldsCriticalityIndex].AsObject());
@@ -1063,7 +1063,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FindingProviderFieldsRelatedFindingsId"))
   {
-    Array<JsonView> findingProviderFieldsRelatedFindingsIdJsonList = jsonValue.GetArray("FindingProviderFieldsRelatedFindingsId");
+    Aws::Utils::Array<JsonView> findingProviderFieldsRelatedFindingsIdJsonList = jsonValue.GetArray("FindingProviderFieldsRelatedFindingsId");
     for(unsigned findingProviderFieldsRelatedFindingsIdIndex = 0; findingProviderFieldsRelatedFindingsIdIndex < findingProviderFieldsRelatedFindingsIdJsonList.GetLength(); ++findingProviderFieldsRelatedFindingsIdIndex)
     {
       m_findingProviderFieldsRelatedFindingsId.push_back(findingProviderFieldsRelatedFindingsIdJsonList[findingProviderFieldsRelatedFindingsIdIndex].AsObject());
@@ -1073,7 +1073,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FindingProviderFieldsRelatedFindingsProductArn"))
   {
-    Array<JsonView> findingProviderFieldsRelatedFindingsProductArnJsonList = jsonValue.GetArray("FindingProviderFieldsRelatedFindingsProductArn");
+    Aws::Utils::Array<JsonView> findingProviderFieldsRelatedFindingsProductArnJsonList = jsonValue.GetArray("FindingProviderFieldsRelatedFindingsProductArn");
     for(unsigned findingProviderFieldsRelatedFindingsProductArnIndex = 0; findingProviderFieldsRelatedFindingsProductArnIndex < findingProviderFieldsRelatedFindingsProductArnJsonList.GetLength(); ++findingProviderFieldsRelatedFindingsProductArnIndex)
     {
       m_findingProviderFieldsRelatedFindingsProductArn.push_back(findingProviderFieldsRelatedFindingsProductArnJsonList[findingProviderFieldsRelatedFindingsProductArnIndex].AsObject());
@@ -1083,7 +1083,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FindingProviderFieldsSeverityLabel"))
   {
-    Array<JsonView> findingProviderFieldsSeverityLabelJsonList = jsonValue.GetArray("FindingProviderFieldsSeverityLabel");
+    Aws::Utils::Array<JsonView> findingProviderFieldsSeverityLabelJsonList = jsonValue.GetArray("FindingProviderFieldsSeverityLabel");
     for(unsigned findingProviderFieldsSeverityLabelIndex = 0; findingProviderFieldsSeverityLabelIndex < findingProviderFieldsSeverityLabelJsonList.GetLength(); ++findingProviderFieldsSeverityLabelIndex)
     {
       m_findingProviderFieldsSeverityLabel.push_back(findingProviderFieldsSeverityLabelJsonList[findingProviderFieldsSeverityLabelIndex].AsObject());
@@ -1093,7 +1093,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FindingProviderFieldsSeverityOriginal"))
   {
-    Array<JsonView> findingProviderFieldsSeverityOriginalJsonList = jsonValue.GetArray("FindingProviderFieldsSeverityOriginal");
+    Aws::Utils::Array<JsonView> findingProviderFieldsSeverityOriginalJsonList = jsonValue.GetArray("FindingProviderFieldsSeverityOriginal");
     for(unsigned findingProviderFieldsSeverityOriginalIndex = 0; findingProviderFieldsSeverityOriginalIndex < findingProviderFieldsSeverityOriginalJsonList.GetLength(); ++findingProviderFieldsSeverityOriginalIndex)
     {
       m_findingProviderFieldsSeverityOriginal.push_back(findingProviderFieldsSeverityOriginalJsonList[findingProviderFieldsSeverityOriginalIndex].AsObject());
@@ -1103,7 +1103,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FindingProviderFieldsTypes"))
   {
-    Array<JsonView> findingProviderFieldsTypesJsonList = jsonValue.GetArray("FindingProviderFieldsTypes");
+    Aws::Utils::Array<JsonView> findingProviderFieldsTypesJsonList = jsonValue.GetArray("FindingProviderFieldsTypes");
     for(unsigned findingProviderFieldsTypesIndex = 0; findingProviderFieldsTypesIndex < findingProviderFieldsTypesJsonList.GetLength(); ++findingProviderFieldsTypesIndex)
     {
       m_findingProviderFieldsTypes.push_back(findingProviderFieldsTypesJsonList[findingProviderFieldsTypesIndex].AsObject());
@@ -1113,7 +1113,7 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Sample"))
   {
-    Array<JsonView> sampleJsonList = jsonValue.GetArray("Sample");
+    Aws::Utils::Array<JsonView> sampleJsonList = jsonValue.GetArray("Sample");
     for(unsigned sampleIndex = 0; sampleIndex < sampleJsonList.GetLength(); ++sampleIndex)
     {
       m_sample.push_back(sampleJsonList[sampleIndex].AsObject());
@@ -1130,7 +1130,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_productArnHasBeenSet)
   {
-   Array<JsonValue> productArnJsonList(m_productArn.size());
+   Aws::Utils::Array<JsonValue> productArnJsonList(m_productArn.size());
    for(unsigned productArnIndex = 0; productArnIndex < productArnJsonList.GetLength(); ++productArnIndex)
    {
      productArnJsonList[productArnIndex].AsObject(m_productArn[productArnIndex].Jsonize());
@@ -1141,7 +1141,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_awsAccountIdHasBeenSet)
   {
-   Array<JsonValue> awsAccountIdJsonList(m_awsAccountId.size());
+   Aws::Utils::Array<JsonValue> awsAccountIdJsonList(m_awsAccountId.size());
    for(unsigned awsAccountIdIndex = 0; awsAccountIdIndex < awsAccountIdJsonList.GetLength(); ++awsAccountIdIndex)
    {
      awsAccountIdJsonList[awsAccountIdIndex].AsObject(m_awsAccountId[awsAccountIdIndex].Jsonize());
@@ -1152,7 +1152,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_idHasBeenSet)
   {
-   Array<JsonValue> idJsonList(m_id.size());
+   Aws::Utils::Array<JsonValue> idJsonList(m_id.size());
    for(unsigned idIndex = 0; idIndex < idJsonList.GetLength(); ++idIndex)
    {
      idJsonList[idIndex].AsObject(m_id[idIndex].Jsonize());
@@ -1163,7 +1163,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_generatorIdHasBeenSet)
   {
-   Array<JsonValue> generatorIdJsonList(m_generatorId.size());
+   Aws::Utils::Array<JsonValue> generatorIdJsonList(m_generatorId.size());
    for(unsigned generatorIdIndex = 0; generatorIdIndex < generatorIdJsonList.GetLength(); ++generatorIdIndex)
    {
      generatorIdJsonList[generatorIdIndex].AsObject(m_generatorId[generatorIdIndex].Jsonize());
@@ -1174,7 +1174,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_regionHasBeenSet)
   {
-   Array<JsonValue> regionJsonList(m_region.size());
+   Aws::Utils::Array<JsonValue> regionJsonList(m_region.size());
    for(unsigned regionIndex = 0; regionIndex < regionJsonList.GetLength(); ++regionIndex)
    {
      regionJsonList[regionIndex].AsObject(m_region[regionIndex].Jsonize());
@@ -1185,7 +1185,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_typeHasBeenSet)
   {
-   Array<JsonValue> typeJsonList(m_type.size());
+   Aws::Utils::Array<JsonValue> typeJsonList(m_type.size());
    for(unsigned typeIndex = 0; typeIndex < typeJsonList.GetLength(); ++typeIndex)
    {
      typeJsonList[typeIndex].AsObject(m_type[typeIndex].Jsonize());
@@ -1196,7 +1196,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_firstObservedAtHasBeenSet)
   {
-   Array<JsonValue> firstObservedAtJsonList(m_firstObservedAt.size());
+   Aws::Utils::Array<JsonValue> firstObservedAtJsonList(m_firstObservedAt.size());
    for(unsigned firstObservedAtIndex = 0; firstObservedAtIndex < firstObservedAtJsonList.GetLength(); ++firstObservedAtIndex)
    {
      firstObservedAtJsonList[firstObservedAtIndex].AsObject(m_firstObservedAt[firstObservedAtIndex].Jsonize());
@@ -1207,7 +1207,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_lastObservedAtHasBeenSet)
   {
-   Array<JsonValue> lastObservedAtJsonList(m_lastObservedAt.size());
+   Aws::Utils::Array<JsonValue> lastObservedAtJsonList(m_lastObservedAt.size());
    for(unsigned lastObservedAtIndex = 0; lastObservedAtIndex < lastObservedAtJsonList.GetLength(); ++lastObservedAtIndex)
    {
      lastObservedAtJsonList[lastObservedAtIndex].AsObject(m_lastObservedAt[lastObservedAtIndex].Jsonize());
@@ -1218,7 +1218,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   Array<JsonValue> createdAtJsonList(m_createdAt.size());
+   Aws::Utils::Array<JsonValue> createdAtJsonList(m_createdAt.size());
    for(unsigned createdAtIndex = 0; createdAtIndex < createdAtJsonList.GetLength(); ++createdAtIndex)
    {
      createdAtJsonList[createdAtIndex].AsObject(m_createdAt[createdAtIndex].Jsonize());
@@ -1229,7 +1229,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   Array<JsonValue> updatedAtJsonList(m_updatedAt.size());
+   Aws::Utils::Array<JsonValue> updatedAtJsonList(m_updatedAt.size());
    for(unsigned updatedAtIndex = 0; updatedAtIndex < updatedAtJsonList.GetLength(); ++updatedAtIndex)
    {
      updatedAtJsonList[updatedAtIndex].AsObject(m_updatedAt[updatedAtIndex].Jsonize());
@@ -1240,7 +1240,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_severityLabelHasBeenSet)
   {
-   Array<JsonValue> severityLabelJsonList(m_severityLabel.size());
+   Aws::Utils::Array<JsonValue> severityLabelJsonList(m_severityLabel.size());
    for(unsigned severityLabelIndex = 0; severityLabelIndex < severityLabelJsonList.GetLength(); ++severityLabelIndex)
    {
      severityLabelJsonList[severityLabelIndex].AsObject(m_severityLabel[severityLabelIndex].Jsonize());
@@ -1251,7 +1251,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_confidenceHasBeenSet)
   {
-   Array<JsonValue> confidenceJsonList(m_confidence.size());
+   Aws::Utils::Array<JsonValue> confidenceJsonList(m_confidence.size());
    for(unsigned confidenceIndex = 0; confidenceIndex < confidenceJsonList.GetLength(); ++confidenceIndex)
    {
      confidenceJsonList[confidenceIndex].AsObject(m_confidence[confidenceIndex].Jsonize());
@@ -1262,7 +1262,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_criticalityHasBeenSet)
   {
-   Array<JsonValue> criticalityJsonList(m_criticality.size());
+   Aws::Utils::Array<JsonValue> criticalityJsonList(m_criticality.size());
    for(unsigned criticalityIndex = 0; criticalityIndex < criticalityJsonList.GetLength(); ++criticalityIndex)
    {
      criticalityJsonList[criticalityIndex].AsObject(m_criticality[criticalityIndex].Jsonize());
@@ -1273,7 +1273,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_titleHasBeenSet)
   {
-   Array<JsonValue> titleJsonList(m_title.size());
+   Aws::Utils::Array<JsonValue> titleJsonList(m_title.size());
    for(unsigned titleIndex = 0; titleIndex < titleJsonList.GetLength(); ++titleIndex)
    {
      titleJsonList[titleIndex].AsObject(m_title[titleIndex].Jsonize());
@@ -1284,7 +1284,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_descriptionHasBeenSet)
   {
-   Array<JsonValue> descriptionJsonList(m_description.size());
+   Aws::Utils::Array<JsonValue> descriptionJsonList(m_description.size());
    for(unsigned descriptionIndex = 0; descriptionIndex < descriptionJsonList.GetLength(); ++descriptionIndex)
    {
      descriptionJsonList[descriptionIndex].AsObject(m_description[descriptionIndex].Jsonize());
@@ -1295,7 +1295,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_recommendationTextHasBeenSet)
   {
-   Array<JsonValue> recommendationTextJsonList(m_recommendationText.size());
+   Aws::Utils::Array<JsonValue> recommendationTextJsonList(m_recommendationText.size());
    for(unsigned recommendationTextIndex = 0; recommendationTextIndex < recommendationTextJsonList.GetLength(); ++recommendationTextIndex)
    {
      recommendationTextJsonList[recommendationTextIndex].AsObject(m_recommendationText[recommendationTextIndex].Jsonize());
@@ -1306,7 +1306,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_sourceUrlHasBeenSet)
   {
-   Array<JsonValue> sourceUrlJsonList(m_sourceUrl.size());
+   Aws::Utils::Array<JsonValue> sourceUrlJsonList(m_sourceUrl.size());
    for(unsigned sourceUrlIndex = 0; sourceUrlIndex < sourceUrlJsonList.GetLength(); ++sourceUrlIndex)
    {
      sourceUrlJsonList[sourceUrlIndex].AsObject(m_sourceUrl[sourceUrlIndex].Jsonize());
@@ -1317,7 +1317,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_productFieldsHasBeenSet)
   {
-   Array<JsonValue> productFieldsJsonList(m_productFields.size());
+   Aws::Utils::Array<JsonValue> productFieldsJsonList(m_productFields.size());
    for(unsigned productFieldsIndex = 0; productFieldsIndex < productFieldsJsonList.GetLength(); ++productFieldsIndex)
    {
      productFieldsJsonList[productFieldsIndex].AsObject(m_productFields[productFieldsIndex].Jsonize());
@@ -1328,7 +1328,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_productNameHasBeenSet)
   {
-   Array<JsonValue> productNameJsonList(m_productName.size());
+   Aws::Utils::Array<JsonValue> productNameJsonList(m_productName.size());
    for(unsigned productNameIndex = 0; productNameIndex < productNameJsonList.GetLength(); ++productNameIndex)
    {
      productNameJsonList[productNameIndex].AsObject(m_productName[productNameIndex].Jsonize());
@@ -1339,7 +1339,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_companyNameHasBeenSet)
   {
-   Array<JsonValue> companyNameJsonList(m_companyName.size());
+   Aws::Utils::Array<JsonValue> companyNameJsonList(m_companyName.size());
    for(unsigned companyNameIndex = 0; companyNameIndex < companyNameJsonList.GetLength(); ++companyNameIndex)
    {
      companyNameJsonList[companyNameIndex].AsObject(m_companyName[companyNameIndex].Jsonize());
@@ -1350,7 +1350,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_userDefinedFieldsHasBeenSet)
   {
-   Array<JsonValue> userDefinedFieldsJsonList(m_userDefinedFields.size());
+   Aws::Utils::Array<JsonValue> userDefinedFieldsJsonList(m_userDefinedFields.size());
    for(unsigned userDefinedFieldsIndex = 0; userDefinedFieldsIndex < userDefinedFieldsJsonList.GetLength(); ++userDefinedFieldsIndex)
    {
      userDefinedFieldsJsonList[userDefinedFieldsIndex].AsObject(m_userDefinedFields[userDefinedFieldsIndex].Jsonize());
@@ -1361,7 +1361,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_malwareNameHasBeenSet)
   {
-   Array<JsonValue> malwareNameJsonList(m_malwareName.size());
+   Aws::Utils::Array<JsonValue> malwareNameJsonList(m_malwareName.size());
    for(unsigned malwareNameIndex = 0; malwareNameIndex < malwareNameJsonList.GetLength(); ++malwareNameIndex)
    {
      malwareNameJsonList[malwareNameIndex].AsObject(m_malwareName[malwareNameIndex].Jsonize());
@@ -1372,7 +1372,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_malwareTypeHasBeenSet)
   {
-   Array<JsonValue> malwareTypeJsonList(m_malwareType.size());
+   Aws::Utils::Array<JsonValue> malwareTypeJsonList(m_malwareType.size());
    for(unsigned malwareTypeIndex = 0; malwareTypeIndex < malwareTypeJsonList.GetLength(); ++malwareTypeIndex)
    {
      malwareTypeJsonList[malwareTypeIndex].AsObject(m_malwareType[malwareTypeIndex].Jsonize());
@@ -1383,7 +1383,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_malwarePathHasBeenSet)
   {
-   Array<JsonValue> malwarePathJsonList(m_malwarePath.size());
+   Aws::Utils::Array<JsonValue> malwarePathJsonList(m_malwarePath.size());
    for(unsigned malwarePathIndex = 0; malwarePathIndex < malwarePathJsonList.GetLength(); ++malwarePathIndex)
    {
      malwarePathJsonList[malwarePathIndex].AsObject(m_malwarePath[malwarePathIndex].Jsonize());
@@ -1394,7 +1394,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_malwareStateHasBeenSet)
   {
-   Array<JsonValue> malwareStateJsonList(m_malwareState.size());
+   Aws::Utils::Array<JsonValue> malwareStateJsonList(m_malwareState.size());
    for(unsigned malwareStateIndex = 0; malwareStateIndex < malwareStateJsonList.GetLength(); ++malwareStateIndex)
    {
      malwareStateJsonList[malwareStateIndex].AsObject(m_malwareState[malwareStateIndex].Jsonize());
@@ -1405,7 +1405,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkDirectionHasBeenSet)
   {
-   Array<JsonValue> networkDirectionJsonList(m_networkDirection.size());
+   Aws::Utils::Array<JsonValue> networkDirectionJsonList(m_networkDirection.size());
    for(unsigned networkDirectionIndex = 0; networkDirectionIndex < networkDirectionJsonList.GetLength(); ++networkDirectionIndex)
    {
      networkDirectionJsonList[networkDirectionIndex].AsObject(m_networkDirection[networkDirectionIndex].Jsonize());
@@ -1416,7 +1416,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkProtocolHasBeenSet)
   {
-   Array<JsonValue> networkProtocolJsonList(m_networkProtocol.size());
+   Aws::Utils::Array<JsonValue> networkProtocolJsonList(m_networkProtocol.size());
    for(unsigned networkProtocolIndex = 0; networkProtocolIndex < networkProtocolJsonList.GetLength(); ++networkProtocolIndex)
    {
      networkProtocolJsonList[networkProtocolIndex].AsObject(m_networkProtocol[networkProtocolIndex].Jsonize());
@@ -1427,7 +1427,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkSourceIpV4HasBeenSet)
   {
-   Array<JsonValue> networkSourceIpV4JsonList(m_networkSourceIpV4.size());
+   Aws::Utils::Array<JsonValue> networkSourceIpV4JsonList(m_networkSourceIpV4.size());
    for(unsigned networkSourceIpV4Index = 0; networkSourceIpV4Index < networkSourceIpV4JsonList.GetLength(); ++networkSourceIpV4Index)
    {
      networkSourceIpV4JsonList[networkSourceIpV4Index].AsObject(m_networkSourceIpV4[networkSourceIpV4Index].Jsonize());
@@ -1438,7 +1438,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkSourceIpV6HasBeenSet)
   {
-   Array<JsonValue> networkSourceIpV6JsonList(m_networkSourceIpV6.size());
+   Aws::Utils::Array<JsonValue> networkSourceIpV6JsonList(m_networkSourceIpV6.size());
    for(unsigned networkSourceIpV6Index = 0; networkSourceIpV6Index < networkSourceIpV6JsonList.GetLength(); ++networkSourceIpV6Index)
    {
      networkSourceIpV6JsonList[networkSourceIpV6Index].AsObject(m_networkSourceIpV6[networkSourceIpV6Index].Jsonize());
@@ -1449,7 +1449,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkSourcePortHasBeenSet)
   {
-   Array<JsonValue> networkSourcePortJsonList(m_networkSourcePort.size());
+   Aws::Utils::Array<JsonValue> networkSourcePortJsonList(m_networkSourcePort.size());
    for(unsigned networkSourcePortIndex = 0; networkSourcePortIndex < networkSourcePortJsonList.GetLength(); ++networkSourcePortIndex)
    {
      networkSourcePortJsonList[networkSourcePortIndex].AsObject(m_networkSourcePort[networkSourcePortIndex].Jsonize());
@@ -1460,7 +1460,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkSourceDomainHasBeenSet)
   {
-   Array<JsonValue> networkSourceDomainJsonList(m_networkSourceDomain.size());
+   Aws::Utils::Array<JsonValue> networkSourceDomainJsonList(m_networkSourceDomain.size());
    for(unsigned networkSourceDomainIndex = 0; networkSourceDomainIndex < networkSourceDomainJsonList.GetLength(); ++networkSourceDomainIndex)
    {
      networkSourceDomainJsonList[networkSourceDomainIndex].AsObject(m_networkSourceDomain[networkSourceDomainIndex].Jsonize());
@@ -1471,7 +1471,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkSourceMacHasBeenSet)
   {
-   Array<JsonValue> networkSourceMacJsonList(m_networkSourceMac.size());
+   Aws::Utils::Array<JsonValue> networkSourceMacJsonList(m_networkSourceMac.size());
    for(unsigned networkSourceMacIndex = 0; networkSourceMacIndex < networkSourceMacJsonList.GetLength(); ++networkSourceMacIndex)
    {
      networkSourceMacJsonList[networkSourceMacIndex].AsObject(m_networkSourceMac[networkSourceMacIndex].Jsonize());
@@ -1482,7 +1482,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkDestinationIpV4HasBeenSet)
   {
-   Array<JsonValue> networkDestinationIpV4JsonList(m_networkDestinationIpV4.size());
+   Aws::Utils::Array<JsonValue> networkDestinationIpV4JsonList(m_networkDestinationIpV4.size());
    for(unsigned networkDestinationIpV4Index = 0; networkDestinationIpV4Index < networkDestinationIpV4JsonList.GetLength(); ++networkDestinationIpV4Index)
    {
      networkDestinationIpV4JsonList[networkDestinationIpV4Index].AsObject(m_networkDestinationIpV4[networkDestinationIpV4Index].Jsonize());
@@ -1493,7 +1493,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkDestinationIpV6HasBeenSet)
   {
-   Array<JsonValue> networkDestinationIpV6JsonList(m_networkDestinationIpV6.size());
+   Aws::Utils::Array<JsonValue> networkDestinationIpV6JsonList(m_networkDestinationIpV6.size());
    for(unsigned networkDestinationIpV6Index = 0; networkDestinationIpV6Index < networkDestinationIpV6JsonList.GetLength(); ++networkDestinationIpV6Index)
    {
      networkDestinationIpV6JsonList[networkDestinationIpV6Index].AsObject(m_networkDestinationIpV6[networkDestinationIpV6Index].Jsonize());
@@ -1504,7 +1504,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkDestinationPortHasBeenSet)
   {
-   Array<JsonValue> networkDestinationPortJsonList(m_networkDestinationPort.size());
+   Aws::Utils::Array<JsonValue> networkDestinationPortJsonList(m_networkDestinationPort.size());
    for(unsigned networkDestinationPortIndex = 0; networkDestinationPortIndex < networkDestinationPortJsonList.GetLength(); ++networkDestinationPortIndex)
    {
      networkDestinationPortJsonList[networkDestinationPortIndex].AsObject(m_networkDestinationPort[networkDestinationPortIndex].Jsonize());
@@ -1515,7 +1515,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_networkDestinationDomainHasBeenSet)
   {
-   Array<JsonValue> networkDestinationDomainJsonList(m_networkDestinationDomain.size());
+   Aws::Utils::Array<JsonValue> networkDestinationDomainJsonList(m_networkDestinationDomain.size());
    for(unsigned networkDestinationDomainIndex = 0; networkDestinationDomainIndex < networkDestinationDomainJsonList.GetLength(); ++networkDestinationDomainIndex)
    {
      networkDestinationDomainJsonList[networkDestinationDomainIndex].AsObject(m_networkDestinationDomain[networkDestinationDomainIndex].Jsonize());
@@ -1526,7 +1526,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_processNameHasBeenSet)
   {
-   Array<JsonValue> processNameJsonList(m_processName.size());
+   Aws::Utils::Array<JsonValue> processNameJsonList(m_processName.size());
    for(unsigned processNameIndex = 0; processNameIndex < processNameJsonList.GetLength(); ++processNameIndex)
    {
      processNameJsonList[processNameIndex].AsObject(m_processName[processNameIndex].Jsonize());
@@ -1537,7 +1537,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_processPathHasBeenSet)
   {
-   Array<JsonValue> processPathJsonList(m_processPath.size());
+   Aws::Utils::Array<JsonValue> processPathJsonList(m_processPath.size());
    for(unsigned processPathIndex = 0; processPathIndex < processPathJsonList.GetLength(); ++processPathIndex)
    {
      processPathJsonList[processPathIndex].AsObject(m_processPath[processPathIndex].Jsonize());
@@ -1548,7 +1548,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_processPidHasBeenSet)
   {
-   Array<JsonValue> processPidJsonList(m_processPid.size());
+   Aws::Utils::Array<JsonValue> processPidJsonList(m_processPid.size());
    for(unsigned processPidIndex = 0; processPidIndex < processPidJsonList.GetLength(); ++processPidIndex)
    {
      processPidJsonList[processPidIndex].AsObject(m_processPid[processPidIndex].Jsonize());
@@ -1559,7 +1559,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_processParentPidHasBeenSet)
   {
-   Array<JsonValue> processParentPidJsonList(m_processParentPid.size());
+   Aws::Utils::Array<JsonValue> processParentPidJsonList(m_processParentPid.size());
    for(unsigned processParentPidIndex = 0; processParentPidIndex < processParentPidJsonList.GetLength(); ++processParentPidIndex)
    {
      processParentPidJsonList[processParentPidIndex].AsObject(m_processParentPid[processParentPidIndex].Jsonize());
@@ -1570,7 +1570,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_processLaunchedAtHasBeenSet)
   {
-   Array<JsonValue> processLaunchedAtJsonList(m_processLaunchedAt.size());
+   Aws::Utils::Array<JsonValue> processLaunchedAtJsonList(m_processLaunchedAt.size());
    for(unsigned processLaunchedAtIndex = 0; processLaunchedAtIndex < processLaunchedAtJsonList.GetLength(); ++processLaunchedAtIndex)
    {
      processLaunchedAtJsonList[processLaunchedAtIndex].AsObject(m_processLaunchedAt[processLaunchedAtIndex].Jsonize());
@@ -1581,7 +1581,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_processTerminatedAtHasBeenSet)
   {
-   Array<JsonValue> processTerminatedAtJsonList(m_processTerminatedAt.size());
+   Aws::Utils::Array<JsonValue> processTerminatedAtJsonList(m_processTerminatedAt.size());
    for(unsigned processTerminatedAtIndex = 0; processTerminatedAtIndex < processTerminatedAtJsonList.GetLength(); ++processTerminatedAtIndex)
    {
      processTerminatedAtJsonList[processTerminatedAtIndex].AsObject(m_processTerminatedAt[processTerminatedAtIndex].Jsonize());
@@ -1592,7 +1592,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_threatIntelIndicatorTypeHasBeenSet)
   {
-   Array<JsonValue> threatIntelIndicatorTypeJsonList(m_threatIntelIndicatorType.size());
+   Aws::Utils::Array<JsonValue> threatIntelIndicatorTypeJsonList(m_threatIntelIndicatorType.size());
    for(unsigned threatIntelIndicatorTypeIndex = 0; threatIntelIndicatorTypeIndex < threatIntelIndicatorTypeJsonList.GetLength(); ++threatIntelIndicatorTypeIndex)
    {
      threatIntelIndicatorTypeJsonList[threatIntelIndicatorTypeIndex].AsObject(m_threatIntelIndicatorType[threatIntelIndicatorTypeIndex].Jsonize());
@@ -1603,7 +1603,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_threatIntelIndicatorValueHasBeenSet)
   {
-   Array<JsonValue> threatIntelIndicatorValueJsonList(m_threatIntelIndicatorValue.size());
+   Aws::Utils::Array<JsonValue> threatIntelIndicatorValueJsonList(m_threatIntelIndicatorValue.size());
    for(unsigned threatIntelIndicatorValueIndex = 0; threatIntelIndicatorValueIndex < threatIntelIndicatorValueJsonList.GetLength(); ++threatIntelIndicatorValueIndex)
    {
      threatIntelIndicatorValueJsonList[threatIntelIndicatorValueIndex].AsObject(m_threatIntelIndicatorValue[threatIntelIndicatorValueIndex].Jsonize());
@@ -1614,7 +1614,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_threatIntelIndicatorCategoryHasBeenSet)
   {
-   Array<JsonValue> threatIntelIndicatorCategoryJsonList(m_threatIntelIndicatorCategory.size());
+   Aws::Utils::Array<JsonValue> threatIntelIndicatorCategoryJsonList(m_threatIntelIndicatorCategory.size());
    for(unsigned threatIntelIndicatorCategoryIndex = 0; threatIntelIndicatorCategoryIndex < threatIntelIndicatorCategoryJsonList.GetLength(); ++threatIntelIndicatorCategoryIndex)
    {
      threatIntelIndicatorCategoryJsonList[threatIntelIndicatorCategoryIndex].AsObject(m_threatIntelIndicatorCategory[threatIntelIndicatorCategoryIndex].Jsonize());
@@ -1625,7 +1625,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_threatIntelIndicatorLastObservedAtHasBeenSet)
   {
-   Array<JsonValue> threatIntelIndicatorLastObservedAtJsonList(m_threatIntelIndicatorLastObservedAt.size());
+   Aws::Utils::Array<JsonValue> threatIntelIndicatorLastObservedAtJsonList(m_threatIntelIndicatorLastObservedAt.size());
    for(unsigned threatIntelIndicatorLastObservedAtIndex = 0; threatIntelIndicatorLastObservedAtIndex < threatIntelIndicatorLastObservedAtJsonList.GetLength(); ++threatIntelIndicatorLastObservedAtIndex)
    {
      threatIntelIndicatorLastObservedAtJsonList[threatIntelIndicatorLastObservedAtIndex].AsObject(m_threatIntelIndicatorLastObservedAt[threatIntelIndicatorLastObservedAtIndex].Jsonize());
@@ -1636,7 +1636,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_threatIntelIndicatorSourceHasBeenSet)
   {
-   Array<JsonValue> threatIntelIndicatorSourceJsonList(m_threatIntelIndicatorSource.size());
+   Aws::Utils::Array<JsonValue> threatIntelIndicatorSourceJsonList(m_threatIntelIndicatorSource.size());
    for(unsigned threatIntelIndicatorSourceIndex = 0; threatIntelIndicatorSourceIndex < threatIntelIndicatorSourceJsonList.GetLength(); ++threatIntelIndicatorSourceIndex)
    {
      threatIntelIndicatorSourceJsonList[threatIntelIndicatorSourceIndex].AsObject(m_threatIntelIndicatorSource[threatIntelIndicatorSourceIndex].Jsonize());
@@ -1647,7 +1647,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_threatIntelIndicatorSourceUrlHasBeenSet)
   {
-   Array<JsonValue> threatIntelIndicatorSourceUrlJsonList(m_threatIntelIndicatorSourceUrl.size());
+   Aws::Utils::Array<JsonValue> threatIntelIndicatorSourceUrlJsonList(m_threatIntelIndicatorSourceUrl.size());
    for(unsigned threatIntelIndicatorSourceUrlIndex = 0; threatIntelIndicatorSourceUrlIndex < threatIntelIndicatorSourceUrlJsonList.GetLength(); ++threatIntelIndicatorSourceUrlIndex)
    {
      threatIntelIndicatorSourceUrlJsonList[threatIntelIndicatorSourceUrlIndex].AsObject(m_threatIntelIndicatorSourceUrl[threatIntelIndicatorSourceUrlIndex].Jsonize());
@@ -1658,7 +1658,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceTypeHasBeenSet)
   {
-   Array<JsonValue> resourceTypeJsonList(m_resourceType.size());
+   Aws::Utils::Array<JsonValue> resourceTypeJsonList(m_resourceType.size());
    for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
    {
      resourceTypeJsonList[resourceTypeIndex].AsObject(m_resourceType[resourceTypeIndex].Jsonize());
@@ -1669,7 +1669,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceIdHasBeenSet)
   {
-   Array<JsonValue> resourceIdJsonList(m_resourceId.size());
+   Aws::Utils::Array<JsonValue> resourceIdJsonList(m_resourceId.size());
    for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
    {
      resourceIdJsonList[resourceIdIndex].AsObject(m_resourceId[resourceIdIndex].Jsonize());
@@ -1680,7 +1680,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourcePartitionHasBeenSet)
   {
-   Array<JsonValue> resourcePartitionJsonList(m_resourcePartition.size());
+   Aws::Utils::Array<JsonValue> resourcePartitionJsonList(m_resourcePartition.size());
    for(unsigned resourcePartitionIndex = 0; resourcePartitionIndex < resourcePartitionJsonList.GetLength(); ++resourcePartitionIndex)
    {
      resourcePartitionJsonList[resourcePartitionIndex].AsObject(m_resourcePartition[resourcePartitionIndex].Jsonize());
@@ -1691,7 +1691,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceRegionHasBeenSet)
   {
-   Array<JsonValue> resourceRegionJsonList(m_resourceRegion.size());
+   Aws::Utils::Array<JsonValue> resourceRegionJsonList(m_resourceRegion.size());
    for(unsigned resourceRegionIndex = 0; resourceRegionIndex < resourceRegionJsonList.GetLength(); ++resourceRegionIndex)
    {
      resourceRegionJsonList[resourceRegionIndex].AsObject(m_resourceRegion[resourceRegionIndex].Jsonize());
@@ -1702,7 +1702,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceTagsHasBeenSet)
   {
-   Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
    for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
    {
      resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
@@ -1713,7 +1713,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsEc2InstanceTypeHasBeenSet)
   {
-   Array<JsonValue> resourceAwsEc2InstanceTypeJsonList(m_resourceAwsEc2InstanceType.size());
+   Aws::Utils::Array<JsonValue> resourceAwsEc2InstanceTypeJsonList(m_resourceAwsEc2InstanceType.size());
    for(unsigned resourceAwsEc2InstanceTypeIndex = 0; resourceAwsEc2InstanceTypeIndex < resourceAwsEc2InstanceTypeJsonList.GetLength(); ++resourceAwsEc2InstanceTypeIndex)
    {
      resourceAwsEc2InstanceTypeJsonList[resourceAwsEc2InstanceTypeIndex].AsObject(m_resourceAwsEc2InstanceType[resourceAwsEc2InstanceTypeIndex].Jsonize());
@@ -1724,7 +1724,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsEc2InstanceImageIdHasBeenSet)
   {
-   Array<JsonValue> resourceAwsEc2InstanceImageIdJsonList(m_resourceAwsEc2InstanceImageId.size());
+   Aws::Utils::Array<JsonValue> resourceAwsEc2InstanceImageIdJsonList(m_resourceAwsEc2InstanceImageId.size());
    for(unsigned resourceAwsEc2InstanceImageIdIndex = 0; resourceAwsEc2InstanceImageIdIndex < resourceAwsEc2InstanceImageIdJsonList.GetLength(); ++resourceAwsEc2InstanceImageIdIndex)
    {
      resourceAwsEc2InstanceImageIdJsonList[resourceAwsEc2InstanceImageIdIndex].AsObject(m_resourceAwsEc2InstanceImageId[resourceAwsEc2InstanceImageIdIndex].Jsonize());
@@ -1735,7 +1735,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet)
   {
-   Array<JsonValue> resourceAwsEc2InstanceIpV4AddressesJsonList(m_resourceAwsEc2InstanceIpV4Addresses.size());
+   Aws::Utils::Array<JsonValue> resourceAwsEc2InstanceIpV4AddressesJsonList(m_resourceAwsEc2InstanceIpV4Addresses.size());
    for(unsigned resourceAwsEc2InstanceIpV4AddressesIndex = 0; resourceAwsEc2InstanceIpV4AddressesIndex < resourceAwsEc2InstanceIpV4AddressesJsonList.GetLength(); ++resourceAwsEc2InstanceIpV4AddressesIndex)
    {
      resourceAwsEc2InstanceIpV4AddressesJsonList[resourceAwsEc2InstanceIpV4AddressesIndex].AsObject(m_resourceAwsEc2InstanceIpV4Addresses[resourceAwsEc2InstanceIpV4AddressesIndex].Jsonize());
@@ -1746,7 +1746,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet)
   {
-   Array<JsonValue> resourceAwsEc2InstanceIpV6AddressesJsonList(m_resourceAwsEc2InstanceIpV6Addresses.size());
+   Aws::Utils::Array<JsonValue> resourceAwsEc2InstanceIpV6AddressesJsonList(m_resourceAwsEc2InstanceIpV6Addresses.size());
    for(unsigned resourceAwsEc2InstanceIpV6AddressesIndex = 0; resourceAwsEc2InstanceIpV6AddressesIndex < resourceAwsEc2InstanceIpV6AddressesJsonList.GetLength(); ++resourceAwsEc2InstanceIpV6AddressesIndex)
    {
      resourceAwsEc2InstanceIpV6AddressesJsonList[resourceAwsEc2InstanceIpV6AddressesIndex].AsObject(m_resourceAwsEc2InstanceIpV6Addresses[resourceAwsEc2InstanceIpV6AddressesIndex].Jsonize());
@@ -1757,7 +1757,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsEc2InstanceKeyNameHasBeenSet)
   {
-   Array<JsonValue> resourceAwsEc2InstanceKeyNameJsonList(m_resourceAwsEc2InstanceKeyName.size());
+   Aws::Utils::Array<JsonValue> resourceAwsEc2InstanceKeyNameJsonList(m_resourceAwsEc2InstanceKeyName.size());
    for(unsigned resourceAwsEc2InstanceKeyNameIndex = 0; resourceAwsEc2InstanceKeyNameIndex < resourceAwsEc2InstanceKeyNameJsonList.GetLength(); ++resourceAwsEc2InstanceKeyNameIndex)
    {
      resourceAwsEc2InstanceKeyNameJsonList[resourceAwsEc2InstanceKeyNameIndex].AsObject(m_resourceAwsEc2InstanceKeyName[resourceAwsEc2InstanceKeyNameIndex].Jsonize());
@@ -1768,7 +1768,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet)
   {
-   Array<JsonValue> resourceAwsEc2InstanceIamInstanceProfileArnJsonList(m_resourceAwsEc2InstanceIamInstanceProfileArn.size());
+   Aws::Utils::Array<JsonValue> resourceAwsEc2InstanceIamInstanceProfileArnJsonList(m_resourceAwsEc2InstanceIamInstanceProfileArn.size());
    for(unsigned resourceAwsEc2InstanceIamInstanceProfileArnIndex = 0; resourceAwsEc2InstanceIamInstanceProfileArnIndex < resourceAwsEc2InstanceIamInstanceProfileArnJsonList.GetLength(); ++resourceAwsEc2InstanceIamInstanceProfileArnIndex)
    {
      resourceAwsEc2InstanceIamInstanceProfileArnJsonList[resourceAwsEc2InstanceIamInstanceProfileArnIndex].AsObject(m_resourceAwsEc2InstanceIamInstanceProfileArn[resourceAwsEc2InstanceIamInstanceProfileArnIndex].Jsonize());
@@ -1779,7 +1779,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsEc2InstanceVpcIdHasBeenSet)
   {
-   Array<JsonValue> resourceAwsEc2InstanceVpcIdJsonList(m_resourceAwsEc2InstanceVpcId.size());
+   Aws::Utils::Array<JsonValue> resourceAwsEc2InstanceVpcIdJsonList(m_resourceAwsEc2InstanceVpcId.size());
    for(unsigned resourceAwsEc2InstanceVpcIdIndex = 0; resourceAwsEc2InstanceVpcIdIndex < resourceAwsEc2InstanceVpcIdJsonList.GetLength(); ++resourceAwsEc2InstanceVpcIdIndex)
    {
      resourceAwsEc2InstanceVpcIdJsonList[resourceAwsEc2InstanceVpcIdIndex].AsObject(m_resourceAwsEc2InstanceVpcId[resourceAwsEc2InstanceVpcIdIndex].Jsonize());
@@ -1790,7 +1790,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsEc2InstanceSubnetIdHasBeenSet)
   {
-   Array<JsonValue> resourceAwsEc2InstanceSubnetIdJsonList(m_resourceAwsEc2InstanceSubnetId.size());
+   Aws::Utils::Array<JsonValue> resourceAwsEc2InstanceSubnetIdJsonList(m_resourceAwsEc2InstanceSubnetId.size());
    for(unsigned resourceAwsEc2InstanceSubnetIdIndex = 0; resourceAwsEc2InstanceSubnetIdIndex < resourceAwsEc2InstanceSubnetIdJsonList.GetLength(); ++resourceAwsEc2InstanceSubnetIdIndex)
    {
      resourceAwsEc2InstanceSubnetIdJsonList[resourceAwsEc2InstanceSubnetIdIndex].AsObject(m_resourceAwsEc2InstanceSubnetId[resourceAwsEc2InstanceSubnetIdIndex].Jsonize());
@@ -1801,7 +1801,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsEc2InstanceLaunchedAtHasBeenSet)
   {
-   Array<JsonValue> resourceAwsEc2InstanceLaunchedAtJsonList(m_resourceAwsEc2InstanceLaunchedAt.size());
+   Aws::Utils::Array<JsonValue> resourceAwsEc2InstanceLaunchedAtJsonList(m_resourceAwsEc2InstanceLaunchedAt.size());
    for(unsigned resourceAwsEc2InstanceLaunchedAtIndex = 0; resourceAwsEc2InstanceLaunchedAtIndex < resourceAwsEc2InstanceLaunchedAtJsonList.GetLength(); ++resourceAwsEc2InstanceLaunchedAtIndex)
    {
      resourceAwsEc2InstanceLaunchedAtJsonList[resourceAwsEc2InstanceLaunchedAtIndex].AsObject(m_resourceAwsEc2InstanceLaunchedAt[resourceAwsEc2InstanceLaunchedAtIndex].Jsonize());
@@ -1812,7 +1812,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsS3BucketOwnerIdHasBeenSet)
   {
-   Array<JsonValue> resourceAwsS3BucketOwnerIdJsonList(m_resourceAwsS3BucketOwnerId.size());
+   Aws::Utils::Array<JsonValue> resourceAwsS3BucketOwnerIdJsonList(m_resourceAwsS3BucketOwnerId.size());
    for(unsigned resourceAwsS3BucketOwnerIdIndex = 0; resourceAwsS3BucketOwnerIdIndex < resourceAwsS3BucketOwnerIdJsonList.GetLength(); ++resourceAwsS3BucketOwnerIdIndex)
    {
      resourceAwsS3BucketOwnerIdJsonList[resourceAwsS3BucketOwnerIdIndex].AsObject(m_resourceAwsS3BucketOwnerId[resourceAwsS3BucketOwnerIdIndex].Jsonize());
@@ -1823,7 +1823,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsS3BucketOwnerNameHasBeenSet)
   {
-   Array<JsonValue> resourceAwsS3BucketOwnerNameJsonList(m_resourceAwsS3BucketOwnerName.size());
+   Aws::Utils::Array<JsonValue> resourceAwsS3BucketOwnerNameJsonList(m_resourceAwsS3BucketOwnerName.size());
    for(unsigned resourceAwsS3BucketOwnerNameIndex = 0; resourceAwsS3BucketOwnerNameIndex < resourceAwsS3BucketOwnerNameJsonList.GetLength(); ++resourceAwsS3BucketOwnerNameIndex)
    {
      resourceAwsS3BucketOwnerNameJsonList[resourceAwsS3BucketOwnerNameIndex].AsObject(m_resourceAwsS3BucketOwnerName[resourceAwsS3BucketOwnerNameIndex].Jsonize());
@@ -1834,7 +1834,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet)
   {
-   Array<JsonValue> resourceAwsIamAccessKeyPrincipalNameJsonList(m_resourceAwsIamAccessKeyPrincipalName.size());
+   Aws::Utils::Array<JsonValue> resourceAwsIamAccessKeyPrincipalNameJsonList(m_resourceAwsIamAccessKeyPrincipalName.size());
    for(unsigned resourceAwsIamAccessKeyPrincipalNameIndex = 0; resourceAwsIamAccessKeyPrincipalNameIndex < resourceAwsIamAccessKeyPrincipalNameJsonList.GetLength(); ++resourceAwsIamAccessKeyPrincipalNameIndex)
    {
      resourceAwsIamAccessKeyPrincipalNameJsonList[resourceAwsIamAccessKeyPrincipalNameIndex].AsObject(m_resourceAwsIamAccessKeyPrincipalName[resourceAwsIamAccessKeyPrincipalNameIndex].Jsonize());
@@ -1845,7 +1845,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsIamAccessKeyStatusHasBeenSet)
   {
-   Array<JsonValue> resourceAwsIamAccessKeyStatusJsonList(m_resourceAwsIamAccessKeyStatus.size());
+   Aws::Utils::Array<JsonValue> resourceAwsIamAccessKeyStatusJsonList(m_resourceAwsIamAccessKeyStatus.size());
    for(unsigned resourceAwsIamAccessKeyStatusIndex = 0; resourceAwsIamAccessKeyStatusIndex < resourceAwsIamAccessKeyStatusJsonList.GetLength(); ++resourceAwsIamAccessKeyStatusIndex)
    {
      resourceAwsIamAccessKeyStatusJsonList[resourceAwsIamAccessKeyStatusIndex].AsObject(m_resourceAwsIamAccessKeyStatus[resourceAwsIamAccessKeyStatusIndex].Jsonize());
@@ -1856,7 +1856,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsIamAccessKeyCreatedAtHasBeenSet)
   {
-   Array<JsonValue> resourceAwsIamAccessKeyCreatedAtJsonList(m_resourceAwsIamAccessKeyCreatedAt.size());
+   Aws::Utils::Array<JsonValue> resourceAwsIamAccessKeyCreatedAtJsonList(m_resourceAwsIamAccessKeyCreatedAt.size());
    for(unsigned resourceAwsIamAccessKeyCreatedAtIndex = 0; resourceAwsIamAccessKeyCreatedAtIndex < resourceAwsIamAccessKeyCreatedAtJsonList.GetLength(); ++resourceAwsIamAccessKeyCreatedAtIndex)
    {
      resourceAwsIamAccessKeyCreatedAtJsonList[resourceAwsIamAccessKeyCreatedAtIndex].AsObject(m_resourceAwsIamAccessKeyCreatedAt[resourceAwsIamAccessKeyCreatedAtIndex].Jsonize());
@@ -1867,7 +1867,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceAwsIamUserUserNameHasBeenSet)
   {
-   Array<JsonValue> resourceAwsIamUserUserNameJsonList(m_resourceAwsIamUserUserName.size());
+   Aws::Utils::Array<JsonValue> resourceAwsIamUserUserNameJsonList(m_resourceAwsIamUserUserName.size());
    for(unsigned resourceAwsIamUserUserNameIndex = 0; resourceAwsIamUserUserNameIndex < resourceAwsIamUserUserNameJsonList.GetLength(); ++resourceAwsIamUserUserNameIndex)
    {
      resourceAwsIamUserUserNameJsonList[resourceAwsIamUserUserNameIndex].AsObject(m_resourceAwsIamUserUserName[resourceAwsIamUserUserNameIndex].Jsonize());
@@ -1878,7 +1878,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceContainerNameHasBeenSet)
   {
-   Array<JsonValue> resourceContainerNameJsonList(m_resourceContainerName.size());
+   Aws::Utils::Array<JsonValue> resourceContainerNameJsonList(m_resourceContainerName.size());
    for(unsigned resourceContainerNameIndex = 0; resourceContainerNameIndex < resourceContainerNameJsonList.GetLength(); ++resourceContainerNameIndex)
    {
      resourceContainerNameJsonList[resourceContainerNameIndex].AsObject(m_resourceContainerName[resourceContainerNameIndex].Jsonize());
@@ -1889,7 +1889,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceContainerImageIdHasBeenSet)
   {
-   Array<JsonValue> resourceContainerImageIdJsonList(m_resourceContainerImageId.size());
+   Aws::Utils::Array<JsonValue> resourceContainerImageIdJsonList(m_resourceContainerImageId.size());
    for(unsigned resourceContainerImageIdIndex = 0; resourceContainerImageIdIndex < resourceContainerImageIdJsonList.GetLength(); ++resourceContainerImageIdIndex)
    {
      resourceContainerImageIdJsonList[resourceContainerImageIdIndex].AsObject(m_resourceContainerImageId[resourceContainerImageIdIndex].Jsonize());
@@ -1900,7 +1900,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceContainerImageNameHasBeenSet)
   {
-   Array<JsonValue> resourceContainerImageNameJsonList(m_resourceContainerImageName.size());
+   Aws::Utils::Array<JsonValue> resourceContainerImageNameJsonList(m_resourceContainerImageName.size());
    for(unsigned resourceContainerImageNameIndex = 0; resourceContainerImageNameIndex < resourceContainerImageNameJsonList.GetLength(); ++resourceContainerImageNameIndex)
    {
      resourceContainerImageNameJsonList[resourceContainerImageNameIndex].AsObject(m_resourceContainerImageName[resourceContainerImageNameIndex].Jsonize());
@@ -1911,7 +1911,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceContainerLaunchedAtHasBeenSet)
   {
-   Array<JsonValue> resourceContainerLaunchedAtJsonList(m_resourceContainerLaunchedAt.size());
+   Aws::Utils::Array<JsonValue> resourceContainerLaunchedAtJsonList(m_resourceContainerLaunchedAt.size());
    for(unsigned resourceContainerLaunchedAtIndex = 0; resourceContainerLaunchedAtIndex < resourceContainerLaunchedAtJsonList.GetLength(); ++resourceContainerLaunchedAtIndex)
    {
      resourceContainerLaunchedAtJsonList[resourceContainerLaunchedAtIndex].AsObject(m_resourceContainerLaunchedAt[resourceContainerLaunchedAtIndex].Jsonize());
@@ -1922,7 +1922,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_resourceDetailsOtherHasBeenSet)
   {
-   Array<JsonValue> resourceDetailsOtherJsonList(m_resourceDetailsOther.size());
+   Aws::Utils::Array<JsonValue> resourceDetailsOtherJsonList(m_resourceDetailsOther.size());
    for(unsigned resourceDetailsOtherIndex = 0; resourceDetailsOtherIndex < resourceDetailsOtherJsonList.GetLength(); ++resourceDetailsOtherIndex)
    {
      resourceDetailsOtherJsonList[resourceDetailsOtherIndex].AsObject(m_resourceDetailsOther[resourceDetailsOtherIndex].Jsonize());
@@ -1933,7 +1933,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_complianceStatusHasBeenSet)
   {
-   Array<JsonValue> complianceStatusJsonList(m_complianceStatus.size());
+   Aws::Utils::Array<JsonValue> complianceStatusJsonList(m_complianceStatus.size());
    for(unsigned complianceStatusIndex = 0; complianceStatusIndex < complianceStatusJsonList.GetLength(); ++complianceStatusIndex)
    {
      complianceStatusJsonList[complianceStatusIndex].AsObject(m_complianceStatus[complianceStatusIndex].Jsonize());
@@ -1944,7 +1944,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_verificationStateHasBeenSet)
   {
-   Array<JsonValue> verificationStateJsonList(m_verificationState.size());
+   Aws::Utils::Array<JsonValue> verificationStateJsonList(m_verificationState.size());
    for(unsigned verificationStateIndex = 0; verificationStateIndex < verificationStateJsonList.GetLength(); ++verificationStateIndex)
    {
      verificationStateJsonList[verificationStateIndex].AsObject(m_verificationState[verificationStateIndex].Jsonize());
@@ -1955,7 +1955,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_workflowStateHasBeenSet)
   {
-   Array<JsonValue> workflowStateJsonList(m_workflowState.size());
+   Aws::Utils::Array<JsonValue> workflowStateJsonList(m_workflowState.size());
    for(unsigned workflowStateIndex = 0; workflowStateIndex < workflowStateJsonList.GetLength(); ++workflowStateIndex)
    {
      workflowStateJsonList[workflowStateIndex].AsObject(m_workflowState[workflowStateIndex].Jsonize());
@@ -1966,7 +1966,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_workflowStatusHasBeenSet)
   {
-   Array<JsonValue> workflowStatusJsonList(m_workflowStatus.size());
+   Aws::Utils::Array<JsonValue> workflowStatusJsonList(m_workflowStatus.size());
    for(unsigned workflowStatusIndex = 0; workflowStatusIndex < workflowStatusJsonList.GetLength(); ++workflowStatusIndex)
    {
      workflowStatusJsonList[workflowStatusIndex].AsObject(m_workflowStatus[workflowStatusIndex].Jsonize());
@@ -1977,7 +1977,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_recordStateHasBeenSet)
   {
-   Array<JsonValue> recordStateJsonList(m_recordState.size());
+   Aws::Utils::Array<JsonValue> recordStateJsonList(m_recordState.size());
    for(unsigned recordStateIndex = 0; recordStateIndex < recordStateJsonList.GetLength(); ++recordStateIndex)
    {
      recordStateJsonList[recordStateIndex].AsObject(m_recordState[recordStateIndex].Jsonize());
@@ -1988,7 +1988,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_relatedFindingsProductArnHasBeenSet)
   {
-   Array<JsonValue> relatedFindingsProductArnJsonList(m_relatedFindingsProductArn.size());
+   Aws::Utils::Array<JsonValue> relatedFindingsProductArnJsonList(m_relatedFindingsProductArn.size());
    for(unsigned relatedFindingsProductArnIndex = 0; relatedFindingsProductArnIndex < relatedFindingsProductArnJsonList.GetLength(); ++relatedFindingsProductArnIndex)
    {
      relatedFindingsProductArnJsonList[relatedFindingsProductArnIndex].AsObject(m_relatedFindingsProductArn[relatedFindingsProductArnIndex].Jsonize());
@@ -1999,7 +1999,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_relatedFindingsIdHasBeenSet)
   {
-   Array<JsonValue> relatedFindingsIdJsonList(m_relatedFindingsId.size());
+   Aws::Utils::Array<JsonValue> relatedFindingsIdJsonList(m_relatedFindingsId.size());
    for(unsigned relatedFindingsIdIndex = 0; relatedFindingsIdIndex < relatedFindingsIdJsonList.GetLength(); ++relatedFindingsIdIndex)
    {
      relatedFindingsIdJsonList[relatedFindingsIdIndex].AsObject(m_relatedFindingsId[relatedFindingsIdIndex].Jsonize());
@@ -2010,7 +2010,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_noteTextHasBeenSet)
   {
-   Array<JsonValue> noteTextJsonList(m_noteText.size());
+   Aws::Utils::Array<JsonValue> noteTextJsonList(m_noteText.size());
    for(unsigned noteTextIndex = 0; noteTextIndex < noteTextJsonList.GetLength(); ++noteTextIndex)
    {
      noteTextJsonList[noteTextIndex].AsObject(m_noteText[noteTextIndex].Jsonize());
@@ -2021,7 +2021,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_noteUpdatedAtHasBeenSet)
   {
-   Array<JsonValue> noteUpdatedAtJsonList(m_noteUpdatedAt.size());
+   Aws::Utils::Array<JsonValue> noteUpdatedAtJsonList(m_noteUpdatedAt.size());
    for(unsigned noteUpdatedAtIndex = 0; noteUpdatedAtIndex < noteUpdatedAtJsonList.GetLength(); ++noteUpdatedAtIndex)
    {
      noteUpdatedAtJsonList[noteUpdatedAtIndex].AsObject(m_noteUpdatedAt[noteUpdatedAtIndex].Jsonize());
@@ -2032,7 +2032,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_noteUpdatedByHasBeenSet)
   {
-   Array<JsonValue> noteUpdatedByJsonList(m_noteUpdatedBy.size());
+   Aws::Utils::Array<JsonValue> noteUpdatedByJsonList(m_noteUpdatedBy.size());
    for(unsigned noteUpdatedByIndex = 0; noteUpdatedByIndex < noteUpdatedByJsonList.GetLength(); ++noteUpdatedByIndex)
    {
      noteUpdatedByJsonList[noteUpdatedByIndex].AsObject(m_noteUpdatedBy[noteUpdatedByIndex].Jsonize());
@@ -2043,7 +2043,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_findingProviderFieldsConfidenceHasBeenSet)
   {
-   Array<JsonValue> findingProviderFieldsConfidenceJsonList(m_findingProviderFieldsConfidence.size());
+   Aws::Utils::Array<JsonValue> findingProviderFieldsConfidenceJsonList(m_findingProviderFieldsConfidence.size());
    for(unsigned findingProviderFieldsConfidenceIndex = 0; findingProviderFieldsConfidenceIndex < findingProviderFieldsConfidenceJsonList.GetLength(); ++findingProviderFieldsConfidenceIndex)
    {
      findingProviderFieldsConfidenceJsonList[findingProviderFieldsConfidenceIndex].AsObject(m_findingProviderFieldsConfidence[findingProviderFieldsConfidenceIndex].Jsonize());
@@ -2054,7 +2054,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_findingProviderFieldsCriticalityHasBeenSet)
   {
-   Array<JsonValue> findingProviderFieldsCriticalityJsonList(m_findingProviderFieldsCriticality.size());
+   Aws::Utils::Array<JsonValue> findingProviderFieldsCriticalityJsonList(m_findingProviderFieldsCriticality.size());
    for(unsigned findingProviderFieldsCriticalityIndex = 0; findingProviderFieldsCriticalityIndex < findingProviderFieldsCriticalityJsonList.GetLength(); ++findingProviderFieldsCriticalityIndex)
    {
      findingProviderFieldsCriticalityJsonList[findingProviderFieldsCriticalityIndex].AsObject(m_findingProviderFieldsCriticality[findingProviderFieldsCriticalityIndex].Jsonize());
@@ -2065,7 +2065,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_findingProviderFieldsRelatedFindingsIdHasBeenSet)
   {
-   Array<JsonValue> findingProviderFieldsRelatedFindingsIdJsonList(m_findingProviderFieldsRelatedFindingsId.size());
+   Aws::Utils::Array<JsonValue> findingProviderFieldsRelatedFindingsIdJsonList(m_findingProviderFieldsRelatedFindingsId.size());
    for(unsigned findingProviderFieldsRelatedFindingsIdIndex = 0; findingProviderFieldsRelatedFindingsIdIndex < findingProviderFieldsRelatedFindingsIdJsonList.GetLength(); ++findingProviderFieldsRelatedFindingsIdIndex)
    {
      findingProviderFieldsRelatedFindingsIdJsonList[findingProviderFieldsRelatedFindingsIdIndex].AsObject(m_findingProviderFieldsRelatedFindingsId[findingProviderFieldsRelatedFindingsIdIndex].Jsonize());
@@ -2076,7 +2076,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet)
   {
-   Array<JsonValue> findingProviderFieldsRelatedFindingsProductArnJsonList(m_findingProviderFieldsRelatedFindingsProductArn.size());
+   Aws::Utils::Array<JsonValue> findingProviderFieldsRelatedFindingsProductArnJsonList(m_findingProviderFieldsRelatedFindingsProductArn.size());
    for(unsigned findingProviderFieldsRelatedFindingsProductArnIndex = 0; findingProviderFieldsRelatedFindingsProductArnIndex < findingProviderFieldsRelatedFindingsProductArnJsonList.GetLength(); ++findingProviderFieldsRelatedFindingsProductArnIndex)
    {
      findingProviderFieldsRelatedFindingsProductArnJsonList[findingProviderFieldsRelatedFindingsProductArnIndex].AsObject(m_findingProviderFieldsRelatedFindingsProductArn[findingProviderFieldsRelatedFindingsProductArnIndex].Jsonize());
@@ -2087,7 +2087,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_findingProviderFieldsSeverityLabelHasBeenSet)
   {
-   Array<JsonValue> findingProviderFieldsSeverityLabelJsonList(m_findingProviderFieldsSeverityLabel.size());
+   Aws::Utils::Array<JsonValue> findingProviderFieldsSeverityLabelJsonList(m_findingProviderFieldsSeverityLabel.size());
    for(unsigned findingProviderFieldsSeverityLabelIndex = 0; findingProviderFieldsSeverityLabelIndex < findingProviderFieldsSeverityLabelJsonList.GetLength(); ++findingProviderFieldsSeverityLabelIndex)
    {
      findingProviderFieldsSeverityLabelJsonList[findingProviderFieldsSeverityLabelIndex].AsObject(m_findingProviderFieldsSeverityLabel[findingProviderFieldsSeverityLabelIndex].Jsonize());
@@ -2098,7 +2098,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_findingProviderFieldsSeverityOriginalHasBeenSet)
   {
-   Array<JsonValue> findingProviderFieldsSeverityOriginalJsonList(m_findingProviderFieldsSeverityOriginal.size());
+   Aws::Utils::Array<JsonValue> findingProviderFieldsSeverityOriginalJsonList(m_findingProviderFieldsSeverityOriginal.size());
    for(unsigned findingProviderFieldsSeverityOriginalIndex = 0; findingProviderFieldsSeverityOriginalIndex < findingProviderFieldsSeverityOriginalJsonList.GetLength(); ++findingProviderFieldsSeverityOriginalIndex)
    {
      findingProviderFieldsSeverityOriginalJsonList[findingProviderFieldsSeverityOriginalIndex].AsObject(m_findingProviderFieldsSeverityOriginal[findingProviderFieldsSeverityOriginalIndex].Jsonize());
@@ -2109,7 +2109,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_findingProviderFieldsTypesHasBeenSet)
   {
-   Array<JsonValue> findingProviderFieldsTypesJsonList(m_findingProviderFieldsTypes.size());
+   Aws::Utils::Array<JsonValue> findingProviderFieldsTypesJsonList(m_findingProviderFieldsTypes.size());
    for(unsigned findingProviderFieldsTypesIndex = 0; findingProviderFieldsTypesIndex < findingProviderFieldsTypesJsonList.GetLength(); ++findingProviderFieldsTypesIndex)
    {
      findingProviderFieldsTypesJsonList[findingProviderFieldsTypesIndex].AsObject(m_findingProviderFieldsTypes[findingProviderFieldsTypesIndex].Jsonize());
@@ -2120,7 +2120,7 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   if(m_sampleHasBeenSet)
   {
-   Array<JsonValue> sampleJsonList(m_sample.size());
+   Aws::Utils::Array<JsonValue> sampleJsonList(m_sample.size());
    for(unsigned sampleIndex = 0; sampleIndex < sampleJsonList.GetLength(); ++sampleIndex)
    {
      sampleJsonList[sampleIndex].AsObject(m_sample[sampleIndex].Jsonize());

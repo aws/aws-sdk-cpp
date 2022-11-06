@@ -32,7 +32,7 @@ SearchQueuesResult& SearchQueuesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Queues"))
   {
-    Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
+    Aws::Utils::Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
     for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsObject());

@@ -23,7 +23,7 @@ Aws::String DescribeEntityAggregatesRequest::SerializePayload() const
 
   if(m_eventArnsHasBeenSet)
   {
-   Array<JsonValue> eventArnsJsonList(m_eventArns.size());
+   Aws::Utils::Array<JsonValue> eventArnsJsonList(m_eventArns.size());
    for(unsigned eventArnsIndex = 0; eventArnsIndex < eventArnsJsonList.GetLength(); ++eventArnsIndex)
    {
      eventArnsJsonList[eventArnsIndex].AsString(m_eventArns[eventArnsIndex]);

@@ -38,7 +38,7 @@ Aws::String GetSavingsPlansCoverageRequest::SerializePayload() const
 
   if(m_groupByHasBeenSet)
   {
-   Array<JsonValue> groupByJsonList(m_groupBy.size());
+   Aws::Utils::Array<JsonValue> groupByJsonList(m_groupBy.size());
    for(unsigned groupByIndex = 0; groupByIndex < groupByJsonList.GetLength(); ++groupByIndex)
    {
      groupByJsonList[groupByIndex].AsObject(m_groupBy[groupByIndex].Jsonize());
@@ -60,7 +60,7 @@ Aws::String GetSavingsPlansCoverageRequest::SerializePayload() const
 
   if(m_metricsHasBeenSet)
   {
-   Array<JsonValue> metricsJsonList(m_metrics.size());
+   Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
    for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
    {
      metricsJsonList[metricsIndex].AsString(m_metrics[metricsIndex]);

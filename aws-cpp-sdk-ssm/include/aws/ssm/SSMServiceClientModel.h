@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/ssm/SSMErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/ssm/SSMEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -184,6 +186,10 @@ namespace Aws
 
   namespace SSM
   {
+    using SSMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSMEndpointProviderBase = Aws::SSM::Endpoint::SSMEndpointProviderBase;
+    using SSMEndpointProvider = Aws::SSM::Endpoint::SSMEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in SSMClient header */

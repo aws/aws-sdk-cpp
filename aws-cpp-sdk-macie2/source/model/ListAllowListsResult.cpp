@@ -30,7 +30,7 @@ ListAllowListsResult& ListAllowListsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("allowLists"))
   {
-    Array<JsonView> allowListsJsonList = jsonValue.GetArray("allowLists");
+    Aws::Utils::Array<JsonView> allowListsJsonList = jsonValue.GetArray("allowLists");
     for(unsigned allowListsIndex = 0; allowListsIndex < allowListsJsonList.GetLength(); ++allowListsIndex)
     {
       m_allowLists.push_back(allowListsJsonList[allowListsIndex].AsObject());

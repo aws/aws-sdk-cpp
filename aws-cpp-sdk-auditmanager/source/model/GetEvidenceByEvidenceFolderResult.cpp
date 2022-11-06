@@ -30,7 +30,7 @@ GetEvidenceByEvidenceFolderResult& GetEvidenceByEvidenceFolderResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("evidence"))
   {
-    Array<JsonView> evidenceJsonList = jsonValue.GetArray("evidence");
+    Aws::Utils::Array<JsonView> evidenceJsonList = jsonValue.GetArray("evidence");
     for(unsigned evidenceIndex = 0; evidenceIndex < evidenceJsonList.GetLength(); ++evidenceIndex)
     {
       m_evidence.push_back(evidenceJsonList[evidenceIndex].AsObject());

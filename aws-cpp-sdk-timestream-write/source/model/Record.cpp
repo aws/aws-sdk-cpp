@@ -53,7 +53,7 @@ Record& Record::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
@@ -105,7 +105,7 @@ Record& Record::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MeasureValues"))
   {
-    Array<JsonView> measureValuesJsonList = jsonValue.GetArray("MeasureValues");
+    Aws::Utils::Array<JsonView> measureValuesJsonList = jsonValue.GetArray("MeasureValues");
     for(unsigned measureValuesIndex = 0; measureValuesIndex < measureValuesJsonList.GetLength(); ++measureValuesIndex)
     {
       m_measureValues.push_back(measureValuesJsonList[measureValuesIndex].AsObject());
@@ -122,7 +122,7 @@ JsonValue Record::Jsonize() const
 
   if(m_dimensionsHasBeenSet)
   {
-   Array<JsonValue> dimensionsJsonList(m_dimensions.size());
+   Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
    {
      dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
@@ -167,7 +167,7 @@ JsonValue Record::Jsonize() const
 
   if(m_measureValuesHasBeenSet)
   {
-   Array<JsonValue> measureValuesJsonList(m_measureValues.size());
+   Aws::Utils::Array<JsonValue> measureValuesJsonList(m_measureValues.size());
    for(unsigned measureValuesIndex = 0; measureValuesIndex < measureValuesJsonList.GetLength(); ++measureValuesIndex)
    {
      measureValuesJsonList[measureValuesIndex].AsObject(m_measureValues[measureValuesIndex].Jsonize());

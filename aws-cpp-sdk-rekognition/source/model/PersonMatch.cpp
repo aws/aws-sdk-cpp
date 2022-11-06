@@ -53,7 +53,7 @@ PersonMatch& PersonMatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FaceMatches"))
   {
-    Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
+    Aws::Utils::Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
     for(unsigned faceMatchesIndex = 0; faceMatchesIndex < faceMatchesJsonList.GetLength(); ++faceMatchesIndex)
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue PersonMatch::Jsonize() const
 
   if(m_faceMatchesHasBeenSet)
   {
-   Array<JsonValue> faceMatchesJsonList(m_faceMatches.size());
+   Aws::Utils::Array<JsonValue> faceMatchesJsonList(m_faceMatches.size());
    for(unsigned faceMatchesIndex = 0; faceMatchesIndex < faceMatchesJsonList.GetLength(); ++faceMatchesIndex)
    {
      faceMatchesJsonList[faceMatchesIndex].AsObject(m_faceMatches[faceMatchesIndex].Jsonize());

@@ -98,7 +98,7 @@ DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Labels"))
   {
-    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
+    Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());
@@ -154,7 +154,7 @@ JsonValue DocumentMetadata::Jsonize() const
 
   if(m_labelsHasBeenSet)
   {
-   Array<JsonValue> labelsJsonList(m_labels.size());
+   Aws::Utils::Array<JsonValue> labelsJsonList(m_labels.size());
    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
    {
      labelsJsonList[labelsIndex].AsString(m_labels[labelsIndex]);

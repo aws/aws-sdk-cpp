@@ -119,7 +119,7 @@ AwsElasticBeanstalkEnvironmentDetails& AwsElasticBeanstalkEnvironmentDetails::op
 
   if(jsonValue.ValueExists("EnvironmentLinks"))
   {
-    Array<JsonView> environmentLinksJsonList = jsonValue.GetArray("EnvironmentLinks");
+    Aws::Utils::Array<JsonView> environmentLinksJsonList = jsonValue.GetArray("EnvironmentLinks");
     for(unsigned environmentLinksIndex = 0; environmentLinksIndex < environmentLinksJsonList.GetLength(); ++environmentLinksIndex)
     {
       m_environmentLinks.push_back(environmentLinksJsonList[environmentLinksIndex].AsObject());
@@ -136,7 +136,7 @@ AwsElasticBeanstalkEnvironmentDetails& AwsElasticBeanstalkEnvironmentDetails::op
 
   if(jsonValue.ValueExists("OptionSettings"))
   {
-    Array<JsonView> optionSettingsJsonList = jsonValue.GetArray("OptionSettings");
+    Aws::Utils::Array<JsonView> optionSettingsJsonList = jsonValue.GetArray("OptionSettings");
     for(unsigned optionSettingsIndex = 0; optionSettingsIndex < optionSettingsJsonList.GetLength(); ++optionSettingsIndex)
     {
       m_optionSettings.push_back(optionSettingsJsonList[optionSettingsIndex].AsObject());
@@ -236,7 +236,7 @@ JsonValue AwsElasticBeanstalkEnvironmentDetails::Jsonize() const
 
   if(m_environmentLinksHasBeenSet)
   {
-   Array<JsonValue> environmentLinksJsonList(m_environmentLinks.size());
+   Aws::Utils::Array<JsonValue> environmentLinksJsonList(m_environmentLinks.size());
    for(unsigned environmentLinksIndex = 0; environmentLinksIndex < environmentLinksJsonList.GetLength(); ++environmentLinksIndex)
    {
      environmentLinksJsonList[environmentLinksIndex].AsObject(m_environmentLinks[environmentLinksIndex].Jsonize());
@@ -253,7 +253,7 @@ JsonValue AwsElasticBeanstalkEnvironmentDetails::Jsonize() const
 
   if(m_optionSettingsHasBeenSet)
   {
-   Array<JsonValue> optionSettingsJsonList(m_optionSettings.size());
+   Aws::Utils::Array<JsonValue> optionSettingsJsonList(m_optionSettings.size());
    for(unsigned optionSettingsIndex = 0; optionSettingsIndex < optionSettingsJsonList.GetLength(); ++optionSettingsIndex)
    {
      optionSettingsJsonList[optionSettingsIndex].AsObject(m_optionSettings[optionSettingsIndex].Jsonize());

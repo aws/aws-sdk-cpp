@@ -47,7 +47,7 @@ ScheduledSplit& ScheduledSplit::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("segmentOverrides"))
   {
-    Array<JsonView> segmentOverridesJsonList = jsonValue.GetArray("segmentOverrides");
+    Aws::Utils::Array<JsonView> segmentOverridesJsonList = jsonValue.GetArray("segmentOverrides");
     for(unsigned segmentOverridesIndex = 0; segmentOverridesIndex < segmentOverridesJsonList.GetLength(); ++segmentOverridesIndex)
     {
       m_segmentOverrides.push_back(segmentOverridesJsonList[segmentOverridesIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue ScheduledSplit::Jsonize() const
 
   if(m_segmentOverridesHasBeenSet)
   {
-   Array<JsonValue> segmentOverridesJsonList(m_segmentOverrides.size());
+   Aws::Utils::Array<JsonValue> segmentOverridesJsonList(m_segmentOverrides.size());
    for(unsigned segmentOverridesIndex = 0; segmentOverridesIndex < segmentOverridesJsonList.GetLength(); ++segmentOverridesIndex)
    {
      segmentOverridesJsonList[segmentOverridesIndex].AsObject(m_segmentOverrides[segmentOverridesIndex].Jsonize());

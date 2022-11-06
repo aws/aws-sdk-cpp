@@ -37,7 +37,7 @@ EbsConfiguration& EbsConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EbsBlockDeviceConfigs"))
   {
-    Array<JsonView> ebsBlockDeviceConfigsJsonList = jsonValue.GetArray("EbsBlockDeviceConfigs");
+    Aws::Utils::Array<JsonView> ebsBlockDeviceConfigsJsonList = jsonValue.GetArray("EbsBlockDeviceConfigs");
     for(unsigned ebsBlockDeviceConfigsIndex = 0; ebsBlockDeviceConfigsIndex < ebsBlockDeviceConfigsJsonList.GetLength(); ++ebsBlockDeviceConfigsIndex)
     {
       m_ebsBlockDeviceConfigs.push_back(ebsBlockDeviceConfigsJsonList[ebsBlockDeviceConfigsIndex].AsObject());
@@ -61,7 +61,7 @@ JsonValue EbsConfiguration::Jsonize() const
 
   if(m_ebsBlockDeviceConfigsHasBeenSet)
   {
-   Array<JsonValue> ebsBlockDeviceConfigsJsonList(m_ebsBlockDeviceConfigs.size());
+   Aws::Utils::Array<JsonValue> ebsBlockDeviceConfigsJsonList(m_ebsBlockDeviceConfigs.size());
    for(unsigned ebsBlockDeviceConfigsIndex = 0; ebsBlockDeviceConfigsIndex < ebsBlockDeviceConfigsJsonList.GetLength(); ++ebsBlockDeviceConfigsIndex)
    {
      ebsBlockDeviceConfigsJsonList[ebsBlockDeviceConfigsIndex].AsObject(m_ebsBlockDeviceConfigs[ebsBlockDeviceConfigsIndex].Jsonize());

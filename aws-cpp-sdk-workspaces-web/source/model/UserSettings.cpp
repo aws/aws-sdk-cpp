@@ -63,7 +63,7 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("associatedPortalArns"))
   {
-    Array<JsonView> associatedPortalArnsJsonList = jsonValue.GetArray("associatedPortalArns");
+    Aws::Utils::Array<JsonView> associatedPortalArnsJsonList = jsonValue.GetArray("associatedPortalArns");
     for(unsigned associatedPortalArnsIndex = 0; associatedPortalArnsIndex < associatedPortalArnsJsonList.GetLength(); ++associatedPortalArnsIndex)
     {
       m_associatedPortalArns.push_back(associatedPortalArnsJsonList[associatedPortalArnsIndex].AsString());
@@ -136,7 +136,7 @@ JsonValue UserSettings::Jsonize() const
 
   if(m_associatedPortalArnsHasBeenSet)
   {
-   Array<JsonValue> associatedPortalArnsJsonList(m_associatedPortalArns.size());
+   Aws::Utils::Array<JsonValue> associatedPortalArnsJsonList(m_associatedPortalArns.size());
    for(unsigned associatedPortalArnsIndex = 0; associatedPortalArnsIndex < associatedPortalArnsJsonList.GetLength(); ++associatedPortalArnsIndex)
    {
      associatedPortalArnsJsonList[associatedPortalArnsIndex].AsString(m_associatedPortalArns[associatedPortalArnsIndex]);

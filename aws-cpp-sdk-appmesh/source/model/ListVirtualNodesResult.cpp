@@ -36,7 +36,7 @@ ListVirtualNodesResult& ListVirtualNodesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("virtualNodes"))
   {
-    Array<JsonView> virtualNodesJsonList = jsonValue.GetArray("virtualNodes");
+    Aws::Utils::Array<JsonView> virtualNodesJsonList = jsonValue.GetArray("virtualNodes");
     for(unsigned virtualNodesIndex = 0; virtualNodesIndex < virtualNodesJsonList.GetLength(); ++virtualNodesIndex)
     {
       m_virtualNodes.push_back(virtualNodesJsonList[virtualNodesIndex].AsObject());

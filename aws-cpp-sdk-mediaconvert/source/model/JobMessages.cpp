@@ -35,7 +35,7 @@ JobMessages& JobMessages::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("info"))
   {
-    Array<JsonView> infoJsonList = jsonValue.GetArray("info");
+    Aws::Utils::Array<JsonView> infoJsonList = jsonValue.GetArray("info");
     for(unsigned infoIndex = 0; infoIndex < infoJsonList.GetLength(); ++infoIndex)
     {
       m_info.push_back(infoJsonList[infoIndex].AsString());
@@ -45,7 +45,7 @@ JobMessages& JobMessages::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("warning"))
   {
-    Array<JsonView> warningJsonList = jsonValue.GetArray("warning");
+    Aws::Utils::Array<JsonView> warningJsonList = jsonValue.GetArray("warning");
     for(unsigned warningIndex = 0; warningIndex < warningJsonList.GetLength(); ++warningIndex)
     {
       m_warning.push_back(warningJsonList[warningIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue JobMessages::Jsonize() const
 
   if(m_infoHasBeenSet)
   {
-   Array<JsonValue> infoJsonList(m_info.size());
+   Aws::Utils::Array<JsonValue> infoJsonList(m_info.size());
    for(unsigned infoIndex = 0; infoIndex < infoJsonList.GetLength(); ++infoIndex)
    {
      infoJsonList[infoIndex].AsString(m_info[infoIndex]);
@@ -73,7 +73,7 @@ JsonValue JobMessages::Jsonize() const
 
   if(m_warningHasBeenSet)
   {
-   Array<JsonValue> warningJsonList(m_warning.size());
+   Aws::Utils::Array<JsonValue> warningJsonList(m_warning.size());
    for(unsigned warningIndex = 0; warningIndex < warningJsonList.GetLength(); ++warningIndex)
    {
      warningJsonList[warningIndex].AsString(m_warning[warningIndex]);

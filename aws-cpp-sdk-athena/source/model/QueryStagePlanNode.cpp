@@ -53,7 +53,7 @@ QueryStagePlanNode& QueryStagePlanNode::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Children"))
   {
-    Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
+    Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
     for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
     {
       m_children.push_back(childrenJsonList[childrenIndex].AsObject());
@@ -63,7 +63,7 @@ QueryStagePlanNode& QueryStagePlanNode::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RemoteSources"))
   {
-    Array<JsonView> remoteSourcesJsonList = jsonValue.GetArray("RemoteSources");
+    Aws::Utils::Array<JsonView> remoteSourcesJsonList = jsonValue.GetArray("RemoteSources");
     for(unsigned remoteSourcesIndex = 0; remoteSourcesIndex < remoteSourcesJsonList.GetLength(); ++remoteSourcesIndex)
     {
       m_remoteSources.push_back(remoteSourcesJsonList[remoteSourcesIndex].AsString());
@@ -92,7 +92,7 @@ JsonValue QueryStagePlanNode::Jsonize() const
 
   if(m_childrenHasBeenSet)
   {
-   Array<JsonValue> childrenJsonList(m_children.size());
+   Aws::Utils::Array<JsonValue> childrenJsonList(m_children.size());
    for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
    {
      childrenJsonList[childrenIndex].AsObject(m_children[childrenIndex].Jsonize());
@@ -103,7 +103,7 @@ JsonValue QueryStagePlanNode::Jsonize() const
 
   if(m_remoteSourcesHasBeenSet)
   {
-   Array<JsonValue> remoteSourcesJsonList(m_remoteSources.size());
+   Aws::Utils::Array<JsonValue> remoteSourcesJsonList(m_remoteSources.size());
    for(unsigned remoteSourcesIndex = 0; remoteSourcesIndex < remoteSourcesJsonList.GetLength(); ++remoteSourcesIndex)
    {
      remoteSourcesJsonList[remoteSourcesIndex].AsString(m_remoteSources[remoteSourcesIndex]);

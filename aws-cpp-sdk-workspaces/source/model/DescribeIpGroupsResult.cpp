@@ -30,7 +30,7 @@ DescribeIpGroupsResult& DescribeIpGroupsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Result"))
   {
-    Array<JsonView> resultJsonList = jsonValue.GetArray("Result");
+    Aws::Utils::Array<JsonView> resultJsonList = jsonValue.GetArray("Result");
     for(unsigned resultIndex = 0; resultIndex < resultJsonList.GetLength(); ++resultIndex)
     {
       m_result.push_back(resultJsonList[resultIndex].AsObject());

@@ -66,7 +66,7 @@ GetImportResult& GetImportResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("failureReason"))
   {
-    Array<JsonView> failureReasonJsonList = jsonValue.GetArray("failureReason");
+    Aws::Utils::Array<JsonView> failureReasonJsonList = jsonValue.GetArray("failureReason");
     for(unsigned failureReasonIndex = 0; failureReasonIndex < failureReasonJsonList.GetLength(); ++failureReasonIndex)
     {
       m_failureReason.push_back(failureReasonJsonList[failureReasonIndex].AsString());

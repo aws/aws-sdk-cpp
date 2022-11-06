@@ -63,7 +63,7 @@ InputDescription& InputDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InAppStreamNames"))
   {
-    Array<JsonView> inAppStreamNamesJsonList = jsonValue.GetArray("InAppStreamNames");
+    Aws::Utils::Array<JsonView> inAppStreamNamesJsonList = jsonValue.GetArray("InAppStreamNames");
     for(unsigned inAppStreamNamesIndex = 0; inAppStreamNamesIndex < inAppStreamNamesJsonList.GetLength(); ++inAppStreamNamesIndex)
     {
       m_inAppStreamNames.push_back(inAppStreamNamesJsonList[inAppStreamNamesIndex].AsString());
@@ -134,7 +134,7 @@ JsonValue InputDescription::Jsonize() const
 
   if(m_inAppStreamNamesHasBeenSet)
   {
-   Array<JsonValue> inAppStreamNamesJsonList(m_inAppStreamNames.size());
+   Aws::Utils::Array<JsonValue> inAppStreamNamesJsonList(m_inAppStreamNames.size());
    for(unsigned inAppStreamNamesIndex = 0; inAppStreamNamesIndex < inAppStreamNamesJsonList.GetLength(); ++inAppStreamNamesIndex)
    {
      inAppStreamNamesJsonList[inAppStreamNamesIndex].AsString(m_inAppStreamNames[inAppStreamNamesIndex]);

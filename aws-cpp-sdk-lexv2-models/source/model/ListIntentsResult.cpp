@@ -48,7 +48,7 @@ ListIntentsResult& ListIntentsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("intentSummaries"))
   {
-    Array<JsonView> intentSummariesJsonList = jsonValue.GetArray("intentSummaries");
+    Aws::Utils::Array<JsonView> intentSummariesJsonList = jsonValue.GetArray("intentSummaries");
     for(unsigned intentSummariesIndex = 0; intentSummariesIndex < intentSummariesJsonList.GetLength(); ++intentSummariesIndex)
     {
       m_intentSummaries.push_back(intentSummariesJsonList[intentSummariesIndex].AsObject());

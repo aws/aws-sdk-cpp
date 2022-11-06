@@ -39,7 +39,7 @@ Aws::String RemoveTargetsRequest::SerializePayload() const
 
   if(m_idsHasBeenSet)
   {
-   Array<JsonValue> idsJsonList(m_ids.size());
+   Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
    for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
    {
      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);

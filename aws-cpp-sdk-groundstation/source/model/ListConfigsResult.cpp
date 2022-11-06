@@ -30,7 +30,7 @@ ListConfigsResult& ListConfigsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configList"))
   {
-    Array<JsonView> configListJsonList = jsonValue.GetArray("configList");
+    Aws::Utils::Array<JsonView> configListJsonList = jsonValue.GetArray("configList");
     for(unsigned configListIndex = 0; configListIndex < configListJsonList.GetLength(); ++configListIndex)
     {
       m_configList.push_back(configListJsonList[configListIndex].AsObject());

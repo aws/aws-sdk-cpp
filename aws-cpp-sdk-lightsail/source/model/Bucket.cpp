@@ -128,7 +128,7 @@ Bucket& Bucket::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -152,7 +152,7 @@ Bucket& Bucket::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("readonlyAccessAccounts"))
   {
-    Array<JsonView> readonlyAccessAccountsJsonList = jsonValue.GetArray("readonlyAccessAccounts");
+    Aws::Utils::Array<JsonView> readonlyAccessAccountsJsonList = jsonValue.GetArray("readonlyAccessAccounts");
     for(unsigned readonlyAccessAccountsIndex = 0; readonlyAccessAccountsIndex < readonlyAccessAccountsJsonList.GetLength(); ++readonlyAccessAccountsIndex)
     {
       m_readonlyAccessAccounts.push_back(readonlyAccessAccountsJsonList[readonlyAccessAccountsIndex].AsString());
@@ -162,7 +162,7 @@ Bucket& Bucket::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourcesReceivingAccess"))
   {
-    Array<JsonView> resourcesReceivingAccessJsonList = jsonValue.GetArray("resourcesReceivingAccess");
+    Aws::Utils::Array<JsonView> resourcesReceivingAccessJsonList = jsonValue.GetArray("resourcesReceivingAccess");
     for(unsigned resourcesReceivingAccessIndex = 0; resourcesReceivingAccessIndex < resourcesReceivingAccessJsonList.GetLength(); ++resourcesReceivingAccessIndex)
     {
       m_resourcesReceivingAccess.push_back(resourcesReceivingAccessJsonList[resourcesReceivingAccessIndex].AsObject());
@@ -246,7 +246,7 @@ JsonValue Bucket::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -269,7 +269,7 @@ JsonValue Bucket::Jsonize() const
 
   if(m_readonlyAccessAccountsHasBeenSet)
   {
-   Array<JsonValue> readonlyAccessAccountsJsonList(m_readonlyAccessAccounts.size());
+   Aws::Utils::Array<JsonValue> readonlyAccessAccountsJsonList(m_readonlyAccessAccounts.size());
    for(unsigned readonlyAccessAccountsIndex = 0; readonlyAccessAccountsIndex < readonlyAccessAccountsJsonList.GetLength(); ++readonlyAccessAccountsIndex)
    {
      readonlyAccessAccountsJsonList[readonlyAccessAccountsIndex].AsString(m_readonlyAccessAccounts[readonlyAccessAccountsIndex]);
@@ -280,7 +280,7 @@ JsonValue Bucket::Jsonize() const
 
   if(m_resourcesReceivingAccessHasBeenSet)
   {
-   Array<JsonValue> resourcesReceivingAccessJsonList(m_resourcesReceivingAccess.size());
+   Aws::Utils::Array<JsonValue> resourcesReceivingAccessJsonList(m_resourcesReceivingAccess.size());
    for(unsigned resourcesReceivingAccessIndex = 0; resourcesReceivingAccessIndex < resourcesReceivingAccessJsonList.GetLength(); ++resourcesReceivingAccessIndex)
    {
      resourcesReceivingAccessJsonList[resourcesReceivingAccessIndex].AsObject(m_resourcesReceivingAccess[resourcesReceivingAccessIndex].Jsonize());

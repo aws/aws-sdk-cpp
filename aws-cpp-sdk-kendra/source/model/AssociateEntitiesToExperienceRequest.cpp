@@ -37,7 +37,7 @@ Aws::String AssociateEntitiesToExperienceRequest::SerializePayload() const
 
   if(m_entityListHasBeenSet)
   {
-   Array<JsonValue> entityListJsonList(m_entityList.size());
+   Aws::Utils::Array<JsonValue> entityListJsonList(m_entityList.size());
    for(unsigned entityListIndex = 0; entityListIndex < entityListJsonList.GetLength(); ++entityListIndex)
    {
      entityListJsonList[entityListIndex].AsObject(m_entityList[entityListIndex].Jsonize());

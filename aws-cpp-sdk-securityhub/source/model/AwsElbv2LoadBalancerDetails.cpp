@@ -53,7 +53,7 @@ AwsElbv2LoadBalancerDetails& AwsElbv2LoadBalancerDetails::operator =(JsonView js
 {
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsObject());
@@ -98,7 +98,7 @@ AwsElbv2LoadBalancerDetails& AwsElbv2LoadBalancerDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -129,7 +129,7 @@ AwsElbv2LoadBalancerDetails& AwsElbv2LoadBalancerDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("LoadBalancerAttributes"))
   {
-    Array<JsonView> loadBalancerAttributesJsonList = jsonValue.GetArray("LoadBalancerAttributes");
+    Aws::Utils::Array<JsonView> loadBalancerAttributesJsonList = jsonValue.GetArray("LoadBalancerAttributes");
     for(unsigned loadBalancerAttributesIndex = 0; loadBalancerAttributesIndex < loadBalancerAttributesJsonList.GetLength(); ++loadBalancerAttributesIndex)
     {
       m_loadBalancerAttributes.push_back(loadBalancerAttributesJsonList[loadBalancerAttributesIndex].AsObject());
@@ -146,7 +146,7 @@ JsonValue AwsElbv2LoadBalancerDetails::Jsonize() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsObject(m_availabilityZones[availabilityZonesIndex].Jsonize());
@@ -187,7 +187,7 @@ JsonValue AwsElbv2LoadBalancerDetails::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);
@@ -216,7 +216,7 @@ JsonValue AwsElbv2LoadBalancerDetails::Jsonize() const
 
   if(m_loadBalancerAttributesHasBeenSet)
   {
-   Array<JsonValue> loadBalancerAttributesJsonList(m_loadBalancerAttributes.size());
+   Aws::Utils::Array<JsonValue> loadBalancerAttributesJsonList(m_loadBalancerAttributes.size());
    for(unsigned loadBalancerAttributesIndex = 0; loadBalancerAttributesIndex < loadBalancerAttributesJsonList.GetLength(); ++loadBalancerAttributesIndex)
    {
      loadBalancerAttributesJsonList[loadBalancerAttributesIndex].AsObject(m_loadBalancerAttributes[loadBalancerAttributesIndex].Jsonize());

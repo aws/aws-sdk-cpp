@@ -36,7 +36,7 @@ ListSegmentsResult& ListSegmentsResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("segments"))
   {
-    Array<JsonView> segmentsJsonList = jsonValue.GetArray("segments");
+    Aws::Utils::Array<JsonView> segmentsJsonList = jsonValue.GetArray("segments");
     for(unsigned segmentsIndex = 0; segmentsIndex < segmentsJsonList.GetLength(); ++segmentsIndex)
     {
       m_segments.push_back(segmentsJsonList[segmentsIndex].AsObject());

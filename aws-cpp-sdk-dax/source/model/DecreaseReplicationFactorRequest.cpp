@@ -39,7 +39,7 @@ Aws::String DecreaseReplicationFactorRequest::SerializePayload() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
@@ -50,7 +50,7 @@ Aws::String DecreaseReplicationFactorRequest::SerializePayload() const
 
   if(m_nodeIdsToRemoveHasBeenSet)
   {
-   Array<JsonValue> nodeIdsToRemoveJsonList(m_nodeIdsToRemove.size());
+   Aws::Utils::Array<JsonValue> nodeIdsToRemoveJsonList(m_nodeIdsToRemove.size());
    for(unsigned nodeIdsToRemoveIndex = 0; nodeIdsToRemoveIndex < nodeIdsToRemoveJsonList.GetLength(); ++nodeIdsToRemoveIndex)
    {
      nodeIdsToRemoveJsonList[nodeIdsToRemoveIndex].AsString(m_nodeIdsToRemove[nodeIdsToRemoveIndex]);

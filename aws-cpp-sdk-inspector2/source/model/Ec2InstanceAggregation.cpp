@@ -47,7 +47,7 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("amis"))
   {
-    Array<JsonView> amisJsonList = jsonValue.GetArray("amis");
+    Aws::Utils::Array<JsonView> amisJsonList = jsonValue.GetArray("amis");
     for(unsigned amisIndex = 0; amisIndex < amisJsonList.GetLength(); ++amisIndex)
     {
       m_amis.push_back(amisJsonList[amisIndex].AsObject());
@@ -57,7 +57,7 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("instanceIds"))
   {
-    Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("instanceIds");
+    Aws::Utils::Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("instanceIds");
     for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
     {
       m_instanceIds.push_back(instanceIdsJsonList[instanceIdsIndex].AsObject());
@@ -67,7 +67,7 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("instanceTags"))
   {
-    Array<JsonView> instanceTagsJsonList = jsonValue.GetArray("instanceTags");
+    Aws::Utils::Array<JsonView> instanceTagsJsonList = jsonValue.GetArray("instanceTags");
     for(unsigned instanceTagsIndex = 0; instanceTagsIndex < instanceTagsJsonList.GetLength(); ++instanceTagsIndex)
     {
       m_instanceTags.push_back(instanceTagsJsonList[instanceTagsIndex].AsObject());
@@ -77,7 +77,7 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("operatingSystems"))
   {
-    Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("operatingSystems");
+    Aws::Utils::Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("operatingSystems");
     for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
     {
       m_operatingSystems.push_back(operatingSystemsJsonList[operatingSystemsIndex].AsObject());
@@ -108,7 +108,7 @@ JsonValue Ec2InstanceAggregation::Jsonize() const
 
   if(m_amisHasBeenSet)
   {
-   Array<JsonValue> amisJsonList(m_amis.size());
+   Aws::Utils::Array<JsonValue> amisJsonList(m_amis.size());
    for(unsigned amisIndex = 0; amisIndex < amisJsonList.GetLength(); ++amisIndex)
    {
      amisJsonList[amisIndex].AsObject(m_amis[amisIndex].Jsonize());
@@ -119,7 +119,7 @@ JsonValue Ec2InstanceAggregation::Jsonize() const
 
   if(m_instanceIdsHasBeenSet)
   {
-   Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
+   Aws::Utils::Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
    for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
    {
      instanceIdsJsonList[instanceIdsIndex].AsObject(m_instanceIds[instanceIdsIndex].Jsonize());
@@ -130,7 +130,7 @@ JsonValue Ec2InstanceAggregation::Jsonize() const
 
   if(m_instanceTagsHasBeenSet)
   {
-   Array<JsonValue> instanceTagsJsonList(m_instanceTags.size());
+   Aws::Utils::Array<JsonValue> instanceTagsJsonList(m_instanceTags.size());
    for(unsigned instanceTagsIndex = 0; instanceTagsIndex < instanceTagsJsonList.GetLength(); ++instanceTagsIndex)
    {
      instanceTagsJsonList[instanceTagsIndex].AsObject(m_instanceTags[instanceTagsIndex].Jsonize());
@@ -141,7 +141,7 @@ JsonValue Ec2InstanceAggregation::Jsonize() const
 
   if(m_operatingSystemsHasBeenSet)
   {
-   Array<JsonValue> operatingSystemsJsonList(m_operatingSystems.size());
+   Aws::Utils::Array<JsonValue> operatingSystemsJsonList(m_operatingSystems.size());
    for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
    {
      operatingSystemsJsonList[operatingSystemsIndex].AsObject(m_operatingSystems[operatingSystemsIndex].Jsonize());

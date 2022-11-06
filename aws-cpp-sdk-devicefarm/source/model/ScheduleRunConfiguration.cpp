@@ -79,7 +79,7 @@ ScheduleRunConfiguration& ScheduleRunConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("vpceConfigurationArns"))
   {
-    Array<JsonView> vpceConfigurationArnsJsonList = jsonValue.GetArray("vpceConfigurationArns");
+    Aws::Utils::Array<JsonView> vpceConfigurationArnsJsonList = jsonValue.GetArray("vpceConfigurationArns");
     for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
     {
       m_vpceConfigurationArns.push_back(vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString());
@@ -103,7 +103,7 @@ ScheduleRunConfiguration& ScheduleRunConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("auxiliaryApps"))
   {
-    Array<JsonView> auxiliaryAppsJsonList = jsonValue.GetArray("auxiliaryApps");
+    Aws::Utils::Array<JsonView> auxiliaryAppsJsonList = jsonValue.GetArray("auxiliaryApps");
     for(unsigned auxiliaryAppsIndex = 0; auxiliaryAppsIndex < auxiliaryAppsJsonList.GetLength(); ++auxiliaryAppsIndex)
     {
       m_auxiliaryApps.push_back(auxiliaryAppsJsonList[auxiliaryAppsIndex].AsString());
@@ -151,7 +151,7 @@ JsonValue ScheduleRunConfiguration::Jsonize() const
 
   if(m_vpceConfigurationArnsHasBeenSet)
   {
-   Array<JsonValue> vpceConfigurationArnsJsonList(m_vpceConfigurationArns.size());
+   Aws::Utils::Array<JsonValue> vpceConfigurationArnsJsonList(m_vpceConfigurationArns.size());
    for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
    {
      vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString(m_vpceConfigurationArns[vpceConfigurationArnsIndex]);
@@ -174,7 +174,7 @@ JsonValue ScheduleRunConfiguration::Jsonize() const
 
   if(m_auxiliaryAppsHasBeenSet)
   {
-   Array<JsonValue> auxiliaryAppsJsonList(m_auxiliaryApps.size());
+   Aws::Utils::Array<JsonValue> auxiliaryAppsJsonList(m_auxiliaryApps.size());
    for(unsigned auxiliaryAppsIndex = 0; auxiliaryAppsIndex < auxiliaryAppsJsonList.GetLength(); ++auxiliaryAppsIndex)
    {
      auxiliaryAppsJsonList[auxiliaryAppsIndex].AsString(m_auxiliaryApps[auxiliaryAppsIndex]);

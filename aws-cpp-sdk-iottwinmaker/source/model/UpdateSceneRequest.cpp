@@ -27,7 +27,7 @@ Aws::String UpdateSceneRequest::SerializePayload() const
 
   if(m_capabilitiesHasBeenSet)
   {
-   Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+   Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
    for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
    {
      capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);

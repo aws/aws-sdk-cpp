@@ -33,7 +33,7 @@ SelfManageResources& SelfManageResources::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("targetDestination"))
   {
-    Array<JsonView> targetDestinationJsonList = jsonValue.GetArray("targetDestination");
+    Aws::Utils::Array<JsonView> targetDestinationJsonList = jsonValue.GetArray("targetDestination");
     for(unsigned targetDestinationIndex = 0; targetDestinationIndex < targetDestinationJsonList.GetLength(); ++targetDestinationIndex)
     {
       m_targetDestination.push_back(SelfManageTargetDestinationMapper::GetSelfManageTargetDestinationForName(targetDestinationJsonList[targetDestinationIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue SelfManageResources::Jsonize() const
 
   if(m_targetDestinationHasBeenSet)
   {
-   Array<JsonValue> targetDestinationJsonList(m_targetDestination.size());
+   Aws::Utils::Array<JsonValue> targetDestinationJsonList(m_targetDestination.size());
    for(unsigned targetDestinationIndex = 0; targetDestinationIndex < targetDestinationJsonList.GetLength(); ++targetDestinationIndex)
    {
      targetDestinationJsonList[targetDestinationIndex].AsString(SelfManageTargetDestinationMapper::GetNameForSelfManageTargetDestination(m_targetDestination[targetDestinationIndex]));

@@ -38,7 +38,7 @@ Aws::String PutLogEventsRequest::SerializePayload() const
 
   if(m_logEventsHasBeenSet)
   {
-   Array<JsonValue> logEventsJsonList(m_logEvents.size());
+   Aws::Utils::Array<JsonValue> logEventsJsonList(m_logEvents.size());
    for(unsigned logEventsIndex = 0; logEventsIndex < logEventsJsonList.GetLength(); ++logEventsIndex)
    {
      logEventsJsonList[logEventsIndex].AsObject(m_logEvents[logEventsIndex].Jsonize());

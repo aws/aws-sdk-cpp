@@ -30,7 +30,7 @@ Aws::String DeleteClientBrandingRequest::SerializePayload() const
 
   if(m_platformsHasBeenSet)
   {
-   Array<JsonValue> platformsJsonList(m_platforms.size());
+   Aws::Utils::Array<JsonValue> platformsJsonList(m_platforms.size());
    for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
    {
      platformsJsonList[platformsIndex].AsString(ClientDeviceTypeMapper::GetNameForClientDeviceType(m_platforms[platformsIndex]));

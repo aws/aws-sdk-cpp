@@ -36,7 +36,7 @@ ListVirtualRoutersResult& ListVirtualRoutersResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("virtualRouters"))
   {
-    Array<JsonView> virtualRoutersJsonList = jsonValue.GetArray("virtualRouters");
+    Aws::Utils::Array<JsonView> virtualRoutersJsonList = jsonValue.GetArray("virtualRouters");
     for(unsigned virtualRoutersIndex = 0; virtualRoutersIndex < virtualRoutersJsonList.GetLength(); ++virtualRoutersIndex)
     {
       m_virtualRouters.push_back(virtualRoutersJsonList[virtualRoutersIndex].AsObject());

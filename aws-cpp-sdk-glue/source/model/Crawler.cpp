@@ -112,7 +112,7 @@ Crawler& Crawler::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Classifiers"))
   {
-    Array<JsonView> classifiersJsonList = jsonValue.GetArray("Classifiers");
+    Aws::Utils::Array<JsonView> classifiersJsonList = jsonValue.GetArray("Classifiers");
     for(unsigned classifiersIndex = 0; classifiersIndex < classifiersJsonList.GetLength(); ++classifiersIndex)
     {
       m_classifiers.push_back(classifiersJsonList[classifiersIndex].AsString());
@@ -257,7 +257,7 @@ JsonValue Crawler::Jsonize() const
 
   if(m_classifiersHasBeenSet)
   {
-   Array<JsonValue> classifiersJsonList(m_classifiers.size());
+   Aws::Utils::Array<JsonValue> classifiersJsonList(m_classifiers.size());
    for(unsigned classifiersIndex = 0; classifiersIndex < classifiersJsonList.GetLength(); ++classifiersIndex)
    {
      classifiersJsonList[classifiersIndex].AsString(m_classifiers[classifiersIndex]);

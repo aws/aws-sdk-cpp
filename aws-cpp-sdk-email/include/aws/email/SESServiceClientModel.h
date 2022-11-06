@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/email/SESErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/email/SESEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -113,6 +115,10 @@ namespace Aws
 
   namespace SES
   {
+    using SESClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SESEndpointProviderBase = Aws::SES::Endpoint::SESEndpointProviderBase;
+    using SESEndpointProvider = Aws::SES::Endpoint::SESEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in SESClient header */

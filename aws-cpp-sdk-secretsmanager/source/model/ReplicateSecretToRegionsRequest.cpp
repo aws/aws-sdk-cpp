@@ -32,7 +32,7 @@ Aws::String ReplicateSecretToRegionsRequest::SerializePayload() const
 
   if(m_addReplicaRegionsHasBeenSet)
   {
-   Array<JsonValue> addReplicaRegionsJsonList(m_addReplicaRegions.size());
+   Aws::Utils::Array<JsonValue> addReplicaRegionsJsonList(m_addReplicaRegions.size());
    for(unsigned addReplicaRegionsIndex = 0; addReplicaRegionsIndex < addReplicaRegionsJsonList.GetLength(); ++addReplicaRegionsIndex)
    {
      addReplicaRegionsJsonList[addReplicaRegionsIndex].AsObject(m_addReplicaRegions[addReplicaRegionsIndex].Jsonize());

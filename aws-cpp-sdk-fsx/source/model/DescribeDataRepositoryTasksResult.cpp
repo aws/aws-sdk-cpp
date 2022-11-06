@@ -30,7 +30,7 @@ DescribeDataRepositoryTasksResult& DescribeDataRepositoryTasksResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DataRepositoryTasks"))
   {
-    Array<JsonView> dataRepositoryTasksJsonList = jsonValue.GetArray("DataRepositoryTasks");
+    Aws::Utils::Array<JsonView> dataRepositoryTasksJsonList = jsonValue.GetArray("DataRepositoryTasks");
     for(unsigned dataRepositoryTasksIndex = 0; dataRepositoryTasksIndex < dataRepositoryTasksJsonList.GetLength(); ++dataRepositoryTasksIndex)
     {
       m_dataRepositoryTasks.push_back(dataRepositoryTasksJsonList[dataRepositoryTasksIndex].AsObject());

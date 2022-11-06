@@ -30,7 +30,7 @@ DescribeClientPropertiesResult& DescribeClientPropertiesResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ClientPropertiesList"))
   {
-    Array<JsonView> clientPropertiesListJsonList = jsonValue.GetArray("ClientPropertiesList");
+    Aws::Utils::Array<JsonView> clientPropertiesListJsonList = jsonValue.GetArray("ClientPropertiesList");
     for(unsigned clientPropertiesListIndex = 0; clientPropertiesListIndex < clientPropertiesListJsonList.GetLength(); ++clientPropertiesListIndex)
     {
       m_clientPropertiesList.push_back(clientPropertiesListJsonList[clientPropertiesListIndex].AsObject());

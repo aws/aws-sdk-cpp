@@ -33,7 +33,7 @@ BucketInfo& BucketInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("buckets"))
   {
-    Array<JsonView> bucketsJsonList = jsonValue.GetArray("buckets");
+    Aws::Utils::Array<JsonView> bucketsJsonList = jsonValue.GetArray("buckets");
     for(unsigned bucketsIndex = 0; bucketsIndex < bucketsJsonList.GetLength(); ++bucketsIndex)
     {
       m_buckets.push_back(bucketsJsonList[bucketsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue BucketInfo::Jsonize() const
 
   if(m_bucketsHasBeenSet)
   {
-   Array<JsonValue> bucketsJsonList(m_buckets.size());
+   Aws::Utils::Array<JsonValue> bucketsJsonList(m_buckets.size());
    for(unsigned bucketsIndex = 0; bucketsIndex < bucketsJsonList.GetLength(); ++bucketsIndex)
    {
      bucketsJsonList[bucketsIndex].AsObject(m_buckets[bucketsIndex].Jsonize());

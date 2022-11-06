@@ -37,7 +37,7 @@ RecommendationRelatedAnomaly& RecommendationRelatedAnomaly::operator =(JsonView 
 {
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
@@ -47,7 +47,7 @@ RecommendationRelatedAnomaly& RecommendationRelatedAnomaly::operator =(JsonView 
 
   if(jsonValue.ValueExists("SourceDetails"))
   {
-    Array<JsonView> sourceDetailsJsonList = jsonValue.GetArray("SourceDetails");
+    Aws::Utils::Array<JsonView> sourceDetailsJsonList = jsonValue.GetArray("SourceDetails");
     for(unsigned sourceDetailsIndex = 0; sourceDetailsIndex < sourceDetailsJsonList.GetLength(); ++sourceDetailsIndex)
     {
       m_sourceDetails.push_back(sourceDetailsJsonList[sourceDetailsIndex].AsObject());
@@ -71,7 +71,7 @@ JsonValue RecommendationRelatedAnomaly::Jsonize() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsObject(m_resources[resourcesIndex].Jsonize());
@@ -82,7 +82,7 @@ JsonValue RecommendationRelatedAnomaly::Jsonize() const
 
   if(m_sourceDetailsHasBeenSet)
   {
-   Array<JsonValue> sourceDetailsJsonList(m_sourceDetails.size());
+   Aws::Utils::Array<JsonValue> sourceDetailsJsonList(m_sourceDetails.size());
    for(unsigned sourceDetailsIndex = 0; sourceDetailsIndex < sourceDetailsJsonList.GetLength(); ++sourceDetailsIndex)
    {
      sourceDetailsJsonList[sourceDetailsIndex].AsObject(m_sourceDetails[sourceDetailsIndex].Jsonize());

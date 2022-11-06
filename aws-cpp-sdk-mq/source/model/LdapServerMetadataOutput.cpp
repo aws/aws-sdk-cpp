@@ -55,7 +55,7 @@ LdapServerMetadataOutput& LdapServerMetadataOutput::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("hosts"))
   {
-    Array<JsonView> hostsJsonList = jsonValue.GetArray("hosts");
+    Aws::Utils::Array<JsonView> hostsJsonList = jsonValue.GetArray("hosts");
     for(unsigned hostsIndex = 0; hostsIndex < hostsJsonList.GetLength(); ++hostsIndex)
     {
       m_hosts.push_back(hostsJsonList[hostsIndex].AsString());
@@ -135,7 +135,7 @@ JsonValue LdapServerMetadataOutput::Jsonize() const
 
   if(m_hostsHasBeenSet)
   {
-   Array<JsonValue> hostsJsonList(m_hosts.size());
+   Aws::Utils::Array<JsonValue> hostsJsonList(m_hosts.size());
    for(unsigned hostsIndex = 0; hostsIndex < hostsJsonList.GetLength(); ++hostsIndex)
    {
      hostsJsonList[hostsIndex].AsString(m_hosts[hostsIndex]);

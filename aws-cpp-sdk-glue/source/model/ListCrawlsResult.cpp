@@ -30,7 +30,7 @@ ListCrawlsResult& ListCrawlsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Crawls"))
   {
-    Array<JsonView> crawlsJsonList = jsonValue.GetArray("Crawls");
+    Aws::Utils::Array<JsonView> crawlsJsonList = jsonValue.GetArray("Crawls");
     for(unsigned crawlsIndex = 0; crawlsIndex < crawlsJsonList.GetLength(); ++crawlsIndex)
     {
       m_crawls.push_back(crawlsJsonList[crawlsIndex].AsObject());

@@ -36,7 +36,7 @@ ListTestRecommendationsResult& ListTestRecommendationsResult::operator =(const A
 
   if(jsonValue.ValueExists("testRecommendations"))
   {
-    Array<JsonView> testRecommendationsJsonList = jsonValue.GetArray("testRecommendations");
+    Aws::Utils::Array<JsonView> testRecommendationsJsonList = jsonValue.GetArray("testRecommendations");
     for(unsigned testRecommendationsIndex = 0; testRecommendationsIndex < testRecommendationsJsonList.GetLength(); ++testRecommendationsIndex)
     {
       m_testRecommendations.push_back(testRecommendationsJsonList[testRecommendationsIndex].AsObject());

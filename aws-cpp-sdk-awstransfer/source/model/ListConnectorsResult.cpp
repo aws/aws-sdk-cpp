@@ -36,7 +36,7 @@ ListConnectorsResult& ListConnectorsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Connectors"))
   {
-    Array<JsonView> connectorsJsonList = jsonValue.GetArray("Connectors");
+    Aws::Utils::Array<JsonView> connectorsJsonList = jsonValue.GetArray("Connectors");
     for(unsigned connectorsIndex = 0; connectorsIndex < connectorsJsonList.GetLength(); ++connectorsIndex)
     {
       m_connectors.push_back(connectorsJsonList[connectorsIndex].AsObject());

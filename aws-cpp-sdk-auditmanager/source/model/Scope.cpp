@@ -35,7 +35,7 @@ Scope& Scope::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("awsAccounts"))
   {
-    Array<JsonView> awsAccountsJsonList = jsonValue.GetArray("awsAccounts");
+    Aws::Utils::Array<JsonView> awsAccountsJsonList = jsonValue.GetArray("awsAccounts");
     for(unsigned awsAccountsIndex = 0; awsAccountsIndex < awsAccountsJsonList.GetLength(); ++awsAccountsIndex)
     {
       m_awsAccounts.push_back(awsAccountsJsonList[awsAccountsIndex].AsObject());
@@ -45,7 +45,7 @@ Scope& Scope::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("awsServices"))
   {
-    Array<JsonView> awsServicesJsonList = jsonValue.GetArray("awsServices");
+    Aws::Utils::Array<JsonView> awsServicesJsonList = jsonValue.GetArray("awsServices");
     for(unsigned awsServicesIndex = 0; awsServicesIndex < awsServicesJsonList.GetLength(); ++awsServicesIndex)
     {
       m_awsServices.push_back(awsServicesJsonList[awsServicesIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue Scope::Jsonize() const
 
   if(m_awsAccountsHasBeenSet)
   {
-   Array<JsonValue> awsAccountsJsonList(m_awsAccounts.size());
+   Aws::Utils::Array<JsonValue> awsAccountsJsonList(m_awsAccounts.size());
    for(unsigned awsAccountsIndex = 0; awsAccountsIndex < awsAccountsJsonList.GetLength(); ++awsAccountsIndex)
    {
      awsAccountsJsonList[awsAccountsIndex].AsObject(m_awsAccounts[awsAccountsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue Scope::Jsonize() const
 
   if(m_awsServicesHasBeenSet)
   {
-   Array<JsonValue> awsServicesJsonList(m_awsServices.size());
+   Aws::Utils::Array<JsonValue> awsServicesJsonList(m_awsServices.size());
    for(unsigned awsServicesIndex = 0; awsServicesIndex < awsServicesJsonList.GetLength(); ++awsServicesIndex)
    {
      awsServicesJsonList[awsServicesIndex].AsObject(m_awsServices[awsServicesIndex].Jsonize());

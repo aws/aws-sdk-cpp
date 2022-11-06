@@ -35,7 +35,7 @@ Aws::String UpdateNetworkAnalyzerConfigurationRequest::SerializePayload() const
 
   if(m_wirelessDevicesToAddHasBeenSet)
   {
-   Array<JsonValue> wirelessDevicesToAddJsonList(m_wirelessDevicesToAdd.size());
+   Aws::Utils::Array<JsonValue> wirelessDevicesToAddJsonList(m_wirelessDevicesToAdd.size());
    for(unsigned wirelessDevicesToAddIndex = 0; wirelessDevicesToAddIndex < wirelessDevicesToAddJsonList.GetLength(); ++wirelessDevicesToAddIndex)
    {
      wirelessDevicesToAddJsonList[wirelessDevicesToAddIndex].AsString(m_wirelessDevicesToAdd[wirelessDevicesToAddIndex]);
@@ -46,7 +46,7 @@ Aws::String UpdateNetworkAnalyzerConfigurationRequest::SerializePayload() const
 
   if(m_wirelessDevicesToRemoveHasBeenSet)
   {
-   Array<JsonValue> wirelessDevicesToRemoveJsonList(m_wirelessDevicesToRemove.size());
+   Aws::Utils::Array<JsonValue> wirelessDevicesToRemoveJsonList(m_wirelessDevicesToRemove.size());
    for(unsigned wirelessDevicesToRemoveIndex = 0; wirelessDevicesToRemoveIndex < wirelessDevicesToRemoveJsonList.GetLength(); ++wirelessDevicesToRemoveIndex)
    {
      wirelessDevicesToRemoveJsonList[wirelessDevicesToRemoveIndex].AsString(m_wirelessDevicesToRemove[wirelessDevicesToRemoveIndex]);
@@ -57,7 +57,7 @@ Aws::String UpdateNetworkAnalyzerConfigurationRequest::SerializePayload() const
 
   if(m_wirelessGatewaysToAddHasBeenSet)
   {
-   Array<JsonValue> wirelessGatewaysToAddJsonList(m_wirelessGatewaysToAdd.size());
+   Aws::Utils::Array<JsonValue> wirelessGatewaysToAddJsonList(m_wirelessGatewaysToAdd.size());
    for(unsigned wirelessGatewaysToAddIndex = 0; wirelessGatewaysToAddIndex < wirelessGatewaysToAddJsonList.GetLength(); ++wirelessGatewaysToAddIndex)
    {
      wirelessGatewaysToAddJsonList[wirelessGatewaysToAddIndex].AsString(m_wirelessGatewaysToAdd[wirelessGatewaysToAddIndex]);
@@ -68,7 +68,7 @@ Aws::String UpdateNetworkAnalyzerConfigurationRequest::SerializePayload() const
 
   if(m_wirelessGatewaysToRemoveHasBeenSet)
   {
-   Array<JsonValue> wirelessGatewaysToRemoveJsonList(m_wirelessGatewaysToRemove.size());
+   Aws::Utils::Array<JsonValue> wirelessGatewaysToRemoveJsonList(m_wirelessGatewaysToRemove.size());
    for(unsigned wirelessGatewaysToRemoveIndex = 0; wirelessGatewaysToRemoveIndex < wirelessGatewaysToRemoveJsonList.GetLength(); ++wirelessGatewaysToRemoveIndex)
    {
      wirelessGatewaysToRemoveJsonList[wirelessGatewaysToRemoveIndex].AsString(m_wirelessGatewaysToRemove[wirelessGatewaysToRemoveIndex]);

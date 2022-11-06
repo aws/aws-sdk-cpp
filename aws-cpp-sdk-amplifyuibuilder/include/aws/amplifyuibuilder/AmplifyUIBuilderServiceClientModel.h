@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/amplifyuibuilder/AmplifyUIBuilderErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -68,6 +70,10 @@ namespace Aws
 
   namespace AmplifyUIBuilder
   {
+    using AmplifyUIBuilderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AmplifyUIBuilderEndpointProviderBase = Aws::AmplifyUIBuilder::Endpoint::AmplifyUIBuilderEndpointProviderBase;
+    using AmplifyUIBuilderEndpointProvider = Aws::AmplifyUIBuilder::Endpoint::AmplifyUIBuilderEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in AmplifyUIBuilderClient header */

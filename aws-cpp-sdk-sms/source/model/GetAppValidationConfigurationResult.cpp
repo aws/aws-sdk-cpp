@@ -30,7 +30,7 @@ GetAppValidationConfigurationResult& GetAppValidationConfigurationResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("appValidationConfigurations"))
   {
-    Array<JsonView> appValidationConfigurationsJsonList = jsonValue.GetArray("appValidationConfigurations");
+    Aws::Utils::Array<JsonView> appValidationConfigurationsJsonList = jsonValue.GetArray("appValidationConfigurations");
     for(unsigned appValidationConfigurationsIndex = 0; appValidationConfigurationsIndex < appValidationConfigurationsJsonList.GetLength(); ++appValidationConfigurationsIndex)
     {
       m_appValidationConfigurations.push_back(appValidationConfigurationsJsonList[appValidationConfigurationsIndex].AsObject());
@@ -39,7 +39,7 @@ GetAppValidationConfigurationResult& GetAppValidationConfigurationResult::operat
 
   if(jsonValue.ValueExists("serverGroupValidationConfigurations"))
   {
-    Array<JsonView> serverGroupValidationConfigurationsJsonList = jsonValue.GetArray("serverGroupValidationConfigurations");
+    Aws::Utils::Array<JsonView> serverGroupValidationConfigurationsJsonList = jsonValue.GetArray("serverGroupValidationConfigurations");
     for(unsigned serverGroupValidationConfigurationsIndex = 0; serverGroupValidationConfigurationsIndex < serverGroupValidationConfigurationsJsonList.GetLength(); ++serverGroupValidationConfigurationsIndex)
     {
       m_serverGroupValidationConfigurations.push_back(serverGroupValidationConfigurationsJsonList[serverGroupValidationConfigurationsIndex].AsObject());

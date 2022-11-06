@@ -30,7 +30,7 @@ ListKeywordsForDataSourceResult& ListKeywordsForDataSourceResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("keywords"))
   {
-    Array<JsonView> keywordsJsonList = jsonValue.GetArray("keywords");
+    Aws::Utils::Array<JsonView> keywordsJsonList = jsonValue.GetArray("keywords");
     for(unsigned keywordsIndex = 0; keywordsIndex < keywordsJsonList.GetLength(); ++keywordsIndex)
     {
       m_keywords.push_back(keywordsJsonList[keywordsIndex].AsString());

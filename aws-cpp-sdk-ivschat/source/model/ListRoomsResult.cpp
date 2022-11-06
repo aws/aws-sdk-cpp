@@ -36,7 +36,7 @@ ListRoomsResult& ListRoomsResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("rooms"))
   {
-    Array<JsonView> roomsJsonList = jsonValue.GetArray("rooms");
+    Aws::Utils::Array<JsonView> roomsJsonList = jsonValue.GetArray("rooms");
     for(unsigned roomsIndex = 0; roomsIndex < roomsJsonList.GetLength(); ++roomsIndex)
     {
       m_rooms.push_back(roomsJsonList[roomsIndex].AsObject());

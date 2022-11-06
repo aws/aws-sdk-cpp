@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/billingconductor/BillingConductorErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/billingconductor/BillingConductorEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -79,6 +81,10 @@ namespace Aws
 
   namespace BillingConductor
   {
+    using BillingConductorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BillingConductorEndpointProviderBase = Aws::BillingConductor::Endpoint::BillingConductorEndpointProviderBase;
+    using BillingConductorEndpointProvider = Aws::BillingConductor::Endpoint::BillingConductorEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in BillingConductorClient header */

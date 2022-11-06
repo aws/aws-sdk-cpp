@@ -42,7 +42,7 @@ ThreatIntelligenceDetail& ThreatIntelligenceDetail::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("threatNames"))
   {
-    Array<JsonView> threatNamesJsonList = jsonValue.GetArray("threatNames");
+    Aws::Utils::Array<JsonView> threatNamesJsonList = jsonValue.GetArray("threatNames");
     for(unsigned threatNamesIndex = 0; threatNamesIndex < threatNamesJsonList.GetLength(); ++threatNamesIndex)
     {
       m_threatNames.push_back(threatNamesJsonList[threatNamesIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue ThreatIntelligenceDetail::Jsonize() const
 
   if(m_threatNamesHasBeenSet)
   {
-   Array<JsonValue> threatNamesJsonList(m_threatNames.size());
+   Aws::Utils::Array<JsonValue> threatNamesJsonList(m_threatNames.size());
    for(unsigned threatNamesIndex = 0; threatNamesIndex < threatNamesJsonList.GetLength(); ++threatNamesIndex)
    {
      threatNamesJsonList[threatNamesIndex].AsString(m_threatNames[threatNamesIndex]);

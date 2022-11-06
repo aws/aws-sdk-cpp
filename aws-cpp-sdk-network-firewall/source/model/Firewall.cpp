@@ -89,7 +89,7 @@ Firewall& Firewall::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubnetMappings"))
   {
-    Array<JsonView> subnetMappingsJsonList = jsonValue.GetArray("SubnetMappings");
+    Aws::Utils::Array<JsonView> subnetMappingsJsonList = jsonValue.GetArray("SubnetMappings");
     for(unsigned subnetMappingsIndex = 0; subnetMappingsIndex < subnetMappingsJsonList.GetLength(); ++subnetMappingsIndex)
     {
       m_subnetMappings.push_back(subnetMappingsJsonList[subnetMappingsIndex].AsObject());
@@ -134,7 +134,7 @@ Firewall& Firewall::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -182,7 +182,7 @@ JsonValue Firewall::Jsonize() const
 
   if(m_subnetMappingsHasBeenSet)
   {
-   Array<JsonValue> subnetMappingsJsonList(m_subnetMappings.size());
+   Aws::Utils::Array<JsonValue> subnetMappingsJsonList(m_subnetMappings.size());
    for(unsigned subnetMappingsIndex = 0; subnetMappingsIndex < subnetMappingsJsonList.GetLength(); ++subnetMappingsIndex)
    {
      subnetMappingsJsonList[subnetMappingsIndex].AsObject(m_subnetMappings[subnetMappingsIndex].Jsonize());
@@ -223,7 +223,7 @@ JsonValue Firewall::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

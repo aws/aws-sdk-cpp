@@ -30,7 +30,7 @@ DescribeImageBuildersResult& DescribeImageBuildersResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ImageBuilders"))
   {
-    Array<JsonView> imageBuildersJsonList = jsonValue.GetArray("ImageBuilders");
+    Aws::Utils::Array<JsonView> imageBuildersJsonList = jsonValue.GetArray("ImageBuilders");
     for(unsigned imageBuildersIndex = 0; imageBuildersIndex < imageBuildersJsonList.GetLength(); ++imageBuildersIndex)
     {
       m_imageBuilders.push_back(imageBuildersJsonList[imageBuildersIndex].AsObject());

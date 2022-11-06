@@ -23,7 +23,7 @@ Aws::String CreateResourceGroupRequest::SerializePayload() const
 
   if(m_resourceGroupTagsHasBeenSet)
   {
-   Array<JsonValue> resourceGroupTagsJsonList(m_resourceGroupTags.size());
+   Aws::Utils::Array<JsonValue> resourceGroupTagsJsonList(m_resourceGroupTags.size());
    for(unsigned resourceGroupTagsIndex = 0; resourceGroupTagsIndex < resourceGroupTagsJsonList.GetLength(); ++resourceGroupTagsIndex)
    {
      resourceGroupTagsJsonList[resourceGroupTagsIndex].AsObject(m_resourceGroupTags[resourceGroupTagsIndex].Jsonize());

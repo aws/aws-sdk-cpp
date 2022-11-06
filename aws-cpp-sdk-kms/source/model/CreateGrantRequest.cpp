@@ -47,7 +47,7 @@ Aws::String CreateGrantRequest::SerializePayload() const
 
   if(m_operationsHasBeenSet)
   {
-   Array<JsonValue> operationsJsonList(m_operations.size());
+   Aws::Utils::Array<JsonValue> operationsJsonList(m_operations.size());
    for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
    {
      operationsJsonList[operationsIndex].AsString(GrantOperationMapper::GetNameForGrantOperation(m_operations[operationsIndex]));
@@ -64,7 +64,7 @@ Aws::String CreateGrantRequest::SerializePayload() const
 
   if(m_grantTokensHasBeenSet)
   {
-   Array<JsonValue> grantTokensJsonList(m_grantTokens.size());
+   Aws::Utils::Array<JsonValue> grantTokensJsonList(m_grantTokens.size());
    for(unsigned grantTokensIndex = 0; grantTokensIndex < grantTokensJsonList.GetLength(); ++grantTokensIndex)
    {
      grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);

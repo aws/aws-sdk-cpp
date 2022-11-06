@@ -42,7 +42,7 @@ AlgorithmValidationSpecification& AlgorithmValidationSpecification::operator =(J
 
   if(jsonValue.ValueExists("ValidationProfiles"))
   {
-    Array<JsonView> validationProfilesJsonList = jsonValue.GetArray("ValidationProfiles");
+    Aws::Utils::Array<JsonView> validationProfilesJsonList = jsonValue.GetArray("ValidationProfiles");
     for(unsigned validationProfilesIndex = 0; validationProfilesIndex < validationProfilesJsonList.GetLength(); ++validationProfilesIndex)
     {
       m_validationProfiles.push_back(validationProfilesJsonList[validationProfilesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue AlgorithmValidationSpecification::Jsonize() const
 
   if(m_validationProfilesHasBeenSet)
   {
-   Array<JsonValue> validationProfilesJsonList(m_validationProfiles.size());
+   Aws::Utils::Array<JsonValue> validationProfilesJsonList(m_validationProfiles.size());
    for(unsigned validationProfilesIndex = 0; validationProfilesIndex < validationProfilesJsonList.GetLength(); ++validationProfilesIndex)
    {
      validationProfilesJsonList[validationProfilesIndex].AsObject(m_validationProfiles[validationProfilesIndex].Jsonize());

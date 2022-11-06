@@ -45,7 +45,7 @@ CanDbcDefinition& CanDbcDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("canDbcFiles"))
   {
-    Array<JsonView> canDbcFilesJsonList = jsonValue.GetArray("canDbcFiles");
+    Aws::Utils::Array<JsonView> canDbcFilesJsonList = jsonValue.GetArray("canDbcFiles");
     for(unsigned canDbcFilesIndex = 0; canDbcFilesIndex < canDbcFilesJsonList.GetLength(); ++canDbcFilesIndex)
     {
       m_canDbcFiles.push_back(HashingUtils::Base64Decode(canDbcFilesJsonList[canDbcFilesIndex].AsString()));
@@ -78,7 +78,7 @@ JsonValue CanDbcDefinition::Jsonize() const
 
   if(m_canDbcFilesHasBeenSet)
   {
-   Array<JsonValue> canDbcFilesJsonList(m_canDbcFiles.size());
+   Aws::Utils::Array<JsonValue> canDbcFilesJsonList(m_canDbcFiles.size());
    for(unsigned canDbcFilesIndex = 0; canDbcFilesIndex < canDbcFilesJsonList.GetLength(); ++canDbcFilesIndex)
    {
      canDbcFilesJsonList[canDbcFilesIndex].AsString(HashingUtils::Base64Encode(m_canDbcFiles[canDbcFilesIndex]));

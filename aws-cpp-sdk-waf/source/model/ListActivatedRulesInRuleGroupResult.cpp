@@ -36,7 +36,7 @@ ListActivatedRulesInRuleGroupResult& ListActivatedRulesInRuleGroupResult::operat
 
   if(jsonValue.ValueExists("ActivatedRules"))
   {
-    Array<JsonView> activatedRulesJsonList = jsonValue.GetArray("ActivatedRules");
+    Aws::Utils::Array<JsonView> activatedRulesJsonList = jsonValue.GetArray("ActivatedRules");
     for(unsigned activatedRulesIndex = 0; activatedRulesIndex < activatedRulesJsonList.GetLength(); ++activatedRulesIndex)
     {
       m_activatedRules.push_back(activatedRulesJsonList[activatedRulesIndex].AsObject());

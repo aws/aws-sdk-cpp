@@ -46,7 +46,7 @@ Aws::String CreateDecoderManifestRequest::SerializePayload() const
 
   if(m_signalDecodersHasBeenSet)
   {
-   Array<JsonValue> signalDecodersJsonList(m_signalDecoders.size());
+   Aws::Utils::Array<JsonValue> signalDecodersJsonList(m_signalDecoders.size());
    for(unsigned signalDecodersIndex = 0; signalDecodersIndex < signalDecodersJsonList.GetLength(); ++signalDecodersIndex)
    {
      signalDecodersJsonList[signalDecodersIndex].AsObject(m_signalDecoders[signalDecodersIndex].Jsonize());
@@ -57,7 +57,7 @@ Aws::String CreateDecoderManifestRequest::SerializePayload() const
 
   if(m_networkInterfacesHasBeenSet)
   {
-   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   Aws::Utils::Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
    {
      networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
@@ -68,7 +68,7 @@ Aws::String CreateDecoderManifestRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

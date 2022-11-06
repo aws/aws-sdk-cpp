@@ -51,7 +51,7 @@ ExecutionParameter& ExecutionParameter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DefaultValues"))
   {
-    Array<JsonView> defaultValuesJsonList = jsonValue.GetArray("DefaultValues");
+    Aws::Utils::Array<JsonView> defaultValuesJsonList = jsonValue.GetArray("DefaultValues");
     for(unsigned defaultValuesIndex = 0; defaultValuesIndex < defaultValuesJsonList.GetLength(); ++defaultValuesIndex)
     {
       m_defaultValues.push_back(defaultValuesJsonList[defaultValuesIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue ExecutionParameter::Jsonize() const
 
   if(m_defaultValuesHasBeenSet)
   {
-   Array<JsonValue> defaultValuesJsonList(m_defaultValues.size());
+   Aws::Utils::Array<JsonValue> defaultValuesJsonList(m_defaultValues.size());
    for(unsigned defaultValuesIndex = 0; defaultValuesIndex < defaultValuesJsonList.GetLength(); ++defaultValuesIndex)
    {
      defaultValuesJsonList[defaultValuesIndex].AsString(m_defaultValues[defaultValuesIndex]);

@@ -35,7 +35,7 @@ BatchGetObjectInformationResponse& BatchGetObjectInformationResponse::operator =
 {
   if(jsonValue.ValueExists("SchemaFacets"))
   {
-    Array<JsonView> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");
+    Aws::Utils::Array<JsonView> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");
     for(unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex)
     {
       m_schemaFacets.push_back(schemaFacetsJsonList[schemaFacetsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue BatchGetObjectInformationResponse::Jsonize() const
 
   if(m_schemaFacetsHasBeenSet)
   {
-   Array<JsonValue> schemaFacetsJsonList(m_schemaFacets.size());
+   Aws::Utils::Array<JsonValue> schemaFacetsJsonList(m_schemaFacets.size());
    for(unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex)
    {
      schemaFacetsJsonList[schemaFacetsIndex].AsObject(m_schemaFacets[schemaFacetsIndex].Jsonize());

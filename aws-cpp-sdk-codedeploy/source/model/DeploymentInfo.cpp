@@ -280,7 +280,7 @@ DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("deploymentStatusMessages"))
   {
-    Array<JsonView> deploymentStatusMessagesJsonList = jsonValue.GetArray("deploymentStatusMessages");
+    Aws::Utils::Array<JsonView> deploymentStatusMessagesJsonList = jsonValue.GetArray("deploymentStatusMessages");
     for(unsigned deploymentStatusMessagesIndex = 0; deploymentStatusMessagesIndex < deploymentStatusMessagesJsonList.GetLength(); ++deploymentStatusMessagesIndex)
     {
       m_deploymentStatusMessages.push_back(deploymentStatusMessagesJsonList[deploymentStatusMessagesIndex].AsString());
@@ -469,7 +469,7 @@ JsonValue DeploymentInfo::Jsonize() const
 
   if(m_deploymentStatusMessagesHasBeenSet)
   {
-   Array<JsonValue> deploymentStatusMessagesJsonList(m_deploymentStatusMessages.size());
+   Aws::Utils::Array<JsonValue> deploymentStatusMessagesJsonList(m_deploymentStatusMessages.size());
    for(unsigned deploymentStatusMessagesIndex = 0; deploymentStatusMessagesIndex < deploymentStatusMessagesJsonList.GetLength(); ++deploymentStatusMessagesIndex)
    {
      deploymentStatusMessagesJsonList[deploymentStatusMessagesIndex].AsString(m_deploymentStatusMessages[deploymentStatusMessagesIndex]);

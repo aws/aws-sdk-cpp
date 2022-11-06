@@ -30,7 +30,7 @@ DescribeFleetAdvisorSchemaObjectSummaryResult& DescribeFleetAdvisorSchemaObjectS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FleetAdvisorSchemaObjects"))
   {
-    Array<JsonView> fleetAdvisorSchemaObjectsJsonList = jsonValue.GetArray("FleetAdvisorSchemaObjects");
+    Aws::Utils::Array<JsonView> fleetAdvisorSchemaObjectsJsonList = jsonValue.GetArray("FleetAdvisorSchemaObjects");
     for(unsigned fleetAdvisorSchemaObjectsIndex = 0; fleetAdvisorSchemaObjectsIndex < fleetAdvisorSchemaObjectsJsonList.GetLength(); ++fleetAdvisorSchemaObjectsIndex)
     {
       m_fleetAdvisorSchemaObjects.push_back(fleetAdvisorSchemaObjectsJsonList[fleetAdvisorSchemaObjectsIndex].AsObject());

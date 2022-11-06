@@ -52,7 +52,7 @@ ListResolverQueryLogConfigsResult& ListResolverQueryLogConfigsResult::operator =
 
   if(jsonValue.ValueExists("ResolverQueryLogConfigs"))
   {
-    Array<JsonView> resolverQueryLogConfigsJsonList = jsonValue.GetArray("ResolverQueryLogConfigs");
+    Aws::Utils::Array<JsonView> resolverQueryLogConfigsJsonList = jsonValue.GetArray("ResolverQueryLogConfigs");
     for(unsigned resolverQueryLogConfigsIndex = 0; resolverQueryLogConfigsIndex < resolverQueryLogConfigsJsonList.GetLength(); ++resolverQueryLogConfigsIndex)
     {
       m_resolverQueryLogConfigs.push_back(resolverQueryLogConfigsJsonList[resolverQueryLogConfigsIndex].AsObject());

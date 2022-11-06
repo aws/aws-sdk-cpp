@@ -42,7 +42,7 @@ DimensionFilter& DimensionFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DimensionValueList"))
   {
-    Array<JsonView> dimensionValueListJsonList = jsonValue.GetArray("DimensionValueList");
+    Aws::Utils::Array<JsonView> dimensionValueListJsonList = jsonValue.GetArray("DimensionValueList");
     for(unsigned dimensionValueListIndex = 0; dimensionValueListIndex < dimensionValueListJsonList.GetLength(); ++dimensionValueListIndex)
     {
       m_dimensionValueList.push_back(dimensionValueListJsonList[dimensionValueListIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue DimensionFilter::Jsonize() const
 
   if(m_dimensionValueListHasBeenSet)
   {
-   Array<JsonValue> dimensionValueListJsonList(m_dimensionValueList.size());
+   Aws::Utils::Array<JsonValue> dimensionValueListJsonList(m_dimensionValueList.size());
    for(unsigned dimensionValueListIndex = 0; dimensionValueListIndex < dimensionValueListJsonList.GetLength(); ++dimensionValueListIndex)
    {
      dimensionValueListJsonList[dimensionValueListIndex].AsString(m_dimensionValueList[dimensionValueListIndex]);

@@ -23,7 +23,7 @@ Aws::String BatchDeletePhoneNumberRequest::SerializePayload() const
 
   if(m_phoneNumberIdsHasBeenSet)
   {
-   Array<JsonValue> phoneNumberIdsJsonList(m_phoneNumberIds.size());
+   Aws::Utils::Array<JsonValue> phoneNumberIdsJsonList(m_phoneNumberIds.size());
    for(unsigned phoneNumberIdsIndex = 0; phoneNumberIdsIndex < phoneNumberIdsJsonList.GetLength(); ++phoneNumberIdsIndex)
    {
      phoneNumberIdsJsonList[phoneNumberIdsIndex].AsString(m_phoneNumberIds[phoneNumberIdsIndex]);

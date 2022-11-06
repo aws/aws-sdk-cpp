@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/mediaconvert/MediaConvertErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/mediaconvert/MediaConvertEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -77,6 +79,10 @@ namespace Aws
 
   namespace MediaConvert
   {
+    using MediaConvertClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaConvertEndpointProviderBase = Aws::MediaConvert::Endpoint::MediaConvertEndpointProviderBase;
+    using MediaConvertEndpointProvider = Aws::MediaConvert::Endpoint::MediaConvertEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in MediaConvertClient header */

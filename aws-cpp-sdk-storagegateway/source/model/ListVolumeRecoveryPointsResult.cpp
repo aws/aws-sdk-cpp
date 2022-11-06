@@ -36,7 +36,7 @@ ListVolumeRecoveryPointsResult& ListVolumeRecoveryPointsResult::operator =(const
 
   if(jsonValue.ValueExists("VolumeRecoveryPointInfos"))
   {
-    Array<JsonView> volumeRecoveryPointInfosJsonList = jsonValue.GetArray("VolumeRecoveryPointInfos");
+    Aws::Utils::Array<JsonView> volumeRecoveryPointInfosJsonList = jsonValue.GetArray("VolumeRecoveryPointInfos");
     for(unsigned volumeRecoveryPointInfosIndex = 0; volumeRecoveryPointInfosIndex < volumeRecoveryPointInfosJsonList.GetLength(); ++volumeRecoveryPointInfosIndex)
     {
       m_volumeRecoveryPointInfos.push_back(volumeRecoveryPointInfosJsonList[volumeRecoveryPointInfosIndex].AsObject());

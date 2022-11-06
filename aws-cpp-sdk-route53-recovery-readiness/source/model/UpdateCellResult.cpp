@@ -42,7 +42,7 @@ UpdateCellResult& UpdateCellResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("cells"))
   {
-    Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");
+    Aws::Utils::Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");
     for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
     {
       m_cells.push_back(cellsJsonList[cellsIndex].AsString());
@@ -51,7 +51,7 @@ UpdateCellResult& UpdateCellResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("parentReadinessScopes"))
   {
-    Array<JsonView> parentReadinessScopesJsonList = jsonValue.GetArray("parentReadinessScopes");
+    Aws::Utils::Array<JsonView> parentReadinessScopesJsonList = jsonValue.GetArray("parentReadinessScopes");
     for(unsigned parentReadinessScopesIndex = 0; parentReadinessScopesIndex < parentReadinessScopesJsonList.GetLength(); ++parentReadinessScopesIndex)
     {
       m_parentReadinessScopes.push_back(parentReadinessScopesJsonList[parentReadinessScopesIndex].AsString());

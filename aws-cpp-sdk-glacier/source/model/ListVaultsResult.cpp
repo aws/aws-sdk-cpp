@@ -30,7 +30,7 @@ ListVaultsResult& ListVaultsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VaultList"))
   {
-    Array<JsonView> vaultListJsonList = jsonValue.GetArray("VaultList");
+    Aws::Utils::Array<JsonView> vaultListJsonList = jsonValue.GetArray("VaultList");
     for(unsigned vaultListIndex = 0; vaultListIndex < vaultListJsonList.GetLength(); ++vaultListIndex)
     {
       m_vaultList.push_back(vaultListJsonList[vaultListIndex].AsObject());

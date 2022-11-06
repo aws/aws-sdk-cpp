@@ -33,7 +33,7 @@ DocumentMetadataResponseInfo& DocumentMetadataResponseInfo::operator =(JsonView 
 {
   if(jsonValue.ValueExists("ReviewerResponse"))
   {
-    Array<JsonView> reviewerResponseJsonList = jsonValue.GetArray("ReviewerResponse");
+    Aws::Utils::Array<JsonView> reviewerResponseJsonList = jsonValue.GetArray("ReviewerResponse");
     for(unsigned reviewerResponseIndex = 0; reviewerResponseIndex < reviewerResponseJsonList.GetLength(); ++reviewerResponseIndex)
     {
       m_reviewerResponse.push_back(reviewerResponseJsonList[reviewerResponseIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue DocumentMetadataResponseInfo::Jsonize() const
 
   if(m_reviewerResponseHasBeenSet)
   {
-   Array<JsonValue> reviewerResponseJsonList(m_reviewerResponse.size());
+   Aws::Utils::Array<JsonValue> reviewerResponseJsonList(m_reviewerResponse.size());
    for(unsigned reviewerResponseIndex = 0; reviewerResponseIndex < reviewerResponseJsonList.GetLength(); ++reviewerResponseIndex)
    {
      reviewerResponseJsonList[reviewerResponseIndex].AsObject(m_reviewerResponse[reviewerResponseIndex].Jsonize());

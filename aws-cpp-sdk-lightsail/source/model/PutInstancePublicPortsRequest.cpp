@@ -24,7 +24,7 @@ Aws::String PutInstancePublicPortsRequest::SerializePayload() const
 
   if(m_portInfosHasBeenSet)
   {
-   Array<JsonValue> portInfosJsonList(m_portInfos.size());
+   Aws::Utils::Array<JsonValue> portInfosJsonList(m_portInfos.size());
    for(unsigned portInfosIndex = 0; portInfosIndex < portInfosJsonList.GetLength(); ++portInfosIndex)
    {
      portInfosJsonList[portInfosIndex].AsObject(m_portInfos[portInfosIndex].Jsonize());

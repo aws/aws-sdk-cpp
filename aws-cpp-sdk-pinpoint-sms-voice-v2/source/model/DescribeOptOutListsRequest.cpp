@@ -26,7 +26,7 @@ Aws::String DescribeOptOutListsRequest::SerializePayload() const
 
   if(m_optOutListNamesHasBeenSet)
   {
-   Array<JsonValue> optOutListNamesJsonList(m_optOutListNames.size());
+   Aws::Utils::Array<JsonValue> optOutListNamesJsonList(m_optOutListNames.size());
    for(unsigned optOutListNamesIndex = 0; optOutListNamesIndex < optOutListNamesJsonList.GetLength(); ++optOutListNamesIndex)
    {
      optOutListNamesJsonList[optOutListNamesIndex].AsString(m_optOutListNames[optOutListNamesIndex]);

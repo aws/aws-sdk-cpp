@@ -144,7 +144,7 @@ InstanceGroup& InstanceGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
@@ -161,7 +161,7 @@ InstanceGroup& InstanceGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LastSuccessfullyAppliedConfigurations"))
   {
-    Array<JsonView> lastSuccessfullyAppliedConfigurationsJsonList = jsonValue.GetArray("LastSuccessfullyAppliedConfigurations");
+    Aws::Utils::Array<JsonView> lastSuccessfullyAppliedConfigurationsJsonList = jsonValue.GetArray("LastSuccessfullyAppliedConfigurations");
     for(unsigned lastSuccessfullyAppliedConfigurationsIndex = 0; lastSuccessfullyAppliedConfigurationsIndex < lastSuccessfullyAppliedConfigurationsJsonList.GetLength(); ++lastSuccessfullyAppliedConfigurationsIndex)
     {
       m_lastSuccessfullyAppliedConfigurations.push_back(lastSuccessfullyAppliedConfigurationsJsonList[lastSuccessfullyAppliedConfigurationsIndex].AsObject());
@@ -178,7 +178,7 @@ InstanceGroup& InstanceGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EbsBlockDevices"))
   {
-    Array<JsonView> ebsBlockDevicesJsonList = jsonValue.GetArray("EbsBlockDevices");
+    Aws::Utils::Array<JsonView> ebsBlockDevicesJsonList = jsonValue.GetArray("EbsBlockDevices");
     for(unsigned ebsBlockDevicesIndex = 0; ebsBlockDevicesIndex < ebsBlockDevicesJsonList.GetLength(); ++ebsBlockDevicesIndex)
     {
       m_ebsBlockDevices.push_back(ebsBlockDevicesJsonList[ebsBlockDevicesIndex].AsObject());
@@ -275,7 +275,7 @@ JsonValue InstanceGroup::Jsonize() const
 
   if(m_configurationsHasBeenSet)
   {
-   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
    {
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
@@ -292,7 +292,7 @@ JsonValue InstanceGroup::Jsonize() const
 
   if(m_lastSuccessfullyAppliedConfigurationsHasBeenSet)
   {
-   Array<JsonValue> lastSuccessfullyAppliedConfigurationsJsonList(m_lastSuccessfullyAppliedConfigurations.size());
+   Aws::Utils::Array<JsonValue> lastSuccessfullyAppliedConfigurationsJsonList(m_lastSuccessfullyAppliedConfigurations.size());
    for(unsigned lastSuccessfullyAppliedConfigurationsIndex = 0; lastSuccessfullyAppliedConfigurationsIndex < lastSuccessfullyAppliedConfigurationsJsonList.GetLength(); ++lastSuccessfullyAppliedConfigurationsIndex)
    {
      lastSuccessfullyAppliedConfigurationsJsonList[lastSuccessfullyAppliedConfigurationsIndex].AsObject(m_lastSuccessfullyAppliedConfigurations[lastSuccessfullyAppliedConfigurationsIndex].Jsonize());
@@ -309,7 +309,7 @@ JsonValue InstanceGroup::Jsonize() const
 
   if(m_ebsBlockDevicesHasBeenSet)
   {
-   Array<JsonValue> ebsBlockDevicesJsonList(m_ebsBlockDevices.size());
+   Aws::Utils::Array<JsonValue> ebsBlockDevicesJsonList(m_ebsBlockDevices.size());
    for(unsigned ebsBlockDevicesIndex = 0; ebsBlockDevicesIndex < ebsBlockDevicesJsonList.GetLength(); ++ebsBlockDevicesIndex)
    {
      ebsBlockDevicesJsonList[ebsBlockDevicesIndex].AsObject(m_ebsBlockDevices[ebsBlockDevicesIndex].Jsonize());

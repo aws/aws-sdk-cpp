@@ -36,7 +36,7 @@ ListIdentitiesResult& ListIdentitiesResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Identities"))
   {
-    Array<JsonView> identitiesJsonList = jsonValue.GetArray("Identities");
+    Aws::Utils::Array<JsonView> identitiesJsonList = jsonValue.GetArray("Identities");
     for(unsigned identitiesIndex = 0; identitiesIndex < identitiesJsonList.GetLength(); ++identitiesIndex)
     {
       m_identities.push_back(identitiesJsonList[identitiesIndex].AsObject());

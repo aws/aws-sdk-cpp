@@ -30,7 +30,7 @@ SearchResourcesResult& SearchResourcesResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("matchingResources"))
   {
-    Array<JsonView> matchingResourcesJsonList = jsonValue.GetArray("matchingResources");
+    Aws::Utils::Array<JsonView> matchingResourcesJsonList = jsonValue.GetArray("matchingResources");
     for(unsigned matchingResourcesIndex = 0; matchingResourcesIndex < matchingResourcesJsonList.GetLength(); ++matchingResourcesIndex)
     {
       m_matchingResources.push_back(matchingResourcesJsonList[matchingResourcesIndex].AsObject());

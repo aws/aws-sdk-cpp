@@ -25,7 +25,7 @@ Aws::String DescribeExclusionsRequest::SerializePayload() const
 
   if(m_exclusionArnsHasBeenSet)
   {
-   Array<JsonValue> exclusionArnsJsonList(m_exclusionArns.size());
+   Aws::Utils::Array<JsonValue> exclusionArnsJsonList(m_exclusionArns.size());
    for(unsigned exclusionArnsIndex = 0; exclusionArnsIndex < exclusionArnsJsonList.GetLength(); ++exclusionArnsIndex)
    {
      exclusionArnsJsonList[exclusionArnsIndex].AsString(m_exclusionArns[exclusionArnsIndex]);

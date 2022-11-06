@@ -36,7 +36,7 @@ DescribeParameterGroupsResult& DescribeParameterGroupsResult::operator =(const A
 
   if(jsonValue.ValueExists("ParameterGroups"))
   {
-    Array<JsonView> parameterGroupsJsonList = jsonValue.GetArray("ParameterGroups");
+    Aws::Utils::Array<JsonView> parameterGroupsJsonList = jsonValue.GetArray("ParameterGroups");
     for(unsigned parameterGroupsIndex = 0; parameterGroupsIndex < parameterGroupsJsonList.GetLength(); ++parameterGroupsIndex)
     {
       m_parameterGroups.push_back(parameterGroupsJsonList[parameterGroupsIndex].AsObject());

@@ -30,7 +30,7 @@ ListNamespacesResult& ListNamespacesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("namespaces"))
   {
-    Array<JsonView> namespacesJsonList = jsonValue.GetArray("namespaces");
+    Aws::Utils::Array<JsonView> namespacesJsonList = jsonValue.GetArray("namespaces");
     for(unsigned namespacesIndex = 0; namespacesIndex < namespacesJsonList.GetLength(); ++namespacesIndex)
     {
       m_namespaces.push_back(namespacesJsonList[namespacesIndex].AsObject());

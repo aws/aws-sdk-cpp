@@ -75,7 +75,7 @@ EndpointGroup& EndpointGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EndpointDescriptions"))
   {
-    Array<JsonView> endpointDescriptionsJsonList = jsonValue.GetArray("EndpointDescriptions");
+    Aws::Utils::Array<JsonView> endpointDescriptionsJsonList = jsonValue.GetArray("EndpointDescriptions");
     for(unsigned endpointDescriptionsIndex = 0; endpointDescriptionsIndex < endpointDescriptionsJsonList.GetLength(); ++endpointDescriptionsIndex)
     {
       m_endpointDescriptions.push_back(endpointDescriptionsJsonList[endpointDescriptionsIndex].AsObject());
@@ -127,7 +127,7 @@ EndpointGroup& EndpointGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PortOverrides"))
   {
-    Array<JsonView> portOverridesJsonList = jsonValue.GetArray("PortOverrides");
+    Aws::Utils::Array<JsonView> portOverridesJsonList = jsonValue.GetArray("PortOverrides");
     for(unsigned portOverridesIndex = 0; portOverridesIndex < portOverridesJsonList.GetLength(); ++portOverridesIndex)
     {
       m_portOverrides.push_back(portOverridesJsonList[portOverridesIndex].AsObject());
@@ -156,7 +156,7 @@ JsonValue EndpointGroup::Jsonize() const
 
   if(m_endpointDescriptionsHasBeenSet)
   {
-   Array<JsonValue> endpointDescriptionsJsonList(m_endpointDescriptions.size());
+   Aws::Utils::Array<JsonValue> endpointDescriptionsJsonList(m_endpointDescriptions.size());
    for(unsigned endpointDescriptionsIndex = 0; endpointDescriptionsIndex < endpointDescriptionsJsonList.GetLength(); ++endpointDescriptionsIndex)
    {
      endpointDescriptionsJsonList[endpointDescriptionsIndex].AsObject(m_endpointDescriptions[endpointDescriptionsIndex].Jsonize());
@@ -202,7 +202,7 @@ JsonValue EndpointGroup::Jsonize() const
 
   if(m_portOverridesHasBeenSet)
   {
-   Array<JsonValue> portOverridesJsonList(m_portOverrides.size());
+   Aws::Utils::Array<JsonValue> portOverridesJsonList(m_portOverrides.size());
    for(unsigned portOverridesIndex = 0; portOverridesIndex < portOverridesJsonList.GetLength(); ++portOverridesIndex)
    {
      portOverridesJsonList[portOverridesIndex].AsObject(m_portOverrides[portOverridesIndex].Jsonize());

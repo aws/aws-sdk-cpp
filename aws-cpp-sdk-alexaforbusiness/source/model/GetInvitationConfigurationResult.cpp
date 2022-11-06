@@ -42,7 +42,7 @@ GetInvitationConfigurationResult& GetInvitationConfigurationResult::operator =(c
 
   if(jsonValue.ValueExists("PrivateSkillIds"))
   {
-    Array<JsonView> privateSkillIdsJsonList = jsonValue.GetArray("PrivateSkillIds");
+    Aws::Utils::Array<JsonView> privateSkillIdsJsonList = jsonValue.GetArray("PrivateSkillIds");
     for(unsigned privateSkillIdsIndex = 0; privateSkillIdsIndex < privateSkillIdsJsonList.GetLength(); ++privateSkillIdsIndex)
     {
       m_privateSkillIds.push_back(privateSkillIdsJsonList[privateSkillIdsIndex].AsString());

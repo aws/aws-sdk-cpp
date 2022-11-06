@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/machinelearning/MachineLearningErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/machinelearning/MachineLearningEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -77,6 +79,10 @@ namespace Aws
 
   namespace MachineLearning
   {
+    using MachineLearningClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MachineLearningEndpointProviderBase = Aws::MachineLearning::Endpoint::MachineLearningEndpointProviderBase;
+    using MachineLearningEndpointProvider = Aws::MachineLearning::Endpoint::MachineLearningEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in MachineLearningClient header */

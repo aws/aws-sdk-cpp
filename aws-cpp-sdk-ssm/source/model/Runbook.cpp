@@ -66,7 +66,7 @@ Runbook& Runbook::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonView> automationParameterValueListJsonList = parametersItem.second.AsArray();
+      Aws::Utils::Array<JsonView> automationParameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> automationParameterValueListList;
       automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
@@ -87,7 +87,7 @@ Runbook& Runbook::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
@@ -97,14 +97,14 @@ Runbook& Runbook::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetMaps"))
   {
-    Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
+    Aws::Utils::Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
     for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
     {
       Aws::Map<Aws::String, JsonView> targetMapJsonMap = targetMapsJsonList[targetMapsIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::Vector<Aws::String>> targetMapMap;
       for(auto& targetMapItem : targetMapJsonMap)
       {
-        Array<JsonView> targetMapValueListJsonList = targetMapItem.second.AsArray();
+        Aws::Utils::Array<JsonView> targetMapValueListJsonList = targetMapItem.second.AsArray();
         Aws::Vector<Aws::String> targetMapValueListList;
         targetMapValueListList.reserve((size_t)targetMapValueListJsonList.GetLength());
         for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
@@ -134,7 +134,7 @@ Runbook& Runbook::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetLocations"))
   {
-    Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
+    Aws::Utils::Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
     for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
     {
       m_targetLocations.push_back(targetLocationsJsonList[targetLocationsIndex].AsObject());
@@ -166,7 +166,7 @@ JsonValue Runbook::Jsonize() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> automationParameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> automationParameterValueListJsonList(parametersItem.second.size());
      for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
      {
        automationParameterValueListJsonList[automationParameterValueListIndex].AsString(parametersItem.second[automationParameterValueListIndex]);
@@ -185,7 +185,7 @@ JsonValue Runbook::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
@@ -196,13 +196,13 @@ JsonValue Runbook::Jsonize() const
 
   if(m_targetMapsHasBeenSet)
   {
-   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   Aws::Utils::Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
    for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
    {
      JsonValue targetMapJsonMap;
      for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
      {
-       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       Aws::Utils::Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
        for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
        {
          targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);
@@ -229,7 +229,7 @@ JsonValue Runbook::Jsonize() const
 
   if(m_targetLocationsHasBeenSet)
   {
-   Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
+   Aws::Utils::Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
    for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
    {
      targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());

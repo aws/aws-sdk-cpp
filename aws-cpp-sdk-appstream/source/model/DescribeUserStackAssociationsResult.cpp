@@ -30,7 +30,7 @@ DescribeUserStackAssociationsResult& DescribeUserStackAssociationsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserStackAssociations"))
   {
-    Array<JsonView> userStackAssociationsJsonList = jsonValue.GetArray("UserStackAssociations");
+    Aws::Utils::Array<JsonView> userStackAssociationsJsonList = jsonValue.GetArray("UserStackAssociations");
     for(unsigned userStackAssociationsIndex = 0; userStackAssociationsIndex < userStackAssociationsJsonList.GetLength(); ++userStackAssociationsIndex)
     {
       m_userStackAssociations.push_back(userStackAssociationsJsonList[userStackAssociationsIndex].AsObject());

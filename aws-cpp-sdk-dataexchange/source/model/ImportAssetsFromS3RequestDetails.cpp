@@ -37,7 +37,7 @@ ImportAssetsFromS3RequestDetails& ImportAssetsFromS3RequestDetails::operator =(J
 {
   if(jsonValue.ValueExists("AssetSources"))
   {
-    Array<JsonView> assetSourcesJsonList = jsonValue.GetArray("AssetSources");
+    Aws::Utils::Array<JsonView> assetSourcesJsonList = jsonValue.GetArray("AssetSources");
     for(unsigned assetSourcesIndex = 0; assetSourcesIndex < assetSourcesJsonList.GetLength(); ++assetSourcesIndex)
     {
       m_assetSources.push_back(assetSourcesJsonList[assetSourcesIndex].AsObject());
@@ -68,7 +68,7 @@ JsonValue ImportAssetsFromS3RequestDetails::Jsonize() const
 
   if(m_assetSourcesHasBeenSet)
   {
-   Array<JsonValue> assetSourcesJsonList(m_assetSources.size());
+   Aws::Utils::Array<JsonValue> assetSourcesJsonList(m_assetSources.size());
    for(unsigned assetSourcesIndex = 0; assetSourcesIndex < assetSourcesJsonList.GetLength(); ++assetSourcesIndex)
    {
      assetSourcesJsonList[assetSourcesIndex].AsObject(m_assetSources[assetSourcesIndex].Jsonize());

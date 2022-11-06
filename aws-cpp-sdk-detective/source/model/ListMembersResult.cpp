@@ -30,7 +30,7 @@ ListMembersResult& ListMembersResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MemberDetails"))
   {
-    Array<JsonView> memberDetailsJsonList = jsonValue.GetArray("MemberDetails");
+    Aws::Utils::Array<JsonView> memberDetailsJsonList = jsonValue.GetArray("MemberDetails");
     for(unsigned memberDetailsIndex = 0; memberDetailsIndex < memberDetailsJsonList.GetLength(); ++memberDetailsIndex)
     {
       m_memberDetails.push_back(memberDetailsJsonList[memberDetailsIndex].AsObject());

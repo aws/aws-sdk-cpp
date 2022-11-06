@@ -30,7 +30,7 @@ ListCustomVerificationEmailTemplatesResult& ListCustomVerificationEmailTemplates
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CustomVerificationEmailTemplates"))
   {
-    Array<JsonView> customVerificationEmailTemplatesJsonList = jsonValue.GetArray("CustomVerificationEmailTemplates");
+    Aws::Utils::Array<JsonView> customVerificationEmailTemplatesJsonList = jsonValue.GetArray("CustomVerificationEmailTemplates");
     for(unsigned customVerificationEmailTemplatesIndex = 0; customVerificationEmailTemplatesIndex < customVerificationEmailTemplatesJsonList.GetLength(); ++customVerificationEmailTemplatesIndex)
     {
       m_customVerificationEmailTemplates.push_back(customVerificationEmailTemplatesJsonList[customVerificationEmailTemplatesIndex].AsObject());

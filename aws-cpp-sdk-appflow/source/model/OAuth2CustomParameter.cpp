@@ -86,7 +86,7 @@ OAuth2CustomParameter& OAuth2CustomParameter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("connectorSuppliedValues"))
   {
-    Array<JsonView> connectorSuppliedValuesJsonList = jsonValue.GetArray("connectorSuppliedValues");
+    Aws::Utils::Array<JsonView> connectorSuppliedValuesJsonList = jsonValue.GetArray("connectorSuppliedValues");
     for(unsigned connectorSuppliedValuesIndex = 0; connectorSuppliedValuesIndex < connectorSuppliedValuesJsonList.GetLength(); ++connectorSuppliedValuesIndex)
     {
       m_connectorSuppliedValues.push_back(connectorSuppliedValuesJsonList[connectorSuppliedValuesIndex].AsString());
@@ -140,7 +140,7 @@ JsonValue OAuth2CustomParameter::Jsonize() const
 
   if(m_connectorSuppliedValuesHasBeenSet)
   {
-   Array<JsonValue> connectorSuppliedValuesJsonList(m_connectorSuppliedValues.size());
+   Aws::Utils::Array<JsonValue> connectorSuppliedValuesJsonList(m_connectorSuppliedValues.size());
    for(unsigned connectorSuppliedValuesIndex = 0; connectorSuppliedValuesIndex < connectorSuppliedValuesJsonList.GetLength(); ++connectorSuppliedValuesIndex)
    {
      connectorSuppliedValuesJsonList[connectorSuppliedValuesIndex].AsString(m_connectorSuppliedValues[connectorSuppliedValuesIndex]);

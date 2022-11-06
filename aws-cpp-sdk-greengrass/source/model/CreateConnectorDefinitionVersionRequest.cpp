@@ -26,7 +26,7 @@ Aws::String CreateConnectorDefinitionVersionRequest::SerializePayload() const
 
   if(m_connectorsHasBeenSet)
   {
-   Array<JsonValue> connectorsJsonList(m_connectors.size());
+   Aws::Utils::Array<JsonValue> connectorsJsonList(m_connectors.size());
    for(unsigned connectorsIndex = 0; connectorsIndex < connectorsJsonList.GetLength(); ++connectorsIndex)
    {
      connectorsJsonList[connectorsIndex].AsObject(m_connectors[connectorsIndex].Jsonize());

@@ -36,7 +36,7 @@ ListImportFileTaskResult& ListImportFileTaskResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("taskInfos"))
   {
-    Array<JsonView> taskInfosJsonList = jsonValue.GetArray("taskInfos");
+    Aws::Utils::Array<JsonView> taskInfosJsonList = jsonValue.GetArray("taskInfos");
     for(unsigned taskInfosIndex = 0; taskInfosIndex < taskInfosJsonList.GetLength(); ++taskInfosIndex)
     {
       m_taskInfos.push_back(taskInfosJsonList[taskInfosIndex].AsObject());

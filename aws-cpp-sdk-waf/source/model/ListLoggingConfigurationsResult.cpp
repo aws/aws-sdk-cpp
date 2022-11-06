@@ -30,7 +30,7 @@ ListLoggingConfigurationsResult& ListLoggingConfigurationsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LoggingConfigurations"))
   {
-    Array<JsonView> loggingConfigurationsJsonList = jsonValue.GetArray("LoggingConfigurations");
+    Aws::Utils::Array<JsonView> loggingConfigurationsJsonList = jsonValue.GetArray("LoggingConfigurations");
     for(unsigned loggingConfigurationsIndex = 0; loggingConfigurationsIndex < loggingConfigurationsJsonList.GetLength(); ++loggingConfigurationsIndex)
     {
       m_loggingConfigurations.push_back(loggingConfigurationsJsonList[loggingConfigurationsIndex].AsObject());

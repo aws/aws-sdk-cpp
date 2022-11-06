@@ -41,7 +41,7 @@ SubscribeToShardEvent& SubscribeToShardEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Records"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
@@ -65,7 +65,7 @@ SubscribeToShardEvent& SubscribeToShardEvent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ChildShards"))
   {
-    Array<JsonView> childShardsJsonList = jsonValue.GetArray("ChildShards");
+    Aws::Utils::Array<JsonView> childShardsJsonList = jsonValue.GetArray("ChildShards");
     for(unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex)
     {
       m_childShards.push_back(childShardsJsonList[childShardsIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue SubscribeToShardEvent::Jsonize() const
 
   if(m_recordsHasBeenSet)
   {
-   Array<JsonValue> recordsJsonList(m_records.size());
+   Aws::Utils::Array<JsonValue> recordsJsonList(m_records.size());
    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
    {
      recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
@@ -105,7 +105,7 @@ JsonValue SubscribeToShardEvent::Jsonize() const
 
   if(m_childShardsHasBeenSet)
   {
-   Array<JsonValue> childShardsJsonList(m_childShards.size());
+   Aws::Utils::Array<JsonValue> childShardsJsonList(m_childShards.size());
    for(unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex)
    {
      childShardsJsonList[childShardsIndex].AsObject(m_childShards[childShardsIndex].Jsonize());

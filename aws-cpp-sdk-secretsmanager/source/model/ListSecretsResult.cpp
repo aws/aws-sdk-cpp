@@ -30,7 +30,7 @@ ListSecretsResult& ListSecretsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SecretList"))
   {
-    Array<JsonView> secretListJsonList = jsonValue.GetArray("SecretList");
+    Aws::Utils::Array<JsonView> secretListJsonList = jsonValue.GetArray("SecretList");
     for(unsigned secretListIndex = 0; secretListIndex < secretListJsonList.GetLength(); ++secretListIndex)
     {
       m_secretList.push_back(secretListJsonList[secretListIndex].AsObject());

@@ -30,7 +30,7 @@ ListOnPremisesInstancesResult& ListOnPremisesInstancesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceNames"))
   {
-    Array<JsonView> instanceNamesJsonList = jsonValue.GetArray("instanceNames");
+    Aws::Utils::Array<JsonView> instanceNamesJsonList = jsonValue.GetArray("instanceNames");
     for(unsigned instanceNamesIndex = 0; instanceNamesIndex < instanceNamesJsonList.GetLength(); ++instanceNamesIndex)
     {
       m_instanceNames.push_back(instanceNamesJsonList[instanceNamesIndex].AsString());

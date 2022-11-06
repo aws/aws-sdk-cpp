@@ -30,7 +30,7 @@ ListCustomLineItemsResult& ListCustomLineItemsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CustomLineItems"))
   {
-    Array<JsonView> customLineItemsJsonList = jsonValue.GetArray("CustomLineItems");
+    Aws::Utils::Array<JsonView> customLineItemsJsonList = jsonValue.GetArray("CustomLineItems");
     for(unsigned customLineItemsIndex = 0; customLineItemsIndex < customLineItemsJsonList.GetLength(); ++customLineItemsIndex)
     {
       m_customLineItems.push_back(customLineItemsJsonList[customLineItemsIndex].AsObject());

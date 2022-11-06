@@ -30,7 +30,7 @@ ListResolversByFunctionResult& ListResolversByFunctionResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resolvers"))
   {
-    Array<JsonView> resolversJsonList = jsonValue.GetArray("resolvers");
+    Aws::Utils::Array<JsonView> resolversJsonList = jsonValue.GetArray("resolvers");
     for(unsigned resolversIndex = 0; resolversIndex < resolversJsonList.GetLength(); ++resolversIndex)
     {
       m_resolvers.push_back(resolversJsonList[resolversIndex].AsObject());

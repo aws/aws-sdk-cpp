@@ -113,7 +113,7 @@ MatchmakingTicket& MatchmakingTicket::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Players"))
   {
-    Array<JsonView> playersJsonList = jsonValue.GetArray("Players");
+    Aws::Utils::Array<JsonView> playersJsonList = jsonValue.GetArray("Players");
     for(unsigned playersIndex = 0; playersIndex < playersJsonList.GetLength(); ++playersIndex)
     {
       m_players.push_back(playersJsonList[playersIndex].AsObject());
@@ -189,7 +189,7 @@ JsonValue MatchmakingTicket::Jsonize() const
 
   if(m_playersHasBeenSet)
   {
-   Array<JsonValue> playersJsonList(m_players.size());
+   Aws::Utils::Array<JsonValue> playersJsonList(m_players.size());
    for(unsigned playersIndex = 0; playersIndex < playersJsonList.GetLength(); ++playersIndex)
    {
      playersJsonList[playersIndex].AsObject(m_players[playersIndex].Jsonize());

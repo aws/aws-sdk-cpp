@@ -23,7 +23,7 @@ Aws::String BatchDeleteDetectorRequest::SerializePayload() const
 
   if(m_detectorsHasBeenSet)
   {
-   Array<JsonValue> detectorsJsonList(m_detectors.size());
+   Aws::Utils::Array<JsonValue> detectorsJsonList(m_detectors.size());
    for(unsigned detectorsIndex = 0; detectorsIndex < detectorsJsonList.GetLength(); ++detectorsIndex)
    {
      detectorsJsonList[detectorsIndex].AsObject(m_detectors[detectorsIndex].Jsonize());

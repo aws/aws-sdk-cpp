@@ -27,7 +27,7 @@ Aws::String PutPermissionRequest::SerializePayload() const
 
   if(m_principalsHasBeenSet)
   {
-   Array<JsonValue> principalsJsonList(m_principals.size());
+   Aws::Utils::Array<JsonValue> principalsJsonList(m_principals.size());
    for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
    {
      principalsJsonList[principalsIndex].AsString(m_principals[principalsIndex]);

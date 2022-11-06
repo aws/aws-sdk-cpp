@@ -30,7 +30,7 @@ ListReleaseLabelsResult& ListReleaseLabelsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReleaseLabels"))
   {
-    Array<JsonView> releaseLabelsJsonList = jsonValue.GetArray("ReleaseLabels");
+    Aws::Utils::Array<JsonView> releaseLabelsJsonList = jsonValue.GetArray("ReleaseLabels");
     for(unsigned releaseLabelsIndex = 0; releaseLabelsIndex < releaseLabelsJsonList.GetLength(); ++releaseLabelsIndex)
     {
       m_releaseLabels.push_back(releaseLabelsJsonList[releaseLabelsIndex].AsString());

@@ -42,7 +42,7 @@ UtteranceList& UtteranceList::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("utterances"))
   {
-    Array<JsonView> utterancesJsonList = jsonValue.GetArray("utterances");
+    Aws::Utils::Array<JsonView> utterancesJsonList = jsonValue.GetArray("utterances");
     for(unsigned utterancesIndex = 0; utterancesIndex < utterancesJsonList.GetLength(); ++utterancesIndex)
     {
       m_utterances.push_back(utterancesJsonList[utterancesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue UtteranceList::Jsonize() const
 
   if(m_utterancesHasBeenSet)
   {
-   Array<JsonValue> utterancesJsonList(m_utterances.size());
+   Aws::Utils::Array<JsonValue> utterancesJsonList(m_utterances.size());
    for(unsigned utterancesIndex = 0; utterancesIndex < utterancesJsonList.GetLength(); ++utterancesIndex)
    {
      utterancesJsonList[utterancesIndex].AsObject(m_utterances[utterancesIndex].Jsonize());

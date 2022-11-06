@@ -32,22 +32,48 @@ namespace Inspector
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        InspectorClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        InspectorClient(const Aws::Inspector::InspectorClientConfiguration& clientConfiguration = Aws::Inspector::InspectorClientConfiguration(),
+                        std::shared_ptr<InspectorEndpointProviderBase> endpointProvider = Aws::MakeShared<InspectorEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         InspectorClient(const Aws::Auth::AWSCredentials& credentials,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<InspectorEndpointProviderBase> endpointProvider = Aws::MakeShared<InspectorEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::Inspector::InspectorClientConfiguration& clientConfiguration = Aws::Inspector::InspectorClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         InspectorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<InspectorEndpointProviderBase> endpointProvider = Aws::MakeShared<InspectorEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::Inspector::InspectorClientConfiguration& clientConfiguration = Aws::Inspector::InspectorClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        InspectorClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        InspectorClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        InspectorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~InspectorClient();
 
 
@@ -750,12 +776,13 @@ namespace Inspector
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<InspectorEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const InspectorClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      InspectorClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<InspectorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Inspector

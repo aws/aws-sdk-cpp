@@ -37,7 +37,7 @@ Aws::String GetResourceShareAssociationsRequest::SerializePayload() const
 
   if(m_resourceShareArnsHasBeenSet)
   {
-   Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
+   Aws::Utils::Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
    for(unsigned resourceShareArnsIndex = 0; resourceShareArnsIndex < resourceShareArnsJsonList.GetLength(); ++resourceShareArnsIndex)
    {
      resourceShareArnsJsonList[resourceShareArnsIndex].AsString(m_resourceShareArns[resourceShareArnsIndex]);

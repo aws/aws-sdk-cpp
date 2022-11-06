@@ -46,7 +46,7 @@ Metric& Metric::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("threadStates"))
   {
-    Array<JsonView> threadStatesJsonList = jsonValue.GetArray("threadStates");
+    Aws::Utils::Array<JsonView> threadStatesJsonList = jsonValue.GetArray("threadStates");
     for(unsigned threadStatesIndex = 0; threadStatesIndex < threadStatesJsonList.GetLength(); ++threadStatesIndex)
     {
       m_threadStates.push_back(threadStatesJsonList[threadStatesIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue Metric::Jsonize() const
 
   if(m_threadStatesHasBeenSet)
   {
-   Array<JsonValue> threadStatesJsonList(m_threadStates.size());
+   Aws::Utils::Array<JsonValue> threadStatesJsonList(m_threadStates.size());
    for(unsigned threadStatesIndex = 0; threadStatesIndex < threadStatesJsonList.GetLength(); ++threadStatesIndex)
    {
      threadStatesJsonList[threadStatesIndex].AsString(m_threadStates[threadStatesIndex]);

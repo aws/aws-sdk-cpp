@@ -53,7 +53,7 @@ OverallVolume& OverallVolume::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DomainIspPlacements"))
   {
-    Array<JsonView> domainIspPlacementsJsonList = jsonValue.GetArray("DomainIspPlacements");
+    Aws::Utils::Array<JsonView> domainIspPlacementsJsonList = jsonValue.GetArray("DomainIspPlacements");
     for(unsigned domainIspPlacementsIndex = 0; domainIspPlacementsIndex < domainIspPlacementsJsonList.GetLength(); ++domainIspPlacementsIndex)
     {
       m_domainIspPlacements.push_back(domainIspPlacementsJsonList[domainIspPlacementsIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue OverallVolume::Jsonize() const
 
   if(m_domainIspPlacementsHasBeenSet)
   {
-   Array<JsonValue> domainIspPlacementsJsonList(m_domainIspPlacements.size());
+   Aws::Utils::Array<JsonValue> domainIspPlacementsJsonList(m_domainIspPlacements.size());
    for(unsigned domainIspPlacementsIndex = 0; domainIspPlacementsIndex < domainIspPlacementsJsonList.GetLength(); ++domainIspPlacementsIndex)
    {
      domainIspPlacementsJsonList[domainIspPlacementsIndex].AsObject(m_domainIspPlacements[domainIspPlacementsIndex].Jsonize());

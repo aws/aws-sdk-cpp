@@ -30,7 +30,7 @@ ListAvailableZonesResult& ListAvailableZonesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AZList"))
   {
-    Array<JsonView> aZListJsonList = jsonValue.GetArray("AZList");
+    Aws::Utils::Array<JsonView> aZListJsonList = jsonValue.GetArray("AZList");
     for(unsigned aZListIndex = 0; aZListIndex < aZListJsonList.GetLength(); ++aZListIndex)
     {
       m_aZList.push_back(aZListJsonList[aZListIndex].AsString());

@@ -30,7 +30,7 @@ GetAttributeValuesResult& GetAttributeValuesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AttributeValues"))
   {
-    Array<JsonView> attributeValuesJsonList = jsonValue.GetArray("AttributeValues");
+    Aws::Utils::Array<JsonView> attributeValuesJsonList = jsonValue.GetArray("AttributeValues");
     for(unsigned attributeValuesIndex = 0; attributeValuesIndex < attributeValuesJsonList.GetLength(); ++attributeValuesIndex)
     {
       m_attributeValues.push_back(attributeValuesJsonList[attributeValuesIndex].AsObject());

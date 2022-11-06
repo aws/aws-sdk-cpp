@@ -64,7 +64,7 @@ LoadBalancerTlsPolicy& LoadBalancerTlsPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("protocols"))
   {
-    Array<JsonView> protocolsJsonList = jsonValue.GetArray("protocols");
+    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("protocols");
     for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
     {
       m_protocols.push_back(protocolsJsonList[protocolsIndex].AsString());
@@ -74,7 +74,7 @@ LoadBalancerTlsPolicy& LoadBalancerTlsPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ciphers"))
   {
-    Array<JsonView> ciphersJsonList = jsonValue.GetArray("ciphers");
+    Aws::Utils::Array<JsonView> ciphersJsonList = jsonValue.GetArray("ciphers");
     for(unsigned ciphersIndex = 0; ciphersIndex < ciphersJsonList.GetLength(); ++ciphersIndex)
     {
       m_ciphers.push_back(ciphersJsonList[ciphersIndex].AsString());
@@ -109,7 +109,7 @@ JsonValue LoadBalancerTlsPolicy::Jsonize() const
 
   if(m_protocolsHasBeenSet)
   {
-   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
    {
      protocolsJsonList[protocolsIndex].AsString(m_protocols[protocolsIndex]);
@@ -120,7 +120,7 @@ JsonValue LoadBalancerTlsPolicy::Jsonize() const
 
   if(m_ciphersHasBeenSet)
   {
-   Array<JsonValue> ciphersJsonList(m_ciphers.size());
+   Aws::Utils::Array<JsonValue> ciphersJsonList(m_ciphers.size());
    for(unsigned ciphersIndex = 0; ciphersIndex < ciphersJsonList.GetLength(); ++ciphersIndex)
    {
      ciphersJsonList[ciphersIndex].AsString(m_ciphers[ciphersIndex]);

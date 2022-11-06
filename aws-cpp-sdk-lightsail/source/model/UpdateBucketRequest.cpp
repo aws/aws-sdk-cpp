@@ -45,7 +45,7 @@ Aws::String UpdateBucketRequest::SerializePayload() const
 
   if(m_readonlyAccessAccountsHasBeenSet)
   {
-   Array<JsonValue> readonlyAccessAccountsJsonList(m_readonlyAccessAccounts.size());
+   Aws::Utils::Array<JsonValue> readonlyAccessAccountsJsonList(m_readonlyAccessAccounts.size());
    for(unsigned readonlyAccessAccountsIndex = 0; readonlyAccessAccountsIndex < readonlyAccessAccountsJsonList.GetLength(); ++readonlyAccessAccountsIndex)
    {
      readonlyAccessAccountsJsonList[readonlyAccessAccountsIndex].AsString(m_readonlyAccessAccounts[readonlyAccessAccountsIndex]);

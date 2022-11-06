@@ -23,7 +23,7 @@ Aws::String BatchDisableStandardsRequest::SerializePayload() const
 
   if(m_standardsSubscriptionArnsHasBeenSet)
   {
-   Array<JsonValue> standardsSubscriptionArnsJsonList(m_standardsSubscriptionArns.size());
+   Aws::Utils::Array<JsonValue> standardsSubscriptionArnsJsonList(m_standardsSubscriptionArns.size());
    for(unsigned standardsSubscriptionArnsIndex = 0; standardsSubscriptionArnsIndex < standardsSubscriptionArnsJsonList.GetLength(); ++standardsSubscriptionArnsIndex)
    {
      standardsSubscriptionArnsJsonList[standardsSubscriptionArnsIndex].AsString(m_standardsSubscriptionArns[standardsSubscriptionArnsIndex]);

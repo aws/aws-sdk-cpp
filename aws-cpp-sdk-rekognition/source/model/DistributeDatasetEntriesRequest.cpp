@@ -23,7 +23,7 @@ Aws::String DistributeDatasetEntriesRequest::SerializePayload() const
 
   if(m_datasetsHasBeenSet)
   {
-   Array<JsonValue> datasetsJsonList(m_datasets.size());
+   Aws::Utils::Array<JsonValue> datasetsJsonList(m_datasets.size());
    for(unsigned datasetsIndex = 0; datasetsIndex < datasetsJsonList.GetLength(); ++datasetsIndex)
    {
      datasetsJsonList[datasetsIndex].AsObject(m_datasets[datasetsIndex].Jsonize());

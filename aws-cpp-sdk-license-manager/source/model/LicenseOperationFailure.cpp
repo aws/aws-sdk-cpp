@@ -98,7 +98,7 @@ LicenseOperationFailure& LicenseOperationFailure::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MetadataList"))
   {
-    Array<JsonView> metadataListJsonList = jsonValue.GetArray("MetadataList");
+    Aws::Utils::Array<JsonView> metadataListJsonList = jsonValue.GetArray("MetadataList");
     for(unsigned metadataListIndex = 0; metadataListIndex < metadataListJsonList.GetLength(); ++metadataListIndex)
     {
       m_metadataList.push_back(metadataListJsonList[metadataListIndex].AsObject());
@@ -155,7 +155,7 @@ JsonValue LicenseOperationFailure::Jsonize() const
 
   if(m_metadataListHasBeenSet)
   {
-   Array<JsonValue> metadataListJsonList(m_metadataList.size());
+   Aws::Utils::Array<JsonValue> metadataListJsonList(m_metadataList.size());
    for(unsigned metadataListIndex = 0; metadataListIndex < metadataListJsonList.GetLength(); ++metadataListIndex)
    {
      metadataListJsonList[metadataListIndex].AsObject(m_metadataList[metadataListIndex].Jsonize());

@@ -24,7 +24,7 @@ Aws::String RebootBrokerRequest::SerializePayload() const
 
   if(m_brokerIdsHasBeenSet)
   {
-   Array<JsonValue> brokerIdsJsonList(m_brokerIds.size());
+   Aws::Utils::Array<JsonValue> brokerIdsJsonList(m_brokerIds.size());
    for(unsigned brokerIdsIndex = 0; brokerIdsIndex < brokerIdsJsonList.GetLength(); ++brokerIdsIndex)
    {
      brokerIdsJsonList[brokerIdsIndex].AsString(m_brokerIds[brokerIdsIndex]);

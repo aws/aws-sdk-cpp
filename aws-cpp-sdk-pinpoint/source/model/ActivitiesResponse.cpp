@@ -35,7 +35,7 @@ ActivitiesResponse& ActivitiesResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Item"))
   {
-    Array<JsonView> itemJsonList = jsonValue.GetArray("Item");
+    Aws::Utils::Array<JsonView> itemJsonList = jsonValue.GetArray("Item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_item.push_back(itemJsonList[itemIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue ActivitiesResponse::Jsonize() const
 
   if(m_itemHasBeenSet)
   {
-   Array<JsonValue> itemJsonList(m_item.size());
+   Aws::Utils::Array<JsonValue> itemJsonList(m_item.size());
    for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
    {
      itemJsonList[itemIndex].AsObject(m_item[itemIndex].Jsonize());

@@ -54,7 +54,7 @@ Aws::String StartChangeRequestExecutionRequest::SerializePayload() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> automationParameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> automationParameterValueListJsonList(parametersItem.second.size());
      for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
      {
        automationParameterValueListJsonList[automationParameterValueListIndex].AsString(parametersItem.second[automationParameterValueListIndex]);
@@ -85,7 +85,7 @@ Aws::String StartChangeRequestExecutionRequest::SerializePayload() const
 
   if(m_runbooksHasBeenSet)
   {
-   Array<JsonValue> runbooksJsonList(m_runbooks.size());
+   Aws::Utils::Array<JsonValue> runbooksJsonList(m_runbooks.size());
    for(unsigned runbooksIndex = 0; runbooksIndex < runbooksJsonList.GetLength(); ++runbooksIndex)
    {
      runbooksJsonList[runbooksIndex].AsObject(m_runbooks[runbooksIndex].Jsonize());
@@ -96,7 +96,7 @@ Aws::String StartChangeRequestExecutionRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

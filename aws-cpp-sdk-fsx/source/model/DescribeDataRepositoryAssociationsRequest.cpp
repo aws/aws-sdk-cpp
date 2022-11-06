@@ -27,7 +27,7 @@ Aws::String DescribeDataRepositoryAssociationsRequest::SerializePayload() const
 
   if(m_associationIdsHasBeenSet)
   {
-   Array<JsonValue> associationIdsJsonList(m_associationIds.size());
+   Aws::Utils::Array<JsonValue> associationIdsJsonList(m_associationIds.size());
    for(unsigned associationIdsIndex = 0; associationIdsIndex < associationIdsJsonList.GetLength(); ++associationIdsIndex)
    {
      associationIdsJsonList[associationIdsIndex].AsString(m_associationIds[associationIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeDataRepositoryAssociationsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

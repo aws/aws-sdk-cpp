@@ -30,7 +30,7 @@ DescribeStacksResult& DescribeStacksResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Stacks"))
   {
-    Array<JsonView> stacksJsonList = jsonValue.GetArray("Stacks");
+    Aws::Utils::Array<JsonView> stacksJsonList = jsonValue.GetArray("Stacks");
     for(unsigned stacksIndex = 0; stacksIndex < stacksJsonList.GetLength(); ++stacksIndex)
     {
       m_stacks.push_back(stacksJsonList[stacksIndex].AsObject());

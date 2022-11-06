@@ -35,7 +35,7 @@ ResultSet& ResultSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Rows"))
   {
-    Array<JsonView> rowsJsonList = jsonValue.GetArray("Rows");
+    Aws::Utils::Array<JsonView> rowsJsonList = jsonValue.GetArray("Rows");
     for(unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex)
     {
       m_rows.push_back(rowsJsonList[rowsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue ResultSet::Jsonize() const
 
   if(m_rowsHasBeenSet)
   {
-   Array<JsonValue> rowsJsonList(m_rows.size());
+   Aws::Utils::Array<JsonValue> rowsJsonList(m_rows.size());
    for(unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex)
    {
      rowsJsonList[rowsIndex].AsObject(m_rows[rowsIndex].Jsonize());

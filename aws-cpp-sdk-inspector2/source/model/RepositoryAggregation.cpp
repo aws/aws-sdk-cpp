@@ -41,7 +41,7 @@ RepositoryAggregation& RepositoryAggregation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repositories"))
   {
-    Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
+    Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
     for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
     {
       m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());
@@ -72,7 +72,7 @@ JsonValue RepositoryAggregation::Jsonize() const
 
   if(m_repositoriesHasBeenSet)
   {
-   Array<JsonValue> repositoriesJsonList(m_repositories.size());
+   Aws::Utils::Array<JsonValue> repositoriesJsonList(m_repositories.size());
    for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
    {
      repositoriesJsonList[repositoriesIndex].AsObject(m_repositories[repositoriesIndex].Jsonize());

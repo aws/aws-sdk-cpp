@@ -36,7 +36,7 @@ DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Aws
 
   if(jsonValue.ValueExists("ProvisioningArtifactSummaries"))
   {
-    Array<JsonView> provisioningArtifactSummariesJsonList = jsonValue.GetArray("ProvisioningArtifactSummaries");
+    Aws::Utils::Array<JsonView> provisioningArtifactSummariesJsonList = jsonValue.GetArray("ProvisioningArtifactSummaries");
     for(unsigned provisioningArtifactSummariesIndex = 0; provisioningArtifactSummariesIndex < provisioningArtifactSummariesJsonList.GetLength(); ++provisioningArtifactSummariesIndex)
     {
       m_provisioningArtifactSummaries.push_back(provisioningArtifactSummariesJsonList[provisioningArtifactSummariesIndex].AsObject());
@@ -45,7 +45,7 @@ DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Aws
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -54,7 +54,7 @@ DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Aws
 
   if(jsonValue.ValueExists("TagOptions"))
   {
-    Array<JsonView> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
+    Aws::Utils::Array<JsonView> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
     for(unsigned tagOptionsIndex = 0; tagOptionsIndex < tagOptionsJsonList.GetLength(); ++tagOptionsIndex)
     {
       m_tagOptions.push_back(tagOptionsJsonList[tagOptionsIndex].AsObject());
@@ -63,7 +63,7 @@ DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Aws
 
   if(jsonValue.ValueExists("Budgets"))
   {
-    Array<JsonView> budgetsJsonList = jsonValue.GetArray("Budgets");
+    Aws::Utils::Array<JsonView> budgetsJsonList = jsonValue.GetArray("Budgets");
     for(unsigned budgetsIndex = 0; budgetsIndex < budgetsJsonList.GetLength(); ++budgetsIndex)
     {
       m_budgets.push_back(budgetsJsonList[budgetsIndex].AsObject());

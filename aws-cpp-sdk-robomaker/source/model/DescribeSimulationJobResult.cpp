@@ -124,7 +124,7 @@ DescribeSimulationJobResult& DescribeSimulationJobResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("robotApplications"))
   {
-    Array<JsonView> robotApplicationsJsonList = jsonValue.GetArray("robotApplications");
+    Aws::Utils::Array<JsonView> robotApplicationsJsonList = jsonValue.GetArray("robotApplications");
     for(unsigned robotApplicationsIndex = 0; robotApplicationsIndex < robotApplicationsJsonList.GetLength(); ++robotApplicationsIndex)
     {
       m_robotApplications.push_back(robotApplicationsJsonList[robotApplicationsIndex].AsObject());
@@ -133,7 +133,7 @@ DescribeSimulationJobResult& DescribeSimulationJobResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("simulationApplications"))
   {
-    Array<JsonView> simulationApplicationsJsonList = jsonValue.GetArray("simulationApplications");
+    Aws::Utils::Array<JsonView> simulationApplicationsJsonList = jsonValue.GetArray("simulationApplications");
     for(unsigned simulationApplicationsIndex = 0; simulationApplicationsIndex < simulationApplicationsJsonList.GetLength(); ++simulationApplicationsIndex)
     {
       m_simulationApplications.push_back(simulationApplicationsJsonList[simulationApplicationsIndex].AsObject());
@@ -142,7 +142,7 @@ DescribeSimulationJobResult& DescribeSimulationJobResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("dataSources"))
   {
-    Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
+    Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
     for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
     {
       m_dataSources.push_back(dataSourcesJsonList[dataSourcesIndex].AsObject());

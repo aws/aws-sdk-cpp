@@ -38,7 +38,7 @@ GetLogLevelsByResourceTypesResult& GetLogLevelsByResourceTypesResult::operator =
 
   if(jsonValue.ValueExists("WirelessGatewayLogOptions"))
   {
-    Array<JsonView> wirelessGatewayLogOptionsJsonList = jsonValue.GetArray("WirelessGatewayLogOptions");
+    Aws::Utils::Array<JsonView> wirelessGatewayLogOptionsJsonList = jsonValue.GetArray("WirelessGatewayLogOptions");
     for(unsigned wirelessGatewayLogOptionsIndex = 0; wirelessGatewayLogOptionsIndex < wirelessGatewayLogOptionsJsonList.GetLength(); ++wirelessGatewayLogOptionsIndex)
     {
       m_wirelessGatewayLogOptions.push_back(wirelessGatewayLogOptionsJsonList[wirelessGatewayLogOptionsIndex].AsObject());
@@ -47,7 +47,7 @@ GetLogLevelsByResourceTypesResult& GetLogLevelsByResourceTypesResult::operator =
 
   if(jsonValue.ValueExists("WirelessDeviceLogOptions"))
   {
-    Array<JsonView> wirelessDeviceLogOptionsJsonList = jsonValue.GetArray("WirelessDeviceLogOptions");
+    Aws::Utils::Array<JsonView> wirelessDeviceLogOptionsJsonList = jsonValue.GetArray("WirelessDeviceLogOptions");
     for(unsigned wirelessDeviceLogOptionsIndex = 0; wirelessDeviceLogOptionsIndex < wirelessDeviceLogOptionsJsonList.GetLength(); ++wirelessDeviceLogOptionsIndex)
     {
       m_wirelessDeviceLogOptions.push_back(wirelessDeviceLogOptionsJsonList[wirelessDeviceLogOptionsIndex].AsObject());

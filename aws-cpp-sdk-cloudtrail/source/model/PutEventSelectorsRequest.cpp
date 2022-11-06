@@ -31,7 +31,7 @@ Aws::String PutEventSelectorsRequest::SerializePayload() const
 
   if(m_eventSelectorsHasBeenSet)
   {
-   Array<JsonValue> eventSelectorsJsonList(m_eventSelectors.size());
+   Aws::Utils::Array<JsonValue> eventSelectorsJsonList(m_eventSelectors.size());
    for(unsigned eventSelectorsIndex = 0; eventSelectorsIndex < eventSelectorsJsonList.GetLength(); ++eventSelectorsIndex)
    {
      eventSelectorsJsonList[eventSelectorsIndex].AsObject(m_eventSelectors[eventSelectorsIndex].Jsonize());
@@ -42,7 +42,7 @@ Aws::String PutEventSelectorsRequest::SerializePayload() const
 
   if(m_advancedEventSelectorsHasBeenSet)
   {
-   Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
+   Aws::Utils::Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
    for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
    {
      advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject(m_advancedEventSelectors[advancedEventSelectorsIndex].Jsonize());

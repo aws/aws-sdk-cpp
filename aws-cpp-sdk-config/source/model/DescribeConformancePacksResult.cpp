@@ -30,7 +30,7 @@ DescribeConformancePacksResult& DescribeConformancePacksResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConformancePackDetails"))
   {
-    Array<JsonView> conformancePackDetailsJsonList = jsonValue.GetArray("ConformancePackDetails");
+    Aws::Utils::Array<JsonView> conformancePackDetailsJsonList = jsonValue.GetArray("ConformancePackDetails");
     for(unsigned conformancePackDetailsIndex = 0; conformancePackDetailsIndex < conformancePackDetailsJsonList.GetLength(); ++conformancePackDetailsIndex)
     {
       m_conformancePackDetails.push_back(conformancePackDetailsJsonList[conformancePackDetailsIndex].AsObject());

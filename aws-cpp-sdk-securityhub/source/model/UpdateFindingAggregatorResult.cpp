@@ -48,7 +48,7 @@ UpdateFindingAggregatorResult& UpdateFindingAggregatorResult::operator =(const A
 
   if(jsonValue.ValueExists("Regions"))
   {
-    Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
+    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
     for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
     {
       m_regions.push_back(regionsJsonList[regionsIndex].AsString());

@@ -36,7 +36,7 @@ ListServicesResult& ListServicesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("ServiceSummaryList"))
   {
-    Array<JsonView> serviceSummaryListJsonList = jsonValue.GetArray("ServiceSummaryList");
+    Aws::Utils::Array<JsonView> serviceSummaryListJsonList = jsonValue.GetArray("ServiceSummaryList");
     for(unsigned serviceSummaryListIndex = 0; serviceSummaryListIndex < serviceSummaryListJsonList.GetLength(); ++serviceSummaryListIndex)
     {
       m_serviceSummaryList.push_back(serviceSummaryListJsonList[serviceSummaryListIndex].AsObject());

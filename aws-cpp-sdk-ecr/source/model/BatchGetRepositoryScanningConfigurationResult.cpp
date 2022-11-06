@@ -30,7 +30,7 @@ BatchGetRepositoryScanningConfigurationResult& BatchGetRepositoryScanningConfigu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("scanningConfigurations"))
   {
-    Array<JsonView> scanningConfigurationsJsonList = jsonValue.GetArray("scanningConfigurations");
+    Aws::Utils::Array<JsonView> scanningConfigurationsJsonList = jsonValue.GetArray("scanningConfigurations");
     for(unsigned scanningConfigurationsIndex = 0; scanningConfigurationsIndex < scanningConfigurationsJsonList.GetLength(); ++scanningConfigurationsIndex)
     {
       m_scanningConfigurations.push_back(scanningConfigurationsJsonList[scanningConfigurationsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetRepositoryScanningConfigurationResult& BatchGetRepositoryScanningConfigu
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

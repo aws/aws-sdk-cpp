@@ -32,7 +32,7 @@ Aws::String ListFirewallsRequest::SerializePayload() const
 
   if(m_vpcIdsHasBeenSet)
   {
-   Array<JsonValue> vpcIdsJsonList(m_vpcIds.size());
+   Aws::Utils::Array<JsonValue> vpcIdsJsonList(m_vpcIds.size());
    for(unsigned vpcIdsIndex = 0; vpcIdsIndex < vpcIdsJsonList.GetLength(); ++vpcIdsIndex)
    {
      vpcIdsJsonList[vpcIdsIndex].AsString(m_vpcIds[vpcIdsIndex]);

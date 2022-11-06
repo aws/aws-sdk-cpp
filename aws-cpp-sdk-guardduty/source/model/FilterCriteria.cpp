@@ -33,7 +33,7 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("filterCriterion"))
   {
-    Array<JsonView> filterCriterionJsonList = jsonValue.GetArray("filterCriterion");
+    Aws::Utils::Array<JsonView> filterCriterionJsonList = jsonValue.GetArray("filterCriterion");
     for(unsigned filterCriterionIndex = 0; filterCriterionIndex < filterCriterionJsonList.GetLength(); ++filterCriterionIndex)
     {
       m_filterCriterion.push_back(filterCriterionJsonList[filterCriterionIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue FilterCriteria::Jsonize() const
 
   if(m_filterCriterionHasBeenSet)
   {
-   Array<JsonValue> filterCriterionJsonList(m_filterCriterion.size());
+   Aws::Utils::Array<JsonValue> filterCriterionJsonList(m_filterCriterion.size());
    for(unsigned filterCriterionIndex = 0; filterCriterionIndex < filterCriterionJsonList.GetLength(); ++filterCriterionIndex)
    {
      filterCriterionJsonList[filterCriterionIndex].AsObject(m_filterCriterion[filterCriterionIndex].Jsonize());

@@ -30,7 +30,7 @@ ListJournalS3ExportsResult& ListJournalS3ExportsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JournalS3Exports"))
   {
-    Array<JsonView> journalS3ExportsJsonList = jsonValue.GetArray("JournalS3Exports");
+    Aws::Utils::Array<JsonView> journalS3ExportsJsonList = jsonValue.GetArray("JournalS3Exports");
     for(unsigned journalS3ExportsIndex = 0; journalS3ExportsIndex < journalS3ExportsJsonList.GetLength(); ++journalS3ExportsIndex)
     {
       m_journalS3Exports.push_back(journalS3ExportsJsonList[journalS3ExportsIndex].AsObject());

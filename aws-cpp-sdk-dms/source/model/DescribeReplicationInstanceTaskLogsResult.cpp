@@ -36,7 +36,7 @@ DescribeReplicationInstanceTaskLogsResult& DescribeReplicationInstanceTaskLogsRe
 
   if(jsonValue.ValueExists("ReplicationInstanceTaskLogs"))
   {
-    Array<JsonView> replicationInstanceTaskLogsJsonList = jsonValue.GetArray("ReplicationInstanceTaskLogs");
+    Aws::Utils::Array<JsonView> replicationInstanceTaskLogsJsonList = jsonValue.GetArray("ReplicationInstanceTaskLogs");
     for(unsigned replicationInstanceTaskLogsIndex = 0; replicationInstanceTaskLogsIndex < replicationInstanceTaskLogsJsonList.GetLength(); ++replicationInstanceTaskLogsIndex)
     {
       m_replicationInstanceTaskLogs.push_back(replicationInstanceTaskLogsJsonList[replicationInstanceTaskLogsIndex].AsObject());

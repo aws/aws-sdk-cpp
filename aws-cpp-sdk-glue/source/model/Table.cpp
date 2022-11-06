@@ -145,7 +145,7 @@ Table& Table::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PartitionKeys"))
   {
-    Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
+    Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
     for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
     {
       m_partitionKeys.push_back(partitionKeysJsonList[partitionKeysIndex].AsObject());
@@ -284,7 +284,7 @@ JsonValue Table::Jsonize() const
 
   if(m_partitionKeysHasBeenSet)
   {
-   Array<JsonValue> partitionKeysJsonList(m_partitionKeys.size());
+   Aws::Utils::Array<JsonValue> partitionKeysJsonList(m_partitionKeys.size());
    for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
    {
      partitionKeysJsonList[partitionKeysIndex].AsObject(m_partitionKeys[partitionKeysIndex].Jsonize());

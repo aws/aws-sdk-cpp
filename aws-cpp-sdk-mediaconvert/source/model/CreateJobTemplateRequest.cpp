@@ -52,7 +52,7 @@ Aws::String CreateJobTemplateRequest::SerializePayload() const
 
   if(m_hopDestinationsHasBeenSet)
   {
-   Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
+   Aws::Utils::Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
    for(unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex)
    {
      hopDestinationsJsonList[hopDestinationsIndex].AsObject(m_hopDestinations[hopDestinationsIndex].Jsonize());

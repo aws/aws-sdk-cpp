@@ -30,7 +30,7 @@ ListPipelineExecutionStepsResult& ListPipelineExecutionStepsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PipelineExecutionSteps"))
   {
-    Array<JsonView> pipelineExecutionStepsJsonList = jsonValue.GetArray("PipelineExecutionSteps");
+    Aws::Utils::Array<JsonView> pipelineExecutionStepsJsonList = jsonValue.GetArray("PipelineExecutionSteps");
     for(unsigned pipelineExecutionStepsIndex = 0; pipelineExecutionStepsIndex < pipelineExecutionStepsJsonList.GetLength(); ++pipelineExecutionStepsIndex)
     {
       m_pipelineExecutionSteps.push_back(pipelineExecutionStepsJsonList[pipelineExecutionStepsIndex].AsObject());

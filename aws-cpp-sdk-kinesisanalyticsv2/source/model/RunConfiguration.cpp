@@ -44,7 +44,7 @@ RunConfiguration& RunConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SqlRunConfigurations"))
   {
-    Array<JsonView> sqlRunConfigurationsJsonList = jsonValue.GetArray("SqlRunConfigurations");
+    Aws::Utils::Array<JsonView> sqlRunConfigurationsJsonList = jsonValue.GetArray("SqlRunConfigurations");
     for(unsigned sqlRunConfigurationsIndex = 0; sqlRunConfigurationsIndex < sqlRunConfigurationsJsonList.GetLength(); ++sqlRunConfigurationsIndex)
     {
       m_sqlRunConfigurations.push_back(sqlRunConfigurationsJsonList[sqlRunConfigurationsIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue RunConfiguration::Jsonize() const
 
   if(m_sqlRunConfigurationsHasBeenSet)
   {
-   Array<JsonValue> sqlRunConfigurationsJsonList(m_sqlRunConfigurations.size());
+   Aws::Utils::Array<JsonValue> sqlRunConfigurationsJsonList(m_sqlRunConfigurations.size());
    for(unsigned sqlRunConfigurationsIndex = 0; sqlRunConfigurationsIndex < sqlRunConfigurationsJsonList.GetLength(); ++sqlRunConfigurationsIndex)
    {
      sqlRunConfigurationsJsonList[sqlRunConfigurationsIndex].AsObject(m_sqlRunConfigurations[sqlRunConfigurationsIndex].Jsonize());

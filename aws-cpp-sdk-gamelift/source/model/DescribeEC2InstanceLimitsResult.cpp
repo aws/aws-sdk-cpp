@@ -30,7 +30,7 @@ DescribeEC2InstanceLimitsResult& DescribeEC2InstanceLimitsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EC2InstanceLimits"))
   {
-    Array<JsonView> eC2InstanceLimitsJsonList = jsonValue.GetArray("EC2InstanceLimits");
+    Aws::Utils::Array<JsonView> eC2InstanceLimitsJsonList = jsonValue.GetArray("EC2InstanceLimits");
     for(unsigned eC2InstanceLimitsIndex = 0; eC2InstanceLimitsIndex < eC2InstanceLimitsJsonList.GetLength(); ++eC2InstanceLimitsIndex)
     {
       m_eC2InstanceLimits.push_back(eC2InstanceLimitsJsonList[eC2InstanceLimitsIndex].AsObject());

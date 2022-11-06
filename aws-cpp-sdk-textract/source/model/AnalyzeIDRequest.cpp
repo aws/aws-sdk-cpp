@@ -23,7 +23,7 @@ Aws::String AnalyzeIDRequest::SerializePayload() const
 
   if(m_documentPagesHasBeenSet)
   {
-   Array<JsonValue> documentPagesJsonList(m_documentPages.size());
+   Aws::Utils::Array<JsonValue> documentPagesJsonList(m_documentPages.size());
    for(unsigned documentPagesIndex = 0; documentPagesIndex < documentPagesJsonList.GetLength(); ++documentPagesIndex)
    {
      documentPagesJsonList[documentPagesIndex].AsObject(m_documentPages[documentPagesIndex].Jsonize());

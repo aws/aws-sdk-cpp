@@ -30,7 +30,7 @@ DescribeRootFoldersResult& DescribeRootFoldersResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Folders"))
   {
-    Array<JsonView> foldersJsonList = jsonValue.GetArray("Folders");
+    Aws::Utils::Array<JsonView> foldersJsonList = jsonValue.GetArray("Folders");
     for(unsigned foldersIndex = 0; foldersIndex < foldersJsonList.GetLength(); ++foldersIndex)
     {
       m_folders.push_back(foldersJsonList[foldersIndex].AsObject());

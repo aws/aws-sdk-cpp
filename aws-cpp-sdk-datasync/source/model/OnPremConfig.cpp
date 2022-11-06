@@ -33,7 +33,7 @@ OnPremConfig& OnPremConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AgentArns"))
   {
-    Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
+    Aws::Utils::Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
     for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
     {
       m_agentArns.push_back(agentArnsJsonList[agentArnsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue OnPremConfig::Jsonize() const
 
   if(m_agentArnsHasBeenSet)
   {
-   Array<JsonValue> agentArnsJsonList(m_agentArns.size());
+   Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
    for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
    {
      agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);

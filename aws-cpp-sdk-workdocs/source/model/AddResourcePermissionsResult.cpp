@@ -30,7 +30,7 @@ AddResourcePermissionsResult& AddResourcePermissionsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ShareResults"))
   {
-    Array<JsonView> shareResultsJsonList = jsonValue.GetArray("ShareResults");
+    Aws::Utils::Array<JsonView> shareResultsJsonList = jsonValue.GetArray("ShareResults");
     for(unsigned shareResultsIndex = 0; shareResultsIndex < shareResultsJsonList.GetLength(); ++shareResultsIndex)
     {
       m_shareResults.push_back(shareResultsJsonList[shareResultsIndex].AsObject());

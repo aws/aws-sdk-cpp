@@ -48,7 +48,7 @@ Aws::String UpdateEventDestinationRequest::SerializePayload() const
 
   if(m_matchingEventTypesHasBeenSet)
   {
-   Array<JsonValue> matchingEventTypesJsonList(m_matchingEventTypes.size());
+   Aws::Utils::Array<JsonValue> matchingEventTypesJsonList(m_matchingEventTypes.size());
    for(unsigned matchingEventTypesIndex = 0; matchingEventTypesIndex < matchingEventTypesJsonList.GetLength(); ++matchingEventTypesIndex)
    {
      matchingEventTypesJsonList[matchingEventTypesIndex].AsString(EventTypeMapper::GetNameForEventType(m_matchingEventTypes[matchingEventTypesIndex]));

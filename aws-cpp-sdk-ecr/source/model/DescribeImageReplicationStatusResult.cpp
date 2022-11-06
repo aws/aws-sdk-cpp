@@ -42,7 +42,7 @@ DescribeImageReplicationStatusResult& DescribeImageReplicationStatusResult::oper
 
   if(jsonValue.ValueExists("replicationStatuses"))
   {
-    Array<JsonView> replicationStatusesJsonList = jsonValue.GetArray("replicationStatuses");
+    Aws::Utils::Array<JsonView> replicationStatusesJsonList = jsonValue.GetArray("replicationStatuses");
     for(unsigned replicationStatusesIndex = 0; replicationStatusesIndex < replicationStatusesJsonList.GetLength(); ++replicationStatusesIndex)
     {
       m_replicationStatuses.push_back(replicationStatusesJsonList[replicationStatusesIndex].AsObject());

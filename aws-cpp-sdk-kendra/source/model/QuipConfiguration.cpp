@@ -96,7 +96,7 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FolderIds"))
   {
-    Array<JsonView> folderIdsJsonList = jsonValue.GetArray("FolderIds");
+    Aws::Utils::Array<JsonView> folderIdsJsonList = jsonValue.GetArray("FolderIds");
     for(unsigned folderIdsIndex = 0; folderIdsIndex < folderIdsJsonList.GetLength(); ++folderIdsIndex)
     {
       m_folderIds.push_back(folderIdsJsonList[folderIdsIndex].AsString());
@@ -106,7 +106,7 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ThreadFieldMappings"))
   {
-    Array<JsonView> threadFieldMappingsJsonList = jsonValue.GetArray("ThreadFieldMappings");
+    Aws::Utils::Array<JsonView> threadFieldMappingsJsonList = jsonValue.GetArray("ThreadFieldMappings");
     for(unsigned threadFieldMappingsIndex = 0; threadFieldMappingsIndex < threadFieldMappingsJsonList.GetLength(); ++threadFieldMappingsIndex)
     {
       m_threadFieldMappings.push_back(threadFieldMappingsJsonList[threadFieldMappingsIndex].AsObject());
@@ -116,7 +116,7 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MessageFieldMappings"))
   {
-    Array<JsonView> messageFieldMappingsJsonList = jsonValue.GetArray("MessageFieldMappings");
+    Aws::Utils::Array<JsonView> messageFieldMappingsJsonList = jsonValue.GetArray("MessageFieldMappings");
     for(unsigned messageFieldMappingsIndex = 0; messageFieldMappingsIndex < messageFieldMappingsJsonList.GetLength(); ++messageFieldMappingsIndex)
     {
       m_messageFieldMappings.push_back(messageFieldMappingsJsonList[messageFieldMappingsIndex].AsObject());
@@ -126,7 +126,7 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttachmentFieldMappings"))
   {
-    Array<JsonView> attachmentFieldMappingsJsonList = jsonValue.GetArray("AttachmentFieldMappings");
+    Aws::Utils::Array<JsonView> attachmentFieldMappingsJsonList = jsonValue.GetArray("AttachmentFieldMappings");
     for(unsigned attachmentFieldMappingsIndex = 0; attachmentFieldMappingsIndex < attachmentFieldMappingsJsonList.GetLength(); ++attachmentFieldMappingsIndex)
     {
       m_attachmentFieldMappings.push_back(attachmentFieldMappingsJsonList[attachmentFieldMappingsIndex].AsObject());
@@ -136,7 +136,7 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
-    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
     for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
     {
       m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
@@ -146,7 +146,7 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
-    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
     for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
     {
       m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
@@ -200,7 +200,7 @@ JsonValue QuipConfiguration::Jsonize() const
 
   if(m_folderIdsHasBeenSet)
   {
-   Array<JsonValue> folderIdsJsonList(m_folderIds.size());
+   Aws::Utils::Array<JsonValue> folderIdsJsonList(m_folderIds.size());
    for(unsigned folderIdsIndex = 0; folderIdsIndex < folderIdsJsonList.GetLength(); ++folderIdsIndex)
    {
      folderIdsJsonList[folderIdsIndex].AsString(m_folderIds[folderIdsIndex]);
@@ -211,7 +211,7 @@ JsonValue QuipConfiguration::Jsonize() const
 
   if(m_threadFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> threadFieldMappingsJsonList(m_threadFieldMappings.size());
+   Aws::Utils::Array<JsonValue> threadFieldMappingsJsonList(m_threadFieldMappings.size());
    for(unsigned threadFieldMappingsIndex = 0; threadFieldMappingsIndex < threadFieldMappingsJsonList.GetLength(); ++threadFieldMappingsIndex)
    {
      threadFieldMappingsJsonList[threadFieldMappingsIndex].AsObject(m_threadFieldMappings[threadFieldMappingsIndex].Jsonize());
@@ -222,7 +222,7 @@ JsonValue QuipConfiguration::Jsonize() const
 
   if(m_messageFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> messageFieldMappingsJsonList(m_messageFieldMappings.size());
+   Aws::Utils::Array<JsonValue> messageFieldMappingsJsonList(m_messageFieldMappings.size());
    for(unsigned messageFieldMappingsIndex = 0; messageFieldMappingsIndex < messageFieldMappingsJsonList.GetLength(); ++messageFieldMappingsIndex)
    {
      messageFieldMappingsJsonList[messageFieldMappingsIndex].AsObject(m_messageFieldMappings[messageFieldMappingsIndex].Jsonize());
@@ -233,7 +233,7 @@ JsonValue QuipConfiguration::Jsonize() const
 
   if(m_attachmentFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> attachmentFieldMappingsJsonList(m_attachmentFieldMappings.size());
+   Aws::Utils::Array<JsonValue> attachmentFieldMappingsJsonList(m_attachmentFieldMappings.size());
    for(unsigned attachmentFieldMappingsIndex = 0; attachmentFieldMappingsIndex < attachmentFieldMappingsJsonList.GetLength(); ++attachmentFieldMappingsIndex)
    {
      attachmentFieldMappingsJsonList[attachmentFieldMappingsIndex].AsObject(m_attachmentFieldMappings[attachmentFieldMappingsIndex].Jsonize());
@@ -244,7 +244,7 @@ JsonValue QuipConfiguration::Jsonize() const
 
   if(m_inclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
    {
      inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
@@ -255,7 +255,7 @@ JsonValue QuipConfiguration::Jsonize() const
 
   if(m_exclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
    {
      exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);

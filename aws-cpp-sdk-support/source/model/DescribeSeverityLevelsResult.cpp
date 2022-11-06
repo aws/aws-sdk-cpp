@@ -30,7 +30,7 @@ DescribeSeverityLevelsResult& DescribeSeverityLevelsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("severityLevels"))
   {
-    Array<JsonView> severityLevelsJsonList = jsonValue.GetArray("severityLevels");
+    Aws::Utils::Array<JsonView> severityLevelsJsonList = jsonValue.GetArray("severityLevels");
     for(unsigned severityLevelsIndex = 0; severityLevelsIndex < severityLevelsJsonList.GetLength(); ++severityLevelsIndex)
     {
       m_severityLevels.push_back(severityLevelsJsonList[severityLevelsIndex].AsObject());

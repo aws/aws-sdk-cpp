@@ -30,7 +30,7 @@ ListNetworkProfilesResult& ListNetworkProfilesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("networkProfiles"))
   {
-    Array<JsonView> networkProfilesJsonList = jsonValue.GetArray("networkProfiles");
+    Aws::Utils::Array<JsonView> networkProfilesJsonList = jsonValue.GetArray("networkProfiles");
     for(unsigned networkProfilesIndex = 0; networkProfilesIndex < networkProfilesJsonList.GetLength(); ++networkProfilesIndex)
     {
       m_networkProfiles.push_back(networkProfilesJsonList[networkProfilesIndex].AsObject());

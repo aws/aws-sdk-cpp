@@ -61,7 +61,7 @@ MediaConcatenationPipeline& MediaConcatenationPipeline::operator =(JsonView json
 
   if(jsonValue.ValueExists("Sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
@@ -71,7 +71,7 @@ MediaConcatenationPipeline& MediaConcatenationPipeline::operator =(JsonView json
 
   if(jsonValue.ValueExists("Sinks"))
   {
-    Array<JsonView> sinksJsonList = jsonValue.GetArray("Sinks");
+    Aws::Utils::Array<JsonView> sinksJsonList = jsonValue.GetArray("Sinks");
     for(unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex)
     {
       m_sinks.push_back(sinksJsonList[sinksIndex].AsObject());
@@ -121,7 +121,7 @@ JsonValue MediaConcatenationPipeline::Jsonize() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
@@ -132,7 +132,7 @@ JsonValue MediaConcatenationPipeline::Jsonize() const
 
   if(m_sinksHasBeenSet)
   {
-   Array<JsonValue> sinksJsonList(m_sinks.size());
+   Aws::Utils::Array<JsonValue> sinksJsonList(m_sinks.size());
    for(unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex)
    {
      sinksJsonList[sinksIndex].AsObject(m_sinks[sinksIndex].Jsonize());

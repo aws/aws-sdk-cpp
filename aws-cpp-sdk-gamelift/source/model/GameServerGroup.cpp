@@ -82,7 +82,7 @@ GameServerGroup& GameServerGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceDefinitions"))
   {
-    Array<JsonView> instanceDefinitionsJsonList = jsonValue.GetArray("InstanceDefinitions");
+    Aws::Utils::Array<JsonView> instanceDefinitionsJsonList = jsonValue.GetArray("InstanceDefinitions");
     for(unsigned instanceDefinitionsIndex = 0; instanceDefinitionsIndex < instanceDefinitionsJsonList.GetLength(); ++instanceDefinitionsIndex)
     {
       m_instanceDefinitions.push_back(instanceDefinitionsJsonList[instanceDefinitionsIndex].AsObject());
@@ -127,7 +127,7 @@ GameServerGroup& GameServerGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SuspendedActions"))
   {
-    Array<JsonView> suspendedActionsJsonList = jsonValue.GetArray("SuspendedActions");
+    Aws::Utils::Array<JsonView> suspendedActionsJsonList = jsonValue.GetArray("SuspendedActions");
     for(unsigned suspendedActionsIndex = 0; suspendedActionsIndex < suspendedActionsJsonList.GetLength(); ++suspendedActionsIndex)
     {
       m_suspendedActions.push_back(GameServerGroupActionMapper::GetGameServerGroupActionForName(suspendedActionsJsonList[suspendedActionsIndex].AsString()));
@@ -176,7 +176,7 @@ JsonValue GameServerGroup::Jsonize() const
 
   if(m_instanceDefinitionsHasBeenSet)
   {
-   Array<JsonValue> instanceDefinitionsJsonList(m_instanceDefinitions.size());
+   Aws::Utils::Array<JsonValue> instanceDefinitionsJsonList(m_instanceDefinitions.size());
    for(unsigned instanceDefinitionsIndex = 0; instanceDefinitionsIndex < instanceDefinitionsJsonList.GetLength(); ++instanceDefinitionsIndex)
    {
      instanceDefinitionsJsonList[instanceDefinitionsIndex].AsObject(m_instanceDefinitions[instanceDefinitionsIndex].Jsonize());
@@ -214,7 +214,7 @@ JsonValue GameServerGroup::Jsonize() const
 
   if(m_suspendedActionsHasBeenSet)
   {
-   Array<JsonValue> suspendedActionsJsonList(m_suspendedActions.size());
+   Aws::Utils::Array<JsonValue> suspendedActionsJsonList(m_suspendedActions.size());
    for(unsigned suspendedActionsIndex = 0; suspendedActionsIndex < suspendedActionsJsonList.GetLength(); ++suspendedActionsIndex)
    {
      suspendedActionsJsonList[suspendedActionsIndex].AsString(GameServerGroupActionMapper::GetNameForGameServerGroupAction(m_suspendedActions[suspendedActionsIndex]));

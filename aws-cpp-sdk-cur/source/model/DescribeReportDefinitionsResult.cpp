@@ -30,7 +30,7 @@ DescribeReportDefinitionsResult& DescribeReportDefinitionsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReportDefinitions"))
   {
-    Array<JsonView> reportDefinitionsJsonList = jsonValue.GetArray("ReportDefinitions");
+    Aws::Utils::Array<JsonView> reportDefinitionsJsonList = jsonValue.GetArray("ReportDefinitions");
     for(unsigned reportDefinitionsIndex = 0; reportDefinitionsIndex < reportDefinitionsJsonList.GetLength(); ++reportDefinitionsIndex)
     {
       m_reportDefinitions.push_back(reportDefinitionsJsonList[reportDefinitionsIndex].AsObject());

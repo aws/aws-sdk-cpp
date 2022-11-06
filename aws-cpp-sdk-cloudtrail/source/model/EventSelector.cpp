@@ -57,7 +57,7 @@ EventSelector& EventSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DataResources"))
   {
-    Array<JsonView> dataResourcesJsonList = jsonValue.GetArray("DataResources");
+    Aws::Utils::Array<JsonView> dataResourcesJsonList = jsonValue.GetArray("DataResources");
     for(unsigned dataResourcesIndex = 0; dataResourcesIndex < dataResourcesJsonList.GetLength(); ++dataResourcesIndex)
     {
       m_dataResources.push_back(dataResourcesJsonList[dataResourcesIndex].AsObject());
@@ -67,7 +67,7 @@ EventSelector& EventSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExcludeManagementEventSources"))
   {
-    Array<JsonView> excludeManagementEventSourcesJsonList = jsonValue.GetArray("ExcludeManagementEventSources");
+    Aws::Utils::Array<JsonView> excludeManagementEventSourcesJsonList = jsonValue.GetArray("ExcludeManagementEventSources");
     for(unsigned excludeManagementEventSourcesIndex = 0; excludeManagementEventSourcesIndex < excludeManagementEventSourcesJsonList.GetLength(); ++excludeManagementEventSourcesIndex)
     {
       m_excludeManagementEventSources.push_back(excludeManagementEventSourcesJsonList[excludeManagementEventSourcesIndex].AsString());
@@ -95,7 +95,7 @@ JsonValue EventSelector::Jsonize() const
 
   if(m_dataResourcesHasBeenSet)
   {
-   Array<JsonValue> dataResourcesJsonList(m_dataResources.size());
+   Aws::Utils::Array<JsonValue> dataResourcesJsonList(m_dataResources.size());
    for(unsigned dataResourcesIndex = 0; dataResourcesIndex < dataResourcesJsonList.GetLength(); ++dataResourcesIndex)
    {
      dataResourcesJsonList[dataResourcesIndex].AsObject(m_dataResources[dataResourcesIndex].Jsonize());
@@ -106,7 +106,7 @@ JsonValue EventSelector::Jsonize() const
 
   if(m_excludeManagementEventSourcesHasBeenSet)
   {
-   Array<JsonValue> excludeManagementEventSourcesJsonList(m_excludeManagementEventSources.size());
+   Aws::Utils::Array<JsonValue> excludeManagementEventSourcesJsonList(m_excludeManagementEventSources.size());
    for(unsigned excludeManagementEventSourcesIndex = 0; excludeManagementEventSourcesIndex < excludeManagementEventSourcesJsonList.GetLength(); ++excludeManagementEventSourcesIndex)
    {
      excludeManagementEventSourcesJsonList[excludeManagementEventSourcesIndex].AsString(m_excludeManagementEventSources[excludeManagementEventSourcesIndex]);

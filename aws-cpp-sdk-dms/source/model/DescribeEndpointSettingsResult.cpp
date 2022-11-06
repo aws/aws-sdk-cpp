@@ -36,7 +36,7 @@ DescribeEndpointSettingsResult& DescribeEndpointSettingsResult::operator =(const
 
   if(jsonValue.ValueExists("EndpointSettings"))
   {
-    Array<JsonView> endpointSettingsJsonList = jsonValue.GetArray("EndpointSettings");
+    Aws::Utils::Array<JsonView> endpointSettingsJsonList = jsonValue.GetArray("EndpointSettings");
     for(unsigned endpointSettingsIndex = 0; endpointSettingsIndex < endpointSettingsJsonList.GetLength(); ++endpointSettingsIndex)
     {
       m_endpointSettings.push_back(endpointSettingsJsonList[endpointSettingsIndex].AsObject());

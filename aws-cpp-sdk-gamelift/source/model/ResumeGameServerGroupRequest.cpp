@@ -30,7 +30,7 @@ Aws::String ResumeGameServerGroupRequest::SerializePayload() const
 
   if(m_resumeActionsHasBeenSet)
   {
-   Array<JsonValue> resumeActionsJsonList(m_resumeActions.size());
+   Aws::Utils::Array<JsonValue> resumeActionsJsonList(m_resumeActions.size());
    for(unsigned resumeActionsIndex = 0; resumeActionsIndex < resumeActionsJsonList.GetLength(); ++resumeActionsIndex)
    {
      resumeActionsJsonList[resumeActionsIndex].AsString(GameServerGroupActionMapper::GetNameForGameServerGroupAction(m_resumeActions[resumeActionsIndex]));

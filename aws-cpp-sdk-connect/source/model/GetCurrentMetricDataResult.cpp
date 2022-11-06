@@ -36,7 +36,7 @@ GetCurrentMetricDataResult& GetCurrentMetricDataResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("MetricResults"))
   {
-    Array<JsonView> metricResultsJsonList = jsonValue.GetArray("MetricResults");
+    Aws::Utils::Array<JsonView> metricResultsJsonList = jsonValue.GetArray("MetricResults");
     for(unsigned metricResultsIndex = 0; metricResultsIndex < metricResultsJsonList.GetLength(); ++metricResultsIndex)
     {
       m_metricResults.push_back(metricResultsJsonList[metricResultsIndex].AsObject());

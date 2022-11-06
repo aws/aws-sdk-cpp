@@ -38,7 +38,7 @@ PutEmailIdentityDkimSigningAttributesResult& PutEmailIdentityDkimSigningAttribut
 
   if(jsonValue.ValueExists("DkimTokens"))
   {
-    Array<JsonView> dkimTokensJsonList = jsonValue.GetArray("DkimTokens");
+    Aws::Utils::Array<JsonView> dkimTokensJsonList = jsonValue.GetArray("DkimTokens");
     for(unsigned dkimTokensIndex = 0; dkimTokensIndex < dkimTokensJsonList.GetLength(); ++dkimTokensIndex)
     {
       m_dkimTokens.push_back(dkimTokensJsonList[dkimTokensIndex].AsString());

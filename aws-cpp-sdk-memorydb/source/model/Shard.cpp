@@ -64,7 +64,7 @@ Shard& Shard::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Nodes"))
   {
-    Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
+    Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
     for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
     {
       m_nodes.push_back(nodesJsonList[nodesIndex].AsObject());
@@ -106,7 +106,7 @@ JsonValue Shard::Jsonize() const
 
   if(m_nodesHasBeenSet)
   {
-   Array<JsonValue> nodesJsonList(m_nodes.size());
+   Aws::Utils::Array<JsonValue> nodesJsonList(m_nodes.size());
    for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
    {
      nodesJsonList[nodesIndex].AsObject(m_nodes[nodesIndex].Jsonize());

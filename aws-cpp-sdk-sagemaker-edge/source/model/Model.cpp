@@ -69,7 +69,7 @@ Model& Model::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ModelMetrics"))
   {
-    Array<JsonView> modelMetricsJsonList = jsonValue.GetArray("ModelMetrics");
+    Aws::Utils::Array<JsonView> modelMetricsJsonList = jsonValue.GetArray("ModelMetrics");
     for(unsigned modelMetricsIndex = 0; modelMetricsIndex < modelMetricsJsonList.GetLength(); ++modelMetricsIndex)
     {
       m_modelMetrics.push_back(modelMetricsJsonList[modelMetricsIndex].AsObject());
@@ -108,7 +108,7 @@ JsonValue Model::Jsonize() const
 
   if(m_modelMetricsHasBeenSet)
   {
-   Array<JsonValue> modelMetricsJsonList(m_modelMetrics.size());
+   Aws::Utils::Array<JsonValue> modelMetricsJsonList(m_modelMetrics.size());
    for(unsigned modelMetricsIndex = 0; modelMetricsIndex < modelMetricsJsonList.GetLength(); ++modelMetricsIndex)
    {
      modelMetricsJsonList[modelMetricsIndex].AsObject(m_modelMetrics[modelMetricsIndex].Jsonize());

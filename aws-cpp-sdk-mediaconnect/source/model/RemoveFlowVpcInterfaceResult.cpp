@@ -36,7 +36,7 @@ RemoveFlowVpcInterfaceResult& RemoveFlowVpcInterfaceResult::operator =(const Aws
 
   if(jsonValue.ValueExists("nonDeletedNetworkInterfaceIds"))
   {
-    Array<JsonView> nonDeletedNetworkInterfaceIdsJsonList = jsonValue.GetArray("nonDeletedNetworkInterfaceIds");
+    Aws::Utils::Array<JsonView> nonDeletedNetworkInterfaceIdsJsonList = jsonValue.GetArray("nonDeletedNetworkInterfaceIds");
     for(unsigned nonDeletedNetworkInterfaceIdsIndex = 0; nonDeletedNetworkInterfaceIdsIndex < nonDeletedNetworkInterfaceIdsJsonList.GetLength(); ++nonDeletedNetworkInterfaceIdsIndex)
     {
       m_nonDeletedNetworkInterfaceIds.push_back(nonDeletedNetworkInterfaceIdsJsonList[nonDeletedNetworkInterfaceIdsIndex].AsString());

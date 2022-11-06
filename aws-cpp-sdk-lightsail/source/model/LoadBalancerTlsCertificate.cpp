@@ -133,7 +133,7 @@ LoadBalancerTlsCertificate& LoadBalancerTlsCertificate::operator =(JsonView json
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -171,7 +171,7 @@ LoadBalancerTlsCertificate& LoadBalancerTlsCertificate::operator =(JsonView json
 
   if(jsonValue.ValueExists("domainValidationRecords"))
   {
-    Array<JsonView> domainValidationRecordsJsonList = jsonValue.GetArray("domainValidationRecords");
+    Aws::Utils::Array<JsonView> domainValidationRecordsJsonList = jsonValue.GetArray("domainValidationRecords");
     for(unsigned domainValidationRecordsIndex = 0; domainValidationRecordsIndex < domainValidationRecordsJsonList.GetLength(); ++domainValidationRecordsIndex)
     {
       m_domainValidationRecords.push_back(domainValidationRecordsJsonList[domainValidationRecordsIndex].AsObject());
@@ -265,7 +265,7 @@ LoadBalancerTlsCertificate& LoadBalancerTlsCertificate::operator =(JsonView json
 
   if(jsonValue.ValueExists("subjectAlternativeNames"))
   {
-    Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("subjectAlternativeNames");
+    Aws::Utils::Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("subjectAlternativeNames");
     for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
     {
       m_subjectAlternativeNames.push_back(subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsString());
@@ -316,7 +316,7 @@ JsonValue LoadBalancerTlsCertificate::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -350,7 +350,7 @@ JsonValue LoadBalancerTlsCertificate::Jsonize() const
 
   if(m_domainValidationRecordsHasBeenSet)
   {
-   Array<JsonValue> domainValidationRecordsJsonList(m_domainValidationRecords.size());
+   Aws::Utils::Array<JsonValue> domainValidationRecordsJsonList(m_domainValidationRecords.size());
    for(unsigned domainValidationRecordsIndex = 0; domainValidationRecordsIndex < domainValidationRecordsJsonList.GetLength(); ++domainValidationRecordsIndex)
    {
      domainValidationRecordsJsonList[domainValidationRecordsIndex].AsObject(m_domainValidationRecords[domainValidationRecordsIndex].Jsonize());
@@ -427,7 +427,7 @@ JsonValue LoadBalancerTlsCertificate::Jsonize() const
 
   if(m_subjectAlternativeNamesHasBeenSet)
   {
-   Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
+   Aws::Utils::Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
    for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
    {
      subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsString(m_subjectAlternativeNames[subjectAlternativeNamesIndex]);

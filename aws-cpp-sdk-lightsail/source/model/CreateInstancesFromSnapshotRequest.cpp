@@ -37,7 +37,7 @@ Aws::String CreateInstancesFromSnapshotRequest::SerializePayload() const
 
   if(m_instanceNamesHasBeenSet)
   {
-   Array<JsonValue> instanceNamesJsonList(m_instanceNames.size());
+   Aws::Utils::Array<JsonValue> instanceNamesJsonList(m_instanceNames.size());
    for(unsigned instanceNamesIndex = 0; instanceNamesIndex < instanceNamesJsonList.GetLength(); ++instanceNamesIndex)
    {
      instanceNamesJsonList[instanceNamesIndex].AsString(m_instanceNames[instanceNamesIndex]);
@@ -51,7 +51,7 @@ Aws::String CreateInstancesFromSnapshotRequest::SerializePayload() const
    JsonValue attachedDiskMappingJsonMap;
    for(auto& attachedDiskMappingItem : m_attachedDiskMapping)
    {
-     Array<JsonValue> diskMapListJsonList(attachedDiskMappingItem.second.size());
+     Aws::Utils::Array<JsonValue> diskMapListJsonList(attachedDiskMappingItem.second.size());
      for(unsigned diskMapListIndex = 0; diskMapListIndex < diskMapListJsonList.GetLength(); ++diskMapListIndex)
      {
        diskMapListJsonList[diskMapListIndex].AsObject(attachedDiskMappingItem.second[diskMapListIndex].Jsonize());
@@ -94,7 +94,7 @@ Aws::String CreateInstancesFromSnapshotRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -105,7 +105,7 @@ Aws::String CreateInstancesFromSnapshotRequest::SerializePayload() const
 
   if(m_addOnsHasBeenSet)
   {
-   Array<JsonValue> addOnsJsonList(m_addOns.size());
+   Aws::Utils::Array<JsonValue> addOnsJsonList(m_addOns.size());
    for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
    {
      addOnsJsonList[addOnsIndex].AsObject(m_addOns[addOnsIndex].Jsonize());

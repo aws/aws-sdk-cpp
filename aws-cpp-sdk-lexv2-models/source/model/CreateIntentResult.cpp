@@ -54,7 +54,7 @@ CreateIntentResult& CreateIntentResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("sampleUtterances"))
   {
-    Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
+    Aws::Utils::Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
     for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
     {
       m_sampleUtterances.push_back(sampleUtterancesJsonList[sampleUtterancesIndex].AsObject());
@@ -87,7 +87,7 @@ CreateIntentResult& CreateIntentResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("inputContexts"))
   {
-    Array<JsonView> inputContextsJsonList = jsonValue.GetArray("inputContexts");
+    Aws::Utils::Array<JsonView> inputContextsJsonList = jsonValue.GetArray("inputContexts");
     for(unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex)
     {
       m_inputContexts.push_back(inputContextsJsonList[inputContextsIndex].AsObject());
@@ -96,7 +96,7 @@ CreateIntentResult& CreateIntentResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("outputContexts"))
   {
-    Array<JsonView> outputContextsJsonList = jsonValue.GetArray("outputContexts");
+    Aws::Utils::Array<JsonView> outputContextsJsonList = jsonValue.GetArray("outputContexts");
     for(unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex)
     {
       m_outputContexts.push_back(outputContextsJsonList[outputContextsIndex].AsObject());

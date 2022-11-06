@@ -44,7 +44,7 @@ AuthInfo& AuthInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsString());
@@ -66,7 +66,7 @@ JsonValue AuthInfo::Jsonize() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsString(m_resources[resourcesIndex]);

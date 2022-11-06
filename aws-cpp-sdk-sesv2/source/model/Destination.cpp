@@ -37,7 +37,7 @@ Destination& Destination::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ToAddresses"))
   {
-    Array<JsonView> toAddressesJsonList = jsonValue.GetArray("ToAddresses");
+    Aws::Utils::Array<JsonView> toAddressesJsonList = jsonValue.GetArray("ToAddresses");
     for(unsigned toAddressesIndex = 0; toAddressesIndex < toAddressesJsonList.GetLength(); ++toAddressesIndex)
     {
       m_toAddresses.push_back(toAddressesJsonList[toAddressesIndex].AsString());
@@ -47,7 +47,7 @@ Destination& Destination::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CcAddresses"))
   {
-    Array<JsonView> ccAddressesJsonList = jsonValue.GetArray("CcAddresses");
+    Aws::Utils::Array<JsonView> ccAddressesJsonList = jsonValue.GetArray("CcAddresses");
     for(unsigned ccAddressesIndex = 0; ccAddressesIndex < ccAddressesJsonList.GetLength(); ++ccAddressesIndex)
     {
       m_ccAddresses.push_back(ccAddressesJsonList[ccAddressesIndex].AsString());
@@ -57,7 +57,7 @@ Destination& Destination::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("BccAddresses"))
   {
-    Array<JsonView> bccAddressesJsonList = jsonValue.GetArray("BccAddresses");
+    Aws::Utils::Array<JsonView> bccAddressesJsonList = jsonValue.GetArray("BccAddresses");
     for(unsigned bccAddressesIndex = 0; bccAddressesIndex < bccAddressesJsonList.GetLength(); ++bccAddressesIndex)
     {
       m_bccAddresses.push_back(bccAddressesJsonList[bccAddressesIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue Destination::Jsonize() const
 
   if(m_toAddressesHasBeenSet)
   {
-   Array<JsonValue> toAddressesJsonList(m_toAddresses.size());
+   Aws::Utils::Array<JsonValue> toAddressesJsonList(m_toAddresses.size());
    for(unsigned toAddressesIndex = 0; toAddressesIndex < toAddressesJsonList.GetLength(); ++toAddressesIndex)
    {
      toAddressesJsonList[toAddressesIndex].AsString(m_toAddresses[toAddressesIndex]);
@@ -85,7 +85,7 @@ JsonValue Destination::Jsonize() const
 
   if(m_ccAddressesHasBeenSet)
   {
-   Array<JsonValue> ccAddressesJsonList(m_ccAddresses.size());
+   Aws::Utils::Array<JsonValue> ccAddressesJsonList(m_ccAddresses.size());
    for(unsigned ccAddressesIndex = 0; ccAddressesIndex < ccAddressesJsonList.GetLength(); ++ccAddressesIndex)
    {
      ccAddressesJsonList[ccAddressesIndex].AsString(m_ccAddresses[ccAddressesIndex]);
@@ -96,7 +96,7 @@ JsonValue Destination::Jsonize() const
 
   if(m_bccAddressesHasBeenSet)
   {
-   Array<JsonValue> bccAddressesJsonList(m_bccAddresses.size());
+   Aws::Utils::Array<JsonValue> bccAddressesJsonList(m_bccAddresses.size());
    for(unsigned bccAddressesIndex = 0; bccAddressesIndex < bccAddressesJsonList.GetLength(); ++bccAddressesIndex)
    {
      bccAddressesJsonList[bccAddressesIndex].AsString(m_bccAddresses[bccAddressesIndex]);

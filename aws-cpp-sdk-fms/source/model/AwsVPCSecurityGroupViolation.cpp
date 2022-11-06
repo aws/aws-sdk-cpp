@@ -53,7 +53,7 @@ AwsVPCSecurityGroupViolation& AwsVPCSecurityGroupViolation::operator =(JsonView 
 
   if(jsonValue.ValueExists("PartialMatches"))
   {
-    Array<JsonView> partialMatchesJsonList = jsonValue.GetArray("PartialMatches");
+    Aws::Utils::Array<JsonView> partialMatchesJsonList = jsonValue.GetArray("PartialMatches");
     for(unsigned partialMatchesIndex = 0; partialMatchesIndex < partialMatchesJsonList.GetLength(); ++partialMatchesIndex)
     {
       m_partialMatches.push_back(partialMatchesJsonList[partialMatchesIndex].AsObject());
@@ -63,7 +63,7 @@ AwsVPCSecurityGroupViolation& AwsVPCSecurityGroupViolation::operator =(JsonView 
 
   if(jsonValue.ValueExists("PossibleSecurityGroupRemediationActions"))
   {
-    Array<JsonView> possibleSecurityGroupRemediationActionsJsonList = jsonValue.GetArray("PossibleSecurityGroupRemediationActions");
+    Aws::Utils::Array<JsonView> possibleSecurityGroupRemediationActionsJsonList = jsonValue.GetArray("PossibleSecurityGroupRemediationActions");
     for(unsigned possibleSecurityGroupRemediationActionsIndex = 0; possibleSecurityGroupRemediationActionsIndex < possibleSecurityGroupRemediationActionsJsonList.GetLength(); ++possibleSecurityGroupRemediationActionsIndex)
     {
       m_possibleSecurityGroupRemediationActions.push_back(possibleSecurityGroupRemediationActionsJsonList[possibleSecurityGroupRemediationActionsIndex].AsObject());
@@ -92,7 +92,7 @@ JsonValue AwsVPCSecurityGroupViolation::Jsonize() const
 
   if(m_partialMatchesHasBeenSet)
   {
-   Array<JsonValue> partialMatchesJsonList(m_partialMatches.size());
+   Aws::Utils::Array<JsonValue> partialMatchesJsonList(m_partialMatches.size());
    for(unsigned partialMatchesIndex = 0; partialMatchesIndex < partialMatchesJsonList.GetLength(); ++partialMatchesIndex)
    {
      partialMatchesJsonList[partialMatchesIndex].AsObject(m_partialMatches[partialMatchesIndex].Jsonize());
@@ -103,7 +103,7 @@ JsonValue AwsVPCSecurityGroupViolation::Jsonize() const
 
   if(m_possibleSecurityGroupRemediationActionsHasBeenSet)
   {
-   Array<JsonValue> possibleSecurityGroupRemediationActionsJsonList(m_possibleSecurityGroupRemediationActions.size());
+   Aws::Utils::Array<JsonValue> possibleSecurityGroupRemediationActionsJsonList(m_possibleSecurityGroupRemediationActions.size());
    for(unsigned possibleSecurityGroupRemediationActionsIndex = 0; possibleSecurityGroupRemediationActionsIndex < possibleSecurityGroupRemediationActionsJsonList.GetLength(); ++possibleSecurityGroupRemediationActionsIndex)
    {
      possibleSecurityGroupRemediationActionsJsonList[possibleSecurityGroupRemediationActionsIndex].AsObject(m_possibleSecurityGroupRemediationActions[possibleSecurityGroupRemediationActionsIndex].Jsonize());

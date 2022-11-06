@@ -32,7 +32,7 @@ RecognizeCelebritiesResult& RecognizeCelebritiesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CelebrityFaces"))
   {
-    Array<JsonView> celebrityFacesJsonList = jsonValue.GetArray("CelebrityFaces");
+    Aws::Utils::Array<JsonView> celebrityFacesJsonList = jsonValue.GetArray("CelebrityFaces");
     for(unsigned celebrityFacesIndex = 0; celebrityFacesIndex < celebrityFacesJsonList.GetLength(); ++celebrityFacesIndex)
     {
       m_celebrityFaces.push_back(celebrityFacesJsonList[celebrityFacesIndex].AsObject());
@@ -41,7 +41,7 @@ RecognizeCelebritiesResult& RecognizeCelebritiesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("UnrecognizedFaces"))
   {
-    Array<JsonView> unrecognizedFacesJsonList = jsonValue.GetArray("UnrecognizedFaces");
+    Aws::Utils::Array<JsonView> unrecognizedFacesJsonList = jsonValue.GetArray("UnrecognizedFaces");
     for(unsigned unrecognizedFacesIndex = 0; unrecognizedFacesIndex < unrecognizedFacesJsonList.GetLength(); ++unrecognizedFacesIndex)
     {
       m_unrecognizedFaces.push_back(unrecognizedFacesJsonList[unrecognizedFacesIndex].AsObject());

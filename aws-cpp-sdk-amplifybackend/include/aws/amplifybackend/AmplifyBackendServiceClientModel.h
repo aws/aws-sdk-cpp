@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/amplifybackend/AmplifyBackendErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/amplifybackend/AmplifyBackendEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -80,6 +82,10 @@ namespace Aws
 
   namespace AmplifyBackend
   {
+    using AmplifyBackendClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AmplifyBackendEndpointProviderBase = Aws::AmplifyBackend::Endpoint::AmplifyBackendEndpointProviderBase;
+    using AmplifyBackendEndpointProvider = Aws::AmplifyBackend::Endpoint::AmplifyBackendEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in AmplifyBackendClient header */

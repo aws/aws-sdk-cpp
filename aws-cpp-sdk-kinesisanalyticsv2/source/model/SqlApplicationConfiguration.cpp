@@ -37,7 +37,7 @@ SqlApplicationConfiguration& SqlApplicationConfiguration::operator =(JsonView js
 {
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
@@ -47,7 +47,7 @@ SqlApplicationConfiguration& SqlApplicationConfiguration::operator =(JsonView js
 
   if(jsonValue.ValueExists("Outputs"))
   {
-    Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
+    Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
@@ -57,7 +57,7 @@ SqlApplicationConfiguration& SqlApplicationConfiguration::operator =(JsonView js
 
   if(jsonValue.ValueExists("ReferenceDataSources"))
   {
-    Array<JsonView> referenceDataSourcesJsonList = jsonValue.GetArray("ReferenceDataSources");
+    Aws::Utils::Array<JsonView> referenceDataSourcesJsonList = jsonValue.GetArray("ReferenceDataSources");
     for(unsigned referenceDataSourcesIndex = 0; referenceDataSourcesIndex < referenceDataSourcesJsonList.GetLength(); ++referenceDataSourcesIndex)
     {
       m_referenceDataSources.push_back(referenceDataSourcesJsonList[referenceDataSourcesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue SqlApplicationConfiguration::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue SqlApplicationConfiguration::Jsonize() const
 
   if(m_outputsHasBeenSet)
   {
-   Array<JsonValue> outputsJsonList(m_outputs.size());
+   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
    for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
    {
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue SqlApplicationConfiguration::Jsonize() const
 
   if(m_referenceDataSourcesHasBeenSet)
   {
-   Array<JsonValue> referenceDataSourcesJsonList(m_referenceDataSources.size());
+   Aws::Utils::Array<JsonValue> referenceDataSourcesJsonList(m_referenceDataSources.size());
    for(unsigned referenceDataSourcesIndex = 0; referenceDataSourcesIndex < referenceDataSourcesJsonList.GetLength(); ++referenceDataSourcesIndex)
    {
      referenceDataSourcesJsonList[referenceDataSourcesIndex].AsObject(m_referenceDataSources[referenceDataSourcesIndex].Jsonize());

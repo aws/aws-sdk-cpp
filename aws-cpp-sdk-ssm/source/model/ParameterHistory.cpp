@@ -126,7 +126,7 @@ ParameterHistory& ParameterHistory::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Labels"))
   {
-    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
+    Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());
@@ -143,7 +143,7 @@ ParameterHistory& ParameterHistory::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Policies"))
   {
-    Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
+    Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
     for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
     {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());
@@ -219,7 +219,7 @@ JsonValue ParameterHistory::Jsonize() const
 
   if(m_labelsHasBeenSet)
   {
-   Array<JsonValue> labelsJsonList(m_labels.size());
+   Aws::Utils::Array<JsonValue> labelsJsonList(m_labels.size());
    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
    {
      labelsJsonList[labelsIndex].AsString(m_labels[labelsIndex]);
@@ -235,7 +235,7 @@ JsonValue ParameterHistory::Jsonize() const
 
   if(m_policiesHasBeenSet)
   {
-   Array<JsonValue> policiesJsonList(m_policies.size());
+   Aws::Utils::Array<JsonValue> policiesJsonList(m_policies.size());
    for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
    {
      policiesJsonList[policiesIndex].AsObject(m_policies[policiesIndex].Jsonize());

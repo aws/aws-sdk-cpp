@@ -30,7 +30,7 @@ ListDataIntegrationsResult& ListDataIntegrationsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DataIntegrations"))
   {
-    Array<JsonView> dataIntegrationsJsonList = jsonValue.GetArray("DataIntegrations");
+    Aws::Utils::Array<JsonView> dataIntegrationsJsonList = jsonValue.GetArray("DataIntegrations");
     for(unsigned dataIntegrationsIndex = 0; dataIntegrationsIndex < dataIntegrationsJsonList.GetLength(); ++dataIntegrationsIndex)
     {
       m_dataIntegrations.push_back(dataIntegrationsJsonList[dataIntegrationsIndex].AsObject());

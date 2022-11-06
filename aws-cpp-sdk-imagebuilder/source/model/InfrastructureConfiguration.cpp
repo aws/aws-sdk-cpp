@@ -86,7 +86,7 @@ InfrastructureConfiguration& InfrastructureConfiguration::operator =(JsonView js
 
   if(jsonValue.ValueExists("instanceTypes"))
   {
-    Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
+    Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
     for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
     {
       m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
@@ -103,7 +103,7 @@ InfrastructureConfiguration& InfrastructureConfiguration::operator =(JsonView js
 
   if(jsonValue.ValueExists("securityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -214,7 +214,7 @@ JsonValue InfrastructureConfiguration::Jsonize() const
 
   if(m_instanceTypesHasBeenSet)
   {
-   Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
+   Aws::Utils::Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
    for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
    {
      instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
@@ -231,7 +231,7 @@ JsonValue InfrastructureConfiguration::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);

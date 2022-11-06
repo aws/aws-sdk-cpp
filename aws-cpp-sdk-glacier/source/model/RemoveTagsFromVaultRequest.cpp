@@ -25,7 +25,7 @@ Aws::String RemoveTagsFromVaultRequest::SerializePayload() const
 
   if(m_tagKeysHasBeenSet)
   {
-   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
    for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
    {
      tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);

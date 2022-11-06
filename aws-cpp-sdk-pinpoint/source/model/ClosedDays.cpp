@@ -41,7 +41,7 @@ ClosedDays& ClosedDays::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EMAIL"))
   {
-    Array<JsonView> eMAILJsonList = jsonValue.GetArray("EMAIL");
+    Aws::Utils::Array<JsonView> eMAILJsonList = jsonValue.GetArray("EMAIL");
     for(unsigned eMAILIndex = 0; eMAILIndex < eMAILJsonList.GetLength(); ++eMAILIndex)
     {
       m_eMAIL.push_back(eMAILJsonList[eMAILIndex].AsObject());
@@ -51,7 +51,7 @@ ClosedDays& ClosedDays::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SMS"))
   {
-    Array<JsonView> sMSJsonList = jsonValue.GetArray("SMS");
+    Aws::Utils::Array<JsonView> sMSJsonList = jsonValue.GetArray("SMS");
     for(unsigned sMSIndex = 0; sMSIndex < sMSJsonList.GetLength(); ++sMSIndex)
     {
       m_sMS.push_back(sMSJsonList[sMSIndex].AsObject());
@@ -61,7 +61,7 @@ ClosedDays& ClosedDays::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PUSH"))
   {
-    Array<JsonView> pUSHJsonList = jsonValue.GetArray("PUSH");
+    Aws::Utils::Array<JsonView> pUSHJsonList = jsonValue.GetArray("PUSH");
     for(unsigned pUSHIndex = 0; pUSHIndex < pUSHJsonList.GetLength(); ++pUSHIndex)
     {
       m_pUSH.push_back(pUSHJsonList[pUSHIndex].AsObject());
@@ -71,7 +71,7 @@ ClosedDays& ClosedDays::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VOICE"))
   {
-    Array<JsonView> vOICEJsonList = jsonValue.GetArray("VOICE");
+    Aws::Utils::Array<JsonView> vOICEJsonList = jsonValue.GetArray("VOICE");
     for(unsigned vOICEIndex = 0; vOICEIndex < vOICEJsonList.GetLength(); ++vOICEIndex)
     {
       m_vOICE.push_back(vOICEJsonList[vOICEIndex].AsObject());
@@ -81,7 +81,7 @@ ClosedDays& ClosedDays::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CUSTOM"))
   {
-    Array<JsonView> cUSTOMJsonList = jsonValue.GetArray("CUSTOM");
+    Aws::Utils::Array<JsonView> cUSTOMJsonList = jsonValue.GetArray("CUSTOM");
     for(unsigned cUSTOMIndex = 0; cUSTOMIndex < cUSTOMJsonList.GetLength(); ++cUSTOMIndex)
     {
       m_cUSTOM.push_back(cUSTOMJsonList[cUSTOMIndex].AsObject());
@@ -98,7 +98,7 @@ JsonValue ClosedDays::Jsonize() const
 
   if(m_eMAILHasBeenSet)
   {
-   Array<JsonValue> eMAILJsonList(m_eMAIL.size());
+   Aws::Utils::Array<JsonValue> eMAILJsonList(m_eMAIL.size());
    for(unsigned eMAILIndex = 0; eMAILIndex < eMAILJsonList.GetLength(); ++eMAILIndex)
    {
      eMAILJsonList[eMAILIndex].AsObject(m_eMAIL[eMAILIndex].Jsonize());
@@ -109,7 +109,7 @@ JsonValue ClosedDays::Jsonize() const
 
   if(m_sMSHasBeenSet)
   {
-   Array<JsonValue> sMSJsonList(m_sMS.size());
+   Aws::Utils::Array<JsonValue> sMSJsonList(m_sMS.size());
    for(unsigned sMSIndex = 0; sMSIndex < sMSJsonList.GetLength(); ++sMSIndex)
    {
      sMSJsonList[sMSIndex].AsObject(m_sMS[sMSIndex].Jsonize());
@@ -120,7 +120,7 @@ JsonValue ClosedDays::Jsonize() const
 
   if(m_pUSHHasBeenSet)
   {
-   Array<JsonValue> pUSHJsonList(m_pUSH.size());
+   Aws::Utils::Array<JsonValue> pUSHJsonList(m_pUSH.size());
    for(unsigned pUSHIndex = 0; pUSHIndex < pUSHJsonList.GetLength(); ++pUSHIndex)
    {
      pUSHJsonList[pUSHIndex].AsObject(m_pUSH[pUSHIndex].Jsonize());
@@ -131,7 +131,7 @@ JsonValue ClosedDays::Jsonize() const
 
   if(m_vOICEHasBeenSet)
   {
-   Array<JsonValue> vOICEJsonList(m_vOICE.size());
+   Aws::Utils::Array<JsonValue> vOICEJsonList(m_vOICE.size());
    for(unsigned vOICEIndex = 0; vOICEIndex < vOICEJsonList.GetLength(); ++vOICEIndex)
    {
      vOICEJsonList[vOICEIndex].AsObject(m_vOICE[vOICEIndex].Jsonize());
@@ -142,7 +142,7 @@ JsonValue ClosedDays::Jsonize() const
 
   if(m_cUSTOMHasBeenSet)
   {
-   Array<JsonValue> cUSTOMJsonList(m_cUSTOM.size());
+   Aws::Utils::Array<JsonValue> cUSTOMJsonList(m_cUSTOM.size());
    for(unsigned cUSTOMIndex = 0; cUSTOMIndex < cUSTOMJsonList.GetLength(); ++cUSTOMIndex)
    {
      cUSTOMJsonList[cUSTOMIndex].AsObject(m_cUSTOM[cUSTOMIndex].Jsonize());

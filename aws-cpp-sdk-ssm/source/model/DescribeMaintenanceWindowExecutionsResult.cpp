@@ -30,7 +30,7 @@ DescribeMaintenanceWindowExecutionsResult& DescribeMaintenanceWindowExecutionsRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WindowExecutions"))
   {
-    Array<JsonView> windowExecutionsJsonList = jsonValue.GetArray("WindowExecutions");
+    Aws::Utils::Array<JsonView> windowExecutionsJsonList = jsonValue.GetArray("WindowExecutions");
     for(unsigned windowExecutionsIndex = 0; windowExecutionsIndex < windowExecutionsJsonList.GetLength(); ++windowExecutionsIndex)
     {
       m_windowExecutions.push_back(windowExecutionsJsonList[windowExecutionsIndex].AsObject());

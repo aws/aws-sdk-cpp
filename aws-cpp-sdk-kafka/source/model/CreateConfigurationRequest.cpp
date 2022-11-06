@@ -33,7 +33,7 @@ Aws::String CreateConfigurationRequest::SerializePayload() const
 
   if(m_kafkaVersionsHasBeenSet)
   {
-   Array<JsonValue> kafkaVersionsJsonList(m_kafkaVersions.size());
+   Aws::Utils::Array<JsonValue> kafkaVersionsJsonList(m_kafkaVersions.size());
    for(unsigned kafkaVersionsIndex = 0; kafkaVersionsIndex < kafkaVersionsJsonList.GetLength(); ++kafkaVersionsIndex)
    {
      kafkaVersionsJsonList[kafkaVersionsIndex].AsString(m_kafkaVersions[kafkaVersionsIndex]);

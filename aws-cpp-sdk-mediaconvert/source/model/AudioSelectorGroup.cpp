@@ -33,7 +33,7 @@ AudioSelectorGroup& AudioSelectorGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioSelectorNames"))
   {
-    Array<JsonView> audioSelectorNamesJsonList = jsonValue.GetArray("audioSelectorNames");
+    Aws::Utils::Array<JsonView> audioSelectorNamesJsonList = jsonValue.GetArray("audioSelectorNames");
     for(unsigned audioSelectorNamesIndex = 0; audioSelectorNamesIndex < audioSelectorNamesJsonList.GetLength(); ++audioSelectorNamesIndex)
     {
       m_audioSelectorNames.push_back(audioSelectorNamesJsonList[audioSelectorNamesIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue AudioSelectorGroup::Jsonize() const
 
   if(m_audioSelectorNamesHasBeenSet)
   {
-   Array<JsonValue> audioSelectorNamesJsonList(m_audioSelectorNames.size());
+   Aws::Utils::Array<JsonValue> audioSelectorNamesJsonList(m_audioSelectorNames.size());
    for(unsigned audioSelectorNamesIndex = 0; audioSelectorNamesIndex < audioSelectorNamesJsonList.GetLength(); ++audioSelectorNamesIndex)
    {
      audioSelectorNamesJsonList[audioSelectorNamesIndex].AsString(m_audioSelectorNames[audioSelectorNamesIndex]);

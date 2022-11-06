@@ -37,7 +37,7 @@ Aws::String CreateBudgetRequest::SerializePayload() const
 
   if(m_notificationsWithSubscribersHasBeenSet)
   {
-   Array<JsonValue> notificationsWithSubscribersJsonList(m_notificationsWithSubscribers.size());
+   Aws::Utils::Array<JsonValue> notificationsWithSubscribersJsonList(m_notificationsWithSubscribers.size());
    for(unsigned notificationsWithSubscribersIndex = 0; notificationsWithSubscribersIndex < notificationsWithSubscribersJsonList.GetLength(); ++notificationsWithSubscribersIndex)
    {
      notificationsWithSubscribersJsonList[notificationsWithSubscribersIndex].AsObject(m_notificationsWithSubscribers[notificationsWithSubscribersIndex].Jsonize());

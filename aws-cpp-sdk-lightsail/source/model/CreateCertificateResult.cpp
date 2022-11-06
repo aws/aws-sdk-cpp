@@ -36,7 +36,7 @@ CreateCertificateResult& CreateCertificateResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("operations"))
   {
-    Array<JsonView> operationsJsonList = jsonValue.GetArray("operations");
+    Aws::Utils::Array<JsonView> operationsJsonList = jsonValue.GetArray("operations");
     for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
     {
       m_operations.push_back(operationsJsonList[operationsIndex].AsObject());

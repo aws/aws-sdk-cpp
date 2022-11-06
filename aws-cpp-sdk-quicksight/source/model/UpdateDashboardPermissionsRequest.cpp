@@ -28,7 +28,7 @@ Aws::String UpdateDashboardPermissionsRequest::SerializePayload() const
 
   if(m_grantPermissionsHasBeenSet)
   {
-   Array<JsonValue> grantPermissionsJsonList(m_grantPermissions.size());
+   Aws::Utils::Array<JsonValue> grantPermissionsJsonList(m_grantPermissions.size());
    for(unsigned grantPermissionsIndex = 0; grantPermissionsIndex < grantPermissionsJsonList.GetLength(); ++grantPermissionsIndex)
    {
      grantPermissionsJsonList[grantPermissionsIndex].AsObject(m_grantPermissions[grantPermissionsIndex].Jsonize());
@@ -39,7 +39,7 @@ Aws::String UpdateDashboardPermissionsRequest::SerializePayload() const
 
   if(m_revokePermissionsHasBeenSet)
   {
-   Array<JsonValue> revokePermissionsJsonList(m_revokePermissions.size());
+   Aws::Utils::Array<JsonValue> revokePermissionsJsonList(m_revokePermissions.size());
    for(unsigned revokePermissionsIndex = 0; revokePermissionsIndex < revokePermissionsJsonList.GetLength(); ++revokePermissionsIndex)
    {
      revokePermissionsJsonList[revokePermissionsIndex].AsObject(m_revokePermissions[revokePermissionsIndex].Jsonize());
@@ -50,7 +50,7 @@ Aws::String UpdateDashboardPermissionsRequest::SerializePayload() const
 
   if(m_grantLinkPermissionsHasBeenSet)
   {
-   Array<JsonValue> grantLinkPermissionsJsonList(m_grantLinkPermissions.size());
+   Aws::Utils::Array<JsonValue> grantLinkPermissionsJsonList(m_grantLinkPermissions.size());
    for(unsigned grantLinkPermissionsIndex = 0; grantLinkPermissionsIndex < grantLinkPermissionsJsonList.GetLength(); ++grantLinkPermissionsIndex)
    {
      grantLinkPermissionsJsonList[grantLinkPermissionsIndex].AsObject(m_grantLinkPermissions[grantLinkPermissionsIndex].Jsonize());
@@ -61,7 +61,7 @@ Aws::String UpdateDashboardPermissionsRequest::SerializePayload() const
 
   if(m_revokeLinkPermissionsHasBeenSet)
   {
-   Array<JsonValue> revokeLinkPermissionsJsonList(m_revokeLinkPermissions.size());
+   Aws::Utils::Array<JsonValue> revokeLinkPermissionsJsonList(m_revokeLinkPermissions.size());
    for(unsigned revokeLinkPermissionsIndex = 0; revokeLinkPermissionsIndex < revokeLinkPermissionsJsonList.GetLength(); ++revokeLinkPermissionsIndex)
    {
      revokeLinkPermissionsJsonList[revokeLinkPermissionsIndex].AsObject(m_revokeLinkPermissions[revokeLinkPermissionsIndex].Jsonize());

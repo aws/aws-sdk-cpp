@@ -30,7 +30,7 @@ ListGraphsResult& ListGraphsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GraphList"))
   {
-    Array<JsonView> graphListJsonList = jsonValue.GetArray("GraphList");
+    Aws::Utils::Array<JsonView> graphListJsonList = jsonValue.GetArray("GraphList");
     for(unsigned graphListIndex = 0; graphListIndex < graphListJsonList.GetLength(); ++graphListIndex)
     {
       m_graphList.push_back(graphListJsonList[graphListIndex].AsObject());

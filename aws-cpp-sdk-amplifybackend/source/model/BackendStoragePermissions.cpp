@@ -35,7 +35,7 @@ BackendStoragePermissions& BackendStoragePermissions::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("authenticated"))
   {
-    Array<JsonView> authenticatedJsonList = jsonValue.GetArray("authenticated");
+    Aws::Utils::Array<JsonView> authenticatedJsonList = jsonValue.GetArray("authenticated");
     for(unsigned authenticatedIndex = 0; authenticatedIndex < authenticatedJsonList.GetLength(); ++authenticatedIndex)
     {
       m_authenticated.push_back(AuthenticatedElementMapper::GetAuthenticatedElementForName(authenticatedJsonList[authenticatedIndex].AsString()));
@@ -45,7 +45,7 @@ BackendStoragePermissions& BackendStoragePermissions::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("unAuthenticated"))
   {
-    Array<JsonView> unAuthenticatedJsonList = jsonValue.GetArray("unAuthenticated");
+    Aws::Utils::Array<JsonView> unAuthenticatedJsonList = jsonValue.GetArray("unAuthenticated");
     for(unsigned unAuthenticatedIndex = 0; unAuthenticatedIndex < unAuthenticatedJsonList.GetLength(); ++unAuthenticatedIndex)
     {
       m_unAuthenticated.push_back(UnAuthenticatedElementMapper::GetUnAuthenticatedElementForName(unAuthenticatedJsonList[unAuthenticatedIndex].AsString()));
@@ -62,7 +62,7 @@ JsonValue BackendStoragePermissions::Jsonize() const
 
   if(m_authenticatedHasBeenSet)
   {
-   Array<JsonValue> authenticatedJsonList(m_authenticated.size());
+   Aws::Utils::Array<JsonValue> authenticatedJsonList(m_authenticated.size());
    for(unsigned authenticatedIndex = 0; authenticatedIndex < authenticatedJsonList.GetLength(); ++authenticatedIndex)
    {
      authenticatedJsonList[authenticatedIndex].AsString(AuthenticatedElementMapper::GetNameForAuthenticatedElement(m_authenticated[authenticatedIndex]));
@@ -73,7 +73,7 @@ JsonValue BackendStoragePermissions::Jsonize() const
 
   if(m_unAuthenticatedHasBeenSet)
   {
-   Array<JsonValue> unAuthenticatedJsonList(m_unAuthenticated.size());
+   Aws::Utils::Array<JsonValue> unAuthenticatedJsonList(m_unAuthenticated.size());
    for(unsigned unAuthenticatedIndex = 0; unAuthenticatedIndex < unAuthenticatedJsonList.GetLength(); ++unAuthenticatedIndex)
    {
      unAuthenticatedJsonList[unAuthenticatedIndex].AsString(UnAuthenticatedElementMapper::GetNameForUnAuthenticatedElement(m_unAuthenticated[unAuthenticatedIndex]));

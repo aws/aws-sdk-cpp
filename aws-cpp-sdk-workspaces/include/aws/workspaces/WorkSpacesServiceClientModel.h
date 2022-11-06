@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/workspaces/WorkSpacesErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/workspaces/WorkSpacesEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -112,6 +114,10 @@ namespace Aws
 
   namespace WorkSpaces
   {
+    using WorkSpacesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkSpacesEndpointProviderBase = Aws::WorkSpaces::Endpoint::WorkSpacesEndpointProviderBase;
+    using WorkSpacesEndpointProvider = Aws::WorkSpaces::Endpoint::WorkSpacesEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in WorkSpacesClient header */

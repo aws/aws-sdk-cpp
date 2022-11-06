@@ -54,7 +54,7 @@ RepositoryCatalogData& RepositoryCatalogData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("architectures"))
   {
-    Array<JsonView> architecturesJsonList = jsonValue.GetArray("architectures");
+    Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("architectures");
     for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
     {
       m_architectures.push_back(architecturesJsonList[architecturesIndex].AsString());
@@ -64,7 +64,7 @@ RepositoryCatalogData& RepositoryCatalogData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("operatingSystems"))
   {
-    Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("operatingSystems");
+    Aws::Utils::Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("operatingSystems");
     for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
     {
       m_operatingSystems.push_back(operatingSystemsJsonList[operatingSystemsIndex].AsString());
@@ -115,7 +115,7 @@ JsonValue RepositoryCatalogData::Jsonize() const
 
   if(m_architecturesHasBeenSet)
   {
-   Array<JsonValue> architecturesJsonList(m_architectures.size());
+   Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
    {
      architecturesJsonList[architecturesIndex].AsString(m_architectures[architecturesIndex]);
@@ -126,7 +126,7 @@ JsonValue RepositoryCatalogData::Jsonize() const
 
   if(m_operatingSystemsHasBeenSet)
   {
-   Array<JsonValue> operatingSystemsJsonList(m_operatingSystems.size());
+   Aws::Utils::Array<JsonValue> operatingSystemsJsonList(m_operatingSystems.size());
    for(unsigned operatingSystemsIndex = 0; operatingSystemsIndex < operatingSystemsJsonList.GetLength(); ++operatingSystemsIndex)
    {
      operatingSystemsJsonList[operatingSystemsIndex].AsString(m_operatingSystems[operatingSystemsIndex]);

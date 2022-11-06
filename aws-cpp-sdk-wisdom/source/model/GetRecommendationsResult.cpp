@@ -30,7 +30,7 @@ GetRecommendationsResult& GetRecommendationsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("recommendations"))
   {
-    Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
+    Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
     for(unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex)
     {
       m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());
@@ -39,7 +39,7 @@ GetRecommendationsResult& GetRecommendationsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("triggers"))
   {
-    Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
+    Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
     for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
     {
       m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());

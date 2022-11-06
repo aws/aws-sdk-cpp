@@ -62,7 +62,7 @@ ContextDataType& ContextDataType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("HttpHeaders"))
   {
-    Array<JsonView> httpHeadersJsonList = jsonValue.GetArray("HttpHeaders");
+    Aws::Utils::Array<JsonView> httpHeadersJsonList = jsonValue.GetArray("HttpHeaders");
     for(unsigned httpHeadersIndex = 0; httpHeadersIndex < httpHeadersJsonList.GetLength(); ++httpHeadersIndex)
     {
       m_httpHeaders.push_back(httpHeadersJsonList[httpHeadersIndex].AsObject());
@@ -104,7 +104,7 @@ JsonValue ContextDataType::Jsonize() const
 
   if(m_httpHeadersHasBeenSet)
   {
-   Array<JsonValue> httpHeadersJsonList(m_httpHeaders.size());
+   Aws::Utils::Array<JsonValue> httpHeadersJsonList(m_httpHeaders.size());
    for(unsigned httpHeadersIndex = 0; httpHeadersIndex < httpHeadersJsonList.GetLength(); ++httpHeadersIndex)
    {
      httpHeadersJsonList[httpHeadersIndex].AsObject(m_httpHeaders[httpHeadersIndex].Jsonize());

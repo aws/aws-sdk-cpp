@@ -30,7 +30,7 @@ ListChangesetsResult& ListChangesetsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("changesets"))
   {
-    Array<JsonView> changesetsJsonList = jsonValue.GetArray("changesets");
+    Aws::Utils::Array<JsonView> changesetsJsonList = jsonValue.GetArray("changesets");
     for(unsigned changesetsIndex = 0; changesetsIndex < changesetsJsonList.GetLength(); ++changesetsIndex)
     {
       m_changesets.push_back(changesetsJsonList[changesetsIndex].AsObject());

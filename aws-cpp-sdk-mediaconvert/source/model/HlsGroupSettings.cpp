@@ -139,7 +139,7 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adMarkers"))
   {
-    Array<JsonView> adMarkersJsonList = jsonValue.GetArray("adMarkers");
+    Aws::Utils::Array<JsonView> adMarkersJsonList = jsonValue.GetArray("adMarkers");
     for(unsigned adMarkersIndex = 0; adMarkersIndex < adMarkersJsonList.GetLength(); ++adMarkersIndex)
     {
       m_adMarkers.push_back(HlsAdMarkersMapper::GetHlsAdMarkersForName(adMarkersJsonList[adMarkersIndex].AsString()));
@@ -149,7 +149,7 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("additionalManifests"))
   {
-    Array<JsonView> additionalManifestsJsonList = jsonValue.GetArray("additionalManifests");
+    Aws::Utils::Array<JsonView> additionalManifestsJsonList = jsonValue.GetArray("additionalManifests");
     for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
     {
       m_additionalManifests.push_back(additionalManifestsJsonList[additionalManifestsIndex].AsObject());
@@ -173,7 +173,7 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("captionLanguageMappings"))
   {
-    Array<JsonView> captionLanguageMappingsJsonList = jsonValue.GetArray("captionLanguageMappings");
+    Aws::Utils::Array<JsonView> captionLanguageMappingsJsonList = jsonValue.GetArray("captionLanguageMappings");
     for(unsigned captionLanguageMappingsIndex = 0; captionLanguageMappingsIndex < captionLanguageMappingsJsonList.GetLength(); ++captionLanguageMappingsIndex)
     {
       m_captionLanguageMappings.push_back(captionLanguageMappingsJsonList[captionLanguageMappingsIndex].AsObject());
@@ -372,7 +372,7 @@ JsonValue HlsGroupSettings::Jsonize() const
 
   if(m_adMarkersHasBeenSet)
   {
-   Array<JsonValue> adMarkersJsonList(m_adMarkers.size());
+   Aws::Utils::Array<JsonValue> adMarkersJsonList(m_adMarkers.size());
    for(unsigned adMarkersIndex = 0; adMarkersIndex < adMarkersJsonList.GetLength(); ++adMarkersIndex)
    {
      adMarkersJsonList[adMarkersIndex].AsString(HlsAdMarkersMapper::GetNameForHlsAdMarkers(m_adMarkers[adMarkersIndex]));
@@ -383,7 +383,7 @@ JsonValue HlsGroupSettings::Jsonize() const
 
   if(m_additionalManifestsHasBeenSet)
   {
-   Array<JsonValue> additionalManifestsJsonList(m_additionalManifests.size());
+   Aws::Utils::Array<JsonValue> additionalManifestsJsonList(m_additionalManifests.size());
    for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
    {
      additionalManifestsJsonList[additionalManifestsIndex].AsObject(m_additionalManifests[additionalManifestsIndex].Jsonize());
@@ -405,7 +405,7 @@ JsonValue HlsGroupSettings::Jsonize() const
 
   if(m_captionLanguageMappingsHasBeenSet)
   {
-   Array<JsonValue> captionLanguageMappingsJsonList(m_captionLanguageMappings.size());
+   Aws::Utils::Array<JsonValue> captionLanguageMappingsJsonList(m_captionLanguageMappings.size());
    for(unsigned captionLanguageMappingsIndex = 0; captionLanguageMappingsIndex < captionLanguageMappingsJsonList.GetLength(); ++captionLanguageMappingsIndex)
    {
      captionLanguageMappingsJsonList[captionLanguageMappingsIndex].AsObject(m_captionLanguageMappings[captionLanguageMappingsIndex].Jsonize());

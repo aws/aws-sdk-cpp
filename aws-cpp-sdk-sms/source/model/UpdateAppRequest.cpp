@@ -52,7 +52,7 @@ Aws::String UpdateAppRequest::SerializePayload() const
 
   if(m_serverGroupsHasBeenSet)
   {
-   Array<JsonValue> serverGroupsJsonList(m_serverGroups.size());
+   Aws::Utils::Array<JsonValue> serverGroupsJsonList(m_serverGroups.size());
    for(unsigned serverGroupsIndex = 0; serverGroupsIndex < serverGroupsJsonList.GetLength(); ++serverGroupsIndex)
    {
      serverGroupsJsonList[serverGroupsIndex].AsObject(m_serverGroups[serverGroupsIndex].Jsonize());
@@ -63,7 +63,7 @@ Aws::String UpdateAppRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

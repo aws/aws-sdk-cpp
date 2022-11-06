@@ -33,7 +33,7 @@ CoreDefinitionVersion& CoreDefinitionVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Cores"))
   {
-    Array<JsonView> coresJsonList = jsonValue.GetArray("Cores");
+    Aws::Utils::Array<JsonView> coresJsonList = jsonValue.GetArray("Cores");
     for(unsigned coresIndex = 0; coresIndex < coresJsonList.GetLength(); ++coresIndex)
     {
       m_cores.push_back(coresJsonList[coresIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue CoreDefinitionVersion::Jsonize() const
 
   if(m_coresHasBeenSet)
   {
-   Array<JsonValue> coresJsonList(m_cores.size());
+   Aws::Utils::Array<JsonValue> coresJsonList(m_cores.size());
    for(unsigned coresIndex = 0; coresIndex < coresJsonList.GetLength(); ++coresIndex)
    {
      coresJsonList[coresIndex].AsObject(m_cores[coresIndex].Jsonize());

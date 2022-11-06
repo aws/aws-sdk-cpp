@@ -30,7 +30,7 @@ ListAssetRelationshipsResult& ListAssetRelationshipsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assetRelationshipSummaries"))
   {
-    Array<JsonView> assetRelationshipSummariesJsonList = jsonValue.GetArray("assetRelationshipSummaries");
+    Aws::Utils::Array<JsonView> assetRelationshipSummariesJsonList = jsonValue.GetArray("assetRelationshipSummaries");
     for(unsigned assetRelationshipSummariesIndex = 0; assetRelationshipSummariesIndex < assetRelationshipSummariesJsonList.GetLength(); ++assetRelationshipSummariesIndex)
     {
       m_assetRelationshipSummaries.push_back(assetRelationshipSummariesJsonList[assetRelationshipSummariesIndex].AsObject());

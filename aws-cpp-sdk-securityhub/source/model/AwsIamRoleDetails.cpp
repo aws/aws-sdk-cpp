@@ -60,7 +60,7 @@ AwsIamRoleDetails& AwsIamRoleDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttachedManagedPolicies"))
   {
-    Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");
+    Aws::Utils::Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");
     for(unsigned attachedManagedPoliciesIndex = 0; attachedManagedPoliciesIndex < attachedManagedPoliciesJsonList.GetLength(); ++attachedManagedPoliciesIndex)
     {
       m_attachedManagedPolicies.push_back(attachedManagedPoliciesJsonList[attachedManagedPoliciesIndex].AsObject());
@@ -77,7 +77,7 @@ AwsIamRoleDetails& AwsIamRoleDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceProfileList"))
   {
-    Array<JsonView> instanceProfileListJsonList = jsonValue.GetArray("InstanceProfileList");
+    Aws::Utils::Array<JsonView> instanceProfileListJsonList = jsonValue.GetArray("InstanceProfileList");
     for(unsigned instanceProfileListIndex = 0; instanceProfileListIndex < instanceProfileListJsonList.GetLength(); ++instanceProfileListIndex)
     {
       m_instanceProfileList.push_back(instanceProfileListJsonList[instanceProfileListIndex].AsObject());
@@ -108,7 +108,7 @@ AwsIamRoleDetails& AwsIamRoleDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RolePolicyList"))
   {
-    Array<JsonView> rolePolicyListJsonList = jsonValue.GetArray("RolePolicyList");
+    Aws::Utils::Array<JsonView> rolePolicyListJsonList = jsonValue.GetArray("RolePolicyList");
     for(unsigned rolePolicyListIndex = 0; rolePolicyListIndex < rolePolicyListJsonList.GetLength(); ++rolePolicyListIndex)
     {
       m_rolePolicyList.push_back(rolePolicyListJsonList[rolePolicyListIndex].AsObject());
@@ -145,7 +145,7 @@ JsonValue AwsIamRoleDetails::Jsonize() const
 
   if(m_attachedManagedPoliciesHasBeenSet)
   {
-   Array<JsonValue> attachedManagedPoliciesJsonList(m_attachedManagedPolicies.size());
+   Aws::Utils::Array<JsonValue> attachedManagedPoliciesJsonList(m_attachedManagedPolicies.size());
    for(unsigned attachedManagedPoliciesIndex = 0; attachedManagedPoliciesIndex < attachedManagedPoliciesJsonList.GetLength(); ++attachedManagedPoliciesIndex)
    {
      attachedManagedPoliciesJsonList[attachedManagedPoliciesIndex].AsObject(m_attachedManagedPolicies[attachedManagedPoliciesIndex].Jsonize());
@@ -162,7 +162,7 @@ JsonValue AwsIamRoleDetails::Jsonize() const
 
   if(m_instanceProfileListHasBeenSet)
   {
-   Array<JsonValue> instanceProfileListJsonList(m_instanceProfileList.size());
+   Aws::Utils::Array<JsonValue> instanceProfileListJsonList(m_instanceProfileList.size());
    for(unsigned instanceProfileListIndex = 0; instanceProfileListIndex < instanceProfileListJsonList.GetLength(); ++instanceProfileListIndex)
    {
      instanceProfileListJsonList[instanceProfileListIndex].AsObject(m_instanceProfileList[instanceProfileListIndex].Jsonize());
@@ -191,7 +191,7 @@ JsonValue AwsIamRoleDetails::Jsonize() const
 
   if(m_rolePolicyListHasBeenSet)
   {
-   Array<JsonValue> rolePolicyListJsonList(m_rolePolicyList.size());
+   Aws::Utils::Array<JsonValue> rolePolicyListJsonList(m_rolePolicyList.size());
    for(unsigned rolePolicyListIndex = 0; rolePolicyListIndex < rolePolicyListJsonList.GetLength(); ++rolePolicyListIndex)
    {
      rolePolicyListJsonList[rolePolicyListIndex].AsObject(m_rolePolicyList[rolePolicyListIndex].Jsonize());

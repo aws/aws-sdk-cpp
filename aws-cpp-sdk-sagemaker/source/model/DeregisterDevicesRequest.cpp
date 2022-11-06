@@ -30,7 +30,7 @@ Aws::String DeregisterDevicesRequest::SerializePayload() const
 
   if(m_deviceNamesHasBeenSet)
   {
-   Array<JsonValue> deviceNamesJsonList(m_deviceNames.size());
+   Aws::Utils::Array<JsonValue> deviceNamesJsonList(m_deviceNames.size());
    for(unsigned deviceNamesIndex = 0; deviceNamesIndex < deviceNamesJsonList.GetLength(); ++deviceNamesIndex)
    {
      deviceNamesJsonList[deviceNamesIndex].AsString(m_deviceNames[deviceNamesIndex]);

@@ -60,7 +60,7 @@ WorkspacesIpGroup& WorkspacesIpGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("userRules"))
   {
-    Array<JsonView> userRulesJsonList = jsonValue.GetArray("userRules");
+    Aws::Utils::Array<JsonView> userRulesJsonList = jsonValue.GetArray("userRules");
     for(unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex)
     {
       m_userRules.push_back(userRulesJsonList[userRulesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue WorkspacesIpGroup::Jsonize() const
 
   if(m_userRulesHasBeenSet)
   {
-   Array<JsonValue> userRulesJsonList(m_userRules.size());
+   Aws::Utils::Array<JsonValue> userRulesJsonList(m_userRules.size());
    for(unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex)
    {
      userRulesJsonList[userRulesIndex].AsObject(m_userRules[userRulesIndex].Jsonize());

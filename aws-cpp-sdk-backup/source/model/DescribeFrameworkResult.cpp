@@ -48,7 +48,7 @@ DescribeFrameworkResult& DescribeFrameworkResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("FrameworkControls"))
   {
-    Array<JsonView> frameworkControlsJsonList = jsonValue.GetArray("FrameworkControls");
+    Aws::Utils::Array<JsonView> frameworkControlsJsonList = jsonValue.GetArray("FrameworkControls");
     for(unsigned frameworkControlsIndex = 0; frameworkControlsIndex < frameworkControlsJsonList.GetLength(); ++frameworkControlsIndex)
     {
       m_frameworkControls.push_back(frameworkControlsJsonList[frameworkControlsIndex].AsObject());

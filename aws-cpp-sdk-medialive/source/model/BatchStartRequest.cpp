@@ -24,7 +24,7 @@ Aws::String BatchStartRequest::SerializePayload() const
 
   if(m_channelIdsHasBeenSet)
   {
-   Array<JsonValue> channelIdsJsonList(m_channelIds.size());
+   Aws::Utils::Array<JsonValue> channelIdsJsonList(m_channelIds.size());
    for(unsigned channelIdsIndex = 0; channelIdsIndex < channelIdsJsonList.GetLength(); ++channelIdsIndex)
    {
      channelIdsJsonList[channelIdsIndex].AsString(m_channelIds[channelIdsIndex]);
@@ -35,7 +35,7 @@ Aws::String BatchStartRequest::SerializePayload() const
 
   if(m_multiplexIdsHasBeenSet)
   {
-   Array<JsonValue> multiplexIdsJsonList(m_multiplexIds.size());
+   Aws::Utils::Array<JsonValue> multiplexIdsJsonList(m_multiplexIds.size());
    for(unsigned multiplexIdsIndex = 0; multiplexIdsIndex < multiplexIdsJsonList.GetLength(); ++multiplexIdsIndex)
    {
      multiplexIdsJsonList[multiplexIdsIndex].AsString(m_multiplexIds[multiplexIdsIndex]);

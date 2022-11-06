@@ -52,7 +52,7 @@ BrokerNodeGroupInfo& BrokerNodeGroupInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("clientSubnets"))
   {
-    Array<JsonView> clientSubnetsJsonList = jsonValue.GetArray("clientSubnets");
+    Aws::Utils::Array<JsonView> clientSubnetsJsonList = jsonValue.GetArray("clientSubnets");
     for(unsigned clientSubnetsIndex = 0; clientSubnetsIndex < clientSubnetsJsonList.GetLength(); ++clientSubnetsIndex)
     {
       m_clientSubnets.push_back(clientSubnetsJsonList[clientSubnetsIndex].AsString());
@@ -69,7 +69,7 @@ BrokerNodeGroupInfo& BrokerNodeGroupInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -105,7 +105,7 @@ JsonValue BrokerNodeGroupInfo::Jsonize() const
 
   if(m_clientSubnetsHasBeenSet)
   {
-   Array<JsonValue> clientSubnetsJsonList(m_clientSubnets.size());
+   Aws::Utils::Array<JsonValue> clientSubnetsJsonList(m_clientSubnets.size());
    for(unsigned clientSubnetsIndex = 0; clientSubnetsIndex < clientSubnetsJsonList.GetLength(); ++clientSubnetsIndex)
    {
      clientSubnetsJsonList[clientSubnetsIndex].AsString(m_clientSubnets[clientSubnetsIndex]);
@@ -122,7 +122,7 @@ JsonValue BrokerNodeGroupInfo::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);

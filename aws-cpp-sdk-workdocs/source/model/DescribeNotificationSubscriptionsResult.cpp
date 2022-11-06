@@ -30,7 +30,7 @@ DescribeNotificationSubscriptionsResult& DescribeNotificationSubscriptionsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Subscriptions"))
   {
-    Array<JsonView> subscriptionsJsonList = jsonValue.GetArray("Subscriptions");
+    Aws::Utils::Array<JsonView> subscriptionsJsonList = jsonValue.GetArray("Subscriptions");
     for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
     {
       m_subscriptions.push_back(subscriptionsJsonList[subscriptionsIndex].AsObject());

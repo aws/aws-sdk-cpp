@@ -64,7 +64,7 @@ Aws::String CreateLicenseConfigurationRequest::SerializePayload() const
 
   if(m_licenseRulesHasBeenSet)
   {
-   Array<JsonValue> licenseRulesJsonList(m_licenseRules.size());
+   Aws::Utils::Array<JsonValue> licenseRulesJsonList(m_licenseRules.size());
    for(unsigned licenseRulesIndex = 0; licenseRulesIndex < licenseRulesJsonList.GetLength(); ++licenseRulesIndex)
    {
      licenseRulesJsonList[licenseRulesIndex].AsString(m_licenseRules[licenseRulesIndex]);
@@ -75,7 +75,7 @@ Aws::String CreateLicenseConfigurationRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -92,7 +92,7 @@ Aws::String CreateLicenseConfigurationRequest::SerializePayload() const
 
   if(m_productInformationListHasBeenSet)
   {
-   Array<JsonValue> productInformationListJsonList(m_productInformationList.size());
+   Aws::Utils::Array<JsonValue> productInformationListJsonList(m_productInformationList.size());
    for(unsigned productInformationListIndex = 0; productInformationListIndex < productInformationListJsonList.GetLength(); ++productInformationListIndex)
    {
      productInformationListJsonList[productInformationListIndex].AsObject(m_productInformationList[productInformationListIndex].Jsonize());

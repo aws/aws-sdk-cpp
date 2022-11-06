@@ -30,7 +30,7 @@ DescribeTableResult& DescribeTableResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ColumnList"))
   {
-    Array<JsonView> columnListJsonList = jsonValue.GetArray("ColumnList");
+    Aws::Utils::Array<JsonView> columnListJsonList = jsonValue.GetArray("ColumnList");
     for(unsigned columnListIndex = 0; columnListIndex < columnListJsonList.GetLength(); ++columnListIndex)
     {
       m_columnList.push_back(columnListJsonList[columnListIndex].AsObject());

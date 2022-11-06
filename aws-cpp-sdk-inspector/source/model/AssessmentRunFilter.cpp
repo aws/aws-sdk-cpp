@@ -52,7 +52,7 @@ AssessmentRunFilter& AssessmentRunFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("states"))
   {
-    Array<JsonView> statesJsonList = jsonValue.GetArray("states");
+    Aws::Utils::Array<JsonView> statesJsonList = jsonValue.GetArray("states");
     for(unsigned statesIndex = 0; statesIndex < statesJsonList.GetLength(); ++statesIndex)
     {
       m_states.push_back(AssessmentRunStateMapper::GetAssessmentRunStateForName(statesJsonList[statesIndex].AsString()));
@@ -69,7 +69,7 @@ AssessmentRunFilter& AssessmentRunFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
-    Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
+    Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
     for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
     {
       m_rulesPackageArns.push_back(rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString());
@@ -113,7 +113,7 @@ JsonValue AssessmentRunFilter::Jsonize() const
 
   if(m_statesHasBeenSet)
   {
-   Array<JsonValue> statesJsonList(m_states.size());
+   Aws::Utils::Array<JsonValue> statesJsonList(m_states.size());
    for(unsigned statesIndex = 0; statesIndex < statesJsonList.GetLength(); ++statesIndex)
    {
      statesJsonList[statesIndex].AsString(AssessmentRunStateMapper::GetNameForAssessmentRunState(m_states[statesIndex]));
@@ -130,7 +130,7 @@ JsonValue AssessmentRunFilter::Jsonize() const
 
   if(m_rulesPackageArnsHasBeenSet)
   {
-   Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
+   Aws::Utils::Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
    for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
    {
      rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString(m_rulesPackageArns[rulesPackageArnsIndex]);

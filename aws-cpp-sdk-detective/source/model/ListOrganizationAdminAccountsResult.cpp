@@ -30,7 +30,7 @@ ListOrganizationAdminAccountsResult& ListOrganizationAdminAccountsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Administrators"))
   {
-    Array<JsonView> administratorsJsonList = jsonValue.GetArray("Administrators");
+    Aws::Utils::Array<JsonView> administratorsJsonList = jsonValue.GetArray("Administrators");
     for(unsigned administratorsIndex = 0; administratorsIndex < administratorsJsonList.GetLength(); ++administratorsIndex)
     {
       m_administrators.push_back(administratorsJsonList[administratorsIndex].AsObject());

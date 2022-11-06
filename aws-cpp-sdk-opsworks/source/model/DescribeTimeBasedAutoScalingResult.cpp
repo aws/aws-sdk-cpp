@@ -30,7 +30,7 @@ DescribeTimeBasedAutoScalingResult& DescribeTimeBasedAutoScalingResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TimeBasedAutoScalingConfigurations"))
   {
-    Array<JsonView> timeBasedAutoScalingConfigurationsJsonList = jsonValue.GetArray("TimeBasedAutoScalingConfigurations");
+    Aws::Utils::Array<JsonView> timeBasedAutoScalingConfigurationsJsonList = jsonValue.GetArray("TimeBasedAutoScalingConfigurations");
     for(unsigned timeBasedAutoScalingConfigurationsIndex = 0; timeBasedAutoScalingConfigurationsIndex < timeBasedAutoScalingConfigurationsJsonList.GetLength(); ++timeBasedAutoScalingConfigurationsIndex)
     {
       m_timeBasedAutoScalingConfigurations.push_back(timeBasedAutoScalingConfigurationsJsonList[timeBasedAutoScalingConfigurationsIndex].AsObject());

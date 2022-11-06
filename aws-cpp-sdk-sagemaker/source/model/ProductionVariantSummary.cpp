@@ -64,7 +64,7 @@ ProductionVariantSummary& ProductionVariantSummary::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("DeployedImages"))
   {
-    Array<JsonView> deployedImagesJsonList = jsonValue.GetArray("DeployedImages");
+    Aws::Utils::Array<JsonView> deployedImagesJsonList = jsonValue.GetArray("DeployedImages");
     for(unsigned deployedImagesIndex = 0; deployedImagesIndex < deployedImagesJsonList.GetLength(); ++deployedImagesIndex)
     {
       m_deployedImages.push_back(deployedImagesJsonList[deployedImagesIndex].AsObject());
@@ -102,7 +102,7 @@ ProductionVariantSummary& ProductionVariantSummary::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("VariantStatus"))
   {
-    Array<JsonView> variantStatusJsonList = jsonValue.GetArray("VariantStatus");
+    Aws::Utils::Array<JsonView> variantStatusJsonList = jsonValue.GetArray("VariantStatus");
     for(unsigned variantStatusIndex = 0; variantStatusIndex < variantStatusJsonList.GetLength(); ++variantStatusIndex)
     {
       m_variantStatus.push_back(variantStatusJsonList[variantStatusIndex].AsObject());
@@ -139,7 +139,7 @@ JsonValue ProductionVariantSummary::Jsonize() const
 
   if(m_deployedImagesHasBeenSet)
   {
-   Array<JsonValue> deployedImagesJsonList(m_deployedImages.size());
+   Aws::Utils::Array<JsonValue> deployedImagesJsonList(m_deployedImages.size());
    for(unsigned deployedImagesIndex = 0; deployedImagesIndex < deployedImagesJsonList.GetLength(); ++deployedImagesIndex)
    {
      deployedImagesJsonList[deployedImagesIndex].AsObject(m_deployedImages[deployedImagesIndex].Jsonize());
@@ -174,7 +174,7 @@ JsonValue ProductionVariantSummary::Jsonize() const
 
   if(m_variantStatusHasBeenSet)
   {
-   Array<JsonValue> variantStatusJsonList(m_variantStatus.size());
+   Aws::Utils::Array<JsonValue> variantStatusJsonList(m_variantStatus.size());
    for(unsigned variantStatusIndex = 0; variantStatusIndex < variantStatusJsonList.GetLength(); ++variantStatusIndex)
    {
      variantStatusJsonList[variantStatusIndex].AsObject(m_variantStatus[variantStatusIndex].Jsonize());

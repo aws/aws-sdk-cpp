@@ -137,7 +137,7 @@ Bundle& Bundle::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedPlatforms"))
   {
-    Array<JsonView> supportedPlatformsJsonList = jsonValue.GetArray("supportedPlatforms");
+    Aws::Utils::Array<JsonView> supportedPlatformsJsonList = jsonValue.GetArray("supportedPlatforms");
     for(unsigned supportedPlatformsIndex = 0; supportedPlatformsIndex < supportedPlatformsJsonList.GetLength(); ++supportedPlatformsIndex)
     {
       m_supportedPlatforms.push_back(InstancePlatformMapper::GetInstancePlatformForName(supportedPlatformsJsonList[supportedPlatformsIndex].AsString()));
@@ -214,7 +214,7 @@ JsonValue Bundle::Jsonize() const
 
   if(m_supportedPlatformsHasBeenSet)
   {
-   Array<JsonValue> supportedPlatformsJsonList(m_supportedPlatforms.size());
+   Aws::Utils::Array<JsonValue> supportedPlatformsJsonList(m_supportedPlatforms.size());
    for(unsigned supportedPlatformsIndex = 0; supportedPlatformsIndex < supportedPlatformsJsonList.GetLength(); ++supportedPlatformsIndex)
    {
      supportedPlatformsJsonList[supportedPlatformsIndex].AsString(InstancePlatformMapper::GetNameForInstancePlatform(m_supportedPlatforms[supportedPlatformsIndex]));

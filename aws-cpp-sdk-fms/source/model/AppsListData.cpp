@@ -80,7 +80,7 @@ AppsListData& AppsListData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AppsList"))
   {
-    Array<JsonView> appsListJsonList = jsonValue.GetArray("AppsList");
+    Aws::Utils::Array<JsonView> appsListJsonList = jsonValue.GetArray("AppsList");
     for(unsigned appsListIndex = 0; appsListIndex < appsListJsonList.GetLength(); ++appsListIndex)
     {
       m_appsList.push_back(appsListJsonList[appsListIndex].AsObject());
@@ -93,7 +93,7 @@ AppsListData& AppsListData::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> previousAppsListJsonMap = jsonValue.GetObject("PreviousAppsList").GetAllObjects();
     for(auto& previousAppsListItem : previousAppsListJsonMap)
     {
-      Array<JsonView> appsListJsonList = previousAppsListItem.second.AsArray();
+      Aws::Utils::Array<JsonView> appsListJsonList = previousAppsListItem.second.AsArray();
       Aws::Vector<App> appsListList;
       appsListList.reserve((size_t)appsListJsonList.GetLength());
       for(unsigned appsListIndex = 0; appsListIndex < appsListJsonList.GetLength(); ++appsListIndex)
@@ -142,7 +142,7 @@ JsonValue AppsListData::Jsonize() const
 
   if(m_appsListHasBeenSet)
   {
-   Array<JsonValue> appsListJsonList(m_appsList.size());
+   Aws::Utils::Array<JsonValue> appsListJsonList(m_appsList.size());
    for(unsigned appsListIndex = 0; appsListIndex < appsListJsonList.GetLength(); ++appsListIndex)
    {
      appsListJsonList[appsListIndex].AsObject(m_appsList[appsListIndex].Jsonize());
@@ -156,7 +156,7 @@ JsonValue AppsListData::Jsonize() const
    JsonValue previousAppsListJsonMap;
    for(auto& previousAppsListItem : m_previousAppsList)
    {
-     Array<JsonValue> appsListJsonList(previousAppsListItem.second.size());
+     Aws::Utils::Array<JsonValue> appsListJsonList(previousAppsListItem.second.size());
      for(unsigned appsListIndex = 0; appsListIndex < appsListJsonList.GetLength(); ++appsListIndex)
      {
        appsListJsonList[appsListIndex].AsObject(previousAppsListItem.second[appsListIndex].Jsonize());

@@ -30,7 +30,7 @@ ListSchedulesResult& ListSchedulesResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Schedules"))
   {
-    Array<JsonView> schedulesJsonList = jsonValue.GetArray("Schedules");
+    Aws::Utils::Array<JsonView> schedulesJsonList = jsonValue.GetArray("Schedules");
     for(unsigned schedulesIndex = 0; schedulesIndex < schedulesJsonList.GetLength(); ++schedulesIndex)
     {
       m_schedules.push_back(schedulesJsonList[schedulesIndex].AsObject());

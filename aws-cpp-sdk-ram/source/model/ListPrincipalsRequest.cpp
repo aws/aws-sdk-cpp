@@ -42,7 +42,7 @@ Aws::String ListPrincipalsRequest::SerializePayload() const
 
   if(m_principalsHasBeenSet)
   {
-   Array<JsonValue> principalsJsonList(m_principals.size());
+   Aws::Utils::Array<JsonValue> principalsJsonList(m_principals.size());
    for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
    {
      principalsJsonList[principalsIndex].AsString(m_principals[principalsIndex]);
@@ -59,7 +59,7 @@ Aws::String ListPrincipalsRequest::SerializePayload() const
 
   if(m_resourceShareArnsHasBeenSet)
   {
-   Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
+   Aws::Utils::Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
    for(unsigned resourceShareArnsIndex = 0; resourceShareArnsIndex < resourceShareArnsJsonList.GetLength(); ++resourceShareArnsIndex)
    {
      resourceShareArnsJsonList[resourceShareArnsIndex].AsString(m_resourceShareArns[resourceShareArnsIndex]);

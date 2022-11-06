@@ -60,7 +60,7 @@ SidewalkDevice& SidewalkDevice::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DeviceCertificates"))
   {
-    Array<JsonView> deviceCertificatesJsonList = jsonValue.GetArray("DeviceCertificates");
+    Aws::Utils::Array<JsonView> deviceCertificatesJsonList = jsonValue.GetArray("DeviceCertificates");
     for(unsigned deviceCertificatesIndex = 0; deviceCertificatesIndex < deviceCertificatesJsonList.GetLength(); ++deviceCertificatesIndex)
     {
       m_deviceCertificates.push_back(deviceCertificatesJsonList[deviceCertificatesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue SidewalkDevice::Jsonize() const
 
   if(m_deviceCertificatesHasBeenSet)
   {
-   Array<JsonValue> deviceCertificatesJsonList(m_deviceCertificates.size());
+   Aws::Utils::Array<JsonValue> deviceCertificatesJsonList(m_deviceCertificates.size());
    for(unsigned deviceCertificatesIndex = 0; deviceCertificatesIndex < deviceCertificatesJsonList.GetLength(); ++deviceCertificatesIndex)
    {
      deviceCertificatesJsonList[deviceCertificatesIndex].AsObject(m_deviceCertificates[deviceCertificatesIndex].Jsonize());

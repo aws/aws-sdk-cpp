@@ -42,7 +42,7 @@ Aws::String CreateFargateProfileRequest::SerializePayload() const
 
   if(m_subnetsHasBeenSet)
   {
-   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
    {
      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
@@ -53,7 +53,7 @@ Aws::String CreateFargateProfileRequest::SerializePayload() const
 
   if(m_selectorsHasBeenSet)
   {
-   Array<JsonValue> selectorsJsonList(m_selectors.size());
+   Aws::Utils::Array<JsonValue> selectorsJsonList(m_selectors.size());
    for(unsigned selectorsIndex = 0; selectorsIndex < selectorsJsonList.GetLength(); ++selectorsIndex)
    {
      selectorsJsonList[selectorsIndex].AsObject(m_selectors[selectorsIndex].Jsonize());

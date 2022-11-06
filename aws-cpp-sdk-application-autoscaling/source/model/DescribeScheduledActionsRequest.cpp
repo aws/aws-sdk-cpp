@@ -31,7 +31,7 @@ Aws::String DescribeScheduledActionsRequest::SerializePayload() const
 
   if(m_scheduledActionNamesHasBeenSet)
   {
-   Array<JsonValue> scheduledActionNamesJsonList(m_scheduledActionNames.size());
+   Aws::Utils::Array<JsonValue> scheduledActionNamesJsonList(m_scheduledActionNames.size());
    for(unsigned scheduledActionNamesIndex = 0; scheduledActionNamesIndex < scheduledActionNamesJsonList.GetLength(); ++scheduledActionNamesIndex)
    {
      scheduledActionNamesJsonList[scheduledActionNamesIndex].AsString(m_scheduledActionNames[scheduledActionNamesIndex]);

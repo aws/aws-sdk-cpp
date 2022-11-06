@@ -30,7 +30,7 @@ ListFleetMetricsResult& ListFleetMetricsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("fleetMetrics"))
   {
-    Array<JsonView> fleetMetricsJsonList = jsonValue.GetArray("fleetMetrics");
+    Aws::Utils::Array<JsonView> fleetMetricsJsonList = jsonValue.GetArray("fleetMetrics");
     for(unsigned fleetMetricsIndex = 0; fleetMetricsIndex < fleetMetricsJsonList.GetLength(); ++fleetMetricsIndex)
     {
       m_fleetMetrics.push_back(fleetMetricsJsonList[fleetMetricsIndex].AsObject());

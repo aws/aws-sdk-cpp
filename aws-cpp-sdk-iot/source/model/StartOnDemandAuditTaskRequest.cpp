@@ -23,7 +23,7 @@ Aws::String StartOnDemandAuditTaskRequest::SerializePayload() const
 
   if(m_targetCheckNamesHasBeenSet)
   {
-   Array<JsonValue> targetCheckNamesJsonList(m_targetCheckNames.size());
+   Aws::Utils::Array<JsonValue> targetCheckNamesJsonList(m_targetCheckNames.size());
    for(unsigned targetCheckNamesIndex = 0; targetCheckNamesIndex < targetCheckNamesJsonList.GetLength(); ++targetCheckNamesIndex)
    {
      targetCheckNamesJsonList[targetCheckNamesIndex].AsString(m_targetCheckNames[targetCheckNamesIndex]);

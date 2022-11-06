@@ -162,7 +162,7 @@ Layer& Layer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CustomSecurityGroupIds"))
   {
-    Array<JsonView> customSecurityGroupIdsJsonList = jsonValue.GetArray("CustomSecurityGroupIds");
+    Aws::Utils::Array<JsonView> customSecurityGroupIdsJsonList = jsonValue.GetArray("CustomSecurityGroupIds");
     for(unsigned customSecurityGroupIdsIndex = 0; customSecurityGroupIdsIndex < customSecurityGroupIdsJsonList.GetLength(); ++customSecurityGroupIdsIndex)
     {
       m_customSecurityGroupIds.push_back(customSecurityGroupIdsJsonList[customSecurityGroupIdsIndex].AsString());
@@ -172,7 +172,7 @@ Layer& Layer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DefaultSecurityGroupNames"))
   {
-    Array<JsonView> defaultSecurityGroupNamesJsonList = jsonValue.GetArray("DefaultSecurityGroupNames");
+    Aws::Utils::Array<JsonView> defaultSecurityGroupNamesJsonList = jsonValue.GetArray("DefaultSecurityGroupNames");
     for(unsigned defaultSecurityGroupNamesIndex = 0; defaultSecurityGroupNamesIndex < defaultSecurityGroupNamesJsonList.GetLength(); ++defaultSecurityGroupNamesIndex)
     {
       m_defaultSecurityGroupNames.push_back(defaultSecurityGroupNamesJsonList[defaultSecurityGroupNamesIndex].AsString());
@@ -182,7 +182,7 @@ Layer& Layer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Packages"))
   {
-    Array<JsonView> packagesJsonList = jsonValue.GetArray("Packages");
+    Aws::Utils::Array<JsonView> packagesJsonList = jsonValue.GetArray("Packages");
     for(unsigned packagesIndex = 0; packagesIndex < packagesJsonList.GetLength(); ++packagesIndex)
     {
       m_packages.push_back(packagesJsonList[packagesIndex].AsString());
@@ -192,7 +192,7 @@ Layer& Layer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VolumeConfigurations"))
   {
-    Array<JsonView> volumeConfigurationsJsonList = jsonValue.GetArray("VolumeConfigurations");
+    Aws::Utils::Array<JsonView> volumeConfigurationsJsonList = jsonValue.GetArray("VolumeConfigurations");
     for(unsigned volumeConfigurationsIndex = 0; volumeConfigurationsIndex < volumeConfigurationsJsonList.GetLength(); ++volumeConfigurationsIndex)
     {
       m_volumeConfigurations.push_back(volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject());
@@ -336,7 +336,7 @@ JsonValue Layer::Jsonize() const
 
   if(m_customSecurityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> customSecurityGroupIdsJsonList(m_customSecurityGroupIds.size());
+   Aws::Utils::Array<JsonValue> customSecurityGroupIdsJsonList(m_customSecurityGroupIds.size());
    for(unsigned customSecurityGroupIdsIndex = 0; customSecurityGroupIdsIndex < customSecurityGroupIdsJsonList.GetLength(); ++customSecurityGroupIdsIndex)
    {
      customSecurityGroupIdsJsonList[customSecurityGroupIdsIndex].AsString(m_customSecurityGroupIds[customSecurityGroupIdsIndex]);
@@ -347,7 +347,7 @@ JsonValue Layer::Jsonize() const
 
   if(m_defaultSecurityGroupNamesHasBeenSet)
   {
-   Array<JsonValue> defaultSecurityGroupNamesJsonList(m_defaultSecurityGroupNames.size());
+   Aws::Utils::Array<JsonValue> defaultSecurityGroupNamesJsonList(m_defaultSecurityGroupNames.size());
    for(unsigned defaultSecurityGroupNamesIndex = 0; defaultSecurityGroupNamesIndex < defaultSecurityGroupNamesJsonList.GetLength(); ++defaultSecurityGroupNamesIndex)
    {
      defaultSecurityGroupNamesJsonList[defaultSecurityGroupNamesIndex].AsString(m_defaultSecurityGroupNames[defaultSecurityGroupNamesIndex]);
@@ -358,7 +358,7 @@ JsonValue Layer::Jsonize() const
 
   if(m_packagesHasBeenSet)
   {
-   Array<JsonValue> packagesJsonList(m_packages.size());
+   Aws::Utils::Array<JsonValue> packagesJsonList(m_packages.size());
    for(unsigned packagesIndex = 0; packagesIndex < packagesJsonList.GetLength(); ++packagesIndex)
    {
      packagesJsonList[packagesIndex].AsString(m_packages[packagesIndex]);
@@ -369,7 +369,7 @@ JsonValue Layer::Jsonize() const
 
   if(m_volumeConfigurationsHasBeenSet)
   {
-   Array<JsonValue> volumeConfigurationsJsonList(m_volumeConfigurations.size());
+   Aws::Utils::Array<JsonValue> volumeConfigurationsJsonList(m_volumeConfigurations.size());
    for(unsigned volumeConfigurationsIndex = 0; volumeConfigurationsIndex < volumeConfigurationsJsonList.GetLength(); ++volumeConfigurationsIndex)
    {
      volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject(m_volumeConfigurations[volumeConfigurationsIndex].Jsonize());

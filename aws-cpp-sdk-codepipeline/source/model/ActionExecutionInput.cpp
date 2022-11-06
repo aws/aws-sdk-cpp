@@ -86,7 +86,7 @@ ActionExecutionInput& ActionExecutionInput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputArtifacts"))
   {
-    Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
+    Aws::Utils::Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
     for(unsigned inputArtifactsIndex = 0; inputArtifactsIndex < inputArtifactsJsonList.GetLength(); ++inputArtifactsIndex)
     {
       m_inputArtifacts.push_back(inputArtifactsJsonList[inputArtifactsIndex].AsObject());
@@ -150,7 +150,7 @@ JsonValue ActionExecutionInput::Jsonize() const
 
   if(m_inputArtifactsHasBeenSet)
   {
-   Array<JsonValue> inputArtifactsJsonList(m_inputArtifacts.size());
+   Aws::Utils::Array<JsonValue> inputArtifactsJsonList(m_inputArtifacts.size());
    for(unsigned inputArtifactsIndex = 0; inputArtifactsIndex < inputArtifactsJsonList.GetLength(); ++inputArtifactsIndex)
    {
      inputArtifactsJsonList[inputArtifactsIndex].AsObject(m_inputArtifacts[inputArtifactsIndex].Jsonize());

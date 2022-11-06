@@ -60,7 +60,7 @@ ResourceServerType& ResourceServerType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Scopes"))
   {
-    Array<JsonView> scopesJsonList = jsonValue.GetArray("Scopes");
+    Aws::Utils::Array<JsonView> scopesJsonList = jsonValue.GetArray("Scopes");
     for(unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex)
     {
       m_scopes.push_back(scopesJsonList[scopesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue ResourceServerType::Jsonize() const
 
   if(m_scopesHasBeenSet)
   {
-   Array<JsonValue> scopesJsonList(m_scopes.size());
+   Aws::Utils::Array<JsonValue> scopesJsonList(m_scopes.size());
    for(unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex)
    {
      scopesJsonList[scopesIndex].AsObject(m_scopes[scopesIndex].Jsonize());

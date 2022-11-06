@@ -64,7 +64,7 @@ Aws::String CreateComponentRequest::SerializePayload() const
 
   if(m_supportedOsVersionsHasBeenSet)
   {
-   Array<JsonValue> supportedOsVersionsJsonList(m_supportedOsVersions.size());
+   Aws::Utils::Array<JsonValue> supportedOsVersionsJsonList(m_supportedOsVersions.size());
    for(unsigned supportedOsVersionsIndex = 0; supportedOsVersionsIndex < supportedOsVersionsJsonList.GetLength(); ++supportedOsVersionsIndex)
    {
      supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString(m_supportedOsVersions[supportedOsVersionsIndex]);

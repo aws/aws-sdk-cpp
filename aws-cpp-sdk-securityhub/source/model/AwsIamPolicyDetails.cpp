@@ -122,7 +122,7 @@ AwsIamPolicyDetails& AwsIamPolicyDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PolicyVersionList"))
   {
-    Array<JsonView> policyVersionListJsonList = jsonValue.GetArray("PolicyVersionList");
+    Aws::Utils::Array<JsonView> policyVersionListJsonList = jsonValue.GetArray("PolicyVersionList");
     for(unsigned policyVersionListIndex = 0; policyVersionListIndex < policyVersionListJsonList.GetLength(); ++policyVersionListIndex)
     {
       m_policyVersionList.push_back(policyVersionListJsonList[policyVersionListIndex].AsObject());
@@ -200,7 +200,7 @@ JsonValue AwsIamPolicyDetails::Jsonize() const
 
   if(m_policyVersionListHasBeenSet)
   {
-   Array<JsonValue> policyVersionListJsonList(m_policyVersionList.size());
+   Aws::Utils::Array<JsonValue> policyVersionListJsonList(m_policyVersionList.size());
    for(unsigned policyVersionListIndex = 0; policyVersionListIndex < policyVersionListJsonList.GetLength(); ++policyVersionListIndex)
    {
      policyVersionListJsonList[policyVersionListIndex].AsObject(m_policyVersionList[policyVersionListIndex].Jsonize());

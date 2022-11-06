@@ -54,7 +54,7 @@ Aws::String UpdateMatchmakingConfigurationRequest::SerializePayload() const
 
   if(m_gameSessionQueueArnsHasBeenSet)
   {
-   Array<JsonValue> gameSessionQueueArnsJsonList(m_gameSessionQueueArns.size());
+   Aws::Utils::Array<JsonValue> gameSessionQueueArnsJsonList(m_gameSessionQueueArns.size());
    for(unsigned gameSessionQueueArnsIndex = 0; gameSessionQueueArnsIndex < gameSessionQueueArnsJsonList.GetLength(); ++gameSessionQueueArnsIndex)
    {
      gameSessionQueueArnsJsonList[gameSessionQueueArnsIndex].AsString(m_gameSessionQueueArns[gameSessionQueueArnsIndex]);
@@ -107,7 +107,7 @@ Aws::String UpdateMatchmakingConfigurationRequest::SerializePayload() const
 
   if(m_gamePropertiesHasBeenSet)
   {
-   Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
+   Aws::Utils::Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
    for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
    {
      gamePropertiesJsonList[gamePropertiesIndex].AsObject(m_gameProperties[gamePropertiesIndex].Jsonize());

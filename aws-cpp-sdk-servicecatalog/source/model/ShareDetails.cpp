@@ -35,7 +35,7 @@ ShareDetails& ShareDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SuccessfulShares"))
   {
-    Array<JsonView> successfulSharesJsonList = jsonValue.GetArray("SuccessfulShares");
+    Aws::Utils::Array<JsonView> successfulSharesJsonList = jsonValue.GetArray("SuccessfulShares");
     for(unsigned successfulSharesIndex = 0; successfulSharesIndex < successfulSharesJsonList.GetLength(); ++successfulSharesIndex)
     {
       m_successfulShares.push_back(successfulSharesJsonList[successfulSharesIndex].AsString());
@@ -45,7 +45,7 @@ ShareDetails& ShareDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ShareErrors"))
   {
-    Array<JsonView> shareErrorsJsonList = jsonValue.GetArray("ShareErrors");
+    Aws::Utils::Array<JsonView> shareErrorsJsonList = jsonValue.GetArray("ShareErrors");
     for(unsigned shareErrorsIndex = 0; shareErrorsIndex < shareErrorsJsonList.GetLength(); ++shareErrorsIndex)
     {
       m_shareErrors.push_back(shareErrorsJsonList[shareErrorsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue ShareDetails::Jsonize() const
 
   if(m_successfulSharesHasBeenSet)
   {
-   Array<JsonValue> successfulSharesJsonList(m_successfulShares.size());
+   Aws::Utils::Array<JsonValue> successfulSharesJsonList(m_successfulShares.size());
    for(unsigned successfulSharesIndex = 0; successfulSharesIndex < successfulSharesJsonList.GetLength(); ++successfulSharesIndex)
    {
      successfulSharesJsonList[successfulSharesIndex].AsString(m_successfulShares[successfulSharesIndex]);
@@ -73,7 +73,7 @@ JsonValue ShareDetails::Jsonize() const
 
   if(m_shareErrorsHasBeenSet)
   {
-   Array<JsonValue> shareErrorsJsonList(m_shareErrors.size());
+   Aws::Utils::Array<JsonValue> shareErrorsJsonList(m_shareErrors.size());
    for(unsigned shareErrorsIndex = 0; shareErrorsIndex < shareErrorsJsonList.GetLength(); ++shareErrorsIndex)
    {
      shareErrorsJsonList[shareErrorsIndex].AsObject(m_shareErrors[shareErrorsIndex].Jsonize());

@@ -24,7 +24,7 @@ Aws::String BatchAssociateScramSecretRequest::SerializePayload() const
 
   if(m_secretArnListHasBeenSet)
   {
-   Array<JsonValue> secretArnListJsonList(m_secretArnList.size());
+   Aws::Utils::Array<JsonValue> secretArnListJsonList(m_secretArnList.size());
    for(unsigned secretArnListIndex = 0; secretArnListIndex < secretArnListJsonList.GetLength(); ++secretArnListIndex)
    {
      secretArnListJsonList[secretArnListIndex].AsString(m_secretArnList[secretArnListIndex]);

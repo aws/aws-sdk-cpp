@@ -39,7 +39,7 @@ Aws::String FilterLogEventsRequest::SerializePayload() const
 
   if(m_logStreamNamesHasBeenSet)
   {
-   Array<JsonValue> logStreamNamesJsonList(m_logStreamNames.size());
+   Aws::Utils::Array<JsonValue> logStreamNamesJsonList(m_logStreamNames.size());
    for(unsigned logStreamNamesIndex = 0; logStreamNamesIndex < logStreamNamesJsonList.GetLength(); ++logStreamNamesIndex)
    {
      logStreamNamesJsonList[logStreamNamesIndex].AsString(m_logStreamNames[logStreamNamesIndex]);

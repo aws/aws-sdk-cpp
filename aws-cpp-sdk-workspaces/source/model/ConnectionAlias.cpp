@@ -71,7 +71,7 @@ ConnectionAlias& ConnectionAlias::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Associations"))
   {
-    Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
+    Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
     for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
     {
       m_associations.push_back(associationsJsonList[associationsIndex].AsObject());
@@ -111,7 +111,7 @@ JsonValue ConnectionAlias::Jsonize() const
 
   if(m_associationsHasBeenSet)
   {
-   Array<JsonValue> associationsJsonList(m_associations.size());
+   Aws::Utils::Array<JsonValue> associationsJsonList(m_associations.size());
    for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
    {
      associationsJsonList[associationsIndex].AsObject(m_associations[associationsIndex].Jsonize());

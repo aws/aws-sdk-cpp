@@ -82,7 +82,7 @@ ActivatedRule& ActivatedRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExcludedRules"))
   {
-    Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
+    Aws::Utils::Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
     for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
     {
       m_excludedRules.push_back(excludedRulesJsonList[excludedRulesIndex].AsObject());
@@ -128,7 +128,7 @@ JsonValue ActivatedRule::Jsonize() const
 
   if(m_excludedRulesHasBeenSet)
   {
-   Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
+   Aws::Utils::Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
    for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
    {
      excludedRulesJsonList[excludedRulesIndex].AsObject(m_excludedRules[excludedRulesIndex].Jsonize());

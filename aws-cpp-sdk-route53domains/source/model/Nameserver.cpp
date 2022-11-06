@@ -42,7 +42,7 @@ Nameserver& Nameserver::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GlueIps"))
   {
-    Array<JsonView> glueIpsJsonList = jsonValue.GetArray("GlueIps");
+    Aws::Utils::Array<JsonView> glueIpsJsonList = jsonValue.GetArray("GlueIps");
     for(unsigned glueIpsIndex = 0; glueIpsIndex < glueIpsJsonList.GetLength(); ++glueIpsIndex)
     {
       m_glueIps.push_back(glueIpsJsonList[glueIpsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue Nameserver::Jsonize() const
 
   if(m_glueIpsHasBeenSet)
   {
-   Array<JsonValue> glueIpsJsonList(m_glueIps.size());
+   Aws::Utils::Array<JsonValue> glueIpsJsonList(m_glueIps.size());
    for(unsigned glueIpsIndex = 0; glueIpsIndex < glueIpsJsonList.GetLength(); ++glueIpsIndex)
    {
      glueIpsJsonList[glueIpsIndex].AsString(m_glueIps[glueIpsIndex]);

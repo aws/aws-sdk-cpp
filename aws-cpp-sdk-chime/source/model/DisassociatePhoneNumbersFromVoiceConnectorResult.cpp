@@ -30,7 +30,7 @@ DisassociatePhoneNumbersFromVoiceConnectorResult& DisassociatePhoneNumbersFromVo
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PhoneNumberErrors"))
   {
-    Array<JsonView> phoneNumberErrorsJsonList = jsonValue.GetArray("PhoneNumberErrors");
+    Aws::Utils::Array<JsonView> phoneNumberErrorsJsonList = jsonValue.GetArray("PhoneNumberErrors");
     for(unsigned phoneNumberErrorsIndex = 0; phoneNumberErrorsIndex < phoneNumberErrorsJsonList.GetLength(); ++phoneNumberErrorsIndex)
     {
       m_phoneNumberErrors.push_back(phoneNumberErrorsJsonList[phoneNumberErrorsIndex].AsObject());

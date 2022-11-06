@@ -206,7 +206,7 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InputDataConfig"))
   {
-    Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
+    Aws::Utils::Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
     for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
     {
       m_inputDataConfig.push_back(inputDataConfigJsonList[inputDataConfigIndex].AsObject());
@@ -272,7 +272,7 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecondaryStatusTransitions"))
   {
-    Array<JsonView> secondaryStatusTransitionsJsonList = jsonValue.GetArray("SecondaryStatusTransitions");
+    Aws::Utils::Array<JsonView> secondaryStatusTransitionsJsonList = jsonValue.GetArray("SecondaryStatusTransitions");
     for(unsigned secondaryStatusTransitionsIndex = 0; secondaryStatusTransitionsIndex < secondaryStatusTransitionsJsonList.GetLength(); ++secondaryStatusTransitionsIndex)
     {
       m_secondaryStatusTransitions.push_back(secondaryStatusTransitionsJsonList[secondaryStatusTransitionsIndex].AsObject());
@@ -282,7 +282,7 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FinalMetricDataList"))
   {
-    Array<JsonView> finalMetricDataListJsonList = jsonValue.GetArray("FinalMetricDataList");
+    Aws::Utils::Array<JsonView> finalMetricDataListJsonList = jsonValue.GetArray("FinalMetricDataList");
     for(unsigned finalMetricDataListIndex = 0; finalMetricDataListIndex < finalMetricDataListJsonList.GetLength(); ++finalMetricDataListIndex)
     {
       m_finalMetricDataList.push_back(finalMetricDataListJsonList[finalMetricDataListIndex].AsObject());
@@ -348,7 +348,7 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DebugRuleConfigurations"))
   {
-    Array<JsonView> debugRuleConfigurationsJsonList = jsonValue.GetArray("DebugRuleConfigurations");
+    Aws::Utils::Array<JsonView> debugRuleConfigurationsJsonList = jsonValue.GetArray("DebugRuleConfigurations");
     for(unsigned debugRuleConfigurationsIndex = 0; debugRuleConfigurationsIndex < debugRuleConfigurationsJsonList.GetLength(); ++debugRuleConfigurationsIndex)
     {
       m_debugRuleConfigurations.push_back(debugRuleConfigurationsJsonList[debugRuleConfigurationsIndex].AsObject());
@@ -365,7 +365,7 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DebugRuleEvaluationStatuses"))
   {
-    Array<JsonView> debugRuleEvaluationStatusesJsonList = jsonValue.GetArray("DebugRuleEvaluationStatuses");
+    Aws::Utils::Array<JsonView> debugRuleEvaluationStatusesJsonList = jsonValue.GetArray("DebugRuleEvaluationStatuses");
     for(unsigned debugRuleEvaluationStatusesIndex = 0; debugRuleEvaluationStatusesIndex < debugRuleEvaluationStatusesJsonList.GetLength(); ++debugRuleEvaluationStatusesIndex)
     {
       m_debugRuleEvaluationStatuses.push_back(debugRuleEvaluationStatusesJsonList[debugRuleEvaluationStatusesIndex].AsObject());
@@ -392,7 +392,7 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -484,7 +484,7 @@ JsonValue TrainingJob::Jsonize() const
 
   if(m_inputDataConfigHasBeenSet)
   {
-   Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
+   Aws::Utils::Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
    for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
    {
      inputDataConfigJsonList[inputDataConfigIndex].AsObject(m_inputDataConfig[inputDataConfigIndex].Jsonize());
@@ -539,7 +539,7 @@ JsonValue TrainingJob::Jsonize() const
 
   if(m_secondaryStatusTransitionsHasBeenSet)
   {
-   Array<JsonValue> secondaryStatusTransitionsJsonList(m_secondaryStatusTransitions.size());
+   Aws::Utils::Array<JsonValue> secondaryStatusTransitionsJsonList(m_secondaryStatusTransitions.size());
    for(unsigned secondaryStatusTransitionsIndex = 0; secondaryStatusTransitionsIndex < secondaryStatusTransitionsJsonList.GetLength(); ++secondaryStatusTransitionsIndex)
    {
      secondaryStatusTransitionsJsonList[secondaryStatusTransitionsIndex].AsObject(m_secondaryStatusTransitions[secondaryStatusTransitionsIndex].Jsonize());
@@ -550,7 +550,7 @@ JsonValue TrainingJob::Jsonize() const
 
   if(m_finalMetricDataListHasBeenSet)
   {
-   Array<JsonValue> finalMetricDataListJsonList(m_finalMetricDataList.size());
+   Aws::Utils::Array<JsonValue> finalMetricDataListJsonList(m_finalMetricDataList.size());
    for(unsigned finalMetricDataListIndex = 0; finalMetricDataListIndex < finalMetricDataListJsonList.GetLength(); ++finalMetricDataListIndex)
    {
      finalMetricDataListJsonList[finalMetricDataListIndex].AsObject(m_finalMetricDataList[finalMetricDataListIndex].Jsonize());
@@ -609,7 +609,7 @@ JsonValue TrainingJob::Jsonize() const
 
   if(m_debugRuleConfigurationsHasBeenSet)
   {
-   Array<JsonValue> debugRuleConfigurationsJsonList(m_debugRuleConfigurations.size());
+   Aws::Utils::Array<JsonValue> debugRuleConfigurationsJsonList(m_debugRuleConfigurations.size());
    for(unsigned debugRuleConfigurationsIndex = 0; debugRuleConfigurationsIndex < debugRuleConfigurationsJsonList.GetLength(); ++debugRuleConfigurationsIndex)
    {
      debugRuleConfigurationsJsonList[debugRuleConfigurationsIndex].AsObject(m_debugRuleConfigurations[debugRuleConfigurationsIndex].Jsonize());
@@ -626,7 +626,7 @@ JsonValue TrainingJob::Jsonize() const
 
   if(m_debugRuleEvaluationStatusesHasBeenSet)
   {
-   Array<JsonValue> debugRuleEvaluationStatusesJsonList(m_debugRuleEvaluationStatuses.size());
+   Aws::Utils::Array<JsonValue> debugRuleEvaluationStatusesJsonList(m_debugRuleEvaluationStatuses.size());
    for(unsigned debugRuleEvaluationStatusesIndex = 0; debugRuleEvaluationStatusesIndex < debugRuleEvaluationStatusesJsonList.GetLength(); ++debugRuleEvaluationStatusesIndex)
    {
      debugRuleEvaluationStatusesJsonList[debugRuleEvaluationStatusesIndex].AsObject(m_debugRuleEvaluationStatuses[debugRuleEvaluationStatusesIndex].Jsonize());
@@ -654,7 +654,7 @@ JsonValue TrainingJob::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

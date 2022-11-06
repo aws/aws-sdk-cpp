@@ -30,7 +30,7 @@ GetBuiltinSlotTypesResult& GetBuiltinSlotTypesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("slotTypes"))
   {
-    Array<JsonView> slotTypesJsonList = jsonValue.GetArray("slotTypes");
+    Aws::Utils::Array<JsonView> slotTypesJsonList = jsonValue.GetArray("slotTypes");
     for(unsigned slotTypesIndex = 0; slotTypesIndex < slotTypesJsonList.GetLength(); ++slotTypesIndex)
     {
       m_slotTypes.push_back(slotTypesJsonList[slotTypesIndex].AsObject());

@@ -70,7 +70,7 @@ GetJobResult& GetJobResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   if(jsonValue.ValueExists("events"))
   {
-    Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
+    Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
@@ -94,7 +94,7 @@ GetJobResult& GetJobResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   if(jsonValue.ValueExists("inputDataConfig"))
   {
-    Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("inputDataConfig");
+    Aws::Utils::Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("inputDataConfig");
     for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
     {
       m_inputDataConfig.push_back(inputDataConfigJsonList[inputDataConfigIndex].AsObject());

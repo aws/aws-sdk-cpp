@@ -41,7 +41,7 @@ Aws::String UpdateGameServerGroupRequest::SerializePayload() const
 
   if(m_instanceDefinitionsHasBeenSet)
   {
-   Array<JsonValue> instanceDefinitionsJsonList(m_instanceDefinitions.size());
+   Aws::Utils::Array<JsonValue> instanceDefinitionsJsonList(m_instanceDefinitions.size());
    for(unsigned instanceDefinitionsIndex = 0; instanceDefinitionsIndex < instanceDefinitionsJsonList.GetLength(); ++instanceDefinitionsIndex)
    {
      instanceDefinitionsJsonList[instanceDefinitionsIndex].AsObject(m_instanceDefinitions[instanceDefinitionsIndex].Jsonize());

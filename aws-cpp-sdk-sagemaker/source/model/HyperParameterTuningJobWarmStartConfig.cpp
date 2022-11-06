@@ -37,7 +37,7 @@ HyperParameterTuningJobWarmStartConfig& HyperParameterTuningJobWarmStartConfig::
 {
   if(jsonValue.ValueExists("ParentHyperParameterTuningJobs"))
   {
-    Array<JsonView> parentHyperParameterTuningJobsJsonList = jsonValue.GetArray("ParentHyperParameterTuningJobs");
+    Aws::Utils::Array<JsonView> parentHyperParameterTuningJobsJsonList = jsonValue.GetArray("ParentHyperParameterTuningJobs");
     for(unsigned parentHyperParameterTuningJobsIndex = 0; parentHyperParameterTuningJobsIndex < parentHyperParameterTuningJobsJsonList.GetLength(); ++parentHyperParameterTuningJobsIndex)
     {
       m_parentHyperParameterTuningJobs.push_back(parentHyperParameterTuningJobsJsonList[parentHyperParameterTuningJobsIndex].AsObject());
@@ -61,7 +61,7 @@ JsonValue HyperParameterTuningJobWarmStartConfig::Jsonize() const
 
   if(m_parentHyperParameterTuningJobsHasBeenSet)
   {
-   Array<JsonValue> parentHyperParameterTuningJobsJsonList(m_parentHyperParameterTuningJobs.size());
+   Aws::Utils::Array<JsonValue> parentHyperParameterTuningJobsJsonList(m_parentHyperParameterTuningJobs.size());
    for(unsigned parentHyperParameterTuningJobsIndex = 0; parentHyperParameterTuningJobsIndex < parentHyperParameterTuningJobsJsonList.GetLength(); ++parentHyperParameterTuningJobsIndex)
    {
      parentHyperParameterTuningJobsJsonList[parentHyperParameterTuningJobsIndex].AsObject(m_parentHyperParameterTuningJobs[parentHyperParameterTuningJobsIndex].Jsonize());

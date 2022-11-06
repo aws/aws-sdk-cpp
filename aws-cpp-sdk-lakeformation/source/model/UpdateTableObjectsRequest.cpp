@@ -51,7 +51,7 @@ Aws::String UpdateTableObjectsRequest::SerializePayload() const
 
   if(m_writeOperationsHasBeenSet)
   {
-   Array<JsonValue> writeOperationsJsonList(m_writeOperations.size());
+   Aws::Utils::Array<JsonValue> writeOperationsJsonList(m_writeOperations.size());
    for(unsigned writeOperationsIndex = 0; writeOperationsIndex < writeOperationsJsonList.GetLength(); ++writeOperationsIndex)
    {
      writeOperationsJsonList[writeOperationsIndex].AsObject(m_writeOperations[writeOperationsIndex].Jsonize());

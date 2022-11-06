@@ -36,7 +36,7 @@ AssociateMacSecKeyResult& AssociateMacSecKeyResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("macSecKeys"))
   {
-    Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
+    Aws::Utils::Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
     for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
     {
       m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());

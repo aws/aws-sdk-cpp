@@ -36,7 +36,7 @@ Aws::String CreateResourceShareRequest::SerializePayload() const
 
   if(m_resourceArnsHasBeenSet)
   {
-   Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
    for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
    {
      resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
@@ -47,7 +47,7 @@ Aws::String CreateResourceShareRequest::SerializePayload() const
 
   if(m_principalsHasBeenSet)
   {
-   Array<JsonValue> principalsJsonList(m_principals.size());
+   Aws::Utils::Array<JsonValue> principalsJsonList(m_principals.size());
    for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
    {
      principalsJsonList[principalsIndex].AsString(m_principals[principalsIndex]);
@@ -58,7 +58,7 @@ Aws::String CreateResourceShareRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -81,7 +81,7 @@ Aws::String CreateResourceShareRequest::SerializePayload() const
 
   if(m_permissionArnsHasBeenSet)
   {
-   Array<JsonValue> permissionArnsJsonList(m_permissionArns.size());
+   Aws::Utils::Array<JsonValue> permissionArnsJsonList(m_permissionArns.size());
    for(unsigned permissionArnsIndex = 0; permissionArnsIndex < permissionArnsJsonList.GetLength(); ++permissionArnsIndex)
    {
      permissionArnsJsonList[permissionArnsIndex].AsString(m_permissionArns[permissionArnsIndex]);

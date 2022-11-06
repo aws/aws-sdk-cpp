@@ -33,7 +33,7 @@ PredictorBaseline& PredictorBaseline::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BaselineMetrics"))
   {
-    Array<JsonView> baselineMetricsJsonList = jsonValue.GetArray("BaselineMetrics");
+    Aws::Utils::Array<JsonView> baselineMetricsJsonList = jsonValue.GetArray("BaselineMetrics");
     for(unsigned baselineMetricsIndex = 0; baselineMetricsIndex < baselineMetricsJsonList.GetLength(); ++baselineMetricsIndex)
     {
       m_baselineMetrics.push_back(baselineMetricsJsonList[baselineMetricsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue PredictorBaseline::Jsonize() const
 
   if(m_baselineMetricsHasBeenSet)
   {
-   Array<JsonValue> baselineMetricsJsonList(m_baselineMetrics.size());
+   Aws::Utils::Array<JsonValue> baselineMetricsJsonList(m_baselineMetrics.size());
    for(unsigned baselineMetricsIndex = 0; baselineMetricsIndex < baselineMetricsJsonList.GetLength(); ++baselineMetricsIndex)
    {
      baselineMetricsJsonList[baselineMetricsIndex].AsObject(m_baselineMetrics[baselineMetricsIndex].Jsonize());

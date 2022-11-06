@@ -45,7 +45,7 @@ AdditionalDataset& AdditionalDataset::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("Configuration").GetAllObjects();
     for(auto& configurationItem : configurationJsonMap)
     {
-      Array<JsonView> valuesJsonList = configurationItem.second.AsArray();
+      Aws::Utils::Array<JsonView> valuesJsonList = configurationItem.second.AsArray();
       Aws::Vector<Aws::String> valuesList;
       valuesList.reserve((size_t)valuesJsonList.GetLength());
       for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
@@ -75,7 +75,7 @@ JsonValue AdditionalDataset::Jsonize() const
    JsonValue configurationJsonMap;
    for(auto& configurationItem : m_configuration)
    {
-     Array<JsonValue> valuesJsonList(configurationItem.second.size());
+     Aws::Utils::Array<JsonValue> valuesJsonList(configurationItem.second.size());
      for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
      {
        valuesJsonList[valuesIndex].AsString(configurationItem.second[valuesIndex]);

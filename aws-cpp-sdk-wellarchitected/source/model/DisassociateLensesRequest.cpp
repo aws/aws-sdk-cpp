@@ -24,7 +24,7 @@ Aws::String DisassociateLensesRequest::SerializePayload() const
 
   if(m_lensAliasesHasBeenSet)
   {
-   Array<JsonValue> lensAliasesJsonList(m_lensAliases.size());
+   Aws::Utils::Array<JsonValue> lensAliasesJsonList(m_lensAliases.size());
    for(unsigned lensAliasesIndex = 0; lensAliasesIndex < lensAliasesJsonList.GetLength(); ++lensAliasesIndex)
    {
      lensAliasesJsonList[lensAliasesIndex].AsString(m_lensAliases[lensAliasesIndex]);

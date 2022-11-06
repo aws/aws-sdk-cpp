@@ -30,7 +30,7 @@ GetSamplingStatisticSummariesResult& GetSamplingStatisticSummariesResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SamplingStatisticSummaries"))
   {
-    Array<JsonView> samplingStatisticSummariesJsonList = jsonValue.GetArray("SamplingStatisticSummaries");
+    Aws::Utils::Array<JsonView> samplingStatisticSummariesJsonList = jsonValue.GetArray("SamplingStatisticSummaries");
     for(unsigned samplingStatisticSummariesIndex = 0; samplingStatisticSummariesIndex < samplingStatisticSummariesJsonList.GetLength(); ++samplingStatisticSummariesIndex)
     {
       m_samplingStatisticSummaries.push_back(samplingStatisticSummariesJsonList[samplingStatisticSummariesIndex].AsObject());

@@ -25,7 +25,7 @@ Aws::String DisassociateRoutingProfileQueuesRequest::SerializePayload() const
 
   if(m_queueReferencesHasBeenSet)
   {
-   Array<JsonValue> queueReferencesJsonList(m_queueReferences.size());
+   Aws::Utils::Array<JsonValue> queueReferencesJsonList(m_queueReferences.size());
    for(unsigned queueReferencesIndex = 0; queueReferencesIndex < queueReferencesJsonList.GetLength(); ++queueReferencesIndex)
    {
      queueReferencesJsonList[queueReferencesIndex].AsObject(m_queueReferences[queueReferencesIndex].Jsonize());

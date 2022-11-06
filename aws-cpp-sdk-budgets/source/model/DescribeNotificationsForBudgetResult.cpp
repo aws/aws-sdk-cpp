@@ -30,7 +30,7 @@ DescribeNotificationsForBudgetResult& DescribeNotificationsForBudgetResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Notifications"))
   {
-    Array<JsonView> notificationsJsonList = jsonValue.GetArray("Notifications");
+    Aws::Utils::Array<JsonView> notificationsJsonList = jsonValue.GetArray("Notifications");
     for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
     {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());

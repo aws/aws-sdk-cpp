@@ -58,7 +58,7 @@ PutBotResult& PutBotResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   if(jsonValue.ValueExists("intents"))
   {
-    Array<JsonView> intentsJsonList = jsonValue.GetArray("intents");
+    Aws::Utils::Array<JsonView> intentsJsonList = jsonValue.GetArray("intents");
     for(unsigned intentsIndex = 0; intentsIndex < intentsJsonList.GetLength(); ++intentsIndex)
     {
       m_intents.push_back(intentsJsonList[intentsIndex].AsObject());
@@ -163,7 +163,7 @@ PutBotResult& PutBotResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

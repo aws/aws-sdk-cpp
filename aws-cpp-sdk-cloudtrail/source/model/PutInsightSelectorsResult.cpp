@@ -36,7 +36,7 @@ PutInsightSelectorsResult& PutInsightSelectorsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("InsightSelectors"))
   {
-    Array<JsonView> insightSelectorsJsonList = jsonValue.GetArray("InsightSelectors");
+    Aws::Utils::Array<JsonView> insightSelectorsJsonList = jsonValue.GetArray("InsightSelectors");
     for(unsigned insightSelectorsIndex = 0; insightSelectorsIndex < insightSelectorsJsonList.GetLength(); ++insightSelectorsIndex)
     {
       m_insightSelectors.push_back(insightSelectorsJsonList[insightSelectorsIndex].AsObject());

@@ -30,7 +30,7 @@ ListCompilationJobsResult& ListCompilationJobsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CompilationJobSummaries"))
   {
-    Array<JsonView> compilationJobSummariesJsonList = jsonValue.GetArray("CompilationJobSummaries");
+    Aws::Utils::Array<JsonView> compilationJobSummariesJsonList = jsonValue.GetArray("CompilationJobSummaries");
     for(unsigned compilationJobSummariesIndex = 0; compilationJobSummariesIndex < compilationJobSummariesJsonList.GetLength(); ++compilationJobSummariesIndex)
     {
       m_compilationJobSummaries.push_back(compilationJobSummariesJsonList[compilationJobSummariesIndex].AsObject());

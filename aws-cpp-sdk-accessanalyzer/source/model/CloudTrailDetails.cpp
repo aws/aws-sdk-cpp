@@ -39,7 +39,7 @@ CloudTrailDetails& CloudTrailDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("trails"))
   {
-    Array<JsonView> trailsJsonList = jsonValue.GetArray("trails");
+    Aws::Utils::Array<JsonView> trailsJsonList = jsonValue.GetArray("trails");
     for(unsigned trailsIndex = 0; trailsIndex < trailsJsonList.GetLength(); ++trailsIndex)
     {
       m_trails.push_back(trailsJsonList[trailsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue CloudTrailDetails::Jsonize() const
 
   if(m_trailsHasBeenSet)
   {
-   Array<JsonValue> trailsJsonList(m_trails.size());
+   Aws::Utils::Array<JsonValue> trailsJsonList(m_trails.size());
    for(unsigned trailsIndex = 0; trailsIndex < trailsJsonList.GetLength(); ++trailsIndex)
    {
      trailsJsonList[trailsIndex].AsObject(m_trails[trailsIndex].Jsonize());

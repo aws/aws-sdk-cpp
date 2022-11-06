@@ -30,7 +30,7 @@ ListDefaultVocabulariesResult& ListDefaultVocabulariesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DefaultVocabularyList"))
   {
-    Array<JsonView> defaultVocabularyListJsonList = jsonValue.GetArray("DefaultVocabularyList");
+    Aws::Utils::Array<JsonView> defaultVocabularyListJsonList = jsonValue.GetArray("DefaultVocabularyList");
     for(unsigned defaultVocabularyListIndex = 0; defaultVocabularyListIndex < defaultVocabularyListJsonList.GetLength(); ++defaultVocabularyListIndex)
     {
       m_defaultVocabularyList.push_back(defaultVocabularyListJsonList[defaultVocabularyListIndex].AsObject());

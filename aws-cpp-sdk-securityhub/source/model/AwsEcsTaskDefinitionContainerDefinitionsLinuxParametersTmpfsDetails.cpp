@@ -46,7 +46,7 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails& AwsEcsTaskD
 
   if(jsonValue.ValueExists("MountOptions"))
   {
-    Array<JsonView> mountOptionsJsonList = jsonValue.GetArray("MountOptions");
+    Aws::Utils::Array<JsonView> mountOptionsJsonList = jsonValue.GetArray("MountOptions");
     for(unsigned mountOptionsIndex = 0; mountOptionsIndex < mountOptionsJsonList.GetLength(); ++mountOptionsIndex)
     {
       m_mountOptions.push_back(mountOptionsJsonList[mountOptionsIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails::J
 
   if(m_mountOptionsHasBeenSet)
   {
-   Array<JsonValue> mountOptionsJsonList(m_mountOptions.size());
+   Aws::Utils::Array<JsonValue> mountOptionsJsonList(m_mountOptions.size());
    for(unsigned mountOptionsIndex = 0; mountOptionsIndex < mountOptionsJsonList.GetLength(); ++mountOptionsIndex)
    {
      mountOptionsJsonList[mountOptionsIndex].AsString(m_mountOptions[mountOptionsIndex]);

@@ -30,7 +30,7 @@ ListAnomaliesForInsightResult& ListAnomaliesForInsightResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProactiveAnomalies"))
   {
-    Array<JsonView> proactiveAnomaliesJsonList = jsonValue.GetArray("ProactiveAnomalies");
+    Aws::Utils::Array<JsonView> proactiveAnomaliesJsonList = jsonValue.GetArray("ProactiveAnomalies");
     for(unsigned proactiveAnomaliesIndex = 0; proactiveAnomaliesIndex < proactiveAnomaliesJsonList.GetLength(); ++proactiveAnomaliesIndex)
     {
       m_proactiveAnomalies.push_back(proactiveAnomaliesJsonList[proactiveAnomaliesIndex].AsObject());
@@ -39,7 +39,7 @@ ListAnomaliesForInsightResult& ListAnomaliesForInsightResult::operator =(const A
 
   if(jsonValue.ValueExists("ReactiveAnomalies"))
   {
-    Array<JsonView> reactiveAnomaliesJsonList = jsonValue.GetArray("ReactiveAnomalies");
+    Aws::Utils::Array<JsonView> reactiveAnomaliesJsonList = jsonValue.GetArray("ReactiveAnomalies");
     for(unsigned reactiveAnomaliesIndex = 0; reactiveAnomaliesIndex < reactiveAnomaliesJsonList.GetLength(); ++reactiveAnomaliesIndex)
     {
       m_reactiveAnomalies.push_back(reactiveAnomaliesJsonList[reactiveAnomaliesIndex].AsObject());

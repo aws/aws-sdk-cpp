@@ -72,7 +72,7 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("configParameters"))
   {
-    Array<JsonView> configParametersJsonList = jsonValue.GetArray("configParameters");
+    Aws::Utils::Array<JsonView> configParametersJsonList = jsonValue.GetArray("configParameters");
     for(unsigned configParametersIndex = 0; configParametersIndex < configParametersJsonList.GetLength(); ++configParametersIndex)
     {
       m_configParameters.push_back(configParametersJsonList[configParametersIndex].AsObject());
@@ -117,7 +117,7 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("securityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -134,7 +134,7 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("subnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -178,7 +178,7 @@ JsonValue Workgroup::Jsonize() const
 
   if(m_configParametersHasBeenSet)
   {
-   Array<JsonValue> configParametersJsonList(m_configParameters.size());
+   Aws::Utils::Array<JsonValue> configParametersJsonList(m_configParameters.size());
    for(unsigned configParametersIndex = 0; configParametersIndex < configParametersJsonList.GetLength(); ++configParametersIndex)
    {
      configParametersJsonList[configParametersIndex].AsObject(m_configParameters[configParametersIndex].Jsonize());
@@ -218,7 +218,7 @@ JsonValue Workgroup::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -234,7 +234,7 @@ JsonValue Workgroup::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);

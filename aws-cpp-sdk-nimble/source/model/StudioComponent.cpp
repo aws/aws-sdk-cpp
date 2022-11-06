@@ -114,7 +114,7 @@ StudioComponent& StudioComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ec2SecurityGroupIds"))
   {
-    Array<JsonView> ec2SecurityGroupIdsJsonList = jsonValue.GetArray("ec2SecurityGroupIds");
+    Aws::Utils::Array<JsonView> ec2SecurityGroupIdsJsonList = jsonValue.GetArray("ec2SecurityGroupIds");
     for(unsigned ec2SecurityGroupIdsIndex = 0; ec2SecurityGroupIdsIndex < ec2SecurityGroupIdsJsonList.GetLength(); ++ec2SecurityGroupIdsIndex)
     {
       m_ec2SecurityGroupIds.push_back(ec2SecurityGroupIdsJsonList[ec2SecurityGroupIdsIndex].AsString());
@@ -124,7 +124,7 @@ StudioComponent& StudioComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("initializationScripts"))
   {
-    Array<JsonView> initializationScriptsJsonList = jsonValue.GetArray("initializationScripts");
+    Aws::Utils::Array<JsonView> initializationScriptsJsonList = jsonValue.GetArray("initializationScripts");
     for(unsigned initializationScriptsIndex = 0; initializationScriptsIndex < initializationScriptsJsonList.GetLength(); ++initializationScriptsIndex)
     {
       m_initializationScripts.push_back(initializationScriptsJsonList[initializationScriptsIndex].AsObject());
@@ -148,7 +148,7 @@ StudioComponent& StudioComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("scriptParameters"))
   {
-    Array<JsonView> scriptParametersJsonList = jsonValue.GetArray("scriptParameters");
+    Aws::Utils::Array<JsonView> scriptParametersJsonList = jsonValue.GetArray("scriptParameters");
     for(unsigned scriptParametersIndex = 0; scriptParametersIndex < scriptParametersJsonList.GetLength(); ++scriptParametersIndex)
     {
       m_scriptParameters.push_back(scriptParametersJsonList[scriptParametersIndex].AsObject());
@@ -267,7 +267,7 @@ JsonValue StudioComponent::Jsonize() const
 
   if(m_ec2SecurityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> ec2SecurityGroupIdsJsonList(m_ec2SecurityGroupIds.size());
+   Aws::Utils::Array<JsonValue> ec2SecurityGroupIdsJsonList(m_ec2SecurityGroupIds.size());
    for(unsigned ec2SecurityGroupIdsIndex = 0; ec2SecurityGroupIdsIndex < ec2SecurityGroupIdsJsonList.GetLength(); ++ec2SecurityGroupIdsIndex)
    {
      ec2SecurityGroupIdsJsonList[ec2SecurityGroupIdsIndex].AsString(m_ec2SecurityGroupIds[ec2SecurityGroupIdsIndex]);
@@ -278,7 +278,7 @@ JsonValue StudioComponent::Jsonize() const
 
   if(m_initializationScriptsHasBeenSet)
   {
-   Array<JsonValue> initializationScriptsJsonList(m_initializationScripts.size());
+   Aws::Utils::Array<JsonValue> initializationScriptsJsonList(m_initializationScripts.size());
    for(unsigned initializationScriptsIndex = 0; initializationScriptsIndex < initializationScriptsJsonList.GetLength(); ++initializationScriptsIndex)
    {
      initializationScriptsJsonList[initializationScriptsIndex].AsObject(m_initializationScripts[initializationScriptsIndex].Jsonize());
@@ -301,7 +301,7 @@ JsonValue StudioComponent::Jsonize() const
 
   if(m_scriptParametersHasBeenSet)
   {
-   Array<JsonValue> scriptParametersJsonList(m_scriptParameters.size());
+   Aws::Utils::Array<JsonValue> scriptParametersJsonList(m_scriptParameters.size());
    for(unsigned scriptParametersIndex = 0; scriptParametersIndex < scriptParametersJsonList.GetLength(); ++scriptParametersIndex)
    {
      scriptParametersJsonList[scriptParametersIndex].AsObject(m_scriptParameters[scriptParametersIndex].Jsonize());

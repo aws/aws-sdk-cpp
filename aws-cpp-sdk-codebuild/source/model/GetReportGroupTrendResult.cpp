@@ -36,7 +36,7 @@ GetReportGroupTrendResult& GetReportGroupTrendResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("rawData"))
   {
-    Array<JsonView> rawDataJsonList = jsonValue.GetArray("rawData");
+    Aws::Utils::Array<JsonView> rawDataJsonList = jsonValue.GetArray("rawData");
     for(unsigned rawDataIndex = 0; rawDataIndex < rawDataJsonList.GetLength(); ++rawDataIndex)
     {
       m_rawData.push_back(rawDataJsonList[rawDataIndex].AsObject());

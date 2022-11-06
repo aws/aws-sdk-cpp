@@ -48,7 +48,7 @@ DescribeAccessControlConfigurationResult& DescribeAccessControlConfigurationResu
 
   if(jsonValue.ValueExists("AccessControlList"))
   {
-    Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
+    Aws::Utils::Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
     for(unsigned accessControlListIndex = 0; accessControlListIndex < accessControlListJsonList.GetLength(); ++accessControlListIndex)
     {
       m_accessControlList.push_back(accessControlListJsonList[accessControlListIndex].AsObject());
@@ -57,7 +57,7 @@ DescribeAccessControlConfigurationResult& DescribeAccessControlConfigurationResu
 
   if(jsonValue.ValueExists("HierarchicalAccessControlList"))
   {
-    Array<JsonView> hierarchicalAccessControlListJsonList = jsonValue.GetArray("HierarchicalAccessControlList");
+    Aws::Utils::Array<JsonView> hierarchicalAccessControlListJsonList = jsonValue.GetArray("HierarchicalAccessControlList");
     for(unsigned hierarchicalAccessControlListIndex = 0; hierarchicalAccessControlListIndex < hierarchicalAccessControlListJsonList.GetLength(); ++hierarchicalAccessControlListIndex)
     {
       m_hierarchicalAccessControlList.push_back(hierarchicalAccessControlListJsonList[hierarchicalAccessControlListIndex].AsObject());

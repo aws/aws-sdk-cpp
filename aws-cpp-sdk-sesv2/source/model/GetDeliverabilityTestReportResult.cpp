@@ -42,7 +42,7 @@ GetDeliverabilityTestReportResult& GetDeliverabilityTestReportResult::operator =
 
   if(jsonValue.ValueExists("IspPlacements"))
   {
-    Array<JsonView> ispPlacementsJsonList = jsonValue.GetArray("IspPlacements");
+    Aws::Utils::Array<JsonView> ispPlacementsJsonList = jsonValue.GetArray("IspPlacements");
     for(unsigned ispPlacementsIndex = 0; ispPlacementsIndex < ispPlacementsJsonList.GetLength(); ++ispPlacementsIndex)
     {
       m_ispPlacements.push_back(ispPlacementsJsonList[ispPlacementsIndex].AsObject());
@@ -57,7 +57,7 @@ GetDeliverabilityTestReportResult& GetDeliverabilityTestReportResult::operator =
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

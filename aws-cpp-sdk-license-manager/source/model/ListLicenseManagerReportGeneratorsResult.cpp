@@ -30,7 +30,7 @@ ListLicenseManagerReportGeneratorsResult& ListLicenseManagerReportGeneratorsResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReportGenerators"))
   {
-    Array<JsonView> reportGeneratorsJsonList = jsonValue.GetArray("ReportGenerators");
+    Aws::Utils::Array<JsonView> reportGeneratorsJsonList = jsonValue.GetArray("ReportGenerators");
     for(unsigned reportGeneratorsIndex = 0; reportGeneratorsIndex < reportGeneratorsJsonList.GetLength(); ++reportGeneratorsIndex)
     {
       m_reportGenerators.push_back(reportGeneratorsJsonList[reportGeneratorsIndex].AsObject());

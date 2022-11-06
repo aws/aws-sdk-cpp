@@ -25,7 +25,7 @@ Aws::String NotifyRecommendationsReceivedRequest::SerializePayload() const
 
   if(m_recommendationIdsHasBeenSet)
   {
-   Array<JsonValue> recommendationIdsJsonList(m_recommendationIds.size());
+   Aws::Utils::Array<JsonValue> recommendationIdsJsonList(m_recommendationIds.size());
    for(unsigned recommendationIdsIndex = 0; recommendationIdsIndex < recommendationIdsJsonList.GetLength(); ++recommendationIdsIndex)
    {
      recommendationIdsJsonList[recommendationIdsIndex].AsString(m_recommendationIds[recommendationIdsIndex]);

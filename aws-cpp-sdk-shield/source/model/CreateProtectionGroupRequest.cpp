@@ -52,7 +52,7 @@ Aws::String CreateProtectionGroupRequest::SerializePayload() const
 
   if(m_membersHasBeenSet)
   {
-   Array<JsonValue> membersJsonList(m_members.size());
+   Aws::Utils::Array<JsonValue> membersJsonList(m_members.size());
    for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
    {
      membersJsonList[membersIndex].AsString(m_members[membersIndex]);
@@ -63,7 +63,7 @@ Aws::String CreateProtectionGroupRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

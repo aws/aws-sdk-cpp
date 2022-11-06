@@ -30,7 +30,7 @@ ListCreateAccountStatusResult& ListCreateAccountStatusResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CreateAccountStatuses"))
   {
-    Array<JsonView> createAccountStatusesJsonList = jsonValue.GetArray("CreateAccountStatuses");
+    Aws::Utils::Array<JsonView> createAccountStatusesJsonList = jsonValue.GetArray("CreateAccountStatuses");
     for(unsigned createAccountStatusesIndex = 0; createAccountStatusesIndex < createAccountStatusesJsonList.GetLength(); ++createAccountStatusesIndex)
     {
       m_createAccountStatuses.push_back(createAccountStatusesJsonList[createAccountStatusesIndex].AsObject());

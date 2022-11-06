@@ -53,7 +53,7 @@ ReceivedMetadata& ReceivedMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AllowedOperations"))
   {
-    Array<JsonView> allowedOperationsJsonList = jsonValue.GetArray("AllowedOperations");
+    Aws::Utils::Array<JsonView> allowedOperationsJsonList = jsonValue.GetArray("AllowedOperations");
     for(unsigned allowedOperationsIndex = 0; allowedOperationsIndex < allowedOperationsJsonList.GetLength(); ++allowedOperationsIndex)
     {
       m_allowedOperations.push_back(AllowedOperationMapper::GetAllowedOperationForName(allowedOperationsJsonList[allowedOperationsIndex].AsString()));
@@ -81,7 +81,7 @@ JsonValue ReceivedMetadata::Jsonize() const
 
   if(m_allowedOperationsHasBeenSet)
   {
-   Array<JsonValue> allowedOperationsJsonList(m_allowedOperations.size());
+   Aws::Utils::Array<JsonValue> allowedOperationsJsonList(m_allowedOperations.size());
    for(unsigned allowedOperationsIndex = 0; allowedOperationsIndex < allowedOperationsJsonList.GetLength(); ++allowedOperationsIndex)
    {
      allowedOperationsJsonList[allowedOperationsIndex].AsString(AllowedOperationMapper::GetNameForAllowedOperation(m_allowedOperations[allowedOperationsIndex]));

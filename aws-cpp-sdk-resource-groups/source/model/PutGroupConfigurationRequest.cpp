@@ -30,7 +30,7 @@ Aws::String PutGroupConfigurationRequest::SerializePayload() const
 
   if(m_configurationHasBeenSet)
   {
-   Array<JsonValue> configurationJsonList(m_configuration.size());
+   Aws::Utils::Array<JsonValue> configurationJsonList(m_configuration.size());
    for(unsigned configurationIndex = 0; configurationIndex < configurationJsonList.GetLength(); ++configurationIndex)
    {
      configurationJsonList[configurationIndex].AsObject(m_configuration[configurationIndex].Jsonize());

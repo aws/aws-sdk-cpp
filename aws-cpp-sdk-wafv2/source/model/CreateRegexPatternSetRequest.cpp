@@ -45,7 +45,7 @@ Aws::String CreateRegexPatternSetRequest::SerializePayload() const
 
   if(m_regularExpressionListHasBeenSet)
   {
-   Array<JsonValue> regularExpressionListJsonList(m_regularExpressionList.size());
+   Aws::Utils::Array<JsonValue> regularExpressionListJsonList(m_regularExpressionList.size());
    for(unsigned regularExpressionListIndex = 0; regularExpressionListIndex < regularExpressionListJsonList.GetLength(); ++regularExpressionListIndex)
    {
      regularExpressionListJsonList[regularExpressionListIndex].AsObject(m_regularExpressionList[regularExpressionListIndex].Jsonize());
@@ -56,7 +56,7 @@ Aws::String CreateRegexPatternSetRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

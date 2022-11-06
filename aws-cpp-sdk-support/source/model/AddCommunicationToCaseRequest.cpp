@@ -38,7 +38,7 @@ Aws::String AddCommunicationToCaseRequest::SerializePayload() const
 
   if(m_ccEmailAddressesHasBeenSet)
   {
-   Array<JsonValue> ccEmailAddressesJsonList(m_ccEmailAddresses.size());
+   Aws::Utils::Array<JsonValue> ccEmailAddressesJsonList(m_ccEmailAddresses.size());
    for(unsigned ccEmailAddressesIndex = 0; ccEmailAddressesIndex < ccEmailAddressesJsonList.GetLength(); ++ccEmailAddressesIndex)
    {
      ccEmailAddressesJsonList[ccEmailAddressesIndex].AsString(m_ccEmailAddresses[ccEmailAddressesIndex]);

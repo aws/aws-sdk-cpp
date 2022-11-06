@@ -92,7 +92,7 @@ WebCrawlerConfiguration& WebCrawlerConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("UrlInclusionPatterns"))
   {
-    Array<JsonView> urlInclusionPatternsJsonList = jsonValue.GetArray("UrlInclusionPatterns");
+    Aws::Utils::Array<JsonView> urlInclusionPatternsJsonList = jsonValue.GetArray("UrlInclusionPatterns");
     for(unsigned urlInclusionPatternsIndex = 0; urlInclusionPatternsIndex < urlInclusionPatternsJsonList.GetLength(); ++urlInclusionPatternsIndex)
     {
       m_urlInclusionPatterns.push_back(urlInclusionPatternsJsonList[urlInclusionPatternsIndex].AsString());
@@ -102,7 +102,7 @@ WebCrawlerConfiguration& WebCrawlerConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("UrlExclusionPatterns"))
   {
-    Array<JsonView> urlExclusionPatternsJsonList = jsonValue.GetArray("UrlExclusionPatterns");
+    Aws::Utils::Array<JsonView> urlExclusionPatternsJsonList = jsonValue.GetArray("UrlExclusionPatterns");
     for(unsigned urlExclusionPatternsIndex = 0; urlExclusionPatternsIndex < urlExclusionPatternsJsonList.GetLength(); ++urlExclusionPatternsIndex)
     {
       m_urlExclusionPatterns.push_back(urlExclusionPatternsJsonList[urlExclusionPatternsIndex].AsString());
@@ -163,7 +163,7 @@ JsonValue WebCrawlerConfiguration::Jsonize() const
 
   if(m_urlInclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> urlInclusionPatternsJsonList(m_urlInclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> urlInclusionPatternsJsonList(m_urlInclusionPatterns.size());
    for(unsigned urlInclusionPatternsIndex = 0; urlInclusionPatternsIndex < urlInclusionPatternsJsonList.GetLength(); ++urlInclusionPatternsIndex)
    {
      urlInclusionPatternsJsonList[urlInclusionPatternsIndex].AsString(m_urlInclusionPatterns[urlInclusionPatternsIndex]);
@@ -174,7 +174,7 @@ JsonValue WebCrawlerConfiguration::Jsonize() const
 
   if(m_urlExclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> urlExclusionPatternsJsonList(m_urlExclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> urlExclusionPatternsJsonList(m_urlExclusionPatterns.size());
    for(unsigned urlExclusionPatternsIndex = 0; urlExclusionPatternsIndex < urlExclusionPatternsJsonList.GetLength(); ++urlExclusionPatternsIndex)
    {
      urlExclusionPatternsJsonList[urlExclusionPatternsIndex].AsString(m_urlExclusionPatterns[urlExclusionPatternsIndex]);

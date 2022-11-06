@@ -102,7 +102,7 @@ Transcript& Transcript::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IssuesDetected"))
   {
-    Array<JsonView> issuesDetectedJsonList = jsonValue.GetArray("IssuesDetected");
+    Aws::Utils::Array<JsonView> issuesDetectedJsonList = jsonValue.GetArray("IssuesDetected");
     for(unsigned issuesDetectedIndex = 0; issuesDetectedIndex < issuesDetectedJsonList.GetLength(); ++issuesDetectedIndex)
     {
       m_issuesDetected.push_back(issuesDetectedJsonList[issuesDetectedIndex].AsObject());
@@ -160,7 +160,7 @@ JsonValue Transcript::Jsonize() const
 
   if(m_issuesDetectedHasBeenSet)
   {
-   Array<JsonValue> issuesDetectedJsonList(m_issuesDetected.size());
+   Aws::Utils::Array<JsonValue> issuesDetectedJsonList(m_issuesDetected.size());
    for(unsigned issuesDetectedIndex = 0; issuesDetectedIndex < issuesDetectedJsonList.GetLength(); ++issuesDetectedIndex)
    {
      issuesDetectedJsonList[issuesDetectedIndex].AsObject(m_issuesDetected[issuesDetectedIndex].Jsonize());

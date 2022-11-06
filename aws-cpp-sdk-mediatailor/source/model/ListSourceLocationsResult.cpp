@@ -30,7 +30,7 @@ ListSourceLocationsResult& ListSourceLocationsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Items"))
   {
-    Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
+    Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
     for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());

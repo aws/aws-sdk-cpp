@@ -52,7 +52,7 @@ Aws::String ListEnvironmentAccountConnectionsRequest::SerializePayload() const
 
   if(m_statusesHasBeenSet)
   {
-   Array<JsonValue> statusesJsonList(m_statuses.size());
+   Aws::Utils::Array<JsonValue> statusesJsonList(m_statuses.size());
    for(unsigned statusesIndex = 0; statusesIndex < statusesJsonList.GetLength(); ++statusesIndex)
    {
      statusesJsonList[statusesIndex].AsString(EnvironmentAccountConnectionStatusMapper::GetNameForEnvironmentAccountConnectionStatus(m_statuses[statusesIndex]));

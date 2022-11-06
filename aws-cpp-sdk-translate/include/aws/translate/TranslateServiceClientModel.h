@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/translate/TranslateErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/translate/TranslateEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -67,6 +69,10 @@ namespace Aws
 
   namespace Translate
   {
+    using TranslateClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TranslateEndpointProviderBase = Aws::Translate::Endpoint::TranslateEndpointProviderBase;
+    using TranslateEndpointProvider = Aws::Translate::Endpoint::TranslateEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in TranslateClient header */

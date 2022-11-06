@@ -60,7 +60,7 @@ Aws::String CreateTrustRequest::SerializePayload() const
 
   if(m_conditionalForwarderIpAddrsHasBeenSet)
   {
-   Array<JsonValue> conditionalForwarderIpAddrsJsonList(m_conditionalForwarderIpAddrs.size());
+   Aws::Utils::Array<JsonValue> conditionalForwarderIpAddrsJsonList(m_conditionalForwarderIpAddrs.size());
    for(unsigned conditionalForwarderIpAddrsIndex = 0; conditionalForwarderIpAddrsIndex < conditionalForwarderIpAddrsJsonList.GetLength(); ++conditionalForwarderIpAddrsIndex)
    {
      conditionalForwarderIpAddrsJsonList[conditionalForwarderIpAddrsIndex].AsString(m_conditionalForwarderIpAddrs[conditionalForwarderIpAddrsIndex]);

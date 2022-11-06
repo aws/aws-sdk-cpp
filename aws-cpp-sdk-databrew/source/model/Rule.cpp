@@ -83,7 +83,7 @@ Rule& Rule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ColumnSelectors"))
   {
-    Array<JsonView> columnSelectorsJsonList = jsonValue.GetArray("ColumnSelectors");
+    Aws::Utils::Array<JsonView> columnSelectorsJsonList = jsonValue.GetArray("ColumnSelectors");
     for(unsigned columnSelectorsIndex = 0; columnSelectorsIndex < columnSelectorsJsonList.GetLength(); ++columnSelectorsIndex)
     {
       m_columnSelectors.push_back(columnSelectorsJsonList[columnSelectorsIndex].AsObject());
@@ -135,7 +135,7 @@ JsonValue Rule::Jsonize() const
 
   if(m_columnSelectorsHasBeenSet)
   {
-   Array<JsonValue> columnSelectorsJsonList(m_columnSelectors.size());
+   Aws::Utils::Array<JsonValue> columnSelectorsJsonList(m_columnSelectors.size());
    for(unsigned columnSelectorsIndex = 0; columnSelectorsIndex < columnSelectorsJsonList.GetLength(); ++columnSelectorsIndex)
    {
      columnSelectorsJsonList[columnSelectorsIndex].AsObject(m_columnSelectors[columnSelectorsIndex].Jsonize());

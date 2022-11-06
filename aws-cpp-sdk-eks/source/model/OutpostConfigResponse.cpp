@@ -35,7 +35,7 @@ OutpostConfigResponse& OutpostConfigResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("outpostArns"))
   {
-    Array<JsonView> outpostArnsJsonList = jsonValue.GetArray("outpostArns");
+    Aws::Utils::Array<JsonView> outpostArnsJsonList = jsonValue.GetArray("outpostArns");
     for(unsigned outpostArnsIndex = 0; outpostArnsIndex < outpostArnsJsonList.GetLength(); ++outpostArnsIndex)
     {
       m_outpostArns.push_back(outpostArnsJsonList[outpostArnsIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue OutpostConfigResponse::Jsonize() const
 
   if(m_outpostArnsHasBeenSet)
   {
-   Array<JsonValue> outpostArnsJsonList(m_outpostArns.size());
+   Aws::Utils::Array<JsonValue> outpostArnsJsonList(m_outpostArns.size());
    for(unsigned outpostArnsIndex = 0; outpostArnsIndex < outpostArnsJsonList.GetLength(); ++outpostArnsIndex)
    {
      outpostArnsJsonList[outpostArnsIndex].AsString(m_outpostArns[outpostArnsIndex]);

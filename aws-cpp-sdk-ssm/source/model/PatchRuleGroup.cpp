@@ -33,7 +33,7 @@ PatchRuleGroup& PatchRuleGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PatchRules"))
   {
-    Array<JsonView> patchRulesJsonList = jsonValue.GetArray("PatchRules");
+    Aws::Utils::Array<JsonView> patchRulesJsonList = jsonValue.GetArray("PatchRules");
     for(unsigned patchRulesIndex = 0; patchRulesIndex < patchRulesJsonList.GetLength(); ++patchRulesIndex)
     {
       m_patchRules.push_back(patchRulesJsonList[patchRulesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue PatchRuleGroup::Jsonize() const
 
   if(m_patchRulesHasBeenSet)
   {
-   Array<JsonValue> patchRulesJsonList(m_patchRules.size());
+   Aws::Utils::Array<JsonValue> patchRulesJsonList(m_patchRules.size());
    for(unsigned patchRulesIndex = 0; patchRulesIndex < patchRulesJsonList.GetLength(); ++patchRulesIndex)
    {
      patchRulesJsonList[patchRulesIndex].AsObject(m_patchRules[patchRulesIndex].Jsonize());

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/devops-guru/DevOpsGuruErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/devops-guru/DevOpsGuruEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -80,6 +82,10 @@ namespace Aws
 
   namespace DevOpsGuru
   {
+    using DevOpsGuruClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DevOpsGuruEndpointProviderBase = Aws::DevOpsGuru::Endpoint::DevOpsGuruEndpointProviderBase;
+    using DevOpsGuruEndpointProvider = Aws::DevOpsGuru::Endpoint::DevOpsGuruEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in DevOpsGuruClient header */

@@ -30,7 +30,7 @@ ListDocumentsResult& ListDocumentsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DocumentIdentifiers"))
   {
-    Array<JsonView> documentIdentifiersJsonList = jsonValue.GetArray("DocumentIdentifiers");
+    Aws::Utils::Array<JsonView> documentIdentifiersJsonList = jsonValue.GetArray("DocumentIdentifiers");
     for(unsigned documentIdentifiersIndex = 0; documentIdentifiersIndex < documentIdentifiersJsonList.GetLength(); ++documentIdentifiersIndex)
     {
       m_documentIdentifiers.push_back(documentIdentifiersJsonList[documentIdentifiersIndex].AsObject());

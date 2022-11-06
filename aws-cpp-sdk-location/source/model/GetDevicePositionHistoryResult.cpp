@@ -30,7 +30,7 @@ GetDevicePositionHistoryResult& GetDevicePositionHistoryResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DevicePositions"))
   {
-    Array<JsonView> devicePositionsJsonList = jsonValue.GetArray("DevicePositions");
+    Aws::Utils::Array<JsonView> devicePositionsJsonList = jsonValue.GetArray("DevicePositions");
     for(unsigned devicePositionsIndex = 0; devicePositionsIndex < devicePositionsJsonList.GetLength(); ++devicePositionsIndex)
     {
       m_devicePositions.push_back(devicePositionsJsonList[devicePositionsIndex].AsObject());

@@ -30,7 +30,7 @@ ListCrlsResult& ListCrlsResult::operator =(const Aws::AmazonWebServiceResult<Jso
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("crls"))
   {
-    Array<JsonView> crlsJsonList = jsonValue.GetArray("crls");
+    Aws::Utils::Array<JsonView> crlsJsonList = jsonValue.GetArray("crls");
     for(unsigned crlsIndex = 0; crlsIndex < crlsJsonList.GetLength(); ++crlsIndex)
     {
       m_crls.push_back(crlsJsonList[crlsIndex].AsObject());

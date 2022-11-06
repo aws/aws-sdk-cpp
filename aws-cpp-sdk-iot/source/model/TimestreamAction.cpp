@@ -62,7 +62,7 @@ TimestreamAction& TimestreamAction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dimensions"))
   {
-    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("dimensions");
+    Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
@@ -104,7 +104,7 @@ JsonValue TimestreamAction::Jsonize() const
 
   if(m_dimensionsHasBeenSet)
   {
-   Array<JsonValue> dimensionsJsonList(m_dimensions.size());
+   Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
    {
      dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());

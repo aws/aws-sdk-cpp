@@ -30,7 +30,7 @@ ListModelMetadataResult& ListModelMetadataResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ModelMetadataSummaries"))
   {
-    Array<JsonView> modelMetadataSummariesJsonList = jsonValue.GetArray("ModelMetadataSummaries");
+    Aws::Utils::Array<JsonView> modelMetadataSummariesJsonList = jsonValue.GetArray("ModelMetadataSummaries");
     for(unsigned modelMetadataSummariesIndex = 0; modelMetadataSummariesIndex < modelMetadataSummariesJsonList.GetLength(); ++modelMetadataSummariesIndex)
     {
       m_modelMetadataSummaries.push_back(modelMetadataSummariesJsonList[modelMetadataSummariesIndex].AsObject());

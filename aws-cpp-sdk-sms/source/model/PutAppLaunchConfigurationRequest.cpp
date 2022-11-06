@@ -45,7 +45,7 @@ Aws::String PutAppLaunchConfigurationRequest::SerializePayload() const
 
   if(m_serverGroupLaunchConfigurationsHasBeenSet)
   {
-   Array<JsonValue> serverGroupLaunchConfigurationsJsonList(m_serverGroupLaunchConfigurations.size());
+   Aws::Utils::Array<JsonValue> serverGroupLaunchConfigurationsJsonList(m_serverGroupLaunchConfigurations.size());
    for(unsigned serverGroupLaunchConfigurationsIndex = 0; serverGroupLaunchConfigurationsIndex < serverGroupLaunchConfigurationsJsonList.GetLength(); ++serverGroupLaunchConfigurationsIndex)
    {
      serverGroupLaunchConfigurationsJsonList[serverGroupLaunchConfigurationsIndex].AsObject(m_serverGroupLaunchConfigurations[serverGroupLaunchConfigurationsIndex].Jsonize());

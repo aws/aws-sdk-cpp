@@ -55,7 +55,7 @@ FilterCondition& FilterCondition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StringValueList"))
   {
-    Array<JsonView> stringValueListJsonList = jsonValue.GetArray("StringValueList");
+    Aws::Utils::Array<JsonView> stringValueListJsonList = jsonValue.GetArray("StringValueList");
     for(unsigned stringValueListIndex = 0; stringValueListIndex < stringValueListJsonList.GetLength(); ++stringValueListIndex)
     {
       m_stringValueList.push_back(stringValueListJsonList[stringValueListIndex].AsString());
@@ -82,7 +82,7 @@ JsonValue FilterCondition::Jsonize() const
 
   if(m_stringValueListHasBeenSet)
   {
-   Array<JsonValue> stringValueListJsonList(m_stringValueList.size());
+   Aws::Utils::Array<JsonValue> stringValueListJsonList(m_stringValueList.size());
    for(unsigned stringValueListIndex = 0; stringValueListIndex < stringValueListJsonList.GetLength(); ++stringValueListIndex)
    {
      stringValueListJsonList[stringValueListIndex].AsString(m_stringValueList[stringValueListIndex]);

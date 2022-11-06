@@ -30,7 +30,7 @@ GetServicesInScopeResult& GetServicesInScopeResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("serviceMetadata"))
   {
-    Array<JsonView> serviceMetadataJsonList = jsonValue.GetArray("serviceMetadata");
+    Aws::Utils::Array<JsonView> serviceMetadataJsonList = jsonValue.GetArray("serviceMetadata");
     for(unsigned serviceMetadataIndex = 0; serviceMetadataIndex < serviceMetadataJsonList.GetLength(); ++serviceMetadataIndex)
     {
       m_serviceMetadata.push_back(serviceMetadataJsonList[serviceMetadataIndex].AsObject());

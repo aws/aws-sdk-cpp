@@ -30,7 +30,7 @@ GetBlueprintRunsResult& GetBlueprintRunsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BlueprintRuns"))
   {
-    Array<JsonView> blueprintRunsJsonList = jsonValue.GetArray("BlueprintRuns");
+    Aws::Utils::Array<JsonView> blueprintRunsJsonList = jsonValue.GetArray("BlueprintRuns");
     for(unsigned blueprintRunsIndex = 0; blueprintRunsIndex < blueprintRunsJsonList.GetLength(); ++blueprintRunsIndex)
     {
       m_blueprintRuns.push_back(blueprintRunsJsonList[blueprintRunsIndex].AsObject());

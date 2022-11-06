@@ -23,7 +23,7 @@ Aws::String DescribeDomainsRequest::SerializePayload() const
 
   if(m_domainNamesHasBeenSet)
   {
-   Array<JsonValue> domainNamesJsonList(m_domainNames.size());
+   Aws::Utils::Array<JsonValue> domainNamesJsonList(m_domainNames.size());
    for(unsigned domainNamesIndex = 0; domainNamesIndex < domainNamesJsonList.GetLength(); ++domainNamesIndex)
    {
      domainNamesJsonList[domainNamesIndex].AsString(m_domainNames[domainNamesIndex]);

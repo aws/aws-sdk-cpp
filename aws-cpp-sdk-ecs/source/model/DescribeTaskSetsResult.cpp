@@ -30,7 +30,7 @@ DescribeTaskSetsResult& DescribeTaskSetsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("taskSets"))
   {
-    Array<JsonView> taskSetsJsonList = jsonValue.GetArray("taskSets");
+    Aws::Utils::Array<JsonView> taskSetsJsonList = jsonValue.GetArray("taskSets");
     for(unsigned taskSetsIndex = 0; taskSetsIndex < taskSetsJsonList.GetLength(); ++taskSetsIndex)
     {
       m_taskSets.push_back(taskSetsJsonList[taskSetsIndex].AsObject());
@@ -39,7 +39,7 @@ DescribeTaskSetsResult& DescribeTaskSetsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

@@ -43,7 +43,7 @@ RuleGroupSourceStatelessRuleMatchAttributes& RuleGroupSourceStatelessRuleMatchAt
 {
   if(jsonValue.ValueExists("DestinationPorts"))
   {
-    Array<JsonView> destinationPortsJsonList = jsonValue.GetArray("DestinationPorts");
+    Aws::Utils::Array<JsonView> destinationPortsJsonList = jsonValue.GetArray("DestinationPorts");
     for(unsigned destinationPortsIndex = 0; destinationPortsIndex < destinationPortsJsonList.GetLength(); ++destinationPortsIndex)
     {
       m_destinationPorts.push_back(destinationPortsJsonList[destinationPortsIndex].AsObject());
@@ -53,7 +53,7 @@ RuleGroupSourceStatelessRuleMatchAttributes& RuleGroupSourceStatelessRuleMatchAt
 
   if(jsonValue.ValueExists("Destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -63,7 +63,7 @@ RuleGroupSourceStatelessRuleMatchAttributes& RuleGroupSourceStatelessRuleMatchAt
 
   if(jsonValue.ValueExists("Protocols"))
   {
-    Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
+    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
     for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
     {
       m_protocols.push_back(protocolsJsonList[protocolsIndex].AsInteger());
@@ -73,7 +73,7 @@ RuleGroupSourceStatelessRuleMatchAttributes& RuleGroupSourceStatelessRuleMatchAt
 
   if(jsonValue.ValueExists("SourcePorts"))
   {
-    Array<JsonView> sourcePortsJsonList = jsonValue.GetArray("SourcePorts");
+    Aws::Utils::Array<JsonView> sourcePortsJsonList = jsonValue.GetArray("SourcePorts");
     for(unsigned sourcePortsIndex = 0; sourcePortsIndex < sourcePortsJsonList.GetLength(); ++sourcePortsIndex)
     {
       m_sourcePorts.push_back(sourcePortsJsonList[sourcePortsIndex].AsObject());
@@ -83,7 +83,7 @@ RuleGroupSourceStatelessRuleMatchAttributes& RuleGroupSourceStatelessRuleMatchAt
 
   if(jsonValue.ValueExists("Sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
@@ -93,7 +93,7 @@ RuleGroupSourceStatelessRuleMatchAttributes& RuleGroupSourceStatelessRuleMatchAt
 
   if(jsonValue.ValueExists("TcpFlags"))
   {
-    Array<JsonView> tcpFlagsJsonList = jsonValue.GetArray("TcpFlags");
+    Aws::Utils::Array<JsonView> tcpFlagsJsonList = jsonValue.GetArray("TcpFlags");
     for(unsigned tcpFlagsIndex = 0; tcpFlagsIndex < tcpFlagsJsonList.GetLength(); ++tcpFlagsIndex)
     {
       m_tcpFlags.push_back(tcpFlagsJsonList[tcpFlagsIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue RuleGroupSourceStatelessRuleMatchAttributes::Jsonize() const
 
   if(m_destinationPortsHasBeenSet)
   {
-   Array<JsonValue> destinationPortsJsonList(m_destinationPorts.size());
+   Aws::Utils::Array<JsonValue> destinationPortsJsonList(m_destinationPorts.size());
    for(unsigned destinationPortsIndex = 0; destinationPortsIndex < destinationPortsJsonList.GetLength(); ++destinationPortsIndex)
    {
      destinationPortsJsonList[destinationPortsIndex].AsObject(m_destinationPorts[destinationPortsIndex].Jsonize());
@@ -121,7 +121,7 @@ JsonValue RuleGroupSourceStatelessRuleMatchAttributes::Jsonize() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
@@ -132,7 +132,7 @@ JsonValue RuleGroupSourceStatelessRuleMatchAttributes::Jsonize() const
 
   if(m_protocolsHasBeenSet)
   {
-   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
    {
      protocolsJsonList[protocolsIndex].AsInteger(m_protocols[protocolsIndex]);
@@ -143,7 +143,7 @@ JsonValue RuleGroupSourceStatelessRuleMatchAttributes::Jsonize() const
 
   if(m_sourcePortsHasBeenSet)
   {
-   Array<JsonValue> sourcePortsJsonList(m_sourcePorts.size());
+   Aws::Utils::Array<JsonValue> sourcePortsJsonList(m_sourcePorts.size());
    for(unsigned sourcePortsIndex = 0; sourcePortsIndex < sourcePortsJsonList.GetLength(); ++sourcePortsIndex)
    {
      sourcePortsJsonList[sourcePortsIndex].AsObject(m_sourcePorts[sourcePortsIndex].Jsonize());
@@ -154,7 +154,7 @@ JsonValue RuleGroupSourceStatelessRuleMatchAttributes::Jsonize() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
@@ -165,7 +165,7 @@ JsonValue RuleGroupSourceStatelessRuleMatchAttributes::Jsonize() const
 
   if(m_tcpFlagsHasBeenSet)
   {
-   Array<JsonValue> tcpFlagsJsonList(m_tcpFlags.size());
+   Aws::Utils::Array<JsonValue> tcpFlagsJsonList(m_tcpFlags.size());
    for(unsigned tcpFlagsIndex = 0; tcpFlagsIndex < tcpFlagsJsonList.GetLength(); ++tcpFlagsIndex)
    {
      tcpFlagsJsonList[tcpFlagsIndex].AsObject(m_tcpFlags[tcpFlagsIndex].Jsonize());

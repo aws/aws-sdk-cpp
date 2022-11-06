@@ -30,7 +30,7 @@ ListAnomalyDetectorsResult& ListAnomalyDetectorsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AnomalyDetectorSummaryList"))
   {
-    Array<JsonView> anomalyDetectorSummaryListJsonList = jsonValue.GetArray("AnomalyDetectorSummaryList");
+    Aws::Utils::Array<JsonView> anomalyDetectorSummaryListJsonList = jsonValue.GetArray("AnomalyDetectorSummaryList");
     for(unsigned anomalyDetectorSummaryListIndex = 0; anomalyDetectorSummaryListIndex < anomalyDetectorSummaryListJsonList.GetLength(); ++anomalyDetectorSummaryListIndex)
     {
       m_anomalyDetectorSummaryList.push_back(anomalyDetectorSummaryListJsonList[anomalyDetectorSummaryListIndex].AsObject());

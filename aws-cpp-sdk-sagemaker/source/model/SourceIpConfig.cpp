@@ -33,7 +33,7 @@ SourceIpConfig& SourceIpConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Cidrs"))
   {
-    Array<JsonView> cidrsJsonList = jsonValue.GetArray("Cidrs");
+    Aws::Utils::Array<JsonView> cidrsJsonList = jsonValue.GetArray("Cidrs");
     for(unsigned cidrsIndex = 0; cidrsIndex < cidrsJsonList.GetLength(); ++cidrsIndex)
     {
       m_cidrs.push_back(cidrsJsonList[cidrsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue SourceIpConfig::Jsonize() const
 
   if(m_cidrsHasBeenSet)
   {
-   Array<JsonValue> cidrsJsonList(m_cidrs.size());
+   Aws::Utils::Array<JsonValue> cidrsJsonList(m_cidrs.size());
    for(unsigned cidrsIndex = 0; cidrsIndex < cidrsJsonList.GetLength(); ++cidrsIndex)
    {
      cidrsJsonList[cidrsIndex].AsString(m_cidrs[cidrsIndex]);

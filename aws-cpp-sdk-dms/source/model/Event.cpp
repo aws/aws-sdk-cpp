@@ -64,7 +64,7 @@ Event& Event::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EventCategories"))
   {
-    Array<JsonView> eventCategoriesJsonList = jsonValue.GetArray("EventCategories");
+    Aws::Utils::Array<JsonView> eventCategoriesJsonList = jsonValue.GetArray("EventCategories");
     for(unsigned eventCategoriesIndex = 0; eventCategoriesIndex < eventCategoriesJsonList.GetLength(); ++eventCategoriesIndex)
     {
       m_eventCategories.push_back(eventCategoriesJsonList[eventCategoriesIndex].AsString());
@@ -105,7 +105,7 @@ JsonValue Event::Jsonize() const
 
   if(m_eventCategoriesHasBeenSet)
   {
-   Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
+   Aws::Utils::Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
    for(unsigned eventCategoriesIndex = 0; eventCategoriesIndex < eventCategoriesJsonList.GetLength(); ++eventCategoriesIndex)
    {
      eventCategoriesJsonList[eventCategoriesIndex].AsString(m_eventCategories[eventCategoriesIndex]);

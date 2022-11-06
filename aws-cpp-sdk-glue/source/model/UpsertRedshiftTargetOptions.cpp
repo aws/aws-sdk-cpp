@@ -51,7 +51,7 @@ UpsertRedshiftTargetOptions& UpsertRedshiftTargetOptions::operator =(JsonView js
 
   if(jsonValue.ValueExists("UpsertKeys"))
   {
-    Array<JsonView> upsertKeysJsonList = jsonValue.GetArray("UpsertKeys");
+    Aws::Utils::Array<JsonView> upsertKeysJsonList = jsonValue.GetArray("UpsertKeys");
     for(unsigned upsertKeysIndex = 0; upsertKeysIndex < upsertKeysJsonList.GetLength(); ++upsertKeysIndex)
     {
       m_upsertKeys.push_back(upsertKeysJsonList[upsertKeysIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue UpsertRedshiftTargetOptions::Jsonize() const
 
   if(m_upsertKeysHasBeenSet)
   {
-   Array<JsonValue> upsertKeysJsonList(m_upsertKeys.size());
+   Aws::Utils::Array<JsonValue> upsertKeysJsonList(m_upsertKeys.size());
    for(unsigned upsertKeysIndex = 0; upsertKeysIndex < upsertKeysJsonList.GetLength(); ++upsertKeysIndex)
    {
      upsertKeysJsonList[upsertKeysIndex].AsString(m_upsertKeys[upsertKeysIndex]);

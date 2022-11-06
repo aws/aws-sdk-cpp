@@ -42,7 +42,7 @@ AdvancedEventSelector& AdvancedEventSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FieldSelectors"))
   {
-    Array<JsonView> fieldSelectorsJsonList = jsonValue.GetArray("FieldSelectors");
+    Aws::Utils::Array<JsonView> fieldSelectorsJsonList = jsonValue.GetArray("FieldSelectors");
     for(unsigned fieldSelectorsIndex = 0; fieldSelectorsIndex < fieldSelectorsJsonList.GetLength(); ++fieldSelectorsIndex)
     {
       m_fieldSelectors.push_back(fieldSelectorsJsonList[fieldSelectorsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue AdvancedEventSelector::Jsonize() const
 
   if(m_fieldSelectorsHasBeenSet)
   {
-   Array<JsonValue> fieldSelectorsJsonList(m_fieldSelectors.size());
+   Aws::Utils::Array<JsonValue> fieldSelectorsJsonList(m_fieldSelectors.size());
    for(unsigned fieldSelectorsIndex = 0; fieldSelectorsIndex < fieldSelectorsJsonList.GetLength(); ++fieldSelectorsIndex)
    {
      fieldSelectorsJsonList[fieldSelectorsIndex].AsObject(m_fieldSelectors[fieldSelectorsIndex].Jsonize());

@@ -30,7 +30,7 @@ ListMissionProfilesResult& ListMissionProfilesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("missionProfileList"))
   {
-    Array<JsonView> missionProfileListJsonList = jsonValue.GetArray("missionProfileList");
+    Aws::Utils::Array<JsonView> missionProfileListJsonList = jsonValue.GetArray("missionProfileList");
     for(unsigned missionProfileListIndex = 0; missionProfileListIndex < missionProfileListJsonList.GetLength(); ++missionProfileListIndex)
     {
       m_missionProfileList.push_back(missionProfileListJsonList[missionProfileListIndex].AsObject());

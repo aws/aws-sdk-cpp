@@ -30,7 +30,7 @@ Aws::String PutInventoryRequest::SerializePayload() const
 
   if(m_itemsHasBeenSet)
   {
-   Array<JsonValue> itemsJsonList(m_items.size());
+   Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
    {
      itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());

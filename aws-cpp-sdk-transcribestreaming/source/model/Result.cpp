@@ -83,7 +83,7 @@ Result& Result::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Alternatives"))
   {
-    Array<JsonView> alternativesJsonList = jsonValue.GetArray("Alternatives");
+    Aws::Utils::Array<JsonView> alternativesJsonList = jsonValue.GetArray("Alternatives");
     for(unsigned alternativesIndex = 0; alternativesIndex < alternativesJsonList.GetLength(); ++alternativesIndex)
     {
       m_alternatives.push_back(alternativesJsonList[alternativesIndex].AsObject());
@@ -107,7 +107,7 @@ Result& Result::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LanguageIdentification"))
   {
-    Array<JsonView> languageIdentificationJsonList = jsonValue.GetArray("LanguageIdentification");
+    Aws::Utils::Array<JsonView> languageIdentificationJsonList = jsonValue.GetArray("LanguageIdentification");
     for(unsigned languageIdentificationIndex = 0; languageIdentificationIndex < languageIdentificationJsonList.GetLength(); ++languageIdentificationIndex)
     {
       m_languageIdentification.push_back(languageIdentificationJsonList[languageIdentificationIndex].AsObject());
@@ -148,7 +148,7 @@ JsonValue Result::Jsonize() const
 
   if(m_alternativesHasBeenSet)
   {
-   Array<JsonValue> alternativesJsonList(m_alternatives.size());
+   Aws::Utils::Array<JsonValue> alternativesJsonList(m_alternatives.size());
    for(unsigned alternativesIndex = 0; alternativesIndex < alternativesJsonList.GetLength(); ++alternativesIndex)
    {
      alternativesJsonList[alternativesIndex].AsObject(m_alternatives[alternativesIndex].Jsonize());
@@ -170,7 +170,7 @@ JsonValue Result::Jsonize() const
 
   if(m_languageIdentificationHasBeenSet)
   {
-   Array<JsonValue> languageIdentificationJsonList(m_languageIdentification.size());
+   Aws::Utils::Array<JsonValue> languageIdentificationJsonList(m_languageIdentification.size());
    for(unsigned languageIdentificationIndex = 0; languageIdentificationIndex < languageIdentificationJsonList.GetLength(); ++languageIdentificationIndex)
    {
      languageIdentificationJsonList[languageIdentificationIndex].AsObject(m_languageIdentification[languageIdentificationIndex].Jsonize());

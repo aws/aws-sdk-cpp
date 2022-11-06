@@ -62,7 +62,7 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
 
   if(m_subnetsHasBeenSet)
   {
-   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
    {
      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
@@ -73,7 +73,7 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
 
   if(m_instanceTypesHasBeenSet)
   {
-   Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
+   Aws::Utils::Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
    for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
    {
      instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
@@ -112,7 +112,7 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
 
   if(m_taintsHasBeenSet)
   {
-   Array<JsonValue> taintsJsonList(m_taints.size());
+   Aws::Utils::Array<JsonValue> taintsJsonList(m_taints.size());
    for(unsigned taintsIndex = 0; taintsIndex < taintsJsonList.GetLength(); ++taintsIndex)
    {
      taintsJsonList[taintsIndex].AsObject(m_taints[taintsIndex].Jsonize());

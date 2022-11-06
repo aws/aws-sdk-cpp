@@ -23,7 +23,7 @@ Aws::String DescribeFileSystemAssociationsRequest::SerializePayload() const
 
   if(m_fileSystemAssociationARNListHasBeenSet)
   {
-   Array<JsonValue> fileSystemAssociationARNListJsonList(m_fileSystemAssociationARNList.size());
+   Aws::Utils::Array<JsonValue> fileSystemAssociationARNListJsonList(m_fileSystemAssociationARNList.size());
    for(unsigned fileSystemAssociationARNListIndex = 0; fileSystemAssociationARNListIndex < fileSystemAssociationARNListJsonList.GetLength(); ++fileSystemAssociationARNListIndex)
    {
      fileSystemAssociationARNListJsonList[fileSystemAssociationARNListIndex].AsString(m_fileSystemAssociationARNList[fileSystemAssociationARNListIndex]);

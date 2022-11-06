@@ -26,7 +26,7 @@ Aws::String AssociateEncryptionConfigRequest::SerializePayload() const
 
   if(m_encryptionConfigHasBeenSet)
   {
-   Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
+   Aws::Utils::Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
    for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
    {
      encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());

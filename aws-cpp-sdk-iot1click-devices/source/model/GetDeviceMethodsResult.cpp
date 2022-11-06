@@ -30,7 +30,7 @@ GetDeviceMethodsResult& GetDeviceMethodsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deviceMethods"))
   {
-    Array<JsonView> deviceMethodsJsonList = jsonValue.GetArray("deviceMethods");
+    Aws::Utils::Array<JsonView> deviceMethodsJsonList = jsonValue.GetArray("deviceMethods");
     for(unsigned deviceMethodsIndex = 0; deviceMethodsIndex < deviceMethodsJsonList.GetLength(); ++deviceMethodsIndex)
     {
       m_deviceMethods.push_back(deviceMethodsJsonList[deviceMethodsIndex].AsObject());

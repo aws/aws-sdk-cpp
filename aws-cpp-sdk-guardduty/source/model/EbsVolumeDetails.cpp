@@ -35,7 +35,7 @@ EbsVolumeDetails& EbsVolumeDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("scannedVolumeDetails"))
   {
-    Array<JsonView> scannedVolumeDetailsJsonList = jsonValue.GetArray("scannedVolumeDetails");
+    Aws::Utils::Array<JsonView> scannedVolumeDetailsJsonList = jsonValue.GetArray("scannedVolumeDetails");
     for(unsigned scannedVolumeDetailsIndex = 0; scannedVolumeDetailsIndex < scannedVolumeDetailsJsonList.GetLength(); ++scannedVolumeDetailsIndex)
     {
       m_scannedVolumeDetails.push_back(scannedVolumeDetailsJsonList[scannedVolumeDetailsIndex].AsObject());
@@ -45,7 +45,7 @@ EbsVolumeDetails& EbsVolumeDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("skippedVolumeDetails"))
   {
-    Array<JsonView> skippedVolumeDetailsJsonList = jsonValue.GetArray("skippedVolumeDetails");
+    Aws::Utils::Array<JsonView> skippedVolumeDetailsJsonList = jsonValue.GetArray("skippedVolumeDetails");
     for(unsigned skippedVolumeDetailsIndex = 0; skippedVolumeDetailsIndex < skippedVolumeDetailsJsonList.GetLength(); ++skippedVolumeDetailsIndex)
     {
       m_skippedVolumeDetails.push_back(skippedVolumeDetailsJsonList[skippedVolumeDetailsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue EbsVolumeDetails::Jsonize() const
 
   if(m_scannedVolumeDetailsHasBeenSet)
   {
-   Array<JsonValue> scannedVolumeDetailsJsonList(m_scannedVolumeDetails.size());
+   Aws::Utils::Array<JsonValue> scannedVolumeDetailsJsonList(m_scannedVolumeDetails.size());
    for(unsigned scannedVolumeDetailsIndex = 0; scannedVolumeDetailsIndex < scannedVolumeDetailsJsonList.GetLength(); ++scannedVolumeDetailsIndex)
    {
      scannedVolumeDetailsJsonList[scannedVolumeDetailsIndex].AsObject(m_scannedVolumeDetails[scannedVolumeDetailsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue EbsVolumeDetails::Jsonize() const
 
   if(m_skippedVolumeDetailsHasBeenSet)
   {
-   Array<JsonValue> skippedVolumeDetailsJsonList(m_skippedVolumeDetails.size());
+   Aws::Utils::Array<JsonValue> skippedVolumeDetailsJsonList(m_skippedVolumeDetails.size());
    for(unsigned skippedVolumeDetailsIndex = 0; skippedVolumeDetailsIndex < skippedVolumeDetailsJsonList.GetLength(); ++skippedVolumeDetailsIndex)
    {
      skippedVolumeDetailsJsonList[skippedVolumeDetailsIndex].AsObject(m_skippedVolumeDetails[skippedVolumeDetailsIndex].Jsonize());

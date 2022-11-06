@@ -30,7 +30,7 @@ DescribeConfigRuleEvaluationStatusResult& DescribeConfigRuleEvaluationStatusResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigRulesEvaluationStatus"))
   {
-    Array<JsonView> configRulesEvaluationStatusJsonList = jsonValue.GetArray("ConfigRulesEvaluationStatus");
+    Aws::Utils::Array<JsonView> configRulesEvaluationStatusJsonList = jsonValue.GetArray("ConfigRulesEvaluationStatus");
     for(unsigned configRulesEvaluationStatusIndex = 0; configRulesEvaluationStatusIndex < configRulesEvaluationStatusJsonList.GetLength(); ++configRulesEvaluationStatusIndex)
     {
       m_configRulesEvaluationStatus.push_back(configRulesEvaluationStatusJsonList[configRulesEvaluationStatusIndex].AsObject());

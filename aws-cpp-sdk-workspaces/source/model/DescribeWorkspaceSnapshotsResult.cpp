@@ -30,7 +30,7 @@ DescribeWorkspaceSnapshotsResult& DescribeWorkspaceSnapshotsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RebuildSnapshots"))
   {
-    Array<JsonView> rebuildSnapshotsJsonList = jsonValue.GetArray("RebuildSnapshots");
+    Aws::Utils::Array<JsonView> rebuildSnapshotsJsonList = jsonValue.GetArray("RebuildSnapshots");
     for(unsigned rebuildSnapshotsIndex = 0; rebuildSnapshotsIndex < rebuildSnapshotsJsonList.GetLength(); ++rebuildSnapshotsIndex)
     {
       m_rebuildSnapshots.push_back(rebuildSnapshotsJsonList[rebuildSnapshotsIndex].AsObject());
@@ -39,7 +39,7 @@ DescribeWorkspaceSnapshotsResult& DescribeWorkspaceSnapshotsResult::operator =(c
 
   if(jsonValue.ValueExists("RestoreSnapshots"))
   {
-    Array<JsonView> restoreSnapshotsJsonList = jsonValue.GetArray("RestoreSnapshots");
+    Aws::Utils::Array<JsonView> restoreSnapshotsJsonList = jsonValue.GetArray("RestoreSnapshots");
     for(unsigned restoreSnapshotsIndex = 0; restoreSnapshotsIndex < restoreSnapshotsJsonList.GetLength(); ++restoreSnapshotsIndex)
     {
       m_restoreSnapshots.push_back(restoreSnapshotsJsonList[restoreSnapshotsIndex].AsObject());

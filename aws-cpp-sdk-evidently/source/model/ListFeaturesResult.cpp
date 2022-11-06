@@ -30,7 +30,7 @@ ListFeaturesResult& ListFeaturesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("features"))
   {
-    Array<JsonView> featuresJsonList = jsonValue.GetArray("features");
+    Aws::Utils::Array<JsonView> featuresJsonList = jsonValue.GetArray("features");
     for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
     {
       m_features.push_back(featuresJsonList[featuresIndex].AsObject());

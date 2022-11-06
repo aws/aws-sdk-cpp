@@ -37,7 +37,7 @@ AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& AwsCloudFrontDistributi
 {
   if(jsonValue.ValueExists("Items"))
   {
-    Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
+    Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
     for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsInteger());
@@ -61,7 +61,7 @@ JsonValue AwsCloudFrontDistributionOriginGroupFailoverStatusCodes::Jsonize() con
 
   if(m_itemsHasBeenSet)
   {
-   Array<JsonValue> itemsJsonList(m_items.size());
+   Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
    {
      itemsJsonList[itemsIndex].AsInteger(m_items[itemsIndex]);

@@ -30,7 +30,7 @@ ListJobExecutionsForJobResult& ListJobExecutionsForJobResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("executionSummaries"))
   {
-    Array<JsonView> executionSummariesJsonList = jsonValue.GetArray("executionSummaries");
+    Aws::Utils::Array<JsonView> executionSummariesJsonList = jsonValue.GetArray("executionSummaries");
     for(unsigned executionSummariesIndex = 0; executionSummariesIndex < executionSummariesJsonList.GetLength(); ++executionSummariesIndex)
     {
       m_executionSummaries.push_back(executionSummariesJsonList[executionSummariesIndex].AsObject());

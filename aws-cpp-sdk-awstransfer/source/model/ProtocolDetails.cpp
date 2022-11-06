@@ -64,7 +64,7 @@ ProtocolDetails& ProtocolDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("As2Transports"))
   {
-    Array<JsonView> as2TransportsJsonList = jsonValue.GetArray("As2Transports");
+    Aws::Utils::Array<JsonView> as2TransportsJsonList = jsonValue.GetArray("As2Transports");
     for(unsigned as2TransportsIndex = 0; as2TransportsIndex < as2TransportsJsonList.GetLength(); ++as2TransportsIndex)
     {
       m_as2Transports.push_back(As2TransportMapper::GetAs2TransportForName(as2TransportsJsonList[as2TransportsIndex].AsString()));
@@ -97,7 +97,7 @@ JsonValue ProtocolDetails::Jsonize() const
 
   if(m_as2TransportsHasBeenSet)
   {
-   Array<JsonValue> as2TransportsJsonList(m_as2Transports.size());
+   Aws::Utils::Array<JsonValue> as2TransportsJsonList(m_as2Transports.size());
    for(unsigned as2TransportsIndex = 0; as2TransportsIndex < as2TransportsJsonList.GetLength(); ++as2TransportsIndex)
    {
      as2TransportsJsonList[as2TransportsIndex].AsString(As2TransportMapper::GetNameForAs2Transport(m_as2Transports[as2TransportsIndex]));

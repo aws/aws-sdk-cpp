@@ -31,7 +31,7 @@ Aws::String UpdateACLRequest::SerializePayload() const
 
   if(m_userNamesToAddHasBeenSet)
   {
-   Array<JsonValue> userNamesToAddJsonList(m_userNamesToAdd.size());
+   Aws::Utils::Array<JsonValue> userNamesToAddJsonList(m_userNamesToAdd.size());
    for(unsigned userNamesToAddIndex = 0; userNamesToAddIndex < userNamesToAddJsonList.GetLength(); ++userNamesToAddIndex)
    {
      userNamesToAddJsonList[userNamesToAddIndex].AsString(m_userNamesToAdd[userNamesToAddIndex]);
@@ -42,7 +42,7 @@ Aws::String UpdateACLRequest::SerializePayload() const
 
   if(m_userNamesToRemoveHasBeenSet)
   {
-   Array<JsonValue> userNamesToRemoveJsonList(m_userNamesToRemove.size());
+   Aws::Utils::Array<JsonValue> userNamesToRemoveJsonList(m_userNamesToRemove.size());
    for(unsigned userNamesToRemoveIndex = 0; userNamesToRemoveIndex < userNamesToRemoveJsonList.GetLength(); ++userNamesToRemoveIndex)
    {
      userNamesToRemoveJsonList[userNamesToRemoveIndex].AsString(m_userNamesToRemove[userNamesToRemoveIndex]);

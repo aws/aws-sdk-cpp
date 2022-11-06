@@ -33,7 +33,7 @@ Captions& Captions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CaptionFormats"))
   {
-    Array<JsonView> captionFormatsJsonList = jsonValue.GetArray("CaptionFormats");
+    Aws::Utils::Array<JsonView> captionFormatsJsonList = jsonValue.GetArray("CaptionFormats");
     for(unsigned captionFormatsIndex = 0; captionFormatsIndex < captionFormatsJsonList.GetLength(); ++captionFormatsIndex)
     {
       m_captionFormats.push_back(captionFormatsJsonList[captionFormatsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue Captions::Jsonize() const
 
   if(m_captionFormatsHasBeenSet)
   {
-   Array<JsonValue> captionFormatsJsonList(m_captionFormats.size());
+   Aws::Utils::Array<JsonValue> captionFormatsJsonList(m_captionFormats.size());
    for(unsigned captionFormatsIndex = 0; captionFormatsIndex < captionFormatsJsonList.GetLength(); ++captionFormatsIndex)
    {
      captionFormatsJsonList[captionFormatsIndex].AsObject(m_captionFormats[captionFormatsIndex].Jsonize());

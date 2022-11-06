@@ -33,7 +33,7 @@ ProjectOperation& ProjectOperation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProjectedColumns"))
   {
-    Array<JsonView> projectedColumnsJsonList = jsonValue.GetArray("ProjectedColumns");
+    Aws::Utils::Array<JsonView> projectedColumnsJsonList = jsonValue.GetArray("ProjectedColumns");
     for(unsigned projectedColumnsIndex = 0; projectedColumnsIndex < projectedColumnsJsonList.GetLength(); ++projectedColumnsIndex)
     {
       m_projectedColumns.push_back(projectedColumnsJsonList[projectedColumnsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue ProjectOperation::Jsonize() const
 
   if(m_projectedColumnsHasBeenSet)
   {
-   Array<JsonValue> projectedColumnsJsonList(m_projectedColumns.size());
+   Aws::Utils::Array<JsonValue> projectedColumnsJsonList(m_projectedColumns.size());
    for(unsigned projectedColumnsIndex = 0; projectedColumnsIndex < projectedColumnsJsonList.GetLength(); ++projectedColumnsIndex)
    {
      projectedColumnsJsonList[projectedColumnsIndex].AsString(m_projectedColumns[projectedColumnsIndex]);

@@ -30,7 +30,7 @@ ListSubscribedWorkteamsResult& ListSubscribedWorkteamsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SubscribedWorkteams"))
   {
-    Array<JsonView> subscribedWorkteamsJsonList = jsonValue.GetArray("SubscribedWorkteams");
+    Aws::Utils::Array<JsonView> subscribedWorkteamsJsonList = jsonValue.GetArray("SubscribedWorkteams");
     for(unsigned subscribedWorkteamsIndex = 0; subscribedWorkteamsIndex < subscribedWorkteamsJsonList.GetLength(); ++subscribedWorkteamsIndex)
     {
       m_subscribedWorkteams.push_back(subscribedWorkteamsJsonList[subscribedWorkteamsIndex].AsObject());

@@ -30,7 +30,7 @@ ListFindingAggregatorsResult& ListFindingAggregatorsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FindingAggregators"))
   {
-    Array<JsonView> findingAggregatorsJsonList = jsonValue.GetArray("FindingAggregators");
+    Aws::Utils::Array<JsonView> findingAggregatorsJsonList = jsonValue.GetArray("FindingAggregators");
     for(unsigned findingAggregatorsIndex = 0; findingAggregatorsIndex < findingAggregatorsJsonList.GetLength(); ++findingAggregatorsIndex)
     {
       m_findingAggregators.push_back(findingAggregatorsJsonList[findingAggregatorsIndex].AsObject());

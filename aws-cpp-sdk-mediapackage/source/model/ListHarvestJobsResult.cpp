@@ -30,7 +30,7 @@ ListHarvestJobsResult& ListHarvestJobsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("harvestJobs"))
   {
-    Array<JsonView> harvestJobsJsonList = jsonValue.GetArray("harvestJobs");
+    Aws::Utils::Array<JsonView> harvestJobsJsonList = jsonValue.GetArray("harvestJobs");
     for(unsigned harvestJobsIndex = 0; harvestJobsIndex < harvestJobsJsonList.GetLength(); ++harvestJobsIndex)
     {
       m_harvestJobs.push_back(harvestJobsJsonList[harvestJobsIndex].AsObject());

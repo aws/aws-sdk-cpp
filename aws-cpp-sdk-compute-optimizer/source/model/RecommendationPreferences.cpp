@@ -33,7 +33,7 @@ RecommendationPreferences& RecommendationPreferences::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("cpuVendorArchitectures"))
   {
-    Array<JsonView> cpuVendorArchitecturesJsonList = jsonValue.GetArray("cpuVendorArchitectures");
+    Aws::Utils::Array<JsonView> cpuVendorArchitecturesJsonList = jsonValue.GetArray("cpuVendorArchitectures");
     for(unsigned cpuVendorArchitecturesIndex = 0; cpuVendorArchitecturesIndex < cpuVendorArchitecturesJsonList.GetLength(); ++cpuVendorArchitecturesIndex)
     {
       m_cpuVendorArchitectures.push_back(CpuVendorArchitectureMapper::GetCpuVendorArchitectureForName(cpuVendorArchitecturesJsonList[cpuVendorArchitecturesIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue RecommendationPreferences::Jsonize() const
 
   if(m_cpuVendorArchitecturesHasBeenSet)
   {
-   Array<JsonValue> cpuVendorArchitecturesJsonList(m_cpuVendorArchitectures.size());
+   Aws::Utils::Array<JsonValue> cpuVendorArchitecturesJsonList(m_cpuVendorArchitectures.size());
    for(unsigned cpuVendorArchitecturesIndex = 0; cpuVendorArchitecturesIndex < cpuVendorArchitecturesJsonList.GetLength(); ++cpuVendorArchitecturesIndex)
    {
      cpuVendorArchitecturesJsonList[cpuVendorArchitecturesIndex].AsString(CpuVendorArchitectureMapper::GetNameForCpuVendorArchitecture(m_cpuVendorArchitectures[cpuVendorArchitecturesIndex]));

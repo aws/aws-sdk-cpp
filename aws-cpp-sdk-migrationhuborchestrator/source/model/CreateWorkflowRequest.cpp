@@ -64,7 +64,7 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
 
   if(m_stepTargetsHasBeenSet)
   {
-   Array<JsonValue> stepTargetsJsonList(m_stepTargets.size());
+   Aws::Utils::Array<JsonValue> stepTargetsJsonList(m_stepTargets.size());
    for(unsigned stepTargetsIndex = 0; stepTargetsIndex < stepTargetsJsonList.GetLength(); ++stepTargetsIndex)
    {
      stepTargetsJsonList[stepTargetsIndex].AsString(m_stepTargets[stepTargetsIndex]);

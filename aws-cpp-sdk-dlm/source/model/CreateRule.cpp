@@ -68,7 +68,7 @@ CreateRule& CreateRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Times"))
   {
-    Array<JsonView> timesJsonList = jsonValue.GetArray("Times");
+    Aws::Utils::Array<JsonView> timesJsonList = jsonValue.GetArray("Times");
     for(unsigned timesIndex = 0; timesIndex < timesJsonList.GetLength(); ++timesIndex)
     {
       m_times.push_back(timesJsonList[timesIndex].AsString());
@@ -108,7 +108,7 @@ JsonValue CreateRule::Jsonize() const
 
   if(m_timesHasBeenSet)
   {
-   Array<JsonValue> timesJsonList(m_times.size());
+   Aws::Utils::Array<JsonValue> timesJsonList(m_times.size());
    for(unsigned timesIndex = 0; timesIndex < timesJsonList.GetLength(); ++timesIndex)
    {
      timesJsonList[timesIndex].AsString(m_times[timesIndex]);

@@ -42,7 +42,7 @@ OpenZFSClientConfiguration& OpenZFSClientConfiguration::operator =(JsonView json
 
   if(jsonValue.ValueExists("Options"))
   {
-    Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
+    Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
     for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
     {
       m_options.push_back(optionsJsonList[optionsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue OpenZFSClientConfiguration::Jsonize() const
 
   if(m_optionsHasBeenSet)
   {
-   Array<JsonValue> optionsJsonList(m_options.size());
+   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
    {
      optionsJsonList[optionsIndex].AsString(m_options[optionsIndex]);

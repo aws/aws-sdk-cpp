@@ -26,7 +26,7 @@ Aws::String PutEvaluationsRequest::SerializePayload() const
 
   if(m_evaluationsHasBeenSet)
   {
-   Array<JsonValue> evaluationsJsonList(m_evaluations.size());
+   Aws::Utils::Array<JsonValue> evaluationsJsonList(m_evaluations.size());
    for(unsigned evaluationsIndex = 0; evaluationsIndex < evaluationsJsonList.GetLength(); ++evaluationsIndex)
    {
      evaluationsJsonList[evaluationsIndex].AsObject(m_evaluations[evaluationsIndex].Jsonize());

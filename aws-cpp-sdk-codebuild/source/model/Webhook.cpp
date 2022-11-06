@@ -75,10 +75,10 @@ Webhook& Webhook::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("filterGroups"))
   {
-    Array<JsonView> filterGroupsJsonList = jsonValue.GetArray("filterGroups");
+    Aws::Utils::Array<JsonView> filterGroupsJsonList = jsonValue.GetArray("filterGroups");
     for(unsigned filterGroupsIndex = 0; filterGroupsIndex < filterGroupsJsonList.GetLength(); ++filterGroupsIndex)
     {
-      Array<JsonView> filterGroupJsonList = filterGroupsJsonList[filterGroupsIndex].AsArray();
+      Aws::Utils::Array<JsonView> filterGroupJsonList = filterGroupsJsonList[filterGroupsIndex].AsArray();
       Aws::Vector<WebhookFilter> filterGroupList;
       filterGroupList.reserve((size_t)filterGroupJsonList.GetLength());
       for(unsigned filterGroupIndex = 0; filterGroupIndex < filterGroupJsonList.GetLength(); ++filterGroupIndex)
@@ -137,10 +137,10 @@ JsonValue Webhook::Jsonize() const
 
   if(m_filterGroupsHasBeenSet)
   {
-   Array<JsonValue> filterGroupsJsonList(m_filterGroups.size());
+   Aws::Utils::Array<JsonValue> filterGroupsJsonList(m_filterGroups.size());
    for(unsigned filterGroupsIndex = 0; filterGroupsIndex < filterGroupsJsonList.GetLength(); ++filterGroupsIndex)
    {
-     Array<JsonValue> filterGroupJsonList(m_filterGroups[filterGroupsIndex].size());
+     Aws::Utils::Array<JsonValue> filterGroupJsonList(m_filterGroups[filterGroupsIndex].size());
      for(unsigned filterGroupIndex = 0; filterGroupIndex < filterGroupJsonList.GetLength(); ++filterGroupIndex)
      {
        filterGroupJsonList[filterGroupIndex].AsObject(m_filterGroups[filterGroupsIndex][filterGroupIndex].Jsonize());
