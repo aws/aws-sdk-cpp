@@ -5,17 +5,18 @@
 
 #pragma once
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
-#include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
-
 namespace S3Outposts
 {
-namespace S3OutpostsEndpoint
+class S3OutpostsEndpointRules
 {
-AWS_S3OUTPOSTS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
-} // namespace S3OutpostsEndpoint
+public:
+    static Aws::String GetRulesAsString();
+    static const Aws::Vector<char> Rules; 
+};
 } // namespace S3Outposts
 } // namespace Aws

@@ -4,7 +4,6 @@
  */
 
 #include <aws/s3control/model/GetMultiRegionAccessPointPolicyRequest.h>
-#include <aws/s3control/S3ControlARN.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -36,20 +35,6 @@ Aws::Http::HeaderValueCollection GetMultiRegionAccessPointPolicyRequest::GetRequ
     ss << m_accountId;
     headers.emplace("x-amz-account-id",  ss.str());
     ss.str("");
-  }
-
-  Aws::S3Control::S3ControlARN arn(m_name);
-  if (arn && arn.Validate().IsSuccess())
-  {
-    ss << arn.GetAccountId();
-    headers.emplace("x-amz-account-id", ss.str());
-    ss.str("");
-    if (arn.GetResourceType() == Aws::S3Control::ARNResourceType::OUTPOST)
-    {
-      ss << arn.GetResourceId();
-      headers.emplace("x-amz-outpost-id",  ss.str());
-      ss.str("");
-    }
   }
 
   return headers;

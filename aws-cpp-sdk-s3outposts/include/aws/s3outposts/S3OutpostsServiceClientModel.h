@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/s3outposts/S3OutpostsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/s3outposts/S3OutpostsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -53,6 +55,10 @@ namespace Aws
 
   namespace S3Outposts
   {
+    using S3OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using S3OutpostsEndpointProviderBase = Aws::S3Outposts::Endpoint::S3OutpostsEndpointProviderBase;
+    using S3OutpostsEndpointProvider = Aws::S3Outposts::Endpoint::S3OutpostsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in S3OutpostsClient header */

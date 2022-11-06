@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/s3/S3Errors.h>
+#include <aws/s3/S3ClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/s3/S3EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -107,6 +109,9 @@ namespace Aws
 
   namespace S3
   {
+    using S3EndpointProviderBase = Aws::S3::Endpoint::S3EndpointProviderBase;
+    using S3EndpointProvider = Aws::S3::Endpoint::S3EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in S3Client header */

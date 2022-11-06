@@ -32,31 +32,12 @@ namespace Aws
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
     } // SS3Headers
 
-    // Get endpoint, signer region and signer service name after computing the endpoint.
-    struct ComputeEndpointResult
-    {
-      ComputeEndpointResult(const Aws::String& endpointName = {}, const Aws::String& region = {}, const Aws::String& serviceName = {}, const Aws::String signer = Aws::Auth::SIGV4_SIGNER) :
-        endpoint(endpointName), signerRegion(region), signerServiceName(serviceName), signerName(signer) {}
-
-      Aws::String endpoint;
-      Aws::String signerRegion;
-      Aws::String signerServiceName;
-      Aws::String signerName;
-    };
-    typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<S3Errors>> ComputeEndpointOutcome;
-
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
 
     /**
      * <p/>
      */
-    enum class US_EAST_1_REGIONAL_ENDPOINT_OPTION
-    {
-      NOT_SET,
-      LEGACY,   //stands for using global endpoint for us-east-1,
-      REGIONAL //stands for using regional endpoint for us-east-1
-    };
     class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient
     {
     public:
@@ -68,9 +49,34 @@ namespace Aws
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration(),
-                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
-                 bool useVirtualAddressing = true,
+        S3Client(const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration(),
+                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG));
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        S3Client(const Aws::Auth::AWSCredentials& credentials,
+                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
+                 const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration());
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        S3Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
+                 const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration());
+
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        S3Client(const Aws::Client::ClientConfiguration& clientConfiguration,
+                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads,
+                 bool useVirtualAddressing,
                  Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
        /**
@@ -78,9 +84,9 @@ namespace Aws
         * is not specified, it will be initialized to default values.
         */
         S3Client(const Aws::Auth::AWSCredentials& credentials,
-                 const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration(),
-                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
-                 bool useVirtualAddressing = true,
+                 const Aws::Client::ClientConfiguration& clientConfiguration,
+                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads,
+                 bool useVirtualAddressing,
                  Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
        /**
@@ -88,12 +94,12 @@ namespace Aws
         * the default http client factory will be used
         */
         S3Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                 const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration(),
-                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
-                 bool useVirtualAddressing = true,
+                 const Aws::Client::ClientConfiguration& clientConfiguration,
+                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads,
+                 bool useVirtualAddressing,
                  Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
-
+        /* End of legacy constructors due deprecation */
         virtual ~S3Client();
 
         /**
@@ -4746,25 +4752,13 @@ namespace Aws
         virtual bool MultipartUploadSupported() const;
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<S3EndpointProviderBase>& accessEndpointProvider();
 
     private:
-        void init(const Client::ClientConfiguration& clientConfiguration);
-        void LoadS3SpecificConfig(const Aws::String& profile);
-        ComputeEndpointOutcome ComputeEndpointString(const Aws::String& bucket) const;
-        ComputeEndpointOutcome ComputeEndpointString() const;
-        ComputeEndpointOutcome ComputeEndpointStringWithServiceName(const Aws::String& serviceNameOverride = "") const;
-
-        Aws::String m_baseUri;
-        Aws::String m_scheme;
-        bool m_enableHostPrefixInjection = false;
-        Aws::String m_configScheme;
+        void init(const S3ClientConfiguration& clientConfiguration);
+        S3ClientConfiguration m_clientConfiguration;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
-        bool m_useVirtualAddressing = false;
-        bool m_useDualStack = false;
-        bool m_useArnRegion = false;
-        bool m_disableMultiRegionAccessPoints = false;
-        bool m_useCustomEndpoint = false;
-        Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
+        std::shared_ptr<S3EndpointProviderBase> m_endpointProvider;
     };
 
   } // namespace S3

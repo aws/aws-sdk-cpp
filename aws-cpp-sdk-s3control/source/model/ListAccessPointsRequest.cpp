@@ -4,7 +4,6 @@
  */
 
 #include <aws/s3control/model/ListAccessPointsRequest.h>
-#include <aws/s3control/S3ControlARN.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/http/URI.h>
@@ -36,27 +35,7 @@ void ListAccessPointsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_bucketHasBeenSet)
     {
-      S3ControlARN arn(m_bucket);
-      if (arn && arn.Validate().IsSuccess())
-      {
-        if (arn.GetResourceType() == ARNResourceType::BUCKET)
-        {
-          ss << arn.GetResourceId();
-        }
-        else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
-        {
-          ss << arn.GetSubResourceId();
-        }
-        else
-        {
-          // It's a valid ARN, but has incorrect resource type.
-          assert(false);
-        }
-      }
-      else
-      {
-        ss << m_bucket;
-      }
+      ss << m_bucket;
       uri.AddQueryStringParameter("bucket", ss.str());
       ss.str("");
     }
@@ -86,20 +65,6 @@ Aws::Http::HeaderValueCollection ListAccessPointsRequest::GetRequestSpecificHead
     ss << m_accountId;
     headers.emplace("x-amz-account-id",  ss.str());
     ss.str("");
-  }
-
-  Aws::S3Control::S3ControlARN arn(m_bucket);
-  if (arn && arn.Validate().IsSuccess())
-  {
-    ss << arn.GetAccountId();
-    headers.emplace("x-amz-account-id", ss.str());
-    ss.str("");
-    if (arn.GetResourceType() == Aws::S3Control::ARNResourceType::OUTPOST)
-    {
-      ss << arn.GetResourceId();
-      headers.emplace("x-amz-outpost-id",  ss.str());
-      ss.str("");
-    }
   }
 
   return headers;

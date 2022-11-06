@@ -5,8 +5,7 @@
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
-#include <aws/s3control/S3ControlEndpoint.h>
-#include <aws/core/client/ClientConfiguration.h>
+#include <aws/s3control/S3ControlEndpointProvider.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -17,17 +16,6 @@ namespace Aws
 {
 namespace S3Control
 {
-    // Get endpoint, signer region and signer service name after computing the endpoint.
-    struct ComputeEndpointResult
-    {
-      ComputeEndpointResult(const Aws::String& iEndpointName = "", const Aws::String& iSignerRegion = "", const Aws::String& iSignerServiceName = "") :
-        endpoint(iEndpointName), signerRegion(iSignerRegion), signerServiceName(iSignerServiceName) {}
-
-      Aws::String endpoint;
-      Aws::String signerRegion;
-      Aws::String signerServiceName;
-    };
-    typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<S3ControlErrors>> ComputeEndpointOutcome;
 
     /**
      * <p> Amazon Web Services S3 Control provides access to Amazon S3 control plane
@@ -44,22 +32,48 @@ namespace S3Control
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3ControlClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        S3ControlClient(const Aws::S3Control::S3ControlClientConfiguration& clientConfiguration = Aws::S3Control::S3ControlClientConfiguration(),
+                        std::shared_ptr<S3ControlEndpointProviderBase> endpointProvider = Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         S3ControlClient(const Aws::Auth::AWSCredentials& credentials,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<S3ControlEndpointProviderBase> endpointProvider = Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::S3Control::S3ControlClientConfiguration& clientConfiguration = Aws::S3Control::S3ControlClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         S3ControlClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<S3ControlEndpointProviderBase> endpointProvider = Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::S3Control::S3ControlClientConfiguration& clientConfiguration = Aws::S3Control::S3ControlClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        S3ControlClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        S3ControlClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        S3ControlClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~S3ControlClient();
 
 
@@ -2026,34 +2040,12 @@ namespace S3Control
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<S3ControlEndpointProviderBase>& accessEndpointProvider();
     private:
-        void init(const Client::ClientConfiguration& clientConfiguration);
-        void LoadS3ControlSpecificConfig(const Aws::String& profile);
-        /**
-         * For operations without account ID or ARN as parameters, e.g. CreateBucket, ListRegionalBuckets. Possible endpoints:
-         * - s3-control[.dualstack].{region}.amazonaws.com
-         * - s3-outposts.{region}.amazonaws.com
-         * @param hasOutpostId: Use s3-outposts as service name for both endpoint and signer if true.
-         */
-        ComputeEndpointOutcome ComputeEndpointString(bool hasOutpostId = false) const;
-        /**
-         * For operations without account ID, but with ARN as parameters. e.g. GetBucket. Possible endpoints:
-         * - {accountId}.s3-control[.dualstack].{region}.amazonaws.com
-         * - s3-outposts.{region}.amazonaws.com
-         * @param name: accesspoint name (ARN) or bucket name (ARN).
-         * @param hasOutpostId: Use s3-outposts as service name to sign the request if true.
-         * @param uriPathPrefix: Path prefix of the first resource in the uri.
-         */
-        ComputeEndpointOutcome ComputeEndpointString(const Aws::String& name, bool hasOutpostId, const Aws::String& uriPathPrefix) const;
-
-        Aws::String m_baseUri;
-        Aws::String m_scheme;
-        bool m_enableHostPrefixInjection = false;
-        Aws::String m_configScheme;
+        void init(const S3ControlClientConfiguration& clientConfiguration);
+        S3ControlClientConfiguration m_clientConfiguration;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
-        bool m_useDualStack = false;
-        bool m_useArnRegion = false;
-        bool m_useCustomEndpoint = false;
+        std::shared_ptr<S3ControlEndpointProviderBase> m_endpointProvider;
     };
 
   } // namespace S3Control

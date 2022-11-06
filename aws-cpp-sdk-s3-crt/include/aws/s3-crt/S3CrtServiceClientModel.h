@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/s3-crt/S3CrtErrors.h>
+#include <aws/s3-crt/S3CrtClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/s3-crt/S3CrtEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -107,6 +109,9 @@ namespace Aws
 
   namespace S3Crt
   {
+    using S3CrtEndpointProviderBase = Aws::S3Crt::Endpoint::S3CrtEndpointProviderBase;
+    using S3CrtEndpointProvider = Aws::S3Crt::Endpoint::S3CrtEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in S3CrtClient header */

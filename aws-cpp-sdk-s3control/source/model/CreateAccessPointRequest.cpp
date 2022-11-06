@@ -4,7 +4,6 @@
  */
 
 #include <aws/s3control/model/CreateAccessPointRequest.h>
-#include <aws/s3control/S3ControlARN.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -35,27 +34,7 @@ Aws::String CreateAccessPointRequest::SerializePayload() const
   if(m_bucketHasBeenSet)
   {
    XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
-   S3ControlARN arn(m_bucket);
-   if (arn && arn.Validate().IsSuccess())
-   {
-     if (arn.GetResourceType() == ARNResourceType::BUCKET)
-     {
-       bucketNode.SetText(arn.GetResourceId());
-     }
-     else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
-     {
-       bucketNode.SetText(arn.GetSubResourceId());
-     }
-     else
-     {
-       // It's a valid ARN, but has incorrect resource type.
-       assert(false);
-     }
-   }
-   else
-   {
-     bucketNode.SetText(m_bucket);
-   }
+   bucketNode.SetText(m_bucket);
   }
 
   if(m_vpcConfigurationHasBeenSet)
@@ -83,20 +62,6 @@ Aws::Http::HeaderValueCollection CreateAccessPointRequest::GetRequestSpecificHea
     ss << m_accountId;
     headers.emplace("x-amz-account-id",  ss.str());
     ss.str("");
-  }
-
-  Aws::S3Control::S3ControlARN arn(m_bucket);
-  if (arn && arn.Validate().IsSuccess())
-  {
-    ss << arn.GetAccountId();
-    headers.emplace("x-amz-account-id", ss.str());
-    ss.str("");
-    if (arn.GetResourceType() == Aws::S3Control::ARNResourceType::OUTPOST)
-    {
-      ss << arn.GetResourceId();
-      headers.emplace("x-amz-outpost-id",  ss.str());
-      ss.str("");
-    }
   }
 
   return headers;

@@ -44,6 +44,17 @@ namespace Model
 
     bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        if (BucketHasBeenSet()) {
+            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+        }
+
+        return parameters;
+    }
+
+
     /**
      * <p>Name of the bucket to which the multipart upload was initiated.</p> <p>When
      * using this action with an access point, you must direct requests to the access

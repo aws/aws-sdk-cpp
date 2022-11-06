@@ -39,6 +39,17 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        if (BucketHasBeenSet()) {
+            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+        }
+
+        return parameters;
+    }
+
+
     /**
      * <p>The name of the Amazon S3 bucket whose configuration you want to modify or
      * retrieve.</p>

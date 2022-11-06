@@ -40,31 +40,12 @@ namespace Aws
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
     } // SS3Headers
 
-    // Get endpoint, signer region and signer service name after computing the endpoint.
-    struct ComputeEndpointResult
-    {
-      ComputeEndpointResult(const Aws::String& endpointName = {}, const Aws::String& region = {}, const Aws::String& serviceName = {}, const Aws::String signer = Aws::Auth::SIGV4_SIGNER) :
-        endpoint(endpointName), signerRegion(region), signerServiceName(serviceName), signerName(signer) {}
-
-      Aws::String endpoint;
-      Aws::String signerRegion;
-      Aws::String signerServiceName;
-      Aws::String signerName;
-    };
-    typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<S3CrtErrors>> ComputeEndpointOutcome;
-
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
 
     /**
      * <p/>
      */
-    enum class US_EAST_1_REGIONAL_ENDPOINT_OPTION
-    {
-      NOT_SET,
-      LEGACY,   //stands for using global endpoint for us-east-1,
-      REGIONAL //stands for using regional endpoint for us-east-1
-    };
     class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient
     {
     public:
@@ -72,6 +53,8 @@ namespace Aws
         static const char* SERVICE_NAME;
         static const char* ALLOCATION_TAG;
 
+
+        /* Legacy constructors due deprecation */
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -102,6 +85,7 @@ namespace Aws
                     bool useVirtualAddressing = true,
                     Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
+        /* End of legacy constructors due deprecation */
         virtual ~S3CrtClient();
 
         /**
@@ -4746,6 +4730,7 @@ namespace Aws
         virtual bool MultipartUploadSupported() const;
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<S3CrtEndpointProviderBase>& accessEndpointProvider();
 
 
         struct CrtRequestCallbackUserData {
@@ -4779,16 +4764,11 @@ namespace Aws
           wrappedData->clientShutdownSem->Release();
         }
 
-        void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData, aws_s3_meta_request_options *options, const Aws::AmazonWebServiceRequest *requset, const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
-        void LoadS3CrtSpecificConfig(const Aws::String& profile);
-        ComputeEndpointOutcome ComputeEndpointString(const Aws::String& bucket) const;
-        ComputeEndpointOutcome ComputeEndpointString() const;
-        ComputeEndpointOutcome ComputeEndpointStringWithServiceName(const Aws::String& serviceNameOverride = "") const;
-
-        Aws::String m_baseUri;
-        Aws::String m_scheme;
-        bool m_enableHostPrefixInjection = false;
-        Aws::String m_configScheme;
+        void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
+                                        aws_s3_meta_request_options *options,
+                                        const Aws::AmazonWebServiceRequest *requset,
+                                        const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
+        S3CrtClientConfiguration m_clientConfiguration;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
         struct aws_s3_client* m_s3CrtClient;
         struct aws_signing_config_aws m_s3CrtSigningConfig;
@@ -4797,12 +4777,7 @@ namespace Aws
         Aws::String m_userAgent;
         std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credProvider;
         std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_crtCredProvider;
-        bool m_useVirtualAddressing = false;
-        bool m_useDualStack = false;
-        bool m_useArnRegion = false;
-        bool m_disableMultiRegionAccessPoints = false;
-        bool m_useCustomEndpoint = false;
-        Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
+        std::shared_ptr<S3CrtEndpointProviderBase> m_endpointProvider;
     };
 
   } // namespace S3Crt
