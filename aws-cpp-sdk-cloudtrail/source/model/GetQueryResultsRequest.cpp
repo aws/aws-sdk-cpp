@@ -13,7 +13,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetQueryResultsRequest::GetQueryResultsRequest() : 
-    m_eventDataStoreHasBeenSet(false),
     m_queryIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxQueryResults(0),
@@ -24,12 +23,6 @@ GetQueryResultsRequest::GetQueryResultsRequest() :
 Aws::String GetQueryResultsRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_eventDataStoreHasBeenSet)
-  {
-   payload.WithString("EventDataStore", m_eventDataStore);
-
-  }
 
   if(m_queryIdHasBeenSet)
   {

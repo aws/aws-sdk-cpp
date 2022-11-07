@@ -7,6 +7,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -304,6 +305,25 @@ namespace Model
      */
     inline TargetLocation& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
 
+
+    
+    inline const AlarmConfiguration& GetTargetLocationAlarmConfiguration() const{ return m_targetLocationAlarmConfiguration; }
+
+    
+    inline bool TargetLocationAlarmConfigurationHasBeenSet() const { return m_targetLocationAlarmConfigurationHasBeenSet; }
+
+    
+    inline void SetTargetLocationAlarmConfiguration(const AlarmConfiguration& value) { m_targetLocationAlarmConfigurationHasBeenSet = true; m_targetLocationAlarmConfiguration = value; }
+
+    
+    inline void SetTargetLocationAlarmConfiguration(AlarmConfiguration&& value) { m_targetLocationAlarmConfigurationHasBeenSet = true; m_targetLocationAlarmConfiguration = std::move(value); }
+
+    
+    inline TargetLocation& WithTargetLocationAlarmConfiguration(const AlarmConfiguration& value) { SetTargetLocationAlarmConfiguration(value); return *this;}
+
+    
+    inline TargetLocation& WithTargetLocationAlarmConfiguration(AlarmConfiguration&& value) { SetTargetLocationAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_accounts;
@@ -320,6 +340,9 @@ namespace Model
 
     Aws::String m_executionRoleName;
     bool m_executionRoleNameHasBeenSet = false;
+
+    AlarmConfiguration m_targetLocationAlarmConfiguration;
+    bool m_targetLocationAlarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

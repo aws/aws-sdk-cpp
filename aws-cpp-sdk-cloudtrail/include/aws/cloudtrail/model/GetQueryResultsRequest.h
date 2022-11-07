@@ -35,55 +35,6 @@ namespace Model
 
 
     /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store against which the
-     * query was run.</p>
-     */
-    inline const Aws::String& GetEventDataStore() const{ return m_eventDataStore; }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store against which the
-     * query was run.</p>
-     */
-    inline bool EventDataStoreHasBeenSet() const { return m_eventDataStoreHasBeenSet; }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store against which the
-     * query was run.</p>
-     */
-    inline void SetEventDataStore(const Aws::String& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = value; }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store against which the
-     * query was run.</p>
-     */
-    inline void SetEventDataStore(Aws::String&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::move(value); }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store against which the
-     * query was run.</p>
-     */
-    inline void SetEventDataStore(const char* value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore.assign(value); }
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store against which the
-     * query was run.</p>
-     */
-    inline GetQueryResultsRequest& WithEventDataStore(const Aws::String& value) { SetEventDataStore(value); return *this;}
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store against which the
-     * query was run.</p>
-     */
-    inline GetQueryResultsRequest& WithEventDataStore(Aws::String&& value) { SetEventDataStore(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN (or ID suffix of the ARN) of the event data store against which the
-     * query was run.</p>
-     */
-    inline GetQueryResultsRequest& WithEventDataStore(const char* value) { SetEventDataStore(value); return *this;}
-
-
-    /**
      * <p>The ID of the query for which you want to get results.</p>
      */
     inline const Aws::String& GetQueryId() const{ return m_queryId; }
@@ -186,9 +137,6 @@ namespace Model
     inline GetQueryResultsRequest& WithMaxQueryResults(int value) { SetMaxQueryResults(value); return *this;}
 
   private:
-
-    Aws::String m_eventDataStore;
-    bool m_eventDataStoreHasBeenSet = false;
 
     Aws::String m_queryId;
     bool m_queryIdHasBeenSet = false;

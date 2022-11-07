@@ -10,6 +10,7 @@
 #include <aws/wellarchitected/model/WorkloadEnvironment.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/wellarchitected/model/WorkloadDiscoveryConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -463,6 +464,89 @@ namespace Model
      */
     inline CreateWorkloadRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Well-Architected discovery configuration settings associated to the
+     * workload.</p>
+     */
+    inline const WorkloadDiscoveryConfig& GetDiscoveryConfig() const{ return m_discoveryConfig; }
+
+    /**
+     * <p>Well-Architected discovery configuration settings associated to the
+     * workload.</p>
+     */
+    inline bool DiscoveryConfigHasBeenSet() const { return m_discoveryConfigHasBeenSet; }
+
+    /**
+     * <p>Well-Architected discovery configuration settings associated to the
+     * workload.</p>
+     */
+    inline void SetDiscoveryConfig(const WorkloadDiscoveryConfig& value) { m_discoveryConfigHasBeenSet = true; m_discoveryConfig = value; }
+
+    /**
+     * <p>Well-Architected discovery configuration settings associated to the
+     * workload.</p>
+     */
+    inline void SetDiscoveryConfig(WorkloadDiscoveryConfig&& value) { m_discoveryConfigHasBeenSet = true; m_discoveryConfig = std::move(value); }
+
+    /**
+     * <p>Well-Architected discovery configuration settings associated to the
+     * workload.</p>
+     */
+    inline CreateWorkloadRequest& WithDiscoveryConfig(const WorkloadDiscoveryConfig& value) { SetDiscoveryConfig(value); return *this;}
+
+    /**
+     * <p>Well-Architected discovery configuration settings associated to the
+     * workload.</p>
+     */
+    inline CreateWorkloadRequest& WithDiscoveryConfig(WorkloadDiscoveryConfig&& value) { SetDiscoveryConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>List of AppRegistry application ARNs associated to the workload.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetApplications() const{ return m_applications; }
+
+    /**
+     * <p>List of AppRegistry application ARNs associated to the workload.</p>
+     */
+    inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
+
+    /**
+     * <p>List of AppRegistry application ARNs associated to the workload.</p>
+     */
+    inline void SetApplications(const Aws::Vector<Aws::String>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+
+    /**
+     * <p>List of AppRegistry application ARNs associated to the workload.</p>
+     */
+    inline void SetApplications(Aws::Vector<Aws::String>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
+
+    /**
+     * <p>List of AppRegistry application ARNs associated to the workload.</p>
+     */
+    inline CreateWorkloadRequest& WithApplications(const Aws::Vector<Aws::String>& value) { SetApplications(value); return *this;}
+
+    /**
+     * <p>List of AppRegistry application ARNs associated to the workload.</p>
+     */
+    inline CreateWorkloadRequest& WithApplications(Aws::Vector<Aws::String>&& value) { SetApplications(std::move(value)); return *this;}
+
+    /**
+     * <p>List of AppRegistry application ARNs associated to the workload.</p>
+     */
+    inline CreateWorkloadRequest& AddApplications(const Aws::String& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+
+    /**
+     * <p>List of AppRegistry application ARNs associated to the workload.</p>
+     */
+    inline CreateWorkloadRequest& AddApplications(Aws::String&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>List of AppRegistry application ARNs associated to the workload.</p>
+     */
+    inline CreateWorkloadRequest& AddApplications(const char* value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+
   private:
 
     Aws::String m_workloadName;
@@ -509,6 +593,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    WorkloadDiscoveryConfig m_discoveryConfig;
+    bool m_discoveryConfigHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_applications;
+    bool m_applicationsHasBeenSet = false;
   };
 
 } // namespace Model

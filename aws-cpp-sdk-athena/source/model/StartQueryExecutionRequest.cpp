@@ -19,7 +19,8 @@ StartQueryExecutionRequest::StartQueryExecutionRequest() :
     m_queryExecutionContextHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
     m_workGroupHasBeenSet(false),
-    m_executionParametersHasBeenSet(false)
+    m_executionParametersHasBeenSet(false),
+    m_resultReuseConfigurationHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String StartQueryExecutionRequest::SerializePayload() const
      executionParametersJsonList[executionParametersIndex].AsString(m_executionParameters[executionParametersIndex]);
    }
    payload.WithArray("ExecutionParameters", std::move(executionParametersJsonList));
+
+  }
+
+  if(m_resultReuseConfigurationHasBeenSet)
+  {
+   payload.WithObject("ResultReuseConfiguration", m_resultReuseConfiguration.Jsonize());
 
   }
 

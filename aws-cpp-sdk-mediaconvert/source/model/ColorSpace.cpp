@@ -25,6 +25,8 @@ namespace Aws
         static const int REC_709_HASH = HashingUtils::HashString("REC_709");
         static const int HDR10_HASH = HashingUtils::HashString("HDR10");
         static const int HLG_2020_HASH = HashingUtils::HashString("HLG_2020");
+        static const int P3DCI_HASH = HashingUtils::HashString("P3DCI");
+        static const int P3D65_SDR_HASH = HashingUtils::HashString("P3D65_SDR");
 
 
         ColorSpace GetColorSpaceForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return ColorSpace::HLG_2020;
           }
+          else if (hashCode == P3DCI_HASH)
+          {
+            return ColorSpace::P3DCI;
+          }
+          else if (hashCode == P3D65_SDR_HASH)
+          {
+            return ColorSpace::P3D65_SDR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +84,10 @@ namespace Aws
             return "HDR10";
           case ColorSpace::HLG_2020:
             return "HLG_2020";
+          case ColorSpace::P3DCI:
+            return "P3DCI";
+          case ColorSpace::P3D65_SDR:
+            return "P3D65_SDR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

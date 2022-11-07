@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/StatementType.h>
 #include <aws/athena/model/ResultConfiguration.h>
+#include <aws/athena/model/ResultReuseConfiguration.h>
 #include <aws/athena/model/QueryExecutionContext.h>
 #include <aws/athena/model/QueryExecutionStatus.h>
 #include <aws/athena/model/QueryExecutionStatistics.h>
@@ -235,6 +236,37 @@ namespace Model
      * are specified for the workgroup.</p>
      */
     inline QueryExecution& WithResultConfiguration(ResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline const ResultReuseConfiguration& GetResultReuseConfiguration() const{ return m_resultReuseConfiguration; }
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline bool ResultReuseConfigurationHasBeenSet() const { return m_resultReuseConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline void SetResultReuseConfiguration(const ResultReuseConfiguration& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = value; }
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline void SetResultReuseConfiguration(ResultReuseConfiguration&& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline QueryExecution& WithResultReuseConfiguration(const ResultReuseConfiguration& value) { SetResultReuseConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline QueryExecution& WithResultReuseConfiguration(ResultReuseConfiguration&& value) { SetResultReuseConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -490,6 +522,9 @@ namespace Model
 
     ResultConfiguration m_resultConfiguration;
     bool m_resultConfigurationHasBeenSet = false;
+
+    ResultReuseConfiguration m_resultReuseConfiguration;
+    bool m_resultReuseConfigurationHasBeenSet = false;
 
     QueryExecutionContext m_queryExecutionContext;
     bool m_queryExecutionContextHasBeenSet = false;

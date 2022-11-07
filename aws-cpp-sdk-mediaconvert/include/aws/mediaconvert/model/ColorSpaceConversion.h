@@ -20,7 +20,9 @@ namespace Model
     FORCE_601,
     FORCE_709,
     FORCE_HDR10,
-    FORCE_HLG_2020
+    FORCE_HLG_2020,
+    FORCE_P3DCI,
+    FORCE_P3D65_SDR
   };
 
 namespace ColorSpaceConversionMapper

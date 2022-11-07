@@ -36,7 +36,9 @@ ModifyCacheClusterRequest::ModifyCacheClusterRequest() :
     m_authTokenHasBeenSet(false),
     m_authTokenUpdateStrategy(AuthTokenUpdateStrategyType::NOT_SET),
     m_authTokenUpdateStrategyHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_ipDiscovery(IpDiscovery::NOT_SET),
+    m_ipDiscoveryHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,11 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
       item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
       logDeliveryConfigurationsCount++;
     }
+  }
+
+  if(m_ipDiscoveryHasBeenSet)
+  {
+    ss << "IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
   }
 
   ss << "Version=2015-02-02";

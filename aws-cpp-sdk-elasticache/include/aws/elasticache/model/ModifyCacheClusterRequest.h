@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AZMode.h>
 #include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
+#include <aws/elasticache/model/IpDiscovery.h>
 #include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
@@ -1695,6 +1696,61 @@ namespace Model
      */
     inline ModifyCacheClusterRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline void SetIpDiscovery(const IpDiscovery& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline void SetIpDiscovery(IpDiscovery&& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = std::move(value); }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline ModifyCacheClusterRequest& WithIpDiscovery(const IpDiscovery& value) { SetIpDiscovery(value); return *this;}
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline ModifyCacheClusterRequest& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_cacheClusterId;
@@ -1756,6 +1812,9 @@ namespace Model
 
     Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
     bool m_logDeliveryConfigurationsHasBeenSet = false;
+
+    IpDiscovery m_ipDiscovery;
+    bool m_ipDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

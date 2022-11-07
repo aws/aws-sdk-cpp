@@ -6839,8 +6839,8 @@ namespace EC2
          * time and not miss a recorded event. Spot Fleet events are available for 48
          * hours.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor
-         * fleet events using Amazon EventBridge</a> in the <i>Amazon EC2 User Guide for
-         * Linux Instances</i>.</p><p><h3>See Also:</h3>   <a
+         * fleet events using Amazon EventBridge</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">AWS
          * API Reference</a></p>
          */
@@ -11689,13 +11689,12 @@ namespace EC2
          * <code>instance</code> resource types are supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-         *  <p>We strongly discourage using the RequestSpotFleet API because it
-         * is a legacy API with no planned investment. For options for requesting Spot
-         * Instances, see <a
+         * Fleet requests</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We
+         * strongly discourage using the RequestSpotFleet API because it is a legacy API
+         * with no planned investment. For options for requesting Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
-         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
-         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
+         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
          */

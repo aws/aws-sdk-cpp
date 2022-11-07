@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/TargetLocation.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/ssm/model/AlarmStateInformation.h>
 #include <utility>
 
 namespace Aws
@@ -968,6 +969,47 @@ namespace Model
      */
     inline StepExecution& WithTargetLocation(TargetLocation&& value) { SetTargetLocation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the automation.</p>
+     */
+    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const{ return m_triggeredAlarms; }
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the automation.</p>
+     */
+    inline bool TriggeredAlarmsHasBeenSet() const { return m_triggeredAlarmsHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the automation.</p>
+     */
+    inline void SetTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = value; }
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the automation.</p>
+     */
+    inline void SetTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the automation.</p>
+     */
+    inline StepExecution& WithTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { SetTriggeredAlarms(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the automation.</p>
+     */
+    inline StepExecution& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the automation.</p>
+     */
+    inline StepExecution& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(value); return *this; }
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the automation.</p>
+     */
+    inline StepExecution& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_stepName;
@@ -1035,6 +1077,9 @@ namespace Model
 
     TargetLocation m_targetLocation;
     bool m_targetLocationHasBeenSet = false;
+
+    Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+    bool m_triggeredAlarmsHasBeenSet = false;
   };
 
 } // namespace Model

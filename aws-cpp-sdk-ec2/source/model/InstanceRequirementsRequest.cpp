@@ -47,7 +47,9 @@ InstanceRequirementsRequest::InstanceRequirementsRequest() :
     m_acceleratorCountHasBeenSet(false),
     m_acceleratorManufacturersHasBeenSet(false),
     m_acceleratorNamesHasBeenSet(false),
-    m_acceleratorTotalMemoryMiBHasBeenSet(false)
+    m_acceleratorTotalMemoryMiBHasBeenSet(false),
+    m_networkBandwidthGbpsHasBeenSet(false),
+    m_allowedInstanceTypesHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ InstanceRequirementsRequest::InstanceRequirementsRequest(const XmlNode& xmlNode)
     m_acceleratorCountHasBeenSet(false),
     m_acceleratorManufacturersHasBeenSet(false),
     m_acceleratorNamesHasBeenSet(false),
-    m_acceleratorTotalMemoryMiBHasBeenSet(false)
+    m_acceleratorTotalMemoryMiBHasBeenSet(false),
+    m_networkBandwidthGbpsHasBeenSet(false),
+    m_allowedInstanceTypesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -257,6 +261,24 @@ InstanceRequirementsRequest& InstanceRequirementsRequest::operator =(const XmlNo
       m_acceleratorTotalMemoryMiB = acceleratorTotalMemoryMiBNode;
       m_acceleratorTotalMemoryMiBHasBeenSet = true;
     }
+    XmlNode networkBandwidthGbpsNode = resultNode.FirstChild("NetworkBandwidthGbps");
+    if(!networkBandwidthGbpsNode.IsNull())
+    {
+      m_networkBandwidthGbps = networkBandwidthGbpsNode;
+      m_networkBandwidthGbpsHasBeenSet = true;
+    }
+    XmlNode allowedInstanceTypesNode = resultNode.FirstChild("AllowedInstanceType");
+    if(!allowedInstanceTypesNode.IsNull())
+    {
+      XmlNode allowedInstanceTypesMember = allowedInstanceTypesNode.FirstChild("item");
+      while(!allowedInstanceTypesMember.IsNull())
+      {
+        m_allowedInstanceTypes.push_back(allowedInstanceTypesMember.GetText());
+        allowedInstanceTypesMember = allowedInstanceTypesMember.NextNode("item");
+      }
+
+      m_allowedInstanceTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -413,6 +435,22 @@ void InstanceRequirementsRequest::OutputToStream(Aws::OStream& oStream, const ch
       m_acceleratorTotalMemoryMiB.OutputToStream(oStream, acceleratorTotalMemoryMiBLocationAndMemberSs.str().c_str());
   }
 
+  if(m_networkBandwidthGbpsHasBeenSet)
+  {
+      Aws::StringStream networkBandwidthGbpsLocationAndMemberSs;
+      networkBandwidthGbpsLocationAndMemberSs << location << index << locationValue << ".NetworkBandwidthGbps";
+      m_networkBandwidthGbps.OutputToStream(oStream, networkBandwidthGbpsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_allowedInstanceTypesHasBeenSet)
+  {
+      unsigned allowedInstanceTypesIdx = 1;
+      for(auto& item : m_allowedInstanceTypes)
+      {
+        oStream << location << index << locationValue << ".AllowedInstanceType." << allowedInstanceTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void InstanceRequirementsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -544,6 +582,20 @@ void InstanceRequirementsRequest::OutputToStream(Aws::OStream& oStream, const ch
       Aws::String acceleratorTotalMemoryMiBLocationAndMember(location);
       acceleratorTotalMemoryMiBLocationAndMember += ".AcceleratorTotalMemoryMiB";
       m_acceleratorTotalMemoryMiB.OutputToStream(oStream, acceleratorTotalMemoryMiBLocationAndMember.c_str());
+  }
+  if(m_networkBandwidthGbpsHasBeenSet)
+  {
+      Aws::String networkBandwidthGbpsLocationAndMember(location);
+      networkBandwidthGbpsLocationAndMember += ".NetworkBandwidthGbps";
+      m_networkBandwidthGbps.OutputToStream(oStream, networkBandwidthGbpsLocationAndMember.c_str());
+  }
+  if(m_allowedInstanceTypesHasBeenSet)
+  {
+      unsigned allowedInstanceTypesIdx = 1;
+      for(auto& item : m_allowedInstanceTypes)
+      {
+        oStream << location << ".AllowedInstanceType." << allowedInstanceTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

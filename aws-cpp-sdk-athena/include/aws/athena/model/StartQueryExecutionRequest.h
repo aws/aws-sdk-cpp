@@ -10,6 +10,7 @@
 #include <aws/athena/model/QueryExecutionContext.h>
 #include <aws/athena/model/ResultConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/athena/model/ResultReuseConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -380,6 +381,37 @@ namespace Model
      */
     inline StartQueryExecutionRequest& AddExecutionParameters(const char* value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline const ResultReuseConfiguration& GetResultReuseConfiguration() const{ return m_resultReuseConfiguration; }
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline bool ResultReuseConfigurationHasBeenSet() const { return m_resultReuseConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline void SetResultReuseConfiguration(const ResultReuseConfiguration& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = value; }
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline void SetResultReuseConfiguration(ResultReuseConfiguration&& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline StartQueryExecutionRequest& WithResultReuseConfiguration(const ResultReuseConfiguration& value) { SetResultReuseConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline StartQueryExecutionRequest& WithResultReuseConfiguration(ResultReuseConfiguration&& value) { SetResultReuseConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_queryString;
@@ -399,6 +431,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_executionParameters;
     bool m_executionParametersHasBeenSet = false;
+
+    ResultReuseConfiguration m_resultReuseConfiguration;
+    bool m_resultReuseConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

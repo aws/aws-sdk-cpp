@@ -41,7 +41,9 @@ ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() :
     m_userGroupIdsToRemoveHasBeenSet(false),
     m_removeUserGroups(false),
     m_removeUserGroupsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_ipDiscovery(IpDiscovery::NOT_SET),
+    m_ipDiscoveryHasBeenSet(false)
 {
 }
 
@@ -196,6 +198,11 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
       item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
       logDeliveryConfigurationsCount++;
     }
+  }
+
+  if(m_ipDiscoveryHasBeenSet)
+  {
+    ss << "IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
   }
 
   ss << "Version=2015-02-02";

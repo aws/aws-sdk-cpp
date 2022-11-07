@@ -110,6 +110,12 @@ CreateEventDataStoreResult& CreateEventDataStoreResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
 
 
   return *this;

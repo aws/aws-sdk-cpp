@@ -23,7 +23,8 @@ TargetLocation::TargetLocation() :
     m_regionsHasBeenSet(false),
     m_targetLocationMaxConcurrencyHasBeenSet(false),
     m_targetLocationMaxErrorsHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false)
+    m_executionRoleNameHasBeenSet(false),
+    m_targetLocationAlarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ TargetLocation::TargetLocation(JsonView jsonValue) :
     m_regionsHasBeenSet(false),
     m_targetLocationMaxConcurrencyHasBeenSet(false),
     m_targetLocationMaxErrorsHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false)
+    m_executionRoleNameHasBeenSet(false),
+    m_targetLocationAlarmConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +82,13 @@ TargetLocation& TargetLocation::operator =(JsonView jsonValue)
     m_executionRoleNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetLocationAlarmConfiguration"))
+  {
+    m_targetLocationAlarmConfiguration = jsonValue.GetObject("TargetLocationAlarmConfiguration");
+
+    m_targetLocationAlarmConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,12 @@ JsonValue TargetLocation::Jsonize() const
   if(m_executionRoleNameHasBeenSet)
   {
    payload.WithString("ExecutionRoleName", m_executionRoleName);
+
+  }
+
+  if(m_targetLocationAlarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("TargetLocationAlarmConfiguration", m_targetLocationAlarmConfiguration.Jsonize());
 
   }
 

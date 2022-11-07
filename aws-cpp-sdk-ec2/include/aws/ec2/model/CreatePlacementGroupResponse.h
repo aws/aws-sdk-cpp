@@ -33,19 +33,29 @@ namespace Model
     CreatePlacementGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline const PlacementGroup& GetPlacementGroup() const{ return m_placementGroup; }
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline void SetPlacementGroup(const PlacementGroup& value) { m_placementGroup = value; }
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline void SetPlacementGroup(PlacementGroup&& value) { m_placementGroup = std::move(value); }
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline CreatePlacementGroupResponse& WithPlacementGroup(const PlacementGroup& value) { SetPlacementGroup(value); return *this;}
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline CreatePlacementGroupResponse& WithPlacementGroup(PlacementGroup&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
 

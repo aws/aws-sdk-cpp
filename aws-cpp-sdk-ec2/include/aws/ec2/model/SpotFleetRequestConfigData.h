@@ -58,14 +58,14 @@ namespace Model
      * capacity across the Spot Instance pools specified by the Spot Fleet launch
      * configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
-     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
-     * from the lowest-price Spot Instance pool that has available capacity. If the
-     * cheapest pool doesn't have available capacity, the Spot Instances come from the
-     * next cheapest pool that has available capacity. If a pool runs out of capacity
-     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
-     * your request by drawing from the next cheapest pool. To ensure that your desired
-     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, Spot Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
      * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
      * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
      * (recommended) - Spot Fleet launches instances from Spot Instance pools with
@@ -88,14 +88,14 @@ namespace Model
      * capacity across the Spot Instance pools specified by the Spot Fleet launch
      * configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
-     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
-     * from the lowest-price Spot Instance pool that has available capacity. If the
-     * cheapest pool doesn't have available capacity, the Spot Instances come from the
-     * next cheapest pool that has available capacity. If a pool runs out of capacity
-     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
-     * your request by drawing from the next cheapest pool. To ensure that your desired
-     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, Spot Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
      * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
      * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
      * (recommended) - Spot Fleet launches instances from Spot Instance pools with
@@ -118,14 +118,14 @@ namespace Model
      * capacity across the Spot Instance pools specified by the Spot Fleet launch
      * configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
-     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
-     * from the lowest-price Spot Instance pool that has available capacity. If the
-     * cheapest pool doesn't have available capacity, the Spot Instances come from the
-     * next cheapest pool that has available capacity. If a pool runs out of capacity
-     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
-     * your request by drawing from the next cheapest pool. To ensure that your desired
-     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, Spot Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
      * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
      * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
      * (recommended) - Spot Fleet launches instances from Spot Instance pools with
@@ -148,14 +148,14 @@ namespace Model
      * capacity across the Spot Instance pools specified by the Spot Fleet launch
      * configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
-     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
-     * from the lowest-price Spot Instance pool that has available capacity. If the
-     * cheapest pool doesn't have available capacity, the Spot Instances come from the
-     * next cheapest pool that has available capacity. If a pool runs out of capacity
-     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
-     * your request by drawing from the next cheapest pool. To ensure that your desired
-     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, Spot Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
      * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
      * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
      * (recommended) - Spot Fleet launches instances from Spot Instance pools with
@@ -178,14 +178,14 @@ namespace Model
      * capacity across the Spot Instance pools specified by the Spot Fleet launch
      * configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
-     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
-     * from the lowest-price Spot Instance pool that has available capacity. If the
-     * cheapest pool doesn't have available capacity, the Spot Instances come from the
-     * next cheapest pool that has available capacity. If a pool runs out of capacity
-     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
-     * your request by drawing from the next cheapest pool. To ensure that your desired
-     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, Spot Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
      * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
      * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
      * (recommended) - Spot Fleet launches instances from Spot Instance pools with
@@ -208,14 +208,14 @@ namespace Model
      * capacity across the Spot Instance pools specified by the Spot Fleet launch
      * configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
-     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
-     * from the lowest-price Spot Instance pool that has available capacity. If the
-     * cheapest pool doesn't have available capacity, the Spot Instances come from the
-     * next cheapest pool that has available capacity. If a pool runs out of capacity
-     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
-     * your request by drawing from the next cheapest pool. To ensure that your desired
-     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowestPrice</code> - Spot Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, Spot Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
      * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
      * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
      * (recommended) - Spot Fleet launches instances from Spot Instance pools with
@@ -503,9 +503,9 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can
+     * terminate Spot Instances on your behalf when you cancel its Spot Fleet request
+     * using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
      * or when the Spot Fleet request expires, if you set
      * <code>TerminateInstancesWithExpiration</code>.</p>
@@ -517,9 +517,9 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can
+     * terminate Spot Instances on your behalf when you cancel its Spot Fleet request
+     * using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
      * or when the Spot Fleet request expires, if you set
      * <code>TerminateInstancesWithExpiration</code>.</p>
@@ -531,9 +531,9 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can
+     * terminate Spot Instances on your behalf when you cancel its Spot Fleet request
+     * using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
      * or when the Spot Fleet request expires, if you set
      * <code>TerminateInstancesWithExpiration</code>.</p>
@@ -545,9 +545,9 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can
+     * terminate Spot Instances on your behalf when you cancel its Spot Fleet request
+     * using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
      * or when the Spot Fleet request expires, if you set
      * <code>TerminateInstancesWithExpiration</code>.</p>
@@ -559,9 +559,9 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can
+     * terminate Spot Instances on your behalf when you cancel its Spot Fleet request
+     * using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
      * or when the Spot Fleet request expires, if you set
      * <code>TerminateInstancesWithExpiration</code>.</p>
@@ -573,9 +573,9 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can
+     * terminate Spot Instances on your behalf when you cancel its Spot Fleet request
+     * using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
      * or when the Spot Fleet request expires, if you set
      * <code>TerminateInstancesWithExpiration</code>.</p>
@@ -587,9 +587,9 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can
+     * terminate Spot Instances on your behalf when you cancel its Spot Fleet request
+     * using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
      * or when the Spot Fleet request expires, if you set
      * <code>TerminateInstancesWithExpiration</code>.</p>
@@ -601,9 +601,9 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can
+     * terminate Spot Instances on your behalf when you cancel its Spot Fleet request
+     * using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
      * or when the Spot Fleet request expires, if you set
      * <code>TerminateInstancesWithExpiration</code>.</p>

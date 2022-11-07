@@ -23,7 +23,8 @@ CreateEventDataStoreRequest::CreateEventDataStoreRequest() :
     m_retentionPeriodHasBeenSet(false),
     m_terminationProtectionEnabled(false),
     m_terminationProtectionEnabledHasBeenSet(false),
-    m_tagsListHasBeenSet(false)
+    m_tagsListHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,12 @@ Aws::String CreateEventDataStoreRequest::SerializePayload() const
      tagsListJsonList[tagsListIndex].AsObject(m_tagsList[tagsListIndex].Jsonize());
    }
    payload.WithArray("TagsList", std::move(tagsListJsonList));
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

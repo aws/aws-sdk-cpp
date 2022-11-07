@@ -31,7 +31,8 @@ QueryExecutionStatistics::QueryExecutionStatistics() :
     m_queryPlanningTimeInMillis(0),
     m_queryPlanningTimeInMillisHasBeenSet(false),
     m_serviceProcessingTimeInMillis(0),
-    m_serviceProcessingTimeInMillisHasBeenSet(false)
+    m_serviceProcessingTimeInMillisHasBeenSet(false),
+    m_resultReuseInformationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ QueryExecutionStatistics::QueryExecutionStatistics(JsonView jsonValue) :
     m_queryPlanningTimeInMillis(0),
     m_queryPlanningTimeInMillisHasBeenSet(false),
     m_serviceProcessingTimeInMillis(0),
-    m_serviceProcessingTimeInMillisHasBeenSet(false)
+    m_serviceProcessingTimeInMillisHasBeenSet(false),
+    m_resultReuseInformationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,13 @@ QueryExecutionStatistics& QueryExecutionStatistics::operator =(JsonView jsonValu
     m_serviceProcessingTimeInMillisHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResultReuseInformation"))
+  {
+    m_resultReuseInformation = jsonValue.GetObject("ResultReuseInformation");
+
+    m_resultReuseInformationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -150,6 +159,12 @@ JsonValue QueryExecutionStatistics::Jsonize() const
   if(m_serviceProcessingTimeInMillisHasBeenSet)
   {
    payload.WithInt64("ServiceProcessingTimeInMillis", m_serviceProcessingTimeInMillis);
+
+  }
+
+  if(m_resultReuseInformationHasBeenSet)
+  {
+   payload.WithObject("ResultReuseInformation", m_resultReuseInformation.Jsonize());
 
   }
 

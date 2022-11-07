@@ -181,8 +181,7 @@ namespace Model
 
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -190,8 +189,7 @@ namespace Model
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -199,8 +197,7 @@ namespace Model
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -208,8 +205,7 @@ namespace Model
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -217,8 +213,7 @@ namespace Model
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -226,8 +221,7 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>

@@ -30,7 +30,9 @@ UpdateWorkloadRequest::UpdateWorkloadRequest() :
     m_industryHasBeenSet(false),
     m_notesHasBeenSet(false),
     m_improvementStatus(WorkloadImprovementStatus::NOT_SET),
-    m_improvementStatusHasBeenSet(false)
+    m_improvementStatusHasBeenSet(false),
+    m_discoveryConfigHasBeenSet(false),
+    m_applicationsHasBeenSet(false)
 {
 }
 
@@ -138,6 +140,23 @@ Aws::String UpdateWorkloadRequest::SerializePayload() const
   if(m_improvementStatusHasBeenSet)
   {
    payload.WithString("ImprovementStatus", WorkloadImprovementStatusMapper::GetNameForWorkloadImprovementStatus(m_improvementStatus));
+  }
+
+  if(m_discoveryConfigHasBeenSet)
+  {
+   payload.WithObject("DiscoveryConfig", m_discoveryConfig.Jsonize());
+
+  }
+
+  if(m_applicationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
+   for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
+   {
+     applicationsJsonList[applicationsIndex].AsString(m_applications[applicationsIndex]);
+   }
+   payload.WithArray("Applications", std::move(applicationsJsonList));
+
   }
 
   return payload.View().WriteReadable();

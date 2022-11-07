@@ -31,7 +31,9 @@ ColorCorrector::ColorCorrector() :
     m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
     m_sampleRangeConversionHasBeenSet(false),
     m_saturation(0),
-    m_saturationHasBeenSet(false)
+    m_saturationHasBeenSet(false),
+    m_sdrReferenceWhiteLevel(0),
+    m_sdrReferenceWhiteLevelHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ ColorCorrector::ColorCorrector(JsonView jsonValue) :
     m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
     m_sampleRangeConversionHasBeenSet(false),
     m_saturation(0),
-    m_saturationHasBeenSet(false)
+    m_saturationHasBeenSet(false),
+    m_sdrReferenceWhiteLevel(0),
+    m_sdrReferenceWhiteLevelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +108,13 @@ ColorCorrector& ColorCorrector::operator =(JsonView jsonValue)
     m_saturationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sdrReferenceWhiteLevel"))
+  {
+    m_sdrReferenceWhiteLevel = jsonValue.GetInteger("sdrReferenceWhiteLevel");
+
+    m_sdrReferenceWhiteLevelHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +159,12 @@ JsonValue ColorCorrector::Jsonize() const
   if(m_saturationHasBeenSet)
   {
    payload.WithInteger("saturation", m_saturation);
+
+  }
+
+  if(m_sdrReferenceWhiteLevelHasBeenSet)
+  {
+   payload.WithInteger("sdrReferenceWhiteLevel", m_sdrReferenceWhiteLevel);
 
   }
 

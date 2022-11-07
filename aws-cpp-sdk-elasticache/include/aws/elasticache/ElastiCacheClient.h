@@ -1079,9 +1079,9 @@ namespace ElastiCache
         virtual void DisassociateGlobalReplicationGroupAsync(const Model::DisassociateGlobalReplicationGroupRequest& request, const DisassociateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used to failover the primary region to a selected secondary region. The
-         * selected secondary region will become primary, and all other clusters will
-         * become secondary.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to failover the primary region to a secondary region. The secondary
+         * region will become primary, and all other clusters will become
+         * secondary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">AWS
          * API Reference</a></p>
          */

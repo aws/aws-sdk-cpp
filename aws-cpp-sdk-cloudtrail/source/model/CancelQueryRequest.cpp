@@ -13,7 +13,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CancelQueryRequest::CancelQueryRequest() : 
-    m_eventDataStoreHasBeenSet(false),
     m_queryIdHasBeenSet(false)
 {
 }
@@ -21,12 +20,6 @@ CancelQueryRequest::CancelQueryRequest() :
 Aws::String CancelQueryRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_eventDataStoreHasBeenSet)
-  {
-   payload.WithString("EventDataStore", m_eventDataStore);
-
-  }
 
   if(m_queryIdHasBeenSet)
   {

@@ -223,6 +223,24 @@ namespace CloudTrail
         virtual void DeleteTrailAsync(const Model::DeleteTrailRequest& request, const DeleteTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes CloudTrail delegated administrator permissions from a member account
+         * in an organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterOrganizationDelegatedAdminOutcome DeregisterOrganizationDelegatedAdmin(const Model::DeregisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeregisterOrganizationDelegatedAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterOrganizationDelegatedAdminOutcomeCallable DeregisterOrganizationDelegatedAdminCallable(const Model::DeregisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * An Async wrapper for DeregisterOrganizationDelegatedAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterOrganizationDelegatedAdminAsync(const Model::DeregisterOrganizationDelegatedAdminRequest& request, const DeregisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns metadata about a query, including query run time in milliseconds,
          * number of events scanned and matched, and query status. You must specify an ARN
          * for <code>EventDataStore</code>, and a value for
@@ -265,7 +283,7 @@ namespace CloudTrail
          * create service-linked channels to get information about CloudTrail events on
          * your behalf. For more information about service-linked channels, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
-         * service-linked channels for CloudTrail by using the CLI.</a>. </p><p><h3>See
+         * service-linked channels for CloudTrail by using the CLI</a>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">AWS
          * API Reference</a></p>
@@ -696,6 +714,24 @@ namespace CloudTrail
          * An Async wrapper for PutInsightSelectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutInsightSelectorsAsync(const Model::PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Registers an organization’s member account as the CloudTrail delegated
+         * administrator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterOrganizationDelegatedAdminOutcome RegisterOrganizationDelegatedAdmin(const Model::RegisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * A Callable wrapper for RegisterOrganizationDelegatedAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterOrganizationDelegatedAdminOutcomeCallable RegisterOrganizationDelegatedAdminCallable(const Model::RegisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * An Async wrapper for RegisterOrganizationDelegatedAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterOrganizationDelegatedAdminAsync(const Model::RegisterOrganizationDelegatedAdminRequest& request, const RegisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from a trail or event data store.</p><p><h3>See

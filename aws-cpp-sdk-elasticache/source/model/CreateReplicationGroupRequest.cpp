@@ -55,7 +55,11 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_userGroupIdsHasBeenSet(false),
     m_logDeliveryConfigurationsHasBeenSet(false),
     m_dataTieringEnabled(false),
-    m_dataTieringEnabledHasBeenSet(false)
+    m_dataTieringEnabledHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
+    m_ipDiscovery(IpDiscovery::NOT_SET),
+    m_ipDiscoveryHasBeenSet(false)
 {
 }
 
@@ -276,6 +280,16 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_dataTieringEnabledHasBeenSet)
   {
     ss << "DataTieringEnabled=" << std::boolalpha << m_dataTieringEnabled << "&";
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+  }
+
+  if(m_ipDiscoveryHasBeenSet)
+  {
+    ss << "IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
   }
 
   ss << "Version=2015-02-02";

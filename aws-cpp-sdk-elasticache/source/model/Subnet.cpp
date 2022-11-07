@@ -23,14 +23,16 @@ namespace Model
 Subnet::Subnet() : 
     m_subnetIdentifierHasBeenSet(false),
     m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetOutpostHasBeenSet(false)
+    m_subnetOutpostHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
 }
 
 Subnet::Subnet(const XmlNode& xmlNode) : 
     m_subnetIdentifierHasBeenSet(false),
     m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetOutpostHasBeenSet(false)
+    m_subnetOutpostHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -59,6 +61,18 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_subnetOutpost = subnetOutpostNode;
       m_subnetOutpostHasBeenSet = true;
     }
+    XmlNode supportedNetworkTypesNode = resultNode.FirstChild("SupportedNetworkTypes");
+    if(!supportedNetworkTypesNode.IsNull())
+    {
+      XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      while(!supportedNetworkTypesMember.IsNull())
+      {
+        m_supportedNetworkTypes.push_back(NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(supportedNetworkTypesMember.GetText().c_str())));
+        supportedNetworkTypesMember = supportedNetworkTypesMember.NextNode("member");
+      }
+
+      m_supportedNetworkTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -85,6 +99,15 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       m_subnetOutpost.OutputToStream(oStream, subnetOutpostLocationAndMemberSs.str().c_str());
   }
 
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << NetworkTypeMapper::GetNameForNetworkType(item) << "&";
+      }
+  }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -104,6 +127,14 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String subnetOutpostLocationAndMember(location);
       subnetOutpostLocationAndMember += ".SubnetOutpost";
       m_subnetOutpost.OutputToStream(oStream, subnetOutpostLocationAndMember.c_str());
+  }
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << NetworkTypeMapper::GetNameForNetworkType(item) << "&";
+      }
   }
 }
 

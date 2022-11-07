@@ -20,7 +20,9 @@ namespace Model
     REC_601,
     REC_709,
     HDR10,
-    HLG_2020
+    HLG_2020,
+    P3DCI,
+    P3D65_SDR
   };
 
 namespace ColorSpaceMapper
