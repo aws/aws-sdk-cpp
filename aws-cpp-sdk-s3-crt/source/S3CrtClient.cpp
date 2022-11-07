@@ -597,16 +597,9 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
 
-<<<<<<< HEAD
-  userData->userCallback = static_cast<const void*>(&handler);
-  userData->userCallbackContext = handlerContext;
-
-  InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
-=======
   userData->putResponseHandler = handler;
   userData->asyncCallerContext = context;
   InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_PUT);
->>>>>>> bc51fa35ec (Resolves #1655)
   options.shutdown_callback = PutObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
