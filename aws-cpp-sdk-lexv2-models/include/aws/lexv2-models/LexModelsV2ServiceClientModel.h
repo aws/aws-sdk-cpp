@@ -18,6 +18,9 @@
 /* End of generic header includes */
 
 /* Service model headers required in LexModelsV2Client header */
+#include <aws/lexv2-models/model/BatchCreateCustomVocabularyItemResult.h>
+#include <aws/lexv2-models/model/BatchDeleteCustomVocabularyItemResult.h>
+#include <aws/lexv2-models/model/BatchUpdateCustomVocabularyItemResult.h>
 #include <aws/lexv2-models/model/BuildBotLocaleResult.h>
 #include <aws/lexv2-models/model/CreateBotResult.h>
 #include <aws/lexv2-models/model/CreateBotAliasResult.h>
@@ -60,6 +63,7 @@
 #include <aws/lexv2-models/model/ListBotsResult.h>
 #include <aws/lexv2-models/model/ListBuiltInIntentsResult.h>
 #include <aws/lexv2-models/model/ListBuiltInSlotTypesResult.h>
+#include <aws/lexv2-models/model/ListCustomVocabularyItemsResult.h>
 #include <aws/lexv2-models/model/ListExportsResult.h>
 #include <aws/lexv2-models/model/ListImportsResult.h>
 #include <aws/lexv2-models/model/ListIntentsResult.h>
@@ -123,6 +127,9 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in LexModelsV2Client header */
+      class BatchCreateCustomVocabularyItemRequest;
+      class BatchDeleteCustomVocabularyItemRequest;
+      class BatchUpdateCustomVocabularyItemRequest;
       class BuildBotLocaleRequest;
       class CreateBotRequest;
       class CreateBotAliasRequest;
@@ -168,6 +175,7 @@ namespace Aws
       class ListBotsRequest;
       class ListBuiltInIntentsRequest;
       class ListBuiltInSlotTypesRequest;
+      class ListCustomVocabularyItemsRequest;
       class ListExportsRequest;
       class ListImportsRequest;
       class ListIntentsRequest;
@@ -193,6 +201,9 @@ namespace Aws
       /* End of service model forward declarations required in LexModelsV2Client header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchCreateCustomVocabularyItemResult, LexModelsV2Error> BatchCreateCustomVocabularyItemOutcome;
+      typedef Aws::Utils::Outcome<BatchDeleteCustomVocabularyItemResult, LexModelsV2Error> BatchDeleteCustomVocabularyItemOutcome;
+      typedef Aws::Utils::Outcome<BatchUpdateCustomVocabularyItemResult, LexModelsV2Error> BatchUpdateCustomVocabularyItemOutcome;
       typedef Aws::Utils::Outcome<BuildBotLocaleResult, LexModelsV2Error> BuildBotLocaleOutcome;
       typedef Aws::Utils::Outcome<CreateBotResult, LexModelsV2Error> CreateBotOutcome;
       typedef Aws::Utils::Outcome<CreateBotAliasResult, LexModelsV2Error> CreateBotAliasOutcome;
@@ -238,6 +249,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListBotsResult, LexModelsV2Error> ListBotsOutcome;
       typedef Aws::Utils::Outcome<ListBuiltInIntentsResult, LexModelsV2Error> ListBuiltInIntentsOutcome;
       typedef Aws::Utils::Outcome<ListBuiltInSlotTypesResult, LexModelsV2Error> ListBuiltInSlotTypesOutcome;
+      typedef Aws::Utils::Outcome<ListCustomVocabularyItemsResult, LexModelsV2Error> ListCustomVocabularyItemsOutcome;
       typedef Aws::Utils::Outcome<ListExportsResult, LexModelsV2Error> ListExportsOutcome;
       typedef Aws::Utils::Outcome<ListImportsResult, LexModelsV2Error> ListImportsOutcome;
       typedef Aws::Utils::Outcome<ListIntentsResult, LexModelsV2Error> ListIntentsOutcome;
@@ -263,6 +275,9 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchCreateCustomVocabularyItemOutcome> BatchCreateCustomVocabularyItemOutcomeCallable;
+      typedef std::future<BatchDeleteCustomVocabularyItemOutcome> BatchDeleteCustomVocabularyItemOutcomeCallable;
+      typedef std::future<BatchUpdateCustomVocabularyItemOutcome> BatchUpdateCustomVocabularyItemOutcomeCallable;
       typedef std::future<BuildBotLocaleOutcome> BuildBotLocaleOutcomeCallable;
       typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
       typedef std::future<CreateBotAliasOutcome> CreateBotAliasOutcomeCallable;
@@ -308,6 +323,7 @@ namespace Aws
       typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
       typedef std::future<ListBuiltInIntentsOutcome> ListBuiltInIntentsOutcomeCallable;
       typedef std::future<ListBuiltInSlotTypesOutcome> ListBuiltInSlotTypesOutcomeCallable;
+      typedef std::future<ListCustomVocabularyItemsOutcome> ListCustomVocabularyItemsOutcomeCallable;
       typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
       typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
       typedef std::future<ListIntentsOutcome> ListIntentsOutcomeCallable;
@@ -336,6 +352,9 @@ namespace Aws
     class LexModelsV2Client;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const LexModelsV2Client*, const Model::BatchCreateCustomVocabularyItemRequest&, const Model::BatchCreateCustomVocabularyItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateCustomVocabularyItemResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::BatchDeleteCustomVocabularyItemRequest&, const Model::BatchDeleteCustomVocabularyItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteCustomVocabularyItemResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::BatchUpdateCustomVocabularyItemRequest&, const Model::BatchUpdateCustomVocabularyItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateCustomVocabularyItemResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::BuildBotLocaleRequest&, const Model::BuildBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BuildBotLocaleResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotRequest&, const Model::CreateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotAliasRequest&, const Model::CreateBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotAliasResponseReceivedHandler;
@@ -381,6 +400,7 @@ namespace Aws
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBuiltInIntentsRequest&, const Model::ListBuiltInIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuiltInIntentsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBuiltInSlotTypesRequest&, const Model::ListBuiltInSlotTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuiltInSlotTypesResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListCustomVocabularyItemsRequest&, const Model::ListCustomVocabularyItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomVocabularyItemsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListIntentsRequest&, const Model::ListIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntentsResponseReceivedHandler;

@@ -42,6 +42,8 @@
 #include <aws/wellarchitected/model/GetWorkloadRequest.h>
 #include <aws/wellarchitected/model/ImportLensRequest.h>
 #include <aws/wellarchitected/model/ListAnswersRequest.h>
+#include <aws/wellarchitected/model/ListCheckDetailsRequest.h>
+#include <aws/wellarchitected/model/ListCheckSummariesRequest.h>
 #include <aws/wellarchitected/model/ListLensReviewImprovementsRequest.h>
 #include <aws/wellarchitected/model/ListLensReviewsRequest.h>
 #include <aws/wellarchitected/model/ListLensSharesRequest.h>
@@ -916,6 +918,70 @@ void WellArchitectedClient::ListAnswersAsync(const ListAnswersRequest& request, 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListAnswers(request), context);
+    } );
+}
+
+ListCheckDetailsOutcome WellArchitectedClient::ListCheckDetails(const ListCheckDetailsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCheckDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkloadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCheckDetails", "Required field: WorkloadId, is not set");
+    return ListCheckDetailsOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkloadId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCheckDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workloads/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/checks");
+  return ListCheckDetailsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCheckDetailsOutcomeCallable WellArchitectedClient::ListCheckDetailsCallable(const ListCheckDetailsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCheckDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCheckDetails(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::ListCheckDetailsAsync(const ListCheckDetailsRequest& request, const ListCheckDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCheckDetails(request), context);
+    } );
+}
+
+ListCheckSummariesOutcome WellArchitectedClient::ListCheckSummaries(const ListCheckSummariesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCheckSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkloadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCheckSummaries", "Required field: WorkloadId, is not set");
+    return ListCheckSummariesOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkloadId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCheckSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workloads/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/checkSummaries");
+  return ListCheckSummariesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCheckSummariesOutcomeCallable WellArchitectedClient::ListCheckSummariesCallable(const ListCheckSummariesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCheckSummariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCheckSummaries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::ListCheckSummariesAsync(const ListCheckSummariesRequest& request, const ListCheckSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCheckSummaries(request), context);
     } );
 }
 

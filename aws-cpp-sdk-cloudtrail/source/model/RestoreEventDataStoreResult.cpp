@@ -101,6 +101,12 @@ RestoreEventDataStoreResult& RestoreEventDataStoreResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
 
 
   return *this;

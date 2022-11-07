@@ -29,7 +29,9 @@ CreateWorkloadRequest::CreateWorkloadRequest() :
     m_notesHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_discoveryConfigHasBeenSet(false),
+    m_applicationsHasBeenSet(false)
 {
 }
 
@@ -153,6 +155,23 @@ Aws::String CreateWorkloadRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_discoveryConfigHasBeenSet)
+  {
+   payload.WithObject("DiscoveryConfig", m_discoveryConfig.Jsonize());
+
+  }
+
+  if(m_applicationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
+   for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
+   {
+     applicationsJsonList[applicationsIndex].AsString(m_applications[applicationsIndex]);
+   }
+   payload.WithArray("Applications", std::move(applicationsJsonList));
 
   }
 

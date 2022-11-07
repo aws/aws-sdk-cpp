@@ -25,7 +25,8 @@ CacheSubnetGroup::CacheSubnetGroup() :
     m_cacheSubnetGroupDescriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetsHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ CacheSubnetGroup::CacheSubnetGroup(const XmlNode& xmlNode) :
     m_cacheSubnetGroupDescriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetsHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -81,6 +83,18 @@ CacheSubnetGroup& CacheSubnetGroup::operator =(const XmlNode& xmlNode)
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
     }
+    XmlNode supportedNetworkTypesNode = resultNode.FirstChild("SupportedNetworkTypes");
+    if(!supportedNetworkTypesNode.IsNull())
+    {
+      XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      while(!supportedNetworkTypesMember.IsNull())
+      {
+        m_supportedNetworkTypes.push_back(NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(supportedNetworkTypesMember.GetText().c_str())));
+        supportedNetworkTypesMember = supportedNetworkTypesMember.NextNode("member");
+      }
+
+      m_supportedNetworkTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -119,6 +133,15 @@ void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << NetworkTypeMapper::GetNameForNetworkType(item) << "&";
+      }
+  }
+
 }
 
 void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -148,6 +171,14 @@ void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_aRNHasBeenSet)
   {
       oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << NetworkTypeMapper::GetNameForNetworkType(item) << "&";
+      }
   }
 }
 

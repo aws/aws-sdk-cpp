@@ -287,38 +287,170 @@ namespace Model
 
 
     /**
-     * <p>A rule statement used to identify web requests based on country of origin.
-     * </p>
+     * <p>A rule statement that labels web requests by country and region and that
+     * matches against web requests based on country code. A geo match rule labels
+     * every request that it inspects regardless of whether it finds a match.</p> <ul>
+     * <li> <p>To manage requests only by country, you can use this statement by itself
+     * and specify the countries that you want to match against in the
+     * <code>CountryCodes</code> array. </p> </li> <li> <p>Otherwise, configure your
+     * geo match rule with Count action so that it only labels requests. Then, add one
+     * or more label match rules to run after the geo match rule and configure them to
+     * match against the geographic labels and handle the requests as needed. </p>
+     * </li> </ul> <p>WAF labels requests using the alpha-2 country and region codes
+     * from the International Organization for Standardization (ISO) 3166 standard. WAF
+     * determines the codes using either the IP address in the web request origin or,
+     * if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.
+     * </p> <p>If you use the web request origin, the label formats are
+     * <code>awswaf:clientip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>If you use a forwarded IP address, the label formats are
+     * <code>awswaf:forwardedip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>For additional details, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic
+     * match rule statement</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline const GeoMatchStatement& GetGeoMatchStatement() const{ return m_geoMatchStatement; }
 
     /**
-     * <p>A rule statement used to identify web requests based on country of origin.
-     * </p>
+     * <p>A rule statement that labels web requests by country and region and that
+     * matches against web requests based on country code. A geo match rule labels
+     * every request that it inspects regardless of whether it finds a match.</p> <ul>
+     * <li> <p>To manage requests only by country, you can use this statement by itself
+     * and specify the countries that you want to match against in the
+     * <code>CountryCodes</code> array. </p> </li> <li> <p>Otherwise, configure your
+     * geo match rule with Count action so that it only labels requests. Then, add one
+     * or more label match rules to run after the geo match rule and configure them to
+     * match against the geographic labels and handle the requests as needed. </p>
+     * </li> </ul> <p>WAF labels requests using the alpha-2 country and region codes
+     * from the International Organization for Standardization (ISO) 3166 standard. WAF
+     * determines the codes using either the IP address in the web request origin or,
+     * if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.
+     * </p> <p>If you use the web request origin, the label formats are
+     * <code>awswaf:clientip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>If you use a forwarded IP address, the label formats are
+     * <code>awswaf:forwardedip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>For additional details, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic
+     * match rule statement</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool GeoMatchStatementHasBeenSet() const { return m_geoMatchStatementHasBeenSet; }
 
     /**
-     * <p>A rule statement used to identify web requests based on country of origin.
-     * </p>
+     * <p>A rule statement that labels web requests by country and region and that
+     * matches against web requests based on country code. A geo match rule labels
+     * every request that it inspects regardless of whether it finds a match.</p> <ul>
+     * <li> <p>To manage requests only by country, you can use this statement by itself
+     * and specify the countries that you want to match against in the
+     * <code>CountryCodes</code> array. </p> </li> <li> <p>Otherwise, configure your
+     * geo match rule with Count action so that it only labels requests. Then, add one
+     * or more label match rules to run after the geo match rule and configure them to
+     * match against the geographic labels and handle the requests as needed. </p>
+     * </li> </ul> <p>WAF labels requests using the alpha-2 country and region codes
+     * from the International Organization for Standardization (ISO) 3166 standard. WAF
+     * determines the codes using either the IP address in the web request origin or,
+     * if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.
+     * </p> <p>If you use the web request origin, the label formats are
+     * <code>awswaf:clientip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>If you use a forwarded IP address, the label formats are
+     * <code>awswaf:forwardedip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>For additional details, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic
+     * match rule statement</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetGeoMatchStatement(const GeoMatchStatement& value) { m_geoMatchStatementHasBeenSet = true; m_geoMatchStatement = value; }
 
     /**
-     * <p>A rule statement used to identify web requests based on country of origin.
-     * </p>
+     * <p>A rule statement that labels web requests by country and region and that
+     * matches against web requests based on country code. A geo match rule labels
+     * every request that it inspects regardless of whether it finds a match.</p> <ul>
+     * <li> <p>To manage requests only by country, you can use this statement by itself
+     * and specify the countries that you want to match against in the
+     * <code>CountryCodes</code> array. </p> </li> <li> <p>Otherwise, configure your
+     * geo match rule with Count action so that it only labels requests. Then, add one
+     * or more label match rules to run after the geo match rule and configure them to
+     * match against the geographic labels and handle the requests as needed. </p>
+     * </li> </ul> <p>WAF labels requests using the alpha-2 country and region codes
+     * from the International Organization for Standardization (ISO) 3166 standard. WAF
+     * determines the codes using either the IP address in the web request origin or,
+     * if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.
+     * </p> <p>If you use the web request origin, the label formats are
+     * <code>awswaf:clientip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>If you use a forwarded IP address, the label formats are
+     * <code>awswaf:forwardedip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>For additional details, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic
+     * match rule statement</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetGeoMatchStatement(GeoMatchStatement&& value) { m_geoMatchStatementHasBeenSet = true; m_geoMatchStatement = std::move(value); }
 
     /**
-     * <p>A rule statement used to identify web requests based on country of origin.
-     * </p>
+     * <p>A rule statement that labels web requests by country and region and that
+     * matches against web requests based on country code. A geo match rule labels
+     * every request that it inspects regardless of whether it finds a match.</p> <ul>
+     * <li> <p>To manage requests only by country, you can use this statement by itself
+     * and specify the countries that you want to match against in the
+     * <code>CountryCodes</code> array. </p> </li> <li> <p>Otherwise, configure your
+     * geo match rule with Count action so that it only labels requests. Then, add one
+     * or more label match rules to run after the geo match rule and configure them to
+     * match against the geographic labels and handle the requests as needed. </p>
+     * </li> </ul> <p>WAF labels requests using the alpha-2 country and region codes
+     * from the International Organization for Standardization (ISO) 3166 standard. WAF
+     * determines the codes using either the IP address in the web request origin or,
+     * if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.
+     * </p> <p>If you use the web request origin, the label formats are
+     * <code>awswaf:clientip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>If you use a forwarded IP address, the label formats are
+     * <code>awswaf:forwardedip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>For additional details, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic
+     * match rule statement</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline Statement& WithGeoMatchStatement(const GeoMatchStatement& value) { SetGeoMatchStatement(value); return *this;}
 
     /**
-     * <p>A rule statement used to identify web requests based on country of origin.
-     * </p>
+     * <p>A rule statement that labels web requests by country and region and that
+     * matches against web requests based on country code. A geo match rule labels
+     * every request that it inspects regardless of whether it finds a match.</p> <ul>
+     * <li> <p>To manage requests only by country, you can use this statement by itself
+     * and specify the countries that you want to match against in the
+     * <code>CountryCodes</code> array. </p> </li> <li> <p>Otherwise, configure your
+     * geo match rule with Count action so that it only labels requests. Then, add one
+     * or more label match rules to run after the geo match rule and configure them to
+     * match against the geographic labels and handle the requests as needed. </p>
+     * </li> </ul> <p>WAF labels requests using the alpha-2 country and region codes
+     * from the International Organization for Standardization (ISO) 3166 standard. WAF
+     * determines the codes using either the IP address in the web request origin or,
+     * if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.
+     * </p> <p>If you use the web request origin, the label formats are
+     * <code>awswaf:clientip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>If you use a forwarded IP address, the label formats are
+     * <code>awswaf:forwardedip:geo:region:&lt;ISO country code&gt;-&lt;ISO region
+     * code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO country
+     * code&gt;</code>.</p> <p>For additional details, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic
+     * match rule statement</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline Statement& WithGeoMatchStatement(GeoMatchStatement&& value) { SetGeoMatchStatement(std::move(value)); return *this;}
 
@@ -968,80 +1100,80 @@ namespace Model
 
 
     /**
-     * <p>A rule statement that defines a string match search against labels that have
-     * been added to the web request by rules that have already run in the web ACL.
-     * </p> <p>The label match statement provides the label or namespace string to
-     * search for. The label string can represent a part or all of the fully qualified
-     * label name that had been added to the web request. Fully qualified labels have a
-     * prefix, optional namespaces, and label name. The prefix identifies the rule
-     * group or web ACL context of the rule that added the label. If you do not provide
-     * the fully qualified name in your label match string, WAF performs the search for
-     * labels that were added in the same context as the label match statement. </p>
+     * <p>A rule statement to match against labels that have been added to the web
+     * request by rules that have already run in the web ACL. </p> <p>The label match
+     * statement provides the label or namespace string to search for. The label string
+     * can represent a part or all of the fully qualified label name that had been
+     * added to the web request. Fully qualified labels have a prefix, optional
+     * namespaces, and label name. The prefix identifies the rule group or web ACL
+     * context of the rule that added the label. If you do not provide the fully
+     * qualified name in your label match string, WAF performs the search for labels
+     * that were added in the same context as the label match statement. </p>
      */
     inline const LabelMatchStatement& GetLabelMatchStatement() const{ return m_labelMatchStatement; }
 
     /**
-     * <p>A rule statement that defines a string match search against labels that have
-     * been added to the web request by rules that have already run in the web ACL.
-     * </p> <p>The label match statement provides the label or namespace string to
-     * search for. The label string can represent a part or all of the fully qualified
-     * label name that had been added to the web request. Fully qualified labels have a
-     * prefix, optional namespaces, and label name. The prefix identifies the rule
-     * group or web ACL context of the rule that added the label. If you do not provide
-     * the fully qualified name in your label match string, WAF performs the search for
-     * labels that were added in the same context as the label match statement. </p>
+     * <p>A rule statement to match against labels that have been added to the web
+     * request by rules that have already run in the web ACL. </p> <p>The label match
+     * statement provides the label or namespace string to search for. The label string
+     * can represent a part or all of the fully qualified label name that had been
+     * added to the web request. Fully qualified labels have a prefix, optional
+     * namespaces, and label name. The prefix identifies the rule group or web ACL
+     * context of the rule that added the label. If you do not provide the fully
+     * qualified name in your label match string, WAF performs the search for labels
+     * that were added in the same context as the label match statement. </p>
      */
     inline bool LabelMatchStatementHasBeenSet() const { return m_labelMatchStatementHasBeenSet; }
 
     /**
-     * <p>A rule statement that defines a string match search against labels that have
-     * been added to the web request by rules that have already run in the web ACL.
-     * </p> <p>The label match statement provides the label or namespace string to
-     * search for. The label string can represent a part or all of the fully qualified
-     * label name that had been added to the web request. Fully qualified labels have a
-     * prefix, optional namespaces, and label name. The prefix identifies the rule
-     * group or web ACL context of the rule that added the label. If you do not provide
-     * the fully qualified name in your label match string, WAF performs the search for
-     * labels that were added in the same context as the label match statement. </p>
+     * <p>A rule statement to match against labels that have been added to the web
+     * request by rules that have already run in the web ACL. </p> <p>The label match
+     * statement provides the label or namespace string to search for. The label string
+     * can represent a part or all of the fully qualified label name that had been
+     * added to the web request. Fully qualified labels have a prefix, optional
+     * namespaces, and label name. The prefix identifies the rule group or web ACL
+     * context of the rule that added the label. If you do not provide the fully
+     * qualified name in your label match string, WAF performs the search for labels
+     * that were added in the same context as the label match statement. </p>
      */
     inline void SetLabelMatchStatement(const LabelMatchStatement& value) { m_labelMatchStatementHasBeenSet = true; m_labelMatchStatement = value; }
 
     /**
-     * <p>A rule statement that defines a string match search against labels that have
-     * been added to the web request by rules that have already run in the web ACL.
-     * </p> <p>The label match statement provides the label or namespace string to
-     * search for. The label string can represent a part or all of the fully qualified
-     * label name that had been added to the web request. Fully qualified labels have a
-     * prefix, optional namespaces, and label name. The prefix identifies the rule
-     * group or web ACL context of the rule that added the label. If you do not provide
-     * the fully qualified name in your label match string, WAF performs the search for
-     * labels that were added in the same context as the label match statement. </p>
+     * <p>A rule statement to match against labels that have been added to the web
+     * request by rules that have already run in the web ACL. </p> <p>The label match
+     * statement provides the label or namespace string to search for. The label string
+     * can represent a part or all of the fully qualified label name that had been
+     * added to the web request. Fully qualified labels have a prefix, optional
+     * namespaces, and label name. The prefix identifies the rule group or web ACL
+     * context of the rule that added the label. If you do not provide the fully
+     * qualified name in your label match string, WAF performs the search for labels
+     * that were added in the same context as the label match statement. </p>
      */
     inline void SetLabelMatchStatement(LabelMatchStatement&& value) { m_labelMatchStatementHasBeenSet = true; m_labelMatchStatement = std::move(value); }
 
     /**
-     * <p>A rule statement that defines a string match search against labels that have
-     * been added to the web request by rules that have already run in the web ACL.
-     * </p> <p>The label match statement provides the label or namespace string to
-     * search for. The label string can represent a part or all of the fully qualified
-     * label name that had been added to the web request. Fully qualified labels have a
-     * prefix, optional namespaces, and label name. The prefix identifies the rule
-     * group or web ACL context of the rule that added the label. If you do not provide
-     * the fully qualified name in your label match string, WAF performs the search for
-     * labels that were added in the same context as the label match statement. </p>
+     * <p>A rule statement to match against labels that have been added to the web
+     * request by rules that have already run in the web ACL. </p> <p>The label match
+     * statement provides the label or namespace string to search for. The label string
+     * can represent a part or all of the fully qualified label name that had been
+     * added to the web request. Fully qualified labels have a prefix, optional
+     * namespaces, and label name. The prefix identifies the rule group or web ACL
+     * context of the rule that added the label. If you do not provide the fully
+     * qualified name in your label match string, WAF performs the search for labels
+     * that were added in the same context as the label match statement. </p>
      */
     inline Statement& WithLabelMatchStatement(const LabelMatchStatement& value) { SetLabelMatchStatement(value); return *this;}
 
     /**
-     * <p>A rule statement that defines a string match search against labels that have
-     * been added to the web request by rules that have already run in the web ACL.
-     * </p> <p>The label match statement provides the label or namespace string to
-     * search for. The label string can represent a part or all of the fully qualified
-     * label name that had been added to the web request. Fully qualified labels have a
-     * prefix, optional namespaces, and label name. The prefix identifies the rule
-     * group or web ACL context of the rule that added the label. If you do not provide
-     * the fully qualified name in your label match string, WAF performs the search for
-     * labels that were added in the same context as the label match statement. </p>
+     * <p>A rule statement to match against labels that have been added to the web
+     * request by rules that have already run in the web ACL. </p> <p>The label match
+     * statement provides the label or namespace string to search for. The label string
+     * can represent a part or all of the fully qualified label name that had been
+     * added to the web request. Fully qualified labels have a prefix, optional
+     * namespaces, and label name. The prefix identifies the rule group or web ACL
+     * context of the rule that added the label. If you do not provide the fully
+     * qualified name in your label match string, WAF performs the search for labels
+     * that were added in the same context as the label match statement. </p>
      */
     inline Statement& WithLabelMatchStatement(LabelMatchStatement&& value) { SetLabelMatchStatement(std::move(value)); return *this;}
 

@@ -27,6 +27,7 @@
 #include <aws/cloudtrail/model/CreateTrailRequest.h>
 #include <aws/cloudtrail/model/DeleteEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/DeleteTrailRequest.h>
+#include <aws/cloudtrail/model/DeregisterOrganizationDelegatedAdminRequest.h>
 #include <aws/cloudtrail/model/DescribeQueryRequest.h>
 #include <aws/cloudtrail/model/DescribeTrailsRequest.h>
 #include <aws/cloudtrail/model/GetChannelRequest.h>
@@ -48,6 +49,7 @@
 #include <aws/cloudtrail/model/LookupEventsRequest.h>
 #include <aws/cloudtrail/model/PutEventSelectorsRequest.h>
 #include <aws/cloudtrail/model/PutInsightSelectorsRequest.h>
+#include <aws/cloudtrail/model/RegisterOrganizationDelegatedAdminRequest.h>
 #include <aws/cloudtrail/model/RemoveTagsRequest.h>
 #include <aws/cloudtrail/model/RestoreEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/StartImportRequest.h>
@@ -326,6 +328,30 @@ void CloudTrailClient::DeleteTrailAsync(const DeleteTrailRequest& request, const
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteTrail(request), context);
+    } );
+}
+
+DeregisterOrganizationDelegatedAdminOutcome CloudTrailClient::DeregisterOrganizationDelegatedAdmin(const DeregisterOrganizationDelegatedAdminRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterOrganizationDelegatedAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterOrganizationDelegatedAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeregisterOrganizationDelegatedAdminOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeregisterOrganizationDelegatedAdminOutcomeCallable CloudTrailClient::DeregisterOrganizationDelegatedAdminCallable(const DeregisterOrganizationDelegatedAdminRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterOrganizationDelegatedAdminOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterOrganizationDelegatedAdmin(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::DeregisterOrganizationDelegatedAdminAsync(const DeregisterOrganizationDelegatedAdminRequest& request, const DeregisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterOrganizationDelegatedAdmin(request), context);
     } );
 }
 
@@ -830,6 +856,30 @@ void CloudTrailClient::PutInsightSelectorsAsync(const PutInsightSelectorsRequest
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutInsightSelectors(request), context);
+    } );
+}
+
+RegisterOrganizationDelegatedAdminOutcome CloudTrailClient::RegisterOrganizationDelegatedAdmin(const RegisterOrganizationDelegatedAdminRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterOrganizationDelegatedAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterOrganizationDelegatedAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RegisterOrganizationDelegatedAdminOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RegisterOrganizationDelegatedAdminOutcomeCallable CloudTrailClient::RegisterOrganizationDelegatedAdminCallable(const RegisterOrganizationDelegatedAdminRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterOrganizationDelegatedAdminOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterOrganizationDelegatedAdmin(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::RegisterOrganizationDelegatedAdminAsync(const RegisterOrganizationDelegatedAdminRequest& request, const RegisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterOrganizationDelegatedAdmin(request), context);
     } );
 }
 

@@ -7,6 +7,8 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/RunningMode.h>
 #include <aws/workspaces/model/Compute.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces/model/Protocol.h>
 #include <utility>
 
 namespace Aws
@@ -238,6 +240,103 @@ namespace Model
      */
     inline WorkspaceProperties& WithComputeTypeName(Compute&& value) { SetComputeTypeName(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline WorkspaceProperties& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline WorkspaceProperties& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline WorkspaceProperties& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline WorkspaceProperties& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+
   private:
 
     RunningMode m_runningMode;
@@ -254,6 +353,9 @@ namespace Model
 
     Compute m_computeTypeName;
     bool m_computeTypeNameHasBeenSet = false;
+
+    Aws::Vector<Protocol> m_protocols;
+    bool m_protocolsHasBeenSet = false;
   };
 
 } // namespace Model

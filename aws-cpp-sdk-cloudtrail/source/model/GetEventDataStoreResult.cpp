@@ -101,6 +101,12 @@ GetEventDataStoreResult& GetEventDataStoreResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
 
 
   return *this;

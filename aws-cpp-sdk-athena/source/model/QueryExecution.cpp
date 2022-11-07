@@ -24,6 +24,7 @@ QueryExecution::QueryExecution() :
     m_statementType(StatementType::NOT_SET),
     m_statementTypeHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
+    m_resultReuseConfigurationHasBeenSet(false),
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
@@ -39,6 +40,7 @@ QueryExecution::QueryExecution(JsonView jsonValue) :
     m_statementType(StatementType::NOT_SET),
     m_statementTypeHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
+    m_resultReuseConfigurationHasBeenSet(false),
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
@@ -77,6 +79,13 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_resultConfiguration = jsonValue.GetObject("ResultConfiguration");
 
     m_resultConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResultReuseConfiguration"))
+  {
+    m_resultReuseConfiguration = jsonValue.GetObject("ResultReuseConfiguration");
+
+    m_resultReuseConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("QueryExecutionContext"))
@@ -151,6 +160,12 @@ JsonValue QueryExecution::Jsonize() const
   if(m_resultConfigurationHasBeenSet)
   {
    payload.WithObject("ResultConfiguration", m_resultConfiguration.Jsonize());
+
+  }
+
+  if(m_resultReuseConfigurationHasBeenSet)
+  {
+   payload.WithObject("ResultReuseConfiguration", m_resultReuseConfiguration.Jsonize());
 
   }
 

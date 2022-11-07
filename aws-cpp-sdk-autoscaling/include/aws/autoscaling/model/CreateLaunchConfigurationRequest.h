@@ -318,156 +318,88 @@ namespace Model
 
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline bool ClassicLinkVPCIdHasBeenSet() const { return m_classicLinkVPCIdHasBeenSet; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
 
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the
-     * specified ClassicLink-enabled VPC.</p> <p>If you specify the
-     * <code>ClassicLinkVPCId</code> property, you must specify
-     * <code>ClassicLinkVPCSecurityGroups</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the
-     * specified ClassicLink-enabled VPC.</p> <p>If you specify the
-     * <code>ClassicLinkVPCId</code> property, you must specify
-     * <code>ClassicLinkVPCSecurityGroups</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline bool ClassicLinkVPCSecurityGroupsHasBeenSet() const { return m_classicLinkVPCSecurityGroupsHasBeenSet; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the
-     * specified ClassicLink-enabled VPC.</p> <p>If you specify the
-     * <code>ClassicLinkVPCId</code> property, you must specify
-     * <code>ClassicLinkVPCSecurityGroups</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the
-     * specified ClassicLink-enabled VPC.</p> <p>If you specify the
-     * <code>ClassicLinkVPCId</code> property, you must specify
-     * <code>ClassicLinkVPCSecurityGroups</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::move(value); }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the
-     * specified ClassicLink-enabled VPC.</p> <p>If you specify the
-     * <code>ClassicLinkVPCId</code> property, you must specify
-     * <code>ClassicLinkVPCSecurityGroups</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the
-     * specified ClassicLink-enabled VPC.</p> <p>If you specify the
-     * <code>ClassicLinkVPCId</code> property, you must specify
-     * <code>ClassicLinkVPCSecurityGroups</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the
-     * specified ClassicLink-enabled VPC.</p> <p>If you specify the
-     * <code>ClassicLinkVPCId</code> property, you must specify
-     * <code>ClassicLinkVPCSecurityGroups</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the
-     * specified ClassicLink-enabled VPC.</p> <p>If you specify the
-     * <code>ClassicLinkVPCId</code> property, you must specify
-     * <code>ClassicLinkVPCSecurityGroups</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the
-     * specified ClassicLink-enabled VPC.</p> <p>If you specify the
-     * <code>ClassicLinkVPCId</code> property, you must specify
-     * <code>ClassicLinkVPCSecurityGroups</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 

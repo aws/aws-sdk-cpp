@@ -44,7 +44,9 @@ Workload::Workload() :
     m_lensesHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_shareInvitationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_discoveryConfigHasBeenSet(false),
+    m_applicationsHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ Workload::Workload(JsonView jsonValue) :
     m_lensesHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_shareInvitationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_discoveryConfigHasBeenSet(false),
+    m_applicationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -263,6 +267,23 @@ Workload& Workload::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DiscoveryConfig"))
+  {
+    m_discoveryConfig = jsonValue.GetObject("DiscoveryConfig");
+
+    m_discoveryConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Applications"))
+  {
+    Aws::Utils::Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
+    for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
+    {
+      m_applications.push_back(applicationsJsonList[applicationsIndex].AsString());
+    }
+    m_applicationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -436,6 +457,23 @@ JsonValue Workload::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_discoveryConfigHasBeenSet)
+  {
+   payload.WithObject("DiscoveryConfig", m_discoveryConfig.Jsonize());
+
+  }
+
+  if(m_applicationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
+   for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
+   {
+     applicationsJsonList[applicationsIndex].AsString(m_applications[applicationsIndex]);
+   }
+   payload.WithArray("Applications", std::move(applicationsJsonList));
 
   }
 

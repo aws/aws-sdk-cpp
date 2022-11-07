@@ -21,6 +21,9 @@
 #include <aws/lexv2-models/LexModelsV2Client.h>
 #include <aws/lexv2-models/LexModelsV2ErrorMarshaller.h>
 #include <aws/lexv2-models/LexModelsV2EndpointProvider.h>
+#include <aws/lexv2-models/model/BatchCreateCustomVocabularyItemRequest.h>
+#include <aws/lexv2-models/model/BatchDeleteCustomVocabularyItemRequest.h>
+#include <aws/lexv2-models/model/BatchUpdateCustomVocabularyItemRequest.h>
 #include <aws/lexv2-models/model/BuildBotLocaleRequest.h>
 #include <aws/lexv2-models/model/CreateBotRequest.h>
 #include <aws/lexv2-models/model/CreateBotAliasRequest.h>
@@ -66,6 +69,7 @@
 #include <aws/lexv2-models/model/ListBotsRequest.h>
 #include <aws/lexv2-models/model/ListBuiltInIntentsRequest.h>
 #include <aws/lexv2-models/model/ListBuiltInSlotTypesRequest.h>
+#include <aws/lexv2-models/model/ListCustomVocabularyItemsRequest.h>
 #include <aws/lexv2-models/model/ListExportsRequest.h>
 #include <aws/lexv2-models/model/ListImportsRequest.h>
 #include <aws/lexv2-models/model/ListIntentsRequest.h>
@@ -214,6 +218,144 @@ void LexModelsV2Client::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+BatchCreateCustomVocabularyItemOutcome LexModelsV2Client::BatchCreateCustomVocabularyItem(const BatchCreateCustomVocabularyItemRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateCustomVocabularyItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchCreateCustomVocabularyItem", "Required field: BotId, is not set");
+    return BatchCreateCustomVocabularyItemOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchCreateCustomVocabularyItem", "Required field: BotVersion, is not set");
+    return BatchCreateCustomVocabularyItemOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchCreateCustomVocabularyItem", "Required field: LocaleId, is not set");
+    return BatchCreateCustomVocabularyItemOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchCreateCustomVocabularyItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary/DEFAULT/batchcreate");
+  return BatchCreateCustomVocabularyItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchCreateCustomVocabularyItemOutcomeCallable LexModelsV2Client::BatchCreateCustomVocabularyItemCallable(const BatchCreateCustomVocabularyItemRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchCreateCustomVocabularyItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreateCustomVocabularyItem(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::BatchCreateCustomVocabularyItemAsync(const BatchCreateCustomVocabularyItemRequest& request, const BatchCreateCustomVocabularyItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchCreateCustomVocabularyItem(request), context);
+    } );
+}
+
+BatchDeleteCustomVocabularyItemOutcome LexModelsV2Client::BatchDeleteCustomVocabularyItem(const BatchDeleteCustomVocabularyItemRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteCustomVocabularyItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteCustomVocabularyItem", "Required field: BotId, is not set");
+    return BatchDeleteCustomVocabularyItemOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteCustomVocabularyItem", "Required field: BotVersion, is not set");
+    return BatchDeleteCustomVocabularyItemOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteCustomVocabularyItem", "Required field: LocaleId, is not set");
+    return BatchDeleteCustomVocabularyItemOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteCustomVocabularyItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary/DEFAULT/batchdelete");
+  return BatchDeleteCustomVocabularyItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDeleteCustomVocabularyItemOutcomeCallable LexModelsV2Client::BatchDeleteCustomVocabularyItemCallable(const BatchDeleteCustomVocabularyItemRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteCustomVocabularyItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteCustomVocabularyItem(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::BatchDeleteCustomVocabularyItemAsync(const BatchDeleteCustomVocabularyItemRequest& request, const BatchDeleteCustomVocabularyItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDeleteCustomVocabularyItem(request), context);
+    } );
+}
+
+BatchUpdateCustomVocabularyItemOutcome LexModelsV2Client::BatchUpdateCustomVocabularyItem(const BatchUpdateCustomVocabularyItemRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateCustomVocabularyItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchUpdateCustomVocabularyItem", "Required field: BotId, is not set");
+    return BatchUpdateCustomVocabularyItemOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchUpdateCustomVocabularyItem", "Required field: BotVersion, is not set");
+    return BatchUpdateCustomVocabularyItemOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchUpdateCustomVocabularyItem", "Required field: LocaleId, is not set");
+    return BatchUpdateCustomVocabularyItemOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateCustomVocabularyItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary/DEFAULT/batchupdate");
+  return BatchUpdateCustomVocabularyItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchUpdateCustomVocabularyItemOutcomeCallable LexModelsV2Client::BatchUpdateCustomVocabularyItemCallable(const BatchUpdateCustomVocabularyItemRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateCustomVocabularyItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateCustomVocabularyItem(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::BatchUpdateCustomVocabularyItemAsync(const BatchUpdateCustomVocabularyItemRequest& request, const BatchUpdateCustomVocabularyItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchUpdateCustomVocabularyItem(request), context);
+    } );
 }
 
 BuildBotLocaleOutcome LexModelsV2Client::BuildBotLocale(const BuildBotLocaleRequest& request) const
@@ -1944,6 +2086,52 @@ void LexModelsV2Client::ListBuiltInSlotTypesAsync(const ListBuiltInSlotTypesRequ
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListBuiltInSlotTypes(request), context);
+    } );
+}
+
+ListCustomVocabularyItemsOutcome LexModelsV2Client::ListCustomVocabularyItems(const ListCustomVocabularyItemsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCustomVocabularyItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCustomVocabularyItems", "Required field: BotId, is not set");
+    return ListCustomVocabularyItemsOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCustomVocabularyItems", "Required field: BotVersion, is not set");
+    return ListCustomVocabularyItemsOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCustomVocabularyItems", "Required field: LocaleId, is not set");
+    return ListCustomVocabularyItemsOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCustomVocabularyItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/customvocabulary/DEFAULT/list");
+  return ListCustomVocabularyItemsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCustomVocabularyItemsOutcomeCallable LexModelsV2Client::ListCustomVocabularyItemsCallable(const ListCustomVocabularyItemsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCustomVocabularyItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomVocabularyItems(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::ListCustomVocabularyItemsAsync(const ListCustomVocabularyItemsRequest& request, const ListCustomVocabularyItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCustomVocabularyItems(request), context);
     } );
 }
 
