@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code> <a>RejectInboundConnection</a>
-   * </code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the request parameters to the
+   * <code>RejectInboundConnection</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RejectInboundConnectionRequest">AWS
    * API Reference</a></p>
    */
@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the inbound connection to reject.</p>
+     * <p>The unique identifier of the inbound connection to reject.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
     /**
-     * <p>The ID of the inbound connection to reject.</p>
+     * <p>The unique identifier of the inbound connection to reject.</p>
      */
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the inbound connection to reject.</p>
+     * <p>The unique identifier of the inbound connection to reject.</p>
      */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
-     * <p>The ID of the inbound connection to reject.</p>
+     * <p>The unique identifier of the inbound connection to reject.</p>
      */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
-     * <p>The ID of the inbound connection to reject.</p>
+     * <p>The unique identifier of the inbound connection to reject.</p>
      */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
 
     /**
-     * <p>The ID of the inbound connection to reject.</p>
+     * <p>The unique identifier of the inbound connection to reject.</p>
      */
     inline RejectInboundConnectionRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the inbound connection to reject.</p>
+     * <p>The unique identifier of the inbound connection to reject.</p>
      */
     inline RejectInboundConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the inbound connection to reject.</p>
+     * <p>The unique identifier of the inbound connection to reject.</p>
      */
     inline RejectInboundConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 

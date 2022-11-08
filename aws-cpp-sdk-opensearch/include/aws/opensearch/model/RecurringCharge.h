@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the specific price and frequency of a recurring charges for a
-   * reserved OpenSearch instance, or for a reserved OpenSearch instance offering.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the specific price and frequency of a recurring charges for an
+   * OpenSearch Reserved Instance, or for a Reserved Instance offering.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RecurringCharge">AWS
    * API Reference</a></p>
    */

@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the
-     * Amazon Web Services charges for a billing group. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute
+     * the Amazon Web Services charges for a billing group. </p>
      */
     inline const Aws::String& GetPricingPlanArn() const{ return m_pricingPlanArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the
-     * Amazon Web Services charges for a billing group. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute
+     * the Amazon Web Services charges for a billing group. </p>
      */
     inline bool PricingPlanArnHasBeenSet() const { return m_pricingPlanArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the
-     * Amazon Web Services charges for a billing group. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute
+     * the Amazon Web Services charges for a billing group. </p>
      */
     inline void SetPricingPlanArn(const Aws::String& value) { m_pricingPlanArnHasBeenSet = true; m_pricingPlanArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the
-     * Amazon Web Services charges for a billing group. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute
+     * the Amazon Web Services charges for a billing group. </p>
      */
     inline void SetPricingPlanArn(Aws::String&& value) { m_pricingPlanArnHasBeenSet = true; m_pricingPlanArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the
-     * Amazon Web Services charges for a billing group. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute
+     * the Amazon Web Services charges for a billing group. </p>
      */
     inline void SetPricingPlanArn(const char* value) { m_pricingPlanArnHasBeenSet = true; m_pricingPlanArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the
-     * Amazon Web Services charges for a billing group. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute
+     * the Amazon Web Services charges for a billing group. </p>
      */
     inline ComputationPreference& WithPricingPlanArn(const Aws::String& value) { SetPricingPlanArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the
-     * Amazon Web Services charges for a billing group. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute
+     * the Amazon Web Services charges for a billing group. </p>
      */
     inline ComputationPreference& WithPricingPlanArn(Aws::String&& value) { SetPricingPlanArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the
-     * Amazon Web Services charges for a billing group. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute
+     * the Amazon Web Services charges for a billing group. </p>
      */
     inline ComputationPreference& WithPricingPlanArn(const char* value) { SetPricingPlanArn(value); return *this;}
 

@@ -245,42 +245,42 @@ namespace Model
 
 
     /**
-     * <p> The product code associated with the custom line item. </p>
+     * <p> The product code that's associated with the custom line item. </p>
      */
     inline const Aws::String& GetProductCode() const{ return m_productCode; }
 
     /**
-     * <p> The product code associated with the custom line item. </p>
+     * <p> The product code that's associated with the custom line item. </p>
      */
     inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
 
     /**
-     * <p> The product code associated with the custom line item. </p>
+     * <p> The product code that's associated with the custom line item. </p>
      */
     inline void SetProductCode(const Aws::String& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
 
     /**
-     * <p> The product code associated with the custom line item. </p>
+     * <p> The product code that's associated with the custom line item. </p>
      */
     inline void SetProductCode(Aws::String&& value) { m_productCodeHasBeenSet = true; m_productCode = std::move(value); }
 
     /**
-     * <p> The product code associated with the custom line item. </p>
+     * <p> The product code that's associated with the custom line item. </p>
      */
     inline void SetProductCode(const char* value) { m_productCodeHasBeenSet = true; m_productCode.assign(value); }
 
     /**
-     * <p> The product code associated with the custom line item. </p>
+     * <p> The product code that's associated with the custom line item. </p>
      */
     inline CustomLineItemListElement& WithProductCode(const Aws::String& value) { SetProductCode(value); return *this;}
 
     /**
-     * <p> The product code associated with the custom line item. </p>
+     * <p> The product code that's associated with the custom line item. </p>
      */
     inline CustomLineItemListElement& WithProductCode(Aws::String&& value) { SetProductCode(std::move(value)); return *this;}
 
     /**
-     * <p> The product code associated with the custom line item. </p>
+     * <p> The product code that's associated with the custom line item. </p>
      */
     inline CustomLineItemListElement& WithProductCode(const char* value) { SetProductCode(value); return *this;}
 
@@ -356,22 +356,22 @@ namespace Model
 
 
     /**
-     * <p> The most recent time the custom line item was modified. </p>
+     * <p> The most recent time when the custom line item was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the custom line item was modified. </p>
+     * <p> The most recent time when the custom line item was modified. </p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p> The most recent time the custom line item was modified. </p>
+     * <p> The most recent time when the custom line item was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the custom line item was modified. </p>
+     * <p> The most recent time when the custom line item was modified. </p>
      */
     inline CustomLineItemListElement& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 

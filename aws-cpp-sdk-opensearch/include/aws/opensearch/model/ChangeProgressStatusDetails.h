@@ -123,153 +123,141 @@ namespace Model
 
 
     /**
-     * <p>The overall status of the domain configuration change. This field can take
-     * the following values: <code>PENDING</code>, <code>PROCESSING</code>,
-     * <code>COMPLETED</code> and <code>FAILED</code></p>
+     * <p>The overall status of the domain configuration change.</p>
      */
     inline const OverallChangeStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The overall status of the domain configuration change. This field can take
-     * the following values: <code>PENDING</code>, <code>PROCESSING</code>,
-     * <code>COMPLETED</code> and <code>FAILED</code></p>
+     * <p>The overall status of the domain configuration change.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The overall status of the domain configuration change. This field can take
-     * the following values: <code>PENDING</code>, <code>PROCESSING</code>,
-     * <code>COMPLETED</code> and <code>FAILED</code></p>
+     * <p>The overall status of the domain configuration change.</p>
      */
     inline void SetStatus(const OverallChangeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The overall status of the domain configuration change. This field can take
-     * the following values: <code>PENDING</code>, <code>PROCESSING</code>,
-     * <code>COMPLETED</code> and <code>FAILED</code></p>
+     * <p>The overall status of the domain configuration change.</p>
      */
     inline void SetStatus(OverallChangeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The overall status of the domain configuration change. This field can take
-     * the following values: <code>PENDING</code>, <code>PROCESSING</code>,
-     * <code>COMPLETED</code> and <code>FAILED</code></p>
+     * <p>The overall status of the domain configuration change.</p>
      */
     inline ChangeProgressStatusDetails& WithStatus(const OverallChangeStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The overall status of the domain configuration change. This field can take
-     * the following values: <code>PENDING</code>, <code>PROCESSING</code>,
-     * <code>COMPLETED</code> and <code>FAILED</code></p>
+     * <p>The overall status of the domain configuration change.</p>
      */
     inline ChangeProgressStatusDetails& WithStatus(OverallChangeStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
-     * still in pending.</p>
+     * <p>The list of properties in the domain configuration change that are still
+     * pending.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPendingProperties() const{ return m_pendingProperties; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
-     * still in pending.</p>
+     * <p>The list of properties in the domain configuration change that are still
+     * pending.</p>
      */
     inline bool PendingPropertiesHasBeenSet() const { return m_pendingPropertiesHasBeenSet; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
-     * still in pending.</p>
+     * <p>The list of properties in the domain configuration change that are still
+     * pending.</p>
      */
     inline void SetPendingProperties(const Aws::Vector<Aws::String>& value) { m_pendingPropertiesHasBeenSet = true; m_pendingProperties = value; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
-     * still in pending.</p>
+     * <p>The list of properties in the domain configuration change that are still
+     * pending.</p>
      */
     inline void SetPendingProperties(Aws::Vector<Aws::String>&& value) { m_pendingPropertiesHasBeenSet = true; m_pendingProperties = std::move(value); }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
-     * still in pending.</p>
+     * <p>The list of properties in the domain configuration change that are still
+     * pending.</p>
      */
     inline ChangeProgressStatusDetails& WithPendingProperties(const Aws::Vector<Aws::String>& value) { SetPendingProperties(value); return *this;}
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
-     * still in pending.</p>
+     * <p>The list of properties in the domain configuration change that are still
+     * pending.</p>
      */
     inline ChangeProgressStatusDetails& WithPendingProperties(Aws::Vector<Aws::String>&& value) { SetPendingProperties(std::move(value)); return *this;}
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
-     * still in pending.</p>
+     * <p>The list of properties in the domain configuration change that are still
+     * pending.</p>
      */
     inline ChangeProgressStatusDetails& AddPendingProperties(const Aws::String& value) { m_pendingPropertiesHasBeenSet = true; m_pendingProperties.push_back(value); return *this; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
-     * still in pending.</p>
+     * <p>The list of properties in the domain configuration change that are still
+     * pending.</p>
      */
     inline ChangeProgressStatusDetails& AddPendingProperties(Aws::String&& value) { m_pendingPropertiesHasBeenSet = true; m_pendingProperties.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
-     * still in pending.</p>
+     * <p>The list of properties in the domain configuration change that are still
+     * pending.</p>
      */
     inline ChangeProgressStatusDetails& AddPendingProperties(const char* value) { m_pendingPropertiesHasBeenSet = true; m_pendingProperties.push_back(value); return *this; }
 
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
+     * <p>The list of properties in the domain configuration change that have
      * completed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCompletedProperties() const{ return m_completedProperties; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
+     * <p>The list of properties in the domain configuration change that have
      * completed.</p>
      */
     inline bool CompletedPropertiesHasBeenSet() const { return m_completedPropertiesHasBeenSet; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
+     * <p>The list of properties in the domain configuration change that have
      * completed.</p>
      */
     inline void SetCompletedProperties(const Aws::Vector<Aws::String>& value) { m_completedPropertiesHasBeenSet = true; m_completedProperties = value; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
+     * <p>The list of properties in the domain configuration change that have
      * completed.</p>
      */
     inline void SetCompletedProperties(Aws::Vector<Aws::String>&& value) { m_completedPropertiesHasBeenSet = true; m_completedProperties = std::move(value); }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
+     * <p>The list of properties in the domain configuration change that have
      * completed.</p>
      */
     inline ChangeProgressStatusDetails& WithCompletedProperties(const Aws::Vector<Aws::String>& value) { SetCompletedProperties(value); return *this;}
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
+     * <p>The list of properties in the domain configuration change that have
      * completed.</p>
      */
     inline ChangeProgressStatusDetails& WithCompletedProperties(Aws::Vector<Aws::String>&& value) { SetCompletedProperties(std::move(value)); return *this;}
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
+     * <p>The list of properties in the domain configuration change that have
      * completed.</p>
      */
     inline ChangeProgressStatusDetails& AddCompletedProperties(const Aws::String& value) { m_completedPropertiesHasBeenSet = true; m_completedProperties.push_back(value); return *this; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
+     * <p>The list of properties in the domain configuration change that have
      * completed.</p>
      */
     inline ChangeProgressStatusDetails& AddCompletedProperties(Aws::String&& value) { m_completedPropertiesHasBeenSet = true; m_completedProperties.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of properties involved in the domain configuration change that are
+     * <p>The list of properties in the domain configuration change that have
      * completed.</p>
      */
     inline ChangeProgressStatusDetails& AddCompletedProperties(const char* value) { m_completedPropertiesHasBeenSet = true; m_completedProperties.push_back(value); return *this; }

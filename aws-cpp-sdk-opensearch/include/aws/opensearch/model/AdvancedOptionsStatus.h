@@ -26,17 +26,27 @@ namespace Model
 {
 
   /**
-   * <p>Status of the advanced options for the specified domain. Currently, the
-   * following advanced options are available: </p> <ul> <li>Option to allow
-   * references to indices in an HTTP request body. Must be <code>false</code> when
-   * configuring access to individual sub-resources. By default, the value is
-   * <code>true</code>. See <a
-   * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-   * target="_blank">Advanced cluster parameters </a> for more information. </li>
-   * <li>Option to specify the percentage of heap space allocated to field data. By
-   * default, this setting is unbounded. </li> </ul> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">
-   * Advanced cluster parameters</a>. </p><p><h3>See Also:</h3>   <a
+   * <p>Status of the advanced options for the specified domain. The following
+   * options are available: </p> <ul> <li> <p>
+   * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
+   * the use of a string rather than a boolean. Specifies whether explicit references
+   * to indexes are allowed inside the body of HTTP requests. If you want to
+   * configure access policies for domain sub-resources, such as specific indexes and
+   * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
+   * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
+   * rather than a boolean. Specifies the percentage of heap space allocated to field
+   * data. Default is unbounded.</p> </li> <li> <p>
+   * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
+   * string rather than a boolean. Specifies the maximum number of clauses allowed in
+   * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
+   * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
+   * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
+   * use of a string rather than a boolean. Specifies whether the domain reports its
+   * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
+   * working with it. Default is false when creating a domain and true when upgrading
+   * a domain.</p> </li> </ul> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
+   * cluster parameters</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AdvancedOptionsStatus">AWS
    * API Reference</a></p>
    */
@@ -116,38 +126,32 @@ namespace Model
 
 
     /**
-     * <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-     * </p>
+     * <p>The status of advanced options for the specified domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-     * </p>
+     * <p>The status of advanced options for the specified domain.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-     * </p>
+     * <p>The status of advanced options for the specified domain.</p>
      */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-     * </p>
+     * <p>The status of advanced options for the specified domain.</p>
      */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-     * </p>
+     * <p>The status of advanced options for the specified domain.</p>
      */
     inline AdvancedOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-     * </p>
+     * <p>The status of advanced options for the specified domain.</p>
      */
     inline AdvancedOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

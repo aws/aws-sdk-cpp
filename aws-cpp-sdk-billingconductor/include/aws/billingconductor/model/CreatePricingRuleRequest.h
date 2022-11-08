@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline CreatePricingRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline CreatePricingRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline CreatePricingRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
@@ -170,38 +170,38 @@ namespace Model
 
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline const PricingRuleScope& GetScope() const{ return m_scope; }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline void SetScope(const PricingRuleScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline void SetScope(PricingRuleScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline CreatePricingRuleRequest& WithScope(const PricingRuleScope& value) { SetScope(value); return *this;}
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline CreatePricingRuleRequest& WithScope(PricingRuleScope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -238,22 +238,22 @@ namespace Model
 
 
     /**
-     * <p> A percentage modifier applied on the public pricing rates. </p>
+     * <p> A percentage modifier that's applied on the public pricing rates. </p>
      */
     inline double GetModifierPercentage() const{ return m_modifierPercentage; }
 
     /**
-     * <p> A percentage modifier applied on the public pricing rates. </p>
+     * <p> A percentage modifier that's applied on the public pricing rates. </p>
      */
     inline bool ModifierPercentageHasBeenSet() const { return m_modifierPercentageHasBeenSet; }
 
     /**
-     * <p> A percentage modifier applied on the public pricing rates. </p>
+     * <p> A percentage modifier that's applied on the public pricing rates. </p>
      */
     inline void SetModifierPercentage(double value) { m_modifierPercentageHasBeenSet = true; m_modifierPercentage = value; }
 
     /**
-     * <p> A percentage modifier applied on the public pricing rates. </p>
+     * <p> A percentage modifier that's applied on the public pricing rates. </p>
      */
     inline CreatePricingRuleRequest& WithModifierPercentage(double value) { SetModifierPercentage(value); return *this;}
 

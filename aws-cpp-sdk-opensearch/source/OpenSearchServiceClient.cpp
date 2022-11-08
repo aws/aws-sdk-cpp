@@ -24,14 +24,17 @@
 #include <aws/opensearch/model/AcceptInboundConnectionRequest.h>
 #include <aws/opensearch/model/AddTagsRequest.h>
 #include <aws/opensearch/model/AssociatePackageRequest.h>
+#include <aws/opensearch/model/AuthorizeVpcEndpointAccessRequest.h>
 #include <aws/opensearch/model/CancelServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/CreateDomainRequest.h>
 #include <aws/opensearch/model/CreateOutboundConnectionRequest.h>
 #include <aws/opensearch/model/CreatePackageRequest.h>
+#include <aws/opensearch/model/CreateVpcEndpointRequest.h>
 #include <aws/opensearch/model/DeleteDomainRequest.h>
 #include <aws/opensearch/model/DeleteInboundConnectionRequest.h>
 #include <aws/opensearch/model/DeleteOutboundConnectionRequest.h>
 #include <aws/opensearch/model/DeletePackageRequest.h>
+#include <aws/opensearch/model/DeleteVpcEndpointRequest.h>
 #include <aws/opensearch/model/DescribeDomainRequest.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesRequest.h>
 #include <aws/opensearch/model/DescribeDomainChangeProgressRequest.h>
@@ -43,6 +46,7 @@
 #include <aws/opensearch/model/DescribePackagesRequest.h>
 #include <aws/opensearch/model/DescribeReservedInstanceOfferingsRequest.h>
 #include <aws/opensearch/model/DescribeReservedInstancesRequest.h>
+#include <aws/opensearch/model/DescribeVpcEndpointsRequest.h>
 #include <aws/opensearch/model/DissociatePackageRequest.h>
 #include <aws/opensearch/model/GetCompatibleVersionsRequest.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
@@ -54,12 +58,17 @@
 #include <aws/opensearch/model/ListPackagesForDomainRequest.h>
 #include <aws/opensearch/model/ListTagsRequest.h>
 #include <aws/opensearch/model/ListVersionsRequest.h>
+#include <aws/opensearch/model/ListVpcEndpointAccessRequest.h>
+#include <aws/opensearch/model/ListVpcEndpointsRequest.h>
+#include <aws/opensearch/model/ListVpcEndpointsForDomainRequest.h>
 #include <aws/opensearch/model/PurchaseReservedInstanceOfferingRequest.h>
 #include <aws/opensearch/model/RejectInboundConnectionRequest.h>
 #include <aws/opensearch/model/RemoveTagsRequest.h>
+#include <aws/opensearch/model/RevokeVpcEndpointAccessRequest.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/UpdateDomainConfigRequest.h>
 #include <aws/opensearch/model/UpdatePackageRequest.h>
+#include <aws/opensearch/model/UpdateVpcEndpointRequest.h>
 #include <aws/opensearch/model/UpgradeDomainRequest.h>
 
 using namespace Aws;
@@ -283,6 +292,38 @@ void OpenSearchServiceClient::AssociatePackageAsync(const AssociatePackageReques
     } );
 }
 
+AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointAccess(const AuthorizeVpcEndpointAccessRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AuthorizeVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AuthorizeVpcEndpointAccess", "Required field: DomainName, is not set");
+    return AuthorizeVpcEndpointAccessOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AuthorizeVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/authorizeVpcEndpointAccess");
+  return AuthorizeVpcEndpointAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AuthorizeVpcEndpointAccessOutcomeCallable OpenSearchServiceClient::AuthorizeVpcEndpointAccessCallable(const AuthorizeVpcEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AuthorizeVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AuthorizeVpcEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::AuthorizeVpcEndpointAccessAsync(const AuthorizeVpcEndpointAccessRequest& request, const AuthorizeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AuthorizeVpcEndpointAccess(request), context);
+    } );
+}
+
 CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwareUpdate(const CancelServiceSoftwareUpdateRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -380,6 +421,31 @@ void OpenSearchServiceClient::CreatePackageAsync(const CreatePackageRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreatePackage(request), context);
+    } );
+}
+
+CreateVpcEndpointOutcome OpenSearchServiceClient::CreateVpcEndpoint(const CreateVpcEndpointRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/vpcEndpoints");
+  return CreateVpcEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateVpcEndpointOutcomeCallable OpenSearchServiceClient::CreateVpcEndpointCallable(const CreateVpcEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::CreateVpcEndpointAsync(const CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVpcEndpoint(request), context);
     } );
 }
 
@@ -504,6 +570,37 @@ void OpenSearchServiceClient::DeletePackageAsync(const DeletePackageRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeletePackage(request), context);
+    } );
+}
+
+DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const DeleteVpcEndpointRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.VpcEndpointIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVpcEndpoint", "Required field: VpcEndpointId, is not set");
+    return DeleteVpcEndpointOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcEndpointId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/vpcEndpoints/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcEndpointId());
+  return DeleteVpcEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteVpcEndpointOutcomeCallable OpenSearchServiceClient::DeleteVpcEndpointCallable(const DeleteVpcEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::DeleteVpcEndpointAsync(const DeleteVpcEndpointRequest& request, const DeleteVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVpcEndpoint(request), context);
     } );
 }
 
@@ -818,6 +915,31 @@ void OpenSearchServiceClient::DescribeReservedInstancesAsync(const DescribeReser
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeReservedInstances(request), context);
+    } );
+}
+
+DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const DescribeVpcEndpointsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/vpcEndpoints/describe");
+  return DescribeVpcEndpointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeVpcEndpointsOutcomeCallable OpenSearchServiceClient::DescribeVpcEndpointsCallable(const DescribeVpcEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVpcEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::DescribeVpcEndpointsAsync(const DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVpcEndpoints(request), context);
     } );
 }
 
@@ -1154,6 +1276,95 @@ void OpenSearchServiceClient::ListVersionsAsync(const ListVersionsRequest& reque
     } );
 }
 
+ListVpcEndpointAccessOutcome OpenSearchServiceClient::ListVpcEndpointAccess(const ListVpcEndpointAccessRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVpcEndpointAccess", "Required field: DomainName, is not set");
+    return ListVpcEndpointAccessOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/listVpcEndpointAccess");
+  return ListVpcEndpointAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListVpcEndpointAccessOutcomeCallable OpenSearchServiceClient::ListVpcEndpointAccessCallable(const ListVpcEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::ListVpcEndpointAccessAsync(const ListVpcEndpointAccessRequest& request, const ListVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVpcEndpointAccess(request), context);
+    } );
+}
+
+ListVpcEndpointsOutcome OpenSearchServiceClient::ListVpcEndpoints(const ListVpcEndpointsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/vpcEndpoints");
+  return ListVpcEndpointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListVpcEndpointsOutcomeCallable OpenSearchServiceClient::ListVpcEndpointsCallable(const ListVpcEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::ListVpcEndpointsAsync(const ListVpcEndpointsRequest& request, const ListVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVpcEndpoints(request), context);
+    } );
+}
+
+ListVpcEndpointsForDomainOutcome OpenSearchServiceClient::ListVpcEndpointsForDomain(const ListVpcEndpointsForDomainRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcEndpointsForDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVpcEndpointsForDomain", "Required field: DomainName, is not set");
+    return ListVpcEndpointsForDomainOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVpcEndpointsForDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/vpcEndpoints");
+  return ListVpcEndpointsForDomainOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListVpcEndpointsForDomainOutcomeCallable OpenSearchServiceClient::ListVpcEndpointsForDomainCallable(const ListVpcEndpointsForDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointsForDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcEndpointsForDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::ListVpcEndpointsForDomainAsync(const ListVpcEndpointsForDomainRequest& request, const ListVpcEndpointsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVpcEndpointsForDomain(request), context);
+    } );
+}
+
 PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReservedInstanceOffering(const PurchaseReservedInstanceOfferingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurchaseReservedInstanceOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1236,6 +1447,38 @@ void OpenSearchServiceClient::RemoveTagsAsync(const RemoveTagsRequest& request, 
     } );
 }
 
+RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(const RevokeVpcEndpointAccessRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RevokeVpcEndpointAccess", "Required field: DomainName, is not set");
+    return RevokeVpcEndpointAccessOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RevokeVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/revokeVpcEndpointAccess");
+  return RevokeVpcEndpointAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RevokeVpcEndpointAccessOutcomeCallable OpenSearchServiceClient::RevokeVpcEndpointAccessCallable(const RevokeVpcEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RevokeVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeVpcEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::RevokeVpcEndpointAccessAsync(const RevokeVpcEndpointAccessRequest& request, const RevokeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RevokeVpcEndpointAccess(request), context);
+    } );
+}
+
 StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareUpdate(const StartServiceSoftwareUpdateRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1315,6 +1558,31 @@ void OpenSearchServiceClient::UpdatePackageAsync(const UpdatePackageRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdatePackage(request), context);
+    } );
+}
+
+UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const UpdateVpcEndpointRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/vpcEndpoints/update");
+  return UpdateVpcEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateVpcEndpointOutcomeCallable OpenSearchServiceClient::UpdateVpcEndpointCallable(const UpdateVpcEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVpcEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::UpdateVpcEndpointAsync(const UpdateVpcEndpointRequest& request, const UpdateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateVpcEndpoint(request), context);
     } );
 }
 

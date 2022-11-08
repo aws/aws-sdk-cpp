@@ -25,8 +25,8 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p>The result of a <code>DescribeDomain</code> request. Contains the status of
-   * the domain specified in the request. </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the status of the domain specified in the request.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainResponse">AWS
    * API Reference</a></p>
    */
@@ -39,27 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The current status of the domain.</p>
+     * <p>List that contains the status of each specified OpenSearch Service
+     * domain.</p>
      */
     inline const DomainStatus& GetDomainStatus() const{ return m_domainStatus; }
 
     /**
-     * <p>The current status of the domain.</p>
+     * <p>List that contains the status of each specified OpenSearch Service
+     * domain.</p>
      */
     inline void SetDomainStatus(const DomainStatus& value) { m_domainStatus = value; }
 
     /**
-     * <p>The current status of the domain.</p>
+     * <p>List that contains the status of each specified OpenSearch Service
+     * domain.</p>
      */
     inline void SetDomainStatus(DomainStatus&& value) { m_domainStatus = std::move(value); }
 
     /**
-     * <p>The current status of the domain.</p>
+     * <p>List that contains the status of each specified OpenSearch Service
+     * domain.</p>
      */
     inline DescribeDomainResult& WithDomainStatus(const DomainStatus& value) { SetDomainStatus(value); return *this;}
 
     /**
-     * <p>The current status of the domain.</p>
+     * <p>List that contains the status of each specified OpenSearch Service
+     * domain.</p>
      */
     inline DescribeDomainResult& WithDomainStatus(DomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
 

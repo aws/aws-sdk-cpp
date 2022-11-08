@@ -169,68 +169,68 @@ namespace Model
 
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list
-     * element. </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list element. </p>
      */
     inline long long GetSize() const{ return m_size; }
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list
-     * element. </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list element. </p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list
-     * element. </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list element. </p>
      */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list
-     * element. </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list element. </p>
      */
     inline PricingPlanListElement& WithSize(long long value) { SetSize(value); return *this;}
 
 
     /**
-     * <p> The time the pricing plan was created. </p>
+     * <p> The time when the pricing plan was created. </p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p> The time the pricing plan was created. </p>
+     * <p> The time when the pricing plan was created. </p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p> The time the pricing plan was created. </p>
+     * <p> The time when the pricing plan was created. </p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p> The time the pricing plan was created. </p>
+     * <p> The time when the pricing plan was created. </p>
      */
     inline PricingPlanListElement& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline PricingPlanListElement& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 

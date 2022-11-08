@@ -124,6 +124,42 @@ namespace FMS
         virtual void AssociateThirdPartyFirewallAsync(const Model::AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associate resources to a Firewall Manager resource set.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchAssociateResourceOutcome BatchAssociateResource(const Model::BatchAssociateResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchAssociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchAssociateResourceOutcomeCallable BatchAssociateResourceCallable(const Model::BatchAssociateResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchAssociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchAssociateResourceAsync(const Model::BatchAssociateResourceRequest& request, const BatchAssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates resources from a Firewall Manager resource set.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDisassociateResourceOutcome BatchDisassociateResource(const Model::BatchDisassociateResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDisassociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDisassociateResourceOutcomeCallable BatchDisassociateResourceCallable(const Model::BatchDisassociateResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchDisassociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDisassociateResourceAsync(const Model::BatchDisassociateResourceRequest& request, const BatchDisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Permanently deletes an Firewall Manager applications list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList">AWS
@@ -194,6 +230,23 @@ namespace FMS
          * An Async wrapper for DeleteProtocolsList that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProtocolsListAsync(const Model::DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified <a>ResourceSet</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourceSetOutcome DeleteResourceSet(const Model::DeleteResourceSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourceSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourceSetOutcomeCallable DeleteResourceSetCallable(const Model::DeleteResourceSetRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteResourceSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourceSetAsync(const Model::DeleteResourceSetRequest& request, const DeleteResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the account that has been set as the Firewall Manager
@@ -376,6 +429,23 @@ namespace FMS
         virtual void GetProtocolsListAsync(const Model::GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about a specific resource set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceSetOutcome GetResourceSet(const Model::GetResourceSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourceSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourceSetOutcomeCallable GetResourceSetCallable(const Model::GetResourceSetRequest& request) const;
+
+        /**
+         * An Async wrapper for GetResourceSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourceSetAsync(const Model::GetResourceSetRequest& request, const GetResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The onboarding status of a Firewall Manager admin account to third-party
          * firewall vendor tenant.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">AWS
@@ -449,6 +519,24 @@ namespace FMS
         virtual void ListComplianceStatusAsync(const Model::ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns an array of resources in the organization's accounts that are
+         * available to be associated with a resource set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDiscoveredResourcesOutcome ListDiscoveredResources(const Model::ListDiscoveredResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDiscoveredResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDiscoveredResourcesOutcomeCallable ListDiscoveredResourcesCallable(const Model::ListDiscoveredResourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListDiscoveredResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a <code>MemberAccounts</code> object that lists the member accounts
          * in the administrator's Amazon Web Services organization.</p> <p>The
          * <code>ListMemberAccounts</code> must be submitted by the account that is set as
@@ -503,6 +591,42 @@ namespace FMS
          * An Async wrapper for ListProtocolsLists that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProtocolsListsAsync(const Model::ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of resources that are currently associated to a resource
+         * set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceSetResourcesOutcome ListResourceSetResources(const Model::ListResourceSetResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceSetResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceSetResourcesOutcomeCallable ListResourceSetResourcesCallable(const Model::ListResourceSetResourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListResourceSetResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceSetResourcesAsync(const Model::ListResourceSetResourcesRequest& request, const ListResourceSetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of <code>ResourceSetSummary</code> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceSetsOutcome ListResourceSets(const Model::ListResourceSetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceSets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceSetsOutcomeCallable ListResourceSetsCallable(const Model::ListResourceSetsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListResourceSets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceSetsAsync(const Model::ListResourceSetsRequest& request, const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the list of tags for the specified Amazon Web Services resource.
@@ -632,6 +756,25 @@ namespace FMS
          * An Async wrapper for PutProtocolsList that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutProtocolsListAsync(const Model::PutProtocolsListRequest& request, const PutProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates the resource set.</p> <p>An Firewall Manager resource set defines the
+         * resources to import into an Firewall Manager policy from another Amazon Web
+         * Services service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourceSetOutcome PutResourceSet(const Model::PutResourceSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourceSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourceSetOutcomeCallable PutResourceSetCallable(const Model::PutResourceSetRequest& request) const;
+
+        /**
+         * An Async wrapper for PutResourceSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourceSetAsync(const Model::PutResourceSetRequest& request, const PutResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an Amazon Web Services resource.</p><p><h3>See

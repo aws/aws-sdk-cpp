@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Status of the EBS options for the specified domain.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>The status of the EBS options for the specified OpenSearch Service
+   * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/EBSOptionsStatus">AWS
    * API Reference</a></p>
    */
@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline const EBSOptions& GetOptions() const{ return m_options; }
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline void SetOptions(const EBSOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline void SetOptions(EBSOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline EBSOptionsStatus& WithOptions(const EBSOptions& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline EBSOptionsStatus& WithOptions(EBSOptions&& value) { SetOptions(std::move(value)); return *this;}
 

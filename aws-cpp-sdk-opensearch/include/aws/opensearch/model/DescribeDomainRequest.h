@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code> <a>DescribeDomain</a> </code>
-   * operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the parameters to the <code>DescribeDomain</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainRequest">AWS
    * API Reference</a></p>
    */
@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the domain for which you want information.</p>
+     * <p>The name of the domain that you want information about.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of the domain for which you want information.</p>
+     * <p>The name of the domain that you want information about.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The name of the domain for which you want information.</p>
+     * <p>The name of the domain that you want information about.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of the domain for which you want information.</p>
+     * <p>The name of the domain that you want information about.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of the domain for which you want information.</p>
+     * <p>The name of the domain that you want information about.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of the domain for which you want information.</p>
+     * <p>The name of the domain that you want information about.</p>
      */
     inline DescribeDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of the domain for which you want information.</p>
+     * <p>The name of the domain that you want information about.</p>
      */
     inline DescribeDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the domain for which you want information.</p>
+     * <p>The name of the domain that you want information about.</p>
      */
     inline DescribeDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

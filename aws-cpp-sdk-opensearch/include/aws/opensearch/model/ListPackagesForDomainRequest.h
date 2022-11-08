@@ -21,8 +21,8 @@ namespace Model
 {
 
   /**
-   * <p> Container for the request parameters to the <code>
-   * <a>ListPackagesForDomain</a> </code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the request parameters to the
+   * <code>ListPackagesForDomain</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListPackagesForDomainRequest">AWS
    * API Reference</a></p>
    */
@@ -84,71 +84,91 @@ namespace Model
 
 
     /**
-     * <p>Limits results to a maximum number of packages.</p>
+     * <p>An optional parameter that specifies the maximum number of results to return.
+     * You can use <code>nextToken</code> to get the next page of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Limits results to a maximum number of packages.</p>
+     * <p>An optional parameter that specifies the maximum number of results to return.
+     * You can use <code>nextToken</code> to get the next page of results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Limits results to a maximum number of packages.</p>
+     * <p>An optional parameter that specifies the maximum number of results to return.
+     * You can use <code>nextToken</code> to get the next page of results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Limits results to a maximum number of packages.</p>
+     * <p>An optional parameter that specifies the maximum number of results to return.
+     * You can use <code>nextToken</code> to get the next page of results.</p>
      */
     inline ListPackagesForDomainRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page. </p>
+     * <p>If your initial <code>ListPackagesForDomain</code> operation returns a
+     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * subsequent <code>ListPackagesForDomain</code> operations, which returns results
+     * in the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page. </p>
+     * <p>If your initial <code>ListPackagesForDomain</code> operation returns a
+     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * subsequent <code>ListPackagesForDomain</code> operations, which returns results
+     * in the next page.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page. </p>
+     * <p>If your initial <code>ListPackagesForDomain</code> operation returns a
+     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * subsequent <code>ListPackagesForDomain</code> operations, which returns results
+     * in the next page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page. </p>
+     * <p>If your initial <code>ListPackagesForDomain</code> operation returns a
+     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * subsequent <code>ListPackagesForDomain</code> operations, which returns results
+     * in the next page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page. </p>
+     * <p>If your initial <code>ListPackagesForDomain</code> operation returns a
+     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * subsequent <code>ListPackagesForDomain</code> operations, which returns results
+     * in the next page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page. </p>
+     * <p>If your initial <code>ListPackagesForDomain</code> operation returns a
+     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * subsequent <code>ListPackagesForDomain</code> operations, which returns results
+     * in the next page.</p>
      */
     inline ListPackagesForDomainRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page. </p>
+     * <p>If your initial <code>ListPackagesForDomain</code> operation returns a
+     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * subsequent <code>ListPackagesForDomain</code> operations, which returns results
+     * in the next page.</p>
      */
     inline ListPackagesForDomainRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page. </p>
+     * <p>If your initial <code>ListPackagesForDomain</code> operation returns a
+     * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
+     * subsequent <code>ListPackagesForDomain</code> operations, which returns results
+     * in the next page.</p>
      */
     inline ListPackagesForDomainRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

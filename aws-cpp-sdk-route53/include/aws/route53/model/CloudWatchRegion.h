@@ -22,6 +22,7 @@ namespace Model
     us_west_2,
     ca_central_1,
     eu_central_1,
+    eu_central_2,
     eu_west_1,
     eu_west_2,
     eu_west_3,

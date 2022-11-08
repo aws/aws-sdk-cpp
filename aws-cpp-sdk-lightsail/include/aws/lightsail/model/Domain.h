@@ -10,6 +10,7 @@
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/RegisteredDomainDelegationInfo.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/DomainEntry.h>
 #include <utility>
@@ -402,6 +403,43 @@ namespace Model
      */
     inline Domain& AddDomainEntries(DomainEntry&& value) { m_domainEntriesHasBeenSet = true; m_domainEntries.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline const RegisteredDomainDelegationInfo& GetRegisteredDomainDelegationInfo() const{ return m_registeredDomainDelegationInfo; }
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline bool RegisteredDomainDelegationInfoHasBeenSet() const { return m_registeredDomainDelegationInfoHasBeenSet; }
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline void SetRegisteredDomainDelegationInfo(const RegisteredDomainDelegationInfo& value) { m_registeredDomainDelegationInfoHasBeenSet = true; m_registeredDomainDelegationInfo = value; }
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline void SetRegisteredDomainDelegationInfo(RegisteredDomainDelegationInfo&& value) { m_registeredDomainDelegationInfoHasBeenSet = true; m_registeredDomainDelegationInfo = std::move(value); }
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline Domain& WithRegisteredDomainDelegationInfo(const RegisteredDomainDelegationInfo& value) { SetRegisteredDomainDelegationInfo(value); return *this;}
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline Domain& WithRegisteredDomainDelegationInfo(RegisteredDomainDelegationInfo&& value) { SetRegisteredDomainDelegationInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -427,6 +465,9 @@ namespace Model
 
     Aws::Vector<DomainEntry> m_domainEntries;
     bool m_domainEntriesHasBeenSet = false;
+
+    RegisteredDomainDelegationInfo m_registeredDomainDelegationInfo;
+    bool m_registeredDomainDelegationInfoHasBeenSet = false;
   };
 
 } // namespace Model

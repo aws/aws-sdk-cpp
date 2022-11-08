@@ -88,32 +88,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region name.</p>
+     * <p>The Amazon Web Services Region name.</p>
      */
     inline const RegionName& GetRegionName() const{ return m_regionName; }
 
     /**
-     * <p>The AWS Region name.</p>
+     * <p>The Amazon Web Services Region name.</p>
      */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
-     * <p>The AWS Region name.</p>
+     * <p>The Amazon Web Services Region name.</p>
      */
     inline void SetRegionName(const RegionName& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
-     * <p>The AWS Region name.</p>
+     * <p>The Amazon Web Services Region name.</p>
      */
     inline void SetRegionName(RegionName&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
-     * <p>The AWS Region name.</p>
+     * <p>The Amazon Web Services Region name.</p>
      */
     inline ResourceLocation& WithRegionName(const RegionName& value) { SetRegionName(value); return *this;}
 
     /**
-     * <p>The AWS Region name.</p>
+     * <p>The Amazon Web Services Region name.</p>
      */
     inline ResourceLocation& WithRegionName(RegionName&& value) { SetRegionName(std::move(value)); return *this;}
 
