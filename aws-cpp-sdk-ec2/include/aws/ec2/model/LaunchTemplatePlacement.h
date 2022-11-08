@@ -353,6 +353,55 @@ namespace Model
      */
     inline LaunchTemplatePlacement& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
 
+
+    /**
+     * <p>The Group ID of the placement group. You must specify the Placement Group
+     * <b>Group ID</b> to launch an instance in a shared placement group.</p>
+     */
+    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The Group ID of the placement group. You must specify the Placement Group
+     * <b>Group ID</b> to launch an instance in a shared placement group.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The Group ID of the placement group. You must specify the Placement Group
+     * <b>Group ID</b> to launch an instance in a shared placement group.</p>
+     */
+    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+
+    /**
+     * <p>The Group ID of the placement group. You must specify the Placement Group
+     * <b>Group ID</b> to launch an instance in a shared placement group.</p>
+     */
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
+
+    /**
+     * <p>The Group ID of the placement group. You must specify the Placement Group
+     * <b>Group ID</b> to launch an instance in a shared placement group.</p>
+     */
+    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
+
+    /**
+     * <p>The Group ID of the placement group. You must specify the Placement Group
+     * <b>Group ID</b> to launch an instance in a shared placement group.</p>
+     */
+    inline LaunchTemplatePlacement& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
+
+    /**
+     * <p>The Group ID of the placement group. You must specify the Placement Group
+     * <b>Group ID</b> to launch an instance in a shared placement group.</p>
+     */
+    inline LaunchTemplatePlacement& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Group ID of the placement group. You must specify the Placement Group
+     * <b>Group ID</b> to launch an instance in a shared placement group.</p>
+     */
+    inline LaunchTemplatePlacement& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -378,6 +427,9 @@ namespace Model
 
     int m_partitionNumber;
     bool m_partitionNumberHasBeenSet = false;
+
+    Aws::String m_groupId;
+    bool m_groupIdHasBeenSet = false;
   };
 
 } // namespace Model

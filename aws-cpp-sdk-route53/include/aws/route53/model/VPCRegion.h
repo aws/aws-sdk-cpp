@@ -24,6 +24,7 @@ namespace Model
     eu_west_2,
     eu_west_3,
     eu_central_1,
+    eu_central_2,
     ap_east_1,
     me_south_1,
     us_gov_west_1,

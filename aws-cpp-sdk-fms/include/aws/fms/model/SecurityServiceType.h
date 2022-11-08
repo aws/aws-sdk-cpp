@@ -24,7 +24,8 @@ namespace Model
     SECURITY_GROUPS_USAGE_AUDIT,
     NETWORK_FIREWALL,
     DNS_FIREWALL,
-    THIRD_PARTY_FIREWALL
+    THIRD_PARTY_FIREWALL,
+    IMPORT_NETWORK_FIREWALL
   };
 
 namespace SecurityServiceTypeMapper

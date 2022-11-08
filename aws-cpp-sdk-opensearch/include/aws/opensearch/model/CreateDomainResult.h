@@ -26,8 +26,7 @@ namespace Model
 {
   /**
    * <p>The result of a <code>CreateDomain</code> operation. Contains the status of
-   * the newly created Amazon OpenSearch Service domain. </p><p><h3>See Also:</h3>  
-   * <a
+   * the newly created domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateDomainResponse">AWS
    * API Reference</a></p>
    */

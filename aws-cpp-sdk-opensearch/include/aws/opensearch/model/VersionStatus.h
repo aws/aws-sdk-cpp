@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The status of the OpenSearch version options for the specified OpenSearch
-   * domain.</p><p><h3>See Also:</h3>   <a
+   * <p>The status of the the OpenSearch or Elasticsearch version options for the
+   * specified Amazon OpenSearch Service domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/VersionStatus">AWS
    * API Reference</a></p>
    */
@@ -40,79 +40,73 @@ namespace Model
 
 
     /**
-     * <p>The OpenSearch version for the specified OpenSearch domain.</p>
+     * <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
      */
     inline const Aws::String& GetOptions() const{ return m_options; }
 
     /**
-     * <p>The OpenSearch version for the specified OpenSearch domain.</p>
+     * <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
-     * <p>The OpenSearch version for the specified OpenSearch domain.</p>
+     * <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
      */
     inline void SetOptions(const Aws::String& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>The OpenSearch version for the specified OpenSearch domain.</p>
+     * <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
      */
     inline void SetOptions(Aws::String&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>The OpenSearch version for the specified OpenSearch domain.</p>
+     * <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
      */
     inline void SetOptions(const char* value) { m_optionsHasBeenSet = true; m_options.assign(value); }
 
     /**
-     * <p>The OpenSearch version for the specified OpenSearch domain.</p>
+     * <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
      */
     inline VersionStatus& WithOptions(const Aws::String& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>The OpenSearch version for the specified OpenSearch domain.</p>
+     * <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
      */
     inline VersionStatus& WithOptions(Aws::String&& value) { SetOptions(std::move(value)); return *this;}
 
     /**
-     * <p>The OpenSearch version for the specified OpenSearch domain.</p>
+     * <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
      */
     inline VersionStatus& WithOptions(const char* value) { SetOptions(value); return *this;}
 
 
     /**
-     * <p>The status of the OpenSearch version options for the specified OpenSearch
-     * domain.</p>
+     * <p>The status of the version options for the specified domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the OpenSearch version options for the specified OpenSearch
-     * domain.</p>
+     * <p>The status of the version options for the specified domain.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the OpenSearch version options for the specified OpenSearch
-     * domain.</p>
+     * <p>The status of the version options for the specified domain.</p>
      */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the OpenSearch version options for the specified OpenSearch
-     * domain.</p>
+     * <p>The status of the version options for the specified domain.</p>
      */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the OpenSearch version options for the specified OpenSearch
-     * domain.</p>
+     * <p>The status of the version options for the specified domain.</p>
      */
     inline VersionStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the OpenSearch version options for the specified OpenSearch
-     * domain.</p>
+     * <p>The status of the version options for the specified domain.</p>
      */
     inline VersionStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

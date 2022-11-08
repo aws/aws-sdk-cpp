@@ -25,9 +25,8 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p>The result of a <code> <a>RejectInboundConnection</a> </code> operation.
-   * Contains details about the rejected inbound connection. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the output of a <code>RejectInboundConnection</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RejectInboundConnectionResponse">AWS
    * API Reference</a></p>
    */
@@ -40,32 +39,27 @@ namespace Model
 
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the rejected inbound
-     * connection. </p>
+     * <p>Contains details about the rejected inbound connection.</p>
      */
     inline const InboundConnection& GetConnection() const{ return m_connection; }
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the rejected inbound
-     * connection. </p>
+     * <p>Contains details about the rejected inbound connection.</p>
      */
     inline void SetConnection(const InboundConnection& value) { m_connection = value; }
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the rejected inbound
-     * connection. </p>
+     * <p>Contains details about the rejected inbound connection.</p>
      */
     inline void SetConnection(InboundConnection&& value) { m_connection = std::move(value); }
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the rejected inbound
-     * connection. </p>
+     * <p>Contains details about the rejected inbound connection.</p>
      */
     inline RejectInboundConnectionResult& WithConnection(const InboundConnection& value) { SetConnection(value); return *this;}
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the rejected inbound
-     * connection. </p>
+     * <p>Contains details about the rejected inbound connection.</p>
      */
     inline RejectInboundConnectionResult& WithConnection(InboundConnection&& value) { SetConnection(std::move(value)); return *this;}
 

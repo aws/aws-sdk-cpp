@@ -21,14 +21,16 @@ namespace Model
 ListResourcesAssociatedToCustomLineItemResponseElement::ListResourcesAssociatedToCustomLineItemResponseElement() : 
     m_arnHasBeenSet(false),
     m_relationship(CustomLineItemRelationship::NOT_SET),
-    m_relationshipHasBeenSet(false)
+    m_relationshipHasBeenSet(false),
+    m_endBillingPeriodHasBeenSet(false)
 {
 }
 
 ListResourcesAssociatedToCustomLineItemResponseElement::ListResourcesAssociatedToCustomLineItemResponseElement(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_relationship(CustomLineItemRelationship::NOT_SET),
-    m_relationshipHasBeenSet(false)
+    m_relationshipHasBeenSet(false),
+    m_endBillingPeriodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ ListResourcesAssociatedToCustomLineItemResponseElement& ListResourcesAssociatedT
     m_relationshipHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EndBillingPeriod"))
+  {
+    m_endBillingPeriod = jsonValue.GetString("EndBillingPeriod");
+
+    m_endBillingPeriodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +74,12 @@ JsonValue ListResourcesAssociatedToCustomLineItemResponseElement::Jsonize() cons
   if(m_relationshipHasBeenSet)
   {
    payload.WithString("Relationship", CustomLineItemRelationshipMapper::GetNameForCustomLineItemRelationship(m_relationship));
+  }
+
+  if(m_endBillingPeriodHasBeenSet)
+  {
+   payload.WithString("EndBillingPeriod", m_endBillingPeriod);
+
   }
 
   return payload;

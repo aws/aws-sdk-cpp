@@ -157,32 +157,32 @@ namespace Model
 
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline const PricingRuleScope& GetScope() const{ return m_scope; }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline void SetScope(const PricingRuleScope& value) { m_scope = value; }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline void SetScope(PricingRuleScope&& value) { m_scope = std::move(value); }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline UpdatePricingRuleResult& WithScope(const PricingRuleScope& value) { SetScope(value); return *this;}
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline UpdatePricingRuleResult& WithScope(PricingRuleScope&& value) { SetScope(std::move(value)); return *this;}
 

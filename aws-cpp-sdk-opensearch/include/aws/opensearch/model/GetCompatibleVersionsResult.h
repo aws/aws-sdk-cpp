@@ -26,8 +26,8 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p> Container for the response returned by the <code>
-   * <a>GetCompatibleVersions</a> </code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the response returned by the <code>GetCompatibleVersions</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCompatibleVersionsResponse">AWS
    * API Reference</a></p>
    */
@@ -40,44 +40,44 @@ namespace Model
 
 
     /**
-     * <p> A map of compatible OpenSearch versions returned as part of the <code>
-     * <a>GetCompatibleVersions</a> </code> operation. </p>
+     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
+     * upgrade them to.</p>
      */
     inline const Aws::Vector<CompatibleVersionsMap>& GetCompatibleVersions() const{ return m_compatibleVersions; }
 
     /**
-     * <p> A map of compatible OpenSearch versions returned as part of the <code>
-     * <a>GetCompatibleVersions</a> </code> operation. </p>
+     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
+     * upgrade them to.</p>
      */
     inline void SetCompatibleVersions(const Aws::Vector<CompatibleVersionsMap>& value) { m_compatibleVersions = value; }
 
     /**
-     * <p> A map of compatible OpenSearch versions returned as part of the <code>
-     * <a>GetCompatibleVersions</a> </code> operation. </p>
+     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
+     * upgrade them to.</p>
      */
     inline void SetCompatibleVersions(Aws::Vector<CompatibleVersionsMap>&& value) { m_compatibleVersions = std::move(value); }
 
     /**
-     * <p> A map of compatible OpenSearch versions returned as part of the <code>
-     * <a>GetCompatibleVersions</a> </code> operation. </p>
+     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
+     * upgrade them to.</p>
      */
     inline GetCompatibleVersionsResult& WithCompatibleVersions(const Aws::Vector<CompatibleVersionsMap>& value) { SetCompatibleVersions(value); return *this;}
 
     /**
-     * <p> A map of compatible OpenSearch versions returned as part of the <code>
-     * <a>GetCompatibleVersions</a> </code> operation. </p>
+     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
+     * upgrade them to.</p>
      */
     inline GetCompatibleVersionsResult& WithCompatibleVersions(Aws::Vector<CompatibleVersionsMap>&& value) { SetCompatibleVersions(std::move(value)); return *this;}
 
     /**
-     * <p> A map of compatible OpenSearch versions returned as part of the <code>
-     * <a>GetCompatibleVersions</a> </code> operation. </p>
+     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
+     * upgrade them to.</p>
      */
     inline GetCompatibleVersionsResult& AddCompatibleVersions(const CompatibleVersionsMap& value) { m_compatibleVersions.push_back(value); return *this; }
 
     /**
-     * <p> A map of compatible OpenSearch versions returned as part of the <code>
-     * <a>GetCompatibleVersions</a> </code> operation. </p>
+     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
+     * upgrade them to.</p>
      */
     inline GetCompatibleVersionsResult& AddCompatibleVersions(CompatibleVersionsMap&& value) { m_compatibleVersions.push_back(std::move(value)); return *this; }
 

@@ -30,7 +30,8 @@ Placement::Placement() :
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
     m_spreadDomainHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false)
+    m_hostResourceGroupArnHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Placement::Placement(const XmlNode& xmlNode) :
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
     m_spreadDomainHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false)
+    m_hostResourceGroupArnHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -103,6 +105,12 @@ Placement& Placement::operator =(const XmlNode& xmlNode)
       m_hostResourceGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(hostResourceGroupArnNode.GetText());
       m_hostResourceGroupArnHasBeenSet = true;
     }
+    XmlNode groupIdNode = resultNode.FirstChild("groupId");
+    if(!groupIdNode.IsNull())
+    {
+      m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
+      m_groupIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -150,6 +158,11 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".HostResourceGroupArn=" << StringUtils::URLEncode(m_hostResourceGroupArn.c_str()) << "&";
   }
 
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+  }
+
 }
 
 void Placement::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -185,6 +198,10 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_hostResourceGroupArnHasBeenSet)
   {
       oStream << location << ".HostResourceGroupArn=" << StringUtils::URLEncode(m_hostResourceGroupArn.c_str()) << "&";
+  }
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 }
 

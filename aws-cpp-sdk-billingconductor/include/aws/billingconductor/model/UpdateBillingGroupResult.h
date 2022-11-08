@@ -244,17 +244,17 @@ namespace Model
 
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline UpdateBillingGroupResult& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 

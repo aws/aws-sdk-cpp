@@ -38,6 +38,7 @@
 #include <aws/billingconductor/model/ListAccountAssociationsRequest.h>
 #include <aws/billingconductor/model/ListBillingGroupCostReportsRequest.h>
 #include <aws/billingconductor/model/ListBillingGroupsRequest.h>
+#include <aws/billingconductor/model/ListCustomLineItemVersionsRequest.h>
 #include <aws/billingconductor/model/ListCustomLineItemsRequest.h>
 #include <aws/billingconductor/model/ListPricingPlansRequest.h>
 #include <aws/billingconductor/model/ListPricingPlansAssociatedWithPricingRuleRequest.h>
@@ -601,6 +602,31 @@ void BillingConductorClient::ListBillingGroupsAsync(const ListBillingGroupsReque
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListBillingGroups(request), context);
+    } );
+}
+
+ListCustomLineItemVersionsOutcome BillingConductorClient::ListCustomLineItemVersions(const ListCustomLineItemVersionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCustomLineItemVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCustomLineItemVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/list-custom-line-item-versions");
+  return ListCustomLineItemVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCustomLineItemVersionsOutcomeCallable BillingConductorClient::ListCustomLineItemVersionsCallable(const ListCustomLineItemVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCustomLineItemVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomLineItemVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BillingConductorClient::ListCustomLineItemVersionsAsync(const ListCustomLineItemVersionsRequest& request, const ListCustomLineItemVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCustomLineItemVersions(request), context);
     } );
 }
 

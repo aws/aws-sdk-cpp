@@ -87,83 +87,91 @@ namespace Model
 
 
     /**
-     * <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+     * <p>The name of the pricing plan. The names must be unique to each pricing plan.
+     * </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+     * <p>The name of the pricing plan. The names must be unique to each pricing plan.
+     * </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+     * <p>The name of the pricing plan. The names must be unique to each pricing plan.
+     * </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+     * <p>The name of the pricing plan. The names must be unique to each pricing plan.
+     * </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+     * <p>The name of the pricing plan. The names must be unique to each pricing plan.
+     * </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+     * <p>The name of the pricing plan. The names must be unique to each pricing plan.
+     * </p>
      */
     inline CreatePricingPlanRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+     * <p>The name of the pricing plan. The names must be unique to each pricing plan.
+     * </p>
      */
     inline CreatePricingPlanRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The pricing plan name. The names must be unique to each pricing plan. </p>
+     * <p>The name of the pricing plan. The names must be unique to each pricing plan.
+     * </p>
      */
     inline CreatePricingPlanRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline CreatePricingPlanRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline CreatePricingPlanRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline CreatePricingPlanRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

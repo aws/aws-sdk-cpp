@@ -10,6 +10,7 @@
 #include <aws/acm/model/ValidationMethod.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/CertificateOptions.h>
+#include <aws/acm/model/KeyAlgorithm.h>
 #include <aws/acm/model/DomainValidationOption.h>
 #include <aws/acm/model/Tag.h>
 #include <utility>
@@ -622,8 +623,8 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
-     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Private Certificate Authority</a> user guide. The ARN must have the
      * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -635,8 +636,8 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
-     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Private Certificate Authority</a> user guide. The ARN must have the
      * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -648,8 +649,8 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
-     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Private Certificate Authority</a> user guide. The ARN must have the
      * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -661,8 +662,8 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
-     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Private Certificate Authority</a> user guide. The ARN must have the
      * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -674,8 +675,8 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
-     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Private Certificate Authority</a> user guide. The ARN must have the
      * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -687,8 +688,8 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
-     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Private Certificate Authority</a> user guide. The ARN must have the
      * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -700,8 +701,8 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
-     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Private Certificate Authority</a> user guide. The ARN must have the
      * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -713,8 +714,8 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
-     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Private Certificate Authority</a> user guide. The ARN must have the
      * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -762,6 +763,85 @@ namespace Model
      */
     inline RequestCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the algorithm of the public and private key pair that your
+     * certificate uses to encrypt data. RSA is the default key algorithm for ACM
+     * certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are
+     * smaller, offering security comparable to RSA keys but with greater computing
+     * efficiency. However, ECDSA is not supported by all network clients. Some AWS
+     * services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that
+     * compatibility is not broken. Check the requirements for the AWS service where
+     * you plan to deploy your certificate.</p> <p>Default: RSA_2048</p>
+     */
+    inline const KeyAlgorithm& GetKeyAlgorithm() const{ return m_keyAlgorithm; }
+
+    /**
+     * <p>Specifies the algorithm of the public and private key pair that your
+     * certificate uses to encrypt data. RSA is the default key algorithm for ACM
+     * certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are
+     * smaller, offering security comparable to RSA keys but with greater computing
+     * efficiency. However, ECDSA is not supported by all network clients. Some AWS
+     * services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that
+     * compatibility is not broken. Check the requirements for the AWS service where
+     * you plan to deploy your certificate.</p> <p>Default: RSA_2048</p>
+     */
+    inline bool KeyAlgorithmHasBeenSet() const { return m_keyAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Specifies the algorithm of the public and private key pair that your
+     * certificate uses to encrypt data. RSA is the default key algorithm for ACM
+     * certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are
+     * smaller, offering security comparable to RSA keys but with greater computing
+     * efficiency. However, ECDSA is not supported by all network clients. Some AWS
+     * services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that
+     * compatibility is not broken. Check the requirements for the AWS service where
+     * you plan to deploy your certificate.</p> <p>Default: RSA_2048</p>
+     */
+    inline void SetKeyAlgorithm(const KeyAlgorithm& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
+
+    /**
+     * <p>Specifies the algorithm of the public and private key pair that your
+     * certificate uses to encrypt data. RSA is the default key algorithm for ACM
+     * certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are
+     * smaller, offering security comparable to RSA keys but with greater computing
+     * efficiency. However, ECDSA is not supported by all network clients. Some AWS
+     * services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that
+     * compatibility is not broken. Check the requirements for the AWS service where
+     * you plan to deploy your certificate.</p> <p>Default: RSA_2048</p>
+     */
+    inline void SetKeyAlgorithm(KeyAlgorithm&& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = std::move(value); }
+
+    /**
+     * <p>Specifies the algorithm of the public and private key pair that your
+     * certificate uses to encrypt data. RSA is the default key algorithm for ACM
+     * certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are
+     * smaller, offering security comparable to RSA keys but with greater computing
+     * efficiency. However, ECDSA is not supported by all network clients. Some AWS
+     * services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that
+     * compatibility is not broken. Check the requirements for the AWS service where
+     * you plan to deploy your certificate.</p> <p>Default: RSA_2048</p>
+     */
+    inline RequestCertificateRequest& WithKeyAlgorithm(const KeyAlgorithm& value) { SetKeyAlgorithm(value); return *this;}
+
+    /**
+     * <p>Specifies the algorithm of the public and private key pair that your
+     * certificate uses to encrypt data. RSA is the default key algorithm for ACM
+     * certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are
+     * smaller, offering security comparable to RSA keys but with greater computing
+     * efficiency. However, ECDSA is not supported by all network clients. Some AWS
+     * services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that
+     * compatibility is not broken. Check the requirements for the AWS service where
+     * you plan to deploy your certificate.</p> <p>Default: RSA_2048</p>
+     */
+    inline RequestCertificateRequest& WithKeyAlgorithm(KeyAlgorithm&& value) { SetKeyAlgorithm(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -787,6 +867,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    KeyAlgorithm m_keyAlgorithm;
+    bool m_keyAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

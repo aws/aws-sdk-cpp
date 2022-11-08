@@ -7,6 +7,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/LoadBalancerTlsCertificateDomainStatus.h>
+#include <aws/lightsail/model/LoadBalancerTlsCertificateDnsRecordCreationState.h>
 #include <utility>
 
 namespace Aws
@@ -249,6 +250,49 @@ namespace Model
      */
     inline LoadBalancerTlsCertificateDomainValidationRecord& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline const LoadBalancerTlsCertificateDnsRecordCreationState& GetDnsRecordCreationState() const{ return m_dnsRecordCreationState; }
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline bool DnsRecordCreationStateHasBeenSet() const { return m_dnsRecordCreationStateHasBeenSet; }
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline void SetDnsRecordCreationState(const LoadBalancerTlsCertificateDnsRecordCreationState& value) { m_dnsRecordCreationStateHasBeenSet = true; m_dnsRecordCreationState = value; }
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline void SetDnsRecordCreationState(LoadBalancerTlsCertificateDnsRecordCreationState&& value) { m_dnsRecordCreationStateHasBeenSet = true; m_dnsRecordCreationState = std::move(value); }
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline LoadBalancerTlsCertificateDomainValidationRecord& WithDnsRecordCreationState(const LoadBalancerTlsCertificateDnsRecordCreationState& value) { SetDnsRecordCreationState(value); return *this;}
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline LoadBalancerTlsCertificateDomainValidationRecord& WithDnsRecordCreationState(LoadBalancerTlsCertificateDnsRecordCreationState&& value) { SetDnsRecordCreationState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -265,6 +309,9 @@ namespace Model
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
+
+    LoadBalancerTlsCertificateDnsRecordCreationState m_dnsRecordCreationState;
+    bool m_dnsRecordCreationStateHasBeenSet = false;
   };
 
 } // namespace Model

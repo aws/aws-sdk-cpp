@@ -21,7 +21,9 @@ RequestCertificateRequest::RequestCertificateRequest() :
     m_domainValidationOptionsHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_certificateAuthorityArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
+    m_keyAlgorithmHasBeenSet(false)
 {
 }
 
@@ -89,6 +91,11 @@ Aws::String RequestCertificateRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_keyAlgorithmHasBeenSet)
+  {
+   payload.WithString("KeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyAlgorithm));
   }
 
   return payload.View().WriteReadable();

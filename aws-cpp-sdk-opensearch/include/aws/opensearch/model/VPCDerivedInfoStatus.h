@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Status of the VPC options for the specified domain.</p><p><h3>See Also:</h3> 
+   * <p>Status of the VPC options for a specified domain.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/VPCDerivedInfoStatus">AWS
    * API Reference</a></p>

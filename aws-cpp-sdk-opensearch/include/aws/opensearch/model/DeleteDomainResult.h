@@ -25,9 +25,9 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p>The result of a <code>DeleteDomain</code> request. Contains the status of the
-   * pending deletion, or a "domain not found" error if the domain and all of its
-   * resources have been deleted. </p><p><h3>See Also:</h3>   <a
+   * <p>The results of a <code>DeleteDomain</code> request. Contains the status of
+   * the pending deletion, or a "domain not found" error if the domain and all of its
+   * resources have been deleted.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDomainResponse">AWS
    * API Reference</a></p>
    */

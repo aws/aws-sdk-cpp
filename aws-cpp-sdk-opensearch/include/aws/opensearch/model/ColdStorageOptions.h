@@ -22,8 +22,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the configuration for cold storage options such as
-   * enabled</p><p><h3>See Also:</h3>   <a
+   * <p>Container for the parameters required to enable cold storage for an
+   * OpenSearch Service domain. For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cold-storage.html">Cold
+   * storage for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ColdStorageOptions">AWS
    * API Reference</a></p>
    */
@@ -37,22 +39,22 @@ namespace Model
 
 
     /**
-     * <p>Enable cold storage option. Accepted values true or false</p>
+     * <p>Whether to enable or disable cold storage on the domain.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Enable cold storage option. Accepted values true or false</p>
+     * <p>Whether to enable or disable cold storage on the domain.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>Enable cold storage option. Accepted values true or false</p>
+     * <p>Whether to enable or disable cold storage on the domain.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Enable cold storage option. Accepted values true or false</p>
+     * <p>Whether to enable or disable cold storage on the domain.</p>
      */
     inline ColdStorageOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

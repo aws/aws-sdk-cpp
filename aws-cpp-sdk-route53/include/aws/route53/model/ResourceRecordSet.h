@@ -831,22 +831,20 @@ namespace Model
      * you created the resource that this resource record set refers to. The resource
      * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
      * load balancer, and is referred to by an IP address or a DNS domain name,
-     * depending on the record type.</p>  <p>Although creating latency and
-     * latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
-     * name and type for which you have created latency resource record sets, Route 53
-     * selects the latency resource record set that has the lowest latency between the
-     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
-     * that is associated with the selected resource record set.</p> <p>Note the
-     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
-     * per latency resource record set.</p> </li> <li> <p>You can only create one
-     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
-     * aren't required to create latency resource record sets for all Amazon EC2
-     * Regions. Route 53 will choose the region with the best latency from among the
-     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
-     * can't create non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * depending on the record type.</p> <p>When Amazon Route 53 receives a DNS query
+     * for a domain name and type for which you have created latency resource record
+     * sets, Route 53 selects the latency resource record set that has the lowest
+     * latency between the end user and the associated Amazon EC2 Region. Route 53 then
+     * returns the value that is associated with the selected resource record set.</p>
+     * <p>Note the following:</p> <ul> <li> <p>You can only specify one
+     * <code>ResourceRecord</code> per latency resource record set.</p> </li> <li>
+     * <p>You can only create one latency resource record set for each Amazon EC2
+     * Region.</p> </li> <li> <p>You aren't required to create latency resource record
+     * sets for all Amazon EC2 Regions. Route 53 will choose the region with the best
+     * latency from among the regions that you create latency resource record sets
+     * for.</p> </li> <li> <p>You can't create non-latency resource record sets that
+     * have the same values for the <code>Name</code> and <code>Type</code> elements as
+     * latency resource record sets.</p> </li> </ul>
      */
     inline const ResourceRecordSetRegion& GetRegion() const{ return m_region; }
 
@@ -855,22 +853,20 @@ namespace Model
      * you created the resource that this resource record set refers to. The resource
      * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
      * load balancer, and is referred to by an IP address or a DNS domain name,
-     * depending on the record type.</p>  <p>Although creating latency and
-     * latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
-     * name and type for which you have created latency resource record sets, Route 53
-     * selects the latency resource record set that has the lowest latency between the
-     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
-     * that is associated with the selected resource record set.</p> <p>Note the
-     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
-     * per latency resource record set.</p> </li> <li> <p>You can only create one
-     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
-     * aren't required to create latency resource record sets for all Amazon EC2
-     * Regions. Route 53 will choose the region with the best latency from among the
-     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
-     * can't create non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * depending on the record type.</p> <p>When Amazon Route 53 receives a DNS query
+     * for a domain name and type for which you have created latency resource record
+     * sets, Route 53 selects the latency resource record set that has the lowest
+     * latency between the end user and the associated Amazon EC2 Region. Route 53 then
+     * returns the value that is associated with the selected resource record set.</p>
+     * <p>Note the following:</p> <ul> <li> <p>You can only specify one
+     * <code>ResourceRecord</code> per latency resource record set.</p> </li> <li>
+     * <p>You can only create one latency resource record set for each Amazon EC2
+     * Region.</p> </li> <li> <p>You aren't required to create latency resource record
+     * sets for all Amazon EC2 Regions. Route 53 will choose the region with the best
+     * latency from among the regions that you create latency resource record sets
+     * for.</p> </li> <li> <p>You can't create non-latency resource record sets that
+     * have the same values for the <code>Name</code> and <code>Type</code> elements as
+     * latency resource record sets.</p> </li> </ul>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
@@ -879,22 +875,20 @@ namespace Model
      * you created the resource that this resource record set refers to. The resource
      * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
      * load balancer, and is referred to by an IP address or a DNS domain name,
-     * depending on the record type.</p>  <p>Although creating latency and
-     * latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
-     * name and type for which you have created latency resource record sets, Route 53
-     * selects the latency resource record set that has the lowest latency between the
-     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
-     * that is associated with the selected resource record set.</p> <p>Note the
-     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
-     * per latency resource record set.</p> </li> <li> <p>You can only create one
-     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
-     * aren't required to create latency resource record sets for all Amazon EC2
-     * Regions. Route 53 will choose the region with the best latency from among the
-     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
-     * can't create non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * depending on the record type.</p> <p>When Amazon Route 53 receives a DNS query
+     * for a domain name and type for which you have created latency resource record
+     * sets, Route 53 selects the latency resource record set that has the lowest
+     * latency between the end user and the associated Amazon EC2 Region. Route 53 then
+     * returns the value that is associated with the selected resource record set.</p>
+     * <p>Note the following:</p> <ul> <li> <p>You can only specify one
+     * <code>ResourceRecord</code> per latency resource record set.</p> </li> <li>
+     * <p>You can only create one latency resource record set for each Amazon EC2
+     * Region.</p> </li> <li> <p>You aren't required to create latency resource record
+     * sets for all Amazon EC2 Regions. Route 53 will choose the region with the best
+     * latency from among the regions that you create latency resource record sets
+     * for.</p> </li> <li> <p>You can't create non-latency resource record sets that
+     * have the same values for the <code>Name</code> and <code>Type</code> elements as
+     * latency resource record sets.</p> </li> </ul>
      */
     inline void SetRegion(const ResourceRecordSetRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
@@ -903,22 +897,20 @@ namespace Model
      * you created the resource that this resource record set refers to. The resource
      * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
      * load balancer, and is referred to by an IP address or a DNS domain name,
-     * depending on the record type.</p>  <p>Although creating latency and
-     * latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
-     * name and type for which you have created latency resource record sets, Route 53
-     * selects the latency resource record set that has the lowest latency between the
-     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
-     * that is associated with the selected resource record set.</p> <p>Note the
-     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
-     * per latency resource record set.</p> </li> <li> <p>You can only create one
-     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
-     * aren't required to create latency resource record sets for all Amazon EC2
-     * Regions. Route 53 will choose the region with the best latency from among the
-     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
-     * can't create non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * depending on the record type.</p> <p>When Amazon Route 53 receives a DNS query
+     * for a domain name and type for which you have created latency resource record
+     * sets, Route 53 selects the latency resource record set that has the lowest
+     * latency between the end user and the associated Amazon EC2 Region. Route 53 then
+     * returns the value that is associated with the selected resource record set.</p>
+     * <p>Note the following:</p> <ul> <li> <p>You can only specify one
+     * <code>ResourceRecord</code> per latency resource record set.</p> </li> <li>
+     * <p>You can only create one latency resource record set for each Amazon EC2
+     * Region.</p> </li> <li> <p>You aren't required to create latency resource record
+     * sets for all Amazon EC2 Regions. Route 53 will choose the region with the best
+     * latency from among the regions that you create latency resource record sets
+     * for.</p> </li> <li> <p>You can't create non-latency resource record sets that
+     * have the same values for the <code>Name</code> and <code>Type</code> elements as
+     * latency resource record sets.</p> </li> </ul>
      */
     inline void SetRegion(ResourceRecordSetRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
@@ -927,22 +919,20 @@ namespace Model
      * you created the resource that this resource record set refers to. The resource
      * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
      * load balancer, and is referred to by an IP address or a DNS domain name,
-     * depending on the record type.</p>  <p>Although creating latency and
-     * latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
-     * name and type for which you have created latency resource record sets, Route 53
-     * selects the latency resource record set that has the lowest latency between the
-     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
-     * that is associated with the selected resource record set.</p> <p>Note the
-     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
-     * per latency resource record set.</p> </li> <li> <p>You can only create one
-     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
-     * aren't required to create latency resource record sets for all Amazon EC2
-     * Regions. Route 53 will choose the region with the best latency from among the
-     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
-     * can't create non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * depending on the record type.</p> <p>When Amazon Route 53 receives a DNS query
+     * for a domain name and type for which you have created latency resource record
+     * sets, Route 53 selects the latency resource record set that has the lowest
+     * latency between the end user and the associated Amazon EC2 Region. Route 53 then
+     * returns the value that is associated with the selected resource record set.</p>
+     * <p>Note the following:</p> <ul> <li> <p>You can only specify one
+     * <code>ResourceRecord</code> per latency resource record set.</p> </li> <li>
+     * <p>You can only create one latency resource record set for each Amazon EC2
+     * Region.</p> </li> <li> <p>You aren't required to create latency resource record
+     * sets for all Amazon EC2 Regions. Route 53 will choose the region with the best
+     * latency from among the regions that you create latency resource record sets
+     * for.</p> </li> <li> <p>You can't create non-latency resource record sets that
+     * have the same values for the <code>Name</code> and <code>Type</code> elements as
+     * latency resource record sets.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithRegion(const ResourceRecordSetRegion& value) { SetRegion(value); return *this;}
 
@@ -951,22 +941,20 @@ namespace Model
      * you created the resource that this resource record set refers to. The resource
      * typically is an Amazon Web Services resource, such as an EC2 instance or an ELB
      * load balancer, and is referred to by an IP address or a DNS domain name,
-     * depending on the record type.</p>  <p>Although creating latency and
-     * latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.</p>  <p>When Amazon Route 53 receives a DNS query for a domain
-     * name and type for which you have created latency resource record sets, Route 53
-     * selects the latency resource record set that has the lowest latency between the
-     * end user and the associated Amazon EC2 Region. Route 53 then returns the value
-     * that is associated with the selected resource record set.</p> <p>Note the
-     * following:</p> <ul> <li> <p>You can only specify one <code>ResourceRecord</code>
-     * per latency resource record set.</p> </li> <li> <p>You can only create one
-     * latency resource record set for each Amazon EC2 Region.</p> </li> <li> <p>You
-     * aren't required to create latency resource record sets for all Amazon EC2
-     * Regions. Route 53 will choose the region with the best latency from among the
-     * regions that you create latency resource record sets for.</p> </li> <li> <p>You
-     * can't create non-latency resource record sets that have the same values for the
-     * <code>Name</code> and <code>Type</code> elements as latency resource record
-     * sets.</p> </li> </ul>
+     * depending on the record type.</p> <p>When Amazon Route 53 receives a DNS query
+     * for a domain name and type for which you have created latency resource record
+     * sets, Route 53 selects the latency resource record set that has the lowest
+     * latency between the end user and the associated Amazon EC2 Region. Route 53 then
+     * returns the value that is associated with the selected resource record set.</p>
+     * <p>Note the following:</p> <ul> <li> <p>You can only specify one
+     * <code>ResourceRecord</code> per latency resource record set.</p> </li> <li>
+     * <p>You can only create one latency resource record set for each Amazon EC2
+     * Region.</p> </li> <li> <p>You aren't required to create latency resource record
+     * sets for all Amazon EC2 Regions. Route 53 will choose the region with the best
+     * latency from among the regions that you create latency resource record sets
+     * for.</p> </li> <li> <p>You can't create non-latency resource record sets that
+     * have the same values for the <code>Name</code> and <code>Type</code> elements as
+     * latency resource record sets.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithRegion(ResourceRecordSetRegion&& value) { SetRegion(std::move(value)); return *this;}
 

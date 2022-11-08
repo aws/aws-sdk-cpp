@@ -17,7 +17,7 @@ namespace BillingConductor
   /**
    * <p>Amazon Web Services Billing Conductor is a fully managed service that you can
    * use to customize a <a
-   * href="https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/understanding-eb.html#eb-other-definitions">pro
+   * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">pro
    * forma</a> version of your billing data each month, to accurately show or
    * chargeback your end customers. Amazon Web Services Billing Conductor doesn't
    * change the way you're billed by Amazon Web Services each month by design.
@@ -31,10 +31,10 @@ namespace BillingConductor
    * console</a>, or configure a cost and usage report per billing group.</p> <p>This
    * documentation shows how you can configure Amazon Web Services Billing Conductor
    * using its API. For more information about using the <a
-   * href="https://console.aws.amazon.com/enterprisebilling/">Amazon Web Services
+   * href="https://console.aws.amazon.com/billingconductor/">Amazon Web Services
    * Billing Conductor</a> user interface, see the <a
-   * href="https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/what-is-enterprisebilling.html">
-   * Amazon Web Services Enterprise Billing Console User Guide</a>.</p>
+   * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html">
+   * Amazon Web Services Billing Conductor User Guide</a>.</p>
    */
   class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJsonClient
   {
@@ -297,8 +297,8 @@ namespace BillingConductor
         virtual void DeletePricingPlanAsync(const Model::DeletePricingPlanRequest& request, const DeletePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes the pricing rule identified by the input Amazon Resource Name (ARN).
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes the pricing rule that's identified by the input Amazon Resource Name
+         * (ARN). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingRule">AWS
          * API Reference</a></p>
          */
@@ -351,15 +351,10 @@ namespace BillingConductor
         virtual void DisassociatePricingRulesAsync(const Model::DisassociatePricingRulesRequest& request, const DisassociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> <i> <b>Amazon Web Services Billing Conductor is in beta release and is
-         * subject to change. Your use of Amazon Web Services Billing Conductor is subject
-         * to the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
-         * Terms</a> (Section 1.10).</b> </i> </p> <p> This is a paginated call to list
-         * linked accounts that are linked to the payer account for the specified time
-         * period. If no information is provided, the current billing period is used. The
-         * response will optionally include the billing group associated with the linked
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p> This is a paginated call to list linked accounts that are linked to the
+         * payer account for the specified time period. If no information is provided, the
+         * current billing period is used. The response will optionally include the billing
+         * group that's associated with the linked account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListAccountAssociations">AWS
          * API Reference</a></p>
          */
@@ -414,6 +409,24 @@ namespace BillingConductor
         virtual void ListBillingGroupsAsync(const Model::ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>A paginated call to get a list of all custom line item
+         * versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCustomLineItemVersionsOutcome ListCustomLineItemVersions(const Model::ListCustomLineItemVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCustomLineItemVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCustomLineItemVersionsOutcomeCallable ListCustomLineItemVersionsCallable(const Model::ListCustomLineItemVersionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCustomLineItemVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCustomLineItemVersionsAsync(const Model::ListCustomLineItemVersionsRequest& request, const ListCustomLineItemVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> A paginated call to get a list of all custom line items (FFLIs) for the
          * given billing period. If you don't provide a billing period, the current billing
          * period is used. </p><p><h3>See Also:</h3>   <a
@@ -452,8 +465,8 @@ namespace BillingConductor
         virtual void ListPricingPlansAsync(const Model::ListPricingPlansRequest& request, const ListPricingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> A list of the pricing plans associated with a pricing rule. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> A list of the pricing plans that are associated with a pricing rule.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlansAssociatedWithPricingRule">AWS
          * API Reference</a></p>
          */
@@ -488,8 +501,8 @@ namespace BillingConductor
         virtual void ListPricingRulesAsync(const Model::ListPricingRulesRequest& request, const ListPricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Lists the pricing rules associated with a pricing plan. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Lists the pricing rules that are associated with a pricing plan.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRulesAssociatedToPricingPlan">AWS
          * API Reference</a></p>
          */
@@ -506,7 +519,7 @@ namespace BillingConductor
         virtual void ListPricingRulesAssociatedToPricingPlanAsync(const Model::ListPricingRulesAssociatedToPricingPlanRequest& request, const ListPricingRulesAssociatedToPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> List the resources associated to a custom line item. </p><p><h3>See
+         * <p> List the resources that are associated to a custom line item. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItem">AWS
          * API Reference</a></p>

@@ -18,9 +18,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code> <a>DescribeDomains</a> </code>
-   * operation. By default, the API returns the status of all domains. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Container for the parameters to the <code>DescribeDomains</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainsRequest">AWS
    * API Reference</a></p>
    */
@@ -39,47 +38,65 @@ namespace Model
 
 
     /**
-     * <p>The domains for which you want information.</p>
+     * <p>Array of OpenSearch Service domain names that you want information about. If
+     * you don't specify any domains, OpenSearch Service returns information about all
+     * domains owned by the account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDomainNames() const{ return m_domainNames; }
 
     /**
-     * <p>The domains for which you want information.</p>
+     * <p>Array of OpenSearch Service domain names that you want information about. If
+     * you don't specify any domains, OpenSearch Service returns information about all
+     * domains owned by the account.</p>
      */
     inline bool DomainNamesHasBeenSet() const { return m_domainNamesHasBeenSet; }
 
     /**
-     * <p>The domains for which you want information.</p>
+     * <p>Array of OpenSearch Service domain names that you want information about. If
+     * you don't specify any domains, OpenSearch Service returns information about all
+     * domains owned by the account.</p>
      */
     inline void SetDomainNames(const Aws::Vector<Aws::String>& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
 
     /**
-     * <p>The domains for which you want information.</p>
+     * <p>Array of OpenSearch Service domain names that you want information about. If
+     * you don't specify any domains, OpenSearch Service returns information about all
+     * domains owned by the account.</p>
      */
     inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::move(value); }
 
     /**
-     * <p>The domains for which you want information.</p>
+     * <p>Array of OpenSearch Service domain names that you want information about. If
+     * you don't specify any domains, OpenSearch Service returns information about all
+     * domains owned by the account.</p>
      */
     inline DescribeDomainsRequest& WithDomainNames(const Aws::Vector<Aws::String>& value) { SetDomainNames(value); return *this;}
 
     /**
-     * <p>The domains for which you want information.</p>
+     * <p>Array of OpenSearch Service domain names that you want information about. If
+     * you don't specify any domains, OpenSearch Service returns information about all
+     * domains owned by the account.</p>
      */
     inline DescribeDomainsRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
 
     /**
-     * <p>The domains for which you want information.</p>
+     * <p>Array of OpenSearch Service domain names that you want information about. If
+     * you don't specify any domains, OpenSearch Service returns information about all
+     * domains owned by the account.</p>
      */
     inline DescribeDomainsRequest& AddDomainNames(const Aws::String& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
 
     /**
-     * <p>The domains for which you want information.</p>
+     * <p>Array of OpenSearch Service domain names that you want information about. If
+     * you don't specify any domains, OpenSearch Service returns information about all
+     * domains owned by the account.</p>
      */
     inline DescribeDomainsRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The domains for which you want information.</p>
+     * <p>Array of OpenSearch Service domain names that you want information about. If
+     * you don't specify any domains, OpenSearch Service returns information about all
+     * domains owned by the account.</p>
      */
     inline DescribeDomainsRequest& AddDomainNames(const char* value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
 

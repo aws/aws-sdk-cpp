@@ -22,7 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>The node-to-node encryption options.</p><p><h3>See Also:</h3>   <a
+   * <p>Enables or disables node-to-node encryption. For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ntn.html">Node-to-node
+   * encryption for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/NodeToNodeEncryptionOptions">AWS
    * API Reference</a></p>
    */

@@ -219,32 +219,38 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 

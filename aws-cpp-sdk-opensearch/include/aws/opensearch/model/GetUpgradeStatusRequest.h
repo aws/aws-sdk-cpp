@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p> Container for the request parameters to the <code> <a>GetUpgradeStatus</a>
-   * </code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the request parameters to the <code>GetUpgradeStatus</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeStatusRequest">AWS
    * API Reference</a></p>
    */
@@ -36,28 +36,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>The domain of the domain to get upgrade status information for.</p>
+     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
-    
+    /**
+     * <p>The domain of the domain to get upgrade status information for.</p>
+     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
-    
+    /**
+     * <p>The domain of the domain to get upgrade status information for.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    
+    /**
+     * <p>The domain of the domain to get upgrade status information for.</p>
+     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
-    
+    /**
+     * <p>The domain of the domain to get upgrade status information for.</p>
+     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
-    
+    /**
+     * <p>The domain of the domain to get upgrade status information for.</p>
+     */
     inline GetUpgradeStatusRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
-    
+    /**
+     * <p>The domain of the domain to get upgrade status information for.</p>
+     */
     inline GetUpgradeStatusRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The domain of the domain to get upgrade status information for.</p>
+     */
     inline GetUpgradeStatusRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:

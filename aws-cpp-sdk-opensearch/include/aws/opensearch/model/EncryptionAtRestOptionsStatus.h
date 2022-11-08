@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Status of the encryption At Rest options for the specified
+   * <p>Status of the encryption at rest options for the specified OpenSearch Service
    * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/EncryptionAtRestOptionsStatus">AWS
    * API Reference</a></p>
@@ -40,63 +40,63 @@ namespace Model
 
 
     /**
-     * <p>The Encryption At Rest options for the specified domain.</p>
+     * <p>Encryption at rest options for the specified domain.</p>
      */
     inline const EncryptionAtRestOptions& GetOptions() const{ return m_options; }
 
     /**
-     * <p>The Encryption At Rest options for the specified domain.</p>
+     * <p>Encryption at rest options for the specified domain.</p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
-     * <p>The Encryption At Rest options for the specified domain.</p>
+     * <p>Encryption at rest options for the specified domain.</p>
      */
     inline void SetOptions(const EncryptionAtRestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>The Encryption At Rest options for the specified domain.</p>
+     * <p>Encryption at rest options for the specified domain.</p>
      */
     inline void SetOptions(EncryptionAtRestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>The Encryption At Rest options for the specified domain.</p>
+     * <p>Encryption at rest options for the specified domain.</p>
      */
     inline EncryptionAtRestOptionsStatus& WithOptions(const EncryptionAtRestOptions& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>The Encryption At Rest options for the specified domain.</p>
+     * <p>Encryption at rest options for the specified domain.</p>
      */
     inline EncryptionAtRestOptionsStatus& WithOptions(EncryptionAtRestOptions&& value) { SetOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>The status of the Encryption At Rest options for the specified domain.</p>
+     * <p>The status of the encryption at rest options for the specified domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the Encryption At Rest options for the specified domain.</p>
+     * <p>The status of the encryption at rest options for the specified domain.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the Encryption At Rest options for the specified domain.</p>
+     * <p>The status of the encryption at rest options for the specified domain.</p>
      */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the Encryption At Rest options for the specified domain.</p>
+     * <p>The status of the encryption at rest options for the specified domain.</p>
      */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the Encryption At Rest options for the specified domain.</p>
+     * <p>The status of the encryption at rest options for the specified domain.</p>
      */
     inline EncryptionAtRestOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the Encryption At Rest options for the specified domain.</p>
+     * <p>The status of the encryption at rest options for the specified domain.</p>
      */
     inline EncryptionAtRestOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

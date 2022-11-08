@@ -20,13 +20,19 @@ namespace Model
 
 DomainValidationRecord::DomainValidationRecord() : 
     m_domainNameHasBeenSet(false),
-    m_resourceRecordHasBeenSet(false)
+    m_resourceRecordHasBeenSet(false),
+    m_dnsRecordCreationStateHasBeenSet(false),
+    m_validationStatus(CertificateDomainValidationStatus::NOT_SET),
+    m_validationStatusHasBeenSet(false)
 {
 }
 
 DomainValidationRecord::DomainValidationRecord(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
-    m_resourceRecordHasBeenSet(false)
+    m_resourceRecordHasBeenSet(false),
+    m_dnsRecordCreationStateHasBeenSet(false),
+    m_validationStatus(CertificateDomainValidationStatus::NOT_SET),
+    m_validationStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +53,20 @@ DomainValidationRecord& DomainValidationRecord::operator =(JsonView jsonValue)
     m_resourceRecordHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dnsRecordCreationState"))
+  {
+    m_dnsRecordCreationState = jsonValue.GetObject("dnsRecordCreationState");
+
+    m_dnsRecordCreationStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("validationStatus"))
+  {
+    m_validationStatus = CertificateDomainValidationStatusMapper::GetCertificateDomainValidationStatusForName(jsonValue.GetString("validationStatus"));
+
+    m_validationStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +84,17 @@ JsonValue DomainValidationRecord::Jsonize() const
   {
    payload.WithObject("resourceRecord", m_resourceRecord.Jsonize());
 
+  }
+
+  if(m_dnsRecordCreationStateHasBeenSet)
+  {
+   payload.WithObject("dnsRecordCreationState", m_dnsRecordCreationState.Jsonize());
+
+  }
+
+  if(m_validationStatusHasBeenSet)
+  {
+   payload.WithString("validationStatus", CertificateDomainValidationStatusMapper::GetNameForCertificateDomainValidationStatus(m_validationStatus));
   }
 
   return payload;

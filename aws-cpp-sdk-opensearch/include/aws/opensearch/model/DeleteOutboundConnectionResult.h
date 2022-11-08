@@ -25,9 +25,7 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p>The result of a <code> <a>DeleteOutboundConnection</a> </code> operation.
-   * Contains details about the deleted outbound connection. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Details about the deleted outbound connection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteOutboundConnectionResponse">AWS
    * API Reference</a></p>
    */
@@ -40,32 +38,27 @@ namespace Model
 
 
     /**
-     * <p>The <code> <a>OutboundConnection</a> </code> of the deleted outbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline const OutboundConnection& GetConnection() const{ return m_connection; }
 
     /**
-     * <p>The <code> <a>OutboundConnection</a> </code> of the deleted outbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline void SetConnection(const OutboundConnection& value) { m_connection = value; }
 
     /**
-     * <p>The <code> <a>OutboundConnection</a> </code> of the deleted outbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline void SetConnection(OutboundConnection&& value) { m_connection = std::move(value); }
 
     /**
-     * <p>The <code> <a>OutboundConnection</a> </code> of the deleted outbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline DeleteOutboundConnectionResult& WithConnection(const OutboundConnection& value) { SetConnection(value); return *this;}
 
     /**
-     * <p>The <code> <a>OutboundConnection</a> </code> of the deleted outbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline DeleteOutboundConnectionResult& WithConnection(OutboundConnection&& value) { SetConnection(std::move(value)); return *this;}
 

@@ -33,7 +33,9 @@ Policy::Policy() :
     m_deleteUnusedFMManagedResources(false),
     m_deleteUnusedFMManagedResourcesHasBeenSet(false),
     m_includeMapHasBeenSet(false),
-    m_excludeMapHasBeenSet(false)
+    m_excludeMapHasBeenSet(false),
+    m_resourceSetIdsHasBeenSet(false),
+    m_policyDescriptionHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ Policy::Policy(JsonView jsonValue) :
     m_deleteUnusedFMManagedResources(false),
     m_deleteUnusedFMManagedResourcesHasBeenSet(false),
     m_includeMapHasBeenSet(false),
-    m_excludeMapHasBeenSet(false)
+    m_excludeMapHasBeenSet(false),
+    m_resourceSetIdsHasBeenSet(false),
+    m_policyDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -169,6 +173,23 @@ Policy& Policy::operator =(JsonView jsonValue)
     m_excludeMapHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceSetIds"))
+  {
+    Aws::Utils::Array<JsonView> resourceSetIdsJsonList = jsonValue.GetArray("ResourceSetIds");
+    for(unsigned resourceSetIdsIndex = 0; resourceSetIdsIndex < resourceSetIdsJsonList.GetLength(); ++resourceSetIdsIndex)
+    {
+      m_resourceSetIds.push_back(resourceSetIdsJsonList[resourceSetIdsIndex].AsString());
+    }
+    m_resourceSetIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PolicyDescription"))
+  {
+    m_policyDescription = jsonValue.GetString("PolicyDescription");
+
+    m_policyDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -275,6 +296,23 @@ JsonValue Policy::Jsonize() const
      excludeMapJsonMap.WithArray(CustomerPolicyScopeIdTypeMapper::GetNameForCustomerPolicyScopeIdType(excludeMapItem.first), std::move(customerPolicyScopeIdListJsonList));
    }
    payload.WithObject("ExcludeMap", std::move(excludeMapJsonMap));
+
+  }
+
+  if(m_resourceSetIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourceSetIdsJsonList(m_resourceSetIds.size());
+   for(unsigned resourceSetIdsIndex = 0; resourceSetIdsIndex < resourceSetIdsJsonList.GetLength(); ++resourceSetIdsIndex)
+   {
+     resourceSetIdsJsonList[resourceSetIdsIndex].AsString(m_resourceSetIds[resourceSetIdsIndex]);
+   }
+   payload.WithArray("ResourceSetIds", std::move(resourceSetIdsJsonList));
+
+  }
+
+  if(m_policyDescriptionHasBeenSet)
+  {
+   payload.WithString("PolicyDescription", m_policyDescription);
 
   }
 

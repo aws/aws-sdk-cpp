@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Details of a package version.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about a package version.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PackageVersionHistory">AWS
    * API Reference</a></p>
    */
@@ -80,73 +80,73 @@ namespace Model
 
 
     /**
-     * <p>A message associated with the package version.</p>
+     * <p>A message associated with the package version when it was uploaded.</p>
      */
     inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
 
     /**
-     * <p>A message associated with the package version.</p>
+     * <p>A message associated with the package version when it was uploaded.</p>
      */
     inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
 
     /**
-     * <p>A message associated with the package version.</p>
+     * <p>A message associated with the package version when it was uploaded.</p>
      */
     inline void SetCommitMessage(const Aws::String& value) { m_commitMessageHasBeenSet = true; m_commitMessage = value; }
 
     /**
-     * <p>A message associated with the package version.</p>
+     * <p>A message associated with the package version when it was uploaded.</p>
      */
     inline void SetCommitMessage(Aws::String&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::move(value); }
 
     /**
-     * <p>A message associated with the package version.</p>
+     * <p>A message associated with the package version when it was uploaded.</p>
      */
     inline void SetCommitMessage(const char* value) { m_commitMessageHasBeenSet = true; m_commitMessage.assign(value); }
 
     /**
-     * <p>A message associated with the package version.</p>
+     * <p>A message associated with the package version when it was uploaded.</p>
      */
     inline PackageVersionHistory& WithCommitMessage(const Aws::String& value) { SetCommitMessage(value); return *this;}
 
     /**
-     * <p>A message associated with the package version.</p>
+     * <p>A message associated with the package version when it was uploaded.</p>
      */
     inline PackageVersionHistory& WithCommitMessage(Aws::String&& value) { SetCommitMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A message associated with the package version.</p>
+     * <p>A message associated with the package version when it was uploaded.</p>
      */
     inline PackageVersionHistory& WithCommitMessage(const char* value) { SetCommitMessage(value); return *this;}
 
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The date and time when the package was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The date and time when the package was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The date and time when the package was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The date and time when the package was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The date and time when the package was created.</p>
      */
     inline PackageVersionHistory& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The date and time when the package was created.</p>
      */
     inline PackageVersionHistory& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

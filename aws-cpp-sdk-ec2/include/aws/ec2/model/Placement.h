@@ -511,6 +511,47 @@ namespace Model
      */
     inline Placement& WithHostResourceGroupArn(const char* value) { SetHostResourceGroupArn(value); return *this;}
 
+
+    /**
+     * <p>The Group Id of the placement group.</p>
+     */
+    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The Group Id of the placement group.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The Group Id of the placement group.</p>
+     */
+    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+
+    /**
+     * <p>The Group Id of the placement group.</p>
+     */
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
+
+    /**
+     * <p>The Group Id of the placement group.</p>
+     */
+    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
+
+    /**
+     * <p>The Group Id of the placement group.</p>
+     */
+    inline Placement& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
+
+    /**
+     * <p>The Group Id of the placement group.</p>
+     */
+    inline Placement& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Group Id of the placement group.</p>
+     */
+    inline Placement& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -536,6 +577,9 @@ namespace Model
 
     Aws::String m_hostResourceGroupArn;
     bool m_hostResourceGroupArnHasBeenSet = false;
+
+    Aws::String m_groupId;
+    bool m_groupIdHasBeenSet = false;
   };
 
 } // namespace Model

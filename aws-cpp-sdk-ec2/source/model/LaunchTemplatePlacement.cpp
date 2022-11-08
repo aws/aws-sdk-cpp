@@ -30,7 +30,8 @@ LaunchTemplatePlacement::LaunchTemplatePlacement() :
     m_spreadDomainHasBeenSet(false),
     m_hostResourceGroupArnHasBeenSet(false),
     m_partitionNumber(0),
-    m_partitionNumberHasBeenSet(false)
+    m_partitionNumberHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ LaunchTemplatePlacement::LaunchTemplatePlacement(const XmlNode& xmlNode) :
     m_spreadDomainHasBeenSet(false),
     m_hostResourceGroupArnHasBeenSet(false),
     m_partitionNumber(0),
-    m_partitionNumberHasBeenSet(false)
+    m_partitionNumberHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -103,6 +105,12 @@ LaunchTemplatePlacement& LaunchTemplatePlacement::operator =(const XmlNode& xmlN
       m_partitionNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionNumberNode.GetText()).c_str()).c_str());
       m_partitionNumberHasBeenSet = true;
     }
+    XmlNode groupIdNode = resultNode.FirstChild("groupId");
+    if(!groupIdNode.IsNull())
+    {
+      m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
+      m_groupIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -150,6 +158,11 @@ void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".PartitionNumber=" << m_partitionNumber << "&";
   }
 
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+  }
+
 }
 
 void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -185,6 +198,10 @@ void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_partitionNumberHasBeenSet)
   {
       oStream << location << ".PartitionNumber=" << m_partitionNumber << "&";
+  }
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 }
 

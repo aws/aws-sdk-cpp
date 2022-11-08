@@ -18,8 +18,7 @@ namespace Model
 
   /**
    * <p>Container for the parameters to the <code>DescribeDomainConfig</code>
-   * operation. Specifies the domain name for which you want configuration
-   * information. </p><p><h3>See Also:</h3>   <a
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainConfigRequest">AWS
    * API Reference</a></p>
    */
@@ -38,42 +37,50 @@ namespace Model
 
 
     /**
-     * <p>The domain you want to get information about.</p>
+     * <p>Name of the OpenSearch Service domain configuration that you want to
+     * describe.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The domain you want to get information about.</p>
+     * <p>Name of the OpenSearch Service domain configuration that you want to
+     * describe.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The domain you want to get information about.</p>
+     * <p>Name of the OpenSearch Service domain configuration that you want to
+     * describe.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The domain you want to get information about.</p>
+     * <p>Name of the OpenSearch Service domain configuration that you want to
+     * describe.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The domain you want to get information about.</p>
+     * <p>Name of the OpenSearch Service domain configuration that you want to
+     * describe.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The domain you want to get information about.</p>
+     * <p>Name of the OpenSearch Service domain configuration that you want to
+     * describe.</p>
      */
     inline DescribeDomainConfigRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The domain you want to get information about.</p>
+     * <p>Name of the OpenSearch Service domain configuration that you want to
+     * describe.</p>
      */
     inline DescribeDomainConfigRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The domain you want to get information about.</p>
+     * <p>Name of the OpenSearch Service domain configuration that you want to
+     * describe.</p>
      */
     inline DescribeDomainConfigRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

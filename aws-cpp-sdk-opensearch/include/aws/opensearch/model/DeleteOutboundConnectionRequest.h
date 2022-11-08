@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code> <a>DeleteOutboundConnection</a>
-   * </code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the parameters to the <code>DeleteOutboundConnection</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteOutboundConnectionRequest">AWS
    * API Reference</a></p>
    */

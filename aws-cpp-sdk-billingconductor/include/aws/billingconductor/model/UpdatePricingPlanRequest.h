@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
      */
     inline UpdatePricingPlanRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
      */
     inline UpdatePricingPlanRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan you're updating. </p>
+     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
      */
     inline UpdatePricingPlanRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline UpdatePricingPlanRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline UpdatePricingPlanRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The pricing plan description. </p>
+     * <p>The description of the pricing plan. </p>
      */
     inline UpdatePricingPlanRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

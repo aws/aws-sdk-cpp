@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Options to enable, disable, and specify the properties of EBS storage
-   * volumes.</p><p><h3>See Also:</h3>   <a
+   * <p>Container for the parameters required to enable EBS-based storage for an
+   * OpenSearch Service domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/EBSOptions">AWS
    * API Reference</a></p>
    */
@@ -39,116 +39,132 @@ namespace Model
 
 
     /**
-     * <p>Whether EBS-based storage is enabled.</p>
+     * <p>Indicates whether EBS volumes are attached to data nodes in an OpenSearch
+     * Service domain.</p>
      */
     inline bool GetEBSEnabled() const{ return m_eBSEnabled; }
 
     /**
-     * <p>Whether EBS-based storage is enabled.</p>
+     * <p>Indicates whether EBS volumes are attached to data nodes in an OpenSearch
+     * Service domain.</p>
      */
     inline bool EBSEnabledHasBeenSet() const { return m_eBSEnabledHasBeenSet; }
 
     /**
-     * <p>Whether EBS-based storage is enabled.</p>
+     * <p>Indicates whether EBS volumes are attached to data nodes in an OpenSearch
+     * Service domain.</p>
      */
     inline void SetEBSEnabled(bool value) { m_eBSEnabledHasBeenSet = true; m_eBSEnabled = value; }
 
     /**
-     * <p>Whether EBS-based storage is enabled.</p>
+     * <p>Indicates whether EBS volumes are attached to data nodes in an OpenSearch
+     * Service domain.</p>
      */
     inline EBSOptions& WithEBSEnabled(bool value) { SetEBSEnabled(value); return *this;}
 
 
     /**
-     * <p>The volume type for EBS-based storage.</p>
+     * <p>Specifies the type of EBS volumes attached to data nodes.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type for EBS-based storage.</p>
+     * <p>Specifies the type of EBS volumes attached to data nodes.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>The volume type for EBS-based storage.</p>
+     * <p>Specifies the type of EBS volumes attached to data nodes.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type for EBS-based storage.</p>
+     * <p>Specifies the type of EBS volumes attached to data nodes.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The volume type for EBS-based storage.</p>
+     * <p>Specifies the type of EBS volumes attached to data nodes.</p>
      */
     inline EBSOptions& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type for EBS-based storage.</p>
+     * <p>Specifies the type of EBS volumes attached to data nodes.</p>
      */
     inline EBSOptions& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Integer to specify the size of an EBS volume.</p>
+     * <p>Specifies the size (in GiB) of EBS volumes attached to data nodes.</p>
      */
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
-     * <p>Integer to specify the size of an EBS volume.</p>
+     * <p>Specifies the size (in GiB) of EBS volumes attached to data nodes.</p>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
     /**
-     * <p>Integer to specify the size of an EBS volume.</p>
+     * <p>Specifies the size (in GiB) of EBS volumes attached to data nodes.</p>
      */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
-     * <p>Integer to specify the size of an EBS volume.</p>
+     * <p>Specifies the size (in GiB) of EBS volumes attached to data nodes.</p>
      */
     inline EBSOptions& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
 
     /**
-     * <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
+     * <p>Specifies the baseline input/output (I/O) performance of EBS volumes attached
+     * to data nodes. Applicable only for the <code>gp3</code> and provisioned IOPS EBS
+     * volume types.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
+     * <p>Specifies the baseline input/output (I/O) performance of EBS volumes attached
+     * to data nodes. Applicable only for the <code>gp3</code> and provisioned IOPS EBS
+     * volume types.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
+     * <p>Specifies the baseline input/output (I/O) performance of EBS volumes attached
+     * to data nodes. Applicable only for the <code>gp3</code> and provisioned IOPS EBS
+     * volume types.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
+     * <p>Specifies the baseline input/output (I/O) performance of EBS volumes attached
+     * to data nodes. Applicable only for the <code>gp3</code> and provisioned IOPS EBS
+     * volume types.</p>
      */
     inline EBSOptions& WithIops(int value) { SetIops(value); return *this;}
 
 
     /**
-     * <p>The Throughput for GP3 EBS volume (SSD).</p>
+     * <p>Specifies the throughput (in MiB/s) of the EBS volumes attached to data
+     * nodes. Applicable only for the <code>gp3</code> volume type.</p>
      */
     inline int GetThroughput() const{ return m_throughput; }
 
     /**
-     * <p>The Throughput for GP3 EBS volume (SSD).</p>
+     * <p>Specifies the throughput (in MiB/s) of the EBS volumes attached to data
+     * nodes. Applicable only for the <code>gp3</code> volume type.</p>
      */
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
 
     /**
-     * <p>The Throughput for GP3 EBS volume (SSD).</p>
+     * <p>Specifies the throughput (in MiB/s) of the EBS volumes attached to data
+     * nodes. Applicable only for the <code>gp3</code> volume type.</p>
      */
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
 
     /**
-     * <p>The Throughput for GP3 EBS volume (SSD).</p>
+     * <p>Specifies the throughput (in MiB/s) of the EBS volumes attached to data
+     * nodes. Applicable only for the <code>gp3</code> volume type.</p>
      */
     inline EBSOptions& WithThroughput(int value) { SetThroughput(value); return *this;}
 

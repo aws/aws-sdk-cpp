@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The advanced security configuration: whether advanced security is enabled,
-   * whether the internal database option is enabled. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for fine-grained access control settings.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AdvancedSecurityOptions">AWS
    * API Reference</a></p>
    */
@@ -40,22 +40,22 @@ namespace Model
 
 
     /**
-     * <p>True if advanced security is enabled.</p>
+     * <p>True if fine-grained access control is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>True if advanced security is enabled.</p>
+     * <p>True if fine-grained access control is enabled.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>True if advanced security is enabled.</p>
+     * <p>True if fine-grained access control is enabled.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>True if advanced security is enabled.</p>
+     * <p>True if fine-grained access control is enabled.</p>
      */
     inline AdvancedSecurityOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -82,88 +82,120 @@ namespace Model
 
 
     /**
-     * <p>Describes the SAML application configured for a domain.</p>
+     * <p>Container for information about the SAML configuration for OpenSearch
+     * Dashboards.</p>
      */
     inline const SAMLOptionsOutput& GetSAMLOptions() const{ return m_sAMLOptions; }
 
     /**
-     * <p>Describes the SAML application configured for a domain.</p>
+     * <p>Container for information about the SAML configuration for OpenSearch
+     * Dashboards.</p>
      */
     inline bool SAMLOptionsHasBeenSet() const { return m_sAMLOptionsHasBeenSet; }
 
     /**
-     * <p>Describes the SAML application configured for a domain.</p>
+     * <p>Container for information about the SAML configuration for OpenSearch
+     * Dashboards.</p>
      */
     inline void SetSAMLOptions(const SAMLOptionsOutput& value) { m_sAMLOptionsHasBeenSet = true; m_sAMLOptions = value; }
 
     /**
-     * <p>Describes the SAML application configured for a domain.</p>
+     * <p>Container for information about the SAML configuration for OpenSearch
+     * Dashboards.</p>
      */
     inline void SetSAMLOptions(SAMLOptionsOutput&& value) { m_sAMLOptionsHasBeenSet = true; m_sAMLOptions = std::move(value); }
 
     /**
-     * <p>Describes the SAML application configured for a domain.</p>
+     * <p>Container for information about the SAML configuration for OpenSearch
+     * Dashboards.</p>
      */
     inline AdvancedSecurityOptions& WithSAMLOptions(const SAMLOptionsOutput& value) { SetSAMLOptions(value); return *this;}
 
     /**
-     * <p>Describes the SAML application configured for a domain.</p>
+     * <p>Container for information about the SAML configuration for OpenSearch
+     * Dashboards.</p>
      */
     inline AdvancedSecurityOptions& WithSAMLOptions(SAMLOptionsOutput&& value) { SetSAMLOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     * <p>Date and time when the migration period will be disabled. Only necessary when
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetAnonymousAuthDisableDate() const{ return m_anonymousAuthDisableDate; }
 
     /**
-     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     * <p>Date and time when the migration period will be disabled. Only necessary when
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline bool AnonymousAuthDisableDateHasBeenSet() const { return m_anonymousAuthDisableDateHasBeenSet; }
 
     /**
-     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     * <p>Date and time when the migration period will be disabled. Only necessary when
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline void SetAnonymousAuthDisableDate(const Aws::Utils::DateTime& value) { m_anonymousAuthDisableDateHasBeenSet = true; m_anonymousAuthDisableDate = value; }
 
     /**
-     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     * <p>Date and time when the migration period will be disabled. Only necessary when
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline void SetAnonymousAuthDisableDate(Aws::Utils::DateTime&& value) { m_anonymousAuthDisableDateHasBeenSet = true; m_anonymousAuthDisableDate = std::move(value); }
 
     /**
-     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     * <p>Date and time when the migration period will be disabled. Only necessary when
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline AdvancedSecurityOptions& WithAnonymousAuthDisableDate(const Aws::Utils::DateTime& value) { SetAnonymousAuthDisableDate(value); return *this;}
 
     /**
-     * <p>Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.</p>
+     * <p>Date and time when the migration period will be disabled. Only necessary when
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline AdvancedSecurityOptions& WithAnonymousAuthDisableDate(Aws::Utils::DateTime&& value) { SetAnonymousAuthDisableDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
-     * AdvancedSecurity is enabled on existing domains.</p>
+     * <p>True if a 30-day migration period is enabled, during which administrators can
+     * create role mappings. Only necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline bool GetAnonymousAuthEnabled() const{ return m_anonymousAuthEnabled; }
 
     /**
-     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
-     * AdvancedSecurity is enabled on existing domains.</p>
+     * <p>True if a 30-day migration period is enabled, during which administrators can
+     * create role mappings. Only necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline bool AnonymousAuthEnabledHasBeenSet() const { return m_anonymousAuthEnabledHasBeenSet; }
 
     /**
-     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
-     * AdvancedSecurity is enabled on existing domains.</p>
+     * <p>True if a 30-day migration period is enabled, during which administrators can
+     * create role mappings. Only necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline void SetAnonymousAuthEnabled(bool value) { m_anonymousAuthEnabledHasBeenSet = true; m_anonymousAuthEnabled = value; }
 
     /**
-     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
-     * AdvancedSecurity is enabled on existing domains.</p>
+     * <p>True if a 30-day migration period is enabled, during which administrators can
+     * create role mappings. Only necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+     * fine-grained access control on an existing domain</a>.</p>
      */
     inline AdvancedSecurityOptions& WithAnonymousAuthEnabled(bool value) { SetAnonymousAuthEnabled(value); return *this;}
 

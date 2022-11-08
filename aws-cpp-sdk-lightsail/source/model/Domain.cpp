@@ -27,7 +27,8 @@ Domain::Domain() :
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_domainEntriesHasBeenSet(false)
+    m_domainEntriesHasBeenSet(false),
+    m_registeredDomainDelegationInfoHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Domain::Domain(JsonView jsonValue) :
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_domainEntriesHasBeenSet(false)
+    m_domainEntriesHasBeenSet(false),
+    m_registeredDomainDelegationInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +111,13 @@ Domain& Domain::operator =(JsonView jsonValue)
     m_domainEntriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("registeredDomainDelegationInfo"))
+  {
+    m_registeredDomainDelegationInfo = jsonValue.GetObject("registeredDomainDelegationInfo");
+
+    m_registeredDomainDelegationInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -169,6 +178,12 @@ JsonValue Domain::Jsonize() const
      domainEntriesJsonList[domainEntriesIndex].AsObject(m_domainEntries[domainEntriesIndex].Jsonize());
    }
    payload.WithArray("domainEntries", std::move(domainEntriesJsonList));
+
+  }
+
+  if(m_registeredDomainDelegationInfoHasBeenSet)
+  {
+   payload.WithObject("registeredDomainDelegationInfo", m_registeredDomainDelegationInfo.Jsonize());
 
   }
 

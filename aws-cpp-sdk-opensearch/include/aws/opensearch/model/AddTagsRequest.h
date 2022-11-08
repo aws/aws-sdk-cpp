@@ -19,8 +19,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code> <a>AddTags</a> </code> operation.
-   * Specifies the tags to attach to the domain. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the parameters to the <code>AddTags</code> operation. Specifies
+   * the tags to attach to the domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTagsRequest">AWS
    * API Reference</a></p>
    */
@@ -39,83 +39,91 @@ namespace Model
 
 
     /**
-     * <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you
+     * want to attach resource tags.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you
+     * want to attach resource tags.</p>
      */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
-     * <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you
+     * want to attach resource tags.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
-     * <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you
+     * want to attach resource tags.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
-     * <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you
+     * want to attach resource tags.</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
-     * <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you
+     * want to attach resource tags.</p>
      */
     inline AddTagsRequest& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you
+     * want to attach resource tags.</p>
      */
     inline AddTagsRequest& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you
+     * want to attach resource tags.</p>
      */
     inline AddTagsRequest& WithARN(const char* value) { SetARN(value); return *this;}
 
 
     /**
-     * <p>List of <code>Tag</code> to add to the domain. </p>
+     * <p>List of resource tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
 
     /**
-     * <p>List of <code>Tag</code> to add to the domain. </p>
+     * <p>List of resource tags.</p>
      */
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
 
     /**
-     * <p>List of <code>Tag</code> to add to the domain. </p>
+     * <p>List of resource tags.</p>
      */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
 
     /**
-     * <p>List of <code>Tag</code> to add to the domain. </p>
+     * <p>List of resource tags.</p>
      */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
 
     /**
-     * <p>List of <code>Tag</code> to add to the domain. </p>
+     * <p>List of resource tags.</p>
      */
     inline AddTagsRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
 
     /**
-     * <p>List of <code>Tag</code> to add to the domain. </p>
+     * <p>List of resource tags.</p>
      */
     inline AddTagsRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
-     * <p>List of <code>Tag</code> to add to the domain. </p>
+     * <p>List of resource tags.</p>
      */
     inline AddTagsRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
 
     /**
-     * <p>List of <code>Tag</code> to add to the domain. </p>
+     * <p>List of resource tags.</p>
      */
     inline AddTagsRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 

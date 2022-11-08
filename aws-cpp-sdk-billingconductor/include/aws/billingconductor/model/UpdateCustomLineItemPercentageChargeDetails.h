@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p> A representation of the new charge details associated with a percentage
-   * custom line item. </p><p><h3>See Also:</h3>   <a
+   * <p> A representation of the new charge details that are associated with a
+   * percentage custom line item. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateCustomLineItemPercentageChargeDetails">AWS
    * API Reference</a></p>
    */

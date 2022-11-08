@@ -23,10 +23,13 @@
 #include <aws/fms/FMSEndpointProvider.h>
 #include <aws/fms/model/AssociateAdminAccountRequest.h>
 #include <aws/fms/model/AssociateThirdPartyFirewallRequest.h>
+#include <aws/fms/model/BatchAssociateResourceRequest.h>
+#include <aws/fms/model/BatchDisassociateResourceRequest.h>
 #include <aws/fms/model/DeleteAppsListRequest.h>
 #include <aws/fms/model/DeleteNotificationChannelRequest.h>
 #include <aws/fms/model/DeletePolicyRequest.h>
 #include <aws/fms/model/DeleteProtocolsListRequest.h>
+#include <aws/fms/model/DeleteResourceSetRequest.h>
 #include <aws/fms/model/DisassociateAdminAccountRequest.h>
 #include <aws/fms/model/DisassociateThirdPartyFirewallRequest.h>
 #include <aws/fms/model/GetAdminAccountRequest.h>
@@ -36,19 +39,24 @@
 #include <aws/fms/model/GetPolicyRequest.h>
 #include <aws/fms/model/GetProtectionStatusRequest.h>
 #include <aws/fms/model/GetProtocolsListRequest.h>
+#include <aws/fms/model/GetResourceSetRequest.h>
 #include <aws/fms/model/GetThirdPartyFirewallAssociationStatusRequest.h>
 #include <aws/fms/model/GetViolationDetailsRequest.h>
 #include <aws/fms/model/ListAppsListsRequest.h>
 #include <aws/fms/model/ListComplianceStatusRequest.h>
+#include <aws/fms/model/ListDiscoveredResourcesRequest.h>
 #include <aws/fms/model/ListMemberAccountsRequest.h>
 #include <aws/fms/model/ListPoliciesRequest.h>
 #include <aws/fms/model/ListProtocolsListsRequest.h>
+#include <aws/fms/model/ListResourceSetResourcesRequest.h>
+#include <aws/fms/model/ListResourceSetsRequest.h>
 #include <aws/fms/model/ListTagsForResourceRequest.h>
 #include <aws/fms/model/ListThirdPartyFirewallFirewallPoliciesRequest.h>
 #include <aws/fms/model/PutAppsListRequest.h>
 #include <aws/fms/model/PutNotificationChannelRequest.h>
 #include <aws/fms/model/PutPolicyRequest.h>
 #include <aws/fms/model/PutProtocolsListRequest.h>
+#include <aws/fms/model/PutResourceSetRequest.h>
 #include <aws/fms/model/TagResourceRequest.h>
 #include <aws/fms/model/UntagResourceRequest.h>
 
@@ -227,6 +235,54 @@ void FMSClient::AssociateThirdPartyFirewallAsync(const AssociateThirdPartyFirewa
     } );
 }
 
+BatchAssociateResourceOutcome FMSClient::BatchAssociateResource(const BatchAssociateResourceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchAssociateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchAssociateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchAssociateResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchAssociateResourceOutcomeCallable FMSClient::BatchAssociateResourceCallable(const BatchAssociateResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchAssociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchAssociateResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::BatchAssociateResourceAsync(const BatchAssociateResourceRequest& request, const BatchAssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchAssociateResource(request), context);
+    } );
+}
+
+BatchDisassociateResourceOutcome FMSClient::BatchDisassociateResource(const BatchDisassociateResourceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDisassociateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDisassociateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchDisassociateResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDisassociateResourceOutcomeCallable FMSClient::BatchDisassociateResourceCallable(const BatchDisassociateResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDisassociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDisassociateResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::BatchDisassociateResourceAsync(const BatchDisassociateResourceRequest& request, const BatchDisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDisassociateResource(request), context);
+    } );
+}
+
 DeleteAppsListOutcome FMSClient::DeleteAppsList(const DeleteAppsListRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppsList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -320,6 +376,30 @@ void FMSClient::DeleteProtocolsListAsync(const DeleteProtocolsListRequest& reque
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteProtocolsList(request), context);
+    } );
+}
+
+DeleteResourceSetOutcome FMSClient::DeleteResourceSet(const DeleteResourceSetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteResourceSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteResourceSetOutcomeCallable FMSClient::DeleteResourceSetCallable(const DeleteResourceSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::DeleteResourceSetAsync(const DeleteResourceSetRequest& request, const DeleteResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResourceSet(request), context);
     } );
 }
 
@@ -539,6 +619,30 @@ void FMSClient::GetProtocolsListAsync(const GetProtocolsListRequest& request, co
     } );
 }
 
+GetResourceSetOutcome FMSClient::GetResourceSet(const GetResourceSetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetResourceSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourceSetOutcomeCallable FMSClient::GetResourceSetCallable(const GetResourceSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::GetResourceSetAsync(const GetResourceSetRequest& request, const GetResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceSet(request), context);
+    } );
+}
+
 GetThirdPartyFirewallAssociationStatusOutcome FMSClient::GetThirdPartyFirewallAssociationStatus(const GetThirdPartyFirewallAssociationStatusRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetThirdPartyFirewallAssociationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -635,6 +739,30 @@ void FMSClient::ListComplianceStatusAsync(const ListComplianceStatusRequest& req
     } );
 }
 
+ListDiscoveredResourcesOutcome FMSClient::ListDiscoveredResources(const ListDiscoveredResourcesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDiscoveredResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDiscoveredResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDiscoveredResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDiscoveredResourcesOutcomeCallable FMSClient::ListDiscoveredResourcesCallable(const ListDiscoveredResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDiscoveredResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDiscoveredResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::ListDiscoveredResourcesAsync(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDiscoveredResources(request), context);
+    } );
+}
+
 ListMemberAccountsOutcome FMSClient::ListMemberAccounts(const ListMemberAccountsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMemberAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -704,6 +832,54 @@ void FMSClient::ListProtocolsListsAsync(const ListProtocolsListsRequest& request
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListProtocolsLists(request), context);
+    } );
+}
+
+ListResourceSetResourcesOutcome FMSClient::ListResourceSetResources(const ListResourceSetResourcesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceSetResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceSetResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListResourceSetResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResourceSetResourcesOutcomeCallable FMSClient::ListResourceSetResourcesCallable(const ListResourceSetResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceSetResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceSetResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::ListResourceSetResourcesAsync(const ListResourceSetResourcesRequest& request, const ListResourceSetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResourceSetResources(request), context);
+    } );
+}
+
+ListResourceSetsOutcome FMSClient::ListResourceSets(const ListResourceSetsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListResourceSetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResourceSetsOutcomeCallable FMSClient::ListResourceSetsCallable(const ListResourceSetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceSets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::ListResourceSetsAsync(const ListResourceSetsRequest& request, const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResourceSets(request), context);
     } );
 }
 
@@ -848,6 +1024,30 @@ void FMSClient::PutProtocolsListAsync(const PutProtocolsListRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutProtocolsList(request), context);
+    } );
+}
+
+PutResourceSetOutcome FMSClient::PutResourceSet(const PutResourceSetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutResourceSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutResourceSetOutcomeCallable FMSClient::PutResourceSetCallable(const PutResourceSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourceSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::PutResourceSetAsync(const PutResourceSetRequest& request, const PutResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutResourceSet(request), context);
     } );
 }
 

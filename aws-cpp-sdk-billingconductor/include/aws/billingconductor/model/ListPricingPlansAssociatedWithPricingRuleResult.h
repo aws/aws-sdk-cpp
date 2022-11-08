@@ -113,50 +113,50 @@ namespace Model
 
 
     /**
-     * <p> The list containing pricing plans associated with the requested pricing
-     * rule. </p>
+     * <p> The list containing pricing plans that are associated with the requested
+     * pricing rule. </p>
      */
     inline const Aws::Vector<Aws::String>& GetPricingPlanArns() const{ return m_pricingPlanArns; }
 
     /**
-     * <p> The list containing pricing plans associated with the requested pricing
-     * rule. </p>
+     * <p> The list containing pricing plans that are associated with the requested
+     * pricing rule. </p>
      */
     inline void SetPricingPlanArns(const Aws::Vector<Aws::String>& value) { m_pricingPlanArns = value; }
 
     /**
-     * <p> The list containing pricing plans associated with the requested pricing
-     * rule. </p>
+     * <p> The list containing pricing plans that are associated with the requested
+     * pricing rule. </p>
      */
     inline void SetPricingPlanArns(Aws::Vector<Aws::String>&& value) { m_pricingPlanArns = std::move(value); }
 
     /**
-     * <p> The list containing pricing plans associated with the requested pricing
-     * rule. </p>
+     * <p> The list containing pricing plans that are associated with the requested
+     * pricing rule. </p>
      */
     inline ListPricingPlansAssociatedWithPricingRuleResult& WithPricingPlanArns(const Aws::Vector<Aws::String>& value) { SetPricingPlanArns(value); return *this;}
 
     /**
-     * <p> The list containing pricing plans associated with the requested pricing
-     * rule. </p>
+     * <p> The list containing pricing plans that are associated with the requested
+     * pricing rule. </p>
      */
     inline ListPricingPlansAssociatedWithPricingRuleResult& WithPricingPlanArns(Aws::Vector<Aws::String>&& value) { SetPricingPlanArns(std::move(value)); return *this;}
 
     /**
-     * <p> The list containing pricing plans associated with the requested pricing
-     * rule. </p>
+     * <p> The list containing pricing plans that are associated with the requested
+     * pricing rule. </p>
      */
     inline ListPricingPlansAssociatedWithPricingRuleResult& AddPricingPlanArns(const Aws::String& value) { m_pricingPlanArns.push_back(value); return *this; }
 
     /**
-     * <p> The list containing pricing plans associated with the requested pricing
-     * rule. </p>
+     * <p> The list containing pricing plans that are associated with the requested
+     * pricing rule. </p>
      */
     inline ListPricingPlansAssociatedWithPricingRuleResult& AddPricingPlanArns(Aws::String&& value) { m_pricingPlanArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The list containing pricing plans associated with the requested pricing
-     * rule. </p>
+     * <p> The list containing pricing plans that are associated with the requested
+     * pricing rule. </p>
      */
     inline ListPricingPlansAssociatedWithPricingRuleResult& AddPricingPlanArns(const char* value) { m_pricingPlanArns.push_back(value); return *this; }
 
