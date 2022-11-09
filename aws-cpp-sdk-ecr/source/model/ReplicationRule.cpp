@@ -35,7 +35,7 @@ ReplicationRule& ReplicationRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -45,7 +45,7 @@ ReplicationRule& ReplicationRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("repositoryFilters"))
   {
-    Array<JsonView> repositoryFiltersJsonList = jsonValue.GetArray("repositoryFilters");
+    Aws::Utils::Array<JsonView> repositoryFiltersJsonList = jsonValue.GetArray("repositoryFilters");
     for(unsigned repositoryFiltersIndex = 0; repositoryFiltersIndex < repositoryFiltersJsonList.GetLength(); ++repositoryFiltersIndex)
     {
       m_repositoryFilters.push_back(repositoryFiltersJsonList[repositoryFiltersIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue ReplicationRule::Jsonize() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue ReplicationRule::Jsonize() const
 
   if(m_repositoryFiltersHasBeenSet)
   {
-   Array<JsonValue> repositoryFiltersJsonList(m_repositoryFilters.size());
+   Aws::Utils::Array<JsonValue> repositoryFiltersJsonList(m_repositoryFilters.size());
    for(unsigned repositoryFiltersIndex = 0; repositoryFiltersIndex < repositoryFiltersJsonList.GetLength(); ++repositoryFiltersIndex)
    {
      repositoryFiltersJsonList[repositoryFiltersIndex].AsObject(m_repositoryFilters[repositoryFiltersIndex].Jsonize());

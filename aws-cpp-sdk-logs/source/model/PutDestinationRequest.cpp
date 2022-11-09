@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 PutDestinationRequest::PutDestinationRequest() : 
     m_destinationNameHasBeenSet(false),
     m_targetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,17 @@ Aws::String PutDestinationRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

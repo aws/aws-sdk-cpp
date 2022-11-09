@@ -30,7 +30,7 @@ ListJobsResult& ListJobsResult::operator =(const Aws::AmazonWebServiceResult<Jso
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Jobs"))
   {
-    Array<JsonView> jobsJsonList = jsonValue.GetArray("Jobs");
+    Aws::Utils::Array<JsonView> jobsJsonList = jsonValue.GetArray("Jobs");
     for(unsigned jobsIndex = 0; jobsIndex < jobsJsonList.GetLength(); ++jobsIndex)
     {
       m_jobs.push_back(jobsJsonList[jobsIndex].AsObject());

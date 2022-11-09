@@ -69,7 +69,7 @@ RelationalTable& RelationalTable::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InputColumns"))
   {
-    Array<JsonView> inputColumnsJsonList = jsonValue.GetArray("InputColumns");
+    Aws::Utils::Array<JsonView> inputColumnsJsonList = jsonValue.GetArray("InputColumns");
     for(unsigned inputColumnsIndex = 0; inputColumnsIndex < inputColumnsJsonList.GetLength(); ++inputColumnsIndex)
     {
       m_inputColumns.push_back(inputColumnsJsonList[inputColumnsIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue RelationalTable::Jsonize() const
 
   if(m_inputColumnsHasBeenSet)
   {
-   Array<JsonValue> inputColumnsJsonList(m_inputColumns.size());
+   Aws::Utils::Array<JsonValue> inputColumnsJsonList(m_inputColumns.size());
    for(unsigned inputColumnsIndex = 0; inputColumnsIndex < inputColumnsJsonList.GetLength(); ++inputColumnsIndex)
    {
      inputColumnsJsonList[inputColumnsIndex].AsObject(m_inputColumns[inputColumnsIndex].Jsonize());

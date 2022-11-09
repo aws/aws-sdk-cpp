@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/batch/BatchErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/batch/BatchEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -73,6 +75,10 @@ namespace Aws
 
   namespace Batch
   {
+    using BatchClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BatchEndpointProviderBase = Aws::Batch::Endpoint::BatchEndpointProviderBase;
+    using BatchEndpointProvider = Aws::Batch::Endpoint::BatchEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in BatchClient header */

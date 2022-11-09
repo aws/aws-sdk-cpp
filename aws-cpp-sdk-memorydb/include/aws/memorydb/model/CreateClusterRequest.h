@@ -343,65 +343,97 @@ namespace Model
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
-     * performed. It is specified as a range in the format
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period.</p>
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline const Aws::String& GetMaintenanceWindow() const{ return m_maintenanceWindow; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
-     * performed. It is specified as a range in the format
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period.</p>
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline bool MaintenanceWindowHasBeenSet() const { return m_maintenanceWindowHasBeenSet; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
-     * performed. It is specified as a range in the format
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period.</p>
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline void SetMaintenanceWindow(const Aws::String& value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow = value; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
-     * performed. It is specified as a range in the format
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period.</p>
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline void SetMaintenanceWindow(Aws::String&& value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow = std::move(value); }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
-     * performed. It is specified as a range in the format
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period.</p>
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline void SetMaintenanceWindow(const char* value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow.assign(value); }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
-     * performed. It is specified as a range in the format
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period.</p>
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline CreateClusterRequest& WithMaintenanceWindow(const Aws::String& value) { SetMaintenanceWindow(value); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
-     * performed. It is specified as a range in the format
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period.</p>
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline CreateClusterRequest& WithMaintenanceWindow(Aws::String&& value) { SetMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
-     * performed. It is specified as a range in the format
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period.</p>
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline CreateClusterRequest& WithMaintenanceWindow(const char* value) { SetMaintenanceWindow(value); return *this;}
 
@@ -916,6 +948,43 @@ namespace Model
      */
     inline CreateClusterRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool GetDataTiering() const{ return m_dataTiering; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool DataTieringHasBeenSet() const { return m_dataTieringHasBeenSet; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(bool value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline CreateClusterRequest& WithDataTiering(bool value) { SetDataTiering(value); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -980,6 +1049,9 @@ namespace Model
 
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet = false;
+
+    bool m_dataTiering;
+    bool m_dataTieringHasBeenSet = false;
   };
 
 } // namespace Model

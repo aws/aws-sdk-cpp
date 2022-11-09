@@ -30,7 +30,7 @@ RebootWorkspacesResult& RebootWorkspacesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedRequests"))
   {
-    Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("FailedRequests");
+    Aws::Utils::Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("FailedRequests");
     for(unsigned failedRequestsIndex = 0; failedRequestsIndex < failedRequestsJsonList.GetLength(); ++failedRequestsIndex)
     {
       m_failedRequests.push_back(failedRequestsJsonList[failedRequestsIndex].AsObject());

@@ -21,14 +21,18 @@ namespace Model
 TagHealth::TagHealth() : 
     m_appBoundaryKeyHasBeenSet(false),
     m_tagValueHasBeenSet(false),
-    m_insightHasBeenSet(false)
+    m_insightHasBeenSet(false),
+    m_analyzedResourceCount(0),
+    m_analyzedResourceCountHasBeenSet(false)
 {
 }
 
 TagHealth::TagHealth(JsonView jsonValue) : 
     m_appBoundaryKeyHasBeenSet(false),
     m_tagValueHasBeenSet(false),
-    m_insightHasBeenSet(false)
+    m_insightHasBeenSet(false),
+    m_analyzedResourceCount(0),
+    m_analyzedResourceCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ TagHealth& TagHealth::operator =(JsonView jsonValue)
     m_insightHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AnalyzedResourceCount"))
+  {
+    m_analyzedResourceCount = jsonValue.GetInt64("AnalyzedResourceCount");
+
+    m_analyzedResourceCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +89,12 @@ JsonValue TagHealth::Jsonize() const
   if(m_insightHasBeenSet)
   {
    payload.WithObject("Insight", m_insight.Jsonize());
+
+  }
+
+  if(m_analyzedResourceCountHasBeenSet)
+  {
+   payload.WithInt64("AnalyzedResourceCount", m_analyzedResourceCount);
 
   }
 

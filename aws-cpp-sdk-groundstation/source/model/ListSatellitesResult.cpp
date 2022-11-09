@@ -36,7 +36,7 @@ ListSatellitesResult& ListSatellitesResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("satellites"))
   {
-    Array<JsonView> satellitesJsonList = jsonValue.GetArray("satellites");
+    Aws::Utils::Array<JsonView> satellitesJsonList = jsonValue.GetArray("satellites");
     for(unsigned satellitesIndex = 0; satellitesIndex < satellitesJsonList.GetLength(); ++satellitesIndex)
     {
       m_satellites.push_back(satellitesJsonList[satellitesIndex].AsObject());

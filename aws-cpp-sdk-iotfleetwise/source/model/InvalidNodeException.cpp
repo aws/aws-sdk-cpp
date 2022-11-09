@@ -35,7 +35,7 @@ InvalidNodeException& InvalidNodeException::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("invalidNodes"))
   {
-    Array<JsonView> invalidNodesJsonList = jsonValue.GetArray("invalidNodes");
+    Aws::Utils::Array<JsonView> invalidNodesJsonList = jsonValue.GetArray("invalidNodes");
     for(unsigned invalidNodesIndex = 0; invalidNodesIndex < invalidNodesJsonList.GetLength(); ++invalidNodesIndex)
     {
       m_invalidNodes.push_back(invalidNodesJsonList[invalidNodesIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue InvalidNodeException::Jsonize() const
 
   if(m_invalidNodesHasBeenSet)
   {
-   Array<JsonValue> invalidNodesJsonList(m_invalidNodes.size());
+   Aws::Utils::Array<JsonValue> invalidNodesJsonList(m_invalidNodes.size());
    for(unsigned invalidNodesIndex = 0; invalidNodesIndex < invalidNodesJsonList.GetLength(); ++invalidNodesIndex)
    {
      invalidNodesJsonList[invalidNodesIndex].AsObject(m_invalidNodes[invalidNodesIndex].Jsonize());

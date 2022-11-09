@@ -71,7 +71,7 @@ EbsVolumeScanDetails& EbsVolumeScanDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsString());
@@ -117,7 +117,7 @@ JsonValue EbsVolumeScanDetails::Jsonize() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsString(m_sources[sourcesIndex]);

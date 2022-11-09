@@ -44,7 +44,7 @@ AutoTuneOptionsInput& AutoTuneOptionsInput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MaintenanceSchedules"))
   {
-    Array<JsonView> maintenanceSchedulesJsonList = jsonValue.GetArray("MaintenanceSchedules");
+    Aws::Utils::Array<JsonView> maintenanceSchedulesJsonList = jsonValue.GetArray("MaintenanceSchedules");
     for(unsigned maintenanceSchedulesIndex = 0; maintenanceSchedulesIndex < maintenanceSchedulesJsonList.GetLength(); ++maintenanceSchedulesIndex)
     {
       m_maintenanceSchedules.push_back(maintenanceSchedulesJsonList[maintenanceSchedulesIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue AutoTuneOptionsInput::Jsonize() const
 
   if(m_maintenanceSchedulesHasBeenSet)
   {
-   Array<JsonValue> maintenanceSchedulesJsonList(m_maintenanceSchedules.size());
+   Aws::Utils::Array<JsonValue> maintenanceSchedulesJsonList(m_maintenanceSchedules.size());
    for(unsigned maintenanceSchedulesIndex = 0; maintenanceSchedulesIndex < maintenanceSchedulesJsonList.GetLength(); ++maintenanceSchedulesIndex)
    {
      maintenanceSchedulesJsonList[maintenanceSchedulesIndex].AsObject(m_maintenanceSchedules[maintenanceSchedulesIndex].Jsonize());

@@ -26,27 +26,55 @@ namespace SageMaker
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SageMakerClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SageMakerClient(const Aws::SageMaker::SageMakerClientConfiguration& clientConfiguration = Aws::SageMaker::SageMakerClientConfiguration(),
+                        std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SageMakerClient(const Aws::Auth::AWSCredentials& credentials,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::SageMaker::SageMakerClientConfiguration& clientConfiguration = Aws::SageMaker::SageMakerClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SageMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::SageMaker::SageMakerClientConfiguration& clientConfiguration = Aws::SageMaker::SageMakerClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SageMakerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SageMakerClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SageMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SageMakerClient();
 
 
@@ -718,8 +746,16 @@ namespace SageMaker
          * best version of a model by running many training jobs on your dataset using the
          * algorithm you choose and values for hyperparameters within ranges that you
          * specify. It then chooses the hyperparameter values that result in a model that
-         * performs the best, as measured by an objective metric that you
-         * choose.</p><p><h3>See Also:</h3>   <a
+         * performs the best, as measured by an objective metric that you choose.</p> <p>A
+         * hyperparameter tuning job automatically creates Amazon SageMaker experiments,
+         * trials, and trial components for each training job that it runs. You can view
+         * these entities in Amazon SageMaker Studio. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View
+         * Experiments, Trials, and Trial Components</a>.</p>  <p>Do not include
+         * any security-sensitive information including account access IDs, secrets or
+         * tokens in any hyperparameter field. If the use of security-sensitive credentials
+         * are detected, SageMaker will reject your training job request and return an
+         * exception error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">AWS
          * API Reference</a></p>
          */
@@ -1233,17 +1269,17 @@ namespace SageMaker
          * learning process. For a list of hyperparameters for each training algorithm
          * provided by SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-         * </p>  <p>You must not include any security-sensitive information,
-         * such as account access IDs, secrets, and tokens, in the dictionary for
-         * configuring hyperparameters. SageMaker rejects the training job request and
-         * returns an exception error for detected credentials, if such user input is
-         * found.</p>  </li> <li> <p> <code>InputDataConfig</code> - Describes
-         * the training dataset and the Amazon S3, EFS, or FSx location where it is
-         * stored.</p> </li> <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon
-         * S3 bucket where you want SageMaker to save the results of model training. </p>
-         * </li> <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML
-         * compute instances, and ML storage volumes to deploy for model training. In
-         * distributed training, you specify more than one instance. </p> </li> <li> <p>
+         * </p>  <p>Do not include any security-sensitive information including
+         * account access IDs, secrets or tokens in any hyperparameter field. If the use of
+         * security-sensitive credentials are detected, SageMaker will reject your training
+         * job request and return an exception error.</p>  </li> <li> <p>
+         * <code>InputDataConfig</code> - Describes the input required by the training job
+         * and the Amazon S3, EFS, or FSx location where it is stored.</p> </li> <li> <p>
+         * <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want
+         * SageMaker to save the results of model training. </p> </li> <li> <p>
+         * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,
+         * and ML storage volumes to deploy for model training. In distributed training,
+         * you specify more than one instance. </p> </li> <li> <p>
          * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
          * learning models by up to 80% by using Amazon EC2 Spot instances. For more
          * information, see <a
@@ -3766,6 +3802,25 @@ namespace SageMaker
         virtual void ListImagesAsync(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the subtasks for an Inference Recommender job.</p> <p>The
+         * supported subtasks are benchmarks, which evaluate the performance of your model
+         * on different instance types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInferenceRecommendationsJobStepsOutcome ListInferenceRecommendationsJobSteps(const Model::ListInferenceRecommendationsJobStepsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInferenceRecommendationsJobSteps that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListInferenceRecommendationsJobStepsOutcomeCallable ListInferenceRecommendationsJobStepsCallable(const Model::ListInferenceRecommendationsJobStepsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListInferenceRecommendationsJobSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListInferenceRecommendationsJobStepsAsync(const Model::ListInferenceRecommendationsJobStepsRequest& request, const ListInferenceRecommendationsJobStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists recommendation jobs that satisfy various filters.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">AWS
@@ -5398,12 +5453,13 @@ namespace SageMaker
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SageMakerEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const SageMakerClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      SageMakerClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SageMakerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SageMaker

@@ -30,7 +30,7 @@ GetReservationUtilizationResult& GetReservationUtilizationResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UtilizationsByTime"))
   {
-    Array<JsonView> utilizationsByTimeJsonList = jsonValue.GetArray("UtilizationsByTime");
+    Aws::Utils::Array<JsonView> utilizationsByTimeJsonList = jsonValue.GetArray("UtilizationsByTime");
     for(unsigned utilizationsByTimeIndex = 0; utilizationsByTimeIndex < utilizationsByTimeJsonList.GetLength(); ++utilizationsByTimeIndex)
     {
       m_utilizationsByTime.push_back(utilizationsByTimeJsonList[utilizationsByTimeIndex].AsObject());

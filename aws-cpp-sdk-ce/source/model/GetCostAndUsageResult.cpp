@@ -36,7 +36,7 @@ GetCostAndUsageResult& GetCostAndUsageResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("GroupDefinitions"))
   {
-    Array<JsonView> groupDefinitionsJsonList = jsonValue.GetArray("GroupDefinitions");
+    Aws::Utils::Array<JsonView> groupDefinitionsJsonList = jsonValue.GetArray("GroupDefinitions");
     for(unsigned groupDefinitionsIndex = 0; groupDefinitionsIndex < groupDefinitionsJsonList.GetLength(); ++groupDefinitionsIndex)
     {
       m_groupDefinitions.push_back(groupDefinitionsJsonList[groupDefinitionsIndex].AsObject());
@@ -45,7 +45,7 @@ GetCostAndUsageResult& GetCostAndUsageResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("ResultsByTime"))
   {
-    Array<JsonView> resultsByTimeJsonList = jsonValue.GetArray("ResultsByTime");
+    Aws::Utils::Array<JsonView> resultsByTimeJsonList = jsonValue.GetArray("ResultsByTime");
     for(unsigned resultsByTimeIndex = 0; resultsByTimeIndex < resultsByTimeJsonList.GetLength(); ++resultsByTimeIndex)
     {
       m_resultsByTime.push_back(resultsByTimeJsonList[resultsByTimeIndex].AsObject());
@@ -54,7 +54,7 @@ GetCostAndUsageResult& GetCostAndUsageResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("DimensionValueAttributes"))
   {
-    Array<JsonView> dimensionValueAttributesJsonList = jsonValue.GetArray("DimensionValueAttributes");
+    Aws::Utils::Array<JsonView> dimensionValueAttributesJsonList = jsonValue.GetArray("DimensionValueAttributes");
     for(unsigned dimensionValueAttributesIndex = 0; dimensionValueAttributesIndex < dimensionValueAttributesJsonList.GetLength(); ++dimensionValueAttributesIndex)
     {
       m_dimensionValueAttributes.push_back(dimensionValueAttributesJsonList[dimensionValueAttributesIndex].AsObject());

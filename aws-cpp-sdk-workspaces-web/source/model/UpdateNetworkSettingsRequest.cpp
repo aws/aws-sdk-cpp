@@ -34,7 +34,7 @@ Aws::String UpdateNetworkSettingsRequest::SerializePayload() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -45,7 +45,7 @@ Aws::String UpdateNetworkSettingsRequest::SerializePayload() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);

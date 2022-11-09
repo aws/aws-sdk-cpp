@@ -30,7 +30,7 @@ ListAuditSuppressionsResult& ListAuditSuppressionsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("suppressions"))
   {
-    Array<JsonView> suppressionsJsonList = jsonValue.GetArray("suppressions");
+    Aws::Utils::Array<JsonView> suppressionsJsonList = jsonValue.GetArray("suppressions");
     for(unsigned suppressionsIndex = 0; suppressionsIndex < suppressionsJsonList.GetLength(); ++suppressionsIndex)
     {
       m_suppressions.push_back(suppressionsJsonList[suppressionsIndex].AsObject());

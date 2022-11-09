@@ -167,7 +167,7 @@ Instance& Instance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("BlockDeviceMappings"))
   {
-    Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("BlockDeviceMappings");
+    Aws::Utils::Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("BlockDeviceMappings");
     for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
     {
       m_blockDeviceMappings.push_back(blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject());
@@ -268,7 +268,7 @@ Instance& Instance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LayerIds"))
   {
-    Array<JsonView> layerIdsJsonList = jsonValue.GetArray("LayerIds");
+    Aws::Utils::Array<JsonView> layerIdsJsonList = jsonValue.GetArray("LayerIds");
     for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
     {
       m_layerIds.push_back(layerIdsJsonList[layerIdsIndex].AsString());
@@ -355,7 +355,7 @@ Instance& Instance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -462,7 +462,7 @@ JsonValue Instance::Jsonize() const
 
   if(m_blockDeviceMappingsHasBeenSet)
   {
-   Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
+   Aws::Utils::Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
    for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
    {
      blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject(m_blockDeviceMappings[blockDeviceMappingsIndex].Jsonize());
@@ -551,7 +551,7 @@ JsonValue Instance::Jsonize() const
 
   if(m_layerIdsHasBeenSet)
   {
-   Array<JsonValue> layerIdsJsonList(m_layerIds.size());
+   Aws::Utils::Array<JsonValue> layerIdsJsonList(m_layerIds.size());
    for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
    {
      layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);
@@ -627,7 +627,7 @@ JsonValue Instance::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);

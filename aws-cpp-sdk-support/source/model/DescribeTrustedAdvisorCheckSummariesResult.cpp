@@ -30,7 +30,7 @@ DescribeTrustedAdvisorCheckSummariesResult& DescribeTrustedAdvisorCheckSummaries
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("summaries"))
   {
-    Array<JsonView> summariesJsonList = jsonValue.GetArray("summaries");
+    Aws::Utils::Array<JsonView> summariesJsonList = jsonValue.GetArray("summaries");
     for(unsigned summariesIndex = 0; summariesIndex < summariesJsonList.GetLength(); ++summariesIndex)
     {
       m_summaries.push_back(summariesJsonList[summariesIndex].AsObject());

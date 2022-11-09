@@ -28,27 +28,55 @@ namespace WellArchitected
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        WellArchitectedClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        WellArchitectedClient(const Aws::WellArchitected::WellArchitectedClientConfiguration& clientConfiguration = Aws::WellArchitected::WellArchitectedClientConfiguration(),
+                              std::shared_ptr<WellArchitectedEndpointProviderBase> endpointProvider = Aws::MakeShared<WellArchitectedEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WellArchitectedClient(const Aws::Auth::AWSCredentials& credentials,
-                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<WellArchitectedEndpointProviderBase> endpointProvider = Aws::MakeShared<WellArchitectedEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::WellArchitected::WellArchitectedClientConfiguration& clientConfiguration = Aws::WellArchitected::WellArchitectedClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         WellArchitectedClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<WellArchitectedEndpointProviderBase> endpointProvider = Aws::MakeShared<WellArchitectedEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::WellArchitected::WellArchitectedClientConfiguration& clientConfiguration = Aws::WellArchitected::WellArchitectedClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WellArchitectedClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WellArchitectedClient(const Aws::Auth::AWSCredentials& credentials,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        WellArchitectedClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~WellArchitectedClient();
 
 
@@ -77,15 +105,15 @@ namespace WellArchitected
 
         /**
          * <p>Create a lens share.</p> <p>The owner of a lens can share it with other
-         * Amazon Web Services accounts and IAM users in the same Amazon Web Services
-         * Region. Shared access to a lens is not removed until the lens invitation is
-         * deleted.</p>  <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses
-         * with other Amazon Web Services accounts, you acknowledge that Amazon Web
-         * Services will make your custom lenses available to those other accounts. Those
-         * other accounts may continue to access and use your shared custom lenses even if
-         * you delete the custom lenses from your own Amazon Web Services account or
-         * terminate your Amazon Web Services account.</p> <p><h3>See Also:</h3>  
-         * <a
+         * Amazon Web Services accounts, IAM users, an organization, and organizational
+         * units (OUs) in the same Amazon Web Services Region. Shared access to a lens is
+         * not removed until the lens invitation is deleted.</p>  <p>
+         * <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web
+         * Services accounts, you acknowledge that Amazon Web Services will make your
+         * custom lenses available to those other accounts. Those other accounts may
+         * continue to access and use your shared custom lenses even if you delete the
+         * custom lenses from your own Amazon Web Services account or terminate your Amazon
+         * Web Services account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensShare">AWS
          * API Reference</a></p>
          */
@@ -141,9 +169,9 @@ namespace WellArchitected
 
         /**
          * <p>Create a new workload.</p> <p>The owner of a workload can share the workload
-         * with other Amazon Web Services accounts and IAM users in the same Amazon Web
-         * Services Region. Only the owner of a workload can delete it.</p> <p>For more
-         * information, see <a
+         * with other Amazon Web Services accounts, IAM users, an organization, and
+         * organizational units (OUs) in the same Amazon Web Services Region. Only the
+         * owner of a workload can delete it.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining
          * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -213,14 +241,15 @@ namespace WellArchitected
 
         /**
          * <p>Delete a lens share.</p> <p>After the lens share is deleted, Amazon Web
-         * Services accounts and IAM users that you shared the lens with can continue to
-         * use it, but they will no longer be able to apply it to new workloads.</p> 
-         * <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon
-         * Web Services accounts, you acknowledge that Amazon Web Services will make your
-         * custom lenses available to those other accounts. Those other accounts may
-         * continue to access and use your shared custom lenses even if you delete the
-         * custom lenses from your own Amazon Web Services account or terminate your Amazon
-         * Web Services account.</p> <p><h3>See Also:</h3>   <a
+         * Services accounts, IAM users, organizations, and organizational units (OUs) that
+         * you shared the lens with can continue to use it, but they will no longer be able
+         * to apply it to new workloads.</p>  <p> <b>Disclaimer</b> </p> <p>By
+         * sharing your custom lenses with other Amazon Web Services accounts, you
+         * acknowledge that Amazon Web Services will make your custom lenses available to
+         * those other accounts. Those other accounts may continue to access and use your
+         * shared custom lenses even if you delete the custom lenses from your own Amazon
+         * Web Services account or terminate your Amazon Web Services account.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLensShare">AWS
          * API Reference</a></p>
          */
@@ -484,6 +513,42 @@ namespace WellArchitected
          * An Async wrapper for ListAnswers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAnswersAsync(const Model::ListAnswersRequest& request, const ListAnswersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List of Trusted Advisor check details by account related to the
+         * workload.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCheckDetailsOutcome ListCheckDetails(const Model::ListCheckDetailsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCheckDetails that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCheckDetailsOutcomeCallable ListCheckDetailsCallable(const Model::ListCheckDetailsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCheckDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCheckDetailsAsync(const Model::ListCheckDetailsRequest& request, const ListCheckDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List of Trusted Advisor checks summarized for all accounts related to the
+         * workload.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckSummaries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCheckSummariesOutcome ListCheckSummaries(const Model::ListCheckSummariesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCheckSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCheckSummariesOutcomeCallable ListCheckSummariesCallable(const Model::ListCheckSummariesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCheckSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCheckSummariesAsync(const Model::ListCheckSummariesRequest& request, const ListCheckSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List lens review improvements.</p><p><h3>See Also:</h3>   <a
@@ -752,7 +817,10 @@ namespace WellArchitected
         virtual void UpdateLensReviewAsync(const Model::UpdateLensReviewRequest& request, const UpdateLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update a workload invitation.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a workload or custom lens share invitation.</p>  <p>This API
+         * operation can be called independently of any resource. Previous documentation
+         * implied that a workload ARN must be specified.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateShareInvitation">AWS
          * API Reference</a></p>
          */
@@ -821,12 +889,13 @@ namespace WellArchitected
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<WellArchitectedEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const WellArchitectedClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      WellArchitectedClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<WellArchitectedEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WellArchitected

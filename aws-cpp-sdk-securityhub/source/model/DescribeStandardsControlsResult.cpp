@@ -30,7 +30,7 @@ DescribeStandardsControlsResult& DescribeStandardsControlsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Controls"))
   {
-    Array<JsonView> controlsJsonList = jsonValue.GetArray("Controls");
+    Aws::Utils::Array<JsonView> controlsJsonList = jsonValue.GetArray("Controls");
     for(unsigned controlsIndex = 0; controlsIndex < controlsJsonList.GetLength(); ++controlsIndex)
     {
       m_controls.push_back(controlsJsonList[controlsIndex].AsObject());

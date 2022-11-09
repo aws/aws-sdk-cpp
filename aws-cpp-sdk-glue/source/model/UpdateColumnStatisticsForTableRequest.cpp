@@ -44,7 +44,7 @@ Aws::String UpdateColumnStatisticsForTableRequest::SerializePayload() const
 
   if(m_columnStatisticsListHasBeenSet)
   {
-   Array<JsonValue> columnStatisticsListJsonList(m_columnStatisticsList.size());
+   Aws::Utils::Array<JsonValue> columnStatisticsListJsonList(m_columnStatisticsList.size());
    for(unsigned columnStatisticsListIndex = 0; columnStatisticsListIndex < columnStatisticsListJsonList.GetLength(); ++columnStatisticsListIndex)
    {
      columnStatisticsListJsonList[columnStatisticsListIndex].AsObject(m_columnStatisticsList[columnStatisticsListIndex].Jsonize());

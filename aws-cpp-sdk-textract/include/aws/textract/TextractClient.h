@@ -23,27 +23,55 @@ namespace Textract
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        TextractClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        TextractClient(const Aws::Textract::TextractClientConfiguration& clientConfiguration = Aws::Textract::TextractClientConfiguration(),
+                       std::shared_ptr<TextractEndpointProviderBase> endpointProvider = Aws::MakeShared<TextractEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         TextractClient(const Aws::Auth::AWSCredentials& credentials,
-                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       std::shared_ptr<TextractEndpointProviderBase> endpointProvider = Aws::MakeShared<TextractEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::Textract::TextractClientConfiguration& clientConfiguration = Aws::Textract::TextractClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         TextractClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       std::shared_ptr<TextractEndpointProviderBase> endpointProvider = Aws::MakeShared<TextractEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::Textract::TextractClientConfiguration& clientConfiguration = Aws::Textract::TextractClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TextractClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TextractClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        TextractClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~TextractClient();
 
 
@@ -60,10 +88,11 @@ namespace Textract
          * <p>Lines and words of text. A LINE <code>Block</code> object contains one or
          * more WORD <code>Block</code> objects. All lines and words that are detected in
          * the document are returned (including text that doesn't have a relationship with
-         * the value of <code>FeatureTypes</code>). </p> </li> <li> <p>Queries.A
-         * QUERIES_RESULT Block object contains the answer to the query, the alias
-         * associated and an ID that connect it to the query asked. This Block also
-         * contains a location and attached confidence score.</p> </li> </ul> <p>Selection
+         * the value of <code>FeatureTypes</code>). </p> </li> <li> <p>Query. A QUERY Block
+         * object contains the query text, alias and link to the associated Query results
+         * block object.</p> </li> <li> <p>Query Result. A QUERY_RESULT Block object
+         * contains the answer to the query and an ID that connects it to the query asked.
+         * This Block also contains a confidence score.</p> </li> </ul> <p>Selection
          * elements such as check boxes and option buttons (radio buttons) can be detected
          * in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object
          * contains information about a selection element, including the selection
@@ -92,7 +121,7 @@ namespace Textract
         /**
          * <p> <code>AnalyzeExpense</code> synchronously analyzes an input document for
          * financially related relationships between text.</p> <p>Information is returned
-         * as <code>ExpenseDocuments</code> and seperated as follows.</p> <ul> <li> <p>
+         * as <code>ExpenseDocuments</code> and seperated as follows:</p> <ul> <li> <p>
          * <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which
          * store information about the lines of text, such as an item purchased and its
          * price on a receipt.</p> </li> <li> <p> <code>SummaryFields</code>- Contains all
@@ -136,16 +165,17 @@ namespace Textract
 
         /**
          * <p>Detects text in the input document. Amazon Textract can detect lines of text
-         * and the words that make up a line of text. The input document must be an image
-         * in JPEG, PNG, PDF, or TIFF format. <code>DetectDocumentText</code> returns the
-         * detected text in an array of <a>Block</a> objects. </p> <p>Each document page
-         * has as an associated <code>Block</code> of type PAGE. Each PAGE
-         * <code>Block</code> object is the parent of LINE <code>Block</code> objects that
-         * represent the lines of detected text on a page. A LINE <code>Block</code> object
-         * is a parent for each word that makes up the line. Words are represented by
-         * <code>Block</code> objects of type WORD.</p> <p> <code>DetectDocumentText</code>
-         * is a synchronous operation. To analyze documents asynchronously, use
-         * <a>StartDocumentTextDetection</a>.</p> <p>For more information, see <a
+         * and the words that make up a line of text. The input document must be in one of
+         * the following image formats: JPEG, PNG, PDF, or TIFF.
+         * <code>DetectDocumentText</code> returns the detected text in an array of
+         * <a>Block</a> objects. </p> <p>Each document page has as an associated
+         * <code>Block</code> of type PAGE. Each PAGE <code>Block</code> object is the
+         * parent of LINE <code>Block</code> objects that represent the lines of detected
+         * text on a page. A LINE <code>Block</code> object is a parent for each word that
+         * makes up the line. Words are represented by <code>Block</code> objects of type
+         * WORD.</p> <p> <code>DetectDocumentText</code> is a synchronous operation. To
+         * analyze documents asynchronously, use <a>StartDocumentTextDetection</a>.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
          * Text Detection</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">AWS
@@ -188,21 +218,25 @@ namespace Textract
          * <code>Block</code> objects. All lines and words that are detected in the
          * document are returned (including text that doesn't have a relationship with the
          * value of the <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input
-         * parameter). </p> </li> <li> <p>Queries. A QUERIES_RESULT Block object contains
-         * the answer to the query, the alias associated and an ID that connect it to the
-         * query asked. This Block also contains a location and attached confidence
-         * score</p> </li> </ul> <p>Selection elements such as check boxes and option
-         * buttons (radio buttons) can be detected in form data and in tables. A
-         * SELECTION_ELEMENT <code>Block</code> object contains information about a
-         * selection element, including the selection status.</p> <p>Use the
-         * <code>MaxResults</code> parameter to limit the number of blocks that are
-         * returned. If there are more results than specified in <code>MaxResults</code>,
-         * the value of <code>NextToken</code> in the operation response contains a
-         * pagination token for getting the next set of results. To get the next page of
-         * results, call <code>GetDocumentAnalysis</code>, and populate the
-         * <code>NextToken</code> request parameter with the token value that's returned
-         * from the previous call to <code>GetDocumentAnalysis</code>.</p> <p>For more
-         * information, see <a
+         * parameter). </p> </li> <li> <p>Query. A QUERY Block object contains the query
+         * text, alias and link to the associated Query results block object.</p> </li>
+         * <li> <p>Query Results. A QUERY_RESULT Block object contains the answer to the
+         * query and an ID that connects it to the query asked. This Block also contains a
+         * confidence score.</p> </li> </ul>  <p>While processing a document with
+         * queries, look out for <code>INVALID_REQUEST_PARAMETERS</code> output. This
+         * indicates that either the per page query limit has been exceeded or that the
+         * operation is trying to query a page in the document which doesn’t exist. </p>
+         *  <p>Selection elements such as check boxes and option buttons (radio
+         * buttons) can be detected in form data and in tables. A SELECTION_ELEMENT
+         * <code>Block</code> object contains information about a selection element,
+         * including the selection status.</p> <p>Use the <code>MaxResults</code> parameter
+         * to limit the number of blocks that are returned. If there are more results than
+         * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the
+         * operation response contains a pagination token for getting the next set of
+         * results. To get the next page of results, call <code>GetDocumentAnalysis</code>,
+         * and populate the <code>NextToken</code> request parameter with the token value
+         * that's returned from the previous call to <code>GetDocumentAnalysis</code>.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
          * Text Analysis</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentAnalysis">AWS
@@ -403,12 +437,13 @@ namespace Textract
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<TextractEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const TextractClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      TextractClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<TextractEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Textract

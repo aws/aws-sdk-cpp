@@ -35,7 +35,7 @@ GeoMatchStatement& GeoMatchStatement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CountryCodes"))
   {
-    Array<JsonView> countryCodesJsonList = jsonValue.GetArray("CountryCodes");
+    Aws::Utils::Array<JsonView> countryCodesJsonList = jsonValue.GetArray("CountryCodes");
     for(unsigned countryCodesIndex = 0; countryCodesIndex < countryCodesJsonList.GetLength(); ++countryCodesIndex)
     {
       m_countryCodes.push_back(CountryCodeMapper::GetCountryCodeForName(countryCodesJsonList[countryCodesIndex].AsString()));
@@ -59,7 +59,7 @@ JsonValue GeoMatchStatement::Jsonize() const
 
   if(m_countryCodesHasBeenSet)
   {
-   Array<JsonValue> countryCodesJsonList(m_countryCodes.size());
+   Aws::Utils::Array<JsonValue> countryCodesJsonList(m_countryCodes.size());
    for(unsigned countryCodesIndex = 0; countryCodesIndex < countryCodesJsonList.GetLength(); ++countryCodesIndex)
    {
      countryCodesJsonList[countryCodesIndex].AsString(CountryCodeMapper::GetNameForCountryCode(m_countryCodes[countryCodesIndex]));

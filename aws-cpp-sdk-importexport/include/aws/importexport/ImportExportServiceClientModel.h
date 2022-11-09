@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/importexport/ImportExportErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/importexport/ImportExportEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -55,6 +57,10 @@ namespace Aws
 
   namespace ImportExport
   {
+    using ImportExportClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ImportExportEndpointProviderBase = Aws::ImportExport::Endpoint::ImportExportEndpointProviderBase;
+    using ImportExportEndpointProvider = Aws::ImportExport::Endpoint::ImportExportEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ImportExportClient header */

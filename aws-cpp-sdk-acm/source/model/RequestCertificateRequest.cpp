@@ -21,7 +21,9 @@ RequestCertificateRequest::RequestCertificateRequest() :
     m_domainValidationOptionsHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_certificateAuthorityArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
+    m_keyAlgorithmHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,7 @@ Aws::String RequestCertificateRequest::SerializePayload() const
 
   if(m_subjectAlternativeNamesHasBeenSet)
   {
-   Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
+   Aws::Utils::Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
    for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
    {
      subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsString(m_subjectAlternativeNames[subjectAlternativeNamesIndex]);
@@ -59,7 +61,7 @@ Aws::String RequestCertificateRequest::SerializePayload() const
 
   if(m_domainValidationOptionsHasBeenSet)
   {
-   Array<JsonValue> domainValidationOptionsJsonList(m_domainValidationOptions.size());
+   Aws::Utils::Array<JsonValue> domainValidationOptionsJsonList(m_domainValidationOptions.size());
    for(unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength(); ++domainValidationOptionsIndex)
    {
      domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject(m_domainValidationOptions[domainValidationOptionsIndex].Jsonize());
@@ -82,13 +84,18 @@ Aws::String RequestCertificateRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_keyAlgorithmHasBeenSet)
+  {
+   payload.WithString("KeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyAlgorithm));
   }
 
   return payload.View().WriteReadable();

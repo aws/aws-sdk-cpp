@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/kinesis/KinesisErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/kinesis/KinesisEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -66,6 +68,10 @@ namespace Aws
 
   namespace Kinesis
   {
+    using KinesisClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisEndpointProviderBase = Aws::Kinesis::Endpoint::KinesisEndpointProviderBase;
+    using KinesisEndpointProvider = Aws::Kinesis::Endpoint::KinesisEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in KinesisClient header */

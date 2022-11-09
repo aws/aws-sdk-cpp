@@ -33,7 +33,7 @@ Aws::String DescribeVTLDevicesRequest::SerializePayload() const
 
   if(m_vTLDeviceARNsHasBeenSet)
   {
-   Array<JsonValue> vTLDeviceARNsJsonList(m_vTLDeviceARNs.size());
+   Aws::Utils::Array<JsonValue> vTLDeviceARNsJsonList(m_vTLDeviceARNs.size());
    for(unsigned vTLDeviceARNsIndex = 0; vTLDeviceARNsIndex < vTLDeviceARNsJsonList.GetLength(); ++vTLDeviceARNsIndex)
    {
      vTLDeviceARNsJsonList[vTLDeviceARNsIndex].AsString(m_vTLDeviceARNs[vTLDeviceARNsIndex]);

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/wellarchitected/WellArchitectedErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/wellarchitected/WellArchitectedEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -31,6 +33,8 @@
 #include <aws/wellarchitected/model/GetWorkloadResult.h>
 #include <aws/wellarchitected/model/ImportLensResult.h>
 #include <aws/wellarchitected/model/ListAnswersResult.h>
+#include <aws/wellarchitected/model/ListCheckDetailsResult.h>
+#include <aws/wellarchitected/model/ListCheckSummariesResult.h>
 #include <aws/wellarchitected/model/ListLensReviewImprovementsResult.h>
 #include <aws/wellarchitected/model/ListLensReviewsResult.h>
 #include <aws/wellarchitected/model/ListLensSharesResult.h>
@@ -82,6 +86,10 @@ namespace Aws
 
   namespace WellArchitected
   {
+    using WellArchitectedClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WellArchitectedEndpointProviderBase = Aws::WellArchitected::Endpoint::WellArchitectedEndpointProviderBase;
+    using WellArchitectedEndpointProvider = Aws::WellArchitected::Endpoint::WellArchitectedEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in WellArchitectedClient header */
@@ -106,6 +114,8 @@ namespace Aws
       class GetWorkloadRequest;
       class ImportLensRequest;
       class ListAnswersRequest;
+      class ListCheckDetailsRequest;
+      class ListCheckSummariesRequest;
       class ListLensReviewImprovementsRequest;
       class ListLensReviewsRequest;
       class ListLensSharesRequest;
@@ -149,6 +159,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetWorkloadResult, WellArchitectedError> GetWorkloadOutcome;
       typedef Aws::Utils::Outcome<ImportLensResult, WellArchitectedError> ImportLensOutcome;
       typedef Aws::Utils::Outcome<ListAnswersResult, WellArchitectedError> ListAnswersOutcome;
+      typedef Aws::Utils::Outcome<ListCheckDetailsResult, WellArchitectedError> ListCheckDetailsOutcome;
+      typedef Aws::Utils::Outcome<ListCheckSummariesResult, WellArchitectedError> ListCheckSummariesOutcome;
       typedef Aws::Utils::Outcome<ListLensReviewImprovementsResult, WellArchitectedError> ListLensReviewImprovementsOutcome;
       typedef Aws::Utils::Outcome<ListLensReviewsResult, WellArchitectedError> ListLensReviewsOutcome;
       typedef Aws::Utils::Outcome<ListLensSharesResult, WellArchitectedError> ListLensSharesOutcome;
@@ -192,6 +204,8 @@ namespace Aws
       typedef std::future<GetWorkloadOutcome> GetWorkloadOutcomeCallable;
       typedef std::future<ImportLensOutcome> ImportLensOutcomeCallable;
       typedef std::future<ListAnswersOutcome> ListAnswersOutcomeCallable;
+      typedef std::future<ListCheckDetailsOutcome> ListCheckDetailsOutcomeCallable;
+      typedef std::future<ListCheckSummariesOutcome> ListCheckSummariesOutcomeCallable;
       typedef std::future<ListLensReviewImprovementsOutcome> ListLensReviewImprovementsOutcomeCallable;
       typedef std::future<ListLensReviewsOutcome> ListLensReviewsOutcomeCallable;
       typedef std::future<ListLensSharesOutcome> ListLensSharesOutcomeCallable;
@@ -238,6 +252,8 @@ namespace Aws
     typedef std::function<void(const WellArchitectedClient*, const Model::GetWorkloadRequest&, const Model::GetWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkloadResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ImportLensRequest&, const Model::ImportLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportLensResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListAnswersRequest&, const Model::ListAnswersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnswersResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ListCheckDetailsRequest&, const Model::ListCheckDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCheckDetailsResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ListCheckSummariesRequest&, const Model::ListCheckSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCheckSummariesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListLensReviewImprovementsRequest&, const Model::ListLensReviewImprovementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLensReviewImprovementsResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListLensReviewsRequest&, const Model::ListLensReviewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLensReviewsResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListLensSharesRequest&, const Model::ListLensSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLensSharesResponseReceivedHandler;

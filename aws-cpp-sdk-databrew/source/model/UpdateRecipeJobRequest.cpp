@@ -66,7 +66,7 @@ Aws::String UpdateRecipeJobRequest::SerializePayload() const
 
   if(m_outputsHasBeenSet)
   {
-   Array<JsonValue> outputsJsonList(m_outputs.size());
+   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
    for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
    {
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
@@ -77,7 +77,7 @@ Aws::String UpdateRecipeJobRequest::SerializePayload() const
 
   if(m_dataCatalogOutputsHasBeenSet)
   {
-   Array<JsonValue> dataCatalogOutputsJsonList(m_dataCatalogOutputs.size());
+   Aws::Utils::Array<JsonValue> dataCatalogOutputsJsonList(m_dataCatalogOutputs.size());
    for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
    {
      dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject(m_dataCatalogOutputs[dataCatalogOutputsIndex].Jsonize());
@@ -88,7 +88,7 @@ Aws::String UpdateRecipeJobRequest::SerializePayload() const
 
   if(m_databaseOutputsHasBeenSet)
   {
-   Array<JsonValue> databaseOutputsJsonList(m_databaseOutputs.size());
+   Aws::Utils::Array<JsonValue> databaseOutputsJsonList(m_databaseOutputs.size());
    for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
    {
      databaseOutputsJsonList[databaseOutputsIndex].AsObject(m_databaseOutputs[databaseOutputsIndex].Jsonize());

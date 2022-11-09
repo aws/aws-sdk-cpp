@@ -225,7 +225,7 @@ function(add_sdks)
                             continue()
                         endif()
                     endif()
-                    STRING(REPLACE "," ";" LIST_RESULT ${TEST_PROJECTS})
+                    STRING(REPLACE "," ";" LIST_RESULT "${TEST_PROJECTS}")
                     foreach(TEST_PROJECT IN LISTS LIST_RESULT)
                         if(TEST_PROJECT)
                             # before we add the test, make sure all of its dependencies are present

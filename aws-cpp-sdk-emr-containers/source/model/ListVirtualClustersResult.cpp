@@ -30,7 +30,7 @@ ListVirtualClustersResult& ListVirtualClustersResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("virtualClusters"))
   {
-    Array<JsonView> virtualClustersJsonList = jsonValue.GetArray("virtualClusters");
+    Aws::Utils::Array<JsonView> virtualClustersJsonList = jsonValue.GetArray("virtualClusters");
     for(unsigned virtualClustersIndex = 0; virtualClustersIndex < virtualClustersJsonList.GetLength(); ++virtualClustersIndex)
     {
       m_virtualClusters.push_back(virtualClustersJsonList[virtualClustersIndex].AsObject());

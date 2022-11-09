@@ -25,27 +25,55 @@ namespace ACM
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ACMClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ACMClient(const Aws::ACM::ACMClientConfiguration& clientConfiguration = Aws::ACM::ACMClientConfiguration(),
+                  std::shared_ptr<ACMEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ACMClient(const Aws::Auth::AWSCredentials& credentials,
-                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<ACMEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::ACM::ACMClientConfiguration& clientConfiguration = Aws::ACM::ACMClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ACMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<ACMEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::ACM::ACMClientConfiguration& clientConfiguration = Aws::ACM::ACMClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ACMClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ACMClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ACMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ACMClient();
 
 
@@ -340,9 +368,9 @@ namespace ACM
 
         /**
          * <p>Renews an eligible ACM certificate. At this time, only exported private
-         * certificates can be renewed with this operation. In order to renew your ACM
-         * Private CA certificates with ACM, you must first <a
-         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant
+         * certificates can be renewed with this operation. In order to renew your Amazon
+         * Web Services Private CA certificates with ACM, you must first <a
+         * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant
          * the ACM service principal permission to do so</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
          * Managed Renewal</a> in the ACM User Guide.</p><p><h3>See Also:</h3>   <a
@@ -449,12 +477,13 @@ namespace ACM
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ACMEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const ACMClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ACMClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ACMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ACM

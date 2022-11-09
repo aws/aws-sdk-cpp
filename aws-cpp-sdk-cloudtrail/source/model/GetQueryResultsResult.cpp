@@ -44,10 +44,10 @@ GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("QueryResultRows"))
   {
-    Array<JsonView> queryResultRowsJsonList = jsonValue.GetArray("QueryResultRows");
+    Aws::Utils::Array<JsonView> queryResultRowsJsonList = jsonValue.GetArray("QueryResultRows");
     for(unsigned queryResultRowsIndex = 0; queryResultRowsIndex < queryResultRowsJsonList.GetLength(); ++queryResultRowsIndex)
     {
-      Array<JsonView> queryResultRowJsonList = queryResultRowsJsonList[queryResultRowsIndex].AsArray();
+      Aws::Utils::Array<JsonView> queryResultRowJsonList = queryResultRowsJsonList[queryResultRowsIndex].AsArray();
       Aws::Vector<Aws::Map<Aws::String, Aws::String>> queryResultRowList;
       queryResultRowList.reserve((size_t)queryResultRowJsonList.GetLength());
       for(unsigned queryResultRowIndex = 0; queryResultRowIndex < queryResultRowJsonList.GetLength(); ++queryResultRowIndex)

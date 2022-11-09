@@ -39,7 +39,7 @@ ContentSourceConfiguration& ContentSourceConfiguration::operator =(JsonView json
 {
   if(jsonValue.ValueExists("DataSourceIds"))
   {
-    Array<JsonView> dataSourceIdsJsonList = jsonValue.GetArray("DataSourceIds");
+    Aws::Utils::Array<JsonView> dataSourceIdsJsonList = jsonValue.GetArray("DataSourceIds");
     for(unsigned dataSourceIdsIndex = 0; dataSourceIdsIndex < dataSourceIdsJsonList.GetLength(); ++dataSourceIdsIndex)
     {
       m_dataSourceIds.push_back(dataSourceIdsJsonList[dataSourceIdsIndex].AsString());
@@ -49,7 +49,7 @@ ContentSourceConfiguration& ContentSourceConfiguration::operator =(JsonView json
 
   if(jsonValue.ValueExists("FaqIds"))
   {
-    Array<JsonView> faqIdsJsonList = jsonValue.GetArray("FaqIds");
+    Aws::Utils::Array<JsonView> faqIdsJsonList = jsonValue.GetArray("FaqIds");
     for(unsigned faqIdsIndex = 0; faqIdsIndex < faqIdsJsonList.GetLength(); ++faqIdsIndex)
     {
       m_faqIds.push_back(faqIdsJsonList[faqIdsIndex].AsString());
@@ -73,7 +73,7 @@ JsonValue ContentSourceConfiguration::Jsonize() const
 
   if(m_dataSourceIdsHasBeenSet)
   {
-   Array<JsonValue> dataSourceIdsJsonList(m_dataSourceIds.size());
+   Aws::Utils::Array<JsonValue> dataSourceIdsJsonList(m_dataSourceIds.size());
    for(unsigned dataSourceIdsIndex = 0; dataSourceIdsIndex < dataSourceIdsJsonList.GetLength(); ++dataSourceIdsIndex)
    {
      dataSourceIdsJsonList[dataSourceIdsIndex].AsString(m_dataSourceIds[dataSourceIdsIndex]);
@@ -84,7 +84,7 @@ JsonValue ContentSourceConfiguration::Jsonize() const
 
   if(m_faqIdsHasBeenSet)
   {
-   Array<JsonValue> faqIdsJsonList(m_faqIds.size());
+   Aws::Utils::Array<JsonValue> faqIdsJsonList(m_faqIds.size());
    for(unsigned faqIdsIndex = 0; faqIdsIndex < faqIdsJsonList.GetLength(); ++faqIdsIndex)
    {
      faqIdsJsonList[faqIdsIndex].AsString(m_faqIds[faqIdsIndex]);

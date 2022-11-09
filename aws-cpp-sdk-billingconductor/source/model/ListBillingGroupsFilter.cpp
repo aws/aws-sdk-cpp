@@ -35,7 +35,7 @@ ListBillingGroupsFilter& ListBillingGroupsFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arns"))
   {
-    Array<JsonView> arnsJsonList = jsonValue.GetArray("Arns");
+    Aws::Utils::Array<JsonView> arnsJsonList = jsonValue.GetArray("Arns");
     for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
     {
       m_arns.push_back(arnsJsonList[arnsIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue ListBillingGroupsFilter::Jsonize() const
 
   if(m_arnsHasBeenSet)
   {
-   Array<JsonValue> arnsJsonList(m_arns.size());
+   Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
    for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
    {
      arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);

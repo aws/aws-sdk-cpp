@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/discovery/ApplicationDiscoveryServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/discovery/ApplicationDiscoveryServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -72,6 +74,10 @@ namespace Aws
 
   namespace ApplicationDiscoveryService
   {
+    using ApplicationDiscoveryServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApplicationDiscoveryServiceEndpointProviderBase = Aws::ApplicationDiscoveryService::Endpoint::ApplicationDiscoveryServiceEndpointProviderBase;
+    using ApplicationDiscoveryServiceEndpointProvider = Aws::ApplicationDiscoveryService::Endpoint::ApplicationDiscoveryServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ApplicationDiscoveryServiceClient header */

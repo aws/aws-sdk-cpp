@@ -75,7 +75,7 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   if(m_platformsHasBeenSet)
   {
-   Array<JsonValue> platformsJsonList(m_platforms.size());
+   Aws::Utils::Array<JsonValue> platformsJsonList(m_platforms.size());
    for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
    {
      platformsJsonList[platformsIndex].AsString(PlatformTypeMapper::GetNameForPlatformType(m_platforms[platformsIndex]));
@@ -86,7 +86,7 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   if(m_instanceFamiliesHasBeenSet)
   {
-   Array<JsonValue> instanceFamiliesJsonList(m_instanceFamilies.size());
+   Aws::Utils::Array<JsonValue> instanceFamiliesJsonList(m_instanceFamilies.size());
    for(unsigned instanceFamiliesIndex = 0; instanceFamiliesIndex < instanceFamiliesJsonList.GetLength(); ++instanceFamiliesIndex)
    {
      instanceFamiliesJsonList[instanceFamiliesIndex].AsString(m_instanceFamilies[instanceFamiliesIndex]);

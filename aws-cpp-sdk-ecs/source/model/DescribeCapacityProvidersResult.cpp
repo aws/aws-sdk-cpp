@@ -30,7 +30,7 @@ DescribeCapacityProvidersResult& DescribeCapacityProvidersResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("capacityProviders"))
   {
-    Array<JsonView> capacityProvidersJsonList = jsonValue.GetArray("capacityProviders");
+    Aws::Utils::Array<JsonView> capacityProvidersJsonList = jsonValue.GetArray("capacityProviders");
     for(unsigned capacityProvidersIndex = 0; capacityProvidersIndex < capacityProvidersJsonList.GetLength(); ++capacityProvidersIndex)
     {
       m_capacityProviders.push_back(capacityProvidersJsonList[capacityProvidersIndex].AsObject());
@@ -39,7 +39,7 @@ DescribeCapacityProvidersResult& DescribeCapacityProvidersResult::operator =(con
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

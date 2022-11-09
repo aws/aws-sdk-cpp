@@ -30,7 +30,7 @@ ResolveComponentCandidatesResult& ResolveComponentCandidatesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resolvedComponentVersions"))
   {
-    Array<JsonView> resolvedComponentVersionsJsonList = jsonValue.GetArray("resolvedComponentVersions");
+    Aws::Utils::Array<JsonView> resolvedComponentVersionsJsonList = jsonValue.GetArray("resolvedComponentVersions");
     for(unsigned resolvedComponentVersionsIndex = 0; resolvedComponentVersionsIndex < resolvedComponentVersionsJsonList.GetLength(); ++resolvedComponentVersionsIndex)
     {
       m_resolvedComponentVersions.push_back(resolvedComponentVersionsJsonList[resolvedComponentVersionsIndex].AsObject());

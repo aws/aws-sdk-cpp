@@ -42,7 +42,7 @@ CreateCommitResult& CreateCommitResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("filesAdded"))
   {
-    Array<JsonView> filesAddedJsonList = jsonValue.GetArray("filesAdded");
+    Aws::Utils::Array<JsonView> filesAddedJsonList = jsonValue.GetArray("filesAdded");
     for(unsigned filesAddedIndex = 0; filesAddedIndex < filesAddedJsonList.GetLength(); ++filesAddedIndex)
     {
       m_filesAdded.push_back(filesAddedJsonList[filesAddedIndex].AsObject());
@@ -51,7 +51,7 @@ CreateCommitResult& CreateCommitResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("filesUpdated"))
   {
-    Array<JsonView> filesUpdatedJsonList = jsonValue.GetArray("filesUpdated");
+    Aws::Utils::Array<JsonView> filesUpdatedJsonList = jsonValue.GetArray("filesUpdated");
     for(unsigned filesUpdatedIndex = 0; filesUpdatedIndex < filesUpdatedJsonList.GetLength(); ++filesUpdatedIndex)
     {
       m_filesUpdated.push_back(filesUpdatedJsonList[filesUpdatedIndex].AsObject());
@@ -60,7 +60,7 @@ CreateCommitResult& CreateCommitResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("filesDeleted"))
   {
-    Array<JsonView> filesDeletedJsonList = jsonValue.GetArray("filesDeleted");
+    Aws::Utils::Array<JsonView> filesDeletedJsonList = jsonValue.GetArray("filesDeleted");
     for(unsigned filesDeletedIndex = 0; filesDeletedIndex < filesDeletedJsonList.GetLength(); ++filesDeletedIndex)
     {
       m_filesDeleted.push_back(filesDeletedJsonList[filesDeletedIndex].AsObject());

@@ -180,7 +180,7 @@ Branch& Branch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("customDomains"))
   {
-    Array<JsonView> customDomainsJsonList = jsonValue.GetArray("customDomains");
+    Aws::Utils::Array<JsonView> customDomainsJsonList = jsonValue.GetArray("customDomains");
     for(unsigned customDomainsIndex = 0; customDomainsIndex < customDomainsJsonList.GetLength(); ++customDomainsIndex)
     {
       m_customDomains.push_back(customDomainsJsonList[customDomainsIndex].AsString());
@@ -253,7 +253,7 @@ Branch& Branch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("associatedResources"))
   {
-    Array<JsonView> associatedResourcesJsonList = jsonValue.GetArray("associatedResources");
+    Aws::Utils::Array<JsonView> associatedResourcesJsonList = jsonValue.GetArray("associatedResources");
     for(unsigned associatedResourcesIndex = 0; associatedResourcesIndex < associatedResourcesJsonList.GetLength(); ++associatedResourcesIndex)
     {
       m_associatedResources.push_back(associatedResourcesJsonList[associatedResourcesIndex].AsString());
@@ -378,7 +378,7 @@ JsonValue Branch::Jsonize() const
 
   if(m_customDomainsHasBeenSet)
   {
-   Array<JsonValue> customDomainsJsonList(m_customDomains.size());
+   Aws::Utils::Array<JsonValue> customDomainsJsonList(m_customDomains.size());
    for(unsigned customDomainsIndex = 0; customDomainsIndex < customDomainsJsonList.GetLength(); ++customDomainsIndex)
    {
      customDomainsJsonList[customDomainsIndex].AsString(m_customDomains[customDomainsIndex]);
@@ -443,7 +443,7 @@ JsonValue Branch::Jsonize() const
 
   if(m_associatedResourcesHasBeenSet)
   {
-   Array<JsonValue> associatedResourcesJsonList(m_associatedResources.size());
+   Aws::Utils::Array<JsonValue> associatedResourcesJsonList(m_associatedResources.size());
    for(unsigned associatedResourcesIndex = 0; associatedResourcesIndex < associatedResourcesJsonList.GetLength(); ++associatedResourcesIndex)
    {
      associatedResourcesJsonList[associatedResourcesIndex].AsString(m_associatedResources[associatedResourcesIndex]);

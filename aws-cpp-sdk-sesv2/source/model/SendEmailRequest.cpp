@@ -50,7 +50,7 @@ Aws::String SendEmailRequest::SerializePayload() const
 
   if(m_replyToAddressesHasBeenSet)
   {
-   Array<JsonValue> replyToAddressesJsonList(m_replyToAddresses.size());
+   Aws::Utils::Array<JsonValue> replyToAddressesJsonList(m_replyToAddresses.size());
    for(unsigned replyToAddressesIndex = 0; replyToAddressesIndex < replyToAddressesJsonList.GetLength(); ++replyToAddressesIndex)
    {
      replyToAddressesJsonList[replyToAddressesIndex].AsString(m_replyToAddresses[replyToAddressesIndex]);
@@ -79,7 +79,7 @@ Aws::String SendEmailRequest::SerializePayload() const
 
   if(m_emailTagsHasBeenSet)
   {
-   Array<JsonValue> emailTagsJsonList(m_emailTags.size());
+   Aws::Utils::Array<JsonValue> emailTagsJsonList(m_emailTags.size());
    for(unsigned emailTagsIndex = 0; emailTagsIndex < emailTagsJsonList.GetLength(); ++emailTagsIndex)
    {
      emailTagsJsonList[emailTagsIndex].AsObject(m_emailTags[emailTagsIndex].Jsonize());

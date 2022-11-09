@@ -23,7 +23,7 @@ Aws::String DescribeStorediSCSIVolumesRequest::SerializePayload() const
 
   if(m_volumeARNsHasBeenSet)
   {
-   Array<JsonValue> volumeARNsJsonList(m_volumeARNs.size());
+   Aws::Utils::Array<JsonValue> volumeARNsJsonList(m_volumeARNs.size());
    for(unsigned volumeARNsIndex = 0; volumeARNsIndex < volumeARNsJsonList.GetLength(); ++volumeARNsIndex)
    {
      volumeARNsJsonList[volumeARNsIndex].AsString(m_volumeARNs[volumeARNsIndex]);

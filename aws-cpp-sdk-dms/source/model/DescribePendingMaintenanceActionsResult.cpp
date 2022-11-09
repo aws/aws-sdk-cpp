@@ -30,7 +30,7 @@ DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PendingMaintenanceActions"))
   {
-    Array<JsonView> pendingMaintenanceActionsJsonList = jsonValue.GetArray("PendingMaintenanceActions");
+    Aws::Utils::Array<JsonView> pendingMaintenanceActionsJsonList = jsonValue.GetArray("PendingMaintenanceActions");
     for(unsigned pendingMaintenanceActionsIndex = 0; pendingMaintenanceActionsIndex < pendingMaintenanceActionsJsonList.GetLength(); ++pendingMaintenanceActionsIndex)
     {
       m_pendingMaintenanceActions.push_back(pendingMaintenanceActionsJsonList[pendingMaintenanceActionsIndex].AsObject());

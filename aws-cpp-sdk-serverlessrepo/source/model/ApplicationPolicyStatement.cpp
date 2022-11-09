@@ -39,7 +39,7 @@ ApplicationPolicyStatement& ApplicationPolicyStatement::operator =(JsonView json
 {
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsString());
@@ -49,7 +49,7 @@ ApplicationPolicyStatement& ApplicationPolicyStatement::operator =(JsonView json
 
   if(jsonValue.ValueExists("principalOrgIDs"))
   {
-    Array<JsonView> principalOrgIDsJsonList = jsonValue.GetArray("principalOrgIDs");
+    Aws::Utils::Array<JsonView> principalOrgIDsJsonList = jsonValue.GetArray("principalOrgIDs");
     for(unsigned principalOrgIDsIndex = 0; principalOrgIDsIndex < principalOrgIDsJsonList.GetLength(); ++principalOrgIDsIndex)
     {
       m_principalOrgIDs.push_back(principalOrgIDsJsonList[principalOrgIDsIndex].AsString());
@@ -59,7 +59,7 @@ ApplicationPolicyStatement& ApplicationPolicyStatement::operator =(JsonView json
 
   if(jsonValue.ValueExists("principals"))
   {
-    Array<JsonView> principalsJsonList = jsonValue.GetArray("principals");
+    Aws::Utils::Array<JsonView> principalsJsonList = jsonValue.GetArray("principals");
     for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
     {
       m_principals.push_back(principalsJsonList[principalsIndex].AsString());
@@ -83,7 +83,7 @@ JsonValue ApplicationPolicyStatement::Jsonize() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsString(m_actions[actionsIndex]);
@@ -94,7 +94,7 @@ JsonValue ApplicationPolicyStatement::Jsonize() const
 
   if(m_principalOrgIDsHasBeenSet)
   {
-   Array<JsonValue> principalOrgIDsJsonList(m_principalOrgIDs.size());
+   Aws::Utils::Array<JsonValue> principalOrgIDsJsonList(m_principalOrgIDs.size());
    for(unsigned principalOrgIDsIndex = 0; principalOrgIDsIndex < principalOrgIDsJsonList.GetLength(); ++principalOrgIDsIndex)
    {
      principalOrgIDsJsonList[principalOrgIDsIndex].AsString(m_principalOrgIDs[principalOrgIDsIndex]);
@@ -105,7 +105,7 @@ JsonValue ApplicationPolicyStatement::Jsonize() const
 
   if(m_principalsHasBeenSet)
   {
-   Array<JsonValue> principalsJsonList(m_principals.size());
+   Aws::Utils::Array<JsonValue> principalsJsonList(m_principals.size());
    for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
    {
      principalsJsonList[principalsIndex].AsString(m_principals[principalsIndex]);

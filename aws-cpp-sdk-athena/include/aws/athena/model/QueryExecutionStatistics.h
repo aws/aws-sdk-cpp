@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/athena/model/ResultReuseInformation.h>
 #include <utility>
 
 namespace Aws
@@ -293,6 +294,43 @@ namespace Model
      */
     inline QueryExecutionStatistics& WithServiceProcessingTimeInMillis(long long value) { SetServiceProcessingTimeInMillis(value); return *this;}
 
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline const ResultReuseInformation& GetResultReuseInformation() const{ return m_resultReuseInformation; }
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline bool ResultReuseInformationHasBeenSet() const { return m_resultReuseInformationHasBeenSet; }
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline void SetResultReuseInformation(const ResultReuseInformation& value) { m_resultReuseInformationHasBeenSet = true; m_resultReuseInformation = value; }
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline void SetResultReuseInformation(ResultReuseInformation&& value) { m_resultReuseInformationHasBeenSet = true; m_resultReuseInformation = std::move(value); }
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline QueryExecutionStatistics& WithResultReuseInformation(const ResultReuseInformation& value) { SetResultReuseInformation(value); return *this;}
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline QueryExecutionStatistics& WithResultReuseInformation(ResultReuseInformation&& value) { SetResultReuseInformation(std::move(value)); return *this;}
+
   private:
 
     long long m_engineExecutionTimeInMillis;
@@ -315,6 +353,9 @@ namespace Model
 
     long long m_serviceProcessingTimeInMillis;
     bool m_serviceProcessingTimeInMillisHasBeenSet = false;
+
+    ResultReuseInformation m_resultReuseInformation;
+    bool m_resultReuseInformationHasBeenSet = false;
   };
 
 } // namespace Model

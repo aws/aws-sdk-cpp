@@ -30,7 +30,7 @@ Aws::String UpdateEndpointWeightsAndCapacitiesRequest::SerializePayload() const
 
   if(m_desiredWeightsAndCapacitiesHasBeenSet)
   {
-   Array<JsonValue> desiredWeightsAndCapacitiesJsonList(m_desiredWeightsAndCapacities.size());
+   Aws::Utils::Array<JsonValue> desiredWeightsAndCapacitiesJsonList(m_desiredWeightsAndCapacities.size());
    for(unsigned desiredWeightsAndCapacitiesIndex = 0; desiredWeightsAndCapacitiesIndex < desiredWeightsAndCapacitiesJsonList.GetLength(); ++desiredWeightsAndCapacitiesIndex)
    {
      desiredWeightsAndCapacitiesJsonList[desiredWeightsAndCapacitiesIndex].AsObject(m_desiredWeightsAndCapacities[desiredWeightsAndCapacitiesIndex].Jsonize());

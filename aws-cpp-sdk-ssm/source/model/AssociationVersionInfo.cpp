@@ -115,7 +115,7 @@ AssociationVersionInfo& AssociationVersionInfo::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
+      Aws::Utils::Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> parameterValueListList;
       parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
@@ -129,7 +129,7 @@ AssociationVersionInfo& AssociationVersionInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
@@ -195,7 +195,7 @@ AssociationVersionInfo& AssociationVersionInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CalendarNames"))
   {
-    Array<JsonView> calendarNamesJsonList = jsonValue.GetArray("CalendarNames");
+    Aws::Utils::Array<JsonView> calendarNamesJsonList = jsonValue.GetArray("CalendarNames");
     for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
     {
       m_calendarNames.push_back(calendarNamesJsonList[calendarNamesIndex].AsString());
@@ -205,7 +205,7 @@ AssociationVersionInfo& AssociationVersionInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetLocations"))
   {
-    Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
+    Aws::Utils::Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
     for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
     {
       m_targetLocations.push_back(targetLocationsJsonList[targetLocationsIndex].AsObject());
@@ -222,14 +222,14 @@ AssociationVersionInfo& AssociationVersionInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetMaps"))
   {
-    Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
+    Aws::Utils::Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
     for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
     {
       Aws::Map<Aws::String, JsonView> targetMapJsonMap = targetMapsJsonList[targetMapsIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::Vector<Aws::String>> targetMapMap;
       for(auto& targetMapItem : targetMapJsonMap)
       {
-        Array<JsonView> targetMapValueListJsonList = targetMapItem.second.AsArray();
+        Aws::Utils::Array<JsonView> targetMapValueListJsonList = targetMapItem.second.AsArray();
         Aws::Vector<Aws::String> targetMapValueListList;
         targetMapValueListList.reserve((size_t)targetMapValueListJsonList.GetLength());
         for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
@@ -284,7 +284,7 @@ JsonValue AssociationVersionInfo::Jsonize() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> parameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> parameterValueListJsonList(parametersItem.second.size());
      for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
      {
        parameterValueListJsonList[parameterValueListIndex].AsString(parametersItem.second[parameterValueListIndex]);
@@ -297,7 +297,7 @@ JsonValue AssociationVersionInfo::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
@@ -354,7 +354,7 @@ JsonValue AssociationVersionInfo::Jsonize() const
 
   if(m_calendarNamesHasBeenSet)
   {
-   Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
+   Aws::Utils::Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
    for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
    {
      calendarNamesJsonList[calendarNamesIndex].AsString(m_calendarNames[calendarNamesIndex]);
@@ -365,7 +365,7 @@ JsonValue AssociationVersionInfo::Jsonize() const
 
   if(m_targetLocationsHasBeenSet)
   {
-   Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
+   Aws::Utils::Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
    for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
    {
      targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
@@ -382,13 +382,13 @@ JsonValue AssociationVersionInfo::Jsonize() const
 
   if(m_targetMapsHasBeenSet)
   {
-   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   Aws::Utils::Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
    for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
    {
      JsonValue targetMapJsonMap;
      for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
      {
-       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       Aws::Utils::Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
        for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
        {
          targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);

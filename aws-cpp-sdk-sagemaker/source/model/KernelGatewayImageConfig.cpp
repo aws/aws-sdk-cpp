@@ -35,7 +35,7 @@ KernelGatewayImageConfig& KernelGatewayImageConfig::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("KernelSpecs"))
   {
-    Array<JsonView> kernelSpecsJsonList = jsonValue.GetArray("KernelSpecs");
+    Aws::Utils::Array<JsonView> kernelSpecsJsonList = jsonValue.GetArray("KernelSpecs");
     for(unsigned kernelSpecsIndex = 0; kernelSpecsIndex < kernelSpecsJsonList.GetLength(); ++kernelSpecsIndex)
     {
       m_kernelSpecs.push_back(kernelSpecsJsonList[kernelSpecsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue KernelGatewayImageConfig::Jsonize() const
 
   if(m_kernelSpecsHasBeenSet)
   {
-   Array<JsonValue> kernelSpecsJsonList(m_kernelSpecs.size());
+   Aws::Utils::Array<JsonValue> kernelSpecsJsonList(m_kernelSpecs.size());
    for(unsigned kernelSpecsIndex = 0; kernelSpecsIndex < kernelSpecsJsonList.GetLength(); ++kernelSpecsIndex)
    {
      kernelSpecsJsonList[kernelSpecsIndex].AsObject(m_kernelSpecs[kernelSpecsIndex].Jsonize());

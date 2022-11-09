@@ -49,7 +49,7 @@ Aws::String UpdateContextRequest::SerializePayload() const
 
   if(m_propertiesToRemoveHasBeenSet)
   {
-   Array<JsonValue> propertiesToRemoveJsonList(m_propertiesToRemove.size());
+   Aws::Utils::Array<JsonValue> propertiesToRemoveJsonList(m_propertiesToRemove.size());
    for(unsigned propertiesToRemoveIndex = 0; propertiesToRemoveIndex < propertiesToRemoveJsonList.GetLength(); ++propertiesToRemoveIndex)
    {
      propertiesToRemoveJsonList[propertiesToRemoveIndex].AsString(m_propertiesToRemove[propertiesToRemoveIndex]);

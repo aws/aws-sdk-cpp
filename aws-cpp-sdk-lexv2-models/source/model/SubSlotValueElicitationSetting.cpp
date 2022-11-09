@@ -53,7 +53,7 @@ SubSlotValueElicitationSetting& SubSlotValueElicitationSetting::operator =(JsonV
 
   if(jsonValue.ValueExists("sampleUtterances"))
   {
-    Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
+    Aws::Utils::Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
     for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
     {
       m_sampleUtterances.push_back(sampleUtterancesJsonList[sampleUtterancesIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue SubSlotValueElicitationSetting::Jsonize() const
 
   if(m_sampleUtterancesHasBeenSet)
   {
-   Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
+   Aws::Utils::Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
    for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
    {
      sampleUtterancesJsonList[sampleUtterancesIndex].AsObject(m_sampleUtterances[sampleUtterancesIndex].Jsonize());

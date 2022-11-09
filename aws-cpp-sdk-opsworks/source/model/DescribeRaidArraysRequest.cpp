@@ -37,7 +37,7 @@ Aws::String DescribeRaidArraysRequest::SerializePayload() const
 
   if(m_raidArrayIdsHasBeenSet)
   {
-   Array<JsonValue> raidArrayIdsJsonList(m_raidArrayIds.size());
+   Aws::Utils::Array<JsonValue> raidArrayIdsJsonList(m_raidArrayIds.size());
    for(unsigned raidArrayIdsIndex = 0; raidArrayIdsIndex < raidArrayIdsJsonList.GetLength(); ++raidArrayIdsIndex)
    {
      raidArrayIdsJsonList[raidArrayIdsIndex].AsString(m_raidArrayIds[raidArrayIdsIndex]);

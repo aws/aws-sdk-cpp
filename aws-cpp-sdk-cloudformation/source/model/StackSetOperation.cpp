@@ -36,7 +36,8 @@ StackSetOperation::StackSetOperation() :
     m_endTimestampHasBeenSet(false),
     m_deploymentTargetsHasBeenSet(false),
     m_stackSetDriftDetectionDetailsHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ StackSetOperation::StackSetOperation(const XmlNode& xmlNode) :
     m_endTimestampHasBeenSet(false),
     m_deploymentTargetsHasBeenSet(false),
     m_stackSetDriftDetectionDetailsHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -145,6 +147,12 @@ StackSetOperation& StackSetOperation::operator =(const XmlNode& xmlNode)
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
     }
+    XmlNode statusDetailsNode = resultNode.FirstChild("StatusDetails");
+    if(!statusDetailsNode.IsNull())
+    {
+      m_statusDetails = statusDetailsNode;
+      m_statusDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -223,6 +231,13 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
   }
 
+  if(m_statusDetailsHasBeenSet)
+  {
+      Aws::StringStream statusDetailsLocationAndMemberSs;
+      statusDetailsLocationAndMemberSs << location << index << locationValue << ".StatusDetails";
+      m_statusDetails.OutputToStream(oStream, statusDetailsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -284,6 +299,12 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_statusReasonHasBeenSet)
   {
       oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+  if(m_statusDetailsHasBeenSet)
+  {
+      Aws::String statusDetailsLocationAndMember(location);
+      statusDetailsLocationAndMember += ".StatusDetails";
+      m_statusDetails.OutputToStream(oStream, statusDetailsLocationAndMember.c_str());
   }
 }
 

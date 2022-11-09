@@ -69,27 +69,55 @@ namespace WAFV2
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        WAFV2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        WAFV2Client(const Aws::WAFV2::WAFV2ClientConfiguration& clientConfiguration = Aws::WAFV2::WAFV2ClientConfiguration(),
+                    std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider = Aws::MakeShared<WAFV2EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WAFV2Client(const Aws::Auth::AWSCredentials& credentials,
-                    const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider = Aws::MakeShared<WAFV2EndpointProvider>(ALLOCATION_TAG),
+                    const Aws::WAFV2::WAFV2ClientConfiguration& clientConfiguration = Aws::WAFV2::WAFV2ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         WAFV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider = Aws::MakeShared<WAFV2EndpointProvider>(ALLOCATION_TAG),
+                    const Aws::WAFV2::WAFV2ClientConfiguration& clientConfiguration = Aws::WAFV2::WAFV2ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WAFV2Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WAFV2Client(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        WAFV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~WAFV2Client();
 
 
@@ -431,9 +459,8 @@ namespace WAFV2
         /**
          * <p>Generates a presigned download URL for the specified release of the mobile
          * SDK.</p> <p>The mobile SDK is not generally available. Customers who have access
-         * to the mobile SDK can use it to establish and manage Security Token Service
-         * (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
-         * For more information, see <a
+         * to the mobile SDK can use it to establish and manage WAF tokens for use in
+         * HTTP(S) requests from a mobile device to WAF. For more information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
          * client application integration</a> in the <i>WAF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -515,9 +542,9 @@ namespace WAFV2
         /**
          * <p>Retrieves information for the specified mobile SDK release, including release
          * notes and tags.</p> <p>The mobile SDK is not generally available. Customers who
-         * have access to the mobile SDK can use it to establish and manage Security Token
-         * Service (STS) security tokens for use in HTTP(S) requests from a mobile device
-         * to WAF. For more information, see <a
+         * have access to the mobile SDK can use it to establish and manage WAF tokens for
+         * use in HTTP(S) requests from a mobile device to WAF. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
          * client application integration</a> in the <i>WAF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -784,8 +811,8 @@ namespace WAFV2
          * <p>Retrieves a list of the available releases for the mobile SDK and the
          * specified device platform. </p> <p>The mobile SDK is not generally available.
          * Customers who have access to the mobile SDK can use it to establish and manage
-         * Security Token Service (STS) security tokens for use in HTTP(S) requests from a
-         * mobile device to WAF. For more information, see <a
+         * WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
          * client application integration</a> in the <i>WAF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1225,12 +1252,13 @@ namespace WAFV2
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<WAFV2EndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const WAFV2ClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      WAFV2ClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<WAFV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WAFV2

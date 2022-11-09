@@ -32,7 +32,7 @@ QueryTableRowsResult& QueryTableRowsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("columnIds"))
   {
-    Array<JsonView> columnIdsJsonList = jsonValue.GetArray("columnIds");
+    Aws::Utils::Array<JsonView> columnIdsJsonList = jsonValue.GetArray("columnIds");
     for(unsigned columnIdsIndex = 0; columnIdsIndex < columnIdsJsonList.GetLength(); ++columnIdsIndex)
     {
       m_columnIds.push_back(columnIdsJsonList[columnIdsIndex].AsString());
@@ -41,7 +41,7 @@ QueryTableRowsResult& QueryTableRowsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("rows"))
   {
-    Array<JsonView> rowsJsonList = jsonValue.GetArray("rows");
+    Aws::Utils::Array<JsonView> rowsJsonList = jsonValue.GetArray("rows");
     for(unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex)
     {
       m_rows.push_back(rowsJsonList[rowsIndex].AsObject());

@@ -30,7 +30,7 @@ ClassifyDocumentResult& ClassifyDocumentResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Classes"))
   {
-    Array<JsonView> classesJsonList = jsonValue.GetArray("Classes");
+    Aws::Utils::Array<JsonView> classesJsonList = jsonValue.GetArray("Classes");
     for(unsigned classesIndex = 0; classesIndex < classesJsonList.GetLength(); ++classesIndex)
     {
       m_classes.push_back(classesJsonList[classesIndex].AsObject());
@@ -39,7 +39,7 @@ ClassifyDocumentResult& ClassifyDocumentResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Labels"))
   {
-    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
+    Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());

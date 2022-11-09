@@ -50,7 +50,7 @@ AssessmentRunInProgressException& AssessmentRunInProgressException::operator =(J
 
   if(jsonValue.ValueExists("assessmentRunArns"))
   {
-    Array<JsonView> assessmentRunArnsJsonList = jsonValue.GetArray("assessmentRunArns");
+    Aws::Utils::Array<JsonView> assessmentRunArnsJsonList = jsonValue.GetArray("assessmentRunArns");
     for(unsigned assessmentRunArnsIndex = 0; assessmentRunArnsIndex < assessmentRunArnsJsonList.GetLength(); ++assessmentRunArnsIndex)
     {
       m_assessmentRunArns.push_back(assessmentRunArnsJsonList[assessmentRunArnsIndex].AsString());
@@ -87,7 +87,7 @@ JsonValue AssessmentRunInProgressException::Jsonize() const
 
   if(m_assessmentRunArnsHasBeenSet)
   {
-   Array<JsonValue> assessmentRunArnsJsonList(m_assessmentRunArns.size());
+   Aws::Utils::Array<JsonValue> assessmentRunArnsJsonList(m_assessmentRunArns.size());
    for(unsigned assessmentRunArnsIndex = 0; assessmentRunArnsIndex < assessmentRunArnsJsonList.GetLength(); ++assessmentRunArnsIndex)
    {
      assessmentRunArnsJsonList[assessmentRunArnsIndex].AsString(m_assessmentRunArns[assessmentRunArnsIndex]);

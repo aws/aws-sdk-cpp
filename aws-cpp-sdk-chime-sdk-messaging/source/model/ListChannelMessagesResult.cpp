@@ -42,7 +42,7 @@ ListChannelMessagesResult& ListChannelMessagesResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ChannelMessages"))
   {
-    Array<JsonView> channelMessagesJsonList = jsonValue.GetArray("ChannelMessages");
+    Aws::Utils::Array<JsonView> channelMessagesJsonList = jsonValue.GetArray("ChannelMessages");
     for(unsigned channelMessagesIndex = 0; channelMessagesIndex < channelMessagesJsonList.GetLength(); ++channelMessagesIndex)
     {
       m_channelMessages.push_back(channelMessagesJsonList[channelMessagesIndex].AsObject());

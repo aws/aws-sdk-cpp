@@ -23,7 +23,7 @@ Aws::String CreateSampleFindingsRequest::SerializePayload() const
 
   if(m_findingTypesHasBeenSet)
   {
-   Array<JsonValue> findingTypesJsonList(m_findingTypes.size());
+   Aws::Utils::Array<JsonValue> findingTypesJsonList(m_findingTypes.size());
    for(unsigned findingTypesIndex = 0; findingTypesIndex < findingTypesJsonList.GetLength(); ++findingTypesIndex)
    {
      findingTypesJsonList[findingTypesIndex].AsString(FindingTypeMapper::GetNameForFindingType(m_findingTypes[findingTypesIndex]));

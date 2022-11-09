@@ -36,7 +36,7 @@ ListNotebookInstancesResult& ListNotebookInstancesResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("NotebookInstances"))
   {
-    Array<JsonView> notebookInstancesJsonList = jsonValue.GetArray("NotebookInstances");
+    Aws::Utils::Array<JsonView> notebookInstancesJsonList = jsonValue.GetArray("NotebookInstances");
     for(unsigned notebookInstancesIndex = 0; notebookInstancesIndex < notebookInstancesJsonList.GetLength(); ++notebookInstancesIndex)
     {
       m_notebookInstances.push_back(notebookInstancesJsonList[notebookInstancesIndex].AsObject());

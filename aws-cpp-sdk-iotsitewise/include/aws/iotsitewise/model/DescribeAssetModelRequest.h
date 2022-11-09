@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoTSiteWise
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAssetModel"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -72,10 +78,34 @@ namespace Model
      */
     inline DescribeAssetModelRequest& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
 
+
+    /**
+     * <p> Whether or not to exclude asset model properties from the response. </p>
+     */
+    inline bool GetExcludeProperties() const{ return m_excludeProperties; }
+
+    /**
+     * <p> Whether or not to exclude asset model properties from the response. </p>
+     */
+    inline bool ExcludePropertiesHasBeenSet() const { return m_excludePropertiesHasBeenSet; }
+
+    /**
+     * <p> Whether or not to exclude asset model properties from the response. </p>
+     */
+    inline void SetExcludeProperties(bool value) { m_excludePropertiesHasBeenSet = true; m_excludeProperties = value; }
+
+    /**
+     * <p> Whether or not to exclude asset model properties from the response. </p>
+     */
+    inline DescribeAssetModelRequest& WithExcludeProperties(bool value) { SetExcludeProperties(value); return *this;}
+
   private:
 
     Aws::String m_assetModelId;
     bool m_assetModelIdHasBeenSet = false;
+
+    bool m_excludeProperties;
+    bool m_excludePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

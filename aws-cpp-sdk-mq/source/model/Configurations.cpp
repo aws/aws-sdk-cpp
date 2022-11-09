@@ -44,7 +44,7 @@ Configurations& Configurations::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("history"))
   {
-    Array<JsonView> historyJsonList = jsonValue.GetArray("history");
+    Aws::Utils::Array<JsonView> historyJsonList = jsonValue.GetArray("history");
     for(unsigned historyIndex = 0; historyIndex < historyJsonList.GetLength(); ++historyIndex)
     {
       m_history.push_back(historyJsonList[historyIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue Configurations::Jsonize() const
 
   if(m_historyHasBeenSet)
   {
-   Array<JsonValue> historyJsonList(m_history.size());
+   Aws::Utils::Array<JsonValue> historyJsonList(m_history.size());
    for(unsigned historyIndex = 0; historyIndex < historyJsonList.GetLength(); ++historyIndex)
    {
      historyJsonList[historyIndex].AsObject(m_history[historyIndex].Jsonize());

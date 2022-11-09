@@ -30,7 +30,7 @@ Aws::String UpdateDatasourcePackagesRequest::SerializePayload() const
 
   if(m_datasourcePackagesHasBeenSet)
   {
-   Array<JsonValue> datasourcePackagesJsonList(m_datasourcePackages.size());
+   Aws::Utils::Array<JsonValue> datasourcePackagesJsonList(m_datasourcePackages.size());
    for(unsigned datasourcePackagesIndex = 0; datasourcePackagesIndex < datasourcePackagesJsonList.GetLength(); ++datasourcePackagesIndex)
    {
      datasourcePackagesJsonList[datasourcePackagesIndex].AsString(DatasourcePackageMapper::GetNameForDatasourcePackage(m_datasourcePackages[datasourcePackagesIndex]));

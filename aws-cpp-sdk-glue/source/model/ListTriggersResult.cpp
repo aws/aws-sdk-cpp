@@ -30,7 +30,7 @@ ListTriggersResult& ListTriggersResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TriggerNames"))
   {
-    Array<JsonView> triggerNamesJsonList = jsonValue.GetArray("TriggerNames");
+    Aws::Utils::Array<JsonView> triggerNamesJsonList = jsonValue.GetArray("TriggerNames");
     for(unsigned triggerNamesIndex = 0; triggerNamesIndex < triggerNamesJsonList.GetLength(); ++triggerNamesIndex)
     {
       m_triggerNames.push_back(triggerNamesJsonList[triggerNamesIndex].AsString());

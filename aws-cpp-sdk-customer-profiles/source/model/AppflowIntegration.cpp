@@ -42,7 +42,7 @@ AppflowIntegration& AppflowIntegration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Batches"))
   {
-    Array<JsonView> batchesJsonList = jsonValue.GetArray("Batches");
+    Aws::Utils::Array<JsonView> batchesJsonList = jsonValue.GetArray("Batches");
     for(unsigned batchesIndex = 0; batchesIndex < batchesJsonList.GetLength(); ++batchesIndex)
     {
       m_batches.push_back(batchesJsonList[batchesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue AppflowIntegration::Jsonize() const
 
   if(m_batchesHasBeenSet)
   {
-   Array<JsonValue> batchesJsonList(m_batches.size());
+   Aws::Utils::Array<JsonValue> batchesJsonList(m_batches.size());
    for(unsigned batchesIndex = 0; batchesIndex < batchesJsonList.GetLength(); ++batchesIndex)
    {
      batchesJsonList[batchesIndex].AsObject(m_batches[batchesIndex].Jsonize());

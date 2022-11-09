@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/billingconductor/BillingConductorErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/billingconductor/BillingConductorEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -33,6 +35,7 @@
 #include <aws/billingconductor/model/ListAccountAssociationsResult.h>
 #include <aws/billingconductor/model/ListBillingGroupCostReportsResult.h>
 #include <aws/billingconductor/model/ListBillingGroupsResult.h>
+#include <aws/billingconductor/model/ListCustomLineItemVersionsResult.h>
 #include <aws/billingconductor/model/ListCustomLineItemsResult.h>
 #include <aws/billingconductor/model/ListPricingPlansResult.h>
 #include <aws/billingconductor/model/ListPricingPlansAssociatedWithPricingRuleResult.h>
@@ -79,6 +82,10 @@ namespace Aws
 
   namespace BillingConductor
   {
+    using BillingConductorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BillingConductorEndpointProviderBase = Aws::BillingConductor::Endpoint::BillingConductorEndpointProviderBase;
+    using BillingConductorEndpointProvider = Aws::BillingConductor::Endpoint::BillingConductorEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in BillingConductorClient header */
@@ -99,6 +106,7 @@ namespace Aws
       class ListAccountAssociationsRequest;
       class ListBillingGroupCostReportsRequest;
       class ListBillingGroupsRequest;
+      class ListCustomLineItemVersionsRequest;
       class ListCustomLineItemsRequest;
       class ListPricingPlansRequest;
       class ListPricingPlansAssociatedWithPricingRuleRequest;
@@ -132,6 +140,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAccountAssociationsResult, BillingConductorError> ListAccountAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListBillingGroupCostReportsResult, BillingConductorError> ListBillingGroupCostReportsOutcome;
       typedef Aws::Utils::Outcome<ListBillingGroupsResult, BillingConductorError> ListBillingGroupsOutcome;
+      typedef Aws::Utils::Outcome<ListCustomLineItemVersionsResult, BillingConductorError> ListCustomLineItemVersionsOutcome;
       typedef Aws::Utils::Outcome<ListCustomLineItemsResult, BillingConductorError> ListCustomLineItemsOutcome;
       typedef Aws::Utils::Outcome<ListPricingPlansResult, BillingConductorError> ListPricingPlansOutcome;
       typedef Aws::Utils::Outcome<ListPricingPlansAssociatedWithPricingRuleResult, BillingConductorError> ListPricingPlansAssociatedWithPricingRuleOutcome;
@@ -165,6 +174,7 @@ namespace Aws
       typedef std::future<ListAccountAssociationsOutcome> ListAccountAssociationsOutcomeCallable;
       typedef std::future<ListBillingGroupCostReportsOutcome> ListBillingGroupCostReportsOutcomeCallable;
       typedef std::future<ListBillingGroupsOutcome> ListBillingGroupsOutcomeCallable;
+      typedef std::future<ListCustomLineItemVersionsOutcome> ListCustomLineItemVersionsOutcomeCallable;
       typedef std::future<ListCustomLineItemsOutcome> ListCustomLineItemsOutcomeCallable;
       typedef std::future<ListPricingPlansOutcome> ListPricingPlansOutcomeCallable;
       typedef std::future<ListPricingPlansAssociatedWithPricingRuleOutcome> ListPricingPlansAssociatedWithPricingRuleOutcomeCallable;
@@ -201,6 +211,7 @@ namespace Aws
     typedef std::function<void(const BillingConductorClient*, const Model::ListAccountAssociationsRequest&, const Model::ListAccountAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountAssociationsResponseReceivedHandler;
     typedef std::function<void(const BillingConductorClient*, const Model::ListBillingGroupCostReportsRequest&, const Model::ListBillingGroupCostReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBillingGroupCostReportsResponseReceivedHandler;
     typedef std::function<void(const BillingConductorClient*, const Model::ListBillingGroupsRequest&, const Model::ListBillingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBillingGroupsResponseReceivedHandler;
+    typedef std::function<void(const BillingConductorClient*, const Model::ListCustomLineItemVersionsRequest&, const Model::ListCustomLineItemVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomLineItemVersionsResponseReceivedHandler;
     typedef std::function<void(const BillingConductorClient*, const Model::ListCustomLineItemsRequest&, const Model::ListCustomLineItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomLineItemsResponseReceivedHandler;
     typedef std::function<void(const BillingConductorClient*, const Model::ListPricingPlansRequest&, const Model::ListPricingPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPricingPlansResponseReceivedHandler;
     typedef std::function<void(const BillingConductorClient*, const Model::ListPricingPlansAssociatedWithPricingRuleRequest&, const Model::ListPricingPlansAssociatedWithPricingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPricingPlansAssociatedWithPricingRuleResponseReceivedHandler;

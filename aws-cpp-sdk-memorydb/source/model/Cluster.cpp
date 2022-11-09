@@ -48,7 +48,9 @@ Cluster::Cluster() :
     m_snapshotWindowHasBeenSet(false),
     m_aCLNameHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ Cluster::Cluster(JsonView jsonValue) :
     m_snapshotWindowHasBeenSet(false),
     m_aCLNameHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,7 +130,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Shards"))
   {
-    Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
+    Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
     for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
     {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
@@ -185,7 +189,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsObject());
@@ -270,6 +274,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_autoMinorVersionUpgradeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataTiering"))
+  {
+    m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(jsonValue.GetString("DataTiering"));
+
+    m_dataTieringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -309,7 +320,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_shardsHasBeenSet)
   {
-   Array<JsonValue> shardsJsonList(m_shards.size());
+   Aws::Utils::Array<JsonValue> shardsJsonList(m_shards.size());
    for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
    {
      shardsJsonList[shardsIndex].AsObject(m_shards[shardsIndex].Jsonize());
@@ -361,7 +372,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsObject(m_securityGroups[securityGroupsIndex].Jsonize());
@@ -434,6 +445,11 @@ JsonValue Cluster::Jsonize() const
   {
    payload.WithBool("AutoMinorVersionUpgrade", m_autoMinorVersionUpgrade);
 
+  }
+
+  if(m_dataTieringHasBeenSet)
+  {
+   payload.WithString("DataTiering", DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering));
   }
 
   return payload;

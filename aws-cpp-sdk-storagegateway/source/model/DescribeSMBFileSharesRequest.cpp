@@ -23,7 +23,7 @@ Aws::String DescribeSMBFileSharesRequest::SerializePayload() const
 
   if(m_fileShareARNListHasBeenSet)
   {
-   Array<JsonValue> fileShareARNListJsonList(m_fileShareARNList.size());
+   Aws::Utils::Array<JsonValue> fileShareARNListJsonList(m_fileShareARNList.size());
    for(unsigned fileShareARNListIndex = 0; fileShareARNListIndex < fileShareARNListJsonList.GetLength(); ++fileShareARNListIndex)
    {
      fileShareARNListJsonList[fileShareARNListIndex].AsString(m_fileShareARNList[fileShareARNListIndex]);

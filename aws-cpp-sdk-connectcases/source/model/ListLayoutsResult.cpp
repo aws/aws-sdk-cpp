@@ -30,7 +30,7 @@ ListLayoutsResult& ListLayoutsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("layouts"))
   {
-    Array<JsonView> layoutsJsonList = jsonValue.GetArray("layouts");
+    Aws::Utils::Array<JsonView> layoutsJsonList = jsonValue.GetArray("layouts");
     for(unsigned layoutsIndex = 0; layoutsIndex < layoutsJsonList.GetLength(); ++layoutsIndex)
     {
       m_layouts.push_back(layoutsJsonList[layoutsIndex].AsObject());

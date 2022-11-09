@@ -251,8 +251,8 @@ namespace Model
      * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
      * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
      * limit for the default option, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
-     * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits</a>
+     * in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
      * provide the Amazon Resource Name (ARN) of an Amazon SES verified email address
      * for the <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd>
@@ -265,10 +265,10 @@ namespace Model
      * <p>Before Amazon Cognito can email your users, it requires additional
      * permissions to call Amazon SES on your behalf. When you update your user pool
      * with this option, Amazon Cognito creates a <i>service-linked role</i>, which is
-     * a type of role, in your Amazon Web Services account. This role contains the
-     * permissions that allow to access Amazon SES and send email messages with your
-     * address. For more information about the service-linked role that Amazon Cognito
-     * creates, see <a
+     * a type of role in your Amazon Web Services account. This role contains the
+     * permissions that allow you to access Amazon SES and send email messages from
+     * your email address. For more information about the service-linked role that
+     * Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -286,8 +286,8 @@ namespace Model
      * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
      * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
      * limit for the default option, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
-     * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits</a>
+     * in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
      * provide the Amazon Resource Name (ARN) of an Amazon SES verified email address
      * for the <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd>
@@ -300,10 +300,10 @@ namespace Model
      * <p>Before Amazon Cognito can email your users, it requires additional
      * permissions to call Amazon SES on your behalf. When you update your user pool
      * with this option, Amazon Cognito creates a <i>service-linked role</i>, which is
-     * a type of role, in your Amazon Web Services account. This role contains the
-     * permissions that allow to access Amazon SES and send email messages with your
-     * address. For more information about the service-linked role that Amazon Cognito
-     * creates, see <a
+     * a type of role in your Amazon Web Services account. This role contains the
+     * permissions that allow you to access Amazon SES and send email messages from
+     * your email address. For more information about the service-linked role that
+     * Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -321,8 +321,8 @@ namespace Model
      * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
      * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
      * limit for the default option, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
-     * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits</a>
+     * in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
      * provide the Amazon Resource Name (ARN) of an Amazon SES verified email address
      * for the <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd>
@@ -335,10 +335,10 @@ namespace Model
      * <p>Before Amazon Cognito can email your users, it requires additional
      * permissions to call Amazon SES on your behalf. When you update your user pool
      * with this option, Amazon Cognito creates a <i>service-linked role</i>, which is
-     * a type of role, in your Amazon Web Services account. This role contains the
-     * permissions that allow to access Amazon SES and send email messages with your
-     * address. For more information about the service-linked role that Amazon Cognito
-     * creates, see <a
+     * a type of role in your Amazon Web Services account. This role contains the
+     * permissions that allow you to access Amazon SES and send email messages from
+     * your email address. For more information about the service-linked role that
+     * Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -356,8 +356,8 @@ namespace Model
      * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
      * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
      * limit for the default option, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
-     * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits</a>
+     * in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
      * provide the Amazon Resource Name (ARN) of an Amazon SES verified email address
      * for the <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd>
@@ -370,10 +370,10 @@ namespace Model
      * <p>Before Amazon Cognito can email your users, it requires additional
      * permissions to call Amazon SES on your behalf. When you update your user pool
      * with this option, Amazon Cognito creates a <i>service-linked role</i>, which is
-     * a type of role, in your Amazon Web Services account. This role contains the
-     * permissions that allow to access Amazon SES and send email messages with your
-     * address. For more information about the service-linked role that Amazon Cognito
-     * creates, see <a
+     * a type of role in your Amazon Web Services account. This role contains the
+     * permissions that allow you to access Amazon SES and send email messages from
+     * your email address. For more information about the service-linked role that
+     * Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -391,8 +391,8 @@ namespace Model
      * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
      * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
      * limit for the default option, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
-     * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits</a>
+     * in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
      * provide the Amazon Resource Name (ARN) of an Amazon SES verified email address
      * for the <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd>
@@ -405,10 +405,10 @@ namespace Model
      * <p>Before Amazon Cognito can email your users, it requires additional
      * permissions to call Amazon SES on your behalf. When you update your user pool
      * with this option, Amazon Cognito creates a <i>service-linked role</i>, which is
-     * a type of role, in your Amazon Web Services account. This role contains the
-     * permissions that allow to access Amazon SES and send email messages with your
-     * address. For more information about the service-linked role that Amazon Cognito
-     * creates, see <a
+     * a type of role in your Amazon Web Services account. This role contains the
+     * permissions that allow you to access Amazon SES and send email messages from
+     * your email address. For more information about the service-linked role that
+     * Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -426,8 +426,8 @@ namespace Model
      * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
      * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
      * limit for the default option, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
-     * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits</a>
+     * in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
      * provide the Amazon Resource Name (ARN) of an Amazon SES verified email address
      * for the <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd>
@@ -440,10 +440,10 @@ namespace Model
      * <p>Before Amazon Cognito can email your users, it requires additional
      * permissions to call Amazon SES on your behalf. When you update your user pool
      * with this option, Amazon Cognito creates a <i>service-linked role</i>, which is
-     * a type of role, in your Amazon Web Services account. This role contains the
-     * permissions that allow to access Amazon SES and send email messages with your
-     * address. For more information about the service-linked role that Amazon Cognito
-     * creates, see <a
+     * a type of role in your Amazon Web Services account. This role contains the
+     * permissions that allow you to access Amazon SES and send email messages from
+     * your email address. For more information about the service-linked role that
+     * Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>

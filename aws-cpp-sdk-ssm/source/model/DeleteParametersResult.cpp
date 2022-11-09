@@ -30,7 +30,7 @@ DeleteParametersResult& DeleteParametersResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeletedParameters"))
   {
-    Array<JsonView> deletedParametersJsonList = jsonValue.GetArray("DeletedParameters");
+    Aws::Utils::Array<JsonView> deletedParametersJsonList = jsonValue.GetArray("DeletedParameters");
     for(unsigned deletedParametersIndex = 0; deletedParametersIndex < deletedParametersJsonList.GetLength(); ++deletedParametersIndex)
     {
       m_deletedParameters.push_back(deletedParametersJsonList[deletedParametersIndex].AsString());
@@ -39,7 +39,7 @@ DeleteParametersResult& DeleteParametersResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("InvalidParameters"))
   {
-    Array<JsonView> invalidParametersJsonList = jsonValue.GetArray("InvalidParameters");
+    Aws::Utils::Array<JsonView> invalidParametersJsonList = jsonValue.GetArray("InvalidParameters");
     for(unsigned invalidParametersIndex = 0; invalidParametersIndex < invalidParametersJsonList.GetLength(); ++invalidParametersIndex)
     {
       m_invalidParameters.push_back(invalidParametersJsonList[invalidParametersIndex].AsString());

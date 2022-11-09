@@ -39,8 +39,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -48,8 +48,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -57,8 +57,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -66,8 +66,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -75,8 +75,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -84,8 +84,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline CreateProposalRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -93,8 +93,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline CreateProposalRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -102,8 +102,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline CreateProposalRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -152,56 +152,56 @@ namespace Model
     /**
      * <p>The unique identifier of the member that is creating the proposal. This
      * identifier is especially useful for identifying the member making the proposal
-     * when multiple members exist in a single AWS account.</p>
+     * when multiple members exist in a single Amazon Web Services account.</p>
      */
     inline const Aws::String& GetMemberId() const{ return m_memberId; }
 
     /**
      * <p>The unique identifier of the member that is creating the proposal. This
      * identifier is especially useful for identifying the member making the proposal
-     * when multiple members exist in a single AWS account.</p>
+     * when multiple members exist in a single Amazon Web Services account.</p>
      */
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the member that is creating the proposal. This
      * identifier is especially useful for identifying the member making the proposal
-     * when multiple members exist in a single AWS account.</p>
+     * when multiple members exist in a single Amazon Web Services account.</p>
      */
     inline void SetMemberId(const Aws::String& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
 
     /**
      * <p>The unique identifier of the member that is creating the proposal. This
      * identifier is especially useful for identifying the member making the proposal
-     * when multiple members exist in a single AWS account.</p>
+     * when multiple members exist in a single Amazon Web Services account.</p>
      */
     inline void SetMemberId(Aws::String&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
 
     /**
      * <p>The unique identifier of the member that is creating the proposal. This
      * identifier is especially useful for identifying the member making the proposal
-     * when multiple members exist in a single AWS account.</p>
+     * when multiple members exist in a single Amazon Web Services account.</p>
      */
     inline void SetMemberId(const char* value) { m_memberIdHasBeenSet = true; m_memberId.assign(value); }
 
     /**
      * <p>The unique identifier of the member that is creating the proposal. This
      * identifier is especially useful for identifying the member making the proposal
-     * when multiple members exist in a single AWS account.</p>
+     * when multiple members exist in a single Amazon Web Services account.</p>
      */
     inline CreateProposalRequest& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
 
     /**
      * <p>The unique identifier of the member that is creating the proposal. This
      * identifier is especially useful for identifying the member making the proposal
-     * when multiple members exist in a single AWS account.</p>
+     * when multiple members exist in a single Amazon Web Services account.</p>
      */
     inline CreateProposalRequest& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the member that is creating the proposal. This
      * identifier is especially useful for identifying the member making the proposal
-     * when multiple members exist in a single AWS account.</p>
+     * when multiple members exist in a single Amazon Web Services account.</p>
      */
     inline CreateProposalRequest& WithMemberId(const char* value) { SetMemberId(value); return *this;}
 

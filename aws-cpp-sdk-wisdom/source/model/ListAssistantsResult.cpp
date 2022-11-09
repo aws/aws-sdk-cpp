@@ -30,7 +30,7 @@ ListAssistantsResult& ListAssistantsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assistantSummaries"))
   {
-    Array<JsonView> assistantSummariesJsonList = jsonValue.GetArray("assistantSummaries");
+    Aws::Utils::Array<JsonView> assistantSummariesJsonList = jsonValue.GetArray("assistantSummaries");
     for(unsigned assistantSummariesIndex = 0; assistantSummariesIndex < assistantSummariesJsonList.GetLength(); ++assistantSummariesIndex)
     {
       m_assistantSummaries.push_back(assistantSummariesJsonList[assistantSummariesIndex].AsObject());

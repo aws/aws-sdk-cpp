@@ -93,7 +93,7 @@ CoreNetwork& CoreNetwork::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Segments"))
   {
-    Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
+    Aws::Utils::Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
     for(unsigned segmentsIndex = 0; segmentsIndex < segmentsJsonList.GetLength(); ++segmentsIndex)
     {
       m_segments.push_back(segmentsJsonList[segmentsIndex].AsObject());
@@ -103,7 +103,7 @@ CoreNetwork& CoreNetwork::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Edges"))
   {
-    Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
+    Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
     for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
     {
       m_edges.push_back(edgesJsonList[edgesIndex].AsObject());
@@ -113,7 +113,7 @@ CoreNetwork& CoreNetwork::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -164,7 +164,7 @@ JsonValue CoreNetwork::Jsonize() const
 
   if(m_segmentsHasBeenSet)
   {
-   Array<JsonValue> segmentsJsonList(m_segments.size());
+   Aws::Utils::Array<JsonValue> segmentsJsonList(m_segments.size());
    for(unsigned segmentsIndex = 0; segmentsIndex < segmentsJsonList.GetLength(); ++segmentsIndex)
    {
      segmentsJsonList[segmentsIndex].AsObject(m_segments[segmentsIndex].Jsonize());
@@ -175,7 +175,7 @@ JsonValue CoreNetwork::Jsonize() const
 
   if(m_edgesHasBeenSet)
   {
-   Array<JsonValue> edgesJsonList(m_edges.size());
+   Aws::Utils::Array<JsonValue> edgesJsonList(m_edges.size());
    for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
    {
      edgesJsonList[edgesIndex].AsObject(m_edges[edgesIndex].Jsonize());
@@ -186,7 +186,7 @@ JsonValue CoreNetwork::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

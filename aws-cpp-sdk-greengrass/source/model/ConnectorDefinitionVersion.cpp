@@ -33,7 +33,7 @@ ConnectorDefinitionVersion& ConnectorDefinitionVersion::operator =(JsonView json
 {
   if(jsonValue.ValueExists("Connectors"))
   {
-    Array<JsonView> connectorsJsonList = jsonValue.GetArray("Connectors");
+    Aws::Utils::Array<JsonView> connectorsJsonList = jsonValue.GetArray("Connectors");
     for(unsigned connectorsIndex = 0; connectorsIndex < connectorsJsonList.GetLength(); ++connectorsIndex)
     {
       m_connectors.push_back(connectorsJsonList[connectorsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ConnectorDefinitionVersion::Jsonize() const
 
   if(m_connectorsHasBeenSet)
   {
-   Array<JsonValue> connectorsJsonList(m_connectors.size());
+   Aws::Utils::Array<JsonValue> connectorsJsonList(m_connectors.size());
    for(unsigned connectorsIndex = 0; connectorsIndex < connectorsJsonList.GetLength(); ++connectorsIndex)
    {
      connectorsJsonList[connectorsIndex].AsObject(m_connectors[connectorsIndex].Jsonize());

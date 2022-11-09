@@ -45,7 +45,7 @@ QueryFilters& QueryFilters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Types"))
   {
-    Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
+    Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
     for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
     {
       m_types.push_back(typesJsonList[typesIndex].AsString());
@@ -55,7 +55,7 @@ QueryFilters& QueryFilters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LineageTypes"))
   {
-    Array<JsonView> lineageTypesJsonList = jsonValue.GetArray("LineageTypes");
+    Aws::Utils::Array<JsonView> lineageTypesJsonList = jsonValue.GetArray("LineageTypes");
     for(unsigned lineageTypesIndex = 0; lineageTypesIndex < lineageTypesJsonList.GetLength(); ++lineageTypesIndex)
     {
       m_lineageTypes.push_back(LineageTypeMapper::GetLineageTypeForName(lineageTypesJsonList[lineageTypesIndex].AsString()));
@@ -110,7 +110,7 @@ JsonValue QueryFilters::Jsonize() const
 
   if(m_typesHasBeenSet)
   {
-   Array<JsonValue> typesJsonList(m_types.size());
+   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
    {
      typesJsonList[typesIndex].AsString(m_types[typesIndex]);
@@ -121,7 +121,7 @@ JsonValue QueryFilters::Jsonize() const
 
   if(m_lineageTypesHasBeenSet)
   {
-   Array<JsonValue> lineageTypesJsonList(m_lineageTypes.size());
+   Aws::Utils::Array<JsonValue> lineageTypesJsonList(m_lineageTypes.size());
    for(unsigned lineageTypesIndex = 0; lineageTypesIndex < lineageTypesJsonList.GetLength(); ++lineageTypesIndex)
    {
      lineageTypesJsonList[lineageTypesIndex].AsString(LineageTypeMapper::GetNameForLineageType(m_lineageTypes[lineageTypesIndex]));

@@ -46,7 +46,7 @@ ProjectedMetric& ProjectedMetric::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("timestamps"))
   {
-    Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
+    Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
     for(unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex)
     {
       m_timestamps.push_back(timestampsJsonList[timestampsIndex].AsDouble());
@@ -56,7 +56,7 @@ ProjectedMetric& ProjectedMetric::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("values"))
   {
-    Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsDouble());
@@ -78,7 +78,7 @@ JsonValue ProjectedMetric::Jsonize() const
 
   if(m_timestampsHasBeenSet)
   {
-   Array<JsonValue> timestampsJsonList(m_timestamps.size());
+   Aws::Utils::Array<JsonValue> timestampsJsonList(m_timestamps.size());
    for(unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex)
    {
      timestampsJsonList[timestampsIndex].AsDouble(m_timestamps[timestampsIndex].SecondsWithMSPrecision());
@@ -89,7 +89,7 @@ JsonValue ProjectedMetric::Jsonize() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsDouble(m_values[valuesIndex]);

@@ -7,15 +7,18 @@
 
 /* Generic header includes */
 #include <aws/ec2/EC2Errors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/ec2/EC2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
 
 /* Service model headers required in EC2Client header */
+#include <aws/ec2/model/AcceptAddressTransferResponse.h>
 #include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/AcceptTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/AcceptTransitGatewayPeeringAttachmentResponse.h>
@@ -52,6 +55,7 @@
 #include <aws/ec2/model/CancelBundleTaskResponse.h>
 #include <aws/ec2/model/CancelCapacityReservationResponse.h>
 #include <aws/ec2/model/CancelCapacityReservationFleetsResponse.h>
+#include <aws/ec2/model/CancelImageLaunchPermissionResponse.h>
 #include <aws/ec2/model/CancelImportTaskResponse.h>
 #include <aws/ec2/model/CancelReservedInstancesListingResponse.h>
 #include <aws/ec2/model/CancelSpotFleetRequestsResponse.h>
@@ -188,6 +192,7 @@
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupMembersResponse.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
+#include <aws/ec2/model/DescribeAddressTransfersResponse.h>
 #include <aws/ec2/model/DescribeAddressesResponse.h>
 #include <aws/ec2/model/DescribeAddressesAttributeResponse.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatResponse.h>
@@ -324,6 +329,7 @@
 #include <aws/ec2/model/DescribeVpnGatewaysResponse.h>
 #include <aws/ec2/model/DetachClassicLinkVpcResponse.h>
 #include <aws/ec2/model/DetachVolumeResponse.h>
+#include <aws/ec2/model/DisableAddressTransferResponse.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/DisableFastLaunchResponse.h>
 #include <aws/ec2/model/DisableFastSnapshotRestoresResponse.h>
@@ -343,6 +349,7 @@
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableResponse.h>
 #include <aws/ec2/model/DisassociateTrunkInterfaceResponse.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockResponse.h>
+#include <aws/ec2/model/EnableAddressTransferResponse.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/EnableFastLaunchResponse.h>
 #include <aws/ec2/model/EnableFastSnapshotRestoresResponse.h>
@@ -536,9 +543,14 @@ namespace Aws
 
   namespace EC2
   {
+    using EC2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EC2EndpointProviderBase = Aws::EC2::Endpoint::EC2EndpointProviderBase;
+    using EC2EndpointProvider = Aws::EC2::Endpoint::EC2EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in EC2Client header */
+      class AcceptAddressTransferRequest;
       class AcceptReservedInstancesExchangeQuoteRequest;
       class AcceptTransitGatewayMulticastDomainAssociationsRequest;
       class AcceptTransitGatewayPeeringAttachmentRequest;
@@ -579,6 +591,7 @@ namespace Aws
       class CancelCapacityReservationFleetsRequest;
       class CancelConversionTaskRequest;
       class CancelExportTaskRequest;
+      class CancelImageLaunchPermissionRequest;
       class CancelImportTaskRequest;
       class CancelReservedInstancesListingRequest;
       class CancelSpotFleetRequestsRequest;
@@ -739,6 +752,7 @@ namespace Aws
       class DeregisterTransitGatewayMulticastGroupMembersRequest;
       class DeregisterTransitGatewayMulticastGroupSourcesRequest;
       class DescribeAccountAttributesRequest;
+      class DescribeAddressTransfersRequest;
       class DescribeAddressesRequest;
       class DescribeAddressesAttributeRequest;
       class DescribeAggregateIdFormatRequest;
@@ -878,6 +892,7 @@ namespace Aws
       class DetachNetworkInterfaceRequest;
       class DetachVolumeRequest;
       class DetachVpnGatewayRequest;
+      class DisableAddressTransferRequest;
       class DisableEbsEncryptionByDefaultRequest;
       class DisableFastLaunchRequest;
       class DisableFastSnapshotRestoresRequest;
@@ -900,6 +915,7 @@ namespace Aws
       class DisassociateTransitGatewayRouteTableRequest;
       class DisassociateTrunkInterfaceRequest;
       class DisassociateVpcCidrBlockRequest;
+      class EnableAddressTransferRequest;
       class EnableEbsEncryptionByDefaultRequest;
       class EnableFastLaunchRequest;
       class EnableFastSnapshotRestoresRequest;
@@ -1084,6 +1100,7 @@ namespace Aws
       /* End of service model forward declarations required in EC2Client header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<AcceptAddressTransferResponse, EC2Error> AcceptAddressTransferOutcome;
       typedef Aws::Utils::Outcome<AcceptReservedInstancesExchangeQuoteResponse, EC2Error> AcceptReservedInstancesExchangeQuoteOutcome;
       typedef Aws::Utils::Outcome<AcceptTransitGatewayMulticastDomainAssociationsResponse, EC2Error> AcceptTransitGatewayMulticastDomainAssociationsOutcome;
       typedef Aws::Utils::Outcome<AcceptTransitGatewayPeeringAttachmentResponse, EC2Error> AcceptTransitGatewayPeeringAttachmentOutcome;
@@ -1124,6 +1141,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CancelCapacityReservationFleetsResponse, EC2Error> CancelCapacityReservationFleetsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CancelConversionTaskOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CancelExportTaskOutcome;
+      typedef Aws::Utils::Outcome<CancelImageLaunchPermissionResponse, EC2Error> CancelImageLaunchPermissionOutcome;
       typedef Aws::Utils::Outcome<CancelImportTaskResponse, EC2Error> CancelImportTaskOutcome;
       typedef Aws::Utils::Outcome<CancelReservedInstancesListingResponse, EC2Error> CancelReservedInstancesListingOutcome;
       typedef Aws::Utils::Outcome<CancelSpotFleetRequestsResponse, EC2Error> CancelSpotFleetRequestsOutcome;
@@ -1284,6 +1302,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupMembersResponse, EC2Error> DeregisterTransitGatewayMulticastGroupMembersOutcome;
       typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupSourcesResponse, EC2Error> DeregisterTransitGatewayMulticastGroupSourcesOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountAttributesResponse, EC2Error> DescribeAccountAttributesOutcome;
+      typedef Aws::Utils::Outcome<DescribeAddressTransfersResponse, EC2Error> DescribeAddressTransfersOutcome;
       typedef Aws::Utils::Outcome<DescribeAddressesResponse, EC2Error> DescribeAddressesOutcome;
       typedef Aws::Utils::Outcome<DescribeAddressesAttributeResponse, EC2Error> DescribeAddressesAttributeOutcome;
       typedef Aws::Utils::Outcome<DescribeAggregateIdFormatResponse, EC2Error> DescribeAggregateIdFormatOutcome;
@@ -1423,6 +1442,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DetachNetworkInterfaceOutcome;
       typedef Aws::Utils::Outcome<DetachVolumeResponse, EC2Error> DetachVolumeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DetachVpnGatewayOutcome;
+      typedef Aws::Utils::Outcome<DisableAddressTransferResponse, EC2Error> DisableAddressTransferOutcome;
       typedef Aws::Utils::Outcome<DisableEbsEncryptionByDefaultResponse, EC2Error> DisableEbsEncryptionByDefaultOutcome;
       typedef Aws::Utils::Outcome<DisableFastLaunchResponse, EC2Error> DisableFastLaunchOutcome;
       typedef Aws::Utils::Outcome<DisableFastSnapshotRestoresResponse, EC2Error> DisableFastSnapshotRestoresOutcome;
@@ -1445,6 +1465,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateTransitGatewayRouteTableResponse, EC2Error> DisassociateTransitGatewayRouteTableOutcome;
       typedef Aws::Utils::Outcome<DisassociateTrunkInterfaceResponse, EC2Error> DisassociateTrunkInterfaceOutcome;
       typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, EC2Error> DisassociateVpcCidrBlockOutcome;
+      typedef Aws::Utils::Outcome<EnableAddressTransferResponse, EC2Error> EnableAddressTransferOutcome;
       typedef Aws::Utils::Outcome<EnableEbsEncryptionByDefaultResponse, EC2Error> EnableEbsEncryptionByDefaultOutcome;
       typedef Aws::Utils::Outcome<EnableFastLaunchResponse, EC2Error> EnableFastLaunchOutcome;
       typedef Aws::Utils::Outcome<EnableFastSnapshotRestoresResponse, EC2Error> EnableFastSnapshotRestoresOutcome;
@@ -1629,6 +1650,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<AcceptAddressTransferOutcome> AcceptAddressTransferOutcomeCallable;
       typedef std::future<AcceptReservedInstancesExchangeQuoteOutcome> AcceptReservedInstancesExchangeQuoteOutcomeCallable;
       typedef std::future<AcceptTransitGatewayMulticastDomainAssociationsOutcome> AcceptTransitGatewayMulticastDomainAssociationsOutcomeCallable;
       typedef std::future<AcceptTransitGatewayPeeringAttachmentOutcome> AcceptTransitGatewayPeeringAttachmentOutcomeCallable;
@@ -1669,6 +1691,7 @@ namespace Aws
       typedef std::future<CancelCapacityReservationFleetsOutcome> CancelCapacityReservationFleetsOutcomeCallable;
       typedef std::future<CancelConversionTaskOutcome> CancelConversionTaskOutcomeCallable;
       typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
+      typedef std::future<CancelImageLaunchPermissionOutcome> CancelImageLaunchPermissionOutcomeCallable;
       typedef std::future<CancelImportTaskOutcome> CancelImportTaskOutcomeCallable;
       typedef std::future<CancelReservedInstancesListingOutcome> CancelReservedInstancesListingOutcomeCallable;
       typedef std::future<CancelSpotFleetRequestsOutcome> CancelSpotFleetRequestsOutcomeCallable;
@@ -1829,6 +1852,7 @@ namespace Aws
       typedef std::future<DeregisterTransitGatewayMulticastGroupMembersOutcome> DeregisterTransitGatewayMulticastGroupMembersOutcomeCallable;
       typedef std::future<DeregisterTransitGatewayMulticastGroupSourcesOutcome> DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable;
       typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
+      typedef std::future<DescribeAddressTransfersOutcome> DescribeAddressTransfersOutcomeCallable;
       typedef std::future<DescribeAddressesOutcome> DescribeAddressesOutcomeCallable;
       typedef std::future<DescribeAddressesAttributeOutcome> DescribeAddressesAttributeOutcomeCallable;
       typedef std::future<DescribeAggregateIdFormatOutcome> DescribeAggregateIdFormatOutcomeCallable;
@@ -1968,6 +1992,7 @@ namespace Aws
       typedef std::future<DetachNetworkInterfaceOutcome> DetachNetworkInterfaceOutcomeCallable;
       typedef std::future<DetachVolumeOutcome> DetachVolumeOutcomeCallable;
       typedef std::future<DetachVpnGatewayOutcome> DetachVpnGatewayOutcomeCallable;
+      typedef std::future<DisableAddressTransferOutcome> DisableAddressTransferOutcomeCallable;
       typedef std::future<DisableEbsEncryptionByDefaultOutcome> DisableEbsEncryptionByDefaultOutcomeCallable;
       typedef std::future<DisableFastLaunchOutcome> DisableFastLaunchOutcomeCallable;
       typedef std::future<DisableFastSnapshotRestoresOutcome> DisableFastSnapshotRestoresOutcomeCallable;
@@ -1990,6 +2015,7 @@ namespace Aws
       typedef std::future<DisassociateTransitGatewayRouteTableOutcome> DisassociateTransitGatewayRouteTableOutcomeCallable;
       typedef std::future<DisassociateTrunkInterfaceOutcome> DisassociateTrunkInterfaceOutcomeCallable;
       typedef std::future<DisassociateVpcCidrBlockOutcome> DisassociateVpcCidrBlockOutcomeCallable;
+      typedef std::future<EnableAddressTransferOutcome> EnableAddressTransferOutcomeCallable;
       typedef std::future<EnableEbsEncryptionByDefaultOutcome> EnableEbsEncryptionByDefaultOutcomeCallable;
       typedef std::future<EnableFastLaunchOutcome> EnableFastLaunchOutcomeCallable;
       typedef std::future<EnableFastSnapshotRestoresOutcome> EnableFastSnapshotRestoresOutcomeCallable;
@@ -2177,6 +2203,7 @@ namespace Aws
     class EC2Client;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const EC2Client*, const Model::AcceptAddressTransferRequest&, const Model::AcceptAddressTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptAddressTransferResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AcceptReservedInstancesExchangeQuoteRequest&, const Model::AcceptReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AcceptTransitGatewayMulticastDomainAssociationsRequest&, const Model::AcceptTransitGatewayMulticastDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptTransitGatewayMulticastDomainAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AcceptTransitGatewayPeeringAttachmentRequest&, const Model::AcceptTransitGatewayPeeringAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler;
@@ -2217,6 +2244,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CancelCapacityReservationFleetsRequest&, const Model::CancelCapacityReservationFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelCapacityReservationFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelConversionTaskRequest&, const Model::CancelConversionTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelConversionTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelExportTaskResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CancelImageLaunchPermissionRequest&, const Model::CancelImageLaunchPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelImageLaunchPermissionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelImportTaskRequest&, const Model::CancelImportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelImportTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelReservedInstancesListingRequest&, const Model::CancelReservedInstancesListingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelReservedInstancesListingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelSpotFleetRequestsRequest&, const Model::CancelSpotFleetRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSpotFleetRequestsResponseReceivedHandler;
@@ -2377,6 +2405,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatewayMulticastGroupMembersRequest&, const Model::DeregisterTransitGatewayMulticastGroupMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest&, const Model::DeregisterTransitGatewayMulticastGroupSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeAddressTransfersRequest&, const Model::DescribeAddressTransfersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressTransfersResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAddressesRequest&, const Model::DescribeAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAddressesAttributeRequest&, const Model::DescribeAddressesAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAggregateIdFormatRequest&, const Model::DescribeAggregateIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateIdFormatResponseReceivedHandler;
@@ -2516,6 +2545,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DetachNetworkInterfaceRequest&, const Model::DetachNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachNetworkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DetachVolumeRequest&, const Model::DetachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DetachVpnGatewayRequest&, const Model::DetachVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVpnGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisableAddressTransferRequest&, const Model::DisableAddressTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableAddressTransferResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableEbsEncryptionByDefaultRequest&, const Model::DisableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableFastLaunchRequest&, const Model::DisableFastLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFastLaunchResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableFastSnapshotRestoresRequest&, const Model::DisableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFastSnapshotRestoresResponseReceivedHandler;
@@ -2538,6 +2568,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayRouteTableRequest&, const Model::DisassociateTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTrunkInterfaceRequest&, const Model::DisassociateTrunkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrunkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateVpcCidrBlockRequest&, const Model::DisassociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVpcCidrBlockResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::EnableAddressTransferRequest&, const Model::EnableAddressTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableAddressTransferResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableEbsEncryptionByDefaultRequest&, const Model::EnableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableFastLaunchRequest&, const Model::EnableFastLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFastLaunchResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableFastSnapshotRestoresRequest&, const Model::EnableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFastSnapshotRestoresResponseReceivedHandler;

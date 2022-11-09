@@ -22,7 +22,9 @@ CreateWebACLRequest::CreateWebACLRequest() :
     m_visibilityConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customResponseBodiesHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false)
+    m_captchaConfigHasBeenSet(false),
+    m_challengeConfigHasBeenSet(false),
+    m_tokenDomainsHasBeenSet(false)
 {
 }
 
@@ -55,7 +57,7 @@ Aws::String CreateWebACLRequest::SerializePayload() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -72,7 +74,7 @@ Aws::String CreateWebACLRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -95,6 +97,23 @@ Aws::String CreateWebACLRequest::SerializePayload() const
   if(m_captchaConfigHasBeenSet)
   {
    payload.WithObject("CaptchaConfig", m_captchaConfig.Jsonize());
+
+  }
+
+  if(m_challengeConfigHasBeenSet)
+  {
+   payload.WithObject("ChallengeConfig", m_challengeConfig.Jsonize());
+
+  }
+
+  if(m_tokenDomainsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tokenDomainsJsonList(m_tokenDomains.size());
+   for(unsigned tokenDomainsIndex = 0; tokenDomainsIndex < tokenDomainsJsonList.GetLength(); ++tokenDomainsIndex)
+   {
+     tokenDomainsJsonList[tokenDomainsIndex].AsString(m_tokenDomains[tokenDomainsIndex]);
+   }
+   payload.WithArray("TokenDomains", std::move(tokenDomainsJsonList));
 
   }
 

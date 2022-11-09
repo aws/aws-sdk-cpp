@@ -6,8 +6,12 @@
 #set($className = "${metadata.classNamePrefix}Client")
 #pragma once
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
-\#include <aws/$metadata.projectName/${metadata.classNamePrefix}Endpoint.h>
+#if(!$serviceModel.endpointRules)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Endpoint.h>
 \#include <aws/core/client/ClientConfiguration.h>
+#else
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
+#end
 \#include <aws/core/client/AWSClient.h>
 \#include <aws/core/auth/AWSAuthSigner.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
@@ -19,6 +23,7 @@ namespace ${rootNamespace}
 {
 namespace ${metadata.namespace}
 {
+#if(!$serviceModel.endpointRules)
     // Get endpoint, signer region and signer service name after computing the endpoint.
     struct ComputeEndpointResult
     {
@@ -30,6 +35,7 @@ namespace ${metadata.namespace}
       Aws::String signerServiceName;
     };
     typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ComputeEndpointOutcome;
+#end
 
 #if($serviceModel.documentation)
     /**
@@ -44,14 +50,24 @@ namespace ${metadata.namespace}
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
+        static const char* SERVICE_NAME;
+        static const char* ALLOCATION_TAG;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
         void OverrideEndpoint(const Aws::String& endpoint);
+#if($serviceModel.endpointRules)
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+#end
     private:
-        void init(const Client::ClientConfiguration& clientConfiguration);
+#if(!$serviceModel.endpointRules)
+        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+#else
+        void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
+#end
+#if(!$serviceModel.endpointRules)
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
         /**
          * For operations without account ID or ARN as parameters, e.g. CreateBucket, ListRegionalBuckets. Possible endpoints:
@@ -74,16 +90,24 @@ namespace ${metadata.namespace}
         Aws::String m_scheme;
         bool m_enableHostPrefixInjection = false;
         Aws::String m_configScheme;
+#end##-#if(!$serviceModel.endpointRules)
+#if($serviceModel.endpointRules)
+        ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
+#end
         std::shared_ptr<Utils::Threading::Executor> m_executor;
+#if(!$serviceModel.endpointRules)
         bool m_useDualStack = false;
         bool m_useArnRegion = false;
         bool m_useCustomEndpoint = false;
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
+#if(!$serviceModel.endpointRules)
         bool m_enableEndpointDiscovery = false;
 #end
+#end
 #if($serviceModel.endpointRules)
-        std::shared_ptr<${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
 #end
     };
 

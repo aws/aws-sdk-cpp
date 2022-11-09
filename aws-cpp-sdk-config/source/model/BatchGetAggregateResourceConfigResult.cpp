@@ -30,7 +30,7 @@ BatchGetAggregateResourceConfigResult& BatchGetAggregateResourceConfigResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BaseConfigurationItems"))
   {
-    Array<JsonView> baseConfigurationItemsJsonList = jsonValue.GetArray("BaseConfigurationItems");
+    Aws::Utils::Array<JsonView> baseConfigurationItemsJsonList = jsonValue.GetArray("BaseConfigurationItems");
     for(unsigned baseConfigurationItemsIndex = 0; baseConfigurationItemsIndex < baseConfigurationItemsJsonList.GetLength(); ++baseConfigurationItemsIndex)
     {
       m_baseConfigurationItems.push_back(baseConfigurationItemsJsonList[baseConfigurationItemsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetAggregateResourceConfigResult& BatchGetAggregateResourceConfigResult::op
 
   if(jsonValue.ValueExists("UnprocessedResourceIdentifiers"))
   {
-    Array<JsonView> unprocessedResourceIdentifiersJsonList = jsonValue.GetArray("UnprocessedResourceIdentifiers");
+    Aws::Utils::Array<JsonView> unprocessedResourceIdentifiersJsonList = jsonValue.GetArray("UnprocessedResourceIdentifiers");
     for(unsigned unprocessedResourceIdentifiersIndex = 0; unprocessedResourceIdentifiersIndex < unprocessedResourceIdentifiersJsonList.GetLength(); ++unprocessedResourceIdentifiersIndex)
     {
       m_unprocessedResourceIdentifiers.push_back(unprocessedResourceIdentifiersJsonList[unprocessedResourceIdentifiersIndex].AsObject());

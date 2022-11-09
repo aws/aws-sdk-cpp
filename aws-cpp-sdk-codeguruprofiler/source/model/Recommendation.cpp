@@ -82,7 +82,7 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("topMatches"))
   {
-    Array<JsonView> topMatchesJsonList = jsonValue.GetArray("topMatches");
+    Aws::Utils::Array<JsonView> topMatchesJsonList = jsonValue.GetArray("topMatches");
     for(unsigned topMatchesIndex = 0; topMatchesIndex < topMatchesJsonList.GetLength(); ++topMatchesIndex)
     {
       m_topMatches.push_back(topMatchesJsonList[topMatchesIndex].AsObject());
@@ -127,7 +127,7 @@ JsonValue Recommendation::Jsonize() const
 
   if(m_topMatchesHasBeenSet)
   {
-   Array<JsonValue> topMatchesJsonList(m_topMatches.size());
+   Aws::Utils::Array<JsonValue> topMatchesJsonList(m_topMatches.size());
    for(unsigned topMatchesIndex = 0; topMatchesIndex < topMatchesJsonList.GetLength(); ++topMatchesIndex)
    {
      topMatchesJsonList[topMatchesIndex].AsObject(m_topMatches[topMatchesIndex].Jsonize());

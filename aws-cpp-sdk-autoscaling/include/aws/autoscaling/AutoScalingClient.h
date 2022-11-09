@@ -29,27 +29,55 @@ namespace AutoScaling
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AutoScalingClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AutoScalingClient(const Aws::AutoScaling::AutoScalingClientConfiguration& clientConfiguration = Aws::AutoScaling::AutoScalingClientConfiguration(),
+                          std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider = Aws::MakeShared<AutoScalingEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AutoScalingClient(const Aws::Auth::AWSCredentials& credentials,
-                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider = Aws::MakeShared<AutoScalingEndpointProvider>(ALLOCATION_TAG),
+                          const Aws::AutoScaling::AutoScalingClientConfiguration& clientConfiguration = Aws::AutoScaling::AutoScalingClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AutoScalingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider = Aws::MakeShared<AutoScalingEndpointProvider>(ALLOCATION_TAG),
+                          const Aws::AutoScaling::AutoScalingClientConfiguration& clientConfiguration = Aws::AutoScaling::AutoScalingClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AutoScalingClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AutoScalingClient(const Aws::Auth::AWSCredentials& credentials,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AutoScalingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AutoScalingClient();
 
 
@@ -292,8 +320,15 @@ namespace AutoScaling
          * for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
-         * configurations</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+         * <p>Amazon EC2 Auto Scaling configures instances launched as part of an Auto
+         * Scaling group using either a launch template or a launch configuration. We
+         * strongly recommend that you do not use launch configurations. They do not
+         * provide full functionality for Amazon EC2 Auto Scaling or Amazon EC2. For
+         * information about using launch templates, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html">Launch
+         * templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">AWS
          * API Reference</a></p>
          */
@@ -335,15 +370,21 @@ namespace AutoScaling
         /**
          * <p>Deletes the specified Auto Scaling group.</p> <p>If the group has instances
          * or scaling activities in progress, you must specify the option to force the
-         * deletion in order for it to succeed.</p> <p>If the group has policies, deleting
-         * the group deletes the policies, the underlying alarm actions, and any alarm that
-         * no longer has an associated action.</p> <p>To remove instances from the Auto
+         * deletion in order for it to succeed. The force delete operation will also
+         * terminate the EC2 instances. If the group has a warm pool, the force delete
+         * option also deletes the warm pool.</p> <p>To remove instances from the Auto
          * Scaling group before deleting it, call the <a>DetachInstances</a> API with the
          * list of instances and the option to decrement the desired capacity. This ensures
          * that Amazon EC2 Auto Scaling does not launch replacement instances.</p> <p>To
          * terminate all instances before deleting the Auto Scaling group, call the
          * <a>UpdateAutoScalingGroup</a> API and set the minimum size and desired capacity
-         * of the Auto Scaling group to zero.</p><p><h3>See Also:</h3>   <a
+         * of the Auto Scaling group to zero.</p> <p>If the group has scaling policies,
+         * deleting the group deletes the policies, the underlying alarm actions, and any
+         * alarm that no longer has an associated action.</p> <p>For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-process-shutdown.html">Delete
+         * your Auto Scaling infrastructure</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup">AWS
          * API Reference</a></p>
          */
@@ -1600,12 +1641,13 @@ namespace AutoScaling
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<AutoScalingEndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void init(const AutoScalingClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        AutoScalingClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<AutoScalingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AutoScaling

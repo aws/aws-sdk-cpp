@@ -28,29 +28,77 @@ namespace SESV2
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SESV2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SESV2Client(const Aws::SESV2::SESV2ClientConfiguration& clientConfiguration = Aws::SESV2::SESV2ClientConfiguration(),
+                    std::shared_ptr<SESV2EndpointProviderBase> endpointProvider = Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SESV2Client(const Aws::Auth::AWSCredentials& credentials,
-                    const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<SESV2EndpointProviderBase> endpointProvider = Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG),
+                    const Aws::SESV2::SESV2ClientConfiguration& clientConfiguration = Aws::SESV2::SESV2ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SESV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<SESV2EndpointProviderBase> endpointProvider = Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG),
+                    const Aws::SESV2::SESV2ClientConfiguration& clientConfiguration = Aws::SESV2::SESV2ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SESV2Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SESV2Client(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SESV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SESV2Client();
 
+
+        /**
+         * <p>Retrieves batches of metric data collected based on your sending
+         * activity.</p> <p>You can execute this operation no more than 16 times per
+         * second, and with at most 160 queries from the batches per second
+         * (cumulative).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BatchGetMetricData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetMetricDataOutcome BatchGetMetricData(const Model::BatchGetMetricDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetMetricDataOutcomeCallable BatchGetMetricDataCallable(const Model::BatchGetMetricDataRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchGetMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetMetricDataAsync(const Model::BatchGetMetricDataRequest& request, const BatchGetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a configuration set. <i>Configuration sets</i> are groups of rules
@@ -135,8 +183,8 @@ namespace SESV2
         /**
          * <p>Creates a new custom verification email template.</p> <p>For more information
          * about custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateCustomVerificationEmailTemplate">AWS
@@ -389,8 +437,8 @@ namespace SESV2
         /**
          * <p>Deletes an existing custom verification email template.</p> <p>For more
          * information about custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteCustomVerificationEmailTemplate">AWS
@@ -627,8 +675,8 @@ namespace SESV2
          * <p>Returns the custom email verification template for the template name you
          * specify.</p> <p>For more information about custom verification email templates,
          * see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetCustomVerificationEmailTemplate">AWS
@@ -664,6 +712,23 @@ namespace SESV2
          * An Async wrapper for GetDedicatedIp that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDedicatedIpAsync(const Model::GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieve information about the dedicated pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIpPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDedicatedIpPoolOutcome GetDedicatedIpPool(const Model::GetDedicatedIpPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDedicatedIpPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDedicatedIpPoolOutcomeCallable GetDedicatedIpPoolCallable(const Model::GetDedicatedIpPoolRequest& request) const;
+
+        /**
+         * An Async wrapper for GetDedicatedIpPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDedicatedIpPoolAsync(const Model::GetDedicatedIpPoolRequest& request, const GetDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the dedicated IP addresses that are associated with your Amazon Web
@@ -925,8 +990,8 @@ namespace SESV2
          * <p>Lists the existing custom verification email templates for your account in
          * the current Amazon Web Services Region.</p> <p>For more information about custom
          * verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListCustomVerificationEmailTemplates">AWS
@@ -1060,6 +1125,25 @@ namespace SESV2
         virtual void ListImportJobsAsync(const Model::ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the recommendations present in your Amazon SES account in the current
+         * Amazon Web Services Region.</p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRecommendationsOutcome ListRecommendations(const Model::ListRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRecommendationsOutcomeCallable ListRecommendationsCallable(const Model::ListRecommendationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRecommendationsAsync(const Model::ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a list of email addresses that are on the suppression list for your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
@@ -1171,6 +1255,24 @@ namespace SESV2
         virtual void PutAccountSuppressionAttributesAsync(const Model::PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update your Amazon SES account VDM attributes.</p> <p>You can execute this
+         * operation no more than once per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountVdmAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccountVdmAttributesOutcome PutAccountVdmAttributes(const Model::PutAccountVdmAttributesRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutAccountVdmAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccountVdmAttributesOutcomeCallable PutAccountVdmAttributesCallable(const Model::PutAccountVdmAttributesRequest& request) const;
+
+        /**
+         * An Async wrapper for PutAccountVdmAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccountVdmAttributesAsync(const Model::PutAccountVdmAttributesRequest& request, const PutAccountVdmAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Associate a configuration set with a dedicated IP pool. You can use dedicated
          * IP pools to create groups of dedicated IP addresses for sending specific types
          * of email.</p><p><h3>See Also:</h3>   <a
@@ -1262,6 +1364,25 @@ namespace SESV2
          * An Async wrapper for PutConfigurationSetTrackingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutConfigurationSetTrackingOptionsAsync(const Model::PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Specify VDM preferences for email that you send using the configuration
+         * set.</p> <p>You can execute this operation no more than once per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetVdmOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutConfigurationSetVdmOptionsOutcome PutConfigurationSetVdmOptions(const Model::PutConfigurationSetVdmOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutConfigurationSetVdmOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutConfigurationSetVdmOptionsOutcomeCallable PutConfigurationSetVdmOptionsCallable(const Model::PutConfigurationSetVdmOptionsRequest& request) const;
+
+        /**
+         * An Async wrapper for PutConfigurationSetVdmOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutConfigurationSetVdmOptionsAsync(const Model::PutConfigurationSetVdmOptionsRequest& request, const PutConfigurationSetVdmOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> 
@@ -1475,8 +1596,8 @@ namespace SESV2
          * specified address.</p> <p>To use this operation, you must first create a custom
          * verification email template. For more information about creating and using
          * custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendCustomVerificationEmail">AWS
@@ -1646,8 +1767,8 @@ namespace SESV2
         /**
          * <p>Updates an existing custom verification email template.</p> <p>For more
          * information about custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateCustomVerificationEmailTemplate">AWS
@@ -1715,12 +1836,13 @@ namespace SESV2
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SESV2EndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const SESV2ClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      SESV2ClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SESV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SESV2

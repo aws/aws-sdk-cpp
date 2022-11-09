@@ -42,7 +42,7 @@ CreateAssessmentFrameworkControlSet& CreateAssessmentFrameworkControlSet::operat
 
   if(jsonValue.ValueExists("controls"))
   {
-    Array<JsonView> controlsJsonList = jsonValue.GetArray("controls");
+    Aws::Utils::Array<JsonView> controlsJsonList = jsonValue.GetArray("controls");
     for(unsigned controlsIndex = 0; controlsIndex < controlsJsonList.GetLength(); ++controlsIndex)
     {
       m_controls.push_back(controlsJsonList[controlsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue CreateAssessmentFrameworkControlSet::Jsonize() const
 
   if(m_controlsHasBeenSet)
   {
-   Array<JsonValue> controlsJsonList(m_controls.size());
+   Aws::Utils::Array<JsonValue> controlsJsonList(m_controls.size());
    for(unsigned controlsIndex = 0; controlsIndex < controlsJsonList.GetLength(); ++controlsIndex)
    {
      controlsJsonList[controlsIndex].AsObject(m_controls[controlsIndex].Jsonize());

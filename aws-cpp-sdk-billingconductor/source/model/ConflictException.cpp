@@ -21,14 +21,18 @@ namespace Model
 ConflictException::ConflictException() : 
     m_messageHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_reason(ConflictExceptionReason::NOT_SET),
+    m_reasonHasBeenSet(false)
 {
 }
 
 ConflictException::ConflictException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_reason(ConflictExceptionReason::NOT_SET),
+    m_reasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Reason"))
+  {
+    m_reason = ConflictExceptionReasonMapper::GetConflictExceptionReasonForName(jsonValue.GetString("Reason"));
+
+    m_reasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +90,11 @@ JsonValue ConflictException::Jsonize() const
   {
    payload.WithString("ResourceType", m_resourceType);
 
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("Reason", ConflictExceptionReasonMapper::GetNameForConflictExceptionReason(m_reason));
   }
 
   return payload;

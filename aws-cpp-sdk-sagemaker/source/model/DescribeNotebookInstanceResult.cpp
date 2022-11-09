@@ -82,7 +82,7 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -139,7 +139,7 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
 
   if(jsonValue.ValueExists("AcceleratorTypes"))
   {
-    Array<JsonView> acceleratorTypesJsonList = jsonValue.GetArray("AcceleratorTypes");
+    Aws::Utils::Array<JsonView> acceleratorTypesJsonList = jsonValue.GetArray("AcceleratorTypes");
     for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
     {
       m_acceleratorTypes.push_back(NotebookInstanceAcceleratorTypeMapper::GetNotebookInstanceAcceleratorTypeForName(acceleratorTypesJsonList[acceleratorTypesIndex].AsString()));
@@ -154,7 +154,7 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
 
   if(jsonValue.ValueExists("AdditionalCodeRepositories"))
   {
-    Array<JsonView> additionalCodeRepositoriesJsonList = jsonValue.GetArray("AdditionalCodeRepositories");
+    Aws::Utils::Array<JsonView> additionalCodeRepositoriesJsonList = jsonValue.GetArray("AdditionalCodeRepositories");
     for(unsigned additionalCodeRepositoriesIndex = 0; additionalCodeRepositoriesIndex < additionalCodeRepositoriesJsonList.GetLength(); ++additionalCodeRepositoriesIndex)
     {
       m_additionalCodeRepositories.push_back(additionalCodeRepositoriesJsonList[additionalCodeRepositoriesIndex].AsString());

@@ -54,7 +54,7 @@ FailureDetails& FailureDetails::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
     for(auto& detailsItem : detailsJsonMap)
     {
-      Array<JsonView> automationParameterValueListJsonList = detailsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> automationParameterValueListJsonList = detailsItem.second.AsArray();
       Aws::Vector<Aws::String> automationParameterValueListList;
       automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
@@ -90,7 +90,7 @@ JsonValue FailureDetails::Jsonize() const
    JsonValue detailsJsonMap;
    for(auto& detailsItem : m_details)
    {
-     Array<JsonValue> automationParameterValueListJsonList(detailsItem.second.size());
+     Aws::Utils::Array<JsonValue> automationParameterValueListJsonList(detailsItem.second.size());
      for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
      {
        automationParameterValueListJsonList[automationParameterValueListIndex].AsString(detailsItem.second[automationParameterValueListIndex]);

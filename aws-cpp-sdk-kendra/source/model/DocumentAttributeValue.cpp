@@ -48,7 +48,7 @@ DocumentAttributeValue& DocumentAttributeValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StringListValue"))
   {
-    Array<JsonView> stringListValueJsonList = jsonValue.GetArray("StringListValue");
+    Aws::Utils::Array<JsonView> stringListValueJsonList = jsonValue.GetArray("StringListValue");
     for(unsigned stringListValueIndex = 0; stringListValueIndex < stringListValueJsonList.GetLength(); ++stringListValueIndex)
     {
       m_stringListValue.push_back(stringListValueJsonList[stringListValueIndex].AsString());
@@ -85,7 +85,7 @@ JsonValue DocumentAttributeValue::Jsonize() const
 
   if(m_stringListValueHasBeenSet)
   {
-   Array<JsonValue> stringListValueJsonList(m_stringListValue.size());
+   Aws::Utils::Array<JsonValue> stringListValueJsonList(m_stringListValue.size());
    for(unsigned stringListValueIndex = 0; stringListValueIndex < stringListValueJsonList.GetLength(); ++stringListValueIndex)
    {
      stringListValueJsonList[stringListValueIndex].AsString(m_stringListValue[stringListValueIndex]);

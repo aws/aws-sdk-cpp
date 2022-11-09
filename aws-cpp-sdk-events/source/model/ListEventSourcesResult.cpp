@@ -30,7 +30,7 @@ ListEventSourcesResult& ListEventSourcesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EventSources"))
   {
-    Array<JsonView> eventSourcesJsonList = jsonValue.GetArray("EventSources");
+    Aws::Utils::Array<JsonView> eventSourcesJsonList = jsonValue.GetArray("EventSources");
     for(unsigned eventSourcesIndex = 0; eventSourcesIndex < eventSourcesJsonList.GetLength(); ++eventSourcesIndex)
     {
       m_eventSources.push_back(eventSourcesJsonList[eventSourcesIndex].AsObject());

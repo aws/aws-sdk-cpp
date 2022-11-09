@@ -44,7 +44,7 @@ AwsEcsTaskDefinitionProxyConfigurationDetails& AwsEcsTaskDefinitionProxyConfigur
 
   if(jsonValue.ValueExists("ProxyConfigurationProperties"))
   {
-    Array<JsonView> proxyConfigurationPropertiesJsonList = jsonValue.GetArray("ProxyConfigurationProperties");
+    Aws::Utils::Array<JsonView> proxyConfigurationPropertiesJsonList = jsonValue.GetArray("ProxyConfigurationProperties");
     for(unsigned proxyConfigurationPropertiesIndex = 0; proxyConfigurationPropertiesIndex < proxyConfigurationPropertiesJsonList.GetLength(); ++proxyConfigurationPropertiesIndex)
     {
       m_proxyConfigurationProperties.push_back(proxyConfigurationPropertiesJsonList[proxyConfigurationPropertiesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue AwsEcsTaskDefinitionProxyConfigurationDetails::Jsonize() const
 
   if(m_proxyConfigurationPropertiesHasBeenSet)
   {
-   Array<JsonValue> proxyConfigurationPropertiesJsonList(m_proxyConfigurationProperties.size());
+   Aws::Utils::Array<JsonValue> proxyConfigurationPropertiesJsonList(m_proxyConfigurationProperties.size());
    for(unsigned proxyConfigurationPropertiesIndex = 0; proxyConfigurationPropertiesIndex < proxyConfigurationPropertiesJsonList.GetLength(); ++proxyConfigurationPropertiesIndex)
    {
      proxyConfigurationPropertiesJsonList[proxyConfigurationPropertiesIndex].AsObject(m_proxyConfigurationProperties[proxyConfigurationPropertiesIndex].Jsonize());

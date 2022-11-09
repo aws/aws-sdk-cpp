@@ -99,7 +99,7 @@ DomainDeliverabilityCampaign& DomainDeliverabilityCampaign::operator =(JsonView 
 
   if(jsonValue.ValueExists("SendingIps"))
   {
-    Array<JsonView> sendingIpsJsonList = jsonValue.GetArray("SendingIps");
+    Aws::Utils::Array<JsonView> sendingIpsJsonList = jsonValue.GetArray("SendingIps");
     for(unsigned sendingIpsIndex = 0; sendingIpsIndex < sendingIpsJsonList.GetLength(); ++sendingIpsIndex)
     {
       m_sendingIps.push_back(sendingIpsJsonList[sendingIpsIndex].AsString());
@@ -165,7 +165,7 @@ DomainDeliverabilityCampaign& DomainDeliverabilityCampaign::operator =(JsonView 
 
   if(jsonValue.ValueExists("Esps"))
   {
-    Array<JsonView> espsJsonList = jsonValue.GetArray("Esps");
+    Aws::Utils::Array<JsonView> espsJsonList = jsonValue.GetArray("Esps");
     for(unsigned espsIndex = 0; espsIndex < espsJsonList.GetLength(); ++espsIndex)
     {
       m_esps.push_back(espsJsonList[espsIndex].AsString());
@@ -206,7 +206,7 @@ JsonValue DomainDeliverabilityCampaign::Jsonize() const
 
   if(m_sendingIpsHasBeenSet)
   {
-   Array<JsonValue> sendingIpsJsonList(m_sendingIps.size());
+   Aws::Utils::Array<JsonValue> sendingIpsJsonList(m_sendingIps.size());
    for(unsigned sendingIpsIndex = 0; sendingIpsIndex < sendingIpsJsonList.GetLength(); ++sendingIpsIndex)
    {
      sendingIpsJsonList[sendingIpsIndex].AsString(m_sendingIps[sendingIpsIndex]);
@@ -263,7 +263,7 @@ JsonValue DomainDeliverabilityCampaign::Jsonize() const
 
   if(m_espsHasBeenSet)
   {
-   Array<JsonValue> espsJsonList(m_esps.size());
+   Aws::Utils::Array<JsonValue> espsJsonList(m_esps.size());
    for(unsigned espsIndex = 0; espsIndex < espsJsonList.GetLength(); ++espsIndex)
    {
      espsJsonList[espsIndex].AsString(m_esps[espsIndex]);

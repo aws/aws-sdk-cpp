@@ -8,6 +8,8 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/CallAs.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/OperationResultFilter.h>
 #include <utility>
 
 namespace Aws
@@ -337,6 +339,47 @@ namespace Model
      */
     inline ListStackSetOperationResultsRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline const Aws::Vector<OperationResultFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline void SetFilters(const Aws::Vector<OperationResultFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline void SetFilters(Aws::Vector<OperationResultFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& WithFilters(const Aws::Vector<OperationResultFilter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& WithFilters(Aws::Vector<OperationResultFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& AddFilters(const OperationResultFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& AddFilters(OperationResultFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_stackSetName;
@@ -353,6 +396,9 @@ namespace Model
 
     CallAs m_callAs;
     bool m_callAsHasBeenSet = false;
+
+    Aws::Vector<OperationResultFilter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

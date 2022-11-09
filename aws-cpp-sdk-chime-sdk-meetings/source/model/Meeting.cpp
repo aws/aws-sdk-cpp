@@ -98,7 +98,7 @@ Meeting& Meeting::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TenantIds"))
   {
-    Array<JsonView> tenantIdsJsonList = jsonValue.GetArray("TenantIds");
+    Aws::Utils::Array<JsonView> tenantIdsJsonList = jsonValue.GetArray("TenantIds");
     for(unsigned tenantIdsIndex = 0; tenantIdsIndex < tenantIdsJsonList.GetLength(); ++tenantIdsIndex)
     {
       m_tenantIds.push_back(tenantIdsJsonList[tenantIdsIndex].AsString());
@@ -164,7 +164,7 @@ JsonValue Meeting::Jsonize() const
 
   if(m_tenantIdsHasBeenSet)
   {
-   Array<JsonValue> tenantIdsJsonList(m_tenantIds.size());
+   Aws::Utils::Array<JsonValue> tenantIdsJsonList(m_tenantIds.size());
    for(unsigned tenantIdsIndex = 0; tenantIdsIndex < tenantIdsJsonList.GetLength(); ++tenantIdsIndex)
    {
      tenantIdsJsonList[tenantIdsIndex].AsString(m_tenantIds[tenantIdsIndex]);

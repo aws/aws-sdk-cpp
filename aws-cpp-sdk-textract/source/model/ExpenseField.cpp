@@ -23,7 +23,9 @@ ExpenseField::ExpenseField() :
     m_labelDetectionHasBeenSet(false),
     m_valueDetectionHasBeenSet(false),
     m_pageNumber(0),
-    m_pageNumberHasBeenSet(false)
+    m_pageNumberHasBeenSet(false),
+    m_currencyHasBeenSet(false),
+    m_groupPropertiesHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ ExpenseField::ExpenseField(JsonView jsonValue) :
     m_labelDetectionHasBeenSet(false),
     m_valueDetectionHasBeenSet(false),
     m_pageNumber(0),
-    m_pageNumberHasBeenSet(false)
+    m_pageNumberHasBeenSet(false),
+    m_currencyHasBeenSet(false),
+    m_groupPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +71,23 @@ ExpenseField& ExpenseField::operator =(JsonView jsonValue)
     m_pageNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Currency"))
+  {
+    m_currency = jsonValue.GetObject("Currency");
+
+    m_currencyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GroupProperties"))
+  {
+    Aws::Utils::Array<JsonView> groupPropertiesJsonList = jsonValue.GetArray("GroupProperties");
+    for(unsigned groupPropertiesIndex = 0; groupPropertiesIndex < groupPropertiesJsonList.GetLength(); ++groupPropertiesIndex)
+    {
+      m_groupProperties.push_back(groupPropertiesJsonList[groupPropertiesIndex].AsObject());
+    }
+    m_groupPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +116,23 @@ JsonValue ExpenseField::Jsonize() const
   if(m_pageNumberHasBeenSet)
   {
    payload.WithInteger("PageNumber", m_pageNumber);
+
+  }
+
+  if(m_currencyHasBeenSet)
+  {
+   payload.WithObject("Currency", m_currency.Jsonize());
+
+  }
+
+  if(m_groupPropertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> groupPropertiesJsonList(m_groupProperties.size());
+   for(unsigned groupPropertiesIndex = 0; groupPropertiesIndex < groupPropertiesJsonList.GetLength(); ++groupPropertiesIndex)
+   {
+     groupPropertiesJsonList[groupPropertiesIndex].AsObject(m_groupProperties[groupPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("GroupProperties", std::move(groupPropertiesJsonList));
 
   }
 

@@ -30,7 +30,7 @@ DescribeSpendLimitsResult& DescribeSpendLimitsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SpendLimits"))
   {
-    Array<JsonView> spendLimitsJsonList = jsonValue.GetArray("SpendLimits");
+    Aws::Utils::Array<JsonView> spendLimitsJsonList = jsonValue.GetArray("SpendLimits");
     for(unsigned spendLimitsIndex = 0; spendLimitsIndex < spendLimitsJsonList.GetLength(); ++spendLimitsIndex)
     {
       m_spendLimits.push_back(spendLimitsJsonList[spendLimitsIndex].AsObject());

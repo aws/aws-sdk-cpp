@@ -56,7 +56,7 @@ StepScalingPolicyConfiguration& StepScalingPolicyConfiguration::operator =(JsonV
 
   if(jsonValue.ValueExists("StepAdjustments"))
   {
-    Array<JsonView> stepAdjustmentsJsonList = jsonValue.GetArray("StepAdjustments");
+    Aws::Utils::Array<JsonView> stepAdjustmentsJsonList = jsonValue.GetArray("StepAdjustments");
     for(unsigned stepAdjustmentsIndex = 0; stepAdjustmentsIndex < stepAdjustmentsJsonList.GetLength(); ++stepAdjustmentsIndex)
     {
       m_stepAdjustments.push_back(stepAdjustmentsJsonList[stepAdjustmentsIndex].AsObject());
@@ -99,7 +99,7 @@ JsonValue StepScalingPolicyConfiguration::Jsonize() const
 
   if(m_stepAdjustmentsHasBeenSet)
   {
-   Array<JsonValue> stepAdjustmentsJsonList(m_stepAdjustments.size());
+   Aws::Utils::Array<JsonValue> stepAdjustmentsJsonList(m_stepAdjustments.size());
    for(unsigned stepAdjustmentsIndex = 0; stepAdjustmentsIndex < stepAdjustmentsJsonList.GetLength(); ++stepAdjustmentsIndex)
    {
      stepAdjustmentsJsonList[stepAdjustmentsIndex].AsObject(m_stepAdjustments[stepAdjustmentsIndex].Jsonize());

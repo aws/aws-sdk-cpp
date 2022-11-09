@@ -32,7 +32,7 @@ Aws::String MergeProfilesRequest::SerializePayload() const
 
   if(m_profileIdsToBeMergedHasBeenSet)
   {
-   Array<JsonValue> profileIdsToBeMergedJsonList(m_profileIdsToBeMerged.size());
+   Aws::Utils::Array<JsonValue> profileIdsToBeMergedJsonList(m_profileIdsToBeMerged.size());
    for(unsigned profileIdsToBeMergedIndex = 0; profileIdsToBeMergedIndex < profileIdsToBeMergedJsonList.GetLength(); ++profileIdsToBeMergedIndex)
    {
      profileIdsToBeMergedJsonList[profileIdsToBeMergedIndex].AsString(m_profileIdsToBeMerged[profileIdsToBeMergedIndex]);

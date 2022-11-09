@@ -44,7 +44,7 @@ AwsEfsAccessPointPosixUserDetails& AwsEfsAccessPointPosixUserDetails::operator =
 
   if(jsonValue.ValueExists("SecondaryGids"))
   {
-    Array<JsonView> secondaryGidsJsonList = jsonValue.GetArray("SecondaryGids");
+    Aws::Utils::Array<JsonView> secondaryGidsJsonList = jsonValue.GetArray("SecondaryGids");
     for(unsigned secondaryGidsIndex = 0; secondaryGidsIndex < secondaryGidsJsonList.GetLength(); ++secondaryGidsIndex)
     {
       m_secondaryGids.push_back(secondaryGidsJsonList[secondaryGidsIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue AwsEfsAccessPointPosixUserDetails::Jsonize() const
 
   if(m_secondaryGidsHasBeenSet)
   {
-   Array<JsonValue> secondaryGidsJsonList(m_secondaryGids.size());
+   Aws::Utils::Array<JsonValue> secondaryGidsJsonList(m_secondaryGids.size());
    for(unsigned secondaryGidsIndex = 0; secondaryGidsIndex < secondaryGidsJsonList.GetLength(); ++secondaryGidsIndex)
    {
      secondaryGidsJsonList[secondaryGidsIndex].AsString(m_secondaryGids[secondaryGidsIndex]);

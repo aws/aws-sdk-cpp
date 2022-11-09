@@ -24,7 +24,7 @@ Aws::String UpdateAutomaticTapeCreationPolicyRequest::SerializePayload() const
 
   if(m_automaticTapeCreationRulesHasBeenSet)
   {
-   Array<JsonValue> automaticTapeCreationRulesJsonList(m_automaticTapeCreationRules.size());
+   Aws::Utils::Array<JsonValue> automaticTapeCreationRulesJsonList(m_automaticTapeCreationRules.size());
    for(unsigned automaticTapeCreationRulesIndex = 0; automaticTapeCreationRulesIndex < automaticTapeCreationRulesJsonList.GetLength(); ++automaticTapeCreationRulesIndex)
    {
      automaticTapeCreationRulesJsonList[automaticTapeCreationRulesIndex].AsObject(m_automaticTapeCreationRules[automaticTapeCreationRulesIndex].Jsonize());

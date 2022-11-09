@@ -42,7 +42,7 @@ UpdateVodSourceResult& UpdateVodSourceResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("HttpPackageConfigurations"))
   {
-    Array<JsonView> httpPackageConfigurationsJsonList = jsonValue.GetArray("HttpPackageConfigurations");
+    Aws::Utils::Array<JsonView> httpPackageConfigurationsJsonList = jsonValue.GetArray("HttpPackageConfigurations");
     for(unsigned httpPackageConfigurationsIndex = 0; httpPackageConfigurationsIndex < httpPackageConfigurationsJsonList.GetLength(); ++httpPackageConfigurationsIndex)
     {
       m_httpPackageConfigurations.push_back(httpPackageConfigurationsJsonList[httpPackageConfigurationsIndex].AsObject());

@@ -35,7 +35,7 @@ PredictionExplanations& PredictionExplanations::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("variableImpactExplanations"))
   {
-    Array<JsonView> variableImpactExplanationsJsonList = jsonValue.GetArray("variableImpactExplanations");
+    Aws::Utils::Array<JsonView> variableImpactExplanationsJsonList = jsonValue.GetArray("variableImpactExplanations");
     for(unsigned variableImpactExplanationsIndex = 0; variableImpactExplanationsIndex < variableImpactExplanationsJsonList.GetLength(); ++variableImpactExplanationsIndex)
     {
       m_variableImpactExplanations.push_back(variableImpactExplanationsJsonList[variableImpactExplanationsIndex].AsObject());
@@ -45,7 +45,7 @@ PredictionExplanations& PredictionExplanations::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("aggregatedVariablesImpactExplanations"))
   {
-    Array<JsonView> aggregatedVariablesImpactExplanationsJsonList = jsonValue.GetArray("aggregatedVariablesImpactExplanations");
+    Aws::Utils::Array<JsonView> aggregatedVariablesImpactExplanationsJsonList = jsonValue.GetArray("aggregatedVariablesImpactExplanations");
     for(unsigned aggregatedVariablesImpactExplanationsIndex = 0; aggregatedVariablesImpactExplanationsIndex < aggregatedVariablesImpactExplanationsJsonList.GetLength(); ++aggregatedVariablesImpactExplanationsIndex)
     {
       m_aggregatedVariablesImpactExplanations.push_back(aggregatedVariablesImpactExplanationsJsonList[aggregatedVariablesImpactExplanationsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue PredictionExplanations::Jsonize() const
 
   if(m_variableImpactExplanationsHasBeenSet)
   {
-   Array<JsonValue> variableImpactExplanationsJsonList(m_variableImpactExplanations.size());
+   Aws::Utils::Array<JsonValue> variableImpactExplanationsJsonList(m_variableImpactExplanations.size());
    for(unsigned variableImpactExplanationsIndex = 0; variableImpactExplanationsIndex < variableImpactExplanationsJsonList.GetLength(); ++variableImpactExplanationsIndex)
    {
      variableImpactExplanationsJsonList[variableImpactExplanationsIndex].AsObject(m_variableImpactExplanations[variableImpactExplanationsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue PredictionExplanations::Jsonize() const
 
   if(m_aggregatedVariablesImpactExplanationsHasBeenSet)
   {
-   Array<JsonValue> aggregatedVariablesImpactExplanationsJsonList(m_aggregatedVariablesImpactExplanations.size());
+   Aws::Utils::Array<JsonValue> aggregatedVariablesImpactExplanationsJsonList(m_aggregatedVariablesImpactExplanations.size());
    for(unsigned aggregatedVariablesImpactExplanationsIndex = 0; aggregatedVariablesImpactExplanationsIndex < aggregatedVariablesImpactExplanationsJsonList.GetLength(); ++aggregatedVariablesImpactExplanationsIndex)
    {
      aggregatedVariablesImpactExplanationsJsonList[aggregatedVariablesImpactExplanationsIndex].AsObject(m_aggregatedVariablesImpactExplanations[aggregatedVariablesImpactExplanationsIndex].Jsonize());

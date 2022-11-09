@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/codebuild/CodeBuildErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/codebuild/CodeBuildEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -94,6 +96,10 @@ namespace Aws
 
   namespace CodeBuild
   {
+    using CodeBuildClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeBuildEndpointProviderBase = Aws::CodeBuild::Endpoint::CodeBuildEndpointProviderBase;
+    using CodeBuildEndpointProvider = Aws::CodeBuild::Endpoint::CodeBuildEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CodeBuildClient header */

@@ -30,7 +30,7 @@ GetColumnStatisticsForPartitionResult& GetColumnStatisticsForPartitionResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ColumnStatisticsList"))
   {
-    Array<JsonView> columnStatisticsListJsonList = jsonValue.GetArray("ColumnStatisticsList");
+    Aws::Utils::Array<JsonView> columnStatisticsListJsonList = jsonValue.GetArray("ColumnStatisticsList");
     for(unsigned columnStatisticsListIndex = 0; columnStatisticsListIndex < columnStatisticsListJsonList.GetLength(); ++columnStatisticsListIndex)
     {
       m_columnStatisticsList.push_back(columnStatisticsListJsonList[columnStatisticsListIndex].AsObject());
@@ -39,7 +39,7 @@ GetColumnStatisticsForPartitionResult& GetColumnStatisticsForPartitionResult::op
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

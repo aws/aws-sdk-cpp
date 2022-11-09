@@ -44,7 +44,7 @@ ContainerDistributionConfiguration& ContainerDistributionConfiguration::operator
 
   if(jsonValue.ValueExists("containerTags"))
   {
-    Array<JsonView> containerTagsJsonList = jsonValue.GetArray("containerTags");
+    Aws::Utils::Array<JsonView> containerTagsJsonList = jsonValue.GetArray("containerTags");
     for(unsigned containerTagsIndex = 0; containerTagsIndex < containerTagsJsonList.GetLength(); ++containerTagsIndex)
     {
       m_containerTags.push_back(containerTagsJsonList[containerTagsIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue ContainerDistributionConfiguration::Jsonize() const
 
   if(m_containerTagsHasBeenSet)
   {
-   Array<JsonValue> containerTagsJsonList(m_containerTags.size());
+   Aws::Utils::Array<JsonValue> containerTagsJsonList(m_containerTags.size());
    for(unsigned containerTagsIndex = 0; containerTagsIndex < containerTagsJsonList.GetLength(); ++containerTagsIndex)
    {
      containerTagsJsonList[containerTagsIndex].AsString(m_containerTags[containerTagsIndex]);

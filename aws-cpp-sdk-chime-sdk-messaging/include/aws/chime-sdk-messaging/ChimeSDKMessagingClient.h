@@ -26,27 +26,55 @@ namespace ChimeSDKMessaging
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ChimeSDKMessagingClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ChimeSDKMessagingClient(const Aws::ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration& clientConfiguration = Aws::ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration(),
+                                std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeSDKMessagingEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ChimeSDKMessagingClient(const Aws::Auth::AWSCredentials& credentials,
-                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeSDKMessagingEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration& clientConfiguration = Aws::ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ChimeSDKMessagingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeSDKMessagingEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration& clientConfiguration = Aws::ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ChimeSDKMessagingClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ChimeSDKMessagingClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ChimeSDKMessagingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ChimeSDKMessagingClient();
 
 
@@ -888,10 +916,9 @@ namespace ChimeSDKMessaging
         virtual void RedactChannelMessageAsync(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows an <code>AppInstanceUser</code> to search the channels that they
-         * belong to. The <code>AppInstanceUser</code> can search by membership or external
-         * ID. An <code>AppInstanceAdmin</code> can search across all channels within the
-         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows <code>ChimeBearer</code> to search channels by channel members.
+         * AppInstanceUsers can search across the channels that they belong to.
+         * AppInstanceAdmins can search across all channels.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">AWS
          * API Reference</a></p>
          */
@@ -1046,12 +1073,13 @@ namespace ChimeSDKMessaging
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ChimeSDKMessagingEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const ChimeSDKMessagingClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ChimeSDKMessagingClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ChimeSDKMessaging

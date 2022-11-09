@@ -80,7 +80,7 @@ GetMLTransformResult& GetMLTransformResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("InputRecordTables"))
   {
-    Array<JsonView> inputRecordTablesJsonList = jsonValue.GetArray("InputRecordTables");
+    Aws::Utils::Array<JsonView> inputRecordTablesJsonList = jsonValue.GetArray("InputRecordTables");
     for(unsigned inputRecordTablesIndex = 0; inputRecordTablesIndex < inputRecordTablesJsonList.GetLength(); ++inputRecordTablesIndex)
     {
       m_inputRecordTables.push_back(inputRecordTablesJsonList[inputRecordTablesIndex].AsObject());
@@ -107,7 +107,7 @@ GetMLTransformResult& GetMLTransformResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Schema"))
   {
-    Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
+    Aws::Utils::Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
     for(unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex)
     {
       m_schema.push_back(schemaJsonList[schemaIndex].AsObject());

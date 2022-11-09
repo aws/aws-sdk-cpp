@@ -74,7 +74,7 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Models"))
   {
-    Array<JsonView> modelsJsonList = jsonValue.GetArray("Models");
+    Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("Models");
     for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
     {
       m_models.push_back(modelsJsonList[modelsIndex].AsObject());

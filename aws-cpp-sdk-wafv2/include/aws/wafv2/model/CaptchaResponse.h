@@ -68,25 +68,25 @@ namespace Model
 
 
     /**
-     * <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied
+     * <p>The time that the <code>CAPTCHA</code> was last solved for the supplied
      * token. </p>
      */
     inline long long GetSolveTimestamp() const{ return m_solveTimestamp; }
 
     /**
-     * <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied
+     * <p>The time that the <code>CAPTCHA</code> was last solved for the supplied
      * token. </p>
      */
     inline bool SolveTimestampHasBeenSet() const { return m_solveTimestampHasBeenSet; }
 
     /**
-     * <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied
+     * <p>The time that the <code>CAPTCHA</code> was last solved for the supplied
      * token. </p>
      */
     inline void SetSolveTimestamp(long long value) { m_solveTimestampHasBeenSet = true; m_solveTimestamp = value; }
 
     /**
-     * <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied
+     * <p>The time that the <code>CAPTCHA</code> was last solved for the supplied
      * token. </p>
      */
     inline CaptchaResponse& WithSolveTimestamp(long long value) { SetSolveTimestamp(value); return *this;}

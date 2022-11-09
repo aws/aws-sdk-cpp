@@ -42,7 +42,7 @@ MessageGroup& MessageGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("variations"))
   {
-    Array<JsonView> variationsJsonList = jsonValue.GetArray("variations");
+    Aws::Utils::Array<JsonView> variationsJsonList = jsonValue.GetArray("variations");
     for(unsigned variationsIndex = 0; variationsIndex < variationsJsonList.GetLength(); ++variationsIndex)
     {
       m_variations.push_back(variationsJsonList[variationsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue MessageGroup::Jsonize() const
 
   if(m_variationsHasBeenSet)
   {
-   Array<JsonValue> variationsJsonList(m_variations.size());
+   Aws::Utils::Array<JsonValue> variationsJsonList(m_variations.size());
    for(unsigned variationsIndex = 0; variationsIndex < variationsJsonList.GetLength(); ++variationsIndex)
    {
      variationsJsonList[variationsIndex].AsObject(m_variations[variationsIndex].Jsonize());

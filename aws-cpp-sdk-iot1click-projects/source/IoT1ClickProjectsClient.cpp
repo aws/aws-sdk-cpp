@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/iot1click-projects/IoT1ClickProjectsClient.h>
-#include <aws/iot1click-projects/IoT1ClickProjectsEndpoint.h>
 #include <aws/iot1click-projects/IoT1ClickProjectsErrorMarshaller.h>
+#include <aws/iot1click-projects/IoT1ClickProjectsEndpointProvider.h>
 #include <aws/iot1click-projects/model/AssociateDeviceWithPlacementRequest.h>
 #include <aws/iot1click-projects/model/CreatePlacementRequest.h>
 #include <aws/iot1click-projects/model/CreateProjectRequest.h>
@@ -44,20 +45,71 @@ using namespace Aws::IoT1ClickProjects;
 using namespace Aws::IoT1ClickProjects::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-static const char* SERVICE_NAME = "iot1click";
-static const char* ALLOCATION_TAG = "IoT1ClickProjectsClient";
+const char* IoT1ClickProjectsClient::SERVICE_NAME = "iot1click";
+const char* IoT1ClickProjectsClient::ALLOCATION_TAG = "IoT1ClickProjectsClient";
 
-IoT1ClickProjectsClient::IoT1ClickProjectsClient(const Client::ClientConfiguration& clientConfiguration) :
+IoT1ClickProjectsClient::IoT1ClickProjectsClient(const IoT1ClickProjects::IoT1ClickProjectsClientConfiguration& clientConfiguration,
+                                                 std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoT1ClickProjectsErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
+}
+
+IoT1ClickProjectsClient::IoT1ClickProjectsClient(const AWSCredentials& credentials,
+                                                 std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> endpointProvider,
+                                                 const IoT1ClickProjects::IoT1ClickProjectsClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoT1ClickProjectsErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+IoT1ClickProjectsClient::IoT1ClickProjectsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                                 std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> endpointProvider,
+                                                 const IoT1ClickProjects::IoT1ClickProjectsClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoT1ClickProjectsErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  IoT1ClickProjectsClient::IoT1ClickProjectsClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoT1ClickProjectsErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<IoT1ClickProjectsEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
 }
 
 IoT1ClickProjectsClient::IoT1ClickProjectsClient(const AWSCredentials& credentials,
@@ -68,9 +120,11 @@ IoT1ClickProjectsClient::IoT1ClickProjectsClient(const AWSCredentials& credentia
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoT1ClickProjectsErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<IoT1ClickProjectsEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 IoT1ClickProjectsClient::IoT1ClickProjectsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -81,43 +135,39 @@ IoT1ClickProjectsClient::IoT1ClickProjectsClient(const std::shared_ptr<AWSCreden
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoT1ClickProjectsErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<IoT1ClickProjectsEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 IoT1ClickProjectsClient::~IoT1ClickProjectsClient()
 {
 }
 
-void IoT1ClickProjectsClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<IoT1ClickProjectsEndpointProviderBase>& IoT1ClickProjectsClient::accessEndpointProvider()
+{
+  return m_endpointProvider;
+}
+
+void IoT1ClickProjectsClient::init(const IoT1ClickProjects::IoT1ClickProjectsClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("IoT 1Click Projects");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + IoT1ClickProjectsEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void IoT1ClickProjectsClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 AssociateDeviceWithPlacementOutcome IoT1ClickProjectsClient::AssociateDeviceWithPlacement(const AssociateDeviceWithPlacementRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateDeviceWithPlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateDeviceWithPlacement", "Required field: ProjectName, is not set");
@@ -133,14 +183,15 @@ AssociateDeviceWithPlacementOutcome IoT1ClickProjectsClient::AssociateDeviceWith
     AWS_LOGSTREAM_ERROR("AssociateDeviceWithPlacement", "Required field: DeviceTemplateName, is not set");
     return AssociateDeviceWithPlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceTemplateName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  uri.AddPathSegments("/placements/");
-  uri.AddPathSegment(request.GetPlacementName());
-  uri.AddPathSegments("/devices/");
-  uri.AddPathSegment(request.GetDeviceTemplateName());
-  return AssociateDeviceWithPlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateDeviceWithPlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/placements/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlacementName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/devices/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceTemplateName());
+  return AssociateDeviceWithPlacementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateDeviceWithPlacementOutcomeCallable IoT1ClickProjectsClient::AssociateDeviceWithPlacementCallable(const AssociateDeviceWithPlacementRequest& request) const
@@ -161,16 +212,18 @@ void IoT1ClickProjectsClient::AssociateDeviceWithPlacementAsync(const AssociateD
 
 CreatePlacementOutcome IoT1ClickProjectsClient::CreatePlacement(const CreatePlacementRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreatePlacement", "Required field: ProjectName, is not set");
     return CreatePlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  uri.AddPathSegments("/placements");
-  return CreatePlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/placements");
+  return CreatePlacementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePlacementOutcomeCallable IoT1ClickProjectsClient::CreatePlacementCallable(const CreatePlacementRequest& request) const
@@ -191,9 +244,11 @@ void IoT1ClickProjectsClient::CreatePlacementAsync(const CreatePlacementRequest&
 
 CreateProjectOutcome IoT1ClickProjectsClient::CreateProject(const CreateProjectRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects");
-  return CreateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
+  return CreateProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateProjectOutcomeCallable IoT1ClickProjectsClient::CreateProjectCallable(const CreateProjectRequest& request) const
@@ -214,6 +269,7 @@ void IoT1ClickProjectsClient::CreateProjectAsync(const CreateProjectRequest& req
 
 DeletePlacementOutcome IoT1ClickProjectsClient::DeletePlacement(const DeletePlacementRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PlacementNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeletePlacement", "Required field: PlacementName, is not set");
@@ -224,12 +280,13 @@ DeletePlacementOutcome IoT1ClickProjectsClient::DeletePlacement(const DeletePlac
     AWS_LOGSTREAM_ERROR("DeletePlacement", "Required field: ProjectName, is not set");
     return DeletePlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  uri.AddPathSegments("/placements/");
-  uri.AddPathSegment(request.GetPlacementName());
-  return DeletePlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/placements/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlacementName());
+  return DeletePlacementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePlacementOutcomeCallable IoT1ClickProjectsClient::DeletePlacementCallable(const DeletePlacementRequest& request) const
@@ -250,15 +307,17 @@ void IoT1ClickProjectsClient::DeletePlacementAsync(const DeletePlacementRequest&
 
 DeleteProjectOutcome IoT1ClickProjectsClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteProject", "Required field: ProjectName, is not set");
     return DeleteProjectOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  return DeleteProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  return DeleteProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteProjectOutcomeCallable IoT1ClickProjectsClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
@@ -279,6 +338,7 @@ void IoT1ClickProjectsClient::DeleteProjectAsync(const DeleteProjectRequest& req
 
 DescribePlacementOutcome IoT1ClickProjectsClient::DescribePlacement(const DescribePlacementRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PlacementNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribePlacement", "Required field: PlacementName, is not set");
@@ -289,12 +349,13 @@ DescribePlacementOutcome IoT1ClickProjectsClient::DescribePlacement(const Descri
     AWS_LOGSTREAM_ERROR("DescribePlacement", "Required field: ProjectName, is not set");
     return DescribePlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  uri.AddPathSegments("/placements/");
-  uri.AddPathSegment(request.GetPlacementName());
-  return DescribePlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/placements/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlacementName());
+  return DescribePlacementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePlacementOutcomeCallable IoT1ClickProjectsClient::DescribePlacementCallable(const DescribePlacementRequest& request) const
@@ -315,15 +376,17 @@ void IoT1ClickProjectsClient::DescribePlacementAsync(const DescribePlacementRequ
 
 DescribeProjectOutcome IoT1ClickProjectsClient::DescribeProject(const DescribeProjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeProject", "Required field: ProjectName, is not set");
     return DescribeProjectOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  return DescribeProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  return DescribeProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeProjectOutcomeCallable IoT1ClickProjectsClient::DescribeProjectCallable(const DescribeProjectRequest& request) const
@@ -344,6 +407,7 @@ void IoT1ClickProjectsClient::DescribeProjectAsync(const DescribeProjectRequest&
 
 DisassociateDeviceFromPlacementOutcome IoT1ClickProjectsClient::DisassociateDeviceFromPlacement(const DisassociateDeviceFromPlacementRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateDeviceFromPlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DisassociateDeviceFromPlacement", "Required field: ProjectName, is not set");
@@ -359,14 +423,15 @@ DisassociateDeviceFromPlacementOutcome IoT1ClickProjectsClient::DisassociateDevi
     AWS_LOGSTREAM_ERROR("DisassociateDeviceFromPlacement", "Required field: DeviceTemplateName, is not set");
     return DisassociateDeviceFromPlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceTemplateName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  uri.AddPathSegments("/placements/");
-  uri.AddPathSegment(request.GetPlacementName());
-  uri.AddPathSegments("/devices/");
-  uri.AddPathSegment(request.GetDeviceTemplateName());
-  return DisassociateDeviceFromPlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateDeviceFromPlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/placements/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlacementName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/devices/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceTemplateName());
+  return DisassociateDeviceFromPlacementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateDeviceFromPlacementOutcomeCallable IoT1ClickProjectsClient::DisassociateDeviceFromPlacementCallable(const DisassociateDeviceFromPlacementRequest& request) const
@@ -387,6 +452,7 @@ void IoT1ClickProjectsClient::DisassociateDeviceFromPlacementAsync(const Disasso
 
 GetDevicesInPlacementOutcome IoT1ClickProjectsClient::GetDevicesInPlacement(const GetDevicesInPlacementRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevicesInPlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDevicesInPlacement", "Required field: ProjectName, is not set");
@@ -397,13 +463,14 @@ GetDevicesInPlacementOutcome IoT1ClickProjectsClient::GetDevicesInPlacement(cons
     AWS_LOGSTREAM_ERROR("GetDevicesInPlacement", "Required field: PlacementName, is not set");
     return GetDevicesInPlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlacementName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  uri.AddPathSegments("/placements/");
-  uri.AddPathSegment(request.GetPlacementName());
-  uri.AddPathSegments("/devices");
-  return GetDevicesInPlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDevicesInPlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/placements/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlacementName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
+  return GetDevicesInPlacementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDevicesInPlacementOutcomeCallable IoT1ClickProjectsClient::GetDevicesInPlacementCallable(const GetDevicesInPlacementRequest& request) const
@@ -424,16 +491,18 @@ void IoT1ClickProjectsClient::GetDevicesInPlacementAsync(const GetDevicesInPlace
 
 ListPlacementsOutcome IoT1ClickProjectsClient::ListPlacements(const ListPlacementsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPlacements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListPlacements", "Required field: ProjectName, is not set");
     return ListPlacementsOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  uri.AddPathSegments("/placements");
-  return ListPlacementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPlacements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/placements");
+  return ListPlacementsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPlacementsOutcomeCallable IoT1ClickProjectsClient::ListPlacementsCallable(const ListPlacementsRequest& request) const
@@ -454,9 +523,11 @@ void IoT1ClickProjectsClient::ListPlacementsAsync(const ListPlacementsRequest& r
 
 ListProjectsOutcome IoT1ClickProjectsClient::ListProjects(const ListProjectsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects");
-  return ListProjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
+  return ListProjectsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProjectsOutcomeCallable IoT1ClickProjectsClient::ListProjectsCallable(const ListProjectsRequest& request) const
@@ -477,15 +548,17 @@ void IoT1ClickProjectsClient::ListProjectsAsync(const ListProjectsRequest& reque
 
 ListTagsForResourceOutcome IoT1ClickProjectsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable IoT1ClickProjectsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -506,15 +579,17 @@ void IoT1ClickProjectsClient::ListTagsForResourceAsync(const ListTagsForResource
 
 TagResourceOutcome IoT1ClickProjectsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable IoT1ClickProjectsClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -535,6 +610,7 @@ void IoT1ClickProjectsClient::TagResourceAsync(const TagResourceRequest& request
 
 UntagResourceOutcome IoT1ClickProjectsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -545,10 +621,11 @@ UntagResourceOutcome IoT1ClickProjectsClient::UntagResource(const UntagResourceR
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable IoT1ClickProjectsClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -569,6 +646,7 @@ void IoT1ClickProjectsClient::UntagResourceAsync(const UntagResourceRequest& req
 
 UpdatePlacementOutcome IoT1ClickProjectsClient::UpdatePlacement(const UpdatePlacementRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PlacementNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdatePlacement", "Required field: PlacementName, is not set");
@@ -579,12 +657,13 @@ UpdatePlacementOutcome IoT1ClickProjectsClient::UpdatePlacement(const UpdatePlac
     AWS_LOGSTREAM_ERROR("UpdatePlacement", "Required field: ProjectName, is not set");
     return UpdatePlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  uri.AddPathSegments("/placements/");
-  uri.AddPathSegment(request.GetPlacementName());
-  return UpdatePlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/placements/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlacementName());
+  return UpdatePlacementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePlacementOutcomeCallable IoT1ClickProjectsClient::UpdatePlacementCallable(const UpdatePlacementRequest& request) const
@@ -605,15 +684,17 @@ void IoT1ClickProjectsClient::UpdatePlacementAsync(const UpdatePlacementRequest&
 
 UpdateProjectOutcome IoT1ClickProjectsClient::UpdateProject(const UpdateProjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateProject", "Required field: ProjectName, is not set");
     return UpdateProjectOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectName());
-  return UpdateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  return UpdateProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateProjectOutcomeCallable IoT1ClickProjectsClient::UpdateProjectCallable(const UpdateProjectRequest& request) const

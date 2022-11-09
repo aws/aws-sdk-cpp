@@ -80,7 +80,7 @@ AttemptContainerDetail& AttemptContainerDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("networkInterfaces"))
   {
-    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
     for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
     {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
@@ -127,7 +127,7 @@ JsonValue AttemptContainerDetail::Jsonize() const
 
   if(m_networkInterfacesHasBeenSet)
   {
-   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   Aws::Utils::Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
    {
      networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());

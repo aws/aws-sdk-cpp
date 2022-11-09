@@ -38,7 +38,7 @@ GetDistributionMetricDataResult& GetDistributionMetricDataResult::operator =(con
 
   if(jsonValue.ValueExists("metricData"))
   {
-    Array<JsonView> metricDataJsonList = jsonValue.GetArray("metricData");
+    Aws::Utils::Array<JsonView> metricDataJsonList = jsonValue.GetArray("metricData");
     for(unsigned metricDataIndex = 0; metricDataIndex < metricDataJsonList.GetLength(); ++metricDataIndex)
     {
       m_metricData.push_back(metricDataJsonList[metricDataIndex].AsObject());

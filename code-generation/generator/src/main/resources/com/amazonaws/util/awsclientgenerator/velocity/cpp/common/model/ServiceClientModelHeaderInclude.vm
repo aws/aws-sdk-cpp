@@ -7,11 +7,19 @@
 #pragma once
 
 /* Generic header includes */
-\#include <aws/$metadata.projectName/${metadata.classNamePrefix}Errors.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
+#if($serviceModel.endpointRules && $serviceModel.metadata.serviceId == "S3")
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+#else
+\#include <aws/core/client/GenericClientConfiguration.h>
+#end
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
 \#include <aws/core/client/AsyncCallerContext.h>
 \#include <aws/core/http/HttpTypes.h>
+#if($serviceModel.endpointRules)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
 \#include <aws/core/utils/ConcurrentCache.h>
 #end
@@ -75,12 +83,16 @@ namespace ${rootNamespace}
 
   namespace ${metadata.namespace}
   {
-#if($serviceModel.endpointRules)
-    namespace Endpoint
-    {
-      class ${metadata.classNamePrefix}EndpointProvider;
-    } // namespace Endpoint
+#if($serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control")
+#if(!$metadata.hasEndpointDiscoveryTrait)
+    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+#else
+    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
 #end
+#end
+    using ${metadata.classNamePrefix}EndpointProviderBase = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProviderBase;
+    using ${metadata.classNamePrefix}EndpointProvider = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProvider;
+
     namespace Model
     {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")

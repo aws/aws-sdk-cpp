@@ -38,7 +38,7 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   if(jsonValue.ValueExists("ResultItems"))
   {
-    Array<JsonView> resultItemsJsonList = jsonValue.GetArray("ResultItems");
+    Aws::Utils::Array<JsonView> resultItemsJsonList = jsonValue.GetArray("ResultItems");
     for(unsigned resultItemsIndex = 0; resultItemsIndex < resultItemsJsonList.GetLength(); ++resultItemsIndex)
     {
       m_resultItems.push_back(resultItemsJsonList[resultItemsIndex].AsObject());
@@ -47,7 +47,7 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   if(jsonValue.ValueExists("FacetResults"))
   {
-    Array<JsonView> facetResultsJsonList = jsonValue.GetArray("FacetResults");
+    Aws::Utils::Array<JsonView> facetResultsJsonList = jsonValue.GetArray("FacetResults");
     for(unsigned facetResultsIndex = 0; facetResultsIndex < facetResultsJsonList.GetLength(); ++facetResultsIndex)
     {
       m_facetResults.push_back(facetResultsJsonList[facetResultsIndex].AsObject());
@@ -62,7 +62,7 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   if(jsonValue.ValueExists("Warnings"))
   {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
@@ -71,7 +71,7 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   if(jsonValue.ValueExists("SpellCorrectedQueries"))
   {
-    Array<JsonView> spellCorrectedQueriesJsonList = jsonValue.GetArray("SpellCorrectedQueries");
+    Aws::Utils::Array<JsonView> spellCorrectedQueriesJsonList = jsonValue.GetArray("SpellCorrectedQueries");
     for(unsigned spellCorrectedQueriesIndex = 0; spellCorrectedQueriesIndex < spellCorrectedQueriesJsonList.GetLength(); ++spellCorrectedQueriesIndex)
     {
       m_spellCorrectedQueries.push_back(spellCorrectedQueriesJsonList[spellCorrectedQueriesIndex].AsObject());

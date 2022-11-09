@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/rolesanywhere/RolesAnywhereErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/rolesanywhere/RolesAnywhereEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -75,6 +77,10 @@ namespace Aws
 
   namespace RolesAnywhere
   {
+    using RolesAnywhereClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RolesAnywhereEndpointProviderBase = Aws::RolesAnywhere::Endpoint::RolesAnywhereEndpointProviderBase;
+    using RolesAnywhereEndpointProvider = Aws::RolesAnywhere::Endpoint::RolesAnywhereEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in RolesAnywhereClient header */

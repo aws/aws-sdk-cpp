@@ -30,7 +30,7 @@ ListNodegroupsResult& ListNodegroupsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("nodegroups"))
   {
-    Array<JsonView> nodegroupsJsonList = jsonValue.GetArray("nodegroups");
+    Aws::Utils::Array<JsonView> nodegroupsJsonList = jsonValue.GetArray("nodegroups");
     for(unsigned nodegroupsIndex = 0; nodegroupsIndex < nodegroupsJsonList.GetLength(); ++nodegroupsIndex)
     {
       m_nodegroups.push_back(nodegroupsJsonList[nodegroupsIndex].AsString());

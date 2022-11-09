@@ -46,7 +46,7 @@ NotificationConfig& NotificationConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NotificationEvents"))
   {
-    Array<JsonView> notificationEventsJsonList = jsonValue.GetArray("NotificationEvents");
+    Aws::Utils::Array<JsonView> notificationEventsJsonList = jsonValue.GetArray("NotificationEvents");
     for(unsigned notificationEventsIndex = 0; notificationEventsIndex < notificationEventsJsonList.GetLength(); ++notificationEventsIndex)
     {
       m_notificationEvents.push_back(NotificationEventMapper::GetNotificationEventForName(notificationEventsJsonList[notificationEventsIndex].AsString()));
@@ -76,7 +76,7 @@ JsonValue NotificationConfig::Jsonize() const
 
   if(m_notificationEventsHasBeenSet)
   {
-   Array<JsonValue> notificationEventsJsonList(m_notificationEvents.size());
+   Aws::Utils::Array<JsonValue> notificationEventsJsonList(m_notificationEvents.size());
    for(unsigned notificationEventsIndex = 0; notificationEventsIndex < notificationEventsJsonList.GetLength(); ++notificationEventsIndex)
    {
      notificationEventsJsonList[notificationEventsIndex].AsString(NotificationEventMapper::GetNameForNotificationEvent(m_notificationEvents[notificationEventsIndex]));

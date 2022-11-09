@@ -33,7 +33,7 @@ VirtualGatewayTlsValidationContextAcmTrust& VirtualGatewayTlsValidationContextAc
 {
   if(jsonValue.ValueExists("certificateAuthorityArns"))
   {
-    Array<JsonView> certificateAuthorityArnsJsonList = jsonValue.GetArray("certificateAuthorityArns");
+    Aws::Utils::Array<JsonView> certificateAuthorityArnsJsonList = jsonValue.GetArray("certificateAuthorityArns");
     for(unsigned certificateAuthorityArnsIndex = 0; certificateAuthorityArnsIndex < certificateAuthorityArnsJsonList.GetLength(); ++certificateAuthorityArnsIndex)
     {
       m_certificateAuthorityArns.push_back(certificateAuthorityArnsJsonList[certificateAuthorityArnsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue VirtualGatewayTlsValidationContextAcmTrust::Jsonize() const
 
   if(m_certificateAuthorityArnsHasBeenSet)
   {
-   Array<JsonValue> certificateAuthorityArnsJsonList(m_certificateAuthorityArns.size());
+   Aws::Utils::Array<JsonValue> certificateAuthorityArnsJsonList(m_certificateAuthorityArns.size());
    for(unsigned certificateAuthorityArnsIndex = 0; certificateAuthorityArnsIndex < certificateAuthorityArnsJsonList.GetLength(); ++certificateAuthorityArnsIndex)
    {
      certificateAuthorityArnsJsonList[certificateAuthorityArnsIndex].AsString(m_certificateAuthorityArns[certificateAuthorityArnsIndex]);

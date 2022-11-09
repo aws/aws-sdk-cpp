@@ -26,7 +26,7 @@ Aws::String BatchUpsertTableRowsRequest::SerializePayload() const
 
   if(m_rowsToUpsertHasBeenSet)
   {
-   Array<JsonValue> rowsToUpsertJsonList(m_rowsToUpsert.size());
+   Aws::Utils::Array<JsonValue> rowsToUpsertJsonList(m_rowsToUpsert.size());
    for(unsigned rowsToUpsertIndex = 0; rowsToUpsertIndex < rowsToUpsertJsonList.GetLength(); ++rowsToUpsertIndex)
    {
      rowsToUpsertJsonList[rowsToUpsertIndex].AsObject(m_rowsToUpsert[rowsToUpsertIndex].Jsonize());

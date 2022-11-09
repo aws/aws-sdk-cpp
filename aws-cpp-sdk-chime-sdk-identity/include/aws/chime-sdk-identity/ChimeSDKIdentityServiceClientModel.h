@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/chime-sdk-identity/ChimeSDKIdentityErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/chime-sdk-identity/ChimeSDKIdentityEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -68,6 +70,10 @@ namespace Aws
 
   namespace ChimeSDKIdentity
   {
+    using ChimeSDKIdentityClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeSDKIdentityEndpointProviderBase = Aws::ChimeSDKIdentity::Endpoint::ChimeSDKIdentityEndpointProviderBase;
+    using ChimeSDKIdentityEndpointProvider = Aws::ChimeSDKIdentity::Endpoint::ChimeSDKIdentityEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ChimeSDKIdentityClient header */

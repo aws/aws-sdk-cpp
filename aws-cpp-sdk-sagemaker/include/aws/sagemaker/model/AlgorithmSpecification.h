@@ -452,6 +452,152 @@ namespace Model
      */
     inline AlgorithmSpecification& WithEnableSageMakerMetricsTimeSeries(bool value) { SetEnableSageMakerMetricsTimeSeries(value); return *this;}
 
+
+    /**
+     * <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint
+     * script for a Docker container</a> used to run a training job. This script takes
+     * precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetContainerEntrypoint() const{ return m_containerEntrypoint; }
+
+    /**
+     * <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint
+     * script for a Docker container</a> used to run a training job. This script takes
+     * precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+     */
+    inline bool ContainerEntrypointHasBeenSet() const { return m_containerEntrypointHasBeenSet; }
+
+    /**
+     * <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint
+     * script for a Docker container</a> used to run a training job. This script takes
+     * precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+     */
+    inline void SetContainerEntrypoint(const Aws::Vector<Aws::String>& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = value; }
+
+    /**
+     * <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint
+     * script for a Docker container</a> used to run a training job. This script takes
+     * precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+     */
+    inline void SetContainerEntrypoint(Aws::Vector<Aws::String>&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = std::move(value); }
+
+    /**
+     * <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint
+     * script for a Docker container</a> used to run a training job. This script takes
+     * precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+     */
+    inline AlgorithmSpecification& WithContainerEntrypoint(const Aws::Vector<Aws::String>& value) { SetContainerEntrypoint(value); return *this;}
+
+    /**
+     * <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint
+     * script for a Docker container</a> used to run a training job. This script takes
+     * precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+     */
+    inline AlgorithmSpecification& WithContainerEntrypoint(Aws::Vector<Aws::String>&& value) { SetContainerEntrypoint(std::move(value)); return *this;}
+
+    /**
+     * <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint
+     * script for a Docker container</a> used to run a training job. This script takes
+     * precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+     */
+    inline AlgorithmSpecification& AddContainerEntrypoint(const Aws::String& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(value); return *this; }
+
+    /**
+     * <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint
+     * script for a Docker container</a> used to run a training job. This script takes
+     * precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+     */
+    inline AlgorithmSpecification& AddContainerEntrypoint(Aws::String&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint
+     * script for a Docker container</a> used to run a training job. This script takes
+     * precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+     */
+    inline AlgorithmSpecification& AddContainerEntrypoint(const char* value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(value); return *this; }
+
+
+    /**
+     * <p>The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetContainerArguments() const{ return m_containerArguments; }
+
+    /**
+     * <p>The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+     */
+    inline bool ContainerArgumentsHasBeenSet() const { return m_containerArgumentsHasBeenSet; }
+
+    /**
+     * <p>The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+     */
+    inline void SetContainerArguments(const Aws::Vector<Aws::String>& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = value; }
+
+    /**
+     * <p>The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+     */
+    inline void SetContainerArguments(Aws::Vector<Aws::String>&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = std::move(value); }
+
+    /**
+     * <p>The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+     */
+    inline AlgorithmSpecification& WithContainerArguments(const Aws::Vector<Aws::String>& value) { SetContainerArguments(value); return *this;}
+
+    /**
+     * <p>The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+     */
+    inline AlgorithmSpecification& WithContainerArguments(Aws::Vector<Aws::String>&& value) { SetContainerArguments(std::move(value)); return *this;}
+
+    /**
+     * <p>The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+     */
+    inline AlgorithmSpecification& AddContainerArguments(const Aws::String& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(value); return *this; }
+
+    /**
+     * <p>The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+     */
+    inline AlgorithmSpecification& AddContainerArguments(Aws::String&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+     */
+    inline AlgorithmSpecification& AddContainerArguments(const char* value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(value); return *this; }
+
   private:
 
     Aws::String m_trainingImage;
@@ -468,6 +614,12 @@ namespace Model
 
     bool m_enableSageMakerMetricsTimeSeries;
     bool m_enableSageMakerMetricsTimeSeriesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_containerEntrypoint;
+    bool m_containerEntrypointHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_containerArguments;
+    bool m_containerArgumentsHasBeenSet = false;
   };
 
 } // namespace Model

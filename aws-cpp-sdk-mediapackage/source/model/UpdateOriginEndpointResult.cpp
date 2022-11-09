@@ -129,7 +129,7 @@ UpdateOriginEndpointResult& UpdateOriginEndpointResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("whitelist"))
   {
-    Array<JsonView> whitelistJsonList = jsonValue.GetArray("whitelist");
+    Aws::Utils::Array<JsonView> whitelistJsonList = jsonValue.GetArray("whitelist");
     for(unsigned whitelistIndex = 0; whitelistIndex < whitelistJsonList.GetLength(); ++whitelistIndex)
     {
       m_whitelist.push_back(whitelistJsonList[whitelistIndex].AsString());

@@ -32,7 +32,7 @@ Aws::String CreateDomainNameRequest::SerializePayload() const
 
   if(m_domainNameConfigurationsHasBeenSet)
   {
-   Array<JsonValue> domainNameConfigurationsJsonList(m_domainNameConfigurations.size());
+   Aws::Utils::Array<JsonValue> domainNameConfigurationsJsonList(m_domainNameConfigurations.size());
    for(unsigned domainNameConfigurationsIndex = 0; domainNameConfigurationsIndex < domainNameConfigurationsJsonList.GetLength(); ++domainNameConfigurationsIndex)
    {
      domainNameConfigurationsJsonList[domainNameConfigurationsIndex].AsObject(m_domainNameConfigurations[domainNameConfigurationsIndex].Jsonize());

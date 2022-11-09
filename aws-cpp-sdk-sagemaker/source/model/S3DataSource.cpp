@@ -66,7 +66,7 @@ S3DataSource& S3DataSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttributeNames"))
   {
-    Array<JsonView> attributeNamesJsonList = jsonValue.GetArray("AttributeNames");
+    Aws::Utils::Array<JsonView> attributeNamesJsonList = jsonValue.GetArray("AttributeNames");
     for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
     {
       m_attributeNames.push_back(attributeNamesJsonList[attributeNamesIndex].AsString());
@@ -76,7 +76,7 @@ S3DataSource& S3DataSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceGroupNames"))
   {
-    Array<JsonView> instanceGroupNamesJsonList = jsonValue.GetArray("InstanceGroupNames");
+    Aws::Utils::Array<JsonView> instanceGroupNamesJsonList = jsonValue.GetArray("InstanceGroupNames");
     for(unsigned instanceGroupNamesIndex = 0; instanceGroupNamesIndex < instanceGroupNamesJsonList.GetLength(); ++instanceGroupNamesIndex)
     {
       m_instanceGroupNames.push_back(instanceGroupNamesJsonList[instanceGroupNamesIndex].AsString());
@@ -109,7 +109,7 @@ JsonValue S3DataSource::Jsonize() const
 
   if(m_attributeNamesHasBeenSet)
   {
-   Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
+   Aws::Utils::Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
    for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
    {
      attributeNamesJsonList[attributeNamesIndex].AsString(m_attributeNames[attributeNamesIndex]);
@@ -120,7 +120,7 @@ JsonValue S3DataSource::Jsonize() const
 
   if(m_instanceGroupNamesHasBeenSet)
   {
-   Array<JsonValue> instanceGroupNamesJsonList(m_instanceGroupNames.size());
+   Aws::Utils::Array<JsonValue> instanceGroupNamesJsonList(m_instanceGroupNames.size());
    for(unsigned instanceGroupNamesIndex = 0; instanceGroupNamesIndex < instanceGroupNamesJsonList.GetLength(); ++instanceGroupNamesIndex)
    {
      instanceGroupNamesJsonList[instanceGroupNamesIndex].AsString(m_instanceGroupNames[instanceGroupNamesIndex]);

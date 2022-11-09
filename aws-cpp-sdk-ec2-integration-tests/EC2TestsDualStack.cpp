@@ -57,8 +57,8 @@ TEST_F(EC2DualStackTests, TestDualStackMocked)
     auto requestsMade = mockHttpClient->GetAllRequestsMade();
     ASSERT_EQ(1u, requestsMade.size());
     const Aws::Http::Standard::StandardHttpRequest requestMade = requestsMade[0];
-    ASSERT_EQ("https://api.ec2.us-east-1.aws", requestMade.GetURIString());
-    ASSERT_EQ("api.ec2.us-east-1.aws", requestMade.GetHeaderValue("host"));
+    ASSERT_EQ("https://ec2.us-east-1.api.aws", requestMade.GetURIString());
+    ASSERT_EQ("ec2.us-east-1.api.aws", requestMade.GetHeaderValue("host"));
 
     mockHttpClient->Reset();
     mockHttpClient = nullptr;

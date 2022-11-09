@@ -121,7 +121,7 @@ ResolverRule& ResolverRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetIps"))
   {
-    Array<JsonView> targetIpsJsonList = jsonValue.GetArray("TargetIps");
+    Aws::Utils::Array<JsonView> targetIpsJsonList = jsonValue.GetArray("TargetIps");
     for(unsigned targetIpsIndex = 0; targetIpsIndex < targetIpsJsonList.GetLength(); ++targetIpsIndex)
     {
       m_targetIps.push_back(targetIpsJsonList[targetIpsIndex].AsObject());
@@ -219,7 +219,7 @@ JsonValue ResolverRule::Jsonize() const
 
   if(m_targetIpsHasBeenSet)
   {
-   Array<JsonValue> targetIpsJsonList(m_targetIps.size());
+   Aws::Utils::Array<JsonValue> targetIpsJsonList(m_targetIps.size());
    for(unsigned targetIpsIndex = 0; targetIpsIndex < targetIpsJsonList.GetLength(); ++targetIpsIndex)
    {
      targetIpsJsonList[targetIpsIndex].AsObject(m_targetIps[targetIpsIndex].Jsonize());

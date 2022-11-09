@@ -57,7 +57,7 @@ RecommendationFeedback& RecommendationFeedback::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Reactions"))
   {
-    Array<JsonView> reactionsJsonList = jsonValue.GetArray("Reactions");
+    Aws::Utils::Array<JsonView> reactionsJsonList = jsonValue.GetArray("Reactions");
     for(unsigned reactionsIndex = 0; reactionsIndex < reactionsJsonList.GetLength(); ++reactionsIndex)
     {
       m_reactions.push_back(ReactionMapper::GetReactionForName(reactionsJsonList[reactionsIndex].AsString()));
@@ -107,7 +107,7 @@ JsonValue RecommendationFeedback::Jsonize() const
 
   if(m_reactionsHasBeenSet)
   {
-   Array<JsonValue> reactionsJsonList(m_reactions.size());
+   Aws::Utils::Array<JsonValue> reactionsJsonList(m_reactions.size());
    for(unsigned reactionsIndex = 0; reactionsIndex < reactionsJsonList.GetLength(); ++reactionsIndex)
    {
      reactionsJsonList[reactionsIndex].AsString(ReactionMapper::GetNameForReaction(m_reactions[reactionsIndex]));

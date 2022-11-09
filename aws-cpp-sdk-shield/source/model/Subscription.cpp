@@ -81,7 +81,7 @@ Subscription& Subscription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Limits"))
   {
-    Array<JsonView> limitsJsonList = jsonValue.GetArray("Limits");
+    Aws::Utils::Array<JsonView> limitsJsonList = jsonValue.GetArray("Limits");
     for(unsigned limitsIndex = 0; limitsIndex < limitsJsonList.GetLength(); ++limitsIndex)
     {
       m_limits.push_back(limitsJsonList[limitsIndex].AsObject());
@@ -140,7 +140,7 @@ JsonValue Subscription::Jsonize() const
 
   if(m_limitsHasBeenSet)
   {
-   Array<JsonValue> limitsJsonList(m_limits.size());
+   Aws::Utils::Array<JsonValue> limitsJsonList(m_limits.size());
    for(unsigned limitsIndex = 0; limitsIndex < limitsJsonList.GetLength(); ++limitsIndex)
    {
      limitsJsonList[limitsIndex].AsObject(m_limits[limitsIndex].Jsonize());

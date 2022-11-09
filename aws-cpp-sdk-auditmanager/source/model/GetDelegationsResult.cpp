@@ -30,7 +30,7 @@ GetDelegationsResult& GetDelegationsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("delegations"))
   {
-    Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");
+    Aws::Utils::Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");
     for(unsigned delegationsIndex = 0; delegationsIndex < delegationsJsonList.GetLength(); ++delegationsIndex)
     {
       m_delegations.push_back(delegationsJsonList[delegationsIndex].AsObject());

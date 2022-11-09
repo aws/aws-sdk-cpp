@@ -42,7 +42,7 @@ CustomAuthConfig& CustomAuthConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("authParameters"))
   {
-    Array<JsonView> authParametersJsonList = jsonValue.GetArray("authParameters");
+    Aws::Utils::Array<JsonView> authParametersJsonList = jsonValue.GetArray("authParameters");
     for(unsigned authParametersIndex = 0; authParametersIndex < authParametersJsonList.GetLength(); ++authParametersIndex)
     {
       m_authParameters.push_back(authParametersJsonList[authParametersIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue CustomAuthConfig::Jsonize() const
 
   if(m_authParametersHasBeenSet)
   {
-   Array<JsonValue> authParametersJsonList(m_authParameters.size());
+   Aws::Utils::Array<JsonValue> authParametersJsonList(m_authParameters.size());
    for(unsigned authParametersIndex = 0; authParametersIndex < authParametersJsonList.GetLength(); ++authParametersIndex)
    {
      authParametersJsonList[authParametersIndex].AsObject(m_authParameters[authParametersIndex].Jsonize());

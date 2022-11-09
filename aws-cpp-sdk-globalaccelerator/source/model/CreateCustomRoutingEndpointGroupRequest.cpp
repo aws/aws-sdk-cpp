@@ -39,7 +39,7 @@ Aws::String CreateCustomRoutingEndpointGroupRequest::SerializePayload() const
 
   if(m_destinationConfigurationsHasBeenSet)
   {
-   Array<JsonValue> destinationConfigurationsJsonList(m_destinationConfigurations.size());
+   Aws::Utils::Array<JsonValue> destinationConfigurationsJsonList(m_destinationConfigurations.size());
    for(unsigned destinationConfigurationsIndex = 0; destinationConfigurationsIndex < destinationConfigurationsJsonList.GetLength(); ++destinationConfigurationsIndex)
    {
      destinationConfigurationsJsonList[destinationConfigurationsIndex].AsObject(m_destinationConfigurations[destinationConfigurationsIndex].Jsonize());

@@ -30,7 +30,7 @@ GetAnomaliesResult& GetAnomaliesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Anomalies"))
   {
-    Array<JsonView> anomaliesJsonList = jsonValue.GetArray("Anomalies");
+    Aws::Utils::Array<JsonView> anomaliesJsonList = jsonValue.GetArray("Anomalies");
     for(unsigned anomaliesIndex = 0; anomaliesIndex < anomaliesJsonList.GetLength(); ++anomaliesIndex)
     {
       m_anomalies.push_back(anomaliesJsonList[anomaliesIndex].AsObject());

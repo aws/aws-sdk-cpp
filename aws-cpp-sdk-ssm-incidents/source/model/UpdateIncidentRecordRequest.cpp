@@ -57,7 +57,7 @@ Aws::String UpdateIncidentRecordRequest::SerializePayload() const
 
   if(m_notificationTargetsHasBeenSet)
   {
-   Array<JsonValue> notificationTargetsJsonList(m_notificationTargets.size());
+   Aws::Utils::Array<JsonValue> notificationTargetsJsonList(m_notificationTargets.size());
    for(unsigned notificationTargetsIndex = 0; notificationTargetsIndex < notificationTargetsJsonList.GetLength(); ++notificationTargetsIndex)
    {
      notificationTargetsJsonList[notificationTargetsIndex].AsObject(m_notificationTargets[notificationTargetsIndex].Jsonize());

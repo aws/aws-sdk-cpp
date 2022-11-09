@@ -73,7 +73,7 @@ OrganizationConfigRule& OrganizationConfigRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExcludedAccounts"))
   {
-    Array<JsonView> excludedAccountsJsonList = jsonValue.GetArray("ExcludedAccounts");
+    Aws::Utils::Array<JsonView> excludedAccountsJsonList = jsonValue.GetArray("ExcludedAccounts");
     for(unsigned excludedAccountsIndex = 0; excludedAccountsIndex < excludedAccountsJsonList.GetLength(); ++excludedAccountsIndex)
     {
       m_excludedAccounts.push_back(excludedAccountsJsonList[excludedAccountsIndex].AsString());
@@ -128,7 +128,7 @@ JsonValue OrganizationConfigRule::Jsonize() const
 
   if(m_excludedAccountsHasBeenSet)
   {
-   Array<JsonValue> excludedAccountsJsonList(m_excludedAccounts.size());
+   Aws::Utils::Array<JsonValue> excludedAccountsJsonList(m_excludedAccounts.size());
    for(unsigned excludedAccountsIndex = 0; excludedAccountsIndex < excludedAccountsJsonList.GetLength(); ++excludedAccountsIndex)
    {
      excludedAccountsJsonList[excludedAccountsIndex].AsString(m_excludedAccounts[excludedAccountsIndex]);

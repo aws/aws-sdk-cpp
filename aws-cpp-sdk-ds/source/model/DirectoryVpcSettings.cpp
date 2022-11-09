@@ -42,7 +42,7 @@ DirectoryVpcSettings& DirectoryVpcSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue DirectoryVpcSettings::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);

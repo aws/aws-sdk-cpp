@@ -55,7 +55,7 @@ StreamingConfiguration& StreamingConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StreamingNotificationTargets"))
   {
-    Array<JsonView> streamingNotificationTargetsJsonList = jsonValue.GetArray("StreamingNotificationTargets");
+    Aws::Utils::Array<JsonView> streamingNotificationTargetsJsonList = jsonValue.GetArray("StreamingNotificationTargets");
     for(unsigned streamingNotificationTargetsIndex = 0; streamingNotificationTargetsIndex < streamingNotificationTargetsJsonList.GetLength(); ++streamingNotificationTargetsIndex)
     {
       m_streamingNotificationTargets.push_back(streamingNotificationTargetsJsonList[streamingNotificationTargetsIndex].AsObject());
@@ -84,7 +84,7 @@ JsonValue StreamingConfiguration::Jsonize() const
 
   if(m_streamingNotificationTargetsHasBeenSet)
   {
-   Array<JsonValue> streamingNotificationTargetsJsonList(m_streamingNotificationTargets.size());
+   Aws::Utils::Array<JsonValue> streamingNotificationTargetsJsonList(m_streamingNotificationTargets.size());
    for(unsigned streamingNotificationTargetsIndex = 0; streamingNotificationTargetsIndex < streamingNotificationTargetsJsonList.GetLength(); ++streamingNotificationTargetsIndex)
    {
      streamingNotificationTargetsJsonList[streamingNotificationTargetsIndex].AsObject(m_streamingNotificationTargets[streamingNotificationTargetsIndex].Jsonize());

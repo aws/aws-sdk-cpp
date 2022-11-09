@@ -132,7 +132,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("loadBalancers"))
   {
-    Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
+    Aws::Utils::Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
     for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
     {
       m_loadBalancers.push_back(loadBalancersJsonList[loadBalancersIndex].AsObject());
@@ -142,7 +142,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("serviceRegistries"))
   {
-    Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
+    Aws::Utils::Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
     for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
     {
       m_serviceRegistries.push_back(serviceRegistriesJsonList[serviceRegistriesIndex].AsObject());
@@ -187,7 +187,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("capacityProviderStrategy"))
   {
-    Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("capacityProviderStrategy");
+    Aws::Utils::Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("capacityProviderStrategy");
     for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
     {
       m_capacityProviderStrategy.push_back(capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject());
@@ -225,7 +225,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("taskSets"))
   {
-    Array<JsonView> taskSetsJsonList = jsonValue.GetArray("taskSets");
+    Aws::Utils::Array<JsonView> taskSetsJsonList = jsonValue.GetArray("taskSets");
     for(unsigned taskSetsIndex = 0; taskSetsIndex < taskSetsJsonList.GetLength(); ++taskSetsIndex)
     {
       m_taskSets.push_back(taskSetsJsonList[taskSetsIndex].AsObject());
@@ -235,7 +235,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("deployments"))
   {
-    Array<JsonView> deploymentsJsonList = jsonValue.GetArray("deployments");
+    Aws::Utils::Array<JsonView> deploymentsJsonList = jsonValue.GetArray("deployments");
     for(unsigned deploymentsIndex = 0; deploymentsIndex < deploymentsJsonList.GetLength(); ++deploymentsIndex)
     {
       m_deployments.push_back(deploymentsJsonList[deploymentsIndex].AsObject());
@@ -252,7 +252,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("events"))
   {
-    Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
+    Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
@@ -269,7 +269,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("placementConstraints"))
   {
-    Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
+    Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
     for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
     {
       m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
@@ -279,7 +279,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("placementStrategy"))
   {
-    Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("placementStrategy");
+    Aws::Utils::Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("placementStrategy");
     for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
     {
       m_placementStrategy.push_back(placementStrategyJsonList[placementStrategyIndex].AsObject());
@@ -317,7 +317,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -380,7 +380,7 @@ JsonValue Service::Jsonize() const
 
   if(m_loadBalancersHasBeenSet)
   {
-   Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
+   Aws::Utils::Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
    for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
    {
      loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
@@ -391,7 +391,7 @@ JsonValue Service::Jsonize() const
 
   if(m_serviceRegistriesHasBeenSet)
   {
-   Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+   Aws::Utils::Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
    for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
    {
      serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
@@ -431,7 +431,7 @@ JsonValue Service::Jsonize() const
 
   if(m_capacityProviderStrategyHasBeenSet)
   {
-   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
    {
      capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
@@ -466,7 +466,7 @@ JsonValue Service::Jsonize() const
 
   if(m_taskSetsHasBeenSet)
   {
-   Array<JsonValue> taskSetsJsonList(m_taskSets.size());
+   Aws::Utils::Array<JsonValue> taskSetsJsonList(m_taskSets.size());
    for(unsigned taskSetsIndex = 0; taskSetsIndex < taskSetsJsonList.GetLength(); ++taskSetsIndex)
    {
      taskSetsJsonList[taskSetsIndex].AsObject(m_taskSets[taskSetsIndex].Jsonize());
@@ -477,7 +477,7 @@ JsonValue Service::Jsonize() const
 
   if(m_deploymentsHasBeenSet)
   {
-   Array<JsonValue> deploymentsJsonList(m_deployments.size());
+   Aws::Utils::Array<JsonValue> deploymentsJsonList(m_deployments.size());
    for(unsigned deploymentsIndex = 0; deploymentsIndex < deploymentsJsonList.GetLength(); ++deploymentsIndex)
    {
      deploymentsJsonList[deploymentsIndex].AsObject(m_deployments[deploymentsIndex].Jsonize());
@@ -494,7 +494,7 @@ JsonValue Service::Jsonize() const
 
   if(m_eventsHasBeenSet)
   {
-   Array<JsonValue> eventsJsonList(m_events.size());
+   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
    {
      eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
@@ -510,7 +510,7 @@ JsonValue Service::Jsonize() const
 
   if(m_placementConstraintsHasBeenSet)
   {
-   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
    {
      placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
@@ -521,7 +521,7 @@ JsonValue Service::Jsonize() const
 
   if(m_placementStrategyHasBeenSet)
   {
-   Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
+   Aws::Utils::Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
    for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
    {
      placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
@@ -555,7 +555,7 @@ JsonValue Service::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

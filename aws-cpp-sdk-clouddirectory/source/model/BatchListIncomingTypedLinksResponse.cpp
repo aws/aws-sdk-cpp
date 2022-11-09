@@ -35,7 +35,7 @@ BatchListIncomingTypedLinksResponse& BatchListIncomingTypedLinksResponse::operat
 {
   if(jsonValue.ValueExists("LinkSpecifiers"))
   {
-    Array<JsonView> linkSpecifiersJsonList = jsonValue.GetArray("LinkSpecifiers");
+    Aws::Utils::Array<JsonView> linkSpecifiersJsonList = jsonValue.GetArray("LinkSpecifiers");
     for(unsigned linkSpecifiersIndex = 0; linkSpecifiersIndex < linkSpecifiersJsonList.GetLength(); ++linkSpecifiersIndex)
     {
       m_linkSpecifiers.push_back(linkSpecifiersJsonList[linkSpecifiersIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue BatchListIncomingTypedLinksResponse::Jsonize() const
 
   if(m_linkSpecifiersHasBeenSet)
   {
-   Array<JsonValue> linkSpecifiersJsonList(m_linkSpecifiers.size());
+   Aws::Utils::Array<JsonValue> linkSpecifiersJsonList(m_linkSpecifiers.size());
    for(unsigned linkSpecifiersIndex = 0; linkSpecifiersIndex < linkSpecifiersJsonList.GetLength(); ++linkSpecifiersIndex)
    {
      linkSpecifiersJsonList[linkSpecifiersIndex].AsObject(m_linkSpecifiers[linkSpecifiersIndex].Jsonize());

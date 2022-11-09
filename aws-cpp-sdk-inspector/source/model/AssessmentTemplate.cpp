@@ -81,7 +81,7 @@ AssessmentTemplate& AssessmentTemplate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
-    Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
+    Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
     for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
     {
       m_rulesPackageArns.push_back(rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString());
@@ -91,7 +91,7 @@ AssessmentTemplate& AssessmentTemplate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("userAttributesForFindings"))
   {
-    Array<JsonView> userAttributesForFindingsJsonList = jsonValue.GetArray("userAttributesForFindings");
+    Aws::Utils::Array<JsonView> userAttributesForFindingsJsonList = jsonValue.GetArray("userAttributesForFindings");
     for(unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength(); ++userAttributesForFindingsIndex)
     {
       m_userAttributesForFindings.push_back(userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject());
@@ -153,7 +153,7 @@ JsonValue AssessmentTemplate::Jsonize() const
 
   if(m_rulesPackageArnsHasBeenSet)
   {
-   Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
+   Aws::Utils::Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
    for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
    {
      rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString(m_rulesPackageArns[rulesPackageArnsIndex]);
@@ -164,7 +164,7 @@ JsonValue AssessmentTemplate::Jsonize() const
 
   if(m_userAttributesForFindingsHasBeenSet)
   {
-   Array<JsonValue> userAttributesForFindingsJsonList(m_userAttributesForFindings.size());
+   Aws::Utils::Array<JsonValue> userAttributesForFindingsJsonList(m_userAttributesForFindings.size());
    for(unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength(); ++userAttributesForFindingsIndex)
    {
      userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject(m_userAttributesForFindings[userAttributesForFindingsIndex].Jsonize());

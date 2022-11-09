@@ -1,0 +1,112 @@
+#set($additionalCtorArgs = {})
+#if($signPayloadsOptional)
+#if($serviceNamespace != "S3Crt")
+#set($addArgDummy = $additionalCtorArgs.put("signPayloads", "Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads"))
+#else
+#set($addArgDummy = $additionalCtorArgs.put("signPayloads", "Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never"))
+#end
+#end
+#if($virtualAddressingSupported)
+#if($serviceNamespace != "S3Crt")
+#set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing"))
+#else
+#set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing = true"))
+#end
+#end
+#if(!$USEast1RegionalEndpointArgString)
+#set($USEast1RegionalEndpointArgString = "")
+#else
+#set($addArgDummy = $additionalCtorArgs.put("USEast1RegionalEndpoint", $USEast1RegionalEndpointArgString.replace(", ", "")))
+#end
+#set($clientConfigurationDefaultInit = "")
+#if($serviceNamespace == "S3Crt")
+#set($clientConfigurationNamespace = $serviceNamespace)
+#set($clientConfigurationDefaultInit = " = Aws::S3Crt::ClientConfiguration()")
+#set($credentialProviderArg = ", const Aws::Auth::DefaultAWSCredentialsProviderChain& credentialsProvider = Aws::Auth::DefaultAWSCredentialsProviderChain()")
+#set($addArgDummy = $additionalCtorArgs.put("additionalCredentialProvider", "const Aws::Auth::DefaultAWSCredentialsProviderChain& credentialsProvider = Aws::Auth::DefaultAWSCredentialsProviderChain()"))
+#else
+#set($clientConfigurationNamespace = "Client")
+#end
+#set($clsWSpace = $className.replaceAll(".", " "))
+#if($serviceModel.hasOnlyBearerAuth())
+#set($bearerAddCtorArgs = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $bearerAddCtorArgs.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+        /**
+        * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
+        */
+        ${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
+        ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${clientConfigurationDefaultInit}#if($bearerAddCtorArgs.isEmpty()));#else,#end
+
+#foreach($ctorArgument in $bearerAddCtorArgs)
+        ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
+
+#end
+#else##if($serviceModel.hasOnlyBearerAuth())
+#set($defCredsChainCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint", "additionalCredentialProvider"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $defCredsChainCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ${className}(const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${clientConfigurationDefaultInit}#if($defCredsChainCtor.isEmpty()));#else,#end
+
+#foreach($ctorArgument in $defCredsChainCtor)
+        ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
+
+#end
+
+#set($simpleCredsCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $simpleCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ${className}(const Aws::Auth::AWSCredentials& credentials,
+        ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${clientConfigurationDefaultInit}#if($simpleCredsCtor.isEmpty()));#else,#end
+
+#foreach($ctorArgument in $simpleCredsCtor)
+        ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
+
+#end
+
+#set($specCredsCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $specCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ${className}(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+        ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${clientConfigurationDefaultInit}#if($specCredsCtor.isEmpty()));#else,#end
+
+#foreach($ctorArgument in $specCredsCtor)
+        ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
+
+#end
+#end##if($serviceModel.hasOnlyBearerAuth())
+
+#if($metadata.standalone || $metadata.apigateway)
+#set($standaloneCredsCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $standaloneCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+       /**
+        * Initializes client to use specified signer with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
+        ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${clientConfigurationDefaultInit}#if($standaloneCredsCtor.isEmpty()));#else,#end
+
+#foreach($ctorArgument in $specCredsCtor)
+        ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
+
+#end
+
+#end

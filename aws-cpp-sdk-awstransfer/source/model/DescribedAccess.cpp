@@ -54,7 +54,7 @@ DescribedAccess& DescribedAccess::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("HomeDirectoryMappings"))
   {
-    Array<JsonView> homeDirectoryMappingsJsonList = jsonValue.GetArray("HomeDirectoryMappings");
+    Aws::Utils::Array<JsonView> homeDirectoryMappingsJsonList = jsonValue.GetArray("HomeDirectoryMappings");
     for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
     {
       m_homeDirectoryMappings.push_back(homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject());
@@ -112,7 +112,7 @@ JsonValue DescribedAccess::Jsonize() const
 
   if(m_homeDirectoryMappingsHasBeenSet)
   {
-   Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
+   Aws::Utils::Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
    for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
    {
      homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());

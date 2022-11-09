@@ -30,7 +30,7 @@ ListSigningProfilesResult& ListSigningProfilesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("profiles"))
   {
-    Array<JsonView> profilesJsonList = jsonValue.GetArray("profiles");
+    Aws::Utils::Array<JsonView> profilesJsonList = jsonValue.GetArray("profiles");
     for(unsigned profilesIndex = 0; profilesIndex < profilesJsonList.GetLength(); ++profilesIndex)
     {
       m_profiles.push_back(profilesJsonList[profilesIndex].AsObject());

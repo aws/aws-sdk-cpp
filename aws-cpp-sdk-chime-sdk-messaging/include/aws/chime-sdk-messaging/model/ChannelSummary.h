@@ -227,32 +227,32 @@ namespace Model
 
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline const Aws::Utils::DateTime& GetLastMessageTimestamp() const{ return m_lastMessageTimestamp; }
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline bool LastMessageTimestampHasBeenSet() const { return m_lastMessageTimestampHasBeenSet; }
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline void SetLastMessageTimestamp(const Aws::Utils::DateTime& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = value; }
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline void SetLastMessageTimestamp(Aws::Utils::DateTime&& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = std::move(value); }
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline ChannelSummary& WithLastMessageTimestamp(const Aws::Utils::DateTime& value) { SetLastMessageTimestamp(value); return *this;}
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline ChannelSummary& WithLastMessageTimestamp(Aws::Utils::DateTime&& value) { SetLastMessageTimestamp(std::move(value)); return *this;}
 

@@ -35,7 +35,7 @@ ConversationLogsRequest& ConversationLogsRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("logSettings"))
   {
-    Array<JsonView> logSettingsJsonList = jsonValue.GetArray("logSettings");
+    Aws::Utils::Array<JsonView> logSettingsJsonList = jsonValue.GetArray("logSettings");
     for(unsigned logSettingsIndex = 0; logSettingsIndex < logSettingsJsonList.GetLength(); ++logSettingsIndex)
     {
       m_logSettings.push_back(logSettingsJsonList[logSettingsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue ConversationLogsRequest::Jsonize() const
 
   if(m_logSettingsHasBeenSet)
   {
-   Array<JsonValue> logSettingsJsonList(m_logSettings.size());
+   Aws::Utils::Array<JsonValue> logSettingsJsonList(m_logSettings.size());
    for(unsigned logSettingsIndex = 0; logSettingsIndex < logSettingsJsonList.GetLength(); ++logSettingsIndex)
    {
      logSettingsJsonList[logSettingsIndex].AsObject(m_logSettings[logSettingsIndex].Jsonize());

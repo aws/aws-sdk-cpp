@@ -38,7 +38,7 @@ Aws::String UpdateWebACLRequest::SerializePayload() const
 
   if(m_updatesHasBeenSet)
   {
-   Array<JsonValue> updatesJsonList(m_updates.size());
+   Aws::Utils::Array<JsonValue> updatesJsonList(m_updates.size());
    for(unsigned updatesIndex = 0; updatesIndex < updatesJsonList.GetLength(); ++updatesIndex)
    {
      updatesJsonList[updatesIndex].AsObject(m_updates[updatesIndex].Jsonize());

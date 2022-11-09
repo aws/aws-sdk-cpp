@@ -30,7 +30,7 @@ ListHostsResult& ListHostsResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Hosts"))
   {
-    Array<JsonView> hostsJsonList = jsonValue.GetArray("Hosts");
+    Aws::Utils::Array<JsonView> hostsJsonList = jsonValue.GetArray("Hosts");
     for(unsigned hostsIndex = 0; hostsIndex < hostsJsonList.GetLength(); ++hostsIndex)
     {
       m_hosts.push_back(hostsJsonList[hostsIndex].AsObject());

@@ -124,6 +124,7 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
         serviceModel.getMetadata().setRequireEndpointDiscovery(requireEndpointDiscovery);
         serviceModel.getMetadata().setEndpointOperationName(endpointOperationName);
+        serviceModel.getMetadata().setAwsQueryCompatible(c2jServiceModel.getMetadata().getAwsQueryCompatible() != null);
 
         if (c2jServiceModel.getEndpointRules() != null) {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -138,6 +139,7 @@ public class C2jModelToGeneratorModelTransformer {
             serviceModel.setEndpointRules(shortenedRules);
         }
         serviceModel.setEndpointTests(c2jServiceModel.getEndpointTests());
+        serviceModel.setClientContextParams(c2jServiceModel.getClientContextParams());
 
         return serviceModel;
     }
@@ -722,6 +724,22 @@ public class C2jModelToGeneratorModelTransformer {
         Http http = new Http();
         http.setMethod(c2jHttp.getMethod());
         http.setRequestUri(c2jHttp.getRequestUri());
+        if (c2jServiceModel.getEndpointRules() != null && c2jHttp.getRequestUri() != null) {
+            // Legacy C2J models require path arguments preprocessed (i.e. removed) to avoid duplication with URI segments
+            if(c2jServiceModel.getServiceName().equalsIgnoreCase("S3") ||
+                    c2jServiceModel.getServiceName().equalsIgnoreCase("S3-CRT") ||
+                    c2jServiceModel.getServiceName().equalsIgnoreCase("S3 Control")) {
+                String bucketPathToRemove = "/{Bucket}";
+                String requestUri = c2jHttp.getRequestUri();
+                if (requestUri.startsWith(bucketPathToRemove)) {
+                    requestUri = requestUri.substring(bucketPathToRemove.length());
+                    if (requestUri.isEmpty()) {
+                        requestUri = null;
+                    }
+                }
+                http.setRequestUri(requestUri);
+            }
+        }
         http.setResponseCode(c2jHttp.getResponseCode());
         return http;
     }

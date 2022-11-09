@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/apigatewayv2/ApiGatewayV2Errors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/apigatewayv2/ApiGatewayV2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -105,6 +107,10 @@ namespace Aws
 
   namespace ApiGatewayV2
   {
+    using ApiGatewayV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApiGatewayV2EndpointProviderBase = Aws::ApiGatewayV2::Endpoint::ApiGatewayV2EndpointProviderBase;
+    using ApiGatewayV2EndpointProvider = Aws::ApiGatewayV2::Endpoint::ApiGatewayV2EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ApiGatewayV2Client header */

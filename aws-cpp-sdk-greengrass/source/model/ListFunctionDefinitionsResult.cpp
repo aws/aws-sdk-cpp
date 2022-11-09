@@ -30,7 +30,7 @@ ListFunctionDefinitionsResult& ListFunctionDefinitionsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Definitions"))
   {
-    Array<JsonView> definitionsJsonList = jsonValue.GetArray("Definitions");
+    Aws::Utils::Array<JsonView> definitionsJsonList = jsonValue.GetArray("Definitions");
     for(unsigned definitionsIndex = 0; definitionsIndex < definitionsJsonList.GetLength(); ++definitionsIndex)
     {
       m_definitions.push_back(definitionsJsonList[definitionsIndex].AsObject());

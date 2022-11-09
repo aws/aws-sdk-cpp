@@ -45,7 +45,7 @@ ImageLayerAggregation& ImageLayerAggregation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("layerHashes"))
   {
-    Array<JsonView> layerHashesJsonList = jsonValue.GetArray("layerHashes");
+    Aws::Utils::Array<JsonView> layerHashesJsonList = jsonValue.GetArray("layerHashes");
     for(unsigned layerHashesIndex = 0; layerHashesIndex < layerHashesJsonList.GetLength(); ++layerHashesIndex)
     {
       m_layerHashes.push_back(layerHashesJsonList[layerHashesIndex].AsObject());
@@ -55,7 +55,7 @@ ImageLayerAggregation& ImageLayerAggregation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("repositories"))
   {
-    Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
+    Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
     for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
     {
       m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());
@@ -65,7 +65,7 @@ ImageLayerAggregation& ImageLayerAggregation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourceIds"))
   {
-    Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
+    Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
     for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
     {
       m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsObject());
@@ -96,7 +96,7 @@ JsonValue ImageLayerAggregation::Jsonize() const
 
   if(m_layerHashesHasBeenSet)
   {
-   Array<JsonValue> layerHashesJsonList(m_layerHashes.size());
+   Aws::Utils::Array<JsonValue> layerHashesJsonList(m_layerHashes.size());
    for(unsigned layerHashesIndex = 0; layerHashesIndex < layerHashesJsonList.GetLength(); ++layerHashesIndex)
    {
      layerHashesJsonList[layerHashesIndex].AsObject(m_layerHashes[layerHashesIndex].Jsonize());
@@ -107,7 +107,7 @@ JsonValue ImageLayerAggregation::Jsonize() const
 
   if(m_repositoriesHasBeenSet)
   {
-   Array<JsonValue> repositoriesJsonList(m_repositories.size());
+   Aws::Utils::Array<JsonValue> repositoriesJsonList(m_repositories.size());
    for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
    {
      repositoriesJsonList[repositoriesIndex].AsObject(m_repositories[repositoriesIndex].Jsonize());
@@ -118,7 +118,7 @@ JsonValue ImageLayerAggregation::Jsonize() const
 
   if(m_resourceIdsHasBeenSet)
   {
-   Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
    {
      resourceIdsJsonList[resourceIdsIndex].AsObject(m_resourceIds[resourceIdsIndex].Jsonize());

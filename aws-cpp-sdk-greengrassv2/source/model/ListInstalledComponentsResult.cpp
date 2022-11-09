@@ -30,7 +30,7 @@ ListInstalledComponentsResult& ListInstalledComponentsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("installedComponents"))
   {
-    Array<JsonView> installedComponentsJsonList = jsonValue.GetArray("installedComponents");
+    Aws::Utils::Array<JsonView> installedComponentsJsonList = jsonValue.GetArray("installedComponents");
     for(unsigned installedComponentsIndex = 0; installedComponentsIndex < installedComponentsJsonList.GetLength(); ++installedComponentsIndex)
     {
       m_installedComponents.push_back(installedComponentsJsonList[installedComponentsIndex].AsObject());

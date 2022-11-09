@@ -38,7 +38,7 @@ GetSensitiveDataOccurrencesAvailabilityResult& GetSensitiveDataOccurrencesAvaila
 
   if(jsonValue.ValueExists("reasons"))
   {
-    Array<JsonView> reasonsJsonList = jsonValue.GetArray("reasons");
+    Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("reasons");
     for(unsigned reasonsIndex = 0; reasonsIndex < reasonsJsonList.GetLength(); ++reasonsIndex)
     {
       m_reasons.push_back(UnavailabilityReasonCodeMapper::GetUnavailabilityReasonCodeForName(reasonsJsonList[reasonsIndex].AsString()));

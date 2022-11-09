@@ -33,10 +33,10 @@ Consolidation& Consolidation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MatchingAttributesList"))
   {
-    Array<JsonView> matchingAttributesListJsonList = jsonValue.GetArray("MatchingAttributesList");
+    Aws::Utils::Array<JsonView> matchingAttributesListJsonList = jsonValue.GetArray("MatchingAttributesList");
     for(unsigned matchingAttributesListIndex = 0; matchingAttributesListIndex < matchingAttributesListJsonList.GetLength(); ++matchingAttributesListIndex)
     {
-      Array<JsonView> matchingAttributesJsonList = matchingAttributesListJsonList[matchingAttributesListIndex].AsArray();
+      Aws::Utils::Array<JsonView> matchingAttributesJsonList = matchingAttributesListJsonList[matchingAttributesListIndex].AsArray();
       Aws::Vector<Aws::String> matchingAttributesList;
       matchingAttributesList.reserve((size_t)matchingAttributesJsonList.GetLength());
       for(unsigned matchingAttributesIndex = 0; matchingAttributesIndex < matchingAttributesJsonList.GetLength(); ++matchingAttributesIndex)
@@ -57,10 +57,10 @@ JsonValue Consolidation::Jsonize() const
 
   if(m_matchingAttributesListHasBeenSet)
   {
-   Array<JsonValue> matchingAttributesListJsonList(m_matchingAttributesList.size());
+   Aws::Utils::Array<JsonValue> matchingAttributesListJsonList(m_matchingAttributesList.size());
    for(unsigned matchingAttributesListIndex = 0; matchingAttributesListIndex < matchingAttributesListJsonList.GetLength(); ++matchingAttributesListIndex)
    {
-     Array<JsonValue> matchingAttributesJsonList(m_matchingAttributesList[matchingAttributesListIndex].size());
+     Aws::Utils::Array<JsonValue> matchingAttributesJsonList(m_matchingAttributesList[matchingAttributesListIndex].size());
      for(unsigned matchingAttributesIndex = 0; matchingAttributesIndex < matchingAttributesJsonList.GetLength(); ++matchingAttributesIndex)
      {
        matchingAttributesJsonList[matchingAttributesIndex].AsString(m_matchingAttributesList[matchingAttributesListIndex][matchingAttributesIndex]);

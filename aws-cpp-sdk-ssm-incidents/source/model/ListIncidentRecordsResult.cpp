@@ -30,7 +30,7 @@ ListIncidentRecordsResult& ListIncidentRecordsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("incidentRecordSummaries"))
   {
-    Array<JsonView> incidentRecordSummariesJsonList = jsonValue.GetArray("incidentRecordSummaries");
+    Aws::Utils::Array<JsonView> incidentRecordSummariesJsonList = jsonValue.GetArray("incidentRecordSummaries");
     for(unsigned incidentRecordSummariesIndex = 0; incidentRecordSummariesIndex < incidentRecordSummariesJsonList.GetLength(); ++incidentRecordSummariesIndex)
     {
       m_incidentRecordSummaries.push_back(incidentRecordSummariesJsonList[incidentRecordSummariesIndex].AsObject());

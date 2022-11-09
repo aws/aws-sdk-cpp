@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The configured endpoint options for the domain and their current
+   * <p>The configured endpoint options for a domain and their current
    * status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DomainEndpointOptionsStatus">AWS
    * API Reference</a></p>
@@ -40,69 +40,63 @@ namespace Model
 
 
     /**
-     * <p>Options to configure the endpoint for the domain.</p>
+     * <p>Options to configure the endpoint for a domain.</p>
      */
     inline const DomainEndpointOptions& GetOptions() const{ return m_options; }
 
     /**
-     * <p>Options to configure the endpoint for the domain.</p>
+     * <p>Options to configure the endpoint for a domain.</p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
-     * <p>Options to configure the endpoint for the domain.</p>
+     * <p>Options to configure the endpoint for a domain.</p>
      */
     inline void SetOptions(const DomainEndpointOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>Options to configure the endpoint for the domain.</p>
+     * <p>Options to configure the endpoint for a domain.</p>
      */
     inline void SetOptions(DomainEndpointOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>Options to configure the endpoint for the domain.</p>
+     * <p>Options to configure the endpoint for a domain.</p>
      */
     inline DomainEndpointOptionsStatus& WithOptions(const DomainEndpointOptions& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>Options to configure the endpoint for the domain.</p>
+     * <p>Options to configure the endpoint for a domain.</p>
      */
     inline DomainEndpointOptionsStatus& WithOptions(DomainEndpointOptions&& value) { SetOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>The status of the endpoint options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the endpoint options for a domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the endpoint options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the endpoint options for a domain.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the endpoint options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the endpoint options for a domain.</p>
      */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the endpoint options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the endpoint options for a domain.</p>
      */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the endpoint options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the endpoint options for a domain.</p>
      */
     inline DomainEndpointOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the endpoint options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the endpoint options for a domain.</p>
      */
     inline DomainEndpointOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

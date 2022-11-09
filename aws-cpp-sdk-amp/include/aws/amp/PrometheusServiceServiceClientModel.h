@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/amp/PrometheusServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/amp/PrometheusServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -66,6 +68,10 @@ namespace Aws
 
   namespace PrometheusService
   {
+    using PrometheusServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PrometheusServiceEndpointProviderBase = Aws::PrometheusService::Endpoint::PrometheusServiceEndpointProviderBase;
+    using PrometheusServiceEndpointProvider = Aws::PrometheusService::Endpoint::PrometheusServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in PrometheusServiceClient header */

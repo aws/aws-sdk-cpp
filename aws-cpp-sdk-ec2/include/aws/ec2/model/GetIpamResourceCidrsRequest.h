@@ -354,22 +354,34 @@ namespace Model
     inline GetIpamResourceCidrsRequest& WithResourceType(IpamResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline const RequestIpamResourceTag& GetResourceTag() const{ return m_resourceTag; }
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline bool ResourceTagHasBeenSet() const { return m_resourceTagHasBeenSet; }
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline void SetResourceTag(const RequestIpamResourceTag& value) { m_resourceTagHasBeenSet = true; m_resourceTag = value; }
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline void SetResourceTag(RequestIpamResourceTag&& value) { m_resourceTagHasBeenSet = true; m_resourceTag = std::move(value); }
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline GetIpamResourceCidrsRequest& WithResourceTag(const RequestIpamResourceTag& value) { SetResourceTag(value); return *this;}
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline GetIpamResourceCidrsRequest& WithResourceTag(RequestIpamResourceTag&& value) { SetResourceTag(std::move(value)); return *this;}
 
 

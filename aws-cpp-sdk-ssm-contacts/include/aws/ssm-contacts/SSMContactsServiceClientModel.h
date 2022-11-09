@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/ssm-contacts/SSMContactsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/ssm-contacts/SSMContactsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -76,6 +78,10 @@ namespace Aws
 
   namespace SSMContacts
   {
+    using SSMContactsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSMContactsEndpointProviderBase = Aws::SSMContacts::Endpoint::SSMContactsEndpointProviderBase;
+    using SSMContactsEndpointProvider = Aws::SSMContacts::Endpoint::SSMContactsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in SSMContactsClient header */

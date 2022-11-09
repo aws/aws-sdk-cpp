@@ -30,7 +30,7 @@ ListUserPoolClientsResult& ListUserPoolClientsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserPoolClients"))
   {
-    Array<JsonView> userPoolClientsJsonList = jsonValue.GetArray("UserPoolClients");
+    Aws::Utils::Array<JsonView> userPoolClientsJsonList = jsonValue.GetArray("UserPoolClients");
     for(unsigned userPoolClientsIndex = 0; userPoolClientsIndex < userPoolClientsJsonList.GetLength(); ++userPoolClientsIndex)
     {
       m_userPoolClients.push_back(userPoolClientsJsonList[userPoolClientsIndex].AsObject());

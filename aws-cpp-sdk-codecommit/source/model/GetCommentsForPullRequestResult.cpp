@@ -30,7 +30,7 @@ GetCommentsForPullRequestResult& GetCommentsForPullRequestResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("commentsForPullRequestData"))
   {
-    Array<JsonView> commentsForPullRequestDataJsonList = jsonValue.GetArray("commentsForPullRequestData");
+    Aws::Utils::Array<JsonView> commentsForPullRequestDataJsonList = jsonValue.GetArray("commentsForPullRequestData");
     for(unsigned commentsForPullRequestDataIndex = 0; commentsForPullRequestDataIndex < commentsForPullRequestDataJsonList.GetLength(); ++commentsForPullRequestDataIndex)
     {
       m_commentsForPullRequestData.push_back(commentsForPullRequestDataJsonList[commentsForPullRequestDataIndex].AsObject());

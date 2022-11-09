@@ -36,7 +36,7 @@ GetReservationPurchaseRecommendationResult& GetReservationPurchaseRecommendation
 
   if(jsonValue.ValueExists("Recommendations"))
   {
-    Array<JsonView> recommendationsJsonList = jsonValue.GetArray("Recommendations");
+    Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("Recommendations");
     for(unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex)
     {
       m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());

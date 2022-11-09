@@ -23,7 +23,7 @@ namespace Lightsail
    * content delivery network (CDN) distributions, DNS management of registered
    * domains, and resource snapshots (backups) - for a low, predictable monthly
    * price.</p> <p>You can manage your Lightsail resources using the Lightsail
-   * console, Lightsail API, AWS Command Line Interface (AWS CLI), or SDKs. For more
+   * console, Lightsail API, Command Line Interface (CLI), or SDKs. For more
    * information about Lightsail concepts and tasks, see the <a
    * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Amazon
    * Lightsail Developer Guide</a>.</p> <p>This API Reference provides detailed
@@ -38,27 +38,55 @@ namespace Lightsail
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LightsailClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LightsailClient(const Aws::Lightsail::LightsailClientConfiguration& clientConfiguration = Aws::Lightsail::LightsailClientConfiguration(),
+                        std::shared_ptr<LightsailEndpointProviderBase> endpointProvider = Aws::MakeShared<LightsailEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LightsailClient(const Aws::Auth::AWSCredentials& credentials,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<LightsailEndpointProviderBase> endpointProvider = Aws::MakeShared<LightsailEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::Lightsail::LightsailClientConfiguration& clientConfiguration = Aws::Lightsail::LightsailClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LightsailClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<LightsailEndpointProviderBase> endpointProvider = Aws::MakeShared<LightsailEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::Lightsail::LightsailClientConfiguration& clientConfiguration = Aws::Lightsail::LightsailClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LightsailClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LightsailClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        LightsailClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~LightsailClient();
 
 
@@ -1781,8 +1809,8 @@ namespace Lightsail
          * <p>Container logs are retained for a certain amount of time. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
-         * Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Lightsail endpoints and quotas</a> in the <i>Amazon Web Services General
+         * Reference</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerLog">AWS
          * API Reference</a></p>
          */
@@ -1806,8 +1834,8 @@ namespace Lightsail
          * top of the response.</p>  <p>A set number of deployments are kept before
          * the oldest one is replaced with the newest one. For more information, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
-         * Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Lightsail endpoints and quotas</a> in the <i>Amazon Web Services General
+         * Reference</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceDeployments">AWS
          * API Reference</a></p>
          */
@@ -3245,8 +3273,8 @@ namespace Lightsail
          * <p>Updates the bundle, or storage plan, of an existing Amazon Lightsail
          * bucket.</p> <p>A bucket bundle specifies the monthly cost, storage space, and
          * data transfer quota for a bucket. You can update a bucket's bundle only one time
-         * within a monthly AWS billing cycle. To determine if you can update a bucket's
-         * bundle, use the <a
+         * within a monthly Amazon Web Services billing cycle. To determine if you can
+         * update a bucket's bundle, use the <a
          * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a>
          * action. The <code>ableToUpdateBundle</code> parameter in the response will
          * indicate whether you can currently update a bucket's bundle.</p> <p>Update a
@@ -3316,9 +3344,9 @@ namespace Lightsail
          * transfer quota and monthly cost of your distribution.</p> <p>Update your
          * distribution's bundle if your distribution is going over its monthly network
          * transfer quota and is incurring an overage fee.</p> <p>You can update your
-         * distribution's bundle only one time within your monthly AWS billing cycle. To
-         * determine if you can update your distribution's bundle, use the
-         * <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code>
+         * distribution's bundle only one time within your monthly Amazon Web Services
+         * billing cycle. To determine if you can update your distribution's bundle, use
+         * the <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code>
          * parameter in the result will indicate whether you can currently update your
          * distribution's bundle.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistributionBundle">AWS
@@ -3462,12 +3490,13 @@ namespace Lightsail
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<LightsailEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const LightsailClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      LightsailClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<LightsailEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Lightsail

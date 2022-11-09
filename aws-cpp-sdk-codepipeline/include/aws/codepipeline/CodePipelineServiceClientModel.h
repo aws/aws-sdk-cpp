@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/codepipeline/CodePipelineErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/codepipeline/CodePipelineEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -80,6 +82,10 @@ namespace Aws
 
   namespace CodePipeline
   {
+    using CodePipelineClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodePipelineEndpointProviderBase = Aws::CodePipeline::Endpoint::CodePipelineEndpointProviderBase;
+    using CodePipelineEndpointProvider = Aws::CodePipeline::Endpoint::CodePipelineEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CodePipelineClient header */

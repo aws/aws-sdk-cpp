@@ -83,7 +83,8 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a
      * value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
      * <p>You can’t specify a date in the past. The upper limit for
-     * <code>DeprecateAt</code> is 10 years from now.</p>
+     * <code>DeprecateAt</code> is 10 years from now, except for public AMIs, where the
+     * upper limit is 2 years from the creation date.</p>
      */
     inline const Aws::Utils::DateTime& GetDeprecateAt() const{ return m_deprecateAt; }
 
@@ -92,7 +93,8 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a
      * value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
      * <p>You can’t specify a date in the past. The upper limit for
-     * <code>DeprecateAt</code> is 10 years from now.</p>
+     * <code>DeprecateAt</code> is 10 years from now, except for public AMIs, where the
+     * upper limit is 2 years from the creation date.</p>
      */
     inline bool DeprecateAtHasBeenSet() const { return m_deprecateAtHasBeenSet; }
 
@@ -101,7 +103,8 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a
      * value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
      * <p>You can’t specify a date in the past. The upper limit for
-     * <code>DeprecateAt</code> is 10 years from now.</p>
+     * <code>DeprecateAt</code> is 10 years from now, except for public AMIs, where the
+     * upper limit is 2 years from the creation date.</p>
      */
     inline void SetDeprecateAt(const Aws::Utils::DateTime& value) { m_deprecateAtHasBeenSet = true; m_deprecateAt = value; }
 
@@ -110,7 +113,8 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a
      * value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
      * <p>You can’t specify a date in the past. The upper limit for
-     * <code>DeprecateAt</code> is 10 years from now.</p>
+     * <code>DeprecateAt</code> is 10 years from now, except for public AMIs, where the
+     * upper limit is 2 years from the creation date.</p>
      */
     inline void SetDeprecateAt(Aws::Utils::DateTime&& value) { m_deprecateAtHasBeenSet = true; m_deprecateAt = std::move(value); }
 
@@ -119,7 +123,8 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a
      * value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
      * <p>You can’t specify a date in the past. The upper limit for
-     * <code>DeprecateAt</code> is 10 years from now.</p>
+     * <code>DeprecateAt</code> is 10 years from now, except for public AMIs, where the
+     * upper limit is 2 years from the creation date.</p>
      */
     inline EnableImageDeprecationRequest& WithDeprecateAt(const Aws::Utils::DateTime& value) { SetDeprecateAt(value); return *this;}
 
@@ -128,7 +133,8 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a
      * value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
      * <p>You can’t specify a date in the past. The upper limit for
-     * <code>DeprecateAt</code> is 10 years from now.</p>
+     * <code>DeprecateAt</code> is 10 years from now, except for public AMIs, where the
+     * upper limit is 2 years from the creation date.</p>
      */
     inline EnableImageDeprecationRequest& WithDeprecateAt(Aws::Utils::DateTime&& value) { SetDeprecateAt(std::move(value)); return *this;}
 

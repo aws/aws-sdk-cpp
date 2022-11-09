@@ -57,42 +57,42 @@ namespace Model
 
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline ListImportsRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline ListImportsRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline ListImportsRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
 

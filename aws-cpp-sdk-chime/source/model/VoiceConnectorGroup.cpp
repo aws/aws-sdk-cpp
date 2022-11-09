@@ -57,7 +57,7 @@ VoiceConnectorGroup& VoiceConnectorGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VoiceConnectorItems"))
   {
-    Array<JsonView> voiceConnectorItemsJsonList = jsonValue.GetArray("VoiceConnectorItems");
+    Aws::Utils::Array<JsonView> voiceConnectorItemsJsonList = jsonValue.GetArray("VoiceConnectorItems");
     for(unsigned voiceConnectorItemsIndex = 0; voiceConnectorItemsIndex < voiceConnectorItemsJsonList.GetLength(); ++voiceConnectorItemsIndex)
     {
       m_voiceConnectorItems.push_back(voiceConnectorItemsJsonList[voiceConnectorItemsIndex].AsObject());
@@ -107,7 +107,7 @@ JsonValue VoiceConnectorGroup::Jsonize() const
 
   if(m_voiceConnectorItemsHasBeenSet)
   {
-   Array<JsonValue> voiceConnectorItemsJsonList(m_voiceConnectorItems.size());
+   Aws::Utils::Array<JsonValue> voiceConnectorItemsJsonList(m_voiceConnectorItems.size());
    for(unsigned voiceConnectorItemsIndex = 0; voiceConnectorItemsIndex < voiceConnectorItemsJsonList.GetLength(); ++voiceConnectorItemsIndex)
    {
      voiceConnectorItemsJsonList[voiceConnectorItemsIndex].AsObject(m_voiceConnectorItems[voiceConnectorItemsIndex].Jsonize());

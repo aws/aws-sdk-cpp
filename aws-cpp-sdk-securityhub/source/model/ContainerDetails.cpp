@@ -82,7 +82,7 @@ ContainerDetails& ContainerDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VolumeMounts"))
   {
-    Array<JsonView> volumeMountsJsonList = jsonValue.GetArray("VolumeMounts");
+    Aws::Utils::Array<JsonView> volumeMountsJsonList = jsonValue.GetArray("VolumeMounts");
     for(unsigned volumeMountsIndex = 0; volumeMountsIndex < volumeMountsJsonList.GetLength(); ++volumeMountsIndex)
     {
       m_volumeMounts.push_back(volumeMountsJsonList[volumeMountsIndex].AsObject());
@@ -136,7 +136,7 @@ JsonValue ContainerDetails::Jsonize() const
 
   if(m_volumeMountsHasBeenSet)
   {
-   Array<JsonValue> volumeMountsJsonList(m_volumeMounts.size());
+   Aws::Utils::Array<JsonValue> volumeMountsJsonList(m_volumeMounts.size());
    for(unsigned volumeMountsIndex = 0; volumeMountsIndex < volumeMountsJsonList.GetLength(); ++volumeMountsIndex)
    {
      volumeMountsJsonList[volumeMountsIndex].AsObject(m_volumeMounts[volumeMountsIndex].Jsonize());

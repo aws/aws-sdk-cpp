@@ -39,7 +39,7 @@ Aws::String PutResourceAttributesRequest::SerializePayload() const
 
   if(m_resourceAttributeListHasBeenSet)
   {
-   Array<JsonValue> resourceAttributeListJsonList(m_resourceAttributeList.size());
+   Aws::Utils::Array<JsonValue> resourceAttributeListJsonList(m_resourceAttributeList.size());
    for(unsigned resourceAttributeListIndex = 0; resourceAttributeListIndex < resourceAttributeListJsonList.GetLength(); ++resourceAttributeListIndex)
    {
      resourceAttributeListJsonList[resourceAttributeListIndex].AsObject(m_resourceAttributeList[resourceAttributeListIndex].Jsonize());

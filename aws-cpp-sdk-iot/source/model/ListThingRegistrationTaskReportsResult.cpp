@@ -32,7 +32,7 @@ ListThingRegistrationTaskReportsResult& ListThingRegistrationTaskReportsResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceLinks"))
   {
-    Array<JsonView> resourceLinksJsonList = jsonValue.GetArray("resourceLinks");
+    Aws::Utils::Array<JsonView> resourceLinksJsonList = jsonValue.GetArray("resourceLinks");
     for(unsigned resourceLinksIndex = 0; resourceLinksIndex < resourceLinksJsonList.GetLength(); ++resourceLinksIndex)
     {
       m_resourceLinks.push_back(resourceLinksJsonList[resourceLinksIndex].AsString());

@@ -52,7 +52,7 @@ ErrorRootCauseService& ErrorRootCauseService::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Names"))
   {
-    Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
+    Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
     for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
     {
       m_names.push_back(namesJsonList[namesIndex].AsString());
@@ -76,7 +76,7 @@ ErrorRootCauseService& ErrorRootCauseService::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EntityPath"))
   {
-    Array<JsonView> entityPathJsonList = jsonValue.GetArray("EntityPath");
+    Aws::Utils::Array<JsonView> entityPathJsonList = jsonValue.GetArray("EntityPath");
     for(unsigned entityPathIndex = 0; entityPathIndex < entityPathJsonList.GetLength(); ++entityPathIndex)
     {
       m_entityPath.push_back(entityPathJsonList[entityPathIndex].AsObject());
@@ -106,7 +106,7 @@ JsonValue ErrorRootCauseService::Jsonize() const
 
   if(m_namesHasBeenSet)
   {
-   Array<JsonValue> namesJsonList(m_names.size());
+   Aws::Utils::Array<JsonValue> namesJsonList(m_names.size());
    for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
    {
      namesJsonList[namesIndex].AsString(m_names[namesIndex]);
@@ -129,7 +129,7 @@ JsonValue ErrorRootCauseService::Jsonize() const
 
   if(m_entityPathHasBeenSet)
   {
-   Array<JsonValue> entityPathJsonList(m_entityPath.size());
+   Aws::Utils::Array<JsonValue> entityPathJsonList(m_entityPath.size());
    for(unsigned entityPathIndex = 0; entityPathIndex < entityPathJsonList.GetLength(); ++entityPathIndex)
    {
      entityPathJsonList[entityPathIndex].AsObject(m_entityPath[entityPathIndex].Jsonize());

@@ -101,7 +101,7 @@ Aws::String CreateNFSFileShareRequest::SerializePayload() const
 
   if(m_clientListHasBeenSet)
   {
-   Array<JsonValue> clientListJsonList(m_clientList.size());
+   Aws::Utils::Array<JsonValue> clientListJsonList(m_clientList.size());
    for(unsigned clientListIndex = 0; clientListIndex < clientListJsonList.GetLength(); ++clientListIndex)
    {
      clientListJsonList[clientListIndex].AsString(m_clientList[clientListIndex]);
@@ -136,7 +136,7 @@ Aws::String CreateNFSFileShareRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

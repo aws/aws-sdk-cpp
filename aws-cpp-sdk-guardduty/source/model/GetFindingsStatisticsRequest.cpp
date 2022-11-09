@@ -25,7 +25,7 @@ Aws::String GetFindingsStatisticsRequest::SerializePayload() const
 
   if(m_findingStatisticTypesHasBeenSet)
   {
-   Array<JsonValue> findingStatisticTypesJsonList(m_findingStatisticTypes.size());
+   Aws::Utils::Array<JsonValue> findingStatisticTypesJsonList(m_findingStatisticTypes.size());
    for(unsigned findingStatisticTypesIndex = 0; findingStatisticTypesIndex < findingStatisticTypesJsonList.GetLength(); ++findingStatisticTypesIndex)
    {
      findingStatisticTypesJsonList[findingStatisticTypesIndex].AsString(FindingStatisticTypeMapper::GetNameForFindingStatisticType(m_findingStatisticTypes[findingStatisticTypesIndex]));

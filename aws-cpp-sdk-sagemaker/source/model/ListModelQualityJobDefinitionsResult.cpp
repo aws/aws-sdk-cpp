@@ -30,7 +30,7 @@ ListModelQualityJobDefinitionsResult& ListModelQualityJobDefinitionsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobDefinitionSummaries"))
   {
-    Array<JsonView> jobDefinitionSummariesJsonList = jsonValue.GetArray("JobDefinitionSummaries");
+    Aws::Utils::Array<JsonView> jobDefinitionSummariesJsonList = jsonValue.GetArray("JobDefinitionSummaries");
     for(unsigned jobDefinitionSummariesIndex = 0; jobDefinitionSummariesIndex < jobDefinitionSummariesJsonList.GetLength(); ++jobDefinitionSummariesIndex)
     {
       m_jobDefinitionSummaries.push_back(jobDefinitionSummariesJsonList[jobDefinitionSummariesIndex].AsObject());

@@ -39,7 +39,7 @@ InclusionProtectionGroupFilters& InclusionProtectionGroupFilters::operator =(Jso
 {
   if(jsonValue.ValueExists("ProtectionGroupIds"))
   {
-    Array<JsonView> protectionGroupIdsJsonList = jsonValue.GetArray("ProtectionGroupIds");
+    Aws::Utils::Array<JsonView> protectionGroupIdsJsonList = jsonValue.GetArray("ProtectionGroupIds");
     for(unsigned protectionGroupIdsIndex = 0; protectionGroupIdsIndex < protectionGroupIdsJsonList.GetLength(); ++protectionGroupIdsIndex)
     {
       m_protectionGroupIds.push_back(protectionGroupIdsJsonList[protectionGroupIdsIndex].AsString());
@@ -49,7 +49,7 @@ InclusionProtectionGroupFilters& InclusionProtectionGroupFilters::operator =(Jso
 
   if(jsonValue.ValueExists("Patterns"))
   {
-    Array<JsonView> patternsJsonList = jsonValue.GetArray("Patterns");
+    Aws::Utils::Array<JsonView> patternsJsonList = jsonValue.GetArray("Patterns");
     for(unsigned patternsIndex = 0; patternsIndex < patternsJsonList.GetLength(); ++patternsIndex)
     {
       m_patterns.push_back(ProtectionGroupPatternMapper::GetProtectionGroupPatternForName(patternsJsonList[patternsIndex].AsString()));
@@ -59,7 +59,7 @@ InclusionProtectionGroupFilters& InclusionProtectionGroupFilters::operator =(Jso
 
   if(jsonValue.ValueExists("ResourceTypes"))
   {
-    Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
+    Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
     for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
     {
       m_resourceTypes.push_back(ProtectedResourceTypeMapper::GetProtectedResourceTypeForName(resourceTypesJsonList[resourceTypesIndex].AsString()));
@@ -69,7 +69,7 @@ InclusionProtectionGroupFilters& InclusionProtectionGroupFilters::operator =(Jso
 
   if(jsonValue.ValueExists("Aggregations"))
   {
-    Array<JsonView> aggregationsJsonList = jsonValue.GetArray("Aggregations");
+    Aws::Utils::Array<JsonView> aggregationsJsonList = jsonValue.GetArray("Aggregations");
     for(unsigned aggregationsIndex = 0; aggregationsIndex < aggregationsJsonList.GetLength(); ++aggregationsIndex)
     {
       m_aggregations.push_back(ProtectionGroupAggregationMapper::GetProtectionGroupAggregationForName(aggregationsJsonList[aggregationsIndex].AsString()));
@@ -86,7 +86,7 @@ JsonValue InclusionProtectionGroupFilters::Jsonize() const
 
   if(m_protectionGroupIdsHasBeenSet)
   {
-   Array<JsonValue> protectionGroupIdsJsonList(m_protectionGroupIds.size());
+   Aws::Utils::Array<JsonValue> protectionGroupIdsJsonList(m_protectionGroupIds.size());
    for(unsigned protectionGroupIdsIndex = 0; protectionGroupIdsIndex < protectionGroupIdsJsonList.GetLength(); ++protectionGroupIdsIndex)
    {
      protectionGroupIdsJsonList[protectionGroupIdsIndex].AsString(m_protectionGroupIds[protectionGroupIdsIndex]);
@@ -97,7 +97,7 @@ JsonValue InclusionProtectionGroupFilters::Jsonize() const
 
   if(m_patternsHasBeenSet)
   {
-   Array<JsonValue> patternsJsonList(m_patterns.size());
+   Aws::Utils::Array<JsonValue> patternsJsonList(m_patterns.size());
    for(unsigned patternsIndex = 0; patternsIndex < patternsJsonList.GetLength(); ++patternsIndex)
    {
      patternsJsonList[patternsIndex].AsString(ProtectionGroupPatternMapper::GetNameForProtectionGroupPattern(m_patterns[patternsIndex]));
@@ -108,7 +108,7 @@ JsonValue InclusionProtectionGroupFilters::Jsonize() const
 
   if(m_resourceTypesHasBeenSet)
   {
-   Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
    {
      resourceTypesJsonList[resourceTypesIndex].AsString(ProtectedResourceTypeMapper::GetNameForProtectedResourceType(m_resourceTypes[resourceTypesIndex]));
@@ -119,7 +119,7 @@ JsonValue InclusionProtectionGroupFilters::Jsonize() const
 
   if(m_aggregationsHasBeenSet)
   {
-   Array<JsonValue> aggregationsJsonList(m_aggregations.size());
+   Aws::Utils::Array<JsonValue> aggregationsJsonList(m_aggregations.size());
    for(unsigned aggregationsIndex = 0; aggregationsIndex < aggregationsJsonList.GetLength(); ++aggregationsIndex)
    {
      aggregationsJsonList[aggregationsIndex].AsString(ProtectionGroupAggregationMapper::GetNameForProtectionGroupAggregation(m_aggregations[aggregationsIndex]));

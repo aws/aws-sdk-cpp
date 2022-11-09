@@ -90,7 +90,7 @@ IdentityProviderType& IdentityProviderType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IdpIdentifiers"))
   {
-    Array<JsonView> idpIdentifiersJsonList = jsonValue.GetArray("IdpIdentifiers");
+    Aws::Utils::Array<JsonView> idpIdentifiersJsonList = jsonValue.GetArray("IdpIdentifiers");
     for(unsigned idpIdentifiersIndex = 0; idpIdentifiersIndex < idpIdentifiersJsonList.GetLength(); ++idpIdentifiersIndex)
     {
       m_idpIdentifiers.push_back(idpIdentifiersJsonList[idpIdentifiersIndex].AsString());
@@ -160,7 +160,7 @@ JsonValue IdentityProviderType::Jsonize() const
 
   if(m_idpIdentifiersHasBeenSet)
   {
-   Array<JsonValue> idpIdentifiersJsonList(m_idpIdentifiers.size());
+   Aws::Utils::Array<JsonValue> idpIdentifiersJsonList(m_idpIdentifiers.size());
    for(unsigned idpIdentifiersIndex = 0; idpIdentifiersIndex < idpIdentifiersJsonList.GetLength(); ++idpIdentifiersIndex)
    {
      idpIdentifiersJsonList[idpIdentifiersIndex].AsString(m_idpIdentifiers[idpIdentifiersIndex]);

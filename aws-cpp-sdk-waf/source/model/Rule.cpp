@@ -60,7 +60,7 @@ Rule& Rule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Predicates"))
   {
-    Array<JsonView> predicatesJsonList = jsonValue.GetArray("Predicates");
+    Aws::Utils::Array<JsonView> predicatesJsonList = jsonValue.GetArray("Predicates");
     for(unsigned predicatesIndex = 0; predicatesIndex < predicatesJsonList.GetLength(); ++predicatesIndex)
     {
       m_predicates.push_back(predicatesJsonList[predicatesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue Rule::Jsonize() const
 
   if(m_predicatesHasBeenSet)
   {
-   Array<JsonValue> predicatesJsonList(m_predicates.size());
+   Aws::Utils::Array<JsonValue> predicatesJsonList(m_predicates.size());
    for(unsigned predicatesIndex = 0; predicatesIndex < predicatesJsonList.GetLength(); ++predicatesIndex)
    {
      predicatesJsonList[predicatesIndex].AsObject(m_predicates[predicatesIndex].Jsonize());

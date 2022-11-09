@@ -30,7 +30,7 @@ GetRemainingFreeTrialDaysResult& GetRemainingFreeTrialDaysResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("accounts"))
   {
-    Array<JsonView> accountsJsonList = jsonValue.GetArray("accounts");
+    Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("accounts");
     for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
     {
       m_accounts.push_back(accountsJsonList[accountsIndex].AsObject());
@@ -39,7 +39,7 @@ GetRemainingFreeTrialDaysResult& GetRemainingFreeTrialDaysResult::operator =(con
 
   if(jsonValue.ValueExists("unprocessedAccounts"))
   {
-    Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
+    Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
     for(unsigned unprocessedAccountsIndex = 0; unprocessedAccountsIndex < unprocessedAccountsJsonList.GetLength(); ++unprocessedAccountsIndex)
     {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());

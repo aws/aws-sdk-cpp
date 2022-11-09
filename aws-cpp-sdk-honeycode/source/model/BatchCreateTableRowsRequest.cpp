@@ -26,7 +26,7 @@ Aws::String BatchCreateTableRowsRequest::SerializePayload() const
 
   if(m_rowsToCreateHasBeenSet)
   {
-   Array<JsonValue> rowsToCreateJsonList(m_rowsToCreate.size());
+   Aws::Utils::Array<JsonValue> rowsToCreateJsonList(m_rowsToCreate.size());
    for(unsigned rowsToCreateIndex = 0; rowsToCreateIndex < rowsToCreateJsonList.GetLength(); ++rowsToCreateIndex)
    {
      rowsToCreateJsonList[rowsToCreateIndex].AsObject(m_rowsToCreate[rowsToCreateIndex].Jsonize());

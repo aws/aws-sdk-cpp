@@ -42,7 +42,7 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
@@ -59,7 +59,7 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   if(m_outputsHasBeenSet)
   {
-   Array<JsonValue> outputsJsonList(m_outputs.size());
+   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
    for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
    {
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
@@ -76,7 +76,7 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   if(m_playlistsHasBeenSet)
   {
-   Array<JsonValue> playlistsJsonList(m_playlists.size());
+   Aws::Utils::Array<JsonValue> playlistsJsonList(m_playlists.size());
    for(unsigned playlistsIndex = 0; playlistsIndex < playlistsJsonList.GetLength(); ++playlistsIndex)
    {
      playlistsJsonList[playlistsIndex].AsObject(m_playlists[playlistsIndex].Jsonize());

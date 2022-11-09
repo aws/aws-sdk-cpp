@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline CreateReplicationSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline CreateReplicationSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline CreateReplicationSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -156,6 +156,72 @@ namespace Model
      */
     inline CreateReplicationSetRequest& AddRegions(const char* key, const RegionMapInputValue& value) { m_regionsHasBeenSet = true; m_regions.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline CreateReplicationSetRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline CreateReplicationSetRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline CreateReplicationSetRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline CreateReplicationSetRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline CreateReplicationSetRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline CreateReplicationSetRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline CreateReplicationSetRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline CreateReplicationSetRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags to add to the replication set.</p>
+     */
+    inline CreateReplicationSetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_clientToken;
@@ -163,6 +229,9 @@ namespace Model
 
     Aws::Map<Aws::String, RegionMapInputValue> m_regions;
     bool m_regionsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ BatchReadResult& BatchReadResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Responses"))
   {
-    Array<JsonView> responsesJsonList = jsonValue.GetArray("Responses");
+    Aws::Utils::Array<JsonView> responsesJsonList = jsonValue.GetArray("Responses");
     for(unsigned responsesIndex = 0; responsesIndex < responsesJsonList.GetLength(); ++responsesIndex)
     {
       m_responses.push_back(responsesJsonList[responsesIndex].AsObject());

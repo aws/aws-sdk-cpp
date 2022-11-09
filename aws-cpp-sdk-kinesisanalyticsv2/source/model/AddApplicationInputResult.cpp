@@ -44,7 +44,7 @@ AddApplicationInputResult& AddApplicationInputResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("InputDescriptions"))
   {
-    Array<JsonView> inputDescriptionsJsonList = jsonValue.GetArray("InputDescriptions");
+    Aws::Utils::Array<JsonView> inputDescriptionsJsonList = jsonValue.GetArray("InputDescriptions");
     for(unsigned inputDescriptionsIndex = 0; inputDescriptionsIndex < inputDescriptionsJsonList.GetLength(); ++inputDescriptionsIndex)
     {
       m_inputDescriptions.push_back(inputDescriptionsJsonList[inputDescriptionsIndex].AsObject());

@@ -15,6 +15,8 @@ using namespace Aws::Utils;
 CreateUserPoolRequest::CreateUserPoolRequest() : 
     m_poolNameHasBeenSet(false),
     m_policiesHasBeenSet(false),
+    m_deletionProtection(DeletionProtectionType::NOT_SET),
+    m_deletionProtectionHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_autoVerifiedAttributesHasBeenSet(false),
     m_aliasAttributesHasBeenSet(false),
@@ -55,6 +57,11 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
 
   }
 
+  if(m_deletionProtectionHasBeenSet)
+  {
+   payload.WithString("DeletionProtection", DeletionProtectionTypeMapper::GetNameForDeletionProtectionType(m_deletionProtection));
+  }
+
   if(m_lambdaConfigHasBeenSet)
   {
    payload.WithObject("LambdaConfig", m_lambdaConfig.Jsonize());
@@ -63,7 +70,7 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
 
   if(m_autoVerifiedAttributesHasBeenSet)
   {
-   Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
+   Aws::Utils::Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
    for(unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength(); ++autoVerifiedAttributesIndex)
    {
      autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString(VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(m_autoVerifiedAttributes[autoVerifiedAttributesIndex]));
@@ -74,7 +81,7 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
 
   if(m_aliasAttributesHasBeenSet)
   {
-   Array<JsonValue> aliasAttributesJsonList(m_aliasAttributes.size());
+   Aws::Utils::Array<JsonValue> aliasAttributesJsonList(m_aliasAttributes.size());
    for(unsigned aliasAttributesIndex = 0; aliasAttributesIndex < aliasAttributesJsonList.GetLength(); ++aliasAttributesIndex)
    {
      aliasAttributesJsonList[aliasAttributesIndex].AsString(AliasAttributeTypeMapper::GetNameForAliasAttributeType(m_aliasAttributes[aliasAttributesIndex]));
@@ -85,7 +92,7 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
 
   if(m_usernameAttributesHasBeenSet)
   {
-   Array<JsonValue> usernameAttributesJsonList(m_usernameAttributes.size());
+   Aws::Utils::Array<JsonValue> usernameAttributesJsonList(m_usernameAttributes.size());
    for(unsigned usernameAttributesIndex = 0; usernameAttributesIndex < usernameAttributesJsonList.GetLength(); ++usernameAttributesIndex)
    {
      usernameAttributesJsonList[usernameAttributesIndex].AsString(UsernameAttributeTypeMapper::GetNameForUsernameAttributeType(m_usernameAttributes[usernameAttributesIndex]));
@@ -172,7 +179,7 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
 
   if(m_schemaHasBeenSet)
   {
-   Array<JsonValue> schemaJsonList(m_schema.size());
+   Aws::Utils::Array<JsonValue> schemaJsonList(m_schema.size());
    for(unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex)
    {
      schemaJsonList[schemaIndex].AsObject(m_schema[schemaIndex].Jsonize());

@@ -23,7 +23,8 @@ CreateEventDataStoreRequest::CreateEventDataStoreRequest() :
     m_retentionPeriodHasBeenSet(false),
     m_terminationProtectionEnabled(false),
     m_terminationProtectionEnabledHasBeenSet(false),
-    m_tagsListHasBeenSet(false)
+    m_tagsListHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -39,7 +40,7 @@ Aws::String CreateEventDataStoreRequest::SerializePayload() const
 
   if(m_advancedEventSelectorsHasBeenSet)
   {
-   Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
+   Aws::Utils::Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
    for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
    {
      advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject(m_advancedEventSelectors[advancedEventSelectorsIndex].Jsonize());
@@ -74,12 +75,18 @@ Aws::String CreateEventDataStoreRequest::SerializePayload() const
 
   if(m_tagsListHasBeenSet)
   {
-   Array<JsonValue> tagsListJsonList(m_tagsList.size());
+   Aws::Utils::Array<JsonValue> tagsListJsonList(m_tagsList.size());
    for(unsigned tagsListIndex = 0; tagsListIndex < tagsListJsonList.GetLength(); ++tagsListIndex)
    {
      tagsListJsonList[tagsListIndex].AsObject(m_tagsList[tagsListIndex].Jsonize());
    }
    payload.WithArray("TagsList", std::move(tagsListJsonList));
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

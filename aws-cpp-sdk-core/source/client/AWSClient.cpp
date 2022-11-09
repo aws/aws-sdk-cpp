@@ -608,6 +608,54 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     return StreamOutcome(std::move(httpResponseOutcome));
 }
 
+StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::AmazonWebServiceRequest& request,
+                                                         const Aws::Endpoint::AWSEndpoint& endpoint,
+                                                         Http::HttpMethod method,
+                                                         const char* signerName,
+                                                         const char* signerRegionOverride,
+                                                         const char* signerServiceNameOverride) const
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+
+    return MakeRequestWithUnparsedResponse(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
+
+XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::AmazonWebServiceRequest& request,
+                                                    const Aws::Endpoint::AWSEndpoint& endpoint,
+                                                    Http::HttpMethod method,
+                                                    const char* signerName,
+                                                    const char* signerRegionOverride,
+                                                    const char* signerServiceNameOverride) const
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+
+    return MakeRequestWithEventStream(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
+
 XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method,
@@ -859,7 +907,7 @@ void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
     httpRequest.SetUserAgent(m_userAgent);
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
@@ -871,7 +919,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     for (const auto& it: customizedHeaders)
@@ -887,7 +935,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const A
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
+Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
@@ -899,7 +947,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const c
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     for (const auto& it: customizedHeaders)
@@ -915,7 +963,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const c
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
@@ -927,7 +975,7 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     for (const auto& it: customizedHeaders)
@@ -943,7 +991,7 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds) const
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto signer = GetSignerByName(signerName);
@@ -955,7 +1003,7 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     for (const auto& it: customizedHeaders)
@@ -971,7 +1019,47 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                            Aws::Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                            const Aws::Http::HeaderValueCollection& customizedHeaders /* = {} */,
+                                            uint64_t expirationInSeconds /* = 0 */,
+                                            const char* signerName /* = Aws::Auth::SIGV4_SIGNER */,
+                                            const char* signerRegionOverride /* = nullptr */,
+                                            const char* signerServiceNameOverride /* = nullptr */)
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    for (const auto& it : endpoint.GetHeaders())
+    {
+        request->SetHeaderValue(it.first, it.second);
+    }
+    for (const auto& it: customizedHeaders)
+    {
+        request->SetHeaderValue(it.first, it.second);
+    }
+    auto signer = GetSignerByName(signerName);
+    if (signer->PresignRequest(*request, signerRegionOverride, signerServiceNameOverride, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return {};
+}
+
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> httpRequest =
@@ -985,7 +1073,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
 const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> httpRequest =
@@ -999,7 +1087,7 @@ const Aws::Http::QueryStringParameterCollection& extraParams, long long expirati
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method,
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> httpRequest =
@@ -1013,11 +1101,12 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
     return {};
 }
 
-std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri,
+std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri,
     Aws::Http::HttpMethod method, const Aws::Http::QueryStringParameterCollection& extraParams) const
 {
-    request.PutToPresignedUrl(uri);
-    std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    Aws::Http::URI uriCopy = uri;
+    request.PutToPresignedUrl(uriCopy);
+    std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(uriCopy, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
 
     for (auto& param : extraParams)
     {
@@ -1091,6 +1180,50 @@ AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configurati
 {
 }
 
+JsonOutcome AWSJsonClient::MakeRequest(const Aws::AmazonWebServiceRequest& request,
+                                       const Aws::Endpoint::AWSEndpoint& endpoint,
+                                       Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                       const char* signerName /* = Aws::Auth::NULL_SIGNER */,
+                                       const char* signerRegionOverride /* = nullptr */,
+                                       const char* signerServiceNameOverride /* = nullptr */) const
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+    return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
+
+JsonOutcome AWSJsonClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                       Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                       const char* signerName /* = Aws::Auth::NULL_SIGNER */,
+                                       const char* signerRegionOverride /* = nullptr */,
+                                       const char* signerServiceNameOverride /* = nullptr */) const
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+    return MakeRequest(uri, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
 
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
@@ -1223,6 +1356,52 @@ AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     BASECLASS(configuration, signerProvider, errorMarshaller)
 {
+}
+
+XmlOutcome AWSXMLClient::MakeRequest(const Aws::AmazonWebServiceRequest& request,
+                                     const Aws::Endpoint::AWSEndpoint& endpoint,
+                                     Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                     const char* signerName /* = Aws::Auth::NULL_SIGNER */,
+                                     const char* signerRegionOverride /* = nullptr */,
+                                     const char* signerServiceNameOverride /* = nullptr */) const
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+    return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
+
+XmlOutcome AWSXMLClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                     const char* requestName /* = "" */,
+                                     Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                     const char* signerName /* = Aws::Auth::NULL_SIGNER */,
+                                     const char* signerRegionOverride /* = nullptr */,
+                                     const char* signerServiceNameOverride /* = nullptr */) const
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+    return MakeRequest(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride);
 }
 
 XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,

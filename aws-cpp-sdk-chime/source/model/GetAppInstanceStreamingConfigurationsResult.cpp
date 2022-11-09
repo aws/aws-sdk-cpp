@@ -30,7 +30,7 @@ GetAppInstanceStreamingConfigurationsResult& GetAppInstanceStreamingConfiguratio
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AppInstanceStreamingConfigurations"))
   {
-    Array<JsonView> appInstanceStreamingConfigurationsJsonList = jsonValue.GetArray("AppInstanceStreamingConfigurations");
+    Aws::Utils::Array<JsonView> appInstanceStreamingConfigurationsJsonList = jsonValue.GetArray("AppInstanceStreamingConfigurations");
     for(unsigned appInstanceStreamingConfigurationsIndex = 0; appInstanceStreamingConfigurationsIndex < appInstanceStreamingConfigurationsJsonList.GetLength(); ++appInstanceStreamingConfigurationsIndex)
     {
       m_appInstanceStreamingConfigurations.push_back(appInstanceStreamingConfigurationsJsonList[appInstanceStreamingConfigurationsIndex].AsObject());

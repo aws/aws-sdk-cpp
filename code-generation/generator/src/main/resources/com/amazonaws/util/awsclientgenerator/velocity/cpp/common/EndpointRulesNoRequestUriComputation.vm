@@ -1,14 +1,14 @@
 #if($serviceModel.endpointRules)
-  Aws::String endpointRulesComputedUri = [&]()
-  {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
 #if($operation.staticContextParams)
-    Aws::UnorderedMap<Aws::String, Aws::String> staticParamBag;
+  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters = {
 #foreach($staticParamPair in $operation.staticContextParams.entrySet())
-    staticParamBag.emplace("${staticParamPair.key}", "${staticParamPair.value.get("value")}");
+  {"${staticParamPair.key}", "${staticParamPair.value.get("value")}"}#if( $foreach.hasNext ),#end
 #end
+  };
+#else
+  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
 #end
-##TODO: add clientContextParams
-    std::cout << "Here we are going to call CRT EndpointRule engine with stored context m_crtEndpointRuleEngineCtx and context params\n";
-    return ss.str();
-  }();
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
 #end

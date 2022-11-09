@@ -49,7 +49,7 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
 {
   if(jsonValue.ValueExists("architectures"))
   {
-    Array<JsonView> architecturesJsonList = jsonValue.GetArray("architectures");
+    Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("architectures");
     for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
     {
       m_architectures.push_back(architecturesJsonList[architecturesIndex].AsObject());
@@ -59,7 +59,7 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
 
   if(jsonValue.ValueExists("imageShas"))
   {
-    Array<JsonView> imageShasJsonList = jsonValue.GetArray("imageShas");
+    Aws::Utils::Array<JsonView> imageShasJsonList = jsonValue.GetArray("imageShas");
     for(unsigned imageShasIndex = 0; imageShasIndex < imageShasJsonList.GetLength(); ++imageShasIndex)
     {
       m_imageShas.push_back(imageShasJsonList[imageShasIndex].AsObject());
@@ -69,7 +69,7 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
 
   if(jsonValue.ValueExists("imageTags"))
   {
-    Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
+    Aws::Utils::Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
     for(unsigned imageTagsIndex = 0; imageTagsIndex < imageTagsJsonList.GetLength(); ++imageTagsIndex)
     {
       m_imageTags.push_back(imageTagsJsonList[imageTagsIndex].AsObject());
@@ -79,7 +79,7 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
 
   if(jsonValue.ValueExists("repositories"))
   {
-    Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
+    Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
     for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
     {
       m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());
@@ -89,7 +89,7 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
 
   if(jsonValue.ValueExists("resourceIds"))
   {
-    Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
+    Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
     for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
     {
       m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsObject());
@@ -120,7 +120,7 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
 
   if(m_architecturesHasBeenSet)
   {
-   Array<JsonValue> architecturesJsonList(m_architectures.size());
+   Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
    {
      architecturesJsonList[architecturesIndex].AsObject(m_architectures[architecturesIndex].Jsonize());
@@ -131,7 +131,7 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
 
   if(m_imageShasHasBeenSet)
   {
-   Array<JsonValue> imageShasJsonList(m_imageShas.size());
+   Aws::Utils::Array<JsonValue> imageShasJsonList(m_imageShas.size());
    for(unsigned imageShasIndex = 0; imageShasIndex < imageShasJsonList.GetLength(); ++imageShasIndex)
    {
      imageShasJsonList[imageShasIndex].AsObject(m_imageShas[imageShasIndex].Jsonize());
@@ -142,7 +142,7 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
 
   if(m_imageTagsHasBeenSet)
   {
-   Array<JsonValue> imageTagsJsonList(m_imageTags.size());
+   Aws::Utils::Array<JsonValue> imageTagsJsonList(m_imageTags.size());
    for(unsigned imageTagsIndex = 0; imageTagsIndex < imageTagsJsonList.GetLength(); ++imageTagsIndex)
    {
      imageTagsJsonList[imageTagsIndex].AsObject(m_imageTags[imageTagsIndex].Jsonize());
@@ -153,7 +153,7 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
 
   if(m_repositoriesHasBeenSet)
   {
-   Array<JsonValue> repositoriesJsonList(m_repositories.size());
+   Aws::Utils::Array<JsonValue> repositoriesJsonList(m_repositories.size());
    for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
    {
      repositoriesJsonList[repositoriesIndex].AsObject(m_repositories[repositoriesIndex].Jsonize());
@@ -164,7 +164,7 @@ JsonValue AwsEcrContainerAggregation::Jsonize() const
 
   if(m_resourceIdsHasBeenSet)
   {
-   Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
    {
      resourceIdsJsonList[resourceIdsIndex].AsObject(m_resourceIds[resourceIdsIndex].Jsonize());

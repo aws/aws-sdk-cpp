@@ -30,7 +30,7 @@ BatchUpdateFindingsResult& BatchUpdateFindingsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProcessedFindings"))
   {
-    Array<JsonView> processedFindingsJsonList = jsonValue.GetArray("ProcessedFindings");
+    Aws::Utils::Array<JsonView> processedFindingsJsonList = jsonValue.GetArray("ProcessedFindings");
     for(unsigned processedFindingsIndex = 0; processedFindingsIndex < processedFindingsJsonList.GetLength(); ++processedFindingsIndex)
     {
       m_processedFindings.push_back(processedFindingsJsonList[processedFindingsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchUpdateFindingsResult& BatchUpdateFindingsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("UnprocessedFindings"))
   {
-    Array<JsonView> unprocessedFindingsJsonList = jsonValue.GetArray("UnprocessedFindings");
+    Aws::Utils::Array<JsonView> unprocessedFindingsJsonList = jsonValue.GetArray("UnprocessedFindings");
     for(unsigned unprocessedFindingsIndex = 0; unprocessedFindingsIndex < unprocessedFindingsJsonList.GetLength(); ++unprocessedFindingsIndex)
     {
       m_unprocessedFindings.push_back(unprocessedFindingsJsonList[unprocessedFindingsIndex].AsObject());

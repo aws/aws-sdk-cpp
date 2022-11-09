@@ -15,6 +15,8 @@
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/elasticache/model/DataTieringStatus.h>
+#include <aws/elasticache/model/NetworkType.h>
+#include <aws/elasticache/model/IpDiscovery.h>
 #include <aws/elasticache/model/NodeGroup.h>
 #include <aws/elasticache/model/LogDeliveryConfiguration.h>
 #include <utility>
@@ -1195,32 +1197,136 @@ namespace Model
 
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * parameter is disabled for previous versions. </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * parameter is disabled for previous versions. </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * parameter is disabled for previous versions. </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * parameter is disabled for previous versions. </p>
      */
     inline ReplicationGroup& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
+
+    /**
+     * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
+     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
+     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
+     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
+     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
+     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline ReplicationGroup& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
+     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline ReplicationGroup& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline void SetIpDiscovery(const IpDiscovery& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline void SetIpDiscovery(IpDiscovery&& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = std::move(value); }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline ReplicationGroup& WithIpDiscovery(const IpDiscovery& value) { SetIpDiscovery(value); return *this;}
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline ReplicationGroup& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}
 
   private:
 
@@ -1304,6 +1410,12 @@ namespace Model
 
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet = false;
+
+    NetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
+
+    IpDiscovery m_ipDiscovery;
+    bool m_ipDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

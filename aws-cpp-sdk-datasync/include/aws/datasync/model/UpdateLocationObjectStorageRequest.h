@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/Array.h>
 #include <utility>
 
 namespace Aws
@@ -37,356 +38,397 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location to be updated.</p>
+     * <p>Specifies the ARN of the object storage system location that you're
+     * updating.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location to be updated.</p>
+     * <p>Specifies the ARN of the object storage system location that you're
+     * updating.</p>
      */
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location to be updated.</p>
+     * <p>Specifies the ARN of the object storage system location that you're
+     * updating.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location to be updated.</p>
+     * <p>Specifies the ARN of the object storage system location that you're
+     * updating.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location to be updated.</p>
+     * <p>Specifies the ARN of the object storage system location that you're
+     * updating.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location to be updated.</p>
+     * <p>Specifies the ARN of the object storage system location that you're
+     * updating.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location to be updated.</p>
+     * <p>Specifies the ARN of the object storage system location that you're
+     * updating.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location to be updated.</p>
+     * <p>Specifies the ARN of the object storage system location that you're
+     * updating.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 
 
     /**
-     * <p>The port that your self-managed object storage server accepts inbound network
-     * traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443
-     * (HTTPS). You can specify a custom port if your self-managed object storage
-     * server requires one.</p>
+     * <p>Specifies the port that your object storage server accepts inbound network
+     * traffic on (for example, port 443).</p>
      */
     inline int GetServerPort() const{ return m_serverPort; }
 
     /**
-     * <p>The port that your self-managed object storage server accepts inbound network
-     * traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443
-     * (HTTPS). You can specify a custom port if your self-managed object storage
-     * server requires one.</p>
+     * <p>Specifies the port that your object storage server accepts inbound network
+     * traffic on (for example, port 443).</p>
      */
     inline bool ServerPortHasBeenSet() const { return m_serverPortHasBeenSet; }
 
     /**
-     * <p>The port that your self-managed object storage server accepts inbound network
-     * traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443
-     * (HTTPS). You can specify a custom port if your self-managed object storage
-     * server requires one.</p>
+     * <p>Specifies the port that your object storage server accepts inbound network
+     * traffic on (for example, port 443).</p>
      */
     inline void SetServerPort(int value) { m_serverPortHasBeenSet = true; m_serverPort = value; }
 
     /**
-     * <p>The port that your self-managed object storage server accepts inbound network
-     * traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443
-     * (HTTPS). You can specify a custom port if your self-managed object storage
-     * server requires one.</p>
+     * <p>Specifies the port that your object storage server accepts inbound network
+     * traffic on (for example, port 443).</p>
      */
     inline UpdateLocationObjectStorageRequest& WithServerPort(int value) { SetServerPort(value); return *this;}
 
 
     /**
-     * <p>The protocol that the object storage server uses to communicate. Valid values
-     * are <code>HTTP</code> or <code>HTTPS</code>.</p>
+     * <p>Specifies the protocol that your object storage server uses to
+     * communicate.</p>
      */
     inline const ObjectStorageServerProtocol& GetServerProtocol() const{ return m_serverProtocol; }
 
     /**
-     * <p>The protocol that the object storage server uses to communicate. Valid values
-     * are <code>HTTP</code> or <code>HTTPS</code>.</p>
+     * <p>Specifies the protocol that your object storage server uses to
+     * communicate.</p>
      */
     inline bool ServerProtocolHasBeenSet() const { return m_serverProtocolHasBeenSet; }
 
     /**
-     * <p>The protocol that the object storage server uses to communicate. Valid values
-     * are <code>HTTP</code> or <code>HTTPS</code>.</p>
+     * <p>Specifies the protocol that your object storage server uses to
+     * communicate.</p>
      */
     inline void SetServerProtocol(const ObjectStorageServerProtocol& value) { m_serverProtocolHasBeenSet = true; m_serverProtocol = value; }
 
     /**
-     * <p>The protocol that the object storage server uses to communicate. Valid values
-     * are <code>HTTP</code> or <code>HTTPS</code>.</p>
+     * <p>Specifies the protocol that your object storage server uses to
+     * communicate.</p>
      */
     inline void SetServerProtocol(ObjectStorageServerProtocol&& value) { m_serverProtocolHasBeenSet = true; m_serverProtocol = std::move(value); }
 
     /**
-     * <p>The protocol that the object storage server uses to communicate. Valid values
-     * are <code>HTTP</code> or <code>HTTPS</code>.</p>
+     * <p>Specifies the protocol that your object storage server uses to
+     * communicate.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithServerProtocol(const ObjectStorageServerProtocol& value) { SetServerProtocol(value); return *this;}
 
     /**
-     * <p>The protocol that the object storage server uses to communicate. Valid values
-     * are <code>HTTP</code> or <code>HTTPS</code>.</p>
+     * <p>Specifies the protocol that your object storage server uses to
+     * communicate.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithServerProtocol(ObjectStorageServerProtocol&& value) { SetServerProtocol(std::move(value)); return *this;}
 
 
     /**
-     * <p>The subdirectory in the self-managed object storage server that is used to
-     * read data from.</p>
+     * <p>Specifies the object prefix for your object storage server. If this is a
+     * source location, DataSync only copies objects with this prefix. If this is a
+     * destination location, DataSync writes all objects with this prefix.</p>
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
     /**
-     * <p>The subdirectory in the self-managed object storage server that is used to
-     * read data from.</p>
+     * <p>Specifies the object prefix for your object storage server. If this is a
+     * source location, DataSync only copies objects with this prefix. If this is a
+     * destination location, DataSync writes all objects with this prefix.</p>
      */
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
     /**
-     * <p>The subdirectory in the self-managed object storage server that is used to
-     * read data from.</p>
+     * <p>Specifies the object prefix for your object storage server. If this is a
+     * source location, DataSync only copies objects with this prefix. If this is a
+     * destination location, DataSync writes all objects with this prefix.</p>
      */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
     /**
-     * <p>The subdirectory in the self-managed object storage server that is used to
-     * read data from.</p>
+     * <p>Specifies the object prefix for your object storage server. If this is a
+     * source location, DataSync only copies objects with this prefix. If this is a
+     * destination location, DataSync writes all objects with this prefix.</p>
      */
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
     /**
-     * <p>The subdirectory in the self-managed object storage server that is used to
-     * read data from.</p>
+     * <p>Specifies the object prefix for your object storage server. If this is a
+     * source location, DataSync only copies objects with this prefix. If this is a
+     * destination location, DataSync writes all objects with this prefix.</p>
      */
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
     /**
-     * <p>The subdirectory in the self-managed object storage server that is used to
-     * read data from.</p>
+     * <p>Specifies the object prefix for your object storage server. If this is a
+     * source location, DataSync only copies objects with this prefix. If this is a
+     * destination location, DataSync writes all objects with this prefix.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
     /**
-     * <p>The subdirectory in the self-managed object storage server that is used to
-     * read data from.</p>
+     * <p>Specifies the object prefix for your object storage server. If this is a
+     * source location, DataSync only copies objects with this prefix. If this is a
+     * destination location, DataSync writes all objects with this prefix.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
     /**
-     * <p>The subdirectory in the self-managed object storage server that is used to
-     * read data from.</p>
+     * <p>Specifies the object prefix for your object storage server. If this is a
+     * source location, DataSync only copies objects with this prefix. If this is a
+     * destination location, DataSync writes all objects with this prefix.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
 
 
     /**
-     * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the access key (for example, a user name) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline const Aws::String& GetAccessKey() const{ return m_accessKey; }
 
     /**
-     * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the access key (for example, a user name) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline bool AccessKeyHasBeenSet() const { return m_accessKeyHasBeenSet; }
 
     /**
-     * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the access key (for example, a user name) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline void SetAccessKey(const Aws::String& value) { m_accessKeyHasBeenSet = true; m_accessKey = value; }
 
     /**
-     * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the access key (for example, a user name) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline void SetAccessKey(Aws::String&& value) { m_accessKeyHasBeenSet = true; m_accessKey = std::move(value); }
 
     /**
-     * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the access key (for example, a user name) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline void SetAccessKey(const char* value) { m_accessKeyHasBeenSet = true; m_accessKey.assign(value); }
 
     /**
-     * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the access key (for example, a user name) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithAccessKey(const Aws::String& value) { SetAccessKey(value); return *this;}
 
     /**
-     * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the access key (for example, a user name) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithAccessKey(Aws::String&& value) { SetAccessKey(std::move(value)); return *this;}
 
     /**
-     * <p>Optional. The access key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the access key (for example, a user name) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithAccessKey(const char* value) { SetAccessKey(value); return *this;}
 
 
     /**
-     * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the secret key (for example, a password) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline const Aws::String& GetSecretKey() const{ return m_secretKey; }
 
     /**
-     * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the secret key (for example, a password) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline bool SecretKeyHasBeenSet() const { return m_secretKeyHasBeenSet; }
 
     /**
-     * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the secret key (for example, a password) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline void SetSecretKey(const Aws::String& value) { m_secretKeyHasBeenSet = true; m_secretKey = value; }
 
     /**
-     * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the secret key (for example, a password) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline void SetSecretKey(Aws::String&& value) { m_secretKeyHasBeenSet = true; m_secretKey = std::move(value); }
 
     /**
-     * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the secret key (for example, a password) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline void SetSecretKey(const char* value) { m_secretKeyHasBeenSet = true; m_secretKey.assign(value); }
 
     /**
-     * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the secret key (for example, a password) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithSecretKey(const Aws::String& value) { SetSecretKey(value); return *this;}
 
     /**
-     * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the secret key (for example, a password) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithSecretKey(Aws::String&& value) { SetSecretKey(std::move(value)); return *this;}
 
     /**
-     * <p>Optional. The secret key is used if credentials are required to access the
-     * self-managed object storage server. If your object storage requires a user name
-     * and password to authenticate, use <code>AccessKey</code> and
-     * <code>SecretKey</code> to provide the user name and password, respectively.</p>
+     * <p>Specifies the secret key (for example, a password) if credentials are
+     * required to authenticate with the object storage server.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithSecretKey(const char* value) { SetSecretKey(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
+     * securely connect with your location.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
+     * securely connect with your location.</p>
      */
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
+     * securely connect with your location.</p>
      */
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
+     * securely connect with your location.</p>
      */
     inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
+     * securely connect with your location.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
+     * securely connect with your location.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
+     * securely connect with your location.</p>
      */
     inline UpdateLocationObjectStorageRequest& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
+     * securely connect with your location.</p>
      */
     inline UpdateLocationObjectStorageRequest& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
+     * securely connect with your location.</p>
      */
     inline UpdateLocationObjectStorageRequest& AddAgentArns(const char* value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Updating the certificate doesn't interfere with tasks that you have in
+     * progress.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetServerCertificate() const{ return m_serverCertificate; }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Updating the certificate doesn't interfere with tasks that you have in
+     * progress.</p>
+     */
+    inline bool ServerCertificateHasBeenSet() const { return m_serverCertificateHasBeenSet; }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Updating the certificate doesn't interfere with tasks that you have in
+     * progress.</p>
+     */
+    inline void SetServerCertificate(const Aws::Utils::ByteBuffer& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = value; }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Updating the certificate doesn't interfere with tasks that you have in
+     * progress.</p>
+     */
+    inline void SetServerCertificate(Aws::Utils::ByteBuffer&& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = std::move(value); }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Updating the certificate doesn't interfere with tasks that you have in
+     * progress.</p>
+     */
+    inline UpdateLocationObjectStorageRequest& WithServerCertificate(const Aws::Utils::ByteBuffer& value) { SetServerCertificate(value); return *this;}
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Updating the certificate doesn't interfere with tasks that you have in
+     * progress.</p>
+     */
+    inline UpdateLocationObjectStorageRequest& WithServerCertificate(Aws::Utils::ByteBuffer&& value) { SetServerCertificate(std::move(value)); return *this;}
 
   private:
 
@@ -410,6 +452,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_agentArns;
     bool m_agentArnsHasBeenSet = false;
+
+    Aws::Utils::ByteBuffer m_serverCertificate;
+    bool m_serverCertificateHasBeenSet = false;
   };
 
 } // namespace Model

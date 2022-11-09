@@ -55,7 +55,7 @@ Parameters& Parameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExcludeDataVolumeTags"))
   {
-    Array<JsonView> excludeDataVolumeTagsJsonList = jsonValue.GetArray("ExcludeDataVolumeTags");
+    Aws::Utils::Array<JsonView> excludeDataVolumeTagsJsonList = jsonValue.GetArray("ExcludeDataVolumeTags");
     for(unsigned excludeDataVolumeTagsIndex = 0; excludeDataVolumeTagsIndex < excludeDataVolumeTagsJsonList.GetLength(); ++excludeDataVolumeTagsIndex)
     {
       m_excludeDataVolumeTags.push_back(excludeDataVolumeTagsJsonList[excludeDataVolumeTagsIndex].AsObject());
@@ -84,7 +84,7 @@ JsonValue Parameters::Jsonize() const
 
   if(m_excludeDataVolumeTagsHasBeenSet)
   {
-   Array<JsonValue> excludeDataVolumeTagsJsonList(m_excludeDataVolumeTags.size());
+   Aws::Utils::Array<JsonValue> excludeDataVolumeTagsJsonList(m_excludeDataVolumeTags.size());
    for(unsigned excludeDataVolumeTagsIndex = 0; excludeDataVolumeTagsIndex < excludeDataVolumeTagsJsonList.GetLength(); ++excludeDataVolumeTagsIndex)
    {
      excludeDataVolumeTagsJsonList[excludeDataVolumeTagsIndex].AsObject(m_excludeDataVolumeTags[excludeDataVolumeTagsIndex].Jsonize());

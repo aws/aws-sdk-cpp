@@ -30,7 +30,7 @@ Aws::String BatchDeleteConnectionRequest::SerializePayload() const
 
   if(m_connectionNameListHasBeenSet)
   {
-   Array<JsonValue> connectionNameListJsonList(m_connectionNameList.size());
+   Aws::Utils::Array<JsonValue> connectionNameListJsonList(m_connectionNameList.size());
    for(unsigned connectionNameListIndex = 0; connectionNameListIndex < connectionNameListJsonList.GetLength(); ++connectionNameListIndex)
    {
      connectionNameListJsonList[connectionNameListIndex].AsString(m_connectionNameList[connectionNameListIndex]);

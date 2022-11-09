@@ -71,7 +71,7 @@ InventoryItem& InventoryItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Content"))
   {
-    Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
+    Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
     for(unsigned contentIndex = 0; contentIndex < contentJsonList.GetLength(); ++contentIndex)
     {
       Aws::Map<Aws::String, JsonView> inventoryItemEntryJsonMap = contentJsonList[contentIndex].GetAllObjects();
@@ -128,7 +128,7 @@ JsonValue InventoryItem::Jsonize() const
 
   if(m_contentHasBeenSet)
   {
-   Array<JsonValue> contentJsonList(m_content.size());
+   Aws::Utils::Array<JsonValue> contentJsonList(m_content.size());
    for(unsigned contentIndex = 0; contentIndex < contentJsonList.GetLength(); ++contentIndex)
    {
      JsonValue inventoryItemEntryJsonMap;

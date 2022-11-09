@@ -37,7 +37,7 @@ SecurityProfileSearchCriteria& SecurityProfileSearchCriteria::operator =(JsonVie
 {
   if(jsonValue.ValueExists("OrConditions"))
   {
-    Array<JsonView> orConditionsJsonList = jsonValue.GetArray("OrConditions");
+    Aws::Utils::Array<JsonView> orConditionsJsonList = jsonValue.GetArray("OrConditions");
     for(unsigned orConditionsIndex = 0; orConditionsIndex < orConditionsJsonList.GetLength(); ++orConditionsIndex)
     {
       m_orConditions.push_back(orConditionsJsonList[orConditionsIndex].AsObject());
@@ -47,7 +47,7 @@ SecurityProfileSearchCriteria& SecurityProfileSearchCriteria::operator =(JsonVie
 
   if(jsonValue.ValueExists("AndConditions"))
   {
-    Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
+    Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
     for(unsigned andConditionsIndex = 0; andConditionsIndex < andConditionsJsonList.GetLength(); ++andConditionsIndex)
     {
       m_andConditions.push_back(andConditionsJsonList[andConditionsIndex].AsObject());
@@ -71,7 +71,7 @@ JsonValue SecurityProfileSearchCriteria::Jsonize() const
 
   if(m_orConditionsHasBeenSet)
   {
-   Array<JsonValue> orConditionsJsonList(m_orConditions.size());
+   Aws::Utils::Array<JsonValue> orConditionsJsonList(m_orConditions.size());
    for(unsigned orConditionsIndex = 0; orConditionsIndex < orConditionsJsonList.GetLength(); ++orConditionsIndex)
    {
      orConditionsJsonList[orConditionsIndex].AsObject(m_orConditions[orConditionsIndex].Jsonize());
@@ -82,7 +82,7 @@ JsonValue SecurityProfileSearchCriteria::Jsonize() const
 
   if(m_andConditionsHasBeenSet)
   {
-   Array<JsonValue> andConditionsJsonList(m_andConditions.size());
+   Aws::Utils::Array<JsonValue> andConditionsJsonList(m_andConditions.size());
    for(unsigned andConditionsIndex = 0; andConditionsIndex < andConditionsJsonList.GetLength(); ++andConditionsIndex)
    {
      andConditionsJsonList[andConditionsIndex].AsObject(m_andConditions[andConditionsIndex].Jsonize());

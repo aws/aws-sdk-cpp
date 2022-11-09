@@ -37,7 +37,7 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
 
   if(m_parametersHasBeenSet)
   {
-   Array<JsonValue> parametersJsonList(m_parameters.size());
+   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
    {
      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());

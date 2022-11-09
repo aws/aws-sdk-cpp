@@ -30,7 +30,7 @@ ListConfigurationHistoryResult& ListConfigurationHistoryResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EventList"))
   {
-    Array<JsonView> eventListJsonList = jsonValue.GetArray("EventList");
+    Aws::Utils::Array<JsonView> eventListJsonList = jsonValue.GetArray("EventList");
     for(unsigned eventListIndex = 0; eventListIndex < eventListJsonList.GetLength(); ++eventListIndex)
     {
       m_eventList.push_back(eventListJsonList[eventListIndex].AsObject());

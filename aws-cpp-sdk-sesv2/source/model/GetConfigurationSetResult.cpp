@@ -60,7 +60,7 @@ GetConfigurationSetResult& GetConfigurationSetResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -70,6 +70,12 @@ GetConfigurationSetResult& GetConfigurationSetResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("SuppressionOptions"))
   {
     m_suppressionOptions = jsonValue.GetObject("SuppressionOptions");
+
+  }
+
+  if(jsonValue.ValueExists("VdmOptions"))
+  {
+    m_vdmOptions = jsonValue.GetObject("VdmOptions");
 
   }
 

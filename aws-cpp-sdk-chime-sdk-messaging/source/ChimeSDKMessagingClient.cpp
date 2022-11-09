@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingClient.h>
-#include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpoint.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingErrorMarshaller.h>
+#include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointProvider.h>
 #include <aws/chime-sdk-messaging/model/AssociateChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/BatchCreateChannelMembershipRequest.h>
 #include <aws/chime-sdk-messaging/model/ChannelFlowCallbackRequest.h>
@@ -75,20 +76,71 @@ using namespace Aws::ChimeSDKMessaging;
 using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-static const char* SERVICE_NAME = "chime";
-static const char* ALLOCATION_TAG = "ChimeSDKMessagingClient";
+const char* ChimeSDKMessagingClient::SERVICE_NAME = "chime";
+const char* ChimeSDKMessagingClient::ALLOCATION_TAG = "ChimeSDKMessagingClient";
 
-ChimeSDKMessagingClient::ChimeSDKMessagingClient(const Client::ClientConfiguration& clientConfiguration) :
+ChimeSDKMessagingClient::ChimeSDKMessagingClient(const ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration& clientConfiguration,
+                                                 std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ChimeSDKMessagingErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
+}
+
+ChimeSDKMessagingClient::ChimeSDKMessagingClient(const AWSCredentials& credentials,
+                                                 std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> endpointProvider,
+                                                 const ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ChimeSDKMessagingErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+ChimeSDKMessagingClient::ChimeSDKMessagingClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                                 std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> endpointProvider,
+                                                 const ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ChimeSDKMessagingErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  ChimeSDKMessagingClient::ChimeSDKMessagingClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ChimeSDKMessagingErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<ChimeSDKMessagingEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
 }
 
 ChimeSDKMessagingClient::ChimeSDKMessagingClient(const AWSCredentials& credentials,
@@ -99,9 +151,11 @@ ChimeSDKMessagingClient::ChimeSDKMessagingClient(const AWSCredentials& credentia
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ChimeSDKMessagingErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<ChimeSDKMessagingEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 ChimeSDKMessagingClient::ChimeSDKMessagingClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -112,43 +166,39 @@ ChimeSDKMessagingClient::ChimeSDKMessagingClient(const std::shared_ptr<AWSCreden
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ChimeSDKMessagingErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<ChimeSDKMessagingEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 ChimeSDKMessagingClient::~ChimeSDKMessagingClient()
 {
 }
 
-void ChimeSDKMessagingClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<ChimeSDKMessagingEndpointProviderBase>& ChimeSDKMessagingClient::accessEndpointProvider()
+{
+  return m_endpointProvider;
+}
+
+void ChimeSDKMessagingClient::init(const ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Chime SDK Messaging");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + ChimeSDKMessagingEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void ChimeSDKMessagingClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 AssociateChannelFlowOutcome ChimeSDKMessagingClient::AssociateChannelFlow(const AssociateChannelFlowRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateChannelFlow", "Required field: ChannelArn, is not set");
@@ -159,11 +209,12 @@ AssociateChannelFlowOutcome ChimeSDKMessagingClient::AssociateChannelFlow(const 
     AWS_LOGSTREAM_ERROR("AssociateChannelFlow", "Required field: ChimeBearer, is not set");
     return AssociateChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/channel-flow");
-  return AssociateChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flow");
+  return AssociateChannelFlowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateChannelFlowOutcomeCallable ChimeSDKMessagingClient::AssociateChannelFlowCallable(const AssociateChannelFlowRequest& request) const
@@ -184,6 +235,7 @@ void ChimeSDKMessagingClient::AssociateChannelFlowAsync(const AssociateChannelFl
 
 BatchCreateChannelMembershipOutcome ChimeSDKMessagingClient::BatchCreateChannelMembership(const BatchCreateChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchCreateChannelMembership", "Required field: ChannelArn, is not set");
@@ -194,14 +246,15 @@ BatchCreateChannelMembershipOutcome ChimeSDKMessagingClient::BatchCreateChannelM
     AWS_LOGSTREAM_ERROR("BatchCreateChannelMembership", "Required field: ChimeBearer, is not set");
     return BatchCreateChannelMembershipOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchCreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/memberships");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
   ss.str("?operation=batch-create");
-  uri.SetQueryString(ss.str());
-  return BatchCreateChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return BatchCreateChannelMembershipOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchCreateChannelMembershipOutcomeCallable ChimeSDKMessagingClient::BatchCreateChannelMembershipCallable(const BatchCreateChannelMembershipRequest& request) const
@@ -222,18 +275,20 @@ void ChimeSDKMessagingClient::BatchCreateChannelMembershipAsync(const BatchCreat
 
 ChannelFlowCallbackOutcome ChimeSDKMessagingClient::ChannelFlowCallback(const ChannelFlowCallbackRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ChannelFlowCallback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ChannelFlowCallback", "Required field: ChannelArn, is not set");
     return ChannelFlowCallbackOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ChannelFlowCallback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   ss.str("?operation=channel-flow-callback");
-  uri.SetQueryString(ss.str());
-  return ChannelFlowCallbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return ChannelFlowCallbackOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ChannelFlowCallbackOutcomeCallable ChimeSDKMessagingClient::ChannelFlowCallbackCallable(const ChannelFlowCallbackRequest& request) const
@@ -254,14 +309,16 @@ void ChimeSDKMessagingClient::ChannelFlowCallbackAsync(const ChannelFlowCallback
 
 CreateChannelOutcome ChimeSDKMessagingClient::CreateChannel(const CreateChannelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChimeBearerHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateChannel", "Required field: ChimeBearer, is not set");
     return CreateChannelOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels");
-  return CreateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
+  return CreateChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateChannelOutcomeCallable ChimeSDKMessagingClient::CreateChannelCallable(const CreateChannelRequest& request) const
@@ -282,6 +339,7 @@ void ChimeSDKMessagingClient::CreateChannelAsync(const CreateChannelRequest& req
 
 CreateChannelBanOutcome ChimeSDKMessagingClient::CreateChannelBan(const CreateChannelBanRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateChannelBan", "Required field: ChannelArn, is not set");
@@ -292,11 +350,12 @@ CreateChannelBanOutcome ChimeSDKMessagingClient::CreateChannelBan(const CreateCh
     AWS_LOGSTREAM_ERROR("CreateChannelBan", "Required field: ChimeBearer, is not set");
     return CreateChannelBanOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/bans");
-  return CreateChannelBanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bans");
+  return CreateChannelBanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateChannelBanOutcomeCallable ChimeSDKMessagingClient::CreateChannelBanCallable(const CreateChannelBanRequest& request) const
@@ -317,9 +376,11 @@ void ChimeSDKMessagingClient::CreateChannelBanAsync(const CreateChannelBanReques
 
 CreateChannelFlowOutcome ChimeSDKMessagingClient::CreateChannelFlow(const CreateChannelFlowRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channel-flows");
-  return CreateChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flows");
+  return CreateChannelFlowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateChannelFlowOutcomeCallable ChimeSDKMessagingClient::CreateChannelFlowCallable(const CreateChannelFlowRequest& request) const
@@ -340,6 +401,7 @@ void ChimeSDKMessagingClient::CreateChannelFlowAsync(const CreateChannelFlowRequ
 
 CreateChannelMembershipOutcome ChimeSDKMessagingClient::CreateChannelMembership(const CreateChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateChannelMembership", "Required field: ChannelArn, is not set");
@@ -350,11 +412,12 @@ CreateChannelMembershipOutcome ChimeSDKMessagingClient::CreateChannelMembership(
     AWS_LOGSTREAM_ERROR("CreateChannelMembership", "Required field: ChimeBearer, is not set");
     return CreateChannelMembershipOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/memberships");
-  return CreateChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
+  return CreateChannelMembershipOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateChannelMembershipOutcomeCallable ChimeSDKMessagingClient::CreateChannelMembershipCallable(const CreateChannelMembershipRequest& request) const
@@ -375,6 +438,7 @@ void ChimeSDKMessagingClient::CreateChannelMembershipAsync(const CreateChannelMe
 
 CreateChannelModeratorOutcome ChimeSDKMessagingClient::CreateChannelModerator(const CreateChannelModeratorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateChannelModerator", "Required field: ChannelArn, is not set");
@@ -385,11 +449,12 @@ CreateChannelModeratorOutcome ChimeSDKMessagingClient::CreateChannelModerator(co
     AWS_LOGSTREAM_ERROR("CreateChannelModerator", "Required field: ChimeBearer, is not set");
     return CreateChannelModeratorOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/moderators");
-  return CreateChannelModeratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/moderators");
+  return CreateChannelModeratorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateChannelModeratorOutcomeCallable ChimeSDKMessagingClient::CreateChannelModeratorCallable(const CreateChannelModeratorRequest& request) const
@@ -410,6 +475,7 @@ void ChimeSDKMessagingClient::CreateChannelModeratorAsync(const CreateChannelMod
 
 DeleteChannelOutcome ChimeSDKMessagingClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteChannel", "Required field: ChannelArn, is not set");
@@ -420,10 +486,11 @@ DeleteChannelOutcome ChimeSDKMessagingClient::DeleteChannel(const DeleteChannelR
     AWS_LOGSTREAM_ERROR("DeleteChannel", "Required field: ChimeBearer, is not set");
     return DeleteChannelOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  return DeleteChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  return DeleteChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteChannelOutcomeCallable ChimeSDKMessagingClient::DeleteChannelCallable(const DeleteChannelRequest& request) const
@@ -444,6 +511,7 @@ void ChimeSDKMessagingClient::DeleteChannelAsync(const DeleteChannelRequest& req
 
 DeleteChannelBanOutcome ChimeSDKMessagingClient::DeleteChannelBan(const DeleteChannelBanRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteChannelBan", "Required field: ChannelArn, is not set");
@@ -459,12 +527,13 @@ DeleteChannelBanOutcome ChimeSDKMessagingClient::DeleteChannelBan(const DeleteCh
     AWS_LOGSTREAM_ERROR("DeleteChannelBan", "Required field: ChimeBearer, is not set");
     return DeleteChannelBanOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/bans/");
-  uri.AddPathSegment(request.GetMemberArn());
-  return DeleteChannelBanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bans/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
+  return DeleteChannelBanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteChannelBanOutcomeCallable ChimeSDKMessagingClient::DeleteChannelBanCallable(const DeleteChannelBanRequest& request) const
@@ -485,15 +554,17 @@ void ChimeSDKMessagingClient::DeleteChannelBanAsync(const DeleteChannelBanReques
 
 DeleteChannelFlowOutcome ChimeSDKMessagingClient::DeleteChannelFlow(const DeleteChannelFlowRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelFlowArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteChannelFlow", "Required field: ChannelFlowArn, is not set");
     return DeleteChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelFlowArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channel-flows/");
-  uri.AddPathSegment(request.GetChannelFlowArn());
-  return DeleteChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flows/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
+  return DeleteChannelFlowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteChannelFlowOutcomeCallable ChimeSDKMessagingClient::DeleteChannelFlowCallable(const DeleteChannelFlowRequest& request) const
@@ -514,6 +585,7 @@ void ChimeSDKMessagingClient::DeleteChannelFlowAsync(const DeleteChannelFlowRequ
 
 DeleteChannelMembershipOutcome ChimeSDKMessagingClient::DeleteChannelMembership(const DeleteChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteChannelMembership", "Required field: ChannelArn, is not set");
@@ -529,12 +601,13 @@ DeleteChannelMembershipOutcome ChimeSDKMessagingClient::DeleteChannelMembership(
     AWS_LOGSTREAM_ERROR("DeleteChannelMembership", "Required field: ChimeBearer, is not set");
     return DeleteChannelMembershipOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/memberships/");
-  uri.AddPathSegment(request.GetMemberArn());
-  return DeleteChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
+  return DeleteChannelMembershipOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteChannelMembershipOutcomeCallable ChimeSDKMessagingClient::DeleteChannelMembershipCallable(const DeleteChannelMembershipRequest& request) const
@@ -555,6 +628,7 @@ void ChimeSDKMessagingClient::DeleteChannelMembershipAsync(const DeleteChannelMe
 
 DeleteChannelMessageOutcome ChimeSDKMessagingClient::DeleteChannelMessage(const DeleteChannelMessageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteChannelMessage", "Required field: ChannelArn, is not set");
@@ -570,12 +644,13 @@ DeleteChannelMessageOutcome ChimeSDKMessagingClient::DeleteChannelMessage(const 
     AWS_LOGSTREAM_ERROR("DeleteChannelMessage", "Required field: ChimeBearer, is not set");
     return DeleteChannelMessageOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/messages/");
-  uri.AddPathSegment(request.GetMessageId());
-  return DeleteChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
+  return DeleteChannelMessageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteChannelMessageOutcomeCallable ChimeSDKMessagingClient::DeleteChannelMessageCallable(const DeleteChannelMessageRequest& request) const
@@ -596,6 +671,7 @@ void ChimeSDKMessagingClient::DeleteChannelMessageAsync(const DeleteChannelMessa
 
 DeleteChannelModeratorOutcome ChimeSDKMessagingClient::DeleteChannelModerator(const DeleteChannelModeratorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteChannelModerator", "Required field: ChannelArn, is not set");
@@ -611,12 +687,13 @@ DeleteChannelModeratorOutcome ChimeSDKMessagingClient::DeleteChannelModerator(co
     AWS_LOGSTREAM_ERROR("DeleteChannelModerator", "Required field: ChimeBearer, is not set");
     return DeleteChannelModeratorOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/moderators/");
-  uri.AddPathSegment(request.GetChannelModeratorArn());
-  return DeleteChannelModeratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/moderators/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelModeratorArn());
+  return DeleteChannelModeratorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteChannelModeratorOutcomeCallable ChimeSDKMessagingClient::DeleteChannelModeratorCallable(const DeleteChannelModeratorRequest& request) const
@@ -637,6 +714,7 @@ void ChimeSDKMessagingClient::DeleteChannelModeratorAsync(const DeleteChannelMod
 
 DescribeChannelOutcome ChimeSDKMessagingClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeChannel", "Required field: ChannelArn, is not set");
@@ -647,10 +725,11 @@ DescribeChannelOutcome ChimeSDKMessagingClient::DescribeChannel(const DescribeCh
     AWS_LOGSTREAM_ERROR("DescribeChannel", "Required field: ChimeBearer, is not set");
     return DescribeChannelOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  return DescribeChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  return DescribeChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeChannelOutcomeCallable ChimeSDKMessagingClient::DescribeChannelCallable(const DescribeChannelRequest& request) const
@@ -671,6 +750,7 @@ void ChimeSDKMessagingClient::DescribeChannelAsync(const DescribeChannelRequest&
 
 DescribeChannelBanOutcome ChimeSDKMessagingClient::DescribeChannelBan(const DescribeChannelBanRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeChannelBan", "Required field: ChannelArn, is not set");
@@ -686,12 +766,13 @@ DescribeChannelBanOutcome ChimeSDKMessagingClient::DescribeChannelBan(const Desc
     AWS_LOGSTREAM_ERROR("DescribeChannelBan", "Required field: ChimeBearer, is not set");
     return DescribeChannelBanOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/bans/");
-  uri.AddPathSegment(request.GetMemberArn());
-  return DescribeChannelBanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bans/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
+  return DescribeChannelBanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeChannelBanOutcomeCallable ChimeSDKMessagingClient::DescribeChannelBanCallable(const DescribeChannelBanRequest& request) const
@@ -712,15 +793,17 @@ void ChimeSDKMessagingClient::DescribeChannelBanAsync(const DescribeChannelBanRe
 
 DescribeChannelFlowOutcome ChimeSDKMessagingClient::DescribeChannelFlow(const DescribeChannelFlowRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelFlowArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeChannelFlow", "Required field: ChannelFlowArn, is not set");
     return DescribeChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelFlowArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channel-flows/");
-  uri.AddPathSegment(request.GetChannelFlowArn());
-  return DescribeChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flows/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
+  return DescribeChannelFlowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeChannelFlowOutcomeCallable ChimeSDKMessagingClient::DescribeChannelFlowCallable(const DescribeChannelFlowRequest& request) const
@@ -741,6 +824,7 @@ void ChimeSDKMessagingClient::DescribeChannelFlowAsync(const DescribeChannelFlow
 
 DescribeChannelMembershipOutcome ChimeSDKMessagingClient::DescribeChannelMembership(const DescribeChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeChannelMembership", "Required field: ChannelArn, is not set");
@@ -756,12 +840,13 @@ DescribeChannelMembershipOutcome ChimeSDKMessagingClient::DescribeChannelMembers
     AWS_LOGSTREAM_ERROR("DescribeChannelMembership", "Required field: ChimeBearer, is not set");
     return DescribeChannelMembershipOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/memberships/");
-  uri.AddPathSegment(request.GetMemberArn());
-  return DescribeChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
+  return DescribeChannelMembershipOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeChannelMembershipOutcomeCallable ChimeSDKMessagingClient::DescribeChannelMembershipCallable(const DescribeChannelMembershipRequest& request) const
@@ -782,6 +867,7 @@ void ChimeSDKMessagingClient::DescribeChannelMembershipAsync(const DescribeChann
 
 DescribeChannelMembershipForAppInstanceUserOutcome ChimeSDKMessagingClient::DescribeChannelMembershipForAppInstanceUser(const DescribeChannelMembershipForAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelMembershipForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeChannelMembershipForAppInstanceUser", "Required field: ChannelArn, is not set");
@@ -797,13 +883,14 @@ DescribeChannelMembershipForAppInstanceUserOutcome ChimeSDKMessagingClient::Desc
     AWS_LOGSTREAM_ERROR("DescribeChannelMembershipForAppInstanceUser", "Required field: ChimeBearer, is not set");
     return DescribeChannelMembershipForAppInstanceUserOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelMembershipForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   ss.str("?scope=app-instance-user-membership");
-  uri.SetQueryString(ss.str());
-  return DescribeChannelMembershipForAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return DescribeChannelMembershipForAppInstanceUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeChannelMembershipForAppInstanceUserOutcomeCallable ChimeSDKMessagingClient::DescribeChannelMembershipForAppInstanceUserCallable(const DescribeChannelMembershipForAppInstanceUserRequest& request) const
@@ -824,6 +911,7 @@ void ChimeSDKMessagingClient::DescribeChannelMembershipForAppInstanceUserAsync(c
 
 DescribeChannelModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::DescribeChannelModeratedByAppInstanceUser(const DescribeChannelModeratedByAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeChannelModeratedByAppInstanceUser", "Required field: ChannelArn, is not set");
@@ -839,13 +927,14 @@ DescribeChannelModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::Descri
     AWS_LOGSTREAM_ERROR("DescribeChannelModeratedByAppInstanceUser", "Required field: ChimeBearer, is not set");
     return DescribeChannelModeratedByAppInstanceUserOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   ss.str("?scope=app-instance-user-moderated-channel");
-  uri.SetQueryString(ss.str());
-  return DescribeChannelModeratedByAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return DescribeChannelModeratedByAppInstanceUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeChannelModeratedByAppInstanceUserOutcomeCallable ChimeSDKMessagingClient::DescribeChannelModeratedByAppInstanceUserCallable(const DescribeChannelModeratedByAppInstanceUserRequest& request) const
@@ -866,6 +955,7 @@ void ChimeSDKMessagingClient::DescribeChannelModeratedByAppInstanceUserAsync(con
 
 DescribeChannelModeratorOutcome ChimeSDKMessagingClient::DescribeChannelModerator(const DescribeChannelModeratorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeChannelModerator", "Required field: ChannelArn, is not set");
@@ -881,12 +971,13 @@ DescribeChannelModeratorOutcome ChimeSDKMessagingClient::DescribeChannelModerato
     AWS_LOGSTREAM_ERROR("DescribeChannelModerator", "Required field: ChimeBearer, is not set");
     return DescribeChannelModeratorOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/moderators/");
-  uri.AddPathSegment(request.GetChannelModeratorArn());
-  return DescribeChannelModeratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/moderators/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelModeratorArn());
+  return DescribeChannelModeratorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeChannelModeratorOutcomeCallable ChimeSDKMessagingClient::DescribeChannelModeratorCallable(const DescribeChannelModeratorRequest& request) const
@@ -907,6 +998,7 @@ void ChimeSDKMessagingClient::DescribeChannelModeratorAsync(const DescribeChanne
 
 DisassociateChannelFlowOutcome ChimeSDKMessagingClient::DisassociateChannelFlow(const DisassociateChannelFlowRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DisassociateChannelFlow", "Required field: ChannelArn, is not set");
@@ -922,12 +1014,13 @@ DisassociateChannelFlowOutcome ChimeSDKMessagingClient::DisassociateChannelFlow(
     AWS_LOGSTREAM_ERROR("DisassociateChannelFlow", "Required field: ChimeBearer, is not set");
     return DisassociateChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/channel-flow/");
-  uri.AddPathSegment(request.GetChannelFlowArn());
-  return DisassociateChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flow/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
+  return DisassociateChannelFlowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateChannelFlowOutcomeCallable ChimeSDKMessagingClient::DisassociateChannelFlowCallable(const DisassociateChannelFlowRequest& request) const
@@ -948,6 +1041,7 @@ void ChimeSDKMessagingClient::DisassociateChannelFlowAsync(const DisassociateCha
 
 GetChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::GetChannelMembershipPreferences(const GetChannelMembershipPreferencesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelMembershipPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetChannelMembershipPreferences", "Required field: ChannelArn, is not set");
@@ -963,13 +1057,14 @@ GetChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::GetChannelMember
     AWS_LOGSTREAM_ERROR("GetChannelMembershipPreferences", "Required field: ChimeBearer, is not set");
     return GetChannelMembershipPreferencesOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/memberships/");
-  uri.AddPathSegment(request.GetMemberArn());
-  uri.AddPathSegments("/preferences");
-  return GetChannelMembershipPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetChannelMembershipPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/preferences");
+  return GetChannelMembershipPreferencesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetChannelMembershipPreferencesOutcomeCallable ChimeSDKMessagingClient::GetChannelMembershipPreferencesCallable(const GetChannelMembershipPreferencesRequest& request) const
@@ -990,6 +1085,7 @@ void ChimeSDKMessagingClient::GetChannelMembershipPreferencesAsync(const GetChan
 
 GetChannelMessageOutcome ChimeSDKMessagingClient::GetChannelMessage(const GetChannelMessageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetChannelMessage", "Required field: ChannelArn, is not set");
@@ -1005,12 +1101,13 @@ GetChannelMessageOutcome ChimeSDKMessagingClient::GetChannelMessage(const GetCha
     AWS_LOGSTREAM_ERROR("GetChannelMessage", "Required field: ChimeBearer, is not set");
     return GetChannelMessageOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/messages/");
-  uri.AddPathSegment(request.GetMessageId());
-  return GetChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
+  return GetChannelMessageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetChannelMessageOutcomeCallable ChimeSDKMessagingClient::GetChannelMessageCallable(const GetChannelMessageRequest& request) const
@@ -1031,6 +1128,7 @@ void ChimeSDKMessagingClient::GetChannelMessageAsync(const GetChannelMessageRequ
 
 GetChannelMessageStatusOutcome ChimeSDKMessagingClient::GetChannelMessageStatus(const GetChannelMessageStatusRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelMessageStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetChannelMessageStatus", "Required field: ChannelArn, is not set");
@@ -1046,15 +1144,16 @@ GetChannelMessageStatusOutcome ChimeSDKMessagingClient::GetChannelMessageStatus(
     AWS_LOGSTREAM_ERROR("GetChannelMessageStatus", "Required field: ChimeBearer, is not set");
     return GetChannelMessageStatusOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetChannelMessageStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/messages/");
-  uri.AddPathSegment(request.GetMessageId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
   ss.str("?scope=message-status");
-  uri.SetQueryString(ss.str());
-  return GetChannelMessageStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return GetChannelMessageStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetChannelMessageStatusOutcomeCallable ChimeSDKMessagingClient::GetChannelMessageStatusCallable(const GetChannelMessageStatusRequest& request) const
@@ -1075,9 +1174,11 @@ void ChimeSDKMessagingClient::GetChannelMessageStatusAsync(const GetChannelMessa
 
 GetMessagingSessionEndpointOutcome ChimeSDKMessagingClient::GetMessagingSessionEndpoint(const GetMessagingSessionEndpointRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/endpoints/messaging-session");
-  return GetMessagingSessionEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMessagingSessionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMessagingSessionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/messaging-session");
+  return GetMessagingSessionEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMessagingSessionEndpointOutcomeCallable ChimeSDKMessagingClient::GetMessagingSessionEndpointCallable(const GetMessagingSessionEndpointRequest& request) const
@@ -1098,6 +1199,7 @@ void ChimeSDKMessagingClient::GetMessagingSessionEndpointAsync(const GetMessagin
 
 ListChannelBansOutcome ChimeSDKMessagingClient::ListChannelBans(const ListChannelBansRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelBans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChannelBans", "Required field: ChannelArn, is not set");
@@ -1108,11 +1210,12 @@ ListChannelBansOutcome ChimeSDKMessagingClient::ListChannelBans(const ListChanne
     AWS_LOGSTREAM_ERROR("ListChannelBans", "Required field: ChimeBearer, is not set");
     return ListChannelBansOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/bans");
-  return ListChannelBansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelBans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bans");
+  return ListChannelBansOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelBansOutcomeCallable ChimeSDKMessagingClient::ListChannelBansCallable(const ListChannelBansRequest& request) const
@@ -1133,14 +1236,16 @@ void ChimeSDKMessagingClient::ListChannelBansAsync(const ListChannelBansRequest&
 
 ListChannelFlowsOutcome ChimeSDKMessagingClient::ListChannelFlows(const ListChannelFlowsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelFlows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChannelFlows", "Required field: AppInstanceArn, is not set");
     return ListChannelFlowsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channel-flows");
-  return ListChannelFlowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelFlows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flows");
+  return ListChannelFlowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelFlowsOutcomeCallable ChimeSDKMessagingClient::ListChannelFlowsCallable(const ListChannelFlowsRequest& request) const
@@ -1161,6 +1266,7 @@ void ChimeSDKMessagingClient::ListChannelFlowsAsync(const ListChannelFlowsReques
 
 ListChannelMembershipsOutcome ChimeSDKMessagingClient::ListChannelMemberships(const ListChannelMembershipsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChannelMemberships", "Required field: ChannelArn, is not set");
@@ -1171,11 +1277,12 @@ ListChannelMembershipsOutcome ChimeSDKMessagingClient::ListChannelMemberships(co
     AWS_LOGSTREAM_ERROR("ListChannelMemberships", "Required field: ChimeBearer, is not set");
     return ListChannelMembershipsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/memberships");
-  return ListChannelMembershipsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
+  return ListChannelMembershipsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelMembershipsOutcomeCallable ChimeSDKMessagingClient::ListChannelMembershipsCallable(const ListChannelMembershipsRequest& request) const
@@ -1196,17 +1303,19 @@ void ChimeSDKMessagingClient::ListChannelMembershipsAsync(const ListChannelMembe
 
 ListChannelMembershipsForAppInstanceUserOutcome ChimeSDKMessagingClient::ListChannelMembershipsForAppInstanceUser(const ListChannelMembershipsForAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMembershipsForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChimeBearerHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChannelMembershipsForAppInstanceUser", "Required field: ChimeBearer, is not set");
     return ListChannelMembershipsForAppInstanceUserOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelMembershipsForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   ss.str("?scope=app-instance-user-memberships");
-  uri.SetQueryString(ss.str());
-  return ListChannelMembershipsForAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return ListChannelMembershipsForAppInstanceUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelMembershipsForAppInstanceUserOutcomeCallable ChimeSDKMessagingClient::ListChannelMembershipsForAppInstanceUserCallable(const ListChannelMembershipsForAppInstanceUserRequest& request) const
@@ -1227,6 +1336,7 @@ void ChimeSDKMessagingClient::ListChannelMembershipsForAppInstanceUserAsync(cons
 
 ListChannelMessagesOutcome ChimeSDKMessagingClient::ListChannelMessages(const ListChannelMessagesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChannelMessages", "Required field: ChannelArn, is not set");
@@ -1237,11 +1347,12 @@ ListChannelMessagesOutcome ChimeSDKMessagingClient::ListChannelMessages(const Li
     AWS_LOGSTREAM_ERROR("ListChannelMessages", "Required field: ChimeBearer, is not set");
     return ListChannelMessagesOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/messages");
-  return ListChannelMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/messages");
+  return ListChannelMessagesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelMessagesOutcomeCallable ChimeSDKMessagingClient::ListChannelMessagesCallable(const ListChannelMessagesRequest& request) const
@@ -1262,6 +1373,7 @@ void ChimeSDKMessagingClient::ListChannelMessagesAsync(const ListChannelMessages
 
 ListChannelModeratorsOutcome ChimeSDKMessagingClient::ListChannelModerators(const ListChannelModeratorsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelModerators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChannelModerators", "Required field: ChannelArn, is not set");
@@ -1272,11 +1384,12 @@ ListChannelModeratorsOutcome ChimeSDKMessagingClient::ListChannelModerators(cons
     AWS_LOGSTREAM_ERROR("ListChannelModerators", "Required field: ChimeBearer, is not set");
     return ListChannelModeratorsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/moderators");
-  return ListChannelModeratorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelModerators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/moderators");
+  return ListChannelModeratorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelModeratorsOutcomeCallable ChimeSDKMessagingClient::ListChannelModeratorsCallable(const ListChannelModeratorsRequest& request) const
@@ -1297,6 +1410,7 @@ void ChimeSDKMessagingClient::ListChannelModeratorsAsync(const ListChannelModera
 
 ListChannelsOutcome ChimeSDKMessagingClient::ListChannels(const ListChannelsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChannels", "Required field: AppInstanceArn, is not set");
@@ -1307,9 +1421,10 @@ ListChannelsOutcome ChimeSDKMessagingClient::ListChannels(const ListChannelsRequ
     AWS_LOGSTREAM_ERROR("ListChannels", "Required field: ChimeBearer, is not set");
     return ListChannelsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels");
-  return ListChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
+  return ListChannelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelsOutcomeCallable ChimeSDKMessagingClient::ListChannelsCallable(const ListChannelsRequest& request) const
@@ -1330,17 +1445,19 @@ void ChimeSDKMessagingClient::ListChannelsAsync(const ListChannelsRequest& reque
 
 ListChannelsAssociatedWithChannelFlowOutcome ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlow(const ListChannelsAssociatedWithChannelFlowRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelsAssociatedWithChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelFlowArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChannelsAssociatedWithChannelFlow", "Required field: ChannelFlowArn, is not set");
     return ListChannelsAssociatedWithChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelFlowArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelsAssociatedWithChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   ss.str("?scope=channel-flow-associations");
-  uri.SetQueryString(ss.str());
-  return ListChannelsAssociatedWithChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return ListChannelsAssociatedWithChannelFlowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelsAssociatedWithChannelFlowOutcomeCallable ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlowCallable(const ListChannelsAssociatedWithChannelFlowRequest& request) const
@@ -1361,17 +1478,19 @@ void ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlowAsync(const L
 
 ListChannelsModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUser(const ListChannelsModeratedByAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelsModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChimeBearerHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChannelsModeratedByAppInstanceUser", "Required field: ChimeBearer, is not set");
     return ListChannelsModeratedByAppInstanceUserOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelsModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   ss.str("?scope=app-instance-user-moderated-channels");
-  uri.SetQueryString(ss.str());
-  return ListChannelsModeratedByAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return ListChannelsModeratedByAppInstanceUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelsModeratedByAppInstanceUserOutcomeCallable ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUserCallable(const ListChannelsModeratedByAppInstanceUserRequest& request) const
@@ -1392,6 +1511,7 @@ void ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUserAsync(const 
 
 ListSubChannelsOutcome ChimeSDKMessagingClient::ListSubChannels(const ListSubChannelsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSubChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListSubChannels", "Required field: ChannelArn, is not set");
@@ -1402,11 +1522,12 @@ ListSubChannelsOutcome ChimeSDKMessagingClient::ListSubChannels(const ListSubCha
     AWS_LOGSTREAM_ERROR("ListSubChannels", "Required field: ChimeBearer, is not set");
     return ListSubChannelsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/subchannels");
-  return ListSubChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSubChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/subchannels");
+  return ListSubChannelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSubChannelsOutcomeCallable ChimeSDKMessagingClient::ListSubChannelsCallable(const ListSubChannelsRequest& request) const
@@ -1427,14 +1548,16 @@ void ChimeSDKMessagingClient::ListSubChannelsAsync(const ListSubChannelsRequest&
 
 ListTagsForResourceOutcome ChimeSDKMessagingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceARNHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceARN, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceARN]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags");
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable ChimeSDKMessagingClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1455,6 +1578,7 @@ void ChimeSDKMessagingClient::ListTagsForResourceAsync(const ListTagsForResource
 
 PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMembershipPreferences(const PutChannelMembershipPreferencesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutChannelMembershipPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutChannelMembershipPreferences", "Required field: ChannelArn, is not set");
@@ -1470,13 +1594,14 @@ PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMember
     AWS_LOGSTREAM_ERROR("PutChannelMembershipPreferences", "Required field: ChimeBearer, is not set");
     return PutChannelMembershipPreferencesOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/memberships/");
-  uri.AddPathSegment(request.GetMemberArn());
-  uri.AddPathSegments("/preferences");
-  return PutChannelMembershipPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutChannelMembershipPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/preferences");
+  return PutChannelMembershipPreferencesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutChannelMembershipPreferencesOutcomeCallable ChimeSDKMessagingClient::PutChannelMembershipPreferencesCallable(const PutChannelMembershipPreferencesRequest& request) const
@@ -1497,6 +1622,7 @@ void ChimeSDKMessagingClient::PutChannelMembershipPreferencesAsync(const PutChan
 
 RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const RedactChannelMessageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RedactChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RedactChannelMessage", "Required field: ChannelArn, is not set");
@@ -1512,15 +1638,16 @@ RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const 
     AWS_LOGSTREAM_ERROR("RedactChannelMessage", "Required field: ChimeBearer, is not set");
     return RedactChannelMessageOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RedactChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/messages/");
-  uri.AddPathSegment(request.GetMessageId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
   ss.str("?operation=redact");
-  uri.SetQueryString(ss.str());
-  return RedactChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return RedactChannelMessageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RedactChannelMessageOutcomeCallable ChimeSDKMessagingClient::RedactChannelMessageCallable(const RedactChannelMessageRequest& request) const
@@ -1541,12 +1668,14 @@ void ChimeSDKMessagingClient::RedactChannelMessageAsync(const RedactChannelMessa
 
 SearchChannelsOutcome ChimeSDKMessagingClient::SearchChannels(const SearchChannelsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/channels");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   ss.str("?operation=search");
-  uri.SetQueryString(ss.str());
-  return SearchChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return SearchChannelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchChannelsOutcomeCallable ChimeSDKMessagingClient::SearchChannelsCallable(const SearchChannelsRequest& request) const
@@ -1567,6 +1696,7 @@ void ChimeSDKMessagingClient::SearchChannelsAsync(const SearchChannelsRequest& r
 
 SendChannelMessageOutcome ChimeSDKMessagingClient::SendChannelMessage(const SendChannelMessageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SendChannelMessage", "Required field: ChannelArn, is not set");
@@ -1577,11 +1707,12 @@ SendChannelMessageOutcome ChimeSDKMessagingClient::SendChannelMessage(const Send
     AWS_LOGSTREAM_ERROR("SendChannelMessage", "Required field: ChimeBearer, is not set");
     return SendChannelMessageOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/messages");
-  return SendChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/messages");
+  return SendChannelMessageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendChannelMessageOutcomeCallable ChimeSDKMessagingClient::SendChannelMessageCallable(const SendChannelMessageRequest& request) const
@@ -1602,12 +1733,14 @@ void ChimeSDKMessagingClient::SendChannelMessageAsync(const SendChannelMessageRe
 
 TagResourceOutcome ChimeSDKMessagingClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/tags");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   ss.str("?operation=tag-resource");
-  uri.SetQueryString(ss.str());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable ChimeSDKMessagingClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1628,12 +1761,14 @@ void ChimeSDKMessagingClient::TagResourceAsync(const TagResourceRequest& request
 
 UntagResourceOutcome ChimeSDKMessagingClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   Aws::StringStream ss;
-  uri.AddPathSegments("/tags");
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   ss.str("?operation=untag-resource");
-  uri.SetQueryString(ss.str());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable ChimeSDKMessagingClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1654,6 +1789,7 @@ void ChimeSDKMessagingClient::UntagResourceAsync(const UntagResourceRequest& req
 
 UpdateChannelOutcome ChimeSDKMessagingClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateChannel", "Required field: ChannelArn, is not set");
@@ -1664,10 +1800,11 @@ UpdateChannelOutcome ChimeSDKMessagingClient::UpdateChannel(const UpdateChannelR
     AWS_LOGSTREAM_ERROR("UpdateChannel", "Required field: ChimeBearer, is not set");
     return UpdateChannelOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  return UpdateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  return UpdateChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateChannelOutcomeCallable ChimeSDKMessagingClient::UpdateChannelCallable(const UpdateChannelRequest& request) const
@@ -1688,15 +1825,17 @@ void ChimeSDKMessagingClient::UpdateChannelAsync(const UpdateChannelRequest& req
 
 UpdateChannelFlowOutcome ChimeSDKMessagingClient::UpdateChannelFlow(const UpdateChannelFlowRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelFlowArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateChannelFlow", "Required field: ChannelFlowArn, is not set");
     return UpdateChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelFlowArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channel-flows/");
-  uri.AddPathSegment(request.GetChannelFlowArn());
-  return UpdateChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flows/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
+  return UpdateChannelFlowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateChannelFlowOutcomeCallable ChimeSDKMessagingClient::UpdateChannelFlowCallable(const UpdateChannelFlowRequest& request) const
@@ -1717,6 +1856,7 @@ void ChimeSDKMessagingClient::UpdateChannelFlowAsync(const UpdateChannelFlowRequ
 
 UpdateChannelMessageOutcome ChimeSDKMessagingClient::UpdateChannelMessage(const UpdateChannelMessageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateChannelMessage", "Required field: ChannelArn, is not set");
@@ -1732,12 +1872,13 @@ UpdateChannelMessageOutcome ChimeSDKMessagingClient::UpdateChannelMessage(const 
     AWS_LOGSTREAM_ERROR("UpdateChannelMessage", "Required field: ChimeBearer, is not set");
     return UpdateChannelMessageOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/messages/");
-  uri.AddPathSegment(request.GetMessageId());
-  return UpdateChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
+  return UpdateChannelMessageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateChannelMessageOutcomeCallable ChimeSDKMessagingClient::UpdateChannelMessageCallable(const UpdateChannelMessageRequest& request) const
@@ -1758,6 +1899,7 @@ void ChimeSDKMessagingClient::UpdateChannelMessageAsync(const UpdateChannelMessa
 
 UpdateChannelReadMarkerOutcome ChimeSDKMessagingClient::UpdateChannelReadMarker(const UpdateChannelReadMarkerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelReadMarker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateChannelReadMarker", "Required field: ChannelArn, is not set");
@@ -1768,11 +1910,12 @@ UpdateChannelReadMarkerOutcome ChimeSDKMessagingClient::UpdateChannelReadMarker(
     AWS_LOGSTREAM_ERROR("UpdateChannelReadMarker", "Required field: ChimeBearer, is not set");
     return UpdateChannelReadMarkerOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/channels/");
-  uri.AddPathSegment(request.GetChannelArn());
-  uri.AddPathSegments("/readMarker");
-  return UpdateChannelReadMarkerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateChannelReadMarker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/readMarker");
+  return UpdateChannelReadMarkerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateChannelReadMarkerOutcomeCallable ChimeSDKMessagingClient::UpdateChannelReadMarkerCallable(const UpdateChannelReadMarkerRequest& request) const

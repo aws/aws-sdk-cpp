@@ -30,7 +30,7 @@ DisassociateMembersResult& DisassociateMembersResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("unprocessedAccounts"))
   {
-    Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
+    Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
     for(unsigned unprocessedAccountsIndex = 0; unprocessedAccountsIndex < unprocessedAccountsJsonList.GetLength(); ++unprocessedAccountsIndex)
     {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());

@@ -39,7 +39,7 @@ Aws::String CreateVocabularyRequest::SerializePayload() const
 
   if(m_phrasesHasBeenSet)
   {
-   Array<JsonValue> phrasesJsonList(m_phrases.size());
+   Aws::Utils::Array<JsonValue> phrasesJsonList(m_phrases.size());
    for(unsigned phrasesIndex = 0; phrasesIndex < phrasesJsonList.GetLength(); ++phrasesIndex)
    {
      phrasesJsonList[phrasesIndex].AsString(m_phrases[phrasesIndex]);
@@ -56,7 +56,7 @@ Aws::String CreateVocabularyRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

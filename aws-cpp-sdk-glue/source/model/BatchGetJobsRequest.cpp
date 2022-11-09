@@ -23,7 +23,7 @@ Aws::String BatchGetJobsRequest::SerializePayload() const
 
   if(m_jobNamesHasBeenSet)
   {
-   Array<JsonValue> jobNamesJsonList(m_jobNames.size());
+   Aws::Utils::Array<JsonValue> jobNamesJsonList(m_jobNames.size());
    for(unsigned jobNamesIndex = 0; jobNamesIndex < jobNamesJsonList.GetLength(); ++jobNamesIndex)
    {
      jobNamesJsonList[jobNamesIndex].AsString(m_jobNames[jobNamesIndex]);

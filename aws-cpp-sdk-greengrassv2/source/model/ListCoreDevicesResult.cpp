@@ -30,7 +30,7 @@ ListCoreDevicesResult& ListCoreDevicesResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("coreDevices"))
   {
-    Array<JsonView> coreDevicesJsonList = jsonValue.GetArray("coreDevices");
+    Aws::Utils::Array<JsonView> coreDevicesJsonList = jsonValue.GetArray("coreDevices");
     for(unsigned coreDevicesIndex = 0; coreDevicesIndex < coreDevicesJsonList.GetLength(); ++coreDevicesIndex)
     {
       m_coreDevices.push_back(coreDevicesJsonList[coreDevicesIndex].AsObject());

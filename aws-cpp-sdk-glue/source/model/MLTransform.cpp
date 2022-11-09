@@ -125,7 +125,7 @@ MLTransform& MLTransform::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InputRecordTables"))
   {
-    Array<JsonView> inputRecordTablesJsonList = jsonValue.GetArray("InputRecordTables");
+    Aws::Utils::Array<JsonView> inputRecordTablesJsonList = jsonValue.GetArray("InputRecordTables");
     for(unsigned inputRecordTablesIndex = 0; inputRecordTablesIndex < inputRecordTablesJsonList.GetLength(); ++inputRecordTablesIndex)
     {
       m_inputRecordTables.push_back(inputRecordTablesJsonList[inputRecordTablesIndex].AsObject());
@@ -156,7 +156,7 @@ MLTransform& MLTransform::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Schema"))
   {
-    Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
+    Aws::Utils::Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
     for(unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex)
     {
       m_schema.push_back(schemaJsonList[schemaIndex].AsObject());
@@ -262,7 +262,7 @@ JsonValue MLTransform::Jsonize() const
 
   if(m_inputRecordTablesHasBeenSet)
   {
-   Array<JsonValue> inputRecordTablesJsonList(m_inputRecordTables.size());
+   Aws::Utils::Array<JsonValue> inputRecordTablesJsonList(m_inputRecordTables.size());
    for(unsigned inputRecordTablesIndex = 0; inputRecordTablesIndex < inputRecordTablesJsonList.GetLength(); ++inputRecordTablesIndex)
    {
      inputRecordTablesJsonList[inputRecordTablesIndex].AsObject(m_inputRecordTables[inputRecordTablesIndex].Jsonize());
@@ -291,7 +291,7 @@ JsonValue MLTransform::Jsonize() const
 
   if(m_schemaHasBeenSet)
   {
-   Array<JsonValue> schemaJsonList(m_schema.size());
+   Aws::Utils::Array<JsonValue> schemaJsonList(m_schema.size());
    for(unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex)
    {
      schemaJsonList[schemaIndex].AsObject(m_schema[schemaIndex].Jsonize());

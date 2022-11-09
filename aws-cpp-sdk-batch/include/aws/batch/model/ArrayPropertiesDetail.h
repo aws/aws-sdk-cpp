@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the array properties of a job.</p><p><h3>See
+   * <p>An object that represents the array properties of a job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ArrayPropertiesDetail">AWS
    * API Reference</a></p>

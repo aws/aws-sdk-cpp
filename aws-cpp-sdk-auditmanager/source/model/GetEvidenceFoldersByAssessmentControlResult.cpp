@@ -30,7 +30,7 @@ GetEvidenceFoldersByAssessmentControlResult& GetEvidenceFoldersByAssessmentContr
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("evidenceFolders"))
   {
-    Array<JsonView> evidenceFoldersJsonList = jsonValue.GetArray("evidenceFolders");
+    Aws::Utils::Array<JsonView> evidenceFoldersJsonList = jsonValue.GetArray("evidenceFolders");
     for(unsigned evidenceFoldersIndex = 0; evidenceFoldersIndex < evidenceFoldersJsonList.GetLength(); ++evidenceFoldersIndex)
     {
       m_evidenceFolders.push_back(evidenceFoldersJsonList[evidenceFoldersIndex].AsObject());

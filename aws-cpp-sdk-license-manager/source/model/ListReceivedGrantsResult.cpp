@@ -30,7 +30,7 @@ ListReceivedGrantsResult& ListReceivedGrantsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Grants"))
   {
-    Array<JsonView> grantsJsonList = jsonValue.GetArray("Grants");
+    Aws::Utils::Array<JsonView> grantsJsonList = jsonValue.GetArray("Grants");
     for(unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex)
     {
       m_grants.push_back(grantsJsonList[grantsIndex].AsObject());

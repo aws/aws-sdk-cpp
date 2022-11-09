@@ -33,7 +33,7 @@ TaskTemplateDefaults& TaskTemplateDefaults::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DefaultFieldValues"))
   {
-    Array<JsonView> defaultFieldValuesJsonList = jsonValue.GetArray("DefaultFieldValues");
+    Aws::Utils::Array<JsonView> defaultFieldValuesJsonList = jsonValue.GetArray("DefaultFieldValues");
     for(unsigned defaultFieldValuesIndex = 0; defaultFieldValuesIndex < defaultFieldValuesJsonList.GetLength(); ++defaultFieldValuesIndex)
     {
       m_defaultFieldValues.push_back(defaultFieldValuesJsonList[defaultFieldValuesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue TaskTemplateDefaults::Jsonize() const
 
   if(m_defaultFieldValuesHasBeenSet)
   {
-   Array<JsonValue> defaultFieldValuesJsonList(m_defaultFieldValues.size());
+   Aws::Utils::Array<JsonValue> defaultFieldValuesJsonList(m_defaultFieldValues.size());
    for(unsigned defaultFieldValuesIndex = 0; defaultFieldValuesIndex < defaultFieldValuesJsonList.GetLength(); ++defaultFieldValuesIndex)
    {
      defaultFieldValuesJsonList[defaultFieldValuesIndex].AsObject(m_defaultFieldValues[defaultFieldValuesIndex].Jsonize());

@@ -30,7 +30,7 @@ ListInputsResult& ListInputsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());

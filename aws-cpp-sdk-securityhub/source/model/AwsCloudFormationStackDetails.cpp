@@ -67,7 +67,7 @@ AwsCloudFormationStackDetails& AwsCloudFormationStackDetails::operator =(JsonVie
 {
   if(jsonValue.ValueExists("Capabilities"))
   {
-    Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("Capabilities");
+    Aws::Utils::Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("Capabilities");
     for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
     {
       m_capabilities.push_back(capabilitiesJsonList[capabilitiesIndex].AsString());
@@ -119,7 +119,7 @@ AwsCloudFormationStackDetails& AwsCloudFormationStackDetails::operator =(JsonVie
 
   if(jsonValue.ValueExists("NotificationArns"))
   {
-    Array<JsonView> notificationArnsJsonList = jsonValue.GetArray("NotificationArns");
+    Aws::Utils::Array<JsonView> notificationArnsJsonList = jsonValue.GetArray("NotificationArns");
     for(unsigned notificationArnsIndex = 0; notificationArnsIndex < notificationArnsJsonList.GetLength(); ++notificationArnsIndex)
     {
       m_notificationArns.push_back(notificationArnsJsonList[notificationArnsIndex].AsString());
@@ -129,7 +129,7 @@ AwsCloudFormationStackDetails& AwsCloudFormationStackDetails::operator =(JsonVie
 
   if(jsonValue.ValueExists("Outputs"))
   {
-    Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
+    Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
@@ -188,7 +188,7 @@ JsonValue AwsCloudFormationStackDetails::Jsonize() const
 
   if(m_capabilitiesHasBeenSet)
   {
-   Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+   Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
    for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
    {
      capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
@@ -235,7 +235,7 @@ JsonValue AwsCloudFormationStackDetails::Jsonize() const
 
   if(m_notificationArnsHasBeenSet)
   {
-   Array<JsonValue> notificationArnsJsonList(m_notificationArns.size());
+   Aws::Utils::Array<JsonValue> notificationArnsJsonList(m_notificationArns.size());
    for(unsigned notificationArnsIndex = 0; notificationArnsIndex < notificationArnsJsonList.GetLength(); ++notificationArnsIndex)
    {
      notificationArnsJsonList[notificationArnsIndex].AsString(m_notificationArns[notificationArnsIndex]);
@@ -246,7 +246,7 @@ JsonValue AwsCloudFormationStackDetails::Jsonize() const
 
   if(m_outputsHasBeenSet)
   {
-   Array<JsonValue> outputsJsonList(m_outputs.size());
+   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
    for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
    {
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());

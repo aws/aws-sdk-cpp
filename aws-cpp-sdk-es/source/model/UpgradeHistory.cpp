@@ -62,7 +62,7 @@ UpgradeHistory& UpgradeHistory::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StepsList"))
   {
-    Array<JsonView> stepsListJsonList = jsonValue.GetArray("StepsList");
+    Aws::Utils::Array<JsonView> stepsListJsonList = jsonValue.GetArray("StepsList");
     for(unsigned stepsListIndex = 0; stepsListIndex < stepsListJsonList.GetLength(); ++stepsListIndex)
     {
       m_stepsList.push_back(stepsListJsonList[stepsListIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue UpgradeHistory::Jsonize() const
 
   if(m_stepsListHasBeenSet)
   {
-   Array<JsonValue> stepsListJsonList(m_stepsList.size());
+   Aws::Utils::Array<JsonValue> stepsListJsonList(m_stepsList.size());
    for(unsigned stepsListIndex = 0; stepsListIndex < stepsListJsonList.GetLength(); ++stepsListIndex)
    {
      stepsListJsonList[stepsListIndex].AsObject(m_stepsList[stepsListIndex].Jsonize());

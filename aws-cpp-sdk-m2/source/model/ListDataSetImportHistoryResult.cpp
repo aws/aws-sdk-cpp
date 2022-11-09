@@ -30,7 +30,7 @@ ListDataSetImportHistoryResult& ListDataSetImportHistoryResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("dataSetImportTasks"))
   {
-    Array<JsonView> dataSetImportTasksJsonList = jsonValue.GetArray("dataSetImportTasks");
+    Aws::Utils::Array<JsonView> dataSetImportTasksJsonList = jsonValue.GetArray("dataSetImportTasks");
     for(unsigned dataSetImportTasksIndex = 0; dataSetImportTasksIndex < dataSetImportTasksJsonList.GetLength(); ++dataSetImportTasksIndex)
     {
       m_dataSetImportTasks.push_back(dataSetImportTasksJsonList[dataSetImportTasksIndex].AsObject());

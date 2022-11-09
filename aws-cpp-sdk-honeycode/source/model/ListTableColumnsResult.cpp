@@ -32,7 +32,7 @@ ListTableColumnsResult& ListTableColumnsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tableColumns"))
   {
-    Array<JsonView> tableColumnsJsonList = jsonValue.GetArray("tableColumns");
+    Aws::Utils::Array<JsonView> tableColumnsJsonList = jsonValue.GetArray("tableColumns");
     for(unsigned tableColumnsIndex = 0; tableColumnsIndex < tableColumnsJsonList.GetLength(); ++tableColumnsIndex)
     {
       m_tableColumns.push_back(tableColumnsJsonList[tableColumnsIndex].AsObject());

@@ -163,7 +163,7 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Protocols"))
   {
-    Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
+    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
     for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
     {
       m_protocols.push_back(ProtocolMapper::GetProtocolForName(protocolsJsonList[protocolsIndex].AsString()));
@@ -194,7 +194,7 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -294,7 +294,7 @@ JsonValue DescribedServer::Jsonize() const
 
   if(m_protocolsHasBeenSet)
   {
-   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
    {
      protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
@@ -322,7 +322,7 @@ JsonValue DescribedServer::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

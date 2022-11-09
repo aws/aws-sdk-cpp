@@ -52,7 +52,7 @@ Aws::String UpdateIPSetRequest::SerializePayload() const
 
   if(m_addressesHasBeenSet)
   {
-   Array<JsonValue> addressesJsonList(m_addresses.size());
+   Aws::Utils::Array<JsonValue> addressesJsonList(m_addresses.size());
    for(unsigned addressesIndex = 0; addressesIndex < addressesJsonList.GetLength(); ++addressesIndex)
    {
      addressesJsonList[addressesIndex].AsString(m_addresses[addressesIndex]);

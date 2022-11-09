@@ -46,7 +46,7 @@ BatchImportFindingsResult& BatchImportFindingsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("FailedFindings"))
   {
-    Array<JsonView> failedFindingsJsonList = jsonValue.GetArray("FailedFindings");
+    Aws::Utils::Array<JsonView> failedFindingsJsonList = jsonValue.GetArray("FailedFindings");
     for(unsigned failedFindingsIndex = 0; failedFindingsIndex < failedFindingsJsonList.GetLength(); ++failedFindingsIndex)
     {
       m_failedFindings.push_back(failedFindingsJsonList[failedFindingsIndex].AsObject());

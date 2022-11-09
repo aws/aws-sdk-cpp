@@ -21,29 +21,111 @@ namespace LexModelsV2
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexModelsV2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LexModelsV2Client(const Aws::LexModelsV2::LexModelsV2ClientConfiguration& clientConfiguration = Aws::LexModelsV2::LexModelsV2ClientConfiguration(),
+                          std::shared_ptr<LexModelsV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexModelsV2EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LexModelsV2Client(const Aws::Auth::AWSCredentials& credentials,
-                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          std::shared_ptr<LexModelsV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexModelsV2EndpointProvider>(ALLOCATION_TAG),
+                          const Aws::LexModelsV2::LexModelsV2ClientConfiguration& clientConfiguration = Aws::LexModelsV2::LexModelsV2ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LexModelsV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          std::shared_ptr<LexModelsV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexModelsV2EndpointProvider>(ALLOCATION_TAG),
+                          const Aws::LexModelsV2::LexModelsV2ClientConfiguration& clientConfiguration = Aws::LexModelsV2::LexModelsV2ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexModelsV2Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexModelsV2Client(const Aws::Auth::AWSCredentials& credentials,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        LexModelsV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~LexModelsV2Client();
 
+
+        /**
+         * <p>Batch create custom vocabulary item for the specified locale in the specified
+         * bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchCreateCustomVocabularyItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchCreateCustomVocabularyItemOutcome BatchCreateCustomVocabularyItem(const Model::BatchCreateCustomVocabularyItemRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchCreateCustomVocabularyItem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchCreateCustomVocabularyItemOutcomeCallable BatchCreateCustomVocabularyItemCallable(const Model::BatchCreateCustomVocabularyItemRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchCreateCustomVocabularyItem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchCreateCustomVocabularyItemAsync(const Model::BatchCreateCustomVocabularyItemRequest& request, const BatchCreateCustomVocabularyItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Batch delete custom vocabulary item for the specified locale in the specified
+         * bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchDeleteCustomVocabularyItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteCustomVocabularyItemOutcome BatchDeleteCustomVocabularyItem(const Model::BatchDeleteCustomVocabularyItemRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteCustomVocabularyItem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDeleteCustomVocabularyItemOutcomeCallable BatchDeleteCustomVocabularyItemCallable(const Model::BatchDeleteCustomVocabularyItemRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchDeleteCustomVocabularyItem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDeleteCustomVocabularyItemAsync(const Model::BatchDeleteCustomVocabularyItemRequest& request, const BatchDeleteCustomVocabularyItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Batch update custom vocabulary item for the specified locale in the specified
+         * bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchUpdateCustomVocabularyItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateCustomVocabularyItemOutcome BatchUpdateCustomVocabularyItem(const Model::BatchUpdateCustomVocabularyItemRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateCustomVocabularyItem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchUpdateCustomVocabularyItemOutcomeCallable BatchUpdateCustomVocabularyItemCallable(const Model::BatchUpdateCustomVocabularyItemRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchUpdateCustomVocabularyItem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchUpdateCustomVocabularyItemAsync(const Model::BatchUpdateCustomVocabularyItemRequest& request, const BatchUpdateCustomVocabularyItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Builds a bot, its intents, and its slot types into a specific locale. A bot
@@ -925,6 +1007,24 @@ namespace LexModelsV2
         virtual void ListBuiltInSlotTypesAsync(const Model::ListBuiltInSlotTypesRequest& request, const ListBuiltInSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List custom vocabulary items for the specified locale in the specified
+         * bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListCustomVocabularyItems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCustomVocabularyItemsOutcome ListCustomVocabularyItems(const Model::ListCustomVocabularyItemsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCustomVocabularyItems that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCustomVocabularyItemsOutcomeCallable ListCustomVocabularyItemsCallable(const Model::ListCustomVocabularyItemsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCustomVocabularyItems that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCustomVocabularyItemsAsync(const Model::ListCustomVocabularyItemsRequest& request, const ListCustomVocabularyItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the exports for a bot, bot locale, or custom vocabulary. Exports are
          * kept in the list for 7 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">AWS
@@ -980,7 +1080,8 @@ namespace LexModelsV2
 
         /**
          * <p>Gets a list of recommended intents provided by the bot recommendation that
-         * you can use in your bot.</p><p><h3>See Also:</h3>   <a
+         * you can use in your bot. Intents in the response are ordered by
+         * relevance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListRecommendedIntents">AWS
          * API Reference</a></p>
          */
@@ -1324,12 +1425,13 @@ namespace LexModelsV2
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<LexModelsV2EndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const LexModelsV2ClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      LexModelsV2ClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<LexModelsV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LexModelsV2

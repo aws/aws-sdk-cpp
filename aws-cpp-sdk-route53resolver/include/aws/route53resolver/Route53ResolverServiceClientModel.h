@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/route53resolver/Route53ResolverErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/route53resolver/Route53ResolverEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -112,6 +114,10 @@ namespace Aws
 
   namespace Route53Resolver
   {
+    using Route53ResolverClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53ResolverEndpointProviderBase = Aws::Route53Resolver::Endpoint::Route53ResolverEndpointProviderBase;
+    using Route53ResolverEndpointProvider = Aws::Route53Resolver::Endpoint::Route53ResolverEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in Route53ResolverClient header */

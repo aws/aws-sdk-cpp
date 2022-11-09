@@ -420,6 +420,55 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline const Aws::String& GetUserAccessLoggingSettingsArn() const{ return m_userAccessLoggingSettingsArn; }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline bool UserAccessLoggingSettingsArnHasBeenSet() const { return m_userAccessLoggingSettingsArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline void SetUserAccessLoggingSettingsArn(const Aws::String& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = value; }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline void SetUserAccessLoggingSettingsArn(Aws::String&& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline void SetUserAccessLoggingSettingsArn(const char* value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn.assign(value); }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline PortalSummary& WithUserAccessLoggingSettingsArn(const Aws::String& value) { SetUserAccessLoggingSettingsArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline PortalSummary& WithUserAccessLoggingSettingsArn(Aws::String&& value) { SetUserAccessLoggingSettingsArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline PortalSummary& WithUserAccessLoggingSettingsArn(const char* value) { SetUserAccessLoggingSettingsArn(value); return *this;}
+
+
+    /**
      * <p>The ARN of the user settings that is associated with the web portal.</p>
      */
     inline const Aws::String& GetUserSettingsArn() const{ return m_userSettingsArn; }
@@ -490,6 +539,9 @@ namespace Model
 
     Aws::String m_trustStoreArn;
     bool m_trustStoreArnHasBeenSet = false;
+
+    Aws::String m_userAccessLoggingSettingsArn;
+    bool m_userAccessLoggingSettingsArnHasBeenSet = false;
 
     Aws::String m_userSettingsArn;
     bool m_userSettingsArnHasBeenSet = false;

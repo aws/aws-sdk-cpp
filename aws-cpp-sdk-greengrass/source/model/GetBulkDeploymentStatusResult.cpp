@@ -50,7 +50,7 @@ GetBulkDeploymentStatusResult& GetBulkDeploymentStatusResult::operator =(const A
 
   if(jsonValue.ValueExists("ErrorDetails"))
   {
-    Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
+    Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
     for(unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex)
     {
       m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());

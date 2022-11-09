@@ -30,7 +30,7 @@ ListPolicyGenerationsResult& ListPolicyGenerationsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("policyGenerations"))
   {
-    Array<JsonView> policyGenerationsJsonList = jsonValue.GetArray("policyGenerations");
+    Aws::Utils::Array<JsonView> policyGenerationsJsonList = jsonValue.GetArray("policyGenerations");
     for(unsigned policyGenerationsIndex = 0; policyGenerationsIndex < policyGenerationsJsonList.GetLength(); ++policyGenerationsIndex)
     {
       m_policyGenerations.push_back(policyGenerationsJsonList[policyGenerationsIndex].AsObject());

@@ -104,7 +104,7 @@ JobQueueDetail& JobQueueDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("computeEnvironmentOrder"))
   {
-    Array<JsonView> computeEnvironmentOrderJsonList = jsonValue.GetArray("computeEnvironmentOrder");
+    Aws::Utils::Array<JsonView> computeEnvironmentOrderJsonList = jsonValue.GetArray("computeEnvironmentOrder");
     for(unsigned computeEnvironmentOrderIndex = 0; computeEnvironmentOrderIndex < computeEnvironmentOrderJsonList.GetLength(); ++computeEnvironmentOrderIndex)
     {
       m_computeEnvironmentOrder.push_back(computeEnvironmentOrderJsonList[computeEnvironmentOrderIndex].AsObject());
@@ -171,7 +171,7 @@ JsonValue JobQueueDetail::Jsonize() const
 
   if(m_computeEnvironmentOrderHasBeenSet)
   {
-   Array<JsonValue> computeEnvironmentOrderJsonList(m_computeEnvironmentOrder.size());
+   Aws::Utils::Array<JsonValue> computeEnvironmentOrderJsonList(m_computeEnvironmentOrder.size());
    for(unsigned computeEnvironmentOrderIndex = 0; computeEnvironmentOrderIndex < computeEnvironmentOrderJsonList.GetLength(); ++computeEnvironmentOrderIndex)
    {
      computeEnvironmentOrderJsonList[computeEnvironmentOrderIndex].AsObject(m_computeEnvironmentOrder[computeEnvironmentOrderIndex].Jsonize());

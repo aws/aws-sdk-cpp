@@ -339,38 +339,32 @@ namespace Model
 
 
     /**
-     * <p>The noncurrent version expiration of the lifecycle rule.</p>  <p>This
-     * is not supported by Amazon S3 on Outposts buckets.</p> 
+     * <p>The noncurrent version expiration of the lifecycle rule.</p>
      */
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
 
     /**
-     * <p>The noncurrent version expiration of the lifecycle rule.</p>  <p>This
-     * is not supported by Amazon S3 on Outposts buckets.</p> 
+     * <p>The noncurrent version expiration of the lifecycle rule.</p>
      */
     inline bool NoncurrentVersionExpirationHasBeenSet() const { return m_noncurrentVersionExpirationHasBeenSet; }
 
     /**
-     * <p>The noncurrent version expiration of the lifecycle rule.</p>  <p>This
-     * is not supported by Amazon S3 on Outposts buckets.</p> 
+     * <p>The noncurrent version expiration of the lifecycle rule.</p>
      */
     inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
 
     /**
-     * <p>The noncurrent version expiration of the lifecycle rule.</p>  <p>This
-     * is not supported by Amazon S3 on Outposts buckets.</p> 
+     * <p>The noncurrent version expiration of the lifecycle rule.</p>
      */
     inline void SetNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = std::move(value); }
 
     /**
-     * <p>The noncurrent version expiration of the lifecycle rule.</p>  <p>This
-     * is not supported by Amazon S3 on Outposts buckets.</p> 
+     * <p>The noncurrent version expiration of the lifecycle rule.</p>
      */
     inline LifecycleRule& WithNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { SetNoncurrentVersionExpiration(value); return *this;}
 
     /**
-     * <p>The noncurrent version expiration of the lifecycle rule.</p>  <p>This
-     * is not supported by Amazon S3 on Outposts buckets.</p> 
+     * <p>The noncurrent version expiration of the lifecycle rule.</p>
      */
     inline LifecycleRule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(std::move(value)); return *this;}
 

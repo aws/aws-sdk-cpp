@@ -36,7 +36,7 @@ ListContainerRecipesResult& ListContainerRecipesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("containerRecipeSummaryList"))
   {
-    Array<JsonView> containerRecipeSummaryListJsonList = jsonValue.GetArray("containerRecipeSummaryList");
+    Aws::Utils::Array<JsonView> containerRecipeSummaryListJsonList = jsonValue.GetArray("containerRecipeSummaryList");
     for(unsigned containerRecipeSummaryListIndex = 0; containerRecipeSummaryListIndex < containerRecipeSummaryListJsonList.GetLength(); ++containerRecipeSummaryListIndex)
     {
       m_containerRecipeSummaryList.push_back(containerRecipeSummaryListJsonList[containerRecipeSummaryListIndex].AsObject());

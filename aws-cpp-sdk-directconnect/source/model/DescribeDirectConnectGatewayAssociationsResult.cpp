@@ -30,7 +30,7 @@ DescribeDirectConnectGatewayAssociationsResult& DescribeDirectConnectGatewayAsso
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("directConnectGatewayAssociations"))
   {
-    Array<JsonView> directConnectGatewayAssociationsJsonList = jsonValue.GetArray("directConnectGatewayAssociations");
+    Aws::Utils::Array<JsonView> directConnectGatewayAssociationsJsonList = jsonValue.GetArray("directConnectGatewayAssociations");
     for(unsigned directConnectGatewayAssociationsIndex = 0; directConnectGatewayAssociationsIndex < directConnectGatewayAssociationsJsonList.GetLength(); ++directConnectGatewayAssociationsIndex)
     {
       m_directConnectGatewayAssociations.push_back(directConnectGatewayAssociationsJsonList[directConnectGatewayAssociationsIndex].AsObject());

@@ -36,7 +36,7 @@ ListNotificationRulesResult& ListNotificationRulesResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("NotificationRules"))
   {
-    Array<JsonView> notificationRulesJsonList = jsonValue.GetArray("NotificationRules");
+    Aws::Utils::Array<JsonView> notificationRulesJsonList = jsonValue.GetArray("NotificationRules");
     for(unsigned notificationRulesIndex = 0; notificationRulesIndex < notificationRulesJsonList.GetLength(); ++notificationRulesIndex)
     {
       m_notificationRules.push_back(notificationRulesJsonList[notificationRulesIndex].AsObject());

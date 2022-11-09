@@ -65,7 +65,7 @@ JobProcessDetails& JobProcessDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("processingTargets"))
   {
-    Array<JsonView> processingTargetsJsonList = jsonValue.GetArray("processingTargets");
+    Aws::Utils::Array<JsonView> processingTargetsJsonList = jsonValue.GetArray("processingTargets");
     for(unsigned processingTargetsIndex = 0; processingTargetsIndex < processingTargetsJsonList.GetLength(); ++processingTargetsIndex)
     {
       m_processingTargets.push_back(processingTargetsJsonList[processingTargetsIndex].AsString());
@@ -138,7 +138,7 @@ JsonValue JobProcessDetails::Jsonize() const
 
   if(m_processingTargetsHasBeenSet)
   {
-   Array<JsonValue> processingTargetsJsonList(m_processingTargets.size());
+   Aws::Utils::Array<JsonValue> processingTargetsJsonList(m_processingTargets.size());
    for(unsigned processingTargetsIndex = 0; processingTargetsIndex < processingTargetsJsonList.GetLength(); ++processingTargetsIndex)
    {
      processingTargetsJsonList[processingTargetsIndex].AsString(m_processingTargets[processingTargetsIndex]);

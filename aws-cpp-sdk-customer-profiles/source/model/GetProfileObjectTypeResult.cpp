@@ -88,7 +88,7 @@ GetProfileObjectTypeResult& GetProfileObjectTypeResult::operator =(const Aws::Am
     Aws::Map<Aws::String, JsonView> keysJsonMap = jsonValue.GetObject("Keys").GetAllObjects();
     for(auto& keysItem : keysJsonMap)
     {
-      Array<JsonView> objectTypeKeyListJsonList = keysItem.second.AsArray();
+      Aws::Utils::Array<JsonView> objectTypeKeyListJsonList = keysItem.second.AsArray();
       Aws::Vector<ObjectTypeKey> objectTypeKeyListList;
       objectTypeKeyListList.reserve((size_t)objectTypeKeyListJsonList.GetLength());
       for(unsigned objectTypeKeyListIndex = 0; objectTypeKeyListIndex < objectTypeKeyListJsonList.GetLength(); ++objectTypeKeyListIndex)

@@ -16,6 +16,7 @@
 #include <aws/sqs/model/CreateQueueRequest.h>
 #include <aws/sqs/model/ListQueuesRequest.h>
 #include <aws/sqs/model/DeleteQueueRequest.h>
+#include <aws/sqs/model/GetQueueUrlRequest.h>
 #include <aws/sqs/model/SendMessageRequest.h>
 #include <aws/sqs/model/ReceiveMessageRequest.h>
 #include <aws/sqs/model/DeleteMessageRequest.h>
@@ -61,6 +62,7 @@ static const char BASE_DEAD_LETTER_QUEUE_NAME[]                     = TEST_QUEUE
 static const char BASE_DEAD_LETTER_SOURCE_QUEUE_NAME[]              = TEST_QUEUE_PREFIX "DeadLetterSource";
 static const char BASE_CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME[] = TEST_QUEUE_PREFIX "ChangeMsgVisBatch";
 static const char BASE_TAG_QUEUE_NAME[]                             = TEST_QUEUE_PREFIX "SimpleForTagging";
+static const char BASE_NON_EXISTING_QUEUE_NAME[]                    = TEST_QUEUE_PREFIX "NonExisting";
 static const char ALLOCATION_TAG[]                                  = "QueueOperationTest";
 
 class QueueOperationTest : public ::testing::Test
@@ -549,4 +551,16 @@ TEST_F(QueueOperationTest, TagQueueTest)
     ASSERT_TRUE(foundExpectedTagIt != listQueueTags2.end());
     ASSERT_EQ(foundExpectedTagIt->second, expectedTag.second);
   }
+}
+
+TEST_F(QueueOperationTest, ErrorCode)
+{
+    GetQueueUrlRequest getQueueUrlRequest;
+    getQueueUrlRequest.SetQueueName(BASE_NON_EXISTING_QUEUE_NAME);
+
+    auto getQueueUrlOutcome = sqsClient->GetQueueUrl(getQueueUrlRequest);
+
+    ASSERT_FALSE(getQueueUrlOutcome.IsSuccess());
+    EXPECT_EQ(SQSErrors::QUEUE_DOES_NOT_EXIST, getQueueUrlOutcome.GetError().GetErrorType());
+    EXPECT_EQ("AWS.SimpleQueueService.NonExistentQueue", getQueueUrlOutcome.GetError().GetExceptionName());
 }

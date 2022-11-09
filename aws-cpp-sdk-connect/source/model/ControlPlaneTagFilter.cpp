@@ -37,10 +37,10 @@ ControlPlaneTagFilter& ControlPlaneTagFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OrConditions"))
   {
-    Array<JsonView> orConditionsJsonList = jsonValue.GetArray("OrConditions");
+    Aws::Utils::Array<JsonView> orConditionsJsonList = jsonValue.GetArray("OrConditions");
     for(unsigned orConditionsIndex = 0; orConditionsIndex < orConditionsJsonList.GetLength(); ++orConditionsIndex)
     {
-      Array<JsonView> tagAndConditionListJsonList = orConditionsJsonList[orConditionsIndex].AsArray();
+      Aws::Utils::Array<JsonView> tagAndConditionListJsonList = orConditionsJsonList[orConditionsIndex].AsArray();
       Aws::Vector<TagCondition> tagAndConditionListList;
       tagAndConditionListList.reserve((size_t)tagAndConditionListJsonList.GetLength());
       for(unsigned tagAndConditionListIndex = 0; tagAndConditionListIndex < tagAndConditionListJsonList.GetLength(); ++tagAndConditionListIndex)
@@ -54,7 +54,7 @@ ControlPlaneTagFilter& ControlPlaneTagFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AndConditions"))
   {
-    Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
+    Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
     for(unsigned andConditionsIndex = 0; andConditionsIndex < andConditionsJsonList.GetLength(); ++andConditionsIndex)
     {
       m_andConditions.push_back(andConditionsJsonList[andConditionsIndex].AsObject());
@@ -78,10 +78,10 @@ JsonValue ControlPlaneTagFilter::Jsonize() const
 
   if(m_orConditionsHasBeenSet)
   {
-   Array<JsonValue> orConditionsJsonList(m_orConditions.size());
+   Aws::Utils::Array<JsonValue> orConditionsJsonList(m_orConditions.size());
    for(unsigned orConditionsIndex = 0; orConditionsIndex < orConditionsJsonList.GetLength(); ++orConditionsIndex)
    {
-     Array<JsonValue> tagAndConditionListJsonList(m_orConditions[orConditionsIndex].size());
+     Aws::Utils::Array<JsonValue> tagAndConditionListJsonList(m_orConditions[orConditionsIndex].size());
      for(unsigned tagAndConditionListIndex = 0; tagAndConditionListIndex < tagAndConditionListJsonList.GetLength(); ++tagAndConditionListIndex)
      {
        tagAndConditionListJsonList[tagAndConditionListIndex].AsObject(m_orConditions[orConditionsIndex][tagAndConditionListIndex].Jsonize());
@@ -94,7 +94,7 @@ JsonValue ControlPlaneTagFilter::Jsonize() const
 
   if(m_andConditionsHasBeenSet)
   {
-   Array<JsonValue> andConditionsJsonList(m_andConditions.size());
+   Aws::Utils::Array<JsonValue> andConditionsJsonList(m_andConditions.size());
    for(unsigned andConditionsIndex = 0; andConditionsIndex < andConditionsJsonList.GetLength(); ++andConditionsIndex)
    {
      andConditionsJsonList[andConditionsIndex].AsObject(m_andConditions[andConditionsIndex].Jsonize());

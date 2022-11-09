@@ -44,7 +44,7 @@ PortProbeAction& PortProbeAction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("portProbeDetails"))
   {
-    Array<JsonView> portProbeDetailsJsonList = jsonValue.GetArray("portProbeDetails");
+    Aws::Utils::Array<JsonView> portProbeDetailsJsonList = jsonValue.GetArray("portProbeDetails");
     for(unsigned portProbeDetailsIndex = 0; portProbeDetailsIndex < portProbeDetailsJsonList.GetLength(); ++portProbeDetailsIndex)
     {
       m_portProbeDetails.push_back(portProbeDetailsJsonList[portProbeDetailsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue PortProbeAction::Jsonize() const
 
   if(m_portProbeDetailsHasBeenSet)
   {
-   Array<JsonValue> portProbeDetailsJsonList(m_portProbeDetails.size());
+   Aws::Utils::Array<JsonValue> portProbeDetailsJsonList(m_portProbeDetails.size());
    for(unsigned portProbeDetailsIndex = 0; portProbeDetailsIndex < portProbeDetailsJsonList.GetLength(); ++portProbeDetailsIndex)
    {
      portProbeDetailsJsonList[portProbeDetailsIndex].AsObject(m_portProbeDetails[portProbeDetailsIndex].Jsonize());

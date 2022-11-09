@@ -46,7 +46,7 @@ DeleteFileSystemOpenZFSConfiguration& DeleteFileSystemOpenZFSConfiguration::oper
 
   if(jsonValue.ValueExists("FinalBackupTags"))
   {
-    Array<JsonView> finalBackupTagsJsonList = jsonValue.GetArray("FinalBackupTags");
+    Aws::Utils::Array<JsonView> finalBackupTagsJsonList = jsonValue.GetArray("FinalBackupTags");
     for(unsigned finalBackupTagsIndex = 0; finalBackupTagsIndex < finalBackupTagsJsonList.GetLength(); ++finalBackupTagsIndex)
     {
       m_finalBackupTags.push_back(finalBackupTagsJsonList[finalBackupTagsIndex].AsObject());
@@ -56,7 +56,7 @@ DeleteFileSystemOpenZFSConfiguration& DeleteFileSystemOpenZFSConfiguration::oper
 
   if(jsonValue.ValueExists("Options"))
   {
-    Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
+    Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
     for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
     {
       m_options.push_back(DeleteFileSystemOpenZFSOptionMapper::GetDeleteFileSystemOpenZFSOptionForName(optionsJsonList[optionsIndex].AsString()));
@@ -79,7 +79,7 @@ JsonValue DeleteFileSystemOpenZFSConfiguration::Jsonize() const
 
   if(m_finalBackupTagsHasBeenSet)
   {
-   Array<JsonValue> finalBackupTagsJsonList(m_finalBackupTags.size());
+   Aws::Utils::Array<JsonValue> finalBackupTagsJsonList(m_finalBackupTags.size());
    for(unsigned finalBackupTagsIndex = 0; finalBackupTagsIndex < finalBackupTagsJsonList.GetLength(); ++finalBackupTagsIndex)
    {
      finalBackupTagsJsonList[finalBackupTagsIndex].AsObject(m_finalBackupTags[finalBackupTagsIndex].Jsonize());
@@ -90,7 +90,7 @@ JsonValue DeleteFileSystemOpenZFSConfiguration::Jsonize() const
 
   if(m_optionsHasBeenSet)
   {
-   Array<JsonValue> optionsJsonList(m_options.size());
+   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
    {
      optionsJsonList[optionsIndex].AsString(DeleteFileSystemOpenZFSOptionMapper::GetNameForDeleteFileSystemOpenZFSOption(m_options[optionsIndex]));

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/m2/MainframeModernizationErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/m2/MainframeModernizationEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -81,6 +83,10 @@ namespace Aws
 
   namespace MainframeModernization
   {
+    using MainframeModernizationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MainframeModernizationEndpointProviderBase = Aws::MainframeModernization::Endpoint::MainframeModernizationEndpointProviderBase;
+    using MainframeModernizationEndpointProvider = Aws::MainframeModernization::Endpoint::MainframeModernizationEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in MainframeModernizationClient header */

@@ -70,7 +70,7 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
 
   if(jsonValue.ValueExists("LicenseRules"))
   {
-    Array<JsonView> licenseRulesJsonList = jsonValue.GetArray("LicenseRules");
+    Aws::Utils::Array<JsonView> licenseRulesJsonList = jsonValue.GetArray("LicenseRules");
     for(unsigned licenseRulesIndex = 0; licenseRulesIndex < licenseRulesJsonList.GetLength(); ++licenseRulesIndex)
     {
       m_licenseRules.push_back(licenseRulesJsonList[licenseRulesIndex].AsString());
@@ -109,7 +109,7 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
 
   if(jsonValue.ValueExists("ConsumedLicenseSummaryList"))
   {
-    Array<JsonView> consumedLicenseSummaryListJsonList = jsonValue.GetArray("ConsumedLicenseSummaryList");
+    Aws::Utils::Array<JsonView> consumedLicenseSummaryListJsonList = jsonValue.GetArray("ConsumedLicenseSummaryList");
     for(unsigned consumedLicenseSummaryListIndex = 0; consumedLicenseSummaryListIndex < consumedLicenseSummaryListJsonList.GetLength(); ++consumedLicenseSummaryListIndex)
     {
       m_consumedLicenseSummaryList.push_back(consumedLicenseSummaryListJsonList[consumedLicenseSummaryListIndex].AsObject());
@@ -118,7 +118,7 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
 
   if(jsonValue.ValueExists("ManagedResourceSummaryList"))
   {
-    Array<JsonView> managedResourceSummaryListJsonList = jsonValue.GetArray("ManagedResourceSummaryList");
+    Aws::Utils::Array<JsonView> managedResourceSummaryListJsonList = jsonValue.GetArray("ManagedResourceSummaryList");
     for(unsigned managedResourceSummaryListIndex = 0; managedResourceSummaryListIndex < managedResourceSummaryListJsonList.GetLength(); ++managedResourceSummaryListIndex)
     {
       m_managedResourceSummaryList.push_back(managedResourceSummaryListJsonList[managedResourceSummaryListIndex].AsObject());
@@ -127,7 +127,7 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -136,7 +136,7 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
 
   if(jsonValue.ValueExists("ProductInformationList"))
   {
-    Array<JsonView> productInformationListJsonList = jsonValue.GetArray("ProductInformationList");
+    Aws::Utils::Array<JsonView> productInformationListJsonList = jsonValue.GetArray("ProductInformationList");
     for(unsigned productInformationListIndex = 0; productInformationListIndex < productInformationListJsonList.GetLength(); ++productInformationListIndex)
     {
       m_productInformationList.push_back(productInformationListJsonList[productInformationListIndex].AsObject());

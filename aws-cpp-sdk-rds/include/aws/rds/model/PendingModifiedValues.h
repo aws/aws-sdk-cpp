@@ -693,6 +693,27 @@ namespace Model
      */
     inline PendingModifiedValues& WithResumeFullAutomationModeTime(Aws::Utils::DateTime&& value) { SetResumeFullAutomationModeTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The storage throughput of the DB instance.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>The storage throughput of the DB instance.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>The storage throughput of the DB instance.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>The storage throughput of the DB instance.</p>
+     */
+    inline PendingModifiedValues& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceClass;
@@ -748,6 +769,9 @@ namespace Model
 
     Aws::Utils::DateTime m_resumeFullAutomationModeTime;
     bool m_resumeFullAutomationModeTimeHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListFieldsResult& ListFieldsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("fields"))
   {
-    Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
+    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
     for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
     {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());

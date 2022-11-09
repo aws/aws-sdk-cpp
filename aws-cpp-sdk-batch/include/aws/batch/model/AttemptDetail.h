@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a job attempt.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents a job attempt.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/AttemptDetail">AWS
    * API Reference</a></p>
    */
@@ -39,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>Details about the container in this job attempt.</p>
+     * <p>The details for the container in this job attempt.</p>
      */
     inline const AttemptContainerDetail& GetContainer() const{ return m_container; }
 
     /**
-     * <p>Details about the container in this job attempt.</p>
+     * <p>The details for the container in this job attempt.</p>
      */
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
-     * <p>Details about the container in this job attempt.</p>
+     * <p>The details for the container in this job attempt.</p>
      */
     inline void SetContainer(const AttemptContainerDetail& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /**
-     * <p>Details about the container in this job attempt.</p>
+     * <p>The details for the container in this job attempt.</p>
      */
     inline void SetContainer(AttemptContainerDetail&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
 
     /**
-     * <p>Details about the container in this job attempt.</p>
+     * <p>The details for the container in this job attempt.</p>
      */
     inline AttemptDetail& WithContainer(const AttemptContainerDetail& value) { SetContainer(value); return *this;}
 
     /**
-     * <p>Details about the container in this job attempt.</p>
+     * <p>The details for the container in this job attempt.</p>
      */
     inline AttemptDetail& WithContainer(AttemptContainerDetail&& value) { SetContainer(std::move(value)); return *this;}
 
@@ -128,50 +128,50 @@ namespace Model
 
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job attempt.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job attempt.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job attempt.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job attempt.</p>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job attempt.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job attempt.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job attempt.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job attempt.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job attempt.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job attempt.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job attempt.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job attempt.</p>
      */
     inline AttemptDetail& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job attempt.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job attempt.</p>
      */
     inline AttemptDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job attempt.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job attempt.</p>
      */
     inline AttemptDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 

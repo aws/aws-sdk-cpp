@@ -30,7 +30,7 @@ ListActiveViolationsResult& ListActiveViolationsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("activeViolations"))
   {
-    Array<JsonView> activeViolationsJsonList = jsonValue.GetArray("activeViolations");
+    Aws::Utils::Array<JsonView> activeViolationsJsonList = jsonValue.GetArray("activeViolations");
     for(unsigned activeViolationsIndex = 0; activeViolationsIndex < activeViolationsJsonList.GetLength(); ++activeViolationsIndex)
     {
       m_activeViolations.push_back(activeViolationsJsonList[activeViolationsIndex].AsObject());

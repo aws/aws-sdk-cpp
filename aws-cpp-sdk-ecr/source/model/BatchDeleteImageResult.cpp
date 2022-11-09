@@ -30,7 +30,7 @@ BatchDeleteImageResult& BatchDeleteImageResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("imageIds"))
   {
-    Array<JsonView> imageIdsJsonList = jsonValue.GetArray("imageIds");
+    Aws::Utils::Array<JsonView> imageIdsJsonList = jsonValue.GetArray("imageIds");
     for(unsigned imageIdsIndex = 0; imageIdsIndex < imageIdsJsonList.GetLength(); ++imageIdsIndex)
     {
       m_imageIds.push_back(imageIdsJsonList[imageIdsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchDeleteImageResult& BatchDeleteImageResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

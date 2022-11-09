@@ -75,7 +75,7 @@ AccountDetails& AccountDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalContactEmailAddresses"))
   {
-    Array<JsonView> additionalContactEmailAddressesJsonList = jsonValue.GetArray("AdditionalContactEmailAddresses");
+    Aws::Utils::Array<JsonView> additionalContactEmailAddressesJsonList = jsonValue.GetArray("AdditionalContactEmailAddresses");
     for(unsigned additionalContactEmailAddressesIndex = 0; additionalContactEmailAddressesIndex < additionalContactEmailAddressesJsonList.GetLength(); ++additionalContactEmailAddressesIndex)
     {
       m_additionalContactEmailAddresses.push_back(additionalContactEmailAddressesJsonList[additionalContactEmailAddressesIndex].AsString());
@@ -121,7 +121,7 @@ JsonValue AccountDetails::Jsonize() const
 
   if(m_additionalContactEmailAddressesHasBeenSet)
   {
-   Array<JsonValue> additionalContactEmailAddressesJsonList(m_additionalContactEmailAddresses.size());
+   Aws::Utils::Array<JsonValue> additionalContactEmailAddressesJsonList(m_additionalContactEmailAddresses.size());
    for(unsigned additionalContactEmailAddressesIndex = 0; additionalContactEmailAddressesIndex < additionalContactEmailAddressesJsonList.GetLength(); ++additionalContactEmailAddressesIndex)
    {
      additionalContactEmailAddressesJsonList[additionalContactEmailAddressesIndex].AsString(m_additionalContactEmailAddresses[additionalContactEmailAddressesIndex]);

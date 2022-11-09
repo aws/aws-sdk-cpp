@@ -42,7 +42,7 @@ EnumerationValue& EnumerationValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("synonyms"))
   {
-    Array<JsonView> synonymsJsonList = jsonValue.GetArray("synonyms");
+    Aws::Utils::Array<JsonView> synonymsJsonList = jsonValue.GetArray("synonyms");
     for(unsigned synonymsIndex = 0; synonymsIndex < synonymsJsonList.GetLength(); ++synonymsIndex)
     {
       m_synonyms.push_back(synonymsJsonList[synonymsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue EnumerationValue::Jsonize() const
 
   if(m_synonymsHasBeenSet)
   {
-   Array<JsonValue> synonymsJsonList(m_synonyms.size());
+   Aws::Utils::Array<JsonValue> synonymsJsonList(m_synonyms.size());
    for(unsigned synonymsIndex = 0; synonymsIndex < synonymsJsonList.GetLength(); ++synonymsIndex)
    {
      synonymsJsonList[synonymsIndex].AsString(m_synonyms[synonymsIndex]);

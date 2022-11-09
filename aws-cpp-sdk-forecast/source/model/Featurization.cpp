@@ -42,7 +42,7 @@ Featurization& Featurization::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FeaturizationPipeline"))
   {
-    Array<JsonView> featurizationPipelineJsonList = jsonValue.GetArray("FeaturizationPipeline");
+    Aws::Utils::Array<JsonView> featurizationPipelineJsonList = jsonValue.GetArray("FeaturizationPipeline");
     for(unsigned featurizationPipelineIndex = 0; featurizationPipelineIndex < featurizationPipelineJsonList.GetLength(); ++featurizationPipelineIndex)
     {
       m_featurizationPipeline.push_back(featurizationPipelineJsonList[featurizationPipelineIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue Featurization::Jsonize() const
 
   if(m_featurizationPipelineHasBeenSet)
   {
-   Array<JsonValue> featurizationPipelineJsonList(m_featurizationPipeline.size());
+   Aws::Utils::Array<JsonValue> featurizationPipelineJsonList(m_featurizationPipeline.size());
    for(unsigned featurizationPipelineIndex = 0; featurizationPipelineIndex < featurizationPipelineJsonList.GetLength(); ++featurizationPipelineIndex)
    {
      featurizationPipelineJsonList[featurizationPipelineIndex].AsObject(m_featurizationPipeline[featurizationPipelineIndex].Jsonize());

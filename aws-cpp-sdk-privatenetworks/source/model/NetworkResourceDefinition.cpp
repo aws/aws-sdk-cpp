@@ -48,7 +48,7 @@ NetworkResourceDefinition& NetworkResourceDefinition::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("options"))
   {
-    Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
+    Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
     for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
     {
       m_options.push_back(optionsJsonList[optionsIndex].AsObject());
@@ -78,7 +78,7 @@ JsonValue NetworkResourceDefinition::Jsonize() const
 
   if(m_optionsHasBeenSet)
   {
-   Array<JsonValue> optionsJsonList(m_options.size());
+   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
    {
      optionsJsonList[optionsIndex].AsObject(m_options[optionsIndex].Jsonize());

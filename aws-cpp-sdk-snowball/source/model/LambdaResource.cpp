@@ -42,7 +42,7 @@ LambdaResource& LambdaResource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EventTriggers"))
   {
-    Array<JsonView> eventTriggersJsonList = jsonValue.GetArray("EventTriggers");
+    Aws::Utils::Array<JsonView> eventTriggersJsonList = jsonValue.GetArray("EventTriggers");
     for(unsigned eventTriggersIndex = 0; eventTriggersIndex < eventTriggersJsonList.GetLength(); ++eventTriggersIndex)
     {
       m_eventTriggers.push_back(eventTriggersJsonList[eventTriggersIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue LambdaResource::Jsonize() const
 
   if(m_eventTriggersHasBeenSet)
   {
-   Array<JsonValue> eventTriggersJsonList(m_eventTriggers.size());
+   Aws::Utils::Array<JsonValue> eventTriggersJsonList(m_eventTriggers.size());
    for(unsigned eventTriggersIndex = 0; eventTriggersIndex < eventTriggersJsonList.GetLength(); ++eventTriggersIndex)
    {
      eventTriggersJsonList[eventTriggersIndex].AsObject(m_eventTriggers[eventTriggersIndex].Jsonize());

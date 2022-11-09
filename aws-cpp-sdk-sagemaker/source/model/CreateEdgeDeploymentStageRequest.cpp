@@ -30,7 +30,7 @@ Aws::String CreateEdgeDeploymentStageRequest::SerializePayload() const
 
   if(m_stagesHasBeenSet)
   {
-   Array<JsonValue> stagesJsonList(m_stages.size());
+   Aws::Utils::Array<JsonValue> stagesJsonList(m_stages.size());
    for(unsigned stagesIndex = 0; stagesIndex < stagesJsonList.GetLength(); ++stagesIndex)
    {
      stagesJsonList[stagesIndex].AsObject(m_stages[stagesIndex].Jsonize());

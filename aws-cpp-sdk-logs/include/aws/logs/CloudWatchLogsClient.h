@@ -44,27 +44,55 @@ namespace CloudWatchLogs
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudWatchLogsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudWatchLogsClient(const Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration = Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration(),
+                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudWatchLogsClient(const Aws::Auth::AWSCredentials& credentials,
-                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration = Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudWatchLogsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration = Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudWatchLogsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudWatchLogsClient(const Aws::Auth::AWSCredentials& credentials,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CloudWatchLogsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CloudWatchLogsClient();
 
 
@@ -123,13 +151,13 @@ namespace CloudWatchLogs
          * log group to an Amazon S3 bucket. When you perform a
          * <code>CreateExportTask</code> operation, you must use credentials that have
          * permission to write to the S3 bucket that you specify as the destination.</p>
-         *  <p>Exporting log data to Amazon S3 buckets that are encrypted by KMS
-         * is not supported. Exporting log data to Amazon S3 buckets that have S3 Object
-         * Lock enabled with a retention period is not supported.</p> <p>Exporting to S3
-         * buckets that are encrypted with AES-256 is supported. </p>  <p>This
-         * is an asynchronous call. If all the required information is provided, this
-         * operation initiates an export task and responds with the ID of the task. After
-         * the task has started, you can use <a
+         * <p>Exporting log data to Amazon S3 buckets that are encrypted by KMS is
+         * supported. Exporting log data to Amazon S3 buckets that have S3 Object Lock
+         * enabled with a retention period is also supported.</p> <p>Exporting to S3
+         * buckets that are encrypted with AES-256 is supported. </p> <p>This is an
+         * asynchronous call. If all the required information is provided, this operation
+         * initiates an export task and responds with the ID of the task. After the task
+         * has started, you can use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
          * to get the status of the export task. Each account can only have one active
          * (<code>RUNNING</code> or <code>PENDING</code>) export task at a time. To cancel
@@ -573,15 +601,16 @@ namespace CloudWatchLogs
         /**
          * <p>Lists log events from the specified log group. You can list all the log
          * events or filter the results using a filter pattern, a time range, and the name
-         * of the log stream.</p> <p>By default, this operation returns as many log events
-         * as can fit in 1 MB (up to 10,000 log events) or all the events found within the
-         * time range that you specify. If the results include a token, then there are more
-         * log events available, and you can get additional results by specifying the token
-         * in a subsequent call. This operation can return empty results while there are
-         * more log events available through the token.</p> <p>The returned log events are
-         * sorted by event timestamp, the timestamp when the event was ingested by
-         * CloudWatch Logs, and the ID of the <code>PutLogEvents</code>
-         * request.</p><p><h3>See Also:</h3>   <a
+         * of the log stream.</p> <p>You must have the <code>logs;FilterLogEvents</code>
+         * permission to perform this operation.</p> <p>By default, this operation returns
+         * as many log events as can fit in 1 MB (up to 10,000 log events) or all the
+         * events found within the time range that you specify. If the results include a
+         * token, then there are more log events available, and you can get additional
+         * results by specifying the token in a subsequent call. This operation can return
+         * empty results while there are more log events available through the token.</p>
+         * <p>The returned log events are sorted by event timestamp, the timestamp when the
+         * event was ingested by CloudWatch Logs, and the ID of the
+         * <code>PutLogEvents</code> request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">AWS
          * API Reference</a></p>
          */
@@ -696,21 +725,22 @@ namespace CloudWatchLogs
         virtual void GetQueryResultsAsync(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for the specified log group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">AWS
+         * <p>Displays the tags associated with a CloudWatch Logs resource. Currently, log
+         * groups and destinations support tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTagsLogGroupOutcome ListTagsLogGroup(const Model::ListTagsLogGroupRequest& request) const;
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * A Callable wrapper for ListTagsLogGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListTagsLogGroupOutcomeCallable ListTagsLogGroupCallable(const Model::ListTagsLogGroupRequest& request) const;
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * An Async wrapper for ListTagsLogGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListTagsLogGroupAsync(const Model::ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a destination. This operation is used only to create
@@ -897,7 +927,17 @@ namespace CloudWatchLogs
         /**
          * <p>Sets the retention of the specified log group. A retention policy allows you
          * to configure the number of days for which to retain log events in the specified
-         * log group.</p><p><h3>See Also:</h3>   <a
+         * log group.</p>  <p>CloudWatch Logs doesn’t immediately delete log events
+         * when they reach their retention setting. It typically takes up to 72 hours after
+         * that before log events are deleted, but in rare situations might take
+         * longer.</p> <p>This means that if you change a log group to have a longer
+         * retention setting when it contains log events that are past the expiration date,
+         * but haven’t been actually deleted, those log events will take up to 72 hours to
+         * be deleted after the new retention date is reached. To make sure that log data
+         * is deleted permanently, keep a log group at its lower retention setting until 72
+         * hours has passed after the end of the previous retention period, or you have
+         * confirmed that the older log events are deleted. </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">AWS
          * API Reference</a></p>
          */
@@ -955,7 +995,9 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
          * Logs Insights Query Syntax</a>.</p> <p>Queries time out after 15 minutes of
          * execution. If your queries are timing out, reduce the time range being searched
-         * or partition your query into a number of queries.</p><p><h3>See Also:</h3>   <a
+         * or partition your query into a number of queries.</p> <p> You are limited to 20
+         * concurrent CloudWatch Logs insights queries, including queries that have been
+         * added to dashboards. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
          * Reference</a></p>
          */
@@ -991,34 +1033,33 @@ namespace CloudWatchLogs
         virtual void StopQueryAsync(const Model::StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates the specified tags for the specified log group.</p> <p>To
-         * list the tags for a log group, use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
-         * To remove tags, use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html">UntagLogGroup</a>.</p>
-         * <p>For more information about tags, see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging">Tag
-         * Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User
-         * Guide</i>.</p> <p>CloudWatch Logs doesn’t support IAM policies that prevent
-         * users from assigning specified tags to log groups using the
-         * <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition
-         * keys. For more information about using tags to control access, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
-         * access to Amazon Web Services resources using tags</a>.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">AWS
+         * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs
+         * resource. Currently, the only CloudWatch Logs resources that can be tagged are
+         * log groups and destinations. </p> <p>Tags can help you organize and categorize
+         * your resources. You can also use them to scope user permissions by granting a
+         * user permission to access or change only resources with certain tag values.</p>
+         * <p>Tags don't have any semantic meaning to Amazon Web Services and are
+         * interpreted strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with a resource that already has tags. If you
+         * specify a new tag key for the alarm, this tag is appended to the list of tags
+         * associated with the alarm. If you specify a tag key that is already associated
+         * with the alarm, the new tag value that you specify replaces the previous value
+         * for that tag.</p> <p>You can associate as many as 50 tags with a CloudWatch Logs
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::TagLogGroupOutcome TagLogGroup(const Model::TagLogGroupRequest& request) const;
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * A Callable wrapper for TagLogGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::TagLogGroupOutcomeCallable TagLogGroupCallable(const Model::TagLogGroupRequest& request) const;
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * An Async wrapper for TagLogGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void TagLogGroupAsync(const Model::TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests the filter pattern of a metric filter against a sample of log event
@@ -1040,38 +1081,32 @@ namespace CloudWatchLogs
         virtual void TestMetricFilterAsync(const Model::TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified tags from the specified log group.</p> <p>To list the
-         * tags for a log group, use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
-         * To add tags, use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.</p>
-         * <p>CloudWatch Logs doesn’t support IAM policies that prevent users from
-         * assigning specified tags to log groups using the
-         * <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition
-         * keys. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">AWS
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::UntagLogGroupOutcome UntagLogGroup(const Model::UntagLogGroupRequest& request) const;
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * A Callable wrapper for UntagLogGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::UntagLogGroupOutcomeCallable UntagLogGroupCallable(const Model::UntagLogGroupRequest& request) const;
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * An Async wrapper for UntagLogGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void UntagLogGroupAsync(const Model::UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudWatchLogsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CloudWatchLogsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CloudWatchLogsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudWatchLogs

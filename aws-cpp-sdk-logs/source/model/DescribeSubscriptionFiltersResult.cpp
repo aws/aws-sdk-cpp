@@ -30,7 +30,7 @@ DescribeSubscriptionFiltersResult& DescribeSubscriptionFiltersResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("subscriptionFilters"))
   {
-    Array<JsonView> subscriptionFiltersJsonList = jsonValue.GetArray("subscriptionFilters");
+    Aws::Utils::Array<JsonView> subscriptionFiltersJsonList = jsonValue.GetArray("subscriptionFilters");
     for(unsigned subscriptionFiltersIndex = 0; subscriptionFiltersIndex < subscriptionFiltersJsonList.GetLength(); ++subscriptionFiltersIndex)
     {
       m_subscriptionFilters.push_back(subscriptionFiltersJsonList[subscriptionFiltersIndex].AsObject());

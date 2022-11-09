@@ -888,6 +888,39 @@ namespace Model
 
 
     /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline int GetHrdBufferFinalFillPercentage() const{ return m_hrdBufferFinalFillPercentage; }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline bool HrdBufferFinalFillPercentageHasBeenSet() const { return m_hrdBufferFinalFillPercentageHasBeenSet; }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline void SetHrdBufferFinalFillPercentage(int value) { m_hrdBufferFinalFillPercentageHasBeenSet = true; m_hrdBufferFinalFillPercentage = value; }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline H265Settings& WithHrdBufferFinalFillPercentage(int value) { SetHrdBufferFinalFillPercentage(value); return *this;}
+
+
+    /**
      * Percentage of the buffer that should initially be filled (HRD buffer model).
      */
     inline int GetHrdBufferInitialFillPercentage() const{ return m_hrdBufferInitialFillPercentage; }
@@ -2297,6 +2330,9 @@ namespace Model
 
     H265GopSizeUnits m_gopSizeUnits;
     bool m_gopSizeUnitsHasBeenSet = false;
+
+    int m_hrdBufferFinalFillPercentage;
+    bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
 
     int m_hrdBufferInitialFillPercentage;
     bool m_hrdBufferInitialFillPercentageHasBeenSet = false;

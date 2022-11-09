@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/workmailmessageflow/WorkMailMessageFlowErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/workmailmessageflow/WorkMailMessageFlowEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -51,6 +53,10 @@ namespace Aws
 
   namespace WorkMailMessageFlow
   {
+    using WorkMailMessageFlowClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkMailMessageFlowEndpointProviderBase = Aws::WorkMailMessageFlow::Endpoint::WorkMailMessageFlowEndpointProviderBase;
+    using WorkMailMessageFlowEndpointProvider = Aws::WorkMailMessageFlow::Endpoint::WorkMailMessageFlowEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in WorkMailMessageFlowClient header */

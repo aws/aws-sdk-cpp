@@ -30,7 +30,7 @@ ListCodeReviewsResult& ListCodeReviewsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CodeReviewSummaries"))
   {
-    Array<JsonView> codeReviewSummariesJsonList = jsonValue.GetArray("CodeReviewSummaries");
+    Aws::Utils::Array<JsonView> codeReviewSummariesJsonList = jsonValue.GetArray("CodeReviewSummaries");
     for(unsigned codeReviewSummariesIndex = 0; codeReviewSummariesIndex < codeReviewSummariesJsonList.GetLength(); ++codeReviewSummariesIndex)
     {
       m_codeReviewSummaries.push_back(codeReviewSummariesJsonList[codeReviewSummariesIndex].AsObject());

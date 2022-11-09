@@ -34,7 +34,7 @@ Aws::String CreateUserRequest::SerializePayload() const
 
   if(m_groupsHasBeenSet)
   {
-   Array<JsonValue> groupsJsonList(m_groups.size());
+   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
    {
      groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);

@@ -78,7 +78,7 @@ Choice& Choice::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalResources"))
   {
-    Array<JsonView> additionalResourcesJsonList = jsonValue.GetArray("AdditionalResources");
+    Aws::Utils::Array<JsonView> additionalResourcesJsonList = jsonValue.GetArray("AdditionalResources");
     for(unsigned additionalResourcesIndex = 0; additionalResourcesIndex < additionalResourcesJsonList.GetLength(); ++additionalResourcesIndex)
     {
       m_additionalResources.push_back(additionalResourcesJsonList[additionalResourcesIndex].AsObject());
@@ -125,7 +125,7 @@ JsonValue Choice::Jsonize() const
 
   if(m_additionalResourcesHasBeenSet)
   {
-   Array<JsonValue> additionalResourcesJsonList(m_additionalResources.size());
+   Aws::Utils::Array<JsonValue> additionalResourcesJsonList(m_additionalResources.size());
    for(unsigned additionalResourcesIndex = 0; additionalResourcesIndex < additionalResourcesJsonList.GetLength(); ++additionalResourcesIndex)
    {
      additionalResourcesJsonList[additionalResourcesIndex].AsObject(m_additionalResources[additionalResourcesIndex].Jsonize());

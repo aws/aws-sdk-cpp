@@ -42,7 +42,7 @@ ListExportsResult& ListExportsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("exportSummaries"))
   {
-    Array<JsonView> exportSummariesJsonList = jsonValue.GetArray("exportSummaries");
+    Aws::Utils::Array<JsonView> exportSummariesJsonList = jsonValue.GetArray("exportSummaries");
     for(unsigned exportSummariesIndex = 0; exportSummariesIndex < exportSummariesJsonList.GetLength(); ++exportSummariesIndex)
     {
       m_exportSummaries.push_back(exportSummariesJsonList[exportSummariesIndex].AsObject());

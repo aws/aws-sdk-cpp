@@ -42,7 +42,7 @@ TransactionCanceledException& TransactionCanceledException::operator =(JsonView 
 
   if(jsonValue.ValueExists("CancellationReasons"))
   {
-    Array<JsonView> cancellationReasonsJsonList = jsonValue.GetArray("CancellationReasons");
+    Aws::Utils::Array<JsonView> cancellationReasonsJsonList = jsonValue.GetArray("CancellationReasons");
     for(unsigned cancellationReasonsIndex = 0; cancellationReasonsIndex < cancellationReasonsJsonList.GetLength(); ++cancellationReasonsIndex)
     {
       m_cancellationReasons.push_back(cancellationReasonsJsonList[cancellationReasonsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue TransactionCanceledException::Jsonize() const
 
   if(m_cancellationReasonsHasBeenSet)
   {
-   Array<JsonValue> cancellationReasonsJsonList(m_cancellationReasons.size());
+   Aws::Utils::Array<JsonValue> cancellationReasonsJsonList(m_cancellationReasons.size());
    for(unsigned cancellationReasonsIndex = 0; cancellationReasonsIndex < cancellationReasonsJsonList.GetLength(); ++cancellationReasonsIndex)
    {
      cancellationReasonsJsonList[cancellationReasonsIndex].AsObject(m_cancellationReasons[cancellationReasonsIndex].Jsonize());

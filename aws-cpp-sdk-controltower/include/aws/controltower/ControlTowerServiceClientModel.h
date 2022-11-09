@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/controltower/ControlTowerErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/controltower/ControlTowerEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -53,6 +55,10 @@ namespace Aws
 
   namespace ControlTower
   {
+    using ControlTowerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ControlTowerEndpointProviderBase = Aws::ControlTower::Endpoint::ControlTowerEndpointProviderBase;
+    using ControlTowerEndpointProvider = Aws::ControlTower::Endpoint::ControlTowerEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ControlTowerClient header */

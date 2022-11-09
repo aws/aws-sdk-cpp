@@ -23,7 +23,7 @@ Aws::String DescribeAssessmentTargetsRequest::SerializePayload() const
 
   if(m_assessmentTargetArnsHasBeenSet)
   {
-   Array<JsonValue> assessmentTargetArnsJsonList(m_assessmentTargetArns.size());
+   Aws::Utils::Array<JsonValue> assessmentTargetArnsJsonList(m_assessmentTargetArns.size());
    for(unsigned assessmentTargetArnsIndex = 0; assessmentTargetArnsIndex < assessmentTargetArnsJsonList.GetLength(); ++assessmentTargetArnsIndex)
    {
      assessmentTargetArnsJsonList[assessmentTargetArnsIndex].AsString(m_assessmentTargetArns[assessmentTargetArnsIndex]);

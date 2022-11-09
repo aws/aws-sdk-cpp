@@ -36,7 +36,7 @@ ListVirtualMachinesResult& ListVirtualMachinesResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("VirtualMachines"))
   {
-    Array<JsonView> virtualMachinesJsonList = jsonValue.GetArray("VirtualMachines");
+    Aws::Utils::Array<JsonView> virtualMachinesJsonList = jsonValue.GetArray("VirtualMachines");
     for(unsigned virtualMachinesIndex = 0; virtualMachinesIndex < virtualMachinesJsonList.GetLength(); ++virtualMachinesIndex)
     {
       m_virtualMachines.push_back(virtualMachinesJsonList[virtualMachinesIndex].AsObject());

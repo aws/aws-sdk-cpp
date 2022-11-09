@@ -43,7 +43,7 @@ Aws::String UpdateIAMPolicyAssignmentRequest::SerializePayload() const
    JsonValue identitiesJsonMap;
    for(auto& identitiesItem : m_identities)
    {
-     Array<JsonValue> identityNameListJsonList(identitiesItem.second.size());
+     Aws::Utils::Array<JsonValue> identityNameListJsonList(identitiesItem.second.size());
      for(unsigned identityNameListIndex = 0; identityNameListIndex < identityNameListJsonList.GetLength(); ++identityNameListIndex)
      {
        identityNameListJsonList[identityNameListIndex].AsString(identitiesItem.second[identityNameListIndex]);

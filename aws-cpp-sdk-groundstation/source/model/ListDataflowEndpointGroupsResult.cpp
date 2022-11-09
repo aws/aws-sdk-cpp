@@ -30,7 +30,7 @@ ListDataflowEndpointGroupsResult& ListDataflowEndpointGroupsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("dataflowEndpointGroupList"))
   {
-    Array<JsonView> dataflowEndpointGroupListJsonList = jsonValue.GetArray("dataflowEndpointGroupList");
+    Aws::Utils::Array<JsonView> dataflowEndpointGroupListJsonList = jsonValue.GetArray("dataflowEndpointGroupList");
     for(unsigned dataflowEndpointGroupListIndex = 0; dataflowEndpointGroupListIndex < dataflowEndpointGroupListJsonList.GetLength(); ++dataflowEndpointGroupListIndex)
     {
       m_dataflowEndpointGroupList.push_back(dataflowEndpointGroupListJsonList[dataflowEndpointGroupListIndex].AsObject());

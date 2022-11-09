@@ -52,7 +52,7 @@ SalesforceDestinationProperties& SalesforceDestinationProperties::operator =(Jso
 
   if(jsonValue.ValueExists("idFieldNames"))
   {
-    Array<JsonView> idFieldNamesJsonList = jsonValue.GetArray("idFieldNames");
+    Aws::Utils::Array<JsonView> idFieldNamesJsonList = jsonValue.GetArray("idFieldNames");
     for(unsigned idFieldNamesIndex = 0; idFieldNamesIndex < idFieldNamesJsonList.GetLength(); ++idFieldNamesIndex)
     {
       m_idFieldNames.push_back(idFieldNamesJsonList[idFieldNamesIndex].AsString());
@@ -96,7 +96,7 @@ JsonValue SalesforceDestinationProperties::Jsonize() const
 
   if(m_idFieldNamesHasBeenSet)
   {
-   Array<JsonValue> idFieldNamesJsonList(m_idFieldNames.size());
+   Aws::Utils::Array<JsonValue> idFieldNamesJsonList(m_idFieldNames.size());
    for(unsigned idFieldNamesIndex = 0; idFieldNamesIndex < idFieldNamesJsonList.GetLength(); ++idFieldNamesIndex)
    {
      idFieldNamesJsonList[idFieldNamesIndex].AsString(m_idFieldNames[idFieldNamesIndex]);

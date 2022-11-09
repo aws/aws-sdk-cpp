@@ -33,7 +33,7 @@ AutoRollbackConfig& AutoRollbackConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Alarms"))
   {
-    Array<JsonView> alarmsJsonList = jsonValue.GetArray("Alarms");
+    Aws::Utils::Array<JsonView> alarmsJsonList = jsonValue.GetArray("Alarms");
     for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
     {
       m_alarms.push_back(alarmsJsonList[alarmsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AutoRollbackConfig::Jsonize() const
 
   if(m_alarmsHasBeenSet)
   {
-   Array<JsonValue> alarmsJsonList(m_alarms.size());
+   Aws::Utils::Array<JsonValue> alarmsJsonList(m_alarms.size());
    for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
    {
      alarmsJsonList[alarmsIndex].AsObject(m_alarms[alarmsIndex].Jsonize());

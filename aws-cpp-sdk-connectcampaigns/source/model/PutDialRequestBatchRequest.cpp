@@ -24,7 +24,7 @@ Aws::String PutDialRequestBatchRequest::SerializePayload() const
 
   if(m_dialRequestsHasBeenSet)
   {
-   Array<JsonValue> dialRequestsJsonList(m_dialRequests.size());
+   Aws::Utils::Array<JsonValue> dialRequestsJsonList(m_dialRequests.size());
    for(unsigned dialRequestsIndex = 0; dialRequestsIndex < dialRequestsJsonList.GetLength(); ++dialRequestsIndex)
    {
      dialRequestsJsonList[dialRequestsIndex].AsObject(m_dialRequests[dialRequestsIndex].Jsonize());

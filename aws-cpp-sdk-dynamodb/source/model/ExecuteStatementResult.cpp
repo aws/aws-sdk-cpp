@@ -30,7 +30,7 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Items"))
   {
-    Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
+    Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
     for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
     {
       Aws::Map<Aws::String, JsonView> attributeMapJsonMap = itemsJsonList[itemsIndex].GetAllObjects();

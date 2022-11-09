@@ -30,7 +30,7 @@ ListProgressUpdateStreamsResult& ListProgressUpdateStreamsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProgressUpdateStreamSummaryList"))
   {
-    Array<JsonView> progressUpdateStreamSummaryListJsonList = jsonValue.GetArray("ProgressUpdateStreamSummaryList");
+    Aws::Utils::Array<JsonView> progressUpdateStreamSummaryListJsonList = jsonValue.GetArray("ProgressUpdateStreamSummaryList");
     for(unsigned progressUpdateStreamSummaryListIndex = 0; progressUpdateStreamSummaryListIndex < progressUpdateStreamSummaryListJsonList.GetLength(); ++progressUpdateStreamSummaryListIndex)
     {
       m_progressUpdateStreamSummaryList.push_back(progressUpdateStreamSummaryListJsonList[progressUpdateStreamSummaryListIndex].AsObject());

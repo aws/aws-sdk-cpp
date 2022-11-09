@@ -47,7 +47,7 @@ Aws::String QuerySchemaVersionMetadataRequest::SerializePayload() const
 
   if(m_metadataListHasBeenSet)
   {
-   Array<JsonValue> metadataListJsonList(m_metadataList.size());
+   Aws::Utils::Array<JsonValue> metadataListJsonList(m_metadataList.size());
    for(unsigned metadataListIndex = 0; metadataListIndex < metadataListJsonList.GetLength(); ++metadataListIndex)
    {
      metadataListJsonList[metadataListIndex].AsObject(m_metadataList[metadataListIndex].Jsonize());

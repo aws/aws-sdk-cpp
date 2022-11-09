@@ -23,7 +23,7 @@ Aws::String BatchGetDevEndpointsRequest::SerializePayload() const
 
   if(m_devEndpointNamesHasBeenSet)
   {
-   Array<JsonValue> devEndpointNamesJsonList(m_devEndpointNames.size());
+   Aws::Utils::Array<JsonValue> devEndpointNamesJsonList(m_devEndpointNames.size());
    for(unsigned devEndpointNamesIndex = 0; devEndpointNamesIndex < devEndpointNamesJsonList.GetLength(); ++devEndpointNamesIndex)
    {
      devEndpointNamesJsonList[devEndpointNamesIndex].AsString(m_devEndpointNames[devEndpointNamesIndex]);

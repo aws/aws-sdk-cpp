@@ -30,7 +30,7 @@ ListEulaAcceptancesResult& ListEulaAcceptancesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eulaAcceptances"))
   {
-    Array<JsonView> eulaAcceptancesJsonList = jsonValue.GetArray("eulaAcceptances");
+    Aws::Utils::Array<JsonView> eulaAcceptancesJsonList = jsonValue.GetArray("eulaAcceptances");
     for(unsigned eulaAcceptancesIndex = 0; eulaAcceptancesIndex < eulaAcceptancesJsonList.GetLength(); ++eulaAcceptancesIndex)
     {
       m_eulaAcceptances.push_back(eulaAcceptancesJsonList[eulaAcceptancesIndex].AsObject());

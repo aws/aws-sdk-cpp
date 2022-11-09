@@ -39,7 +39,7 @@ Metrics& Metrics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WeightedQuantileLosses"))
   {
-    Array<JsonView> weightedQuantileLossesJsonList = jsonValue.GetArray("WeightedQuantileLosses");
+    Aws::Utils::Array<JsonView> weightedQuantileLossesJsonList = jsonValue.GetArray("WeightedQuantileLosses");
     for(unsigned weightedQuantileLossesIndex = 0; weightedQuantileLossesIndex < weightedQuantileLossesJsonList.GetLength(); ++weightedQuantileLossesIndex)
     {
       m_weightedQuantileLosses.push_back(weightedQuantileLossesJsonList[weightedQuantileLossesIndex].AsObject());
@@ -49,7 +49,7 @@ Metrics& Metrics::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ErrorMetrics"))
   {
-    Array<JsonView> errorMetricsJsonList = jsonValue.GetArray("ErrorMetrics");
+    Aws::Utils::Array<JsonView> errorMetricsJsonList = jsonValue.GetArray("ErrorMetrics");
     for(unsigned errorMetricsIndex = 0; errorMetricsIndex < errorMetricsJsonList.GetLength(); ++errorMetricsIndex)
     {
       m_errorMetrics.push_back(errorMetricsJsonList[errorMetricsIndex].AsObject());
@@ -73,7 +73,7 @@ JsonValue Metrics::Jsonize() const
 
   if(m_weightedQuantileLossesHasBeenSet)
   {
-   Array<JsonValue> weightedQuantileLossesJsonList(m_weightedQuantileLosses.size());
+   Aws::Utils::Array<JsonValue> weightedQuantileLossesJsonList(m_weightedQuantileLosses.size());
    for(unsigned weightedQuantileLossesIndex = 0; weightedQuantileLossesIndex < weightedQuantileLossesJsonList.GetLength(); ++weightedQuantileLossesIndex)
    {
      weightedQuantileLossesJsonList[weightedQuantileLossesIndex].AsObject(m_weightedQuantileLosses[weightedQuantileLossesIndex].Jsonize());
@@ -84,7 +84,7 @@ JsonValue Metrics::Jsonize() const
 
   if(m_errorMetricsHasBeenSet)
   {
-   Array<JsonValue> errorMetricsJsonList(m_errorMetrics.size());
+   Aws::Utils::Array<JsonValue> errorMetricsJsonList(m_errorMetrics.size());
    for(unsigned errorMetricsIndex = 0; errorMetricsIndex < errorMetricsJsonList.GetLength(); ++errorMetricsIndex)
    {
      errorMetricsJsonList[errorMetricsIndex].AsObject(m_errorMetrics[errorMetricsIndex].Jsonize());

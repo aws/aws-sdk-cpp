@@ -46,7 +46,7 @@ ReactionForComment& ReactionForComment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("reactionUsers"))
   {
-    Array<JsonView> reactionUsersJsonList = jsonValue.GetArray("reactionUsers");
+    Aws::Utils::Array<JsonView> reactionUsersJsonList = jsonValue.GetArray("reactionUsers");
     for(unsigned reactionUsersIndex = 0; reactionUsersIndex < reactionUsersJsonList.GetLength(); ++reactionUsersIndex)
     {
       m_reactionUsers.push_back(reactionUsersJsonList[reactionUsersIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue ReactionForComment::Jsonize() const
 
   if(m_reactionUsersHasBeenSet)
   {
-   Array<JsonValue> reactionUsersJsonList(m_reactionUsers.size());
+   Aws::Utils::Array<JsonValue> reactionUsersJsonList(m_reactionUsers.size());
    for(unsigned reactionUsersIndex = 0; reactionUsersIndex < reactionUsersJsonList.GetLength(); ++reactionUsersIndex)
    {
      reactionUsersJsonList[reactionUsersIndex].AsString(m_reactionUsers[reactionUsersIndex]);

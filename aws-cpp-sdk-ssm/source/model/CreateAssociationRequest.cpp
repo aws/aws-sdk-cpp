@@ -67,7 +67,7 @@ Aws::String CreateAssociationRequest::SerializePayload() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> parameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> parameterValueListJsonList(parametersItem.second.size());
      for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
      {
        parameterValueListJsonList[parameterValueListIndex].AsString(parametersItem.second[parameterValueListIndex]);
@@ -80,7 +80,7 @@ Aws::String CreateAssociationRequest::SerializePayload() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
@@ -143,7 +143,7 @@ Aws::String CreateAssociationRequest::SerializePayload() const
 
   if(m_calendarNamesHasBeenSet)
   {
-   Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
+   Aws::Utils::Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
    for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
    {
      calendarNamesJsonList[calendarNamesIndex].AsString(m_calendarNames[calendarNamesIndex]);
@@ -154,7 +154,7 @@ Aws::String CreateAssociationRequest::SerializePayload() const
 
   if(m_targetLocationsHasBeenSet)
   {
-   Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
+   Aws::Utils::Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
    for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
    {
      targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
@@ -171,13 +171,13 @@ Aws::String CreateAssociationRequest::SerializePayload() const
 
   if(m_targetMapsHasBeenSet)
   {
-   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   Aws::Utils::Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
    for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
    {
      JsonValue targetMapJsonMap;
      for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
      {
-       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       Aws::Utils::Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
        for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
        {
          targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);
@@ -192,7 +192,7 @@ Aws::String CreateAssociationRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

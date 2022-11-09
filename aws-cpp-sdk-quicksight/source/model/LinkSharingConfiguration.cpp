@@ -33,7 +33,7 @@ LinkSharingConfiguration& LinkSharingConfiguration::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("Permissions"))
   {
-    Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
+    Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
     for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue LinkSharingConfiguration::Jsonize() const
 
   if(m_permissionsHasBeenSet)
   {
-   Array<JsonValue> permissionsJsonList(m_permissions.size());
+   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
    {
      permissionsJsonList[permissionsIndex].AsObject(m_permissions[permissionsIndex].Jsonize());

@@ -52,7 +52,7 @@ NewGatingRule& NewGatingRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GatingControls"))
   {
-    Array<JsonView> gatingControlsJsonList = jsonValue.GetArray("GatingControls");
+    Aws::Utils::Array<JsonView> gatingControlsJsonList = jsonValue.GetArray("GatingControls");
     for(unsigned gatingControlsIndex = 0; gatingControlsIndex < gatingControlsJsonList.GetLength(); ++gatingControlsIndex)
     {
       m_gatingControls.push_back(gatingControlsJsonList[gatingControlsIndex].AsString());
@@ -76,7 +76,7 @@ NewGatingRule& NewGatingRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetControls"))
   {
-    Array<JsonView> targetControlsJsonList = jsonValue.GetArray("TargetControls");
+    Aws::Utils::Array<JsonView> targetControlsJsonList = jsonValue.GetArray("TargetControls");
     for(unsigned targetControlsIndex = 0; targetControlsIndex < targetControlsJsonList.GetLength(); ++targetControlsIndex)
     {
       m_targetControls.push_back(targetControlsJsonList[targetControlsIndex].AsString());
@@ -106,7 +106,7 @@ JsonValue NewGatingRule::Jsonize() const
 
   if(m_gatingControlsHasBeenSet)
   {
-   Array<JsonValue> gatingControlsJsonList(m_gatingControls.size());
+   Aws::Utils::Array<JsonValue> gatingControlsJsonList(m_gatingControls.size());
    for(unsigned gatingControlsIndex = 0; gatingControlsIndex < gatingControlsJsonList.GetLength(); ++gatingControlsIndex)
    {
      gatingControlsJsonList[gatingControlsIndex].AsString(m_gatingControls[gatingControlsIndex]);
@@ -129,7 +129,7 @@ JsonValue NewGatingRule::Jsonize() const
 
   if(m_targetControlsHasBeenSet)
   {
-   Array<JsonValue> targetControlsJsonList(m_targetControls.size());
+   Aws::Utils::Array<JsonValue> targetControlsJsonList(m_targetControls.size());
    for(unsigned targetControlsIndex = 0; targetControlsIndex < targetControlsJsonList.GetLength(); ++targetControlsIndex)
    {
      targetControlsJsonList[targetControlsIndex].AsString(m_targetControls[targetControlsIndex]);

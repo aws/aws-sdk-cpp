@@ -47,7 +47,7 @@ DeploymentCommand& DeploymentCommand::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> argsJsonMap = jsonValue.GetObject("Args").GetAllObjects();
     for(auto& argsItem : argsJsonMap)
     {
-      Array<JsonView> stringsJsonList = argsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> stringsJsonList = argsItem.second.AsArray();
       Aws::Vector<Aws::String> stringsList;
       stringsList.reserve((size_t)stringsJsonList.GetLength());
       for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
@@ -76,7 +76,7 @@ JsonValue DeploymentCommand::Jsonize() const
    JsonValue argsJsonMap;
    for(auto& argsItem : m_args)
    {
-     Array<JsonValue> stringsJsonList(argsItem.second.size());
+     Aws::Utils::Array<JsonValue> stringsJsonList(argsItem.second.size());
      for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
      {
        stringsJsonList[stringsIndex].AsString(argsItem.second[stringsIndex]);

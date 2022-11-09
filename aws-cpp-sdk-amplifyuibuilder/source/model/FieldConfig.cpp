@@ -71,7 +71,7 @@ FieldConfig& FieldConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("validations"))
   {
-    Array<JsonView> validationsJsonList = jsonValue.GetArray("validations");
+    Aws::Utils::Array<JsonView> validationsJsonList = jsonValue.GetArray("validations");
     for(unsigned validationsIndex = 0; validationsIndex < validationsJsonList.GetLength(); ++validationsIndex)
     {
       m_validations.push_back(validationsJsonList[validationsIndex].AsObject());
@@ -112,7 +112,7 @@ JsonValue FieldConfig::Jsonize() const
 
   if(m_validationsHasBeenSet)
   {
-   Array<JsonValue> validationsJsonList(m_validations.size());
+   Aws::Utils::Array<JsonValue> validationsJsonList(m_validations.size());
    for(unsigned validationsIndex = 0; validationsIndex < validationsJsonList.GetLength(); ++validationsIndex)
    {
      validationsJsonList[validationsIndex].AsObject(m_validations[validationsIndex].Jsonize());

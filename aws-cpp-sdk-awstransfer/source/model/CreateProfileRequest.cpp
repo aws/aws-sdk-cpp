@@ -38,7 +38,7 @@ Aws::String CreateProfileRequest::SerializePayload() const
 
   if(m_certificateIdsHasBeenSet)
   {
-   Array<JsonValue> certificateIdsJsonList(m_certificateIds.size());
+   Aws::Utils::Array<JsonValue> certificateIdsJsonList(m_certificateIds.size());
    for(unsigned certificateIdsIndex = 0; certificateIdsIndex < certificateIdsJsonList.GetLength(); ++certificateIdsIndex)
    {
      certificateIdsJsonList[certificateIdsIndex].AsString(m_certificateIds[certificateIdsIndex]);
@@ -49,7 +49,7 @@ Aws::String CreateProfileRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

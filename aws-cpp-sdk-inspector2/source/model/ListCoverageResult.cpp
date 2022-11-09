@@ -30,7 +30,7 @@ ListCoverageResult& ListCoverageResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("coveredResources"))
   {
-    Array<JsonView> coveredResourcesJsonList = jsonValue.GetArray("coveredResources");
+    Aws::Utils::Array<JsonView> coveredResourcesJsonList = jsonValue.GetArray("coveredResources");
     for(unsigned coveredResourcesIndex = 0; coveredResourcesIndex < coveredResourcesJsonList.GetLength(); ++coveredResourcesIndex)
     {
       m_coveredResources.push_back(coveredResourcesJsonList[coveredResourcesIndex].AsObject());

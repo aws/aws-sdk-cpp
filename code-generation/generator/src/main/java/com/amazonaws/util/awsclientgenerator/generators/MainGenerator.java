@@ -10,11 +10,14 @@ import com.amazonaws.util.awsclientgenerator.config.ServiceGeneratorConfig;
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.DefaultsModel;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.PartitionsModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOption;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionModifier;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.DefaultClientConfigs;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.CppDefaultsGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.CppPartitionsGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.CppServiceClientTestGenerator;
 import com.amazonaws.util.awsclientgenerator.transform.C2jModelToGeneratorModelTransformer;
 
 import java.io.*;
@@ -50,27 +53,7 @@ public class MainGenerator {
         SdkFileEntry[] apiFiles = clientGenerator.generateSourceFiles(serviceModel);
         String sdkOutputName = String.format("aws-%s-sdk-%s", spec.getLanguageBinding(), serviceModel.getMetadata().getProjectName());
 
-        //we need to add a BOM to accommodate MSFT compilers.
-        //as specified here https://blogs.msdn.microsoft.com/vcblog/2016/02/22/new-options-for-managing-character-sets-in-the-microsoft-cc-compiler/
-        byte[] bom = {(byte)0xEF,(byte)0xBB,(byte)0xBF};
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        try (ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream, StandardCharsets.UTF_8)) {
-            for (SdkFileEntry apiFile : apiFiles) {
-                if (apiFile != null && apiFile.getPathRelativeToRoot() != null) {
-                    ZipEntry zipEntry = new ZipEntry(String.format("%s/%s", sdkOutputName, apiFile.getPathRelativeToRoot()));
-                    zipOutputStream.putNextEntry(zipEntry);
-
-                    if(apiFile.isNeedsByteOrderMark()) {
-                        zipOutputStream.write(bom);
-                    }
-
-                    zipOutputStream.write(apiFile.getSdkFile().toString().getBytes(StandardCharsets.UTF_8));
-                    zipOutputStream.closeEntry();
-                }
-            }
-        }
-
-        return outputStream;
+        return compressFilesToZip(apiFiles, sdkOutputName);
     }
 
     public ByteArrayOutputStream generateDefaultsSourceFromModel(final DefaultClientConfigs model,
@@ -85,12 +68,48 @@ public class MainGenerator {
         SdkFileEntry[] apiFiles = cppDefaultsGenerator.generateSourceFiles(processedModel);
         String componentOutputName = String.format("aws-cpp-sdk-core");
 
+        return compressFilesToZip(apiFiles, componentOutputName);
+    }
+
+    public ByteArrayOutputStream generatePartitionsSourceFromStrBlob(final PartitionsModel partitionsBom,
+                                                                     String languageBinding,
+                                                                     String namespace,
+                                                                     String licenseText) throws Exception {
+        CppPartitionsGenerator cppPartitionsGenerator = new CppPartitionsGenerator();
+        SdkFileEntry[] apiFiles = cppPartitionsGenerator.generateSourceFiles(partitionsBom);
+        String componentOutputName = String.format("aws-cpp-sdk-core");
+
+        return compressFilesToZip(apiFiles, componentOutputName);
+    }
+
+    public ByteArrayOutputStream generateTestSourceFromModel(C2jServiceModel c2jModel,
+                                                             String serviceName, String languageBinding,
+                                                             String namespace, String licenseText) throws Exception {
+        SdkSpec spec = new SdkSpec(languageBinding, serviceName, null);
+        // Transform to ServiceModel
+        ServiceModel serviceModel = new C2jModelToGeneratorModelTransformer(c2jModel, false).convert();
+
+        serviceModel.setRuntimeMajorVersion("@RUNTIME_MAJOR_VERSION@");
+        serviceModel.setRuntimeMajorVersionUpperBound("@RUNTIME_MAJOR_VERSION_UPPER_BOUND@");
+        serviceModel.setRuntimeMinorVersion("@RUNTIME_MINOR_VERSION@");
+        serviceModel.setNamespace(namespace);
+        serviceModel.setLicenseText(licenseText);
+        serviceModel.setEnableVirtualOperations(true);
+
+        spec.setVersion(serviceModel.getMetadata().getApiVersion());
+        CppServiceClientTestGenerator cppTestGenerator = new CppServiceClientTestGenerator();
+        SdkFileEntry[] apiFiles = cppTestGenerator.generateSourceFiles(serviceModel);
+        String componentOutputName = String.format("%s-gen-tests", serviceModel.getMetadata().getProjectName());
+
+        return compressFilesToZip(apiFiles, componentOutputName);
+    }
+
+    private static ByteArrayOutputStream compressFilesToZip(final SdkFileEntry[] apiFiles, final String componentOutputName) throws IOException {
         //we need to add a BOM to accommodate MSFT compilers.
         //as specified here https://blogs.msdn.microsoft.com/vcblog/2016/02/22/new-options-for-managing-character-sets-in-the-microsoft-cc-compiler/
         byte[] bom = {(byte)0xEF,(byte)0xBB,(byte)0xBF};
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         try (ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream, StandardCharsets.UTF_8)) {
-
             for (SdkFileEntry apiFile : apiFiles) {
                 if (apiFile != null && apiFile.getPathRelativeToRoot() != null) {
                     ZipEntry zipEntry = new ZipEntry(String.format("%s/%s", componentOutputName, apiFile.getPathRelativeToRoot()));

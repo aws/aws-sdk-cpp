@@ -54,6 +54,7 @@ file(GLOB HTTP_STANDARD_HEADERS "include/aws/core/http/standard/*.h")
 file(GLOB CONFIG_HEADERS "include/aws/core/config/*.h")
 file(GLOB CONFIG_DEFAULTS_HEADERS "include/aws/core/config/defaults/*.h")
 file(GLOB ENDPOINT_HEADERS "include/aws/core/endpoint/*.h")
+file(GLOB ENDPOINT_INTERNAL_HEADERS "include/aws/core/endpoint/internal/*.h")
 file(GLOB MONITORING_HEADERS "include/aws/core/monitoring/*.h")
 file(GLOB PLATFORM_HEADERS "include/aws/core/platform/*.h")
 file(GLOB UTILS_HEADERS "include/aws/core/utils/*.h")
@@ -86,6 +87,7 @@ file(GLOB HTTP_STANDARD_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/standard
 file(GLOB CONFIG_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/config/*.cpp")
 file(GLOB CONFIG_DEFAULTS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/config/defaults/*.cpp")
 file(GLOB ENDPOINT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/endpoint/*.cpp")
+file(GLOB ENDPOINT_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/endpoint/internal/*.cpp")
 file(GLOB MONITORING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/monitoring/*.cpp")
 file(GLOB UTILS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/*.cpp")
 file(GLOB UTILS_EVENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/event/*.cpp")
@@ -229,6 +231,8 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${HTTP_CLIENT_SOURCE}
     ${CONFIG_SOURCE}
     ${CONFIG_DEFAULTS_SOURCE}
+    ${ENDPOINT_SOURCE}
+    ${ENDPOINT_INTERNAL_SOURCE}
     ${UTILS_BASE64_SOURCE}
     ${UTILS_THREADING_SOURCE}
     ${UTILS_RETRY_SOURCE}
@@ -254,6 +258,8 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${HTTP_STANDARD_HEADERS}
   ${CONFIG_HEADERS}
   ${CONFIG_DEFAULTS_HEADERS}
+  ${ENDPOINT_HEADERS}
+  ${ENDPOINT_INTERNAL_HEADERS}
   ${MONITORING_HEADERS}
   ${HTTP_CLIENT_HEADERS}
   ${PLATFORM_HEADERS}
@@ -370,6 +376,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\config" FILES ${CONFIG_HEADERS})
     source_group("Header Files\\aws\\core\\config\\defaults" FILES ${CONFIG_DEFAULTS_HEADERS})
     source_group("Header Files\\aws\\core\\endpoint" FILES ${ENDPOINT_HEADERS})
+    source_group("Header Files\\aws\\core\\endpoint\\internal" FILES ${ENDPOINT_INTERNAL_HEADERS})
     source_group("Header Files\\aws\\core\\monitoring" FILES ${MONITORING_HEADERS})
     source_group("Header Files\\aws\\core\\platform" FILES ${PLATFORM_HEADERS})
     source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
@@ -419,6 +426,7 @@ if(MSVC)
     source_group("Source Files\\config" FILES ${CONFIG_SOURCE})
     source_group("Source Files\\config\\defaults" FILES ${CONFIG_DEFAULTS_SOURCE})
     source_group("Source Files\\endpoint" FILES ${ENDPOINT_SOURCE})
+    source_group("Source Files\\endpoint\\internal" FILES ${ENDPOINT_INTERNAL_SOURCE})
     source_group("Source Files\\monitoring" FILES ${MONITORING_SOURCE})
     source_group("Source Files\\platform\\windows" FILES ${PLATFORM_WINDOWS_SOURCE})
     source_group("Source Files\\utils" FILES ${UTILS_SOURCE})
@@ -589,6 +597,8 @@ install (FILES ${HTTP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http)
 install (FILES ${HTTP_STANDARD_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/standard)
 install (FILES ${CONFIG_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/)
 install (FILES ${CONFIG_DEFAULTS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/defaults)
+install (FILES ${ENDPOINT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/endpoint)
+install (FILES ${ENDPOINT_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/endpoint/internal)
 install (FILES ${MONITORING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/monitoring)
 install (FILES ${PLATFORM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/platform)
 install (FILES ${UTILS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils)

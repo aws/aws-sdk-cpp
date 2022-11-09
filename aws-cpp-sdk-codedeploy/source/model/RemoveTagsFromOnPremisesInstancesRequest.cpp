@@ -24,7 +24,7 @@ Aws::String RemoveTagsFromOnPremisesInstancesRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -35,7 +35,7 @@ Aws::String RemoveTagsFromOnPremisesInstancesRequest::SerializePayload() const
 
   if(m_instanceNamesHasBeenSet)
   {
-   Array<JsonValue> instanceNamesJsonList(m_instanceNames.size());
+   Aws::Utils::Array<JsonValue> instanceNamesJsonList(m_instanceNames.size());
    for(unsigned instanceNamesIndex = 0; instanceNamesIndex < instanceNamesJsonList.GetLength(); ++instanceNamesIndex)
    {
      instanceNamesJsonList[instanceNamesIndex].AsString(m_instanceNames[instanceNamesIndex]);

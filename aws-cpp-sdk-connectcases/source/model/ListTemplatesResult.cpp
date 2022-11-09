@@ -36,7 +36,7 @@ ListTemplatesResult& ListTemplatesResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("templates"))
   {
-    Array<JsonView> templatesJsonList = jsonValue.GetArray("templates");
+    Aws::Utils::Array<JsonView> templatesJsonList = jsonValue.GetArray("templates");
     for(unsigned templatesIndex = 0; templatesIndex < templatesJsonList.GetLength(); ++templatesIndex)
     {
       m_templates.push_back(templatesJsonList[templatesIndex].AsObject());

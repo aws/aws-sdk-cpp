@@ -116,7 +116,7 @@ MaintenanceWindowRunCommandParameters& MaintenanceWindowRunCommandParameters::op
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
+      Aws::Utils::Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> parameterValueListList;
       parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
@@ -201,7 +201,7 @@ JsonValue MaintenanceWindowRunCommandParameters::Jsonize() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> parameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> parameterValueListJsonList(parametersItem.second.size());
      for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
      {
        parameterValueListJsonList[parameterValueListIndex].AsString(parametersItem.second[parameterValueListIndex]);

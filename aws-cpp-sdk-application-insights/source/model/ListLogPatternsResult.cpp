@@ -36,7 +36,7 @@ ListLogPatternsResult& ListLogPatternsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("LogPatterns"))
   {
-    Array<JsonView> logPatternsJsonList = jsonValue.GetArray("LogPatterns");
+    Aws::Utils::Array<JsonView> logPatternsJsonList = jsonValue.GetArray("LogPatterns");
     for(unsigned logPatternsIndex = 0; logPatternsIndex < logPatternsJsonList.GetLength(); ++logPatternsIndex)
     {
       m_logPatterns.push_back(logPatternsJsonList[logPatternsIndex].AsObject());

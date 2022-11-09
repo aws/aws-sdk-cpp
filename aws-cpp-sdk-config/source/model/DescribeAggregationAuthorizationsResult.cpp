@@ -30,7 +30,7 @@ DescribeAggregationAuthorizationsResult& DescribeAggregationAuthorizationsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AggregationAuthorizations"))
   {
-    Array<JsonView> aggregationAuthorizationsJsonList = jsonValue.GetArray("AggregationAuthorizations");
+    Aws::Utils::Array<JsonView> aggregationAuthorizationsJsonList = jsonValue.GetArray("AggregationAuthorizations");
     for(unsigned aggregationAuthorizationsIndex = 0; aggregationAuthorizationsIndex < aggregationAuthorizationsJsonList.GetLength(); ++aggregationAuthorizationsIndex)
     {
       m_aggregationAuthorizations.push_back(aggregationAuthorizationsJsonList[aggregationAuthorizationsIndex].AsObject());

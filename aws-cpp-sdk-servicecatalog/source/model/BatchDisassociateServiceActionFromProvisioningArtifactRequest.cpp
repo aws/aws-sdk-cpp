@@ -24,7 +24,7 @@ Aws::String BatchDisassociateServiceActionFromProvisioningArtifactRequest::Seria
 
   if(m_serviceActionAssociationsHasBeenSet)
   {
-   Array<JsonValue> serviceActionAssociationsJsonList(m_serviceActionAssociations.size());
+   Aws::Utils::Array<JsonValue> serviceActionAssociationsJsonList(m_serviceActionAssociations.size());
    for(unsigned serviceActionAssociationsIndex = 0; serviceActionAssociationsIndex < serviceActionAssociationsJsonList.GetLength(); ++serviceActionAssociationsIndex)
    {
      serviceActionAssociationsJsonList[serviceActionAssociationsIndex].AsObject(m_serviceActionAssociations[serviceActionAssociationsIndex].Jsonize());

@@ -38,7 +38,7 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   if(m_entitlementsHasBeenSet)
   {
-   Array<JsonValue> entitlementsJsonList(m_entitlements.size());
+   Aws::Utils::Array<JsonValue> entitlementsJsonList(m_entitlements.size());
    for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
    {
      entitlementsJsonList[entitlementsIndex].AsObject(m_entitlements[entitlementsIndex].Jsonize());
@@ -49,7 +49,7 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   if(m_mediaStreamsHasBeenSet)
   {
-   Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
+   Aws::Utils::Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
    for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
    {
      mediaStreamsJsonList[mediaStreamsIndex].AsObject(m_mediaStreams[mediaStreamsIndex].Jsonize());
@@ -66,7 +66,7 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   if(m_outputsHasBeenSet)
   {
-   Array<JsonValue> outputsJsonList(m_outputs.size());
+   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
    for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
    {
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
@@ -89,7 +89,7 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
@@ -100,7 +100,7 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   if(m_vpcInterfacesHasBeenSet)
   {
-   Array<JsonValue> vpcInterfacesJsonList(m_vpcInterfaces.size());
+   Aws::Utils::Array<JsonValue> vpcInterfacesJsonList(m_vpcInterfaces.size());
    for(unsigned vpcInterfacesIndex = 0; vpcInterfacesIndex < vpcInterfacesJsonList.GetLength(); ++vpcInterfacesIndex)
    {
      vpcInterfacesJsonList[vpcInterfacesIndex].AsObject(m_vpcInterfaces[vpcInterfacesIndex].Jsonize());

@@ -30,7 +30,7 @@ ListSkillsStoreSkillsByCategoryResult& ListSkillsStoreSkillsByCategoryResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SkillsStoreSkills"))
   {
-    Array<JsonView> skillsStoreSkillsJsonList = jsonValue.GetArray("SkillsStoreSkills");
+    Aws::Utils::Array<JsonView> skillsStoreSkillsJsonList = jsonValue.GetArray("SkillsStoreSkills");
     for(unsigned skillsStoreSkillsIndex = 0; skillsStoreSkillsIndex < skillsStoreSkillsJsonList.GetLength(); ++skillsStoreSkillsIndex)
     {
       m_skillsStoreSkills.push_back(skillsStoreSkillsJsonList[skillsStoreSkillsIndex].AsObject());

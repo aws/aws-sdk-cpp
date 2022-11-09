@@ -49,7 +49,7 @@ Aws::String SearchProductsAsAdminRequest::SerializePayload() const
    JsonValue filtersJsonMap;
    for(auto& filtersItem : m_filters)
    {
-     Array<JsonValue> productViewFilterValuesJsonList(filtersItem.second.size());
+     Aws::Utils::Array<JsonValue> productViewFilterValuesJsonList(filtersItem.second.size());
      for(unsigned productViewFilterValuesIndex = 0; productViewFilterValuesIndex < productViewFilterValuesJsonList.GetLength(); ++productViewFilterValuesIndex)
      {
        productViewFilterValuesJsonList[productViewFilterValuesIndex].AsString(filtersItem.second[productViewFilterValuesIndex]);

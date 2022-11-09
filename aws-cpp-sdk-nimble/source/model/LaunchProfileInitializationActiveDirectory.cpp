@@ -45,7 +45,7 @@ LaunchProfileInitializationActiveDirectory& LaunchProfileInitializationActiveDir
 {
   if(jsonValue.ValueExists("computerAttributes"))
   {
-    Array<JsonView> computerAttributesJsonList = jsonValue.GetArray("computerAttributes");
+    Aws::Utils::Array<JsonView> computerAttributesJsonList = jsonValue.GetArray("computerAttributes");
     for(unsigned computerAttributesIndex = 0; computerAttributesIndex < computerAttributesJsonList.GetLength(); ++computerAttributesIndex)
     {
       m_computerAttributes.push_back(computerAttributesJsonList[computerAttributesIndex].AsObject());
@@ -69,7 +69,7 @@ LaunchProfileInitializationActiveDirectory& LaunchProfileInitializationActiveDir
 
   if(jsonValue.ValueExists("dnsIpAddresses"))
   {
-    Array<JsonView> dnsIpAddressesJsonList = jsonValue.GetArray("dnsIpAddresses");
+    Aws::Utils::Array<JsonView> dnsIpAddressesJsonList = jsonValue.GetArray("dnsIpAddresses");
     for(unsigned dnsIpAddressesIndex = 0; dnsIpAddressesIndex < dnsIpAddressesJsonList.GetLength(); ++dnsIpAddressesIndex)
     {
       m_dnsIpAddresses.push_back(dnsIpAddressesJsonList[dnsIpAddressesIndex].AsString());
@@ -107,7 +107,7 @@ JsonValue LaunchProfileInitializationActiveDirectory::Jsonize() const
 
   if(m_computerAttributesHasBeenSet)
   {
-   Array<JsonValue> computerAttributesJsonList(m_computerAttributes.size());
+   Aws::Utils::Array<JsonValue> computerAttributesJsonList(m_computerAttributes.size());
    for(unsigned computerAttributesIndex = 0; computerAttributesIndex < computerAttributesJsonList.GetLength(); ++computerAttributesIndex)
    {
      computerAttributesJsonList[computerAttributesIndex].AsObject(m_computerAttributes[computerAttributesIndex].Jsonize());
@@ -130,7 +130,7 @@ JsonValue LaunchProfileInitializationActiveDirectory::Jsonize() const
 
   if(m_dnsIpAddressesHasBeenSet)
   {
-   Array<JsonValue> dnsIpAddressesJsonList(m_dnsIpAddresses.size());
+   Aws::Utils::Array<JsonValue> dnsIpAddressesJsonList(m_dnsIpAddresses.size());
    for(unsigned dnsIpAddressesIndex = 0; dnsIpAddressesIndex < dnsIpAddressesJsonList.GetLength(); ++dnsIpAddressesIndex)
    {
      dnsIpAddressesJsonList[dnsIpAddressesIndex].AsString(m_dnsIpAddresses[dnsIpAddressesIndex]);

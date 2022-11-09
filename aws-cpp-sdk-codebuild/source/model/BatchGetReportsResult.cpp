@@ -30,7 +30,7 @@ BatchGetReportsResult& BatchGetReportsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("reports"))
   {
-    Array<JsonView> reportsJsonList = jsonValue.GetArray("reports");
+    Aws::Utils::Array<JsonView> reportsJsonList = jsonValue.GetArray("reports");
     for(unsigned reportsIndex = 0; reportsIndex < reportsJsonList.GetLength(); ++reportsIndex)
     {
       m_reports.push_back(reportsJsonList[reportsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetReportsResult& BatchGetReportsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("reportsNotFound"))
   {
-    Array<JsonView> reportsNotFoundJsonList = jsonValue.GetArray("reportsNotFound");
+    Aws::Utils::Array<JsonView> reportsNotFoundJsonList = jsonValue.GetArray("reportsNotFound");
     for(unsigned reportsNotFoundIndex = 0; reportsNotFoundIndex < reportsNotFoundJsonList.GetLength(); ++reportsNotFoundIndex)
     {
       m_reportsNotFound.push_back(reportsNotFoundJsonList[reportsNotFoundIndex].AsString());

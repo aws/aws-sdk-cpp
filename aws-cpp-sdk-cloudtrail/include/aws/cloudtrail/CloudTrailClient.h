@@ -39,27 +39,55 @@ namespace CloudTrail
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudTrailClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudTrailClient(const Aws::CloudTrail::CloudTrailClientConfiguration& clientConfiguration = Aws::CloudTrail::CloudTrailClientConfiguration(),
+                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudTrailEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudTrailClient(const Aws::Auth::AWSCredentials& credentials,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudTrailEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CloudTrail::CloudTrailClientConfiguration& clientConfiguration = Aws::CloudTrail::CloudTrailClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudTrailClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudTrailEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CloudTrail::CloudTrailClientConfiguration& clientConfiguration = Aws::CloudTrail::CloudTrailClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudTrailClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudTrailClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CloudTrailClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CloudTrailClient();
 
 
@@ -195,6 +223,24 @@ namespace CloudTrail
         virtual void DeleteTrailAsync(const Model::DeleteTrailRequest& request, const DeleteTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes CloudTrail delegated administrator permissions from a member account
+         * in an organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterOrganizationDelegatedAdminOutcome DeregisterOrganizationDelegatedAdmin(const Model::DeregisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeregisterOrganizationDelegatedAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterOrganizationDelegatedAdminOutcomeCallable DeregisterOrganizationDelegatedAdminCallable(const Model::DeregisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * An Async wrapper for DeregisterOrganizationDelegatedAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterOrganizationDelegatedAdminAsync(const Model::DeregisterOrganizationDelegatedAdminRequest& request, const DeregisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns metadata about a query, including query run time in milliseconds,
          * number of events scanned and matched, and query status. You must specify an ARN
          * for <code>EventDataStore</code>, and a value for
@@ -233,9 +279,12 @@ namespace CloudTrail
         virtual void DescribeTrailsAsync(const Model::DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the specified CloudTrail service-linked channel. Amazon Web Services
-         * services create service-linked channels to view CloudTrail events.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns information about a specific channel. Amazon Web Services services
+         * create service-linked channels to get information about CloudTrail events on
+         * your behalf. For more information about service-linked channels, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+         * service-linked channels for CloudTrail by using the CLI</a>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">AWS
          * API Reference</a></p>
          */
@@ -299,7 +348,7 @@ namespace CloudTrail
         virtual void GetEventSelectorsAsync(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns information for the specified import. </p><p><h3>See Also:</h3>   <a
+         * <p> Returns information about a specific import. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">AWS
          * API Reference</a></p>
          */
@@ -399,7 +448,13 @@ namespace CloudTrail
         virtual void GetTrailStatusAsync(const Model::GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns all CloudTrail channels. </p><p><h3>See Also:</h3>   <a
+         * <p> Lists the channels in the current account, and their source names. Amazon
+         * Web Services services create service-linked channels get information about
+         * CloudTrail events on your behalf. For more information about service-linked
+         * channels, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+         * service-linked channels for CloudTrail by using the CLI</a>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">AWS
          * API Reference</a></p>
          */
@@ -661,6 +716,24 @@ namespace CloudTrail
         virtual void PutInsightSelectorsAsync(const Model::PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Registers an organization’s member account as the CloudTrail delegated
+         * administrator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterOrganizationDelegatedAdminOutcome RegisterOrganizationDelegatedAdmin(const Model::RegisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * A Callable wrapper for RegisterOrganizationDelegatedAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterOrganizationDelegatedAdminOutcomeCallable RegisterOrganizationDelegatedAdminCallable(const Model::RegisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * An Async wrapper for RegisterOrganizationDelegatedAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterOrganizationDelegatedAdminAsync(const Model::RegisterOrganizationDelegatedAdminRequest& request, const RegisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes the specified tags from a trail or event data store.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
@@ -701,10 +774,18 @@ namespace CloudTrail
 
         /**
          * <p> Starts an import of logged trail events from a source S3 bucket to a
-         * destination event data store. </p> <p> When you start a new import, the
-         * <code>Destinations</code> and <code>ImportSource</code> parameters are required.
-         * Before starting a new import, disable any access control lists (ACLs) attached
-         * to the source S3 bucket. For more information about disabling ACLs, see <a
+         * destination event data store. By default, CloudTrail only imports events
+         * contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
+         * inside the <code>CloudTrail</code> prefix, and does not check prefixes for other
+         * Amazon Web Services services. If you want to import CloudTrail events contained
+         * in another prefix, you must include the prefix in the
+         * <code>S3LocationUri</code>. For more considerations about importing trail
+         * events, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations">Considerations</a>.
+         * </p> <p> When you start a new import, the <code>Destinations</code> and
+         * <code>ImportSource</code> parameters are required. Before starting a new import,
+         * disable any access control lists (ACLs) attached to the source S3 bucket. For
+         * more information about disabling ACLs, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
          * ownership of objects and disabling ACLs for your bucket</a>. </p> <p> When you
          * retry an import, the <code>ImportID</code> parameter is required. </p><p><h3>See
@@ -747,8 +828,9 @@ namespace CloudTrail
 
         /**
          * <p>Starts a CloudTrail Lake query. The required <code>QueryStatement</code>
-         * parameter provides your SQL query, enclosed in single quotation
-         * marks.</p><p><h3>See Also:</h3>   <a
+         * parameter provides your SQL query, enclosed in single quotation marks. Use the
+         * optional <code>DeliveryS3Uri</code> parameter to deliver the query results to an
+         * S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartQuery">AWS
          * API Reference</a></p>
          */
@@ -856,12 +938,13 @@ namespace CloudTrail
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudTrailEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const CloudTrailClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CloudTrailClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CloudTrailEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudTrail

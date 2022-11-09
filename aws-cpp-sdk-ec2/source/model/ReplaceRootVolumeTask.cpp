@@ -27,7 +27,11 @@ ReplaceRootVolumeTask::ReplaceRootVolumeTask() :
     m_taskStateHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_completeTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_deleteReplacedRootVolume(false),
+    m_deleteReplacedRootVolumeHasBeenSet(false)
 {
 }
 
@@ -38,7 +42,11 @@ ReplaceRootVolumeTask::ReplaceRootVolumeTask(const XmlNode& xmlNode) :
     m_taskStateHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_completeTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_deleteReplacedRootVolume(false),
+    m_deleteReplacedRootVolumeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -91,6 +99,24 @@ ReplaceRootVolumeTask& ReplaceRootVolumeTask::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode imageIdNode = resultNode.FirstChild("imageId");
+    if(!imageIdNode.IsNull())
+    {
+      m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
+      m_imageIdHasBeenSet = true;
+    }
+    XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
+    if(!snapshotIdNode.IsNull())
+    {
+      m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
+      m_snapshotIdHasBeenSet = true;
+    }
+    XmlNode deleteReplacedRootVolumeNode = resultNode.FirstChild("deleteReplacedRootVolume");
+    if(!deleteReplacedRootVolumeNode.IsNull())
+    {
+      m_deleteReplacedRootVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteReplacedRootVolumeNode.GetText()).c_str()).c_str());
+      m_deleteReplacedRootVolumeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -134,6 +160,21 @@ void ReplaceRootVolumeTask::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
+  if(m_imageIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
+
+  if(m_snapshotIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
+  }
+
+  if(m_deleteReplacedRootVolumeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeleteReplacedRootVolume=" << std::boolalpha << m_deleteReplacedRootVolume << "&";
+  }
+
 }
 
 void ReplaceRootVolumeTask::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -167,6 +208,18 @@ void ReplaceRootVolumeTask::OutputToStream(Aws::OStream& oStream, const char* lo
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_imageIdHasBeenSet)
+  {
+      oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
+  if(m_snapshotIdHasBeenSet)
+  {
+      oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
+  }
+  if(m_deleteReplacedRootVolumeHasBeenSet)
+  {
+      oStream << location << ".DeleteReplacedRootVolume=" << std::boolalpha << m_deleteReplacedRootVolume << "&";
   }
 }
 

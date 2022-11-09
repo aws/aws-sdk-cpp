@@ -16,6 +16,19 @@ function(get_map_element KEY VALUE_VAR)
     set(${VALUE_VAR} "" PARENT_SCOPE)
 endfunction(get_map_element)
 
+function(get_multimap_element KEY VALUE_VAR)
+    set(${VALUE_VAR} "" PARENT_SCOPE)
+    set(RETURN_LIST "")
+    foreach(ELEMENT_PAIR ${ARGN})
+        STRING(REGEX REPLACE "([^:]+):.*" "\\1" KEY_RESULT ${ELEMENT_PAIR})
+        if(${KEY_RESULT} STREQUAL ${KEY} )
+            STRING(REGEX REPLACE "[^:]+:(.*)" "\\1" VALUE_RESULT ${ELEMENT_PAIR})
+            list(APPEND RETURN_LIST "${VALUE_RESULT}")
+        endif()
+    endforeach()
+    set(${VALUE_VAR} "${RETURN_LIST}" PARENT_SCOPE)
+endfunction(get_multimap_element)
+
 # a bunch of key-value retrieval functions for the list-maps we defined above
 function(get_c2j_date_for_service SERVICE_NAME C2J_DATE_VAR)
     get_map_element(${SERVICE_NAME} TEMP_VAR ${C2J_LIST})
@@ -32,7 +45,7 @@ function(get_c2j_name_for_service SERVICE_NAME C2J_NAME_VAR)
 endfunction()
 
 function(get_test_projects_for_service SERVICE_NAME TEST_PROJECT_NAME_VAR)
-    get_map_element(${SERVICE_NAME} TEMP_VAR ${SDK_TEST_PROJECT_LIST})
+    get_multimap_element(${SERVICE_NAME} TEMP_VAR ${SDK_TEST_PROJECT_LIST})
     set(${TEST_PROJECT_NAME_VAR} "${TEMP_VAR}" PARENT_SCOPE)
 endfunction()
 
@@ -161,6 +174,20 @@ list(APPEND SDK_TEST_PROJECT_LIST "text-to-speech:aws-cpp-sdk-text-to-speech-tes
 list(APPEND SDK_TEST_PROJECT_LIST "transcribestreaming:aws-cpp-sdk-transcribestreaming-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "eventbridge:aws-cpp-sdk-eventbridge-tests")
 
+build_sdk_list()
+
+if(EXISTS "${CMAKE_SOURCE_DIR}/generated")
+    if(EXISTS "${CMAKE_SOURCE_DIR}/generated/tests")
+        foreach(GENERATED_C2J_TEST IN LISTS C2J_LIST)
+            STRING(REGEX REPLACE "([^:]+):.*" "\\1" GENERATED_C2J_TEST_RESULT ${GENERATED_C2J_TEST})
+
+            if(EXISTS "${CMAKE_SOURCE_DIR}/generated/tests/${GENERATED_C2J_TEST_RESULT}-gen-tests")
+                list(APPEND SDK_TEST_PROJECT_LIST "${GENERATED_C2J_TEST_RESULT}:generated/tests/${GENERATED_C2J_TEST_RESULT}-gen-tests")
+            endif()
+        endforeach()
+    endif()
+endif()
+
 set(SDK_DEPENDENCY_LIST "")
 list(APPEND SDK_DEPENDENCY_LIST "access-management:iam,cognito-identity,core")
 list(APPEND SDK_DEPENDENCY_LIST "identity-management:cognito-identity,sts,core")
@@ -178,8 +205,6 @@ list(APPEND TEST_DEPENDENCY_LIST "s3control:s3,access-management,cognito-identit
 list(APPEND TEST_DEPENDENCY_LIST "sqs:access-management,cognito-identity,iam,core")
 list(APPEND TEST_DEPENDENCY_LIST "text-to-speech:polly,core")
 list(APPEND TEST_DEPENDENCY_LIST "transfer:s3,core")
-
-build_sdk_list()
 
 # make a list of the generated clients
 set(GENERATED_SERVICE_LIST "")

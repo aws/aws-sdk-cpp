@@ -98,32 +98,38 @@ namespace Model
 
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline const ReferenceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline void SetType(const ReferenceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline void SetType(ReferenceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline Reference& WithType(const ReferenceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline Reference& WithType(ReferenceType&& value) { SetType(std::move(value)); return *this;}
 

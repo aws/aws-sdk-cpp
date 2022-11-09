@@ -36,7 +36,7 @@ StartRemediationExecutionResult& StartRemediationExecutionResult::operator =(con
 
   if(jsonValue.ValueExists("FailedItems"))
   {
-    Array<JsonView> failedItemsJsonList = jsonValue.GetArray("FailedItems");
+    Aws::Utils::Array<JsonView> failedItemsJsonList = jsonValue.GetArray("FailedItems");
     for(unsigned failedItemsIndex = 0; failedItemsIndex < failedItemsJsonList.GetLength(); ++failedItemsIndex)
     {
       m_failedItems.push_back(failedItemsJsonList[failedItemsIndex].AsObject());

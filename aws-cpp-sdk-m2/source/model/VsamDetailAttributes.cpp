@@ -47,7 +47,7 @@ VsamDetailAttributes& VsamDetailAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("alternateKeys"))
   {
-    Array<JsonView> alternateKeysJsonList = jsonValue.GetArray("alternateKeys");
+    Aws::Utils::Array<JsonView> alternateKeysJsonList = jsonValue.GetArray("alternateKeys");
     for(unsigned alternateKeysIndex = 0; alternateKeysIndex < alternateKeysJsonList.GetLength(); ++alternateKeysIndex)
     {
       m_alternateKeys.push_back(alternateKeysJsonList[alternateKeysIndex].AsObject());
@@ -99,7 +99,7 @@ JsonValue VsamDetailAttributes::Jsonize() const
 
   if(m_alternateKeysHasBeenSet)
   {
-   Array<JsonValue> alternateKeysJsonList(m_alternateKeys.size());
+   Aws::Utils::Array<JsonValue> alternateKeysJsonList(m_alternateKeys.size());
    for(unsigned alternateKeysIndex = 0; alternateKeysIndex < alternateKeysJsonList.GetLength(); ++alternateKeysIndex)
    {
      alternateKeysJsonList[alternateKeysIndex].AsObject(m_alternateKeys[alternateKeysIndex].Jsonize());

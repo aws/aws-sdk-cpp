@@ -51,7 +51,7 @@ Query& Query::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Pages"))
   {
-    Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
+    Aws::Utils::Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
     for(unsigned pagesIndex = 0; pagesIndex < pagesJsonList.GetLength(); ++pagesIndex)
     {
       m_pages.push_back(pagesJsonList[pagesIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue Query::Jsonize() const
 
   if(m_pagesHasBeenSet)
   {
-   Array<JsonValue> pagesJsonList(m_pages.size());
+   Aws::Utils::Array<JsonValue> pagesJsonList(m_pages.size());
    for(unsigned pagesIndex = 0; pagesIndex < pagesJsonList.GetLength(); ++pagesIndex)
    {
      pagesJsonList[pagesIndex].AsString(m_pages[pagesIndex]);

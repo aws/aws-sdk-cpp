@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Details of an inbound connection.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an inbound cross-cluster connection for Amazon OpenSearch Service.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+   * search for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InboundConnection">AWS
    * API Reference</a></p>
    */
@@ -40,153 +43,135 @@ namespace Model
 
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch
-     * domain. </p>
+     * <p>Information about the source (local) domain.</p>
      */
     inline const DomainInformationContainer& GetLocalDomainInfo() const{ return m_localDomainInfo; }
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch
-     * domain. </p>
+     * <p>Information about the source (local) domain.</p>
      */
     inline bool LocalDomainInfoHasBeenSet() const { return m_localDomainInfoHasBeenSet; }
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch
-     * domain. </p>
+     * <p>Information about the source (local) domain.</p>
      */
     inline void SetLocalDomainInfo(const DomainInformationContainer& value) { m_localDomainInfoHasBeenSet = true; m_localDomainInfo = value; }
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch
-     * domain. </p>
+     * <p>Information about the source (local) domain.</p>
      */
     inline void SetLocalDomainInfo(DomainInformationContainer&& value) { m_localDomainInfoHasBeenSet = true; m_localDomainInfo = std::move(value); }
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch
-     * domain. </p>
+     * <p>Information about the source (local) domain.</p>
      */
     inline InboundConnection& WithLocalDomainInfo(const DomainInformationContainer& value) { SetLocalDomainInfo(value); return *this;}
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch
-     * domain. </p>
+     * <p>Information about the source (local) domain.</p>
      */
     inline InboundConnection& WithLocalDomainInfo(DomainInformationContainer&& value) { SetLocalDomainInfo(std::move(value)); return *this;}
 
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch
-     * domain. </p>
+     * <p>Information about the destination (remote) domain.</p>
      */
     inline const DomainInformationContainer& GetRemoteDomainInfo() const{ return m_remoteDomainInfo; }
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch
-     * domain. </p>
+     * <p>Information about the destination (remote) domain.</p>
      */
     inline bool RemoteDomainInfoHasBeenSet() const { return m_remoteDomainInfoHasBeenSet; }
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch
-     * domain. </p>
+     * <p>Information about the destination (remote) domain.</p>
      */
     inline void SetRemoteDomainInfo(const DomainInformationContainer& value) { m_remoteDomainInfoHasBeenSet = true; m_remoteDomainInfo = value; }
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch
-     * domain. </p>
+     * <p>Information about the destination (remote) domain.</p>
      */
     inline void SetRemoteDomainInfo(DomainInformationContainer&& value) { m_remoteDomainInfoHasBeenSet = true; m_remoteDomainInfo = std::move(value); }
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch
-     * domain. </p>
+     * <p>Information about the destination (remote) domain.</p>
      */
     inline InboundConnection& WithRemoteDomainInfo(const DomainInformationContainer& value) { SetRemoteDomainInfo(value); return *this;}
 
     /**
-     * <p>The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch
-     * domain. </p>
+     * <p>Information about the destination (remote) domain.</p>
      */
     inline InboundConnection& WithRemoteDomainInfo(DomainInformationContainer&& value) { SetRemoteDomainInfo(std::move(value)); return *this;}
 
 
     /**
-     * <p>The connection ID for the inbound cross-cluster connection.</p>
+     * <p>The unique identifier of the connection.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
     /**
-     * <p>The connection ID for the inbound cross-cluster connection.</p>
+     * <p>The unique identifier of the connection.</p>
      */
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
 
     /**
-     * <p>The connection ID for the inbound cross-cluster connection.</p>
+     * <p>The unique identifier of the connection.</p>
      */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
-     * <p>The connection ID for the inbound cross-cluster connection.</p>
+     * <p>The unique identifier of the connection.</p>
      */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
-     * <p>The connection ID for the inbound cross-cluster connection.</p>
+     * <p>The unique identifier of the connection.</p>
      */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
 
     /**
-     * <p>The connection ID for the inbound cross-cluster connection.</p>
+     * <p>The unique identifier of the connection.</p>
      */
     inline InboundConnection& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     /**
-     * <p>The connection ID for the inbound cross-cluster connection.</p>
+     * <p>The unique identifier of the connection.</p>
      */
     inline InboundConnection& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The connection ID for the inbound cross-cluster connection.</p>
+     * <p>The unique identifier of the connection.</p>
      */
     inline InboundConnection& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
 
     /**
-     * <p>The <code> <a>InboundConnectionStatus</a> </code> for the outbound
-     * connection. </p>
+     * <p>The current status of the connection.</p>
      */
     inline const InboundConnectionStatus& GetConnectionStatus() const{ return m_connectionStatus; }
 
     /**
-     * <p>The <code> <a>InboundConnectionStatus</a> </code> for the outbound
-     * connection. </p>
+     * <p>The current status of the connection.</p>
      */
     inline bool ConnectionStatusHasBeenSet() const { return m_connectionStatusHasBeenSet; }
 
     /**
-     * <p>The <code> <a>InboundConnectionStatus</a> </code> for the outbound
-     * connection. </p>
+     * <p>The current status of the connection.</p>
      */
     inline void SetConnectionStatus(const InboundConnectionStatus& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
 
     /**
-     * <p>The <code> <a>InboundConnectionStatus</a> </code> for the outbound
-     * connection. </p>
+     * <p>The current status of the connection.</p>
      */
     inline void SetConnectionStatus(InboundConnectionStatus&& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = std::move(value); }
 
     /**
-     * <p>The <code> <a>InboundConnectionStatus</a> </code> for the outbound
-     * connection. </p>
+     * <p>The current status of the connection.</p>
      */
     inline InboundConnection& WithConnectionStatus(const InboundConnectionStatus& value) { SetConnectionStatus(value); return *this;}
 
     /**
-     * <p>The <code> <a>InboundConnectionStatus</a> </code> for the outbound
-     * connection. </p>
+     * <p>The current status of the connection.</p>
      */
     inline InboundConnection& WithConnectionStatus(InboundConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
 

@@ -30,7 +30,7 @@ BatchDisassociateResourcesFromCustomLineItemResult& BatchDisassociateResourcesFr
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SuccessfullyDisassociatedResources"))
   {
-    Array<JsonView> successfullyDisassociatedResourcesJsonList = jsonValue.GetArray("SuccessfullyDisassociatedResources");
+    Aws::Utils::Array<JsonView> successfullyDisassociatedResourcesJsonList = jsonValue.GetArray("SuccessfullyDisassociatedResources");
     for(unsigned successfullyDisassociatedResourcesIndex = 0; successfullyDisassociatedResourcesIndex < successfullyDisassociatedResourcesJsonList.GetLength(); ++successfullyDisassociatedResourcesIndex)
     {
       m_successfullyDisassociatedResources.push_back(successfullyDisassociatedResourcesJsonList[successfullyDisassociatedResourcesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchDisassociateResourcesFromCustomLineItemResult& BatchDisassociateResourcesFr
 
   if(jsonValue.ValueExists("FailedDisassociatedResources"))
   {
-    Array<JsonView> failedDisassociatedResourcesJsonList = jsonValue.GetArray("FailedDisassociatedResources");
+    Aws::Utils::Array<JsonView> failedDisassociatedResourcesJsonList = jsonValue.GetArray("FailedDisassociatedResources");
     for(unsigned failedDisassociatedResourcesIndex = 0; failedDisassociatedResourcesIndex < failedDisassociatedResourcesJsonList.GetLength(); ++failedDisassociatedResourcesIndex)
     {
       m_failedDisassociatedResources.push_back(failedDisassociatedResourcesJsonList[failedDisassociatedResourcesIndex].AsObject());

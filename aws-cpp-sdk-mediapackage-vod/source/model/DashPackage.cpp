@@ -49,7 +49,7 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("dashManifests"))
   {
-    Array<JsonView> dashManifestsJsonList = jsonValue.GetArray("dashManifests");
+    Aws::Utils::Array<JsonView> dashManifestsJsonList = jsonValue.GetArray("dashManifests");
     for(unsigned dashManifestsIndex = 0; dashManifestsIndex < dashManifestsJsonList.GetLength(); ++dashManifestsIndex)
     {
       m_dashManifests.push_back(dashManifestsJsonList[dashManifestsIndex].AsObject());
@@ -73,7 +73,7 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("periodTriggers"))
   {
-    Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
+    Aws::Utils::Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
     for(unsigned periodTriggersIndex = 0; periodTriggersIndex < periodTriggersJsonList.GetLength(); ++periodTriggersIndex)
     {
       m_periodTriggers.push_back(__PeriodTriggersElementMapper::Get__PeriodTriggersElementForName(periodTriggersJsonList[periodTriggersIndex].AsString()));
@@ -104,7 +104,7 @@ JsonValue DashPackage::Jsonize() const
 
   if(m_dashManifestsHasBeenSet)
   {
-   Array<JsonValue> dashManifestsJsonList(m_dashManifests.size());
+   Aws::Utils::Array<JsonValue> dashManifestsJsonList(m_dashManifests.size());
    for(unsigned dashManifestsIndex = 0; dashManifestsIndex < dashManifestsJsonList.GetLength(); ++dashManifestsIndex)
    {
      dashManifestsJsonList[dashManifestsIndex].AsObject(m_dashManifests[dashManifestsIndex].Jsonize());
@@ -127,7 +127,7 @@ JsonValue DashPackage::Jsonize() const
 
   if(m_periodTriggersHasBeenSet)
   {
-   Array<JsonValue> periodTriggersJsonList(m_periodTriggers.size());
+   Aws::Utils::Array<JsonValue> periodTriggersJsonList(m_periodTriggers.size());
    for(unsigned periodTriggersIndex = 0; periodTriggersIndex < periodTriggersJsonList.GetLength(); ++periodTriggersIndex)
    {
      periodTriggersJsonList[periodTriggersIndex].AsString(__PeriodTriggersElementMapper::GetNameFor__PeriodTriggersElement(m_periodTriggers[periodTriggersIndex]));

@@ -25,6 +25,7 @@ CreateTransformJobRequest::CreateTransformJobRequest() :
     m_environmentHasBeenSet(false),
     m_transformInputHasBeenSet(false),
     m_transformOutputHasBeenSet(false),
+    m_dataCaptureConfigHasBeenSet(false),
     m_transformResourcesHasBeenSet(false),
     m_dataProcessingHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -94,6 +95,12 @@ Aws::String CreateTransformJobRequest::SerializePayload() const
 
   }
 
+  if(m_dataCaptureConfigHasBeenSet)
+  {
+   payload.WithObject("DataCaptureConfig", m_dataCaptureConfig.Jsonize());
+
+  }
+
   if(m_transformResourcesHasBeenSet)
   {
    payload.WithObject("TransformResources", m_transformResources.Jsonize());
@@ -108,7 +115,7 @@ Aws::String CreateTransformJobRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

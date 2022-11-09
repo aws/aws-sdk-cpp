@@ -42,7 +42,7 @@ CmafAdditionalManifest& CmafAdditionalManifest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("selectedOutputs"))
   {
-    Array<JsonView> selectedOutputsJsonList = jsonValue.GetArray("selectedOutputs");
+    Aws::Utils::Array<JsonView> selectedOutputsJsonList = jsonValue.GetArray("selectedOutputs");
     for(unsigned selectedOutputsIndex = 0; selectedOutputsIndex < selectedOutputsJsonList.GetLength(); ++selectedOutputsIndex)
     {
       m_selectedOutputs.push_back(selectedOutputsJsonList[selectedOutputsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue CmafAdditionalManifest::Jsonize() const
 
   if(m_selectedOutputsHasBeenSet)
   {
-   Array<JsonValue> selectedOutputsJsonList(m_selectedOutputs.size());
+   Aws::Utils::Array<JsonValue> selectedOutputsJsonList(m_selectedOutputs.size());
    for(unsigned selectedOutputsIndex = 0; selectedOutputsIndex < selectedOutputsJsonList.GetLength(); ++selectedOutputsIndex)
    {
      selectedOutputsJsonList[selectedOutputsIndex].AsString(m_selectedOutputs[selectedOutputsIndex]);

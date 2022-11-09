@@ -30,7 +30,7 @@ Aws::String DescribeLayersRequest::SerializePayload() const
 
   if(m_layerIdsHasBeenSet)
   {
-   Array<JsonValue> layerIdsJsonList(m_layerIds.size());
+   Aws::Utils::Array<JsonValue> layerIdsJsonList(m_layerIds.size());
    for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
    {
      layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);

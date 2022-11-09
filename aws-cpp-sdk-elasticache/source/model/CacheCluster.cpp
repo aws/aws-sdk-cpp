@@ -57,7 +57,11 @@ CacheCluster::CacheCluster() :
     m_aRNHasBeenSet(false),
     m_replicationGroupLogDeliveryEnabled(false),
     m_replicationGroupLogDeliveryEnabledHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
+    m_ipDiscovery(IpDiscovery::NOT_SET),
+    m_ipDiscoveryHasBeenSet(false)
 {
 }
 
@@ -98,7 +102,11 @@ CacheCluster::CacheCluster(const XmlNode& xmlNode) :
     m_aRNHasBeenSet(false),
     m_replicationGroupLogDeliveryEnabled(false),
     m_replicationGroupLogDeliveryEnabledHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
+    m_ipDiscovery(IpDiscovery::NOT_SET),
+    m_ipDiscoveryHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -313,6 +321,18 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
 
       m_logDeliveryConfigurationsHasBeenSet = true;
     }
+    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
+    if(!networkTypeNode.IsNull())
+    {
+      m_networkType = NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText()).c_str()).c_str());
+      m_networkTypeHasBeenSet = true;
+    }
+    XmlNode ipDiscoveryNode = resultNode.FirstChild("IpDiscovery");
+    if(!ipDiscoveryNode.IsNull())
+    {
+      m_ipDiscovery = IpDiscoveryMapper::GetIpDiscoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipDiscoveryNode.GetText()).c_str()).c_str());
+      m_ipDiscoveryHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -502,6 +522,16 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
       }
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+  }
+
+  if(m_ipDiscoveryHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+  }
+
 }
 
 void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -657,6 +687,14 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
         logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
         item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
       }
+  }
+  if(m_networkTypeHasBeenSet)
+  {
+      oStream << location << ".NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+  }
+  if(m_ipDiscoveryHasBeenSet)
+  {
+      oStream << location << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
   }
 }
 

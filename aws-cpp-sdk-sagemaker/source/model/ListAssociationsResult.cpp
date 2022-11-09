@@ -30,7 +30,7 @@ ListAssociationsResult& ListAssociationsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AssociationSummaries"))
   {
-    Array<JsonView> associationSummariesJsonList = jsonValue.GetArray("AssociationSummaries");
+    Aws::Utils::Array<JsonView> associationSummariesJsonList = jsonValue.GetArray("AssociationSummaries");
     for(unsigned associationSummariesIndex = 0; associationSummariesIndex < associationSummariesJsonList.GetLength(); ++associationSummariesIndex)
     {
       m_associationSummaries.push_back(associationSummariesJsonList[associationSummariesIndex].AsObject());

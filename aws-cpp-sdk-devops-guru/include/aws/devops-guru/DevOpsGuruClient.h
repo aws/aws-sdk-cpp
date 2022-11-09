@@ -38,27 +38,55 @@ namespace DevOpsGuru
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DevOpsGuruClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DevOpsGuruClient(const Aws::DevOpsGuru::DevOpsGuruClientConfiguration& clientConfiguration = Aws::DevOpsGuru::DevOpsGuruClientConfiguration(),
+                         std::shared_ptr<DevOpsGuruEndpointProviderBase> endpointProvider = Aws::MakeShared<DevOpsGuruEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DevOpsGuruClient(const Aws::Auth::AWSCredentials& credentials,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<DevOpsGuruEndpointProviderBase> endpointProvider = Aws::MakeShared<DevOpsGuruEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::DevOpsGuru::DevOpsGuruClientConfiguration& clientConfiguration = Aws::DevOpsGuru::DevOpsGuruClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         DevOpsGuruClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<DevOpsGuruEndpointProviderBase> endpointProvider = Aws::MakeShared<DevOpsGuruEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::DevOpsGuru::DevOpsGuruClientConfiguration& clientConfiguration = Aws::DevOpsGuru::DevOpsGuruClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DevOpsGuruClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DevOpsGuruClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        DevOpsGuruClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~DevOpsGuruClient();
 
 
@@ -568,9 +596,9 @@ namespace DevOpsGuru
         /**
          * <p> Returns a list of insights in your Amazon Web Services account. You can
          * specify which insights are returned by their start time, one or more statuses
-         * (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or
-         * more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>),
-         * and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p> <p> Use the
+         * (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities
+         * (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type
+         * (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p> <p> Use the
          * <code>Filters</code> parameter to specify status and severity search parameters.
          * Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or
          * <code>PROACTIVE</code> in your search. </p><p><h3>See Also:</h3>   <a
@@ -697,12 +725,13 @@ namespace DevOpsGuru
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<DevOpsGuruEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const DevOpsGuruClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      DevOpsGuruClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<DevOpsGuruEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DevOpsGuru

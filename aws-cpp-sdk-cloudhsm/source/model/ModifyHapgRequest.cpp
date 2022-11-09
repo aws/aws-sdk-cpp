@@ -37,7 +37,7 @@ Aws::String ModifyHapgRequest::SerializePayload() const
 
   if(m_partitionSerialListHasBeenSet)
   {
-   Array<JsonValue> partitionSerialListJsonList(m_partitionSerialList.size());
+   Aws::Utils::Array<JsonValue> partitionSerialListJsonList(m_partitionSerialList.size());
    for(unsigned partitionSerialListIndex = 0; partitionSerialListIndex < partitionSerialListJsonList.GetLength(); ++partitionSerialListIndex)
    {
      partitionSerialListJsonList[partitionSerialListIndex].AsString(m_partitionSerialList[partitionSerialListIndex]);

@@ -45,7 +45,7 @@ Aws::String UpdateSlotTypeRequest::SerializePayload() const
 
   if(m_slotTypeValuesHasBeenSet)
   {
-   Array<JsonValue> slotTypeValuesJsonList(m_slotTypeValues.size());
+   Aws::Utils::Array<JsonValue> slotTypeValuesJsonList(m_slotTypeValues.size());
    for(unsigned slotTypeValuesIndex = 0; slotTypeValuesIndex < slotTypeValuesJsonList.GetLength(); ++slotTypeValuesIndex)
    {
      slotTypeValuesJsonList[slotTypeValuesIndex].AsObject(m_slotTypeValues[slotTypeValuesIndex].Jsonize());

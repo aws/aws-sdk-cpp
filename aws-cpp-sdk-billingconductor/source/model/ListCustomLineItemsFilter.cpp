@@ -37,7 +37,7 @@ ListCustomLineItemsFilter& ListCustomLineItemsFilter::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("Names"))
   {
-    Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
+    Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
     for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
     {
       m_names.push_back(namesJsonList[namesIndex].AsString());
@@ -47,7 +47,7 @@ ListCustomLineItemsFilter& ListCustomLineItemsFilter::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("BillingGroups"))
   {
-    Array<JsonView> billingGroupsJsonList = jsonValue.GetArray("BillingGroups");
+    Aws::Utils::Array<JsonView> billingGroupsJsonList = jsonValue.GetArray("BillingGroups");
     for(unsigned billingGroupsIndex = 0; billingGroupsIndex < billingGroupsJsonList.GetLength(); ++billingGroupsIndex)
     {
       m_billingGroups.push_back(billingGroupsJsonList[billingGroupsIndex].AsString());
@@ -57,7 +57,7 @@ ListCustomLineItemsFilter& ListCustomLineItemsFilter::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Arns"))
   {
-    Array<JsonView> arnsJsonList = jsonValue.GetArray("Arns");
+    Aws::Utils::Array<JsonView> arnsJsonList = jsonValue.GetArray("Arns");
     for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
     {
       m_arns.push_back(arnsJsonList[arnsIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue ListCustomLineItemsFilter::Jsonize() const
 
   if(m_namesHasBeenSet)
   {
-   Array<JsonValue> namesJsonList(m_names.size());
+   Aws::Utils::Array<JsonValue> namesJsonList(m_names.size());
    for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
    {
      namesJsonList[namesIndex].AsString(m_names[namesIndex]);
@@ -85,7 +85,7 @@ JsonValue ListCustomLineItemsFilter::Jsonize() const
 
   if(m_billingGroupsHasBeenSet)
   {
-   Array<JsonValue> billingGroupsJsonList(m_billingGroups.size());
+   Aws::Utils::Array<JsonValue> billingGroupsJsonList(m_billingGroups.size());
    for(unsigned billingGroupsIndex = 0; billingGroupsIndex < billingGroupsJsonList.GetLength(); ++billingGroupsIndex)
    {
      billingGroupsJsonList[billingGroupsIndex].AsString(m_billingGroups[billingGroupsIndex]);
@@ -96,7 +96,7 @@ JsonValue ListCustomLineItemsFilter::Jsonize() const
 
   if(m_arnsHasBeenSet)
   {
-   Array<JsonValue> arnsJsonList(m_arns.size());
+   Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
    for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
    {
      arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);

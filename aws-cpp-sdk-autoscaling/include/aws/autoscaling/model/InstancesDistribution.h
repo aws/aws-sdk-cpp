@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instances distribution for an Auto Scaling group.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Use this structure to specify the distribution of On-Demand Instances and
+   * Spot Instances and the allocation strategies used to fulfill On-Demand and Spot
+   * capacities for a mixed instances policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstancesDistribution">AWS
    * API Reference</a></p>
    */
@@ -435,89 +436,105 @@ namespace Model
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
-     * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
-     * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>  <p>If your maximum price is lower than the Spot
-     * price for the instance types that you selected, your Spot Instances are not
-     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
+     * Instance. If your maximum price is lower than the Spot price for the instance
+     * types that you selected, your Spot Instances are not launched. We do not
+     * recommend specifying a maximum price because it can lead to increased
+     * interruptions. When Spot Instances launch, you pay the current Spot price. To
+     * remove a maximum price that you previously set, include the property but specify
+     * an empty string ("") for the value.</p>  <p>If you specify a maximum
+     * price, your instances will be interrupted more frequently than if you do not
+     * specify one.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline const Aws::String& GetSpotMaxPrice() const{ return m_spotMaxPrice; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
-     * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
-     * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>  <p>If your maximum price is lower than the Spot
-     * price for the instance types that you selected, your Spot Instances are not
-     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
+     * Instance. If your maximum price is lower than the Spot price for the instance
+     * types that you selected, your Spot Instances are not launched. We do not
+     * recommend specifying a maximum price because it can lead to increased
+     * interruptions. When Spot Instances launch, you pay the current Spot price. To
+     * remove a maximum price that you previously set, include the property but specify
+     * an empty string ("") for the value.</p>  <p>If you specify a maximum
+     * price, your instances will be interrupted more frequently than if you do not
+     * specify one.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline bool SpotMaxPriceHasBeenSet() const { return m_spotMaxPriceHasBeenSet; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
-     * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
-     * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>  <p>If your maximum price is lower than the Spot
-     * price for the instance types that you selected, your Spot Instances are not
-     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
+     * Instance. If your maximum price is lower than the Spot price for the instance
+     * types that you selected, your Spot Instances are not launched. We do not
+     * recommend specifying a maximum price because it can lead to increased
+     * interruptions. When Spot Instances launch, you pay the current Spot price. To
+     * remove a maximum price that you previously set, include the property but specify
+     * an empty string ("") for the value.</p>  <p>If you specify a maximum
+     * price, your instances will be interrupted more frequently than if you do not
+     * specify one.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline void SetSpotMaxPrice(const Aws::String& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = value; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
-     * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
-     * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>  <p>If your maximum price is lower than the Spot
-     * price for the instance types that you selected, your Spot Instances are not
-     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
+     * Instance. If your maximum price is lower than the Spot price for the instance
+     * types that you selected, your Spot Instances are not launched. We do not
+     * recommend specifying a maximum price because it can lead to increased
+     * interruptions. When Spot Instances launch, you pay the current Spot price. To
+     * remove a maximum price that you previously set, include the property but specify
+     * an empty string ("") for the value.</p>  <p>If you specify a maximum
+     * price, your instances will be interrupted more frequently than if you do not
+     * specify one.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline void SetSpotMaxPrice(Aws::String&& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = std::move(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
-     * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
-     * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>  <p>If your maximum price is lower than the Spot
-     * price for the instance types that you selected, your Spot Instances are not
-     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
+     * Instance. If your maximum price is lower than the Spot price for the instance
+     * types that you selected, your Spot Instances are not launched. We do not
+     * recommend specifying a maximum price because it can lead to increased
+     * interruptions. When Spot Instances launch, you pay the current Spot price. To
+     * remove a maximum price that you previously set, include the property but specify
+     * an empty string ("") for the value.</p>  <p>If you specify a maximum
+     * price, your instances will be interrupted more frequently than if you do not
+     * specify one.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline void SetSpotMaxPrice(const char* value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice.assign(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
-     * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
-     * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>  <p>If your maximum price is lower than the Spot
-     * price for the instance types that you selected, your Spot Instances are not
-     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
+     * Instance. If your maximum price is lower than the Spot price for the instance
+     * types that you selected, your Spot Instances are not launched. We do not
+     * recommend specifying a maximum price because it can lead to increased
+     * interruptions. When Spot Instances launch, you pay the current Spot price. To
+     * remove a maximum price that you previously set, include the property but specify
+     * an empty string ("") for the value.</p>  <p>If you specify a maximum
+     * price, your instances will be interrupted more frequently than if you do not
+     * specify one.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const Aws::String& value) { SetSpotMaxPrice(value); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
-     * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
-     * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>  <p>If your maximum price is lower than the Spot
-     * price for the instance types that you selected, your Spot Instances are not
-     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
+     * Instance. If your maximum price is lower than the Spot price for the instance
+     * types that you selected, your Spot Instances are not launched. We do not
+     * recommend specifying a maximum price because it can lead to increased
+     * interruptions. When Spot Instances launch, you pay the current Spot price. To
+     * remove a maximum price that you previously set, include the property but specify
+     * an empty string ("") for the value.</p>  <p>If you specify a maximum
+     * price, your instances will be interrupted more frequently than if you do not
+     * specify one.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(Aws::String&& value) { SetSpotMaxPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
-     * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
-     * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>  <p>If your maximum price is lower than the Spot
-     * price for the instance types that you selected, your Spot Instances are not
-     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
+     * Instance. If your maximum price is lower than the Spot price for the instance
+     * types that you selected, your Spot Instances are not launched. We do not
+     * recommend specifying a maximum price because it can lead to increased
+     * interruptions. When Spot Instances launch, you pay the current Spot price. To
+     * remove a maximum price that you previously set, include the property but specify
+     * an empty string ("") for the value.</p>  <p>If you specify a maximum
+     * price, your instances will be interrupted more frequently than if you do not
+     * specify one.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const char* value) { SetSpotMaxPrice(value); return *this;}
 

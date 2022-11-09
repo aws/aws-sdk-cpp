@@ -34,31 +34,31 @@ namespace Model
 
     /**
      * <p>Information about a phone number that's been claimed to your Amazon Connect
-     * instance.</p>
+     * instance or traffic distribution group.</p>
      */
     inline const ClaimedPhoneNumberSummary& GetClaimedPhoneNumberSummary() const{ return m_claimedPhoneNumberSummary; }
 
     /**
      * <p>Information about a phone number that's been claimed to your Amazon Connect
-     * instance.</p>
+     * instance or traffic distribution group.</p>
      */
     inline void SetClaimedPhoneNumberSummary(const ClaimedPhoneNumberSummary& value) { m_claimedPhoneNumberSummary = value; }
 
     /**
      * <p>Information about a phone number that's been claimed to your Amazon Connect
-     * instance.</p>
+     * instance or traffic distribution group.</p>
      */
     inline void SetClaimedPhoneNumberSummary(ClaimedPhoneNumberSummary&& value) { m_claimedPhoneNumberSummary = std::move(value); }
 
     /**
      * <p>Information about a phone number that's been claimed to your Amazon Connect
-     * instance.</p>
+     * instance or traffic distribution group.</p>
      */
     inline DescribePhoneNumberResult& WithClaimedPhoneNumberSummary(const ClaimedPhoneNumberSummary& value) { SetClaimedPhoneNumberSummary(value); return *this;}
 
     /**
      * <p>Information about a phone number that's been claimed to your Amazon Connect
-     * instance.</p>
+     * instance or traffic distribution group.</p>
      */
     inline DescribePhoneNumberResult& WithClaimedPhoneNumberSummary(ClaimedPhoneNumberSummary&& value) { SetClaimedPhoneNumberSummary(std::move(value)); return *this;}
 

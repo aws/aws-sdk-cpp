@@ -24,7 +24,7 @@ Aws::String UpdateRoutingControlStatesRequest::SerializePayload() const
 
   if(m_updateRoutingControlStateEntriesHasBeenSet)
   {
-   Array<JsonValue> updateRoutingControlStateEntriesJsonList(m_updateRoutingControlStateEntries.size());
+   Aws::Utils::Array<JsonValue> updateRoutingControlStateEntriesJsonList(m_updateRoutingControlStateEntries.size());
    for(unsigned updateRoutingControlStateEntriesIndex = 0; updateRoutingControlStateEntriesIndex < updateRoutingControlStateEntriesJsonList.GetLength(); ++updateRoutingControlStateEntriesIndex)
    {
      updateRoutingControlStateEntriesJsonList[updateRoutingControlStateEntriesIndex].AsObject(m_updateRoutingControlStateEntries[updateRoutingControlStateEntriesIndex].Jsonize());
@@ -35,7 +35,7 @@ Aws::String UpdateRoutingControlStatesRequest::SerializePayload() const
 
   if(m_safetyRulesToOverrideHasBeenSet)
   {
-   Array<JsonValue> safetyRulesToOverrideJsonList(m_safetyRulesToOverride.size());
+   Aws::Utils::Array<JsonValue> safetyRulesToOverrideJsonList(m_safetyRulesToOverride.size());
    for(unsigned safetyRulesToOverrideIndex = 0; safetyRulesToOverrideIndex < safetyRulesToOverrideJsonList.GetLength(); ++safetyRulesToOverrideIndex)
    {
      safetyRulesToOverrideJsonList[safetyRulesToOverrideIndex].AsString(m_safetyRulesToOverride[safetyRulesToOverrideIndex]);

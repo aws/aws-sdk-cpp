@@ -60,7 +60,7 @@ EvaluatedModelVersion& EvaluatedModelVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("evaluations"))
   {
-    Array<JsonView> evaluationsJsonList = jsonValue.GetArray("evaluations");
+    Aws::Utils::Array<JsonView> evaluationsJsonList = jsonValue.GetArray("evaluations");
     for(unsigned evaluationsIndex = 0; evaluationsIndex < evaluationsJsonList.GetLength(); ++evaluationsIndex)
     {
       m_evaluations.push_back(evaluationsJsonList[evaluationsIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue EvaluatedModelVersion::Jsonize() const
 
   if(m_evaluationsHasBeenSet)
   {
-   Array<JsonValue> evaluationsJsonList(m_evaluations.size());
+   Aws::Utils::Array<JsonValue> evaluationsJsonList(m_evaluations.size());
    for(unsigned evaluationsIndex = 0; evaluationsIndex < evaluationsJsonList.GetLength(); ++evaluationsIndex)
    {
      evaluationsJsonList[evaluationsIndex].AsObject(m_evaluations[evaluationsIndex].Jsonize());

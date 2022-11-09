@@ -150,3 +150,12 @@ AWS_CORE_API AWSError<CoreErrors> CoreErrorsMapper::GetErrorForHttpResponseCode(
     error.SetResponseCode(code);
     return error;
 }
+
+/**
+ * Overload ostream operator<< for CoreErrors enum class for a prettier output such as "103" and not "<67-00 00-00>"
+ */
+Aws::OStream& Aws::Client::operator<< (Aws::OStream& oStream, CoreErrors code)
+{
+    oStream << Aws::Utils::StringUtils::to_string(static_cast<typename std::underlying_type<HttpResponseCode>::type>(code));
+    return oStream;
+}

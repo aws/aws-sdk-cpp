@@ -42,7 +42,7 @@ DescribeGroupResult& DescribeGroupResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("ExternalIds"))
   {
-    Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
+    Aws::Utils::Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
     for(unsigned externalIdsIndex = 0; externalIdsIndex < externalIdsJsonList.GetLength(); ++externalIdsIndex)
     {
       m_externalIds.push_back(externalIdsJsonList[externalIdsIndex].AsObject());

@@ -30,7 +30,7 @@ GetRelationalDatabaseSnapshotsResult& GetRelationalDatabaseSnapshotsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("relationalDatabaseSnapshots"))
   {
-    Array<JsonView> relationalDatabaseSnapshotsJsonList = jsonValue.GetArray("relationalDatabaseSnapshots");
+    Aws::Utils::Array<JsonView> relationalDatabaseSnapshotsJsonList = jsonValue.GetArray("relationalDatabaseSnapshots");
     for(unsigned relationalDatabaseSnapshotsIndex = 0; relationalDatabaseSnapshotsIndex < relationalDatabaseSnapshotsJsonList.GetLength(); ++relationalDatabaseSnapshotsIndex)
     {
       m_relationalDatabaseSnapshots.push_back(relationalDatabaseSnapshotsJsonList[relationalDatabaseSnapshotsIndex].AsObject());

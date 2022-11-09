@@ -22,7 +22,8 @@ CreateComputeEnvironmentRequest::CreateComputeEnvironmentRequest() :
     m_unmanagedvCpusHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_eksConfigurationHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,12 @@ Aws::String CreateComputeEnvironmentRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_eksConfigurationHasBeenSet)
+  {
+   payload.WithObject("eksConfiguration", m_eksConfiguration.Jsonize());
 
   }
 

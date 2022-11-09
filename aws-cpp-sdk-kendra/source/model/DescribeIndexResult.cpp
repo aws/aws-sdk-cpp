@@ -90,7 +90,7 @@ DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("DocumentMetadataConfigurations"))
   {
-    Array<JsonView> documentMetadataConfigurationsJsonList = jsonValue.GetArray("DocumentMetadataConfigurations");
+    Aws::Utils::Array<JsonView> documentMetadataConfigurationsJsonList = jsonValue.GetArray("DocumentMetadataConfigurations");
     for(unsigned documentMetadataConfigurationsIndex = 0; documentMetadataConfigurationsIndex < documentMetadataConfigurationsJsonList.GetLength(); ++documentMetadataConfigurationsIndex)
     {
       m_documentMetadataConfigurations.push_back(documentMetadataConfigurationsJsonList[documentMetadataConfigurationsIndex].AsObject());
@@ -117,7 +117,7 @@ DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("UserTokenConfigurations"))
   {
-    Array<JsonView> userTokenConfigurationsJsonList = jsonValue.GetArray("UserTokenConfigurations");
+    Aws::Utils::Array<JsonView> userTokenConfigurationsJsonList = jsonValue.GetArray("UserTokenConfigurations");
     for(unsigned userTokenConfigurationsIndex = 0; userTokenConfigurationsIndex < userTokenConfigurationsJsonList.GetLength(); ++userTokenConfigurationsIndex)
     {
       m_userTokenConfigurations.push_back(userTokenConfigurationsJsonList[userTokenConfigurationsIndex].AsObject());

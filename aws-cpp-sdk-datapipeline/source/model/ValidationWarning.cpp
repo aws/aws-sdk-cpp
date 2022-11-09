@@ -42,7 +42,7 @@ ValidationWarning& ValidationWarning::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue ValidationWarning::Jsonize() const
 
   if(m_warningsHasBeenSet)
   {
-   Array<JsonValue> warningsJsonList(m_warnings.size());
+   Aws::Utils::Array<JsonValue> warningsJsonList(m_warnings.size());
    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
    {
      warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);

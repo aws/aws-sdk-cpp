@@ -112,7 +112,7 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("remainingResources"))
   {
-    Array<JsonView> remainingResourcesJsonList = jsonValue.GetArray("remainingResources");
+    Aws::Utils::Array<JsonView> remainingResourcesJsonList = jsonValue.GetArray("remainingResources");
     for(unsigned remainingResourcesIndex = 0; remainingResourcesIndex < remainingResourcesJsonList.GetLength(); ++remainingResourcesIndex)
     {
       m_remainingResources.push_back(remainingResourcesJsonList[remainingResourcesIndex].AsObject());
@@ -122,7 +122,7 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("registeredResources"))
   {
-    Array<JsonView> registeredResourcesJsonList = jsonValue.GetArray("registeredResources");
+    Aws::Utils::Array<JsonView> registeredResourcesJsonList = jsonValue.GetArray("registeredResources");
     for(unsigned registeredResourcesIndex = 0; registeredResourcesIndex < registeredResourcesJsonList.GetLength(); ++registeredResourcesIndex)
     {
       m_registeredResources.push_back(registeredResourcesJsonList[registeredResourcesIndex].AsObject());
@@ -174,7 +174,7 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -191,7 +191,7 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attachments"))
   {
-    Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
+    Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
     for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
     {
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
@@ -201,7 +201,7 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -255,7 +255,7 @@ JsonValue ContainerInstance::Jsonize() const
 
   if(m_remainingResourcesHasBeenSet)
   {
-   Array<JsonValue> remainingResourcesJsonList(m_remainingResources.size());
+   Aws::Utils::Array<JsonValue> remainingResourcesJsonList(m_remainingResources.size());
    for(unsigned remainingResourcesIndex = 0; remainingResourcesIndex < remainingResourcesJsonList.GetLength(); ++remainingResourcesIndex)
    {
      remainingResourcesJsonList[remainingResourcesIndex].AsObject(m_remainingResources[remainingResourcesIndex].Jsonize());
@@ -266,7 +266,7 @@ JsonValue ContainerInstance::Jsonize() const
 
   if(m_registeredResourcesHasBeenSet)
   {
-   Array<JsonValue> registeredResourcesJsonList(m_registeredResources.size());
+   Aws::Utils::Array<JsonValue> registeredResourcesJsonList(m_registeredResources.size());
    for(unsigned registeredResourcesIndex = 0; registeredResourcesIndex < registeredResourcesJsonList.GetLength(); ++registeredResourcesIndex)
    {
      registeredResourcesJsonList[registeredResourcesIndex].AsObject(m_registeredResources[registeredResourcesIndex].Jsonize());
@@ -312,7 +312,7 @@ JsonValue ContainerInstance::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
@@ -328,7 +328,7 @@ JsonValue ContainerInstance::Jsonize() const
 
   if(m_attachmentsHasBeenSet)
   {
-   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
    {
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
@@ -339,7 +339,7 @@ JsonValue ContainerInstance::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

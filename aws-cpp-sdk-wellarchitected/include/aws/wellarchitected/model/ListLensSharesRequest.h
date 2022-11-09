@@ -65,50 +65,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the lens is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the lens is shared.</p>
      */
     inline const Aws::String& GetSharedWithPrefix() const{ return m_sharedWithPrefix; }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the lens is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the lens is shared.</p>
      */
     inline bool SharedWithPrefixHasBeenSet() const { return m_sharedWithPrefixHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the lens is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the lens is shared.</p>
      */
     inline void SetSharedWithPrefix(const Aws::String& value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix = value; }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the lens is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the lens is shared.</p>
      */
     inline void SetSharedWithPrefix(Aws::String&& value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the lens is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the lens is shared.</p>
      */
     inline void SetSharedWithPrefix(const char* value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the lens is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the lens is shared.</p>
      */
     inline ListLensSharesRequest& WithSharedWithPrefix(const Aws::String& value) { SetSharedWithPrefix(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the lens is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the lens is shared.</p>
      */
     inline ListLensSharesRequest& WithSharedWithPrefix(Aws::String&& value) { SetSharedWithPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the lens is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the lens is shared.</p>
      */
     inline ListLensSharesRequest& WithSharedWithPrefix(const char* value) { SetSharedWithPrefix(value); return *this;}
 

@@ -54,7 +54,7 @@ Aws::String CreateConfigurationProfileRequest::SerializePayload() const
 
   if(m_validatorsHasBeenSet)
   {
-   Array<JsonValue> validatorsJsonList(m_validators.size());
+   Aws::Utils::Array<JsonValue> validatorsJsonList(m_validators.size());
    for(unsigned validatorsIndex = 0; validatorsIndex < validatorsJsonList.GetLength(); ++validatorsIndex)
    {
      validatorsJsonList[validatorsIndex].AsObject(m_validators[validatorsIndex].Jsonize());

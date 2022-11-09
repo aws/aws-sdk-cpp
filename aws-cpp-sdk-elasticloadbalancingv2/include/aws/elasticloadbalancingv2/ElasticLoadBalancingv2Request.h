@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
+#include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>
@@ -16,6 +17,9 @@ namespace ElasticLoadBalancingv2
   class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Request : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
+    using EndpointParameter = Aws::Endpoint::EndpointParameter;
+    using EndpointParameters = Aws::Endpoint::EndpointParameters;
+
     virtual ~ElasticLoadBalancingv2Request () {}
 
     void AddParametersToRequest(Aws::Http::HttpRequest& httpRequest) const { AWS_UNREFERENCED_PARAM(httpRequest); }

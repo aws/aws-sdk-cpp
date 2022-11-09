@@ -50,7 +50,7 @@ ValidateE911AddressResult& ValidateE911AddressResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("CandidateAddressList"))
   {
-    Array<JsonView> candidateAddressListJsonList = jsonValue.GetArray("CandidateAddressList");
+    Aws::Utils::Array<JsonView> candidateAddressListJsonList = jsonValue.GetArray("CandidateAddressList");
     for(unsigned candidateAddressListIndex = 0; candidateAddressListIndex < candidateAddressListJsonList.GetLength(); ++candidateAddressListIndex)
     {
       m_candidateAddressList.push_back(candidateAddressListJsonList[candidateAddressListIndex].AsObject());

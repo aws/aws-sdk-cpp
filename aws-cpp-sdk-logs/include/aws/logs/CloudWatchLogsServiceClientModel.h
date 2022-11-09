@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/logs/CloudWatchLogsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/logs/CloudWatchLogsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -32,7 +34,7 @@
 #include <aws/logs/model/GetLogGroupFieldsResult.h>
 #include <aws/logs/model/GetLogRecordResult.h>
 #include <aws/logs/model/GetQueryResultsResult.h>
-#include <aws/logs/model/ListTagsLogGroupResult.h>
+#include <aws/logs/model/ListTagsForResourceResult.h>
 #include <aws/logs/model/PutDestinationResult.h>
 #include <aws/logs/model/PutLogEventsResult.h>
 #include <aws/logs/model/PutQueryDefinitionResult.h>
@@ -74,6 +76,10 @@ namespace Aws
 
   namespace CloudWatchLogs
   {
+    using CloudWatchLogsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchLogsEndpointProviderBase = Aws::CloudWatchLogs::Endpoint::CloudWatchLogsEndpointProviderBase;
+    using CloudWatchLogsEndpointProvider = Aws::CloudWatchLogs::Endpoint::CloudWatchLogsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CloudWatchLogsClient header */
@@ -105,7 +111,7 @@ namespace Aws
       class GetLogGroupFieldsRequest;
       class GetLogRecordRequest;
       class GetQueryResultsRequest;
-      class ListTagsLogGroupRequest;
+      class ListTagsForResourceRequest;
       class PutDestinationRequest;
       class PutDestinationPolicyRequest;
       class PutLogEventsRequest;
@@ -116,9 +122,9 @@ namespace Aws
       class PutSubscriptionFilterRequest;
       class StartQueryRequest;
       class StopQueryRequest;
-      class TagLogGroupRequest;
+      class TagResourceRequest;
       class TestMetricFilterRequest;
-      class UntagLogGroupRequest;
+      class UntagResourceRequest;
       /* End of service model forward declarations required in CloudWatchLogsClient header */
 
       /* Service model Outcome class definitions */
@@ -150,7 +156,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetLogGroupFieldsResult, CloudWatchLogsError> GetLogGroupFieldsOutcome;
       typedef Aws::Utils::Outcome<GetLogRecordResult, CloudWatchLogsError> GetLogRecordOutcome;
       typedef Aws::Utils::Outcome<GetQueryResultsResult, CloudWatchLogsError> GetQueryResultsOutcome;
-      typedef Aws::Utils::Outcome<ListTagsLogGroupResult, CloudWatchLogsError> ListTagsLogGroupOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchLogsError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutDestinationResult, CloudWatchLogsError> PutDestinationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutDestinationPolicyOutcome;
       typedef Aws::Utils::Outcome<PutLogEventsResult, CloudWatchLogsError> PutLogEventsOutcome;
@@ -161,9 +167,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutSubscriptionFilterOutcome;
       typedef Aws::Utils::Outcome<StartQueryResult, CloudWatchLogsError> StartQueryOutcome;
       typedef Aws::Utils::Outcome<StopQueryResult, CloudWatchLogsError> StopQueryOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> TagLogGroupOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<TestMetricFilterResult, CloudWatchLogsError> TestMetricFilterOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> UntagLogGroupOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> UntagResourceOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -195,7 +201,7 @@ namespace Aws
       typedef std::future<GetLogGroupFieldsOutcome> GetLogGroupFieldsOutcomeCallable;
       typedef std::future<GetLogRecordOutcome> GetLogRecordOutcomeCallable;
       typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
-      typedef std::future<ListTagsLogGroupOutcome> ListTagsLogGroupOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutDestinationOutcome> PutDestinationOutcomeCallable;
       typedef std::future<PutDestinationPolicyOutcome> PutDestinationPolicyOutcomeCallable;
       typedef std::future<PutLogEventsOutcome> PutLogEventsOutcomeCallable;
@@ -206,9 +212,9 @@ namespace Aws
       typedef std::future<PutSubscriptionFilterOutcome> PutSubscriptionFilterOutcomeCallable;
       typedef std::future<StartQueryOutcome> StartQueryOutcomeCallable;
       typedef std::future<StopQueryOutcome> StopQueryOutcomeCallable;
-      typedef std::future<TagLogGroupOutcome> TagLogGroupOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<TestMetricFilterOutcome> TestMetricFilterOutcomeCallable;
-      typedef std::future<UntagLogGroupOutcome> UntagLogGroupOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -243,7 +249,7 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogGroupFieldsRequest&, const Model::GetLogGroupFieldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogGroupFieldsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogRecordRequest&, const Model::GetLogRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogRecordResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryResultsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsLogGroupRequest&, const Model::ListTagsLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsLogGroupResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationRequest&, const Model::PutDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationPolicyRequest&, const Model::PutDestinationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutLogEventsRequest&, const Model::PutLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLogEventsResponseReceivedHandler;
@@ -254,9 +260,9 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutSubscriptionFilterRequest&, const Model::PutSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSubscriptionFilterResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::StartQueryRequest&, const Model::StartQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::StopQueryRequest&, const Model::StopQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopQueryResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::TagLogGroupRequest&, const Model::TagLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagLogGroupResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::TestMetricFilterRequest&, const Model::TestMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestMetricFilterResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::UntagLogGroupRequest&, const Model::UntagLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagLogGroupResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace CloudWatchLogs
 } // namespace Aws

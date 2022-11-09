@@ -104,7 +104,7 @@ Trigger& Trigger::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
@@ -175,7 +175,7 @@ JsonValue Trigger::Jsonize() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());

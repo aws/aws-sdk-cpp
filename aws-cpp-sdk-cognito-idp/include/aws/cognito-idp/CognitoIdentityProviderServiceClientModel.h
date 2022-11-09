@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/cognito-idp/CognitoIdentityProviderErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/cognito-idp/CognitoIdentityProviderEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -140,6 +142,10 @@ namespace Aws
 
   namespace CognitoIdentityProvider
   {
+    using CognitoIdentityProviderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CognitoIdentityProviderEndpointProviderBase = Aws::CognitoIdentityProvider::Endpoint::CognitoIdentityProviderEndpointProviderBase;
+    using CognitoIdentityProviderEndpointProvider = Aws::CognitoIdentityProvider::Endpoint::CognitoIdentityProviderEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CognitoIdentityProviderClient header */

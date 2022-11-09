@@ -59,7 +59,7 @@ FindingProviderFields& FindingProviderFields::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RelatedFindings"))
   {
-    Array<JsonView> relatedFindingsJsonList = jsonValue.GetArray("RelatedFindings");
+    Aws::Utils::Array<JsonView> relatedFindingsJsonList = jsonValue.GetArray("RelatedFindings");
     for(unsigned relatedFindingsIndex = 0; relatedFindingsIndex < relatedFindingsJsonList.GetLength(); ++relatedFindingsIndex)
     {
       m_relatedFindings.push_back(relatedFindingsJsonList[relatedFindingsIndex].AsObject());
@@ -76,7 +76,7 @@ FindingProviderFields& FindingProviderFields::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Types"))
   {
-    Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
+    Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
     for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
     {
       m_types.push_back(typesJsonList[typesIndex].AsString());
@@ -105,7 +105,7 @@ JsonValue FindingProviderFields::Jsonize() const
 
   if(m_relatedFindingsHasBeenSet)
   {
-   Array<JsonValue> relatedFindingsJsonList(m_relatedFindings.size());
+   Aws::Utils::Array<JsonValue> relatedFindingsJsonList(m_relatedFindings.size());
    for(unsigned relatedFindingsIndex = 0; relatedFindingsIndex < relatedFindingsJsonList.GetLength(); ++relatedFindingsIndex)
    {
      relatedFindingsJsonList[relatedFindingsIndex].AsObject(m_relatedFindings[relatedFindingsIndex].Jsonize());
@@ -122,7 +122,7 @@ JsonValue FindingProviderFields::Jsonize() const
 
   if(m_typesHasBeenSet)
   {
-   Array<JsonValue> typesJsonList(m_types.size());
+   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
    {
      typesJsonList[typesIndex].AsString(m_types[typesIndex]);

@@ -30,7 +30,7 @@ NotifyRecommendationsReceivedResult& NotifyRecommendationsReceivedResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -39,7 +39,7 @@ NotifyRecommendationsReceivedResult& NotifyRecommendationsReceivedResult::operat
 
   if(jsonValue.ValueExists("recommendationIds"))
   {
-    Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");
+    Aws::Utils::Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");
     for(unsigned recommendationIdsIndex = 0; recommendationIdsIndex < recommendationIdsJsonList.GetLength(); ++recommendationIdsIndex)
     {
       m_recommendationIds.push_back(recommendationIdsJsonList[recommendationIdsIndex].AsString());

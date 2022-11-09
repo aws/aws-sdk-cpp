@@ -30,7 +30,7 @@ DescribeDomainAutoTunesResult& DescribeDomainAutoTunesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AutoTunes"))
   {
-    Array<JsonView> autoTunesJsonList = jsonValue.GetArray("AutoTunes");
+    Aws::Utils::Array<JsonView> autoTunesJsonList = jsonValue.GetArray("AutoTunes");
     for(unsigned autoTunesIndex = 0; autoTunesIndex < autoTunesJsonList.GetLength(); ++autoTunesIndex)
     {
       m_autoTunes.push_back(autoTunesJsonList[autoTunesIndex].AsObject());

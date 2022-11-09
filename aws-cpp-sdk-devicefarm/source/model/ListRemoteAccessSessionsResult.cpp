@@ -30,7 +30,7 @@ ListRemoteAccessSessionsResult& ListRemoteAccessSessionsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("remoteAccessSessions"))
   {
-    Array<JsonView> remoteAccessSessionsJsonList = jsonValue.GetArray("remoteAccessSessions");
+    Aws::Utils::Array<JsonView> remoteAccessSessionsJsonList = jsonValue.GetArray("remoteAccessSessions");
     for(unsigned remoteAccessSessionsIndex = 0; remoteAccessSessionsIndex < remoteAccessSessionsJsonList.GetLength(); ++remoteAccessSessionsIndex)
     {
       m_remoteAccessSessions.push_back(remoteAccessSessionsJsonList[remoteAccessSessionsIndex].AsObject());

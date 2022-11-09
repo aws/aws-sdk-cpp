@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/codestar/CodeStarErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/codestar/CodeStarEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -67,6 +69,10 @@ namespace Aws
 
   namespace CodeStar
   {
+    using CodeStarClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeStarEndpointProviderBase = Aws::CodeStar::Endpoint::CodeStarEndpointProviderBase;
+    using CodeStarEndpointProvider = Aws::CodeStar::Endpoint::CodeStarEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CodeStarClient header */

@@ -35,7 +35,7 @@ KernelCapabilities& KernelCapabilities::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("add"))
   {
-    Array<JsonView> addJsonList = jsonValue.GetArray("add");
+    Aws::Utils::Array<JsonView> addJsonList = jsonValue.GetArray("add");
     for(unsigned addIndex = 0; addIndex < addJsonList.GetLength(); ++addIndex)
     {
       m_add.push_back(addJsonList[addIndex].AsString());
@@ -45,7 +45,7 @@ KernelCapabilities& KernelCapabilities::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("drop"))
   {
-    Array<JsonView> dropJsonList = jsonValue.GetArray("drop");
+    Aws::Utils::Array<JsonView> dropJsonList = jsonValue.GetArray("drop");
     for(unsigned dropIndex = 0; dropIndex < dropJsonList.GetLength(); ++dropIndex)
     {
       m_drop.push_back(dropJsonList[dropIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue KernelCapabilities::Jsonize() const
 
   if(m_addHasBeenSet)
   {
-   Array<JsonValue> addJsonList(m_add.size());
+   Aws::Utils::Array<JsonValue> addJsonList(m_add.size());
    for(unsigned addIndex = 0; addIndex < addJsonList.GetLength(); ++addIndex)
    {
      addJsonList[addIndex].AsString(m_add[addIndex]);
@@ -73,7 +73,7 @@ JsonValue KernelCapabilities::Jsonize() const
 
   if(m_dropHasBeenSet)
   {
-   Array<JsonValue> dropJsonList(m_drop.size());
+   Aws::Utils::Array<JsonValue> dropJsonList(m_drop.size());
    for(unsigned dropIndex = 0; dropIndex < dropJsonList.GetLength(); ++dropIndex)
    {
      dropJsonList[dropIndex].AsString(m_drop[dropIndex]);

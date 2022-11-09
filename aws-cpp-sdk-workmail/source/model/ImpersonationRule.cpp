@@ -73,7 +73,7 @@ ImpersonationRule& ImpersonationRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetUsers"))
   {
-    Array<JsonView> targetUsersJsonList = jsonValue.GetArray("TargetUsers");
+    Aws::Utils::Array<JsonView> targetUsersJsonList = jsonValue.GetArray("TargetUsers");
     for(unsigned targetUsersIndex = 0; targetUsersIndex < targetUsersJsonList.GetLength(); ++targetUsersIndex)
     {
       m_targetUsers.push_back(targetUsersJsonList[targetUsersIndex].AsString());
@@ -83,7 +83,7 @@ ImpersonationRule& ImpersonationRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NotTargetUsers"))
   {
-    Array<JsonView> notTargetUsersJsonList = jsonValue.GetArray("NotTargetUsers");
+    Aws::Utils::Array<JsonView> notTargetUsersJsonList = jsonValue.GetArray("NotTargetUsers");
     for(unsigned notTargetUsersIndex = 0; notTargetUsersIndex < notTargetUsersJsonList.GetLength(); ++notTargetUsersIndex)
     {
       m_notTargetUsers.push_back(notTargetUsersJsonList[notTargetUsersIndex].AsString());
@@ -123,7 +123,7 @@ JsonValue ImpersonationRule::Jsonize() const
 
   if(m_targetUsersHasBeenSet)
   {
-   Array<JsonValue> targetUsersJsonList(m_targetUsers.size());
+   Aws::Utils::Array<JsonValue> targetUsersJsonList(m_targetUsers.size());
    for(unsigned targetUsersIndex = 0; targetUsersIndex < targetUsersJsonList.GetLength(); ++targetUsersIndex)
    {
      targetUsersJsonList[targetUsersIndex].AsString(m_targetUsers[targetUsersIndex]);
@@ -134,7 +134,7 @@ JsonValue ImpersonationRule::Jsonize() const
 
   if(m_notTargetUsersHasBeenSet)
   {
-   Array<JsonValue> notTargetUsersJsonList(m_notTargetUsers.size());
+   Aws::Utils::Array<JsonValue> notTargetUsersJsonList(m_notTargetUsers.size());
    for(unsigned notTargetUsersIndex = 0; notTargetUsersIndex < notTargetUsersJsonList.GetLength(); ++notTargetUsersIndex)
    {
      notTargetUsersJsonList[notTargetUsersIndex].AsString(m_notTargetUsers[notTargetUsersIndex]);

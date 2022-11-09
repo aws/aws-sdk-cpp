@@ -31,7 +31,7 @@ Aws::String PutDeliverabilityDashboardOptionRequest::SerializePayload() const
 
   if(m_subscribedDomainsHasBeenSet)
   {
-   Array<JsonValue> subscribedDomainsJsonList(m_subscribedDomains.size());
+   Aws::Utils::Array<JsonValue> subscribedDomainsJsonList(m_subscribedDomains.size());
    for(unsigned subscribedDomainsIndex = 0; subscribedDomainsIndex < subscribedDomainsJsonList.GetLength(); ++subscribedDomainsIndex)
    {
      subscribedDomainsJsonList[subscribedDomainsIndex].AsObject(m_subscribedDomains[subscribedDomainsIndex].Jsonize());

@@ -30,7 +30,7 @@ ListProposalVotesResult& ListProposalVotesResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProposalVotes"))
   {
-    Array<JsonView> proposalVotesJsonList = jsonValue.GetArray("ProposalVotes");
+    Aws::Utils::Array<JsonView> proposalVotesJsonList = jsonValue.GetArray("ProposalVotes");
     for(unsigned proposalVotesIndex = 0; proposalVotesIndex < proposalVotesJsonList.GetLength(); ++proposalVotesIndex)
     {
       m_proposalVotes.push_back(proposalVotesJsonList[proposalVotesIndex].AsObject());

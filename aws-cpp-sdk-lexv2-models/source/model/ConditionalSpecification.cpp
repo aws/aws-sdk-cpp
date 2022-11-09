@@ -46,7 +46,7 @@ ConditionalSpecification& ConditionalSpecification::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("conditionalBranches"))
   {
-    Array<JsonView> conditionalBranchesJsonList = jsonValue.GetArray("conditionalBranches");
+    Aws::Utils::Array<JsonView> conditionalBranchesJsonList = jsonValue.GetArray("conditionalBranches");
     for(unsigned conditionalBranchesIndex = 0; conditionalBranchesIndex < conditionalBranchesJsonList.GetLength(); ++conditionalBranchesIndex)
     {
       m_conditionalBranches.push_back(conditionalBranchesJsonList[conditionalBranchesIndex].AsObject());
@@ -76,7 +76,7 @@ JsonValue ConditionalSpecification::Jsonize() const
 
   if(m_conditionalBranchesHasBeenSet)
   {
-   Array<JsonValue> conditionalBranchesJsonList(m_conditionalBranches.size());
+   Aws::Utils::Array<JsonValue> conditionalBranchesJsonList(m_conditionalBranches.size());
    for(unsigned conditionalBranchesIndex = 0; conditionalBranchesIndex < conditionalBranchesJsonList.GetLength(); ++conditionalBranchesIndex)
    {
      conditionalBranchesJsonList[conditionalBranchesIndex].AsObject(m_conditionalBranches[conditionalBranchesIndex].Jsonize());

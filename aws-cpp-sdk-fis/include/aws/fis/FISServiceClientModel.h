@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/fis/FISErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/fis/FISEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -65,6 +67,10 @@ namespace Aws
 
   namespace FIS
   {
+    using FISClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FISEndpointProviderBase = Aws::FIS::Endpoint::FISEndpointProviderBase;
+    using FISEndpointProvider = Aws::FIS::Endpoint::FISEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in FISClient header */

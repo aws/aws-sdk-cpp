@@ -30,7 +30,7 @@ ListChannelsResult& ListChannelsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("channels"))
   {
-    Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
+    Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
     for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
     {
       m_channels.push_back(channelsJsonList[channelsIndex].AsObject());

@@ -17,9 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code> <a>DeleteDomain</a> </code>
-   * operation. Specifies the name of the domain you want to delete. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Container for the parameters to the <code>DeleteDomain</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDomainRequest">AWS
    * API Reference</a></p>
    */

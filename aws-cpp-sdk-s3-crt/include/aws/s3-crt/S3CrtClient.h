@@ -40,35 +40,21 @@ namespace Aws
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
     } // SS3Headers
 
-    // Get endpoint, signer region and signer service name after computing the endpoint.
-    struct ComputeEndpointResult
-    {
-      ComputeEndpointResult(const Aws::String& endpointName = {}, const Aws::String& region = {}, const Aws::String& serviceName = {}, const Aws::String signer = Aws::Auth::SIGV4_SIGNER) :
-        endpoint(endpointName), signerRegion(region), signerServiceName(serviceName), signerName(signer) {}
-
-      Aws::String endpoint;
-      Aws::String signerRegion;
-      Aws::String signerServiceName;
-      Aws::String signerName;
-    };
-    typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<S3CrtErrors>> ComputeEndpointOutcome;
-
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
 
     /**
      * <p/>
      */
-    enum class US_EAST_1_REGIONAL_ENDPOINT_OPTION
-    {
-      NOT_SET,
-      LEGACY,   //stands for using global endpoint for us-east-1,
-      REGIONAL //stands for using regional endpoint for us-east-1
-    };
     class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
+        static const char* SERVICE_NAME;
+        static const char* ALLOCATION_TAG;
+
+
+        /* Legacy constructors due deprecation */
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -99,6 +85,7 @@ namespace Aws
                     bool useVirtualAddressing = true,
                     Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
+        /* End of legacy constructors due deprecation */
         virtual ~S3CrtClient();
 
         /**
@@ -4658,9 +4645,16 @@ namespace Aws
         virtual void WriteGetObjectResponseAsync(const Model::WriteGetObjectResponseRequest& request, const WriteGetObjectResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
-        Aws::String GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        Aws::String GeneratePresignedUrl(const Aws::String& bucket,
+                                         const Aws::String& key,
+                                         Aws::Http::HttpMethod method,
+                                         uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
 
-        Aws::String GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        Aws::String GeneratePresignedUrl(const Aws::String& bucket,
+                                         const Aws::String& key,
+                                         Aws::Http::HttpMethod method,
+                                         const Http::HeaderValueCollection& customizedHeaders,
+                                         uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
 
         /**
          * Server Side Encryption Headers and Algorithm
@@ -4673,44 +4667,70 @@ namespace Aws
          * Generate presigned URL with Sever Side Encryption(SSE) and with S3 managed keys.
          * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: AES256)
          */
-        Aws::String GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        Aws::String GeneratePresignedUrlWithSSES3(const Aws::String& bucket,
+                                                  const Aws::String& key,
+                                                  Aws::Http::HttpMethod method,
+                                                  uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
         /**
          * Generate presigned URL with Sever Side Encryption(SSE) and with S3 managed keys.
          * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: AES256)
          * Header: "x-amz-server-side-encryption" will be added internally, don't customize it.
          */
-        Aws::String GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        Aws::String GeneratePresignedUrlWithSSES3(const Aws::String& bucket,
+                                                  const Aws::String& key,
+                                                  Aws::Http::HttpMethod method,
+                                                  Http::HeaderValueCollection customizedHeaders,
+                                                  uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
 
         /**
          * Generate presigned URL with Server Side Encryption(SSE) and with KMS master key id.
          * if kmsMasterKeyId is empty, we will end up use the default one generated by KMS for you. You can find it via AWS IAM console, it's the one aliased as "aws/s3".
          * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: aws:kms)
          */
-        Aws::String GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId = "", long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        Aws::String GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket,
+                                                   const Aws::String& key,
+                                                   Aws::Http::HttpMethod method,
+                                                   const Aws::String& kmsMasterKeyId = "",
+                                                   uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
         /**
          * Generate presigned URL with Server Side Encryption(SSE) and with KMS master key id.
          * if kmsMasterKeyId is empty, we will end up use the default one generated by KMS for you. You can find it via AWS IAM console, it's the one aliased as "aws/s3".
          * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: aws:kms)
          * Headers: "x-amz-server-side-encryption" and "x-amz-server-side-encryption-aws-kms-key-id" will be added internally, don't customize them.
          */
-        Aws::String GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId = "", long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        Aws::String GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket,
+                                                   const Aws::String& key,
+                                                   Aws::Http::HttpMethod method,
+                                                   Http::HeaderValueCollection customizedHeaders,
+                                                   const Aws::String& kmsMasterKeyId = "",
+                                                   uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
 
         /**
          * Generate presigned URL with Sever Side Encryption(SSE) and with customer supplied Key.
          * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: AES256)
          */
-        Aws::String GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        Aws::String GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
+                                                 const Aws::String& key,
+                                                 Aws::Http::HttpMethod method,
+                                                 const Aws::String& base64EncodedAES256Key,
+                                                 uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
         /**
          * Generate presigned URL with Sever Side Encryption(SSE) and with customer supplied Key.
          * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: AES256)
          * Headers: "x-amz-server-side-encryption-customer-algorithm","x-amz-server-side-encryption-customer-key" and "x-amz-server-side-encryption-customer-key-MD5" will be added internally, don't customize them.
          */
-        Aws::String GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        Aws::String GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
+                                                 const Aws::String& key,
+                                                 Aws::Http::HttpMethod method,
+                                                 Http::HeaderValueCollection customizedHeaders,
+                                                 const Aws::String& base64EncodedAES256Key,
+                                                 uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
 
 
         virtual bool MultipartUploadSupported() const;
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<S3CrtEndpointProviderBase>& accessEndpointProvider();
 
 
         struct CrtRequestCallbackUserData {
@@ -4744,16 +4764,11 @@ namespace Aws
           wrappedData->clientShutdownSem->Release();
         }
 
-        void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData, aws_s3_meta_request_options *options, const Aws::AmazonWebServiceRequest *requset, const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
-        void LoadS3CrtSpecificConfig(const Aws::String& profile);
-        ComputeEndpointOutcome ComputeEndpointString(const Aws::String& bucket) const;
-        ComputeEndpointOutcome ComputeEndpointString() const;
-        ComputeEndpointOutcome ComputeEndpointStringWithServiceName(const Aws::String& serviceNameOverride = "") const;
-
-        Aws::String m_baseUri;
-        Aws::String m_scheme;
-        bool m_enableHostPrefixInjection = false;
-        Aws::String m_configScheme;
+        void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
+                                        aws_s3_meta_request_options *options,
+                                        const Aws::AmazonWebServiceRequest *requset,
+                                        const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
+        S3CrtClientConfiguration m_clientConfiguration;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
         struct aws_s3_client* m_s3CrtClient;
         struct aws_signing_config_aws m_s3CrtSigningConfig;
@@ -4762,12 +4777,7 @@ namespace Aws
         Aws::String m_userAgent;
         std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credProvider;
         std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_crtCredProvider;
-        bool m_useVirtualAddressing = false;
-        bool m_useDualStack = false;
-        bool m_useArnRegion = false;
-        bool m_disableMultiRegionAccessPoints = false;
-        bool m_useCustomEndpoint = false;
-        Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
+        std::shared_ptr<S3CrtEndpointProviderBase> m_endpointProvider;
     };
 
   } // namespace S3Crt

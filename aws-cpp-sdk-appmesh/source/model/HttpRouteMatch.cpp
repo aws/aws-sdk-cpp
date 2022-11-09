@@ -51,7 +51,7 @@ HttpRouteMatch& HttpRouteMatch::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("headers"))
   {
-    Array<JsonView> headersJsonList = jsonValue.GetArray("headers");
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("headers");
     for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
     {
       m_headers.push_back(headersJsonList[headersIndex].AsObject());
@@ -89,7 +89,7 @@ HttpRouteMatch& HttpRouteMatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("queryParameters"))
   {
-    Array<JsonView> queryParametersJsonList = jsonValue.GetArray("queryParameters");
+    Aws::Utils::Array<JsonView> queryParametersJsonList = jsonValue.GetArray("queryParameters");
     for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
     {
       m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
@@ -113,7 +113,7 @@ JsonValue HttpRouteMatch::Jsonize() const
 
   if(m_headersHasBeenSet)
   {
-   Array<JsonValue> headersJsonList(m_headers.size());
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
    {
      headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
@@ -147,7 +147,7 @@ JsonValue HttpRouteMatch::Jsonize() const
 
   if(m_queryParametersHasBeenSet)
   {
-   Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
+   Aws::Utils::Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
    for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
    {
      queryParametersJsonList[queryParametersIndex].AsObject(m_queryParameters[queryParametersIndex].Jsonize());

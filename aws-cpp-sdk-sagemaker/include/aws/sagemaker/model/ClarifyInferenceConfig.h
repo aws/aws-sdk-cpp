@@ -45,7 +45,7 @@ namespace Model
      * container input in JSON Lines format. For example, if
      * <code>FeaturesAttribute</code> is the JMESPath expression
      * <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
-     * from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+     * from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
      */
     inline const Aws::String& GetFeaturesAttribute() const{ return m_featuresAttribute; }
 
@@ -54,7 +54,7 @@ namespace Model
      * container input in JSON Lines format. For example, if
      * <code>FeaturesAttribute</code> is the JMESPath expression
      * <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
-     * from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+     * from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
      */
     inline bool FeaturesAttributeHasBeenSet() const { return m_featuresAttributeHasBeenSet; }
 
@@ -63,7 +63,7 @@ namespace Model
      * container input in JSON Lines format. For example, if
      * <code>FeaturesAttribute</code> is the JMESPath expression
      * <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
-     * from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+     * from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
      */
     inline void SetFeaturesAttribute(const Aws::String& value) { m_featuresAttributeHasBeenSet = true; m_featuresAttribute = value; }
 
@@ -72,7 +72,7 @@ namespace Model
      * container input in JSON Lines format. For example, if
      * <code>FeaturesAttribute</code> is the JMESPath expression
      * <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
-     * from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+     * from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
      */
     inline void SetFeaturesAttribute(Aws::String&& value) { m_featuresAttributeHasBeenSet = true; m_featuresAttribute = std::move(value); }
 
@@ -81,7 +81,7 @@ namespace Model
      * container input in JSON Lines format. For example, if
      * <code>FeaturesAttribute</code> is the JMESPath expression
      * <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
-     * from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+     * from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
      */
     inline void SetFeaturesAttribute(const char* value) { m_featuresAttributeHasBeenSet = true; m_featuresAttribute.assign(value); }
 
@@ -90,7 +90,7 @@ namespace Model
      * container input in JSON Lines format. For example, if
      * <code>FeaturesAttribute</code> is the JMESPath expression
      * <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
-     * from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+     * from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
      */
     inline ClarifyInferenceConfig& WithFeaturesAttribute(const Aws::String& value) { SetFeaturesAttribute(value); return *this;}
 
@@ -99,7 +99,7 @@ namespace Model
      * container input in JSON Lines format. For example, if
      * <code>FeaturesAttribute</code> is the JMESPath expression
      * <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
-     * from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+     * from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
      */
     inline ClarifyInferenceConfig& WithFeaturesAttribute(Aws::String&& value) { SetFeaturesAttribute(std::move(value)); return *this;}
 
@@ -108,7 +108,7 @@ namespace Model
      * container input in JSON Lines format. For example, if
      * <code>FeaturesAttribute</code> is the JMESPath expression
      * <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
-     * from request data <code>'{"myfeatures":[1,2,3}'</code>.</p>
+     * from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
      */
     inline ClarifyInferenceConfig& WithFeaturesAttribute(const char* value) { SetFeaturesAttribute(value); return *this;}
 

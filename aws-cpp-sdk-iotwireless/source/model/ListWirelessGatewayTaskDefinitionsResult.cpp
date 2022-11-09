@@ -36,7 +36,7 @@ ListWirelessGatewayTaskDefinitionsResult& ListWirelessGatewayTaskDefinitionsResu
 
   if(jsonValue.ValueExists("TaskDefinitions"))
   {
-    Array<JsonView> taskDefinitionsJsonList = jsonValue.GetArray("TaskDefinitions");
+    Aws::Utils::Array<JsonView> taskDefinitionsJsonList = jsonValue.GetArray("TaskDefinitions");
     for(unsigned taskDefinitionsIndex = 0; taskDefinitionsIndex < taskDefinitionsJsonList.GetLength(); ++taskDefinitionsIndex)
     {
       m_taskDefinitions.push_back(taskDefinitionsJsonList[taskDefinitionsIndex].AsObject());

@@ -36,7 +36,7 @@ ListSpeechSynthesisTasksResult& ListSpeechSynthesisTasksResult::operator =(const
 
   if(jsonValue.ValueExists("SynthesisTasks"))
   {
-    Array<JsonView> synthesisTasksJsonList = jsonValue.GetArray("SynthesisTasks");
+    Aws::Utils::Array<JsonView> synthesisTasksJsonList = jsonValue.GetArray("SynthesisTasks");
     for(unsigned synthesisTasksIndex = 0; synthesisTasksIndex < synthesisTasksJsonList.GetLength(); ++synthesisTasksIndex)
     {
       m_synthesisTasks.push_back(synthesisTasksJsonList[synthesisTasksIndex].AsObject());

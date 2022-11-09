@@ -32,7 +32,7 @@ ListTemplateAliasesResult& ListTemplateAliasesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TemplateAliasList"))
   {
-    Array<JsonView> templateAliasListJsonList = jsonValue.GetArray("TemplateAliasList");
+    Aws::Utils::Array<JsonView> templateAliasListJsonList = jsonValue.GetArray("TemplateAliasList");
     for(unsigned templateAliasListIndex = 0; templateAliasListIndex < templateAliasListJsonList.GetLength(); ++templateAliasListIndex)
     {
       m_templateAliasList.push_back(templateAliasListJsonList[templateAliasListIndex].AsObject());

@@ -42,7 +42,7 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   if(jsonValue.ValueExists("Rows"))
   {
-    Array<JsonView> rowsJsonList = jsonValue.GetArray("Rows");
+    Aws::Utils::Array<JsonView> rowsJsonList = jsonValue.GetArray("Rows");
     for(unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex)
     {
       m_rows.push_back(rowsJsonList[rowsIndex].AsObject());
@@ -51,7 +51,7 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   if(jsonValue.ValueExists("ColumnInfo"))
   {
-    Array<JsonView> columnInfoJsonList = jsonValue.GetArray("ColumnInfo");
+    Aws::Utils::Array<JsonView> columnInfoJsonList = jsonValue.GetArray("ColumnInfo");
     for(unsigned columnInfoIndex = 0; columnInfoIndex < columnInfoJsonList.GetLength(); ++columnInfoIndex)
     {
       m_columnInfo.push_back(columnInfoJsonList[columnInfoIndex].AsObject());

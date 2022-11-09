@@ -30,7 +30,7 @@ GetServerStrategiesResult& GetServerStrategiesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("serverStrategies"))
   {
-    Array<JsonView> serverStrategiesJsonList = jsonValue.GetArray("serverStrategies");
+    Aws::Utils::Array<JsonView> serverStrategiesJsonList = jsonValue.GetArray("serverStrategies");
     for(unsigned serverStrategiesIndex = 0; serverStrategiesIndex < serverStrategiesJsonList.GetLength(); ++serverStrategiesIndex)
     {
       m_serverStrategies.push_back(serverStrategiesJsonList[serverStrategiesIndex].AsObject());

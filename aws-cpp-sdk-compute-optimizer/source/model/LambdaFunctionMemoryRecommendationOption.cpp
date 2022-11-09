@@ -57,7 +57,7 @@ LambdaFunctionMemoryRecommendationOption& LambdaFunctionMemoryRecommendationOpti
 
   if(jsonValue.ValueExists("projectedUtilizationMetrics"))
   {
-    Array<JsonView> projectedUtilizationMetricsJsonList = jsonValue.GetArray("projectedUtilizationMetrics");
+    Aws::Utils::Array<JsonView> projectedUtilizationMetricsJsonList = jsonValue.GetArray("projectedUtilizationMetrics");
     for(unsigned projectedUtilizationMetricsIndex = 0; projectedUtilizationMetricsIndex < projectedUtilizationMetricsJsonList.GetLength(); ++projectedUtilizationMetricsIndex)
     {
       m_projectedUtilizationMetrics.push_back(projectedUtilizationMetricsJsonList[projectedUtilizationMetricsIndex].AsObject());
@@ -93,7 +93,7 @@ JsonValue LambdaFunctionMemoryRecommendationOption::Jsonize() const
 
   if(m_projectedUtilizationMetricsHasBeenSet)
   {
-   Array<JsonValue> projectedUtilizationMetricsJsonList(m_projectedUtilizationMetrics.size());
+   Aws::Utils::Array<JsonValue> projectedUtilizationMetricsJsonList(m_projectedUtilizationMetrics.size());
    for(unsigned projectedUtilizationMetricsIndex = 0; projectedUtilizationMetricsIndex < projectedUtilizationMetricsJsonList.GetLength(); ++projectedUtilizationMetricsIndex)
    {
      projectedUtilizationMetricsJsonList[projectedUtilizationMetricsIndex].AsObject(m_projectedUtilizationMetrics[projectedUtilizationMetricsIndex].Jsonize());

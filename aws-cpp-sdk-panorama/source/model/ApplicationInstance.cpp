@@ -115,7 +115,7 @@ ApplicationInstance& ApplicationInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RuntimeContextStates"))
   {
-    Array<JsonView> runtimeContextStatesJsonList = jsonValue.GetArray("RuntimeContextStates");
+    Aws::Utils::Array<JsonView> runtimeContextStatesJsonList = jsonValue.GetArray("RuntimeContextStates");
     for(unsigned runtimeContextStatesIndex = 0; runtimeContextStatesIndex < runtimeContextStatesJsonList.GetLength(); ++runtimeContextStatesIndex)
     {
       m_runtimeContextStates.push_back(runtimeContextStatesJsonList[runtimeContextStatesIndex].AsObject());
@@ -202,7 +202,7 @@ JsonValue ApplicationInstance::Jsonize() const
 
   if(m_runtimeContextStatesHasBeenSet)
   {
-   Array<JsonValue> runtimeContextStatesJsonList(m_runtimeContextStates.size());
+   Aws::Utils::Array<JsonValue> runtimeContextStatesJsonList(m_runtimeContextStates.size());
    for(unsigned runtimeContextStatesIndex = 0; runtimeContextStatesIndex < runtimeContextStatesJsonList.GetLength(); ++runtimeContextStatesIndex)
    {
      runtimeContextStatesJsonList[runtimeContextStatesIndex].AsObject(m_runtimeContextStates[runtimeContextStatesIndex].Jsonize());

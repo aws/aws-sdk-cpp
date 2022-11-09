@@ -47,7 +47,7 @@ Aws::String UpdateAnomalySubscriptionRequest::SerializePayload() const
 
   if(m_monitorArnListHasBeenSet)
   {
-   Array<JsonValue> monitorArnListJsonList(m_monitorArnList.size());
+   Aws::Utils::Array<JsonValue> monitorArnListJsonList(m_monitorArnList.size());
    for(unsigned monitorArnListIndex = 0; monitorArnListIndex < monitorArnListJsonList.GetLength(); ++monitorArnListIndex)
    {
      monitorArnListJsonList[monitorArnListIndex].AsString(m_monitorArnList[monitorArnListIndex]);
@@ -58,7 +58,7 @@ Aws::String UpdateAnomalySubscriptionRequest::SerializePayload() const
 
   if(m_subscribersHasBeenSet)
   {
-   Array<JsonValue> subscribersJsonList(m_subscribers.size());
+   Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
    for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
    {
      subscribersJsonList[subscribersIndex].AsObject(m_subscribers[subscribersIndex].Jsonize());

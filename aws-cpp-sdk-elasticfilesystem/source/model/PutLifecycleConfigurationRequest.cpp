@@ -24,7 +24,7 @@ Aws::String PutLifecycleConfigurationRequest::SerializePayload() const
 
   if(m_lifecyclePoliciesHasBeenSet)
   {
-   Array<JsonValue> lifecyclePoliciesJsonList(m_lifecyclePolicies.size());
+   Aws::Utils::Array<JsonValue> lifecyclePoliciesJsonList(m_lifecyclePolicies.size());
    for(unsigned lifecyclePoliciesIndex = 0; lifecyclePoliciesIndex < lifecyclePoliciesJsonList.GetLength(); ++lifecyclePoliciesIndex)
    {
      lifecyclePoliciesJsonList[lifecyclePoliciesIndex].AsObject(m_lifecyclePolicies[lifecyclePoliciesIndex].Jsonize());

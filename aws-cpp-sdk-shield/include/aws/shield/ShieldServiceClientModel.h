@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/shield/ShieldErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/shield/ShieldEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -84,6 +86,10 @@ namespace Aws
 
   namespace Shield
   {
+    using ShieldClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ShieldEndpointProviderBase = Aws::Shield::Endpoint::ShieldEndpointProviderBase;
+    using ShieldEndpointProvider = Aws::Shield::Endpoint::ShieldEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ShieldClient header */

@@ -30,7 +30,7 @@ DescribeRaidArraysResult& DescribeRaidArraysResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RaidArrays"))
   {
-    Array<JsonView> raidArraysJsonList = jsonValue.GetArray("RaidArrays");
+    Aws::Utils::Array<JsonView> raidArraysJsonList = jsonValue.GetArray("RaidArrays");
     for(unsigned raidArraysIndex = 0; raidArraysIndex < raidArraysJsonList.GetLength(); ++raidArraysIndex)
     {
       m_raidArrays.push_back(raidArraysJsonList[raidArraysIndex].AsObject());

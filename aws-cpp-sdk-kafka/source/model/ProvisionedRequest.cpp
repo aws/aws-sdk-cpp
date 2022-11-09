@@ -29,7 +29,9 @@ ProvisionedRequest::ProvisionedRequest() :
     m_kafkaVersionHasBeenSet(false),
     m_loggingInfoHasBeenSet(false),
     m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false)
+    m_numberOfBrokerNodesHasBeenSet(false),
+    m_storageMode(StorageMode::NOT_SET),
+    m_storageModeHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ ProvisionedRequest::ProvisionedRequest(JsonView jsonValue) :
     m_kafkaVersionHasBeenSet(false),
     m_loggingInfoHasBeenSet(false),
     m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false)
+    m_numberOfBrokerNodesHasBeenSet(false),
+    m_storageMode(StorageMode::NOT_SET),
+    m_storageModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -114,6 +118,13 @@ ProvisionedRequest& ProvisionedRequest::operator =(JsonView jsonValue)
     m_numberOfBrokerNodesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("storageMode"))
+  {
+    m_storageMode = StorageModeMapper::GetStorageModeForName(jsonValue.GetString("storageMode"));
+
+    m_storageModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -172,6 +183,11 @@ JsonValue ProvisionedRequest::Jsonize() const
   {
    payload.WithInteger("numberOfBrokerNodes", m_numberOfBrokerNodes);
 
+  }
+
+  if(m_storageModeHasBeenSet)
+  {
+   payload.WithString("storageMode", StorageModeMapper::GetNameForStorageMode(m_storageMode));
   }
 
   return payload;

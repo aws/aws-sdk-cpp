@@ -132,11 +132,7 @@ namespace Model
      * by <code>ListServices</code>. Valid values for <code>Condition</code> include
      * the following:</p> <ul> <li> <p> <code>EQ</code>: When you specify
      * <code>EQ</code>, specify one namespace ID for <code>Values</code>.
-     * <code>EQ</code> is the default condition and can be omitted.</p> </li> <li> <p>
-     * <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for
-     * the namespaces that you want <code>ListServices</code> to return a list of
-     * services for.</p> </li> <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
-     * </ul>
+     * <code>EQ</code> is the default condition and can be omitted.</p> </li> </ul>
      */
     inline const FilterCondition& GetCondition() const{ return m_condition; }
 
@@ -145,11 +141,7 @@ namespace Model
      * by <code>ListServices</code>. Valid values for <code>Condition</code> include
      * the following:</p> <ul> <li> <p> <code>EQ</code>: When you specify
      * <code>EQ</code>, specify one namespace ID for <code>Values</code>.
-     * <code>EQ</code> is the default condition and can be omitted.</p> </li> <li> <p>
-     * <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for
-     * the namespaces that you want <code>ListServices</code> to return a list of
-     * services for.</p> </li> <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
-     * </ul>
+     * <code>EQ</code> is the default condition and can be omitted.</p> </li> </ul>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
@@ -158,11 +150,7 @@ namespace Model
      * by <code>ListServices</code>. Valid values for <code>Condition</code> include
      * the following:</p> <ul> <li> <p> <code>EQ</code>: When you specify
      * <code>EQ</code>, specify one namespace ID for <code>Values</code>.
-     * <code>EQ</code> is the default condition and can be omitted.</p> </li> <li> <p>
-     * <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for
-     * the namespaces that you want <code>ListServices</code> to return a list of
-     * services for.</p> </li> <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
-     * </ul>
+     * <code>EQ</code> is the default condition and can be omitted.</p> </li> </ul>
      */
     inline void SetCondition(const FilterCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
@@ -171,11 +159,7 @@ namespace Model
      * by <code>ListServices</code>. Valid values for <code>Condition</code> include
      * the following:</p> <ul> <li> <p> <code>EQ</code>: When you specify
      * <code>EQ</code>, specify one namespace ID for <code>Values</code>.
-     * <code>EQ</code> is the default condition and can be omitted.</p> </li> <li> <p>
-     * <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for
-     * the namespaces that you want <code>ListServices</code> to return a list of
-     * services for.</p> </li> <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
-     * </ul>
+     * <code>EQ</code> is the default condition and can be omitted.</p> </li> </ul>
      */
     inline void SetCondition(FilterCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
@@ -184,11 +168,7 @@ namespace Model
      * by <code>ListServices</code>. Valid values for <code>Condition</code> include
      * the following:</p> <ul> <li> <p> <code>EQ</code>: When you specify
      * <code>EQ</code>, specify one namespace ID for <code>Values</code>.
-     * <code>EQ</code> is the default condition and can be omitted.</p> </li> <li> <p>
-     * <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for
-     * the namespaces that you want <code>ListServices</code> to return a list of
-     * services for.</p> </li> <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
-     * </ul>
+     * <code>EQ</code> is the default condition and can be omitted.</p> </li> </ul>
      */
     inline ServiceFilter& WithCondition(const FilterCondition& value) { SetCondition(value); return *this;}
 
@@ -197,11 +177,7 @@ namespace Model
      * by <code>ListServices</code>. Valid values for <code>Condition</code> include
      * the following:</p> <ul> <li> <p> <code>EQ</code>: When you specify
      * <code>EQ</code>, specify one namespace ID for <code>Values</code>.
-     * <code>EQ</code> is the default condition and can be omitted.</p> </li> <li> <p>
-     * <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for
-     * the namespaces that you want <code>ListServices</code> to return a list of
-     * services for.</p> </li> <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
-     * </ul>
+     * <code>EQ</code> is the default condition and can be omitted.</p> </li> </ul>
      */
     inline ServiceFilter& WithCondition(FilterCondition&& value) { SetCondition(std::move(value)); return *this;}
 

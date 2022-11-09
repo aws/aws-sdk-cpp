@@ -92,7 +92,7 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("QueryParameters"))
   {
-    Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
+    Aws::Utils::Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
     for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
     {
       m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
@@ -143,7 +143,7 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("SubStatements"))
   {
-    Array<JsonView> subStatementsJsonList = jsonValue.GetArray("SubStatements");
+    Aws::Utils::Array<JsonView> subStatementsJsonList = jsonValue.GetArray("SubStatements");
     for(unsigned subStatementsIndex = 0; subStatementsIndex < subStatementsJsonList.GetLength(); ++subStatementsIndex)
     {
       m_subStatements.push_back(subStatementsJsonList[subStatementsIndex].AsObject());

@@ -23,7 +23,7 @@ Aws::String BatchDisassociateUserStackRequest::SerializePayload() const
 
   if(m_userStackAssociationsHasBeenSet)
   {
-   Array<JsonValue> userStackAssociationsJsonList(m_userStackAssociations.size());
+   Aws::Utils::Array<JsonValue> userStackAssociationsJsonList(m_userStackAssociations.size());
    for(unsigned userStackAssociationsIndex = 0; userStackAssociationsIndex < userStackAssociationsJsonList.GetLength(); ++userStackAssociationsIndex)
    {
      userStackAssociationsJsonList[userStackAssociationsIndex].AsObject(m_userStackAssociations[userStackAssociationsIndex].Jsonize());

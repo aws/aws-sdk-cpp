@@ -91,7 +91,7 @@ CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdditionalTreatments"))
   {
-    Array<JsonView> additionalTreatmentsJsonList = jsonValue.GetArray("AdditionalTreatments");
+    Aws::Utils::Array<JsonView> additionalTreatmentsJsonList = jsonValue.GetArray("AdditionalTreatments");
     for(unsigned additionalTreatmentsIndex = 0; additionalTreatmentsIndex < additionalTreatmentsJsonList.GetLength(); ++additionalTreatmentsIndex)
     {
       m_additionalTreatments.push_back(additionalTreatmentsJsonList[additionalTreatmentsIndex].AsObject());
@@ -279,7 +279,7 @@ JsonValue CampaignResponse::Jsonize() const
 
   if(m_additionalTreatmentsHasBeenSet)
   {
-   Array<JsonValue> additionalTreatmentsJsonList(m_additionalTreatments.size());
+   Aws::Utils::Array<JsonValue> additionalTreatmentsJsonList(m_additionalTreatments.size());
    for(unsigned additionalTreatmentsIndex = 0; additionalTreatmentsIndex < additionalTreatmentsJsonList.GetLength(); ++additionalTreatmentsIndex)
    {
      additionalTreatmentsJsonList[additionalTreatmentsIndex].AsObject(m_additionalTreatments[additionalTreatmentsIndex].Jsonize());

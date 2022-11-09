@@ -33,7 +33,7 @@ BatchScheduleActionDeleteRequest& BatchScheduleActionDeleteRequest::operator =(J
 {
   if(jsonValue.ValueExists("actionNames"))
   {
-    Array<JsonView> actionNamesJsonList = jsonValue.GetArray("actionNames");
+    Aws::Utils::Array<JsonView> actionNamesJsonList = jsonValue.GetArray("actionNames");
     for(unsigned actionNamesIndex = 0; actionNamesIndex < actionNamesJsonList.GetLength(); ++actionNamesIndex)
     {
       m_actionNames.push_back(actionNamesJsonList[actionNamesIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue BatchScheduleActionDeleteRequest::Jsonize() const
 
   if(m_actionNamesHasBeenSet)
   {
-   Array<JsonValue> actionNamesJsonList(m_actionNames.size());
+   Aws::Utils::Array<JsonValue> actionNamesJsonList(m_actionNames.size());
    for(unsigned actionNamesIndex = 0; actionNamesIndex < actionNamesJsonList.GetLength(); ++actionNamesIndex)
    {
      actionNamesJsonList[actionNamesIndex].AsString(m_actionNames[actionNamesIndex]);

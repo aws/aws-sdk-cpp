@@ -36,7 +36,7 @@ Aws::String UpdateRecordsRequest::SerializePayload() const
 
   if(m_recordPatchesHasBeenSet)
   {
-   Array<JsonValue> recordPatchesJsonList(m_recordPatches.size());
+   Aws::Utils::Array<JsonValue> recordPatchesJsonList(m_recordPatches.size());
    for(unsigned recordPatchesIndex = 0; recordPatchesIndex < recordPatchesJsonList.GetLength(); ++recordPatchesIndex)
    {
      recordPatchesJsonList[recordPatchesIndex].AsObject(m_recordPatches[recordPatchesIndex].Jsonize());

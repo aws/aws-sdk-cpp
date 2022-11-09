@@ -17,6 +17,7 @@ AWS_CORE_API extern const char MESSAGE_LOWER_CASE[];
 AWS_CORE_API extern const char MESSAGE_CAMEL_CASE[];
 AWS_CORE_API extern const char ERROR_TYPE_HEADER[];
 AWS_CORE_API extern const char REQUEST_ID_HEADER[];
+AWS_CORE_API extern const char QUERY_ERROR_HEADER[];
 AWS_CORE_API extern const char TYPE[];
 
 enum JsonErrorResponseStyle
@@ -36,7 +37,7 @@ enum XmlErrorResponseStyle
 
 static const char ERROR_MARSHALLER_TEST_ALLOC_TAG[] = "ErrorMarshllerTestAllocTag";
 
-static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::String& exception, const Aws::String& message, const Aws::String& requestId, int style = LowerCaseMessage)
+static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::String& exception, const Aws::String& message, const Aws::String& requestId, int style = LowerCaseMessage, const Aws::String& queryErrorCode = "")
 {
     using namespace Aws::Http;
     using namespace Aws::Http::Standard;
@@ -64,6 +65,11 @@ static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::Stri
     {
         *ss << "}";
         response->AddHeader(ERROR_TYPE_HEADER, exception);
+    }
+
+    if (!queryErrorCode.empty())
+    {
+        response->AddHeader(QUERY_ERROR_HEADER, queryErrorCode);
     }
 
     return response;
@@ -460,6 +466,13 @@ TEST(JsonErrorMashallerTest, TestErrorsWithPrefixParse)
     ASSERT_EQ("Unable to parse ExceptionName: " + exceptionPrefix + "IDon'tExist Message: JunkMessage", error.GetMessage());
     ASSERT_EQ(requestId, error.GetRequestId());
     ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "AccessDeniedException", message, requestId, LowerCaseMessage, "AwsQueryErrorCode"));
+    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ("AwsQueryErrorCode", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
 }
 
 TEST(AWSErrorMashallerTest, TestErrorsWithoutPrefixParse)
@@ -718,6 +731,13 @@ TEST(AWSErrorMashallerTest, TestErrorsWithoutPrefixParse)
     ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
     ASSERT_EQ(exceptionPrefix + "IDon'tExist", error.GetExceptionName());
     ASSERT_EQ("Unable to parse ExceptionName: " + exceptionPrefix + "IDon'tExist Message: JunkMessage", error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "AccessDeniedException", message, requestId, LowerCaseMessage, "AwsQueryErrorCode"));
+    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ("AwsQueryErrorCode", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
     ASSERT_EQ(requestId, error.GetRequestId());
     ASSERT_FALSE(error.ShouldRetry());
 }

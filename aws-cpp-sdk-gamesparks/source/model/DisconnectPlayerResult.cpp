@@ -30,7 +30,7 @@ DisconnectPlayerResult& DisconnectPlayerResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DisconnectFailures"))
   {
-    Array<JsonView> disconnectFailuresJsonList = jsonValue.GetArray("DisconnectFailures");
+    Aws::Utils::Array<JsonView> disconnectFailuresJsonList = jsonValue.GetArray("DisconnectFailures");
     for(unsigned disconnectFailuresIndex = 0; disconnectFailuresIndex < disconnectFailuresJsonList.GetLength(); ++disconnectFailuresIndex)
     {
       m_disconnectFailures.push_back(disconnectFailuresJsonList[disconnectFailuresIndex].AsString());
@@ -39,7 +39,7 @@ DisconnectPlayerResult& DisconnectPlayerResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("DisconnectSuccesses"))
   {
-    Array<JsonView> disconnectSuccessesJsonList = jsonValue.GetArray("DisconnectSuccesses");
+    Aws::Utils::Array<JsonView> disconnectSuccessesJsonList = jsonValue.GetArray("DisconnectSuccesses");
     for(unsigned disconnectSuccessesIndex = 0; disconnectSuccessesIndex < disconnectSuccessesJsonList.GetLength(); ++disconnectSuccessesIndex)
     {
       m_disconnectSuccesses.push_back(disconnectSuccessesJsonList[disconnectSuccessesIndex].AsString());

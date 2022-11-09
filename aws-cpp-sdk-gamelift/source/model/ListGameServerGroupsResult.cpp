@@ -30,7 +30,7 @@ ListGameServerGroupsResult& ListGameServerGroupsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GameServerGroups"))
   {
-    Array<JsonView> gameServerGroupsJsonList = jsonValue.GetArray("GameServerGroups");
+    Aws::Utils::Array<JsonView> gameServerGroupsJsonList = jsonValue.GetArray("GameServerGroups");
     for(unsigned gameServerGroupsIndex = 0; gameServerGroupsIndex < gameServerGroupsJsonList.GetLength(); ++gameServerGroupsIndex)
     {
       m_gameServerGroups.push_back(gameServerGroupsJsonList[gameServerGroupsIndex].AsObject());

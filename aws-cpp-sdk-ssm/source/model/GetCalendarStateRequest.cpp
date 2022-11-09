@@ -24,7 +24,7 @@ Aws::String GetCalendarStateRequest::SerializePayload() const
 
   if(m_calendarNamesHasBeenSet)
   {
-   Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
+   Aws::Utils::Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
    for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
    {
      calendarNamesJsonList[calendarNamesIndex].AsString(m_calendarNames[calendarNamesIndex]);

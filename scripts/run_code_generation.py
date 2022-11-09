@@ -20,10 +20,11 @@ from pathlib import Path
 # Default configuration variables
 CLIENT_MODEL_FILE_LOCATION = "./code-generation/api-descriptions/"
 ENDPOINT_RULES_LOCATION = "./code-generation/endpoints/"
+PARTITIONS_FILE_LOCATION = "../partitions/partitions.json"  # Relative to models dir
 DEFAULTS_FILE_LOCATION = "../defaults/sdk-default-configuration.json"  # Relative to models dir
 DEFAULT_GENERATOR_LOCATION = "code-generation/generator/"
-GENERATOR_JAR = "target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar"
-
+GENERATOR_TARGET_DIR = "target"
+GENERATOR_JAR = GENERATOR_TARGET_DIR + "/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
 # Regexp to parse C2J model filename to extract service name and date version
 SERVICE_MODEL_FILENAME_PATTERN = re.compile(
@@ -41,14 +42,8 @@ SERVICE_NAME_REMAPS = {"runtime.lex": "lex",
                        "transcribe-streaming": "transcribestreaming",
                        "streams.dynamodb": "dynamodbstreams"}
 
-ENDPOINT_NAME_REMAPS = {"s3outposts": "outposts",
-                        "s3-control": None,
-                        "importexport": None,
-                        "license-manager-user-subscriptions": None,
-                        "redshift-serverless": "redshiftserverless",
-                        "sdb": None,
-                        "mobileanalytics": None,
-                        "rolesanywhere": None}
+CORE_COMPONENT_TO_MODEL = {"defaults": DEFAULTS_FILE_LOCATION,
+                           "partitions": PARTITIONS_FILE_LOCATION}
 
 
 class ServiceModel(object):
@@ -63,50 +58,49 @@ class ServiceModel(object):
             setattr(self, key, value)
 
 
+def is_endpoints_enabled(sdk_root: str) -> bool:
+    """Return if support for a new endpoints API should be enabled
+
+    :param sdk_root (str): filepath (absolute or relative) to the dir aws-cpp-sdk-core
+    """
+    with open(sdk_root + "/" + "aws-cpp-sdk-core/include/aws/core/VersionConfig.h") as version_config_file:
+        version_config = version_config_file.read()
+        m_major = re.search("#define AWS_SDK_VERSION_MAJOR (?P<version_major>\d+)", version_config)
+        m_minor = re.search("#define AWS_SDK_VERSION_MINOR (?P<version_minor>\d+)", version_config)
+        if int(m_major.group("version_major")) >= 2 or int(m_minor.group("version_minor")) >= 10:
+            return True
+
+    return False
+
+
 def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str, c2j_model_filename) -> ServiceModel:
     """Return a ServiceModel containing paths to the Service models: C2J model and endpoints (rules and tests).
-    Thanks to our legacy and backward compatibility, a more complicated logic to match c2j models and smithy endpoints are required.
 
     :param models_dir (str): filepath (absolute or relative) to the dir with c2j models
     :param endpoint_rules_dir (str): filepath (absolute or relative) to the dir with dirs of endpoints
     :param c2j_model_filename (str): filename of a service C2J model (just filename, relative to models_dir without separator)
     :return: ServiceModel, a descriptor class holding Service models filenames
     """
-    with open(models_dir + "/" + c2j_model_filename) as c2j_model_file:
-        try:
-            c2j_model = json.loads(c2j_model_file.read())
-            service_id = c2j_model["metadata"].get("serviceId", None)
-            if not service_id:
-                service_id = c2j_model["metadata"]["serviceFullName"]
-                service_id = service_id.lower().replace("aws", "").replace("amazon", "").strip()
-            service_id = service_id.lower().replace(' ', '-')
-            service_ids_to_try = [service_id]
-            if ENDPOINT_NAME_REMAPS.get(service_id):
-                service_ids_to_try.append(ENDPOINT_NAME_REMAPS.get(service_id))
-            for service_id in service_ids_to_try:
-                endpoint_dir_service_id = service_id.lower().replace(' ', '-')
-                endpoint_rules_path = f"{endpoint_dir_service_id}/endpoint-rule-set.json"
-                endpoint_tests_path = f"{endpoint_dir_service_id}/endpoint-tests.json"
-                if os.path.exists(f"{endpoint_rules_dir}/{endpoint_dir_service_id}") \
-                        and os.path.exists(f"{endpoint_rules_dir}/{endpoint_rules_path}") \
-                        and os.path.exists(f"{endpoint_rules_dir}/{endpoint_tests_path}"):  # tests must exist
-                    return ServiceModel(service_id=service_id,
-                                        c2j_model=c2j_model_filename,
-                                        endpoint_rule_set=endpoint_rules_path,
-                                        endpoint_tests=endpoint_tests_path)
-            else:
-                raise RuntimeError(f"Service model {c2j_model_filename} (service_id {service_id}) does not have "
-                                   f"corresponding non-empty endpoint rules dir!")
-        except KeyError as exc:
-            raise KeyError(f"C2j Model does not contain ['metadata']['serviceId'] field: {exc}")
-        except Exception as exc:
-            raise Exception(f"Unknown exception while parsing c2j model {c2j_model_filename}: {exc}")
+
+    endpoint_rules_filename = c2j_model_filename.replace('.normal.json', '.endpoint-rule-set.json')
+    endpoint_rules_filepath = f"{endpoint_rules_dir}/{endpoint_rules_filename}"
+    endpoint_tests_filename = c2j_model_filename.replace('.normal.json', '.endpoint-tests.json')
+    endpoint_tests_filepath = f"{endpoint_rules_dir}/{endpoint_tests_filename}"
+    match = SERVICE_MODEL_FILENAME_PATTERN.match(c2j_model_filename)
+    service_id = match.group("service")
+
+    if os.path.exists(endpoint_rules_filepath) and os.path.exists(endpoint_tests_filepath):
+        return ServiceModel(service_id=service_id,
+                            c2j_model=c2j_model_filename,
+                            endpoint_rule_set=endpoint_rules_filename,
+                            endpoint_tests=endpoint_tests_filename)
 
 
-def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
+def collect_available_models(models_dir: str, endpoints_enabled: bool, endpoint_rules_dir: str) -> dict:
     """Return a dict of <service_name, model_file_name> with all available c2j models in a models_dir
 
     :param models_dir: path to the directory with c2j models
+    :param endpoints_enabled: if new endpoints API should be enabled
     :param endpoint_rules_dir: path to the directory with endpoints dir models
     :return: dict<service_name, model_file_name> in models dir
     """
@@ -140,9 +134,16 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
 
         # fetch endpoint-rules filename which is based on ServiceId in c2j models:
         try:
-            service_name_to_model_filename[key] = _build_service_model_with_endpoints(models_dir,
-                                                                                      endpoint_rules_dir,
-                                                                                      model_file_date[0])
+            if endpoints_enabled:
+                service_name_to_model_filename[key] = _build_service_model_with_endpoints(models_dir,
+                                                                                          endpoint_rules_dir,
+                                                                                          model_file_date[0])
+            else:
+                service_name_to_model_filename[key] = ServiceModel(service_id=key,
+                                                                   c2j_model=model_file_date[0],
+                                                                   endpoint_rule_set=None,
+                                                                   endpoint_tests=None)
+
             if key == "s3":
                 service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
         except Exception as exc:
@@ -172,9 +173,8 @@ def build_generator(generator_dir: str, max_workers: int) -> None:
     :return: None
     """
 
-    mvn_cmd = shutil.which("mvn")  # subprocess.run does expand Path by default
-    max_workers = min(int(max_workers), 8)
-    process = subprocess.run([mvn_cmd, "package"], cwd=generator_dir, timeout=5*60, check=True)
+    mvn_cmd = [shutil.which("mvn"), "package", "-q"]  # subprocess.run does expand Path by default
+    process = subprocess.run(mvn_cmd, cwd=generator_dir, timeout=5*60, check=True)
     process.check_returncode()
 
 
@@ -186,6 +186,8 @@ def run_generator_once(service_name: str, run_command: list, output_filename: st
     :param output_filename: temporary file to be generated by generator or STDOUT
     :return: generated filename (str) or io.BytesIO-like object
     """
+    # run_command_str = str(run_command).replace(', ', ' ').replace('\'','')
+    # print(f"RUNNING COMMAND\n{run_command_str}\n")
     process = subprocess.run(run_command, timeout=5 * 60, check=True, capture_output=True)
     process.check_returncode()
 
@@ -232,46 +234,51 @@ def extract_zip(zip_bytes: io.BytesIO, service_name: str, output_dir: str, dir_t
     return service_name, 0
 
 
-def generate_defaults(models_filepath: str,
-                      generator_filepath: str,
-                      output_dir: str,
-                      tmp_dir: str,
-                      kwargs):
+def generate_core_component(component_name: str,
+                            model_file_path: str,
+                            models_dir: str,
+                            generator_filepath: str,
+                            output_dir: str,
+                            tmp_dir: str,
+                            kwargs):
     """Generate AWS-SDK-CPP defaults
 
-    :param models_filepath: path where c2j models are located
+    :param component_name: "partitions" or "defaults"
+    :param model_file_path: relative path to the component json model
+    :param models_dir: path where c2j models are located
     :param generator_filepath: path where SDK generator is located
     :param output_dir: path to the SDK root (with aws-cpp-sdk-core)
     :param tmp_dir: Optional path to a tmp dir to use (otherwise STDOUT piping will be used)
     :param kwargs: Additional optional arguments to pass to the code generator
     :return: ("Defaults", status_code), where 0 is success status_code
     """
-
+    if component_name not in ["defaults", "partitions"]:
+        raise RuntimeError(f"Unknown core component: {component_name}")
     # raw arguments to be passed from Py wrapper to the actual generator
     if not kwargs.get("language-binding"):
         kwargs["language-binding"] = "cpp"  # Always cpp by default in the current code gen
 
     if tmp_dir:
-        output_filename = f"{tmp_dir}/aws-cpp-sdk-core-defaults.zip"
+        output_filename = f"{tmp_dir}/aws-cpp-sdk-core-{component_name}.zip"
     else:
         output_filename = "STDOUT"
 
-    defaults_filepath = models_filepath + "/" + DEFAULTS_FILE_LOCATION
+    full_model_file_path = f"{models_dir}/{model_file_path}"
     generator_jar = generator_filepath + "/" + GENERATOR_JAR
     run_command = list()
     run_command.append("java")
     run_command += ["-jar", generator_jar]
-    run_command += ["--inputfile", defaults_filepath]
-    run_command += ["--defaults", "global"]
+    run_command += ["--inputfile", full_model_file_path]
+    run_command += [f"--{component_name}", "global"]
     run_command += ["--outputfile", output_filename]
     run_command += ["--arbitrary"]
 
     for key, val in kwargs.items():
         run_command += [f"--{key}", val]
 
-    output_zip_file = run_generator_once("Defaults", run_command, output_filename)
+    output_zip_file = run_generator_once(f"core/{component_name}", run_command, output_filename)
 
-    return extract_zip(output_zip_file, "Defaults", output_dir, None)
+    return extract_zip(output_zip_file, f"core/{component_name}", output_dir, None)
 
 
 def generate_single_client(service_name: str,
@@ -325,8 +332,22 @@ def generate_single_client(service_name: str,
 
     output_zip_file = run_generator_once(service_name, run_command, output_filename)
     dir_to_delete_before_extract = f"{output_dir}/aws-cpp-sdk-{service_name}"
+    service_name, status = extract_zip(output_zip_file, service_name, output_dir, dir_to_delete_before_extract)
 
-    return extract_zip(output_zip_file, service_name, output_dir, dir_to_delete_before_extract)
+    if model_files.endpoint_rule_set and model_files.endpoint_tests:
+        run_command.append("--generate-tests")
+
+        if tmp_dir:
+            output_filename = f"{tmp_dir}/{model_files.c2j_model.replace('.normal.json', '-gen-tests.zip')}"
+        else:
+            output_filename = "STDOUT"
+        output_zip_file = run_generator_once(service_name, run_command, output_filename)
+        if not os.path.exists(f"{output_dir}/generated/tests"):
+            os.makedirs(f"{output_dir}/generated/tests")
+        dir_to_delete_before_extract = f"{output_dir}/generated/tests/{service_name}-gen-tests"
+        extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/generated/tests", dir_to_delete_before_extract)
+
+    return service_name, status
 
 
 def parse_arguments() -> dict:
@@ -338,6 +359,7 @@ def parse_arguments() -> dict:
     parser.add_argument("--client_list", type=str, help="Comma-separated or semi-colon-separated list of SDK clients "
                                                         "to be (re)generated")
     parser.add_argument("--defaults", action="store_true", help="Generates defaults configuration")
+    parser.add_argument("--partitions", action="store_true", help="Generates partitions blob")
     parser.add_argument("--all",
                         help="Generate all found clients and defaults. Always True unless client_list provided",
                         action="store_true")
@@ -368,20 +390,27 @@ def parse_arguments() -> dict:
     args = vars(parser.parse_args())
     arg_map = {}
 
-    if args.get("api_definition_file", None):
+    if args.get("all", None):
+        arg_map["all"] = True
+        arg_map["defaults"] = True
+        arg_map["partitions"] = True
+    elif args.get("api_definition_file", None):
         arg_map["api_definition_file"] = args.get("api_definition_file")
     else:
         raw_client_list = args.get("client_list", None)
-        if raw_client_list:
-            arg_map["client_list"] = raw_client_list.replace(";", ",").split(",")
-            arg_map["all"] = False
-            arg_map["defaults"] = False
-        else:
-            arg_map["all"] = True
-            arg_map["defaults"] = True
+        arg_map["all"] = False
+        arg_map["defaults"] = False
+        arg_map["partitions"] = False
+        arg_map["client_list"] = False
 
         if args.get("defaults", None):
             arg_map["defaults"] = args.get("defaults")
+
+        if args.get("partitions", None):
+            arg_map["partitions"] = args.get("partitions")
+
+        if raw_client_list:
+            arg_map["client_list"] = raw_client_list.replace(";", ",").split(",")
 
     output_location = args["output_location"] or None
     if not output_location:
@@ -443,7 +472,9 @@ def main():
             build_generator_future.result()  # will rethrow any exceptions
             return 0
 
-        available_models = collect_available_models(args["path_to_api_definitions"], args["path_to_endpoint_rules"])
+        available_models = collect_available_models(args["path_to_api_definitions"],
+                                                    is_endpoints_enabled(args["output_location"]),
+                                                    args["path_to_endpoint_rules"])
         if args.get("list_all"):
             model_list = available_models.keys()
             print(model_list)
@@ -452,7 +483,9 @@ def main():
         if args.get("all"):
             clients_to_build = available_models.keys()
         else:
-            clients_to_build = args["client_list"]
+            clients_to_build = args.get("client_list")
+            if not clients_to_build:
+                clients_to_build = []
             clients_to_build_set = set(clients_to_build)
             available_models_set = set(available_models.keys())
             not_found_models = clients_to_build_set - available_models_set
@@ -468,14 +501,17 @@ def main():
 
         print(f"Running code generator, up to {max_workers} processes in parallel")
         sys.stdout.flush()
-        if args.get("all") or args.get("defaults"):
-            task = executor.submit(generate_defaults,
-                                   args["path_to_api_definitions"],
-                                   args["path_to_generator"],
-                                   args["output_location"],
-                                   None,
-                                   args["raw_generator_arguments"])
-            pending.add(task)
+        for core_component in ["defaults", "partitions"]:
+            if args.get("all") or args.get(core_component):
+                task = executor.submit(generate_core_component,
+                                       core_component,
+                                       CORE_COMPONENT_TO_MODEL[core_component],
+                                       args["path_to_api_definitions"],
+                                       args["path_to_generator"],
+                                       args["output_location"],
+                                       None,
+                                       args["raw_generator_arguments"])
+                pending.add(task)
 
         for service in clients_to_build:
             model_files = available_models[service]
@@ -505,18 +541,19 @@ def main():
                 if status != 0:
                     raise RuntimeError(f"Service {service} (re)generation failed with non-zero return: {status}")
             except Exception as exc:
-                failures.add(f"Service (re)generation failed with error.\n    Exception: {exc}")
+                failures.add(f"Service (re)generation failed with error.\n    Exception: {exc}\n"
+                             f"stderr: {getattr(exc, 'stderr', None)}")
 
         if len(failures):
             print(f"Code generation failed, processed {len(done)} packages. "
-                  f"Encountered {len(failures)} failures:\n")  # Including defaults
+                  f"Encountered {len(failures)} failures:\n")  # Including defaults and partitions
             for failure in failures:
                 print(failure)
 
         if len(failures):
             return -1
 
-        print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults
+        print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
 
     return 0
 

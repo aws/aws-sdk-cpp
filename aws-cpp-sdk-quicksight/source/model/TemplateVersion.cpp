@@ -60,7 +60,7 @@ TemplateVersion& TemplateVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -84,7 +84,7 @@ TemplateVersion& TemplateVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DataSetConfigurations"))
   {
-    Array<JsonView> dataSetConfigurationsJsonList = jsonValue.GetArray("DataSetConfigurations");
+    Aws::Utils::Array<JsonView> dataSetConfigurationsJsonList = jsonValue.GetArray("DataSetConfigurations");
     for(unsigned dataSetConfigurationsIndex = 0; dataSetConfigurationsIndex < dataSetConfigurationsJsonList.GetLength(); ++dataSetConfigurationsIndex)
     {
       m_dataSetConfigurations.push_back(dataSetConfigurationsJsonList[dataSetConfigurationsIndex].AsObject());
@@ -115,7 +115,7 @@ TemplateVersion& TemplateVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Sheets"))
   {
-    Array<JsonView> sheetsJsonList = jsonValue.GetArray("Sheets");
+    Aws::Utils::Array<JsonView> sheetsJsonList = jsonValue.GetArray("Sheets");
     for(unsigned sheetsIndex = 0; sheetsIndex < sheetsJsonList.GetLength(); ++sheetsIndex)
     {
       m_sheets.push_back(sheetsJsonList[sheetsIndex].AsObject());
@@ -137,7 +137,7 @@ JsonValue TemplateVersion::Jsonize() const
 
   if(m_errorsHasBeenSet)
   {
-   Array<JsonValue> errorsJsonList(m_errors.size());
+   Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
    {
      errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
@@ -159,7 +159,7 @@ JsonValue TemplateVersion::Jsonize() const
 
   if(m_dataSetConfigurationsHasBeenSet)
   {
-   Array<JsonValue> dataSetConfigurationsJsonList(m_dataSetConfigurations.size());
+   Aws::Utils::Array<JsonValue> dataSetConfigurationsJsonList(m_dataSetConfigurations.size());
    for(unsigned dataSetConfigurationsIndex = 0; dataSetConfigurationsIndex < dataSetConfigurationsJsonList.GetLength(); ++dataSetConfigurationsIndex)
    {
      dataSetConfigurationsJsonList[dataSetConfigurationsIndex].AsObject(m_dataSetConfigurations[dataSetConfigurationsIndex].Jsonize());
@@ -188,7 +188,7 @@ JsonValue TemplateVersion::Jsonize() const
 
   if(m_sheetsHasBeenSet)
   {
-   Array<JsonValue> sheetsJsonList(m_sheets.size());
+   Aws::Utils::Array<JsonValue> sheetsJsonList(m_sheets.size());
    for(unsigned sheetsIndex = 0; sheetsIndex < sheetsJsonList.GetLength(); ++sheetsIndex)
    {
      sheetsJsonList[sheetsIndex].AsObject(m_sheets[sheetsIndex].Jsonize());

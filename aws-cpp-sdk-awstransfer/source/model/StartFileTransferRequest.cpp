@@ -30,7 +30,7 @@ Aws::String StartFileTransferRequest::SerializePayload() const
 
   if(m_sendFilePathsHasBeenSet)
   {
-   Array<JsonValue> sendFilePathsJsonList(m_sendFilePaths.size());
+   Aws::Utils::Array<JsonValue> sendFilePathsJsonList(m_sendFilePaths.size());
    for(unsigned sendFilePathsIndex = 0; sendFilePathsIndex < sendFilePathsJsonList.GetLength(); ++sendFilePathsIndex)
    {
      sendFilePathsJsonList[sendFilePathsIndex].AsString(m_sendFilePaths[sendFilePathsIndex]);

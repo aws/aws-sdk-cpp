@@ -30,7 +30,7 @@ DescribeEventTopicsResult& DescribeEventTopicsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EventTopics"))
   {
-    Array<JsonView> eventTopicsJsonList = jsonValue.GetArray("EventTopics");
+    Aws::Utils::Array<JsonView> eventTopicsJsonList = jsonValue.GetArray("EventTopics");
     for(unsigned eventTopicsIndex = 0; eventTopicsIndex < eventTopicsJsonList.GetLength(); ++eventTopicsIndex)
     {
       m_eventTopics.push_back(eventTopicsJsonList[eventTopicsIndex].AsObject());

@@ -7,6 +7,7 @@
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/textract/model/IdentityDocumentField.h>
+#include <aws/textract/model/Block.h>
 #include <utility>
 
 namespace Aws
@@ -112,6 +113,47 @@ namespace Model
      */
     inline IdentityDocument& AddIdentityDocumentFields(IdentityDocumentField&& value) { m_identityDocumentFieldsHasBeenSet = true; m_identityDocumentFields.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Individual word recognition, as returned by document detection.</p>
+     */
+    inline const Aws::Vector<Block>& GetBlocks() const{ return m_blocks; }
+
+    /**
+     * <p>Individual word recognition, as returned by document detection.</p>
+     */
+    inline bool BlocksHasBeenSet() const { return m_blocksHasBeenSet; }
+
+    /**
+     * <p>Individual word recognition, as returned by document detection.</p>
+     */
+    inline void SetBlocks(const Aws::Vector<Block>& value) { m_blocksHasBeenSet = true; m_blocks = value; }
+
+    /**
+     * <p>Individual word recognition, as returned by document detection.</p>
+     */
+    inline void SetBlocks(Aws::Vector<Block>&& value) { m_blocksHasBeenSet = true; m_blocks = std::move(value); }
+
+    /**
+     * <p>Individual word recognition, as returned by document detection.</p>
+     */
+    inline IdentityDocument& WithBlocks(const Aws::Vector<Block>& value) { SetBlocks(value); return *this;}
+
+    /**
+     * <p>Individual word recognition, as returned by document detection.</p>
+     */
+    inline IdentityDocument& WithBlocks(Aws::Vector<Block>&& value) { SetBlocks(std::move(value)); return *this;}
+
+    /**
+     * <p>Individual word recognition, as returned by document detection.</p>
+     */
+    inline IdentityDocument& AddBlocks(const Block& value) { m_blocksHasBeenSet = true; m_blocks.push_back(value); return *this; }
+
+    /**
+     * <p>Individual word recognition, as returned by document detection.</p>
+     */
+    inline IdentityDocument& AddBlocks(Block&& value) { m_blocksHasBeenSet = true; m_blocks.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_documentIndex;
@@ -119,6 +161,9 @@ namespace Model
 
     Aws::Vector<IdentityDocumentField> m_identityDocumentFields;
     bool m_identityDocumentFieldsHasBeenSet = false;
+
+    Aws::Vector<Block> m_blocks;
+    bool m_blocksHasBeenSet = false;
   };
 
 } // namespace Model

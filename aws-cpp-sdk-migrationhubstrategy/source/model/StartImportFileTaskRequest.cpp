@@ -40,7 +40,7 @@ Aws::String StartImportFileTaskRequest::SerializePayload() const
 
   if(m_groupIdHasBeenSet)
   {
-   Array<JsonValue> groupIdJsonList(m_groupId.size());
+   Aws::Utils::Array<JsonValue> groupIdJsonList(m_groupId.size());
    for(unsigned groupIdIndex = 0; groupIdIndex < groupIdJsonList.GetLength(); ++groupIdIndex)
    {
      groupIdJsonList[groupIdIndex].AsObject(m_groupId[groupIdIndex].Jsonize());

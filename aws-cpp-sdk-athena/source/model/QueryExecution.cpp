@@ -24,6 +24,7 @@ QueryExecution::QueryExecution() :
     m_statementType(StatementType::NOT_SET),
     m_statementTypeHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
+    m_resultReuseConfigurationHasBeenSet(false),
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
@@ -39,6 +40,7 @@ QueryExecution::QueryExecution(JsonView jsonValue) :
     m_statementType(StatementType::NOT_SET),
     m_statementTypeHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
+    m_resultReuseConfigurationHasBeenSet(false),
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
@@ -79,6 +81,13 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_resultConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResultReuseConfiguration"))
+  {
+    m_resultReuseConfiguration = jsonValue.GetObject("ResultReuseConfiguration");
+
+    m_resultReuseConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("QueryExecutionContext"))
   {
     m_queryExecutionContext = jsonValue.GetObject("QueryExecutionContext");
@@ -116,7 +125,7 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExecutionParameters"))
   {
-    Array<JsonView> executionParametersJsonList = jsonValue.GetArray("ExecutionParameters");
+    Aws::Utils::Array<JsonView> executionParametersJsonList = jsonValue.GetArray("ExecutionParameters");
     for(unsigned executionParametersIndex = 0; executionParametersIndex < executionParametersJsonList.GetLength(); ++executionParametersIndex)
     {
       m_executionParameters.push_back(executionParametersJsonList[executionParametersIndex].AsString());
@@ -154,6 +163,12 @@ JsonValue QueryExecution::Jsonize() const
 
   }
 
+  if(m_resultReuseConfigurationHasBeenSet)
+  {
+   payload.WithObject("ResultReuseConfiguration", m_resultReuseConfiguration.Jsonize());
+
+  }
+
   if(m_queryExecutionContextHasBeenSet)
   {
    payload.WithObject("QueryExecutionContext", m_queryExecutionContext.Jsonize());
@@ -186,7 +201,7 @@ JsonValue QueryExecution::Jsonize() const
 
   if(m_executionParametersHasBeenSet)
   {
-   Array<JsonValue> executionParametersJsonList(m_executionParameters.size());
+   Aws::Utils::Array<JsonValue> executionParametersJsonList(m_executionParameters.size());
    for(unsigned executionParametersIndex = 0; executionParametersIndex < executionParametersJsonList.GetLength(); ++executionParametersIndex)
    {
      executionParametersJsonList[executionParametersIndex].AsString(m_executionParameters[executionParametersIndex]);

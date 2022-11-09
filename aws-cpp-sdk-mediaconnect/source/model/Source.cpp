@@ -107,7 +107,7 @@ Source& Source::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mediaStreamSourceConfigurations"))
   {
-    Array<JsonView> mediaStreamSourceConfigurationsJsonList = jsonValue.GetArray("mediaStreamSourceConfigurations");
+    Aws::Utils::Array<JsonView> mediaStreamSourceConfigurationsJsonList = jsonValue.GetArray("mediaStreamSourceConfigurations");
     for(unsigned mediaStreamSourceConfigurationsIndex = 0; mediaStreamSourceConfigurationsIndex < mediaStreamSourceConfigurationsJsonList.GetLength(); ++mediaStreamSourceConfigurationsIndex)
     {
       m_mediaStreamSourceConfigurations.push_back(mediaStreamSourceConfigurationsJsonList[mediaStreamSourceConfigurationsIndex].AsObject());
@@ -209,7 +209,7 @@ JsonValue Source::Jsonize() const
 
   if(m_mediaStreamSourceConfigurationsHasBeenSet)
   {
-   Array<JsonValue> mediaStreamSourceConfigurationsJsonList(m_mediaStreamSourceConfigurations.size());
+   Aws::Utils::Array<JsonValue> mediaStreamSourceConfigurationsJsonList(m_mediaStreamSourceConfigurations.size());
    for(unsigned mediaStreamSourceConfigurationsIndex = 0; mediaStreamSourceConfigurationsIndex < mediaStreamSourceConfigurationsJsonList.GetLength(); ++mediaStreamSourceConfigurationsIndex)
    {
      mediaStreamSourceConfigurationsJsonList[mediaStreamSourceConfigurationsIndex].AsObject(m_mediaStreamSourceConfigurations[mediaStreamSourceConfigurationsIndex].Jsonize());

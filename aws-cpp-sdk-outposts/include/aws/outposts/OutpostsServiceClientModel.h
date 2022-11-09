@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/outposts/OutpostsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/outposts/OutpostsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -75,6 +77,10 @@ namespace Aws
 
   namespace Outposts
   {
+    using OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OutpostsEndpointProviderBase = Aws::Outposts::Endpoint::OutpostsEndpointProviderBase;
+    using OutpostsEndpointProvider = Aws::Outposts::Endpoint::OutpostsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in OutpostsClient header */

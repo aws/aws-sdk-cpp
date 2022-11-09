@@ -42,7 +42,7 @@ TimeSeriesTransformation& TimeSeriesTransformation::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("TimeSeriesConditions"))
   {
-    Array<JsonView> timeSeriesConditionsJsonList = jsonValue.GetArray("TimeSeriesConditions");
+    Aws::Utils::Array<JsonView> timeSeriesConditionsJsonList = jsonValue.GetArray("TimeSeriesConditions");
     for(unsigned timeSeriesConditionsIndex = 0; timeSeriesConditionsIndex < timeSeriesConditionsJsonList.GetLength(); ++timeSeriesConditionsIndex)
     {
       m_timeSeriesConditions.push_back(timeSeriesConditionsJsonList[timeSeriesConditionsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue TimeSeriesTransformation::Jsonize() const
 
   if(m_timeSeriesConditionsHasBeenSet)
   {
-   Array<JsonValue> timeSeriesConditionsJsonList(m_timeSeriesConditions.size());
+   Aws::Utils::Array<JsonValue> timeSeriesConditionsJsonList(m_timeSeriesConditions.size());
    for(unsigned timeSeriesConditionsIndex = 0; timeSeriesConditionsIndex < timeSeriesConditionsJsonList.GetLength(); ++timeSeriesConditionsIndex)
    {
      timeSeriesConditionsJsonList[timeSeriesConditionsIndex].AsObject(m_timeSeriesConditions[timeSeriesConditionsIndex].Jsonize());

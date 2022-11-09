@@ -24,7 +24,7 @@ Aws::String SignalApplicationInstanceNodeInstancesRequest::SerializePayload() co
 
   if(m_nodeSignalsHasBeenSet)
   {
-   Array<JsonValue> nodeSignalsJsonList(m_nodeSignals.size());
+   Aws::Utils::Array<JsonValue> nodeSignalsJsonList(m_nodeSignals.size());
    for(unsigned nodeSignalsIndex = 0; nodeSignalsIndex < nodeSignalsJsonList.GetLength(); ++nodeSignalsIndex)
    {
      nodeSignalsJsonList[nodeSignalsIndex].AsObject(m_nodeSignals[nodeSignalsIndex].Jsonize());

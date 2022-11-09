@@ -48,7 +48,7 @@ TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("policyDocuments"))
   {
-    Array<JsonView> policyDocumentsJsonList = jsonValue.GetArray("policyDocuments");
+    Aws::Utils::Array<JsonView> policyDocumentsJsonList = jsonValue.GetArray("policyDocuments");
     for(unsigned policyDocumentsIndex = 0; policyDocumentsIndex < policyDocumentsJsonList.GetLength(); ++policyDocumentsIndex)
     {
       m_policyDocuments.push_back(policyDocumentsJsonList[policyDocumentsIndex].AsString());

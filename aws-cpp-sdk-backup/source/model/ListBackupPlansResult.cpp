@@ -36,7 +36,7 @@ ListBackupPlansResult& ListBackupPlansResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("BackupPlansList"))
   {
-    Array<JsonView> backupPlansListJsonList = jsonValue.GetArray("BackupPlansList");
+    Aws::Utils::Array<JsonView> backupPlansListJsonList = jsonValue.GetArray("BackupPlansList");
     for(unsigned backupPlansListIndex = 0; backupPlansListIndex < backupPlansListJsonList.GetLength(); ++backupPlansListIndex)
     {
       m_backupPlansList.push_back(backupPlansListJsonList[backupPlansListIndex].AsObject());

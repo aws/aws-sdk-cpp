@@ -33,7 +33,7 @@ SiteMapsConfiguration& SiteMapsConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SiteMaps"))
   {
-    Array<JsonView> siteMapsJsonList = jsonValue.GetArray("SiteMaps");
+    Aws::Utils::Array<JsonView> siteMapsJsonList = jsonValue.GetArray("SiteMaps");
     for(unsigned siteMapsIndex = 0; siteMapsIndex < siteMapsJsonList.GetLength(); ++siteMapsIndex)
     {
       m_siteMaps.push_back(siteMapsJsonList[siteMapsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue SiteMapsConfiguration::Jsonize() const
 
   if(m_siteMapsHasBeenSet)
   {
-   Array<JsonValue> siteMapsJsonList(m_siteMaps.size());
+   Aws::Utils::Array<JsonValue> siteMapsJsonList(m_siteMaps.size());
    for(unsigned siteMapsIndex = 0; siteMapsIndex < siteMapsJsonList.GetLength(); ++siteMapsIndex)
    {
      siteMapsJsonList[siteMapsIndex].AsString(m_siteMaps[siteMapsIndex]);

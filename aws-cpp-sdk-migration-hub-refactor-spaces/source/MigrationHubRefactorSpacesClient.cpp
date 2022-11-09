@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesClient.h>
-#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpoint.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesErrorMarshaller.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpointProvider.h>
 #include <aws/migration-hub-refactor-spaces/model/CreateApplicationRequest.h>
 #include <aws/migration-hub-refactor-spaces/model/CreateEnvironmentRequest.h>
 #include <aws/migration-hub-refactor-spaces/model/CreateRouteRequest.h>
@@ -52,20 +53,71 @@ using namespace Aws::MigrationHubRefactorSpaces;
 using namespace Aws::MigrationHubRefactorSpaces::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-static const char* SERVICE_NAME = "refactor-spaces";
-static const char* ALLOCATION_TAG = "MigrationHubRefactorSpacesClient";
+const char* MigrationHubRefactorSpacesClient::SERVICE_NAME = "refactor-spaces";
+const char* MigrationHubRefactorSpacesClient::ALLOCATION_TAG = "MigrationHubRefactorSpacesClient";
 
-MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const Client::ClientConfiguration& clientConfiguration) :
+MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration& clientConfiguration,
+                                                                   std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MigrationHubRefactorSpacesErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
+}
+
+MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const AWSCredentials& credentials,
+                                                                   std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider,
+                                                                   const MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MigrationHubRefactorSpacesErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                                                   std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider,
+                                                                   const MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MigrationHubRefactorSpacesErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MigrationHubRefactorSpacesErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<MigrationHubRefactorSpacesEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
 }
 
 MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const AWSCredentials& credentials,
@@ -76,9 +128,11 @@ MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const AWSCred
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MigrationHubRefactorSpacesErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<MigrationHubRefactorSpacesEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -89,53 +143,50 @@ MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const std::sh
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MigrationHubRefactorSpacesErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<MigrationHubRefactorSpacesEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 MigrationHubRefactorSpacesClient::~MigrationHubRefactorSpacesClient()
 {
 }
 
-void MigrationHubRefactorSpacesClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase>& MigrationHubRefactorSpacesClient::accessEndpointProvider()
+{
+  return m_endpointProvider;
+}
+
+void MigrationHubRefactorSpacesClient::init(const MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Migration Hub Refactor Spaces");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + MigrationHubRefactorSpacesEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void MigrationHubRefactorSpacesClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 CreateApplicationOutcome MigrationHubRefactorSpacesClient::CreateApplication(const CreateApplicationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateApplication", "Required field: EnvironmentIdentifier, is not set");
     return CreateApplicationOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications");
-  return CreateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
+  return CreateApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApplicationOutcomeCallable MigrationHubRefactorSpacesClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
@@ -156,9 +207,11 @@ void MigrationHubRefactorSpacesClient::CreateApplicationAsync(const CreateApplic
 
 CreateEnvironmentOutcome MigrationHubRefactorSpacesClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments");
-  return CreateEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
+  return CreateEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateEnvironmentOutcomeCallable MigrationHubRefactorSpacesClient::CreateEnvironmentCallable(const CreateEnvironmentRequest& request) const
@@ -179,6 +232,7 @@ void MigrationHubRefactorSpacesClient::CreateEnvironmentAsync(const CreateEnviro
 
 CreateRouteOutcome MigrationHubRefactorSpacesClient::CreateRoute(const CreateRouteRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateRoute", "Required field: ApplicationIdentifier, is not set");
@@ -189,13 +243,14 @@ CreateRouteOutcome MigrationHubRefactorSpacesClient::CreateRoute(const CreateRou
     AWS_LOGSTREAM_ERROR("CreateRoute", "Required field: EnvironmentIdentifier, is not set");
     return CreateRouteOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  uri.AddPathSegments("/routes");
-  return CreateRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
+  return CreateRouteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRouteOutcomeCallable MigrationHubRefactorSpacesClient::CreateRouteCallable(const CreateRouteRequest& request) const
@@ -216,6 +271,7 @@ void MigrationHubRefactorSpacesClient::CreateRouteAsync(const CreateRouteRequest
 
 CreateServiceOutcome MigrationHubRefactorSpacesClient::CreateService(const CreateServiceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateService", "Required field: ApplicationIdentifier, is not set");
@@ -226,13 +282,14 @@ CreateServiceOutcome MigrationHubRefactorSpacesClient::CreateService(const Creat
     AWS_LOGSTREAM_ERROR("CreateService", "Required field: EnvironmentIdentifier, is not set");
     return CreateServiceOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  uri.AddPathSegments("/services");
-  return CreateServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/services");
+  return CreateServiceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateServiceOutcomeCallable MigrationHubRefactorSpacesClient::CreateServiceCallable(const CreateServiceRequest& request) const
@@ -253,6 +310,7 @@ void MigrationHubRefactorSpacesClient::CreateServiceAsync(const CreateServiceReq
 
 DeleteApplicationOutcome MigrationHubRefactorSpacesClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteApplication", "Required field: ApplicationIdentifier, is not set");
@@ -263,12 +321,13 @@ DeleteApplicationOutcome MigrationHubRefactorSpacesClient::DeleteApplication(con
     AWS_LOGSTREAM_ERROR("DeleteApplication", "Required field: EnvironmentIdentifier, is not set");
     return DeleteApplicationOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  return DeleteApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  return DeleteApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApplicationOutcomeCallable MigrationHubRefactorSpacesClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
@@ -289,15 +348,17 @@ void MigrationHubRefactorSpacesClient::DeleteApplicationAsync(const DeleteApplic
 
 DeleteEnvironmentOutcome MigrationHubRefactorSpacesClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteEnvironment", "Required field: EnvironmentIdentifier, is not set");
     return DeleteEnvironmentOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  return DeleteEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  return DeleteEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEnvironmentOutcomeCallable MigrationHubRefactorSpacesClient::DeleteEnvironmentCallable(const DeleteEnvironmentRequest& request) const
@@ -318,15 +379,17 @@ void MigrationHubRefactorSpacesClient::DeleteEnvironmentAsync(const DeleteEnviro
 
 DeleteResourcePolicyOutcome MigrationHubRefactorSpacesClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteResourcePolicy", "Required field: Identifier, is not set");
     return DeleteResourcePolicyOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/resourcepolicy/");
-  uri.AddPathSegment(request.GetIdentifier());
-  return DeleteResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resourcepolicy/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  return DeleteResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResourcePolicyOutcomeCallable MigrationHubRefactorSpacesClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
@@ -347,6 +410,7 @@ void MigrationHubRefactorSpacesClient::DeleteResourcePolicyAsync(const DeleteRes
 
 DeleteRouteOutcome MigrationHubRefactorSpacesClient::DeleteRoute(const DeleteRouteRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteRoute", "Required field: ApplicationIdentifier, is not set");
@@ -362,14 +426,15 @@ DeleteRouteOutcome MigrationHubRefactorSpacesClient::DeleteRoute(const DeleteRou
     AWS_LOGSTREAM_ERROR("DeleteRoute", "Required field: RouteIdentifier, is not set");
     return DeleteRouteOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  uri.AddPathSegments("/routes/");
-  uri.AddPathSegment(request.GetRouteIdentifier());
-  return DeleteRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/routes/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRouteIdentifier());
+  return DeleteRouteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRouteOutcomeCallable MigrationHubRefactorSpacesClient::DeleteRouteCallable(const DeleteRouteRequest& request) const
@@ -390,6 +455,7 @@ void MigrationHubRefactorSpacesClient::DeleteRouteAsync(const DeleteRouteRequest
 
 DeleteServiceOutcome MigrationHubRefactorSpacesClient::DeleteService(const DeleteServiceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteService", "Required field: ApplicationIdentifier, is not set");
@@ -405,14 +471,15 @@ DeleteServiceOutcome MigrationHubRefactorSpacesClient::DeleteService(const Delet
     AWS_LOGSTREAM_ERROR("DeleteService", "Required field: ServiceIdentifier, is not set");
     return DeleteServiceOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  uri.AddPathSegments("/services/");
-  uri.AddPathSegment(request.GetServiceIdentifier());
-  return DeleteServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/services/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceIdentifier());
+  return DeleteServiceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteServiceOutcomeCallable MigrationHubRefactorSpacesClient::DeleteServiceCallable(const DeleteServiceRequest& request) const
@@ -433,6 +500,7 @@ void MigrationHubRefactorSpacesClient::DeleteServiceAsync(const DeleteServiceReq
 
 GetApplicationOutcome MigrationHubRefactorSpacesClient::GetApplication(const GetApplicationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetApplication", "Required field: ApplicationIdentifier, is not set");
@@ -443,12 +511,13 @@ GetApplicationOutcome MigrationHubRefactorSpacesClient::GetApplication(const Get
     AWS_LOGSTREAM_ERROR("GetApplication", "Required field: EnvironmentIdentifier, is not set");
     return GetApplicationOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  return GetApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  return GetApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApplicationOutcomeCallable MigrationHubRefactorSpacesClient::GetApplicationCallable(const GetApplicationRequest& request) const
@@ -469,15 +538,17 @@ void MigrationHubRefactorSpacesClient::GetApplicationAsync(const GetApplicationR
 
 GetEnvironmentOutcome MigrationHubRefactorSpacesClient::GetEnvironment(const GetEnvironmentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetEnvironment", "Required field: EnvironmentIdentifier, is not set");
     return GetEnvironmentOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  return GetEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  return GetEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEnvironmentOutcomeCallable MigrationHubRefactorSpacesClient::GetEnvironmentCallable(const GetEnvironmentRequest& request) const
@@ -498,15 +569,17 @@ void MigrationHubRefactorSpacesClient::GetEnvironmentAsync(const GetEnvironmentR
 
 GetResourcePolicyOutcome MigrationHubRefactorSpacesClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetResourcePolicy", "Required field: Identifier, is not set");
     return GetResourcePolicyOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/resourcepolicy/");
-  uri.AddPathSegment(request.GetIdentifier());
-  return GetResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resourcepolicy/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  return GetResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourcePolicyOutcomeCallable MigrationHubRefactorSpacesClient::GetResourcePolicyCallable(const GetResourcePolicyRequest& request) const
@@ -527,6 +600,7 @@ void MigrationHubRefactorSpacesClient::GetResourcePolicyAsync(const GetResourceP
 
 GetRouteOutcome MigrationHubRefactorSpacesClient::GetRoute(const GetRouteRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetRoute", "Required field: ApplicationIdentifier, is not set");
@@ -542,14 +616,15 @@ GetRouteOutcome MigrationHubRefactorSpacesClient::GetRoute(const GetRouteRequest
     AWS_LOGSTREAM_ERROR("GetRoute", "Required field: RouteIdentifier, is not set");
     return GetRouteOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  uri.AddPathSegments("/routes/");
-  uri.AddPathSegment(request.GetRouteIdentifier());
-  return GetRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/routes/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRouteIdentifier());
+  return GetRouteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRouteOutcomeCallable MigrationHubRefactorSpacesClient::GetRouteCallable(const GetRouteRequest& request) const
@@ -570,6 +645,7 @@ void MigrationHubRefactorSpacesClient::GetRouteAsync(const GetRouteRequest& requ
 
 GetServiceOutcome MigrationHubRefactorSpacesClient::GetService(const GetServiceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetService", "Required field: ApplicationIdentifier, is not set");
@@ -585,14 +661,15 @@ GetServiceOutcome MigrationHubRefactorSpacesClient::GetService(const GetServiceR
     AWS_LOGSTREAM_ERROR("GetService", "Required field: ServiceIdentifier, is not set");
     return GetServiceOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  uri.AddPathSegments("/services/");
-  uri.AddPathSegment(request.GetServiceIdentifier());
-  return GetServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/services/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceIdentifier());
+  return GetServiceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetServiceOutcomeCallable MigrationHubRefactorSpacesClient::GetServiceCallable(const GetServiceRequest& request) const
@@ -613,16 +690,18 @@ void MigrationHubRefactorSpacesClient::GetServiceAsync(const GetServiceRequest& 
 
 ListApplicationsOutcome MigrationHubRefactorSpacesClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListApplications", "Required field: EnvironmentIdentifier, is not set");
     return ListApplicationsOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications");
-  return ListApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
+  return ListApplicationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListApplicationsOutcomeCallable MigrationHubRefactorSpacesClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
@@ -643,16 +722,18 @@ void MigrationHubRefactorSpacesClient::ListApplicationsAsync(const ListApplicati
 
 ListEnvironmentVpcsOutcome MigrationHubRefactorSpacesClient::ListEnvironmentVpcs(const ListEnvironmentVpcsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironmentVpcs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListEnvironmentVpcs", "Required field: EnvironmentIdentifier, is not set");
     return ListEnvironmentVpcsOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/vpcs");
-  return ListEnvironmentVpcsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnvironmentVpcs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/vpcs");
+  return ListEnvironmentVpcsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEnvironmentVpcsOutcomeCallable MigrationHubRefactorSpacesClient::ListEnvironmentVpcsCallable(const ListEnvironmentVpcsRequest& request) const
@@ -673,9 +754,11 @@ void MigrationHubRefactorSpacesClient::ListEnvironmentVpcsAsync(const ListEnviro
 
 ListEnvironmentsOutcome MigrationHubRefactorSpacesClient::ListEnvironments(const ListEnvironmentsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments");
-  return ListEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
+  return ListEnvironmentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEnvironmentsOutcomeCallable MigrationHubRefactorSpacesClient::ListEnvironmentsCallable(const ListEnvironmentsRequest& request) const
@@ -696,6 +779,7 @@ void MigrationHubRefactorSpacesClient::ListEnvironmentsAsync(const ListEnvironme
 
 ListRoutesOutcome MigrationHubRefactorSpacesClient::ListRoutes(const ListRoutesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListRoutes", "Required field: ApplicationIdentifier, is not set");
@@ -706,13 +790,14 @@ ListRoutesOutcome MigrationHubRefactorSpacesClient::ListRoutes(const ListRoutesR
     AWS_LOGSTREAM_ERROR("ListRoutes", "Required field: EnvironmentIdentifier, is not set");
     return ListRoutesOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  uri.AddPathSegments("/routes");
-  return ListRoutesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
+  return ListRoutesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRoutesOutcomeCallable MigrationHubRefactorSpacesClient::ListRoutesCallable(const ListRoutesRequest& request) const
@@ -733,6 +818,7 @@ void MigrationHubRefactorSpacesClient::ListRoutesAsync(const ListRoutesRequest& 
 
 ListServicesOutcome MigrationHubRefactorSpacesClient::ListServices(const ListServicesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListServices", "Required field: ApplicationIdentifier, is not set");
@@ -743,13 +829,14 @@ ListServicesOutcome MigrationHubRefactorSpacesClient::ListServices(const ListSer
     AWS_LOGSTREAM_ERROR("ListServices", "Required field: EnvironmentIdentifier, is not set");
     return ListServicesOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  uri.AddPathSegments("/services");
-  return ListServicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/services");
+  return ListServicesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListServicesOutcomeCallable MigrationHubRefactorSpacesClient::ListServicesCallable(const ListServicesRequest& request) const
@@ -770,15 +857,17 @@ void MigrationHubRefactorSpacesClient::ListServicesAsync(const ListServicesReque
 
 ListTagsForResourceOutcome MigrationHubRefactorSpacesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable MigrationHubRefactorSpacesClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -799,9 +888,11 @@ void MigrationHubRefactorSpacesClient::ListTagsForResourceAsync(const ListTagsFo
 
 PutResourcePolicyOutcome MigrationHubRefactorSpacesClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/resourcepolicy");
-  return PutResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resourcepolicy");
+  return PutResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutResourcePolicyOutcomeCallable MigrationHubRefactorSpacesClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
@@ -822,15 +913,17 @@ void MigrationHubRefactorSpacesClient::PutResourcePolicyAsync(const PutResourceP
 
 TagResourceOutcome MigrationHubRefactorSpacesClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable MigrationHubRefactorSpacesClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -851,6 +944,7 @@ void MigrationHubRefactorSpacesClient::TagResourceAsync(const TagResourceRequest
 
 UntagResourceOutcome MigrationHubRefactorSpacesClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -861,10 +955,11 @@ UntagResourceOutcome MigrationHubRefactorSpacesClient::UntagResource(const Untag
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable MigrationHubRefactorSpacesClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -885,6 +980,7 @@ void MigrationHubRefactorSpacesClient::UntagResourceAsync(const UntagResourceReq
 
 UpdateRouteOutcome MigrationHubRefactorSpacesClient::UpdateRoute(const UpdateRouteRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateRoute", "Required field: ApplicationIdentifier, is not set");
@@ -900,14 +996,15 @@ UpdateRouteOutcome MigrationHubRefactorSpacesClient::UpdateRoute(const UpdateRou
     AWS_LOGSTREAM_ERROR("UpdateRoute", "Required field: RouteIdentifier, is not set");
     return UpdateRouteOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteIdentifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetEnvironmentIdentifier());
-  uri.AddPathSegments("/applications/");
-  uri.AddPathSegment(request.GetApplicationIdentifier());
-  uri.AddPathSegments("/routes/");
-  uri.AddPathSegment(request.GetRouteIdentifier());
-  return UpdateRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/routes/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRouteIdentifier());
+  return UpdateRouteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRouteOutcomeCallable MigrationHubRefactorSpacesClient::UpdateRouteCallable(const UpdateRouteRequest& request) const

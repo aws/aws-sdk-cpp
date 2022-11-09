@@ -24,7 +24,7 @@ Aws::String BatchUpdateUserRequest::SerializePayload() const
 
   if(m_updateUserRequestItemsHasBeenSet)
   {
-   Array<JsonValue> updateUserRequestItemsJsonList(m_updateUserRequestItems.size());
+   Aws::Utils::Array<JsonValue> updateUserRequestItemsJsonList(m_updateUserRequestItems.size());
    for(unsigned updateUserRequestItemsIndex = 0; updateUserRequestItemsIndex < updateUserRequestItemsJsonList.GetLength(); ++updateUserRequestItemsIndex)
    {
      updateUserRequestItemsJsonList[updateUserRequestItemsIndex].AsObject(m_updateUserRequestItems[updateUserRequestItemsIndex].Jsonize());

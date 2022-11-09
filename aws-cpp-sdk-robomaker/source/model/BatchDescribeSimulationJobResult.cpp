@@ -30,7 +30,7 @@ BatchDescribeSimulationJobResult& BatchDescribeSimulationJobResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobs"))
   {
-    Array<JsonView> jobsJsonList = jsonValue.GetArray("jobs");
+    Aws::Utils::Array<JsonView> jobsJsonList = jsonValue.GetArray("jobs");
     for(unsigned jobsIndex = 0; jobsIndex < jobsJsonList.GetLength(); ++jobsIndex)
     {
       m_jobs.push_back(jobsJsonList[jobsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchDescribeSimulationJobResult& BatchDescribeSimulationJobResult::operator =(c
 
   if(jsonValue.ValueExists("unprocessedJobs"))
   {
-    Array<JsonView> unprocessedJobsJsonList = jsonValue.GetArray("unprocessedJobs");
+    Aws::Utils::Array<JsonView> unprocessedJobsJsonList = jsonValue.GetArray("unprocessedJobs");
     for(unsigned unprocessedJobsIndex = 0; unprocessedJobsIndex < unprocessedJobsJsonList.GetLength(); ++unprocessedJobsIndex)
     {
       m_unprocessedJobs.push_back(unprocessedJobsJsonList[unprocessedJobsIndex].AsString());

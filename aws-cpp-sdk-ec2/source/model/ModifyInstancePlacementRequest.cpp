@@ -20,7 +20,8 @@ ModifyInstancePlacementRequest::ModifyInstancePlacementRequest() :
     m_tenancyHasBeenSet(false),
     m_partitionNumber(0),
     m_partitionNumberHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false)
+    m_hostResourceGroupArnHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,11 @@ Aws::String ModifyInstancePlacementRequest::SerializePayload() const
   if(m_hostResourceGroupArnHasBeenSet)
   {
     ss << "HostResourceGroupArn=" << StringUtils::URLEncode(m_hostResourceGroupArn.c_str()) << "&";
+  }
+
+  if(m_groupIdHasBeenSet)
+  {
+    ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

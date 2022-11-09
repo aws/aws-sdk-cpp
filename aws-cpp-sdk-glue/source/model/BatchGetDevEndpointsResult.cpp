@@ -30,7 +30,7 @@ BatchGetDevEndpointsResult& BatchGetDevEndpointsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DevEndpoints"))
   {
-    Array<JsonView> devEndpointsJsonList = jsonValue.GetArray("DevEndpoints");
+    Aws::Utils::Array<JsonView> devEndpointsJsonList = jsonValue.GetArray("DevEndpoints");
     for(unsigned devEndpointsIndex = 0; devEndpointsIndex < devEndpointsJsonList.GetLength(); ++devEndpointsIndex)
     {
       m_devEndpoints.push_back(devEndpointsJsonList[devEndpointsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetDevEndpointsResult& BatchGetDevEndpointsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("DevEndpointsNotFound"))
   {
-    Array<JsonView> devEndpointsNotFoundJsonList = jsonValue.GetArray("DevEndpointsNotFound");
+    Aws::Utils::Array<JsonView> devEndpointsNotFoundJsonList = jsonValue.GetArray("DevEndpointsNotFound");
     for(unsigned devEndpointsNotFoundIndex = 0; devEndpointsNotFoundIndex < devEndpointsNotFoundJsonList.GetLength(); ++devEndpointsNotFoundIndex)
     {
       m_devEndpointsNotFound.push_back(devEndpointsNotFoundJsonList[devEndpointsNotFoundIndex].AsString());

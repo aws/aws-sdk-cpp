@@ -6,90 +6,111 @@
 
 #pragma once
 
+#include <aws/core/endpoint/AWSPartitions.h>
 #include <aws/core/endpoint/EndpointProviderBase.h>
 #include <aws/core/endpoint/EndpointParameter.h>
+#include <aws/core/endpoint/ClientContextParameters.h>
+#include <aws/core/endpoint/BuiltInParameters.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
+
+#include <aws/crt/endpoints/RuleEngine.h>
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
+#include "aws/core/utils/logging/LogMacros.h"
 
 namespace Aws
 {
     namespace Endpoint
     {
+        static const char DEFAULT_ENDPOINT_PROVIDER_TAG[] = "Aws::Endpoint::DefaultEndpointProvider";
+
         /**
-          * Curiously Recurring Template Pattern is used:
-          * https://en.cppreference.com/w/cpp/language/crtp
-          */
-        template<typename DerivedT, typename EndpointParametersT>
-        class AWS_CORE_API DefaultEndpointProvider : EndpointProviderBase<EndpointParametersT>
+         * Default template implementation for endpoint resolution
+         * @param ruleEngine
+         * @param builtInParameters
+         * @param clientContextParameters
+         * @param endpointParameters
+         * @return
+         */
+        AWS_CORE_API ResolveEndpointOutcome
+        ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
+                                   const EndpointParameters& builtInParameters,
+                                   const EndpointParameters& clientContextParameters,
+                                   const EndpointParameters& endpointParameters);
+
+        /**
+         * Default endpoint provider template used in this SDK.
+         */
+        template<typename ClientConfigurationT = Aws::Client::GenericClientConfiguration<false>,
+                 typename BuiltInParametersT = Aws::Endpoint::BuiltInParameters,
+                 typename ClientContextParametersT = Aws::Endpoint::ClientContextParameters>
+        class AWS_CORE_API DefaultEndpointProvider : public EndpointProviderBase<ClientConfigurationT, BuiltInParametersT, ClientContextParametersT>
         {
         public:
             DefaultEndpointProvider(const Aws::Vector<char>& endpointRulesBLOB)
+                : m_crtRuleEngine(Aws::Crt::ByteCursorFromArray((const uint8_t*) endpointRulesBLOB.data(), endpointRulesBLOB.size()),
+                                  Aws::Crt::ByteCursorFromArray((const uint8_t*) AWSPartitions::PartitionsBlob.data(), AWSPartitions::PartitionsBlobSize))
             {
-                // m_crtRuleEngineCtx = crt_init_rules_engine(endpointRulesBLOB);
+                if(!m_crtRuleEngine) {
+                    AWS_LOGSTREAM_FATAL(DEFAULT_ENDPOINT_PROVIDER_TAG, "Invalid CRT Rule Engine state");
+                }
             }
 
             virtual ~DefaultEndpointProvider()
             {
-                // crt_free_rules_engine(crtRuleEngineCtx);
-                m_crtRuleEngineCtx = nullptr;
             }
 
-            using ResolveEndpointOutcome = typename EndpointProviderBase<EndpointParametersT>::ResolveEndpointOutcome;
+            void InitBuiltInParameters(const ClientConfigurationT& config) override
+            {
+                m_builtInParameters.SetFromClientConfiguration(config);
+            }
 
             /**
-             * The core of the bearer token provider interface. Implement ResolveEndpointImpl in Derived
+             * Default implementation of the ResolveEndpoint
              */
-            ResolveEndpointOutcome ResolveEndpoint(const EndpointParametersT& endpointParameters) const
+            ResolveEndpointOutcome ResolveEndpoint(const EndpointParameters& endpointParameters) const override
             {
-                DerivedT& derived = static_cast<DerivedT&>(*this);
-                return derived.ResolveEndpointImpl(endpointParameters);
+                auto ResolveEndpointDefaultImpl = Aws::Endpoint::ResolveEndpointDefaultImpl;
+                return ResolveEndpointDefaultImpl(m_crtRuleEngine, m_builtInParameters.GetAllParameters(), m_clientContextParameters.GetAllParameters(), endpointParameters);
             };
 
-        protected:
-            void * m_crtRuleEngineCtx = nullptr;
-        };
-
-
-        // non-member function in case DerivedT::EndpointParametersT is not compatible with a default implementation
-        template<typename DerivedT, typename EndpointParametersT>
-        typename DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome ResolveEndpointDefaultImpl(const EndpointParametersT& endpointParameters)
-        {
-            // void* crtRuleEngineEndpointParameters = crt_init_rules_engine_endpoint_parameters();
-            for(const auto& parameter : endpointParameters)
+            const ClientContextParametersT& GetClientContextParameters() const override
             {
-                std::cout << "Parameter: " << parameter.GetName();
-
-                if(EndpointParameter::ParameterType::BOOLEAN == parameter.GetStoredType())
-                {
-                    // crt_init_rules_engine_endpoint_parameters_append_boolean_parameter(crtRuleEngineEndpointParameters, parameter.GetName(), parameter.GetBool());
-                }
-                else if(EndpointParameter::ParameterType::STRING == parameter.GetStoredType())
-                {
-                    // crt_init_rules_engine_endpoint_parameters_append_string_parameter(crtRuleEngineEndpointParameters, parameter.GetName(), parameter.GetString());
-                }
-                else
-                {
-                    return DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome(
-                            Aws::Client::AWSError<Aws::Client::CoreErrors>(
-                                    Aws::Client::CoreErrors::INVALID_QUERY_PARAMETER,
-                                    "",
-                                    "Invalid endpoint parameter type for parameter " + parameter.GetName(),
-                                    false/*retryable*/));
-                }
+                return m_clientContextParameters;
+            }
+            ClientContextParametersT& AccessClientContextParameters() override
+            {
+                return m_clientContextParameters;
             }
 
-            // crt_resolved_endpoint = crt_resolve_endpoint(m_crtRuleEngineCtx, crtRuleEngineEndpointParameters);
+            const BuiltInParametersT& GetBuiltInParameters() const
+            {
+                return m_builtInParameters;
+            }
+            BuiltInParametersT& AccessBuiltInParameters()
+            {
+                return m_builtInParameters;
+            }
 
-            Aws::Endpoint::AWSEndpoint endpoint;
-            endpoint.SetURL("https://aws-sdk-dummy.amazon.com" /*crt_resolved_endpoint.resolved_url*/);
+            void OverrideEndpoint(const Aws::String& endpoint) override
+            {
+                m_builtInParameters.OverrideEndpoint(endpoint);
+            }
 
-            // transform attributes
+        protected:
+            /* Crt RuleEngine evaluator built using the service's Rule engine */
+            Aws::Crt::Endpoints::RuleEngine m_crtRuleEngine;
 
-            // transform headers
+            /* Also known as a configurable parameters defined by the AWS Service in their c2j/smithy model definition */
+            ClientContextParametersT m_clientContextParameters;
 
-            return DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome(std::move(endpoint));
+            /* Also known as parameters on the ClientConfiguration in this SDK */
+            BuiltInParametersT m_builtInParameters;
         };
-    } // namespace Auth
+
+        // Export symbol from the DLL:
+        template class AWS_CORE_API DefaultEndpointProvider<Aws::Client::GenericClientConfiguration</*HasEndpointDiscovery*/ true> >;
+    } // namespace Endpoint
 } // namespace Aws

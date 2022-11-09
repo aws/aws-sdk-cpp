@@ -36,7 +36,7 @@ ListNetworkAnalyzerConfigurationsResult& ListNetworkAnalyzerConfigurationsResult
 
   if(jsonValue.ValueExists("NetworkAnalyzerConfigurationList"))
   {
-    Array<JsonView> networkAnalyzerConfigurationListJsonList = jsonValue.GetArray("NetworkAnalyzerConfigurationList");
+    Aws::Utils::Array<JsonView> networkAnalyzerConfigurationListJsonList = jsonValue.GetArray("NetworkAnalyzerConfigurationList");
     for(unsigned networkAnalyzerConfigurationListIndex = 0; networkAnalyzerConfigurationListIndex < networkAnalyzerConfigurationListJsonList.GetLength(); ++networkAnalyzerConfigurationListIndex)
     {
       m_networkAnalyzerConfigurationList.push_back(networkAnalyzerConfigurationListJsonList[networkAnalyzerConfigurationListIndex].AsObject());

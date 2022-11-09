@@ -78,7 +78,7 @@ DeploymentResult& DeploymentResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DeploymentModels"))
   {
-    Array<JsonView> deploymentModelsJsonList = jsonValue.GetArray("DeploymentModels");
+    Aws::Utils::Array<JsonView> deploymentModelsJsonList = jsonValue.GetArray("DeploymentModels");
     for(unsigned deploymentModelsIndex = 0; deploymentModelsIndex < deploymentModelsJsonList.GetLength(); ++deploymentModelsIndex)
     {
       m_deploymentModels.push_back(deploymentModelsJsonList[deploymentModelsIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue DeploymentResult::Jsonize() const
 
   if(m_deploymentModelsHasBeenSet)
   {
-   Array<JsonValue> deploymentModelsJsonList(m_deploymentModels.size());
+   Aws::Utils::Array<JsonValue> deploymentModelsJsonList(m_deploymentModels.size());
    for(unsigned deploymentModelsIndex = 0; deploymentModelsIndex < deploymentModelsJsonList.GetLength(); ++deploymentModelsIndex)
    {
      deploymentModelsJsonList[deploymentModelsIndex].AsObject(m_deploymentModels[deploymentModelsIndex].Jsonize());

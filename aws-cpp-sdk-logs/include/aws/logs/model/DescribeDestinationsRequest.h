@@ -134,25 +134,25 @@ namespace Model
 
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
-     * default is up to 50 items.</p>
+     * default maximum value of 50 items is used.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
-     * default is up to 50 items.</p>
+     * default maximum value of 50 items is used.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
-     * default is up to 50 items.</p>
+     * default maximum value of 50 items is used.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
-     * default is up to 50 items.</p>
+     * default maximum value of 50 items is used.</p>
      */
     inline DescribeDestinationsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

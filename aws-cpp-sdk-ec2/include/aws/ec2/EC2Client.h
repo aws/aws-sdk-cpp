@@ -43,29 +43,77 @@ namespace EC2
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EC2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        EC2Client(const Aws::EC2::EC2ClientConfiguration& clientConfiguration = Aws::EC2::EC2ClientConfiguration(),
+                  std::shared_ptr<EC2EndpointProviderBase> endpointProvider = Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EC2Client(const Aws::Auth::AWSCredentials& credentials,
-                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<EC2EndpointProviderBase> endpointProvider = Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG),
+                  const Aws::EC2::EC2ClientConfiguration& clientConfiguration = Aws::EC2::EC2ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         EC2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<EC2EndpointProviderBase> endpointProvider = Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG),
+                  const Aws::EC2::EC2ClientConfiguration& clientConfiguration = Aws::EC2::EC2ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        EC2Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        EC2Client(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        EC2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~EC2Client();
 
+
+        /**
+         * <p>Accepts an Elastic IP address transfer. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept
+         * a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptAddressTransferOutcome AcceptAddressTransfer(const Model::AcceptAddressTransferRequest& request) const;
+
+        /**
+         * A Callable wrapper for AcceptAddressTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AcceptAddressTransferOutcomeCallable AcceptAddressTransferCallable(const Model::AcceptAddressTransferRequest& request) const;
+
+        /**
+         * An Async wrapper for AcceptAddressTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AcceptAddressTransferAsync(const Model::AcceptAddressTransferRequest& request, const AcceptAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts the Convertible Reserved Instance exchange quote described in the
@@ -1054,6 +1102,27 @@ namespace EC2
          * An Async wrapper for CancelExportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelExportTaskAsync(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes your Amazon Web Services account from the launch permissions for the
+         * specified AMI. For more information, see <a
+         * href="https://docs.aws.amazon.com/">Cancel sharing an AMI with your Amazon Web
+         * Services account</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelImageLaunchPermissionOutcome CancelImageLaunchPermission(const Model::CancelImageLaunchPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelImageLaunchPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelImageLaunchPermissionOutcomeCallable CancelImageLaunchPermissionCallable(const Model::CancelImageLaunchPermissionRequest& request) const;
+
+        /**
+         * An Async wrapper for CancelImageLaunchPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelImageLaunchPermissionAsync(const Model::CancelImageLaunchPermissionRequest& request, const CancelImageLaunchPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an in-process import virtual machine or import snapshot
@@ -2226,9 +2295,11 @@ namespace EC2
         virtual void CreatePublicIpv4PoolAsync(const Model::CreatePublicIpv4PoolRequest& request, const CreatePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a root volume replacement task for an Amazon EC2 instance. The root
-         * volume can either be restored to its initial launch state, or it can be restored
-         * using a specific snapshot.</p> <p>For more information, see <a
+         * <p>Replaces the EBS-backed root volume for a <code>running</code> instance with
+         * a new volume that is restored to the original root volume's launch state, that
+         * is restored to a specific snapshot taken from the original root volume, or that
+         * is restored from an AMI that has the same key characteristics as that of the
+         * instance.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
          * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4693,6 +4764,26 @@ namespace EC2
         virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes an Elastic IP address transfer. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+         * Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAddressTransfersOutcome DescribeAddressTransfers(const Model::DescribeAddressTransfersRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAddressTransfers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAddressTransfersOutcomeCallable DescribeAddressTransfersCallable(const Model::DescribeAddressTransfersRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAddressTransfers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAddressTransfersAsync(const Model::DescribeAddressTransfersRequest& request, const DescribeAddressTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the specified Elastic IP addresses or all of your Elastic IP
          * addresses.</p> <p>An Elastic IP address is for use in either the EC2-Classic
          * platform or in a VPC. For more information, see <a
@@ -6748,8 +6839,8 @@ namespace EC2
          * time and not miss a recorded event. Spot Fleet events are available for 48
          * hours.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor
-         * fleet events using Amazon EventBridge</a> in the <i>Amazon EC2 User Guide for
-         * Linux Instances</i>.</p><p><h3>See Also:</h3>   <a
+         * fleet events using Amazon EventBridge</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">AWS
          * API Reference</a></p>
          */
@@ -7686,6 +7777,26 @@ namespace EC2
         virtual void DetachVpnGatewayAsync(const Model::DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disables Elastic IP address transfer. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+         * Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableAddressTransferOutcome DisableAddressTransfer(const Model::DisableAddressTransferRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableAddressTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableAddressTransferOutcomeCallable DisableAddressTransferCallable(const Model::DisableAddressTransferRequest& request) const;
+
+        /**
+         * An Async wrapper for DisableAddressTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableAddressTransferAsync(const Model::DisableAddressTransferRequest& request, const DisableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disables EBS encryption by default for your account in the current
          * Region.</p> <p>After you disable encryption by default, you can still create
          * encrypted volumes by enabling encryption when you create each volume.</p>
@@ -8148,6 +8259,26 @@ namespace EC2
          * An Async wrapper for DisassociateVpcCidrBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateVpcCidrBlockAsync(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enables Elastic IP address transfer. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+         * Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableAddressTransferOutcome EnableAddressTransfer(const Model::EnableAddressTransferRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableAddressTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableAddressTransferOutcomeCallable EnableAddressTransferCallable(const Model::EnableAddressTransferRequest& request) const;
+
+        /**
+         * An Async wrapper for EnableAddressTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableAddressTransferAsync(const Model::EnableAddressTransferRequest& request, const EnableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
@@ -11558,13 +11689,12 @@ namespace EC2
          * <code>instance</code> resource types are supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-         *  <p>We strongly discourage using the RequestSpotFleet API because it
-         * is a legacy API with no planned investment. For options for requesting Spot
-         * Instances, see <a
+         * Fleet requests</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We
+         * strongly discourage using the RequestSpotFleet API because it is a legacy API
+         * with no planned investment. For options for requesting Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
-         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
-         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
+         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
          */
@@ -12469,12 +12599,13 @@ namespace EC2
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<EC2EndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void init(const EC2ClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        EC2ClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<EC2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EC2

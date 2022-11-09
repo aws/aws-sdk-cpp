@@ -27,27 +27,55 @@ namespace WorkSpacesWeb
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        WorkSpacesWebClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        WorkSpacesWebClient(const Aws::WorkSpacesWeb::WorkSpacesWebClientConfiguration& clientConfiguration = Aws::WorkSpacesWeb::WorkSpacesWebClientConfiguration(),
+                            std::shared_ptr<WorkSpacesWebEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesWebEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WorkSpacesWebClient(const Aws::Auth::AWSCredentials& credentials,
-                            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            std::shared_ptr<WorkSpacesWebEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesWebEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::WorkSpacesWeb::WorkSpacesWebClientConfiguration& clientConfiguration = Aws::WorkSpacesWeb::WorkSpacesWebClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         WorkSpacesWebClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            std::shared_ptr<WorkSpacesWebEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesWebEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::WorkSpacesWeb::WorkSpacesWebClientConfiguration& clientConfiguration = Aws::WorkSpacesWeb::WorkSpacesWebClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WorkSpacesWebClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WorkSpacesWebClient(const Aws::Auth::AWSCredentials& credentials,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        WorkSpacesWebClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~WorkSpacesWebClient();
 
 
@@ -103,6 +131,24 @@ namespace WorkSpacesWeb
          * An Async wrapper for AssociateTrustStore that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateTrustStoreAsync(const Model::AssociateTrustStoreRequest& request, const AssociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a user access logging settings resource with a web
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserAccessLoggingSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateUserAccessLoggingSettingsOutcome AssociateUserAccessLoggingSettings(const Model::AssociateUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateUserAccessLoggingSettingsOutcomeCallable AssociateUserAccessLoggingSettingsCallable(const Model::AssociateUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for AssociateUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateUserAccessLoggingSettingsAsync(const Model::AssociateUserAccessLoggingSettingsRequest& request, const AssociateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a user settings resource with a web portal.</p><p><h3>See
@@ -219,6 +265,24 @@ namespace WorkSpacesWeb
         virtual void CreateTrustStoreAsync(const Model::CreateTrustStoreRequest& request, const CreateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a user access logging settings resource that can be associated with a
+         * web portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserAccessLoggingSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUserAccessLoggingSettingsOutcome CreateUserAccessLoggingSettings(const Model::CreateUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUserAccessLoggingSettingsOutcomeCallable CreateUserAccessLoggingSettingsCallable(const Model::CreateUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUserAccessLoggingSettingsAsync(const Model::CreateUserAccessLoggingSettingsRequest& request, const CreateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a user settings resource that can be associated with a web portal.
          * Once associated with a web portal, user settings control how users can transfer
          * data between a streaming session and the their local devices. </p><p><h3>See
@@ -324,6 +388,23 @@ namespace WorkSpacesWeb
         virtual void DeleteTrustStoreAsync(const Model::DeleteTrustStoreRequest& request, const DeleteTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes user access logging settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserAccessLoggingSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserAccessLoggingSettingsOutcome DeleteUserAccessLoggingSettings(const Model::DeleteUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUserAccessLoggingSettingsOutcomeCallable DeleteUserAccessLoggingSettingsCallable(const Model::DeleteUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUserAccessLoggingSettingsAsync(const Model::DeleteUserAccessLoggingSettingsRequest& request, const DeleteUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes user settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserSettings">AWS
          * API Reference</a></p>
@@ -392,6 +473,24 @@ namespace WorkSpacesWeb
          * An Async wrapper for DisassociateTrustStore that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateTrustStoreAsync(const Model::DisassociateTrustStoreRequest& request, const DisassociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates user access logging settings from a web portal.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserAccessLoggingSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateUserAccessLoggingSettingsOutcome DisassociateUserAccessLoggingSettings(const Model::DisassociateUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateUserAccessLoggingSettingsOutcomeCallable DisassociateUserAccessLoggingSettingsCallable(const Model::DisassociateUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for DisassociateUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateUserAccessLoggingSettingsAsync(const Model::DisassociateUserAccessLoggingSettingsRequest& request, const DisassociateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates user settings from a web portal.</p><p><h3>See Also:</h3>   <a
@@ -530,6 +629,23 @@ namespace WorkSpacesWeb
         virtual void GetTrustStoreCertificateAsync(const Model::GetTrustStoreCertificateRequest& request, const GetTrustStoreCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets user access logging settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserAccessLoggingSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUserAccessLoggingSettingsOutcome GetUserAccessLoggingSettings(const Model::GetUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetUserAccessLoggingSettingsOutcomeCallable GetUserAccessLoggingSettingsCallable(const Model::GetUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetUserAccessLoggingSettingsAsync(const Model::GetUserAccessLoggingSettingsRequest& request, const GetUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets user settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserSettings">AWS
          * API Reference</a></p>
@@ -665,6 +781,24 @@ namespace WorkSpacesWeb
          * An Async wrapper for ListTrustStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTrustStoresAsync(const Model::ListTrustStoresRequest& request, const ListTrustStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of user access logging settings.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUserAccessLoggingSettingsOutcome ListUserAccessLoggingSettings(const Model::ListUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListUserAccessLoggingSettingsOutcomeCallable ListUserAccessLoggingSettingsCallable(const Model::ListUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListUserAccessLoggingSettingsAsync(const Model::ListUserAccessLoggingSettingsRequest& request, const ListUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of user settings.</p><p><h3>See Also:</h3>   <a
@@ -805,6 +939,23 @@ namespace WorkSpacesWeb
         virtual void UpdateTrustStoreAsync(const Model::UpdateTrustStoreRequest& request, const UpdateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the user access logging settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserAccessLoggingSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateUserAccessLoggingSettingsOutcome UpdateUserAccessLoggingSettings(const Model::UpdateUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateUserAccessLoggingSettingsOutcomeCallable UpdateUserAccessLoggingSettingsCallable(const Model::UpdateUserAccessLoggingSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateUserAccessLoggingSettingsAsync(const Model::UpdateUserAccessLoggingSettingsRequest& request, const UpdateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the user settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserSettings">AWS
          * API Reference</a></p>
@@ -823,12 +974,13 @@ namespace WorkSpacesWeb
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<WorkSpacesWebEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const WorkSpacesWebClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      WorkSpacesWebClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<WorkSpacesWebEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkSpacesWeb

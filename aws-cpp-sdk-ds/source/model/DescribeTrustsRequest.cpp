@@ -33,7 +33,7 @@ Aws::String DescribeTrustsRequest::SerializePayload() const
 
   if(m_trustIdsHasBeenSet)
   {
-   Array<JsonValue> trustIdsJsonList(m_trustIds.size());
+   Aws::Utils::Array<JsonValue> trustIdsJsonList(m_trustIds.size());
    for(unsigned trustIdsIndex = 0; trustIdsIndex < trustIdsJsonList.GetLength(); ++trustIdsIndex)
    {
      trustIdsJsonList[trustIdsIndex].AsString(m_trustIds[trustIdsIndex]);

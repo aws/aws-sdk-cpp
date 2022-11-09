@@ -30,7 +30,7 @@ DescribeOutboundCrossClusterSearchConnectionsResult& DescribeOutboundCrossCluste
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CrossClusterSearchConnections"))
   {
-    Array<JsonView> crossClusterSearchConnectionsJsonList = jsonValue.GetArray("CrossClusterSearchConnections");
+    Aws::Utils::Array<JsonView> crossClusterSearchConnectionsJsonList = jsonValue.GetArray("CrossClusterSearchConnections");
     for(unsigned crossClusterSearchConnectionsIndex = 0; crossClusterSearchConnectionsIndex < crossClusterSearchConnectionsJsonList.GetLength(); ++crossClusterSearchConnectionsIndex)
     {
       m_crossClusterSearchConnections.push_back(crossClusterSearchConnectionsJsonList[crossClusterSearchConnectionsIndex].AsObject());

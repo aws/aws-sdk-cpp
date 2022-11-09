@@ -55,7 +55,7 @@ AlarmConfiguration& AlarmConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("alarms"))
   {
-    Array<JsonView> alarmsJsonList = jsonValue.GetArray("alarms");
+    Aws::Utils::Array<JsonView> alarmsJsonList = jsonValue.GetArray("alarms");
     for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
     {
       m_alarms.push_back(alarmsJsonList[alarmsIndex].AsObject());
@@ -84,7 +84,7 @@ JsonValue AlarmConfiguration::Jsonize() const
 
   if(m_alarmsHasBeenSet)
   {
-   Array<JsonValue> alarmsJsonList(m_alarms.size());
+   Aws::Utils::Array<JsonValue> alarmsJsonList(m_alarms.size());
    for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
    {
      alarmsJsonList[alarmsIndex].AsObject(m_alarms[alarmsIndex].Jsonize());

@@ -37,7 +37,7 @@ SegmentGroupList& SegmentGroupList::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Groups"))
   {
-    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
+    Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsObject());
@@ -61,7 +61,7 @@ JsonValue SegmentGroupList::Jsonize() const
 
   if(m_groupsHasBeenSet)
   {
-   Array<JsonValue> groupsJsonList(m_groups.size());
+   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
    {
      groupsJsonList[groupsIndex].AsObject(m_groups[groupsIndex].Jsonize());

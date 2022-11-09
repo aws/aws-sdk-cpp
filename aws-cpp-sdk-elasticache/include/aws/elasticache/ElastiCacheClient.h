@@ -30,27 +30,55 @@ namespace ElastiCache
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ElastiCacheClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ElastiCacheClient(const Aws::ElastiCache::ElastiCacheClientConfiguration& clientConfiguration = Aws::ElastiCache::ElastiCacheClientConfiguration(),
+                          std::shared_ptr<ElastiCacheEndpointProviderBase> endpointProvider = Aws::MakeShared<ElastiCacheEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ElastiCacheClient(const Aws::Auth::AWSCredentials& credentials,
-                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          std::shared_ptr<ElastiCacheEndpointProviderBase> endpointProvider = Aws::MakeShared<ElastiCacheEndpointProvider>(ALLOCATION_TAG),
+                          const Aws::ElastiCache::ElastiCacheClientConfiguration& clientConfiguration = Aws::ElastiCache::ElastiCacheClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ElastiCacheClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          std::shared_ptr<ElastiCacheEndpointProviderBase> endpointProvider = Aws::MakeShared<ElastiCacheEndpointProvider>(ALLOCATION_TAG),
+                          const Aws::ElastiCache::ElastiCacheClientConfiguration& clientConfiguration = Aws::ElastiCache::ElastiCacheClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ElastiCacheClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ElastiCacheClient(const Aws::Auth::AWSCredentials& credentials,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ElastiCacheClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ElastiCacheClient();
 
 
@@ -1051,9 +1079,9 @@ namespace ElastiCache
         virtual void DisassociateGlobalReplicationGroupAsync(const Model::DisassociateGlobalReplicationGroupRequest& request, const DisassociateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used to failover the primary region to a selected secondary region. The
-         * selected secondary region will become primary, and all other clusters will
-         * become secondary.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to failover the primary region to a secondary region. The secondary
+         * region will become primary, and all other clusters will become
+         * secondary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">AWS
          * API Reference</a></p>
          */
@@ -1507,12 +1535,13 @@ namespace ElastiCache
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<ElastiCacheEndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void init(const ElastiCacheClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        ElastiCacheClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<ElastiCacheEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ElastiCache

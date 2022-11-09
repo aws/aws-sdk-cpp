@@ -30,7 +30,7 @@ DescribeJobDefinitionsResult& DescribeJobDefinitionsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobDefinitions"))
   {
-    Array<JsonView> jobDefinitionsJsonList = jsonValue.GetArray("jobDefinitions");
+    Aws::Utils::Array<JsonView> jobDefinitionsJsonList = jsonValue.GetArray("jobDefinitions");
     for(unsigned jobDefinitionsIndex = 0; jobDefinitionsIndex < jobDefinitionsJsonList.GetLength(); ++jobDefinitionsIndex)
     {
       m_jobDefinitions.push_back(jobDefinitionsJsonList[jobDefinitionsIndex].AsObject());

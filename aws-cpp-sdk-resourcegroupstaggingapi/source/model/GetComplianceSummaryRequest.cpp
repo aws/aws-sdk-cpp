@@ -30,7 +30,7 @@ Aws::String GetComplianceSummaryRequest::SerializePayload() const
 
   if(m_targetIdFiltersHasBeenSet)
   {
-   Array<JsonValue> targetIdFiltersJsonList(m_targetIdFilters.size());
+   Aws::Utils::Array<JsonValue> targetIdFiltersJsonList(m_targetIdFilters.size());
    for(unsigned targetIdFiltersIndex = 0; targetIdFiltersIndex < targetIdFiltersJsonList.GetLength(); ++targetIdFiltersIndex)
    {
      targetIdFiltersJsonList[targetIdFiltersIndex].AsString(m_targetIdFilters[targetIdFiltersIndex]);
@@ -41,7 +41,7 @@ Aws::String GetComplianceSummaryRequest::SerializePayload() const
 
   if(m_regionFiltersHasBeenSet)
   {
-   Array<JsonValue> regionFiltersJsonList(m_regionFilters.size());
+   Aws::Utils::Array<JsonValue> regionFiltersJsonList(m_regionFilters.size());
    for(unsigned regionFiltersIndex = 0; regionFiltersIndex < regionFiltersJsonList.GetLength(); ++regionFiltersIndex)
    {
      regionFiltersJsonList[regionFiltersIndex].AsString(m_regionFilters[regionFiltersIndex]);
@@ -52,7 +52,7 @@ Aws::String GetComplianceSummaryRequest::SerializePayload() const
 
   if(m_resourceTypeFiltersHasBeenSet)
   {
-   Array<JsonValue> resourceTypeFiltersJsonList(m_resourceTypeFilters.size());
+   Aws::Utils::Array<JsonValue> resourceTypeFiltersJsonList(m_resourceTypeFilters.size());
    for(unsigned resourceTypeFiltersIndex = 0; resourceTypeFiltersIndex < resourceTypeFiltersJsonList.GetLength(); ++resourceTypeFiltersIndex)
    {
      resourceTypeFiltersJsonList[resourceTypeFiltersIndex].AsString(m_resourceTypeFilters[resourceTypeFiltersIndex]);
@@ -63,7 +63,7 @@ Aws::String GetComplianceSummaryRequest::SerializePayload() const
 
   if(m_tagKeyFiltersHasBeenSet)
   {
-   Array<JsonValue> tagKeyFiltersJsonList(m_tagKeyFilters.size());
+   Aws::Utils::Array<JsonValue> tagKeyFiltersJsonList(m_tagKeyFilters.size());
    for(unsigned tagKeyFiltersIndex = 0; tagKeyFiltersIndex < tagKeyFiltersJsonList.GetLength(); ++tagKeyFiltersIndex)
    {
      tagKeyFiltersJsonList[tagKeyFiltersIndex].AsString(m_tagKeyFilters[tagKeyFiltersIndex]);
@@ -74,7 +74,7 @@ Aws::String GetComplianceSummaryRequest::SerializePayload() const
 
   if(m_groupByHasBeenSet)
   {
-   Array<JsonValue> groupByJsonList(m_groupBy.size());
+   Aws::Utils::Array<JsonValue> groupByJsonList(m_groupBy.size());
    for(unsigned groupByIndex = 0; groupByIndex < groupByJsonList.GetLength(); ++groupByIndex)
    {
      groupByJsonList[groupByIndex].AsString(GroupByAttributeMapper::GetNameForGroupByAttribute(m_groupBy[groupByIndex]));

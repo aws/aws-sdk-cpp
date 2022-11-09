@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a container instance host device.</p>  <p>This
-   * object isn't applicable to jobs that are running on Fargate resources and
-   * shouldn't be provided.</p> <p><h3>See Also:</h3>   <a
+   * <p>An object that represents a container instance host device.</p> 
+   * <p>This object isn't applicable to jobs that are running on Fargate resources
+   * and shouldn't be provided.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Device">AWS API
    * Reference</a></p>
    */

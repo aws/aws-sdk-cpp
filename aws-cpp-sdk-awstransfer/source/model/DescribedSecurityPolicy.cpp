@@ -59,7 +59,7 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SshCiphers"))
   {
-    Array<JsonView> sshCiphersJsonList = jsonValue.GetArray("SshCiphers");
+    Aws::Utils::Array<JsonView> sshCiphersJsonList = jsonValue.GetArray("SshCiphers");
     for(unsigned sshCiphersIndex = 0; sshCiphersIndex < sshCiphersJsonList.GetLength(); ++sshCiphersIndex)
     {
       m_sshCiphers.push_back(sshCiphersJsonList[sshCiphersIndex].AsString());
@@ -69,7 +69,7 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SshKexs"))
   {
-    Array<JsonView> sshKexsJsonList = jsonValue.GetArray("SshKexs");
+    Aws::Utils::Array<JsonView> sshKexsJsonList = jsonValue.GetArray("SshKexs");
     for(unsigned sshKexsIndex = 0; sshKexsIndex < sshKexsJsonList.GetLength(); ++sshKexsIndex)
     {
       m_sshKexs.push_back(sshKexsJsonList[sshKexsIndex].AsString());
@@ -79,7 +79,7 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SshMacs"))
   {
-    Array<JsonView> sshMacsJsonList = jsonValue.GetArray("SshMacs");
+    Aws::Utils::Array<JsonView> sshMacsJsonList = jsonValue.GetArray("SshMacs");
     for(unsigned sshMacsIndex = 0; sshMacsIndex < sshMacsJsonList.GetLength(); ++sshMacsIndex)
     {
       m_sshMacs.push_back(sshMacsJsonList[sshMacsIndex].AsString());
@@ -89,7 +89,7 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TlsCiphers"))
   {
-    Array<JsonView> tlsCiphersJsonList = jsonValue.GetArray("TlsCiphers");
+    Aws::Utils::Array<JsonView> tlsCiphersJsonList = jsonValue.GetArray("TlsCiphers");
     for(unsigned tlsCiphersIndex = 0; tlsCiphersIndex < tlsCiphersJsonList.GetLength(); ++tlsCiphersIndex)
     {
       m_tlsCiphers.push_back(tlsCiphersJsonList[tlsCiphersIndex].AsString());
@@ -118,7 +118,7 @@ JsonValue DescribedSecurityPolicy::Jsonize() const
 
   if(m_sshCiphersHasBeenSet)
   {
-   Array<JsonValue> sshCiphersJsonList(m_sshCiphers.size());
+   Aws::Utils::Array<JsonValue> sshCiphersJsonList(m_sshCiphers.size());
    for(unsigned sshCiphersIndex = 0; sshCiphersIndex < sshCiphersJsonList.GetLength(); ++sshCiphersIndex)
    {
      sshCiphersJsonList[sshCiphersIndex].AsString(m_sshCiphers[sshCiphersIndex]);
@@ -129,7 +129,7 @@ JsonValue DescribedSecurityPolicy::Jsonize() const
 
   if(m_sshKexsHasBeenSet)
   {
-   Array<JsonValue> sshKexsJsonList(m_sshKexs.size());
+   Aws::Utils::Array<JsonValue> sshKexsJsonList(m_sshKexs.size());
    for(unsigned sshKexsIndex = 0; sshKexsIndex < sshKexsJsonList.GetLength(); ++sshKexsIndex)
    {
      sshKexsJsonList[sshKexsIndex].AsString(m_sshKexs[sshKexsIndex]);
@@ -140,7 +140,7 @@ JsonValue DescribedSecurityPolicy::Jsonize() const
 
   if(m_sshMacsHasBeenSet)
   {
-   Array<JsonValue> sshMacsJsonList(m_sshMacs.size());
+   Aws::Utils::Array<JsonValue> sshMacsJsonList(m_sshMacs.size());
    for(unsigned sshMacsIndex = 0; sshMacsIndex < sshMacsJsonList.GetLength(); ++sshMacsIndex)
    {
      sshMacsJsonList[sshMacsIndex].AsString(m_sshMacs[sshMacsIndex]);
@@ -151,7 +151,7 @@ JsonValue DescribedSecurityPolicy::Jsonize() const
 
   if(m_tlsCiphersHasBeenSet)
   {
-   Array<JsonValue> tlsCiphersJsonList(m_tlsCiphers.size());
+   Aws::Utils::Array<JsonValue> tlsCiphersJsonList(m_tlsCiphers.size());
    for(unsigned tlsCiphersIndex = 0; tlsCiphersIndex < tlsCiphersJsonList.GetLength(); ++tlsCiphersIndex)
    {
      tlsCiphersJsonList[tlsCiphersIndex].AsString(m_tlsCiphers[tlsCiphersIndex]);

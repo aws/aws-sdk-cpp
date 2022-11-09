@@ -115,7 +115,7 @@ Disk& Disk::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -125,7 +125,7 @@ Disk& Disk::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("addOns"))
   {
-    Array<JsonView> addOnsJsonList = jsonValue.GetArray("addOns");
+    Aws::Utils::Array<JsonView> addOnsJsonList = jsonValue.GetArray("addOns");
     for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
     {
       m_addOns.push_back(addOnsJsonList[addOnsIndex].AsObject());
@@ -225,7 +225,7 @@ JsonValue Disk::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -236,7 +236,7 @@ JsonValue Disk::Jsonize() const
 
   if(m_addOnsHasBeenSet)
   {
-   Array<JsonValue> addOnsJsonList(m_addOns.size());
+   Aws::Utils::Array<JsonValue> addOnsJsonList(m_addOns.size());
    for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
    {
      addOnsJsonList[addOnsIndex].AsObject(m_addOns[addOnsIndex].Jsonize());

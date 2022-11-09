@@ -49,7 +49,7 @@ AssertionRule& AssertionRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AssertedControls"))
   {
-    Array<JsonView> assertedControlsJsonList = jsonValue.GetArray("AssertedControls");
+    Aws::Utils::Array<JsonView> assertedControlsJsonList = jsonValue.GetArray("AssertedControls");
     for(unsigned assertedControlsIndex = 0; assertedControlsIndex < assertedControlsJsonList.GetLength(); ++assertedControlsIndex)
     {
       m_assertedControls.push_back(assertedControlsJsonList[assertedControlsIndex].AsString());
@@ -108,7 +108,7 @@ JsonValue AssertionRule::Jsonize() const
 
   if(m_assertedControlsHasBeenSet)
   {
-   Array<JsonValue> assertedControlsJsonList(m_assertedControls.size());
+   Aws::Utils::Array<JsonValue> assertedControlsJsonList(m_assertedControls.size());
    for(unsigned assertedControlsIndex = 0; assertedControlsIndex < assertedControlsJsonList.GetLength(); ++assertedControlsIndex)
    {
      assertedControlsJsonList[assertedControlsIndex].AsString(m_assertedControls[assertedControlsIndex]);

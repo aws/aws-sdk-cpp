@@ -51,7 +51,7 @@ Aws::String PutRetentionPolicyRequest::SerializePayload() const
 
   if(m_folderConfigurationsHasBeenSet)
   {
-   Array<JsonValue> folderConfigurationsJsonList(m_folderConfigurations.size());
+   Aws::Utils::Array<JsonValue> folderConfigurationsJsonList(m_folderConfigurations.size());
    for(unsigned folderConfigurationsIndex = 0; folderConfigurationsIndex < folderConfigurationsJsonList.GetLength(); ++folderConfigurationsIndex)
    {
      folderConfigurationsJsonList[folderConfigurationsIndex].AsObject(m_folderConfigurations[folderConfigurationsIndex].Jsonize());

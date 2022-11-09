@@ -142,7 +142,7 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -155,7 +155,7 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> secretVersionsToStagesJsonMap = jsonValue.GetObject("SecretVersionsToStages").GetAllObjects();
     for(auto& secretVersionsToStagesItem : secretVersionsToStagesJsonMap)
     {
-      Array<JsonView> secretVersionStagesTypeJsonList = secretVersionsToStagesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> secretVersionStagesTypeJsonList = secretVersionsToStagesItem.second.AsArray();
       Aws::Vector<Aws::String> secretVersionStagesTypeList;
       secretVersionStagesTypeList.reserve((size_t)secretVersionStagesTypeJsonList.GetLength());
       for(unsigned secretVersionStagesTypeIndex = 0; secretVersionStagesTypeIndex < secretVersionStagesTypeJsonList.GetLength(); ++secretVersionStagesTypeIndex)
@@ -259,7 +259,7 @@ JsonValue SecretListEntry::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -273,7 +273,7 @@ JsonValue SecretListEntry::Jsonize() const
    JsonValue secretVersionsToStagesJsonMap;
    for(auto& secretVersionsToStagesItem : m_secretVersionsToStages)
    {
-     Array<JsonValue> secretVersionStagesTypeJsonList(secretVersionsToStagesItem.second.size());
+     Aws::Utils::Array<JsonValue> secretVersionStagesTypeJsonList(secretVersionsToStagesItem.second.size());
      for(unsigned secretVersionStagesTypeIndex = 0; secretVersionStagesTypeIndex < secretVersionStagesTypeJsonList.GetLength(); ++secretVersionStagesTypeIndex)
      {
        secretVersionStagesTypeJsonList[secretVersionStagesTypeIndex].AsString(secretVersionsToStagesItem.second[secretVersionStagesTypeIndex]);

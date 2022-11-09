@@ -30,7 +30,7 @@ GetOutcomesResult& GetOutcomesResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("outcomes"))
   {
-    Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
+    Aws::Utils::Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
     for(unsigned outcomesIndex = 0; outcomesIndex < outcomesJsonList.GetLength(); ++outcomesIndex)
     {
       m_outcomes.push_back(outcomesJsonList[outcomesIndex].AsObject());

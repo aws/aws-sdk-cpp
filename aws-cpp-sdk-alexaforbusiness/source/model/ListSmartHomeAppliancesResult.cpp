@@ -30,7 +30,7 @@ ListSmartHomeAppliancesResult& ListSmartHomeAppliancesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SmartHomeAppliances"))
   {
-    Array<JsonView> smartHomeAppliancesJsonList = jsonValue.GetArray("SmartHomeAppliances");
+    Aws::Utils::Array<JsonView> smartHomeAppliancesJsonList = jsonValue.GetArray("SmartHomeAppliances");
     for(unsigned smartHomeAppliancesIndex = 0; smartHomeAppliancesIndex < smartHomeAppliancesJsonList.GetLength(); ++smartHomeAppliancesIndex)
     {
       m_smartHomeAppliances.push_back(smartHomeAppliancesJsonList[smartHomeAppliancesIndex].AsObject());

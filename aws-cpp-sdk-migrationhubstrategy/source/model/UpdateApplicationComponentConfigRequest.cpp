@@ -45,7 +45,7 @@ Aws::String UpdateApplicationComponentConfigRequest::SerializePayload() const
 
   if(m_sourceCodeListHasBeenSet)
   {
-   Array<JsonValue> sourceCodeListJsonList(m_sourceCodeList.size());
+   Aws::Utils::Array<JsonValue> sourceCodeListJsonList(m_sourceCodeList.size());
    for(unsigned sourceCodeListIndex = 0; sourceCodeListIndex < sourceCodeListJsonList.GetLength(); ++sourceCodeListIndex)
    {
      sourceCodeListJsonList[sourceCodeListIndex].AsObject(m_sourceCodeList[sourceCodeListIndex].Jsonize());

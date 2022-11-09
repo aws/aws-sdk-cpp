@@ -36,7 +36,7 @@ ListFirewallConfigsResult& ListFirewallConfigsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("FirewallConfigs"))
   {
-    Array<JsonView> firewallConfigsJsonList = jsonValue.GetArray("FirewallConfigs");
+    Aws::Utils::Array<JsonView> firewallConfigsJsonList = jsonValue.GetArray("FirewallConfigs");
     for(unsigned firewallConfigsIndex = 0; firewallConfigsIndex < firewallConfigsJsonList.GetLength(); ++firewallConfigsIndex)
     {
       m_firewallConfigs.push_back(firewallConfigsJsonList[firewallConfigsIndex].AsObject());

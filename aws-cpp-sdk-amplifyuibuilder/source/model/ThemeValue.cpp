@@ -35,7 +35,7 @@ ThemeValue& ThemeValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("children"))
   {
-    Array<JsonView> childrenJsonList = jsonValue.GetArray("children");
+    Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("children");
     for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
     {
       m_children.push_back(childrenJsonList[childrenIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue ThemeValue::Jsonize() const
 
   if(m_childrenHasBeenSet)
   {
-   Array<JsonValue> childrenJsonList(m_children.size());
+   Aws::Utils::Array<JsonValue> childrenJsonList(m_children.size());
    for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
    {
      childrenJsonList[childrenIndex].AsObject(m_children[childrenIndex].Jsonize());

@@ -26,7 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains prefetch schedule information.</p><p><h3>See
+   * <p>A prefetch schedule allows you to tell MediaTailor to fetch and prepare
+   * certain ads before an ad break happens. For more information about ad
+   * prefetching, see <a
+   * href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+   * ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PrefetchSchedule">AWS
    * API Reference</a></p>

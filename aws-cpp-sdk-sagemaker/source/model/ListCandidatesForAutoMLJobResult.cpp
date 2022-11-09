@@ -30,7 +30,7 @@ ListCandidatesForAutoMLJobResult& ListCandidatesForAutoMLJobResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Candidates"))
   {
-    Array<JsonView> candidatesJsonList = jsonValue.GetArray("Candidates");
+    Aws::Utils::Array<JsonView> candidatesJsonList = jsonValue.GetArray("Candidates");
     for(unsigned candidatesIndex = 0; candidatesIndex < candidatesJsonList.GetLength(); ++candidatesIndex)
     {
       m_candidates.push_back(candidatesJsonList[candidatesIndex].AsObject());

@@ -43,27 +43,55 @@ namespace WorkSpaces
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        WorkSpacesClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        WorkSpacesClient(const Aws::WorkSpaces::WorkSpacesClientConfiguration& clientConfiguration = Aws::WorkSpaces::WorkSpacesClientConfiguration(),
+                         std::shared_ptr<WorkSpacesEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WorkSpacesClient(const Aws::Auth::AWSCredentials& credentials,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<WorkSpacesEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::WorkSpaces::WorkSpacesClientConfiguration& clientConfiguration = Aws::WorkSpaces::WorkSpacesClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         WorkSpacesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<WorkSpacesEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::WorkSpaces::WorkSpacesClientConfiguration& clientConfiguration = Aws::WorkSpaces::WorkSpacesClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WorkSpacesClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WorkSpacesClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        WorkSpacesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~WorkSpacesClient();
 
 
@@ -313,7 +341,11 @@ namespace WorkSpaces
 
         /**
          * <p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and
-         * returns before the WorkSpaces are created.</p><p><h3>See Also:</h3>   <a
+         * returns before the WorkSpaces are created.</p>  <p>The <code>MANUAL</code>
+         * running mode value is only supported by Amazon WorkSpaces Core. Contact your
+         * account team to be allow-listed to use this value. For more information, see <a
+         * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">AWS
          * API Reference</a></p>
          */
@@ -881,10 +913,10 @@ namespace WorkSpaces
         virtual void ImportClientBrandingAsync(const Model::ImportClientBrandingRequest& request, const ImportClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into
-         * Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that
-         * is in your Amazon Web Services account, and you must own the image. For more
-         * information about creating BYOL images, see <a
+         * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows
+         * Server 2016 BYOL image into Amazon WorkSpaces. The image must be an already
+         * licensed Amazon EC2 image that is in your Amazon Web Services account, and you
+         * must own the image. For more information about creating BYOL images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
          * Bring Your Own Windows Desktop Licenses</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">AWS
@@ -1074,7 +1106,11 @@ namespace WorkSpaces
          * <p>Modifies the specified WorkSpace properties. For important information about
          * how to modify the size of the root and user volumes, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
-         * Modify a WorkSpace</a>. </p><p><h3>See Also:</h3>   <a
+         * Modify a WorkSpace</a>. </p>  <p>The <code>MANUAL</code> running mode
+         * value is only supported by Amazon WorkSpaces Core. Contact your account team to
+         * be allow-listed to use this value. For more information, see <a
+         * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">AWS
          * API Reference</a></p>
          */
@@ -1427,12 +1463,13 @@ namespace WorkSpaces
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<WorkSpacesEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const WorkSpacesClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      WorkSpacesClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<WorkSpacesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkSpaces

@@ -36,7 +36,7 @@ GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("supportedLocales"))
   {
-    Array<JsonView> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
+    Aws::Utils::Array<JsonView> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
     for(unsigned supportedLocalesIndex = 0; supportedLocalesIndex < supportedLocalesJsonList.GetLength(); ++supportedLocalesIndex)
     {
       m_supportedLocales.push_back(LocaleMapper::GetLocaleForName(supportedLocalesJsonList[supportedLocalesIndex].AsString()));
@@ -45,7 +45,7 @@ GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("slots"))
   {
-    Array<JsonView> slotsJsonList = jsonValue.GetArray("slots");
+    Aws::Utils::Array<JsonView> slotsJsonList = jsonValue.GetArray("slots");
     for(unsigned slotsIndex = 0; slotsIndex < slotsJsonList.GetLength(); ++slotsIndex)
     {
       m_slots.push_back(slotsJsonList[slotsIndex].AsObject());

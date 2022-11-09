@@ -36,7 +36,7 @@ DescribeReplicationInstancesResult& DescribeReplicationInstancesResult::operator
 
   if(jsonValue.ValueExists("ReplicationInstances"))
   {
-    Array<JsonView> replicationInstancesJsonList = jsonValue.GetArray("ReplicationInstances");
+    Aws::Utils::Array<JsonView> replicationInstancesJsonList = jsonValue.GetArray("ReplicationInstances");
     for(unsigned replicationInstancesIndex = 0; replicationInstancesIndex < replicationInstancesJsonList.GetLength(); ++replicationInstancesIndex)
     {
       m_replicationInstances.push_back(replicationInstancesJsonList[replicationInstancesIndex].AsObject());

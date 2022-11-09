@@ -26,7 +26,7 @@ Aws::String DescribeComputeEnvironmentsRequest::SerializePayload() const
 
   if(m_computeEnvironmentsHasBeenSet)
   {
-   Array<JsonValue> computeEnvironmentsJsonList(m_computeEnvironments.size());
+   Aws::Utils::Array<JsonValue> computeEnvironmentsJsonList(m_computeEnvironments.size());
    for(unsigned computeEnvironmentsIndex = 0; computeEnvironmentsIndex < computeEnvironmentsJsonList.GetLength(); ++computeEnvironmentsIndex)
    {
      computeEnvironmentsJsonList[computeEnvironmentsIndex].AsString(m_computeEnvironments[computeEnvironmentsIndex]);

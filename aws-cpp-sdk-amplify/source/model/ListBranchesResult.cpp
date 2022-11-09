@@ -30,7 +30,7 @@ ListBranchesResult& ListBranchesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("branches"))
   {
-    Array<JsonView> branchesJsonList = jsonValue.GetArray("branches");
+    Aws::Utils::Array<JsonView> branchesJsonList = jsonValue.GetArray("branches");
     for(unsigned branchesIndex = 0; branchesIndex < branchesJsonList.GetLength(); ++branchesIndex)
     {
       m_branches.push_back(branchesJsonList[branchesIndex].AsObject());

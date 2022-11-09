@@ -23,7 +23,7 @@ Aws::String BatchGetCrawlersRequest::SerializePayload() const
 
   if(m_crawlerNamesHasBeenSet)
   {
-   Array<JsonValue> crawlerNamesJsonList(m_crawlerNames.size());
+   Aws::Utils::Array<JsonValue> crawlerNamesJsonList(m_crawlerNames.size());
    for(unsigned crawlerNamesIndex = 0; crawlerNamesIndex < crawlerNamesJsonList.GetLength(); ++crawlerNamesIndex)
    {
      crawlerNamesJsonList[crawlerNamesIndex].AsString(m_crawlerNames[crawlerNamesIndex]);

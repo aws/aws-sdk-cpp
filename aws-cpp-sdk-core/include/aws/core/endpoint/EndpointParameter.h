@@ -7,6 +7,7 @@
 #pragma once
 
 #include <aws/core/client/AWSError.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -24,14 +25,42 @@ namespace Aws
             {
                 STATIC_CONTEXT,
                 OPERATION_CONTEXT,
-                CLIENT_CONTEXT
+                CLIENT_CONTEXT,
+                BUILT_IN,
+                NOT_SET = -1
             };
+
+            EndpointParameter(Aws::String name, bool initialValue, ParameterOrigin parameterOrigin = ParameterOrigin::NOT_SET)
+                    : m_storedType(ParameterType::BOOLEAN),
+                      m_parameterOrigin(parameterOrigin),
+                      m_name(std::move(name)),
+                      m_boolValue(initialValue)
+            {}
+
+            EndpointParameter(Aws::String name, Aws::String initialValue, ParameterOrigin parameterOrigin = ParameterOrigin::NOT_SET)
+                    : m_storedType(ParameterType::STRING),
+                      m_parameterOrigin(parameterOrigin),
+                      m_name(std::move(name)),
+                      m_stringValue(std::move(initialValue))
+            {}
+
+            EndpointParameter(Aws::String name, const char* initialValue, ParameterOrigin parameterOrigin = ParameterOrigin::NOT_SET)
+                    : m_storedType(ParameterType::STRING),
+                      m_parameterOrigin(parameterOrigin),
+                      m_name(std::move(name)),
+                      m_stringValue(initialValue)
+            {}
 
             EndpointParameter(ParameterType storedType, ParameterOrigin parameterOrigin, Aws::String name)
               : m_storedType(storedType),
                 m_parameterOrigin(parameterOrigin),
                 m_name(std::move(name))
             {}
+
+            EndpointParameter(const EndpointParameter&) = default;
+            EndpointParameter(EndpointParameter&&) = default;
+            EndpointParameter& operator=(const EndpointParameter&) = default;
+            EndpointParameter& operator=(EndpointParameter&&) = default;
 
             inline ParameterType GetStoredType() const
             {
@@ -87,13 +116,24 @@ namespace Aws
                 return GetSetResult::SUCCESS;
             }
 
+            bool GetBoolValueNoCheck() const
+            {
+                return m_boolValue;
+            }
+            const Aws::String& GetStrValueNoCheck() const
+            {
+                return m_stringValue;
+            }
+
         protected:
-            const ParameterType m_storedType;
-            const ParameterOrigin m_parameterOrigin;
-            const Aws::String m_name;
+            ParameterType m_storedType;
+            ParameterOrigin m_parameterOrigin;
+            Aws::String m_name;
 
             bool m_boolValue = false;
             Aws::String m_stringValue;
         };
+
+        using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
     } // namespace Endpoint
 } // namespace Aws

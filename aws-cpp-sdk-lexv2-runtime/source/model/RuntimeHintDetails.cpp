@@ -35,7 +35,7 @@ RuntimeHintDetails& RuntimeHintDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("runtimeHintValues"))
   {
-    Array<JsonView> runtimeHintValuesJsonList = jsonValue.GetArray("runtimeHintValues");
+    Aws::Utils::Array<JsonView> runtimeHintValuesJsonList = jsonValue.GetArray("runtimeHintValues");
     for(unsigned runtimeHintValuesIndex = 0; runtimeHintValuesIndex < runtimeHintValuesJsonList.GetLength(); ++runtimeHintValuesIndex)
     {
       m_runtimeHintValues.push_back(runtimeHintValuesJsonList[runtimeHintValuesIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue RuntimeHintDetails::Jsonize() const
 
   if(m_runtimeHintValuesHasBeenSet)
   {
-   Array<JsonValue> runtimeHintValuesJsonList(m_runtimeHintValues.size());
+   Aws::Utils::Array<JsonValue> runtimeHintValuesJsonList(m_runtimeHintValues.size());
    for(unsigned runtimeHintValuesIndex = 0; runtimeHintValuesIndex < runtimeHintValuesJsonList.GetLength(); ++runtimeHintValuesIndex)
    {
      runtimeHintValuesJsonList[runtimeHintValuesIndex].AsObject(m_runtimeHintValues[runtimeHintValuesIndex].Jsonize());

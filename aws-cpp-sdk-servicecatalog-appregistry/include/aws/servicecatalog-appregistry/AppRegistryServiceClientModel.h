@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/servicecatalog-appregistry/AppRegistryErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/servicecatalog-appregistry/AppRegistryEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -71,6 +73,10 @@ namespace Aws
 
   namespace AppRegistry
   {
+    using AppRegistryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppRegistryEndpointProviderBase = Aws::AppRegistry::Endpoint::AppRegistryEndpointProviderBase;
+    using AppRegistryEndpointProvider = Aws::AppRegistry::Endpoint::AppRegistryEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in AppRegistryClient header */

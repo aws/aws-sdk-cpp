@@ -30,7 +30,7 @@ GetServerDetailsResult& GetServerDetailsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("associatedApplications"))
   {
-    Array<JsonView> associatedApplicationsJsonList = jsonValue.GetArray("associatedApplications");
+    Aws::Utils::Array<JsonView> associatedApplicationsJsonList = jsonValue.GetArray("associatedApplications");
     for(unsigned associatedApplicationsIndex = 0; associatedApplicationsIndex < associatedApplicationsJsonList.GetLength(); ++associatedApplicationsIndex)
     {
       m_associatedApplications.push_back(associatedApplicationsJsonList[associatedApplicationsIndex].AsObject());

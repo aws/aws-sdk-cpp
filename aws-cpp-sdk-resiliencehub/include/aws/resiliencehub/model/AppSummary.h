@@ -9,6 +9,7 @@
 #include <aws/resiliencehub/model/AppAssessmentScheduleType.h>
 #include <aws/resiliencehub/model/AppComplianceStatusType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/resiliencehub/model/AppStatusType.h>
 #include <utility>
 
 namespace Aws
@@ -316,6 +317,37 @@ namespace Model
      */
     inline AppSummary& WithResiliencyScore(double value) { SetResiliencyScore(value); return *this;}
 
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline const AppStatusType& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline void SetStatus(const AppStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline void SetStatus(AppStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline AppSummary& WithStatus(const AppStatusType& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline AppSummary& WithStatus(AppStatusType&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appArn;
@@ -338,6 +370,9 @@ namespace Model
 
     double m_resiliencyScore;
     bool m_resiliencyScoreHasBeenSet = false;
+
+    AppStatusType m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,7 +27,7 @@ Aws::String CreateTrustStoreRequest::SerializePayload() const
 
   if(m_certificateListHasBeenSet)
   {
-   Array<JsonValue> certificateListJsonList(m_certificateList.size());
+   Aws::Utils::Array<JsonValue> certificateListJsonList(m_certificateList.size());
    for(unsigned certificateListIndex = 0; certificateListIndex < certificateListJsonList.GetLength(); ++certificateListIndex)
    {
      certificateListJsonList[certificateListIndex].AsString(HashingUtils::Base64Encode(m_certificateList[certificateListIndex]));
@@ -44,7 +44,7 @@ Aws::String CreateTrustStoreRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -30,7 +30,7 @@ DescribeActionTargetsResult& DescribeActionTargetsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ActionTargets"))
   {
-    Array<JsonView> actionTargetsJsonList = jsonValue.GetArray("ActionTargets");
+    Aws::Utils::Array<JsonView> actionTargetsJsonList = jsonValue.GetArray("ActionTargets");
     for(unsigned actionTargetsIndex = 0; actionTargetsIndex < actionTargetsJsonList.GetLength(); ++actionTargetsIndex)
     {
       m_actionTargets.push_back(actionTargetsJsonList[actionTargetsIndex].AsObject());

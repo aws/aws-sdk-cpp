@@ -33,7 +33,7 @@ DeleteVolumeOpenZFSConfiguration& DeleteVolumeOpenZFSConfiguration::operator =(J
 {
   if(jsonValue.ValueExists("Options"))
   {
-    Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
+    Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
     for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
     {
       m_options.push_back(DeleteOpenZFSVolumeOptionMapper::GetDeleteOpenZFSVolumeOptionForName(optionsJsonList[optionsIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue DeleteVolumeOpenZFSConfiguration::Jsonize() const
 
   if(m_optionsHasBeenSet)
   {
-   Array<JsonValue> optionsJsonList(m_options.size());
+   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
    {
      optionsJsonList[optionsIndex].AsString(DeleteOpenZFSVolumeOptionMapper::GetNameForDeleteOpenZFSVolumeOption(m_options[optionsIndex]));

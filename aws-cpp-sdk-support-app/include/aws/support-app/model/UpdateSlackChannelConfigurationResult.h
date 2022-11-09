@@ -269,37 +269,44 @@ namespace Model
 
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline const Aws::String& GetTeamId() const{ return m_teamId; }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline void SetTeamId(const Aws::String& value) { m_teamId = value; }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline void SetTeamId(Aws::String&& value) { m_teamId = std::move(value); }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline void SetTeamId(const char* value) { m_teamId.assign(value); }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline UpdateSlackChannelConfigurationResult& WithTeamId(const Aws::String& value) { SetTeamId(value); return *this;}
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline UpdateSlackChannelConfigurationResult& WithTeamId(Aws::String&& value) { SetTeamId(std::move(value)); return *this;}
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline UpdateSlackChannelConfigurationResult& WithTeamId(const char* value) { SetTeamId(value); return *this;}
 

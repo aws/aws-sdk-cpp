@@ -36,7 +36,7 @@ DescribeProductViewResult& DescribeProductViewResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ProvisioningArtifacts"))
   {
-    Array<JsonView> provisioningArtifactsJsonList = jsonValue.GetArray("ProvisioningArtifacts");
+    Aws::Utils::Array<JsonView> provisioningArtifactsJsonList = jsonValue.GetArray("ProvisioningArtifacts");
     for(unsigned provisioningArtifactsIndex = 0; provisioningArtifactsIndex < provisioningArtifactsJsonList.GetLength(); ++provisioningArtifactsIndex)
     {
       m_provisioningArtifacts.push_back(provisioningArtifactsJsonList[provisioningArtifactsIndex].AsObject());

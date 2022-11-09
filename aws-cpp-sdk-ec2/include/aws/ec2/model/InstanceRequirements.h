@@ -18,6 +18,7 @@
 #include <aws/ec2/model/BaselineEbsBandwidthMbps.h>
 #include <aws/ec2/model/AcceleratorCount.h>
 #include <aws/ec2/model/AcceleratorTotalMemoryMiB.h>
+#include <aws/ec2/model/NetworkBandwidthGbps.h>
 #include <aws/ec2/model/CpuManufacturer.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceGeneration.h>
@@ -46,10 +47,17 @@ namespace Model
    * Amazon EC2 will identify instance types with these attributes.</p> <p>When you
    * specify multiple attributes, you get instance types that satisfy all of the
    * specified attributes. If you specify multiple values for an attribute, you get
-   * instance types that satisfy any of the specified values.</p>  <p>You must
-   * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
-   * are optional. Any unspecified optional attribute is set to its default.</p>
-   *  <p>For more information, see <a
+   * instance types that satisfy any of the specified values.</p> <p>To limit the
+   * list of instance types from which Amazon EC2 can identify matching instance
+   * types, you can use one of the following parameters, but not both in the same
+   * request:</p> <ul> <li> <p> <code>AllowedInstanceTypes</code> - The instance
+   * types to include in the list. All other instance types are ignored, even if they
+   * match your specified attributes.</p> </li> <li> <p>
+   * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the
+   * list, even if they match your specified attributes.</p> </li> </ul> 
+   * <p>You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other
+   * attributes are optional. Any unspecified optional attribute is set to its
+   * default.</p>  <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
    * instance type selection for EC2 Fleet</a>, <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
@@ -275,7 +283,10 @@ namespace Model
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
      * specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types,
-     * but not the M5n instance types.</p> <p>Default: No excluded instance types</p>
+     * but not the M5n instance types.</p>  <p>If you specify
+     * <code>ExcludedInstanceTypes</code>, you can't specify
+     * <code>AllowedInstanceTypes</code>.</p>  <p>Default: No excluded instance
+     * types</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const{ return m_excludedInstanceTypes; }
 
@@ -287,7 +298,10 @@ namespace Model
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
      * specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types,
-     * but not the M5n instance types.</p> <p>Default: No excluded instance types</p>
+     * but not the M5n instance types.</p>  <p>If you specify
+     * <code>ExcludedInstanceTypes</code>, you can't specify
+     * <code>AllowedInstanceTypes</code>.</p>  <p>Default: No excluded instance
+     * types</p>
      */
     inline bool ExcludedInstanceTypesHasBeenSet() const { return m_excludedInstanceTypesHasBeenSet; }
 
@@ -299,7 +313,10 @@ namespace Model
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
      * specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types,
-     * but not the M5n instance types.</p> <p>Default: No excluded instance types</p>
+     * but not the M5n instance types.</p>  <p>If you specify
+     * <code>ExcludedInstanceTypes</code>, you can't specify
+     * <code>AllowedInstanceTypes</code>.</p>  <p>Default: No excluded instance
+     * types</p>
      */
     inline void SetExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = value; }
 
@@ -311,7 +328,10 @@ namespace Model
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
      * specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types,
-     * but not the M5n instance types.</p> <p>Default: No excluded instance types</p>
+     * but not the M5n instance types.</p>  <p>If you specify
+     * <code>ExcludedInstanceTypes</code>, you can't specify
+     * <code>AllowedInstanceTypes</code>.</p>  <p>Default: No excluded instance
+     * types</p>
      */
     inline void SetExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = std::move(value); }
 
@@ -323,7 +343,10 @@ namespace Model
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
      * specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types,
-     * but not the M5n instance types.</p> <p>Default: No excluded instance types</p>
+     * but not the M5n instance types.</p>  <p>If you specify
+     * <code>ExcludedInstanceTypes</code>, you can't specify
+     * <code>AllowedInstanceTypes</code>.</p>  <p>Default: No excluded instance
+     * types</p>
      */
     inline InstanceRequirements& WithExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetExcludedInstanceTypes(value); return *this;}
 
@@ -335,7 +358,10 @@ namespace Model
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
      * specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types,
-     * but not the M5n instance types.</p> <p>Default: No excluded instance types</p>
+     * but not the M5n instance types.</p>  <p>If you specify
+     * <code>ExcludedInstanceTypes</code>, you can't specify
+     * <code>AllowedInstanceTypes</code>.</p>  <p>Default: No excluded instance
+     * types</p>
      */
     inline InstanceRequirements& WithExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetExcludedInstanceTypes(std::move(value)); return *this;}
 
@@ -347,7 +373,10 @@ namespace Model
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
      * specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types,
-     * but not the M5n instance types.</p> <p>Default: No excluded instance types</p>
+     * but not the M5n instance types.</p>  <p>If you specify
+     * <code>ExcludedInstanceTypes</code>, you can't specify
+     * <code>AllowedInstanceTypes</code>.</p>  <p>Default: No excluded instance
+     * types</p>
      */
     inline InstanceRequirements& AddExcludedInstanceTypes(const Aws::String& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
 
@@ -359,7 +388,10 @@ namespace Model
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
      * specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types,
-     * but not the M5n instance types.</p> <p>Default: No excluded instance types</p>
+     * but not the M5n instance types.</p>  <p>If you specify
+     * <code>ExcludedInstanceTypes</code>, you can't specify
+     * <code>AllowedInstanceTypes</code>.</p>  <p>Default: No excluded instance
+     * types</p>
      */
     inline InstanceRequirements& AddExcludedInstanceTypes(Aws::String&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(std::move(value)); return *this; }
 
@@ -371,7 +403,10 @@ namespace Model
      * <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the
      * entire C5 instance family, which includes all C5a and C5n instance types. If you
      * specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types,
-     * but not the M5n instance types.</p> <p>Default: No excluded instance types</p>
+     * but not the M5n instance types.</p>  <p>If you specify
+     * <code>ExcludedInstanceTypes</code>, you can't specify
+     * <code>AllowedInstanceTypes</code>.</p>  <p>Default: No excluded instance
+     * types</p>
      */
     inline InstanceRequirements& AddExcludedInstanceTypes(const char* value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
 
@@ -1467,6 +1502,188 @@ namespace Model
      */
     inline InstanceRequirements& WithAcceleratorTotalMemoryMiB(AcceleratorTotalMemoryMiB&& value) { SetAcceleratorTotalMemoryMiB(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline const NetworkBandwidthGbps& GetNetworkBandwidthGbps() const{ return m_networkBandwidthGbps; }
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline bool NetworkBandwidthGbpsHasBeenSet() const { return m_networkBandwidthGbpsHasBeenSet; }
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline void SetNetworkBandwidthGbps(const NetworkBandwidthGbps& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = value; }
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline void SetNetworkBandwidthGbps(NetworkBandwidthGbps&& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = std::move(value); }
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline InstanceRequirements& WithNetworkBandwidthGbps(const NetworkBandwidthGbps& value) { SetNetworkBandwidthGbps(value); return *this;}
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline InstanceRequirements& WithNetworkBandwidthGbps(NetworkBandwidthGbps&& value) { SetNetworkBandwidthGbps(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will allow all the M5a instance types, but not the M5n instance
+     * types.</p>  <p>If you specify <code>AllowedInstanceTypes</code>, you can't
+     * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowedInstanceTypes() const{ return m_allowedInstanceTypes; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will allow all the M5a instance types, but not the M5n instance
+     * types.</p>  <p>If you specify <code>AllowedInstanceTypes</code>, you can't
+     * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline bool AllowedInstanceTypesHasBeenSet() const { return m_allowedInstanceTypesHasBeenSet; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will allow all the M5a instance types, but not the M5n instance
+     * types.</p>  <p>If you specify <code>AllowedInstanceTypes</code>, you can't
+     * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline void SetAllowedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes = value; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will allow all the M5a instance types, but not the M5n instance
+     * types.</p>  <p>If you specify <code>AllowedInstanceTypes</code>, you can't
+     * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline void SetAllowedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes = std::move(value); }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will allow all the M5a instance types, but not the M5n instance
+     * types.</p>  <p>If you specify <code>AllowedInstanceTypes</code>, you can't
+     * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& WithAllowedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetAllowedInstanceTypes(value); return *this;}
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will allow all the M5a instance types, but not the M5n instance
+     * types.</p>  <p>If you specify <code>AllowedInstanceTypes</code>, you can't
+     * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& WithAllowedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetAllowedInstanceTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will allow all the M5a instance types, but not the M5n instance
+     * types.</p>  <p>If you specify <code>AllowedInstanceTypes</code>, you can't
+     * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& AddAllowedInstanceTypes(const Aws::String& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will allow all the M5a instance types, but not the M5n instance
+     * types.</p>  <p>If you specify <code>AllowedInstanceTypes</code>, you can't
+     * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& AddAllowedInstanceTypes(Aws::String&& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will allow all the M5a instance types, but not the M5n instance
+     * types.</p>  <p>If you specify <code>AllowedInstanceTypes</code>, you can't
+     * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& AddAllowedInstanceTypes(const char* value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(value); return *this; }
+
   private:
 
     VCpuCountRange m_vCpuCount;
@@ -1531,6 +1748,12 @@ namespace Model
 
     AcceleratorTotalMemoryMiB m_acceleratorTotalMemoryMiB;
     bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
+
+    NetworkBandwidthGbps m_networkBandwidthGbps;
+    bool m_networkBandwidthGbpsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_allowedInstanceTypes;
+    bool m_allowedInstanceTypesHasBeenSet = false;
   };
 
 } // namespace Model

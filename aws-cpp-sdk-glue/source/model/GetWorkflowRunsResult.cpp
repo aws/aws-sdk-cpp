@@ -30,7 +30,7 @@ GetWorkflowRunsResult& GetWorkflowRunsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Runs"))
   {
-    Array<JsonView> runsJsonList = jsonValue.GetArray("Runs");
+    Aws::Utils::Array<JsonView> runsJsonList = jsonValue.GetArray("Runs");
     for(unsigned runsIndex = 0; runsIndex < runsJsonList.GetLength(); ++runsIndex)
     {
       m_runs.push_back(runsJsonList[runsIndex].AsObject());

@@ -32,7 +32,7 @@ Aws::String AcceptMatchRequest::SerializePayload() const
 
   if(m_playerIdsHasBeenSet)
   {
-   Array<JsonValue> playerIdsJsonList(m_playerIds.size());
+   Aws::Utils::Array<JsonValue> playerIdsJsonList(m_playerIds.size());
    for(unsigned playerIdsIndex = 0; playerIdsIndex < playerIdsJsonList.GetLength(); ++playerIdsIndex)
    {
      playerIdsJsonList[playerIdsIndex].AsString(m_playerIds[playerIdsIndex]);

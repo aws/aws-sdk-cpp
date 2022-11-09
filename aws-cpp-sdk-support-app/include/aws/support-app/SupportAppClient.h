@@ -38,41 +38,67 @@ namespace SupportApp
    * Services Support App API to manage your Slack configurations. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html">Authorize
-   * a Slack workspace to enable the Amazon Web Services Support App</a>.</p></p>
-   * <pre><code> &lt;note&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You must have a Business
-   * or Enterprise Support plan to use the Amazon Web Services Support App API.
-   * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;For more information about the Amazon
-   * Web Services Support App endpoints, see the &lt;a
-   * href=&quot;https://docs.aws.amazon.com/general/latest/gr/awssupport.html#awssupport_app_region&quot;&gt;Amazon
-   * Web Services Support App in Slack endpoints&lt;/a&gt; in the &lt;i&gt;Amazon Web
-   * Services General Reference&lt;/i&gt;.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-   * &lt;/note&gt; </code></pre>
+   * a Slack workspace to enable the Amazon Web Services Support App</a>.</p> 
+   * <ul> <li> <p>You must have a Business or Enterprise Support plan to use the
+   * Amazon Web Services Support App API. </p> </li> <li> <p>For more information
+   * about the Amazon Web Services Support App endpoints, see the <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/awssupport.html#awssupport_app_region">Amazon
+   * Web Services Support App in Slack endpoints</a> in the <i>Amazon Web Services
+   * General Reference</i>.</p> </li> </ul> </p>
    */
   class AWS_SUPPORTAPP_API SupportAppClient : public Aws::Client::AWSJsonClient
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SupportAppClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SupportAppClient(const Aws::SupportApp::SupportAppClientConfiguration& clientConfiguration = Aws::SupportApp::SupportAppClientConfiguration(),
+                         std::shared_ptr<SupportAppEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportAppEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SupportAppClient(const Aws::Auth::AWSCredentials& credentials,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<SupportAppEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportAppEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::SupportApp::SupportAppClientConfiguration& clientConfiguration = Aws::SupportApp::SupportAppClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SupportAppClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<SupportAppEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportAppEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::SupportApp::SupportAppClientConfiguration& clientConfiguration = Aws::SupportApp::SupportAppClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SupportAppClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SupportAppClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SupportAppClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SupportAppClient();
 
 
@@ -239,6 +265,48 @@ namespace SupportApp
         virtual void PutAccountAliasAsync(const Model::PutAccountAliasRequest& request, const PutAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Registers a Slack workspace for your Amazon Web Services account. To call
+         * this API, your account must be part of an organization in Organizations.</p>
+         * <p>If you're the <i>management account</i> and you want to register Slack
+         * workspaces for your organization, you must complete the following tasks:</p>
+         * <ol> <li> <p>Sign in to the <a
+         * href="https://console.aws.amazon.com/support/app">Amazon Web Services Support
+         * Center</a> and authorize the Slack workspaces where you want your organization
+         * to have access to. See <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html">Authorize
+         * a Slack workspace</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
+         * </li> <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API to
+         * authorize each Slack workspace for the organization.</p> </li> </ol> <p>After
+         * the management account authorizes the Slack workspace, member accounts can call
+         * this API to authorize the same Slack workspace for their individual accounts.
+         * Member accounts don't need to authorize the Slack workspace manually through the
+         * <a href="https://console.aws.amazon.com/support/app">Amazon Web Services Support
+         * Center</a>.</p> <p>To use the Amazon Web Services Support App, each account must
+         * then complete the following tasks:</p> <ul> <li> <p>Create an Identity and
+         * Access Management (IAM) role with the required permission. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing
+         * access to the Amazon Web Services Support App</a>.</p> </li> <li> <p>Configure a
+         * Slack channel to use the Amazon Web Services Support App for support cases for
+         * that account. For more information, see <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/add-your-slack-channel.html">Configuring
+         * a Slack channel</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/RegisterSlackWorkspaceForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterSlackWorkspaceForOrganizationOutcome RegisterSlackWorkspaceForOrganization(const Model::RegisterSlackWorkspaceForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for RegisterSlackWorkspaceForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterSlackWorkspaceForOrganizationOutcomeCallable RegisterSlackWorkspaceForOrganizationCallable(const Model::RegisterSlackWorkspaceForOrganizationRequest& request) const;
+
+        /**
+         * An Async wrapper for RegisterSlackWorkspaceForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterSlackWorkspaceForOrganizationAsync(const Model::RegisterSlackWorkspaceForOrganizationRequest& request, const RegisterSlackWorkspaceForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the configuration for a Slack channel, such as case update
          * notifications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/UpdateSlackChannelConfiguration">AWS
@@ -258,12 +326,13 @@ namespace SupportApp
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SupportAppEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const SupportAppClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      SupportAppClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SupportAppEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SupportApp

@@ -117,7 +117,7 @@ ClarifyInferenceConfig& ClarifyInferenceConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LabelHeaders"))
   {
-    Array<JsonView> labelHeadersJsonList = jsonValue.GetArray("LabelHeaders");
+    Aws::Utils::Array<JsonView> labelHeadersJsonList = jsonValue.GetArray("LabelHeaders");
     for(unsigned labelHeadersIndex = 0; labelHeadersIndex < labelHeadersJsonList.GetLength(); ++labelHeadersIndex)
     {
       m_labelHeaders.push_back(labelHeadersJsonList[labelHeadersIndex].AsString());
@@ -127,7 +127,7 @@ ClarifyInferenceConfig& ClarifyInferenceConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FeatureHeaders"))
   {
-    Array<JsonView> featureHeadersJsonList = jsonValue.GetArray("FeatureHeaders");
+    Aws::Utils::Array<JsonView> featureHeadersJsonList = jsonValue.GetArray("FeatureHeaders");
     for(unsigned featureHeadersIndex = 0; featureHeadersIndex < featureHeadersJsonList.GetLength(); ++featureHeadersIndex)
     {
       m_featureHeaders.push_back(featureHeadersJsonList[featureHeadersIndex].AsString());
@@ -137,7 +137,7 @@ ClarifyInferenceConfig& ClarifyInferenceConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FeatureTypes"))
   {
-    Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
+    Aws::Utils::Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
     for(unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex)
     {
       m_featureTypes.push_back(ClarifyFeatureTypeMapper::GetClarifyFeatureTypeForName(featureTypesJsonList[featureTypesIndex].AsString()));
@@ -202,7 +202,7 @@ JsonValue ClarifyInferenceConfig::Jsonize() const
 
   if(m_labelHeadersHasBeenSet)
   {
-   Array<JsonValue> labelHeadersJsonList(m_labelHeaders.size());
+   Aws::Utils::Array<JsonValue> labelHeadersJsonList(m_labelHeaders.size());
    for(unsigned labelHeadersIndex = 0; labelHeadersIndex < labelHeadersJsonList.GetLength(); ++labelHeadersIndex)
    {
      labelHeadersJsonList[labelHeadersIndex].AsString(m_labelHeaders[labelHeadersIndex]);
@@ -213,7 +213,7 @@ JsonValue ClarifyInferenceConfig::Jsonize() const
 
   if(m_featureHeadersHasBeenSet)
   {
-   Array<JsonValue> featureHeadersJsonList(m_featureHeaders.size());
+   Aws::Utils::Array<JsonValue> featureHeadersJsonList(m_featureHeaders.size());
    for(unsigned featureHeadersIndex = 0; featureHeadersIndex < featureHeadersJsonList.GetLength(); ++featureHeadersIndex)
    {
      featureHeadersJsonList[featureHeadersIndex].AsString(m_featureHeaders[featureHeadersIndex]);
@@ -224,7 +224,7 @@ JsonValue ClarifyInferenceConfig::Jsonize() const
 
   if(m_featureTypesHasBeenSet)
   {
-   Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
+   Aws::Utils::Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
    for(unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex)
    {
      featureTypesJsonList[featureTypesIndex].AsString(ClarifyFeatureTypeMapper::GetNameForClarifyFeatureType(m_featureTypes[featureTypesIndex]));

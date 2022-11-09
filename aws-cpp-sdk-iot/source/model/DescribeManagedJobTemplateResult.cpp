@@ -54,7 +54,7 @@ DescribeManagedJobTemplateResult& DescribeManagedJobTemplateResult::operator =(c
 
   if(jsonValue.ValueExists("environments"))
   {
-    Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");
+    Aws::Utils::Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");
     for(unsigned environmentsIndex = 0; environmentsIndex < environmentsJsonList.GetLength(); ++environmentsIndex)
     {
       m_environments.push_back(environmentsJsonList[environmentsIndex].AsString());
@@ -63,7 +63,7 @@ DescribeManagedJobTemplateResult& DescribeManagedJobTemplateResult::operator =(c
 
   if(jsonValue.ValueExists("documentParameters"))
   {
-    Array<JsonView> documentParametersJsonList = jsonValue.GetArray("documentParameters");
+    Aws::Utils::Array<JsonView> documentParametersJsonList = jsonValue.GetArray("documentParameters");
     for(unsigned documentParametersIndex = 0; documentParametersIndex < documentParametersJsonList.GetLength(); ++documentParametersIndex)
     {
       m_documentParameters.push_back(documentParametersJsonList[documentParametersIndex].AsObject());

@@ -30,7 +30,7 @@ GetOutpostInstanceTypesResult& GetOutpostInstanceTypesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceTypes"))
   {
-    Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("InstanceTypes");
+    Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("InstanceTypes");
     for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
     {
       m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsObject());

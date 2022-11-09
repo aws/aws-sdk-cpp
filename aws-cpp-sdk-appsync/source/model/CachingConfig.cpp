@@ -44,7 +44,7 @@ CachingConfig& CachingConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("cachingKeys"))
   {
-    Array<JsonView> cachingKeysJsonList = jsonValue.GetArray("cachingKeys");
+    Aws::Utils::Array<JsonView> cachingKeysJsonList = jsonValue.GetArray("cachingKeys");
     for(unsigned cachingKeysIndex = 0; cachingKeysIndex < cachingKeysJsonList.GetLength(); ++cachingKeysIndex)
     {
       m_cachingKeys.push_back(cachingKeysJsonList[cachingKeysIndex].AsString());
@@ -67,7 +67,7 @@ JsonValue CachingConfig::Jsonize() const
 
   if(m_cachingKeysHasBeenSet)
   {
-   Array<JsonValue> cachingKeysJsonList(m_cachingKeys.size());
+   Aws::Utils::Array<JsonValue> cachingKeysJsonList(m_cachingKeys.size());
    for(unsigned cachingKeysIndex = 0; cachingKeysIndex < cachingKeysJsonList.GetLength(); ++cachingKeysIndex)
    {
      cachingKeysJsonList[cachingKeysIndex].AsString(m_cachingKeys[cachingKeysIndex]);

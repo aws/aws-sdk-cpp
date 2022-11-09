@@ -35,7 +35,7 @@ OnInputLifecycle& OnInputLifecycle::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("events"))
   {
-    Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
+    Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
@@ -45,7 +45,7 @@ OnInputLifecycle& OnInputLifecycle::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("transitionEvents"))
   {
-    Array<JsonView> transitionEventsJsonList = jsonValue.GetArray("transitionEvents");
+    Aws::Utils::Array<JsonView> transitionEventsJsonList = jsonValue.GetArray("transitionEvents");
     for(unsigned transitionEventsIndex = 0; transitionEventsIndex < transitionEventsJsonList.GetLength(); ++transitionEventsIndex)
     {
       m_transitionEvents.push_back(transitionEventsJsonList[transitionEventsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue OnInputLifecycle::Jsonize() const
 
   if(m_eventsHasBeenSet)
   {
-   Array<JsonValue> eventsJsonList(m_events.size());
+   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
    {
      eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue OnInputLifecycle::Jsonize() const
 
   if(m_transitionEventsHasBeenSet)
   {
-   Array<JsonValue> transitionEventsJsonList(m_transitionEvents.size());
+   Aws::Utils::Array<JsonValue> transitionEventsJsonList(m_transitionEvents.size());
    for(unsigned transitionEventsIndex = 0; transitionEventsIndex < transitionEventsJsonList.GetLength(); ++transitionEventsIndex)
    {
      transitionEventsJsonList[transitionEventsIndex].AsObject(m_transitionEvents[transitionEventsIndex].Jsonize());

@@ -64,22 +64,35 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateClientHeaderFile(serviceModel));
         fileList.add(generateServiceClientModelInclude(serviceModel));
         fileList.add(generateClientSourceFile(serviceModel));
-        fileList.add(generateARNHeaderFile(serviceModel));
-        fileList.add(generateARNSourceFile(serviceModel));
+        if (serviceModel.getEndpointRules() == null) {
+            fileList.add(generateARNHeaderFile(serviceModel));
+            fileList.add(generateARNSourceFile(serviceModel));
+        }
         fileList.add(generateClientConfigurationFile(serviceModel));
-        fileList.add(generateRegionHeaderFile(serviceModel));
-        fileList.add(generateRegionSourceFile(serviceModel));
         if (serviceModel.getEndpointRules() != null) {
             fileList.add(generateEndpointRulesHeaderFile(serviceModel));
             fileList.add(generateEndpointRulesSourceFile(serviceModel));
             fileList.add(generateEndpointProviderHeaderFile(serviceModel));
             fileList.add(generateEndpointProviderSourceFile(serviceModel));
+
+            if (serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3") ||
+                  serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3-CRT") ||
+                  serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3 Control")) {
+                fileList.add(generateServiceClientConfigurationHeaderFile(serviceModel));
+                fileList.add(generateServiceClientConfigurationSourceFile(serviceModel));
+            }
+        } else {
+            fileList.add(generateRegionHeaderFile(serviceModel));
+            fileList.add(generateRegionSourceFile(serviceModel));
         }
         fileList.add(generateErrorsHeaderFile(serviceModel));
         fileList.add(generateErrorMarshallerHeaderFile(serviceModel));
         fileList.add(generateErrorSourceFile(serviceModel));
         fileList.add(generateErrorMarshallingSourceFile(serviceModel));
         fileList.add(generateServiceRequestHeader(serviceModel));
+        if (serviceModel.getEndpointRules() != null) {
+            fileList.add(generateServiceRequestSource(serviceModel));
+        }
         fileList.add(generateExportHeader(serviceModel));
         fileList.add(generateCmakeFile(serviceModel));
 
@@ -357,13 +370,25 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private SdkFileEntry generateServiceRequestHeader(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequest.vm", StandardCharsets.UTF_8.name());
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequestHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("include/aws/%s/%sRequest.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    private SdkFileEntry generateServiceRequestSource(final ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequestSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+
+        String fileName = String.format("source/%sRequest.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
         return makeFile(template, context, fileName, true);
     }
@@ -393,48 +418,42 @@ public abstract class CppClientGenerator implements ClientGenerator {
     }
 
     protected SdkFileEntry generateEndpointRulesHeaderFile(ServiceModel serviceModel) throws Exception {
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointRulesHeader.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createContext(serviceModel);
-        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
-
+        String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointRulesHeader.vm";
         String fileName = String.format("include/aws/%s/%sEndpointRules.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
-
-        return makeFile(template, context, fileName, true);
+        return generateSingleSourceFile(serviceModel, templateName, fileName);
     }
 
     protected SdkFileEntry generateEndpointRulesSourceFile(ServiceModel serviceModel) throws Exception {
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointRulesSource.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createContext(serviceModel);
-
+        String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointRulesSource.vm";
         String fileName = String.format("source/%sEndpointRules.cpp", serviceModel.getMetadata().getClassNamePrefix());
-        return makeFile(template, context, fileName, true);
+        return generateSingleSourceFile(serviceModel, templateName, fileName);
     }
 
     protected SdkFileEntry generateEndpointProviderHeaderFile(ServiceModel serviceModel) throws Exception {
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointProviderHeader.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createContext(serviceModel);
-        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
-
+        String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointProviderHeader.vm";
         String fileName = String.format("include/aws/%s/%sEndpointProvider.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
-
-        return makeFile(template, context, fileName, true);
+        return generateSingleSourceFile(serviceModel, templateName, fileName);
     }
 
     protected SdkFileEntry generateEndpointProviderSourceFile(ServiceModel serviceModel) throws Exception {
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointProviderSource.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createContext(serviceModel);
+        String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointProviderSource.vm";
         String fileName = String.format("source/%sEndpointProvider.cpp", serviceModel.getMetadata().getClassNamePrefix());
-        return makeFile(template, context, fileName, true);
+        return generateSingleSourceFile(serviceModel, templateName, fileName);
+    }
+
+    protected SdkFileEntry generateServiceClientConfigurationHeaderFile(ServiceModel serviceModel) throws Exception {
+        String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientConfigurationHeader.vm";
+        String fileName = String.format("include/aws/%s/%sClientConfiguration.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+        return generateSingleSourceFile(serviceModel, templateName, fileName);
+    }
+
+    protected SdkFileEntry generateServiceClientConfigurationSourceFile(ServiceModel serviceModel) throws Exception {
+        String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientConfigurationSource.vm";
+        String fileName = String.format("source/%sClientConfiguration.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        return generateSingleSourceFile(serviceModel, templateName, fileName);
     }
 
     protected Map<String, String> computeEndpointMappingForService(ServiceModel serviceModel) {
@@ -491,15 +510,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
     }
 
     private SdkFileEntry generateExportHeader(final ServiceModel serviceModel) throws Exception {
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceExportHeader.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createContext(serviceModel);
-        context.put("CppViewHelper", CppViewHelper.class);
-
+        String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceExportHeader.vm";
         String fileName = String.format("include/aws/%s/%s_EXPORTS.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
-        return makeFile(template, context, fileName, true);
+        return generateSingleSourceFile(serviceModel, templateName, fileName);
     }
 
     private SdkFileEntry generateCmakeFile(final ServiceModel serviceModel) throws Exception {
@@ -509,6 +523,14 @@ public abstract class CppClientGenerator implements ClientGenerator {
         VelocityContext context = createContext(serviceModel);
 
         return makeFile(template, context, "CMakeLists.txt", false);
+    }
+
+    private SdkFileEntry generateSingleSourceFile(final ServiceModel serviceModel, final String templatePath, final String dstFileName) throws IOException {
+        Template template = velocityEngine.getTemplate(templatePath, StandardCharsets.UTF_8.name());
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
+        return makeFile(template, context, dstFileName, true);
     }
 
     protected final SdkFileEntry makeFile(Template template, VelocityContext context, String path, boolean needsBOM) throws IOException {

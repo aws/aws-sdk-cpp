@@ -69,7 +69,7 @@ Aws::String CreateMeetingWithAttendeesRequest::SerializePayload() const
 
   if(m_attendeesHasBeenSet)
   {
-   Array<JsonValue> attendeesJsonList(m_attendees.size());
+   Aws::Utils::Array<JsonValue> attendeesJsonList(m_attendees.size());
    for(unsigned attendeesIndex = 0; attendeesIndex < attendeesJsonList.GetLength(); ++attendeesIndex)
    {
      attendeesJsonList[attendeesIndex].AsObject(m_attendees[attendeesIndex].Jsonize());
@@ -86,7 +86,7 @@ Aws::String CreateMeetingWithAttendeesRequest::SerializePayload() const
 
   if(m_tenantIdsHasBeenSet)
   {
-   Array<JsonValue> tenantIdsJsonList(m_tenantIds.size());
+   Aws::Utils::Array<JsonValue> tenantIdsJsonList(m_tenantIds.size());
    for(unsigned tenantIdsIndex = 0; tenantIdsIndex < tenantIdsJsonList.GetLength(); ++tenantIdsIndex)
    {
      tenantIdsJsonList[tenantIdsIndex].AsString(m_tenantIds[tenantIdsIndex]);
@@ -97,7 +97,7 @@ Aws::String CreateMeetingWithAttendeesRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

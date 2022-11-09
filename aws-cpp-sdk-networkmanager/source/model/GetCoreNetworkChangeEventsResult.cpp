@@ -30,7 +30,7 @@ GetCoreNetworkChangeEventsResult& GetCoreNetworkChangeEventsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CoreNetworkChangeEvents"))
   {
-    Array<JsonView> coreNetworkChangeEventsJsonList = jsonValue.GetArray("CoreNetworkChangeEvents");
+    Aws::Utils::Array<JsonView> coreNetworkChangeEventsJsonList = jsonValue.GetArray("CoreNetworkChangeEvents");
     for(unsigned coreNetworkChangeEventsIndex = 0; coreNetworkChangeEventsIndex < coreNetworkChangeEventsJsonList.GetLength(); ++coreNetworkChangeEventsIndex)
     {
       m_coreNetworkChangeEvents.push_back(coreNetworkChangeEventsJsonList[coreNetworkChangeEventsIndex].AsObject());

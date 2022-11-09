@@ -84,7 +84,7 @@ LoRaWANDeviceMetadata& LoRaWANDeviceMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Gateways"))
   {
-    Array<JsonView> gatewaysJsonList = jsonValue.GetArray("Gateways");
+    Aws::Utils::Array<JsonView> gatewaysJsonList = jsonValue.GetArray("Gateways");
     for(unsigned gatewaysIndex = 0; gatewaysIndex < gatewaysJsonList.GetLength(); ++gatewaysIndex)
     {
       m_gateways.push_back(gatewaysJsonList[gatewaysIndex].AsObject());
@@ -131,7 +131,7 @@ JsonValue LoRaWANDeviceMetadata::Jsonize() const
 
   if(m_gatewaysHasBeenSet)
   {
-   Array<JsonValue> gatewaysJsonList(m_gateways.size());
+   Aws::Utils::Array<JsonValue> gatewaysJsonList(m_gateways.size());
    for(unsigned gatewaysIndex = 0; gatewaysIndex < gatewaysJsonList.GetLength(); ++gatewaysIndex)
    {
      gatewaysJsonList[gatewaysIndex].AsObject(m_gateways[gatewaysIndex].Jsonize());

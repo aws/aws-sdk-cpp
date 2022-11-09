@@ -37,7 +37,7 @@ Aws::String CreateDataRepositoryTaskRequest::SerializePayload() const
 
   if(m_pathsHasBeenSet)
   {
-   Array<JsonValue> pathsJsonList(m_paths.size());
+   Aws::Utils::Array<JsonValue> pathsJsonList(m_paths.size());
    for(unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex)
    {
      pathsJsonList[pathsIndex].AsString(m_paths[pathsIndex]);
@@ -66,7 +66,7 @@ Aws::String CreateDataRepositoryTaskRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

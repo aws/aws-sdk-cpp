@@ -36,7 +36,7 @@ ListRegexMatchSetsResult& ListRegexMatchSetsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("RegexMatchSets"))
   {
-    Array<JsonView> regexMatchSetsJsonList = jsonValue.GetArray("RegexMatchSets");
+    Aws::Utils::Array<JsonView> regexMatchSetsJsonList = jsonValue.GetArray("RegexMatchSets");
     for(unsigned regexMatchSetsIndex = 0; regexMatchSetsIndex < regexMatchSetsJsonList.GetLength(); ++regexMatchSetsIndex)
     {
       m_regexMatchSets.push_back(regexMatchSetsJsonList[regexMatchSetsIndex].AsObject());

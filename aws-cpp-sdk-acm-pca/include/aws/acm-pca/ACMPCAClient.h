@@ -15,20 +15,20 @@ namespace Aws
 namespace ACMPCA
 {
   /**
-   * <p>This is the <i>Certificate Manager Private Certificate Authority (PCA) API
-   * Reference</i>. It provides descriptions, syntax, and usage examples for each of
-   * the actions and data types involved in creating and managing a private
-   * certificate authority (CA) for your organization.</p> <p>The documentation for
-   * each action shows the API request parameters and the JSON response.
-   * Alternatively, you can use one of the Amazon Web Services SDKs to access an API
-   * that is tailored to the programming language or platform that you prefer. For
-   * more information, see <a href="https://aws.amazon.com/tools/#SDKs">Amazon Web
-   * Services SDKs</a>.</p> <p>Each ACM Private CA API operation has a quota that
-   * determines the number of times the operation can be called per second. ACM
-   * Private CA throttles API requests at different rates depending on the operation.
-   * Throttling means that ACM Private CA rejects an otherwise valid request because
-   * the request exceeds the operation's quota for the number of requests per second.
-   * When a request is throttled, ACM Private CA returns a <a
+   * <p>This is the <i>Private Certificate Authority (PCA) API Reference</i>. It
+   * provides descriptions, syntax, and usage examples for each of the actions and
+   * data types involved in creating and managing a private certificate authority
+   * (CA) for your organization.</p> <p>The documentation for each action shows the
+   * API request parameters and the JSON response. Alternatively, you can use one of
+   * the Amazon Web Services SDKs to access an API that is tailored to the
+   * programming language or platform that you prefer. For more information, see <a
+   * href="https://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p>
+   * <p>Each ACM Private CA API operation has a quota that determines the number of
+   * times the operation can be called per second. ACM Private CA throttles API
+   * requests at different rates depending on the operation. Throttling means that
+   * ACM Private CA rejects an otherwise valid request because the request exceeds
+   * the operation's quota for the number of requests per second. When a request is
+   * throttled, ACM Private CA returns a <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/CommonErrors.html">ThrottlingException</a>
    * error. ACM Private CA does not guarantee a minimum request rate for APIs. </p>
    * <p>To see an up-to-date list of your ACM Private CA quotas, or to request a
@@ -40,27 +40,55 @@ namespace ACMPCA
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ACMPCAClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ACMPCAClient(const Aws::ACMPCA::ACMPCAClientConfiguration& clientConfiguration = Aws::ACMPCA::ACMPCAClientConfiguration(),
+                     std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMPCAEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ACMPCAClient(const Aws::Auth::AWSCredentials& credentials,
-                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                     std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMPCAEndpointProvider>(ALLOCATION_TAG),
+                     const Aws::ACMPCA::ACMPCAClientConfiguration& clientConfiguration = Aws::ACMPCA::ACMPCAClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ACMPCAClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                     std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMPCAEndpointProvider>(ALLOCATION_TAG),
+                     const Aws::ACMPCA::ACMPCAClientConfiguration& clientConfiguration = Aws::ACMPCA::ACMPCAClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ACMPCAClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ACMPCAClient(const Aws::Auth::AWSCredentials& credentials,
+                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ACMPCAClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ACMPCAClient();
 
 
@@ -826,12 +854,13 @@ namespace ACMPCA
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ACMPCAEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const ACMPCAClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ACMPCAClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ACMPCAEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ACMPCA

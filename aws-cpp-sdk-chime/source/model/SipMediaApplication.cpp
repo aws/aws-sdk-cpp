@@ -64,7 +64,7 @@ SipMediaApplication& SipMediaApplication::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Endpoints"))
   {
-    Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
+    Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
     for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
     {
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsObject());
@@ -113,7 +113,7 @@ JsonValue SipMediaApplication::Jsonize() const
 
   if(m_endpointsHasBeenSet)
   {
-   Array<JsonValue> endpointsJsonList(m_endpoints.size());
+   Aws::Utils::Array<JsonValue> endpointsJsonList(m_endpoints.size());
    for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
    {
      endpointsJsonList[endpointsIndex].AsObject(m_endpoints[endpointsIndex].Jsonize());

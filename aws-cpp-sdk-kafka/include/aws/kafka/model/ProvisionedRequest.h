@@ -13,6 +13,7 @@
 #include <aws/kafka/model/OpenMonitoringInfo.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/model/LoggingInfo.h>
+#include <aws/kafka/model/StorageMode.h>
 #include <utility>
 
 namespace Aws
@@ -459,6 +460,55 @@ namespace Model
      */
     inline ProvisionedRequest& WithNumberOfBrokerNodes(int value) { SetNumberOfBrokerNodes(value); return *this;}
 
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline const StorageMode& GetStorageMode() const{ return m_storageMode; }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline bool StorageModeHasBeenSet() const { return m_storageModeHasBeenSet; }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline void SetStorageMode(const StorageMode& value) { m_storageModeHasBeenSet = true; m_storageMode = value; }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline void SetStorageMode(StorageMode&& value) { m_storageModeHasBeenSet = true; m_storageMode = std::move(value); }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline ProvisionedRequest& WithStorageMode(const StorageMode& value) { SetStorageMode(value); return *this;}
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline ProvisionedRequest& WithStorageMode(StorageMode&& value) { SetStorageMode(std::move(value)); return *this;}
+
   private:
 
     BrokerNodeGroupInfo m_brokerNodeGroupInfo;
@@ -487,6 +537,9 @@ namespace Model
 
     int m_numberOfBrokerNodes;
     bool m_numberOfBrokerNodesHasBeenSet = false;
+
+    StorageMode m_storageMode;
+    bool m_storageModeHasBeenSet = false;
   };
 
 } // namespace Model

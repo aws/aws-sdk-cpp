@@ -90,7 +90,7 @@ DistributionConfigurationSummary& DistributionConfigurationSummary::operator =(J
 
   if(jsonValue.ValueExists("regions"))
   {
-    Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
+    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
     for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
     {
       m_regions.push_back(regionsJsonList[regionsIndex].AsString());
@@ -148,7 +148,7 @@ JsonValue DistributionConfigurationSummary::Jsonize() const
 
   if(m_regionsHasBeenSet)
   {
-   Array<JsonValue> regionsJsonList(m_regions.size());
+   Aws::Utils::Array<JsonValue> regionsJsonList(m_regions.size());
    for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
    {
      regionsJsonList[regionsIndex].AsString(m_regions[regionsIndex]);

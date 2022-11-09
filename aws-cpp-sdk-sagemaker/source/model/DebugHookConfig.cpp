@@ -63,7 +63,7 @@ DebugHookConfig& DebugHookConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CollectionConfigurations"))
   {
-    Array<JsonView> collectionConfigurationsJsonList = jsonValue.GetArray("CollectionConfigurations");
+    Aws::Utils::Array<JsonView> collectionConfigurationsJsonList = jsonValue.GetArray("CollectionConfigurations");
     for(unsigned collectionConfigurationsIndex = 0; collectionConfigurationsIndex < collectionConfigurationsJsonList.GetLength(); ++collectionConfigurationsIndex)
     {
       m_collectionConfigurations.push_back(collectionConfigurationsJsonList[collectionConfigurationsIndex].AsObject());
@@ -103,7 +103,7 @@ JsonValue DebugHookConfig::Jsonize() const
 
   if(m_collectionConfigurationsHasBeenSet)
   {
-   Array<JsonValue> collectionConfigurationsJsonList(m_collectionConfigurations.size());
+   Aws::Utils::Array<JsonValue> collectionConfigurationsJsonList(m_collectionConfigurations.size());
    for(unsigned collectionConfigurationsIndex = 0; collectionConfigurationsIndex < collectionConfigurationsJsonList.GetLength(); ++collectionConfigurationsIndex)
    {
      collectionConfigurationsJsonList[collectionConfigurationsIndex].AsObject(m_collectionConfigurations[collectionConfigurationsIndex].Jsonize());

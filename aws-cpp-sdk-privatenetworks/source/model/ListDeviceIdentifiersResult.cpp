@@ -30,7 +30,7 @@ ListDeviceIdentifiersResult& ListDeviceIdentifiersResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deviceIdentifiers"))
   {
-    Array<JsonView> deviceIdentifiersJsonList = jsonValue.GetArray("deviceIdentifiers");
+    Aws::Utils::Array<JsonView> deviceIdentifiersJsonList = jsonValue.GetArray("deviceIdentifiers");
     for(unsigned deviceIdentifiersIndex = 0; deviceIdentifiersIndex < deviceIdentifiersJsonList.GetLength(); ++deviceIdentifiersIndex)
     {
       m_deviceIdentifiers.push_back(deviceIdentifiersJsonList[deviceIdentifiersIndex].AsObject());

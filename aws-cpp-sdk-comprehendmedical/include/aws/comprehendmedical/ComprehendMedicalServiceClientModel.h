@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/comprehendmedical/ComprehendMedicalErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/comprehendmedical/ComprehendMedicalEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -74,6 +76,10 @@ namespace Aws
 
   namespace ComprehendMedical
   {
+    using ComprehendMedicalClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ComprehendMedicalEndpointProviderBase = Aws::ComprehendMedical::Endpoint::ComprehendMedicalEndpointProviderBase;
+    using ComprehendMedicalEndpointProvider = Aws::ComprehendMedical::Endpoint::ComprehendMedicalEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ComprehendMedicalClient header */

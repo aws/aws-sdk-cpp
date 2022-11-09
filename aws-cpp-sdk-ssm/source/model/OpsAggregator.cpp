@@ -74,7 +74,7 @@ OpsAggregator& OpsAggregator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Filters"))
   {
-    Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
+    Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
     for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
     {
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());
@@ -84,7 +84,7 @@ OpsAggregator& OpsAggregator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Aggregators"))
   {
-    Array<JsonView> aggregatorsJsonList = jsonValue.GetArray("Aggregators");
+    Aws::Utils::Array<JsonView> aggregatorsJsonList = jsonValue.GetArray("Aggregators");
     for(unsigned aggregatorsIndex = 0; aggregatorsIndex < aggregatorsJsonList.GetLength(); ++aggregatorsIndex)
     {
       m_aggregators.push_back(aggregatorsJsonList[aggregatorsIndex].AsObject());
@@ -130,7 +130,7 @@ JsonValue OpsAggregator::Jsonize() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
@@ -141,7 +141,7 @@ JsonValue OpsAggregator::Jsonize() const
 
   if(m_aggregatorsHasBeenSet)
   {
-   Array<JsonValue> aggregatorsJsonList(m_aggregators.size());
+   Aws::Utils::Array<JsonValue> aggregatorsJsonList(m_aggregators.size());
    for(unsigned aggregatorsIndex = 0; aggregatorsIndex < aggregatorsJsonList.GetLength(); ++aggregatorsIndex)
    {
      aggregatorsJsonList[aggregatorsIndex].AsObject(m_aggregators[aggregatorsIndex].Jsonize());
