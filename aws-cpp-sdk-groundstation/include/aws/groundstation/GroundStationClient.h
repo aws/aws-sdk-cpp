@@ -137,6 +137,24 @@ namespace GroundStation
         virtual void CreateDataflowEndpointGroupAsync(const Model::CreateDataflowEndpointGroupRequest& request, const CreateDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an Ephemeris with the specified
+         * <code>EphemerisData</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEphemerisOutcome CreateEphemeris(const Model::CreateEphemerisRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEphemeris that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEphemerisOutcomeCallable CreateEphemerisCallable(const Model::CreateEphemerisRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateEphemeris that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEphemerisAsync(const Model::CreateEphemerisRequest& request, const CreateEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a mission profile.</p> <p> <code>dataflowEdges</code> is a list of
          * lists of strings. Each lower level list of strings has two elements: a
          * <i>from</i> ARN and a <i>to</i> ARN.</p><p><h3>See Also:</h3>   <a
@@ -190,6 +208,23 @@ namespace GroundStation
         virtual void DeleteDataflowEndpointGroupAsync(const Model::DeleteDataflowEndpointGroupRequest& request, const DeleteDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an ephemeris</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEphemerisOutcome DeleteEphemeris(const Model::DeleteEphemerisRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEphemeris that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEphemerisOutcomeCallable DeleteEphemerisCallable(const Model::DeleteEphemerisRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteEphemeris that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEphemerisAsync(const Model::DeleteEphemerisRequest& request, const DeleteEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a mission profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteMissionProfile">AWS
          * API Reference</a></p>
@@ -222,6 +257,23 @@ namespace GroundStation
          * An Async wrapper for DescribeContact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeContactAsync(const Model::DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes an existing ephemeris.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEphemerisOutcome DescribeEphemeris(const Model::DescribeEphemerisRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEphemeris that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEphemerisOutcomeCallable DescribeEphemerisCallable(const Model::DescribeEphemerisRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeEphemeris that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEphemerisAsync(const Model::DescribeEphemerisRequest& request, const DescribeEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns <code>Config</code> information.</p> <p>Only one <code>Config</code>
@@ -365,6 +417,23 @@ namespace GroundStation
         virtual void ListDataflowEndpointGroupsAsync(const Model::ListDataflowEndpointGroupsRequest& request, const ListDataflowEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List existing ephemerides.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEphemeridesOutcome ListEphemerides(const Model::ListEphemeridesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEphemerides that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEphemeridesOutcomeCallable ListEphemeridesCallable(const Model::ListEphemeridesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListEphemerides that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEphemeridesAsync(const Model::ListEphemeridesRequest& request, const ListEphemeridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of ground stations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListGroundStations">AWS
          * API Reference</a></p>
@@ -503,6 +572,23 @@ namespace GroundStation
          * An Async wrapper for UpdateConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConfigAsync(const Model::UpdateConfigRequest& request, const UpdateConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an existing ephemeris</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEphemerisOutcome UpdateEphemeris(const Model::UpdateEphemerisRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEphemeris that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateEphemerisOutcomeCallable UpdateEphemerisCallable(const Model::UpdateEphemerisRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateEphemeris that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateEphemerisAsync(const Model::UpdateEphemerisRequest& request, const UpdateEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a mission profile.</p> <p>Updating a mission profile will not update

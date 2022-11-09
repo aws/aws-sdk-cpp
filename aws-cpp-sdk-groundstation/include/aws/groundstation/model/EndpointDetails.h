@@ -70,32 +70,38 @@ namespace Model
 
 
     /**
-     * <p>Endpoint security details.</p>
+     * <p>Endpoint security details including a list of subnets, a list of security
+     * groups and a role to connect streams to instances.</p>
      */
     inline const SecurityDetails& GetSecurityDetails() const{ return m_securityDetails; }
 
     /**
-     * <p>Endpoint security details.</p>
+     * <p>Endpoint security details including a list of subnets, a list of security
+     * groups and a role to connect streams to instances.</p>
      */
     inline bool SecurityDetailsHasBeenSet() const { return m_securityDetailsHasBeenSet; }
 
     /**
-     * <p>Endpoint security details.</p>
+     * <p>Endpoint security details including a list of subnets, a list of security
+     * groups and a role to connect streams to instances.</p>
      */
     inline void SetSecurityDetails(const SecurityDetails& value) { m_securityDetailsHasBeenSet = true; m_securityDetails = value; }
 
     /**
-     * <p>Endpoint security details.</p>
+     * <p>Endpoint security details including a list of subnets, a list of security
+     * groups and a role to connect streams to instances.</p>
      */
     inline void SetSecurityDetails(SecurityDetails&& value) { m_securityDetailsHasBeenSet = true; m_securityDetails = std::move(value); }
 
     /**
-     * <p>Endpoint security details.</p>
+     * <p>Endpoint security details including a list of subnets, a list of security
+     * groups and a role to connect streams to instances.</p>
      */
     inline EndpointDetails& WithSecurityDetails(const SecurityDetails& value) { SetSecurityDetails(value); return *this;}
 
     /**
-     * <p>Endpoint security details.</p>
+     * <p>Endpoint security details including a list of subnets, a list of security
+     * groups and a role to connect streams to instances.</p>
      */
     inline EndpointDetails& WithSecurityDetails(SecurityDetails&& value) { SetSecurityDetails(std::move(value)); return *this;}
 

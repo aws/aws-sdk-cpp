@@ -17,8 +17,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the audio stream from your application to Amazon
-   * Transcribe.</p><p><h3>See Also:</h3>   <a
+   * <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2
+   * or WebSocket data frames.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
+   * streaming audio</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/AudioStream">AWS
    * API Reference</a></p>
    */

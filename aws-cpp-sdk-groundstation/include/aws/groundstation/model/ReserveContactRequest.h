@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline ReserveContactRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline ReserveContactRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -192,32 +192,32 @@ namespace Model
 
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline ReserveContactRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline ReserveContactRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

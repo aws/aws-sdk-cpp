@@ -24,11 +24,14 @@
 #include <aws/groundstation/model/CancelContactRequest.h>
 #include <aws/groundstation/model/CreateConfigRequest.h>
 #include <aws/groundstation/model/CreateDataflowEndpointGroupRequest.h>
+#include <aws/groundstation/model/CreateEphemerisRequest.h>
 #include <aws/groundstation/model/CreateMissionProfileRequest.h>
 #include <aws/groundstation/model/DeleteConfigRequest.h>
 #include <aws/groundstation/model/DeleteDataflowEndpointGroupRequest.h>
+#include <aws/groundstation/model/DeleteEphemerisRequest.h>
 #include <aws/groundstation/model/DeleteMissionProfileRequest.h>
 #include <aws/groundstation/model/DescribeContactRequest.h>
+#include <aws/groundstation/model/DescribeEphemerisRequest.h>
 #include <aws/groundstation/model/GetConfigRequest.h>
 #include <aws/groundstation/model/GetDataflowEndpointGroupRequest.h>
 #include <aws/groundstation/model/GetMinuteUsageRequest.h>
@@ -37,6 +40,7 @@
 #include <aws/groundstation/model/ListConfigsRequest.h>
 #include <aws/groundstation/model/ListContactsRequest.h>
 #include <aws/groundstation/model/ListDataflowEndpointGroupsRequest.h>
+#include <aws/groundstation/model/ListEphemeridesRequest.h>
 #include <aws/groundstation/model/ListGroundStationsRequest.h>
 #include <aws/groundstation/model/ListMissionProfilesRequest.h>
 #include <aws/groundstation/model/ListSatellitesRequest.h>
@@ -45,6 +49,7 @@
 #include <aws/groundstation/model/TagResourceRequest.h>
 #include <aws/groundstation/model/UntagResourceRequest.h>
 #include <aws/groundstation/model/UpdateConfigRequest.h>
+#include <aws/groundstation/model/UpdateEphemerisRequest.h>
 #include <aws/groundstation/model/UpdateMissionProfileRequest.h>
 
 using namespace Aws;
@@ -255,6 +260,31 @@ void GroundStationClient::CreateDataflowEndpointGroupAsync(const CreateDataflowE
     } );
 }
 
+CreateEphemerisOutcome GroundStationClient::CreateEphemeris(const CreateEphemerisRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ephemeris");
+  return CreateEphemerisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateEphemerisOutcomeCallable GroundStationClient::CreateEphemerisCallable(const CreateEphemerisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEphemeris(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GroundStationClient::CreateEphemerisAsync(const CreateEphemerisRequest& request, const CreateEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEphemeris(request), context);
+    } );
+}
+
 CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const CreateMissionProfileRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMissionProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -348,6 +378,37 @@ void GroundStationClient::DeleteDataflowEndpointGroupAsync(const DeleteDataflowE
     } );
 }
 
+DeleteEphemerisOutcome GroundStationClient::DeleteEphemeris(const DeleteEphemerisRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.EphemerisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEphemeris", "Required field: EphemerisId, is not set");
+    return DeleteEphemerisOutcome(Aws::Client::AWSError<GroundStationErrors>(GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EphemerisId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ephemeris/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEphemerisId());
+  return DeleteEphemerisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEphemerisOutcomeCallable GroundStationClient::DeleteEphemerisCallable(const DeleteEphemerisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEphemeris(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GroundStationClient::DeleteEphemerisAsync(const DeleteEphemerisRequest& request, const DeleteEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEphemeris(request), context);
+    } );
+}
+
 DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const DeleteMissionProfileRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMissionProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -407,6 +468,37 @@ void GroundStationClient::DescribeContactAsync(const DescribeContactRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeContact(request), context);
+    } );
+}
+
+DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEphemerisRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.EphemerisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeEphemeris", "Required field: EphemerisId, is not set");
+    return DescribeEphemerisOutcome(Aws::Client::AWSError<GroundStationErrors>(GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EphemerisId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ephemeris/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEphemerisId());
+  return DescribeEphemerisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEphemerisOutcomeCallable GroundStationClient::DescribeEphemerisCallable(const DescribeEphemerisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEphemeris(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GroundStationClient::DescribeEphemerisAsync(const DescribeEphemerisRequest& request, const DescribeEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEphemeris(request), context);
     } );
 }
 
@@ -637,6 +729,31 @@ void GroundStationClient::ListDataflowEndpointGroupsAsync(const ListDataflowEndp
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListDataflowEndpointGroups(request), context);
+    } );
+}
+
+ListEphemeridesOutcome GroundStationClient::ListEphemerides(const ListEphemeridesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEphemerides, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEphemerides, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ephemerides");
+  return ListEphemeridesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEphemeridesOutcomeCallable GroundStationClient::ListEphemeridesCallable(const ListEphemeridesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEphemeridesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEphemerides(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GroundStationClient::ListEphemeridesAsync(const ListEphemeridesRequest& request, const ListEphemeridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEphemerides(request), context);
     } );
 }
 
@@ -872,6 +989,37 @@ void GroundStationClient::UpdateConfigAsync(const UpdateConfigRequest& request, 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateConfig(request), context);
+    } );
+}
+
+UpdateEphemerisOutcome GroundStationClient::UpdateEphemeris(const UpdateEphemerisRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.EphemerisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEphemeris", "Required field: EphemerisId, is not set");
+    return UpdateEphemerisOutcome(Aws::Client::AWSError<GroundStationErrors>(GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EphemerisId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ephemeris/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEphemerisId());
+  return UpdateEphemerisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEphemerisOutcomeCallable GroundStationClient::UpdateEphemerisCallable(const UpdateEphemerisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEphemeris(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GroundStationClient::UpdateEphemerisAsync(const UpdateEphemerisRequest& request, const UpdateEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEphemeris(request), context);
     } );
 }
 

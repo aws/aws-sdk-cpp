@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcases/model/TemplateStatus.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,37 @@ namespace Model
      * <p>The template name.</p>
      */
     inline TemplateSummary& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline const TemplateStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline void SetStatus(const TemplateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline void SetStatus(TemplateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline TemplateSummary& WithStatus(const TemplateStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline TemplateSummary& WithStatus(TemplateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -163,6 +195,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    TemplateStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_templateArn;
     bool m_templateArnHasBeenSet = false;

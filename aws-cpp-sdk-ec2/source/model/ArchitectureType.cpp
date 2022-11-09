@@ -24,6 +24,7 @@ namespace Aws
         static const int x86_64_HASH = HashingUtils::HashString("x86_64");
         static const int arm64_HASH = HashingUtils::HashString("arm64");
         static const int x86_64_mac_HASH = HashingUtils::HashString("x86_64_mac");
+        static const int arm64_mac_HASH = HashingUtils::HashString("arm64_mac");
 
 
         ArchitectureType GetArchitectureTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == x86_64_mac_HASH)
           {
             return ArchitectureType::x86_64_mac;
+          }
+          else if (hashCode == arm64_mac_HASH)
+          {
+            return ArchitectureType::arm64_mac;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "arm64";
           case ArchitectureType::x86_64_mac:
             return "x86_64_mac";
+          case ArchitectureType::arm64_mac:
+            return "arm64_mac";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

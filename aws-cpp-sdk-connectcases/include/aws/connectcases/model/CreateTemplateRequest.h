@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectcases/model/LayoutConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/connectcases/model/RequiredField.h>
 #include <utility>
 
@@ -237,6 +238,37 @@ namespace Model
      */
     inline CreateTemplateRequest& AddRequiredFields(RequiredField&& value) { m_requiredFieldsHasBeenSet = true; m_requiredFields.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline const TemplateStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline void SetStatus(const TemplateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline void SetStatus(TemplateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline CreateTemplateRequest& WithStatus(const TemplateStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline CreateTemplateRequest& WithStatus(TemplateStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -253,6 +285,9 @@ namespace Model
 
     Aws::Vector<RequiredField> m_requiredFields;
     bool m_requiredFieldsHasBeenSet = false;
+
+    TemplateStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

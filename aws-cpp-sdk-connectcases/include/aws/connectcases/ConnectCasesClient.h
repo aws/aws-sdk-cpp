@@ -224,10 +224,12 @@ namespace ConnectCases
 
         /**
          * <p>Creates a template in the Cases domain. This template is used to define the
-         * case object model (that is, define what data can be captured on cases) in a
+         * case object model (that is, to define what data can be captured on cases) in a
          * Cases domain. A template must have a unique name within a domain, and it must
          * reference existing field IDs and layout IDs. Additionally, multiple fields with
-         * same IDs are not allowed within the same Template.</p><p><h3>See Also:</h3>   <a
+         * same IDs are not allowed within the same Template. A template can be either
+         * Active or Inactive, as indicated by its status. Inactive templates cannot be
+         * used to create cases.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateTemplate">AWS
          * API Reference</a></p>
          */
@@ -607,10 +609,10 @@ namespace ConnectCases
         /**
          * <p>Updates the attributes of an existing template. The template attributes that
          * can be modified include <code>name</code>, <code>description</code>,
-         * <code>layouts</code>, and <code>requiredFields</code>. At least one of these
-         * attributes must not be null. If a null value is provided for a given attribute,
-         * that attribute is ignored and its current value is preserved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>layoutConfiguration</code>, <code>requiredFields</code>, and
+         * <code>status</code>. At least one of these attributes must not be null. If a
+         * null value is provided for a given attribute, that attribute is ignored and its
+         * current value is preserved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateTemplate">AWS
          * API Reference</a></p>
          */

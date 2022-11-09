@@ -23,6 +23,8 @@ DashPackage::DashPackage() :
     m_encryptionHasBeenSet(false),
     m_includeEncoderConfigurationInSegments(false),
     m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
+    m_includeIframeOnlyStream(false),
+    m_includeIframeOnlyStreamHasBeenSet(false),
     m_periodTriggersHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
@@ -36,6 +38,8 @@ DashPackage::DashPackage(JsonView jsonValue) :
     m_encryptionHasBeenSet(false),
     m_includeEncoderConfigurationInSegments(false),
     m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
+    m_includeIframeOnlyStream(false),
+    m_includeIframeOnlyStreamHasBeenSet(false),
     m_periodTriggersHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
@@ -69,6 +73,13 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     m_includeEncoderConfigurationInSegments = jsonValue.GetBool("includeEncoderConfigurationInSegments");
 
     m_includeEncoderConfigurationInSegmentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("includeIframeOnlyStream"))
+  {
+    m_includeIframeOnlyStream = jsonValue.GetBool("includeIframeOnlyStream");
+
+    m_includeIframeOnlyStreamHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("periodTriggers"))
@@ -122,6 +133,12 @@ JsonValue DashPackage::Jsonize() const
   if(m_includeEncoderConfigurationInSegmentsHasBeenSet)
   {
    payload.WithBool("includeEncoderConfigurationInSegments", m_includeEncoderConfigurationInSegments);
+
+  }
+
+  if(m_includeIframeOnlyStreamHasBeenSet)
+  {
+   payload.WithBool("includeIframeOnlyStream", m_includeIframeOnlyStream);
 
   }
 

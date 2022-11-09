@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectcases/model/LayoutConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/connectcases/model/RequiredField.h>
 #include <utility>
 
@@ -239,6 +240,37 @@ namespace Model
 
 
     /**
+     * <p>The status of the template.</p>
+     */
+    inline const TemplateStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline void SetStatus(const TemplateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline void SetStatus(TemplateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline UpdateTemplateRequest& WithStatus(const TemplateStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline UpdateTemplateRequest& WithStatus(TemplateStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>A unique identifier for the template.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
@@ -294,6 +326,9 @@ namespace Model
 
     Aws::Vector<RequiredField> m_requiredFields;
     bool m_requiredFieldsHasBeenSet = false;
+
+    TemplateStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_templateId;
     bool m_templateIdHasBeenSet = false;

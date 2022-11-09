@@ -15,7 +15,13 @@ namespace Aws
 namespace TranscribeStreamingService
 {
   /**
-   * <p>Operations and objects for transcribing streaming speech to text.</p>
+   * <p>Amazon Transcribe streaming offers two types of real-time transcription:
+   * <b>Standard</b> and <b>Medical</b>.</p> <ul> <li> <p> <b>Standard
+   * transcriptions</b> are the most common option. Refer to for details.</p> </li>
+   * <li> <p> <b>Medical transcriptions</b> are tailored to medical professionals and
+   * incorporate medical terms. A common use case for this service is transcribing
+   * doctor-patient dialogue in real time, so doctors can focus on their patient
+   * instead of taking notes. Refer to for details.</p> </li> </ul>
    */
   class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -74,9 +80,12 @@ namespace TranscribeStreamingService
 
 
         /**
-         * <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon
-         * Transcribe Medical and the transcription results are streamed to your
-         * application.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to
+         * Amazon Transcribe Medical and the transcription results are streamed to your
+         * application.</p> <p>For more information on streaming with Amazon Transcribe
+         * Medical, see <a
+         * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
+         * streaming audio</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartMedicalStreamTranscription">AWS
          * API Reference</a></p>
          *
@@ -90,15 +99,14 @@ namespace TranscribeStreamingService
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
         /**
-         * <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon
-         * Transcribe and the transcription results are streamed to your application.</p>
-         * <p>The following are encoded as HTTP/2 headers:</p> <ul> <li>
-         * <p>x-amzn-transcribe-language-code</p> </li> <li>
-         * <p>x-amzn-transcribe-media-encoding</p> </li> <li>
-         * <p>x-amzn-transcribe-sample-rate</p> </li> <li>
-         * <p>x-amzn-transcribe-session-id</p> </li> </ul> <p>See the <a
-         * href="https://docs.aws.amazon.com/sdk-for-go/api/service/transcribestreamingservice/#TranscribeStreamingService.StartStreamTranscription">
-         * SDK for Go API Reference</a> for more detail.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to
+         * Amazon Transcribe and the transcription results are streamed to your
+         * application.</p> <p>The following are encoded as headers:</p> <ul> <li>
+         * <p>language-code</p> </li> <li> <p>media-encoding</p> </li> <li>
+         * <p>sample-rate</p> </li> <li> <p>session-id</p> </li> </ul> <p>For more
+         * information on streaming with Amazon Transcribe, see <a
+         * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
+         * streaming audio</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartStreamTranscription">AWS
          * API Reference</a></p>
          *

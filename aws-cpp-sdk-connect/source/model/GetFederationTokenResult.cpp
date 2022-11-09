@@ -34,6 +34,24 @@ GetFederationTokenResult& GetFederationTokenResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("SignInUrl"))
+  {
+    m_signInUrl = jsonValue.GetString("SignInUrl");
+
+  }
+
+  if(jsonValue.ValueExists("UserArn"))
+  {
+    m_userArn = jsonValue.GetString("UserArn");
+
+  }
+
+  if(jsonValue.ValueExists("UserId"))
+  {
+    m_userId = jsonValue.GetString("UserId");
+
+  }
+
 
 
   return *this;
