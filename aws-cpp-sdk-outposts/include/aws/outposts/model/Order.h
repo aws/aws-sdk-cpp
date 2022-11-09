@@ -127,11 +127,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -140,11 +140,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -153,11 +153,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -166,11 +166,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -179,11 +179,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -192,11 +192,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */

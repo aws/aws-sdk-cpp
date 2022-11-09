@@ -32,12 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the launch specification for an instance.</p>  <p>We are
-   * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-   * EC2-Classic to a VPC. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-   * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux
-   * Instances</i>.</p> <p><h3>See Also:</h3>   <a
+   * <p>Describes the launch specification for an instance.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchSpecification">AWS
    * API Reference</a></p>
    */

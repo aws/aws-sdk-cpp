@@ -31,12 +31,15 @@
 #include <aws/cloudtrail/model/GetChannelRequest.h>
 #include <aws/cloudtrail/model/GetEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/GetEventSelectorsRequest.h>
+#include <aws/cloudtrail/model/GetImportRequest.h>
 #include <aws/cloudtrail/model/GetInsightSelectorsRequest.h>
 #include <aws/cloudtrail/model/GetQueryResultsRequest.h>
 #include <aws/cloudtrail/model/GetTrailRequest.h>
 #include <aws/cloudtrail/model/GetTrailStatusRequest.h>
 #include <aws/cloudtrail/model/ListChannelsRequest.h>
 #include <aws/cloudtrail/model/ListEventDataStoresRequest.h>
+#include <aws/cloudtrail/model/ListImportFailuresRequest.h>
+#include <aws/cloudtrail/model/ListImportsRequest.h>
 #include <aws/cloudtrail/model/ListPublicKeysRequest.h>
 #include <aws/cloudtrail/model/ListQueriesRequest.h>
 #include <aws/cloudtrail/model/ListTagsRequest.h>
@@ -46,8 +49,10 @@
 #include <aws/cloudtrail/model/PutInsightSelectorsRequest.h>
 #include <aws/cloudtrail/model/RemoveTagsRequest.h>
 #include <aws/cloudtrail/model/RestoreEventDataStoreRequest.h>
+#include <aws/cloudtrail/model/StartImportRequest.h>
 #include <aws/cloudtrail/model/StartLoggingRequest.h>
 #include <aws/cloudtrail/model/StartQueryRequest.h>
+#include <aws/cloudtrail/model/StopImportRequest.h>
 #include <aws/cloudtrail/model/StopLoggingRequest.h>
 #include <aws/cloudtrail/model/UpdateEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/UpdateTrailRequest.h>
@@ -373,6 +378,28 @@ void CloudTrailClient::GetEventSelectorsAsync(const GetEventSelectorsRequest& re
     } );
 }
 
+GetImportOutcome CloudTrailClient::GetImport(const GetImportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetImportOutcomeCallable CloudTrailClient::GetImportCallable(const GetImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::GetImportAsync(const GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetImport(request), context);
+    } );
+}
+
 GetInsightSelectorsOutcome CloudTrailClient::GetInsightSelectors(const GetInsightSelectorsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -502,6 +529,50 @@ void CloudTrailClient::ListEventDataStoresAsync(const ListEventDataStoresRequest
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListEventDataStores(request), context);
+    } );
+}
+
+ListImportFailuresOutcome CloudTrailClient::ListImportFailures(const ListImportFailuresRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListImportFailuresOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImportFailuresOutcomeCallable CloudTrailClient::ListImportFailuresCallable(const ListImportFailuresRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImportFailuresOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImportFailures(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::ListImportFailuresAsync(const ListImportFailuresRequest& request, const ListImportFailuresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListImportFailures(request), context);
+    } );
+}
+
+ListImportsOutcome CloudTrailClient::ListImports(const ListImportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListImportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImportsOutcomeCallable CloudTrailClient::ListImportsCallable(const ListImportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListImports(request), context);
     } );
 }
 
@@ -703,6 +774,28 @@ void CloudTrailClient::RestoreEventDataStoreAsync(const RestoreEventDataStoreReq
     } );
 }
 
+StartImportOutcome CloudTrailClient::StartImport(const StartImportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartImportOutcomeCallable CloudTrailClient::StartImportCallable(const StartImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::StartImportAsync(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartImport(request), context);
+    } );
+}
+
 StartLoggingOutcome CloudTrailClient::StartLogging(const StartLoggingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -744,6 +837,28 @@ void CloudTrailClient::StartQueryAsync(const StartQueryRequest& request, const S
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, StartQuery(request), context);
+    } );
+}
+
+StopImportOutcome CloudTrailClient::StopImport(const StopImportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopImportOutcomeCallable CloudTrailClient::StopImportCallable(const StopImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::StopImportAsync(const StopImportRequest& request, const StopImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopImport(request), context);
     } );
 }
 

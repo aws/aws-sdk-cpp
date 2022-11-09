@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline TemplateSyncConfig& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline TemplateSyncConfig& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline TemplateSyncConfig& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 

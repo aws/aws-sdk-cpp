@@ -16,21 +16,22 @@ namespace GuardDuty
 {
   /**
    * <p>Amazon GuardDuty is a continuous security monitoring service that analyzes
-   * and processes the following data sources: VPC Flow Logs, AWS CloudTrail
-   * management event logs, CloudTrail S3 data event logs, EKS audit logs, and DNS
-   * logs. It uses threat intelligence feeds (such as lists of malicious IPs and
-   * domains) and machine learning to identify unexpected, potentially unauthorized,
-   * and malicious activity within your Amazon Web Services environment. This can
-   * include issues like escalations of privileges, uses of exposed credentials, or
-   * communication with malicious IPs, URLs, or domains. For example, GuardDuty can
-   * detect compromised EC2 instances that serve malware or mine bitcoin. </p>
-   * <p>GuardDuty also monitors Amazon Web Services account access behavior for signs
-   * of compromise. Some examples of this are unauthorized infrastructure deployments
-   * such as EC2 instances deployed in a Region that has never been used, or unusual
-   * API calls like a password policy change to reduce password strength. </p>
-   * <p>GuardDuty informs you of the status of your Amazon Web Services environment
-   * by producing security findings that you can view in the GuardDuty console or
-   * through Amazon CloudWatch events. For more information, see the <i> <a
+   * and processes the following data sources: VPC flow logs, Amazon Web Services
+   * CloudTrail management event logs, CloudTrail S3 data event logs, EKS audit logs,
+   * and DNS logs. It uses threat intelligence feeds (such as lists of malicious IPs
+   * and domains) and machine learning to identify unexpected, potentially
+   * unauthorized, and malicious activity within your Amazon Web Services
+   * environment. This can include issues like escalations of privileges, uses of
+   * exposed credentials, or communication with malicious IPs, URLs, or domains. For
+   * example, GuardDuty can detect compromised EC2 instances that serve malware or
+   * mine bitcoin. </p> <p>GuardDuty also monitors Amazon Web Services account access
+   * behavior for signs of compromise. Some examples of this are unauthorized
+   * infrastructure deployments such as EC2 instances deployed in a Region that has
+   * never been used, or unusual API calls like a password policy change to reduce
+   * password strength. </p> <p>GuardDuty informs you of the status of your Amazon
+   * Web Services environment by producing security findings that you can view in the
+   * GuardDuty console or through Amazon CloudWatch events. For more information, see
+   * the <i> <a
    * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
    * GuardDuty User Guide</a> </i>. </p>
    */
@@ -391,7 +392,9 @@ namespace GuardDuty
         virtual void DeleteThreatIntelSetAsync(const Model::DeleteThreatIntelSetRequest& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of malware scans.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of malware scans. Each member account can view the malware
+         * scans for their own accounts. An administrator can view the malware scans for
+         * all the member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeMalwareScans">AWS
          * API Reference</a></p>
          */
@@ -480,9 +483,8 @@ namespace GuardDuty
         virtual void DisassociateFromAdministratorAccountAsync(const Model::DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates GuardDuty member accounts (to the current GuardDuty
-         * administrator account) specified by the account IDs.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Disassociates GuardDuty member accounts (to the current administrator
+         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
          */

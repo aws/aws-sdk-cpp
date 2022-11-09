@@ -86,73 +86,65 @@ namespace Model
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>Destination - The ID of the resource.</p> </li> <li> <p>DestinationPort - The
-     * destination port.</p> </li> <li> <p>Name - The path name.</p> </li> <li>
-     * <p>Protocol - The protocol.</p> </li> <li> <p>Source - The ID of the
-     * resource.</p> </li> </ul>
+     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
+     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>Destination - The ID of the resource.</p> </li> <li> <p>DestinationPort - The
-     * destination port.</p> </li> <li> <p>Name - The path name.</p> </li> <li>
-     * <p>Protocol - The protocol.</p> </li> <li> <p>Source - The ID of the
-     * resource.</p> </li> </ul>
+     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
+     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>Destination - The ID of the resource.</p> </li> <li> <p>DestinationPort - The
-     * destination port.</p> </li> <li> <p>Name - The path name.</p> </li> <li>
-     * <p>Protocol - The protocol.</p> </li> <li> <p>Source - The ID of the
-     * resource.</p> </li> </ul>
+     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
+     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>Destination - The ID of the resource.</p> </li> <li> <p>DestinationPort - The
-     * destination port.</p> </li> <li> <p>Name - The path name.</p> </li> <li>
-     * <p>Protocol - The protocol.</p> </li> <li> <p>Source - The ID of the
-     * resource.</p> </li> </ul>
+     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
+     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>Destination - The ID of the resource.</p> </li> <li> <p>DestinationPort - The
-     * destination port.</p> </li> <li> <p>Name - The path name.</p> </li> <li>
-     * <p>Protocol - The protocol.</p> </li> <li> <p>Source - The ID of the
-     * resource.</p> </li> </ul>
+     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
+     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline DescribeNetworkInsightsPathsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>Destination - The ID of the resource.</p> </li> <li> <p>DestinationPort - The
-     * destination port.</p> </li> <li> <p>Name - The path name.</p> </li> <li>
-     * <p>Protocol - The protocol.</p> </li> <li> <p>Source - The ID of the
-     * resource.</p> </li> </ul>
+     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
+     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline DescribeNetworkInsightsPathsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>Destination - The ID of the resource.</p> </li> <li> <p>DestinationPort - The
-     * destination port.</p> </li> <li> <p>Name - The path name.</p> </li> <li>
-     * <p>Protocol - The protocol.</p> </li> <li> <p>Source - The ID of the
-     * resource.</p> </li> </ul>
+     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
+     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline DescribeNetworkInsightsPathsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>Destination - The ID of the resource.</p> </li> <li> <p>DestinationPort - The
-     * destination port.</p> </li> <li> <p>Name - The path name.</p> </li> <li>
-     * <p>Protocol - The protocol.</p> </li> <li> <p>Source - The ID of the
-     * resource.</p> </li> </ul>
+     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
+     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline DescribeNetworkInsightsPathsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

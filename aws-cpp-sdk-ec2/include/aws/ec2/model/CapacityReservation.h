@@ -15,6 +15,7 @@
 #include <aws/ec2/model/InstanceMatchCriteria.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/CapacityAllocation.h>
 #include <utility>
 
 namespace Aws
@@ -1094,6 +1095,47 @@ namespace Model
      */
     inline CapacityReservation& WithPlacementGroupArn(const char* value) { SetPlacementGroupArn(value); return *this;}
 
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline const Aws::Vector<CapacityAllocation>& GetCapacityAllocations() const{ return m_capacityAllocations; }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline bool CapacityAllocationsHasBeenSet() const { return m_capacityAllocationsHasBeenSet; }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline void SetCapacityAllocations(const Aws::Vector<CapacityAllocation>& value) { m_capacityAllocationsHasBeenSet = true; m_capacityAllocations = value; }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline void SetCapacityAllocations(Aws::Vector<CapacityAllocation>&& value) { m_capacityAllocationsHasBeenSet = true; m_capacityAllocations = std::move(value); }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline CapacityReservation& WithCapacityAllocations(const Aws::Vector<CapacityAllocation>& value) { SetCapacityAllocations(value); return *this;}
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline CapacityReservation& WithCapacityAllocations(Aws::Vector<CapacityAllocation>&& value) { SetCapacityAllocations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline CapacityReservation& AddCapacityAllocations(const CapacityAllocation& value) { m_capacityAllocationsHasBeenSet = true; m_capacityAllocations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline CapacityReservation& AddCapacityAllocations(CapacityAllocation&& value) { m_capacityAllocationsHasBeenSet = true; m_capacityAllocations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_capacityReservationId;
@@ -1161,6 +1203,9 @@ namespace Model
 
     Aws::String m_placementGroupArn;
     bool m_placementGroupArnHasBeenSet = false;
+
+    Aws::Vector<CapacityAllocation> m_capacityAllocations;
+    bool m_capacityAllocationsHasBeenSet = false;
   };
 
 } // namespace Model

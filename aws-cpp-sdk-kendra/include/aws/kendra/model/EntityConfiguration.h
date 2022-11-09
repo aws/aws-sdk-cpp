@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides the configuration information for users or groups in your Amazon Web
-   * Services SSO identity source to grant access your Amazon Kendra
+   * <p>Provides the configuration information for users or groups in your IAM
+   * Identity Center identity source to grant access your Amazon Kendra
    * experience.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/EntityConfiguration">AWS
    * API Reference</a></p>
@@ -41,49 +41,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline EntityConfiguration& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline EntityConfiguration& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline EntityConfiguration& WithEntityId(const char* value) { SetEntityId(value); return *this;}

@@ -15,7 +15,8 @@ CreateLocalGatewayRouteRequest::CreateLocalGatewayRouteRequest() :
     m_localGatewayRouteTableIdHasBeenSet(false),
     m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,11 @@ Aws::String CreateLocalGatewayRouteRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_networkInterfaceIdHasBeenSet)
+  {
+    ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

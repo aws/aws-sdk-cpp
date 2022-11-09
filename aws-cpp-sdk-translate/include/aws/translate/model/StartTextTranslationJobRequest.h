@@ -151,159 +151,219 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * information, see <a>identity-and-access-management</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity
+     * and access management </a>.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * information, see <a>identity-and-access-management</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity
+     * and access management </a>.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * information, see <a>identity-and-access-management</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity
+     * and access management </a>.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * information, see <a>identity-and-access-management</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity
+     * and access management </a>.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * information, see <a>identity-and-access-management</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity
+     * and access management </a>.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * information, see <a>identity-and-access-management</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity
+     * and access management </a>.</p>
      */
     inline StartTextTranslationJobRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * information, see <a>identity-and-access-management</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity
+     * and access management </a>.</p>
      */
     inline StartTextTranslationJobRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * information, see <a>identity-and-access-management</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity
+     * and access management </a>.</p>
      */
     inline StartTextTranslationJobRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>Amazon Translate does not automatically detect
-     * a source language during batch translation jobs.</p>
+     * <p>The language code of the input language. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
+     * language during batch translation jobs.</p>
      */
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>Amazon Translate does not automatically detect
-     * a source language during batch translation jobs.</p>
+     * <p>The language code of the input language. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
+     * language during batch translation jobs.</p>
      */
     inline bool SourceLanguageCodeHasBeenSet() const { return m_sourceLanguageCodeHasBeenSet; }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>Amazon Translate does not automatically detect
-     * a source language during batch translation jobs.</p>
+     * <p>The language code of the input language. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
+     * language during batch translation jobs.</p>
      */
     inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = value; }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>Amazon Translate does not automatically detect
-     * a source language during batch translation jobs.</p>
+     * <p>The language code of the input language. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
+     * language during batch translation jobs.</p>
      */
     inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::move(value); }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>Amazon Translate does not automatically detect
-     * a source language during batch translation jobs.</p>
+     * <p>The language code of the input language. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
+     * language during batch translation jobs.</p>
      */
     inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode.assign(value); }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>Amazon Translate does not automatically detect
-     * a source language during batch translation jobs.</p>
+     * <p>The language code of the input language. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
+     * language during batch translation jobs.</p>
      */
     inline StartTextTranslationJobRequest& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>Amazon Translate does not automatically detect
-     * a source language during batch translation jobs.</p>
+     * <p>The language code of the input language. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
+     * language during batch translation jobs.</p>
      */
     inline StartTextTranslationJobRequest& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>Amazon Translate does not automatically detect
-     * a source language during batch translation jobs.</p>
+     * <p>The language code of the input language. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
+     * language during batch translation jobs.</p>
      */
     inline StartTextTranslationJobRequest& WithSourceLanguageCode(const char* value) { SetSourceLanguageCode(value); return *this;}
 
 
     /**
-     * <p>The language code of the output language.</p>
+     * <p>The target languages of the translation job. Enter up to 10 language codes.
+     * Each input file is translated into each target language.</p> <p>Each language
+     * code is two or five characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetLanguageCodes() const{ return m_targetLanguageCodes; }
 
     /**
-     * <p>The language code of the output language.</p>
+     * <p>The target languages of the translation job. Enter up to 10 language codes.
+     * Each input file is translated into each target language.</p> <p>Each language
+     * code is two or five characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline bool TargetLanguageCodesHasBeenSet() const { return m_targetLanguageCodesHasBeenSet; }
 
     /**
-     * <p>The language code of the output language.</p>
+     * <p>The target languages of the translation job. Enter up to 10 language codes.
+     * Each input file is translated into each target language.</p> <p>Each language
+     * code is two or five characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetTargetLanguageCodes(const Aws::Vector<Aws::String>& value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes = value; }
 
     /**
-     * <p>The language code of the output language.</p>
+     * <p>The target languages of the translation job. Enter up to 10 language codes.
+     * Each input file is translated into each target language.</p> <p>Each language
+     * code is two or five characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetTargetLanguageCodes(Aws::Vector<Aws::String>&& value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes = std::move(value); }
 
     /**
-     * <p>The language code of the output language.</p>
+     * <p>The target languages of the translation job. Enter up to 10 language codes.
+     * Each input file is translated into each target language.</p> <p>Each language
+     * code is two or five characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithTargetLanguageCodes(const Aws::Vector<Aws::String>& value) { SetTargetLanguageCodes(value); return *this;}
 
     /**
-     * <p>The language code of the output language.</p>
+     * <p>The target languages of the translation job. Enter up to 10 language codes.
+     * Each input file is translated into each target language.</p> <p>Each language
+     * code is two or five characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithTargetLanguageCodes(Aws::Vector<Aws::String>&& value) { SetTargetLanguageCodes(std::move(value)); return *this;}
 
     /**
-     * <p>The language code of the output language.</p>
+     * <p>The target languages of the translation job. Enter up to 10 language codes.
+     * Each input file is translated into each target language.</p> <p>Each language
+     * code is two or five characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddTargetLanguageCodes(const Aws::String& value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes.push_back(value); return *this; }
 
     /**
-     * <p>The language code of the output language.</p>
+     * <p>The target languages of the translation job. Enter up to 10 language codes.
+     * Each input file is translated into each target language.</p> <p>Each language
+     * code is two or five characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddTargetLanguageCodes(Aws::String&& value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The language code of the output language.</p>
+     * <p>The target languages of the translation job. Enter up to 10 language codes.
+     * Each input file is translated into each target language.</p> <p>Each language
+     * code is two or five characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddTargetLanguageCodes(const char* value) { m_targetLanguageCodesHasBeenSet = true; m_targetLanguageCodes.push_back(value); return *this; }
 
@@ -312,9 +372,13 @@ namespace Model
      * <p>The name of a custom terminology resource to add to the translation job. This
      * resource lists examples source terms and the desired translation for each
      * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
-     * <p>For a list of available custom terminology resources, use the
-     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
-     * <a>how-custom-terminology</a>.</p>
+     * <p>If you specify multiple target languages for the job, translate uses the
+     * designated terminology for each requested target language that has an entry for
+     * the source term in the terminology file.</p> <p>For a list of available custom
+     * terminology resources, use the <a>ListTerminologies</a> operation.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminologyNames() const{ return m_terminologyNames; }
 
@@ -322,9 +386,13 @@ namespace Model
      * <p>The name of a custom terminology resource to add to the translation job. This
      * resource lists examples source terms and the desired translation for each
      * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
-     * <p>For a list of available custom terminology resources, use the
-     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
-     * <a>how-custom-terminology</a>.</p>
+     * <p>If you specify multiple target languages for the job, translate uses the
+     * designated terminology for each requested target language that has an entry for
+     * the source term in the terminology file.</p> <p>For a list of available custom
+     * terminology resources, use the <a>ListTerminologies</a> operation.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline bool TerminologyNamesHasBeenSet() const { return m_terminologyNamesHasBeenSet; }
 
@@ -332,9 +400,13 @@ namespace Model
      * <p>The name of a custom terminology resource to add to the translation job. This
      * resource lists examples source terms and the desired translation for each
      * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
-     * <p>For a list of available custom terminology resources, use the
-     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
-     * <a>how-custom-terminology</a>.</p>
+     * <p>If you specify multiple target languages for the job, translate uses the
+     * designated terminology for each requested target language that has an entry for
+     * the source term in the terminology file.</p> <p>For a list of available custom
+     * terminology resources, use the <a>ListTerminologies</a> operation.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline void SetTerminologyNames(const Aws::Vector<Aws::String>& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = value; }
 
@@ -342,9 +414,13 @@ namespace Model
      * <p>The name of a custom terminology resource to add to the translation job. This
      * resource lists examples source terms and the desired translation for each
      * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
-     * <p>For a list of available custom terminology resources, use the
-     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
-     * <a>how-custom-terminology</a>.</p>
+     * <p>If you specify multiple target languages for the job, translate uses the
+     * designated terminology for each requested target language that has an entry for
+     * the source term in the terminology file.</p> <p>For a list of available custom
+     * terminology resources, use the <a>ListTerminologies</a> operation.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline void SetTerminologyNames(Aws::Vector<Aws::String>&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = std::move(value); }
 
@@ -352,9 +428,13 @@ namespace Model
      * <p>The name of a custom terminology resource to add to the translation job. This
      * resource lists examples source terms and the desired translation for each
      * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
-     * <p>For a list of available custom terminology resources, use the
-     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
-     * <a>how-custom-terminology</a>.</p>
+     * <p>If you specify multiple target languages for the job, translate uses the
+     * designated terminology for each requested target language that has an entry for
+     * the source term in the terminology file.</p> <p>For a list of available custom
+     * terminology resources, use the <a>ListTerminologies</a> operation.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithTerminologyNames(const Aws::Vector<Aws::String>& value) { SetTerminologyNames(value); return *this;}
 
@@ -362,9 +442,13 @@ namespace Model
      * <p>The name of a custom terminology resource to add to the translation job. This
      * resource lists examples source terms and the desired translation for each
      * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
-     * <p>For a list of available custom terminology resources, use the
-     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
-     * <a>how-custom-terminology</a>.</p>
+     * <p>If you specify multiple target languages for the job, translate uses the
+     * designated terminology for each requested target language that has an entry for
+     * the source term in the terminology file.</p> <p>For a list of available custom
+     * terminology resources, use the <a>ListTerminologies</a> operation.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithTerminologyNames(Aws::Vector<Aws::String>&& value) { SetTerminologyNames(std::move(value)); return *this;}
 
@@ -372,9 +456,13 @@ namespace Model
      * <p>The name of a custom terminology resource to add to the translation job. This
      * resource lists examples source terms and the desired translation for each
      * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
-     * <p>For a list of available custom terminology resources, use the
-     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
-     * <a>how-custom-terminology</a>.</p>
+     * <p>If you specify multiple target languages for the job, translate uses the
+     * designated terminology for each requested target language that has an entry for
+     * the source term in the terminology file.</p> <p>For a list of available custom
+     * terminology resources, use the <a>ListTerminologies</a> operation.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddTerminologyNames(const Aws::String& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
 
@@ -382,9 +470,13 @@ namespace Model
      * <p>The name of a custom terminology resource to add to the translation job. This
      * resource lists examples source terms and the desired translation for each
      * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
-     * <p>For a list of available custom terminology resources, use the
-     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
-     * <a>how-custom-terminology</a>.</p>
+     * <p>If you specify multiple target languages for the job, translate uses the
+     * designated terminology for each requested target language that has an entry for
+     * the source term in the terminology file.</p> <p>For a list of available custom
+     * terminology resources, use the <a>ListTerminologies</a> operation.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddTerminologyNames(Aws::String&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(std::move(value)); return *this; }
 
@@ -392,9 +484,13 @@ namespace Model
      * <p>The name of a custom terminology resource to add to the translation job. This
      * resource lists examples source terms and the desired translation for each
      * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
-     * <p>For a list of available custom terminology resources, use the
-     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
-     * <a>how-custom-terminology</a>.</p>
+     * <p>If you specify multiple target languages for the job, translate uses the
+     * designated terminology for each requested target language that has an entry for
+     * the source term in the terminology file.</p> <p>For a list of available custom
+     * terminology resources, use the <a>ListTerminologies</a> operation.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddTerminologyNames(const char* value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
 
@@ -402,126 +498,153 @@ namespace Model
     /**
      * <p>The name of a parallel data resource to add to the translation job. This
      * resource consists of examples that show how you want segments of text to be
-     * translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
-     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
-     * at a higher rate than other jobs that don't use parallel data. For more
-     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
-     * Translate pricing</a>.</p>  <p>For a list of available parallel data
-     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
-     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     * translated. If you specify multiple target languages for the job, the parallel
+     * data file must include translations for all the target languages.</p> <p>When
+     * you add parallel data to a translation job, you create an <i>Active Custom
+     * Translation</i> job. </p> <p>This parameter accepts only one parallel data
+     * resource.</p>  <p>Active Custom Translation jobs are priced at a higher
+     * rate than other jobs that don't use parallel data. For more information, see <a
+     * href="http://aws.amazon.com/translate/pricing/">Amazon Translate
+     * pricing</a>.</p>  <p>For a list of available parallel data resources, use
+     * the <a>ListParallelData</a> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     * Customizing your translations with parallel data</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetParallelDataNames() const{ return m_parallelDataNames; }
 
     /**
      * <p>The name of a parallel data resource to add to the translation job. This
      * resource consists of examples that show how you want segments of text to be
-     * translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
-     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
-     * at a higher rate than other jobs that don't use parallel data. For more
-     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
-     * Translate pricing</a>.</p>  <p>For a list of available parallel data
-     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
-     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     * translated. If you specify multiple target languages for the job, the parallel
+     * data file must include translations for all the target languages.</p> <p>When
+     * you add parallel data to a translation job, you create an <i>Active Custom
+     * Translation</i> job. </p> <p>This parameter accepts only one parallel data
+     * resource.</p>  <p>Active Custom Translation jobs are priced at a higher
+     * rate than other jobs that don't use parallel data. For more information, see <a
+     * href="http://aws.amazon.com/translate/pricing/">Amazon Translate
+     * pricing</a>.</p>  <p>For a list of available parallel data resources, use
+     * the <a>ListParallelData</a> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     * Customizing your translations with parallel data</a>.</p>
      */
     inline bool ParallelDataNamesHasBeenSet() const { return m_parallelDataNamesHasBeenSet; }
 
     /**
      * <p>The name of a parallel data resource to add to the translation job. This
      * resource consists of examples that show how you want segments of text to be
-     * translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
-     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
-     * at a higher rate than other jobs that don't use parallel data. For more
-     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
-     * Translate pricing</a>.</p>  <p>For a list of available parallel data
-     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
-     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     * translated. If you specify multiple target languages for the job, the parallel
+     * data file must include translations for all the target languages.</p> <p>When
+     * you add parallel data to a translation job, you create an <i>Active Custom
+     * Translation</i> job. </p> <p>This parameter accepts only one parallel data
+     * resource.</p>  <p>Active Custom Translation jobs are priced at a higher
+     * rate than other jobs that don't use parallel data. For more information, see <a
+     * href="http://aws.amazon.com/translate/pricing/">Amazon Translate
+     * pricing</a>.</p>  <p>For a list of available parallel data resources, use
+     * the <a>ListParallelData</a> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     * Customizing your translations with parallel data</a>.</p>
      */
     inline void SetParallelDataNames(const Aws::Vector<Aws::String>& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames = value; }
 
     /**
      * <p>The name of a parallel data resource to add to the translation job. This
      * resource consists of examples that show how you want segments of text to be
-     * translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
-     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
-     * at a higher rate than other jobs that don't use parallel data. For more
-     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
-     * Translate pricing</a>.</p>  <p>For a list of available parallel data
-     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
-     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     * translated. If you specify multiple target languages for the job, the parallel
+     * data file must include translations for all the target languages.</p> <p>When
+     * you add parallel data to a translation job, you create an <i>Active Custom
+     * Translation</i> job. </p> <p>This parameter accepts only one parallel data
+     * resource.</p>  <p>Active Custom Translation jobs are priced at a higher
+     * rate than other jobs that don't use parallel data. For more information, see <a
+     * href="http://aws.amazon.com/translate/pricing/">Amazon Translate
+     * pricing</a>.</p>  <p>For a list of available parallel data resources, use
+     * the <a>ListParallelData</a> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     * Customizing your translations with parallel data</a>.</p>
      */
     inline void SetParallelDataNames(Aws::Vector<Aws::String>&& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames = std::move(value); }
 
     /**
      * <p>The name of a parallel data resource to add to the translation job. This
      * resource consists of examples that show how you want segments of text to be
-     * translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
-     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
-     * at a higher rate than other jobs that don't use parallel data. For more
-     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
-     * Translate pricing</a>.</p>  <p>For a list of available parallel data
-     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
-     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     * translated. If you specify multiple target languages for the job, the parallel
+     * data file must include translations for all the target languages.</p> <p>When
+     * you add parallel data to a translation job, you create an <i>Active Custom
+     * Translation</i> job. </p> <p>This parameter accepts only one parallel data
+     * resource.</p>  <p>Active Custom Translation jobs are priced at a higher
+     * rate than other jobs that don't use parallel data. For more information, see <a
+     * href="http://aws.amazon.com/translate/pricing/">Amazon Translate
+     * pricing</a>.</p>  <p>For a list of available parallel data resources, use
+     * the <a>ListParallelData</a> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     * Customizing your translations with parallel data</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithParallelDataNames(const Aws::Vector<Aws::String>& value) { SetParallelDataNames(value); return *this;}
 
     /**
      * <p>The name of a parallel data resource to add to the translation job. This
      * resource consists of examples that show how you want segments of text to be
-     * translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
-     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
-     * at a higher rate than other jobs that don't use parallel data. For more
-     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
-     * Translate pricing</a>.</p>  <p>For a list of available parallel data
-     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
-     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     * translated. If you specify multiple target languages for the job, the parallel
+     * data file must include translations for all the target languages.</p> <p>When
+     * you add parallel data to a translation job, you create an <i>Active Custom
+     * Translation</i> job. </p> <p>This parameter accepts only one parallel data
+     * resource.</p>  <p>Active Custom Translation jobs are priced at a higher
+     * rate than other jobs that don't use parallel data. For more information, see <a
+     * href="http://aws.amazon.com/translate/pricing/">Amazon Translate
+     * pricing</a>.</p>  <p>For a list of available parallel data resources, use
+     * the <a>ListParallelData</a> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     * Customizing your translations with parallel data</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithParallelDataNames(Aws::Vector<Aws::String>&& value) { SetParallelDataNames(std::move(value)); return *this;}
 
     /**
      * <p>The name of a parallel data resource to add to the translation job. This
      * resource consists of examples that show how you want segments of text to be
-     * translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
-     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
-     * at a higher rate than other jobs that don't use parallel data. For more
-     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
-     * Translate pricing</a>.</p>  <p>For a list of available parallel data
-     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
-     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     * translated. If you specify multiple target languages for the job, the parallel
+     * data file must include translations for all the target languages.</p> <p>When
+     * you add parallel data to a translation job, you create an <i>Active Custom
+     * Translation</i> job. </p> <p>This parameter accepts only one parallel data
+     * resource.</p>  <p>Active Custom Translation jobs are priced at a higher
+     * rate than other jobs that don't use parallel data. For more information, see <a
+     * href="http://aws.amazon.com/translate/pricing/">Amazon Translate
+     * pricing</a>.</p>  <p>For a list of available parallel data resources, use
+     * the <a>ListParallelData</a> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     * Customizing your translations with parallel data</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddParallelDataNames(const Aws::String& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(value); return *this; }
 
     /**
      * <p>The name of a parallel data resource to add to the translation job. This
      * resource consists of examples that show how you want segments of text to be
-     * translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
-     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
-     * at a higher rate than other jobs that don't use parallel data. For more
-     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
-     * Translate pricing</a>.</p>  <p>For a list of available parallel data
-     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
-     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     * translated. If you specify multiple target languages for the job, the parallel
+     * data file must include translations for all the target languages.</p> <p>When
+     * you add parallel data to a translation job, you create an <i>Active Custom
+     * Translation</i> job. </p> <p>This parameter accepts only one parallel data
+     * resource.</p>  <p>Active Custom Translation jobs are priced at a higher
+     * rate than other jobs that don't use parallel data. For more information, see <a
+     * href="http://aws.amazon.com/translate/pricing/">Amazon Translate
+     * pricing</a>.</p>  <p>For a list of available parallel data resources, use
+     * the <a>ListParallelData</a> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     * Customizing your translations with parallel data</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddParallelDataNames(Aws::String&& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of a parallel data resource to add to the translation job. This
      * resource consists of examples that show how you want segments of text to be
-     * translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
-     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
-     * at a higher rate than other jobs that don't use parallel data. For more
-     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
-     * Translate pricing</a>.</p>  <p>For a list of available parallel data
-     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
-     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     * translated. If you specify multiple target languages for the job, the parallel
+     * data file must include translations for all the target languages.</p> <p>When
+     * you add parallel data to a translation job, you create an <i>Active Custom
+     * Translation</i> job. </p> <p>This parameter accepts only one parallel data
+     * resource.</p>  <p>Active Custom Translation jobs are priced at a higher
+     * rate than other jobs that don't use parallel data. For more information, see <a
+     * href="http://aws.amazon.com/translate/pricing/">Amazon Translate
+     * pricing</a>.</p>  <p>For a list of available parallel data resources, use
+     * the <a>ListParallelData</a> operation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     * Customizing your translations with parallel data</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddParallelDataNames(const char* value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(value); return *this; }
 
@@ -576,44 +699,44 @@ namespace Model
 
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
-     * the formality setting.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline const TranslationSettings& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
-     * the formality setting.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
-     * the formality setting.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
-     * the formality setting.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
-     * the formality setting.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline StartTextTranslationJobRequest& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
-     * the formality setting.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline StartTextTranslationJobRequest& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
 

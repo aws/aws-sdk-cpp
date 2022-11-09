@@ -22,7 +22,9 @@ namespace Model
     t4,
     m60,
     radeon_pro_v520,
-    vu9p
+    vu9p,
+    inferentia,
+    k520
   };
 
 namespace AcceleratorNameMapper

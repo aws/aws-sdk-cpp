@@ -35,7 +35,8 @@ CreateAssociationRequest::CreateAssociationRequest() :
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
     m_targetMapsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,12 @@ Aws::String CreateAssociationRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
 
   }
 

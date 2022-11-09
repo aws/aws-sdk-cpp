@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/TensorBoardAppSettings.h>
 #include <aws/sagemaker/model/RStudioServerProAppSettings.h>
 #include <aws/sagemaker/model/RSessionAppSettings.h>
+#include <aws/sagemaker/model/CanvasAppSettings.h>
 #include <utility>
 
 namespace Aws
@@ -398,6 +399,37 @@ namespace Model
      */
     inline UserSettings& WithRSessionAppSettings(RSessionAppSettings&& value) { SetRSessionAppSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline const CanvasAppSettings& GetCanvasAppSettings() const{ return m_canvasAppSettings; }
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline bool CanvasAppSettingsHasBeenSet() const { return m_canvasAppSettingsHasBeenSet; }
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline void SetCanvasAppSettings(const CanvasAppSettings& value) { m_canvasAppSettingsHasBeenSet = true; m_canvasAppSettings = value; }
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline void SetCanvasAppSettings(CanvasAppSettings&& value) { m_canvasAppSettingsHasBeenSet = true; m_canvasAppSettings = std::move(value); }
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline UserSettings& WithCanvasAppSettings(const CanvasAppSettings& value) { SetCanvasAppSettings(value); return *this;}
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline UserSettings& WithCanvasAppSettings(CanvasAppSettings&& value) { SetCanvasAppSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_executionRole;
@@ -423,6 +455,9 @@ namespace Model
 
     RSessionAppSettings m_rSessionAppSettings;
     bool m_rSessionAppSettingsHasBeenSet = false;
+
+    CanvasAppSettings m_canvasAppSettings;
+    bool m_canvasAppSettingsHasBeenSet = false;
   };
 
 } // namespace Model

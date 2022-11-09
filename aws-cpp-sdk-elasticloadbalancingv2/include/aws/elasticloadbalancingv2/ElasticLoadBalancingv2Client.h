@@ -742,9 +742,8 @@ namespace ElasticLoadBalancingv2
         virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Sets the type of IP addresses used by the subnets of the specified load
+         * balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          */

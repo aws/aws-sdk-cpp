@@ -23,7 +23,8 @@ Project::Project() :
     m_nameHasBeenSet(false),
     m_defaultJobTimeoutMinutes(0),
     m_defaultJobTimeoutMinutesHasBeenSet(false),
-    m_createdHasBeenSet(false)
+    m_createdHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Project::Project(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_defaultJobTimeoutMinutes(0),
     m_defaultJobTimeoutMinutesHasBeenSet(false),
-    m_createdHasBeenSet(false)
+    m_createdHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ Project& Project::operator =(JsonView jsonValue)
     m_createdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +104,12 @@ JsonValue Project::Jsonize() const
   if(m_createdHasBeenSet)
   {
    payload.WithDouble("created", m_created.SecondsWithMSPrecision());
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
   }
 
   return payload;

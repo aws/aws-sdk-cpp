@@ -21,8 +21,8 @@ namespace Model
 Configuration::Configuration() : 
     m_iamRoleHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
     m_secretsManagerSecretHasBeenSet(false),
+    m_s3BucketHasBeenSet(false),
     m_sqsQueueHasBeenSet(false)
 {
 }
@@ -30,8 +30,8 @@ Configuration::Configuration() :
 Configuration::Configuration(JsonView jsonValue) : 
     m_iamRoleHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
     m_secretsManagerSecretHasBeenSet(false),
+    m_s3BucketHasBeenSet(false),
     m_sqsQueueHasBeenSet(false)
 {
   *this = jsonValue;
@@ -53,18 +53,18 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     m_kmsKeyHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("s3Bucket"))
-  {
-    m_s3Bucket = jsonValue.GetObject("s3Bucket");
-
-    m_s3BucketHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("secretsManagerSecret"))
   {
     m_secretsManagerSecret = jsonValue.GetObject("secretsManagerSecret");
 
     m_secretsManagerSecretHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3Bucket"))
+  {
+    m_s3Bucket = jsonValue.GetObject("s3Bucket");
+
+    m_s3BucketHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sqsQueue"))
@@ -93,15 +93,15 @@ JsonValue Configuration::Jsonize() const
 
   }
 
-  if(m_s3BucketHasBeenSet)
-  {
-   payload.WithObject("s3Bucket", m_s3Bucket.Jsonize());
-
-  }
-
   if(m_secretsManagerSecretHasBeenSet)
   {
    payload.WithObject("secretsManagerSecret", m_secretsManagerSecret.Jsonize());
+
+  }
+
+  if(m_s3BucketHasBeenSet)
+  {
+   payload.WithObject("s3Bucket", m_s3Bucket.Jsonize());
 
   }
 

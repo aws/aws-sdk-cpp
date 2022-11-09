@@ -42,7 +42,8 @@ JobUpdate::JobUpdate() :
     m_glueVersionHasBeenSet(false),
     m_codeGenConfigurationNodesHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false)
+    m_executionClassHasBeenSet(false),
+    m_sourceControlDetailsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ JobUpdate::JobUpdate(JsonView jsonValue) :
     m_glueVersionHasBeenSet(false),
     m_codeGenConfigurationNodesHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false)
+    m_executionClassHasBeenSet(false),
+    m_sourceControlDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -212,6 +214,13 @@ JobUpdate& JobUpdate::operator =(JsonView jsonValue)
     m_executionClassHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceControlDetails"))
+  {
+    m_sourceControlDetails = jsonValue.GetObject("SourceControlDetails");
+
+    m_sourceControlDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -338,6 +347,12 @@ JsonValue JobUpdate::Jsonize() const
   if(m_executionClassHasBeenSet)
   {
    payload.WithString("ExecutionClass", ExecutionClassMapper::GetNameForExecutionClass(m_executionClass));
+  }
+
+  if(m_sourceControlDetailsHasBeenSet)
+  {
+   payload.WithObject("SourceControlDetails", m_sourceControlDetails.Jsonize());
+
   }
 
   return payload;

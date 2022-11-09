@@ -46,10 +46,10 @@ namespace kendra
 
 
         /**
-         * <p>Grants users or groups in your Amazon Web Services SSO identity source access
-         * to your Amazon Kendra experience. You can create an Amazon Kendra experience
-         * such as a search application. For more information on creating a search
-         * application experience, see <a
+         * <p>Grants users or groups in your IAM Identity Center identity source access to
+         * your Amazon Kendra experience. You can create an Amazon Kendra experience such
+         * as a search application. For more information on creating a search application
+         * experience, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
          * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">AWS
@@ -68,9 +68,9 @@ namespace kendra
         virtual void AssociateEntitiesToExperienceAsync(const Model::AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Defines the specific permissions of users or groups in your Amazon Web
-         * Services SSO identity source with access to your Amazon Kendra experience. You
-         * can create an Amazon Kendra experience such as a search application. For more
+         * <p>Defines the specific permissions of users or groups in your IAM Identity
+         * Center identity source with access to your Amazon Kendra experience. You can
+         * create an Amazon Kendra experience such as a search application. For more
          * information on creating a search application experience, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
          * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
@@ -728,7 +728,7 @@ namespace kendra
         virtual void DescribeThesaurusAsync(const Model::DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Prevents users or groups in your Amazon Web Services SSO identity source from
+         * <p>Prevents users or groups in your IAM Identity Center identity source from
          * accessing your Amazon Kendra experience. You can create an Amazon Kendra
          * experience such as a search application. For more information on creating a
          * search application experience, see <a
@@ -750,9 +750,9 @@ namespace kendra
         virtual void DisassociateEntitiesFromExperienceAsync(const Model::DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specific permissions of users or groups in your Amazon Web
-         * Services SSO identity source with access to your Amazon Kendra experience. You
-         * can create an Amazon Kendra experience such as a search application. For more
+         * <p>Removes the specific permissions of users or groups in your IAM Identity
+         * Center identity source with access to your Amazon Kendra experience. You can
+         * create an Amazon Kendra experience such as a search application. For more
          * information on creating a search application experience, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
          * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
@@ -884,10 +884,10 @@ namespace kendra
         virtual void ListEntityPersonasAsync(const Model::ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists users or groups in your Amazon Web Services SSO identity source that
-         * are granted access to your Amazon Kendra experience. You can create an Amazon
-         * Kendra experience such as a search application. For more information on creating
-         * a search application experience, see <a
+         * <p>Lists users or groups in your IAM Identity Center identity source that are
+         * granted access to your Amazon Kendra experience. You can create an Amazon Kendra
+         * experience such as a search application. For more information on creating a
+         * search application experience, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
          * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">AWS

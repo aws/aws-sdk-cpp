@@ -104,8 +104,10 @@ namespace Transfer
 
         /**
          * <p>Creates the connector, which captures the parameters for an outbound
-         * connection for the AS2 protocol. The connector is required for sending files
-         * from a customer's non Amazon Web Services server. </p><p><h3>See Also:</h3>   <a
+         * connection for the AS2 protocol. The connector is required for sending files to
+         * an externally hosted AS2 server. For more details about connectors, see <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+         * AS2 connectors</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">AWS
          * API Reference</a></p>
          */
@@ -122,8 +124,8 @@ namespace Transfer
         virtual void CreateConnectorAsync(const Model::CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the profile for the AS2 process. The agreement is between the partner
-         * and the AS2 process.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the local or partner profile to use for AS2 transfers.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">AWS
          * API Reference</a></p>
          */
@@ -276,6 +278,24 @@ namespace Transfer
          * An Async wrapper for DeleteConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConnectorAsync(const Model::DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the host key that's specified in the <code>HoskKeyId</code>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteHostKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHostKeyOutcome DeleteHostKey(const Model::DeleteHostKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteHostKeyOutcomeCallable DeleteHostKeyCallable(const Model::DeleteHostKeyRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteHostKeyAsync(const Model::DeleteHostKeyRequest& request, const DeleteHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the profile that's specified in the <code>ProfileId</code>
@@ -461,6 +481,24 @@ namespace Transfer
         virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the details of the host key that's specified by the
+         * <code>HostKeyId</code> and <code>ServerId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeHostKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeHostKeyOutcome DescribeHostKey(const Model::DescribeHostKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeHostKeyOutcomeCallable DescribeHostKeyCallable(const Model::DescribeHostKeyRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeHostKeyAsync(const Model::DescribeHostKeyRequest& request, const DescribeHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the details of the profile that's specified by the
          * <code>ProfileId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile">AWS
@@ -574,6 +612,24 @@ namespace Transfer
          * An Async wrapper for ImportCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportCertificateAsync(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a host key to the server that's specified by the <code>ServerId</code>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportHostKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportHostKeyOutcome ImportHostKey(const Model::ImportHostKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportHostKeyOutcomeCallable ImportHostKeyCallable(const Model::ImportHostKeyRequest& request) const;
+
+        /**
+         * An Async wrapper for ImportHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportHostKeyAsync(const Model::ImportHostKeyRequest& request, const ImportHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a Secure Shell (SSH) public key to a user account identified by a
@@ -693,6 +749,24 @@ namespace Transfer
          * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of host keys for the server that's specified by the
+         * <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListHostKeys">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHostKeysOutcome ListHostKeys(const Model::ListHostKeysRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListHostKeys that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListHostKeysOutcomeCallable ListHostKeysCallable(const Model::ListHostKeysRequest& request) const;
+
+        /**
+         * An Async wrapper for ListHostKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListHostKeysAsync(const Model::ListHostKeysRequest& request, const ListHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the profiles for your system. If you want to limit the
@@ -827,8 +901,9 @@ namespace Transfer
         virtual void SendWorkflowStepStateAsync(const Model::SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Begins an outbound file transfer. You specify the <code>ConnectorId</code>
-         * and the file paths for where to send the files. </p><p><h3>See Also:</h3>   <a
+         * <p>Begins an outbound file transfer to a remote AS2 server. You specify the
+         * <code>ConnectorId</code> and the file paths for where to send the files.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">AWS
          * API Reference</a></p>
          */
@@ -1046,6 +1121,25 @@ namespace Transfer
          * An Async wrapper for UpdateConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConnectorAsync(const Model::UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the description for the host key that's specified by the
+         * <code>ServerId</code> and <code>HostKeyId</code> parameters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateHostKeyOutcome UpdateHostKey(const Model::UpdateHostKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateHostKeyOutcomeCallable UpdateHostKeyCallable(const Model::UpdateHostKeyRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateHostKeyAsync(const Model::UpdateHostKeyRequest& request, const UpdateHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates some of the parameters for an existing profile. Provide the

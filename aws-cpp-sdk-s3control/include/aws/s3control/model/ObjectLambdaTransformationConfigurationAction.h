@@ -16,7 +16,10 @@ namespace Model
   enum class ObjectLambdaTransformationConfigurationAction
   {
     NOT_SET,
-    GetObject
+    GetObject,
+    HeadObject,
+    ListObjects,
+    ListObjectsV2
   };
 
 namespace ObjectLambdaTransformationConfigurationActionMapper

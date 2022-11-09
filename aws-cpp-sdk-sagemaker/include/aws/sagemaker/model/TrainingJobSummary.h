@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/TrainingJobStatus.h>
+#include <aws/sagemaker/model/WarmPoolStatus.h>
 #include <utility>
 
 namespace Aws
@@ -257,6 +258,37 @@ namespace Model
      */
     inline TrainingJobSummary& WithTrainingJobStatus(TrainingJobStatus&& value) { SetTrainingJobStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline const WarmPoolStatus& GetWarmPoolStatus() const{ return m_warmPoolStatus; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline bool WarmPoolStatusHasBeenSet() const { return m_warmPoolStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(const WarmPoolStatus& value) { m_warmPoolStatusHasBeenSet = true; m_warmPoolStatus = value; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(WarmPoolStatus&& value) { m_warmPoolStatusHasBeenSet = true; m_warmPoolStatus = std::move(value); }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline TrainingJobSummary& WithWarmPoolStatus(const WarmPoolStatus& value) { SetWarmPoolStatus(value); return *this;}
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline TrainingJobSummary& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -276,6 +308,9 @@ namespace Model
 
     TrainingJobStatus m_trainingJobStatus;
     bool m_trainingJobStatusHasBeenSet = false;
+
+    WarmPoolStatus m_warmPoolStatus;
+    bool m_warmPoolStatusHasBeenSet = false;
   };
 
 } // namespace Model

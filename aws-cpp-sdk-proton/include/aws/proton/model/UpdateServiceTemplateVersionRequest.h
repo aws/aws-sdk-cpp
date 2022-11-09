@@ -272,8 +272,8 @@ namespace Model
      * existing component attachments to instances based on this template version. A
      * change only affects later associations.</p>  <p>For more information
      * about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& GetSupportedComponentSources() const{ return m_supportedComponentSources; }
 
@@ -284,8 +284,8 @@ namespace Model
      * existing component attachments to instances based on this template version. A
      * change only affects later associations.</p>  <p>For more information
      * about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool SupportedComponentSourcesHasBeenSet() const { return m_supportedComponentSourcesHasBeenSet; }
 
@@ -296,8 +296,8 @@ namespace Model
      * existing component attachments to instances based on this template version. A
      * change only affects later associations.</p>  <p>For more information
      * about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSupportedComponentSources(const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources = value; }
 
@@ -308,8 +308,8 @@ namespace Model
      * existing component attachments to instances based on this template version. A
      * change only affects later associations.</p>  <p>For more information
      * about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSupportedComponentSources(Aws::Vector<ServiceTemplateSupportedComponentSourceType>&& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources = std::move(value); }
 
@@ -320,8 +320,8 @@ namespace Model
      * existing component attachments to instances based on this template version. A
      * change only affects later associations.</p>  <p>For more information
      * about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateServiceTemplateVersionRequest& WithSupportedComponentSources(const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& value) { SetSupportedComponentSources(value); return *this;}
 
@@ -332,8 +332,8 @@ namespace Model
      * existing component attachments to instances based on this template version. A
      * change only affects later associations.</p>  <p>For more information
      * about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateServiceTemplateVersionRequest& WithSupportedComponentSources(Aws::Vector<ServiceTemplateSupportedComponentSourceType>&& value) { SetSupportedComponentSources(std::move(value)); return *this;}
 
@@ -344,8 +344,8 @@ namespace Model
      * existing component attachments to instances based on this template version. A
      * change only affects later associations.</p>  <p>For more information
      * about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateServiceTemplateVersionRequest& AddSupportedComponentSources(const ServiceTemplateSupportedComponentSourceType& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources.push_back(value); return *this; }
 
@@ -356,8 +356,8 @@ namespace Model
      * existing component attachments to instances based on this template version. A
      * change only affects later associations.</p>  <p>For more information
      * about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateServiceTemplateVersionRequest& AddSupportedComponentSources(ServiceTemplateSupportedComponentSourceType&& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources.push_back(std::move(value)); return *this; }
 

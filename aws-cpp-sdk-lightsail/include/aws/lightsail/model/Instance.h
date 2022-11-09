@@ -14,6 +14,7 @@
 #include <aws/lightsail/model/InstanceHardware.h>
 #include <aws/lightsail/model/InstanceNetworking.h>
 #include <aws/lightsail/model/InstanceState.h>
+#include <aws/lightsail/model/InstanceMetadataOptions.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/AddOn.h>
 #include <utility>
@@ -929,6 +930,37 @@ namespace Model
      */
     inline Instance& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
 
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline const InstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline void SetMetadataOptions(const InstanceMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline void SetMetadataOptions(InstanceMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline Instance& WithMetadataOptions(const InstanceMetadataOptions& value) { SetMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline Instance& WithMetadataOptions(InstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -993,6 +1025,9 @@ namespace Model
 
     Aws::String m_sshKeyName;
     bool m_sshKeyNameHasBeenSet = false;
+
+    InstanceMetadataOptions m_metadataOptions;
+    bool m_metadataOptionsHasBeenSet = false;
   };
 
 } // namespace Model

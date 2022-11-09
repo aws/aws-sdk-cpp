@@ -47,42 +47,42 @@ namespace Model
 
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline LoggingInfo& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline LoggingInfo& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline LoggingInfo& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 

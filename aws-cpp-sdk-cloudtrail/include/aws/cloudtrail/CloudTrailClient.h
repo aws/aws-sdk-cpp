@@ -277,10 +277,12 @@ namespace CloudTrail
          * data events.</p> </li> <li> <p>If your event selector includes management
          * events.</p> </li> <li> <p>If your event selector includes data events, the
          * resources on which you are logging data events.</p> </li> </ul> <p>For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-         * Data and Management Events for Trails </a> in the <i>CloudTrail User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * information about logging management and data events, see the following topics
+         * in the <i>CloudTrail User Guide</i>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+         * management events for trails </a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+         * data events for trails </a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
          */
@@ -295,6 +297,23 @@ namespace CloudTrail
          * An Async wrapper for GetEventSelectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEventSelectorsAsync(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns information for the specified import. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImportOutcome GetImport(const Model::GetImportRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetImport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetImportOutcomeCallable GetImportCallable(const Model::GetImportRequest& request) const;
+
+        /**
+         * An Async wrapper for GetImport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetImportAsync(const Model::GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the settings for the Insights event selectors that you configured
@@ -413,6 +432,43 @@ namespace CloudTrail
          * An Async wrapper for ListEventDataStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEventDataStoresAsync(const Model::ListEventDataStoresRequest& request, const ListEventDataStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns a list of failures for the specified import. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImportFailuresOutcome ListImportFailures(const Model::ListImportFailuresRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListImportFailures that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImportFailuresOutcomeCallable ListImportFailuresCallable(const Model::ListImportFailuresRequest& request) const;
+
+        /**
+         * An Async wrapper for ListImportFailures that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImportFailuresAsync(const Model::ListImportFailuresRequest& request, const ListImportFailuresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns information on all imports, or a select set of imports by
+         * <code>ImportStatus</code> or <code>Destination</code>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListImports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImportsOutcomeCallable ListImportsCallable(const Model::ListImportsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListImports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImportsAsync(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all public keys whose private keys were used to sign the digest files
@@ -552,8 +608,10 @@ namespace CloudTrail
          * <code>InvalidHomeRegionException</code> exception is thrown.</p> <p>You can
          * configure up to five event selectors for each trail. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-         * data and management events for trails </a> and <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+         * management events for trails </a>, <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+         * data events for trails </a>, and <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
          * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p> <p>You can add
          * advanced event selectors, and conditions for your advanced event selectors, up
@@ -642,6 +700,31 @@ namespace CloudTrail
         virtual void RestoreEventDataStoreAsync(const Model::RestoreEventDataStoreRequest& request, const RestoreEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Starts an import of logged trail events from a source S3 bucket to a
+         * destination event data store. </p> <p> When you start a new import, the
+         * <code>Destinations</code> and <code>ImportSource</code> parameters are required.
+         * Before starting a new import, disable any access control lists (ACLs) attached
+         * to the source S3 bucket. For more information about disabling ACLs, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+         * ownership of objects and disabling ACLs for your bucket</a>. </p> <p> When you
+         * retry an import, the <code>ImportID</code> parameter is required. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartImport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartImportOutcomeCallable StartImportCallable(const Model::StartImportRequest& request) const;
+
+        /**
+         * An Async wrapper for StartImport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartImportAsync(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts the recording of Amazon Web Services API calls and log file delivery
          * for a trail. For a trail that is enabled in all regions, this operation must be
          * called from the region in which the trail was created. This operation cannot be
@@ -680,6 +763,23 @@ namespace CloudTrail
          * An Async wrapper for StartQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartQueryAsync(const Model::StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Stops a specified import. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopImportOutcome StopImport(const Model::StopImportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopImport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopImportOutcomeCallable StopImportCallable(const Model::StopImportRequest& request) const;
+
+        /**
+         * An Async wrapper for StopImport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopImportAsync(const Model::StopImportRequest& request, const StopImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Suspends the recording of Amazon Web Services API calls and log file delivery

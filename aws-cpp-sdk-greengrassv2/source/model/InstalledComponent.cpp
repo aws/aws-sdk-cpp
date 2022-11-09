@@ -26,7 +26,10 @@ InstalledComponent::InstalledComponent() :
     m_lifecycleStateDetailsHasBeenSet(false),
     m_isRoot(false),
     m_isRootHasBeenSet(false),
-    m_lastStatusChangeTimestampHasBeenSet(false)
+    m_lastStatusChangeTimestampHasBeenSet(false),
+    m_lastReportedTimestampHasBeenSet(false),
+    m_lastInstallationSourceHasBeenSet(false),
+    m_lifecycleStatusCodesHasBeenSet(false)
 {
 }
 
@@ -38,7 +41,10 @@ InstalledComponent::InstalledComponent(JsonView jsonValue) :
     m_lifecycleStateDetailsHasBeenSet(false),
     m_isRoot(false),
     m_isRootHasBeenSet(false),
-    m_lastStatusChangeTimestampHasBeenSet(false)
+    m_lastStatusChangeTimestampHasBeenSet(false),
+    m_lastReportedTimestampHasBeenSet(false),
+    m_lastInstallationSourceHasBeenSet(false),
+    m_lifecycleStatusCodesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +93,30 @@ InstalledComponent& InstalledComponent::operator =(JsonView jsonValue)
     m_lastStatusChangeTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastReportedTimestamp"))
+  {
+    m_lastReportedTimestamp = jsonValue.GetDouble("lastReportedTimestamp");
+
+    m_lastReportedTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastInstallationSource"))
+  {
+    m_lastInstallationSource = jsonValue.GetString("lastInstallationSource");
+
+    m_lastInstallationSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lifecycleStatusCodes"))
+  {
+    Array<JsonView> lifecycleStatusCodesJsonList = jsonValue.GetArray("lifecycleStatusCodes");
+    for(unsigned lifecycleStatusCodesIndex = 0; lifecycleStatusCodesIndex < lifecycleStatusCodesJsonList.GetLength(); ++lifecycleStatusCodesIndex)
+    {
+      m_lifecycleStatusCodes.push_back(lifecycleStatusCodesJsonList[lifecycleStatusCodesIndex].AsString());
+    }
+    m_lifecycleStatusCodesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +156,28 @@ JsonValue InstalledComponent::Jsonize() const
   if(m_lastStatusChangeTimestampHasBeenSet)
   {
    payload.WithDouble("lastStatusChangeTimestamp", m_lastStatusChangeTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_lastReportedTimestampHasBeenSet)
+  {
+   payload.WithDouble("lastReportedTimestamp", m_lastReportedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_lastInstallationSourceHasBeenSet)
+  {
+   payload.WithString("lastInstallationSource", m_lastInstallationSource);
+
+  }
+
+  if(m_lifecycleStatusCodesHasBeenSet)
+  {
+   Array<JsonValue> lifecycleStatusCodesJsonList(m_lifecycleStatusCodes.size());
+   for(unsigned lifecycleStatusCodesIndex = 0; lifecycleStatusCodesIndex < lifecycleStatusCodesJsonList.GetLength(); ++lifecycleStatusCodesIndex)
+   {
+     lifecycleStatusCodesJsonList[lifecycleStatusCodesIndex].AsString(m_lifecycleStatusCodes[lifecycleStatusCodesIndex]);
+   }
+   payload.WithArray("lifecycleStatusCodes", std::move(lifecycleStatusCodesJsonList));
+
   }
 
   return payload;

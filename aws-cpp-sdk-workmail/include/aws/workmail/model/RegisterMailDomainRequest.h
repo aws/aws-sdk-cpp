@@ -77,83 +77,83 @@ namespace Model
 
 
     /**
-     * <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+     * <p>The WorkMail organization under which you're creating the domain.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+     * <p>The WorkMail organization under which you're creating the domain.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+     * <p>The WorkMail organization under which you're creating the domain.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+     * <p>The WorkMail organization under which you're creating the domain.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+     * <p>The WorkMail organization under which you're creating the domain.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+     * <p>The WorkMail organization under which you're creating the domain.</p>
      */
     inline RegisterMailDomainRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+     * <p>The WorkMail organization under which you're creating the domain.</p>
      */
     inline RegisterMailDomainRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+     * <p>The WorkMail organization under which you're creating the domain.</p>
      */
     inline RegisterMailDomainRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
 
     /**
-     * <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+     * <p>The name of the mail domain to create in WorkMail and SES.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+     * <p>The name of the mail domain to create in WorkMail and SES.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+     * <p>The name of the mail domain to create in WorkMail and SES.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+     * <p>The name of the mail domain to create in WorkMail and SES.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+     * <p>The name of the mail domain to create in WorkMail and SES.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+     * <p>The name of the mail domain to create in WorkMail and SES.</p>
      */
     inline RegisterMailDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+     * <p>The name of the mail domain to create in WorkMail and SES.</p>
      */
     inline RegisterMailDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+     * <p>The name of the mail domain to create in WorkMail and SES.</p>
      */
     inline RegisterMailDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

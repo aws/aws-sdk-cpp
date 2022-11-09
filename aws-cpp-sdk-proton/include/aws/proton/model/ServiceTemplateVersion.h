@@ -484,8 +484,8 @@ namespace Model
      * <p>An array of supported component sources. Components with supported sources
      * can be attached to service instances based on this service template version.</p>
      * <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& GetSupportedComponentSources() const{ return m_supportedComponentSources; }
 
@@ -493,8 +493,8 @@ namespace Model
      * <p>An array of supported component sources. Components with supported sources
      * can be attached to service instances based on this service template version.</p>
      * <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool SupportedComponentSourcesHasBeenSet() const { return m_supportedComponentSourcesHasBeenSet; }
 
@@ -502,8 +502,8 @@ namespace Model
      * <p>An array of supported component sources. Components with supported sources
      * can be attached to service instances based on this service template version.</p>
      * <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSupportedComponentSources(const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources = value; }
 
@@ -511,8 +511,8 @@ namespace Model
      * <p>An array of supported component sources. Components with supported sources
      * can be attached to service instances based on this service template version.</p>
      * <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSupportedComponentSources(Aws::Vector<ServiceTemplateSupportedComponentSourceType>&& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources = std::move(value); }
 
@@ -520,8 +520,8 @@ namespace Model
      * <p>An array of supported component sources. Components with supported sources
      * can be attached to service instances based on this service template version.</p>
      * <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline ServiceTemplateVersion& WithSupportedComponentSources(const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& value) { SetSupportedComponentSources(value); return *this;}
 
@@ -529,8 +529,8 @@ namespace Model
      * <p>An array of supported component sources. Components with supported sources
      * can be attached to service instances based on this service template version.</p>
      * <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline ServiceTemplateVersion& WithSupportedComponentSources(Aws::Vector<ServiceTemplateSupportedComponentSourceType>&& value) { SetSupportedComponentSources(std::move(value)); return *this;}
 
@@ -538,8 +538,8 @@ namespace Model
      * <p>An array of supported component sources. Components with supported sources
      * can be attached to service instances based on this service template version.</p>
      * <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline ServiceTemplateVersion& AddSupportedComponentSources(const ServiceTemplateSupportedComponentSourceType& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources.push_back(value); return *this; }
 
@@ -547,8 +547,8 @@ namespace Model
      * <p>An array of supported component sources. Components with supported sources
      * can be attached to service instances based on this service template version.</p>
      * <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline ServiceTemplateVersion& AddSupportedComponentSources(ServiceTemplateSupportedComponentSourceType&& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources.push_back(std::move(value)); return *this; }
 

@@ -21,6 +21,7 @@ namespace Model
 HyperParameterTuningJobConfig::HyperParameterTuningJobConfig() : 
     m_strategy(HyperParameterTuningJobStrategyType::NOT_SET),
     m_strategyHasBeenSet(false),
+    m_strategyConfigHasBeenSet(false),
     m_hyperParameterTuningJobObjectiveHasBeenSet(false),
     m_resourceLimitsHasBeenSet(false),
     m_parameterRangesHasBeenSet(false),
@@ -33,6 +34,7 @@ HyperParameterTuningJobConfig::HyperParameterTuningJobConfig() :
 HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue) : 
     m_strategy(HyperParameterTuningJobStrategyType::NOT_SET),
     m_strategyHasBeenSet(false),
+    m_strategyConfigHasBeenSet(false),
     m_hyperParameterTuningJobObjectiveHasBeenSet(false),
     m_resourceLimitsHasBeenSet(false),
     m_parameterRangesHasBeenSet(false),
@@ -50,6 +52,13 @@ HyperParameterTuningJobConfig& HyperParameterTuningJobConfig::operator =(JsonVie
     m_strategy = HyperParameterTuningJobStrategyTypeMapper::GetHyperParameterTuningJobStrategyTypeForName(jsonValue.GetString("Strategy"));
 
     m_strategyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StrategyConfig"))
+  {
+    m_strategyConfig = jsonValue.GetObject("StrategyConfig");
+
+    m_strategyConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("HyperParameterTuningJobObjective"))
@@ -97,6 +106,12 @@ JsonValue HyperParameterTuningJobConfig::Jsonize() const
   if(m_strategyHasBeenSet)
   {
    payload.WithString("Strategy", HyperParameterTuningJobStrategyTypeMapper::GetNameForHyperParameterTuningJobStrategyType(m_strategy));
+  }
+
+  if(m_strategyConfigHasBeenSet)
+  {
+   payload.WithObject("StrategyConfig", m_strategyConfig.Jsonize());
+
   }
 
   if(m_hyperParameterTuningJobObjectiveHasBeenSet)

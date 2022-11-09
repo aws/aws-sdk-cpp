@@ -423,6 +423,28 @@ namespace Model
      */
     inline PutIntegrationResult& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline bool GetIsUnstructured() const{ return m_isUnstructured; }
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline void SetIsUnstructured(bool value) { m_isUnstructured = value; }
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline PutIntegrationResult& WithIsUnstructured(bool value) { SetIsUnstructured(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -440,6 +462,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_objectTypeNames;
 
     Aws::String m_workflowId;
+
+    bool m_isUnstructured;
   };
 
 } // namespace Model

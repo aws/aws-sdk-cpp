@@ -13,6 +13,7 @@
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/DeviceMinutes.h>
 #include <aws/devicefarm/model/InteractionMode.h>
+#include <aws/devicefarm/model/VpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -971,7 +972,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information about how Device Farm re-signs your apps, see
-     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in
      * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool GetSkipAppResign() const{ return m_skipAppResign; }
@@ -980,7 +981,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information about how Device Farm re-signs your apps, see
-     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in
      * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool SkipAppResignHasBeenSet() const { return m_skipAppResignHasBeenSet; }
@@ -989,7 +990,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information about how Device Farm re-signs your apps, see
-     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in
      * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
@@ -998,10 +999,41 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information about how Device Farm re-signs your apps, see
-     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in
      * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline RemoteAccessSession& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
+
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline RemoteAccessSession& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline RemoteAccessSession& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
   private:
 
@@ -1067,6 +1099,9 @@ namespace Model
 
     bool m_skipAppResign;
     bool m_skipAppResignHasBeenSet = false;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

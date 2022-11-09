@@ -63,7 +63,7 @@
         {"shape":"ResourceExistsException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The connector is required for sending files from a customer's non Amazon Web Services server. </p>"
+      "documentation":"<p>Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The connector is required for sending files to an externally hosted AS2 server. For more details about connectors, see <a href=\"https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector\">Create AS2 connectors</a>.</p>"
     },
     "CreateProfile":{
       "name":"CreateProfile",
@@ -79,7 +79,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Creates the profile for the AS2 process. The agreement is between the partner and the AS2 process.</p>"
+      "documentation":"<p>Creates the local or partner profile to use for AS2 transfers.</p>"
     },
     "CreateServer":{
       "name":"CreateServer",
@@ -194,6 +194,22 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Deletes the agreement that's specified in the provided <code>ConnectorId</code>.</p>"
+    },
+    "DeleteHostKey":{
+      "name":"DeleteHostKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteHostKeyRequest"},
+      "errors":[
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"InternalServiceError"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.</p>"
     },
     "DeleteProfile":{
       "name":"DeleteProfile",
@@ -353,6 +369,22 @@
       ],
       "documentation":"<p>You can use <code>DescribeExecution</code> to check the details of the execution of the specified workflow.</p>"
     },
+    "DescribeHostKey":{
+      "name":"DescribeHostKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeHostKeyRequest"},
+      "output":{"shape":"DescribeHostKeyResponse"},
+      "errors":[
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"InternalServiceError"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Returns the details of the host key that's specified by the <code>HostKeyId</code> and <code>ServerId</code>.</p>"
+    },
     "DescribeProfile":{
       "name":"DescribeProfile",
       "http":{
@@ -448,6 +480,24 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Imports the signing and encryption certificates that you need to create local (AS2) profiles and partner profiles.</p>"
+    },
+    "ImportHostKey":{
+      "name":"ImportHostKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ImportHostKeyRequest"},
+      "output":{"shape":"ImportHostKeyResponse"},
+      "errors":[
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"InternalServiceError"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceExistsException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Adds a host key to the server that's specified by the <code>ServerId</code> parameter.</p>"
     },
     "ImportSshPublicKey":{
       "name":"ImportSshPublicKey",
@@ -551,6 +601,23 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Lists all executions for the specified workflow.</p>"
+    },
+    "ListHostKeys":{
+      "name":"ListHostKeys",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListHostKeysRequest"},
+      "output":{"shape":"ListHostKeysResponse"},
+      "errors":[
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"InternalServiceError"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Returns a list of host keys for the server that's specified by the <code>ServerId</code> parameter.</p>"
     },
     "ListProfiles":{
       "name":"ListProfiles",
@@ -683,7 +750,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Begins an outbound file transfer. You specify the <code>ConnectorId</code> and the file paths for where to send the files. </p>"
+      "documentation":"<p>Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file paths for where to send the files. </p>"
     },
     "StartServer":{
       "name":"StartServer",
@@ -829,6 +896,23 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Updates some of the parameters for an existing connector. Provide the <code>ConnectorId</code> for the connector that you want to update, along with the new values for the parameters to update.</p>"
+    },
+    "UpdateHostKey":{
+      "name":"UpdateHostKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateHostKeyRequest"},
+      "output":{"shape":"UpdateHostKeyResponse"},
+      "errors":[
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"InternalServiceError"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Updates the description for the host key that's specified by the <code>ServerId</code> and <code>HostKeyId</code> parameters.</p>"
     },
     "UpdateProfile":{
       "name":"UpdateProfile",
@@ -1127,11 +1211,11 @@
       "members":{
         "ServerId":{
           "shape":"ServerId",
-          "documentation":"<p>The ID of the server that the user is attached to.</p>"
+          "documentation":"<p>The identifier of the server that the user is attached to.</p>"
         },
         "ExternalId":{
           "shape":"ExternalId",
-          "documentation":"<p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>"
+          "documentation":"<p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>"
         }
       }
     },
@@ -1163,7 +1247,7 @@
         },
         "BaseDirectory":{
           "shape":"HomeDirectory",
-          "documentation":"<p>The landing directory (folder) for files transferred by using the AS2 protocol.</p> <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>"
+          "documentation":"<p>The landing directory (folder) for files transferred by using the AS2 protocol.</p> <p>A <code>BaseDirectory</code> example is <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>"
         },
         "AccessRole":{
           "shape":"Role",
@@ -1242,7 +1326,7 @@
         },
         "ProfileType":{
           "shape":"ProfileType",
-          "documentation":"<p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>"
+          "documentation":"<p>Determines the type of profile to create:</p> <ul> <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li> <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li> </ul>"
         },
         "CertificateIds":{
           "shape":"CertificateIds",
@@ -1285,7 +1369,7 @@
         },
         "HostKey":{
           "shape":"HostKey",
-          "documentation":"<p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t rsa -b 2048 -N \"\" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N \"\" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N \"\" -f my-new-server-key</code>.</p> <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important> <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p> </important> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key\">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>"
+          "documentation":"<p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p> <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t rsa -b 2048 -N \"\" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N \"\" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N \"\" -f my-new-server-key</code>.</p> <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important> <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p> </important> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key\">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>"
         },
         "IdentityProviderDetails":{
           "shape":"IdentityProviderDetails",
@@ -1325,7 +1409,7 @@
         },
         "WorkflowDetails":{
           "shape":"WorkflowDetails",
-          "documentation":"<p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>"
+          "documentation":"<p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p> <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>"
         }
       }
     },
@@ -1335,7 +1419,7 @@
       "members":{
         "ServerId":{
           "shape":"ServerId",
-          "documentation":"<p>The service-assigned ID of the server that is created.</p>"
+          "documentation":"<p>The service-assigned identifier of the server that is created.</p>"
         }
       }
     },
@@ -1398,7 +1482,7 @@
       "members":{
         "ServerId":{
           "shape":"ServerId",
-          "documentation":"<p>The ID of the server that the user is attached to.</p>"
+          "documentation":"<p>The identifier of the server that the user is attached to.</p>"
         },
         "UserName":{
           "shape":"UserName",
@@ -1508,7 +1592,7 @@
         },
         "ServerId":{
           "shape":"ServerId",
-          "documentation":"<p>The server ID associated with the agreement that you are deleting.</p>"
+          "documentation":"<p>The server identifier associated with the agreement that you are deleting.</p>"
         }
       }
     },
@@ -1518,7 +1602,7 @@
       "members":{
         "CertificateId":{
           "shape":"CertificateId",
-          "documentation":"<p>The ID of the certificate object that you are deleting.</p>"
+          "documentation":"<p>The identifier of the certificate object that you are deleting.</p>"
         }
       }
     },
@@ -1532,13 +1616,30 @@
         }
       }
     },
+    "DeleteHostKeyRequest":{
+      "type":"structure",
+      "required":[
+        "ServerId",
+        "HostKeyId"
+      ],
+      "members":{
+        "ServerId":{
+          "shape":"ServerId",
+          "documentation":"<p>The identifier of the server that contains the host key that you are deleting.</p>"
+        },
+        "HostKeyId":{
+          "shape":"HostKeyId",
+          "documentation":"<p>The identifier of the host key that you are deleting.</p>"
+        }
+      }
+    },
     "DeleteProfileRequest":{
       "type":"structure",
       "required":["ProfileId"],
       "members":{
         "ProfileId":{
           "shape":"ProfileId",
-          "documentation":"<p>The ID of the profile that you are deleting.</p>"
+          "documentation":"<p>The identifier of the profile that you are deleting.</p>"
         }
       }
     },
@@ -1645,7 +1746,7 @@
         },
         "Access":{
           "shape":"DescribedAccess",
-          "documentation":"<p>The external ID of the server that the access is attached to.</p>"
+          "documentation":"<p>The external identifier of the server that the access is attached to.</p>"
         }
       }
     },
@@ -1662,7 +1763,7 @@
         },
         "ServerId":{
           "shape":"ServerId",
-          "documentation":"<p>The server ID that's associated with the agreement.</p>"
+          "documentation":"<p>The server identifier that's associated with the agreement.</p>"
         }
       }
     },
@@ -1747,6 +1848,33 @@
         "Execution":{
           "shape":"DescribedExecution",
           "documentation":"<p>The structure that contains the details of the workflow' execution.</p>"
+        }
+      }
+    },
+    "DescribeHostKeyRequest":{
+      "type":"structure",
+      "required":[
+        "ServerId",
+        "HostKeyId"
+      ],
+      "members":{
+        "ServerId":{
+          "shape":"ServerId",
+          "documentation":"<p>The identifier of the server that contains the host key that you want described.</p>"
+        },
+        "HostKeyId":{
+          "shape":"HostKeyId",
+          "documentation":"<p>The identifier of the host key that you want described.</p>"
+        }
+      }
+    },
+    "DescribeHostKeyResponse":{
+      "type":"structure",
+      "required":["HostKey"],
+      "members":{
+        "HostKey":{
+          "shape":"DescribedHostKey",
+          "documentation":"<p>Returns the details for the specified host key.</p>"
         }
       }
     },
@@ -2075,6 +2203,41 @@
       },
       "documentation":"<p>The details for an execution object.</p>"
     },
+    "DescribedHostKey":{
+      "type":"structure",
+      "required":["Arn"],
+      "members":{
+        "Arn":{
+          "shape":"Arn",
+          "documentation":"<p>The unique Amazon Resource Name (ARN) for the host key.</p>"
+        },
+        "HostKeyId":{
+          "shape":"HostKeyId",
+          "documentation":"<p>A unique identifier for the host key.</p>"
+        },
+        "HostKeyFingerprint":{
+          "shape":"HostKeyFingerprint",
+          "documentation":"<p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>"
+        },
+        "Description":{
+          "shape":"HostKeyDescription",
+          "documentation":"<p>The text description for this host key.</p>"
+        },
+        "Type":{
+          "shape":"HostKeyType",
+          "documentation":"<p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p> <ul> <li> <p> <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li> <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>"
+        },
+        "DateImported":{
+          "shape":"DateImported",
+          "documentation":"<p>The date on which the host key was added to the server.</p>"
+        },
+        "Tags":{
+          "shape":"Tags",
+          "documentation":"<p>Key-value pairs that can be used to group and search for host keys.</p>"
+        }
+      },
+      "documentation":"<p>The details for a server host key.</p>"
+    },
     "DescribedProfile":{
       "type":"structure",
       "required":["Arn"],
@@ -2104,7 +2267,7 @@
           "documentation":"<p>Key-value pairs that can be used to group and search for profiles.</p>"
         }
       },
-      "documentation":"<p>The details for a local or partner AS2 profile. profile.</p>"
+      "documentation":"<p>The details for a local or partner AS2 profile. </p>"
     },
     "DescribedSecurityPolicy":{
       "type":"structure",
@@ -2215,7 +2378,7 @@
         },
         "WorkflowDetails":{
           "shape":"WorkflowDetails",
-          "documentation":"<p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>"
+          "documentation":"<p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p> <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>"
         }
       },
       "documentation":"<p>Describes the properties of a file transfer protocol-enabled server that was specified.</p>"
@@ -2322,7 +2485,7 @@
       "members":{
         "FileSystemId":{
           "shape":"EfsFileSystemId",
-          "documentation":"<p>The ID of the file system, assigned by Amazon EFS.</p>"
+          "documentation":"<p>The identifier of the file system, assigned by Amazon EFS.</p>"
         },
         "Path":{
           "shape":"EfsPath",
@@ -2363,11 +2526,11 @@
         },
         "VpcEndpointId":{
           "shape":"VpcEndpointId",
-          "documentation":"<p>The ID of the VPC endpoint.</p> <note> <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p> </note>"
+          "documentation":"<p>The identifier of the VPC endpoint.</p> <note> <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p> </note>"
         },
         "VpcId":{
           "shape":"VpcId",
-          "documentation":"<p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note> <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>"
+          "documentation":"<p>The VPC identifier of the VPC in which a server's endpoint will be hosted.</p> <note> <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>"
         },
         "SecurityGroupIds":{
           "shape":"SecurityGroupIds",
@@ -2484,7 +2647,7 @@
         },
         "EfsFileLocation":{
           "shape":"EfsFileLocation",
-          "documentation":"<p>Specifies the Amazon EFS ID and the path for the file being used.</p>"
+          "documentation":"<p>Specifies the Amazon EFS identifier and the path for the file being used.</p>"
         }
       },
       "documentation":"<p>Specifies the Amazon S3 or EFS file details to be used in the step.</p>"
@@ -2549,7 +2712,20 @@
       "max":4096,
       "sensitive":true
     },
+    "HostKeyDescription":{
+      "type":"string",
+      "max":200,
+      "min":0,
+      "pattern":"^[\\p{Print}]*$"
+    },
     "HostKeyFingerprint":{"type":"string"},
+    "HostKeyId":{
+      "type":"string",
+      "max":25,
+      "min":25,
+      "pattern":"^hostkey-[0-9a-f]{17}$"
+    },
+    "HostKeyType":{"type":"string"},
     "IdentityProviderDetails":{
       "type":"structure",
       "members":{
@@ -2630,6 +2806,48 @@
         "CertificateId":{
           "shape":"CertificateId",
           "documentation":"<p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>"
+        }
+      }
+    },
+    "ImportHostKeyRequest":{
+      "type":"structure",
+      "required":[
+        "ServerId",
+        "HostKeyBody"
+      ],
+      "members":{
+        "ServerId":{
+          "shape":"ServerId",
+          "documentation":"<p>The identifier of the server that contains the host key that you are importing.</p>"
+        },
+        "HostKeyBody":{
+          "shape":"HostKey",
+          "documentation":"<p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>"
+        },
+        "Description":{
+          "shape":"HostKeyDescription",
+          "documentation":"<p>The text description that identifies this host key.</p>"
+        },
+        "Tags":{
+          "shape":"Tags",
+          "documentation":"<p>Key-value pairs that can be used to group and search for host keys.</p>"
+        }
+      }
+    },
+    "ImportHostKeyResponse":{
+      "type":"structure",
+      "required":[
+        "ServerId",
+        "HostKeyId"
+      ],
+      "members":{
+        "ServerId":{
+          "shape":"ServerId",
+          "documentation":"<p>Returns the server identifier that contains the imported key.</p>"
+        },
+        "HostKeyId":{
+          "shape":"HostKeyId",
+          "documentation":"<p>Returns the host key identifier for the imported key.</p>"
         }
       }
     },
@@ -2881,6 +3099,45 @@
         "Executions":{
           "shape":"ListedExecutions",
           "documentation":"<p>Returns the details for each execution.</p> <ul> <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li> <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li> <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> </ul>"
+        }
+      }
+    },
+    "ListHostKeysRequest":{
+      "type":"structure",
+      "required":["ServerId"],
+      "members":{
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of host keys to return.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>"
+        },
+        "ServerId":{
+          "shape":"ServerId",
+          "documentation":"<p>The identifier of the server that contains the host keys that you want to view.</p>"
+        }
+      }
+    },
+    "ListHostKeysResponse":{
+      "type":"structure",
+      "required":[
+        "ServerId",
+        "HostKeys"
+      ],
+      "members":{
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>"
+        },
+        "ServerId":{
+          "shape":"ServerId",
+          "documentation":"<p>Returns the server identifier that contains the listed host keys.</p>"
+        },
+        "HostKeys":{
+          "shape":"ListedHostKeys",
+          "documentation":"<p>Returns an array, where each item contains the details of a host key.</p>"
         }
       }
     },
@@ -3224,6 +3481,41 @@
       "type":"list",
       "member":{"shape":"ListedExecution"}
     },
+    "ListedHostKey":{
+      "type":"structure",
+      "required":["Arn"],
+      "members":{
+        "Arn":{
+          "shape":"Arn",
+          "documentation":"<p>The unique Amazon Resource Name (ARN) of the host key.</p>"
+        },
+        "HostKeyId":{
+          "shape":"HostKeyId",
+          "documentation":"<p>A unique identifier for the host key.</p>"
+        },
+        "Fingerprint":{
+          "shape":"HostKeyFingerprint",
+          "documentation":"<p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>"
+        },
+        "Description":{
+          "shape":"HostKeyDescription",
+          "documentation":"<p>The current description for the host key. You can change it by calling the <code>UpdateHostKey</code> operation and providing a new description.</p>"
+        },
+        "Type":{
+          "shape":"HostKeyType",
+          "documentation":"<p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p> <ul> <li> <p> <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li> <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>"
+        },
+        "DateImported":{
+          "shape":"DateImported",
+          "documentation":"<p>The date on which the host key was added to the server.</p>"
+        }
+      },
+      "documentation":"<p>Returns properties of the host key that's specified.</p>"
+    },
+    "ListedHostKeys":{
+      "type":"list",
+      "member":{"shape":"ListedHostKey"}
+    },
     "ListedProfile":{
       "type":"structure",
       "members":{
@@ -3344,7 +3636,7 @@
           "documentation":"<p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>"
         }
       },
-      "documentation":"<p>Contains the ID, text description, and Amazon Resource Name (ARN) for the workflow.</p>"
+      "documentation":"<p>Contains the identifier, text description, and Amazon Resource Name (ARN) for the workflow.</p>"
     },
     "ListedWorkflows":{
       "type":"list",
@@ -3419,6 +3711,11 @@
       "type":"string",
       "max":2048,
       "pattern":"^$|arn:.*role/.*"
+    },
+    "OnPartialUploadWorkflowDetails":{
+      "type":"list",
+      "member":{"shape":"WorkflowDetail"},
+      "max":1
     },
     "OnUploadWorkflowDetails":{
       "type":"list",
@@ -3511,7 +3808,7 @@
       "members":{
         "PassiveIp":{
           "shape":"PassiveIp",
-          "documentation":"<p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p> <p> <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p> <p>Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address you want to use.</p> <note> <p> If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=\"http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/\">Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>. </p> </note>"
+          "documentation":"<p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p> <p> <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code> </p> <p>Replace <code>0.0.0.0</code> in the example above with the actual IP address you want to use.</p> <note> <p> If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=\"http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/\">Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>. </p> </note> <p> <i>Special values</i> </p> <p>The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.</p>"
         },
         "TlsSessionResumptionMode":{
           "shape":"TlsSessionResumptionMode",
@@ -4115,11 +4412,11 @@
       "members":{
         "ServerId":{
           "shape":"ServerId",
-          "documentation":"<p>The ID of the server that the user is attached to.</p>"
+          "documentation":"<p>The identifier of the server that the user is attached to.</p>"
         },
         "ExternalId":{
           "shape":"ExternalId",
-          "documentation":"<p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>"
+          "documentation":"<p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>"
         }
       }
     },
@@ -4242,6 +4539,45 @@
         }
       }
     },
+    "UpdateHostKeyRequest":{
+      "type":"structure",
+      "required":[
+        "ServerId",
+        "HostKeyId",
+        "Description"
+      ],
+      "members":{
+        "ServerId":{
+          "shape":"ServerId",
+          "documentation":"<p>The identifier of the server that contains the host key that you are updating.</p>"
+        },
+        "HostKeyId":{
+          "shape":"HostKeyId",
+          "documentation":"<p>The identifier of the host key that you are updating.</p>"
+        },
+        "Description":{
+          "shape":"HostKeyDescription",
+          "documentation":"<p>An updated description for the host key.</p>"
+        }
+      }
+    },
+    "UpdateHostKeyResponse":{
+      "type":"structure",
+      "required":[
+        "ServerId",
+        "HostKeyId"
+      ],
+      "members":{
+        "ServerId":{
+          "shape":"ServerId",
+          "documentation":"<p>Returns the server identifier for the server that contains the updated host key.</p>"
+        },
+        "HostKeyId":{
+          "shape":"HostKeyId",
+          "documentation":"<p>Returns the host key identifier for the updated host key.</p>"
+        }
+      }
+    },
     "UpdateProfileRequest":{
       "type":"structure",
       "required":["ProfileId"],
@@ -4288,7 +4624,7 @@
         },
         "HostKey":{
           "shape":"HostKey",
-          "documentation":"<p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t rsa -b 2048 -N \"\" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N \"\" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N \"\" -f my-new-server-key</code>.</p> <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important> <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p> </important> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key\">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>"
+          "documentation":"<p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p> <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t rsa -b 2048 -N \"\" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N \"\" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N \"\" -f my-new-server-key</code>.</p> <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important> <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p> </important> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key\">Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>"
         },
         "IdentityProviderDetails":{
           "shape":"IdentityProviderDetails",
@@ -4320,7 +4656,7 @@
         },
         "WorkflowDetails":{
           "shape":"WorkflowDetails",
-          "documentation":"<p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p> <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p> <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{\"OnUpload\":[]}'</code> </p>"
+          "documentation":"<p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p> <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p> <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p> <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{\"OnUpload\":[]}'</code> </p>"
         }
       }
     },
@@ -4459,15 +4795,18 @@
           "documentation":"<p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>"
         }
       },
-      "documentation":"<p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>"
+      "documentation":"<p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p> <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>"
     },
     "WorkflowDetails":{
       "type":"structure",
-      "required":["OnUpload"],
       "members":{
         "OnUpload":{
           "shape":"OnUploadWorkflowDetails",
           "documentation":"<p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p> <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p> <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{\"OnUpload\":[]}'</code> </p>"
+        },
+        "OnPartialUpload":{
+          "shape":"OnPartialUploadWorkflowDetails",
+          "documentation":"<p>A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that executes whenever there is a partial upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the session disconnects.</p>"
         }
       },
       "documentation":"<p>Container for the <code>WorkflowDetail</code> data type. It is used by actions that trigger a workflow to begin execution.</p>"

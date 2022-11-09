@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The representation of an Amazon WorkMail user.</p><p><h3>See Also:</h3>   <a
+   * <p>The representation of an WorkMail user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/User">AWS API
    * Reference</a></p>
    */
@@ -267,63 +267,63 @@ namespace Model
 
 
     /**
-     * <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was enabled for WorkMail use.</p>
      */
     inline const Aws::Utils::DateTime& GetEnabledDate() const{ return m_enabledDate; }
 
     /**
-     * <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was enabled for WorkMail use.</p>
      */
     inline bool EnabledDateHasBeenSet() const { return m_enabledDateHasBeenSet; }
 
     /**
-     * <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was enabled for WorkMail use.</p>
      */
     inline void SetEnabledDate(const Aws::Utils::DateTime& value) { m_enabledDateHasBeenSet = true; m_enabledDate = value; }
 
     /**
-     * <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was enabled for WorkMail use.</p>
      */
     inline void SetEnabledDate(Aws::Utils::DateTime&& value) { m_enabledDateHasBeenSet = true; m_enabledDate = std::move(value); }
 
     /**
-     * <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was enabled for WorkMail use.</p>
      */
     inline User& WithEnabledDate(const Aws::Utils::DateTime& value) { SetEnabledDate(value); return *this;}
 
     /**
-     * <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was enabled for WorkMail use.</p>
      */
     inline User& WithEnabledDate(Aws::Utils::DateTime&& value) { SetEnabledDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was disabled from WorkMail use.</p>
      */
     inline const Aws::Utils::DateTime& GetDisabledDate() const{ return m_disabledDate; }
 
     /**
-     * <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was disabled from WorkMail use.</p>
      */
     inline bool DisabledDateHasBeenSet() const { return m_disabledDateHasBeenSet; }
 
     /**
-     * <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was disabled from WorkMail use.</p>
      */
     inline void SetDisabledDate(const Aws::Utils::DateTime& value) { m_disabledDateHasBeenSet = true; m_disabledDate = value; }
 
     /**
-     * <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was disabled from WorkMail use.</p>
      */
     inline void SetDisabledDate(Aws::Utils::DateTime&& value) { m_disabledDateHasBeenSet = true; m_disabledDate = std::move(value); }
 
     /**
-     * <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was disabled from WorkMail use.</p>
      */
     inline User& WithDisabledDate(const Aws::Utils::DateTime& value) { SetDisabledDate(value); return *this;}
 
     /**
-     * <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+     * <p>The date indicating when the user was disabled from WorkMail use.</p>
      */
     inline User& WithDisabledDate(Aws::Utils::DateTime&& value) { SetDisabledDate(std::move(value)); return *this;}
 

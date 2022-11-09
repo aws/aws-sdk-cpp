@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceType</code>,
      * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceType</code>,
      * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceType</code>,
      * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceType</code>,
      * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceType</code>,
      * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline FleetLaunchTemplateOverridesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceType</code>,
      * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline FleetLaunchTemplateOverridesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
@@ -387,7 +387,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline const InstanceRequirementsRequest& GetInstanceRequirements() const{ return m_instanceRequirements; }
 
@@ -395,7 +395,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
 
@@ -403,7 +403,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline void SetInstanceRequirements(const InstanceRequirementsRequest& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
 
@@ -411,7 +411,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline void SetInstanceRequirements(InstanceRequirementsRequest&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
 
@@ -419,7 +419,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline FleetLaunchTemplateOverridesRequest& WithInstanceRequirements(const InstanceRequirementsRequest& value) { SetInstanceRequirements(value); return *this;}
 
@@ -427,9 +427,58 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline FleetLaunchTemplateOverridesRequest& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AMI. An AMI is required to launch an instance. The AMI ID must
+     * be specified here or in the launch template.</p>
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
   private:
 
@@ -456,6 +505,9 @@ namespace Model
 
     InstanceRequirementsRequest m_instanceRequirements;
     bool m_instanceRequirementsHasBeenSet = false;
+
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,6 +25,7 @@ namespace Aws
         static const int NODEJS_14_HASH = HashingUtils::HashString("NODEJS_14");
         static const int CORRETTO_8_HASH = HashingUtils::HashString("CORRETTO_8");
         static const int CORRETTO_11_HASH = HashingUtils::HashString("CORRETTO_11");
+        static const int NODEJS_16_HASH = HashingUtils::HashString("NODEJS_16");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return Runtime::CORRETTO_11;
           }
+          else if (hashCode == NODEJS_16_HASH)
+          {
+            return Runtime::NODEJS_16;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "CORRETTO_8";
           case Runtime::CORRETTO_11:
             return "CORRETTO_11";
+          case Runtime::NODEJS_16:
+            return "NODEJS_16";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

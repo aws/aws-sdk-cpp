@@ -192,10 +192,12 @@
 #include <aws/glue/model/UpdateDatabaseResult.h>
 #include <aws/glue/model/UpdateDevEndpointResult.h>
 #include <aws/glue/model/UpdateJobResult.h>
+#include <aws/glue/model/UpdateJobFromSourceControlResult.h>
 #include <aws/glue/model/UpdateMLTransformResult.h>
 #include <aws/glue/model/UpdatePartitionResult.h>
 #include <aws/glue/model/UpdateRegistryResult.h>
 #include <aws/glue/model/UpdateSchemaResult.h>
+#include <aws/glue/model/UpdateSourceControlFromJobResult.h>
 #include <aws/glue/model/UpdateTableResult.h>
 #include <aws/glue/model/UpdateTriggerResult.h>
 #include <aws/glue/model/UpdateUserDefinedFunctionResult.h>
@@ -412,10 +414,12 @@ namespace Aws
       class UpdateDatabaseRequest;
       class UpdateDevEndpointRequest;
       class UpdateJobRequest;
+      class UpdateJobFromSourceControlRequest;
       class UpdateMLTransformRequest;
       class UpdatePartitionRequest;
       class UpdateRegistryRequest;
       class UpdateSchemaRequest;
+      class UpdateSourceControlFromJobRequest;
       class UpdateTableRequest;
       class UpdateTriggerRequest;
       class UpdateUserDefinedFunctionRequest;
@@ -599,10 +603,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateDatabaseResult, GlueError> UpdateDatabaseOutcome;
       typedef Aws::Utils::Outcome<UpdateDevEndpointResult, GlueError> UpdateDevEndpointOutcome;
       typedef Aws::Utils::Outcome<UpdateJobResult, GlueError> UpdateJobOutcome;
+      typedef Aws::Utils::Outcome<UpdateJobFromSourceControlResult, GlueError> UpdateJobFromSourceControlOutcome;
       typedef Aws::Utils::Outcome<UpdateMLTransformResult, GlueError> UpdateMLTransformOutcome;
       typedef Aws::Utils::Outcome<UpdatePartitionResult, GlueError> UpdatePartitionOutcome;
       typedef Aws::Utils::Outcome<UpdateRegistryResult, GlueError> UpdateRegistryOutcome;
       typedef Aws::Utils::Outcome<UpdateSchemaResult, GlueError> UpdateSchemaOutcome;
+      typedef Aws::Utils::Outcome<UpdateSourceControlFromJobResult, GlueError> UpdateSourceControlFromJobOutcome;
       typedef Aws::Utils::Outcome<UpdateTableResult, GlueError> UpdateTableOutcome;
       typedef Aws::Utils::Outcome<UpdateTriggerResult, GlueError> UpdateTriggerOutcome;
       typedef Aws::Utils::Outcome<UpdateUserDefinedFunctionResult, GlueError> UpdateUserDefinedFunctionOutcome;
@@ -786,10 +792,12 @@ namespace Aws
       typedef std::future<UpdateDatabaseOutcome> UpdateDatabaseOutcomeCallable;
       typedef std::future<UpdateDevEndpointOutcome> UpdateDevEndpointOutcomeCallable;
       typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
+      typedef std::future<UpdateJobFromSourceControlOutcome> UpdateJobFromSourceControlOutcomeCallable;
       typedef std::future<UpdateMLTransformOutcome> UpdateMLTransformOutcomeCallable;
       typedef std::future<UpdatePartitionOutcome> UpdatePartitionOutcomeCallable;
       typedef std::future<UpdateRegistryOutcome> UpdateRegistryOutcomeCallable;
       typedef std::future<UpdateSchemaOutcome> UpdateSchemaOutcomeCallable;
+      typedef std::future<UpdateSourceControlFromJobOutcome> UpdateSourceControlFromJobOutcomeCallable;
       typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
       typedef std::future<UpdateTriggerOutcome> UpdateTriggerOutcomeCallable;
       typedef std::future<UpdateUserDefinedFunctionOutcome> UpdateUserDefinedFunctionOutcomeCallable;
@@ -976,10 +984,12 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::UpdateDatabaseRequest&, const Model::UpdateDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatabaseResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateDevEndpointRequest&, const Model::UpdateDevEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevEndpointResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateJobRequest&, const Model::UpdateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::UpdateJobFromSourceControlRequest&, const Model::UpdateJobFromSourceControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobFromSourceControlResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateMLTransformRequest&, const Model::UpdateMLTransformOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMLTransformResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdatePartitionRequest&, const Model::UpdatePartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateRegistryRequest&, const Model::UpdateRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRegistryResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateSchemaRequest&, const Model::UpdateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSchemaResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::UpdateSourceControlFromJobRequest&, const Model::UpdateSourceControlFromJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSourceControlFromJobResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateTriggerRequest&, const Model::UpdateTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTriggerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateUserDefinedFunctionRequest&, const Model::UpdateUserDefinedFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserDefinedFunctionResponseReceivedHandler;

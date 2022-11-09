@@ -14,9 +14,9 @@ using namespace Aws::Utils;
 
 ApplyArchiveRuleRequest::ApplyArchiveRuleRequest() : 
     m_analyzerArnHasBeenSet(false),
+    m_ruleNameHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_ruleNameHasBeenSet(false)
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -30,15 +30,15 @@ Aws::String ApplyArchiveRuleRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_ruleNameHasBeenSet)
   {
    payload.WithString("ruleName", m_ruleName);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

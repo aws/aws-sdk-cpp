@@ -20,6 +20,7 @@
 #include <aws/emr-serverless/model/CreateApplicationResult.h>
 #include <aws/emr-serverless/model/DeleteApplicationResult.h>
 #include <aws/emr-serverless/model/GetApplicationResult.h>
+#include <aws/emr-serverless/model/GetDashboardForJobRunResult.h>
 #include <aws/emr-serverless/model/GetJobRunResult.h>
 #include <aws/emr-serverless/model/ListApplicationsResult.h>
 #include <aws/emr-serverless/model/ListJobRunsResult.h>
@@ -70,6 +71,7 @@ namespace Aws
       class CreateApplicationRequest;
       class DeleteApplicationRequest;
       class GetApplicationRequest;
+      class GetDashboardForJobRunRequest;
       class GetJobRunRequest;
       class ListApplicationsRequest;
       class ListJobRunsRequest;
@@ -87,6 +89,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateApplicationResult, EMRServerlessError> CreateApplicationOutcome;
       typedef Aws::Utils::Outcome<DeleteApplicationResult, EMRServerlessError> DeleteApplicationOutcome;
       typedef Aws::Utils::Outcome<GetApplicationResult, EMRServerlessError> GetApplicationOutcome;
+      typedef Aws::Utils::Outcome<GetDashboardForJobRunResult, EMRServerlessError> GetDashboardForJobRunOutcome;
       typedef Aws::Utils::Outcome<GetJobRunResult, EMRServerlessError> GetJobRunOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, EMRServerlessError> ListApplicationsOutcome;
       typedef Aws::Utils::Outcome<ListJobRunsResult, EMRServerlessError> ListJobRunsOutcome;
@@ -104,6 +107,7 @@ namespace Aws
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
       typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
       typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
+      typedef std::future<GetDashboardForJobRunOutcome> GetDashboardForJobRunOutcomeCallable;
       typedef std::future<GetJobRunOutcome> GetJobRunOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
       typedef std::future<ListJobRunsOutcome> ListJobRunsOutcomeCallable;
@@ -124,6 +128,7 @@ namespace Aws
     typedef std::function<void(const EMRServerlessClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
+    typedef std::function<void(const EMRServerlessClient*, const Model::GetDashboardForJobRunRequest&, const Model::GetDashboardForJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardForJobRunResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::GetJobRunRequest&, const Model::GetJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobRunResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::ListJobRunsRequest&, const Model::ListJobRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobRunsResponseReceivedHandler;

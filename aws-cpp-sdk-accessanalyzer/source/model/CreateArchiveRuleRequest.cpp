@@ -14,10 +14,10 @@ using namespace Aws::Utils;
 
 CreateArchiveRuleRequest::CreateArchiveRuleRequest() : 
     m_analyzerNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true),
+    m_ruleNameHasBeenSet(false),
     m_filterHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -25,9 +25,9 @@ Aws::String CreateArchiveRuleRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_ruleNameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("ruleName", m_ruleName);
 
   }
 
@@ -42,9 +42,9 @@ Aws::String CreateArchiveRuleRequest::SerializePayload() const
 
   }
 
-  if(m_ruleNameHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("ruleName", m_ruleName);
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

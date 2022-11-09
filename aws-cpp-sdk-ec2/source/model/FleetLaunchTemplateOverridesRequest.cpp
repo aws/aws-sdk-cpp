@@ -31,7 +31,8 @@ FleetLaunchTemplateOverridesRequest::FleetLaunchTemplateOverridesRequest() :
     m_priority(0.0),
     m_priorityHasBeenSet(false),
     m_placementHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
+    m_instanceRequirementsHasBeenSet(false),
+    m_imageIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ FleetLaunchTemplateOverridesRequest::FleetLaunchTemplateOverridesRequest(const X
     m_priority(0.0),
     m_priorityHasBeenSet(false),
     m_placementHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
+    m_instanceRequirementsHasBeenSet(false),
+    m_imageIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +107,12 @@ FleetLaunchTemplateOverridesRequest& FleetLaunchTemplateOverridesRequest::operat
       m_instanceRequirements = instanceRequirementsNode;
       m_instanceRequirementsHasBeenSet = true;
     }
+    XmlNode imageIdNode = resultNode.FirstChild("ImageId");
+    if(!imageIdNode.IsNull())
+    {
+      m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
+      m_imageIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -156,6 +164,11 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
       m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_imageIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
+
 }
 
 void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -195,6 +208,10 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
       Aws::String instanceRequirementsLocationAndMember(location);
       instanceRequirementsLocationAndMember += ".InstanceRequirements";
       m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
+  }
+  if(m_imageIdHasBeenSet)
+  {
+      oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 }
 

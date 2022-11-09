@@ -211,7 +211,10 @@ namespace FSx
          * for both. To learn more about linking a data repository to your file system, see
          * <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking
-         * your file system to an S3 bucket</a>.</p><p><h3>See Also:</h3>   <a
+         * your file system to an S3 bucket</a>.</p>  <p>
+         * <code>CreateDataRepositoryAssociation</code> isn't supported on Amazon File
+         * Cache resources. To create a DRA on Amazon File Cache, use the
+         * <code>CreateFileCache</code> operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryAssociation">AWS
          * API Reference</a></p>
          */
@@ -257,6 +260,39 @@ namespace FSx
         virtual void CreateDataRepositoryTaskAsync(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new Amazon File Cache resource.</p> <p>You can use this operation
+         * with a client request token in the request that Amazon File Cache uses to ensure
+         * idempotent creation. If a cache with the specified client request token exists
+         * and the parameters match, <code>CreateFileCache</code> returns the description
+         * of the existing cache. If a cache with the specified client request token exists
+         * and the parameters don't match, this call returns
+         * <code>IncompatibleParameterError</code>. If a file cache with the specified
+         * client request token doesn't exist, <code>CreateFileCache</code> does the
+         * following: </p> <ul> <li> <p>Creates a new, empty Amazon File Cache resourcewith
+         * an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p>
+         * </li> <li> <p>Returns the description of the cache in JSON format.</p> </li>
+         * </ul>  <p>The <code>CreateFileCache</code> call returns while the cache's
+         * lifecycle state is still <code>CREATING</code>. You can check the cache creation
+         * status by calling the <a
+         * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+         * operation, which returns the cache state along with other information.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFileCacheOutcome CreateFileCache(const Model::CreateFileCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFileCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFileCacheOutcomeCallable CreateFileCacheCallable(const Model::CreateFileCacheRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateFileCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFileCacheAsync(const Model::CreateFileCacheRequest& request, const CreateFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new, empty Amazon FSx file system. You can create the following
          * supported Amazon FSx file systems using the <code>CreateFileSystem</code> API
          * operation:</p> <ul> <li> <p>Amazon FSx for Lustre</p> </li> <li> <p>Amazon FSx
@@ -280,19 +316,9 @@ namespace FSx
          * following: </p> <ul> <li> <p>Creates a new, empty Amazon FSx file system with an
          * assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
          * <li> <p>Returns the description of the file system in JSON format.</p> </li>
-         * </ul> <p>This operation requires a client request token in the request that
-         * Amazon FSx uses to ensure idempotent creation. This means that calling the
-         * operation multiple times with the same client request token has no effect. By
-         * using the idempotent operation, you can retry a <code>CreateFileSystem</code>
-         * operation without the risk of creating an extra file system. This approach can
-         * be useful when an initial call fails in a way that makes it unclear whether a
-         * file system was created. Examples are if a transport-level timeout occurred, or
-         * your connection was reset. If you use the same client request token and the
-         * initial call created a file system, the client receives a success message as
-         * long as the parameters are the same.</p>  <p>The
-         * <code>CreateFileSystem</code> call returns while the file system's lifecycle
-         * state is still <code>CREATING</code>. You can check the file-system creation
-         * status by calling the <a
+         * </ul>  <p>The <code>CreateFileSystem</code> call returns while the file
+         * system's lifecycle state is still <code>CREATING</code>. You can check the
+         * file-system creation status by calling the <a
          * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
          * operation, which returns the file system state along with other information.</p>
          * <p><h3>See Also:</h3>   <a
@@ -490,6 +516,32 @@ namespace FSx
         virtual void DeleteDataRepositoryAssociationAsync(const Model::DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an Amazon File Cache resource. After deletion, the cache no longer
+         * exists, and its data is gone.</p> <p>The <code>DeleteFileCache</code> operation
+         * returns while the cache has the <code>DELETING</code> status. You can check the
+         * cache deletion status by calling the <a
+         * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+         * operation, which returns a list of caches in your account. If you pass the cache
+         * ID for a deleted cache, the <code>DescribeFileCaches</code> operation returns a
+         * <code>FileCacheNotFound</code> error.</p>  <p>The data in a deleted
+         * cache is also deleted and can't be recovered by any means.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFileCacheOutcome DeleteFileCache(const Model::DeleteFileCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFileCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFileCacheOutcomeCallable DeleteFileCacheCallable(const Model::DeleteFileCacheRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteFileCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFileCacheAsync(const Model::DeleteFileCacheRequest& request, const DeleteFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a file system. After deletion, the file system no longer exists, and
          * its data is gone. Any existing automatic backups and snapshots are also
          * deleted.</p> <p>To delete an Amazon FSx for NetApp ONTAP file system, first
@@ -621,23 +673,25 @@ namespace FSx
         virtual void DescribeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx for Lustre data repository
-         * associations, if one or more <code>AssociationIds</code> values are provided in
-         * the request, or if filters are used in the request. Data repository associations
-         * are supported only for file systems with the <code>Persistent_2</code>
-         * deployment type.</p> <p>You can use filters to narrow the response to include
+         * <p>Returns the description of specific Amazon FSx for Lustre or Amazon File
+         * Cache data repository associations, if one or more <code>AssociationIds</code>
+         * values are provided in the request, or if filters are used in the request. Data
+         * repository associations are supported only for Amazon FSx for Lustre file
+         * systems with the <code>Persistent_2</code> deployment type and for Amazon File
+         * Cache resources.</p> <p>You can use filters to narrow the response to include
          * just data repository associations for specific file systems (use the
-         * <code>file-system-id</code> filter with the ID of the file system) or data
+         * <code>file-system-id</code> filter with the ID of the file system) or caches
+         * (use the <code>file-cache-id</code> filter with the ID of the cache), or data
          * repository associations for a specific repository type (use the
-         * <code>data-repository-type</code> filter with a value of <code>S3</code>). If
-         * you don't use filters, the response returns all data repository associations
-         * owned by your Amazon Web Services account in the Amazon Web Services Region of
-         * the endpoint that you're calling.</p> <p>When retrieving all data repository
-         * associations, you can paginate the response by using the optional
-         * <code>MaxResults</code> parameter to limit the number of data repository
-         * associations returned in a response. If more data repository associations
-         * remain, Amazon FSx returns a <code>NextToken</code> value in the response. In
-         * this case, send a later request with the <code>NextToken</code> request
+         * <code>data-repository-type</code> filter with a value of <code>S3</code> or
+         * <code>NFS</code>). If you don't use filters, the response returns all data
+         * repository associations owned by your Amazon Web Services account in the Amazon
+         * Web Services Region of the endpoint that you're calling.</p> <p>When retrieving
+         * all data repository associations, you can paginate the response by using the
+         * optional <code>MaxResults</code> parameter to limit the number of data
+         * repository associations returned in a response. If more data repository
+         * associations remain, a <code>NextToken</code> value is returned in the response.
+         * In this case, send a later request with the <code>NextToken</code> request
          * parameter set to the value of <code>NextToken</code> from the last
          * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryAssociations">AWS
@@ -656,18 +710,19 @@ namespace FSx
         virtual void DescribeDataRepositoryAssociationsAsync(const Model::DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx for Lustre data repository
-         * tasks, if one or more <code>TaskIds</code> values are provided in the request,
-         * or if filters are used in the request. You can use filters to narrow the
-         * response to include just tasks for specific file systems, or tasks in a specific
-         * lifecycle state. Otherwise, it returns all data repository tasks owned by your
-         * Amazon Web Services account in the Amazon Web Services Region of the endpoint
-         * that you're calling.</p> <p>When retrieving all tasks, you can paginate the
-         * response by using the optional <code>MaxResults</code> parameter to limit the
-         * number of tasks returned in a response. If more tasks remain, Amazon FSx returns
-         * a <code>NextToken</code> value in the response. In this case, send a later
-         * request with the <code>NextToken</code> request parameter set to the value of
-         * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the description of specific Amazon FSx for Lustre or Amazon File
+         * Cache data repository tasks, if one or more <code>TaskIds</code> values are
+         * provided in the request, or if filters are used in the request. You can use
+         * filters to narrow the response to include just tasks for specific file systems
+         * or caches, or tasks in a specific lifecycle state. Otherwise, it returns all
+         * data repository tasks owned by your Amazon Web Services account in the Amazon
+         * Web Services Region of the endpoint that you're calling.</p> <p>When retrieving
+         * all tasks, you can paginate the response by using the optional
+         * <code>MaxResults</code> parameter to limit the number of tasks returned in a
+         * response. If more tasks remain, a <code>NextToken</code> value is returned in
+         * the response. In this case, send a later request with the <code>NextToken</code>
+         * request parameter set to the value of <code>NextToken</code> from the last
+         * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">AWS
          * API Reference</a></p>
          */
@@ -682,6 +737,44 @@ namespace FSx
          * An Async wrapper for DescribeDataRepositoryTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDataRepositoryTasksAsync(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the description of a specific Amazon File Cache resource, if a
+         * <code>FileCacheIds</code> value is provided for that cache. Otherwise, it
+         * returns descriptions of all caches owned by your Amazon Web Services account in
+         * the Amazon Web Services Region of the endpoint that you're calling.</p> <p>When
+         * retrieving all cache descriptions, you can optionally specify the
+         * <code>MaxResults</code> parameter to limit the number of descriptions in a
+         * response. If more cache descriptions remain, the operation returns a
+         * <code>NextToken</code> value in the response. In this case, send a later request
+         * with the <code>NextToken</code> request parameter set to the value of
+         * <code>NextToken</code> from the last response.</p> <p>This operation is used in
+         * an iterative process to retrieve a list of your cache descriptions.
+         * <code>DescribeFileCaches</code> is called first without a
+         * <code>NextToken</code>value. Then the operation continues to be called with the
+         * <code>NextToken</code> parameter set to the value of the last
+         * <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
+         * <p>When using this operation, keep the following in mind:</p> <ul> <li> <p>The
+         * implementation might return fewer than <code>MaxResults</code> cache
+         * descriptions while still including a <code>NextToken</code> value.</p> </li>
+         * <li> <p>The order of caches returned in the response of one
+         * <code>DescribeFileCaches</code> call and the order of caches returned across the
+         * responses of a multicall iteration is unspecified.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileCaches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFileCachesOutcome DescribeFileCaches(const Model::DescribeFileCachesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFileCaches that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFileCachesOutcomeCallable DescribeFileCachesCallable(const Model::DescribeFileCachesRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeFileCaches that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFileCachesAsync(const Model::DescribeFileCachesRequest& request, const DescribeFileCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the DNS aliases that are associated with the specified Amazon FSx for
@@ -963,6 +1056,24 @@ namespace FSx
          * An Async wrapper for UpdateDataRepositoryAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDataRepositoryAssociationAsync(const Model::UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the configuration of an existing Amazon File Cache resource. You can
+         * update multiple properties in a single request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFileCacheOutcome UpdateFileCache(const Model::UpdateFileCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFileCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFileCacheOutcomeCallable UpdateFileCacheCallable(const Model::UpdateFileCacheRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateFileCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFileCacheAsync(const Model::UpdateFileCacheRequest& request, const UpdateFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to update the configuration of an existing Amazon FSx file

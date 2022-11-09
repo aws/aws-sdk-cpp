@@ -327,7 +327,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
 
@@ -337,7 +337,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
 
@@ -347,7 +347,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
 
@@ -357,7 +357,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
 
@@ -367,7 +367,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline LaunchTemplateOverrides& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
 
@@ -377,7 +377,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline LaunchTemplateOverrides& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 

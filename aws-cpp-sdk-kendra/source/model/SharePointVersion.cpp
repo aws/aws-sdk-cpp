@@ -23,6 +23,7 @@ namespace Aws
         static const int SHAREPOINT_2013_HASH = HashingUtils::HashString("SHAREPOINT_2013");
         static const int SHAREPOINT_2016_HASH = HashingUtils::HashString("SHAREPOINT_2016");
         static const int SHAREPOINT_ONLINE_HASH = HashingUtils::HashString("SHAREPOINT_ONLINE");
+        static const int SHAREPOINT_2019_HASH = HashingUtils::HashString("SHAREPOINT_2019");
 
 
         SharePointVersion GetSharePointVersionForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == SHAREPOINT_ONLINE_HASH)
           {
             return SharePointVersion::SHAREPOINT_ONLINE;
+          }
+          else if (hashCode == SHAREPOINT_2019_HASH)
+          {
+            return SharePointVersion::SHAREPOINT_2019;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "SHAREPOINT_2016";
           case SharePointVersion::SHAREPOINT_ONLINE:
             return "SHAREPOINT_ONLINE";
+          case SharePointVersion::SHAREPOINT_2019:
+            return "SHAREPOINT_2019";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

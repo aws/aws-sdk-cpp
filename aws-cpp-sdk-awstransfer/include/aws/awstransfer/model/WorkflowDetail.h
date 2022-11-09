@@ -25,7 +25,11 @@ namespace Model
 
   /**
    * <p>Specifies the workflow ID for the workflow to assign and the execution role
-   * that's used for executing the workflow.</p><p><h3>See Also:</h3>   <a
+   * that's used for executing the workflow.</p> <p>In additon to a workflow to
+   * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+   * also contain a workflow ID (and execution role) for a workflow to execute on
+   * partial upload. A partial upload occurs when a file is open when the session
+   * disconnects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/WorkflowDetail">AWS
    * API Reference</a></p>
    */

@@ -111,59 +111,83 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of container instances that Amazon ECS scales in or scales
-     * out at one time. If this parameter is omitted, the default value of
-     * <code>1</code> is used.</p>
+     * <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at
+     * one time. The scale in process is not affected by this parameter If this
+     * parameter is omitted, the default value of <code>1</code> is used.</p> <p>When
+     * additional capacity is required, Amazon ECS will scale up the minimum scaling
+     * step size even if the actual demand is less than the minimum scaling step
+     * size.</p> <p>If you use a capacity provider with an Auto Scaling group
+     * configured with more than one Amazon EC2 instance type or Availability Zone,
+     * Amazon ECS will scale up by the exact minimum scaling step size value and will
+     * ignore both the maximum scaling step size as well as the capacity demand.</p>
      */
     inline int GetMinimumScalingStepSize() const{ return m_minimumScalingStepSize; }
 
     /**
-     * <p>The minimum number of container instances that Amazon ECS scales in or scales
-     * out at one time. If this parameter is omitted, the default value of
-     * <code>1</code> is used.</p>
+     * <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at
+     * one time. The scale in process is not affected by this parameter If this
+     * parameter is omitted, the default value of <code>1</code> is used.</p> <p>When
+     * additional capacity is required, Amazon ECS will scale up the minimum scaling
+     * step size even if the actual demand is less than the minimum scaling step
+     * size.</p> <p>If you use a capacity provider with an Auto Scaling group
+     * configured with more than one Amazon EC2 instance type or Availability Zone,
+     * Amazon ECS will scale up by the exact minimum scaling step size value and will
+     * ignore both the maximum scaling step size as well as the capacity demand.</p>
      */
     inline bool MinimumScalingStepSizeHasBeenSet() const { return m_minimumScalingStepSizeHasBeenSet; }
 
     /**
-     * <p>The minimum number of container instances that Amazon ECS scales in or scales
-     * out at one time. If this parameter is omitted, the default value of
-     * <code>1</code> is used.</p>
+     * <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at
+     * one time. The scale in process is not affected by this parameter If this
+     * parameter is omitted, the default value of <code>1</code> is used.</p> <p>When
+     * additional capacity is required, Amazon ECS will scale up the minimum scaling
+     * step size even if the actual demand is less than the minimum scaling step
+     * size.</p> <p>If you use a capacity provider with an Auto Scaling group
+     * configured with more than one Amazon EC2 instance type or Availability Zone,
+     * Amazon ECS will scale up by the exact minimum scaling step size value and will
+     * ignore both the maximum scaling step size as well as the capacity demand.</p>
      */
     inline void SetMinimumScalingStepSize(int value) { m_minimumScalingStepSizeHasBeenSet = true; m_minimumScalingStepSize = value; }
 
     /**
-     * <p>The minimum number of container instances that Amazon ECS scales in or scales
-     * out at one time. If this parameter is omitted, the default value of
-     * <code>1</code> is used.</p>
+     * <p>The minimum number of Amazon EC2 instances that Amazon ECS will scale out at
+     * one time. The scale in process is not affected by this parameter If this
+     * parameter is omitted, the default value of <code>1</code> is used.</p> <p>When
+     * additional capacity is required, Amazon ECS will scale up the minimum scaling
+     * step size even if the actual demand is less than the minimum scaling step
+     * size.</p> <p>If you use a capacity provider with an Auto Scaling group
+     * configured with more than one Amazon EC2 instance type or Availability Zone,
+     * Amazon ECS will scale up by the exact minimum scaling step size value and will
+     * ignore both the maximum scaling step size as well as the capacity demand.</p>
      */
     inline ManagedScaling& WithMinimumScalingStepSize(int value) { SetMinimumScalingStepSize(value); return *this;}
 
 
     /**
-     * <p>The maximum number of container instances that Amazon ECS scales in or scales
-     * out at one time. If this parameter is omitted, the default value of
-     * <code>10000</code> is used.</p>
+     * <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at
+     * one time. The scale in process is not affected by this parameter. If this
+     * parameter is omitted, the default value of <code>10000</code> is used.</p>
      */
     inline int GetMaximumScalingStepSize() const{ return m_maximumScalingStepSize; }
 
     /**
-     * <p>The maximum number of container instances that Amazon ECS scales in or scales
-     * out at one time. If this parameter is omitted, the default value of
-     * <code>10000</code> is used.</p>
+     * <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at
+     * one time. The scale in process is not affected by this parameter. If this
+     * parameter is omitted, the default value of <code>10000</code> is used.</p>
      */
     inline bool MaximumScalingStepSizeHasBeenSet() const { return m_maximumScalingStepSizeHasBeenSet; }
 
     /**
-     * <p>The maximum number of container instances that Amazon ECS scales in or scales
-     * out at one time. If this parameter is omitted, the default value of
-     * <code>10000</code> is used.</p>
+     * <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at
+     * one time. The scale in process is not affected by this parameter. If this
+     * parameter is omitted, the default value of <code>10000</code> is used.</p>
      */
     inline void SetMaximumScalingStepSize(int value) { m_maximumScalingStepSizeHasBeenSet = true; m_maximumScalingStepSize = value; }
 
     /**
-     * <p>The maximum number of container instances that Amazon ECS scales in or scales
-     * out at one time. If this parameter is omitted, the default value of
-     * <code>10000</code> is used.</p>
+     * <p>The maximum number of Amazon EC2 instances that Amazon ECS will scale out at
+     * one time. The scale in process is not affected by this parameter. If this
+     * parameter is omitted, the default value of <code>10000</code> is used.</p>
      */
     inline ManagedScaling& WithMaximumScalingStepSize(int value) { SetMaximumScalingStepSize(value); return *this;}
 

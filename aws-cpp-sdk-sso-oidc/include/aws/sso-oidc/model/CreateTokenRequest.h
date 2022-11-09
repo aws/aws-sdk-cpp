@@ -132,50 +132,74 @@ namespace Model
 
 
     /**
-     * <p>Supports grant types for authorization code, refresh token, and device code
-     * request.</p>
+     * <p>Supports grant types for the authorization code, refresh token, and device
+     * code request. For device code requests, specify the following value:</p> <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p> <p>For
+     * information about how to obtain the device code, see the
+     * <a>StartDeviceAuthorization</a> topic.</p>
      */
     inline const Aws::String& GetGrantType() const{ return m_grantType; }
 
     /**
-     * <p>Supports grant types for authorization code, refresh token, and device code
-     * request.</p>
+     * <p>Supports grant types for the authorization code, refresh token, and device
+     * code request. For device code requests, specify the following value:</p> <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p> <p>For
+     * information about how to obtain the device code, see the
+     * <a>StartDeviceAuthorization</a> topic.</p>
      */
     inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
 
     /**
-     * <p>Supports grant types for authorization code, refresh token, and device code
-     * request.</p>
+     * <p>Supports grant types for the authorization code, refresh token, and device
+     * code request. For device code requests, specify the following value:</p> <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p> <p>For
+     * information about how to obtain the device code, see the
+     * <a>StartDeviceAuthorization</a> topic.</p>
      */
     inline void SetGrantType(const Aws::String& value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
 
     /**
-     * <p>Supports grant types for authorization code, refresh token, and device code
-     * request.</p>
+     * <p>Supports grant types for the authorization code, refresh token, and device
+     * code request. For device code requests, specify the following value:</p> <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p> <p>For
+     * information about how to obtain the device code, see the
+     * <a>StartDeviceAuthorization</a> topic.</p>
      */
     inline void SetGrantType(Aws::String&& value) { m_grantTypeHasBeenSet = true; m_grantType = std::move(value); }
 
     /**
-     * <p>Supports grant types for authorization code, refresh token, and device code
-     * request.</p>
+     * <p>Supports grant types for the authorization code, refresh token, and device
+     * code request. For device code requests, specify the following value:</p> <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p> <p>For
+     * information about how to obtain the device code, see the
+     * <a>StartDeviceAuthorization</a> topic.</p>
      */
     inline void SetGrantType(const char* value) { m_grantTypeHasBeenSet = true; m_grantType.assign(value); }
 
     /**
-     * <p>Supports grant types for authorization code, refresh token, and device code
-     * request.</p>
+     * <p>Supports grant types for the authorization code, refresh token, and device
+     * code request. For device code requests, specify the following value:</p> <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p> <p>For
+     * information about how to obtain the device code, see the
+     * <a>StartDeviceAuthorization</a> topic.</p>
      */
     inline CreateTokenRequest& WithGrantType(const Aws::String& value) { SetGrantType(value); return *this;}
 
     /**
-     * <p>Supports grant types for authorization code, refresh token, and device code
-     * request.</p>
+     * <p>Supports grant types for the authorization code, refresh token, and device
+     * code request. For device code requests, specify the following value:</p> <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p> <p>For
+     * information about how to obtain the device code, see the
+     * <a>StartDeviceAuthorization</a> topic.</p>
      */
     inline CreateTokenRequest& WithGrantType(Aws::String&& value) { SetGrantType(std::move(value)); return *this;}
 
     /**
-     * <p>Supports grant types for authorization code, refresh token, and device code
-     * request.</p>
+     * <p>Supports grant types for the authorization code, refresh token, and device
+     * code request. For device code requests, specify the following value:</p> <p>
+     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p> <p>For
+     * information about how to obtain the device code, see the
+     * <a>StartDeviceAuthorization</a> topic.</p>
      */
     inline CreateTokenRequest& WithGrantType(const char* value) { SetGrantType(value); return *this;}
 
@@ -303,50 +327,90 @@ namespace Model
 
 
     /**
-     * <p>The token used to obtain an access token in the event that the access token
-     * is invalid or expired. This token is not issued by the service.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * access token in the event that the access token is invalid or expired.</p>
      */
     inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
 
     /**
-     * <p>The token used to obtain an access token in the event that the access token
-     * is invalid or expired. This token is not issued by the service.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * access token in the event that the access token is invalid or expired.</p>
      */
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
 
     /**
-     * <p>The token used to obtain an access token in the event that the access token
-     * is invalid or expired. This token is not issued by the service.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * access token in the event that the access token is invalid or expired.</p>
      */
     inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
 
     /**
-     * <p>The token used to obtain an access token in the event that the access token
-     * is invalid or expired. This token is not issued by the service.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * access token in the event that the access token is invalid or expired.</p>
      */
     inline void SetRefreshToken(Aws::String&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
 
     /**
-     * <p>The token used to obtain an access token in the event that the access token
-     * is invalid or expired. This token is not issued by the service.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * access token in the event that the access token is invalid or expired.</p>
      */
     inline void SetRefreshToken(const char* value) { m_refreshTokenHasBeenSet = true; m_refreshToken.assign(value); }
 
     /**
-     * <p>The token used to obtain an access token in the event that the access token
-     * is invalid or expired. This token is not issued by the service.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * access token in the event that the access token is invalid or expired.</p>
      */
     inline CreateTokenRequest& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
 
     /**
-     * <p>The token used to obtain an access token in the event that the access token
-     * is invalid or expired. This token is not issued by the service.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * access token in the event that the access token is invalid or expired.</p>
      */
     inline CreateTokenRequest& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token used to obtain an access token in the event that the access token
-     * is invalid or expired. This token is not issued by the service.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * access token in the event that the access token is invalid or expired.</p>
      */
     inline CreateTokenRequest& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
 

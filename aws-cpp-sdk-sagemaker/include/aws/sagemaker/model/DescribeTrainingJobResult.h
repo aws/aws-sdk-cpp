@@ -24,6 +24,7 @@
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ProfilingStatus.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
+#include <aws/sagemaker/model/WarmPoolStatus.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <aws/sagemaker/model/MetricData.h>
@@ -1613,6 +1614,32 @@ namespace Model
      */
     inline DescribeTrainingJobResult& AddEnvironment(const char* key, const char* value) { m_environment.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline const WarmPoolStatus& GetWarmPoolStatus() const{ return m_warmPoolStatus; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(const WarmPoolStatus& value) { m_warmPoolStatus = value; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(WarmPoolStatus&& value) { m_warmPoolStatus = std::move(value); }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithWarmPoolStatus(const WarmPoolStatus& value) { SetWarmPoolStatus(value); return *this;}
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1694,6 +1721,8 @@ namespace Model
     RetryStrategy m_retryStrategy;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
+
+    WarmPoolStatus m_warmPoolStatus;
   };
 
 } // namespace Model

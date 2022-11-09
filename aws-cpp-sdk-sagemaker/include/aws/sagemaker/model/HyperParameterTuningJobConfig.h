@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobStrategyType.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobStrategyConfig.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobObjective.h>
 #include <aws/sagemaker/model/ResourceLimits.h>
 #include <aws/sagemaker/model/ParameterRanges.h>
@@ -44,9 +45,8 @@ namespace Model
 
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
-     * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
-     * set it to <code>Random</code>. For information about search strategies, see <a
+     * hyperparameter values to use for the training job it launches. For information
+     * about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
@@ -54,9 +54,8 @@ namespace Model
 
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
-     * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
-     * set it to <code>Random</code>. For information about search strategies, see <a
+     * hyperparameter values to use for the training job it launches. For information
+     * about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
@@ -64,9 +63,8 @@ namespace Model
 
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
-     * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
-     * set it to <code>Random</code>. For information about search strategies, see <a
+     * hyperparameter values to use for the training job it launches. For information
+     * about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
@@ -74,9 +72,8 @@ namespace Model
 
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
-     * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
-     * set it to <code>Random</code>. For information about search strategies, see <a
+     * hyperparameter values to use for the training job it launches. For information
+     * about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
@@ -84,9 +81,8 @@ namespace Model
 
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
-     * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
-     * set it to <code>Random</code>. For information about search strategies, see <a
+     * hyperparameter values to use for the training job it launches. For information
+     * about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
@@ -94,13 +90,55 @@ namespace Model
 
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
-     * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
-     * set it to <code>Random</code>. For information about search strategies, see <a
+     * hyperparameter values to use for the training job it launches. For information
+     * about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline HyperParameterTuningJobConfig& WithStrategy(HyperParameterTuningJobStrategyType&& value) { SetStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for the <code>Hyperband</code> optimization strategy. This
+     * parameter should be provided only if <code>Hyperband</code> is selected as the
+     * strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+     */
+    inline const HyperParameterTuningJobStrategyConfig& GetStrategyConfig() const{ return m_strategyConfig; }
+
+    /**
+     * <p>The configuration for the <code>Hyperband</code> optimization strategy. This
+     * parameter should be provided only if <code>Hyperband</code> is selected as the
+     * strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+     */
+    inline bool StrategyConfigHasBeenSet() const { return m_strategyConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for the <code>Hyperband</code> optimization strategy. This
+     * parameter should be provided only if <code>Hyperband</code> is selected as the
+     * strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+     */
+    inline void SetStrategyConfig(const HyperParameterTuningJobStrategyConfig& value) { m_strategyConfigHasBeenSet = true; m_strategyConfig = value; }
+
+    /**
+     * <p>The configuration for the <code>Hyperband</code> optimization strategy. This
+     * parameter should be provided only if <code>Hyperband</code> is selected as the
+     * strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+     */
+    inline void SetStrategyConfig(HyperParameterTuningJobStrategyConfig&& value) { m_strategyConfigHasBeenSet = true; m_strategyConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for the <code>Hyperband</code> optimization strategy. This
+     * parameter should be provided only if <code>Hyperband</code> is selected as the
+     * strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+     */
+    inline HyperParameterTuningJobConfig& WithStrategyConfig(const HyperParameterTuningJobStrategyConfig& value) { SetStrategyConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for the <code>Hyperband</code> optimization strategy. This
+     * parameter should be provided only if <code>Hyperband</code> is selected as the
+     * strategy for <code>HyperParameterTuningJobConfig</code>.</p>
+     */
+    inline HyperParameterTuningJobConfig& WithStrategyConfig(HyperParameterTuningJobStrategyConfig&& value) { SetStrategyConfig(std::move(value)); return *this;}
 
 
     /**
@@ -216,10 +254,13 @@ namespace Model
 
     /**
      * <p>Specifies whether to use early stopping for training jobs launched by the
-     * hyperparameter tuning job. This can be one of the following values (the default
-     * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
-     * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
+     * hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its
+     * own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use
+     * <code>Hyperband</code>. This parameter can take on one of the following values
+     * (the default value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training
+     * jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+     * </dd> <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -229,10 +270,13 @@ namespace Model
 
     /**
      * <p>Specifies whether to use early stopping for training jobs launched by the
-     * hyperparameter tuning job. This can be one of the following values (the default
-     * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
-     * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
+     * hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its
+     * own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use
+     * <code>Hyperband</code>. This parameter can take on one of the following values
+     * (the default value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training
+     * jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+     * </dd> <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -242,10 +286,13 @@ namespace Model
 
     /**
      * <p>Specifies whether to use early stopping for training jobs launched by the
-     * hyperparameter tuning job. This can be one of the following values (the default
-     * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
-     * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
+     * hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its
+     * own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use
+     * <code>Hyperband</code>. This parameter can take on one of the following values
+     * (the default value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training
+     * jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+     * </dd> <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -255,10 +302,13 @@ namespace Model
 
     /**
      * <p>Specifies whether to use early stopping for training jobs launched by the
-     * hyperparameter tuning job. This can be one of the following values (the default
-     * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
-     * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
+     * hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its
+     * own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use
+     * <code>Hyperband</code>. This parameter can take on one of the following values
+     * (the default value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training
+     * jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+     * </dd> <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -268,10 +318,13 @@ namespace Model
 
     /**
      * <p>Specifies whether to use early stopping for training jobs launched by the
-     * hyperparameter tuning job. This can be one of the following values (the default
-     * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
-     * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
+     * hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its
+     * own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use
+     * <code>Hyperband</code>. This parameter can take on one of the following values
+     * (the default value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training
+     * jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+     * </dd> <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -281,10 +334,13 @@ namespace Model
 
     /**
      * <p>Specifies whether to use early stopping for training jobs launched by the
-     * hyperparameter tuning job. This can be one of the following values (the default
-     * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
-     * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
+     * hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its
+     * own advanced internal early stopping mechanism,
+     * <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use
+     * <code>Hyperband</code>. This parameter can take on one of the following values
+     * (the default value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training
+     * jobs launched by the hyperparameter tuning job do not use early stopping.</p>
+     * </dd> <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -327,6 +383,9 @@ namespace Model
 
     HyperParameterTuningJobStrategyType m_strategy;
     bool m_strategyHasBeenSet = false;
+
+    HyperParameterTuningJobStrategyConfig m_strategyConfig;
+    bool m_strategyConfigHasBeenSet = false;
 
     HyperParameterTuningJobObjective m_hyperParameterTuningJobObjective;
     bool m_hyperParameterTuningJobObjectiveHasBeenSet = false;

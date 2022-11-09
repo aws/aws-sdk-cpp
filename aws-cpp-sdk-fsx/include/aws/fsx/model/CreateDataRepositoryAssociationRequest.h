@@ -75,7 +75,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -93,7 +93,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -111,7 +111,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -129,7 +129,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -147,7 +147,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -165,7 +165,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -183,7 +183,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -201,7 +201,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */

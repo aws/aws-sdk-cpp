@@ -237,8 +237,8 @@ namespace EC2
          * <p>You can allocate a carrier IP address which is a public IP address from a
          * telecommunication carrier, to a network interface which resides in a subnet in a
          * Wavelength Zone (for example an EC2 instance). </p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
+         * EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -417,9 +417,8 @@ namespace EC2
          * each time the Elastic IP address is remapped to the same instance. For more
          * information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
-         *   <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
+         *   <p>We are retiring EC2-Classic. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -498,7 +497,7 @@ namespace EC2
          * Manager for Nitro Enclaves</a> in the <i>Amazon Web Services Nitro Enclaves User
          * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate, the
          * certificate, certificate chain, and encrypted private key are placed in an
-         * Amazon S3 bucket that only the associated IAM role can access. The private key
+         * Amazon S3 location that only the associated IAM role can access. The private key
          * of the certificate is encrypted with an Amazon Web Services managed key that has
          * an attached attestation-based key policy.</p> <p>To enable the IAM role to
          * access the Amazon S3 object, you must grant it permission to call
@@ -907,9 +906,8 @@ namespace EC2
          * within the security group as quickly as possible. However, a small delay might
          * occur.</p> <p>For more information about VPC security group quotas, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC quotas</a>.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
+         * VPC quotas</a>.</p>  <p>We are retiring EC2-Classic. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -1374,6 +1372,42 @@ namespace EC2
          * An Async wrapper for CreateClientVpnRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateClientVpnRouteAsync(const Model::CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a range of customer-owned IP addresses. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCoipCidrOutcome CreateCoipCidr(const Model::CreateCoipCidrRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCoipCidrOutcomeCallable CreateCoipCidrCallable(const Model::CreateCoipCidrRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateCoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCoipCidrAsync(const Model::CreateCoipCidrRequest& request, const CreateCoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a pool of customer-owned IP (CoIP) addresses. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCoipPoolOutcome CreateCoipPool(const Model::CreateCoipPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCoipPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCoipPoolOutcomeCallable CreateCoipPoolCallable(const Model::CreateCoipPoolRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateCoipPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCoipPoolAsync(const Model::CreateCoipPoolRequest& request, const CreateCoipPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information to Amazon Web Services about your customer gateway
@@ -1880,8 +1914,10 @@ namespace EC2
         virtual void CreateLaunchTemplateVersionAsync(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a static route for the specified local gateway route
-         * table.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a static route for the specified local gateway route table. You must
+         * specify one of the following targets: </p> <ul> <li> <p>
+         * <code>LocalGatewayVirtualInterfaceGroupId</code> </p> </li> <li> <p>
+         * <code>NetworkInterfaceId</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">AWS
          * API Reference</a></p>
          */
@@ -1896,6 +1932,41 @@ namespace EC2
          * An Async wrapper for CreateLocalGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateLocalGatewayRouteAsync(const Model::CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a local gateway route table. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocalGatewayRouteTableOutcome CreateLocalGatewayRouteTable(const Model::CreateLocalGatewayRouteTableRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLocalGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLocalGatewayRouteTableOutcomeCallable CreateLocalGatewayRouteTableCallable(const Model::CreateLocalGatewayRouteTableRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLocalGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLocalGatewayRouteTableAsync(const Model::CreateLocalGatewayRouteTableRequest& request, const CreateLocalGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a local gateway route table virtual interface group association.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationCallable(const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request, const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified VPC with the specified local gateway route
@@ -2061,10 +2132,14 @@ namespace EC2
         virtual void CreateNetworkInsightsPathAsync(const Model::CreateNetworkInsightsPathRequest& request, const CreateNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a network interface in the specified subnet.</p> <p>For more
-         * information about network interfaces, see <a
+         * <p>Creates a network interface in the specified subnet.</p> <p>The number of IP
+         * addresses you can assign to a network interface varies by instance type. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+         * Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud
+         * User Guide</i>.</p> <p>For more information about network interfaces, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-         * Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User
+         * network interfaces</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">AWS
          * API Reference</a></p>
@@ -2312,9 +2387,8 @@ namespace EC2
          * <a>RevokeSecurityGroupIngress</a>, and <a>RevokeSecurityGroupEgress</a>.</p>
          * <p>For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC Limits</a>.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
+         * VPC Limits</a>.</p>  <p>We are retiring EC2-Classic. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -2384,13 +2458,15 @@ namespace EC2
         /**
          * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
          * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
-         * will produce one snapshot each that is crash-consistent across the instance.
-         * Boot volumes can be excluded by changing the parameters. </p> <p>You can create
-         * multi-volume snapshots of instances in a Region and instances on an Outpost. If
-         * you create snapshots from an instance in a Region, the snapshots must be stored
-         * in the same Region as the instance. If you create snapshots from an instance on
-         * an Outpost, the snapshots can be stored on the same Outpost as the instance, or
-         * in the Region for that Outpost.</p><p><h3>See Also:</h3>   <a
+         * will produce one snapshot each that is crash-consistent across the instance.</p>
+         * <p>You can include all of the volumes currently attached to the instance, or you
+         * can exclude the root volume or specific data (non-root) volumes from the
+         * multi-volume snapshot set.</p> <p>You can create multi-volume snapshots of
+         * instances in a Region and instances on an Outpost. If you create snapshots from
+         * an instance in a Region, the snapshots must be stored in the same Region as the
+         * instance. If you create snapshots from an instance on an Outpost, the snapshots
+         * can be stored on the same Outpost as the instance, or in the Region for that
+         * Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
          * API Reference</a></p>
          */
@@ -3170,6 +3246,42 @@ namespace EC2
         virtual void DeleteClientVpnRouteAsync(const Model::DeleteClientVpnRouteRequest& request, const DeleteClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Deletes a range of customer-owned IP addresses. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCoipCidrOutcome DeleteCoipCidr(const Model::DeleteCoipCidrRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCoipCidrOutcomeCallable DeleteCoipCidrCallable(const Model::DeleteCoipCidrRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteCoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCoipCidrAsync(const Model::DeleteCoipCidrRequest& request, const DeleteCoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a pool of customer-owned IP (CoIP) addresses. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCoipPoolOutcome DeleteCoipPool(const Model::DeleteCoipPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCoipPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCoipPoolOutcomeCallable DeleteCoipPoolCallable(const Model::DeleteCoipPoolRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteCoipPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCoipPoolAsync(const Model::DeleteCoipPoolRequest& request, const DeleteCoipPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified customer gateway. You must delete the VPN connection
          * before you can delete the customer gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">AWS
@@ -3473,6 +3585,41 @@ namespace EC2
         virtual void DeleteLocalGatewayRouteAsync(const Model::DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Deletes a local gateway route table. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLocalGatewayRouteTableOutcome DeleteLocalGatewayRouteTable(const Model::DeleteLocalGatewayRouteTableRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLocalGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLocalGatewayRouteTableOutcomeCallable DeleteLocalGatewayRouteTableCallable(const Model::DeleteLocalGatewayRouteTableRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteLocalGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLocalGatewayRouteTableAsync(const Model::DeleteLocalGatewayRouteTableRequest& request, const DeleteLocalGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Deletes a local gateway route table virtual interface group association.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationCallable(const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request, const DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified association between a VPC and local gateway route
          * table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">AWS
@@ -3774,8 +3921,8 @@ namespace EC2
          * that is associated with an instance, or is referenced by another security group,
          * the operation fails with <code>InvalidGroup.InUse</code> in EC2-Classic or
          * <code>DependencyViolation</code> in EC2-VPC.</p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
+         * EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -4551,8 +4698,8 @@ namespace EC2
          * platform or in a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
-         * migrate from EC2-Classic to a VPC. For more information, see <a
+         *  <p>We are retiring EC2-Classic. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -5615,12 +5762,7 @@ namespace EC2
          * experiencing a service disruption and you specify instance IDs that are in the
          * affected zone, or do not specify any instance IDs at all, the call fails. If you
          * describe instances and specify only instance IDs that are in an unaffected zone,
-         * the call works normally.</p>  <p>We are retiring EC2-Classic on August 15,
-         * 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the call works normally.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          */
@@ -6235,12 +6377,7 @@ namespace EC2
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
          * API Reference</a></p>
          */
@@ -6295,12 +6432,8 @@ namespace EC2
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are
-         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-         * EC2-Classic to a VPC. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
          * API Reference</a></p>
          */
@@ -6326,12 +6459,8 @@ namespace EC2
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We
-         * are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-         * EC2-Classic to a VPC. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
          * API Reference</a></p>
          */
@@ -6378,12 +6507,7 @@ namespace EC2
          * daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the
          * minimum monthly schedule is 100 hours.</p> <p>After you find a schedule that
          * meets your needs, call <a>PurchaseScheduledInstances</a> to purchase Scheduled
-         * Instances with that schedule.</p>  <p>We are retiring EC2-Classic on
-         * August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Instances with that schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">AWS
          * API Reference</a></p>
          */
@@ -6401,12 +6525,7 @@ namespace EC2
 
         /**
          * <p>Describes the specified Scheduled Instances or all your Scheduled
-         * Instances.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">AWS
          * API Reference</a></p>
          */
@@ -6468,9 +6587,8 @@ namespace EC2
          * and <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
+         * Guide</i>.</p>  <p>We are retiring EC2-Classic. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -7785,8 +7903,8 @@ namespace EC2
          * EC2-Classic platform or in a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
-         * migrate from EC2-Classic to a VPC. For more information, see <a
+         *  <p>We are retiring EC2-Classic. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>  <p>This is an idempotent operation. If you perform the
@@ -9172,7 +9290,12 @@ namespace EC2
 
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
-         * Machine Image (AMI).</p> <p>For more information, see <a
+         * Machine Image (AMI).</p>  <p>Amazon Web Services VM Import/Export
+         * strongly recommends specifying a value for either the
+         * <code>--license-type</code> or <code>--usage-operation</code> parameter when you
+         * create a new VM Import task. This ensures your operating system is licensed
+         * appropriately and your billing is optimized.</p>  <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
          * a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -9982,6 +10105,23 @@ namespace EC2
         virtual void ModifyLaunchTemplateAsync(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the specified local gateway route.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyLocalGatewayRouteOutcome ModifyLocalGatewayRoute(const Model::ModifyLocalGatewayRouteRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyLocalGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyLocalGatewayRouteOutcomeCallable ModifyLocalGatewayRouteCallable(const Model::ModifyLocalGatewayRouteRequest& request) const;
+
+        /**
+         * An Async wrapper for ModifyLocalGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyLocalGatewayRouteAsync(const Model::ModifyLocalGatewayRouteRequest& request, const ModifyLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the specified managed prefix list.</p> <p>Adding or removing entries
          * in a prefix list creates a new version of the prefix list. Changing the name of
          * the prefix list does not affect the version.</p> <p>If you specify a current
@@ -10040,14 +10180,14 @@ namespace EC2
         virtual void ModifyPrivateDnsNameOptionsAsync(const Model::ModifyPrivateDnsNameOptionsRequest& request, const ModifyPrivateDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the Availability Zone, instance count, instance type, or network
-         * platform (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved
-         * Instances to be modified must be identical, except for Availability Zone,
-         * network platform, and instance type.</p> <p>For more information, see <a
+         * <p>Modifies the configuration of your Reserved Instances, such as the
+         * Availability Zone, instance count, or instance type. The Reserved Instances to
+         * be modified must be identical, except for Availability Zone, network platform,
+         * and instance type.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are
-         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-         * EC2-Classic to a VPC. For more information, see <a
+         * retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -10709,8 +10849,8 @@ namespace EC2
          * unless you move it back using the <a>RestoreAddressToClassic</a> request. You
          * cannot move an Elastic IP address that was originally allocated for use in the
          * EC2-VPC platform to the EC2-Classic platform.</p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
+         * EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -10860,8 +11000,12 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We
+         * are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a
+         * VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">AWS
          * API Reference</a></p>
          */
@@ -10878,6 +11022,7 @@ namespace EC2
         virtual void PurchaseReservedInstancesOfferingAsync(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         *  <p>You can no longer purchase Scheduled Instances.</p> 
          * <p>Purchases the Scheduled Instances with the specified schedule.</p>
          * <p>Scheduled Instances enable you to purchase Amazon EC2 compute capacity by the
          * hour for a one-year term. Before you can purchase a Scheduled Instance, you must
@@ -11159,8 +11304,8 @@ namespace EC2
          * Releasing an Elastic IP address automatically disassociates it from any instance
          * that it's associated with. To disassociate an Elastic IP address without
          * releasing it, use <a>DisassociateAddress</a>.</p>  <p>We are retiring
-         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
-         * to a VPC. For more information, see <a
+         * EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>  <p>[Nondefault VPC] You must use
@@ -11444,9 +11589,9 @@ namespace EC2
          * For options for requesting Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
          * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
-         * Linux Instances</i>.</p>   <p>We are retiring EC2-Classic on
-         * August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For
-         * more information, see <a
+         * Linux Instances</i>.</p>   <p>We are retiring EC2-Classic. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p> <p><h3>See Also:</h3>   <a
@@ -11615,8 +11760,8 @@ namespace EC2
          * platform back to the EC2-Classic platform. You cannot move an Elastic IP address
          * that was originally allocated for use in EC2-VPC. The Elastic IP address must
          * not be associated with an instance or network interface.</p>  <p>We are
-         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-         * EC2-Classic to a VPC. For more information, see <a
+         * retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -11783,9 +11928,8 @@ namespace EC2
          * revoked.</p> <p>Amazon Web Services recommends that you describe the security
          * group to verify that the rules were removed.</p> <p>Rule changes are propagated
          * to instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p>  <p>We are retiring EC2-Classic on August 15, 2022.
-         * We recommend that you migrate from EC2-Classic to a VPC. For more information,
-         * see <a
+         * delay might occur.</p>  <p>We are retiring EC2-Classic. We recommend that
+         * you migrate from EC2-Classic to a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -11848,9 +11992,9 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * connecting to your instance</a>.</p>  <p>We are retiring EC2-Classic on
-         * August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For
-         * more information, see <a
+         * connecting to your instance</a>.</p>  <p>We are retiring EC2-Classic. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
          * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
          * <p><h3>See Also:</h3>   <a

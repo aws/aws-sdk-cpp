@@ -40,35 +40,6 @@ namespace Model
 
 
     /**
-     * <p>Possible values are <code>true</code> or <code>false</code>. If set to
-     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
-     * regions to analyze and generate a policy.</p>
-     */
-    inline bool GetAllRegions() const{ return m_allRegions; }
-
-    /**
-     * <p>Possible values are <code>true</code> or <code>false</code>. If set to
-     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
-     * regions to analyze and generate a policy.</p>
-     */
-    inline bool AllRegionsHasBeenSet() const { return m_allRegionsHasBeenSet; }
-
-    /**
-     * <p>Possible values are <code>true</code> or <code>false</code>. If set to
-     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
-     * regions to analyze and generate a policy.</p>
-     */
-    inline void SetAllRegions(bool value) { m_allRegionsHasBeenSet = true; m_allRegions = value; }
-
-    /**
-     * <p>Possible values are <code>true</code> or <code>false</code>. If set to
-     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
-     * regions to analyze and generate a policy.</p>
-     */
-    inline Trail& WithAllRegions(bool value) { SetAllRegions(value); return *this;}
-
-
-    /**
      * <p>Specifies the ARN of the trail. The format of a trail ARN is
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
      */
@@ -171,16 +142,45 @@ namespace Model
      */
     inline Trail& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
-  private:
 
-    bool m_allRegions;
-    bool m_allRegionsHasBeenSet = false;
+    /**
+     * <p>Possible values are <code>true</code> or <code>false</code>. If set to
+     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
+     * regions to analyze and generate a policy.</p>
+     */
+    inline bool GetAllRegions() const{ return m_allRegions; }
+
+    /**
+     * <p>Possible values are <code>true</code> or <code>false</code>. If set to
+     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
+     * regions to analyze and generate a policy.</p>
+     */
+    inline bool AllRegionsHasBeenSet() const { return m_allRegionsHasBeenSet; }
+
+    /**
+     * <p>Possible values are <code>true</code> or <code>false</code>. If set to
+     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
+     * regions to analyze and generate a policy.</p>
+     */
+    inline void SetAllRegions(bool value) { m_allRegionsHasBeenSet = true; m_allRegions = value; }
+
+    /**
+     * <p>Possible values are <code>true</code> or <code>false</code>. If set to
+     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
+     * regions to analyze and generate a policy.</p>
+     */
+    inline Trail& WithAllRegions(bool value) { SetAllRegions(value); return *this;}
+
+  private:
 
     Aws::String m_cloudTrailArn;
     bool m_cloudTrailArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
     bool m_regionsHasBeenSet = false;
+
+    bool m_allRegions;
+    bool m_allRegionsHasBeenSet = false;
   };
 
 } // namespace Model

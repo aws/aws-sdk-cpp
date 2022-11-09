@@ -116,6 +116,11 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     {
       m_lastLaunchedTime = lastLaunchedTimeNode;
     }
+    XmlNode imdsSupportNode = resultNode.FirstChild("imdsSupport");
+    if(!imdsSupportNode.IsNull())
+    {
+      m_imdsSupport = imdsSupportNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

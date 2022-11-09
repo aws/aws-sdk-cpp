@@ -190,8 +190,7 @@ namespace SageMaker
         virtual void CreateAlgorithmAsync(const Model::CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a running app for the specified UserProfile. Supported apps are
-         * <code>JupyterServer</code> and <code>KernelGateway</code>. This operation is
+         * <p>Creates a running app for the specified UserProfile. This operation is
          * automatically invoked by Amazon SageMaker Studio upon access to the associated
          * Domain, and when new kernel configurations are selected by the user. A user may
          * have multiple Apps active simultaneously.</p><p><h3>See Also:</h3>   <a
@@ -1372,10 +1371,10 @@ namespace SageMaker
          * domain, and is the main way to reference a "person" for the purposes of sharing,
          * reporting, and other user-oriented features. This entity is created when a user
          * onboards to Amazon SageMaker Studio. If an administrator invites a person by
-         * email or imports them from Amazon Web Services SSO, a user profile is
-         * automatically created. A user profile is the primary holder of settings for an
-         * individual user and has a reference to the user's private Amazon Elastic File
-         * System (EFS) home directory. </p><p><h3>See Also:</h3>   <a
+         * email or imports them from IAM Identity Center, a user profile is automatically
+         * created. A user profile is the primary holder of settings for an individual user
+         * and has a reference to the user's private Amazon Elastic File System (EFS) home
+         * directory. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile">AWS
          * API Reference</a></p>
          */
@@ -1621,9 +1620,9 @@ namespace SageMaker
 
         /**
          * <p>Used to delete a domain. If you onboarded with IAM mode, you will need to
-         * delete your domain to onboard again using Amazon Web Services SSO. Use with
-         * caution. All of the members of the domain will lose access to their EFS volume,
-         * including data, notebooks, and other artifacts. </p><p><h3>See Also:</h3>   <a
+         * delete your domain to onboard again using IAM Identity Center. Use with caution.
+         * All of the members of the domain will lose access to their EFS volume, including
+         * data, notebooks, and other artifacts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain">AWS
          * API Reference</a></p>
          */
@@ -5271,8 +5270,8 @@ namespace SageMaker
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update a model training job to request a new Debugger profiling
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a model training job to request a new Debugger profiling configuration
+         * or to change warm pool retention length.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob">AWS
          * API Reference</a></p>
          */

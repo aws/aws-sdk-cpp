@@ -5228,28 +5228,32 @@ namespace Model
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time. The default value is 1000 objects.</p>
+     * more than one worker at one time. The default value is 1000 objects. To increase
+     * the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
      */
     inline int GetMaxConcurrentTaskCount() const{ return m_maxConcurrentTaskCount; }
 
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time. The default value is 1000 objects.</p>
+     * more than one worker at one time. The default value is 1000 objects. To increase
+     * the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
      */
     inline bool MaxConcurrentTaskCountHasBeenSet() const { return m_maxConcurrentTaskCountHasBeenSet; }
 
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time. The default value is 1000 objects.</p>
+     * more than one worker at one time. The default value is 1000 objects. To increase
+     * the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
      */
     inline void SetMaxConcurrentTaskCount(int value) { m_maxConcurrentTaskCountHasBeenSet = true; m_maxConcurrentTaskCount = value; }
 
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time. The default value is 1000 objects.</p>
+     * more than one worker at one time. The default value is 1000 objects. To increase
+     * the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
      */
     inline HumanTaskConfig& WithMaxConcurrentTaskCount(int value) { SetMaxConcurrentTaskCount(value); return *this;}
 

@@ -29,7 +29,10 @@ LocalGatewayRoute::LocalGatewayRoute() :
     m_stateHasBeenSet(false),
     m_localGatewayRouteTableIdHasBeenSet(false),
     m_localGatewayRouteTableArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
+    m_ownerIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_coipPoolIdHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ LocalGatewayRoute::LocalGatewayRoute(const XmlNode& xmlNode) :
     m_stateHasBeenSet(false),
     m_localGatewayRouteTableIdHasBeenSet(false),
     m_localGatewayRouteTableArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
+    m_ownerIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_coipPoolIdHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +101,24 @@ LocalGatewayRoute& LocalGatewayRoute::operator =(const XmlNode& xmlNode)
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
+    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
+    if(!subnetIdNode.IsNull())
+    {
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
+      m_subnetIdHasBeenSet = true;
+    }
+    XmlNode coipPoolIdNode = resultNode.FirstChild("coipPoolId");
+    if(!coipPoolIdNode.IsNull())
+    {
+      m_coipPoolId = Aws::Utils::Xml::DecodeEscapedXmlText(coipPoolIdNode.GetText());
+      m_coipPoolIdHasBeenSet = true;
+    }
+    XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
+    if(!networkInterfaceIdNode.IsNull())
+    {
+      m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
+      m_networkInterfaceIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -137,6 +161,21 @@ void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if(m_coipPoolIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CoipPoolId=" << StringUtils::URLEncode(m_coipPoolId.c_str()) << "&";
+  }
+
+  if(m_networkInterfaceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
+  }
+
 }
 
 void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -168,6 +207,18 @@ void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_coipPoolIdHasBeenSet)
+  {
+      oStream << location << ".CoipPoolId=" << StringUtils::URLEncode(m_coipPoolId.c_str()) << "&";
+  }
+  if(m_networkInterfaceIdHasBeenSet)
+  {
+      oStream << location << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 }
 

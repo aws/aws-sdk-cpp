@@ -48,6 +48,7 @@
 #include <aws/location/model/GetMapSpritesResult.h>
 #include <aws/location/model/GetMapStyleDescriptorResult.h>
 #include <aws/location/model/GetMapTileResult.h>
+#include <aws/location/model/GetPlaceResult.h>
 #include <aws/location/model/ListDevicePositionsResult.h>
 #include <aws/location/model/ListGeofenceCollectionsResult.h>
 #include <aws/location/model/ListGeofencesResult.h>
@@ -136,6 +137,7 @@ namespace Aws
       class GetMapSpritesRequest;
       class GetMapStyleDescriptorRequest;
       class GetMapTileRequest;
+      class GetPlaceRequest;
       class ListDevicePositionsRequest;
       class ListGeofenceCollectionsRequest;
       class ListGeofencesRequest;
@@ -191,6 +193,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetMapSpritesResult, LocationServiceError> GetMapSpritesOutcome;
       typedef Aws::Utils::Outcome<GetMapStyleDescriptorResult, LocationServiceError> GetMapStyleDescriptorOutcome;
       typedef Aws::Utils::Outcome<GetMapTileResult, LocationServiceError> GetMapTileOutcome;
+      typedef Aws::Utils::Outcome<GetPlaceResult, LocationServiceError> GetPlaceOutcome;
       typedef Aws::Utils::Outcome<ListDevicePositionsResult, LocationServiceError> ListDevicePositionsOutcome;
       typedef Aws::Utils::Outcome<ListGeofenceCollectionsResult, LocationServiceError> ListGeofenceCollectionsOutcome;
       typedef Aws::Utils::Outcome<ListGeofencesResult, LocationServiceError> ListGeofencesOutcome;
@@ -246,6 +249,7 @@ namespace Aws
       typedef std::future<GetMapSpritesOutcome> GetMapSpritesOutcomeCallable;
       typedef std::future<GetMapStyleDescriptorOutcome> GetMapStyleDescriptorOutcomeCallable;
       typedef std::future<GetMapTileOutcome> GetMapTileOutcomeCallable;
+      typedef std::future<GetPlaceOutcome> GetPlaceOutcomeCallable;
       typedef std::future<ListDevicePositionsOutcome> ListDevicePositionsOutcomeCallable;
       typedef std::future<ListGeofenceCollectionsOutcome> ListGeofenceCollectionsOutcomeCallable;
       typedef std::future<ListGeofencesOutcome> ListGeofencesOutcomeCallable;
@@ -304,6 +308,7 @@ namespace Aws
     typedef std::function<void(const LocationServiceClient*, const Model::GetMapSpritesRequest&, Model::GetMapSpritesOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMapSpritesResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::GetMapStyleDescriptorRequest&, Model::GetMapStyleDescriptorOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMapStyleDescriptorResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::GetMapTileRequest&, Model::GetMapTileOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMapTileResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::GetPlaceRequest&, const Model::GetPlaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlaceResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::ListDevicePositionsRequest&, const Model::ListDevicePositionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicePositionsResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::ListGeofenceCollectionsRequest&, const Model::ListGeofenceCollectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeofenceCollectionsResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::ListGeofencesRequest&, const Model::ListGeofencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeofencesResponseReceivedHandler;

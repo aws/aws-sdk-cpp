@@ -26,7 +26,8 @@ UserSettings::UserSettings() :
     m_kernelGatewayAppSettingsHasBeenSet(false),
     m_tensorBoardAppSettingsHasBeenSet(false),
     m_rStudioServerProAppSettingsHasBeenSet(false),
-    m_rSessionAppSettingsHasBeenSet(false)
+    m_rSessionAppSettingsHasBeenSet(false),
+    m_canvasAppSettingsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ UserSettings::UserSettings(JsonView jsonValue) :
     m_kernelGatewayAppSettingsHasBeenSet(false),
     m_tensorBoardAppSettingsHasBeenSet(false),
     m_rStudioServerProAppSettingsHasBeenSet(false),
-    m_rSessionAppSettingsHasBeenSet(false)
+    m_rSessionAppSettingsHasBeenSet(false),
+    m_canvasAppSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,13 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_rSessionAppSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CanvasAppSettings"))
+  {
+    m_canvasAppSettings = jsonValue.GetObject("CanvasAppSettings");
+
+    m_canvasAppSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +170,12 @@ JsonValue UserSettings::Jsonize() const
   if(m_rSessionAppSettingsHasBeenSet)
   {
    payload.WithObject("RSessionAppSettings", m_rSessionAppSettings.Jsonize());
+
+  }
+
+  if(m_canvasAppSettingsHasBeenSet)
+  {
+   payload.WithObject("CanvasAppSettings", m_canvasAppSettings.Jsonize());
 
   }
 

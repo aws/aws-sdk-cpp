@@ -37,50 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon WorkMail organization where the availability provider will be
-     * tested.</p>
+     * <p>The WorkMail organization where the availability provider will be tested.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The Amazon WorkMail organization where the availability provider will be
-     * tested.</p>
+     * <p>The WorkMail organization where the availability provider will be tested.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The Amazon WorkMail organization where the availability provider will be
-     * tested.</p>
+     * <p>The WorkMail organization where the availability provider will be tested.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The Amazon WorkMail organization where the availability provider will be
-     * tested.</p>
+     * <p>The WorkMail organization where the availability provider will be tested.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The Amazon WorkMail organization where the availability provider will be
-     * tested.</p>
+     * <p>The WorkMail organization where the availability provider will be tested.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The Amazon WorkMail organization where the availability provider will be
-     * tested.</p>
+     * <p>The WorkMail organization where the availability provider will be tested.</p>
      */
     inline TestAvailabilityConfigurationRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization where the availability provider will be
-     * tested.</p>
+     * <p>The WorkMail organization where the availability provider will be tested.</p>
      */
     inline TestAvailabilityConfigurationRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization where the availability provider will be
-     * tested.</p>
+     * <p>The WorkMail organization where the availability provider will be tested.</p>
      */
     inline TestAvailabilityConfigurationRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 

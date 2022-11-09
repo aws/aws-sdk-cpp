@@ -30,7 +30,7 @@ namespace CodeStarNotifications
    * subscribes a target to a notification rule. </p> </li> <li> <p>
    * <a>Unsubscribe</a>, which removes a target from a notification rule. </p> </li>
    * </ul> <p>Targets, by calling the following: </p> <ul> <li> <p>
-   * <a>DeleteTarget</a>, which removes a notification rule target (SNS topic) from a
+   * <a>DeleteTarget</a>, which removes a notification rule target from a
    * notification rule. </p> </li> <li> <p> <a>ListTargets</a>, which lists the
    * targets associated with a notification rule. </p> </li> </ul> <p>Events, by
    * calling the following: </p> <ul> <li> <p> <a>ListEventTypes</a>, which lists the
@@ -40,8 +40,9 @@ namespace CodeStarNotifications
    * </li> <li> <p> <a>TagResource</a>, which associates a tag you provide with a
    * notification rule in your account. </p> </li> <li> <p> <a>UntagResource</a>,
    * which removes a tag from a notification rule in your account. </p> </li> </ul>
-   * <p> For information about how to use AWS CodeStar Notifications, see link in the
-   * CodeStarNotifications User Guide. </p>
+   * <p> For information about how to use AWS CodeStar Notifications, see the <a
+   * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">Amazon
+   * Web Services Developer Tools Console User Guide</a>. </p>
    */
   class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient : public Aws::Client::AWSJsonClient
   {
@@ -73,8 +74,9 @@ namespace CodeStarNotifications
 
         /**
          * <p>Creates a notification rule for a resource. The rule specifies the events you
-         * want notifications about and the targets (such as SNS topics) where you want to
-         * receive them.</p><p><h3>See Also:</h3>   <a
+         * want notifications about and the targets (such as Chatbot topics or Chatbot
+         * clients configured for Slack) where you want to receive them.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/CreateNotificationRule">AWS
          * API Reference</a></p>
          */
@@ -161,8 +163,8 @@ namespace CodeStarNotifications
         virtual void ListEventTypesAsync(const Model::ListEventTypesRequest& request, const ListEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the notification rules for an AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the notification rules for an Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListNotificationRules">AWS
          * API Reference</a></p>
          */
@@ -197,7 +199,7 @@ namespace CodeStarNotifications
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the notification rule targets for an AWS
+         * <p>Returns a list of the notification rule targets for an Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTargets">AWS
          * API Reference</a></p>
@@ -215,9 +217,9 @@ namespace CodeStarNotifications
         virtual void ListTargetsAsync(const Model::ListTargetsRequest& request, const ListTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an association between a notification rule and an SNS topic so that
-         * the associated target can receive notifications when the events described in the
-         * rule are triggered.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an association between a notification rule and an Chatbot topic or
+         * Chatbot client so that the associated target can receive notifications when the
+         * events described in the rule are triggered.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Subscribe">AWS
          * API Reference</a></p>
          */
@@ -252,7 +254,7 @@ namespace CodeStarNotifications
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes an association between a notification rule and an Amazon SNS topic so
+         * <p>Removes an association between a notification rule and an Chatbot topic so
          * that subscribers to that topic stop receiving notifications when the events
          * described in the rule are triggered.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Unsubscribe">AWS

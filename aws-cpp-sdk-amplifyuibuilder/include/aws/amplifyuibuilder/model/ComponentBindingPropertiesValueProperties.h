@@ -289,6 +289,47 @@ namespace Model
 
 
     /**
+     * <p>The name of a component slot.</p>
+     */
+    inline const Aws::String& GetSlotName() const{ return m_slotName; }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline bool SlotNameHasBeenSet() const { return m_slotNameHasBeenSet; }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline void SetSlotName(const Aws::String& value) { m_slotNameHasBeenSet = true; m_slotName = value; }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline void SetSlotName(Aws::String&& value) { m_slotNameHasBeenSet = true; m_slotName = std::move(value); }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline void SetSlotName(const char* value) { m_slotNameHasBeenSet = true; m_slotName.assign(value); }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline ComponentBindingPropertiesValueProperties& WithSlotName(const Aws::String& value) { SetSlotName(value); return *this;}
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline ComponentBindingPropertiesValueProperties& WithSlotName(Aws::String&& value) { SetSlotName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline ComponentBindingPropertiesValueProperties& WithSlotName(const char* value) { SetSlotName(value); return *this;}
+
+
+    /**
      * <p>An authenticated user attribute.</p>
      */
     inline const Aws::String& GetUserAttribute() const{ return m_userAttribute; }
@@ -347,6 +388,9 @@ namespace Model
 
     Aws::Vector<Predicate> m_predicates;
     bool m_predicatesHasBeenSet = false;
+
+    Aws::String m_slotName;
+    bool m_slotNameHasBeenSet = false;
 
     Aws::String m_userAttribute;
     bool m_userAttributeHasBeenSet = false;

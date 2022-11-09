@@ -22,6 +22,7 @@
 #include <aws/fsx/model/CreateBackupResult.h>
 #include <aws/fsx/model/CreateDataRepositoryAssociationResult.h>
 #include <aws/fsx/model/CreateDataRepositoryTaskResult.h>
+#include <aws/fsx/model/CreateFileCacheResult.h>
 #include <aws/fsx/model/CreateFileSystemResult.h>
 #include <aws/fsx/model/CreateFileSystemFromBackupResult.h>
 #include <aws/fsx/model/CreateSnapshotResult.h>
@@ -30,6 +31,7 @@
 #include <aws/fsx/model/CreateVolumeFromBackupResult.h>
 #include <aws/fsx/model/DeleteBackupResult.h>
 #include <aws/fsx/model/DeleteDataRepositoryAssociationResult.h>
+#include <aws/fsx/model/DeleteFileCacheResult.h>
 #include <aws/fsx/model/DeleteFileSystemResult.h>
 #include <aws/fsx/model/DeleteSnapshotResult.h>
 #include <aws/fsx/model/DeleteStorageVirtualMachineResult.h>
@@ -37,6 +39,7 @@
 #include <aws/fsx/model/DescribeBackupsResult.h>
 #include <aws/fsx/model/DescribeDataRepositoryAssociationsResult.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksResult.h>
+#include <aws/fsx/model/DescribeFileCachesResult.h>
 #include <aws/fsx/model/DescribeFileSystemAliasesResult.h>
 #include <aws/fsx/model/DescribeFileSystemsResult.h>
 #include <aws/fsx/model/DescribeSnapshotsResult.h>
@@ -49,6 +52,7 @@
 #include <aws/fsx/model/TagResourceResult.h>
 #include <aws/fsx/model/UntagResourceResult.h>
 #include <aws/fsx/model/UpdateDataRepositoryAssociationResult.h>
+#include <aws/fsx/model/UpdateFileCacheResult.h>
 #include <aws/fsx/model/UpdateFileSystemResult.h>
 #include <aws/fsx/model/UpdateSnapshotResult.h>
 #include <aws/fsx/model/UpdateStorageVirtualMachineResult.h>
@@ -95,6 +99,7 @@ namespace Aws
       class CreateBackupRequest;
       class CreateDataRepositoryAssociationRequest;
       class CreateDataRepositoryTaskRequest;
+      class CreateFileCacheRequest;
       class CreateFileSystemRequest;
       class CreateFileSystemFromBackupRequest;
       class CreateSnapshotRequest;
@@ -103,6 +108,7 @@ namespace Aws
       class CreateVolumeFromBackupRequest;
       class DeleteBackupRequest;
       class DeleteDataRepositoryAssociationRequest;
+      class DeleteFileCacheRequest;
       class DeleteFileSystemRequest;
       class DeleteSnapshotRequest;
       class DeleteStorageVirtualMachineRequest;
@@ -110,6 +116,7 @@ namespace Aws
       class DescribeBackupsRequest;
       class DescribeDataRepositoryAssociationsRequest;
       class DescribeDataRepositoryTasksRequest;
+      class DescribeFileCachesRequest;
       class DescribeFileSystemAliasesRequest;
       class DescribeFileSystemsRequest;
       class DescribeSnapshotsRequest;
@@ -122,6 +129,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateDataRepositoryAssociationRequest;
+      class UpdateFileCacheRequest;
       class UpdateFileSystemRequest;
       class UpdateSnapshotRequest;
       class UpdateStorageVirtualMachineRequest;
@@ -135,6 +143,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateBackupResult, FSxError> CreateBackupOutcome;
       typedef Aws::Utils::Outcome<CreateDataRepositoryAssociationResult, FSxError> CreateDataRepositoryAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateDataRepositoryTaskResult, FSxError> CreateDataRepositoryTaskOutcome;
+      typedef Aws::Utils::Outcome<CreateFileCacheResult, FSxError> CreateFileCacheOutcome;
       typedef Aws::Utils::Outcome<CreateFileSystemResult, FSxError> CreateFileSystemOutcome;
       typedef Aws::Utils::Outcome<CreateFileSystemFromBackupResult, FSxError> CreateFileSystemFromBackupOutcome;
       typedef Aws::Utils::Outcome<CreateSnapshotResult, FSxError> CreateSnapshotOutcome;
@@ -143,6 +152,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateVolumeFromBackupResult, FSxError> CreateVolumeFromBackupOutcome;
       typedef Aws::Utils::Outcome<DeleteBackupResult, FSxError> DeleteBackupOutcome;
       typedef Aws::Utils::Outcome<DeleteDataRepositoryAssociationResult, FSxError> DeleteDataRepositoryAssociationOutcome;
+      typedef Aws::Utils::Outcome<DeleteFileCacheResult, FSxError> DeleteFileCacheOutcome;
       typedef Aws::Utils::Outcome<DeleteFileSystemResult, FSxError> DeleteFileSystemOutcome;
       typedef Aws::Utils::Outcome<DeleteSnapshotResult, FSxError> DeleteSnapshotOutcome;
       typedef Aws::Utils::Outcome<DeleteStorageVirtualMachineResult, FSxError> DeleteStorageVirtualMachineOutcome;
@@ -150,6 +160,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeBackupsResult, FSxError> DescribeBackupsOutcome;
       typedef Aws::Utils::Outcome<DescribeDataRepositoryAssociationsResult, FSxError> DescribeDataRepositoryAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeDataRepositoryTasksResult, FSxError> DescribeDataRepositoryTasksOutcome;
+      typedef Aws::Utils::Outcome<DescribeFileCachesResult, FSxError> DescribeFileCachesOutcome;
       typedef Aws::Utils::Outcome<DescribeFileSystemAliasesResult, FSxError> DescribeFileSystemAliasesOutcome;
       typedef Aws::Utils::Outcome<DescribeFileSystemsResult, FSxError> DescribeFileSystemsOutcome;
       typedef Aws::Utils::Outcome<DescribeSnapshotsResult, FSxError> DescribeSnapshotsOutcome;
@@ -162,6 +173,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, FSxError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, FSxError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateDataRepositoryAssociationResult, FSxError> UpdateDataRepositoryAssociationOutcome;
+      typedef Aws::Utils::Outcome<UpdateFileCacheResult, FSxError> UpdateFileCacheOutcome;
       typedef Aws::Utils::Outcome<UpdateFileSystemResult, FSxError> UpdateFileSystemOutcome;
       typedef Aws::Utils::Outcome<UpdateSnapshotResult, FSxError> UpdateSnapshotOutcome;
       typedef Aws::Utils::Outcome<UpdateStorageVirtualMachineResult, FSxError> UpdateStorageVirtualMachineOutcome;
@@ -175,6 +187,7 @@ namespace Aws
       typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
       typedef std::future<CreateDataRepositoryAssociationOutcome> CreateDataRepositoryAssociationOutcomeCallable;
       typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
+      typedef std::future<CreateFileCacheOutcome> CreateFileCacheOutcomeCallable;
       typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
       typedef std::future<CreateFileSystemFromBackupOutcome> CreateFileSystemFromBackupOutcomeCallable;
       typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
@@ -183,6 +196,7 @@ namespace Aws
       typedef std::future<CreateVolumeFromBackupOutcome> CreateVolumeFromBackupOutcomeCallable;
       typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
       typedef std::future<DeleteDataRepositoryAssociationOutcome> DeleteDataRepositoryAssociationOutcomeCallable;
+      typedef std::future<DeleteFileCacheOutcome> DeleteFileCacheOutcomeCallable;
       typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
       typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
       typedef std::future<DeleteStorageVirtualMachineOutcome> DeleteStorageVirtualMachineOutcomeCallable;
@@ -190,6 +204,7 @@ namespace Aws
       typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
       typedef std::future<DescribeDataRepositoryAssociationsOutcome> DescribeDataRepositoryAssociationsOutcomeCallable;
       typedef std::future<DescribeDataRepositoryTasksOutcome> DescribeDataRepositoryTasksOutcomeCallable;
+      typedef std::future<DescribeFileCachesOutcome> DescribeFileCachesOutcomeCallable;
       typedef std::future<DescribeFileSystemAliasesOutcome> DescribeFileSystemAliasesOutcomeCallable;
       typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
       typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
@@ -202,6 +217,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateDataRepositoryAssociationOutcome> UpdateDataRepositoryAssociationOutcomeCallable;
+      typedef std::future<UpdateFileCacheOutcome> UpdateFileCacheOutcomeCallable;
       typedef std::future<UpdateFileSystemOutcome> UpdateFileSystemOutcomeCallable;
       typedef std::future<UpdateSnapshotOutcome> UpdateSnapshotOutcomeCallable;
       typedef std::future<UpdateStorageVirtualMachineOutcome> UpdateStorageVirtualMachineOutcomeCallable;
@@ -218,6 +234,7 @@ namespace Aws
     typedef std::function<void(const FSxClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateDataRepositoryAssociationRequest&, const Model::CreateDataRepositoryAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataRepositoryAssociationResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateDataRepositoryTaskRequest&, const Model::CreateDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataRepositoryTaskResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::CreateFileCacheRequest&, const Model::CreateFileCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileCacheResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateFileSystemRequest&, const Model::CreateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateFileSystemFromBackupRequest&, const Model::CreateFileSystemFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemFromBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotResponseReceivedHandler;
@@ -226,6 +243,7 @@ namespace Aws
     typedef std::function<void(const FSxClient*, const Model::CreateVolumeFromBackupRequest&, const Model::CreateVolumeFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVolumeFromBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DeleteBackupRequest&, const Model::DeleteBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DeleteDataRepositoryAssociationRequest&, const Model::DeleteDataRepositoryAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataRepositoryAssociationResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::DeleteFileCacheRequest&, const Model::DeleteFileCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileCacheResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DeleteFileSystemRequest&, const Model::DeleteFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DeleteStorageVirtualMachineRequest&, const Model::DeleteStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStorageVirtualMachineResponseReceivedHandler;
@@ -233,6 +251,7 @@ namespace Aws
     typedef std::function<void(const FSxClient*, const Model::DescribeBackupsRequest&, const Model::DescribeBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupsResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeDataRepositoryAssociationsRequest&, const Model::DescribeDataRepositoryAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataRepositoryAssociationsResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeDataRepositoryTasksRequest&, const Model::DescribeDataRepositoryTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataRepositoryTasksResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::DescribeFileCachesRequest&, const Model::DescribeFileCachesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileCachesResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeFileSystemAliasesRequest&, const Model::DescribeFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemAliasesResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
@@ -245,6 +264,7 @@ namespace Aws
     typedef std::function<void(const FSxClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UpdateDataRepositoryAssociationRequest&, const Model::UpdateDataRepositoryAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataRepositoryAssociationResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::UpdateFileCacheRequest&, const Model::UpdateFileCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFileCacheResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UpdateFileSystemRequest&, const Model::UpdateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFileSystemResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UpdateSnapshotRequest&, const Model::UpdateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSnapshotResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UpdateStorageVirtualMachineRequest&, const Model::UpdateStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStorageVirtualMachineResponseReceivedHandler;

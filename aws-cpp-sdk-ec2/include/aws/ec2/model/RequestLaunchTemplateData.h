@@ -339,7 +339,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
@@ -348,7 +348,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -357,7 +357,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -366,7 +366,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
@@ -375,7 +375,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
@@ -384,7 +384,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
@@ -1539,7 +1539,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline const InstanceRequirementsRequest& GetInstanceRequirements() const{ return m_instanceRequirements; }
 
@@ -1547,7 +1547,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
 
@@ -1555,7 +1555,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceRequirements(const InstanceRequirementsRequest& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
 
@@ -1563,7 +1563,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceRequirements(InstanceRequirementsRequest&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
 
@@ -1571,7 +1571,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceRequirements(const InstanceRequirementsRequest& value) { SetInstanceRequirements(value); return *this;}
 
@@ -1579,7 +1579,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 
