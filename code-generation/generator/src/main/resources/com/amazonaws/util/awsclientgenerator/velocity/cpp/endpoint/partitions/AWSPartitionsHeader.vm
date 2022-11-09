@@ -12,37 +12,10 @@ namespace Endpoint
     {
     public:
 #set($PartitionsBlobStrLen = $serviceModel.partitionsBlob.length() - 1)
-        static constexpr size_t PartitionsBlobStrLen = $PartitionsBlobStrLen;
-        static constexpr size_t PartitionsBlobSize = $serviceModel.partitionsBlob.length();
-        using PartitionsBlobT = Aws::Array<const char, PartitionsBlobSize>;
-        static constexpr PartitionsBlobT PartitionsBlob = {
-#set($lineLenth = 0)
-#foreach($tmpChar in $serviceModel.partitionsBlob.toCharArray())
-#if($tmpChar.equals($nl) || $tmpChar == $nl)
-#set($tmpChar = "\n")
-#end
-#if($tmpChar == "\")
-#set($tmpChar = "\\")
-#end
-#if($tmpChar == "'")
-#set($tmpChar = "\'")
-#end
-#if($tmpChar == $nullChar)
-#set($tmpChar = "\0")
-#end
-#if(25 == $lineLenth)
-#set($lineLenth = 0)
+        static const size_t PartitionsBlobStrLen;
+        static const size_t PartitionsBlobSize;
 
-#end
-#set($lineLenth = $lineLenth + 1)
-#if( $foreach.hasNext )
-'${tmpChar}',##comment to avoid newline
-#else
-'${tmpChar}'##comment to avoid newline
-#end
-#end
-
-        };
+        static const char* GetPartitionsBlob();
     };
 } // namespace Endpoint
 } // namespace Aws

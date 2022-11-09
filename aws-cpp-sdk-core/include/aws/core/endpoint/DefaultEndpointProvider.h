@@ -51,7 +51,7 @@ namespace Aws
         public:
             DefaultEndpointProvider(const Aws::Vector<char>& endpointRulesBLOB)
                 : m_crtRuleEngine(Aws::Crt::ByteCursorFromArray((const uint8_t*) endpointRulesBLOB.data(), endpointRulesBLOB.size()),
-                                  Aws::Crt::ByteCursorFromArray((const uint8_t*) AWSPartitions::PartitionsBlob.data(), AWSPartitions::PartitionsBlobSize))
+                                  Aws::Crt::ByteCursorFromArray((const uint8_t*) AWSPartitions::GetPartitionsBlob(), AWSPartitions::PartitionsBlobSize))
             {
                 if(!m_crtRuleEngine) {
                     AWS_LOGSTREAM_FATAL(DEFAULT_ENDPOINT_PROVIDER_TAG, "Invalid CRT Rule Engine state");
