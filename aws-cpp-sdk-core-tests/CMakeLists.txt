@@ -115,7 +115,7 @@ endif()
 
 if (AUTORUN_UNIT_TESTS)
     ADD_CUSTOM_COMMAND( TARGET ${PROJECT_NAME} POST_BUILD COMMAND $<TARGET_FILE:${PROJECT_NAME}>
-        ARGS "--gtest_shuffle" "--gtest_repeat=3")
+        ARGS "--gtest_shuffle" "--gtest_repeat=3" "--gtest_brief=1")
 endif()
 
 if(NOT CMAKE_CROSSCOMPILING)

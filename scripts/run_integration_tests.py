@@ -61,8 +61,9 @@ def main():
             random.choice(string.ascii_lowercase + string.digits) for _ in range(8))
         print("testExe = " + test_exe)
         print("prefix = " + prefix)
+        gtest_brief = "--gtest_brief=1"
         add_executable_bit(test_exe)
-        subprocess.check_call([test_exe, prefix])
+        subprocess.check_call([test_exe, prefix, gtest_brief])
 
 
 # Run from powershell; make sure msbuild is in PATH environment variable
