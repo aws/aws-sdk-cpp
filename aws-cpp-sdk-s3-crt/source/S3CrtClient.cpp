@@ -518,7 +518,7 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   AWS_ZERO_STRUCT(options);
 
   userData->getResponseHandler = handler;
-  userData->asyncCallerContext = context;
+  userData->asyncCallerContext = handlerContext;
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET);
   options.shutdown_callback = GetObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
@@ -598,7 +598,7 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   AWS_ZERO_STRUCT(options);
 
   userData->putResponseHandler = handler;
-  userData->asyncCallerContext = context;
+  userData->asyncCallerContext = handlerContext;
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
   options.shutdown_callback = PutObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
