@@ -257,7 +257,8 @@ namespace Model
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
+     * retries safe with idempotent APIs</a>.</p> <p>Pattern:
+     * <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -266,7 +267,8 @@ namespace Model
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
+     * retries safe with idempotent APIs</a>.</p> <p>Pattern:
+     * <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -275,7 +277,8 @@ namespace Model
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
+     * retries safe with idempotent APIs</a>.</p> <p>Pattern:
+     * <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -284,7 +287,8 @@ namespace Model
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
+     * retries safe with idempotent APIs</a>.</p> <p>Pattern:
+     * <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -293,7 +297,8 @@ namespace Model
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
+     * retries safe with idempotent APIs</a>.</p> <p>Pattern:
+     * <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -302,7 +307,8 @@ namespace Model
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
+     * retries safe with idempotent APIs</a>.</p> <p>Pattern:
+     * <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
      */
     inline ClaimPhoneNumberRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -311,7 +317,8 @@ namespace Model
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
+     * retries safe with idempotent APIs</a>.</p> <p>Pattern:
+     * <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
      */
     inline ClaimPhoneNumberRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -320,7 +327,8 @@ namespace Model
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
+     * retries safe with idempotent APIs</a>.</p> <p>Pattern:
+     * <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
      */
     inline ClaimPhoneNumberRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

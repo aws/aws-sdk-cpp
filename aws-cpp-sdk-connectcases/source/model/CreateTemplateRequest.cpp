@@ -17,7 +17,9 @@ CreateTemplateRequest::CreateTemplateRequest() :
     m_domainIdHasBeenSet(false),
     m_layoutConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_requiredFieldsHasBeenSet(false)
+    m_requiredFieldsHasBeenSet(false),
+    m_status(TemplateStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,11 @@ Aws::String CreateTemplateRequest::SerializePayload() const
    }
    payload.WithArray("requiredFields", std::move(requiredFieldsJsonList));
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", TemplateStatusMapper::GetNameForTemplateStatus(m_status));
   }
 
   return payload.View().WriteReadable();

@@ -19,6 +19,7 @@ namespace Model
 {
 
 SatelliteListItem::SatelliteListItem() : 
+    m_currentEphemerisHasBeenSet(false),
     m_groundStationsHasBeenSet(false),
     m_noradSatelliteID(0),
     m_noradSatelliteIDHasBeenSet(false),
@@ -28,6 +29,7 @@ SatelliteListItem::SatelliteListItem() :
 }
 
 SatelliteListItem::SatelliteListItem(JsonView jsonValue) : 
+    m_currentEphemerisHasBeenSet(false),
     m_groundStationsHasBeenSet(false),
     m_noradSatelliteID(0),
     m_noradSatelliteIDHasBeenSet(false),
@@ -39,6 +41,13 @@ SatelliteListItem::SatelliteListItem(JsonView jsonValue) :
 
 SatelliteListItem& SatelliteListItem::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("currentEphemeris"))
+  {
+    m_currentEphemeris = jsonValue.GetObject("currentEphemeris");
+
+    m_currentEphemerisHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("groundStations"))
   {
     Aws::Utils::Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
@@ -76,6 +85,12 @@ SatelliteListItem& SatelliteListItem::operator =(JsonView jsonValue)
 JsonValue SatelliteListItem::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_currentEphemerisHasBeenSet)
+  {
+   payload.WithObject("currentEphemeris", m_currentEphemeris.Jsonize());
+
+  }
 
   if(m_groundStationsHasBeenSet)
   {

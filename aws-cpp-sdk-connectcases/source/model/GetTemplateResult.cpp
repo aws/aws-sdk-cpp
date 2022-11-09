@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTemplateResult::GetTemplateResult()
+GetTemplateResult::GetTemplateResult() : 
+    m_status(TemplateStatus::NOT_SET)
 {
 }
 
-GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(TemplateStatus::NOT_SET)
 {
   *this = result;
 }
@@ -53,6 +55,12 @@ GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_requiredFields.push_back(requiredFieldsJsonList[requiredFieldsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = TemplateStatusMapper::GetTemplateStatusForName(jsonValue.GetString("status"));
+
   }
 
   if(jsonValue.ValueExists("tags"))

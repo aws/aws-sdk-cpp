@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectcases/model/LayoutConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connectcases/model/RequiredField.h>
 #include <utility>
@@ -178,6 +179,32 @@ namespace Model
 
 
     /**
+     * <p>The status of the template.</p>
+     */
+    inline const TemplateStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline void SetStatus(const TemplateStatus& value) { m_status = value; }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline void SetStatus(TemplateStatus&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline GetTemplateResult& WithStatus(const TemplateStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the template.</p>
+     */
+    inline GetTemplateResult& WithStatus(TemplateStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
      * to organize, track, or control access for this resource.</p>
      */
@@ -330,6 +357,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::Vector<RequiredField> m_requiredFields;
+
+    TemplateStatus m_status;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

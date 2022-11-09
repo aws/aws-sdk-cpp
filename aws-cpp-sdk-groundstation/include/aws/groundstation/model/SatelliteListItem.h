@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
+#include <aws/groundstation/model/EphemerisMetaData.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -36,6 +37,43 @@ namespace Model
     SatelliteListItem(Aws::Utils::Json::JsonView jsonValue);
     SatelliteListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The current ephemeris being used to compute the trajectory of the
+     * satellite.</p>
+     */
+    inline const EphemerisMetaData& GetCurrentEphemeris() const{ return m_currentEphemeris; }
+
+    /**
+     * <p>The current ephemeris being used to compute the trajectory of the
+     * satellite.</p>
+     */
+    inline bool CurrentEphemerisHasBeenSet() const { return m_currentEphemerisHasBeenSet; }
+
+    /**
+     * <p>The current ephemeris being used to compute the trajectory of the
+     * satellite.</p>
+     */
+    inline void SetCurrentEphemeris(const EphemerisMetaData& value) { m_currentEphemerisHasBeenSet = true; m_currentEphemeris = value; }
+
+    /**
+     * <p>The current ephemeris being used to compute the trajectory of the
+     * satellite.</p>
+     */
+    inline void SetCurrentEphemeris(EphemerisMetaData&& value) { m_currentEphemerisHasBeenSet = true; m_currentEphemeris = std::move(value); }
+
+    /**
+     * <p>The current ephemeris being used to compute the trajectory of the
+     * satellite.</p>
+     */
+    inline SatelliteListItem& WithCurrentEphemeris(const EphemerisMetaData& value) { SetCurrentEphemeris(value); return *this;}
+
+    /**
+     * <p>The current ephemeris being used to compute the trajectory of the
+     * satellite.</p>
+     */
+    inline SatelliteListItem& WithCurrentEphemeris(EphemerisMetaData&& value) { SetCurrentEphemeris(std::move(value)); return *this;}
 
 
     /**
@@ -187,6 +225,9 @@ namespace Model
     inline SatelliteListItem& WithSatelliteId(const char* value) { SetSatelliteId(value); return *this;}
 
   private:
+
+    EphemerisMetaData m_currentEphemeris;
+    bool m_currentEphemerisHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groundStations;
     bool m_groundStationsHasBeenSet = false;

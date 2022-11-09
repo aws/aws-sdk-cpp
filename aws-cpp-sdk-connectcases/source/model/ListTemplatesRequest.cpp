@@ -19,7 +19,8 @@ ListTemplatesRequest::ListTemplatesRequest() :
     m_domainIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,16 @@ void ListTemplatesRequest::AddQueryStringParameters(URI& uri) const
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
       ss.str("");
+    }
+
+    if(m_statusHasBeenSet)
+    {
+      for(const auto& item : m_status)
+      {
+        ss << TemplateStatusMapper::GetNameForTemplateStatus(item);
+        uri.AddQueryStringParameter("status", ss.str());
+        ss.str("");
+      }
     }
 
 }

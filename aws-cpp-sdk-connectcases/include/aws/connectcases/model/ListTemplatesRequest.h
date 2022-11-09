@@ -7,6 +7,8 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/ConnectCasesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connectcases/model/TemplateStatus.h>
 #include <utility>
 
 namespace Aws
@@ -148,6 +150,47 @@ namespace Model
      */
     inline ListTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A list of status values to filter on.</p>
+     */
+    inline const Aws::Vector<TemplateStatus>& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>A list of status values to filter on.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A list of status values to filter on.</p>
+     */
+    inline void SetStatus(const Aws::Vector<TemplateStatus>& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>A list of status values to filter on.</p>
+     */
+    inline void SetStatus(Aws::Vector<TemplateStatus>&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>A list of status values to filter on.</p>
+     */
+    inline ListTemplatesRequest& WithStatus(const Aws::Vector<TemplateStatus>& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>A list of status values to filter on.</p>
+     */
+    inline ListTemplatesRequest& WithStatus(Aws::Vector<TemplateStatus>&& value) { SetStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of status values to filter on.</p>
+     */
+    inline ListTemplatesRequest& AddStatus(const TemplateStatus& value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
+
+    /**
+     * <p>A list of status values to filter on.</p>
+     */
+    inline ListTemplatesRequest& AddStatus(TemplateStatus&& value) { m_statusHasBeenSet = true; m_status.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domainId;
@@ -158,6 +201,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<TemplateStatus> m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

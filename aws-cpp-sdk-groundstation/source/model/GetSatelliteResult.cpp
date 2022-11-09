@@ -30,6 +30,12 @@ GetSatelliteResult::GetSatelliteResult(const Aws::AmazonWebServiceResult<JsonVal
 GetSatelliteResult& GetSatelliteResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("currentEphemeris"))
+  {
+    m_currentEphemeris = jsonValue.GetObject("currentEphemeris");
+
+  }
+
   if(jsonValue.ValueExists("groundStations"))
   {
     Aws::Utils::Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");

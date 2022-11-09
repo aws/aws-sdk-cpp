@@ -32,6 +32,8 @@ namespace Aws
         static const int ja_JP_HASH = HashingUtils::HashString("ja-JP");
         static const int ko_KR_HASH = HashingUtils::HashString("ko-KR");
         static const int zh_CN_HASH = HashingUtils::HashString("zh-CN");
+        static const int hi_IN_HASH = HashingUtils::HashString("hi-IN");
+        static const int th_TH_HASH = HashingUtils::HashString("th-TH");
 
 
         LanguageCode GetLanguageCodeForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return LanguageCode::zh_CN;
           }
+          else if (hashCode == hi_IN_HASH)
+          {
+            return LanguageCode::hi_IN;
+          }
+          else if (hashCode == th_TH_HASH)
+          {
+            return LanguageCode::th_TH;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +133,10 @@ namespace Aws
             return "ko-KR";
           case LanguageCode::zh_CN:
             return "zh-CN";
+          case LanguageCode::hi_IN:
+            return "hi-IN";
+          case LanguageCode::th_TH:
+            return "th-TH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

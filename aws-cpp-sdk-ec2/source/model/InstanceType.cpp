@@ -589,6 +589,10 @@ namespace Aws
         static const int r6a_metal_HASH = HashingUtils::HashString("r6a.metal");
         static const int p4de_24xlarge_HASH = HashingUtils::HashString("p4de.24xlarge");
         static const int u_3tb1_56xlarge_HASH = HashingUtils::HashString("u-3tb1.56xlarge");
+        static const int u_18tb1_112xlarge_HASH = HashingUtils::HashString("u-18tb1.112xlarge");
+        static const int u_24tb1_112xlarge_HASH = HashingUtils::HashString("u-24tb1.112xlarge");
+        static const int trn1_2xlarge_HASH = HashingUtils::HashString("trn1.2xlarge");
+        static const int trn1_32xlarge_HASH = HashingUtils::HashString("trn1.32xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3458,6 +3462,26 @@ namespace Aws
             enumValue = InstanceType::u_3tb1_56xlarge;
             return true;
           }
+          else if (hashCode == u_18tb1_112xlarge_HASH)
+          {
+            enumValue = InstanceType::u_18tb1_112xlarge;
+            return true;
+          }
+          else if (hashCode == u_24tb1_112xlarge_HASH)
+          {
+            enumValue = InstanceType::u_24tb1_112xlarge;
+            return true;
+          }
+          else if (hashCode == trn1_2xlarge_HASH)
+          {
+            enumValue = InstanceType::trn1_2xlarge;
+            return true;
+          }
+          else if (hashCode == trn1_32xlarge_HASH)
+          {
+            enumValue = InstanceType::trn1_32xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -5203,6 +5227,18 @@ namespace Aws
             return true;
           case InstanceType::u_3tb1_56xlarge:
             value = "u-3tb1.56xlarge";
+            return true;
+          case InstanceType::u_18tb1_112xlarge:
+            value = "u-18tb1.112xlarge";
+            return true;
+          case InstanceType::u_24tb1_112xlarge:
+            value = "u-24tb1.112xlarge";
+            return true;
+          case InstanceType::trn1_2xlarge:
+            value = "trn1.2xlarge";
+            return true;
+          case InstanceType::trn1_32xlarge:
+            value = "trn1.32xlarge";
             return true;
           default:
             return false;

@@ -20,6 +20,8 @@ namespace Model
 
 TemplateSummary::TemplateSummary() : 
     m_nameHasBeenSet(false),
+    m_status(TemplateStatus::NOT_SET),
+    m_statusHasBeenSet(false),
     m_templateArnHasBeenSet(false),
     m_templateIdHasBeenSet(false)
 {
@@ -27,6 +29,8 @@ TemplateSummary::TemplateSummary() :
 
 TemplateSummary::TemplateSummary(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_status(TemplateStatus::NOT_SET),
+    m_statusHasBeenSet(false),
     m_templateArnHasBeenSet(false),
     m_templateIdHasBeenSet(false)
 {
@@ -40,6 +44,13 @@ TemplateSummary& TemplateSummary::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = TemplateStatusMapper::GetTemplateStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("templateArn"))
@@ -67,6 +78,11 @@ JsonValue TemplateSummary::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", TemplateStatusMapper::GetNameForTemplateStatus(m_status));
   }
 
   if(m_templateArnHasBeenSet)

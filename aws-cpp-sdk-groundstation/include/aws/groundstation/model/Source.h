@@ -40,38 +40,44 @@ namespace Model
 
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline const ConfigDetails& GetConfigDetails() const{ return m_configDetails; }
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline bool ConfigDetailsHasBeenSet() const { return m_configDetailsHasBeenSet; }
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline void SetConfigDetails(const ConfigDetails& value) { m_configDetailsHasBeenSet = true; m_configDetails = value; }
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline void SetConfigDetails(ConfigDetails&& value) { m_configDetailsHasBeenSet = true; m_configDetails = std::move(value); }
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline Source& WithConfigDetails(const ConfigDetails& value) { SetConfigDetails(value); return *this;}
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline Source& WithConfigDetails(ConfigDetails&& value) { SetConfigDetails(std::move(value)); return *this;}
 
