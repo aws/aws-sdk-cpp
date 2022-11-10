@@ -13,7 +13,7 @@ const size_t AWSPartitions::PartitionsBlobStrLen = 1629;
 const size_t AWSPartitions::PartitionsBlobSize = 1630;
 
 using PartitionsBlobT = Aws::Array<const char, AWSPartitions::PartitionsBlobSize>;
-static constexpr PartitionsBlobT PartitionsBlob = {
+static constexpr PartitionsBlobT PartitionsBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','1','"',',','"','p','a','r','t','i','t','i',
 'o','n','s','"',':','[','{','"','i','d','"',':','"','a','w','s','"',',','"','r','e','g','i','o','n',
 'R','e','g','e','x','"',':','"','^','(','u','s','|','e','u','|','a','p','|','s','a','|','c','a','|',
@@ -80,7 +80,7 @@ static constexpr PartitionsBlobT PartitionsBlob = {
 ':','"','s','c','2','s','.','s','g','o','v','.','g','o','v','"','}',',','"','r','e','g','i','o','n',
 's','"',':','{','"','a','w','s','-','i','s','o','-','b','-','g','l','o','b','a','l','"',':','{','}',
 '}','}',']','}','\0'
-};
+}};
 
 const char* AWSPartitions::GetPartitionsBlob()
 {
