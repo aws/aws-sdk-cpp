@@ -42,6 +42,7 @@
 #include <aws/ecs/model/DescribeTasksRequest.h>
 #include <aws/ecs/model/DiscoverPollEndpointRequest.h>
 #include <aws/ecs/model/ExecuteCommandRequest.h>
+#include <aws/ecs/model/GetTaskProtectionRequest.h>
 #include <aws/ecs/model/ListAccountSettingsRequest.h>
 #include <aws/ecs/model/ListAttributesRequest.h>
 #include <aws/ecs/model/ListClustersRequest.h>
@@ -72,6 +73,7 @@
 #include <aws/ecs/model/UpdateContainerInstancesStateRequest.h>
 #include <aws/ecs/model/UpdateServiceRequest.h>
 #include <aws/ecs/model/UpdateServicePrimaryTaskSetRequest.h>
+#include <aws/ecs/model/UpdateTaskProtectionRequest.h>
 #include <aws/ecs/model/UpdateTaskSetRequest.h>
 
 using namespace Aws;
@@ -702,6 +704,30 @@ void ECSClient::ExecuteCommandAsync(const ExecuteCommandRequest& request, const 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ExecuteCommand(request), context);
+    } );
+}
+
+GetTaskProtectionOutcome ECSClient::GetTaskProtection(const GetTaskProtectionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTaskProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTaskProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetTaskProtectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTaskProtectionOutcomeCallable ECSClient::GetTaskProtectionCallable(const GetTaskProtectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTaskProtectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTaskProtection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::GetTaskProtectionAsync(const GetTaskProtectionRequest& request, const GetTaskProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTaskProtection(request), context);
     } );
 }
 
@@ -1422,6 +1448,30 @@ void ECSClient::UpdateServicePrimaryTaskSetAsync(const UpdateServicePrimaryTaskS
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateServicePrimaryTaskSet(request), context);
+    } );
+}
+
+UpdateTaskProtectionOutcome ECSClient::UpdateTaskProtection(const UpdateTaskProtectionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTaskProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTaskProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateTaskProtectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateTaskProtectionOutcomeCallable ECSClient::UpdateTaskProtectionCallable(const UpdateTaskProtectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTaskProtectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTaskProtection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::UpdateTaskProtectionAsync(const UpdateTaskProtectionRequest& request, const UpdateTaskProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTaskProtection(request), context);
     } );
 }
 

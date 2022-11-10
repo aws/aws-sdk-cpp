@@ -43,49 +43,65 @@ namespace Model
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
@@ -896,9 +912,9 @@ namespace Model
      * check. This is useful if your instances do not immediately pass these health
      * checks after they enter the <code>InService</code> state. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Default: <code>0</code> seconds</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p> <p>Default: <code>0</code> seconds</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
@@ -909,9 +925,9 @@ namespace Model
      * check. This is useful if your instances do not immediately pass these health
      * checks after they enter the <code>InService</code> state. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Default: <code>0</code> seconds</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p> <p>Default: <code>0</code> seconds</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
@@ -922,9 +938,9 @@ namespace Model
      * check. This is useful if your instances do not immediately pass these health
      * checks after they enter the <code>InService</code> state. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Default: <code>0</code> seconds</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p> <p>Default: <code>0</code> seconds</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
@@ -935,9 +951,9 @@ namespace Model
      * check. This is useful if your instances do not immediately pass these health
      * checks after they enter the <code>InService</code> state. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Default: <code>0</code> seconds</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p> <p>Default: <code>0</code> seconds</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 

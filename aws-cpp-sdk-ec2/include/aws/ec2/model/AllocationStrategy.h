@@ -19,7 +19,8 @@ namespace Model
     lowestPrice,
     diversified,
     capacityOptimized,
-    capacityOptimizedPrioritized
+    capacityOptimizedPrioritized,
+    priceCapacityOptimized
   };
 
 namespace AllocationStrategyMapper

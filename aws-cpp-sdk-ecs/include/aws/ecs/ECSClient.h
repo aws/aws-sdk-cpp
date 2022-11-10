@@ -645,6 +645,24 @@ namespace ECS
         virtual void ExecuteCommandAsync(const Model::ExecuteCommandRequest& request, const ExecuteCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the protection status of tasks in an Amazon ECS
+         * service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTaskProtectionOutcome GetTaskProtection(const Model::GetTaskProtectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTaskProtection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTaskProtectionOutcomeCallable GetTaskProtectionCallable(const Model::GetTaskProtectionRequest& request) const;
+
+        /**
+         * An Async wrapper for GetTaskProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTaskProtectionAsync(const Model::GetTaskProtectionRequest& request, const GetTaskProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the account settings for a specified principal.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">AWS
@@ -1457,6 +1475,48 @@ namespace ECS
          * An Async wrapper for UpdateServicePrimaryTaskSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateServicePrimaryTaskSetAsync(const Model::UpdateServicePrimaryTaskSetRequest& request, const UpdateServicePrimaryTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the protection status of a task. You can set
+         * <code>protectionEnabled</code> to <code>true</code> to protect your task from
+         * termination during scale-in events from <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+         * Autoscaling</a> or <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.</p>
+         * <p>Task-protection, by default, expires after 2 hours at which point Amazon ECS
+         * unsets the <code>protectionEnabled</code> property making the task eligible for
+         * termination by a subsequent scale-in event.</p> <p>You can specify a custom
+         * expiration period for task protection from 1 minute to up to 2,880 minutes (48
+         * hours). To specify the custom expiration period, set the
+         * <code>expiresInMinutes</code> property. The <code>expiresInMinutes</code>
+         * property is always reset when you invoke this operation for a task that already
+         * has <code>protectionEnabled</code> set to <code>true</code>. You can keep
+         * extending the protection expiration period of a task by invoking this operation
+         * repeatedly.</p> <p>To learn more about Amazon ECS task protection, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task
+         * scale-in protection</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p>  <p>This operation is only supported for tasks belonging to
+         * an Amazon ECS service. Invoking this operation for a standalone task will result
+         * in an <code>TASK_NOT_VALID</code> failure. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html.html">API
+         * failure reasons</a>.</p>   <p>If you prefer to set task
+         * protection from within the container, we recommend using the <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-endpoint.html">Amazon
+         * ECS container agent endpoint</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTaskProtectionOutcome UpdateTaskProtection(const Model::UpdateTaskProtectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTaskProtection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTaskProtectionOutcomeCallable UpdateTaskProtectionCallable(const Model::UpdateTaskProtectionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateTaskProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTaskProtectionAsync(const Model::UpdateTaskProtectionRequest& request, const UpdateTaskProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a task set. This is used when a service uses the
