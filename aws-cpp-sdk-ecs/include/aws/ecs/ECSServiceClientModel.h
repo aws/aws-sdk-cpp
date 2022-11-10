@@ -39,6 +39,7 @@
 #include <aws/ecs/model/DescribeTasksResult.h>
 #include <aws/ecs/model/DiscoverPollEndpointResult.h>
 #include <aws/ecs/model/ExecuteCommandResult.h>
+#include <aws/ecs/model/GetTaskProtectionResult.h>
 #include <aws/ecs/model/ListAccountSettingsResult.h>
 #include <aws/ecs/model/ListAttributesResult.h>
 #include <aws/ecs/model/ListClustersResult.h>
@@ -69,6 +70,7 @@
 #include <aws/ecs/model/UpdateContainerInstancesStateResult.h>
 #include <aws/ecs/model/UpdateServiceResult.h>
 #include <aws/ecs/model/UpdateServicePrimaryTaskSetResult.h>
+#include <aws/ecs/model/UpdateTaskProtectionResult.h>
 #include <aws/ecs/model/UpdateTaskSetResult.h>
 /* End of service model headers required in ECSClient header */
 
@@ -131,6 +133,7 @@ namespace Aws
       class DescribeTasksRequest;
       class DiscoverPollEndpointRequest;
       class ExecuteCommandRequest;
+      class GetTaskProtectionRequest;
       class ListAccountSettingsRequest;
       class ListAttributesRequest;
       class ListClustersRequest;
@@ -161,6 +164,7 @@ namespace Aws
       class UpdateContainerInstancesStateRequest;
       class UpdateServiceRequest;
       class UpdateServicePrimaryTaskSetRequest;
+      class UpdateTaskProtectionRequest;
       class UpdateTaskSetRequest;
       /* End of service model forward declarations required in ECSClient header */
 
@@ -186,6 +190,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeTasksResult, ECSError> DescribeTasksOutcome;
       typedef Aws::Utils::Outcome<DiscoverPollEndpointResult, ECSError> DiscoverPollEndpointOutcome;
       typedef Aws::Utils::Outcome<ExecuteCommandResult, ECSError> ExecuteCommandOutcome;
+      typedef Aws::Utils::Outcome<GetTaskProtectionResult, ECSError> GetTaskProtectionOutcome;
       typedef Aws::Utils::Outcome<ListAccountSettingsResult, ECSError> ListAccountSettingsOutcome;
       typedef Aws::Utils::Outcome<ListAttributesResult, ECSError> ListAttributesOutcome;
       typedef Aws::Utils::Outcome<ListClustersResult, ECSError> ListClustersOutcome;
@@ -216,6 +221,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateContainerInstancesStateResult, ECSError> UpdateContainerInstancesStateOutcome;
       typedef Aws::Utils::Outcome<UpdateServiceResult, ECSError> UpdateServiceOutcome;
       typedef Aws::Utils::Outcome<UpdateServicePrimaryTaskSetResult, ECSError> UpdateServicePrimaryTaskSetOutcome;
+      typedef Aws::Utils::Outcome<UpdateTaskProtectionResult, ECSError> UpdateTaskProtectionOutcome;
       typedef Aws::Utils::Outcome<UpdateTaskSetResult, ECSError> UpdateTaskSetOutcome;
       /* End of service model Outcome class definitions */
 
@@ -241,6 +247,7 @@ namespace Aws
       typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
       typedef std::future<DiscoverPollEndpointOutcome> DiscoverPollEndpointOutcomeCallable;
       typedef std::future<ExecuteCommandOutcome> ExecuteCommandOutcomeCallable;
+      typedef std::future<GetTaskProtectionOutcome> GetTaskProtectionOutcomeCallable;
       typedef std::future<ListAccountSettingsOutcome> ListAccountSettingsOutcomeCallable;
       typedef std::future<ListAttributesOutcome> ListAttributesOutcomeCallable;
       typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
@@ -271,6 +278,7 @@ namespace Aws
       typedef std::future<UpdateContainerInstancesStateOutcome> UpdateContainerInstancesStateOutcomeCallable;
       typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
       typedef std::future<UpdateServicePrimaryTaskSetOutcome> UpdateServicePrimaryTaskSetOutcomeCallable;
+      typedef std::future<UpdateTaskProtectionOutcome> UpdateTaskProtectionOutcomeCallable;
       typedef std::future<UpdateTaskSetOutcome> UpdateTaskSetOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -299,6 +307,7 @@ namespace Aws
     typedef std::function<void(const ECSClient*, const Model::DescribeTasksRequest&, const Model::DescribeTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTasksResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DiscoverPollEndpointRequest&, const Model::DiscoverPollEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverPollEndpointResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ExecuteCommandRequest&, const Model::ExecuteCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteCommandResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::GetTaskProtectionRequest&, const Model::GetTaskProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTaskProtectionResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListAccountSettingsRequest&, const Model::ListAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListAttributesRequest&, const Model::ListAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
@@ -329,6 +338,7 @@ namespace Aws
     typedef std::function<void(const ECSClient*, const Model::UpdateContainerInstancesStateRequest&, const Model::UpdateContainerInstancesStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerInstancesStateResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateServicePrimaryTaskSetRequest&, const Model::UpdateServicePrimaryTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServicePrimaryTaskSetResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::UpdateTaskProtectionRequest&, const Model::UpdateTaskProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskProtectionResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateTaskSetRequest&, const Model::UpdateTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskSetResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ECS

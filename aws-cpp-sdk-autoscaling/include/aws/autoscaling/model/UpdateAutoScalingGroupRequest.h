@@ -483,8 +483,9 @@ namespace Model
      * check. This is useful if your instances do not immediately pass these health
      * checks after they enter the <code>InService</code> state. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
@@ -495,8 +496,9 @@ namespace Model
      * check. This is useful if your instances do not immediately pass these health
      * checks after they enter the <code>InService</code> state. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
@@ -507,8 +509,9 @@ namespace Model
      * check. This is useful if your instances do not immediately pass these health
      * checks after they enter the <code>InService</code> state. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
@@ -519,8 +522,9 @@ namespace Model
      * check. This is useful if your instances do not immediately pass these health
      * checks after they enter the <code>InService</code> state. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 

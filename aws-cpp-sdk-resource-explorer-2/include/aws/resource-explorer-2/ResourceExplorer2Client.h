@@ -40,24 +40,10 @@ namespace ResourceExplorer2
    * the aggregator index has a copy of all resource information for all Regions in
    * the account where you turned on Resource Explorer. As a result, views in the
    * aggregator index Region include resources from all of the indexed Regions in
-   * your account.</p> <pre><code> &lt;p&gt;For more information about Amazon Web
-   * Services Resource Explorer, including how to enable and configure the service,
-   * see the &lt;a
-   * href=&quot;https://docs.aws.amazon.com/resource-explorer/latest/userguide/&quot;&gt;Amazon
-   * Web Services Resource Explorer User Guide&lt;/a&gt;.&lt;/p&gt; &lt;note&gt;
-   * &lt;p&gt;The example HTTP query requests and responses in this guide are
-   * displayed with the &lt;a href=&quot;https://json.org&quot;&gt;JSON&lt;/a&gt;
-   * formatted across multiple lines for readability. The actual query responses from
-   * the Resource Explorer service do not include this extra whitespace.&lt;/p&gt;
-   * &lt;/note&gt; &lt;p&gt; &lt;b&gt;We want your feedback about this
-   * documentation&lt;/b&gt; &lt;/p&gt; &lt;p&gt;Our goal is to help you get
-   * everything you can from Resource Explorer. If this guide helps you to do that,
-   * then let us know. If the guide isn't helping you, then we want to hear from you
-   * so we can address the issue. Use the &lt;b&gt;Feedback&lt;/b&gt; link that's in
-   * the upper-right corner of every page. That sends your comments directly to the
-   * writers of this guide. We review every submission, looking for opportunities to
-   * improve the documentation. Thank you in advance for your help!&lt;/p&gt;
-   * </code></pre>
+   * your account.</p> <p>For more information about Amazon Web Services Resource
+   * Explorer, including how to enable and configure the service, see the <a
+   * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/">Amazon
+   * Web Services Resource Explorer User Guide</a>.</p>
    */
   class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : public Aws::Client::AWSJsonClient
   {
@@ -178,31 +164,26 @@ namespace ResourceExplorer2
          * index for Resource Explorer, then this operation also <a
          * href="https://docs.aws.amazon.com/arexug/mainline/security_iam_service-linked-roles.html">creates
          * a service-linked role</a> in your Amazon Web Services account that allows
-         * Resource Explorer to enumerate your resources to populate the index.</p>
-         * <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;b&gt;Action&lt;/b&gt;:
-         * &lt;code&gt;resource-explorer-2:CreateIndex&lt;/code&gt; &lt;/p&gt; &lt;p&gt;
-         * &lt;b&gt;Resource&lt;/b&gt;: The ARN of the index (as it will exist after the
-         * operation completes) in the Amazon Web Services Region and account in which
-         * you're trying to create the index. Use the wildcard character
-         * (&lt;code&gt;*&lt;/code&gt;) at the end of the string to match the eventual
-         * UUID. For example, the following &lt;code&gt;Resource&lt;/code&gt; element
-         * restricts the role or user to creating an index in only the
-         * &lt;code&gt;us-east-2&lt;/code&gt; Region of the specified account.&lt;/p&gt;
-         * &lt;p&gt; &lt;code&gt;&quot;Resource&quot;:
-         * &quot;arn:aws:resource-explorer-2:us-east-2:&lt;i&gt;&amp;lt;account-id&amp;gt;&lt;/i&gt;:index/ *&quot;&lt;/code&gt;
-         * &lt;/p&gt; &lt;p&gt;Alternatively, you can use &lt;code&gt;&quot;Resource&quot;:
-         * &quot;*&quot;&lt;/code&gt; to allow the role or user to create an index in any
-         * Region.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;b&gt;Action&lt;/b&gt;:
-         * &lt;code&gt;iam:CreateServiceLinkedRole&lt;/code&gt; &lt;/p&gt; &lt;p&gt;
-         * &lt;b&gt;Resource&lt;/b&gt;: No specific resource (*). &lt;/p&gt; &lt;p&gt;This
-         * permission is required only the first time you create an index to turn on
-         * Resource Explorer in the account. Resource Explorer uses this to create the
-         * &lt;a
-         * href=&quot;https://docs.aws.amazon.com/resource-explorer/latest/userguide/security_iam_service-linked-roles.html&quot;&gt;service-linked
-         * role needed to index the resources in your account&lt;/a&gt;. Resource Explorer
-         * uses the same service-linked role for all additional indexes you create
-         * afterwards.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre><p><h3>See Also:</h3>
-         * <a
+         * Resource Explorer to enumerate your resources to populate the index.</p> <ul>
+         * <li> <p> <b>Action</b>: <code>resource-explorer-2:CreateIndex</code> </p> <p>
+         * <b>Resource</b>: The ARN of the index (as it will exist after the operation
+         * completes) in the Amazon Web Services Region and account in which you're trying
+         * to create the index. Use the wildcard character (<code>*</code>) at the end of
+         * the string to match the eventual UUID. For example, the following
+         * <code>Resource</code> element restricts the role or user to creating an index in
+         * only the <code>us-east-2</code> Region of the specified account.</p> <p>
+         * <code>"Resource":
+         * "arn:aws:resource-explorer-2:us-west-2:<i>&lt;account-id&gt;</i>:index/ *"</code>
+         * </p> <p>Alternatively, you can use <code>"Resource": "*"</code> to allow the
+         * role or user to create an index in any Region.</p> </li> <li> <p> <b>Action</b>:
+         * <code>iam:CreateServiceLinkedRole</code> </p> <p> <b>Resource</b>: No specific
+         * resource (*). </p> <p>This permission is required only the first time you create
+         * an index to turn on Resource Explorer in the account. Resource Explorer uses
+         * this to create the <a
+         * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/security_iam_service-linked-roles.html">service-linked
+         * role needed to index the resources in your account</a>. Resource Explorer uses
+         * the same service-linked role for all additional indexes you create
+         * afterwards.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/CreateIndex">AWS
          * API Reference</a></p>
          */
