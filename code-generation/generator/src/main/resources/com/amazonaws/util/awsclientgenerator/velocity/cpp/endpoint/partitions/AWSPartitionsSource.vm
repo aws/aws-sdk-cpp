@@ -11,7 +11,7 @@ const size_t AWSPartitions::PartitionsBlobStrLen = $PartitionsBlobStrLen;
 const size_t AWSPartitions::PartitionsBlobSize = $serviceModel.partitionsBlob.length();
 
 using PartitionsBlobT = Aws::Array<const char, AWSPartitions::PartitionsBlobSize>;
-static constexpr PartitionsBlobT PartitionsBlob = {
+static constexpr PartitionsBlobT PartitionsBlob = {{
 #set($lineLenth = 0)
 #foreach($tmpChar in $serviceModel.partitionsBlob.toCharArray())
 #if($tmpChar.equals($nl) || $tmpChar == $nl)
@@ -38,7 +38,7 @@ static constexpr PartitionsBlobT PartitionsBlob = {
 #end
 #end
 
-};
+}};
 
 const char* AWSPartitions::GetPartitionsBlob()
 {
