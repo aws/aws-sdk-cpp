@@ -3401,6 +3401,36 @@ namespace IoT
         virtual void ListProvisioningTemplatesAsync(const Model::ListProvisioningTemplatesRequest& request, const ListProvisioningTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>The related resources of an Audit finding. The following resources can be
+         * returned from calling this API:</p> <ul> <li> <p>DEVICE_CERTIFICATE</p> </li>
+         * <li> <p>CA_CERTIFICATE</p> </li> <li> <p>IOT_POLICY</p> </li> <li>
+         * <p>COGNITO_IDENTITY_POOL</p> </li> <li> <p>CLIENT_ID</p> </li> <li>
+         * <p>ACCOUNT_SETTINGS</p> </li> <li> <p>ROLE_ALIAS</p> </li> <li> <p>IAM_ROLE</p>
+         * </li> <li> <p>ISSUER_CERTIFICATE</p> </li> </ul>  <p>This API is similar
+         * to DescribeAuditFinding's <a
+         * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a>
+         * but provides pagination and is not limited to 10 resources. When calling <a
+         * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a>
+         * for the intermediate CA revoked for active device certificates check,
+         * RelatedResources will not be populated. You must use this API,
+         * ListRelatedResourcesForAuditFinding, to list the certificates.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRelatedResourcesForAuditFinding">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRelatedResourcesForAuditFindingOutcome ListRelatedResourcesForAuditFinding(const Model::ListRelatedResourcesForAuditFindingRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRelatedResourcesForAuditFinding that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRelatedResourcesForAuditFindingOutcomeCallable ListRelatedResourcesForAuditFindingCallable(const Model::ListRelatedResourcesForAuditFindingRequest& request) const;
+
+        /**
+         * An Async wrapper for ListRelatedResourcesForAuditFinding that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRelatedResourcesForAuditFindingAsync(const Model::ListRelatedResourcesForAuditFindingRequest& request, const ListRelatedResourcesForAuditFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the role aliases registered in your account.</p> <p>Requires permission
          * to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListRoleAliases</a>
@@ -3683,7 +3713,10 @@ namespace IoT
          * <p>Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b>
          * parameters to filter your things. For example, calling <code>ListThings</code>
          * with attributeName=Color and attributeValue=Red retrieves all things in the
-         * registry that contain an attribute <b>Color</b> with the value <b>Red</b>. </p>
+         * registry that contain an attribute <b>Color</b> with the value <b>Red</b>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List
+         * Things</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
          * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a>
          * action.</p>  <p>You will not be charged for calling this API if an

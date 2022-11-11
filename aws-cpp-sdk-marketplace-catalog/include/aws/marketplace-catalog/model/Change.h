@@ -7,6 +7,8 @@
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-catalog/model/Entity.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/marketplace-catalog/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +130,47 @@ namespace Model
 
 
     /**
+     * <p>The tags associated with the change.</p>
+     */
+    inline const Aws::Vector<Tag>& GetEntityTags() const{ return m_entityTags; }
+
+    /**
+     * <p>The tags associated with the change.</p>
+     */
+    inline bool EntityTagsHasBeenSet() const { return m_entityTagsHasBeenSet; }
+
+    /**
+     * <p>The tags associated with the change.</p>
+     */
+    inline void SetEntityTags(const Aws::Vector<Tag>& value) { m_entityTagsHasBeenSet = true; m_entityTags = value; }
+
+    /**
+     * <p>The tags associated with the change.</p>
+     */
+    inline void SetEntityTags(Aws::Vector<Tag>&& value) { m_entityTagsHasBeenSet = true; m_entityTags = std::move(value); }
+
+    /**
+     * <p>The tags associated with the change.</p>
+     */
+    inline Change& WithEntityTags(const Aws::Vector<Tag>& value) { SetEntityTags(value); return *this;}
+
+    /**
+     * <p>The tags associated with the change.</p>
+     */
+    inline Change& WithEntityTags(Aws::Vector<Tag>&& value) { SetEntityTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags associated with the change.</p>
+     */
+    inline Change& AddEntityTags(const Tag& value) { m_entityTagsHasBeenSet = true; m_entityTags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags associated with the change.</p>
+     */
+    inline Change& AddEntityTags(Tag&& value) { m_entityTagsHasBeenSet = true; m_entityTags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>This object contains details specific to the change type of the requested
      * change.</p>
      */
@@ -223,6 +266,9 @@ namespace Model
 
     Entity m_entity;
     bool m_entityHasBeenSet = false;
+
+    Aws::Vector<Tag> m_entityTags;
+    bool m_entityTagsHasBeenSet = false;
 
     Aws::String m_details;
     bool m_detailsHasBeenSet = false;

@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ssm-incidents/model/EventReference.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +80,47 @@ namespace Model
      * <p>The timeline event ID.</p>
      */
     inline EventSummary& WithEventId(const char* value) { SetEventId(value); return *this;}
+
+
+    /**
+     * <p>A list of references in a <code>TimelineEvent</code>.</p>
+     */
+    inline const Aws::Vector<EventReference>& GetEventReferences() const{ return m_eventReferences; }
+
+    /**
+     * <p>A list of references in a <code>TimelineEvent</code>.</p>
+     */
+    inline bool EventReferencesHasBeenSet() const { return m_eventReferencesHasBeenSet; }
+
+    /**
+     * <p>A list of references in a <code>TimelineEvent</code>.</p>
+     */
+    inline void SetEventReferences(const Aws::Vector<EventReference>& value) { m_eventReferencesHasBeenSet = true; m_eventReferences = value; }
+
+    /**
+     * <p>A list of references in a <code>TimelineEvent</code>.</p>
+     */
+    inline void SetEventReferences(Aws::Vector<EventReference>&& value) { m_eventReferencesHasBeenSet = true; m_eventReferences = std::move(value); }
+
+    /**
+     * <p>A list of references in a <code>TimelineEvent</code>.</p>
+     */
+    inline EventSummary& WithEventReferences(const Aws::Vector<EventReference>& value) { SetEventReferences(value); return *this;}
+
+    /**
+     * <p>A list of references in a <code>TimelineEvent</code>.</p>
+     */
+    inline EventSummary& WithEventReferences(Aws::Vector<EventReference>&& value) { SetEventReferences(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of references in a <code>TimelineEvent</code>.</p>
+     */
+    inline EventSummary& AddEventReferences(const EventReference& value) { m_eventReferencesHasBeenSet = true; m_eventReferences.push_back(value); return *this; }
+
+    /**
+     * <p>A list of references in a <code>TimelineEvent</code>.</p>
+     */
+    inline EventSummary& AddEventReferences(EventReference&& value) { m_eventReferencesHasBeenSet = true; m_eventReferences.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -235,6 +278,9 @@ namespace Model
 
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet = false;
+
+    Aws::Vector<EventReference> m_eventReferences;
+    bool m_eventReferencesHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
     bool m_eventTimeHasBeenSet = false;

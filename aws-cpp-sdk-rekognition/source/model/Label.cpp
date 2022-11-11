@@ -23,7 +23,9 @@ Label::Label() :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_instancesHasBeenSet(false),
-    m_parentsHasBeenSet(false)
+    m_parentsHasBeenSet(false),
+    m_aliasesHasBeenSet(false),
+    m_categoriesHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ Label::Label(JsonView jsonValue) :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_instancesHasBeenSet(false),
-    m_parentsHasBeenSet(false)
+    m_parentsHasBeenSet(false),
+    m_aliasesHasBeenSet(false),
+    m_categoriesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +77,26 @@ Label& Label::operator =(JsonView jsonValue)
     m_parentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Aliases"))
+  {
+    Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
+    for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
+    {
+      m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());
+    }
+    m_aliasesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Categories"))
+  {
+    Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
+    for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
+    {
+      m_categories.push_back(categoriesJsonList[categoriesIndex].AsObject());
+    }
+    m_categoriesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +135,28 @@ JsonValue Label::Jsonize() const
      parentsJsonList[parentsIndex].AsObject(m_parents[parentsIndex].Jsonize());
    }
    payload.WithArray("Parents", std::move(parentsJsonList));
+
+  }
+
+  if(m_aliasesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> aliasesJsonList(m_aliases.size());
+   for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
+   {
+     aliasesJsonList[aliasesIndex].AsObject(m_aliases[aliasesIndex].Jsonize());
+   }
+   payload.WithArray("Aliases", std::move(aliasesJsonList));
+
+  }
+
+  if(m_categoriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> categoriesJsonList(m_categories.size());
+   for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
+   {
+     categoriesJsonList[categoriesIndex].AsObject(m_categories[categoriesIndex].Jsonize());
+   }
+   payload.WithArray("Categories", std::move(categoriesJsonList));
 
   }
 

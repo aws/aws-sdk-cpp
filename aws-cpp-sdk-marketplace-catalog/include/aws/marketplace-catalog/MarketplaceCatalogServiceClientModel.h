@@ -23,7 +23,10 @@
 #include <aws/marketplace-catalog/model/DescribeEntityResult.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsResult.h>
 #include <aws/marketplace-catalog/model/ListEntitiesResult.h>
+#include <aws/marketplace-catalog/model/ListTagsForResourceResult.h>
 #include <aws/marketplace-catalog/model/StartChangeSetResult.h>
+#include <aws/marketplace-catalog/model/TagResourceResult.h>
+#include <aws/marketplace-catalog/model/UntagResourceResult.h>
 /* End of service model headers required in MarketplaceCatalogClient header */
 
 namespace Aws
@@ -69,7 +72,10 @@ namespace Aws
       class DescribeEntityRequest;
       class ListChangeSetsRequest;
       class ListEntitiesRequest;
+      class ListTagsForResourceRequest;
       class StartChangeSetRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       /* End of service model forward declarations required in MarketplaceCatalogClient header */
 
       /* Service model Outcome class definitions */
@@ -78,7 +84,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeEntityResult, MarketplaceCatalogError> DescribeEntityOutcome;
       typedef Aws::Utils::Outcome<ListChangeSetsResult, MarketplaceCatalogError> ListChangeSetsOutcome;
       typedef Aws::Utils::Outcome<ListEntitiesResult, MarketplaceCatalogError> ListEntitiesOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, MarketplaceCatalogError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<StartChangeSetResult, MarketplaceCatalogError> StartChangeSetOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, MarketplaceCatalogError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, MarketplaceCatalogError> UntagResourceOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -87,7 +96,10 @@ namespace Aws
       typedef std::future<DescribeEntityOutcome> DescribeEntityOutcomeCallable;
       typedef std::future<ListChangeSetsOutcome> ListChangeSetsOutcomeCallable;
       typedef std::future<ListEntitiesOutcome> ListEntitiesOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<StartChangeSetOutcome> StartChangeSetOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -99,7 +111,10 @@ namespace Aws
     typedef std::function<void(const MarketplaceCatalogClient*, const Model::DescribeEntityRequest&, const Model::DescribeEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEntityResponseReceivedHandler;
     typedef std::function<void(const MarketplaceCatalogClient*, const Model::ListChangeSetsRequest&, const Model::ListChangeSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChangeSetsResponseReceivedHandler;
     typedef std::function<void(const MarketplaceCatalogClient*, const Model::ListEntitiesRequest&, const Model::ListEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntitiesResponseReceivedHandler;
+    typedef std::function<void(const MarketplaceCatalogClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MarketplaceCatalogClient*, const Model::StartChangeSetRequest&, const Model::StartChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChangeSetResponseReceivedHandler;
+    typedef std::function<void(const MarketplaceCatalogClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const MarketplaceCatalogClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace MarketplaceCatalog
 } // namespace Aws

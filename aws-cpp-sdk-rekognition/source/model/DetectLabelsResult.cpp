@@ -51,6 +51,12 @@ DetectLabelsResult& DetectLabelsResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("ImageProperties"))
+  {
+    m_imageProperties = jsonValue.GetObject("ImageProperties");
+
+  }
+
 
 
   return *this;

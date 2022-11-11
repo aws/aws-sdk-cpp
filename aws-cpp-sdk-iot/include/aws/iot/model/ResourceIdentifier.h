@@ -7,6 +7,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/PolicyVersionIdentifier.h>
+#include <aws/iot/model/IssuerCertificateIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -356,6 +357,78 @@ namespace Model
      */
     inline ResourceIdentifier& WithRoleAliasArn(const char* value) { SetRoleAliasArn(value); return *this;}
 
+
+    /**
+     * <p>The issuer certificate identifier.</p>
+     */
+    inline const IssuerCertificateIdentifier& GetIssuerCertificateIdentifier() const{ return m_issuerCertificateIdentifier; }
+
+    /**
+     * <p>The issuer certificate identifier.</p>
+     */
+    inline bool IssuerCertificateIdentifierHasBeenSet() const { return m_issuerCertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The issuer certificate identifier.</p>
+     */
+    inline void SetIssuerCertificateIdentifier(const IssuerCertificateIdentifier& value) { m_issuerCertificateIdentifierHasBeenSet = true; m_issuerCertificateIdentifier = value; }
+
+    /**
+     * <p>The issuer certificate identifier.</p>
+     */
+    inline void SetIssuerCertificateIdentifier(IssuerCertificateIdentifier&& value) { m_issuerCertificateIdentifierHasBeenSet = true; m_issuerCertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>The issuer certificate identifier.</p>
+     */
+    inline ResourceIdentifier& WithIssuerCertificateIdentifier(const IssuerCertificateIdentifier& value) { SetIssuerCertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>The issuer certificate identifier.</p>
+     */
+    inline ResourceIdentifier& WithIssuerCertificateIdentifier(IssuerCertificateIdentifier&& value) { SetIssuerCertificateIdentifier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ARN of the identified device certificate.</p>
+     */
+    inline const Aws::String& GetDeviceCertificateArn() const{ return m_deviceCertificateArn; }
+
+    /**
+     * <p>The ARN of the identified device certificate.</p>
+     */
+    inline bool DeviceCertificateArnHasBeenSet() const { return m_deviceCertificateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the identified device certificate.</p>
+     */
+    inline void SetDeviceCertificateArn(const Aws::String& value) { m_deviceCertificateArnHasBeenSet = true; m_deviceCertificateArn = value; }
+
+    /**
+     * <p>The ARN of the identified device certificate.</p>
+     */
+    inline void SetDeviceCertificateArn(Aws::String&& value) { m_deviceCertificateArnHasBeenSet = true; m_deviceCertificateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the identified device certificate.</p>
+     */
+    inline void SetDeviceCertificateArn(const char* value) { m_deviceCertificateArnHasBeenSet = true; m_deviceCertificateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the identified device certificate.</p>
+     */
+    inline ResourceIdentifier& WithDeviceCertificateArn(const Aws::String& value) { SetDeviceCertificateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the identified device certificate.</p>
+     */
+    inline ResourceIdentifier& WithDeviceCertificateArn(Aws::String&& value) { SetDeviceCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the identified device certificate.</p>
+     */
+    inline ResourceIdentifier& WithDeviceCertificateArn(const char* value) { SetDeviceCertificateArn(value); return *this;}
+
   private:
 
     Aws::String m_deviceCertificateId;
@@ -381,6 +454,12 @@ namespace Model
 
     Aws::String m_roleAliasArn;
     bool m_roleAliasArnHasBeenSet = false;
+
+    IssuerCertificateIdentifier m_issuerCertificateIdentifier;
+    bool m_issuerCertificateIdentifierHasBeenSet = false;
+
+    Aws::String m_deviceCertificateArn;
+    bool m_deviceCertificateArnHasBeenSet = false;
   };
 
 } // namespace Model

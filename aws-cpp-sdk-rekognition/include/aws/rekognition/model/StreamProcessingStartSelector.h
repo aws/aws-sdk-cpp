@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>This is a required parameter for label detection stream processors and should
+   * not be used to start a face search stream processor.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessingStartSelector">AWS
    * API Reference</a></p>
    */
@@ -39,37 +41,37 @@ namespace Model
 
     /**
      * <p> Specifies the starting point in the stream to start processing. This can be
-     * done with a timestamp or a fragment number in a Kinesis stream. </p>
+     * done with a producer timestamp or a fragment number in a Kinesis stream. </p>
      */
     inline const KinesisVideoStreamStartSelector& GetKVSStreamStartSelector() const{ return m_kVSStreamStartSelector; }
 
     /**
      * <p> Specifies the starting point in the stream to start processing. This can be
-     * done with a timestamp or a fragment number in a Kinesis stream. </p>
+     * done with a producer timestamp or a fragment number in a Kinesis stream. </p>
      */
     inline bool KVSStreamStartSelectorHasBeenSet() const { return m_kVSStreamStartSelectorHasBeenSet; }
 
     /**
      * <p> Specifies the starting point in the stream to start processing. This can be
-     * done with a timestamp or a fragment number in a Kinesis stream. </p>
+     * done with a producer timestamp or a fragment number in a Kinesis stream. </p>
      */
     inline void SetKVSStreamStartSelector(const KinesisVideoStreamStartSelector& value) { m_kVSStreamStartSelectorHasBeenSet = true; m_kVSStreamStartSelector = value; }
 
     /**
      * <p> Specifies the starting point in the stream to start processing. This can be
-     * done with a timestamp or a fragment number in a Kinesis stream. </p>
+     * done with a producer timestamp or a fragment number in a Kinesis stream. </p>
      */
     inline void SetKVSStreamStartSelector(KinesisVideoStreamStartSelector&& value) { m_kVSStreamStartSelectorHasBeenSet = true; m_kVSStreamStartSelector = std::move(value); }
 
     /**
      * <p> Specifies the starting point in the stream to start processing. This can be
-     * done with a timestamp or a fragment number in a Kinesis stream. </p>
+     * done with a producer timestamp or a fragment number in a Kinesis stream. </p>
      */
     inline StreamProcessingStartSelector& WithKVSStreamStartSelector(const KinesisVideoStreamStartSelector& value) { SetKVSStreamStartSelector(value); return *this;}
 
     /**
      * <p> Specifies the starting point in the stream to start processing. This can be
-     * done with a timestamp or a fragment number in a Kinesis stream. </p>
+     * done with a producer timestamp or a fragment number in a Kinesis stream. </p>
      */
     inline StreamProcessingStartSelector& WithKVSStreamStartSelector(KinesisVideoStreamStartSelector&& value) { SetKVSStreamStartSelector(std::move(value)); return *this;}
 

@@ -1613,11 +1613,11 @@ namespace Glue
         virtual void GetDevEndpointAsync(const Model::GetDevEndpointRequest& request, const GetDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves all the development endpoints in this AWS account.</p> 
-         * <p>When you create a development endpoint in a virtual private cloud (VPC), Glue
-         * returns only a private IP address and the public IP address field is not
-         * populated. When you create a non-VPC development endpoint, Glue returns only a
-         * public IP address.</p> <p><h3>See Also:</h3>   <a
+         * <p>Retrieves all the development endpoints in this Amazon Web Services
+         * account.</p>  <p>When you create a development endpoint in a virtual
+         * private cloud (VPC), Glue returns only a private IP address and the public IP
+         * address field is not populated. When you create a non-VPC development endpoint,
+         * Glue returns only a public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          */
@@ -1651,7 +1651,14 @@ namespace Glue
         virtual void GetJobAsync(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information on a job bookmark entry.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information on a job bookmark entry.</p> <p>For more information
+         * about enabling and using job bookmarks, see:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking
+         * processed data using job bookmarks</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job
+         * parameters used by Glue</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+         * structure</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmark">AWS
          * API Reference</a></p>
          */
@@ -2818,7 +2825,14 @@ namespace Glue
         virtual void RemoveSchemaVersionMetadataAsync(const Model::RemoveSchemaVersionMetadataRequest& request, const RemoveSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resets a bookmark entry.</p><p><h3>See Also:</h3>   <a
+         * <p>Resets a bookmark entry.</p> <p>For more information about enabling and using
+         * job bookmarks, see:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking
+         * processed data using job bookmarks</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job
+         * parameters used by Glue</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+         * structure</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResetJobBookmark">AWS
          * API Reference</a></p>
          */

@@ -128,7 +128,9 @@ namespace LicenseManager
         virtual void CheckoutBorrowLicenseAsync(const Model::CheckoutBorrowLicenseRequest& request, const CheckoutBorrowLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Checks out the specified license.</p><p><h3>See Also:</h3>   <a
+         * <p>Checks out the specified license.</p>  <p>If the account that created
+         * the license is the same that is performing the check out, you must specify the
+         * account as the beneficiary.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutLicense">AWS
          * API Reference</a></p>
          */
@@ -723,6 +725,24 @@ namespace LicenseManager
         virtual void ListReceivedGrantsAsync(const Model::ListReceivedGrantsRequest& request, const ListReceivedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the grants received for all accounts in the organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrantsForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReceivedGrantsForOrganizationOutcome ListReceivedGrantsForOrganization(const Model::ListReceivedGrantsForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListReceivedGrantsForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListReceivedGrantsForOrganizationOutcomeCallable ListReceivedGrantsForOrganizationCallable(const Model::ListReceivedGrantsForOrganizationRequest& request) const;
+
+        /**
+         * An Async wrapper for ListReceivedGrantsForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListReceivedGrantsForOrganizationAsync(const Model::ListReceivedGrantsForOrganizationRequest& request, const ListReceivedGrantsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists received licenses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicenses">AWS
          * API Reference</a></p>
@@ -738,6 +758,24 @@ namespace LicenseManager
          * An Async wrapper for ListReceivedLicenses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListReceivedLicensesAsync(const Model::ListReceivedLicensesRequest& request, const ListReceivedLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the licenses received for all accounts in the
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicensesForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReceivedLicensesForOrganizationOutcome ListReceivedLicensesForOrganization(const Model::ListReceivedLicensesForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListReceivedLicensesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListReceivedLicensesForOrganizationOutcomeCallable ListReceivedLicensesForOrganizationCallable(const Model::ListReceivedLicensesForOrganizationRequest& request) const;
+
+        /**
+         * An Async wrapper for ListReceivedLicensesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListReceivedLicensesForOrganizationAsync(const Model::ListReceivedLicensesForOrganizationRequest& request, const ListReceivedLicensesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists resources managed using Systems Manager inventory.</p><p><h3>See
