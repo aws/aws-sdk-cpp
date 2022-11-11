@@ -170,6 +170,8 @@ CreateCliTokenOutcome MWAAClient::CreateCliToken(const CreateCliTokenRequest& re
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCliToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("env.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateCliTokenOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/clitoken/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   return CreateCliTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -201,6 +203,8 @@ CreateEnvironmentOutcome MWAAClient::CreateEnvironment(const CreateEnvironmentRe
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateEnvironmentOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   return CreateEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
@@ -232,6 +236,8 @@ CreateWebLoginTokenOutcome MWAAClient::CreateWebLoginToken(const CreateWebLoginT
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWebLoginToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("env.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateWebLoginTokenOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/webtoken/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   return CreateWebLoginTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -263,6 +269,8 @@ DeleteEnvironmentOutcome MWAAClient::DeleteEnvironment(const DeleteEnvironmentRe
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteEnvironmentOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   return DeleteEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -294,6 +302,8 @@ GetEnvironmentOutcome MWAAClient::GetEnvironment(const GetEnvironmentRequest& re
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetEnvironmentOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   return GetEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -320,6 +330,8 @@ ListEnvironmentsOutcome MWAAClient::ListEnvironments(const ListEnvironmentsReque
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListEnvironmentsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   return ListEnvironmentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -350,6 +362,8 @@ ListTagsForResourceOutcome MWAAClient::ListTagsForResource(const ListTagsForReso
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListTagsForResourceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -381,6 +395,8 @@ PublishMetricsOutcome MWAAClient::PublishMetrics(const PublishMetricsRequest& re
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PublishMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("ops.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), PublishMetricsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/metrics/environments/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentName());
   return PublishMetricsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -412,6 +428,8 @@ TagResourceOutcome MWAAClient::TagResource(const TagResourceRequest& request) co
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), TagResourceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -448,6 +466,8 @@ UntagResourceOutcome MWAAClient::UntagResource(const UntagResourceRequest& reque
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UntagResourceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -479,6 +499,8 @@ UpdateEnvironmentOutcome MWAAClient::UpdateEnvironment(const UpdateEnvironmentRe
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateEnvironmentOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   return UpdateEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));

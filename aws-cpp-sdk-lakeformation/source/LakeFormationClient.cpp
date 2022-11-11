@@ -649,6 +649,8 @@ GetQueryStateOutcome LakeFormationClient::GetQueryState(const GetQueryStateReque
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueryState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetQueryState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("query-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetQueryStateOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/GetQueryState");
   return GetQueryStateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -674,6 +676,8 @@ GetQueryStatisticsOutcome LakeFormationClient::GetQueryStatistics(const GetQuery
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueryStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetQueryStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("query-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetQueryStatisticsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/GetQueryStatistics");
   return GetQueryStatisticsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -799,6 +803,8 @@ GetWorkUnitResultsOutcome LakeFormationClient::GetWorkUnitResults(const GetWorkU
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkUnitResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorkUnitResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("data-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetWorkUnitResultsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/GetWorkUnitResults");
   return GetWorkUnitResultsOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
@@ -824,6 +830,8 @@ GetWorkUnitsOutcome LakeFormationClient::GetWorkUnits(const GetWorkUnitsRequest&
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkUnits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorkUnits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("query-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetWorkUnitsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/GetWorkUnits");
   return GetWorkUnitsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -1174,6 +1182,8 @@ StartQueryPlanningOutcome LakeFormationClient::StartQueryPlanning(const StartQue
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartQueryPlanning, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartQueryPlanning, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("query-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), StartQueryPlanningOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/StartQueryPlanning");
   return StartQueryPlanningOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }

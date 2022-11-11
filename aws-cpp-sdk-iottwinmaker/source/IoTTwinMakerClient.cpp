@@ -185,6 +185,8 @@ BatchPutPropertyValuesOutcome IoTTwinMakerClient::BatchPutPropertyValues(const B
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchPutPropertyValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("data.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), BatchPutPropertyValuesOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/entity-properties");
@@ -222,6 +224,8 @@ CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateC
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateComponentType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateComponentTypeOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/component-types/");
@@ -255,6 +259,8 @@ CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& 
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateEntityOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/entities");
@@ -287,6 +293,8 @@ CreateSceneOutcome IoTTwinMakerClient::CreateScene(const CreateSceneRequest& req
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateScene, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateSceneOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/scenes");
@@ -319,6 +327,8 @@ CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspace
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateWorkspaceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   return CreateWorkspaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -355,6 +365,8 @@ DeleteComponentTypeOutcome IoTTwinMakerClient::DeleteComponentType(const DeleteC
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteComponentType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteComponentTypeOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/component-types/");
@@ -393,6 +405,8 @@ DeleteEntityOutcome IoTTwinMakerClient::DeleteEntity(const DeleteEntityRequest& 
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteEntityOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/entities/");
@@ -431,6 +445,8 @@ DeleteSceneOutcome IoTTwinMakerClient::DeleteScene(const DeleteSceneRequest& req
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteScene, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteSceneOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/scenes/");
@@ -464,6 +480,8 @@ DeleteWorkspaceOutcome IoTTwinMakerClient::DeleteWorkspace(const DeleteWorkspace
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteWorkspaceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   return DeleteWorkspaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -500,6 +518,8 @@ GetComponentTypeOutcome IoTTwinMakerClient::GetComponentType(const GetComponentT
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetComponentType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetComponentTypeOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/component-types/");
@@ -538,6 +558,8 @@ GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) 
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetEntityOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/entities/");
@@ -571,6 +593,8 @@ GetPropertyValueOutcome IoTTwinMakerClient::GetPropertyValue(const GetPropertyVa
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("data.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetPropertyValueOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/entity-properties/value");
@@ -603,6 +627,8 @@ GetPropertyValueHistoryOutcome IoTTwinMakerClient::GetPropertyValueHistory(const
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("data.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetPropertyValueHistoryOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/entity-properties/history");
@@ -640,6 +666,8 @@ GetSceneOutcome IoTTwinMakerClient::GetScene(const GetSceneRequest& request) con
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetScene, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetSceneOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/scenes/");
@@ -673,6 +701,8 @@ GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& 
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetWorkspaceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   return GetWorkspaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -704,6 +734,8 @@ ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListCompo
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComponentTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListComponentTypesOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/component-types-list");
@@ -736,6 +768,8 @@ ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& 
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEntities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListEntitiesOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/entities-list");
@@ -768,6 +802,8 @@ ListScenesOutcome IoTTwinMakerClient::ListScenes(const ListScenesRequest& reques
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListScenes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListScenesOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/scenes-list");
@@ -795,6 +831,8 @@ ListTagsForResourceOutcome IoTTwinMakerClient::ListTagsForResource(const ListTag
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListTagsForResourceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags-list");
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -820,6 +858,8 @@ ListWorkspacesOutcome IoTTwinMakerClient::ListWorkspaces(const ListWorkspacesReq
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkspaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkspaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListWorkspacesOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces-list");
   return ListWorkspacesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -845,6 +885,8 @@ TagResourceOutcome IoTTwinMakerClient::TagResource(const TagResourceRequest& req
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), TagResourceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -880,6 +922,8 @@ UntagResourceOutcome IoTTwinMakerClient::UntagResource(const UntagResourceReques
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UntagResourceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
@@ -915,6 +959,8 @@ UpdateComponentTypeOutcome IoTTwinMakerClient::UpdateComponentType(const UpdateC
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateComponentType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateComponentTypeOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/component-types/");
@@ -953,6 +999,8 @@ UpdateEntityOutcome IoTTwinMakerClient::UpdateEntity(const UpdateEntityRequest& 
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateEntityOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/entities/");
@@ -991,6 +1039,8 @@ UpdateSceneOutcome IoTTwinMakerClient::UpdateScene(const UpdateSceneRequest& req
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateScene, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateSceneOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/scenes/");
@@ -1024,6 +1074,8 @@ UpdateWorkspaceOutcome IoTTwinMakerClient::UpdateWorkspace(const UpdateWorkspace
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateWorkspaceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   return UpdateWorkspaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));

@@ -609,6 +609,8 @@ StartSyncExecutionOutcome SFNClient::StartSyncExecution(const StartSyncExecution
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSyncExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSyncExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("sync-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), StartSyncExecutionOutcome(addPrefixErr.value()));
   return StartSyncExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

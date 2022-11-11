@@ -348,6 +348,8 @@ DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const Discove
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DiscoverInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DiscoverInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("data-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DiscoverInstancesOutcome(addPrefixErr.value()));
   return DiscoverInstancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

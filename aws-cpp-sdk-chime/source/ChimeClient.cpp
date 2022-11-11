@@ -536,6 +536,8 @@ BatchCreateChannelMembershipOutcome ChimeClient::BatchCreateChannelMembership(co
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchCreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), BatchCreateChannelMembershipOutcome(addPrefixErr.value()));
   Aws::StringStream ss;
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
@@ -811,6 +813,8 @@ CreateAppInstanceOutcome ChimeClient::CreateAppInstance(const CreateAppInstanceR
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateAppInstanceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances");
   return CreateAppInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -841,6 +845,8 @@ CreateAppInstanceAdminOutcome ChimeClient::CreateAppInstanceAdmin(const CreateAp
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppInstanceAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateAppInstanceAdminOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/admins");
@@ -868,6 +874,8 @@ CreateAppInstanceUserOutcome ChimeClient::CreateAppInstanceUser(const CreateAppI
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateAppInstanceUserOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-users");
   return CreateAppInstanceUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -962,6 +970,8 @@ CreateChannelOutcome ChimeClient::CreateChannel(const CreateChannelRequest& requ
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateChannelOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   return CreateChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -992,6 +1002,8 @@ CreateChannelBanOutcome ChimeClient::CreateChannelBan(const CreateChannelBanRequ
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateChannelBanOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/bans");
@@ -1024,6 +1036,8 @@ CreateChannelMembershipOutcome ChimeClient::CreateChannelMembership(const Create
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateChannelMembershipOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
@@ -1056,6 +1070,8 @@ CreateChannelModeratorOutcome ChimeClient::CreateChannelModerator(const CreateCh
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateChannelModeratorOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/moderators");
@@ -1544,6 +1560,8 @@ DeleteAppInstanceOutcome ChimeClient::DeleteAppInstance(const DeleteAppInstanceR
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteAppInstanceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   return DeleteAppInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -1580,6 +1598,8 @@ DeleteAppInstanceAdminOutcome ChimeClient::DeleteAppInstanceAdmin(const DeleteAp
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAppInstanceAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteAppInstanceAdminOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/admins/");
@@ -1645,6 +1665,8 @@ DeleteAppInstanceUserOutcome ChimeClient::DeleteAppInstanceUser(const DeleteAppI
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteAppInstanceUserOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-users/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceUserArn());
   return DeleteAppInstanceUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -1714,6 +1736,8 @@ DeleteChannelOutcome ChimeClient::DeleteChannel(const DeleteChannelRequest& requ
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteChannelOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   return DeleteChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -1750,6 +1774,8 @@ DeleteChannelBanOutcome ChimeClient::DeleteChannelBan(const DeleteChannelBanRequ
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteChannelBanOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/bans/");
@@ -1788,6 +1814,8 @@ DeleteChannelMembershipOutcome ChimeClient::DeleteChannelMembership(const Delete
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteChannelMembershipOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
@@ -1826,6 +1854,8 @@ DeleteChannelMessageOutcome ChimeClient::DeleteChannelMessage(const DeleteChanne
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteChannelMessageOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
@@ -1864,6 +1894,8 @@ DeleteChannelModeratorOutcome ChimeClient::DeleteChannelModerator(const DeleteCh
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteChannelModeratorOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/moderators/");
@@ -2484,6 +2516,8 @@ DescribeAppInstanceOutcome ChimeClient::DescribeAppInstance(const DescribeAppIns
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeAppInstanceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   return DescribeAppInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -2520,6 +2554,8 @@ DescribeAppInstanceAdminOutcome ChimeClient::DescribeAppInstanceAdmin(const Desc
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAppInstanceAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeAppInstanceAdminOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/admins/");
@@ -2553,6 +2589,8 @@ DescribeAppInstanceUserOutcome ChimeClient::DescribeAppInstanceUser(const Descri
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeAppInstanceUserOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-users/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceUserArn());
   return DescribeAppInstanceUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -2584,6 +2622,8 @@ DescribeChannelOutcome ChimeClient::DescribeChannel(const DescribeChannelRequest
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeChannelOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   return DescribeChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -2620,6 +2660,8 @@ DescribeChannelBanOutcome ChimeClient::DescribeChannelBan(const DescribeChannelB
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeChannelBanOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/bans/");
@@ -2658,6 +2700,8 @@ DescribeChannelMembershipOutcome ChimeClient::DescribeChannelMembership(const De
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeChannelMembershipOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
@@ -2696,6 +2740,8 @@ DescribeChannelMembershipForAppInstanceUserOutcome ChimeClient::DescribeChannelM
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelMembershipForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeChannelMembershipForAppInstanceUserOutcome(addPrefixErr.value()));
   Aws::StringStream ss;
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
@@ -2735,6 +2781,8 @@ DescribeChannelModeratedByAppInstanceUserOutcome ChimeClient::DescribeChannelMod
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeChannelModeratedByAppInstanceUserOutcome(addPrefixErr.value()));
   Aws::StringStream ss;
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
@@ -2774,6 +2822,8 @@ DescribeChannelModeratorOutcome ChimeClient::DescribeChannelModerator(const Desc
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeChannelModeratorOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/moderators/");
@@ -3033,6 +3083,8 @@ GetAppInstanceRetentionSettingsOutcome ChimeClient::GetAppInstanceRetentionSetti
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAppInstanceRetentionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetAppInstanceRetentionSettingsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/retention-settings");
@@ -3183,6 +3235,8 @@ GetChannelMessageOutcome ChimeClient::GetChannelMessage(const GetChannelMessageR
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetChannelMessageOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
@@ -3343,6 +3397,8 @@ GetMessagingSessionEndpointOutcome ChimeClient::GetMessagingSessionEndpoint(cons
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMessagingSessionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMessagingSessionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetMessagingSessionEndpointOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/messaging-session");
   return GetMessagingSessionEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -4111,6 +4167,8 @@ ListAppInstanceAdminsOutcome ChimeClient::ListAppInstanceAdmins(const ListAppIns
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppInstanceAdmins, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListAppInstanceAdminsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/admins");
@@ -4143,6 +4201,8 @@ ListAppInstanceUsersOutcome ChimeClient::ListAppInstanceUsers(const ListAppInsta
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppInstanceUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListAppInstanceUsersOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-users");
   return ListAppInstanceUsersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -4168,6 +4228,8 @@ ListAppInstancesOutcome ChimeClient::ListAppInstances(const ListAppInstancesRequ
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListAppInstancesOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances");
   return ListAppInstancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -4306,6 +4368,8 @@ ListChannelBansOutcome ChimeClient::ListChannelBans(const ListChannelBansRequest
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelBans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListChannelBansOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/bans");
@@ -4338,6 +4402,8 @@ ListChannelMembershipsOutcome ChimeClient::ListChannelMemberships(const ListChan
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListChannelMembershipsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
@@ -4365,6 +4431,8 @@ ListChannelMembershipsForAppInstanceUserOutcome ChimeClient::ListChannelMembersh
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMembershipsForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelMembershipsForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListChannelMembershipsForAppInstanceUserOutcome(addPrefixErr.value()));
   Aws::StringStream ss;
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   ss.str("?scope=app-instance-user-memberships");
@@ -4398,6 +4466,8 @@ ListChannelMessagesOutcome ChimeClient::ListChannelMessages(const ListChannelMes
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListChannelMessagesOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/messages");
@@ -4430,6 +4500,8 @@ ListChannelModeratorsOutcome ChimeClient::ListChannelModerators(const ListChanne
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelModerators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListChannelModeratorsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/moderators");
@@ -4462,6 +4534,8 @@ ListChannelsOutcome ChimeClient::ListChannels(const ListChannelsRequest& request
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListChannelsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   return ListChannelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -4487,6 +4561,8 @@ ListChannelsModeratedByAppInstanceUserOutcome ChimeClient::ListChannelsModerated
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelsModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelsModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListChannelsModeratedByAppInstanceUserOutcome(addPrefixErr.value()));
   Aws::StringStream ss;
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   ss.str("?scope=app-instance-user-moderated-channels");
@@ -5040,6 +5116,8 @@ PutAppInstanceRetentionSettingsOutcome ChimeClient::PutAppInstanceRetentionSetti
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAppInstanceRetentionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), PutAppInstanceRetentionSettingsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/retention-settings");
@@ -5449,6 +5527,8 @@ RedactChannelMessageOutcome ChimeClient::RedactChannelMessage(const RedactChanne
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RedactChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), RedactChannelMessageOutcome(addPrefixErr.value()));
   Aws::StringStream ss;
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
@@ -5745,6 +5825,8 @@ SendChannelMessageOutcome ChimeClient::SendChannelMessage(const SendChannelMessa
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), SendChannelMessageOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/messages");
@@ -6130,6 +6212,8 @@ UpdateAppInstanceOutcome ChimeClient::UpdateAppInstance(const UpdateAppInstanceR
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateAppInstanceOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   return UpdateAppInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
@@ -6161,6 +6245,8 @@ UpdateAppInstanceUserOutcome ChimeClient::UpdateAppInstanceUser(const UpdateAppI
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("identity-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateAppInstanceUserOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-users/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceUserArn());
   return UpdateAppInstanceUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
@@ -6235,6 +6321,8 @@ UpdateChannelOutcome ChimeClient::UpdateChannel(const UpdateChannelRequest& requ
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateChannelOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   return UpdateChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
@@ -6271,6 +6359,8 @@ UpdateChannelMessageOutcome ChimeClient::UpdateChannelMessage(const UpdateChanne
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateChannelMessageOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
@@ -6304,6 +6394,8 @@ UpdateChannelReadMarkerOutcome ChimeClient::UpdateChannelReadMarker(const Update
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateChannelReadMarker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("messaging-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateChannelReadMarkerOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/readMarker");
