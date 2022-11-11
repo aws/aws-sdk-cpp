@@ -173,13 +173,10 @@
 #if($serviceModel.endpointRules)
 #if($operation.arnEndpointAllowed && $operation.hasAccountIdMember)
 #set($accountIdMemberWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($operation.accountIdMemberName))
-  if (m_clientConfiguration.enableHostPrefixInjection)
+  if (request.Get${accountIdMemberWithFirstLetterCapitalized}().size() != 12 || request.Get${accountIdMemberWithFirstLetterCapitalized}().find_first_not_of("0123456789") != Aws::String::npos)
   {
-    if (request.Get${accountIdMemberWithFirstLetterCapitalized}().size() != 12 || request.Get${accountIdMemberWithFirstLetterCapitalized}().find_first_not_of("0123456789") != Aws::String::npos)
-    {
-      AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${accountIdMemberWithFirstLetterCapitalized} has invalid value");
-      return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "${accountIdMemberWithFirstLetterCapitalized} is invalid", false));
-    }
+    AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${accountIdMemberWithFirstLetterCapitalized} has invalid value");
+    return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "${accountIdMemberWithFirstLetterCapitalized} is invalid", false));
   }
 #else
 #foreach($memberEntry in $operation.request.shape.members.entrySet())

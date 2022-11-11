@@ -8,6 +8,10 @@
 #end
 #if(!$operation.request.shape.hasEventStreamMembers() && !$operation.s3CrtSpecific)
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+#if($operation.hasEndpointTrait)## Note: EndpointDiscovery Trait is not Endpoint Trait
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing(${operation.endpoint.constructHostPrefixString("request")});
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ${operation.name}Outcome(addPrefixErr.value()));
+#end
 #else
   if (!endpointResolutionOutcome.IsSuccess()) {
     handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<CoreErrors>(
