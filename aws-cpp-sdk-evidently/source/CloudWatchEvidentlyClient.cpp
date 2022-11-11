@@ -197,6 +197,8 @@ BatchEvaluateFeatureOutcome CloudWatchEvidentlyClient::BatchEvaluateFeature(cons
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchEvaluateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("dataplane.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), BatchEvaluateFeatureOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
   endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations");
@@ -556,6 +558,8 @@ EvaluateFeatureOutcome CloudWatchEvidentlyClient::EvaluateFeature(const Evaluate
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EvaluateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("dataplane.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), EvaluateFeatureOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
   endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations/");
@@ -1018,6 +1022,8 @@ PutProjectEventsOutcome CloudWatchEvidentlyClient::PutProjectEvents(const PutPro
   }
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutProjectEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("dataplane.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), PutProjectEventsOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/events/projects/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
   return PutProjectEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
