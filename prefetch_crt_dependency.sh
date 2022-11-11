@@ -1,47 +1,50 @@
 #!/bin/sh
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
+
 CRT_URI_PREFIX=https://codeload.github.com/awslabs
-CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/1e31c173215cef18005831bff1f19a621dd870b6
-CRT_AUTH_URI=${CRT_URI_PREFIX}/aws-c-auth/zip/e1b95cca6f2248c28b66ddb40bcccd35a59cb8b5
-CRT_CAL_URI=${CRT_URI_PREFIX}/aws-c-cal/zip/7eb1d7360ea205ff275d2acc6cce2682063b643f
+CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/365f0343712e2123592885b2c9e738df7c3de6ae  # v0.18.13
 
-CRT_COMMON_URI=${CRT_URI_PREFIX}/aws-c-common/zip/68f28f8df258390744f3c5b460250f8809161041
+AWS_C_AUTH_URI=${CRT_URI_PREFIX}/aws-c-auth/zip/30df6c407e2df43bd244e2c34c9b4a4b87372bfb  # v0.6.19
+AWS_C_CAL_URI=${CRT_URI_PREFIX}/aws-c-cal/zip/ac4216b78d5323b5b8ce95a3dd4a8fc0f95e2d33  # v0.5.20
+AWS_C_COMMON_URI=${CRT_URI_PREFIX}/aws-c-common/zip/d6a6a6057afd8024cf2790a50de4a9818014cec6  # v0.8.5
+AWS_C_COMPRESSION_URI=${CRT_URI_PREFIX}/aws-c-compression/zip/b517b7decd0dac30be2162f5186c250221c53aff  # v0.2.16
+AWS_C_EVENT_STREAM_URI=${CRT_URI_PREFIX}/aws-c-event-stream/zip/39bfa94a14b7126bf0c1330286ef8db452d87e66  # v0.2.15
+AWS_C_HTTP_URI=${CRT_URI_PREFIX}/aws-c-http/zip/2c5a2a7d5556600b9782ffa6c9d7e09964df1abc  # v0.6.25
+AWS_C_IO_URI=${CRT_URI_PREFIX}/aws-c-io/zip/8c15cd781d5ff96d8e30d89da5f077a6431a6b0d  # v0.13.8
+AWS_C_MQTT_URI=${CRT_URI_PREFIX}/aws-c-mqtt/zip/882c689561a3db1466330ccfe3b63637e0a575d3  # v0.7.13
+AWS_C_S3_URI=${CRT_URI_PREFIX}/aws-c-s3/zip/a41255ece72a7c887bba7f9d998ca3e14f4c8a1b  # v0.1.51
+AWS_C_SDKUTILS_URI=${CRT_URI_PREFIX}/aws-c-sdkutils/zip/25bf5cf225f977c3accc6a05a0a7a181ef2a4a30  # v0.1.6
+AWS_CHECKSUMS_URI=${CRT_URI_PREFIX}/aws-checksums/zip/48e7c0e01479232f225c8044d76c84e74192889d  # v0.1.13
+AWS_LC_URI=${CRT_URI_PREFIX}/aws-lc/zip/75a73bfabf1be384b49c7f92da6fdfd9d867069e  # v1.3.0
+S2N_URI=${CRT_URI_PREFIX}/s2n/zip/15d534e8a9ca1eda6bacee514e37d08b4f38a526  # v1.3.27
 
-CRT_COMPRESSION_URI=${CRT_URI_PREFIX}/aws-c-compression/zip/5fab8bc5ab5321d86f6d153b06062419080820ec
-CRT_EVENT_STREAM_URI=${CRT_URI_PREFIX}/aws-c-event-stream/zip/e87537be561d753ec82e783bc0929b1979c585f8
-CRT_HTTP_URI=${CRT_URI_PREFIX}/aws-c-http/zip/3f8ffda541eab815646f739cef2b350d6e7d5406
-CRT_IO=${CRT_URI_PREFIX}/aws-c-io/zip/59b4225bb87021d44d7fd2509b54d7038f11b7e7
-CRT_MQTT_URI=${CRT_URI_PREFIX}/aws-c-mqtt/zip/6168e32bf9f745dec40df633b78baa03420b7f83
-CRT_S3_URI=${CRT_URI_PREFIX}/aws-c-s3/zip/92067b1f44523e70337e0c5eb00b80c9cf10b941
-CRT_SDKUTILS_URI=${CRT_URI_PREFIX}/aws-c-sdkutils/zip/e3c23f4aca31d9e66df25827645f72cbcbfb657a
-AWS_CHECKSUMS_URI=${CRT_URI_PREFIX}/aws-checksums/zip/41df3031b92120b6d8127b7b7122391d5ac6f33f
-AWS_LC_URI=${CRT_URI_PREFIX}/aws-lc/zip/11b50d39cf2378703a4ca6b6fee9d76a2e9852d1
-
-S2N_URI=${CRT_URI_PREFIX}/s2n/zip/88c7ae4d3fd9b3e9e49fcecc9bee1ddb8099ae70
 
 echo "Removing CRT"
 rm -rf crt
 
-echo "Downloading and expanding CRT"
+echo "Downloading and expanding CRT CPP"
 mkdir -p crt/tmp
 curl ${CRT_URI} --output crt/tmp/crt.zip
 unzip crt/tmp/crt -d crt
 CRT_DIR_TMP=`ls -d crt/aws-crt-cpp*`
 mv ${CRT_DIR_TMP} crt/aws-crt-cpp
 
-echo "Downloading and expanding CRT dependancies"
-curl ${CRT_AUTH_URI} --output crt/tmp/1.zip
-curl ${CRT_CAL_URI} --output crt/tmp/2.zip
-curl ${CRT_COMMON_URI} --output crt/tmp/3.zip
-curl ${CRT_COMPRESSION_URI} --output crt/tmp/4.zip
-curl ${CRT_EVENT_STREAM_URI} --output crt/tmp/5.zip
-curl ${CRT_HTTP_URI} --output crt/tmp/6.zip
-curl ${CRT_IO} --output crt/tmp/7.zip
-curl ${CRT_MQTT_URI} --output crt/tmp/8.zip
-curl ${CRT_S3_URI} --output crt/tmp/9.zip
-curl ${CRT_SDKUTILS_URI} --output crt/tmp/10.zip
+echo "Downloading and expanding CRT dependencies"
+curl ${AWS_C_AUTH_URI} --output crt/tmp/1.zip
+curl ${AWS_C_CAL_URI} --output crt/tmp/2.zip
+curl ${AWS_C_COMMON_URI} --output crt/tmp/3.zip
+curl ${AWS_C_COMPRESSION_URI} --output crt/tmp/4.zip
+curl ${AWS_C_EVENT_STREAM_URI} --output crt/tmp/5.zip
+curl ${AWS_C_HTTP_URI} --output crt/tmp/6.zip
+curl ${AWS_C_IO_URI} --output crt/tmp/7.zip
+curl ${AWS_C_MQTT_URI} --output crt/tmp/8.zip
+curl ${AWS_C_S3_URI} --output crt/tmp/9.zip
+curl ${AWS_C_SDKUTILS_URI} --output crt/tmp/10.zip
 curl ${AWS_CHECKSUMS_URI} --output crt/tmp/11.zip
 curl ${AWS_LC_URI} --output crt/tmp/12.zip
 curl ${S2N_URI} --output crt/tmp/13.zip
+
 
 for a in `seq 1 13`; do
     unzip crt/tmp/${a} -d crt/tmp
