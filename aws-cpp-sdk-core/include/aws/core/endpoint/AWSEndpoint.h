@@ -26,23 +26,11 @@ namespace Aws
             virtual ~AWSEndpoint()
             {};
 
-            Aws::String GetURL() const
-            {
-                return m_uri.GetURIString();
-            }
-            void SetURL(Aws::String url)
-            {
-                m_uri = std::move(url);
-            }
+            Aws::String GetURL() const;
+            void SetURL(Aws::String url);
 
-            const Aws::Http::URI& GetURI() const
-            {
-                return m_uri;
-            }
-            void SetURI(Aws::Http::URI uri)
-            {
-                m_uri = std::move(uri);
-            }
+            const Aws::Http::URI& GetURI() const;
+            void SetURI(Aws::Http::URI uri);
 
             template<typename T>
             inline void AddPathSegment(T&& pathSegment)
@@ -56,33 +44,17 @@ namespace Aws
                 m_uri.AddPathSegments(std::forward<T>(pathSegments));
             }
 
-            void SetQueryString(const Aws::String& queryString)
-            {
-                m_uri.SetQueryString(queryString);
-            }
+            using OptionalError = Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>>;
+            OptionalError AddPrefixIfMissing(const Aws::String& prefix);
 
-            const Crt::Optional <EndpointAttributes>& GetAttributes() const
-            {
-                return m_attributes;
-            }
-            Crt::Optional<EndpointAttributes>& AccessAttributes()
-            {
-                return m_attributes;
-            }
+            void SetQueryString(const Aws::String& queryString);
 
-            void SetAttributes(EndpointAttributes&& attributes)
-            {
-                m_attributes = std::move(attributes);
-            }
+            const Crt::Optional<EndpointAttributes>& GetAttributes() const;
+            Crt::Optional<EndpointAttributes>& AccessAttributes();
+            void SetAttributes(EndpointAttributes&& attributes);
 
-            const Aws::UnorderedMap<Aws::String, Aws::String>& GetHeaders() const
-            {
-                return m_headers;
-            }
-            void SetHeaders(Aws::UnorderedMap<Aws::String, Aws::String> headers)
-            {
-                m_headers = std::move(headers);
-            }
+            const Aws::UnorderedMap<Aws::String, Aws::String>& GetHeaders() const;
+            void SetHeaders(Aws::UnorderedMap<Aws::String, Aws::String> headers);
 
         protected:
             // A URI containing at minimum the scheme and host. May optionally include a port and a path.

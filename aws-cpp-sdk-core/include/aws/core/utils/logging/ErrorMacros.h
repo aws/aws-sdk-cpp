@@ -20,6 +20,15 @@ do { \
   } \
 } while (0)
 
+#define AWS_CHECK(LOG_TAG, CONDITION, ERROR_MESSAGE, RETURN) \
+do { \
+  if (!(CONDITION)) \
+  { \
+    AWS_LOGSTREAM_ERROR(LOG_TAG, ERROR_MESSAGE); \
+    return RETURN; \
+  } \
+} while (0)
+
 #define AWS_CHECK_PTR(LOG_TAG, PTR) \
 do { \
   if (PTR == nullptr) \
@@ -33,7 +42,7 @@ do { \
 do { \
   if (!OUTCOME.IsSuccess()) \
   { \
-    AWS_LOGSTREAM_FATAL(#OPERATION, ERROR_MESSAGE); \
+    AWS_LOGSTREAM_ERROR(#OPERATION, ERROR_MESSAGE); \
     return OPERATION##Outcome(Aws::Client::AWSError<ERROR_TYPE>(ERROR, #ERROR, ERROR_MESSAGE, false)); \
   } \
 } while (0)
