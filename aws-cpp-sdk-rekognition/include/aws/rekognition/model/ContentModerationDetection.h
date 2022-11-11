@@ -40,25 +40,33 @@ namespace Model
 
     /**
      * <p>Time, in milliseconds from the beginning of the video, that the content
-     * moderation label was detected.</p>
+     * moderation label was detected. Note that <code>Timestamp</code> is not
+     * guaranteed to be accurate to the individual frame where the moderated content
+     * first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>Time, in milliseconds from the beginning of the video, that the content
-     * moderation label was detected.</p>
+     * moderation label was detected. Note that <code>Timestamp</code> is not
+     * guaranteed to be accurate to the individual frame where the moderated content
+     * first appears.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>Time, in milliseconds from the beginning of the video, that the content
-     * moderation label was detected.</p>
+     * moderation label was detected. Note that <code>Timestamp</code> is not
+     * guaranteed to be accurate to the individual frame where the moderated content
+     * first appears.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>Time, in milliseconds from the beginning of the video, that the content
-     * moderation label was detected.</p>
+     * moderation label was detected. Note that <code>Timestamp</code> is not
+     * guaranteed to be accurate to the individual frame where the moderated content
+     * first appears.</p>
      */
     inline ContentModerationDetection& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 

@@ -19,12 +19,14 @@ namespace Model
 {
 
 RelatedItem::RelatedItem() : 
+    m_generatedIdHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_titleHasBeenSet(false)
 {
 }
 
 RelatedItem::RelatedItem(JsonView jsonValue) : 
+    m_generatedIdHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_titleHasBeenSet(false)
 {
@@ -33,6 +35,13 @@ RelatedItem::RelatedItem(JsonView jsonValue) :
 
 RelatedItem& RelatedItem::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("generatedId"))
+  {
+    m_generatedId = jsonValue.GetString("generatedId");
+
+    m_generatedIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetObject("identifier");
@@ -53,6 +62,12 @@ RelatedItem& RelatedItem::operator =(JsonView jsonValue)
 JsonValue RelatedItem::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_generatedIdHasBeenSet)
+  {
+   payload.WithString("generatedId", m_generatedId);
+
+  }
 
   if(m_identifierHasBeenSet)
   {

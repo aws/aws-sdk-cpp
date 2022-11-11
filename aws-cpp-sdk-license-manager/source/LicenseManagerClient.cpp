@@ -57,7 +57,9 @@
 #include <aws/license-manager/model/ListLicenseVersionsRequest.h>
 #include <aws/license-manager/model/ListLicensesRequest.h>
 #include <aws/license-manager/model/ListReceivedGrantsRequest.h>
+#include <aws/license-manager/model/ListReceivedGrantsForOrganizationRequest.h>
 #include <aws/license-manager/model/ListReceivedLicensesRequest.h>
+#include <aws/license-manager/model/ListReceivedLicensesForOrganizationRequest.h>
 #include <aws/license-manager/model/ListResourceInventoryRequest.h>
 #include <aws/license-manager/model/ListTagsForResourceRequest.h>
 #include <aws/license-manager/model/ListTokensRequest.h>
@@ -1061,6 +1063,30 @@ void LicenseManagerClient::ListReceivedGrantsAsync(const ListReceivedGrantsReque
     } );
 }
 
+ListReceivedGrantsForOrganizationOutcome LicenseManagerClient::ListReceivedGrantsForOrganization(const ListReceivedGrantsForOrganizationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReceivedGrantsForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReceivedGrantsForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListReceivedGrantsForOrganizationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListReceivedGrantsForOrganizationOutcomeCallable LicenseManagerClient::ListReceivedGrantsForOrganizationCallable(const ListReceivedGrantsForOrganizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListReceivedGrantsForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReceivedGrantsForOrganization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LicenseManagerClient::ListReceivedGrantsForOrganizationAsync(const ListReceivedGrantsForOrganizationRequest& request, const ListReceivedGrantsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListReceivedGrantsForOrganization(request), context);
+    } );
+}
+
 ListReceivedLicensesOutcome LicenseManagerClient::ListReceivedLicenses(const ListReceivedLicensesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReceivedLicenses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1082,6 +1108,30 @@ void LicenseManagerClient::ListReceivedLicensesAsync(const ListReceivedLicensesR
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListReceivedLicenses(request), context);
+    } );
+}
+
+ListReceivedLicensesForOrganizationOutcome LicenseManagerClient::ListReceivedLicensesForOrganization(const ListReceivedLicensesForOrganizationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReceivedLicensesForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReceivedLicensesForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListReceivedLicensesForOrganizationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListReceivedLicensesForOrganizationOutcomeCallable LicenseManagerClient::ListReceivedLicensesForOrganizationCallable(const ListReceivedLicensesForOrganizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListReceivedLicensesForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReceivedLicensesForOrganization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LicenseManagerClient::ListReceivedLicensesForOrganizationAsync(const ListReceivedLicensesForOrganizationRequest& request, const ListReceivedLicensesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListReceivedLicensesForOrganization(request), context);
     } );
 }
 

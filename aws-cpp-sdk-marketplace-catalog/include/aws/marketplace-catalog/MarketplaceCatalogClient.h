@@ -172,18 +172,39 @@ namespace MarketplaceCatalog
         virtual void ListEntitiesAsync(const Model::ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation allows you to request changes for your entities. Within a
-         * single ChangeSet, you cannot start the same change type against the same entity
-         * multiple times. Additionally, when a ChangeSet is running, all the entities
-         * targeted by the different changes are locked until the ChangeSet has completed
-         * (either succeeded, cancelled, or failed). If you try to start a ChangeSet
-         * containing a change against an entity that is already locked, you will receive a
-         * <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the
-         * ChangeSet described in the <a
+         * <p>Lists all tags that have been added to a resource (either an <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change
+         * set</a>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Allows you to request changes for your entities. Within a single
+         * <code>ChangeSet</code>, you can't start the same change type against the same
+         * entity multiple times. Additionally, when a <code>ChangeSet</code> is running,
+         * all the entities targeted by the different changes are locked until the change
+         * set has completed (either succeeded, cancelled, or failed). If you try to start
+         * a change set containing a change against an entity that is already locked, you
+         * will receive a <code>ResourceInUseException</code> error.</p> <p>For example,
+         * you can't start the <code>ChangeSet</code> described in the <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
-         * later in this topic, because it contains two changes to execute the same change
-         * type (<code>AddRevisions</code>) against the same entity
-         * (<code>entity-id@1)</code>.</p> <p>For more information about working with
+         * later in this topic because it contains two changes to run the same change type
+         * (<code>AddRevisions</code>) against the same entity
+         * (<code>entity-id@1</code>).</p> <p>For more information about working with
          * change sets, see <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
          * Working with change sets</a>.</p><p><h3>See Also:</h3>   <a
@@ -201,6 +222,48 @@ namespace MarketplaceCatalog
          * An Async wrapper for StartChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartChangeSetAsync(const Model::StartChangeSetRequest& request, const StartChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Tags a resource (either an <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change
+         * set</a>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a tag or list of tags from a resource (either an <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change
+         * set</a>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

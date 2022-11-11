@@ -23,7 +23,8 @@ namespace Model
     CLIENT_ID,
     ACCOUNT_SETTINGS,
     ROLE_ALIAS,
-    IAM_ROLE
+    IAM_ROLE,
+    ISSUER_CERTIFICATE
   };
 
 namespace ResourceTypeMapper

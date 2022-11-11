@@ -28,6 +28,7 @@ namespace Aws
         static const int ACCOUNT_SETTINGS_HASH = HashingUtils::HashString("ACCOUNT_SETTINGS");
         static const int ROLE_ALIAS_HASH = HashingUtils::HashString("ROLE_ALIAS");
         static const int IAM_ROLE_HASH = HashingUtils::HashString("IAM_ROLE");
+        static const int ISSUER_CERTIFICATE_HASH = HashingUtils::HashString("ISSUER_CERTIFICATE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return ResourceType::IAM_ROLE;
           }
+          else if (hashCode == ISSUER_CERTIFICATE_HASH)
+          {
+            return ResourceType::ISSUER_CERTIFICATE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "ROLE_ALIAS";
           case ResourceType::IAM_ROLE:
             return "IAM_ROLE";
+          case ResourceType::ISSUER_CERTIFICATE:
+            return "ISSUER_CERTIFICATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

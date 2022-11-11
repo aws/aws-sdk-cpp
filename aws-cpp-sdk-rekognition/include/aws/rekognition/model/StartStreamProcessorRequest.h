@@ -79,8 +79,9 @@ namespace Model
 
     /**
      * <p> Specifies the starting point in the Kinesis stream to start processing. You
-     * can use the producer timestamp or the fragment number. For more information, see
-     * <a
+     * can use the producer timestamp or the fragment number. If you use the producer
+     * timestamp, you must put the time in milliseconds. For more information about
+     * fragment numbers, see <a
      * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
      * </p> <p>This is a required parameter for label detection stream processors and
      * should not be used to start a face search stream processor.</p>
@@ -89,8 +90,9 @@ namespace Model
 
     /**
      * <p> Specifies the starting point in the Kinesis stream to start processing. You
-     * can use the producer timestamp or the fragment number. For more information, see
-     * <a
+     * can use the producer timestamp or the fragment number. If you use the producer
+     * timestamp, you must put the time in milliseconds. For more information about
+     * fragment numbers, see <a
      * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
      * </p> <p>This is a required parameter for label detection stream processors and
      * should not be used to start a face search stream processor.</p>
@@ -99,8 +101,9 @@ namespace Model
 
     /**
      * <p> Specifies the starting point in the Kinesis stream to start processing. You
-     * can use the producer timestamp or the fragment number. For more information, see
-     * <a
+     * can use the producer timestamp or the fragment number. If you use the producer
+     * timestamp, you must put the time in milliseconds. For more information about
+     * fragment numbers, see <a
      * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
      * </p> <p>This is a required parameter for label detection stream processors and
      * should not be used to start a face search stream processor.</p>
@@ -109,8 +112,9 @@ namespace Model
 
     /**
      * <p> Specifies the starting point in the Kinesis stream to start processing. You
-     * can use the producer timestamp or the fragment number. For more information, see
-     * <a
+     * can use the producer timestamp or the fragment number. If you use the producer
+     * timestamp, you must put the time in milliseconds. For more information about
+     * fragment numbers, see <a
      * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
      * </p> <p>This is a required parameter for label detection stream processors and
      * should not be used to start a face search stream processor.</p>
@@ -119,8 +123,9 @@ namespace Model
 
     /**
      * <p> Specifies the starting point in the Kinesis stream to start processing. You
-     * can use the producer timestamp or the fragment number. For more information, see
-     * <a
+     * can use the producer timestamp or the fragment number. If you use the producer
+     * timestamp, you must put the time in milliseconds. For more information about
+     * fragment numbers, see <a
      * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
      * </p> <p>This is a required parameter for label detection stream processors and
      * should not be used to start a face search stream processor.</p>
@@ -129,8 +134,9 @@ namespace Model
 
     /**
      * <p> Specifies the starting point in the Kinesis stream to start processing. You
-     * can use the producer timestamp or the fragment number. For more information, see
-     * <a
+     * can use the producer timestamp or the fragment number. If you use the producer
+     * timestamp, you must put the time in milliseconds. For more information about
+     * fragment numbers, see <a
      * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
      * </p> <p>This is a required parameter for label detection stream processors and
      * should not be used to start a face search stream processor.</p>

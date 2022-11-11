@@ -40,25 +40,29 @@ namespace Model
 
     /**
      * <p>Time, in milliseconds from the start of the video, that the label was
-     * detected.</p>
+     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the label first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>Time, in milliseconds from the start of the video, that the label was
-     * detected.</p>
+     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the label first appears.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>Time, in milliseconds from the start of the video, that the label was
-     * detected.</p>
+     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the label first appears.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>Time, in milliseconds from the start of the video, that the label was
-     * detected.</p>
+     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the label first appears.</p>
      */
     inline LabelDetection& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 

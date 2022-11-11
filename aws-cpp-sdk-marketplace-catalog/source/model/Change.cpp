@@ -21,6 +21,7 @@ namespace Model
 Change::Change() : 
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
+    m_entityTagsHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_changeNameHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ Change::Change() :
 Change::Change(JsonView jsonValue) : 
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
+    m_entityTagsHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_changeNameHasBeenSet(false)
 {
@@ -49,6 +51,16 @@ Change& Change::operator =(JsonView jsonValue)
     m_entity = jsonValue.GetObject("Entity");
 
     m_entityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EntityTags"))
+  {
+    Aws::Utils::Array<JsonView> entityTagsJsonList = jsonValue.GetArray("EntityTags");
+    for(unsigned entityTagsIndex = 0; entityTagsIndex < entityTagsJsonList.GetLength(); ++entityTagsIndex)
+    {
+      m_entityTags.push_back(entityTagsJsonList[entityTagsIndex].AsObject());
+    }
+    m_entityTagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Details"))
@@ -81,6 +93,17 @@ JsonValue Change::Jsonize() const
   if(m_entityHasBeenSet)
   {
    payload.WithObject("Entity", m_entity.Jsonize());
+
+  }
+
+  if(m_entityTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> entityTagsJsonList(m_entityTags.size());
+   for(unsigned entityTagsIndex = 0; entityTagsIndex < entityTagsJsonList.GetLength(); ++entityTagsIndex)
+   {
+     entityTagsJsonList[entityTagsIndex].AsObject(m_entityTags[entityTagsIndex].Jsonize());
+   }
+   payload.WithArray("EntityTags", std::move(entityTagsJsonList));
 
   }
 

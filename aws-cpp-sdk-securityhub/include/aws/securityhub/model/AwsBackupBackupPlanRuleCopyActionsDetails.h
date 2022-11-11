@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An array of <code>CopyAction</code> objects, which contains the details of
-   * the copy operation. </p><p><h3>See Also:</h3>   <a
+   * <p>An array of <code>CopyAction</code> objects, each of which contains details
+   * of the copy operation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsBackupBackupPlanRuleCopyActionsDetails">AWS
    * API Reference</a></p>
    */

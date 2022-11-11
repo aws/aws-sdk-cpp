@@ -183,6 +183,7 @@
 #include <aws/iot/model/ListPrincipalThingsRequest.h>
 #include <aws/iot/model/ListProvisioningTemplateVersionsRequest.h>
 #include <aws/iot/model/ListProvisioningTemplatesRequest.h>
+#include <aws/iot/model/ListRelatedResourcesForAuditFindingRequest.h>
 #include <aws/iot/model/ListRoleAliasesRequest.h>
 #include <aws/iot/model/ListScheduledAuditsRequest.h>
 #include <aws/iot/model/ListSecurityProfilesRequest.h>
@@ -5249,6 +5250,36 @@ void IoTClient::ListProvisioningTemplatesAsync(const ListProvisioningTemplatesRe
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListProvisioningTemplates(request), context);
+    } );
+}
+
+ListRelatedResourcesForAuditFindingOutcome IoTClient::ListRelatedResourcesForAuditFinding(const ListRelatedResourcesForAuditFindingRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRelatedResourcesForAuditFinding, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FindingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRelatedResourcesForAuditFinding", "Required field: FindingId, is not set");
+    return ListRelatedResourcesForAuditFindingOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FindingId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRelatedResourcesForAuditFinding, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/audit/relatedResources");
+  return ListRelatedResourcesForAuditFindingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRelatedResourcesForAuditFindingOutcomeCallable IoTClient::ListRelatedResourcesForAuditFindingCallable(const ListRelatedResourcesForAuditFindingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRelatedResourcesForAuditFindingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRelatedResourcesForAuditFinding(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListRelatedResourcesForAuditFindingAsync(const ListRelatedResourcesForAuditFindingRequest& request, const ListRelatedResourcesForAuditFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRelatedResourcesForAuditFinding(request), context);
     } );
 }
 

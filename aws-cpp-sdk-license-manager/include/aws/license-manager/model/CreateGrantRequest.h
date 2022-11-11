@@ -168,47 +168,56 @@ namespace Model
 
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 

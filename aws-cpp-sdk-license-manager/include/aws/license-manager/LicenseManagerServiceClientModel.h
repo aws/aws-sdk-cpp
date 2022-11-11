@@ -54,7 +54,9 @@
 #include <aws/license-manager/model/ListLicenseVersionsResult.h>
 #include <aws/license-manager/model/ListLicensesResult.h>
 #include <aws/license-manager/model/ListReceivedGrantsResult.h>
+#include <aws/license-manager/model/ListReceivedGrantsForOrganizationResult.h>
 #include <aws/license-manager/model/ListReceivedLicensesResult.h>
+#include <aws/license-manager/model/ListReceivedLicensesForOrganizationResult.h>
 #include <aws/license-manager/model/ListResourceInventoryResult.h>
 #include <aws/license-manager/model/ListTagsForResourceResult.h>
 #include <aws/license-manager/model/ListTokensResult.h>
@@ -142,7 +144,9 @@ namespace Aws
       class ListLicenseVersionsRequest;
       class ListLicensesRequest;
       class ListReceivedGrantsRequest;
+      class ListReceivedGrantsForOrganizationRequest;
       class ListReceivedLicensesRequest;
+      class ListReceivedLicensesForOrganizationRequest;
       class ListResourceInventoryRequest;
       class ListTagsForResourceRequest;
       class ListTokensRequest;
@@ -193,7 +197,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListLicenseVersionsResult, LicenseManagerError> ListLicenseVersionsOutcome;
       typedef Aws::Utils::Outcome<ListLicensesResult, LicenseManagerError> ListLicensesOutcome;
       typedef Aws::Utils::Outcome<ListReceivedGrantsResult, LicenseManagerError> ListReceivedGrantsOutcome;
+      typedef Aws::Utils::Outcome<ListReceivedGrantsForOrganizationResult, LicenseManagerError> ListReceivedGrantsForOrganizationOutcome;
       typedef Aws::Utils::Outcome<ListReceivedLicensesResult, LicenseManagerError> ListReceivedLicensesOutcome;
+      typedef Aws::Utils::Outcome<ListReceivedLicensesForOrganizationResult, LicenseManagerError> ListReceivedLicensesForOrganizationOutcome;
       typedef Aws::Utils::Outcome<ListResourceInventoryResult, LicenseManagerError> ListResourceInventoryOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, LicenseManagerError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTokensResult, LicenseManagerError> ListTokensOutcome;
@@ -244,7 +250,9 @@ namespace Aws
       typedef std::future<ListLicenseVersionsOutcome> ListLicenseVersionsOutcomeCallable;
       typedef std::future<ListLicensesOutcome> ListLicensesOutcomeCallable;
       typedef std::future<ListReceivedGrantsOutcome> ListReceivedGrantsOutcomeCallable;
+      typedef std::future<ListReceivedGrantsForOrganizationOutcome> ListReceivedGrantsForOrganizationOutcomeCallable;
       typedef std::future<ListReceivedLicensesOutcome> ListReceivedLicensesOutcomeCallable;
+      typedef std::future<ListReceivedLicensesForOrganizationOutcome> ListReceivedLicensesForOrganizationOutcomeCallable;
       typedef std::future<ListResourceInventoryOutcome> ListResourceInventoryOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTokensOutcome> ListTokensOutcomeCallable;
@@ -298,7 +306,9 @@ namespace Aws
     typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseVersionsRequest&, const Model::ListLicenseVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicenseVersionsResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListLicensesRequest&, const Model::ListLicensesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicensesResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListReceivedGrantsRequest&, const Model::ListReceivedGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReceivedGrantsResponseReceivedHandler;
+    typedef std::function<void(const LicenseManagerClient*, const Model::ListReceivedGrantsForOrganizationRequest&, const Model::ListReceivedGrantsForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReceivedGrantsForOrganizationResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListReceivedLicensesRequest&, const Model::ListReceivedLicensesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReceivedLicensesResponseReceivedHandler;
+    typedef std::function<void(const LicenseManagerClient*, const Model::ListReceivedLicensesForOrganizationRequest&, const Model::ListReceivedLicensesForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReceivedLicensesForOrganizationResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListResourceInventoryRequest&, const Model::ListResourceInventoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceInventoryResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListTokensRequest&, const Model::ListTokensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTokensResponseReceivedHandler;

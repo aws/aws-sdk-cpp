@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-catalog/model/Change.h>
+#include <aws/marketplace-catalog/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -214,6 +215,55 @@ namespace Model
      */
     inline StartChangeSetRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>A list of objects specifying each key name and value for the
+     * <code>ChangeSetTags</code> property.</p>
+     */
+    inline const Aws::Vector<Tag>& GetChangeSetTags() const{ return m_changeSetTags; }
+
+    /**
+     * <p>A list of objects specifying each key name and value for the
+     * <code>ChangeSetTags</code> property.</p>
+     */
+    inline bool ChangeSetTagsHasBeenSet() const { return m_changeSetTagsHasBeenSet; }
+
+    /**
+     * <p>A list of objects specifying each key name and value for the
+     * <code>ChangeSetTags</code> property.</p>
+     */
+    inline void SetChangeSetTags(const Aws::Vector<Tag>& value) { m_changeSetTagsHasBeenSet = true; m_changeSetTags = value; }
+
+    /**
+     * <p>A list of objects specifying each key name and value for the
+     * <code>ChangeSetTags</code> property.</p>
+     */
+    inline void SetChangeSetTags(Aws::Vector<Tag>&& value) { m_changeSetTagsHasBeenSet = true; m_changeSetTags = std::move(value); }
+
+    /**
+     * <p>A list of objects specifying each key name and value for the
+     * <code>ChangeSetTags</code> property.</p>
+     */
+    inline StartChangeSetRequest& WithChangeSetTags(const Aws::Vector<Tag>& value) { SetChangeSetTags(value); return *this;}
+
+    /**
+     * <p>A list of objects specifying each key name and value for the
+     * <code>ChangeSetTags</code> property.</p>
+     */
+    inline StartChangeSetRequest& WithChangeSetTags(Aws::Vector<Tag>&& value) { SetChangeSetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of objects specifying each key name and value for the
+     * <code>ChangeSetTags</code> property.</p>
+     */
+    inline StartChangeSetRequest& AddChangeSetTags(const Tag& value) { m_changeSetTagsHasBeenSet = true; m_changeSetTags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of objects specifying each key name and value for the
+     * <code>ChangeSetTags</code> property.</p>
+     */
+    inline StartChangeSetRequest& AddChangeSetTags(Tag&& value) { m_changeSetTagsHasBeenSet = true; m_changeSetTags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_catalog;
@@ -227,6 +277,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    Aws::Vector<Tag> m_changeSetTags;
+    bool m_changeSetTagsHasBeenSet = false;
   };
 
 } // namespace Model

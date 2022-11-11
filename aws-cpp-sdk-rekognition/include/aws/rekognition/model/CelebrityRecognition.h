@@ -41,25 +41,29 @@ namespace Model
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the celebrity was
-     * recognized.</p>
+     * recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the celebrity first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the celebrity was
-     * recognized.</p>
+     * recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the celebrity first appears.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the celebrity was
-     * recognized.</p>
+     * recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the celebrity first appears.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the celebrity was
-     * recognized.</p>
+     * recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the celebrity first appears.</p>
      */
     inline CelebrityRecognition& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
