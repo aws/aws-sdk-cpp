@@ -42,6 +42,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -51,6 +52,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -60,6 +62,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -69,6 +72,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -78,6 +82,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -87,6 +92,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -96,6 +102,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -105,6 +112,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */

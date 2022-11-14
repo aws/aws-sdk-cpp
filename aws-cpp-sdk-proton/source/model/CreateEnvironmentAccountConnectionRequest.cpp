@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateEnvironmentAccountConnectionRequest::CreateEnvironmentAccountConnectionRequest() : 
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_codebuildRoleArnHasBeenSet(false),
     m_componentRoleArnHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_managementAccountIdHasBeenSet(false),
@@ -30,6 +31,12 @@ Aws::String CreateEnvironmentAccountConnectionRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_codebuildRoleArnHasBeenSet)
+  {
+   payload.WithString("codebuildRoleArn", m_codebuildRoleArn);
 
   }
 

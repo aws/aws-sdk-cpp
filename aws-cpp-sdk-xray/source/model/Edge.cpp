@@ -25,7 +25,9 @@ Edge::Edge() :
     m_endTimeHasBeenSet(false),
     m_summaryStatisticsHasBeenSet(false),
     m_responseTimeHistogramHasBeenSet(false),
-    m_aliasesHasBeenSet(false)
+    m_aliasesHasBeenSet(false),
+    m_edgeTypeHasBeenSet(false),
+    m_receivedEventAgeHistogramHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ Edge::Edge(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_summaryStatisticsHasBeenSet(false),
     m_responseTimeHistogramHasBeenSet(false),
-    m_aliasesHasBeenSet(false)
+    m_aliasesHasBeenSet(false),
+    m_edgeTypeHasBeenSet(false),
+    m_receivedEventAgeHistogramHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +95,23 @@ Edge& Edge::operator =(JsonView jsonValue)
     m_aliasesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EdgeType"))
+  {
+    m_edgeType = jsonValue.GetString("EdgeType");
+
+    m_edgeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReceivedEventAgeHistogram"))
+  {
+    Aws::Utils::Array<JsonView> receivedEventAgeHistogramJsonList = jsonValue.GetArray("ReceivedEventAgeHistogram");
+    for(unsigned receivedEventAgeHistogramIndex = 0; receivedEventAgeHistogramIndex < receivedEventAgeHistogramJsonList.GetLength(); ++receivedEventAgeHistogramIndex)
+    {
+      m_receivedEventAgeHistogram.push_back(receivedEventAgeHistogramJsonList[receivedEventAgeHistogramIndex].AsObject());
+    }
+    m_receivedEventAgeHistogramHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +160,23 @@ JsonValue Edge::Jsonize() const
      aliasesJsonList[aliasesIndex].AsObject(m_aliases[aliasesIndex].Jsonize());
    }
    payload.WithArray("Aliases", std::move(aliasesJsonList));
+
+  }
+
+  if(m_edgeTypeHasBeenSet)
+  {
+   payload.WithString("EdgeType", m_edgeType);
+
+  }
+
+  if(m_receivedEventAgeHistogramHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> receivedEventAgeHistogramJsonList(m_receivedEventAgeHistogram.size());
+   for(unsigned receivedEventAgeHistogramIndex = 0; receivedEventAgeHistogramIndex < receivedEventAgeHistogramJsonList.GetLength(); ++receivedEventAgeHistogramIndex)
+   {
+     receivedEventAgeHistogramJsonList[receivedEventAgeHistogramIndex].AsObject(m_receivedEventAgeHistogram[receivedEventAgeHistogramIndex].Jsonize());
+   }
+   payload.WithArray("ReceivedEventAgeHistogram", std::move(receivedEventAgeHistogramJsonList));
 
   }
 

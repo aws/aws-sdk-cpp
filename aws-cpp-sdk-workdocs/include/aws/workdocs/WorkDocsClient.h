@@ -39,7 +39,14 @@ namespace WorkDocs
    * limited to, the ability to modify file permissions and upload any file to any
    * user. This allows developers to perform the three use cases above, as well as
    * give users the ability to grant access on a selective basis using the IAM
-   * model.</p>
+   * model.</p>  <p>The pricing for Amazon WorkDocs APIs varies depending on
+   * the API call type for these actions:</p> <ul> <li> <p> <code>READ (Get*)</code>
+   * </p> </li> <li> <p> <code>WRITE (Activate*, Add*, Create*, Deactivate*,
+   * Initiate*, Update*)</code> </p> </li> <li> <p> <code>LIST (Describe*)</code>
+   * </p> </li> <li> <p> <code>DELETE*, CANCEL</code> </p> </li> </ul> <p>For
+   * information about Amazon WorkDocs API pricing, see <a
+   * href="https://aws.amazon.com/workdocs/pricing/">Amazon WorkDocs Pricing</a>.</p>
+   * 
    */
   class AWS_WORKDOCS_API WorkDocsClient : public Aws::Client::AWSJsonClient
   {
@@ -230,8 +237,8 @@ namespace WorkDocs
          * <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint
          * receives a confirmation message, and must confirm the subscription.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
-         * to Notifications</a> in the <i>Amazon WorkDocs Developer
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/manage-notifications.html">Setting
+         * up notifications for an IAM user or role</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">AWS
          * API Reference</a></p>
@@ -338,6 +345,25 @@ namespace WorkDocs
          * An Async wrapper for DeleteDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDocumentAsync(const Model::DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a version of an Amazon WorkDocs document. Use the
+         * <code>DeletePriorVersions</code> parameter to delete prior
+         * versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocumentVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDocumentVersionOutcome DeleteDocumentVersion(const Model::DeleteDocumentVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDocumentVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDocumentVersionOutcomeCallable DeleteDocumentVersionCallable(const Model::DeleteDocumentVersionRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteDocumentVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDocumentVersionAsync(const Model::DeleteDocumentVersionRequest& request, const DeleteDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes the specified folder and its contents.</p><p><h3>See
@@ -797,6 +823,24 @@ namespace WorkDocs
          * An Async wrapper for RemoveResourcePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveResourcePermissionAsync(const Model::RemoveResourcePermissionRequest& request, const RemoveResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Recovers a deleted version of an Amazon WorkDocs document.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RestoreDocumentVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestoreDocumentVersionsOutcome RestoreDocumentVersions(const Model::RestoreDocumentVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for RestoreDocumentVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RestoreDocumentVersionsOutcomeCallable RestoreDocumentVersionsCallable(const Model::RestoreDocumentVersionsRequest& request) const;
+
+        /**
+         * An Async wrapper for RestoreDocumentVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RestoreDocumentVersionsAsync(const Model::RestoreDocumentVersionsRequest& request, const RestoreDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified attributes of a document. The user must have access to

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workdocs/model/SubscriptionProtocolType.h>
+#include <aws/customer-profiles/model/LogicalOperator.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace WorkDocs
+  namespace CustomerProfiles
   {
     namespace Model
     {
-      namespace SubscriptionProtocolTypeMapper
+      namespace LogicalOperatorMapper
       {
 
-        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
-        static const int SQS_HASH = HashingUtils::HashString("SQS");
+        static const int AND_HASH = HashingUtils::HashString("AND");
+        static const int OR_HASH = HashingUtils::HashString("OR");
 
 
-        SubscriptionProtocolType GetSubscriptionProtocolTypeForName(const Aws::String& name)
+        LogicalOperator GetLogicalOperatorForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == HTTPS_HASH)
+          if (hashCode == AND_HASH)
           {
-            return SubscriptionProtocolType::HTTPS;
+            return LogicalOperator::AND;
           }
-          else if (hashCode == SQS_HASH)
+          else if (hashCode == OR_HASH)
           {
-            return SubscriptionProtocolType::SQS;
+            return LogicalOperator::OR;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<SubscriptionProtocolType>(hashCode);
+            return static_cast<LogicalOperator>(hashCode);
           }
 
-          return SubscriptionProtocolType::NOT_SET;
+          return LogicalOperator::NOT_SET;
         }
 
-        Aws::String GetNameForSubscriptionProtocolType(SubscriptionProtocolType enumValue)
+        Aws::String GetNameForLogicalOperator(LogicalOperator enumValue)
         {
           switch(enumValue)
           {
-          case SubscriptionProtocolType::HTTPS:
-            return "HTTPS";
-          case SubscriptionProtocolType::SQS:
-            return "SQS";
+          case LogicalOperator::AND:
+            return "AND";
+          case LogicalOperator::OR:
+            return "OR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace SubscriptionProtocolTypeMapper
+      } // namespace LogicalOperatorMapper
     } // namespace Model
-  } // namespace WorkDocs
+  } // namespace CustomerProfiles
 } // namespace Aws
