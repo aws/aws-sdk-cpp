@@ -135,6 +135,10 @@ public class CppViewHelper {
     public static String computeJsonizeString(Shape shape, boolean isPointer) {
         String memberAccessOp = isPointer ? "->" : ".";
 
+	if (shape.isDocument()) {
+            return memberAccessOp + "View()";
+        }
+
         if(shape.isStructure()) {
             return memberAccessOp + "Jsonize()";
         }
