@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/proton/Proton_EXPORTS.h>
 #include <aws/proton/ProtonRequest.h>
-#include <aws/proton/model/RepositoryBranchInput.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/model/RepositoryBranchInput.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +62,63 @@ namespace Model
      * pipeline repository.</p>
      */
     inline UpdateAccountSettingsRequest& WithDeletePipelineProvisioningRepository(bool value) { SetDeletePipelineProvisioningRepository(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Proton assumes this role for CodeBuild-based
+     * provisioning.</p>
+     */
+    inline const Aws::String& GetPipelineCodebuildRoleArn() const{ return m_pipelineCodebuildRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Proton assumes this role for CodeBuild-based
+     * provisioning.</p>
+     */
+    inline bool PipelineCodebuildRoleArnHasBeenSet() const { return m_pipelineCodebuildRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Proton assumes this role for CodeBuild-based
+     * provisioning.</p>
+     */
+    inline void SetPipelineCodebuildRoleArn(const Aws::String& value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Proton assumes this role for CodeBuild-based
+     * provisioning.</p>
+     */
+    inline void SetPipelineCodebuildRoleArn(Aws::String&& value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Proton assumes this role for CodeBuild-based
+     * provisioning.</p>
+     */
+    inline void SetPipelineCodebuildRoleArn(const char* value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Proton assumes this role for CodeBuild-based
+     * provisioning.</p>
+     */
+    inline UpdateAccountSettingsRequest& WithPipelineCodebuildRoleArn(const Aws::String& value) { SetPipelineCodebuildRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Proton assumes this role for CodeBuild-based
+     * provisioning.</p>
+     */
+    inline UpdateAccountSettingsRequest& WithPipelineCodebuildRoleArn(Aws::String&& value) { SetPipelineCodebuildRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Proton assumes this role for CodeBuild-based
+     * provisioning.</p>
+     */
+    inline UpdateAccountSettingsRequest& WithPipelineCodebuildRoleArn(const char* value) { SetPipelineCodebuildRoleArn(value); return *this;}
 
 
     /**
@@ -207,6 +264,9 @@ namespace Model
 
     bool m_deletePipelineProvisioningRepository;
     bool m_deletePipelineProvisioningRepositoryHasBeenSet = false;
+
+    Aws::String m_pipelineCodebuildRoleArn;
+    bool m_pipelineCodebuildRoleArnHasBeenSet = false;
 
     RepositoryBranchInput m_pipelineProvisioningRepository;
     bool m_pipelineProvisioningRepositoryHasBeenSet = false;

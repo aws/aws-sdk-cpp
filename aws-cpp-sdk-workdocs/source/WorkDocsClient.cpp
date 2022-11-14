@@ -34,6 +34,7 @@
 #include <aws/workdocs/model/DeleteCommentRequest.h>
 #include <aws/workdocs/model/DeleteCustomMetadataRequest.h>
 #include <aws/workdocs/model/DeleteDocumentRequest.h>
+#include <aws/workdocs/model/DeleteDocumentVersionRequest.h>
 #include <aws/workdocs/model/DeleteFolderRequest.h>
 #include <aws/workdocs/model/DeleteFolderContentsRequest.h>
 #include <aws/workdocs/model/DeleteLabelsRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/workdocs/model/InitiateDocumentVersionUploadRequest.h>
 #include <aws/workdocs/model/RemoveAllResourcePermissionsRequest.h>
 #include <aws/workdocs/model/RemoveResourcePermissionRequest.h>
+#include <aws/workdocs/model/RestoreDocumentVersionsRequest.h>
 #include <aws/workdocs/model/UpdateDocumentRequest.h>
 #include <aws/workdocs/model/UpdateDocumentVersionRequest.h>
 #include <aws/workdocs/model/UpdateFolderRequest.h>
@@ -614,6 +616,49 @@ void WorkDocsClient::DeleteDocumentAsync(const DeleteDocumentRequest& request, c
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteDocument(request), context);
+    } );
+}
+
+DeleteDocumentVersionOutcome WorkDocsClient::DeleteDocumentVersion(const DeleteDocumentVersionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDocumentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDocumentVersion", "Required field: DocumentId, is not set");
+    return DeleteDocumentVersionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  if (!request.VersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDocumentVersion", "Required field: VersionId, is not set");
+    return DeleteDocumentVersionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
+  }
+  if (!request.DeletePriorVersionsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDocumentVersion", "Required field: DeletePriorVersions, is not set");
+    return DeleteDocumentVersionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeletePriorVersions]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDocumentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/documentVersions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
+  return DeleteDocumentVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDocumentVersionOutcomeCallable WorkDocsClient::DeleteDocumentVersionCallable(const DeleteDocumentVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDocumentVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDocumentVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkDocsClient::DeleteDocumentVersionAsync(const DeleteDocumentVersionRequest& request, const DeleteDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDocumentVersion(request), context);
     } );
 }
 
@@ -1369,6 +1414,37 @@ void WorkDocsClient::RemoveResourcePermissionAsync(const RemoveResourcePermissio
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, RemoveResourcePermission(request), context);
+    } );
+}
+
+RestoreDocumentVersionsOutcome WorkDocsClient::RestoreDocumentVersions(const RestoreDocumentVersionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreDocumentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RestoreDocumentVersions", "Required field: DocumentId, is not set");
+    return RestoreDocumentVersionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestoreDocumentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/documentVersions/restore/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
+  return RestoreDocumentVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RestoreDocumentVersionsOutcomeCallable WorkDocsClient::RestoreDocumentVersionsCallable(const RestoreDocumentVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RestoreDocumentVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreDocumentVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkDocsClient::RestoreDocumentVersionsAsync(const RestoreDocumentVersionsRequest& request, const RestoreDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RestoreDocumentVersions(request), context);
     } );
 }
 

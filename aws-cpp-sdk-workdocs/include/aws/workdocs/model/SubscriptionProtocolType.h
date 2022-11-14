@@ -16,7 +16,8 @@ namespace Model
   enum class SubscriptionProtocolType
   {
     NOT_SET,
-    HTTPS
+    HTTPS,
+    SQS
   };
 
 namespace SubscriptionProtocolTypeMapper

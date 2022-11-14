@@ -4584,25 +4584,29 @@ namespace Model
 
     /**
      * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * setting applies only to the <code>gp3</code> storage type.</p> <p>This setting
+     * doesn't apply to RDS Custom or Amazon Aurora.</p>
      */
     inline int GetStorageThroughput() const{ return m_storageThroughput; }
 
     /**
      * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * setting applies only to the <code>gp3</code> storage type.</p> <p>This setting
+     * doesn't apply to RDS Custom or Amazon Aurora.</p>
      */
     inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
 
     /**
      * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * setting applies only to the <code>gp3</code> storage type.</p> <p>This setting
+     * doesn't apply to RDS Custom or Amazon Aurora.</p>
      */
     inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
 
     /**
      * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * setting applies only to the <code>gp3</code> storage type.</p> <p>This setting
+     * doesn't apply to RDS Custom or Amazon Aurora.</p>
      */
     inline CreateDBInstanceRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 

@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() : 
     m_deletePipelineProvisioningRepository(false),
     m_deletePipelineProvisioningRepositoryHasBeenSet(false),
+    m_pipelineCodebuildRoleArnHasBeenSet(false),
     m_pipelineProvisioningRepositoryHasBeenSet(false),
     m_pipelineServiceRoleArnHasBeenSet(false)
 {
@@ -27,6 +28,12 @@ Aws::String UpdateAccountSettingsRequest::SerializePayload() const
   if(m_deletePipelineProvisioningRepositoryHasBeenSet)
   {
    payload.WithBool("deletePipelineProvisioningRepository", m_deletePipelineProvisioningRepository);
+
+  }
+
+  if(m_pipelineCodebuildRoleArnHasBeenSet)
+  {
+   payload.WithString("pipelineCodebuildRoleArn", m_pipelineCodebuildRoleArn);
 
   }
 

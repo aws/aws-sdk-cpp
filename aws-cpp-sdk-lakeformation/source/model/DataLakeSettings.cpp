@@ -22,6 +22,7 @@ DataLakeSettings::DataLakeSettings() :
     m_dataLakeAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_trustedResourceOwnersHasBeenSet(false),
     m_allowExternalDataFiltering(false),
     m_allowExternalDataFilteringHasBeenSet(false),
@@ -34,6 +35,7 @@ DataLakeSettings::DataLakeSettings(JsonView jsonValue) :
     m_dataLakeAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
+    m_parametersHasBeenSet(false),
     m_trustedResourceOwnersHasBeenSet(false),
     m_allowExternalDataFiltering(false),
     m_allowExternalDataFilteringHasBeenSet(false),
@@ -73,6 +75,16 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
       m_createTableDefaultPermissions.push_back(createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject());
     }
     m_createTableDefaultPermissionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Parameters"))
+  {
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    for(auto& parametersItem : parametersJsonMap)
+    {
+      m_parameters[parametersItem.first] = parametersItem.second.AsString();
+    }
+    m_parametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TrustedResourceOwners"))
@@ -149,6 +161,17 @@ JsonValue DataLakeSettings::Jsonize() const
      createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());
    }
    payload.WithArray("CreateTableDefaultPermissions", std::move(createTableDefaultPermissionsJsonList));
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   JsonValue parametersJsonMap;
+   for(auto& parametersItem : m_parameters)
+   {
+     parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+   }
+   payload.WithObject("Parameters", std::move(parametersJsonMap));
 
   }
 

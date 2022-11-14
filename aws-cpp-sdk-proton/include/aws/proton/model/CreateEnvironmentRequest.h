@@ -38,6 +38,87 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+     * <p>To use CodeBuild-based provisioning for the environment or for any service
+     * instance running in the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code>
+     * parameter.</p>
+     */
+    inline const Aws::String& GetCodebuildRoleArn() const{ return m_codebuildRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+     * <p>To use CodeBuild-based provisioning for the environment or for any service
+     * instance running in the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code>
+     * parameter.</p>
+     */
+    inline bool CodebuildRoleArnHasBeenSet() const { return m_codebuildRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+     * <p>To use CodeBuild-based provisioning for the environment or for any service
+     * instance running in the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code>
+     * parameter.</p>
+     */
+    inline void SetCodebuildRoleArn(const Aws::String& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+     * <p>To use CodeBuild-based provisioning for the environment or for any service
+     * instance running in the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code>
+     * parameter.</p>
+     */
+    inline void SetCodebuildRoleArn(Aws::String&& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+     * <p>To use CodeBuild-based provisioning for the environment or for any service
+     * instance running in the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code>
+     * parameter.</p>
+     */
+    inline void SetCodebuildRoleArn(const char* value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+     * <p>To use CodeBuild-based provisioning for the environment or for any service
+     * instance running in the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code>
+     * parameter.</p>
+     */
+    inline CreateEnvironmentRequest& WithCodebuildRoleArn(const Aws::String& value) { SetCodebuildRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+     * <p>To use CodeBuild-based provisioning for the environment or for any service
+     * instance running in the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code>
+     * parameter.</p>
+     */
+    inline CreateEnvironmentRequest& WithCodebuildRoleArn(Aws::String&& value) { SetCodebuildRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+     * <p>To use CodeBuild-based provisioning for the environment or for any service
+     * instance running in the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code>
+     * parameter.</p>
+     */
+    inline CreateEnvironmentRequest& WithCodebuildRoleArn(const char* value) { SetCodebuildRoleArn(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
      * provisioning directly defined components in this environment. It determines the
      * scope of infrastructure that a component can provision.</p> <p>You must specify
@@ -176,98 +257,106 @@ namespace Model
 
 
     /**
-     * <p>The ID of the environment account connection that you provide if you're
-     * provisioning your environment infrastructure resources to an environment
-     * account. For more information, see <a
+     * <p>The ID of the environment account connection that you provide if you want
+     * Proton to provision infrastructure resources for your environment or for any of
+     * the service instances running in it in an environment account. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton User guide</i>.</p> <p>To use Amazon
-     * Web Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * account connections</a> in the <i>Proton User guide</i>.</p> <p>If you specify
+     * the <code>environmentAccountConnectionId</code> parameter, don't specify
+     * <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, or
+     * <code>provisioningRepository</code>.</p>
      */
     inline const Aws::String& GetEnvironmentAccountConnectionId() const{ return m_environmentAccountConnectionId; }
 
     /**
-     * <p>The ID of the environment account connection that you provide if you're
-     * provisioning your environment infrastructure resources to an environment
-     * account. For more information, see <a
+     * <p>The ID of the environment account connection that you provide if you want
+     * Proton to provision infrastructure resources for your environment or for any of
+     * the service instances running in it in an environment account. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton User guide</i>.</p> <p>To use Amazon
-     * Web Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * account connections</a> in the <i>Proton User guide</i>.</p> <p>If you specify
+     * the <code>environmentAccountConnectionId</code> parameter, don't specify
+     * <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, or
+     * <code>provisioningRepository</code>.</p>
      */
     inline bool EnvironmentAccountConnectionIdHasBeenSet() const { return m_environmentAccountConnectionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the environment account connection that you provide if you're
-     * provisioning your environment infrastructure resources to an environment
-     * account. For more information, see <a
+     * <p>The ID of the environment account connection that you provide if you want
+     * Proton to provision infrastructure resources for your environment or for any of
+     * the service instances running in it in an environment account. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton User guide</i>.</p> <p>To use Amazon
-     * Web Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * account connections</a> in the <i>Proton User guide</i>.</p> <p>If you specify
+     * the <code>environmentAccountConnectionId</code> parameter, don't specify
+     * <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, or
+     * <code>provisioningRepository</code>.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const Aws::String& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = value; }
 
     /**
-     * <p>The ID of the environment account connection that you provide if you're
-     * provisioning your environment infrastructure resources to an environment
-     * account. For more information, see <a
+     * <p>The ID of the environment account connection that you provide if you want
+     * Proton to provision infrastructure resources for your environment or for any of
+     * the service instances running in it in an environment account. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton User guide</i>.</p> <p>To use Amazon
-     * Web Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * account connections</a> in the <i>Proton User guide</i>.</p> <p>If you specify
+     * the <code>environmentAccountConnectionId</code> parameter, don't specify
+     * <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, or
+     * <code>provisioningRepository</code>.</p>
      */
     inline void SetEnvironmentAccountConnectionId(Aws::String&& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = std::move(value); }
 
     /**
-     * <p>The ID of the environment account connection that you provide if you're
-     * provisioning your environment infrastructure resources to an environment
-     * account. For more information, see <a
+     * <p>The ID of the environment account connection that you provide if you want
+     * Proton to provision infrastructure resources for your environment or for any of
+     * the service instances running in it in an environment account. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton User guide</i>.</p> <p>To use Amazon
-     * Web Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * account connections</a> in the <i>Proton User guide</i>.</p> <p>If you specify
+     * the <code>environmentAccountConnectionId</code> parameter, don't specify
+     * <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, or
+     * <code>provisioningRepository</code>.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const char* value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId.assign(value); }
 
     /**
-     * <p>The ID of the environment account connection that you provide if you're
-     * provisioning your environment infrastructure resources to an environment
-     * account. For more information, see <a
+     * <p>The ID of the environment account connection that you provide if you want
+     * Proton to provision infrastructure resources for your environment or for any of
+     * the service instances running in it in an environment account. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton User guide</i>.</p> <p>To use Amazon
-     * Web Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * account connections</a> in the <i>Proton User guide</i>.</p> <p>If you specify
+     * the <code>environmentAccountConnectionId</code> parameter, don't specify
+     * <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, or
+     * <code>provisioningRepository</code>.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(const Aws::String& value) { SetEnvironmentAccountConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the environment account connection that you provide if you're
-     * provisioning your environment infrastructure resources to an environment
-     * account. For more information, see <a
+     * <p>The ID of the environment account connection that you provide if you want
+     * Proton to provision infrastructure resources for your environment or for any of
+     * the service instances running in it in an environment account. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton User guide</i>.</p> <p>To use Amazon
-     * Web Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * account connections</a> in the <i>Proton User guide</i>.</p> <p>If you specify
+     * the <code>environmentAccountConnectionId</code> parameter, don't specify
+     * <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, or
+     * <code>provisioningRepository</code>.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(Aws::String&& value) { SetEnvironmentAccountConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the environment account connection that you provide if you're
-     * provisioning your environment infrastructure resources to an environment
-     * account. For more information, see <a
+     * <p>The ID of the environment account connection that you provide if you want
+     * Proton to provision infrastructure resources for your environment or for any of
+     * the service instances running in it in an environment account. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton User guide</i>.</p> <p>To use Amazon
-     * Web Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * account connections</a> in the <i>Proton User guide</i>.</p> <p>If you specify
+     * the <code>environmentAccountConnectionId</code> parameter, don't specify
+     * <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, or
+     * <code>provisioningRepository</code>.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(const char* value) { SetEnvironmentAccountConnectionId(value); return *this;}
 
@@ -314,74 +403,82 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
-     * Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using Amazon Web Services-managed provisioning and
+     * CloudFormation on your behalf.</p> <p>To use Amazon Web Services-managed
+     * provisioning for the environment or for any service instance running in the
+     * environment, specify either the <code>environmentAccountConnectionId</code> or
+     * <code>protonServiceRoleArn</code> parameter.</p>
      */
     inline const Aws::String& GetProtonServiceRoleArn() const{ return m_protonServiceRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
-     * Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using Amazon Web Services-managed provisioning and
+     * CloudFormation on your behalf.</p> <p>To use Amazon Web Services-managed
+     * provisioning for the environment or for any service instance running in the
+     * environment, specify either the <code>environmentAccountConnectionId</code> or
+     * <code>protonServiceRoleArn</code> parameter.</p>
      */
     inline bool ProtonServiceRoleArnHasBeenSet() const { return m_protonServiceRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
-     * Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using Amazon Web Services-managed provisioning and
+     * CloudFormation on your behalf.</p> <p>To use Amazon Web Services-managed
+     * provisioning for the environment or for any service instance running in the
+     * environment, specify either the <code>environmentAccountConnectionId</code> or
+     * <code>protonServiceRoleArn</code> parameter.</p>
      */
     inline void SetProtonServiceRoleArn(const Aws::String& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
-     * Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using Amazon Web Services-managed provisioning and
+     * CloudFormation on your behalf.</p> <p>To use Amazon Web Services-managed
+     * provisioning for the environment or for any service instance running in the
+     * environment, specify either the <code>environmentAccountConnectionId</code> or
+     * <code>protonServiceRoleArn</code> parameter.</p>
      */
     inline void SetProtonServiceRoleArn(Aws::String&& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
-     * Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using Amazon Web Services-managed provisioning and
+     * CloudFormation on your behalf.</p> <p>To use Amazon Web Services-managed
+     * provisioning for the environment or for any service instance running in the
+     * environment, specify either the <code>environmentAccountConnectionId</code> or
+     * <code>protonServiceRoleArn</code> parameter.</p>
      */
     inline void SetProtonServiceRoleArn(const char* value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
-     * Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using Amazon Web Services-managed provisioning and
+     * CloudFormation on your behalf.</p> <p>To use Amazon Web Services-managed
+     * provisioning for the environment or for any service instance running in the
+     * environment, specify either the <code>environmentAccountConnectionId</code> or
+     * <code>protonServiceRoleArn</code> parameter.</p>
      */
     inline CreateEnvironmentRequest& WithProtonServiceRoleArn(const Aws::String& value) { SetProtonServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
-     * Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using Amazon Web Services-managed provisioning and
+     * CloudFormation on your behalf.</p> <p>To use Amazon Web Services-managed
+     * provisioning for the environment or for any service instance running in the
+     * environment, specify either the <code>environmentAccountConnectionId</code> or
+     * <code>protonServiceRoleArn</code> parameter.</p>
      */
     inline CreateEnvironmentRequest& WithProtonServiceRoleArn(Aws::String&& value) { SetProtonServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
-     * Services-managed provisioning for the environment, specify either the
-     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
+     * provision infrastructure using Amazon Web Services-managed provisioning and
+     * CloudFormation on your behalf.</p> <p>To use Amazon Web Services-managed
+     * provisioning for the environment or for any service instance running in the
+     * environment, specify either the <code>environmentAccountConnectionId</code> or
+     * <code>protonServiceRoleArn</code> parameter.</p>
      */
     inline CreateEnvironmentRequest& WithProtonServiceRoleArn(const char* value) { SetProtonServiceRoleArn(value); return *this;}
 
@@ -391,9 +488,8 @@ namespace Model
      * templates for self-managed provisioning. A linked repository is a repository
      * that has been registered with Proton. For more information, see
      * <a>CreateRepository</a>.</p> <p>To use self-managed provisioning for the
-     * environment, specify this parameter and omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>
+     * environment or for any service instance running in the environment, specify this
+     * parameter.</p>
      */
     inline const RepositoryBranchInput& GetProvisioningRepository() const{ return m_provisioningRepository; }
 
@@ -402,9 +498,8 @@ namespace Model
      * templates for self-managed provisioning. A linked repository is a repository
      * that has been registered with Proton. For more information, see
      * <a>CreateRepository</a>.</p> <p>To use self-managed provisioning for the
-     * environment, specify this parameter and omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>
+     * environment or for any service instance running in the environment, specify this
+     * parameter.</p>
      */
     inline bool ProvisioningRepositoryHasBeenSet() const { return m_provisioningRepositoryHasBeenSet; }
 
@@ -413,9 +508,8 @@ namespace Model
      * templates for self-managed provisioning. A linked repository is a repository
      * that has been registered with Proton. For more information, see
      * <a>CreateRepository</a>.</p> <p>To use self-managed provisioning for the
-     * environment, specify this parameter and omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>
+     * environment or for any service instance running in the environment, specify this
+     * parameter.</p>
      */
     inline void SetProvisioningRepository(const RepositoryBranchInput& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = value; }
 
@@ -424,9 +518,8 @@ namespace Model
      * templates for self-managed provisioning. A linked repository is a repository
      * that has been registered with Proton. For more information, see
      * <a>CreateRepository</a>.</p> <p>To use self-managed provisioning for the
-     * environment, specify this parameter and omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>
+     * environment or for any service instance running in the environment, specify this
+     * parameter.</p>
      */
     inline void SetProvisioningRepository(RepositoryBranchInput&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::move(value); }
 
@@ -435,9 +528,8 @@ namespace Model
      * templates for self-managed provisioning. A linked repository is a repository
      * that has been registered with Proton. For more information, see
      * <a>CreateRepository</a>.</p> <p>To use self-managed provisioning for the
-     * environment, specify this parameter and omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>
+     * environment or for any service instance running in the environment, specify this
+     * parameter.</p>
      */
     inline CreateEnvironmentRequest& WithProvisioningRepository(const RepositoryBranchInput& value) { SetProvisioningRepository(value); return *this;}
 
@@ -446,9 +538,8 @@ namespace Model
      * templates for self-managed provisioning. A linked repository is a repository
      * that has been registered with Proton. For more information, see
      * <a>CreateRepository</a>.</p> <p>To use self-managed provisioning for the
-     * environment, specify this parameter and omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>
+     * environment or for any service instance running in the environment, specify this
+     * parameter.</p>
      */
     inline CreateEnvironmentRequest& WithProvisioningRepository(RepositoryBranchInput&& value) { SetProvisioningRepository(std::move(value)); return *this;}
 
@@ -722,6 +813,9 @@ namespace Model
     inline CreateEnvironmentRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
   private:
+
+    Aws::String m_codebuildRoleArn;
+    bool m_codebuildRoleArnHasBeenSet = false;
 
     Aws::String m_componentRoleArn;
     bool m_componentRoleArnHasBeenSet = false;

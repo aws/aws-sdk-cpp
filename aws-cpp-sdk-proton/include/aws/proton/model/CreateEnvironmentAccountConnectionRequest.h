@@ -95,96 +95,161 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
-     * provisioning directly defined components in the associated environment account.
-     * It determines the scope of infrastructure that a component can provision in the
-     * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
-     * defined components to be associated with any environments running in this
-     * account.</p> <p>For more information about components, see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * CodeBuild-based provisioning in the associated environment account.</p>
+     */
+    inline const Aws::String& GetCodebuildRoleArn() const{ return m_codebuildRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * CodeBuild-based provisioning in the associated environment account.</p>
+     */
+    inline bool CodebuildRoleArnHasBeenSet() const { return m_codebuildRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * CodeBuild-based provisioning in the associated environment account.</p>
+     */
+    inline void SetCodebuildRoleArn(const Aws::String& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * CodeBuild-based provisioning in the associated environment account.</p>
+     */
+    inline void SetCodebuildRoleArn(Aws::String&& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * CodeBuild-based provisioning in the associated environment account.</p>
+     */
+    inline void SetCodebuildRoleArn(const char* value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * CodeBuild-based provisioning in the associated environment account.</p>
+     */
+    inline CreateEnvironmentAccountConnectionRequest& WithCodebuildRoleArn(const Aws::String& value) { SetCodebuildRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * CodeBuild-based provisioning in the associated environment account.</p>
+     */
+    inline CreateEnvironmentAccountConnectionRequest& WithCodebuildRoleArn(Aws::String&& value) { SetCodebuildRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * CodeBuild-based provisioning in the associated environment account.</p>
+     */
+    inline CreateEnvironmentAccountConnectionRequest& WithCodebuildRoleArn(const char* value) { SetCodebuildRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision directly defined components in the
+     * associated environment account. It determines the scope of infrastructure that a
+     * component can provision in the account.</p> <p>You must specify
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in this account.</p> <p>For more
+     * information about components, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
-     * provisioning directly defined components in the associated environment account.
-     * It determines the scope of infrastructure that a component can provision in the
-     * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
-     * defined components to be associated with any environments running in this
-     * account.</p> <p>For more information about components, see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision directly defined components in the
+     * associated environment account. It determines the scope of infrastructure that a
+     * component can provision in the account.</p> <p>You must specify
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in this account.</p> <p>For more
+     * information about components, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
-     * provisioning directly defined components in the associated environment account.
-     * It determines the scope of infrastructure that a component can provision in the
-     * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
-     * defined components to be associated with any environments running in this
-     * account.</p> <p>For more information about components, see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision directly defined components in the
+     * associated environment account. It determines the scope of infrastructure that a
+     * component can provision in the account.</p> <p>You must specify
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in this account.</p> <p>For more
+     * information about components, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
-     * provisioning directly defined components in the associated environment account.
-     * It determines the scope of infrastructure that a component can provision in the
-     * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
-     * defined components to be associated with any environments running in this
-     * account.</p> <p>For more information about components, see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision directly defined components in the
+     * associated environment account. It determines the scope of infrastructure that a
+     * component can provision in the account.</p> <p>You must specify
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in this account.</p> <p>For more
+     * information about components, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
-     * provisioning directly defined components in the associated environment account.
-     * It determines the scope of infrastructure that a component can provision in the
-     * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
-     * defined components to be associated with any environments running in this
-     * account.</p> <p>For more information about components, see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision directly defined components in the
+     * associated environment account. It determines the scope of infrastructure that a
+     * component can provision in the account.</p> <p>You must specify
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in this account.</p> <p>For more
+     * information about components, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
-     * provisioning directly defined components in the associated environment account.
-     * It determines the scope of infrastructure that a component can provision in the
-     * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
-     * defined components to be associated with any environments running in this
-     * account.</p> <p>For more information about components, see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision directly defined components in the
+     * associated environment account. It determines the scope of infrastructure that a
+     * component can provision in the account.</p> <p>You must specify
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in this account.</p> <p>For more
+     * information about components, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
-     * provisioning directly defined components in the associated environment account.
-     * It determines the scope of infrastructure that a component can provision in the
-     * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
-     * defined components to be associated with any environments running in this
-     * account.</p> <p>For more information about components, see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision directly defined components in the
+     * associated environment account. It determines the scope of infrastructure that a
+     * component can provision in the account.</p> <p>You must specify
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in this account.</p> <p>For more
+     * information about components, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
-     * provisioning directly defined components in the associated environment account.
-     * It determines the scope of infrastructure that a component can provision in the
-     * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
-     * defined components to be associated with any environments running in this
-     * account.</p> <p>For more information about components, see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision directly defined components in the
+     * associated environment account. It determines the scope of infrastructure that a
+     * component can provision in the account.</p> <p>You must specify
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in this account.</p> <p>For more
+     * information about components, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
@@ -314,58 +379,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the
-     * environment account. Proton uses this role to provision infrastructure resources
-     * in the associated environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * Amazon Web Services-managed provisioning and CloudFormation in the associated
+     * environment account.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the
-     * environment account. Proton uses this role to provision infrastructure resources
-     * in the associated environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * Amazon Web Services-managed provisioning and CloudFormation in the associated
+     * environment account.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the
-     * environment account. Proton uses this role to provision infrastructure resources
-     * in the associated environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * Amazon Web Services-managed provisioning and CloudFormation in the associated
+     * environment account.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the
-     * environment account. Proton uses this role to provision infrastructure resources
-     * in the associated environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * Amazon Web Services-managed provisioning and CloudFormation in the associated
+     * environment account.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the
-     * environment account. Proton uses this role to provision infrastructure resources
-     * in the associated environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * Amazon Web Services-managed provisioning and CloudFormation in the associated
+     * environment account.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the
-     * environment account. Proton uses this role to provision infrastructure resources
-     * in the associated environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * Amazon Web Services-managed provisioning and CloudFormation in the associated
+     * environment account.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the
-     * environment account. Proton uses this role to provision infrastructure resources
-     * in the associated environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * Amazon Web Services-managed provisioning and CloudFormation in the associated
+     * environment account.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the
-     * environment account. Proton uses this role to provision infrastructure resources
-     * in the associated environment account.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
+     * account. Proton uses this role to provision infrastructure resources using
+     * Amazon Web Services-managed provisioning and CloudFormation in the associated
+     * environment account.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -446,6 +519,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_codebuildRoleArn;
+    bool m_codebuildRoleArnHasBeenSet = false;
 
     Aws::String m_componentRoleArn;
     bool m_componentRoleArnHasBeenSet = false;
