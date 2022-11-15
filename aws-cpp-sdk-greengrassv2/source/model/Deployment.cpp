@@ -27,7 +27,8 @@ Deployment::Deployment() :
     m_deploymentStatus(DeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
     m_isLatestForTarget(false),
-    m_isLatestForTargetHasBeenSet(false)
+    m_isLatestForTargetHasBeenSet(false),
+    m_parentTargetArnHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Deployment::Deployment(JsonView jsonValue) :
     m_deploymentStatus(DeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
     m_isLatestForTarget(false),
-    m_isLatestForTargetHasBeenSet(false)
+    m_isLatestForTargetHasBeenSet(false),
+    m_parentTargetArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +98,13 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_isLatestForTargetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("parentTargetArn"))
+  {
+    m_parentTargetArn = jsonValue.GetString("parentTargetArn");
+
+    m_parentTargetArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +149,12 @@ JsonValue Deployment::Jsonize() const
   if(m_isLatestForTargetHasBeenSet)
   {
    payload.WithBool("isLatestForTarget", m_isLatestForTarget);
+
+  }
+
+  if(m_parentTargetArnHasBeenSet)
+  {
+   payload.WithString("parentTargetArn", m_parentTargetArn);
 
   }
 

@@ -24,7 +24,8 @@ namespace Model
     USE_CUSTOM_TTS_VOICES,
     EARLY_MEDIA,
     MULTI_PARTY_CONFERENCE,
-    HIGH_VOLUME_OUTBOUND
+    HIGH_VOLUME_OUTBOUND,
+    ENHANCED_CONTACT_MONITORING
   };
 
 namespace InstanceAttributeTypeMapper

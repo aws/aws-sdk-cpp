@@ -61,6 +61,7 @@
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesResult.h>
 #include <aws/workspaces/model/MigrateWorkspaceResult.h>
 #include <aws/workspaces/model/ModifyAccountResult.h>
+#include <aws/workspaces/model/ModifyCertificateBasedAuthPropertiesResult.h>
 #include <aws/workspaces/model/ModifyClientPropertiesResult.h>
 #include <aws/workspaces/model/ModifySamlPropertiesResult.h>
 #include <aws/workspaces/model/ModifySelfservicePermissionsResult.h>
@@ -164,6 +165,7 @@ namespace Aws
       class ListAvailableManagementCidrRangesRequest;
       class MigrateWorkspaceRequest;
       class ModifyAccountRequest;
+      class ModifyCertificateBasedAuthPropertiesRequest;
       class ModifyClientPropertiesRequest;
       class ModifySamlPropertiesRequest;
       class ModifySelfservicePermissionsRequest;
@@ -230,6 +232,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAvailableManagementCidrRangesResult, WorkSpacesError> ListAvailableManagementCidrRangesOutcome;
       typedef Aws::Utils::Outcome<MigrateWorkspaceResult, WorkSpacesError> MigrateWorkspaceOutcome;
       typedef Aws::Utils::Outcome<ModifyAccountResult, WorkSpacesError> ModifyAccountOutcome;
+      typedef Aws::Utils::Outcome<ModifyCertificateBasedAuthPropertiesResult, WorkSpacesError> ModifyCertificateBasedAuthPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifyClientPropertiesResult, WorkSpacesError> ModifyClientPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifySamlPropertiesResult, WorkSpacesError> ModifySamlPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifySelfservicePermissionsResult, WorkSpacesError> ModifySelfservicePermissionsOutcome;
@@ -296,6 +299,7 @@ namespace Aws
       typedef std::future<ListAvailableManagementCidrRangesOutcome> ListAvailableManagementCidrRangesOutcomeCallable;
       typedef std::future<MigrateWorkspaceOutcome> MigrateWorkspaceOutcomeCallable;
       typedef std::future<ModifyAccountOutcome> ModifyAccountOutcomeCallable;
+      typedef std::future<ModifyCertificateBasedAuthPropertiesOutcome> ModifyCertificateBasedAuthPropertiesOutcomeCallable;
       typedef std::future<ModifyClientPropertiesOutcome> ModifyClientPropertiesOutcomeCallable;
       typedef std::future<ModifySamlPropertiesOutcome> ModifySamlPropertiesOutcomeCallable;
       typedef std::future<ModifySelfservicePermissionsOutcome> ModifySelfservicePermissionsOutcomeCallable;
@@ -365,6 +369,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::ListAvailableManagementCidrRangesRequest&, const Model::ListAvailableManagementCidrRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableManagementCidrRangesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::MigrateWorkspaceRequest&, const Model::MigrateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MigrateWorkspaceResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyAccountRequest&, const Model::ModifyAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAccountResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ModifyCertificateBasedAuthPropertiesRequest&, const Model::ModifyCertificateBasedAuthPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCertificateBasedAuthPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyClientPropertiesRequest&, const Model::ModifyClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifySamlPropertiesRequest&, const Model::ModifySamlPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySamlPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifySelfservicePermissionsRequest&, const Model::ModifySelfservicePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySelfservicePermissionsResponseReceivedHandler;

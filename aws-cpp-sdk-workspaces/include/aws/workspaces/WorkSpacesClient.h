@@ -1006,6 +1006,24 @@ namespace WorkSpaces
         virtual void ModifyAccountAsync(const Model::ModifyAccountRequest& request, const ModifyAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the properties of the certificate-based authentication you want to
+         * use with your WorkSpaces.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyCertificateBasedAuthProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyCertificateBasedAuthPropertiesOutcome ModifyCertificateBasedAuthProperties(const Model::ModifyCertificateBasedAuthPropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyCertificateBasedAuthProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyCertificateBasedAuthPropertiesOutcomeCallable ModifyCertificateBasedAuthPropertiesCallable(const Model::ModifyCertificateBasedAuthPropertiesRequest& request) const;
+
+        /**
+         * An Async wrapper for ModifyCertificateBasedAuthProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyCertificateBasedAuthPropertiesAsync(const Model::ModifyCertificateBasedAuthPropertiesRequest& request, const ModifyCertificateBasedAuthPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the properties of the specified Amazon WorkSpaces
          * clients.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">AWS
