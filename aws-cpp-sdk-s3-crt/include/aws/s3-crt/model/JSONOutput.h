@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_recordDelimiter;
-    bool m_recordDelimiterHasBeenSet;
+    bool m_recordDelimiterHasBeenSet = false;
   };
 
 } // namespace Model

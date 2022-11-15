@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the default cache configuration for the
+   * <p>Contains information about the default cache configuration for the CloudFront
    * distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionDefaultCacheBehavior">AWS
    * API Reference</a></p>
@@ -129,7 +129,7 @@ namespace Model
   private:
 
     Aws::String m_viewerProtocolPolicy;
-    bool m_viewerProtocolPolicyHasBeenSet;
+    bool m_viewerProtocolPolicyHasBeenSet = false;
   };
 
 } // namespace Model

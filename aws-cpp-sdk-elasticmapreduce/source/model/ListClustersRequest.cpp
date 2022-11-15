@@ -36,7 +36,7 @@ Aws::String ListClustersRequest::SerializePayload() const
 
   if(m_clusterStatesHasBeenSet)
   {
-   Array<JsonValue> clusterStatesJsonList(m_clusterStates.size());
+   Aws::Utils::Array<JsonValue> clusterStatesJsonList(m_clusterStates.size());
    for(unsigned clusterStatesIndex = 0; clusterStatesIndex < clusterStatesJsonList.GetLength(); ++clusterStatesIndex)
    {
      clusterStatesJsonList[clusterStatesIndex].AsString(ClusterStateMapper::GetNameForClusterState(m_clusterStates[clusterStatesIndex]));

@@ -586,67 +586,95 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithMaxIopsPerGib(double value) { SetMaxIopsPerGib(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
+
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     bool m_multiAZCapable;
-    bool m_multiAZCapableHasBeenSet;
+    bool m_multiAZCapableHasBeenSet = false;
 
     bool m_readReplicaCapable;
-    bool m_readReplicaCapableHasBeenSet;
+    bool m_readReplicaCapableHasBeenSet = false;
 
     bool m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
 
     bool m_supportsStorageEncryption;
-    bool m_supportsStorageEncryptionHasBeenSet;
+    bool m_supportsStorageEncryptionHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     bool m_supportsIops;
-    bool m_supportsIopsHasBeenSet;
+    bool m_supportsIopsHasBeenSet = false;
 
     bool m_supportsEnhancedMonitoring;
-    bool m_supportsEnhancedMonitoringHasBeenSet;
+    bool m_supportsEnhancedMonitoringHasBeenSet = false;
 
     bool m_supportsIAMDatabaseAuthentication;
-    bool m_supportsIAMDatabaseAuthenticationHasBeenSet;
+    bool m_supportsIAMDatabaseAuthenticationHasBeenSet = false;
 
     bool m_supportsPerformanceInsights;
-    bool m_supportsPerformanceInsightsHasBeenSet;
+    bool m_supportsPerformanceInsightsHasBeenSet = false;
 
     int m_minStorageSize;
-    bool m_minStorageSizeHasBeenSet;
+    bool m_minStorageSizeHasBeenSet = false;
 
     int m_maxStorageSize;
-    bool m_maxStorageSizeHasBeenSet;
+    bool m_maxStorageSizeHasBeenSet = false;
 
     int m_minIopsPerDbInstance;
-    bool m_minIopsPerDbInstanceHasBeenSet;
+    bool m_minIopsPerDbInstanceHasBeenSet = false;
 
     int m_maxIopsPerDbInstance;
-    bool m_maxIopsPerDbInstanceHasBeenSet;
+    bool m_maxIopsPerDbInstanceHasBeenSet = false;
 
     double m_minIopsPerGib;
-    bool m_minIopsPerGibHasBeenSet;
+    bool m_minIopsPerGibHasBeenSet = false;
 
     double m_maxIopsPerGib;
-    bool m_maxIopsPerGibHasBeenSet;
+    bool m_maxIopsPerGibHasBeenSet = false;
+
+    bool m_supportsGlobalDatabases;
+    bool m_supportsGlobalDatabasesHasBeenSet = false;
   };
 
 } // namespace Model

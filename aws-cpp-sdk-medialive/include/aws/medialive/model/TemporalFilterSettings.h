@@ -138,10 +138,10 @@ namespace Model
   private:
 
     TemporalFilterPostFilterSharpening m_postFilterSharpening;
-    bool m_postFilterSharpeningHasBeenSet;
+    bool m_postFilterSharpeningHasBeenSet = false;
 
     TemporalFilterStrength m_strength;
-    bool m_strengthHasBeenSet;
+    bool m_strengthHasBeenSet = false;
   };
 
 } // namespace Model

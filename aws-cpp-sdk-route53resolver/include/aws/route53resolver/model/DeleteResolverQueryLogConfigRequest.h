@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_resolverQueryLogConfigId;
-    bool m_resolverQueryLogConfigIdHasBeenSet;
+    bool m_resolverQueryLogConfigIdHasBeenSet = false;
   };
 
 } // namespace Model

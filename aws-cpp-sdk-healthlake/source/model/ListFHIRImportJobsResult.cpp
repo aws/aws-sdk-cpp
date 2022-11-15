@@ -30,7 +30,7 @@ ListFHIRImportJobsResult& ListFHIRImportJobsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ImportJobPropertiesList"))
   {
-    Array<JsonView> importJobPropertiesListJsonList = jsonValue.GetArray("ImportJobPropertiesList");
+    Aws::Utils::Array<JsonView> importJobPropertiesListJsonList = jsonValue.GetArray("ImportJobPropertiesList");
     for(unsigned importJobPropertiesListIndex = 0; importJobPropertiesListIndex < importJobPropertiesListJsonList.GetLength(); ++importJobPropertiesListIndex)
     {
       m_importJobPropertiesList.push_back(importJobPropertiesListJsonList[importJobPropertiesListIndex].AsObject());

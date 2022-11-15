@@ -26,7 +26,9 @@ PermissionGroup::PermissionGroup() :
     m_createTime(0),
     m_createTimeHasBeenSet(false),
     m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
+    m_membershipStatusHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ PermissionGroup::PermissionGroup(JsonView jsonValue) :
     m_createTime(0),
     m_createTimeHasBeenSet(false),
     m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
+    m_membershipStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,7 +72,7 @@ PermissionGroup& PermissionGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("applicationPermissions"))
   {
-    Array<JsonView> applicationPermissionsJsonList = jsonValue.GetArray("applicationPermissions");
+    Aws::Utils::Array<JsonView> applicationPermissionsJsonList = jsonValue.GetArray("applicationPermissions");
     for(unsigned applicationPermissionsIndex = 0; applicationPermissionsIndex < applicationPermissionsJsonList.GetLength(); ++applicationPermissionsIndex)
     {
       m_applicationPermissions.push_back(ApplicationPermissionMapper::GetApplicationPermissionForName(applicationPermissionsJsonList[applicationPermissionsIndex].AsString()));
@@ -88,6 +92,13 @@ PermissionGroup& PermissionGroup::operator =(JsonView jsonValue)
     m_lastModifiedTime = jsonValue.GetInt64("lastModifiedTime");
 
     m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("membershipStatus"))
+  {
+    m_membershipStatus = PermissionGroupMembershipStatusMapper::GetPermissionGroupMembershipStatusForName(jsonValue.GetString("membershipStatus"));
+
+    m_membershipStatusHasBeenSet = true;
   }
 
   return *this;
@@ -117,7 +128,7 @@ JsonValue PermissionGroup::Jsonize() const
 
   if(m_applicationPermissionsHasBeenSet)
   {
-   Array<JsonValue> applicationPermissionsJsonList(m_applicationPermissions.size());
+   Aws::Utils::Array<JsonValue> applicationPermissionsJsonList(m_applicationPermissions.size());
    for(unsigned applicationPermissionsIndex = 0; applicationPermissionsIndex < applicationPermissionsJsonList.GetLength(); ++applicationPermissionsIndex)
    {
      applicationPermissionsJsonList[applicationPermissionsIndex].AsString(ApplicationPermissionMapper::GetNameForApplicationPermission(m_applicationPermissions[applicationPermissionsIndex]));
@@ -136,6 +147,11 @@ JsonValue PermissionGroup::Jsonize() const
   {
    payload.WithInt64("lastModifiedTime", m_lastModifiedTime);
 
+  }
+
+  if(m_membershipStatusHasBeenSet)
+  {
+   payload.WithString("membershipStatus", PermissionGroupMembershipStatusMapper::GetNameForPermissionGroupMembershipStatus(m_membershipStatus));
   }
 
   return payload;

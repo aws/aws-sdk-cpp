@@ -84,64 +84,64 @@ namespace Model
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline const Aws::String& GetDefaultNamespace() const{ return m_defaultNamespace; }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline bool DefaultNamespaceHasBeenSet() const { return m_defaultNamespaceHasBeenSet; }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline void SetDefaultNamespace(const Aws::String& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = value; }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline void SetDefaultNamespace(Aws::String&& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = std::move(value); }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline void SetDefaultNamespace(const char* value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace.assign(value); }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline UpdateAccountSettingsRequest& WithDefaultNamespace(const Aws::String& value) { SetDefaultNamespace(value); return *this;}
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline UpdateAccountSettingsRequest& WithDefaultNamespace(Aws::String&& value) { SetDefaultNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline UpdateAccountSettingsRequest& WithDefaultNamespace(const char* value) { SetDefaultNamespace(value); return *this;}
 
@@ -205,13 +205,13 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_defaultNamespace;
-    bool m_defaultNamespaceHasBeenSet;
+    bool m_defaultNamespaceHasBeenSet = false;
 
     Aws::String m_notificationEmail;
-    bool m_notificationEmailHasBeenSet;
+    bool m_notificationEmailHasBeenSet = false;
   };
 
 } // namespace Model

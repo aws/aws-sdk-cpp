@@ -45,7 +45,8 @@ TunnelOption::TunnelOption() :
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
     m_ikeVersionsHasBeenSet(false),
-    m_startupActionHasBeenSet(false)
+    m_startupActionHasBeenSet(false),
+    m_logOptionsHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ TunnelOption::TunnelOption(const XmlNode& xmlNode) :
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
     m_ikeVersionsHasBeenSet(false),
-    m_startupActionHasBeenSet(false)
+    m_startupActionHasBeenSet(false),
+    m_logOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -241,6 +243,12 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
       m_startupAction = Aws::Utils::Xml::DecodeEscapedXmlText(startupActionNode.GetText());
       m_startupActionHasBeenSet = true;
     }
+    XmlNode logOptionsNode = resultNode.FirstChild("logOptions");
+    if(!logOptionsNode.IsNull())
+    {
+      m_logOptions = logOptionsNode;
+      m_logOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -385,6 +393,13 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
   }
 
+  if(m_logOptionsHasBeenSet)
+  {
+      Aws::StringStream logOptionsLocationAndMemberSs;
+      logOptionsLocationAndMemberSs << location << index << locationValue << ".LogOptions";
+      m_logOptions.OutputToStream(oStream, logOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -506,6 +521,12 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_startupActionHasBeenSet)
   {
       oStream << location << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
+  }
+  if(m_logOptionsHasBeenSet)
+  {
+      Aws::String logOptionsLocationAndMember(location);
+      logOptionsLocationAndMember += ".LogOptions";
+      m_logOptions.OutputToStream(oStream, logOptionsLocationAndMember.c_str());
   }
 }
 

@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, PropertyRequest> m_propertyUpdates;
-    bool m_propertyUpdatesHasBeenSet;
+    bool m_propertyUpdatesHasBeenSet = false;
 
     ComponentUpdateType m_updateType;
-    bool m_updateTypeHasBeenSet;
+    bool m_updateTypeHasBeenSet = false;
   };
 
 } // namespace Model

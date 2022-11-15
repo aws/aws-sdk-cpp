@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     NotificationChannelConfig m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
   };
 
 } // namespace Model

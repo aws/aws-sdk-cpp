@@ -1,3 +1,4 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/MacroParseOverrideOrDefault.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
@@ -17,6 +18,9 @@
 \#include <aws/core/utils/threading/Executor.h>
 \#include <aws/core/utils/DNS.h>
 \#include <aws/core/utils/logging/LogMacros.h>
+#if($serviceModel.endpointRules)
+\#include <aws/core/utils/logging/ErrorMacros.h>
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;
@@ -26,26 +30,41 @@ using namespace ${rootNamespace}::${serviceNamespace};
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
+#if($serviceModel.endpointRules)
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+#end
 
 
-static const char* SERVICE_NAME = "${metadata.signingName}";
-static const char* ALLOCATION_TAG = "${className}";
+const char* ${className}::SERVICE_NAME = "${metadata.signingName}";
+const char* ${className}::ALLOCATION_TAG = "${className}";
 #set($hostOverrideString = '')
 #if($metadata.globalEndpoint)
 #set($hostOverrideString = ', "' + $metadata.globalEndpoint + '"')
 #end
 
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
+#parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
 
 #if($metadata.protocol == "query")
 Aws::String ${className}::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
 {
+  if (!m_endpointProvider)
+  {
+    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Endpoint provider is not initialized.");
+    return "";
+  }
+  Aws::Endpoint::EndpointParameters endpointParameters;
+  endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", Aws::String(region)));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
+  if (!endpointResolutionOutcome.IsSuccess())
+  {
+    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Endpoint resolution failed: " << endpointResolutionOutcome.GetError().GetMessage());
+    return "";
+  }
   Aws::StringStream ss;
-  ss << "https://" << ${metadata.classNamePrefix}Endpoint::ForRegion(region);
   ss << "?" << requestToConvert.SerializePayload();
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
 
-  URI uri(ss.str());
-  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 #end

@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
 
     long long m_lastValidByteReceived;
-    bool m_lastValidByteReceivedHasBeenSet;
+    bool m_lastValidByteReceivedHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,7 +44,7 @@ EnvironmentPlatform& EnvironmentPlatform::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("languages"))
   {
-    Array<JsonView> languagesJsonList = jsonValue.GetArray("languages");
+    Aws::Utils::Array<JsonView> languagesJsonList = jsonValue.GetArray("languages");
     for(unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex)
     {
       m_languages.push_back(languagesJsonList[languagesIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue EnvironmentPlatform::Jsonize() const
 
   if(m_languagesHasBeenSet)
   {
-   Array<JsonValue> languagesJsonList(m_languages.size());
+   Aws::Utils::Array<JsonValue> languagesJsonList(m_languages.size());
    for(unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex)
    {
      languagesJsonList[languagesIndex].AsObject(m_languages[languagesIndex].Jsonize());

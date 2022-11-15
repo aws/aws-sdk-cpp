@@ -180,58 +180,66 @@ namespace Model
 
 
     /**
-     * <p>The current state of the VPC.</p>
+     * <p>The current state of the VPC. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
 
     /**
-     * <p>The current state of the VPC.</p>
+     * <p>The current state of the VPC. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The current state of the VPC.</p>
+     * <p>The current state of the VPC. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The current state of the VPC.</p>
+     * <p>The current state of the VPC. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The current state of the VPC.</p>
+     * <p>The current state of the VPC. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
     /**
-     * <p>The current state of the VPC.</p>
+     * <p>The current state of the VPC. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline AwsEc2VpcDetails& WithState(const Aws::String& value) { SetState(value); return *this;}
 
     /**
-     * <p>The current state of the VPC.</p>
+     * <p>The current state of the VPC. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline AwsEc2VpcDetails& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the VPC.</p>
+     * <p>The current state of the VPC. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline AwsEc2VpcDetails& WithState(const char* value) { SetState(value); return *this;}
 
   private:
 
     Aws::Vector<CidrBlockAssociation> m_cidrBlockAssociationSet;
-    bool m_cidrBlockAssociationSetHasBeenSet;
+    bool m_cidrBlockAssociationSetHasBeenSet = false;
 
     Aws::Vector<Ipv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
-    bool m_ipv6CidrBlockAssociationSetHasBeenSet;
+    bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
 
     Aws::String m_dhcpOptionsId;
-    bool m_dhcpOptionsIdHasBeenSet;
+    bool m_dhcpOptionsIdHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

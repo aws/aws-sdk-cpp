@@ -168,13 +168,13 @@ namespace Model
   private:
 
     long long m_eventNumber;
-    bool m_eventNumberHasBeenSet;
+    bool m_eventNumberHasBeenSet = false;
 
     Aws::String m_eventMessage;
-    bool m_eventMessageHasBeenSet;
+    bool m_eventMessageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_extractedValues;
-    bool m_extractedValuesHasBeenSet;
+    bool m_extractedValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,6 +15,7 @@
 #include <aws/ec2/model/InstanceMatchCriteria.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/CapacityAllocation.h>
 #include <utility>
 
 namespace Aws
@@ -501,26 +502,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline bool GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline void SetEphemeralStorage(bool value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline CapacityReservation& WithEphemeralStorage(bool value) { SetEphemeralStorage(value); return *this;}
 
@@ -1098,73 +1095,117 @@ namespace Model
      */
     inline CapacityReservation& WithPlacementGroupArn(const char* value) { SetPlacementGroupArn(value); return *this;}
 
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline const Aws::Vector<CapacityAllocation>& GetCapacityAllocations() const{ return m_capacityAllocations; }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline bool CapacityAllocationsHasBeenSet() const { return m_capacityAllocationsHasBeenSet; }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline void SetCapacityAllocations(const Aws::Vector<CapacityAllocation>& value) { m_capacityAllocationsHasBeenSet = true; m_capacityAllocations = value; }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline void SetCapacityAllocations(Aws::Vector<CapacityAllocation>&& value) { m_capacityAllocationsHasBeenSet = true; m_capacityAllocations = std::move(value); }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline CapacityReservation& WithCapacityAllocations(const Aws::Vector<CapacityAllocation>& value) { SetCapacityAllocations(value); return *this;}
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline CapacityReservation& WithCapacityAllocations(Aws::Vector<CapacityAllocation>&& value) { SetCapacityAllocations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline CapacityReservation& AddCapacityAllocations(const CapacityAllocation& value) { m_capacityAllocationsHasBeenSet = true; m_capacityAllocations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about instance capacity usage.</p>
+     */
+    inline CapacityReservation& AddCapacityAllocations(CapacityAllocation&& value) { m_capacityAllocationsHasBeenSet = true; m_capacityAllocations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_capacityReservationId;
-    bool m_capacityReservationIdHasBeenSet;
+    bool m_capacityReservationIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_capacityReservationArn;
-    bool m_capacityReservationArnHasBeenSet;
+    bool m_capacityReservationArnHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     CapacityReservationInstancePlatform m_instancePlatform;
-    bool m_instancePlatformHasBeenSet;
+    bool m_instancePlatformHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     CapacityReservationTenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     int m_totalInstanceCount;
-    bool m_totalInstanceCountHasBeenSet;
+    bool m_totalInstanceCountHasBeenSet = false;
 
     int m_availableInstanceCount;
-    bool m_availableInstanceCountHasBeenSet;
+    bool m_availableInstanceCountHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     bool m_ephemeralStorage;
-    bool m_ephemeralStorageHasBeenSet;
+    bool m_ephemeralStorageHasBeenSet = false;
 
     CapacityReservationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     EndDateType m_endDateType;
-    bool m_endDateTypeHasBeenSet;
+    bool m_endDateTypeHasBeenSet = false;
 
     InstanceMatchCriteria m_instanceMatchCriteria;
-    bool m_instanceMatchCriteriaHasBeenSet;
+    bool m_instanceMatchCriteriaHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::String m_capacityReservationFleetId;
-    bool m_capacityReservationFleetIdHasBeenSet;
+    bool m_capacityReservationFleetIdHasBeenSet = false;
 
     Aws::String m_placementGroupArn;
-    bool m_placementGroupArnHasBeenSet;
+    bool m_placementGroupArnHasBeenSet = false;
+
+    Aws::Vector<CapacityAllocation> m_capacityAllocations;
+    bool m_capacityAllocationsHasBeenSet = false;
   };
 
 } // namespace Model

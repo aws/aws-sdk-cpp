@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>This response includes only the "property" : "type" property.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The output item response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ResponseOutputItem">AWS
    * API Reference</a></p>
    */
@@ -243,19 +242,19 @@ namespace Model
   private:
 
     DashPlaylistSettings m_dashPlaylistSettings;
-    bool m_dashPlaylistSettingsHasBeenSet;
+    bool m_dashPlaylistSettingsHasBeenSet = false;
 
     HlsPlaylistSettings m_hlsPlaylistSettings;
-    bool m_hlsPlaylistSettingsHasBeenSet;
+    bool m_hlsPlaylistSettingsHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     Aws::String m_playbackUrl;
-    bool m_playbackUrlHasBeenSet;
+    bool m_playbackUrlHasBeenSet = false;
 
     Aws::String m_sourceGroup;
-    bool m_sourceGroupHasBeenSet;
+    bool m_sourceGroupHasBeenSet = false;
   };
 
 } // namespace Model

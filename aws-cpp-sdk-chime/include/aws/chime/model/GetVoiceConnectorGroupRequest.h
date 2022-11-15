@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorGroupId;
-    bool m_voiceConnectorGroupIdHasBeenSet;
+    bool m_voiceConnectorGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

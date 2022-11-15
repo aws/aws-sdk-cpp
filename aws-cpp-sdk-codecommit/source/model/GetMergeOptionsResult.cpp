@@ -30,7 +30,7 @@ GetMergeOptionsResult& GetMergeOptionsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("mergeOptions"))
   {
-    Array<JsonView> mergeOptionsJsonList = jsonValue.GetArray("mergeOptions");
+    Aws::Utils::Array<JsonView> mergeOptionsJsonList = jsonValue.GetArray("mergeOptions");
     for(unsigned mergeOptionsIndex = 0; mergeOptionsIndex < mergeOptionsJsonList.GetLength(); ++mergeOptionsIndex)
     {
       m_mergeOptions.push_back(MergeOptionTypeEnumMapper::GetMergeOptionTypeEnumForName(mergeOptionsJsonList[mergeOptionsIndex].AsString()));

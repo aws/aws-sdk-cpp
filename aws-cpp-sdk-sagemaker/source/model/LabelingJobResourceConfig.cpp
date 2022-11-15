@@ -19,12 +19,14 @@ namespace Model
 {
 
 LabelingJobResourceConfig::LabelingJobResourceConfig() : 
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
 LabelingJobResourceConfig::LabelingJobResourceConfig(JsonView jsonValue) : 
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ LabelingJobResourceConfig& LabelingJobResourceConfig::operator =(JsonView jsonVa
     m_volumeKmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("VpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue LabelingJobResourceConfig::Jsonize() const
   if(m_volumeKmsKeyIdHasBeenSet)
   {
    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 

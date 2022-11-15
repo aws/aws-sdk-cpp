@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Serializer m_serializer;
-    bool m_serializerHasBeenSet;
+    bool m_serializerHasBeenSet = false;
   };
 
 } // namespace Model

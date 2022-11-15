@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_wirelessGatewayTaskDefinitionId;
-    bool m_wirelessGatewayTaskDefinitionIdHasBeenSet;
+    bool m_wirelessGatewayTaskDefinitionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -191,16 +191,16 @@ namespace Model
   private:
 
     AuthResources m_authResources;
-    bool m_authResourcesHasBeenSet;
+    bool m_authResourcesHasBeenSet = false;
 
     CreateBackendAuthIdentityPoolConfig m_identityPoolConfigs;
-    bool m_identityPoolConfigsHasBeenSet;
+    bool m_identityPoolConfigsHasBeenSet = false;
 
     Service m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     CreateBackendAuthUserPoolConfig m_userPoolConfigs;
-    bool m_userPoolConfigsHasBeenSet;
+    bool m_userPoolConfigsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,7 +27,7 @@ Aws::String GetAnomalySubscriptionsRequest::SerializePayload() const
 
   if(m_subscriptionArnListHasBeenSet)
   {
-   Array<JsonValue> subscriptionArnListJsonList(m_subscriptionArnList.size());
+   Aws::Utils::Array<JsonValue> subscriptionArnListJsonList(m_subscriptionArnList.size());
    for(unsigned subscriptionArnListIndex = 0; subscriptionArnListIndex < subscriptionArnListJsonList.GetLength(); ++subscriptionArnListIndex)
    {
      subscriptionArnListJsonList[subscriptionArnListIndex].AsString(m_subscriptionArnList[subscriptionArnListIndex]);

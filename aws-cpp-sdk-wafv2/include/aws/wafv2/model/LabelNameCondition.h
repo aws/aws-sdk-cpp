@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_labelName;
-    bool m_labelNameHasBeenSet;
+    bool m_labelNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -145,13 +145,13 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_manufacturer;
-    bool m_manufacturerHasBeenSet;
+    bool m_manufacturerHasBeenSet = false;
   };
 
 } // namespace Model

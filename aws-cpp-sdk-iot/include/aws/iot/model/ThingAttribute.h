@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     Aws::String m_thingArn;
-    bool m_thingArnHasBeenSet;
+    bool m_thingArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

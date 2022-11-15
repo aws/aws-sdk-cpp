@@ -427,30 +427,30 @@ namespace Model
 
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when the job runs. A DPU is a relative measure of processing power that consists
-     * of 4 vCPUs of compute capacity and 16 GB memory. </p>
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * the job runs. A DPU is a relative measure of processing power that consists of 4
+     * vCPUs of compute capacity and 16 GB memory. </p>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when the job runs. A DPU is a relative measure of processing power that consists
-     * of 4 vCPUs of compute capacity and 16 GB memory. </p>
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * the job runs. A DPU is a relative measure of processing power that consists of 4
+     * vCPUs of compute capacity and 16 GB memory. </p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when the job runs. A DPU is a relative measure of processing power that consists
-     * of 4 vCPUs of compute capacity and 16 GB memory. </p>
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * the job runs. A DPU is a relative measure of processing power that consists of 4
+     * vCPUs of compute capacity and 16 GB memory. </p>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when the job runs. A DPU is a relative measure of processing power that consists
-     * of 4 vCPUs of compute capacity and 16 GB memory. </p>
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * the job runs. A DPU is a relative measure of processing power that consists of 4
+     * vCPUs of compute capacity and 16 GB memory. </p>
      */
     inline Session& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
 
@@ -505,93 +505,93 @@ namespace Model
 
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0.</p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0.</p>
      */
     inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0.</p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0.</p>
      */
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0.</p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0.</p>
      */
     inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0.</p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0.</p>
      */
     inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0.</p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0.</p>
      */
     inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0.</p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0.</p>
      */
     inline Session& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0.</p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0.</p>
      */
     inline Session& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0.</p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0.</p>
      */
     inline Session& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdOn;
-    bool m_createdOnHasBeenSet;
+    bool m_createdOnHasBeenSet = false;
 
     SessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     SessionCommand m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultArguments;
-    bool m_defaultArgumentsHasBeenSet;
+    bool m_defaultArgumentsHasBeenSet = false;
 
     ConnectionsList m_connections;
-    bool m_connectionsHasBeenSet;
+    bool m_connectionsHasBeenSet = false;
 
     double m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     double m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
   };
 
 } // namespace Model

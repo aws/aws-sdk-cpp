@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_destinationName;
-    bool m_destinationNameHasBeenSet;
+    bool m_destinationNameHasBeenSet = false;
 
     Aws::String m_accessPolicy;
-    bool m_accessPolicyHasBeenSet;
+    bool m_accessPolicyHasBeenSet = false;
 
     bool m_forceUpdate;
-    bool m_forceUpdateHasBeenSet;
+    bool m_forceUpdateHasBeenSet = false;
   };
 
 } // namespace Model

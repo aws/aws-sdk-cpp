@@ -378,19 +378,19 @@ namespace Model
   private:
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_defaultSubstitutions;
-    bool m_defaultSubstitutionsHasBeenSet;
+    bool m_defaultSubstitutionsHasBeenSet = false;
 
     Aws::String m_recommenderId;
-    bool m_recommenderIdHasBeenSet;
+    bool m_recommenderIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateDescription;
-    bool m_templateDescriptionHasBeenSet;
+    bool m_templateDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

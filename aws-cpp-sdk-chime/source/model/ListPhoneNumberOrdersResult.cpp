@@ -30,7 +30,7 @@ ListPhoneNumberOrdersResult& ListPhoneNumberOrdersResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PhoneNumberOrders"))
   {
-    Array<JsonView> phoneNumberOrdersJsonList = jsonValue.GetArray("PhoneNumberOrders");
+    Aws::Utils::Array<JsonView> phoneNumberOrdersJsonList = jsonValue.GetArray("PhoneNumberOrders");
     for(unsigned phoneNumberOrdersIndex = 0; phoneNumberOrdersIndex < phoneNumberOrdersJsonList.GetLength(); ++phoneNumberOrdersIndex)
     {
       m_phoneNumberOrders.push_back(phoneNumberOrdersJsonList[phoneNumberOrdersIndex].AsObject());

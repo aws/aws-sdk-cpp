@@ -28,16 +28,8 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>An API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon
-   * Virtual Private Cloud (VPC).</p> <div class="remarks"> <p><p>To enable access to
-   * a resource in an Amazon Virtual Private Cloud through Amazon API Gateway, you,
-   * as an API developer, create a <a>VpcLink</a> resource targeted for one or more
-   * network load balancers of the VPC and then integrate an API method with a
-   * private integration that uses the <a>VpcLink</a>. The private integration has an
-   * integration type of <code>HTTP</code> or <code>HTTP_PROXY</code> and has a
-   * connection type of <code>VPC_LINK</code>. The integration uses the
-   * <code>connectionId</code> property to identify the <a>VpcLink</a> used.</p></p>
-   * </div><p><h3>See Also:</h3>   <a
+   * <p>An API Gateway VPC link for a RestApi to access resources in an Amazon
+   * Virtual Private Cloud (VPC).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/VpcLink">AWS
    * API Reference</a></p>
    */
@@ -50,44 +42,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to
-     * reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to
-     * reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to
-     * reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to
-     * reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to
-     * reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline CreateVpcLinkResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to
-     * reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline CreateVpcLinkResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to
-     * reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline CreateVpcLinkResult& WithId(const char* value) { SetId(value); return *this;}
 
@@ -225,7 +217,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>.</p>
+     * status is <code>DELETING</code>. </p>
      */
     inline const VpcLinkStatus& GetStatus() const{ return m_status; }
 
@@ -233,7 +225,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>.</p>
+     * status is <code>DELETING</code>. </p>
      */
     inline void SetStatus(const VpcLinkStatus& value) { m_status = value; }
 
@@ -241,7 +233,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>.</p>
+     * status is <code>DELETING</code>. </p>
      */
     inline void SetStatus(VpcLinkStatus&& value) { m_status = std::move(value); }
 
@@ -249,7 +241,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>.</p>
+     * status is <code>DELETING</code>. </p>
      */
     inline CreateVpcLinkResult& WithStatus(const VpcLinkStatus& value) { SetStatus(value); return *this;}
 
@@ -257,7 +249,7 @@ namespace Model
      * <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>,
      * <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying
      * an API will wait if the status is <code>PENDING</code> and will fail if the
-     * status is <code>DELETING</code>.</p>
+     * status is <code>DELETING</code>. </p>
      */
     inline CreateVpcLinkResult& WithStatus(VpcLinkStatus&& value) { SetStatus(std::move(value)); return *this;}
 

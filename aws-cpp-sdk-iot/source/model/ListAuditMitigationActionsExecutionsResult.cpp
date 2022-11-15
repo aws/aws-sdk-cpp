@@ -30,7 +30,7 @@ ListAuditMitigationActionsExecutionsResult& ListAuditMitigationActionsExecutions
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("actionsExecutions"))
   {
-    Array<JsonView> actionsExecutionsJsonList = jsonValue.GetArray("actionsExecutions");
+    Aws::Utils::Array<JsonView> actionsExecutionsJsonList = jsonValue.GetArray("actionsExecutions");
     for(unsigned actionsExecutionsIndex = 0; actionsExecutionsIndex < actionsExecutionsJsonList.GetLength(); ++actionsExecutionsIndex)
     {
       m_actionsExecutions.push_back(actionsExecutionsJsonList[actionsExecutionsIndex].AsObject());

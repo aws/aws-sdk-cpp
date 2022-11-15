@@ -64,6 +64,10 @@ namespace Aws
         static const int MULTIPLE_LINKED_ACCOUNT_IDS_HASH = HashingUtils::HashString("MULTIPLE_LINKED_ACCOUNT_IDS");
         static const int MISSING_PRICING_PLAN_ARN_HASH = HashingUtils::HashString("MISSING_PRICING_PLAN_ARN");
         static const int MULTIPLE_PRICING_PLAN_ARN_HASH = HashingUtils::HashString("MULTIPLE_PRICING_PLAN_ARN");
+        static const int ILLEGAL_CHILD_ASSOCIATE_RESOURCE_HASH = HashingUtils::HashString("ILLEGAL_CHILD_ASSOCIATE_RESOURCE");
+        static const int CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS_HASH = HashingUtils::HashString("CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS");
+        static const int INVALID_BILLING_PERIOD_FOR_OPERATION_HASH = HashingUtils::HashString("INVALID_BILLING_PERIOD_FOR_OPERATION");
+        static const int INVALID_BILLING_GROUP_HASH = HashingUtils::HashString("INVALID_BILLING_GROUP");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -245,6 +249,22 @@ namespace Aws
           {
             return ValidationExceptionReason::MULTIPLE_PRICING_PLAN_ARN;
           }
+          else if (hashCode == ILLEGAL_CHILD_ASSOCIATE_RESOURCE_HASH)
+          {
+            return ValidationExceptionReason::ILLEGAL_CHILD_ASSOCIATE_RESOURCE;
+          }
+          else if (hashCode == CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS_HASH)
+          {
+            return ValidationExceptionReason::CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS;
+          }
+          else if (hashCode == INVALID_BILLING_PERIOD_FOR_OPERATION_HASH)
+          {
+            return ValidationExceptionReason::INVALID_BILLING_PERIOD_FOR_OPERATION;
+          }
+          else if (hashCode == INVALID_BILLING_GROUP_HASH)
+          {
+            return ValidationExceptionReason::INVALID_BILLING_GROUP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -347,6 +367,14 @@ namespace Aws
             return "MISSING_PRICING_PLAN_ARN";
           case ValidationExceptionReason::MULTIPLE_PRICING_PLAN_ARN:
             return "MULTIPLE_PRICING_PLAN_ARN";
+          case ValidationExceptionReason::ILLEGAL_CHILD_ASSOCIATE_RESOURCE:
+            return "ILLEGAL_CHILD_ASSOCIATE_RESOURCE";
+          case ValidationExceptionReason::CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS:
+            return "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS";
+          case ValidationExceptionReason::INVALID_BILLING_PERIOD_FOR_OPERATION:
+            return "INVALID_BILLING_PERIOD_FOR_OPERATION";
+          case ValidationExceptionReason::INVALID_BILLING_GROUP:
+            return "INVALID_BILLING_GROUP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

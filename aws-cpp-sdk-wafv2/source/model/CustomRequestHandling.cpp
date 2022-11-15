@@ -33,7 +33,7 @@ CustomRequestHandling& CustomRequestHandling::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InsertHeaders"))
   {
-    Array<JsonView> insertHeadersJsonList = jsonValue.GetArray("InsertHeaders");
+    Aws::Utils::Array<JsonView> insertHeadersJsonList = jsonValue.GetArray("InsertHeaders");
     for(unsigned insertHeadersIndex = 0; insertHeadersIndex < insertHeadersJsonList.GetLength(); ++insertHeadersIndex)
     {
       m_insertHeaders.push_back(insertHeadersJsonList[insertHeadersIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue CustomRequestHandling::Jsonize() const
 
   if(m_insertHeadersHasBeenSet)
   {
-   Array<JsonValue> insertHeadersJsonList(m_insertHeaders.size());
+   Aws::Utils::Array<JsonValue> insertHeadersJsonList(m_insertHeaders.size());
    for(unsigned insertHeadersIndex = 0; insertHeadersIndex < insertHeadersJsonList.GetLength(); ++insertHeadersIndex)
    {
      insertHeadersJsonList[insertHeadersIndex].AsObject(m_insertHeaders[insertHeadersIndex].Jsonize());

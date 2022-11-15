@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
   };
 
 } // namespace Model

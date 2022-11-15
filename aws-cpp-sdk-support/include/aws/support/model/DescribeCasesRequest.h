@@ -420,31 +420,31 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_caseIdList;
-    bool m_caseIdListHasBeenSet;
+    bool m_caseIdListHasBeenSet = false;
 
     Aws::String m_displayId;
-    bool m_displayIdHasBeenSet;
+    bool m_displayIdHasBeenSet = false;
 
     Aws::String m_afterTime;
-    bool m_afterTimeHasBeenSet;
+    bool m_afterTimeHasBeenSet = false;
 
     Aws::String m_beforeTime;
-    bool m_beforeTimeHasBeenSet;
+    bool m_beforeTimeHasBeenSet = false;
 
     bool m_includeResolvedCases;
-    bool m_includeResolvedCasesHasBeenSet;
+    bool m_includeResolvedCasesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     bool m_includeCommunications;
-    bool m_includeCommunicationsHasBeenSet;
+    bool m_includeCommunicationsHasBeenSet = false;
   };
 
 } // namespace Model

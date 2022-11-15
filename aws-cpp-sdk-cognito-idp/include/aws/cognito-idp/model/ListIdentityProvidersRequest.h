@@ -76,22 +76,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of identity providers to return.</p>
+     * <p>The maximum number of IdPs to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of identity providers to return.</p>
+     * <p>The maximum number of IdPs to return.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of identity providers to return.</p>
+     * <p>The maximum number of IdPs to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of identity providers to return.</p>
+     * <p>The maximum number of IdPs to return.</p>
      */
     inline ListIdentityProvidersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -139,13 +139,13 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

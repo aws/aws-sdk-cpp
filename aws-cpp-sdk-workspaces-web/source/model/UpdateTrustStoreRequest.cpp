@@ -28,7 +28,7 @@ Aws::String UpdateTrustStoreRequest::SerializePayload() const
 
   if(m_certificatesToAddHasBeenSet)
   {
-   Array<JsonValue> certificatesToAddJsonList(m_certificatesToAdd.size());
+   Aws::Utils::Array<JsonValue> certificatesToAddJsonList(m_certificatesToAdd.size());
    for(unsigned certificatesToAddIndex = 0; certificatesToAddIndex < certificatesToAddJsonList.GetLength(); ++certificatesToAddIndex)
    {
      certificatesToAddJsonList[certificatesToAddIndex].AsString(HashingUtils::Base64Encode(m_certificatesToAdd[certificatesToAddIndex]));
@@ -39,7 +39,7 @@ Aws::String UpdateTrustStoreRequest::SerializePayload() const
 
   if(m_certificatesToDeleteHasBeenSet)
   {
-   Array<JsonValue> certificatesToDeleteJsonList(m_certificatesToDelete.size());
+   Aws::Utils::Array<JsonValue> certificatesToDeleteJsonList(m_certificatesToDelete.size());
    for(unsigned certificatesToDeleteIndex = 0; certificatesToDeleteIndex < certificatesToDeleteJsonList.GetLength(); ++certificatesToDeleteIndex)
    {
      certificatesToDeleteJsonList[certificatesToDeleteIndex].AsString(m_certificatesToDelete[certificatesToDeleteIndex]);

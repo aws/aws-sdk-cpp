@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_uris;
-    bool m_urisHasBeenSet;
+    bool m_urisHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     int m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
   };
 
 } // namespace Model

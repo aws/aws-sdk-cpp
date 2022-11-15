@@ -30,7 +30,7 @@ ListMultiplexesResult& ListMultiplexesResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("multiplexes"))
   {
-    Array<JsonView> multiplexesJsonList = jsonValue.GetArray("multiplexes");
+    Aws::Utils::Array<JsonView> multiplexesJsonList = jsonValue.GetArray("multiplexes");
     for(unsigned multiplexesIndex = 0; multiplexesIndex < multiplexesJsonList.GetLength(); ++multiplexesIndex)
     {
       m_multiplexes.push_back(multiplexesJsonList[multiplexesIndex].AsObject());

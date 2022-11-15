@@ -18,9 +18,6 @@ namespace Model
 {
 
   /**
-   * <p>The request body for CreateJob.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateJobRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DATAEXCHANGE_API CreateJobRequest : public DataExchangeRequest
   {
@@ -100,10 +97,10 @@ namespace Model
   private:
 
     RequestDetails m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

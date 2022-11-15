@@ -174,10 +174,10 @@ namespace Model
   private:
 
     Aws::Vector<ChannelProtocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     ChannelRole m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
   };
 
 } // namespace Model

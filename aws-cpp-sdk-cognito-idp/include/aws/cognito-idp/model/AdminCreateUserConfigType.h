@@ -68,50 +68,50 @@ namespace Model
 
 
     /**
-     * <p>The user account expiration limit, in days, after which the account is no
-     * longer usable. To reset the account after that time limit, you must call
-     * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
-     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
-     * </p>  <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
-     * in <code>PasswordPolicy</code>, that value will be used, and
-     * <code>UnusedAccountValidityDays</code> will be no longer be an available
-     * parameter for that user pool.</p> 
+     * <p>The user account expiration limit, in days, after which a new account that
+     * hasn't signed in is no longer usable. To reset the account after that time
+     * limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default
+     * value for this parameter is 7. </p>  <p>If you set a value for
+     * <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
+     * value will be used, and <code>UnusedAccountValidityDays</code> will be no longer
+     * be an available parameter for that user pool.</p> 
      */
     inline int GetUnusedAccountValidityDays() const{ return m_unusedAccountValidityDays; }
 
     /**
-     * <p>The user account expiration limit, in days, after which the account is no
-     * longer usable. To reset the account after that time limit, you must call
-     * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
-     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
-     * </p>  <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
-     * in <code>PasswordPolicy</code>, that value will be used, and
-     * <code>UnusedAccountValidityDays</code> will be no longer be an available
-     * parameter for that user pool.</p> 
+     * <p>The user account expiration limit, in days, after which a new account that
+     * hasn't signed in is no longer usable. To reset the account after that time
+     * limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default
+     * value for this parameter is 7. </p>  <p>If you set a value for
+     * <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
+     * value will be used, and <code>UnusedAccountValidityDays</code> will be no longer
+     * be an available parameter for that user pool.</p> 
      */
     inline bool UnusedAccountValidityDaysHasBeenSet() const { return m_unusedAccountValidityDaysHasBeenSet; }
 
     /**
-     * <p>The user account expiration limit, in days, after which the account is no
-     * longer usable. To reset the account after that time limit, you must call
-     * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
-     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
-     * </p>  <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
-     * in <code>PasswordPolicy</code>, that value will be used, and
-     * <code>UnusedAccountValidityDays</code> will be no longer be an available
-     * parameter for that user pool.</p> 
+     * <p>The user account expiration limit, in days, after which a new account that
+     * hasn't signed in is no longer usable. To reset the account after that time
+     * limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default
+     * value for this parameter is 7. </p>  <p>If you set a value for
+     * <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
+     * value will be used, and <code>UnusedAccountValidityDays</code> will be no longer
+     * be an available parameter for that user pool.</p> 
      */
     inline void SetUnusedAccountValidityDays(int value) { m_unusedAccountValidityDaysHasBeenSet = true; m_unusedAccountValidityDays = value; }
 
     /**
-     * <p>The user account expiration limit, in days, after which the account is no
-     * longer usable. To reset the account after that time limit, you must call
-     * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
-     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
-     * </p>  <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
-     * in <code>PasswordPolicy</code>, that value will be used, and
-     * <code>UnusedAccountValidityDays</code> will be no longer be an available
-     * parameter for that user pool.</p> 
+     * <p>The user account expiration limit, in days, after which a new account that
+     * hasn't signed in is no longer usable. To reset the account after that time
+     * limit, you must call <code>AdminCreateUser</code> again, specifying
+     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default
+     * value for this parameter is 7. </p>  <p>If you set a value for
+     * <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
+     * value will be used, and <code>UnusedAccountValidityDays</code> will be no longer
+     * be an available parameter for that user pool.</p> 
      */
     inline AdminCreateUserConfigType& WithUnusedAccountValidityDays(int value) { SetUnusedAccountValidityDays(value); return *this;}
 
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     bool m_allowAdminCreateUserOnly;
-    bool m_allowAdminCreateUserOnlyHasBeenSet;
+    bool m_allowAdminCreateUserOnlyHasBeenSet = false;
 
     int m_unusedAccountValidityDays;
-    bool m_unusedAccountValidityDaysHasBeenSet;
+    bool m_unusedAccountValidityDaysHasBeenSet = false;
 
     MessageTemplateType m_inviteMessageTemplate;
-    bool m_inviteMessageTemplateHasBeenSet;
+    bool m_inviteMessageTemplateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_virtualRouterName;
-    bool m_virtualRouterNameHasBeenSet;
+    bool m_virtualRouterNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,6 +21,9 @@ namespace Aws
       {
 
         static const int GetObject_HASH = HashingUtils::HashString("GetObject");
+        static const int HeadObject_HASH = HashingUtils::HashString("HeadObject");
+        static const int ListObjects_HASH = HashingUtils::HashString("ListObjects");
+        static const int ListObjectsV2_HASH = HashingUtils::HashString("ListObjectsV2");
 
 
         ObjectLambdaTransformationConfigurationAction GetObjectLambdaTransformationConfigurationActionForName(const Aws::String& name)
@@ -29,6 +32,18 @@ namespace Aws
           if (hashCode == GetObject_HASH)
           {
             return ObjectLambdaTransformationConfigurationAction::GetObject;
+          }
+          else if (hashCode == HeadObject_HASH)
+          {
+            return ObjectLambdaTransformationConfigurationAction::HeadObject;
+          }
+          else if (hashCode == ListObjects_HASH)
+          {
+            return ObjectLambdaTransformationConfigurationAction::ListObjects;
+          }
+          else if (hashCode == ListObjectsV2_HASH)
+          {
+            return ObjectLambdaTransformationConfigurationAction::ListObjectsV2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +61,12 @@ namespace Aws
           {
           case ObjectLambdaTransformationConfigurationAction::GetObject:
             return "GetObject";
+          case ObjectLambdaTransformationConfigurationAction::HeadObject:
+            return "HeadObject";
+          case ObjectLambdaTransformationConfigurationAction::ListObjects:
+            return "ListObjects";
+          case ObjectLambdaTransformationConfigurationAction::ListObjectsV2:
+            return "ListObjectsV2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

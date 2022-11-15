@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_firehoseArn;
-    bool m_firehoseArnHasBeenSet;
+    bool m_firehoseArnHasBeenSet = false;
   };
 
 } // namespace Model

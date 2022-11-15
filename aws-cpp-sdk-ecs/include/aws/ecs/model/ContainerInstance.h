@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>An EC2 instance that's running the Amazon ECS agent and has been registered
-   * with a cluster.</p><p><h3>See Also:</h3>   <a
+   * <p>An Amazon EC2 or External instance that's running the Amazon ECS agent and
+   * has been registered with a cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerInstance">AWS
    * API Reference</a></p>
    */
@@ -48,82 +48,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the Amazon Web Services account ID of the container instance owner,
-     * the <code>container-instance</code> namespace, and then the container instance
-     * ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the container instance. For more
+     * information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the Amazon Web Services account ID of the container instance owner,
-     * the <code>container-instance</code> namespace, and then the container instance
-     * ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the container instance. For more
+     * information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline bool ContainerInstanceArnHasBeenSet() const { return m_containerInstanceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the Amazon Web Services account ID of the container instance owner,
-     * the <code>container-instance</code> namespace, and then the container instance
-     * ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the container instance. For more
+     * information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the Amazon Web Services account ID of the container instance owner,
-     * the <code>container-instance</code> namespace, and then the container instance
-     * ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the container instance. For more
+     * information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the Amazon Web Services account ID of the container instance owner,
-     * the <code>container-instance</code> namespace, and then the container instance
-     * ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the container instance. For more
+     * information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetContainerInstanceArn(const char* value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the Amazon Web Services account ID of the container instance owner,
-     * the <code>container-instance</code> namespace, and then the container instance
-     * ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the container instance. For more
+     * information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the Amazon Web Services account ID of the container instance owner,
-     * the <code>container-instance</code> namespace, and then the container instance
-     * ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the container instance. For more
+     * information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the Amazon Web Services account ID of the container instance owner,
-     * the <code>container-instance</code> namespace, and then the container instance
-     * ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the container instance. For more
+     * information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
 
@@ -505,7 +489,7 @@ namespace Model
      * tasks running on the container instance are removed if possible. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
@@ -529,7 +513,7 @@ namespace Model
      * tasks running on the container instance are removed if possible. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -553,7 +537,7 @@ namespace Model
      * tasks running on the container instance are removed if possible. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -577,7 +561,7 @@ namespace Model
      * tasks running on the container instance are removed if possible. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
@@ -601,7 +585,7 @@ namespace Model
      * tasks running on the container instance are removed if possible. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
@@ -625,7 +609,7 @@ namespace Model
      * tasks running on the container instance are removed if possible. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
@@ -649,7 +633,7 @@ namespace Model
      * tasks running on the container instance are removed if possible. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
@@ -673,7 +657,7 @@ namespace Model
      * tasks running on the container instance are removed if possible. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
+     * instance draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(const char* value) { SetStatus(value); return *this;}
@@ -722,33 +706,33 @@ namespace Model
 
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
-     * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Only instances connected to an agent can accept placement
-     * requests.</p>
+     * ECS. An instance with an agent that may be unhealthy or stopped return
+     * <code>false</code>. Only instances connected to an agent can accept task
+     * placement requests.</p>
      */
     inline bool GetAgentConnected() const{ return m_agentConnected; }
 
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
-     * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Only instances connected to an agent can accept placement
-     * requests.</p>
+     * ECS. An instance with an agent that may be unhealthy or stopped return
+     * <code>false</code>. Only instances connected to an agent can accept task
+     * placement requests.</p>
      */
     inline bool AgentConnectedHasBeenSet() const { return m_agentConnectedHasBeenSet; }
 
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
-     * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Only instances connected to an agent can accept placement
-     * requests.</p>
+     * ECS. An instance with an agent that may be unhealthy or stopped return
+     * <code>false</code>. Only instances connected to an agent can accept task
+     * placement requests.</p>
      */
     inline void SetAgentConnected(bool value) { m_agentConnectedHasBeenSet = true; m_agentConnected = value; }
 
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
-     * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Only instances connected to an agent can accept placement
-     * requests.</p>
+     * ECS. An instance with an agent that may be unhealthy or stopped return
+     * <code>false</code>. Only instances connected to an agent can accept task
+     * placement requests.</p>
      */
     inline ContainerInstance& WithAgentConnected(bool value) { SetAgentConnected(value); return *this;}
 
@@ -935,50 +919,50 @@ namespace Model
 
 
     /**
-     * <p>The resources attached to a container instance, such as elastic network
-     * interfaces.</p>
+     * <p>The resources attached to a container instance, such as an elastic network
+     * interface.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
 
     /**
-     * <p>The resources attached to a container instance, such as elastic network
-     * interfaces.</p>
+     * <p>The resources attached to a container instance, such as an elastic network
+     * interface.</p>
      */
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
 
     /**
-     * <p>The resources attached to a container instance, such as elastic network
-     * interfaces.</p>
+     * <p>The resources attached to a container instance, such as an elastic network
+     * interface.</p>
      */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
-     * <p>The resources attached to a container instance, such as elastic network
-     * interfaces.</p>
+     * <p>The resources attached to a container instance, such as an elastic network
+     * interface.</p>
      */
     inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
-     * <p>The resources attached to a container instance, such as elastic network
-     * interfaces.</p>
+     * <p>The resources attached to a container instance, such as an elastic network
+     * interface.</p>
      */
     inline ContainerInstance& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
 
     /**
-     * <p>The resources attached to a container instance, such as elastic network
-     * interfaces.</p>
+     * <p>The resources attached to a container instance, such as an elastic network
+     * interface.</p>
      */
     inline ContainerInstance& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
-     * <p>The resources attached to a container instance, such as elastic network
-     * interfaces.</p>
+     * <p>The resources attached to a container instance, such as an elastic network
+     * interface.</p>
      */
     inline ContainerInstance& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
 
     /**
-     * <p>The resources attached to a container instance, such as elastic network
-     * interfaces.</p>
+     * <p>The resources attached to a container instance, such as an elastic network
+     * interface.</p>
      */
     inline ContainerInstance& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
@@ -1177,58 +1161,58 @@ namespace Model
   private:
 
     Aws::String m_containerInstanceArn;
-    bool m_containerInstanceArnHasBeenSet;
+    bool m_containerInstanceArnHasBeenSet = false;
 
     Aws::String m_ec2InstanceId;
-    bool m_ec2InstanceIdHasBeenSet;
+    bool m_ec2InstanceIdHasBeenSet = false;
 
     Aws::String m_capacityProviderName;
-    bool m_capacityProviderNameHasBeenSet;
+    bool m_capacityProviderNameHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     VersionInfo m_versionInfo;
-    bool m_versionInfoHasBeenSet;
+    bool m_versionInfoHasBeenSet = false;
 
     Aws::Vector<Resource> m_remainingResources;
-    bool m_remainingResourcesHasBeenSet;
+    bool m_remainingResourcesHasBeenSet = false;
 
     Aws::Vector<Resource> m_registeredResources;
-    bool m_registeredResourcesHasBeenSet;
+    bool m_registeredResourcesHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     bool m_agentConnected;
-    bool m_agentConnectedHasBeenSet;
+    bool m_agentConnectedHasBeenSet = false;
 
     int m_runningTasksCount;
-    bool m_runningTasksCountHasBeenSet;
+    bool m_runningTasksCountHasBeenSet = false;
 
     int m_pendingTasksCount;
-    bool m_pendingTasksCountHasBeenSet;
+    bool m_pendingTasksCountHasBeenSet = false;
 
     AgentUpdateStatus m_agentUpdateStatus;
-    bool m_agentUpdateStatusHasBeenSet;
+    bool m_agentUpdateStatusHasBeenSet = false;
 
     Aws::Vector<Attribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_registeredAt;
-    bool m_registeredAtHasBeenSet;
+    bool m_registeredAtHasBeenSet = false;
 
     Aws::Vector<Attachment> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ContainerInstanceHealthStatus m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
   };
 
 } // namespace Model

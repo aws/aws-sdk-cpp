@@ -30,7 +30,7 @@ ListTrialComponentsResult& ListTrialComponentsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TrialComponentSummaries"))
   {
-    Array<JsonView> trialComponentSummariesJsonList = jsonValue.GetArray("TrialComponentSummaries");
+    Aws::Utils::Array<JsonView> trialComponentSummariesJsonList = jsonValue.GetArray("TrialComponentSummaries");
     for(unsigned trialComponentSummariesIndex = 0; trialComponentSummariesIndex < trialComponentSummariesJsonList.GetLength(); ++trialComponentSummariesIndex)
     {
       m_trialComponentSummaries.push_back(trialComponentSummariesJsonList[trialComponentSummariesIndex].AsObject());

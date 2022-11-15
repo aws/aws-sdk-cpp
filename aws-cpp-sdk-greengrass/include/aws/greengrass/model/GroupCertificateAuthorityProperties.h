@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_groupCertificateAuthorityArn;
-    bool m_groupCertificateAuthorityArnHasBeenSet;
+    bool m_groupCertificateAuthorityArnHasBeenSet = false;
 
     Aws::String m_groupCertificateAuthorityId;
-    bool m_groupCertificateAuthorityIdHasBeenSet;
+    bool m_groupCertificateAuthorityIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     CompliantSummary m_compliantSummary;
-    bool m_compliantSummaryHasBeenSet;
+    bool m_compliantSummaryHasBeenSet = false;
 
     NonCompliantSummary m_nonCompliantSummary;
-    bool m_nonCompliantSummaryHasBeenSet;
+    bool m_nonCompliantSummaryHasBeenSet = false;
   };
 
 } // namespace Model

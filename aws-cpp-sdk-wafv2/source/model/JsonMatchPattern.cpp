@@ -42,7 +42,7 @@ JsonMatchPattern& JsonMatchPattern::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IncludedPaths"))
   {
-    Array<JsonView> includedPathsJsonList = jsonValue.GetArray("IncludedPaths");
+    Aws::Utils::Array<JsonView> includedPathsJsonList = jsonValue.GetArray("IncludedPaths");
     for(unsigned includedPathsIndex = 0; includedPathsIndex < includedPathsJsonList.GetLength(); ++includedPathsIndex)
     {
       m_includedPaths.push_back(includedPathsJsonList[includedPathsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue JsonMatchPattern::Jsonize() const
 
   if(m_includedPathsHasBeenSet)
   {
-   Array<JsonValue> includedPathsJsonList(m_includedPaths.size());
+   Aws::Utils::Array<JsonValue> includedPathsJsonList(m_includedPaths.size());
    for(unsigned includedPathsIndex = 0; includedPathsIndex < includedPathsJsonList.GetLength(); ++includedPathsIndex)
    {
      includedPathsJsonList[includedPathsIndex].AsString(m_includedPaths[includedPathsIndex]);

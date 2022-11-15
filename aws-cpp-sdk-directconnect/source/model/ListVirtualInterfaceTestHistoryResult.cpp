@@ -30,7 +30,7 @@ ListVirtualInterfaceTestHistoryResult& ListVirtualInterfaceTestHistoryResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("virtualInterfaceTestHistory"))
   {
-    Array<JsonView> virtualInterfaceTestHistoryJsonList = jsonValue.GetArray("virtualInterfaceTestHistory");
+    Aws::Utils::Array<JsonView> virtualInterfaceTestHistoryJsonList = jsonValue.GetArray("virtualInterfaceTestHistory");
     for(unsigned virtualInterfaceTestHistoryIndex = 0; virtualInterfaceTestHistoryIndex < virtualInterfaceTestHistoryJsonList.GetLength(); ++virtualInterfaceTestHistoryIndex)
     {
       m_virtualInterfaceTestHistory.push_back(virtualInterfaceTestHistoryJsonList[virtualInterfaceTestHistoryIndex].AsObject());

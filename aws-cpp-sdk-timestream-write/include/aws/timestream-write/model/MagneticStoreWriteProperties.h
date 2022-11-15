@@ -98,10 +98,10 @@ namespace Model
   private:
 
     bool m_enableMagneticStoreWrites;
-    bool m_enableMagneticStoreWritesHasBeenSet;
+    bool m_enableMagneticStoreWritesHasBeenSet = false;
 
     MagneticStoreRejectedDataLocation m_magneticStoreRejectedDataLocation;
-    bool m_magneticStoreRejectedDataLocationHasBeenSet;
+    bool m_magneticStoreRejectedDataLocationHasBeenSet = false;
   };
 
 } // namespace Model

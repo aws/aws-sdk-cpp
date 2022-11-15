@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lightsail/model/ContainerServiceDeploymentRequest.h>
+#include <aws/lightsail/model/PrivateRegistryAccessRequest.h>
 #include <aws/lightsail/model/Tag.h>
 #include <utility>
 
@@ -45,8 +46,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -63,8 +65,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -81,8 +84,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -99,8 +103,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -117,8 +122,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -135,8 +141,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -153,8 +160,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -171,8 +179,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -624,25 +633,89 @@ namespace Model
      */
     inline CreateContainerServiceRequest& WithDeployment(ContainerServiceDeploymentRequest&& value) { SetDeployment(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline const PrivateRegistryAccessRequest& GetPrivateRegistryAccess() const{ return m_privateRegistryAccess; }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline bool PrivateRegistryAccessHasBeenSet() const { return m_privateRegistryAccessHasBeenSet; }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetPrivateRegistryAccess(const PrivateRegistryAccessRequest& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = value; }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetPrivateRegistryAccess(PrivateRegistryAccessRequest&& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = std::move(value); }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateContainerServiceRequest& WithPrivateRegistryAccess(const PrivateRegistryAccessRequest& value) { SetPrivateRegistryAccess(value); return *this;}
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateContainerServiceRequest& WithPrivateRegistryAccess(PrivateRegistryAccessRequest&& value) { SetPrivateRegistryAccess(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     ContainerServicePowerName m_power;
-    bool m_powerHasBeenSet;
+    bool m_powerHasBeenSet = false;
 
     int m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_publicDomainNames;
-    bool m_publicDomainNamesHasBeenSet;
+    bool m_publicDomainNamesHasBeenSet = false;
 
     ContainerServiceDeploymentRequest m_deployment;
-    bool m_deploymentHasBeenSet;
+    bool m_deploymentHasBeenSet = false;
+
+    PrivateRegistryAccessRequest m_privateRegistryAccess;
+    bool m_privateRegistryAccessHasBeenSet = false;
   };
 
 } // namespace Model

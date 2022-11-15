@@ -19,12 +19,14 @@ namespace Model
 {
 
 LabelsInputConfiguration::LabelsInputConfiguration() : 
-    m_s3InputConfigurationHasBeenSet(false)
+    m_s3InputConfigurationHasBeenSet(false),
+    m_labelGroupNameHasBeenSet(false)
 {
 }
 
 LabelsInputConfiguration::LabelsInputConfiguration(JsonView jsonValue) : 
-    m_s3InputConfigurationHasBeenSet(false)
+    m_s3InputConfigurationHasBeenSet(false),
+    m_labelGroupNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ LabelsInputConfiguration& LabelsInputConfiguration::operator =(JsonView jsonValu
     m_s3InputConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LabelGroupName"))
+  {
+    m_labelGroupName = jsonValue.GetString("LabelGroupName");
+
+    m_labelGroupNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue LabelsInputConfiguration::Jsonize() const
   if(m_s3InputConfigurationHasBeenSet)
   {
    payload.WithObject("S3InputConfiguration", m_s3InputConfiguration.Jsonize());
+
+  }
+
+  if(m_labelGroupNameHasBeenSet)
+  {
+   payload.WithString("LabelGroupName", m_labelGroupName);
 
   }
 

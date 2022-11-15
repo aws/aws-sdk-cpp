@@ -168,10 +168,10 @@ namespace Model
   private:
 
     Aws::String m_rowId;
-    bool m_rowIdHasBeenSet;
+    bool m_rowIdHasBeenSet = false;
 
     Aws::Map<Aws::String, CellInput> m_cellsToUpdate;
-    bool m_cellsToUpdateHasBeenSet;
+    bool m_cellsToUpdateHasBeenSet = false;
   };
 
 } // namespace Model

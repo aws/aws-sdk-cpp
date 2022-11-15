@@ -32,7 +32,7 @@ ListTableRowsResult& ListTableRowsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("columnIds"))
   {
-    Array<JsonView> columnIdsJsonList = jsonValue.GetArray("columnIds");
+    Aws::Utils::Array<JsonView> columnIdsJsonList = jsonValue.GetArray("columnIds");
     for(unsigned columnIdsIndex = 0; columnIdsIndex < columnIdsJsonList.GetLength(); ++columnIdsIndex)
     {
       m_columnIds.push_back(columnIdsJsonList[columnIdsIndex].AsString());
@@ -41,7 +41,7 @@ ListTableRowsResult& ListTableRowsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("rows"))
   {
-    Array<JsonView> rowsJsonList = jsonValue.GetArray("rows");
+    Aws::Utils::Array<JsonView> rowsJsonList = jsonValue.GetArray("rows");
     for(unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex)
     {
       m_rows.push_back(rowsJsonList[rowsIndex].AsObject());
@@ -50,7 +50,7 @@ ListTableRowsResult& ListTableRowsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("rowIdsNotFound"))
   {
-    Array<JsonView> rowIdsNotFoundJsonList = jsonValue.GetArray("rowIdsNotFound");
+    Aws::Utils::Array<JsonView> rowIdsNotFoundJsonList = jsonValue.GetArray("rowIdsNotFound");
     for(unsigned rowIdsNotFoundIndex = 0; rowIdsNotFoundIndex < rowIdsNotFoundJsonList.GetLength(); ++rowIdsNotFoundIndex)
     {
       m_rowIdsNotFound.push_back(rowIdsNotFoundJsonList[rowIdsNotFoundIndex].AsString());

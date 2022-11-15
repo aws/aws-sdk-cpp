@@ -27,8 +27,16 @@ namespace Model
 {
 
   /**
-   * <p>A condition in the call between the customer and the agent that you want to
-   * filter for.</p><p><h3>See Also:</h3>   <a
+   * <p>A rule is a set of criteria you can specify to flag an attribute in your Call
+   * Analytics output. Rules define a Call Analytics category.</p> <p>Rules can
+   * include these parameters: , , , and . To learn more about these parameters,
+   * refer to <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
+   * criteria</a>.</p> <p>To learn more about Call Analytics categories, see <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
+   * categories</a>.</p> <p>To learn more about Call Analytics, see <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
+   * call center audio with Call Analytics</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Rule">AWS API
    * Reference</a></p>
    */
@@ -42,165 +50,165 @@ namespace Model
 
 
     /**
-     * <p>A condition for a time period when neither the customer nor the agent was
-     * talking.</p>
+     * <p>Flag the presence or absence of periods of silence in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline const NonTalkTimeFilter& GetNonTalkTimeFilter() const{ return m_nonTalkTimeFilter; }
 
     /**
-     * <p>A condition for a time period when neither the customer nor the agent was
-     * talking.</p>
+     * <p>Flag the presence or absence of periods of silence in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline bool NonTalkTimeFilterHasBeenSet() const { return m_nonTalkTimeFilterHasBeenSet; }
 
     /**
-     * <p>A condition for a time period when neither the customer nor the agent was
-     * talking.</p>
+     * <p>Flag the presence or absence of periods of silence in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline void SetNonTalkTimeFilter(const NonTalkTimeFilter& value) { m_nonTalkTimeFilterHasBeenSet = true; m_nonTalkTimeFilter = value; }
 
     /**
-     * <p>A condition for a time period when neither the customer nor the agent was
-     * talking.</p>
+     * <p>Flag the presence or absence of periods of silence in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline void SetNonTalkTimeFilter(NonTalkTimeFilter&& value) { m_nonTalkTimeFilterHasBeenSet = true; m_nonTalkTimeFilter = std::move(value); }
 
     /**
-     * <p>A condition for a time period when neither the customer nor the agent was
-     * talking.</p>
+     * <p>Flag the presence or absence of periods of silence in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline Rule& WithNonTalkTimeFilter(const NonTalkTimeFilter& value) { SetNonTalkTimeFilter(value); return *this;}
 
     /**
-     * <p>A condition for a time period when neither the customer nor the agent was
-     * talking.</p>
+     * <p>Flag the presence or absence of periods of silence in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline Rule& WithNonTalkTimeFilter(NonTalkTimeFilter&& value) { SetNonTalkTimeFilter(std::move(value)); return *this;}
 
 
     /**
-     * <p>A condition for a time period when either the customer or agent was
-     * interrupting the other person. </p>
+     * <p>Flag the presence or absence of interruptions in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline const InterruptionFilter& GetInterruptionFilter() const{ return m_interruptionFilter; }
 
     /**
-     * <p>A condition for a time period when either the customer or agent was
-     * interrupting the other person. </p>
+     * <p>Flag the presence or absence of interruptions in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline bool InterruptionFilterHasBeenSet() const { return m_interruptionFilterHasBeenSet; }
 
     /**
-     * <p>A condition for a time period when either the customer or agent was
-     * interrupting the other person. </p>
+     * <p>Flag the presence or absence of interruptions in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline void SetInterruptionFilter(const InterruptionFilter& value) { m_interruptionFilterHasBeenSet = true; m_interruptionFilter = value; }
 
     /**
-     * <p>A condition for a time period when either the customer or agent was
-     * interrupting the other person. </p>
+     * <p>Flag the presence or absence of interruptions in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline void SetInterruptionFilter(InterruptionFilter&& value) { m_interruptionFilterHasBeenSet = true; m_interruptionFilter = std::move(value); }
 
     /**
-     * <p>A condition for a time period when either the customer or agent was
-     * interrupting the other person. </p>
+     * <p>Flag the presence or absence of interruptions in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline Rule& WithInterruptionFilter(const InterruptionFilter& value) { SetInterruptionFilter(value); return *this;}
 
     /**
-     * <p>A condition for a time period when either the customer or agent was
-     * interrupting the other person. </p>
+     * <p>Flag the presence or absence of interruptions in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline Rule& WithInterruptionFilter(InterruptionFilter&& value) { SetInterruptionFilter(std::move(value)); return *this;}
 
 
     /**
-     * <p>A condition that catches particular words or phrases based on a exact match.
-     * For example, if you set the phrase "I want to speak to the manager", only that
-     * exact phrase will be returned.</p>
+     * <p>Flag the presence or absence of specific words or phrases in your Call
+     * Analytics transcription output. Refer to for more detail.</p>
      */
     inline const TranscriptFilter& GetTranscriptFilter() const{ return m_transcriptFilter; }
 
     /**
-     * <p>A condition that catches particular words or phrases based on a exact match.
-     * For example, if you set the phrase "I want to speak to the manager", only that
-     * exact phrase will be returned.</p>
+     * <p>Flag the presence or absence of specific words or phrases in your Call
+     * Analytics transcription output. Refer to for more detail.</p>
      */
     inline bool TranscriptFilterHasBeenSet() const { return m_transcriptFilterHasBeenSet; }
 
     /**
-     * <p>A condition that catches particular words or phrases based on a exact match.
-     * For example, if you set the phrase "I want to speak to the manager", only that
-     * exact phrase will be returned.</p>
+     * <p>Flag the presence or absence of specific words or phrases in your Call
+     * Analytics transcription output. Refer to for more detail.</p>
      */
     inline void SetTranscriptFilter(const TranscriptFilter& value) { m_transcriptFilterHasBeenSet = true; m_transcriptFilter = value; }
 
     /**
-     * <p>A condition that catches particular words or phrases based on a exact match.
-     * For example, if you set the phrase "I want to speak to the manager", only that
-     * exact phrase will be returned.</p>
+     * <p>Flag the presence or absence of specific words or phrases in your Call
+     * Analytics transcription output. Refer to for more detail.</p>
      */
     inline void SetTranscriptFilter(TranscriptFilter&& value) { m_transcriptFilterHasBeenSet = true; m_transcriptFilter = std::move(value); }
 
     /**
-     * <p>A condition that catches particular words or phrases based on a exact match.
-     * For example, if you set the phrase "I want to speak to the manager", only that
-     * exact phrase will be returned.</p>
+     * <p>Flag the presence or absence of specific words or phrases in your Call
+     * Analytics transcription output. Refer to for more detail.</p>
      */
     inline Rule& WithTranscriptFilter(const TranscriptFilter& value) { SetTranscriptFilter(value); return *this;}
 
     /**
-     * <p>A condition that catches particular words or phrases based on a exact match.
-     * For example, if you set the phrase "I want to speak to the manager", only that
-     * exact phrase will be returned.</p>
+     * <p>Flag the presence or absence of specific words or phrases in your Call
+     * Analytics transcription output. Refer to for more detail.</p>
      */
     inline Rule& WithTranscriptFilter(TranscriptFilter&& value) { SetTranscriptFilter(std::move(value)); return *this;}
 
 
     /**
-     * <p>A condition that is applied to a particular customer sentiment.</p>
+     * <p>Flag the presence or absence of specific sentiments in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline const SentimentFilter& GetSentimentFilter() const{ return m_sentimentFilter; }
 
     /**
-     * <p>A condition that is applied to a particular customer sentiment.</p>
+     * <p>Flag the presence or absence of specific sentiments in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline bool SentimentFilterHasBeenSet() const { return m_sentimentFilterHasBeenSet; }
 
     /**
-     * <p>A condition that is applied to a particular customer sentiment.</p>
+     * <p>Flag the presence or absence of specific sentiments in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline void SetSentimentFilter(const SentimentFilter& value) { m_sentimentFilterHasBeenSet = true; m_sentimentFilter = value; }
 
     /**
-     * <p>A condition that is applied to a particular customer sentiment.</p>
+     * <p>Flag the presence or absence of specific sentiments in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline void SetSentimentFilter(SentimentFilter&& value) { m_sentimentFilterHasBeenSet = true; m_sentimentFilter = std::move(value); }
 
     /**
-     * <p>A condition that is applied to a particular customer sentiment.</p>
+     * <p>Flag the presence or absence of specific sentiments in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline Rule& WithSentimentFilter(const SentimentFilter& value) { SetSentimentFilter(value); return *this;}
 
     /**
-     * <p>A condition that is applied to a particular customer sentiment.</p>
+     * <p>Flag the presence or absence of specific sentiments in your Call Analytics
+     * transcription output. Refer to for more detail.</p>
      */
     inline Rule& WithSentimentFilter(SentimentFilter&& value) { SetSentimentFilter(std::move(value)); return *this;}
 
   private:
 
     NonTalkTimeFilter m_nonTalkTimeFilter;
-    bool m_nonTalkTimeFilterHasBeenSet;
+    bool m_nonTalkTimeFilterHasBeenSet = false;
 
     InterruptionFilter m_interruptionFilter;
-    bool m_interruptionFilterHasBeenSet;
+    bool m_interruptionFilterHasBeenSet = false;
 
     TranscriptFilter m_transcriptFilter;
-    bool m_transcriptFilterHasBeenSet;
+    bool m_transcriptFilterHasBeenSet = false;
 
     SentimentFilter m_sentimentFilter;
-    bool m_sentimentFilterHasBeenSet;
+    bool m_sentimentFilterHasBeenSet = false;
   };
 
 } // namespace Model

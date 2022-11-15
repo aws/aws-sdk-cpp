@@ -35,7 +35,7 @@ Aws::String DescribeScalableTargetsRequest::SerializePayload() const
 
   if(m_resourceIdsHasBeenSet)
   {
-   Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
    {
      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);

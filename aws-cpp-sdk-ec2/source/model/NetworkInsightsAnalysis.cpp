@@ -100,7 +100,7 @@ NetworkInsightsAnalysis& NetworkInsightsAnalysis::operator =(const XmlNode& xmlN
     XmlNode startDateNode = resultNode.FirstChild("startDate");
     if(!startDateNode.IsNull())
     {
-      m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startDateHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
@@ -220,7 +220,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
 
   if(m_startDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_statusHasBeenSet)
@@ -324,7 +324,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_startDateHasBeenSet)
   {
-      oStream << location << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusHasBeenSet)
   {

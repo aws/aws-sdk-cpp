@@ -296,22 +296,22 @@ namespace Model
   private:
 
     Aws::String m_configurationSetArn;
-    bool m_configurationSetArnHasBeenSet;
+    bool m_configurationSetArnHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::Vector<EventDestination> m_eventDestinations;
-    bool m_eventDestinationsHasBeenSet;
+    bool m_eventDestinationsHasBeenSet = false;
 
     MessageType m_defaultMessageType;
-    bool m_defaultMessageTypeHasBeenSet;
+    bool m_defaultMessageTypeHasBeenSet = false;
 
     Aws::String m_defaultSenderId;
-    bool m_defaultSenderIdHasBeenSet;
+    bool m_defaultSenderIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
   };
 
 } // namespace Model

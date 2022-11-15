@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_warehouse;
-    bool m_warehouseHasBeenSet;
+    bool m_warehouseHasBeenSet = false;
   };
 
 } // namespace Model

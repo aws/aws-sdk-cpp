@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_ionBinary;
-    bool m_ionBinaryHasBeenSet;
+    bool m_ionBinaryHasBeenSet = false;
 
     Aws::String m_ionText;
-    bool m_ionTextHasBeenSet;
+    bool m_ionTextHasBeenSet = false;
   };
 
 } // namespace Model

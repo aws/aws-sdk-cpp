@@ -80,22 +80,22 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of results to return at one time. The default is 25. </p>
+     * <p> The maximum number of results to return at one time. The default is 10. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p> The maximum number of results to return at one time. The default is 25. </p>
+     * <p> The maximum number of results to return at one time. The default is 10. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p> The maximum number of results to return at one time. The default is 25. </p>
+     * <p> The maximum number of results to return at one time. The default is 10. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p> The maximum number of results to return at one time. The default is 25. </p>
+     * <p> The maximum number of results to return at one time. The default is 10. </p>
      */
     inline GetBehaviorModelTrainingSummariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_securityProfileName;
-    bool m_securityProfileNameHasBeenSet;
+    bool m_securityProfileNameHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

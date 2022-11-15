@@ -42,6 +42,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false),
+    m_globalClusterIdentifierHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -196,6 +198,16 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
+  }
+
+  if(m_globalClusterIdentifierHasBeenSet)
+  {
+    ss << "GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

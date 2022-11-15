@@ -155,16 +155,16 @@ namespace Model
   private:
 
     OfferingTransactionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Offering m_offering;
-    bool m_offeringHasBeenSet;
+    bool m_offeringHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Utils::DateTime m_effectiveOn;
-    bool m_effectiveOnHasBeenSet;
+    bool m_effectiveOnHasBeenSet = false;
   };
 
 } // namespace Model

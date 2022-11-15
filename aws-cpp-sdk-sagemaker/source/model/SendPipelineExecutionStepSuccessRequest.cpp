@@ -32,7 +32,7 @@ Aws::String SendPipelineExecutionStepSuccessRequest::SerializePayload() const
 
   if(m_outputParametersHasBeenSet)
   {
-   Array<JsonValue> outputParametersJsonList(m_outputParameters.size());
+   Aws::Utils::Array<JsonValue> outputParametersJsonList(m_outputParameters.size());
    for(unsigned outputParametersIndex = 0; outputParametersIndex < outputParametersJsonList.GetLength(); ++outputParametersIndex)
    {
      outputParametersJsonList[outputParametersIndex].AsObject(m_outputParameters[outputParametersIndex].Jsonize());

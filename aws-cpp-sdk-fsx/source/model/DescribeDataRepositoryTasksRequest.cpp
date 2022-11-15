@@ -27,7 +27,7 @@ Aws::String DescribeDataRepositoryTasksRequest::SerializePayload() const
 
   if(m_taskIdsHasBeenSet)
   {
-   Array<JsonValue> taskIdsJsonList(m_taskIds.size());
+   Aws::Utils::Array<JsonValue> taskIdsJsonList(m_taskIds.size());
    for(unsigned taskIdsIndex = 0; taskIdsIndex < taskIdsJsonList.GetLength(); ++taskIdsIndex)
    {
      taskIdsJsonList[taskIdsIndex].AsString(m_taskIds[taskIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeDataRepositoryTasksRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

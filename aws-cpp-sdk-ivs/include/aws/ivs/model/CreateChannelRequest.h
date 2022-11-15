@@ -206,80 +206,132 @@ namespace Model
 
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateChannelRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateChannelRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateChannelRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateChannelRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateChannelRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateChannelRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateChannelRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateChannelRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateChannelRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -288,14 +340,17 @@ namespace Model
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
      * you exceed the allowable resolution or bitrate, the stream probably will
      * disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-     * <ul> <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the
-     * original input, to automatically give viewers the best experience for their
-     * devices and network conditions. Resolution can be up to 1080p and bitrate can be
-     * up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS
-     * delivers the original input to viewers. The viewer’s video-quality choice is
-     * limited to the original input. Resolution can be up to 480p and bitrate can be
-     * up to 1.5 Mbps.</p> </li> </ul>
+     * <ul> <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are
+     * generated from the original input, to automatically give viewers the best
+     * experience for their devices and network conditions. Transcoding allows higher
+     * playback quality across a range of download speeds. Resolution can be up to
+     * 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions
+     * 360p and below; above that, audio is passed through. This is the default.</p>
+     * </li> <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps
+     * for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+     * </ul>
      */
     inline const ChannelType& GetType() const{ return m_type; }
 
@@ -303,14 +358,17 @@ namespace Model
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
      * you exceed the allowable resolution or bitrate, the stream probably will
      * disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-     * <ul> <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the
-     * original input, to automatically give viewers the best experience for their
-     * devices and network conditions. Resolution can be up to 1080p and bitrate can be
-     * up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS
-     * delivers the original input to viewers. The viewer’s video-quality choice is
-     * limited to the original input. Resolution can be up to 480p and bitrate can be
-     * up to 1.5 Mbps.</p> </li> </ul>
+     * <ul> <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are
+     * generated from the original input, to automatically give viewers the best
+     * experience for their devices and network conditions. Transcoding allows higher
+     * playback quality across a range of download speeds. Resolution can be up to
+     * 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions
+     * 360p and below; above that, audio is passed through. This is the default.</p>
+     * </li> <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps
+     * for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+     * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -318,14 +376,17 @@ namespace Model
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
      * you exceed the allowable resolution or bitrate, the stream probably will
      * disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-     * <ul> <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the
-     * original input, to automatically give viewers the best experience for their
-     * devices and network conditions. Resolution can be up to 1080p and bitrate can be
-     * up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS
-     * delivers the original input to viewers. The viewer’s video-quality choice is
-     * limited to the original input. Resolution can be up to 480p and bitrate can be
-     * up to 1.5 Mbps.</p> </li> </ul>
+     * <ul> <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are
+     * generated from the original input, to automatically give viewers the best
+     * experience for their devices and network conditions. Transcoding allows higher
+     * playback quality across a range of download speeds. Resolution can be up to
+     * 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions
+     * 360p and below; above that, audio is passed through. This is the default.</p>
+     * </li> <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps
+     * for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+     * </ul>
      */
     inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -333,14 +394,17 @@ namespace Model
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
      * you exceed the allowable resolution or bitrate, the stream probably will
      * disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-     * <ul> <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the
-     * original input, to automatically give viewers the best experience for their
-     * devices and network conditions. Resolution can be up to 1080p and bitrate can be
-     * up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS
-     * delivers the original input to viewers. The viewer’s video-quality choice is
-     * limited to the original input. Resolution can be up to 480p and bitrate can be
-     * up to 1.5 Mbps.</p> </li> </ul>
+     * <ul> <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are
+     * generated from the original input, to automatically give viewers the best
+     * experience for their devices and network conditions. Transcoding allows higher
+     * playback quality across a range of download speeds. Resolution can be up to
+     * 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions
+     * 360p and below; above that, audio is passed through. This is the default.</p>
+     * </li> <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps
+     * for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+     * </ul>
      */
     inline void SetType(ChannelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -348,14 +412,17 @@ namespace Model
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
      * you exceed the allowable resolution or bitrate, the stream probably will
      * disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-     * <ul> <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the
-     * original input, to automatically give viewers the best experience for their
-     * devices and network conditions. Resolution can be up to 1080p and bitrate can be
-     * up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS
-     * delivers the original input to viewers. The viewer’s video-quality choice is
-     * limited to the original input. Resolution can be up to 480p and bitrate can be
-     * up to 1.5 Mbps.</p> </li> </ul>
+     * <ul> <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are
+     * generated from the original input, to automatically give viewers the best
+     * experience for their devices and network conditions. Transcoding allows higher
+     * playback quality across a range of download speeds. Resolution can be up to
+     * 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions
+     * 360p and below; above that, audio is passed through. This is the default.</p>
+     * </li> <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps
+     * for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+     * </ul>
      */
     inline CreateChannelRequest& WithType(const ChannelType& value) { SetType(value); return *this;}
 
@@ -363,36 +430,39 @@ namespace Model
      * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
      * you exceed the allowable resolution or bitrate, the stream probably will
      * disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-     * <ul> <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the
-     * original input, to automatically give viewers the best experience for their
-     * devices and network conditions. Resolution can be up to 1080p and bitrate can be
-     * up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above
-     * that, audio is passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS
-     * delivers the original input to viewers. The viewer’s video-quality choice is
-     * limited to the original input. Resolution can be up to 480p and bitrate can be
-     * up to 1.5 Mbps.</p> </li> </ul>
+     * <ul> <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are
+     * generated from the original input, to automatically give viewers the best
+     * experience for their devices and network conditions. Transcoding allows higher
+     * playback quality across a range of download speeds. Resolution can be up to
+     * 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions
+     * 360p and below; above that, audio is passed through. This is the default.</p>
+     * </li> <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps
+     * for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+     * </ul>
      */
     inline CreateChannelRequest& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
 
   private:
 
     bool m_authorized;
-    bool m_authorizedHasBeenSet;
+    bool m_authorizedHasBeenSet = false;
 
     ChannelLatencyMode m_latencyMode;
-    bool m_latencyModeHasBeenSet;
+    bool m_latencyModeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_recordingConfigurationArn;
-    bool m_recordingConfigurationArnHasBeenSet;
+    bool m_recordingConfigurationArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ChannelType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

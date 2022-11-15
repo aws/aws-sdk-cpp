@@ -37,18 +37,25 @@ public class EventBridgeCppClientGenerator  extends JsonCppClientGenerator {
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
 
-        if (serviceModel.getOperations().get("PutEvents").getRequest().getShape().getMembers().containsKey("EndpointId")) {
-            // Override PutEvents function body
-            Map<String, String> templateOverride = new HashMap<>();
-            String putEventsTemplateKey = new StringBuilder(serviceModel.getServiceName()).append("_PutEvents_OperationOutcome").toString();
-            String putEventsTemplateVal = "com/amazonaws/util/awsclientgenerator/velocity/cpp/eventbridge/PutEvents_OperationOutcome.vm";
-            templateOverride.put(putEventsTemplateKey, putEventsTemplateVal);
-            context.put("TemplateOverride", templateOverride);
-
+        if (serviceModel.getEndpointRules() != null) {
             // Store the flag of endpoint being overwritten in the config
             context.put("customEndpointUsed", true);
             // Instruct code gen to use DefaultAuthSignerProvider with SigV4A instead of default AWSAuthV4Signer
             context.put("multiRegionAccessPointSupported", true);
+        } else {
+            if (serviceModel.getOperations().get("PutEvents").getRequest().getShape().getMembers().containsKey("EndpointId")) {
+                // Override PutEvents function body
+                Map<String, String> templateOverride = new HashMap<>();
+                String putEventsTemplateKey = new StringBuilder(serviceModel.getServiceName()).append("_PutEvents_OperationOutcome").toString();
+                String putEventsTemplateVal = "com/amazonaws/util/awsclientgenerator/velocity/cpp/eventbridge/PutEvents_OperationOutcome.vm";
+                templateOverride.put(putEventsTemplateKey, putEventsTemplateVal);
+                context.put("TemplateOverride", templateOverride);
+
+                // Store the flag of endpoint being overwritten in the config
+                context.put("customEndpointUsed", true);
+                // Instruct code gen to use DefaultAuthSignerProvider with SigV4A instead of default AWSAuthV4Signer
+                context.put("multiRegionAccessPointSupported", true);
+            }
         }
 
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());

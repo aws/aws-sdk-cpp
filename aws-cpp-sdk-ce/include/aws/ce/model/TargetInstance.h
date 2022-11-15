@@ -260,83 +260,75 @@ namespace Model
 
 
     /**
-     * <p> Explains the actions you might need to take in order to successfully migrate
-     * your workloads from the current instance type to the recommended instance type.
-     * </p>
+     * <p>Explains the actions that you might need to take to successfully migrate your
+     * workloads from the current instance type to the recommended instance type. </p>
      */
     inline const Aws::Vector<PlatformDifference>& GetPlatformDifferences() const{ return m_platformDifferences; }
 
     /**
-     * <p> Explains the actions you might need to take in order to successfully migrate
-     * your workloads from the current instance type to the recommended instance type.
-     * </p>
+     * <p>Explains the actions that you might need to take to successfully migrate your
+     * workloads from the current instance type to the recommended instance type. </p>
      */
     inline bool PlatformDifferencesHasBeenSet() const { return m_platformDifferencesHasBeenSet; }
 
     /**
-     * <p> Explains the actions you might need to take in order to successfully migrate
-     * your workloads from the current instance type to the recommended instance type.
-     * </p>
+     * <p>Explains the actions that you might need to take to successfully migrate your
+     * workloads from the current instance type to the recommended instance type. </p>
      */
     inline void SetPlatformDifferences(const Aws::Vector<PlatformDifference>& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences = value; }
 
     /**
-     * <p> Explains the actions you might need to take in order to successfully migrate
-     * your workloads from the current instance type to the recommended instance type.
-     * </p>
+     * <p>Explains the actions that you might need to take to successfully migrate your
+     * workloads from the current instance type to the recommended instance type. </p>
      */
     inline void SetPlatformDifferences(Aws::Vector<PlatformDifference>&& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences = std::move(value); }
 
     /**
-     * <p> Explains the actions you might need to take in order to successfully migrate
-     * your workloads from the current instance type to the recommended instance type.
-     * </p>
+     * <p>Explains the actions that you might need to take to successfully migrate your
+     * workloads from the current instance type to the recommended instance type. </p>
      */
     inline TargetInstance& WithPlatformDifferences(const Aws::Vector<PlatformDifference>& value) { SetPlatformDifferences(value); return *this;}
 
     /**
-     * <p> Explains the actions you might need to take in order to successfully migrate
-     * your workloads from the current instance type to the recommended instance type.
-     * </p>
+     * <p>Explains the actions that you might need to take to successfully migrate your
+     * workloads from the current instance type to the recommended instance type. </p>
      */
     inline TargetInstance& WithPlatformDifferences(Aws::Vector<PlatformDifference>&& value) { SetPlatformDifferences(std::move(value)); return *this;}
 
     /**
-     * <p> Explains the actions you might need to take in order to successfully migrate
-     * your workloads from the current instance type to the recommended instance type.
-     * </p>
+     * <p>Explains the actions that you might need to take to successfully migrate your
+     * workloads from the current instance type to the recommended instance type. </p>
      */
     inline TargetInstance& AddPlatformDifferences(const PlatformDifference& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences.push_back(value); return *this; }
 
     /**
-     * <p> Explains the actions you might need to take in order to successfully migrate
-     * your workloads from the current instance type to the recommended instance type.
-     * </p>
+     * <p>Explains the actions that you might need to take to successfully migrate your
+     * workloads from the current instance type to the recommended instance type. </p>
      */
     inline TargetInstance& AddPlatformDifferences(PlatformDifference&& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_estimatedMonthlyCost;
-    bool m_estimatedMonthlyCostHasBeenSet;
+    bool m_estimatedMonthlyCostHasBeenSet = false;
 
     Aws::String m_estimatedMonthlySavings;
-    bool m_estimatedMonthlySavingsHasBeenSet;
+    bool m_estimatedMonthlySavingsHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     bool m_defaultTargetInstance;
-    bool m_defaultTargetInstanceHasBeenSet;
+    bool m_defaultTargetInstanceHasBeenSet = false;
 
     ResourceDetails m_resourceDetails;
-    bool m_resourceDetailsHasBeenSet;
+    bool m_resourceDetailsHasBeenSet = false;
 
     ResourceUtilization m_expectedResourceUtilization;
-    bool m_expectedResourceUtilizationHasBeenSet;
+    bool m_expectedResourceUtilizationHasBeenSet = false;
 
     Aws::Vector<PlatformDifference> m_platformDifferences;
-    bool m_platformDifferencesHasBeenSet;
+    bool m_platformDifferencesHasBeenSet = false;
   };
 
 } // namespace Model

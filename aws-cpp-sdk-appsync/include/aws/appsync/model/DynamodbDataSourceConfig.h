@@ -200,19 +200,19 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     bool m_useCallerCredentials;
-    bool m_useCallerCredentialsHasBeenSet;
+    bool m_useCallerCredentialsHasBeenSet = false;
 
     DeltaSyncConfig m_deltaSyncConfig;
-    bool m_deltaSyncConfigHasBeenSet;
+    bool m_deltaSyncConfigHasBeenSet = false;
 
     bool m_versioned;
-    bool m_versionedHasBeenSet;
+    bool m_versionedHasBeenSet = false;
   };
 
 } // namespace Model

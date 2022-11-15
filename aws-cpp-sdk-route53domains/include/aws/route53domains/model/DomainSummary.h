@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_autoRenew;
-    bool m_autoRenewHasBeenSet;
+    bool m_autoRenewHasBeenSet = false;
 
     bool m_transferLock;
-    bool m_transferLockHasBeenSet;
+    bool m_transferLockHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiry;
-    bool m_expiryHasBeenSet;
+    bool m_expiryHasBeenSet = false;
   };
 
 } // namespace Model

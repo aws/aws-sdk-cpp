@@ -16,10 +16,10 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListPolicyGenerationsRequest::ListPolicyGenerationsRequest() : 
+    m_principalArnHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_principalArnHasBeenSet(false)
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -31,6 +31,13 @@ Aws::String ListPolicyGenerationsRequest::SerializePayload() const
 void ListPolicyGenerationsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_principalArnHasBeenSet)
+    {
+      ss << m_principalArn;
+      uri.AddQueryStringParameter("principalArn", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;
@@ -42,13 +49,6 @@ void ListPolicyGenerationsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-    if(m_principalArnHasBeenSet)
-    {
-      ss << m_principalArn;
-      uri.AddQueryStringParameter("principalArn", ss.str());
       ss.str("");
     }
 

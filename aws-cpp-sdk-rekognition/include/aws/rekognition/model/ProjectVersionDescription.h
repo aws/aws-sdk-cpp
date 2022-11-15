@@ -489,46 +489,138 @@ namespace Model
      */
     inline ProjectVersionDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
+     * to auto-scale the model. For more information, see
+     * <a>StartProjectVersion</a>.</p>
+     */
+    inline int GetMaxInferenceUnits() const{ return m_maxInferenceUnits; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
+     * to auto-scale the model. For more information, see
+     * <a>StartProjectVersion</a>.</p>
+     */
+    inline bool MaxInferenceUnitsHasBeenSet() const { return m_maxInferenceUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
+     * to auto-scale the model. For more information, see
+     * <a>StartProjectVersion</a>.</p>
+     */
+    inline void SetMaxInferenceUnits(int value) { m_maxInferenceUnitsHasBeenSet = true; m_maxInferenceUnits = value; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
+     * to auto-scale the model. For more information, see
+     * <a>StartProjectVersion</a>.</p>
+     */
+    inline ProjectVersionDescription& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
+
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline const Aws::String& GetSourceProjectVersionArn() const{ return m_sourceProjectVersionArn; }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline bool SourceProjectVersionArnHasBeenSet() const { return m_sourceProjectVersionArnHasBeenSet; }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline void SetSourceProjectVersionArn(const Aws::String& value) { m_sourceProjectVersionArnHasBeenSet = true; m_sourceProjectVersionArn = value; }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline void SetSourceProjectVersionArn(Aws::String&& value) { m_sourceProjectVersionArnHasBeenSet = true; m_sourceProjectVersionArn = std::move(value); }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline void SetSourceProjectVersionArn(const char* value) { m_sourceProjectVersionArnHasBeenSet = true; m_sourceProjectVersionArn.assign(value); }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline ProjectVersionDescription& WithSourceProjectVersionArn(const Aws::String& value) { SetSourceProjectVersionArn(value); return *this;}
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline ProjectVersionDescription& WithSourceProjectVersionArn(Aws::String&& value) { SetSourceProjectVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline ProjectVersionDescription& WithSourceProjectVersionArn(const char* value) { SetSourceProjectVersionArn(value); return *this;}
+
   private:
 
     Aws::String m_projectVersionArn;
-    bool m_projectVersionArnHasBeenSet;
+    bool m_projectVersionArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     int m_minInferenceUnits;
-    bool m_minInferenceUnitsHasBeenSet;
+    bool m_minInferenceUnitsHasBeenSet = false;
 
     ProjectVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     long long m_billableTrainingTimeInSeconds;
-    bool m_billableTrainingTimeInSecondsHasBeenSet;
+    bool m_billableTrainingTimeInSecondsHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingEndTimestamp;
-    bool m_trainingEndTimestampHasBeenSet;
+    bool m_trainingEndTimestampHasBeenSet = false;
 
     OutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     TrainingDataResult m_trainingDataResult;
-    bool m_trainingDataResultHasBeenSet;
+    bool m_trainingDataResultHasBeenSet = false;
 
     TestingDataResult m_testingDataResult;
-    bool m_testingDataResultHasBeenSet;
+    bool m_testingDataResultHasBeenSet = false;
 
     EvaluationResult m_evaluationResult;
-    bool m_evaluationResultHasBeenSet;
+    bool m_evaluationResultHasBeenSet = false;
 
     GroundTruthManifest m_manifestSummary;
-    bool m_manifestSummaryHasBeenSet;
+    bool m_manifestSummaryHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
+
+    int m_maxInferenceUnits;
+    bool m_maxInferenceUnitsHasBeenSet = false;
+
+    Aws::String m_sourceProjectVersionArn;
+    bool m_sourceProjectVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

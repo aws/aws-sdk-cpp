@@ -19,17 +19,17 @@ namespace Model
 {
 
 ArchiveRuleSummary::ArchiveRuleSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_filterHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
+    m_filterHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
 
 ArchiveRuleSummary::ArchiveRuleSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_filterHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
+    m_filterHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -37,11 +37,11 @@ ArchiveRuleSummary::ArchiveRuleSummary(JsonView jsonValue) :
 
 ArchiveRuleSummary& ArchiveRuleSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("ruleName"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
+    m_ruleName = jsonValue.GetString("ruleName");
 
-    m_createdAtHasBeenSet = true;
+    m_ruleNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("filter"))
@@ -54,11 +54,11 @@ ArchiveRuleSummary& ArchiveRuleSummary::operator =(JsonView jsonValue)
     m_filterHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ruleName"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_ruleName = jsonValue.GetString("ruleName");
+    m_createdAt = jsonValue.GetString("createdAt");
 
-    m_ruleNameHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -75,9 +75,10 @@ JsonValue ArchiveRuleSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_ruleNameHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("ruleName", m_ruleName);
+
   }
 
   if(m_filterHasBeenSet)
@@ -91,15 +92,14 @@ JsonValue ArchiveRuleSummary::Jsonize() const
 
   }
 
-  if(m_ruleNameHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("ruleName", m_ruleName);
-
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

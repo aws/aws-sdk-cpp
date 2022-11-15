@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_isAlexaForBusinessEnabled;
-    bool m_isAlexaForBusinessEnabledHasBeenSet;
+    bool m_isAlexaForBusinessEnabledHasBeenSet = false;
 
     Aws::String m_alexaForBusinessRoomArn;
-    bool m_alexaForBusinessRoomArnHasBeenSet;
+    bool m_alexaForBusinessRoomArnHasBeenSet = false;
   };
 
 } // namespace Model

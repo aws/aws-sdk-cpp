@@ -30,7 +30,7 @@ DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TagList"))
   {
-    Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
+    Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
     for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
     {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());

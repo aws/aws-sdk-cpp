@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_localGatewayRouteTableId;
-    bool m_localGatewayRouteTableIdHasBeenSet;
+    bool m_localGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

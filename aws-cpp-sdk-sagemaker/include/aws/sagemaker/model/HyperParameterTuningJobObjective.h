@@ -116,10 +116,10 @@ namespace Model
   private:
 
     HyperParameterTuningJobObjectiveType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -202,6 +202,47 @@ namespace Model
 
 
     /**
+     * <p>The reason for creating the filter.</p>
+     */
+    inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason for creating the filter.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason for creating the filter.</p>
+     */
+    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>The reason for creating the filter.</p>
+     */
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>The reason for creating the filter.</p>
+     */
+    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
+
+    /**
+     * <p>The reason for creating the filter.</p>
+     */
+    inline CreateFilterRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>The reason for creating the filter.</p>
+     */
+    inline CreateFilterRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for creating the filter.</p>
+     */
+    inline CreateFilterRequest& WithReason(const char* value) { SetReason(value); return *this;}
+
+
+    /**
      * <p>A list of tags for the filter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -269,19 +310,22 @@ namespace Model
   private:
 
     FilterAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_reason;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

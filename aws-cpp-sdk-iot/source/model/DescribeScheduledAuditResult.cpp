@@ -52,7 +52,7 @@ DescribeScheduledAuditResult& DescribeScheduledAuditResult::operator =(const Aws
 
   if(jsonValue.ValueExists("targetCheckNames"))
   {
-    Array<JsonView> targetCheckNamesJsonList = jsonValue.GetArray("targetCheckNames");
+    Aws::Utils::Array<JsonView> targetCheckNamesJsonList = jsonValue.GetArray("targetCheckNames");
     for(unsigned targetCheckNamesIndex = 0; targetCheckNamesIndex < targetCheckNamesJsonList.GetLength(); ++targetCheckNamesIndex)
     {
       m_targetCheckNames.push_back(targetCheckNamesJsonList[targetCheckNamesIndex].AsString());

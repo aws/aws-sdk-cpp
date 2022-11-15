@@ -129,108 +129,112 @@ namespace Model
 
 
     /**
-     * <p>The percentage of traffic to send to an AWS Region. Additional traffic is
-     * distributed to other endpoint groups for this listener. </p> <p>Use this action
-     * to increase (dial up) or decrease (dial down) traffic to a specific Region. The
-     * percentage is applied to the traffic that would otherwise have been routed to
-     * the Region based on optimal routing.</p> <p>The default value is 100.</p>
+     * <p>The percentage of traffic to send to an Amazon Web Services Region.
+     * Additional traffic is distributed to other endpoint groups for this listener.
+     * </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to
+     * a specific Region. The percentage is applied to the traffic that would otherwise
+     * have been routed to the Region based on optimal routing.</p> <p>The default
+     * value is 100.</p>
      */
     inline double GetTrafficDialPercentage() const{ return m_trafficDialPercentage; }
 
     /**
-     * <p>The percentage of traffic to send to an AWS Region. Additional traffic is
-     * distributed to other endpoint groups for this listener. </p> <p>Use this action
-     * to increase (dial up) or decrease (dial down) traffic to a specific Region. The
-     * percentage is applied to the traffic that would otherwise have been routed to
-     * the Region based on optimal routing.</p> <p>The default value is 100.</p>
+     * <p>The percentage of traffic to send to an Amazon Web Services Region.
+     * Additional traffic is distributed to other endpoint groups for this listener.
+     * </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to
+     * a specific Region. The percentage is applied to the traffic that would otherwise
+     * have been routed to the Region based on optimal routing.</p> <p>The default
+     * value is 100.</p>
      */
     inline bool TrafficDialPercentageHasBeenSet() const { return m_trafficDialPercentageHasBeenSet; }
 
     /**
-     * <p>The percentage of traffic to send to an AWS Region. Additional traffic is
-     * distributed to other endpoint groups for this listener. </p> <p>Use this action
-     * to increase (dial up) or decrease (dial down) traffic to a specific Region. The
-     * percentage is applied to the traffic that would otherwise have been routed to
-     * the Region based on optimal routing.</p> <p>The default value is 100.</p>
+     * <p>The percentage of traffic to send to an Amazon Web Services Region.
+     * Additional traffic is distributed to other endpoint groups for this listener.
+     * </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to
+     * a specific Region. The percentage is applied to the traffic that would otherwise
+     * have been routed to the Region based on optimal routing.</p> <p>The default
+     * value is 100.</p>
      */
     inline void SetTrafficDialPercentage(double value) { m_trafficDialPercentageHasBeenSet = true; m_trafficDialPercentage = value; }
 
     /**
-     * <p>The percentage of traffic to send to an AWS Region. Additional traffic is
-     * distributed to other endpoint groups for this listener. </p> <p>Use this action
-     * to increase (dial up) or decrease (dial down) traffic to a specific Region. The
-     * percentage is applied to the traffic that would otherwise have been routed to
-     * the Region based on optimal routing.</p> <p>The default value is 100.</p>
+     * <p>The percentage of traffic to send to an Amazon Web Services Region.
+     * Additional traffic is distributed to other endpoint groups for this listener.
+     * </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to
+     * a specific Region. The percentage is applied to the traffic that would otherwise
+     * have been routed to the Region based on optimal routing.</p> <p>The default
+     * value is 100.</p>
      */
     inline UpdateEndpointGroupRequest& WithTrafficDialPercentage(double value) { SetTrafficDialPercentage(value); return *this;}
 
 
     /**
-     * <p>The port that AWS Global Accelerator uses to check the health of endpoints
-     * that are part of this endpoint group. The default port is the listener port that
-     * this endpoint group is associated with. If the listener port is a list of ports,
+     * <p>The port that Global Accelerator uses to check the health of endpoints that
+     * are part of this endpoint group. The default port is the listener port that this
+     * endpoint group is associated with. If the listener port is a list of ports,
      * Global Accelerator uses the first port in the list.</p>
      */
     inline int GetHealthCheckPort() const{ return m_healthCheckPort; }
 
     /**
-     * <p>The port that AWS Global Accelerator uses to check the health of endpoints
-     * that are part of this endpoint group. The default port is the listener port that
-     * this endpoint group is associated with. If the listener port is a list of ports,
+     * <p>The port that Global Accelerator uses to check the health of endpoints that
+     * are part of this endpoint group. The default port is the listener port that this
+     * endpoint group is associated with. If the listener port is a list of ports,
      * Global Accelerator uses the first port in the list.</p>
      */
     inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
 
     /**
-     * <p>The port that AWS Global Accelerator uses to check the health of endpoints
-     * that are part of this endpoint group. The default port is the listener port that
-     * this endpoint group is associated with. If the listener port is a list of ports,
+     * <p>The port that Global Accelerator uses to check the health of endpoints that
+     * are part of this endpoint group. The default port is the listener port that this
+     * endpoint group is associated with. If the listener port is a list of ports,
      * Global Accelerator uses the first port in the list.</p>
      */
     inline void SetHealthCheckPort(int value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = value; }
 
     /**
-     * <p>The port that AWS Global Accelerator uses to check the health of endpoints
-     * that are part of this endpoint group. The default port is the listener port that
-     * this endpoint group is associated with. If the listener port is a list of ports,
+     * <p>The port that Global Accelerator uses to check the health of endpoints that
+     * are part of this endpoint group. The default port is the listener port that this
+     * endpoint group is associated with. If the listener port is a list of ports,
      * Global Accelerator uses the first port in the list.</p>
      */
     inline UpdateEndpointGroupRequest& WithHealthCheckPort(int value) { SetHealthCheckPort(value); return *this;}
 
 
     /**
-     * <p>The protocol that AWS Global Accelerator uses to check the health of
-     * endpoints that are part of this endpoint group. The default value is TCP.</p>
+     * <p>The protocol that Global Accelerator uses to check the health of endpoints
+     * that are part of this endpoint group. The default value is TCP.</p>
      */
     inline const HealthCheckProtocol& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
 
     /**
-     * <p>The protocol that AWS Global Accelerator uses to check the health of
-     * endpoints that are part of this endpoint group. The default value is TCP.</p>
+     * <p>The protocol that Global Accelerator uses to check the health of endpoints
+     * that are part of this endpoint group. The default value is TCP.</p>
      */
     inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
 
     /**
-     * <p>The protocol that AWS Global Accelerator uses to check the health of
-     * endpoints that are part of this endpoint group. The default value is TCP.</p>
+     * <p>The protocol that Global Accelerator uses to check the health of endpoints
+     * that are part of this endpoint group. The default value is TCP.</p>
      */
     inline void SetHealthCheckProtocol(const HealthCheckProtocol& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
-     * <p>The protocol that AWS Global Accelerator uses to check the health of
-     * endpoints that are part of this endpoint group. The default value is TCP.</p>
+     * <p>The protocol that Global Accelerator uses to check the health of endpoints
+     * that are part of this endpoint group. The default value is TCP.</p>
      */
     inline void SetHealthCheckProtocol(HealthCheckProtocol&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
 
     /**
-     * <p>The protocol that AWS Global Accelerator uses to check the health of
-     * endpoints that are part of this endpoint group. The default value is TCP.</p>
+     * <p>The protocol that Global Accelerator uses to check the health of endpoints
+     * that are part of this endpoint group. The default value is TCP.</p>
      */
     inline UpdateEndpointGroupRequest& WithHealthCheckProtocol(const HealthCheckProtocol& value) { SetHealthCheckProtocol(value); return *this;}
 
     /**
-     * <p>The protocol that AWS Global Accelerator uses to check the health of
-     * endpoints that are part of this endpoint group. The default value is TCP.</p>
+     * <p>The protocol that Global Accelerator uses to check the health of endpoints
+     * that are part of this endpoint group. The default value is TCP.</p>
      */
     inline UpdateEndpointGroupRequest& WithHealthCheckProtocol(HealthCheckProtocol&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
 
@@ -345,7 +349,8 @@ namespace Model
      * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
      * endpoints.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Overriding listener ports</a> in the <i>Global Accelerator Developer
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<PortOverride>& GetPortOverrides() const{ return m_portOverrides; }
 
@@ -356,7 +361,8 @@ namespace Model
      * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
      * endpoints.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Overriding listener ports</a> in the <i>Global Accelerator Developer
+     * Guide</i>.</p>
      */
     inline bool PortOverridesHasBeenSet() const { return m_portOverridesHasBeenSet; }
 
@@ -367,7 +373,8 @@ namespace Model
      * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
      * endpoints.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Overriding listener ports</a> in the <i>Global Accelerator Developer
+     * Guide</i>.</p>
      */
     inline void SetPortOverrides(const Aws::Vector<PortOverride>& value) { m_portOverridesHasBeenSet = true; m_portOverrides = value; }
 
@@ -378,7 +385,8 @@ namespace Model
      * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
      * endpoints.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Overriding listener ports</a> in the <i>Global Accelerator Developer
+     * Guide</i>.</p>
      */
     inline void SetPortOverrides(Aws::Vector<PortOverride>&& value) { m_portOverridesHasBeenSet = true; m_portOverrides = std::move(value); }
 
@@ -389,7 +397,8 @@ namespace Model
      * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
      * endpoints.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Overriding listener ports</a> in the <i>Global Accelerator Developer
+     * Guide</i>.</p>
      */
     inline UpdateEndpointGroupRequest& WithPortOverrides(const Aws::Vector<PortOverride>& value) { SetPortOverrides(value); return *this;}
 
@@ -400,7 +409,8 @@ namespace Model
      * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
      * endpoints.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Overriding listener ports</a> in the <i>Global Accelerator Developer
+     * Guide</i>.</p>
      */
     inline UpdateEndpointGroupRequest& WithPortOverrides(Aws::Vector<PortOverride>&& value) { SetPortOverrides(std::move(value)); return *this;}
 
@@ -411,7 +421,8 @@ namespace Model
      * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
      * endpoints.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Overriding listener ports</a> in the <i>Global Accelerator Developer
+     * Guide</i>.</p>
      */
     inline UpdateEndpointGroupRequest& AddPortOverrides(const PortOverride& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(value); return *this; }
 
@@ -422,38 +433,39 @@ namespace Model
      * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
      * endpoints.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Overriding listener ports</a> in the <i>Global Accelerator Developer
+     * Guide</i>.</p>
      */
     inline UpdateEndpointGroupRequest& AddPortOverrides(PortOverride&& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::Vector<EndpointConfiguration> m_endpointConfigurations;
-    bool m_endpointConfigurationsHasBeenSet;
+    bool m_endpointConfigurationsHasBeenSet = false;
 
     double m_trafficDialPercentage;
-    bool m_trafficDialPercentageHasBeenSet;
+    bool m_trafficDialPercentageHasBeenSet = false;
 
     int m_healthCheckPort;
-    bool m_healthCheckPortHasBeenSet;
+    bool m_healthCheckPortHasBeenSet = false;
 
     HealthCheckProtocol m_healthCheckProtocol;
-    bool m_healthCheckProtocolHasBeenSet;
+    bool m_healthCheckProtocolHasBeenSet = false;
 
     Aws::String m_healthCheckPath;
-    bool m_healthCheckPathHasBeenSet;
+    bool m_healthCheckPathHasBeenSet = false;
 
     int m_healthCheckIntervalSeconds;
-    bool m_healthCheckIntervalSecondsHasBeenSet;
+    bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
     int m_thresholdCount;
-    bool m_thresholdCountHasBeenSet;
+    bool m_thresholdCountHasBeenSet = false;
 
     Aws::Vector<PortOverride> m_portOverrides;
-    bool m_portOverridesHasBeenSet;
+    bool m_portOverridesHasBeenSet = false;
   };
 
 } // namespace Model

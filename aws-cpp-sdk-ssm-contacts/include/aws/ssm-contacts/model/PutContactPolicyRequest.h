@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_contactArn;
-    bool m_contactArnHasBeenSet;
+    bool m_contactArnHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

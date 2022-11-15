@@ -5,78 +5,15 @@
 
 #pragma once
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
-#include <aws/dynamodbstreams/DynamoDBStreamsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/dynamodbstreams/model/DescribeStreamResult.h>
-#include <aws/dynamodbstreams/model/GetRecordsResult.h>
-#include <aws/dynamodbstreams/model/GetShardIteratorResult.h>
-#include <aws/dynamodbstreams/model/ListStreamsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/dynamodbstreams/DynamoDBStreamsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace DynamoDBStreams
 {
-
-namespace Model
-{
-        class DescribeStreamRequest;
-        class GetRecordsRequest;
-        class GetShardIteratorRequest;
-        class ListStreamsRequest;
-
-        typedef Aws::Utils::Outcome<DescribeStreamResult, DynamoDBStreamsError> DescribeStreamOutcome;
-        typedef Aws::Utils::Outcome<GetRecordsResult, DynamoDBStreamsError> GetRecordsOutcome;
-        typedef Aws::Utils::Outcome<GetShardIteratorResult, DynamoDBStreamsError> GetShardIteratorOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, DynamoDBStreamsError> ListStreamsOutcome;
-
-        typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
-        typedef std::future<GetRecordsOutcome> GetRecordsOutcomeCallable;
-        typedef std::future<GetShardIteratorOutcome> GetShardIteratorOutcomeCallable;
-        typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
-} // namespace Model
-
-  class DynamoDBStreamsClient;
-
-    typedef std::function<void(const DynamoDBStreamsClient*, const Model::DescribeStreamRequest&, const Model::DescribeStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamResponseReceivedHandler;
-    typedef std::function<void(const DynamoDBStreamsClient*, const Model::GetRecordsRequest&, const Model::GetRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordsResponseReceivedHandler;
-    typedef std::function<void(const DynamoDBStreamsClient*, const Model::GetShardIteratorRequest&, const Model::GetShardIteratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetShardIteratorResponseReceivedHandler;
-    typedef std::function<void(const DynamoDBStreamsClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
-
   /**
    * <fullname>Amazon DynamoDB</fullname> <p>Amazon DynamoDB Streams provides API
    * actions for accessing streams and processing stream records. To learn more about
@@ -89,26 +26,55 @@ namespace Model
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DynamoDBStreamsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DynamoDBStreamsClient(const Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration& clientConfiguration = Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration(),
+                              std::shared_ptr<DynamoDBStreamsEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBStreamsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DynamoDBStreamsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DynamoDBStreamsClient(const Aws::Auth::AWSCredentials& credentials,
+                              std::shared_ptr<DynamoDBStreamsEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBStreamsEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration& clientConfiguration = Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         DynamoDBStreamsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<DynamoDBStreamsEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBStreamsEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration& clientConfiguration = Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DynamoDBStreamsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DynamoDBStreamsClient(const Aws::Auth::AWSCredentials& credentials,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        DynamoDBStreamsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~DynamoDBStreamsClient();
 
 
@@ -208,16 +174,13 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<DynamoDBStreamsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DescribeStreamAsyncHelper(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRecordsAsyncHelper(const Model::GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetShardIteratorAsyncHelper(const Model::GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamsAsyncHelper(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      void init(const DynamoDBStreamsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      DynamoDBStreamsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<DynamoDBStreamsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DynamoDBStreams

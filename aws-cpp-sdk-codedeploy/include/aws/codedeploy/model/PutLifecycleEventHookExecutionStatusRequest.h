@@ -135,56 +135,62 @@ namespace Model
 
     /**
      * <p>The result of a Lambda function that validates a deployment lifecycle event.
-     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-     * <code>status</code>.</p>
+     * The values listed in <b>Valid Values</b> are valid for lifecycle statuses in
+     * general; however, only <code>Succeeded</code> and <code>Failed</code> can be
+     * passed successfully in your API call.</p>
      */
     inline const LifecycleEventStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The result of a Lambda function that validates a deployment lifecycle event.
-     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-     * <code>status</code>.</p>
+     * The values listed in <b>Valid Values</b> are valid for lifecycle statuses in
+     * general; however, only <code>Succeeded</code> and <code>Failed</code> can be
+     * passed successfully in your API call.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The result of a Lambda function that validates a deployment lifecycle event.
-     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-     * <code>status</code>.</p>
+     * The values listed in <b>Valid Values</b> are valid for lifecycle statuses in
+     * general; however, only <code>Succeeded</code> and <code>Failed</code> can be
+     * passed successfully in your API call.</p>
      */
     inline void SetStatus(const LifecycleEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The result of a Lambda function that validates a deployment lifecycle event.
-     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-     * <code>status</code>.</p>
+     * The values listed in <b>Valid Values</b> are valid for lifecycle statuses in
+     * general; however, only <code>Succeeded</code> and <code>Failed</code> can be
+     * passed successfully in your API call.</p>
      */
     inline void SetStatus(LifecycleEventStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The result of a Lambda function that validates a deployment lifecycle event.
-     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-     * <code>status</code>.</p>
+     * The values listed in <b>Valid Values</b> are valid for lifecycle statuses in
+     * general; however, only <code>Succeeded</code> and <code>Failed</code> can be
+     * passed successfully in your API call.</p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithStatus(const LifecycleEventStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The result of a Lambda function that validates a deployment lifecycle event.
-     * <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-     * <code>status</code>.</p>
+     * The values listed in <b>Valid Values</b> are valid for lifecycle statuses in
+     * general; however, only <code>Succeeded</code> and <code>Failed</code> can be
+     * passed successfully in your API call.</p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithStatus(LifecycleEventStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_lifecycleEventHookExecutionId;
-    bool m_lifecycleEventHookExecutionIdHasBeenSet;
+    bool m_lifecycleEventHookExecutionIdHasBeenSet = false;
 
     LifecycleEventStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

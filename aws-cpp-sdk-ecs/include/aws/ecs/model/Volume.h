@@ -331,19 +331,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     HostVolumeProperties m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     DockerVolumeConfiguration m_dockerVolumeConfiguration;
-    bool m_dockerVolumeConfigurationHasBeenSet;
+    bool m_dockerVolumeConfigurationHasBeenSet = false;
 
     EFSVolumeConfiguration m_efsVolumeConfiguration;
-    bool m_efsVolumeConfigurationHasBeenSet;
+    bool m_efsVolumeConfigurationHasBeenSet = false;
 
     FSxWindowsFileServerVolumeConfiguration m_fsxWindowsFileServerVolumeConfiguration;
-    bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet;
+    bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

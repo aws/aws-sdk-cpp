@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_entry;
-    bool m_entryHasBeenSet;
+    bool m_entryHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

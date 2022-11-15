@@ -26,7 +26,7 @@ Aws::String UpdateTemplatePermissionsRequest::SerializePayload() const
 
   if(m_grantPermissionsHasBeenSet)
   {
-   Array<JsonValue> grantPermissionsJsonList(m_grantPermissions.size());
+   Aws::Utils::Array<JsonValue> grantPermissionsJsonList(m_grantPermissions.size());
    for(unsigned grantPermissionsIndex = 0; grantPermissionsIndex < grantPermissionsJsonList.GetLength(); ++grantPermissionsIndex)
    {
      grantPermissionsJsonList[grantPermissionsIndex].AsObject(m_grantPermissions[grantPermissionsIndex].Jsonize());
@@ -37,7 +37,7 @@ Aws::String UpdateTemplatePermissionsRequest::SerializePayload() const
 
   if(m_revokePermissionsHasBeenSet)
   {
-   Array<JsonValue> revokePermissionsJsonList(m_revokePermissions.size());
+   Aws::Utils::Array<JsonValue> revokePermissionsJsonList(m_revokePermissions.size());
    for(unsigned revokePermissionsIndex = 0; revokePermissionsIndex < revokePermissionsJsonList.GetLength(); ++revokePermissionsIndex)
    {
      revokePermissionsJsonList[revokePermissionsIndex].AsObject(m_revokePermissions[revokePermissionsIndex].Jsonize());

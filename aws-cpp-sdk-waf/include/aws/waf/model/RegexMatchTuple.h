@@ -423,13 +423,13 @@ namespace Model
   private:
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     TextTransformation m_textTransformation;
-    bool m_textTransformationHasBeenSet;
+    bool m_textTransformationHasBeenSet = false;
 
     Aws::String m_regexPatternSetId;
-    bool m_regexPatternSetIdHasBeenSet;
+    bool m_regexPatternSetIdHasBeenSet = false;
   };
 
 } // namespace Model

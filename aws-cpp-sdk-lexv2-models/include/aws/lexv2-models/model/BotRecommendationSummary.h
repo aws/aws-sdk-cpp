@@ -187,16 +187,16 @@ namespace Model
   private:
 
     BotRecommendationStatus m_botRecommendationStatus;
-    bool m_botRecommendationStatusHasBeenSet;
+    bool m_botRecommendationStatusHasBeenSet = false;
 
     Aws::String m_botRecommendationId;
-    bool m_botRecommendationIdHasBeenSet;
+    bool m_botRecommendationIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -425,31 +425,31 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_propertyAlias;
-    bool m_propertyAliasHasBeenSet;
+    bool m_propertyAliasHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::Vector<Quality> m_qualities;
-    bool m_qualitiesHasBeenSet;
+    bool m_qualitiesHasBeenSet = false;
 
     TimeOrdering m_timeOrdering;
-    bool m_timeOrderingHasBeenSet;
+    bool m_timeOrderingHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

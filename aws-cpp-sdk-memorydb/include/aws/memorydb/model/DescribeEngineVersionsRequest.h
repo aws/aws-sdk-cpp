@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_parameterGroupFamily;
-    bool m_parameterGroupFamilyHasBeenSet;
+    bool m_parameterGroupFamilyHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_defaultOnly;
-    bool m_defaultOnlyHasBeenSet;
+    bool m_defaultOnlyHasBeenSet = false;
   };
 
 } // namespace Model

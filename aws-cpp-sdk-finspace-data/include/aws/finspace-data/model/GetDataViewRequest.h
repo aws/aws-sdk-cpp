@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_dataViewId;
-    bool m_dataViewIdHasBeenSet;
+    bool m_dataViewIdHasBeenSet = false;
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
   };
 
 } // namespace Model

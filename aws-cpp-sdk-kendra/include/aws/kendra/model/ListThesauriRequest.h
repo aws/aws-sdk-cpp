@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to list.</p>
+     * <p>The identifier of the index with one or more thesauri.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to list.</p>
+     * <p>The identifier of the index with one or more thesauri.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to list.</p>
+     * <p>The identifier of the index with one or more thesauri.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to list.</p>
+     * <p>The identifier of the index with one or more thesauri.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to list.</p>
+     * <p>The identifier of the index with one or more thesauri.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to list.</p>
+     * <p>The identifier of the index with one or more thesauri.</p>
      */
     inline ListThesauriRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to list.</p>
+     * <p>The identifier of the index with one or more thesauri.</p>
      */
     inline ListThesauriRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to list.</p>
+     * <p>The identifier of the index with one or more thesauri.</p>
      */
     inline ListThesauriRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

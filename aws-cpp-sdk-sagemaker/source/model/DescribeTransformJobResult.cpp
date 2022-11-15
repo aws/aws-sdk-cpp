@@ -111,6 +111,12 @@ DescribeTransformJobResult& DescribeTransformJobResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("DataCaptureConfig"))
+  {
+    m_dataCaptureConfig = jsonValue.GetObject("DataCaptureConfig");
+
+  }
+
   if(jsonValue.ValueExists("TransformResources"))
   {
     m_transformResources = jsonValue.GetObject("TransformResources");

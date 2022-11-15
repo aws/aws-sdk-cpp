@@ -557,41 +557,41 @@ namespace Model
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
-     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
-     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     * 35 seconds.</p>
+     * individual target. If the target group protocol is HTTP or HTTPS, the default is
+     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
+     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
+     * target group protocol is GENEVE, the default is 10 seconds. If the target type
+     * is <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
-     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
-     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     * 35 seconds.</p>
+     * individual target. If the target group protocol is HTTP or HTTPS, the default is
+     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
+     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
+     * target group protocol is GENEVE, the default is 10 seconds. If the target type
+     * is <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
-     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
-     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     * 35 seconds.</p>
+     * individual target. If the target group protocol is HTTP or HTTPS, the default is
+     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
+     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
+     * target group protocol is GENEVE, the default is 10 seconds. If the target type
+     * is <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
-     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
-     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     * 35 seconds.</p>
+     * individual target. If the target group protocol is HTTP or HTTPS, the default is
+     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
+     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
+     * target group protocol is GENEVE, the default is 10 seconds. If the target type
+     * is <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 
@@ -921,55 +921,55 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProtocolEnum m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_protocolVersion;
-    bool m_protocolVersionHasBeenSet;
+    bool m_protocolVersionHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     ProtocolEnum m_healthCheckProtocol;
-    bool m_healthCheckProtocolHasBeenSet;
+    bool m_healthCheckProtocolHasBeenSet = false;
 
     Aws::String m_healthCheckPort;
-    bool m_healthCheckPortHasBeenSet;
+    bool m_healthCheckPortHasBeenSet = false;
 
     bool m_healthCheckEnabled;
-    bool m_healthCheckEnabledHasBeenSet;
+    bool m_healthCheckEnabledHasBeenSet = false;
 
     Aws::String m_healthCheckPath;
-    bool m_healthCheckPathHasBeenSet;
+    bool m_healthCheckPathHasBeenSet = false;
 
     int m_healthCheckIntervalSeconds;
-    bool m_healthCheckIntervalSecondsHasBeenSet;
+    bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
     int m_healthCheckTimeoutSeconds;
-    bool m_healthCheckTimeoutSecondsHasBeenSet;
+    bool m_healthCheckTimeoutSecondsHasBeenSet = false;
 
     int m_healthyThresholdCount;
-    bool m_healthyThresholdCountHasBeenSet;
+    bool m_healthyThresholdCountHasBeenSet = false;
 
     int m_unhealthyThresholdCount;
-    bool m_unhealthyThresholdCountHasBeenSet;
+    bool m_unhealthyThresholdCountHasBeenSet = false;
 
     Matcher m_matcher;
-    bool m_matcherHasBeenSet;
+    bool m_matcherHasBeenSet = false;
 
     TargetTypeEnum m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     TargetGroupIpAddressTypeEnum m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

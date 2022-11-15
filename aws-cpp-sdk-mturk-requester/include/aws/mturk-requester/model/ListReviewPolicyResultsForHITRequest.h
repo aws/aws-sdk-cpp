@@ -248,22 +248,22 @@ namespace Model
   private:
 
     Aws::String m_hITId;
-    bool m_hITIdHasBeenSet;
+    bool m_hITIdHasBeenSet = false;
 
     Aws::Vector<ReviewPolicyLevel> m_policyLevels;
-    bool m_policyLevelsHasBeenSet;
+    bool m_policyLevelsHasBeenSet = false;
 
     bool m_retrieveActions;
-    bool m_retrieveActionsHasBeenSet;
+    bool m_retrieveActionsHasBeenSet = false;
 
     bool m_retrieveResults;
-    bool m_retrieveResultsHasBeenSet;
+    bool m_retrieveResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

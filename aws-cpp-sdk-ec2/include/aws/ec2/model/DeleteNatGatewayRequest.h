@@ -112,10 +112,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_natGatewayId;
-    bool m_natGatewayIdHasBeenSet;
+    bool m_natGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

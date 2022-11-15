@@ -18,6 +18,7 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_componentsHasBeenSet(false),
     m_iotJobConfigurationHasBeenSet(false),
     m_deploymentPoliciesHasBeenSet(false),
+    m_parentTargetArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
@@ -60,6 +61,12 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
   if(m_deploymentPoliciesHasBeenSet)
   {
    payload.WithObject("deploymentPolicies", m_deploymentPolicies.Jsonize());
+
+  }
+
+  if(m_parentTargetArnHasBeenSet)
+  {
+   payload.WithString("parentTargetArn", m_parentTargetArn);
 
   }
 

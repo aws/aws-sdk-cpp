@@ -91,91 +91,99 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline CopyPackageVersionsRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline CopyPackageVersionsRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline CopyPackageVersionsRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
 
     /**
-     * <p> The name of the repository that contains the package versions to copy. </p>
+     * <p> The name of the repository that contains the package versions to be copied.
+     * </p>
      */
     inline const Aws::String& GetSourceRepository() const{ return m_sourceRepository; }
 
     /**
-     * <p> The name of the repository that contains the package versions to copy. </p>
+     * <p> The name of the repository that contains the package versions to be copied.
+     * </p>
      */
     inline bool SourceRepositoryHasBeenSet() const { return m_sourceRepositoryHasBeenSet; }
 
     /**
-     * <p> The name of the repository that contains the package versions to copy. </p>
+     * <p> The name of the repository that contains the package versions to be copied.
+     * </p>
      */
     inline void SetSourceRepository(const Aws::String& value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository = value; }
 
     /**
-     * <p> The name of the repository that contains the package versions to copy. </p>
+     * <p> The name of the repository that contains the package versions to be copied.
+     * </p>
      */
     inline void SetSourceRepository(Aws::String&& value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository = std::move(value); }
 
     /**
-     * <p> The name of the repository that contains the package versions to copy. </p>
+     * <p> The name of the repository that contains the package versions to be copied.
+     * </p>
      */
     inline void SetSourceRepository(const char* value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository.assign(value); }
 
     /**
-     * <p> The name of the repository that contains the package versions to copy. </p>
+     * <p> The name of the repository that contains the package versions to be copied.
+     * </p>
      */
     inline CopyPackageVersionsRequest& WithSourceRepository(const Aws::String& value) { SetSourceRepository(value); return *this;}
 
     /**
-     * <p> The name of the repository that contains the package versions to copy. </p>
+     * <p> The name of the repository that contains the package versions to be copied.
+     * </p>
      */
     inline CopyPackageVersionsRequest& WithSourceRepository(Aws::String&& value) { SetSourceRepository(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the repository that contains the package versions to copy. </p>
+     * <p> The name of the repository that contains the package versions to be copied.
+     * </p>
      */
     inline CopyPackageVersionsRequest& WithSourceRepository(const char* value) { SetSourceRepository(value); return *this;}
 
@@ -222,240 +230,232 @@ namespace Model
 
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package versions to be copied. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package versions to be copied. </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package versions to be copied. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package versions to be copied. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package versions to be copied. </p>
      */
     inline CopyPackageVersionsRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> The format of the package that is copied. The valid package types are: </p>
-     * <ul> <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-     * <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-     * <li> <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package versions to be copied. </p>
      */
     inline CopyPackageVersionsRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package versions to be copied. The package version
+     * component that specifies its namespace depends on its type. For example:</p>
+     * <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. The namespace is required when copying Maven package
+     * versions. </p> </li> <li> <p> The namespace of an npm package version is its
+     * <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not
+     * contain a corresponding component, package versions of those formats do not have
+     * a namespace. </p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package versions to be copied. The package version
+     * component that specifies its namespace depends on its type. For example:</p>
+     * <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. The namespace is required when copying Maven package
+     * versions. </p> </li> <li> <p> The namespace of an npm package version is its
+     * <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not
+     * contain a corresponding component, package versions of those formats do not have
+     * a namespace. </p> </li> </ul>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package versions to be copied. The package version
+     * component that specifies its namespace depends on its type. For example:</p>
+     * <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. The namespace is required when copying Maven package
+     * versions. </p> </li> <li> <p> The namespace of an npm package version is its
+     * <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not
+     * contain a corresponding component, package versions of those formats do not have
+     * a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package versions to be copied. The package version
+     * component that specifies its namespace depends on its type. For example:</p>
+     * <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. The namespace is required when copying Maven package
+     * versions. </p> </li> <li> <p> The namespace of an npm package version is its
+     * <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not
+     * contain a corresponding component, package versions of those formats do not have
+     * a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package versions to be copied. The package version
+     * component that specifies its namespace depends on its type. For example:</p>
+     * <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. The namespace is required when copying Maven package
+     * versions. </p> </li> <li> <p> The namespace of an npm package version is its
+     * <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not
+     * contain a corresponding component, package versions of those formats do not have
+     * a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package versions to be copied. The package version
+     * component that specifies its namespace depends on its type. For example:</p>
+     * <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. The namespace is required when copying Maven package
+     * versions. </p> </li> <li> <p> The namespace of an npm package version is its
+     * <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not
+     * contain a corresponding component, package versions of those formats do not have
+     * a namespace. </p> </li> </ul>
      */
     inline CopyPackageVersionsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package versions to be copied. The package version
+     * component that specifies its namespace depends on its type. For example:</p>
+     * <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. The namespace is required when copying Maven package
+     * versions. </p> </li> <li> <p> The namespace of an npm package version is its
+     * <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not
+     * contain a corresponding component, package versions of those formats do not have
+     * a namespace. </p> </li> </ul>
      */
     inline CopyPackageVersionsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package versions to be copied. The package version
+     * component that specifies its namespace depends on its type. For example:</p>
+     * <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. The namespace is required when copying Maven package
+     * versions. </p> </li> <li> <p> The namespace of an npm package version is its
+     * <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not
+     * contain a corresponding component, package versions of those formats do not have
+     * a namespace. </p> </li> </ul>
      */
     inline CopyPackageVersionsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
 
     /**
-     * <p> The name of the package that is copied. </p>
+     * <p> The name of the package that contains the versions to be copied. </p>
      */
     inline const Aws::String& GetPackage() const{ return m_package; }
 
     /**
-     * <p> The name of the package that is copied. </p>
+     * <p> The name of the package that contains the versions to be copied. </p>
      */
     inline bool PackageHasBeenSet() const { return m_packageHasBeenSet; }
 
     /**
-     * <p> The name of the package that is copied. </p>
+     * <p> The name of the package that contains the versions to be copied. </p>
      */
     inline void SetPackage(const Aws::String& value) { m_packageHasBeenSet = true; m_package = value; }
 
     /**
-     * <p> The name of the package that is copied. </p>
+     * <p> The name of the package that contains the versions to be copied. </p>
      */
     inline void SetPackage(Aws::String&& value) { m_packageHasBeenSet = true; m_package = std::move(value); }
 
     /**
-     * <p> The name of the package that is copied. </p>
+     * <p> The name of the package that contains the versions to be copied. </p>
      */
     inline void SetPackage(const char* value) { m_packageHasBeenSet = true; m_package.assign(value); }
 
     /**
-     * <p> The name of the package that is copied. </p>
+     * <p> The name of the package that contains the versions to be copied. </p>
      */
     inline CopyPackageVersionsRequest& WithPackage(const Aws::String& value) { SetPackage(value); return *this;}
 
     /**
-     * <p> The name of the package that is copied. </p>
+     * <p> The name of the package that contains the versions to be copied. </p>
      */
     inline CopyPackageVersionsRequest& WithPackage(Aws::String&& value) { SetPackage(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the package that is copied. </p>
+     * <p> The name of the package that contains the versions to be copied. </p>
      */
     inline CopyPackageVersionsRequest& WithPackage(const char* value) { SetPackage(value); return *this;}
 
 
     /**
-     * <p> The versions of the package to copy. </p>  <p> You must specify
+     * <p> The versions of the package to be copied. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      * </p> 
      */
     inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
 
     /**
-     * <p> The versions of the package to copy. </p>  <p> You must specify
+     * <p> The versions of the package to be copied. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      * </p> 
      */
     inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
 
     /**
-     * <p> The versions of the package to copy. </p>  <p> You must specify
+     * <p> The versions of the package to be copied. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      * </p> 
      */
     inline void SetVersions(const Aws::Vector<Aws::String>& value) { m_versionsHasBeenSet = true; m_versions = value; }
 
     /**
-     * <p> The versions of the package to copy. </p>  <p> You must specify
+     * <p> The versions of the package to be copied. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      * </p> 
      */
     inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = std::move(value); }
 
     /**
-     * <p> The versions of the package to copy. </p>  <p> You must specify
+     * <p> The versions of the package to be copied. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      * </p> 
      */
     inline CopyPackageVersionsRequest& WithVersions(const Aws::Vector<Aws::String>& value) { SetVersions(value); return *this;}
 
     /**
-     * <p> The versions of the package to copy. </p>  <p> You must specify
+     * <p> The versions of the package to be copied. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      * </p> 
      */
     inline CopyPackageVersionsRequest& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
-     * <p> The versions of the package to copy. </p>  <p> You must specify
+     * <p> The versions of the package to be copied. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      * </p> 
      */
     inline CopyPackageVersionsRequest& AddVersions(const Aws::String& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
 
     /**
-     * <p> The versions of the package to copy. </p>  <p> You must specify
+     * <p> The versions of the package to be copied. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      * </p> 
      */
     inline CopyPackageVersionsRequest& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The versions of the package to copy. </p>  <p> You must specify
+     * <p> The versions of the package to be copied. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
      * </p> 
      */
@@ -656,37 +656,37 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_sourceRepository;
-    bool m_sourceRepositoryHasBeenSet;
+    bool m_sourceRepositoryHasBeenSet = false;
 
     Aws::String m_destinationRepository;
-    bool m_destinationRepositoryHasBeenSet;
+    bool m_destinationRepositoryHasBeenSet = false;
 
     PackageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
-    bool m_packageHasBeenSet;
+    bool m_packageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versions;
-    bool m_versionsHasBeenSet;
+    bool m_versionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_versionRevisions;
-    bool m_versionRevisionsHasBeenSet;
+    bool m_versionRevisionsHasBeenSet = false;
 
     bool m_allowOverwrite;
-    bool m_allowOverwriteHasBeenSet;
+    bool m_allowOverwriteHasBeenSet = false;
 
     bool m_includeFromUpstream;
-    bool m_includeFromUpstreamHasBeenSet;
+    bool m_includeFromUpstreamHasBeenSet = false;
   };
 
 } // namespace Model

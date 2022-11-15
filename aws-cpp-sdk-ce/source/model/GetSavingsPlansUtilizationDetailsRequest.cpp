@@ -41,7 +41,7 @@ Aws::String GetSavingsPlansUtilizationDetailsRequest::SerializePayload() const
 
   if(m_dataTypeHasBeenSet)
   {
-   Array<JsonValue> dataTypeJsonList(m_dataType.size());
+   Aws::Utils::Array<JsonValue> dataTypeJsonList(m_dataType.size());
    for(unsigned dataTypeIndex = 0; dataTypeIndex < dataTypeJsonList.GetLength(); ++dataTypeIndex)
    {
      dataTypeJsonList[dataTypeIndex].AsString(SavingsPlansDataTypeMapper::GetNameForSavingsPlansDataType(m_dataType[dataTypeIndex]));

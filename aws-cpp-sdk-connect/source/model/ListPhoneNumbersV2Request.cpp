@@ -47,7 +47,7 @@ Aws::String ListPhoneNumbersV2Request::SerializePayload() const
 
   if(m_phoneNumberCountryCodesHasBeenSet)
   {
-   Array<JsonValue> phoneNumberCountryCodesJsonList(m_phoneNumberCountryCodes.size());
+   Aws::Utils::Array<JsonValue> phoneNumberCountryCodesJsonList(m_phoneNumberCountryCodes.size());
    for(unsigned phoneNumberCountryCodesIndex = 0; phoneNumberCountryCodesIndex < phoneNumberCountryCodesJsonList.GetLength(); ++phoneNumberCountryCodesIndex)
    {
      phoneNumberCountryCodesJsonList[phoneNumberCountryCodesIndex].AsString(PhoneNumberCountryCodeMapper::GetNameForPhoneNumberCountryCode(m_phoneNumberCountryCodes[phoneNumberCountryCodesIndex]));
@@ -58,7 +58,7 @@ Aws::String ListPhoneNumbersV2Request::SerializePayload() const
 
   if(m_phoneNumberTypesHasBeenSet)
   {
-   Array<JsonValue> phoneNumberTypesJsonList(m_phoneNumberTypes.size());
+   Aws::Utils::Array<JsonValue> phoneNumberTypesJsonList(m_phoneNumberTypes.size());
    for(unsigned phoneNumberTypesIndex = 0; phoneNumberTypesIndex < phoneNumberTypesJsonList.GetLength(); ++phoneNumberTypesIndex)
    {
      phoneNumberTypesJsonList[phoneNumberTypesIndex].AsString(PhoneNumberTypeMapper::GetNameForPhoneNumberType(m_phoneNumberTypes[phoneNumberTypesIndex]));

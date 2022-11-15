@@ -214,13 +214,13 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     ConfigurationInfo m_configurationInfo;
-    bool m_configurationInfoHasBeenSet;
+    bool m_configurationInfoHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
   };
 
 } // namespace Model

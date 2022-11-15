@@ -33,7 +33,7 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ReplicationConfiguration::Jsonize() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_entityRecognizerArn;
-    bool m_entityRecognizerArnHasBeenSet;
+    bool m_entityRecognizerArnHasBeenSet = false;
   };
 
 } // namespace Model

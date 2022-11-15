@@ -28,6 +28,7 @@ ApplicationInstance::ApplicationInstance() :
     m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_runtimeContextStatesHasBeenSet(false),
     m_status(ApplicationInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusDescriptionHasBeenSet(false),
@@ -45,6 +46,7 @@ ApplicationInstance::ApplicationInstance(JsonView jsonValue) :
     m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_runtimeContextStatesHasBeenSet(false),
     m_status(ApplicationInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusDescriptionHasBeenSet(false),
@@ -109,6 +111,16 @@ ApplicationInstance& ApplicationInstance::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RuntimeContextStates"))
+  {
+    Aws::Utils::Array<JsonView> runtimeContextStatesJsonList = jsonValue.GetArray("RuntimeContextStates");
+    for(unsigned runtimeContextStatesIndex = 0; runtimeContextStatesIndex < runtimeContextStatesJsonList.GetLength(); ++runtimeContextStatesIndex)
+    {
+      m_runtimeContextStates.push_back(runtimeContextStatesJsonList[runtimeContextStatesIndex].AsObject());
+    }
+    m_runtimeContextStatesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -185,6 +197,17 @@ JsonValue ApplicationInstance::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_runtimeContextStatesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> runtimeContextStatesJsonList(m_runtimeContextStates.size());
+   for(unsigned runtimeContextStatesIndex = 0; runtimeContextStatesIndex < runtimeContextStatesJsonList.GetLength(); ++runtimeContextStatesIndex)
+   {
+     runtimeContextStatesJsonList[runtimeContextStatesIndex].AsObject(m_runtimeContextStates[runtimeContextStatesIndex].Jsonize());
+   }
+   payload.WithArray("RuntimeContextStates", std::move(runtimeContextStatesJsonList));
 
   }
 

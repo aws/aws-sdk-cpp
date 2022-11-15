@@ -195,10 +195,10 @@ namespace Model
   private:
 
     Aws::String m_collectionName;
-    bool m_collectionNameHasBeenSet;
+    bool m_collectionNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_collectionParameters;
-    bool m_collectionParametersHasBeenSet;
+    bool m_collectionParametersHasBeenSet = false;
   };
 
 } // namespace Model

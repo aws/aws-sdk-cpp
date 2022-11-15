@@ -61,7 +61,7 @@ namespace Model
   private:
 
     ScheduledAutoTuneDetails m_scheduledAutoTuneDetails;
-    bool m_scheduledAutoTuneDetailsHasBeenSet;
+    bool m_scheduledAutoTuneDetailsHasBeenSet = false;
   };
 
 } // namespace Model

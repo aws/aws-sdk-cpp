@@ -33,7 +33,7 @@ AlarmEventActions& AlarmEventActions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("alarmActions"))
   {
-    Array<JsonView> alarmActionsJsonList = jsonValue.GetArray("alarmActions");
+    Aws::Utils::Array<JsonView> alarmActionsJsonList = jsonValue.GetArray("alarmActions");
     for(unsigned alarmActionsIndex = 0; alarmActionsIndex < alarmActionsJsonList.GetLength(); ++alarmActionsIndex)
     {
       m_alarmActions.push_back(alarmActionsJsonList[alarmActionsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AlarmEventActions::Jsonize() const
 
   if(m_alarmActionsHasBeenSet)
   {
-   Array<JsonValue> alarmActionsJsonList(m_alarmActions.size());
+   Aws::Utils::Array<JsonValue> alarmActionsJsonList(m_alarmActions.size());
    for(unsigned alarmActionsIndex = 0; alarmActionsIndex < alarmActionsJsonList.GetLength(); ++alarmActionsIndex)
    {
      alarmActionsJsonList[alarmActionsIndex].AsObject(m_alarmActions[alarmActionsIndex].Jsonize());

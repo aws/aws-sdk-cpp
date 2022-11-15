@@ -36,7 +36,7 @@ ListCreatedArtifactsResult& ListCreatedArtifactsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("CreatedArtifactList"))
   {
-    Array<JsonView> createdArtifactListJsonList = jsonValue.GetArray("CreatedArtifactList");
+    Aws::Utils::Array<JsonView> createdArtifactListJsonList = jsonValue.GetArray("CreatedArtifactList");
     for(unsigned createdArtifactListIndex = 0; createdArtifactListIndex < createdArtifactListJsonList.GetLength(); ++createdArtifactListIndex)
     {
       m_createdArtifactList.push_back(createdArtifactListJsonList[createdArtifactListIndex].AsObject());

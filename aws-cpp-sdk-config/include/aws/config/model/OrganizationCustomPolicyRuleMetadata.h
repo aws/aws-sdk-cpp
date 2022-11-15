@@ -664,37 +664,37 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<OrganizationConfigRuleTriggerTypeNoSN> m_organizationConfigRuleTriggerTypes;
-    bool m_organizationConfigRuleTriggerTypesHasBeenSet;
+    bool m_organizationConfigRuleTriggerTypesHasBeenSet = false;
 
     Aws::String m_inputParameters;
-    bool m_inputParametersHasBeenSet;
+    bool m_inputParametersHasBeenSet = false;
 
     MaximumExecutionFrequency m_maximumExecutionFrequency;
-    bool m_maximumExecutionFrequencyHasBeenSet;
+    bool m_maximumExecutionFrequencyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypesScope;
-    bool m_resourceTypesScopeHasBeenSet;
+    bool m_resourceTypesScopeHasBeenSet = false;
 
     Aws::String m_resourceIdScope;
-    bool m_resourceIdScopeHasBeenSet;
+    bool m_resourceIdScopeHasBeenSet = false;
 
     Aws::String m_tagKeyScope;
-    bool m_tagKeyScopeHasBeenSet;
+    bool m_tagKeyScopeHasBeenSet = false;
 
     Aws::String m_tagValueScope;
-    bool m_tagValueScopeHasBeenSet;
+    bool m_tagValueScopeHasBeenSet = false;
 
     Aws::String m_policyRuntime;
-    bool m_policyRuntimeHasBeenSet;
+    bool m_policyRuntimeHasBeenSet = false;
 
     Aws::String m_policyText;
-    bool m_policyTextHasBeenSet;
+    bool m_policyTextHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_debugLogDeliveryAccounts;
-    bool m_debugLogDeliveryAccountsHasBeenSet;
+    bool m_debugLogDeliveryAccountsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     bool m_resetAllParameters;
-    bool m_resetAllParametersHasBeenSet;
+    bool m_resetAllParametersHasBeenSet = false;
 
     Aws::Vector<ParameterNameValue> m_parameterNameValues;
-    bool m_parameterNameValuesHasBeenSet;
+    bool m_parameterNameValuesHasBeenSet = false;
   };
 
 } // namespace Model

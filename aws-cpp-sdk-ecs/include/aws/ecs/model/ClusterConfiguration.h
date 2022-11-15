@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ExecuteCommandConfiguration m_executeCommandConfiguration;
-    bool m_executeCommandConfigurationHasBeenSet;
+    bool m_executeCommandConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

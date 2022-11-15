@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_ptrRecord;
-    bool m_ptrRecordHasBeenSet;
+    bool m_ptrRecordHasBeenSet = false;
 
     PtrUpdateStatus m_ptrRecordUpdate;
-    bool m_ptrRecordUpdateHasBeenSet;
+    bool m_ptrRecordUpdateHasBeenSet = false;
   };
 
 } // namespace Model

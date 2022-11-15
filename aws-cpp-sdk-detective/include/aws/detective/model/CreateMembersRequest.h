@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     bool m_disableEmailNotification;
-    bool m_disableEmailNotificationHasBeenSet;
+    bool m_disableEmailNotificationHasBeenSet = false;
 
     Aws::Vector<Account> m_accounts;
-    bool m_accountsHasBeenSet;
+    bool m_accountsHasBeenSet = false;
   };
 
 } // namespace Model

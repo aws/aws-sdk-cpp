@@ -668,31 +668,31 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_resultLocationBucket;
-    bool m_resultLocationBucketHasBeenSet;
+    bool m_resultLocationBucketHasBeenSet = false;
 
     Aws::String m_resultLocationFolder;
-    bool m_resultLocationFolderHasBeenSet;
+    bool m_resultLocationFolderHasBeenSet = false;
 
     Aws::String m_resultEncryptionMode;
-    bool m_resultEncryptionModeHasBeenSet;
+    bool m_resultEncryptionModeHasBeenSet = false;
 
     Aws::String m_resultKmsKeyArn;
-    bool m_resultKmsKeyArnHasBeenSet;
+    bool m_resultKmsKeyArnHasBeenSet = false;
 
     Aws::String m_assessmentRunName;
-    bool m_assessmentRunNameHasBeenSet;
+    bool m_assessmentRunNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeOnly;
-    bool m_includeOnlyHasBeenSet;
+    bool m_includeOnlyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclude;
-    bool m_excludeHasBeenSet;
+    bool m_excludeHasBeenSet = false;
   };
 
 } // namespace Model

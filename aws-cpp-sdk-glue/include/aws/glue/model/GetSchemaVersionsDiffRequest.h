@@ -198,16 +198,16 @@ namespace Model
   private:
 
     SchemaId m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     SchemaVersionNumber m_firstSchemaVersionNumber;
-    bool m_firstSchemaVersionNumberHasBeenSet;
+    bool m_firstSchemaVersionNumberHasBeenSet = false;
 
     SchemaVersionNumber m_secondSchemaVersionNumber;
-    bool m_secondSchemaVersionNumberHasBeenSet;
+    bool m_secondSchemaVersionNumberHasBeenSet = false;
 
     SchemaDiffType m_schemaDiffType;
-    bool m_schemaDiffTypeHasBeenSet;
+    bool m_schemaDiffTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -101,13 +101,13 @@ namespace Model
   private:
 
     int m_openProactiveInsights;
-    bool m_openProactiveInsightsHasBeenSet;
+    bool m_openProactiveInsightsHasBeenSet = false;
 
     int m_openReactiveInsights;
-    bool m_openReactiveInsightsHasBeenSet;
+    bool m_openReactiveInsightsHasBeenSet = false;
 
     long long m_meanTimeToRecoverInMilliseconds;
-    bool m_meanTimeToRecoverInMillisecondsHasBeenSet;
+    bool m_meanTimeToRecoverInMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

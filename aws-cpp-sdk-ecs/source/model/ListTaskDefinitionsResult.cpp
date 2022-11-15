@@ -30,7 +30,7 @@ ListTaskDefinitionsResult& ListTaskDefinitionsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("taskDefinitionArns"))
   {
-    Array<JsonView> taskDefinitionArnsJsonList = jsonValue.GetArray("taskDefinitionArns");
+    Aws::Utils::Array<JsonView> taskDefinitionArnsJsonList = jsonValue.GetArray("taskDefinitionArns");
     for(unsigned taskDefinitionArnsIndex = 0; taskDefinitionArnsIndex < taskDefinitionArnsJsonList.GetLength(); ++taskDefinitionArnsIndex)
     {
       m_taskDefinitionArns.push_back(taskDefinitionArnsJsonList[taskDefinitionArnsIndex].AsString());

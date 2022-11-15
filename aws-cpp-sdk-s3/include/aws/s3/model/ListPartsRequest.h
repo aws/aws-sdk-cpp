@@ -42,6 +42,17 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        if (BucketHasBeenSet()) {
+            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+        }
+
+        return parameters;
+    }
+
+
     /**
      * <p>The name of the bucket to which the parts are being uploaded. </p> <p>When
      * using this action with an access point, you must direct requests to the access
@@ -676,37 +687,37 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     int m_maxParts;
-    bool m_maxPartsHasBeenSet;
+    bool m_maxPartsHasBeenSet = false;
 
     int m_partNumberMarker;
-    bool m_partNumberMarkerHasBeenSet;
+    bool m_partNumberMarkerHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::String m_sSECustomerAlgorithm;
-    bool m_sSECustomerAlgorithmHasBeenSet;
+    bool m_sSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_sSECustomerKey;
-    bool m_sSECustomerKeyHasBeenSet;
+    bool m_sSECustomerKeyHasBeenSet = false;
 
     Aws::String m_sSECustomerKeyMD5;
-    bool m_sSECustomerKeyMD5HasBeenSet;
+    bool m_sSECustomerKeyMD5HasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,7 +39,7 @@ Aws::String PutRumEventsRequest::SerializePayload() const
 
   if(m_rumEventsHasBeenSet)
   {
-   Array<JsonValue> rumEventsJsonList(m_rumEvents.size());
+   Aws::Utils::Array<JsonValue> rumEventsJsonList(m_rumEvents.size());
    for(unsigned rumEventsIndex = 0; rumEventsIndex < rumEventsJsonList.GetLength(); ++rumEventsIndex)
    {
      rumEventsJsonList[rumEventsIndex].AsObject(m_rumEvents[rumEventsIndex].Jsonize());

@@ -40,38 +40,44 @@ namespace Model
 
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
-     * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
+     * throughput (MiB/s) that are requested for the EBS volume attached to an EC2
+     * instance in the cluster.</p>
      */
     inline const VolumeSpecification& GetVolumeSpecification() const{ return m_volumeSpecification; }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
-     * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
+     * throughput (MiB/s) that are requested for the EBS volume attached to an EC2
+     * instance in the cluster.</p>
      */
     inline bool VolumeSpecificationHasBeenSet() const { return m_volumeSpecificationHasBeenSet; }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
-     * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
+     * throughput (MiB/s) that are requested for the EBS volume attached to an EC2
+     * instance in the cluster.</p>
      */
     inline void SetVolumeSpecification(const VolumeSpecification& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
-     * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
+     * throughput (MiB/s) that are requested for the EBS volume attached to an EC2
+     * instance in the cluster.</p>
      */
     inline void SetVolumeSpecification(VolumeSpecification&& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = std::move(value); }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
-     * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
+     * throughput (MiB/s) that are requested for the EBS volume attached to an EC2
+     * instance in the cluster.</p>
      */
     inline EbsBlockDevice& WithVolumeSpecification(const VolumeSpecification& value) { SetVolumeSpecification(value); return *this;}
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
-     * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
+     * throughput (MiB/s) that are requested for the EBS volume attached to an EC2
+     * instance in the cluster.</p>
      */
     inline EbsBlockDevice& WithVolumeSpecification(VolumeSpecification&& value) { SetVolumeSpecification(std::move(value)); return *this;}
 
@@ -119,10 +125,10 @@ namespace Model
   private:
 
     VolumeSpecification m_volumeSpecification;
-    bool m_volumeSpecificationHasBeenSet;
+    bool m_volumeSpecificationHasBeenSet = false;
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
   };
 
 } // namespace Model

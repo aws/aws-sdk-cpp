@@ -55,7 +55,7 @@ FairsharePolicy& FairsharePolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("shareDistribution"))
   {
-    Array<JsonView> shareDistributionJsonList = jsonValue.GetArray("shareDistribution");
+    Aws::Utils::Array<JsonView> shareDistributionJsonList = jsonValue.GetArray("shareDistribution");
     for(unsigned shareDistributionIndex = 0; shareDistributionIndex < shareDistributionJsonList.GetLength(); ++shareDistributionIndex)
     {
       m_shareDistribution.push_back(shareDistributionJsonList[shareDistributionIndex].AsObject());
@@ -84,7 +84,7 @@ JsonValue FairsharePolicy::Jsonize() const
 
   if(m_shareDistributionHasBeenSet)
   {
-   Array<JsonValue> shareDistributionJsonList(m_shareDistribution.size());
+   Aws::Utils::Array<JsonValue> shareDistributionJsonList(m_shareDistribution.size());
    for(unsigned shareDistributionIndex = 0; shareDistributionIndex < shareDistributionJsonList.GetLength(); ++shareDistributionIndex)
    {
      shareDistributionJsonList[shareDistributionIndex].AsObject(m_shareDistribution[shareDistributionIndex].Jsonize());

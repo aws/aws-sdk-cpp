@@ -24,7 +24,8 @@ SlotValueElicitationSetting::SlotValueElicitationSetting() :
     m_slotConstraintHasBeenSet(false),
     m_promptSpecificationHasBeenSet(false),
     m_sampleUtterancesHasBeenSet(false),
-    m_waitAndContinueSpecificationHasBeenSet(false)
+    m_waitAndContinueSpecificationHasBeenSet(false),
+    m_slotCaptureSettingHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ SlotValueElicitationSetting::SlotValueElicitationSetting(JsonView jsonValue) :
     m_slotConstraintHasBeenSet(false),
     m_promptSpecificationHasBeenSet(false),
     m_sampleUtterancesHasBeenSet(false),
-    m_waitAndContinueSpecificationHasBeenSet(false)
+    m_waitAndContinueSpecificationHasBeenSet(false),
+    m_slotCaptureSettingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -64,7 +66,7 @@ SlotValueElicitationSetting& SlotValueElicitationSetting::operator =(JsonView js
 
   if(jsonValue.ValueExists("sampleUtterances"))
   {
-    Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
+    Aws::Utils::Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
     for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
     {
       m_sampleUtterances.push_back(sampleUtterancesJsonList[sampleUtterancesIndex].AsObject());
@@ -77,6 +79,13 @@ SlotValueElicitationSetting& SlotValueElicitationSetting::operator =(JsonView js
     m_waitAndContinueSpecification = jsonValue.GetObject("waitAndContinueSpecification");
 
     m_waitAndContinueSpecificationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("slotCaptureSetting"))
+  {
+    m_slotCaptureSetting = jsonValue.GetObject("slotCaptureSetting");
+
+    m_slotCaptureSettingHasBeenSet = true;
   }
 
   return *this;
@@ -105,7 +114,7 @@ JsonValue SlotValueElicitationSetting::Jsonize() const
 
   if(m_sampleUtterancesHasBeenSet)
   {
-   Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
+   Aws::Utils::Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
    for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
    {
      sampleUtterancesJsonList[sampleUtterancesIndex].AsObject(m_sampleUtterances[sampleUtterancesIndex].Jsonize());
@@ -117,6 +126,12 @@ JsonValue SlotValueElicitationSetting::Jsonize() const
   if(m_waitAndContinueSpecificationHasBeenSet)
   {
    payload.WithObject("waitAndContinueSpecification", m_waitAndContinueSpecification.Jsonize());
+
+  }
+
+  if(m_slotCaptureSettingHasBeenSet)
+  {
+   payload.WithObject("slotCaptureSetting", m_slotCaptureSetting.Jsonize());
 
   }
 

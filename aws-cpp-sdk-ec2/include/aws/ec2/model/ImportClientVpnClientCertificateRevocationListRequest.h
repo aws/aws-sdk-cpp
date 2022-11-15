@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     Aws::String m_certificateRevocationList;
-    bool m_certificateRevocationListHasBeenSet;
+    bool m_certificateRevocationListHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

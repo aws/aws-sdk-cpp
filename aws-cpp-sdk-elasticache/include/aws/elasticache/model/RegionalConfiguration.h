@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_replicationGroupRegion;
-    bool m_replicationGroupRegionHasBeenSet;
+    bool m_replicationGroupRegionHasBeenSet = false;
 
     Aws::Vector<ReshardingConfiguration> m_reshardingConfiguration;
-    bool m_reshardingConfigurationHasBeenSet;
+    bool m_reshardingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

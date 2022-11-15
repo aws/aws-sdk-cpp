@@ -51,7 +51,7 @@ SizeConstraintSet& SizeConstraintSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SizeConstraints"))
   {
-    Array<JsonView> sizeConstraintsJsonList = jsonValue.GetArray("SizeConstraints");
+    Aws::Utils::Array<JsonView> sizeConstraintsJsonList = jsonValue.GetArray("SizeConstraints");
     for(unsigned sizeConstraintsIndex = 0; sizeConstraintsIndex < sizeConstraintsJsonList.GetLength(); ++sizeConstraintsIndex)
     {
       m_sizeConstraints.push_back(sizeConstraintsJsonList[sizeConstraintsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue SizeConstraintSet::Jsonize() const
 
   if(m_sizeConstraintsHasBeenSet)
   {
-   Array<JsonValue> sizeConstraintsJsonList(m_sizeConstraints.size());
+   Aws::Utils::Array<JsonValue> sizeConstraintsJsonList(m_sizeConstraints.size());
    for(unsigned sizeConstraintsIndex = 0; sizeConstraintsIndex < sizeConstraintsJsonList.GetLength(); ++sizeConstraintsIndex)
    {
      sizeConstraintsJsonList[sizeConstraintsIndex].AsObject(m_sizeConstraints[sizeConstraintsIndex].Jsonize());

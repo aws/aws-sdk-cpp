@@ -330,77 +330,77 @@ namespace Model
 
 
     /**
-     * <p> The time the pricing rule was created. </p>
+     * <p> The time when the pricing rule was created. </p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p> The time the pricing rule was created. </p>
+     * <p> The time when the pricing rule was created. </p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p> The time the pricing rule was created. </p>
+     * <p> The time when the pricing rule was created. </p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p> The time the pricing rule was created. </p>
+     * <p> The time when the pricing rule was created. </p>
      */
     inline PricingRuleListElement& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
 
     /**
-     * <p> The most recent time the pricing rule was modified. </p>
+     * <p> The most recent time when the pricing rule was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the pricing rule was modified. </p>
+     * <p> The most recent time when the pricing rule was modified. </p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p> The most recent time the pricing rule was modified. </p>
+     * <p> The most recent time when the pricing rule was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the pricing rule was modified. </p>
+     * <p> The most recent time when the pricing rule was modified. </p>
      */
     inline PricingRuleListElement& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PricingRuleScope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     PricingRuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_modifierPercentage;
-    bool m_modifierPercentageHasBeenSet;
+    bool m_modifierPercentageHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     long long m_associatedPricingPlanCount;
-    bool m_associatedPricingPlanCountHasBeenSet;
+    bool m_associatedPricingPlanCountHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

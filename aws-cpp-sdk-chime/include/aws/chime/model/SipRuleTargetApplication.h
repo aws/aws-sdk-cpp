@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_sipMediaApplicationId;
-    bool m_sipMediaApplicationIdHasBeenSet;
+    bool m_sipMediaApplicationIdHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
   };
 
 } // namespace Model

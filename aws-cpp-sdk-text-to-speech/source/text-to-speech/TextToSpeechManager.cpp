@@ -152,7 +152,6 @@ namespace Aws
                 AWS_LOGSTREAM_TRACE(CLASS_TAG, "Audio retrieved from Polly. " << result.GetContentType() << " with " 
                     << result.GetRequestCharacters() << " characters syntesized");
 
-                std::streamsize amountRead(0);
                 unsigned char buffer[BUFF_SIZE];
 
                 std::lock_guard<std::mutex> m(m_driverLock);
@@ -165,7 +164,6 @@ namespace Aws
                     AWS_LOGSTREAM_TRACE(CLASS_TAG, "Writing " << read << " bytes to device.");
 
                     successfullyPlayed = m_activeDriver->WriteBufferToDevice(buffer, (std::size_t)read);
-                    amountRead += read;
                     played = successfullyPlayed;
                 }
 

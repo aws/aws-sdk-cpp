@@ -174,16 +174,16 @@ namespace Model
   private:
 
     long long m_found;
-    bool m_foundHasBeenSet;
+    bool m_foundHasBeenSet = false;
 
     long long m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_cursor;
-    bool m_cursorHasBeenSet;
+    bool m_cursorHasBeenSet = false;
 
     Aws::Vector<Hit> m_hit;
-    bool m_hitHasBeenSet;
+    bool m_hitHasBeenSet = false;
   };
 
 } // namespace Model

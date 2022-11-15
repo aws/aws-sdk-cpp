@@ -30,7 +30,7 @@ DescribeLagsResult& DescribeLagsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("lags"))
   {
-    Array<JsonView> lagsJsonList = jsonValue.GetArray("lags");
+    Aws::Utils::Array<JsonView> lagsJsonList = jsonValue.GetArray("lags");
     for(unsigned lagsIndex = 0; lagsIndex < lagsJsonList.GetLength(); ++lagsIndex)
     {
       m_lags.push_back(lagsJsonList[lagsIndex].AsObject());

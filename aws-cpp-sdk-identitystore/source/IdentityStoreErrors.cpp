@@ -6,7 +6,9 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/identitystore/IdentityStoreErrors.h>
+#include <aws/identitystore/model/ConflictException.h>
 #include <aws/identitystore/model/ThrottlingException.h>
+#include <aws/identitystore/model/ServiceQuotaExceededException.h>
 #include <aws/identitystore/model/ResourceNotFoundException.h>
 #include <aws/identitystore/model/InternalServerException.h>
 #include <aws/identitystore/model/ValidationException.h>
@@ -21,10 +23,22 @@ namespace Aws
 {
 namespace IdentityStore
 {
+template<> AWS_IDENTITYSTORE_API ConflictException IdentityStoreError::GetModeledError()
+{
+  assert(this->GetErrorType() == IdentityStoreErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
 template<> AWS_IDENTITYSTORE_API ThrottlingException IdentityStoreError::GetModeledError()
 {
   assert(this->GetErrorType() == IdentityStoreErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_IDENTITYSTORE_API ServiceQuotaExceededException IdentityStoreError::GetModeledError()
+{
+  assert(this->GetErrorType() == IdentityStoreErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_IDENTITYSTORE_API ResourceNotFoundException IdentityStoreError::GetModeledError()
@@ -54,6 +68,8 @@ template<> AWS_IDENTITYSTORE_API AccessDeniedException IdentityStoreError::GetMo
 namespace IdentityStoreErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 
 
@@ -61,7 +77,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVER_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IdentityStoreErrors::CONFLICT), false);
+  }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IdentityStoreErrors::SERVICE_QUOTA_EXCEEDED), false);
+  }
+  else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IdentityStoreErrors::INTERNAL_SERVER), false);
   }

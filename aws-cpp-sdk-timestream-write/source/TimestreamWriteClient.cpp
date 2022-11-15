@@ -16,11 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/platform/Environment.h>
 
 #include <aws/timestream-write/TimestreamWriteClient.h>
-#include <aws/timestream-write/TimestreamWriteEndpoint.h>
 #include <aws/timestream-write/TimestreamWriteErrorMarshaller.h>
+#include <aws/timestream-write/TimestreamWriteEndpointProvider.h>
 #include <aws/timestream-write/model/CreateDatabaseRequest.h>
 #include <aws/timestream-write/model/CreateTableRequest.h>
 #include <aws/timestream-write/model/DeleteDatabaseRequest.h>
@@ -44,122 +45,138 @@ using namespace Aws::TimestreamWrite;
 using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-static const char* SERVICE_NAME = "timestream";
-static const char* ALLOCATION_TAG = "TimestreamWriteClient";
+const char* TimestreamWriteClient::SERVICE_NAME = "timestream";
+const char* TimestreamWriteClient::ALLOCATION_TAG = "TimestreamWriteClient";
 
-
-TimestreamWriteClient::TimestreamWriteClient(const Client::ClientConfiguration& clientConfiguration) :
+TimestreamWriteClient::TimestreamWriteClient(const TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration,
+                                             std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
-TimestreamWriteClient::TimestreamWriteClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+TimestreamWriteClient::TimestreamWriteClient(const AWSCredentials& credentials,
+                                             std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider,
+                                             const TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 TimestreamWriteClient::TimestreamWriteClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                             std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider,
+                                             const TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* Legacy constructors due deprecation */
+  TimestreamWriteClient::TimestreamWriteClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+TimestreamWriteClient::TimestreamWriteClient(const AWSCredentials& credentials,
+                                             const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+TimestreamWriteClient::TimestreamWriteClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                             const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+    /* End of legacy constructors due deprecation */
 TimestreamWriteClient::~TimestreamWriteClient()
 {
 }
 
-void TimestreamWriteClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<TimestreamWriteEndpointProviderBase>& TimestreamWriteClient::accessEndpointProvider()
 {
-  SetServiceClientName("Timestream Write");
-  LoadTimestreamWriteSpecificConfig(config);
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + TimestreamWriteEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  return m_endpointProvider;
 }
 
-void TimestreamWriteClient::LoadTimestreamWriteSpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
+void TimestreamWriteClient::init(const TimestreamWrite::TimestreamWriteClientConfiguration& config)
 {
-  if (!clientConfiguration.endpointOverride.empty())
-  {
-    m_enableEndpointDiscovery = false;
-  }
-  else if (clientConfiguration.enableEndpointDiscovery)
-  {
-    m_enableEndpointDiscovery = clientConfiguration.enableEndpointDiscovery.value();
-  }
-  else
-  {
-    m_enableEndpointDiscovery = true;
-
-    Aws::String enableEndpointDiscovery = Aws::Environment::GetEnv("AWS_ENABLE_ENDPOINT_DISCOVERY");
-    if (enableEndpointDiscovery.empty())
-    {
-      enableEndpointDiscovery = Aws::Config::GetCachedConfigValue(clientConfiguration.profileName, "endpoint_discovery_enabled");
-    }
-
-    if (enableEndpointDiscovery == "true")
-    {
-      m_enableEndpointDiscovery = true;
-    }
-    else if (enableEndpointDiscovery == "false")
-    {
-      m_enableEndpointDiscovery = false;
-    }
-    else if (!enableEndpointDiscovery.empty())
-    {
-      AWS_LOGSTREAM_WARN("TimestreamWriteClient", R"(Using the SDK default configuration for Endpoint Discovery. )"
-        R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY" or )"
-        R"(your config file's variable "endpoint_discovery_enabled" are explicitly set to "true" or "false" (case-sensitive) or not set at all.)");
-    }
-  }
+  AWSClient::SetServiceClientName("Timestream Write");
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void TimestreamWriteClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
-  m_enableEndpointDiscovery = false;
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabaseRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateDatabase", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -169,9 +186,11 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("CreateDatabase", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -188,7 +207,11 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return CreateDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return CreateDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateDatabaseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDatabaseOutcomeCallable TimestreamWriteClient::CreateDatabaseCallable(const CreateDatabaseRequest& request) const
@@ -201,25 +224,24 @@ CreateDatabaseOutcomeCallable TimestreamWriteClient::CreateDatabaseCallable(cons
 
 void TimestreamWriteClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatabaseAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::CreateDatabaseAsyncHelper(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDatabase(request), context);
+    } );
 }
 
 CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -229,9 +251,11 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("CreateTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -248,7 +272,11 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return CreateTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return CreateTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTableOutcomeCallable TimestreamWriteClient::CreateTableCallable(const CreateTableRequest& request) const
@@ -261,25 +289,24 @@ CreateTableOutcomeCallable TimestreamWriteClient::CreateTableCallable(const Crea
 
 void TimestreamWriteClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTableAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::CreateTableAsyncHelper(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTable(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTable(request), context);
+    } );
 }
 
 DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabaseRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteDatabase", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -289,9 +316,11 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DeleteDatabase", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -308,7 +337,11 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DeleteDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return DeleteDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteDatabaseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDatabaseOutcomeCallable TimestreamWriteClient::DeleteDatabaseCallable(const DeleteDatabaseRequest& request) const
@@ -321,25 +354,24 @@ DeleteDatabaseOutcomeCallable TimestreamWriteClient::DeleteDatabaseCallable(cons
 
 void TimestreamWriteClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatabaseAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::DeleteDatabaseAsyncHelper(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDatabase(request), context);
+    } );
 }
 
 DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -349,9 +381,11 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DeleteTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -368,7 +402,11 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DeleteTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return DeleteTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTableOutcomeCallable TimestreamWriteClient::DeleteTableCallable(const DeleteTableRequest& request) const
@@ -381,25 +419,24 @@ DeleteTableOutcomeCallable TimestreamWriteClient::DeleteTableCallable(const Dele
 
 void TimestreamWriteClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTableAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTable(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTable(request), context);
+    } );
 }
 
 DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDatabaseRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeDatabase", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -409,9 +446,11 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeDatabase", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -428,7 +467,11 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DescribeDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return DescribeDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeDatabaseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDatabaseOutcomeCallable TimestreamWriteClient::DescribeDatabaseCallable(const DescribeDatabaseRequest& request) const
@@ -441,18 +484,18 @@ DescribeDatabaseOutcomeCallable TimestreamWriteClient::DescribeDatabaseCallable(
 
 void TimestreamWriteClient::DescribeDatabaseAsync(const DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatabaseAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::DescribeDatabaseAsyncHelper(const DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDatabase(request), context);
+    } );
 }
 
 DescribeEndpointsOutcome TimestreamWriteClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return DescribeEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeEndpointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEndpointsOutcomeCallable TimestreamWriteClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
@@ -465,25 +508,24 @@ DescribeEndpointsOutcomeCallable TimestreamWriteClient::DescribeEndpointsCallabl
 
 void TimestreamWriteClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointsAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::DescribeEndpointsAsyncHelper(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeEndpoints(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEndpoints(request), context);
+    } );
 }
 
 DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -493,9 +535,11 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -512,7 +556,11 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DescribeTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return DescribeTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTableOutcomeCallable TimestreamWriteClient::DescribeTableCallable(const DescribeTableRequest& request) const
@@ -525,25 +573,24 @@ DescribeTableOutcomeCallable TimestreamWriteClient::DescribeTableCallable(const 
 
 void TimestreamWriteClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTableAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::DescribeTableAsyncHelper(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTable(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTable(request), context);
+    } );
 }
 
 ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatabases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListDatabases", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -553,9 +600,11 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListDatabases", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -572,7 +621,11 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return ListDatabasesOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return ListDatabasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDatabases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDatabasesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDatabasesOutcomeCallable TimestreamWriteClient::ListDatabasesCallable(const ListDatabasesRequest& request) const
@@ -585,25 +638,24 @@ ListDatabasesOutcomeCallable TimestreamWriteClient::ListDatabasesCallable(const 
 
 void TimestreamWriteClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatabasesAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::ListDatabasesAsyncHelper(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDatabases(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDatabases(request), context);
+    } );
 }
 
 ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTables", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -613,9 +665,11 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListTables", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -632,7 +686,11 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return ListTablesOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return ListTablesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTablesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTablesOutcomeCallable TimestreamWriteClient::ListTablesCallable(const ListTablesRequest& request) const
@@ -645,25 +703,24 @@ ListTablesOutcomeCallable TimestreamWriteClient::ListTablesCallable(const ListTa
 
 void TimestreamWriteClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTablesAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::ListTablesAsyncHelper(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTables(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTables(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTagsForResource", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -673,9 +730,11 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListTagsForResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -692,7 +751,11 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return ListTagsForResourceOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable TimestreamWriteClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -705,25 +768,24 @@ ListTagsForResourceOutcomeCallable TimestreamWriteClient::ListTagsForResourceCal
 
 void TimestreamWriteClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TagResource", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -733,9 +795,11 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("TagResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -752,7 +816,11 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return TagResourceOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable TimestreamWriteClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -765,25 +833,24 @@ TagResourceOutcomeCallable TimestreamWriteClient::TagResourceCallable(const TagR
 
 void TimestreamWriteClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UntagResource", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -793,9 +860,11 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UntagResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -812,7 +881,11 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return UntagResourceOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable TimestreamWriteClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -825,25 +898,24 @@ UntagResourceOutcomeCallable TimestreamWriteClient::UntagResourceCallable(const 
 
 void TimestreamWriteClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabaseRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateDatabase", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -853,9 +925,11 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateDatabase", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -872,7 +946,11 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return UpdateDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return UpdateDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateDatabaseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDatabaseOutcomeCallable TimestreamWriteClient::UpdateDatabaseCallable(const UpdateDatabaseRequest& request) const
@@ -885,25 +963,24 @@ UpdateDatabaseOutcomeCallable TimestreamWriteClient::UpdateDatabaseCallable(cons
 
 void TimestreamWriteClient::UpdateDatabaseAsync(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatabaseAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::UpdateDatabaseAsyncHelper(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDatabase(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDatabase(request), context);
+    } );
 }
 
 UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -913,9 +990,11 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -932,7 +1011,11 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return UpdateTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return UpdateTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTableOutcomeCallable TimestreamWriteClient::UpdateTableCallable(const UpdateTableRequest& request) const
@@ -945,25 +1028,24 @@ UpdateTableOutcomeCallable TimestreamWriteClient::UpdateTableCallable(const Upda
 
 void TimestreamWriteClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTableAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::UpdateTableAsyncHelper(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTable(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTable(request), context);
+    } );
 }
 
 WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, WriteRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("WriteRecords", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -973,9 +1055,11 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("WriteRecords", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -992,7 +1076,11 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return WriteRecordsOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  return WriteRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, WriteRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return WriteRecordsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 WriteRecordsOutcomeCallable TimestreamWriteClient::WriteRecordsCallable(const WriteRecordsRequest& request) const
@@ -1005,11 +1093,9 @@ WriteRecordsOutcomeCallable TimestreamWriteClient::WriteRecordsCallable(const Wr
 
 void TimestreamWriteClient::WriteRecordsAsync(const WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->WriteRecordsAsyncHelper( request, handler, context ); } );
-}
-
-void TimestreamWriteClient::WriteRecordsAsyncHelper(const WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, WriteRecords(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, WriteRecords(request), context);
+    } );
 }
 

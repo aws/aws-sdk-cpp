@@ -42,6 +42,27 @@ namespace Model
 
 
     /**
+     * <p>The targeted port of the weighted object.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The targeted port of the weighted object.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The targeted port of the weighted object.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The targeted port of the weighted object.</p>
+     */
+    inline WeightedTarget& WithPort(int value) { SetPort(value); return *this;}
+
+
+    /**
      * <p>The virtual node to associate with the weighted target.</p>
      */
     inline const Aws::String& GetVirtualNode() const{ return m_virtualNode; }
@@ -104,11 +125,14 @@ namespace Model
 
   private:
 
+    int m_port;
+    bool m_portHasBeenSet = false;
+
     Aws::String m_virtualNode;
-    bool m_virtualNodeHasBeenSet;
+    bool m_virtualNodeHasBeenSet = false;
 
     int m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
   };
 
 } // namespace Model

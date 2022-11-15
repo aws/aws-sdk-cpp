@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<ThreatIntelligenceDetail> m_threatIntelligenceDetails;
-    bool m_threatIntelligenceDetailsHasBeenSet;
+    bool m_threatIntelligenceDetailsHasBeenSet = false;
   };
 
 } // namespace Model

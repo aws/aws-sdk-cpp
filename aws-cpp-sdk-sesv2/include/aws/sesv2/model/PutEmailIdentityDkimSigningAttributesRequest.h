@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_emailIdentity;
-    bool m_emailIdentityHasBeenSet;
+    bool m_emailIdentityHasBeenSet = false;
 
     DkimSigningAttributesOrigin m_signingAttributesOrigin;
-    bool m_signingAttributesOriginHasBeenSet;
+    bool m_signingAttributesOriginHasBeenSet = false;
 
     DkimSigningAttributes m_signingAttributes;
-    bool m_signingAttributesHasBeenSet;
+    bool m_signingAttributesHasBeenSet = false;
   };
 
 } // namespace Model

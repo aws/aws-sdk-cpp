@@ -86,7 +86,7 @@ SipRule& SipRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetApplications"))
   {
-    Array<JsonView> targetApplicationsJsonList = jsonValue.GetArray("TargetApplications");
+    Aws::Utils::Array<JsonView> targetApplicationsJsonList = jsonValue.GetArray("TargetApplications");
     for(unsigned targetApplicationsIndex = 0; targetApplicationsIndex < targetApplicationsJsonList.GetLength(); ++targetApplicationsIndex)
     {
       m_targetApplications.push_back(targetApplicationsJsonList[targetApplicationsIndex].AsObject());
@@ -146,7 +146,7 @@ JsonValue SipRule::Jsonize() const
 
   if(m_targetApplicationsHasBeenSet)
   {
-   Array<JsonValue> targetApplicationsJsonList(m_targetApplications.size());
+   Aws::Utils::Array<JsonValue> targetApplicationsJsonList(m_targetApplications.size());
    for(unsigned targetApplicationsIndex = 0; targetApplicationsIndex < targetApplicationsJsonList.GetLength(); ++targetApplicationsIndex)
    {
      targetApplicationsJsonList[targetApplicationsIndex].AsObject(m_targetApplications[targetApplicationsIndex].Jsonize());
@@ -157,12 +157,12 @@ JsonValue SipRule::Jsonize() const
 
   if(m_createdTimestampHasBeenSet)
   {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedTimestampHasBeenSet)
   {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

@@ -326,22 +326,22 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     bool m_showDetail;
-    bool m_showDetailHasBeenSet;
+    bool m_showDetailHasBeenSet = false;
   };
 
 } // namespace Model

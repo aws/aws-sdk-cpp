@@ -198,28 +198,28 @@ namespace Model
   private:
 
     ArchiveGroupSettings m_archiveGroupSettings;
-    bool m_archiveGroupSettingsHasBeenSet;
+    bool m_archiveGroupSettingsHasBeenSet = false;
 
     FrameCaptureGroupSettings m_frameCaptureGroupSettings;
-    bool m_frameCaptureGroupSettingsHasBeenSet;
+    bool m_frameCaptureGroupSettingsHasBeenSet = false;
 
     HlsGroupSettings m_hlsGroupSettings;
-    bool m_hlsGroupSettingsHasBeenSet;
+    bool m_hlsGroupSettingsHasBeenSet = false;
 
     MediaPackageGroupSettings m_mediaPackageGroupSettings;
-    bool m_mediaPackageGroupSettingsHasBeenSet;
+    bool m_mediaPackageGroupSettingsHasBeenSet = false;
 
     MsSmoothGroupSettings m_msSmoothGroupSettings;
-    bool m_msSmoothGroupSettingsHasBeenSet;
+    bool m_msSmoothGroupSettingsHasBeenSet = false;
 
     MultiplexGroupSettings m_multiplexGroupSettings;
-    bool m_multiplexGroupSettingsHasBeenSet;
+    bool m_multiplexGroupSettingsHasBeenSet = false;
 
     RtmpGroupSettings m_rtmpGroupSettings;
-    bool m_rtmpGroupSettingsHasBeenSet;
+    bool m_rtmpGroupSettingsHasBeenSet = false;
 
     UdpGroupSettings m_udpGroupSettings;
-    bool m_udpGroupSettingsHasBeenSet;
+    bool m_udpGroupSettingsHasBeenSet = false;
   };
 
 } // namespace Model

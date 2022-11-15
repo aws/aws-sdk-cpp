@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     GetObject_Range,
-    GetObject_PartNumber
+    GetObject_PartNumber,
+    HeadObject_Range,
+    HeadObject_PartNumber
   };
 
 namespace ObjectLambdaAllowedFeatureMapper

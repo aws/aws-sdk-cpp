@@ -116,40 +116,56 @@ namespace Model
     inline ListStatementsRequest& WithRequestOrigin(const char* value) { SetRequestOrigin(value); return *this;}
 
 
-    
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
-    
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
-    
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
     inline ListStatementsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
     inline ListStatementsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
     inline ListStatementsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_requestOrigin;
-    bool m_requestOriginHasBeenSet;
+    bool m_requestOriginHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_configurationAggregatorName;
-    bool m_configurationAggregatorNameHasBeenSet;
+    bool m_configurationAggregatorNameHasBeenSet = false;
 
     Aws::Vector<AccountAggregationSource> m_accountAggregationSources;
-    bool m_accountAggregationSourcesHasBeenSet;
+    bool m_accountAggregationSourcesHasBeenSet = false;
 
     OrganizationAggregationSource m_organizationAggregationSource;
-    bool m_organizationAggregationSourceHasBeenSet;
+    bool m_organizationAggregationSourceHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

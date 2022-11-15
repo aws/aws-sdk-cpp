@@ -32,7 +32,7 @@ ListApplicationsResult& ListApplicationsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ApplicationSummaries"))
   {
-    Array<JsonView> applicationSummariesJsonList = jsonValue.GetArray("ApplicationSummaries");
+    Aws::Utils::Array<JsonView> applicationSummariesJsonList = jsonValue.GetArray("ApplicationSummaries");
     for(unsigned applicationSummariesIndex = 0; applicationSummariesIndex < applicationSummariesJsonList.GetLength(); ++applicationSummariesIndex)
     {
       m_applicationSummaries.push_back(applicationSummariesJsonList[applicationSummariesIndex].AsObject());

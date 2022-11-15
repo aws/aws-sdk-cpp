@@ -379,37 +379,49 @@ namespace Model
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline const CanaryRunConfigInput& GetRunConfig() const{ return m_runConfig; }
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline bool RunConfigHasBeenSet() const { return m_runConfigHasBeenSet; }
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline void SetRunConfig(const CanaryRunConfigInput& value) { m_runConfigHasBeenSet = true; m_runConfig = value; }
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline void SetRunConfig(CanaryRunConfigInput&& value) { m_runConfigHasBeenSet = true; m_runConfig = std::move(value); }
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline CreateCanaryRequest& WithRunConfig(const CanaryRunConfigInput& value) { SetRunConfig(value); return *this;}
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline CreateCanaryRequest& WithRunConfig(CanaryRunConfigInput&& value) { SetRunConfig(std::move(value)); return *this;}
 
@@ -755,40 +767,40 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CanaryCodeInput m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_artifactS3Location;
-    bool m_artifactS3LocationHasBeenSet;
+    bool m_artifactS3LocationHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     CanaryScheduleInput m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     CanaryRunConfigInput m_runConfig;
-    bool m_runConfigHasBeenSet;
+    bool m_runConfigHasBeenSet = false;
 
     int m_successRetentionPeriodInDays;
-    bool m_successRetentionPeriodInDaysHasBeenSet;
+    bool m_successRetentionPeriodInDaysHasBeenSet = false;
 
     int m_failureRetentionPeriodInDays;
-    bool m_failureRetentionPeriodInDaysHasBeenSet;
+    bool m_failureRetentionPeriodInDaysHasBeenSet = false;
 
     Aws::String m_runtimeVersion;
-    bool m_runtimeVersionHasBeenSet;
+    bool m_runtimeVersionHasBeenSet = false;
 
     VpcConfigInput m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ArtifactConfigInput m_artifactConfig;
-    bool m_artifactConfigHasBeenSet;
+    bool m_artifactConfigHasBeenSet = false;
   };
 
 } // namespace Model

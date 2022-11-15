@@ -250,16 +250,16 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     Aws::Vector<InputLogEvent> m_logEvents;
-    bool m_logEventsHasBeenSet;
+    bool m_logEventsHasBeenSet = false;
 
     Aws::String m_sequenceToken;
-    bool m_sequenceTokenHasBeenSet;
+    bool m_sequenceTokenHasBeenSet = false;
   };
 
 } // namespace Model

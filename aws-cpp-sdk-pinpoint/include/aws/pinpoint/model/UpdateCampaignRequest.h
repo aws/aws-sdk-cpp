@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     WriteCampaignRequest m_writeCampaignRequest;
-    bool m_writeCampaignRequestHasBeenSet;
+    bool m_writeCampaignRequestHasBeenSet = false;
   };
 
 } // namespace Model

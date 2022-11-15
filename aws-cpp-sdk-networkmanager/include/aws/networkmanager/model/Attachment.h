@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>A core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
 
     /**
-     * <p>A core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
 
     /**
-     * <p>A core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
 
     /**
-     * <p>A core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
 
     /**
-     * <p>A core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
 
     /**
-     * <p>A core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline Attachment& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
 
     /**
-     * <p>A core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline Attachment& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
 
     /**
-     * <p>A core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline Attachment& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
 
@@ -549,46 +549,46 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_coreNetworkArn;
-    bool m_coreNetworkArnHasBeenSet;
+    bool m_coreNetworkArnHasBeenSet = false;
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     AttachmentType m_attachmentType;
-    bool m_attachmentTypeHasBeenSet;
+    bool m_attachmentTypeHasBeenSet = false;
 
     AttachmentState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     int m_attachmentPolicyRuleNumber;
-    bool m_attachmentPolicyRuleNumberHasBeenSet;
+    bool m_attachmentPolicyRuleNumberHasBeenSet = false;
 
     Aws::String m_segmentName;
-    bool m_segmentNameHasBeenSet;
+    bool m_segmentNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ProposedSegmentChange m_proposedSegmentChange;
-    bool m_proposedSegmentChangeHasBeenSet;
+    bool m_proposedSegmentChangeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

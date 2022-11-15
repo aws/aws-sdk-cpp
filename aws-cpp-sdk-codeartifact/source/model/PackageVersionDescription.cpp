@@ -32,7 +32,8 @@ PackageVersionDescription::PackageVersionDescription() :
     m_licensesHasBeenSet(false),
     m_revisionHasBeenSet(false),
     m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_originHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ PackageVersionDescription::PackageVersionDescription(JsonView jsonValue) :
     m_licensesHasBeenSet(false),
     m_revisionHasBeenSet(false),
     m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_originHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,7 +124,7 @@ PackageVersionDescription& PackageVersionDescription::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("licenses"))
   {
-    Array<JsonView> licensesJsonList = jsonValue.GetArray("licenses");
+    Aws::Utils::Array<JsonView> licensesJsonList = jsonValue.GetArray("licenses");
     for(unsigned licensesIndex = 0; licensesIndex < licensesJsonList.GetLength(); ++licensesIndex)
     {
       m_licenses.push_back(licensesJsonList[licensesIndex].AsObject());
@@ -142,6 +144,13 @@ PackageVersionDescription& PackageVersionDescription::operator =(JsonView jsonVa
     m_status = PackageVersionStatusMapper::GetPackageVersionStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("origin"))
+  {
+    m_origin = jsonValue.GetObject("origin");
+
+    m_originHasBeenSet = true;
   }
 
   return *this;
@@ -205,7 +214,7 @@ JsonValue PackageVersionDescription::Jsonize() const
 
   if(m_licensesHasBeenSet)
   {
-   Array<JsonValue> licensesJsonList(m_licenses.size());
+   Aws::Utils::Array<JsonValue> licensesJsonList(m_licenses.size());
    for(unsigned licensesIndex = 0; licensesIndex < licensesJsonList.GetLength(); ++licensesIndex)
    {
      licensesJsonList[licensesIndex].AsObject(m_licenses[licensesIndex].Jsonize());
@@ -223,6 +232,12 @@ JsonValue PackageVersionDescription::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", PackageVersionStatusMapper::GetNameForPackageVersionStatus(m_status));
+  }
+
+  if(m_originHasBeenSet)
+  {
+   payload.WithObject("origin", m_origin.Jsonize());
+
   }
 
   return payload;

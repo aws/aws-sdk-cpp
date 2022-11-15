@@ -410,31 +410,31 @@ namespace Model
   private:
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_replicationInstanceClass;
-    bool m_replicationInstanceClassHasBeenSet;
+    bool m_replicationInstanceClassHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     int m_minAllocatedStorage;
-    bool m_minAllocatedStorageHasBeenSet;
+    bool m_minAllocatedStorageHasBeenSet = false;
 
     int m_maxAllocatedStorage;
-    bool m_maxAllocatedStorageHasBeenSet;
+    bool m_maxAllocatedStorageHasBeenSet = false;
 
     int m_defaultAllocatedStorage;
-    bool m_defaultAllocatedStorageHasBeenSet;
+    bool m_defaultAllocatedStorageHasBeenSet = false;
 
     int m_includedAllocatedStorage;
-    bool m_includedAllocatedStorageHasBeenSet;
+    bool m_includedAllocatedStorageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     ReleaseStatusValues m_releaseStatus;
-    bool m_releaseStatusHasBeenSet;
+    bool m_releaseStatusHasBeenSet = false;
   };
 
 } // namespace Model

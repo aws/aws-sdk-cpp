@@ -533,34 +533,110 @@ namespace Model
      */
     inline Origin& WithOriginShield(OriginShield&& value) { SetOriginShield(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetOriginAccessControlId() const{ return m_originAccessControlId; }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline bool OriginAccessControlIdHasBeenSet() const { return m_originAccessControlIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline void SetOriginAccessControlId(const Aws::String& value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId = value; }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline void SetOriginAccessControlId(Aws::String&& value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId = std::move(value); }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline void SetOriginAccessControlId(const char* value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId.assign(value); }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline Origin& WithOriginAccessControlId(const Aws::String& value) { SetOriginAccessControlId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline Origin& WithOriginAccessControlId(Aws::String&& value) { SetOriginAccessControlId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline Origin& WithOriginAccessControlId(const char* value) { SetOriginAccessControlId(value); return *this;}
+
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_originPath;
-    bool m_originPathHasBeenSet;
+    bool m_originPathHasBeenSet = false;
 
     CustomHeaders m_customHeaders;
-    bool m_customHeadersHasBeenSet;
+    bool m_customHeadersHasBeenSet = false;
 
     S3OriginConfig m_s3OriginConfig;
-    bool m_s3OriginConfigHasBeenSet;
+    bool m_s3OriginConfigHasBeenSet = false;
 
     CustomOriginConfig m_customOriginConfig;
-    bool m_customOriginConfigHasBeenSet;
+    bool m_customOriginConfigHasBeenSet = false;
 
     int m_connectionAttempts;
-    bool m_connectionAttemptsHasBeenSet;
+    bool m_connectionAttemptsHasBeenSet = false;
 
     int m_connectionTimeout;
-    bool m_connectionTimeoutHasBeenSet;
+    bool m_connectionTimeoutHasBeenSet = false;
 
     OriginShield m_originShield;
-    bool m_originShieldHasBeenSet;
+    bool m_originShieldHasBeenSet = false;
+
+    Aws::String m_originAccessControlId;
+    bool m_originAccessControlIdHasBeenSet = false;
   };
 
 } // namespace Model

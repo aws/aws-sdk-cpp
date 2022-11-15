@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
+#include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>
@@ -16,6 +17,9 @@ namespace ElasticTranscoder
   class AWS_ELASTICTRANSCODER_API ElasticTranscoderRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
+    using EndpointParameter = Aws::Endpoint::EndpointParameter;
+    using EndpointParameters = Aws::Endpoint::EndpointParameters;
+
     virtual ~ElasticTranscoderRequest () {}
 
     void AddParametersToRequest(Aws::Http::HttpRequest& httpRequest) const { AWS_UNREFERENCED_PARAM(httpRequest); }

@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
 
     AggFunction m_aggFunc;
-    bool m_aggFuncHasBeenSet;
+    bool m_aggFuncHasBeenSet = false;
   };
 
 } // namespace Model

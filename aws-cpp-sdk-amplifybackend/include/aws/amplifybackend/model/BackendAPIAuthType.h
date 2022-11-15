@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Mode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     BackendAPIAppSyncAuthSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

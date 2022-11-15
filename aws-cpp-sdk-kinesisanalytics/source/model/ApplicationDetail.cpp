@@ -101,7 +101,7 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InputDescriptions"))
   {
-    Array<JsonView> inputDescriptionsJsonList = jsonValue.GetArray("InputDescriptions");
+    Aws::Utils::Array<JsonView> inputDescriptionsJsonList = jsonValue.GetArray("InputDescriptions");
     for(unsigned inputDescriptionsIndex = 0; inputDescriptionsIndex < inputDescriptionsJsonList.GetLength(); ++inputDescriptionsIndex)
     {
       m_inputDescriptions.push_back(inputDescriptionsJsonList[inputDescriptionsIndex].AsObject());
@@ -111,7 +111,7 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OutputDescriptions"))
   {
-    Array<JsonView> outputDescriptionsJsonList = jsonValue.GetArray("OutputDescriptions");
+    Aws::Utils::Array<JsonView> outputDescriptionsJsonList = jsonValue.GetArray("OutputDescriptions");
     for(unsigned outputDescriptionsIndex = 0; outputDescriptionsIndex < outputDescriptionsJsonList.GetLength(); ++outputDescriptionsIndex)
     {
       m_outputDescriptions.push_back(outputDescriptionsJsonList[outputDescriptionsIndex].AsObject());
@@ -121,7 +121,7 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReferenceDataSourceDescriptions"))
   {
-    Array<JsonView> referenceDataSourceDescriptionsJsonList = jsonValue.GetArray("ReferenceDataSourceDescriptions");
+    Aws::Utils::Array<JsonView> referenceDataSourceDescriptionsJsonList = jsonValue.GetArray("ReferenceDataSourceDescriptions");
     for(unsigned referenceDataSourceDescriptionsIndex = 0; referenceDataSourceDescriptionsIndex < referenceDataSourceDescriptionsJsonList.GetLength(); ++referenceDataSourceDescriptionsIndex)
     {
       m_referenceDataSourceDescriptions.push_back(referenceDataSourceDescriptionsJsonList[referenceDataSourceDescriptionsIndex].AsObject());
@@ -131,7 +131,7 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CloudWatchLoggingOptionDescriptions"))
   {
-    Array<JsonView> cloudWatchLoggingOptionDescriptionsJsonList = jsonValue.GetArray("CloudWatchLoggingOptionDescriptions");
+    Aws::Utils::Array<JsonView> cloudWatchLoggingOptionDescriptionsJsonList = jsonValue.GetArray("CloudWatchLoggingOptionDescriptions");
     for(unsigned cloudWatchLoggingOptionDescriptionsIndex = 0; cloudWatchLoggingOptionDescriptionsIndex < cloudWatchLoggingOptionDescriptionsJsonList.GetLength(); ++cloudWatchLoggingOptionDescriptionsIndex)
     {
       m_cloudWatchLoggingOptionDescriptions.push_back(cloudWatchLoggingOptionDescriptionsJsonList[cloudWatchLoggingOptionDescriptionsIndex].AsObject());
@@ -195,7 +195,7 @@ JsonValue ApplicationDetail::Jsonize() const
 
   if(m_inputDescriptionsHasBeenSet)
   {
-   Array<JsonValue> inputDescriptionsJsonList(m_inputDescriptions.size());
+   Aws::Utils::Array<JsonValue> inputDescriptionsJsonList(m_inputDescriptions.size());
    for(unsigned inputDescriptionsIndex = 0; inputDescriptionsIndex < inputDescriptionsJsonList.GetLength(); ++inputDescriptionsIndex)
    {
      inputDescriptionsJsonList[inputDescriptionsIndex].AsObject(m_inputDescriptions[inputDescriptionsIndex].Jsonize());
@@ -206,7 +206,7 @@ JsonValue ApplicationDetail::Jsonize() const
 
   if(m_outputDescriptionsHasBeenSet)
   {
-   Array<JsonValue> outputDescriptionsJsonList(m_outputDescriptions.size());
+   Aws::Utils::Array<JsonValue> outputDescriptionsJsonList(m_outputDescriptions.size());
    for(unsigned outputDescriptionsIndex = 0; outputDescriptionsIndex < outputDescriptionsJsonList.GetLength(); ++outputDescriptionsIndex)
    {
      outputDescriptionsJsonList[outputDescriptionsIndex].AsObject(m_outputDescriptions[outputDescriptionsIndex].Jsonize());
@@ -217,7 +217,7 @@ JsonValue ApplicationDetail::Jsonize() const
 
   if(m_referenceDataSourceDescriptionsHasBeenSet)
   {
-   Array<JsonValue> referenceDataSourceDescriptionsJsonList(m_referenceDataSourceDescriptions.size());
+   Aws::Utils::Array<JsonValue> referenceDataSourceDescriptionsJsonList(m_referenceDataSourceDescriptions.size());
    for(unsigned referenceDataSourceDescriptionsIndex = 0; referenceDataSourceDescriptionsIndex < referenceDataSourceDescriptionsJsonList.GetLength(); ++referenceDataSourceDescriptionsIndex)
    {
      referenceDataSourceDescriptionsJsonList[referenceDataSourceDescriptionsIndex].AsObject(m_referenceDataSourceDescriptions[referenceDataSourceDescriptionsIndex].Jsonize());
@@ -228,7 +228,7 @@ JsonValue ApplicationDetail::Jsonize() const
 
   if(m_cloudWatchLoggingOptionDescriptionsHasBeenSet)
   {
-   Array<JsonValue> cloudWatchLoggingOptionDescriptionsJsonList(m_cloudWatchLoggingOptionDescriptions.size());
+   Aws::Utils::Array<JsonValue> cloudWatchLoggingOptionDescriptionsJsonList(m_cloudWatchLoggingOptionDescriptions.size());
    for(unsigned cloudWatchLoggingOptionDescriptionsIndex = 0; cloudWatchLoggingOptionDescriptionsIndex < cloudWatchLoggingOptionDescriptionsJsonList.GetLength(); ++cloudWatchLoggingOptionDescriptionsIndex)
    {
      cloudWatchLoggingOptionDescriptionsJsonList[cloudWatchLoggingOptionDescriptionsIndex].AsObject(m_cloudWatchLoggingOptionDescriptions[cloudWatchLoggingOptionDescriptionsIndex].Jsonize());

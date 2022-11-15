@@ -33,7 +33,7 @@ Allowed& Allowed::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("policies"))
   {
-    Array<JsonView> policiesJsonList = jsonValue.GetArray("policies");
+    Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("policies");
     for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
     {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue Allowed::Jsonize() const
 
   if(m_policiesHasBeenSet)
   {
-   Array<JsonValue> policiesJsonList(m_policies.size());
+   Aws::Utils::Array<JsonValue> policiesJsonList(m_policies.size());
    for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
    {
      policiesJsonList[policiesIndex].AsObject(m_policies[policiesIndex].Jsonize());

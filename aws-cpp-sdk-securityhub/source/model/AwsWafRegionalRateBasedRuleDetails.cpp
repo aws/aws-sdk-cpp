@@ -80,7 +80,7 @@ AwsWafRegionalRateBasedRuleDetails& AwsWafRegionalRateBasedRuleDetails::operator
 
   if(jsonValue.ValueExists("MatchPredicates"))
   {
-    Array<JsonView> matchPredicatesJsonList = jsonValue.GetArray("MatchPredicates");
+    Aws::Utils::Array<JsonView> matchPredicatesJsonList = jsonValue.GetArray("MatchPredicates");
     for(unsigned matchPredicatesIndex = 0; matchPredicatesIndex < matchPredicatesJsonList.GetLength(); ++matchPredicatesIndex)
     {
       m_matchPredicates.push_back(matchPredicatesJsonList[matchPredicatesIndex].AsObject());
@@ -127,7 +127,7 @@ JsonValue AwsWafRegionalRateBasedRuleDetails::Jsonize() const
 
   if(m_matchPredicatesHasBeenSet)
   {
-   Array<JsonValue> matchPredicatesJsonList(m_matchPredicates.size());
+   Aws::Utils::Array<JsonValue> matchPredicatesJsonList(m_matchPredicates.size());
    for(unsigned matchPredicatesIndex = 0; matchPredicatesIndex < matchPredicatesJsonList.GetLength(); ++matchPredicatesIndex)
    {
      matchPredicatesJsonList[matchPredicatesIndex].AsObject(m_matchPredicates[matchPredicatesIndex].Jsonize());

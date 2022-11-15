@@ -39,38 +39,44 @@ namespace Model
 
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live
-     * streams, this is <code>NULL</code>.</p>
+     * <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note
+     * that this is returned as a string</i>. For live streams, this is
+     * <code>NULL</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live
-     * streams, this is <code>NULL</code>.</p>
+     * <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note
+     * that this is returned as a string</i>. For live streams, this is
+     * <code>NULL</code>.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live
-     * streams, this is <code>NULL</code>.</p>
+     * <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note
+     * that this is returned as a string</i>. For live streams, this is
+     * <code>NULL</code>.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live
-     * streams, this is <code>NULL</code>.</p>
+     * <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note
+     * that this is returned as a string</i>. For live streams, this is
+     * <code>NULL</code>.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live
-     * streams, this is <code>NULL</code>.</p>
+     * <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note
+     * that this is returned as a string</i>. For live streams, this is
+     * <code>NULL</code>.</p>
      */
     inline StreamSessionSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live
-     * streams, this is <code>NULL</code>.</p>
+     * <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note
+     * that this is returned as a string</i>. For live streams, this is
+     * <code>NULL</code>.</p>
      */
     inline StreamSessionSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -97,32 +103,38 @@ namespace Model
 
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+     * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+     * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+     * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+     * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+     * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline StreamSessionSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
+     * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline StreamSessionSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -178,16 +190,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     bool m_hasErrorEvent;
-    bool m_hasErrorEventHasBeenSet;
+    bool m_hasErrorEventHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
   };
 
 } // namespace Model

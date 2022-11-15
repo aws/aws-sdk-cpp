@@ -31,7 +31,9 @@ VpcEndpointConnection::VpcEndpointConnection() :
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_gatewayLoadBalancerArnsHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_vpcEndpointConnectionIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode) :
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_gatewayLoadBalancerArnsHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_vpcEndpointConnectionIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -84,7 +88,7 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
     if(!creationTimestampNode.IsNull())
     {
-      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
     }
     XmlNode dnsEntriesNode = resultNode.FirstChild("dnsEntrySet");
@@ -129,6 +133,24 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
       m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
       m_ipAddressTypeHasBeenSet = true;
     }
+    XmlNode vpcEndpointConnectionIdNode = resultNode.FirstChild("vpcEndpointConnectionId");
+    if(!vpcEndpointConnectionIdNode.IsNull())
+    {
+      m_vpcEndpointConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointConnectionIdNode.GetText());
+      m_vpcEndpointConnectionIdHasBeenSet = true;
+    }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -158,7 +180,7 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_dnsEntriesHasBeenSet)
@@ -195,6 +217,22 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
   }
 
+  if(m_vpcEndpointConnectionIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcEndpointConnectionId=" << StringUtils::URLEncode(m_vpcEndpointConnectionId.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -217,7 +255,7 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_dnsEntriesHasBeenSet)
   {
@@ -248,6 +286,20 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_ipAddressTypeHasBeenSet)
   {
       oStream << location << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+  if(m_vpcEndpointConnectionIdHasBeenSet)
+  {
+      oStream << location << ".VpcEndpointConnectionId=" << StringUtils::URLEncode(m_vpcEndpointConnectionId.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

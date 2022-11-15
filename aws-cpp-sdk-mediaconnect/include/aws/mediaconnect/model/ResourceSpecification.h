@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_reservedBitrate;
-    bool m_reservedBitrateHasBeenSet;
+    bool m_reservedBitrateHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

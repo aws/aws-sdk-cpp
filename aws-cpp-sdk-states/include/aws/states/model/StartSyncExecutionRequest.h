@@ -248,16 +248,16 @@ namespace Model
   private:
 
     Aws::String m_stateMachineArn;
-    bool m_stateMachineArnHasBeenSet;
+    bool m_stateMachineArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_traceHeader;
-    bool m_traceHeaderHasBeenSet;
+    bool m_traceHeaderHasBeenSet = false;
   };
 
 } // namespace Model

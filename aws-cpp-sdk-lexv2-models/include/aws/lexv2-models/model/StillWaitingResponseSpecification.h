@@ -165,16 +165,16 @@ namespace Model
   private:
 
     Aws::Vector<MessageGroup> m_messageGroups;
-    bool m_messageGroupsHasBeenSet;
+    bool m_messageGroupsHasBeenSet = false;
 
     int m_frequencyInSeconds;
-    bool m_frequencyInSecondsHasBeenSet;
+    bool m_frequencyInSecondsHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     bool m_allowInterrupt;
-    bool m_allowInterruptHasBeenSet;
+    bool m_allowInterruptHasBeenSet = false;
   };
 
 } // namespace Model

@@ -110,7 +110,7 @@ JsonValue RoomSummary::Jsonize() const
 
   if(m_createTimeHasBeenSet)
   {
-   payload.WithString("createTime", m_createTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_idHasBeenSet)
@@ -144,7 +144,7 @@ JsonValue RoomSummary::Jsonize() const
 
   if(m_updateTimeHasBeenSet)
   {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

@@ -25,7 +25,7 @@ Aws::String UpdateContactListRequest::SerializePayload() const
 
   if(m_topicsHasBeenSet)
   {
-   Array<JsonValue> topicsJsonList(m_topics.size());
+   Aws::Utils::Array<JsonValue> topicsJsonList(m_topics.size());
    for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
    {
      topicsJsonList[topicsIndex].AsObject(m_topics[topicsIndex].Jsonize());

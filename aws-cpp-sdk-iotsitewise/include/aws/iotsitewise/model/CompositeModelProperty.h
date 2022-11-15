@@ -139,16 +139,60 @@ namespace Model
     
     inline CompositeModelProperty& WithAssetProperty(Property&& value) { SetAssetProperty(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The ID of the composite model that contains the property. </p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p> The ID of the composite model that contains the property. </p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p> The ID of the composite model that contains the property. </p>
+     */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /**
+     * <p> The ID of the composite model that contains the property. </p>
+     */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    /**
+     * <p> The ID of the composite model that contains the property. </p>
+     */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /**
+     * <p> The ID of the composite model that contains the property. </p>
+     */
+    inline CompositeModelProperty& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p> The ID of the composite model that contains the property. </p>
+     */
+    inline CompositeModelProperty& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p> The ID of the composite model that contains the property. </p>
+     */
+    inline CompositeModelProperty& WithId(const char* value) { SetId(value); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Property m_assetProperty;
-    bool m_assetPropertyHasBeenSet;
+    bool m_assetPropertyHasBeenSet = false;
+
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

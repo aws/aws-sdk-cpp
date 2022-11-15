@@ -19,7 +19,9 @@ StartModelRequest::StartModelRequest() :
     m_minInferenceUnits(0),
     m_minInferenceUnitsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_maxInferenceUnits(0),
+    m_maxInferenceUnitsHasBeenSet(false)
 {
 }
 
@@ -30,6 +32,12 @@ Aws::String StartModelRequest::SerializePayload() const
   if(m_minInferenceUnitsHasBeenSet)
   {
    payload.WithInteger("MinInferenceUnits", m_minInferenceUnits);
+
+  }
+
+  if(m_maxInferenceUnitsHasBeenSet)
+  {
+   payload.WithInteger("MaxInferenceUnits", m_maxInferenceUnits);
 
   }
 

@@ -147,13 +147,13 @@ namespace Model
   private:
 
     ListenerTlsAcmCertificate m_acm;
-    bool m_acmHasBeenSet;
+    bool m_acmHasBeenSet = false;
 
     ListenerTlsFileCertificate m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
 
     ListenerTlsSdsCertificate m_sds;
-    bool m_sdsHasBeenSet;
+    bool m_sdsHasBeenSet = false;
   };
 
 } // namespace Model

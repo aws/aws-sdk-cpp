@@ -141,13 +141,13 @@ namespace Model
   private:
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     int m_qos;
-    bool m_qosHasBeenSet;
+    bool m_qosHasBeenSet = false;
 
     bool m_retain;
-    bool m_retainHasBeenSet;
+    bool m_retainHasBeenSet = false;
 
   };
 

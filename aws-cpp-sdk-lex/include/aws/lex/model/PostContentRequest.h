@@ -716,26 +716,26 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_botAlias;
-    bool m_botAliasHasBeenSet;
+    bool m_botAliasHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_sessionAttributes;
-    bool m_sessionAttributesHasBeenSet;
+    bool m_sessionAttributesHasBeenSet = false;
 
     Aws::String m_requestAttributes;
-    bool m_requestAttributesHasBeenSet;
+    bool m_requestAttributesHasBeenSet = false;
 
     Aws::String m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
 
 
     Aws::String m_activeContexts;
-    bool m_activeContextsHasBeenSet;
+    bool m_activeContextsHasBeenSet = false;
   };
 
 } // namespace Model

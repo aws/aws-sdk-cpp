@@ -30,7 +30,7 @@ DescribeGlobalNetworksResult& DescribeGlobalNetworksResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GlobalNetworks"))
   {
-    Array<JsonView> globalNetworksJsonList = jsonValue.GetArray("GlobalNetworks");
+    Aws::Utils::Array<JsonView> globalNetworksJsonList = jsonValue.GetArray("GlobalNetworks");
     for(unsigned globalNetworksIndex = 0; globalNetworksIndex < globalNetworksJsonList.GetLength(); ++globalNetworksIndex)
     {
       m_globalNetworks.push_back(globalNetworksJsonList[globalNetworksIndex].AsObject());

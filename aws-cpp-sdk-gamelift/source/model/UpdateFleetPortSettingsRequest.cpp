@@ -31,7 +31,7 @@ Aws::String UpdateFleetPortSettingsRequest::SerializePayload() const
 
   if(m_inboundPermissionAuthorizationsHasBeenSet)
   {
-   Array<JsonValue> inboundPermissionAuthorizationsJsonList(m_inboundPermissionAuthorizations.size());
+   Aws::Utils::Array<JsonValue> inboundPermissionAuthorizationsJsonList(m_inboundPermissionAuthorizations.size());
    for(unsigned inboundPermissionAuthorizationsIndex = 0; inboundPermissionAuthorizationsIndex < inboundPermissionAuthorizationsJsonList.GetLength(); ++inboundPermissionAuthorizationsIndex)
    {
      inboundPermissionAuthorizationsJsonList[inboundPermissionAuthorizationsIndex].AsObject(m_inboundPermissionAuthorizations[inboundPermissionAuthorizationsIndex].Jsonize());
@@ -42,7 +42,7 @@ Aws::String UpdateFleetPortSettingsRequest::SerializePayload() const
 
   if(m_inboundPermissionRevocationsHasBeenSet)
   {
-   Array<JsonValue> inboundPermissionRevocationsJsonList(m_inboundPermissionRevocations.size());
+   Aws::Utils::Array<JsonValue> inboundPermissionRevocationsJsonList(m_inboundPermissionRevocations.size());
    for(unsigned inboundPermissionRevocationsIndex = 0; inboundPermissionRevocationsIndex < inboundPermissionRevocationsJsonList.GetLength(); ++inboundPermissionRevocationsIndex)
    {
      inboundPermissionRevocationsJsonList[inboundPermissionRevocationsIndex].AsObject(m_inboundPermissionRevocations[inboundPermissionRevocationsIndex].Jsonize());

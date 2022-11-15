@@ -44,7 +44,7 @@ AccessKeyLastUsed& AccessKeyLastUsed::operator =(const XmlNode& xmlNode)
     XmlNode lastUsedDateNode = resultNode.FirstChild("LastUsedDate");
     if(!lastUsedDateNode.IsNull())
     {
-      m_lastUsedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUsedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastUsedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUsedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUsedDateHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
@@ -68,7 +68,7 @@ void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_lastUsedDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_serviceNameHasBeenSet)
@@ -87,7 +87,7 @@ void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_lastUsedDateHasBeenSet)
   {
-      oStream << location << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_serviceNameHasBeenSet)
   {

@@ -39,10 +39,10 @@ Aws::String CreateWebhookRequest::SerializePayload() const
 
   if(m_filterGroupsHasBeenSet)
   {
-   Array<JsonValue> filterGroupsJsonList(m_filterGroups.size());
+   Aws::Utils::Array<JsonValue> filterGroupsJsonList(m_filterGroups.size());
    for(unsigned filterGroupsIndex = 0; filterGroupsIndex < filterGroupsJsonList.GetLength(); ++filterGroupsIndex)
    {
-     Array<JsonValue> filterGroupJsonList(m_filterGroups[filterGroupsIndex].size());
+     Aws::Utils::Array<JsonValue> filterGroupJsonList(m_filterGroups[filterGroupsIndex].size());
      for(unsigned filterGroupIndex = 0; filterGroupIndex < filterGroupJsonList.GetLength(); ++filterGroupIndex)
      {
        filterGroupJsonList[filterGroupIndex].AsObject(m_filterGroups[filterGroupsIndex][filterGroupIndex].Jsonize());

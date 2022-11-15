@@ -449,34 +449,34 @@ namespace Model
   private:
 
     Aws::String m_assumeRolePolicyDocument;
-    bool m_assumeRolePolicyDocumentHasBeenSet;
+    bool m_assumeRolePolicyDocumentHasBeenSet = false;
 
     Aws::Vector<AwsIamAttachedManagedPolicy> m_attachedManagedPolicies;
-    bool m_attachedManagedPoliciesHasBeenSet;
+    bool m_attachedManagedPoliciesHasBeenSet = false;
 
     Aws::String m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Vector<AwsIamInstanceProfile> m_instanceProfileList;
-    bool m_instanceProfileListHasBeenSet;
+    bool m_instanceProfileListHasBeenSet = false;
 
     AwsIamPermissionsBoundary m_permissionsBoundary;
-    bool m_permissionsBoundaryHasBeenSet;
+    bool m_permissionsBoundaryHasBeenSet = false;
 
     Aws::String m_roleId;
-    bool m_roleIdHasBeenSet;
+    bool m_roleIdHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::Vector<AwsIamRolePolicy> m_rolePolicyList;
-    bool m_rolePolicyListHasBeenSet;
+    bool m_rolePolicyListHasBeenSet = false;
 
     int m_maxSessionDuration;
-    bool m_maxSessionDurationHasBeenSet;
+    bool m_maxSessionDurationHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

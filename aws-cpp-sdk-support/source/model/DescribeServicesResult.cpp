@@ -30,7 +30,7 @@ DescribeServicesResult& DescribeServicesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("services"))
   {
-    Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
+    Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsObject());

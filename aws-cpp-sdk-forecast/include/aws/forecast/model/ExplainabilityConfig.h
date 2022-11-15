@@ -50,7 +50,7 @@ namespace Model
      * <p>To create an Explainability for all time series in your datasets, use
      * <code>ALL</code>. To create an Explainability for specific time series in your
      * datasets, use <code>SPECIFIC</code>.</p> <p>Specify time series by uploading a
-     * CSV file to an Amazon S3 bucket and set the location within the
+     * CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.</p>
      */
     inline const TimeSeriesGranularity& GetTimeSeriesGranularity() const{ return m_timeSeriesGranularity; }
@@ -59,7 +59,7 @@ namespace Model
      * <p>To create an Explainability for all time series in your datasets, use
      * <code>ALL</code>. To create an Explainability for specific time series in your
      * datasets, use <code>SPECIFIC</code>.</p> <p>Specify time series by uploading a
-     * CSV file to an Amazon S3 bucket and set the location within the
+     * CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.</p>
      */
     inline bool TimeSeriesGranularityHasBeenSet() const { return m_timeSeriesGranularityHasBeenSet; }
@@ -68,7 +68,7 @@ namespace Model
      * <p>To create an Explainability for all time series in your datasets, use
      * <code>ALL</code>. To create an Explainability for specific time series in your
      * datasets, use <code>SPECIFIC</code>.</p> <p>Specify time series by uploading a
-     * CSV file to an Amazon S3 bucket and set the location within the
+     * CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.</p>
      */
     inline void SetTimeSeriesGranularity(const TimeSeriesGranularity& value) { m_timeSeriesGranularityHasBeenSet = true; m_timeSeriesGranularity = value; }
@@ -77,7 +77,7 @@ namespace Model
      * <p>To create an Explainability for all time series in your datasets, use
      * <code>ALL</code>. To create an Explainability for specific time series in your
      * datasets, use <code>SPECIFIC</code>.</p> <p>Specify time series by uploading a
-     * CSV file to an Amazon S3 bucket and set the location within the
+     * CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.</p>
      */
     inline void SetTimeSeriesGranularity(TimeSeriesGranularity&& value) { m_timeSeriesGranularityHasBeenSet = true; m_timeSeriesGranularity = std::move(value); }
@@ -86,7 +86,7 @@ namespace Model
      * <p>To create an Explainability for all time series in your datasets, use
      * <code>ALL</code>. To create an Explainability for specific time series in your
      * datasets, use <code>SPECIFIC</code>.</p> <p>Specify time series by uploading a
-     * CSV file to an Amazon S3 bucket and set the location within the
+     * CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.</p>
      */
     inline ExplainabilityConfig& WithTimeSeriesGranularity(const TimeSeriesGranularity& value) { SetTimeSeriesGranularity(value); return *this;}
@@ -95,7 +95,7 @@ namespace Model
      * <p>To create an Explainability for all time series in your datasets, use
      * <code>ALL</code>. To create an Explainability for specific time series in your
      * datasets, use <code>SPECIFIC</code>.</p> <p>Specify time series by uploading a
-     * CSV file to an Amazon S3 bucket and set the location within the
+     * CSV or Parquet file to an Amazon S3 bucket and set the location within the
      * <a>DataDestination</a> data type.</p>
      */
     inline ExplainabilityConfig& WithTimeSeriesGranularity(TimeSeriesGranularity&& value) { SetTimeSeriesGranularity(std::move(value)); return *this;}
@@ -158,10 +158,10 @@ namespace Model
   private:
 
     TimeSeriesGranularity m_timeSeriesGranularity;
-    bool m_timeSeriesGranularityHasBeenSet;
+    bool m_timeSeriesGranularityHasBeenSet = false;
 
     TimePointGranularity m_timePointGranularity;
-    bool m_timePointGranularityHasBeenSet;
+    bool m_timePointGranularityHasBeenSet = false;
   };
 
 } // namespace Model

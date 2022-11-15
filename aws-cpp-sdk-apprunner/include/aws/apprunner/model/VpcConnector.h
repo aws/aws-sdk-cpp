@@ -407,28 +407,28 @@ namespace Model
   private:
 
     Aws::String m_vpcConnectorName;
-    bool m_vpcConnectorNameHasBeenSet;
+    bool m_vpcConnectorNameHasBeenSet = false;
 
     Aws::String m_vpcConnectorArn;
-    bool m_vpcConnectorArnHasBeenSet;
+    bool m_vpcConnectorArnHasBeenSet = false;
 
     int m_vpcConnectorRevision;
-    bool m_vpcConnectorRevisionHasBeenSet;
+    bool m_vpcConnectorRevisionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     VpcConnectorStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletedAt;
-    bool m_deletedAtHasBeenSet;
+    bool m_deletedAtHasBeenSet = false;
   };
 
 } // namespace Model

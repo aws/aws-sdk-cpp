@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_defaultGateway;
-    bool m_defaultGatewayHasBeenSet;
+    bool m_defaultGatewayHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dns;
-    bool m_dnsHasBeenSet;
+    bool m_dnsHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_mask;
-    bool m_maskHasBeenSet;
+    bool m_maskHasBeenSet = false;
   };
 
 } // namespace Model

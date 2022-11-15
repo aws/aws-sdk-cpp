@@ -154,13 +154,13 @@ namespace Model
   private:
 
     VoteValue m_vote;
-    bool m_voteHasBeenSet;
+    bool m_voteHasBeenSet = false;
 
     Aws::String m_memberName;
-    bool m_memberNameHasBeenSet;
+    bool m_memberNameHasBeenSet = false;
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
   };
 
 } // namespace Model

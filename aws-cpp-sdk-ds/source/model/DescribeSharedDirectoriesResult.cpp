@@ -30,7 +30,7 @@ DescribeSharedDirectoriesResult& DescribeSharedDirectoriesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SharedDirectories"))
   {
-    Array<JsonView> sharedDirectoriesJsonList = jsonValue.GetArray("SharedDirectories");
+    Aws::Utils::Array<JsonView> sharedDirectoriesJsonList = jsonValue.GetArray("SharedDirectories");
     for(unsigned sharedDirectoriesIndex = 0; sharedDirectoriesIndex < sharedDirectoriesJsonList.GetLength(); ++sharedDirectoriesIndex)
     {
       m_sharedDirectories.push_back(sharedDirectoriesJsonList[sharedDirectoriesIndex].AsObject());

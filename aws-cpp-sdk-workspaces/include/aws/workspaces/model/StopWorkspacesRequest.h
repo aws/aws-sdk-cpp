@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<StopRequest> m_stopWorkspaceRequests;
-    bool m_stopWorkspaceRequestsHasBeenSet;
+    bool m_stopWorkspaceRequestsHasBeenSet = false;
   };
 
 } // namespace Model

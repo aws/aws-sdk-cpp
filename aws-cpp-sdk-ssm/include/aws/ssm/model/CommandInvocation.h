@@ -397,7 +397,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
@@ -434,7 +436,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
@@ -471,7 +475,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
 
@@ -508,7 +514,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
@@ -545,7 +553,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
 
@@ -582,7 +592,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline CommandInvocation& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
@@ -619,7 +631,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline CommandInvocation& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
@@ -656,7 +670,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline CommandInvocation& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
@@ -1014,52 +1030,52 @@ namespace Model
   private:
 
     Aws::String m_commandId;
-    bool m_commandIdHasBeenSet;
+    bool m_commandIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedDateTime;
-    bool m_requestedDateTimeHasBeenSet;
+    bool m_requestedDateTimeHasBeenSet = false;
 
     CommandInvocationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::String m_traceOutput;
-    bool m_traceOutputHasBeenSet;
+    bool m_traceOutputHasBeenSet = false;
 
     Aws::String m_standardOutputUrl;
-    bool m_standardOutputUrlHasBeenSet;
+    bool m_standardOutputUrlHasBeenSet = false;
 
     Aws::String m_standardErrorUrl;
-    bool m_standardErrorUrlHasBeenSet;
+    bool m_standardErrorUrlHasBeenSet = false;
 
     Aws::Vector<CommandPlugin> m_commandPlugins;
-    bool m_commandPluginsHasBeenSet;
+    bool m_commandPluginsHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     NotificationConfig m_notificationConfig;
-    bool m_notificationConfigHasBeenSet;
+    bool m_notificationConfigHasBeenSet = false;
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
-    bool m_cloudWatchOutputConfigHasBeenSet;
+    bool m_cloudWatchOutputConfigHasBeenSet = false;
   };
 
 } // namespace Model

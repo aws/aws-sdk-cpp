@@ -169,13 +169,13 @@ namespace Model
   private:
 
     ArchiveContainerSettings m_containerSettings;
-    bool m_containerSettingsHasBeenSet;
+    bool m_containerSettingsHasBeenSet = false;
 
     Aws::String m_extension;
-    bool m_extensionHasBeenSet;
+    bool m_extensionHasBeenSet = false;
 
     Aws::String m_nameModifier;
-    bool m_nameModifierHasBeenSet;
+    bool m_nameModifierHasBeenSet = false;
   };
 
 } // namespace Model

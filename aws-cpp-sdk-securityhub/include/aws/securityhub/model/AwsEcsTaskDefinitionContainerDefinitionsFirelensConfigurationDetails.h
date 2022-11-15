@@ -171,52 +171,60 @@ namespace Model
 
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails& WithType(const char* value) { SetType(value); return *this;}
 
   private:
 
     Aws::Map<Aws::String, Aws::String> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

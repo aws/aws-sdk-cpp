@@ -65,12 +65,12 @@ JsonValue ProfilingStatus::Jsonize() const
 
   if(m_latestAgentOrchestratedAtHasBeenSet)
   {
-   payload.WithString("latestAgentOrchestratedAt", m_latestAgentOrchestratedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("latestAgentOrchestratedAt", m_latestAgentOrchestratedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_latestAgentProfileReportedAtHasBeenSet)
   {
-   payload.WithString("latestAgentProfileReportedAt", m_latestAgentProfileReportedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("latestAgentProfileReportedAt", m_latestAgentProfileReportedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_latestAggregatedProfileHasBeenSet)

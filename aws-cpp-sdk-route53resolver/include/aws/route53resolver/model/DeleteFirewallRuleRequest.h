@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_firewallRuleGroupId;
-    bool m_firewallRuleGroupIdHasBeenSet;
+    bool m_firewallRuleGroupIdHasBeenSet = false;
 
     Aws::String m_firewallDomainListId;
-    bool m_firewallDomainListIdHasBeenSet;
+    bool m_firewallDomainListIdHasBeenSet = false;
   };
 
 } // namespace Model

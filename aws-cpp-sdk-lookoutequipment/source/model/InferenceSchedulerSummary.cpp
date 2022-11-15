@@ -28,7 +28,9 @@ InferenceSchedulerSummary::InferenceSchedulerSummary() :
     m_dataDelayOffsetInMinutes(0),
     m_dataDelayOffsetInMinutesHasBeenSet(false),
     m_dataUploadFrequency(DataUploadFrequency::NOT_SET),
-    m_dataUploadFrequencyHasBeenSet(false)
+    m_dataUploadFrequencyHasBeenSet(false),
+    m_latestInferenceResult(LatestInferenceResult::NOT_SET),
+    m_latestInferenceResultHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ InferenceSchedulerSummary::InferenceSchedulerSummary(JsonView jsonValue) :
     m_dataDelayOffsetInMinutes(0),
     m_dataDelayOffsetInMinutesHasBeenSet(false),
     m_dataUploadFrequency(DataUploadFrequency::NOT_SET),
-    m_dataUploadFrequencyHasBeenSet(false)
+    m_dataUploadFrequencyHasBeenSet(false),
+    m_latestInferenceResult(LatestInferenceResult::NOT_SET),
+    m_latestInferenceResultHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +102,13 @@ InferenceSchedulerSummary& InferenceSchedulerSummary::operator =(JsonView jsonVa
     m_dataUploadFrequencyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LatestInferenceResult"))
+  {
+    m_latestInferenceResult = LatestInferenceResultMapper::GetLatestInferenceResultForName(jsonValue.GetString("LatestInferenceResult"));
+
+    m_latestInferenceResultHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -143,6 +154,11 @@ JsonValue InferenceSchedulerSummary::Jsonize() const
   if(m_dataUploadFrequencyHasBeenSet)
   {
    payload.WithString("DataUploadFrequency", DataUploadFrequencyMapper::GetNameForDataUploadFrequency(m_dataUploadFrequency));
+  }
+
+  if(m_latestInferenceResultHasBeenSet)
+  {
+   payload.WithString("LatestInferenceResult", LatestInferenceResultMapper::GetNameForLatestInferenceResult(m_latestInferenceResult));
   }
 
   return payload;

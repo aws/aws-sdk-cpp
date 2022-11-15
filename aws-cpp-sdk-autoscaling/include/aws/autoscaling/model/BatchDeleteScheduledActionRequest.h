@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scheduledActionNames;
-    bool m_scheduledActionNamesHasBeenSet;
+    bool m_scheduledActionNamesHasBeenSet = false;
   };
 
 } // namespace Model

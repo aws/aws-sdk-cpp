@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<WorkspaceRequest> m_workspaces;
-    bool m_workspacesHasBeenSet;
+    bool m_workspacesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -99,10 +99,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     SMBLocalGroups m_sMBLocalGroups;
-    bool m_sMBLocalGroupsHasBeenSet;
+    bool m_sMBLocalGroupsHasBeenSet = false;
   };
 
 } // namespace Model

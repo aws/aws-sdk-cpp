@@ -35,7 +35,7 @@ ExecutionResults& ExecutionResults::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Steps"))
   {
-    Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
+    Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
     for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
@@ -45,7 +45,7 @@ ExecutionResults& ExecutionResults::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OnExceptionSteps"))
   {
-    Array<JsonView> onExceptionStepsJsonList = jsonValue.GetArray("OnExceptionSteps");
+    Aws::Utils::Array<JsonView> onExceptionStepsJsonList = jsonValue.GetArray("OnExceptionSteps");
     for(unsigned onExceptionStepsIndex = 0; onExceptionStepsIndex < onExceptionStepsJsonList.GetLength(); ++onExceptionStepsIndex)
     {
       m_onExceptionSteps.push_back(onExceptionStepsJsonList[onExceptionStepsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue ExecutionResults::Jsonize() const
 
   if(m_stepsHasBeenSet)
   {
-   Array<JsonValue> stepsJsonList(m_steps.size());
+   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
    {
      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue ExecutionResults::Jsonize() const
 
   if(m_onExceptionStepsHasBeenSet)
   {
-   Array<JsonValue> onExceptionStepsJsonList(m_onExceptionSteps.size());
+   Aws::Utils::Array<JsonValue> onExceptionStepsJsonList(m_onExceptionSteps.size());
    for(unsigned onExceptionStepsIndex = 0; onExceptionStepsIndex < onExceptionStepsJsonList.GetLength(); ++onExceptionStepsIndex)
    {
      onExceptionStepsJsonList[onExceptionStepsIndex].AsObject(m_onExceptionSteps[onExceptionStepsIndex].Jsonize());

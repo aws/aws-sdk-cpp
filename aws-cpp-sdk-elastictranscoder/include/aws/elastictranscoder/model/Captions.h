@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<CaptionFormat> m_captionFormats;
-    bool m_captionFormatsHasBeenSet;
+    bool m_captionFormatsHasBeenSet = false;
   };
 
 } // namespace Model

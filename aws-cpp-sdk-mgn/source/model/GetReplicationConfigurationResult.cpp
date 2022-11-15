@@ -92,7 +92,7 @@ GetReplicationConfigurationResult& GetReplicationConfigurationResult::operator =
 
   if(jsonValue.ValueExists("replicatedDisks"))
   {
-    Array<JsonView> replicatedDisksJsonList = jsonValue.GetArray("replicatedDisks");
+    Aws::Utils::Array<JsonView> replicatedDisksJsonList = jsonValue.GetArray("replicatedDisks");
     for(unsigned replicatedDisksIndex = 0; replicatedDisksIndex < replicatedDisksJsonList.GetLength(); ++replicatedDisksIndex)
     {
       m_replicatedDisks.push_back(replicatedDisksJsonList[replicatedDisksIndex].AsObject());
@@ -107,7 +107,7 @@ GetReplicationConfigurationResult& GetReplicationConfigurationResult::operator =
 
   if(jsonValue.ValueExists("replicationServersSecurityGroupsIDs"))
   {
-    Array<JsonView> replicationServersSecurityGroupsIDsJsonList = jsonValue.GetArray("replicationServersSecurityGroupsIDs");
+    Aws::Utils::Array<JsonView> replicationServersSecurityGroupsIDsJsonList = jsonValue.GetArray("replicationServersSecurityGroupsIDs");
     for(unsigned replicationServersSecurityGroupsIDsIndex = 0; replicationServersSecurityGroupsIDsIndex < replicationServersSecurityGroupsIDsJsonList.GetLength(); ++replicationServersSecurityGroupsIDsIndex)
     {
       m_replicationServersSecurityGroupsIDs.push_back(replicationServersSecurityGroupsIDsJsonList[replicationServersSecurityGroupsIDsIndex].AsString());

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_sourcePipelineExecutionArn;
-    bool m_sourcePipelineExecutionArnHasBeenSet;
+    bool m_sourcePipelineExecutionArnHasBeenSet = false;
   };
 
 } // namespace Model

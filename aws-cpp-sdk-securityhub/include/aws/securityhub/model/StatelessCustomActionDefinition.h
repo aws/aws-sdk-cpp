@@ -71,7 +71,7 @@ namespace Model
   private:
 
     StatelessCustomPublishMetricAction m_publishMetricAction;
-    bool m_publishMetricActionHasBeenSet;
+    bool m_publishMetricActionHasBeenSet = false;
   };
 
 } // namespace Model

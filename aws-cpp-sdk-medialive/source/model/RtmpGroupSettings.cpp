@@ -57,7 +57,7 @@ RtmpGroupSettings& RtmpGroupSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adMarkers"))
   {
-    Array<JsonView> adMarkersJsonList = jsonValue.GetArray("adMarkers");
+    Aws::Utils::Array<JsonView> adMarkersJsonList = jsonValue.GetArray("adMarkers");
     for(unsigned adMarkersIndex = 0; adMarkersIndex < adMarkersJsonList.GetLength(); ++adMarkersIndex)
     {
       m_adMarkers.push_back(RtmpAdMarkersMapper::GetRtmpAdMarkersForName(adMarkersJsonList[adMarkersIndex].AsString()));
@@ -116,7 +116,7 @@ JsonValue RtmpGroupSettings::Jsonize() const
 
   if(m_adMarkersHasBeenSet)
   {
-   Array<JsonValue> adMarkersJsonList(m_adMarkers.size());
+   Aws::Utils::Array<JsonValue> adMarkersJsonList(m_adMarkers.size());
    for(unsigned adMarkersIndex = 0; adMarkersIndex < adMarkersJsonList.GetLength(); ++adMarkersIndex)
    {
      adMarkersJsonList[adMarkersIndex].AsString(RtmpAdMarkersMapper::GetNameForRtmpAdMarkers(m_adMarkers[adMarkersIndex]));

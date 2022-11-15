@@ -845,43 +845,43 @@ namespace Model
   private:
 
     Aws::String m_documentClassifierName;
-    bool m_documentClassifierNameHasBeenSet;
+    bool m_documentClassifierNameHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     DocumentClassifierInputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     DocumentClassifierOutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     DocumentClassifierMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_modelKmsKeyId;
-    bool m_modelKmsKeyIdHasBeenSet;
+    bool m_modelKmsKeyIdHasBeenSet = false;
 
     Aws::String m_modelPolicy;
-    bool m_modelPolicyHasBeenSet;
+    bool m_modelPolicyHasBeenSet = false;
   };
 
 } // namespace Model

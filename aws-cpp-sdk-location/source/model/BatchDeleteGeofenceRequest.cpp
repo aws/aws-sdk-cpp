@@ -24,7 +24,7 @@ Aws::String BatchDeleteGeofenceRequest::SerializePayload() const
 
   if(m_geofenceIdsHasBeenSet)
   {
-   Array<JsonValue> geofenceIdsJsonList(m_geofenceIds.size());
+   Aws::Utils::Array<JsonValue> geofenceIdsJsonList(m_geofenceIds.size());
    for(unsigned geofenceIdsIndex = 0; geofenceIdsIndex < geofenceIdsJsonList.GetLength(); ++geofenceIdsIndex)
    {
      geofenceIdsJsonList[geofenceIdsIndex].AsString(m_geofenceIds[geofenceIdsIndex]);

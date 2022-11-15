@@ -103,10 +103,10 @@ namespace Model
   private:
 
     BatchPermissionsRequestEntry m_requestEntry;
-    bool m_requestEntryHasBeenSet;
+    bool m_requestEntryHasBeenSet = false;
 
     ErrorDetail m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_rawValue;
-    bool m_rawValueHasBeenSet;
+    bool m_rawValueHasBeenSet = false;
   };
 
 } // namespace Model

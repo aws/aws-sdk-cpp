@@ -30,7 +30,7 @@ ListDatasetsResult& ListDatasetsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Datasets"))
   {
-    Array<JsonView> datasetsJsonList = jsonValue.GetArray("Datasets");
+    Aws::Utils::Array<JsonView> datasetsJsonList = jsonValue.GetArray("Datasets");
     for(unsigned datasetsIndex = 0; datasetsIndex < datasetsJsonList.GetLength(); ++datasetsIndex)
     {
       m_datasets.push_back(datasetsJsonList[datasetsIndex].AsObject());

@@ -28,8 +28,8 @@ namespace Model
    * recommendations across two attributes. You can choose to view recommendations
    * for instances within the same instance families or across different instance
    * families. You can also choose to view your estimated savings that are associated
-   * with recommendations with consideration of existing Savings Plans or RI
-   * benefits, or neither. </p><p><h3>See Also:</h3>   <a
+   * with recommendations with consideration of existing Savings Plans or Reserved
+   * Instance (RI) benefits, or neither. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     RecommendationTarget m_recommendationTarget;
-    bool m_recommendationTargetHasBeenSet;
+    bool m_recommendationTargetHasBeenSet = false;
 
     bool m_benefitsConsidered;
-    bool m_benefitsConsideredHasBeenSet;
+    bool m_benefitsConsideredHasBeenSet = false;
   };
 
 } // namespace Model

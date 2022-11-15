@@ -167,8 +167,8 @@ namespace Model
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>AttributesToGet</code>. This return value is equivalent to specifying
-     * <code>AttributesToGet</code> without specifying any value for
+     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
+     * <code>ProjectionExpression</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
@@ -177,16 +177,17 @@ namespace Model
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
      * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are
-     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
+     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
+     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
      * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>AttributesToGet</code> together in
-     * a single request, unless the value for <code>Select</code> is
+     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
+     * together in a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
-     * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
-     * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> 
+     * <code>ProjectionExpression</code> without any value for
+     * <code>Select</code>.)</p>  <p>If you use the
+     * <code>ProjectionExpression</code> parameter, then the value for
+     * <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
+     * value for <code>Select</code> will return an error.</p> 
      */
     inline const Select& GetSelect() const{ return m_select; }
 
@@ -206,8 +207,8 @@ namespace Model
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>AttributesToGet</code>. This return value is equivalent to specifying
-     * <code>AttributesToGet</code> without specifying any value for
+     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
+     * <code>ProjectionExpression</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
@@ -216,16 +217,17 @@ namespace Model
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
      * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are
-     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
+     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
+     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
      * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>AttributesToGet</code> together in
-     * a single request, unless the value for <code>Select</code> is
+     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
+     * together in a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
-     * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
-     * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> 
+     * <code>ProjectionExpression</code> without any value for
+     * <code>Select</code>.)</p>  <p>If you use the
+     * <code>ProjectionExpression</code> parameter, then the value for
+     * <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
+     * value for <code>Select</code> will return an error.</p> 
      */
     inline bool SelectHasBeenSet() const { return m_selectHasBeenSet; }
 
@@ -245,8 +247,8 @@ namespace Model
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>AttributesToGet</code>. This return value is equivalent to specifying
-     * <code>AttributesToGet</code> without specifying any value for
+     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
+     * <code>ProjectionExpression</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
@@ -255,16 +257,17 @@ namespace Model
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
      * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are
-     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
+     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
+     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
      * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>AttributesToGet</code> together in
-     * a single request, unless the value for <code>Select</code> is
+     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
+     * together in a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
-     * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
-     * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> 
+     * <code>ProjectionExpression</code> without any value for
+     * <code>Select</code>.)</p>  <p>If you use the
+     * <code>ProjectionExpression</code> parameter, then the value for
+     * <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
+     * value for <code>Select</code> will return an error.</p> 
      */
     inline void SetSelect(const Select& value) { m_selectHasBeenSet = true; m_select = value; }
 
@@ -284,8 +287,8 @@ namespace Model
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>AttributesToGet</code>. This return value is equivalent to specifying
-     * <code>AttributesToGet</code> without specifying any value for
+     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
+     * <code>ProjectionExpression</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
@@ -294,16 +297,17 @@ namespace Model
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
      * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are
-     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
+     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
+     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
      * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>AttributesToGet</code> together in
-     * a single request, unless the value for <code>Select</code> is
+     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
+     * together in a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
-     * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
-     * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> 
+     * <code>ProjectionExpression</code> without any value for
+     * <code>Select</code>.)</p>  <p>If you use the
+     * <code>ProjectionExpression</code> parameter, then the value for
+     * <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
+     * value for <code>Select</code> will return an error.</p> 
      */
     inline void SetSelect(Select&& value) { m_selectHasBeenSet = true; m_select = std::move(value); }
 
@@ -323,8 +327,8 @@ namespace Model
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>AttributesToGet</code>. This return value is equivalent to specifying
-     * <code>AttributesToGet</code> without specifying any value for
+     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
+     * <code>ProjectionExpression</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
@@ -333,16 +337,17 @@ namespace Model
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
      * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are
-     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
+     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
+     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
      * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>AttributesToGet</code> together in
-     * a single request, unless the value for <code>Select</code> is
+     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
+     * together in a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
-     * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
-     * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> 
+     * <code>ProjectionExpression</code> without any value for
+     * <code>Select</code>.)</p>  <p>If you use the
+     * <code>ProjectionExpression</code> parameter, then the value for
+     * <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
+     * value for <code>Select</code> will return an error.</p> 
      */
     inline QueryRequest& WithSelect(const Select& value) { SetSelect(value); return *this;}
 
@@ -362,8 +367,8 @@ namespace Model
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>AttributesToGet</code>. This return value is equivalent to specifying
-     * <code>AttributesToGet</code> without specifying any value for
+     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
+     * <code>ProjectionExpression</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
@@ -372,16 +377,17 @@ namespace Model
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
      * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are
-     * specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
+     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
+     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
      * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>AttributesToGet</code> together in
-     * a single request, unless the value for <code>Select</code> is
+     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
+     * together in a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
-     * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
-     * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> 
+     * <code>ProjectionExpression</code> without any value for
+     * <code>Select</code>.)</p>  <p>If you use the
+     * <code>ProjectionExpression</code> parameter, then the value for
+     * <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
+     * value for <code>Select</code> will return an error.</p> 
      */
     inline QueryRequest& WithSelect(Select&& value) { SetSelect(std::move(value)); return *this;}
 
@@ -1091,7 +1097,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
@@ -1105,7 +1111,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
@@ -1119,7 +1125,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
@@ -1133,7 +1139,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
@@ -1147,7 +1153,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
@@ -1161,7 +1167,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
@@ -1175,7 +1181,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
@@ -1189,7 +1195,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
@@ -2219,55 +2225,55 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Select m_select;
-    bool m_selectHasBeenSet;
+    bool m_selectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributesToGet;
-    bool m_attributesToGetHasBeenSet;
+    bool m_attributesToGetHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     bool m_consistentRead;
-    bool m_consistentReadHasBeenSet;
+    bool m_consistentReadHasBeenSet = false;
 
     Aws::Map<Aws::String, Condition> m_keyConditions;
-    bool m_keyConditionsHasBeenSet;
+    bool m_keyConditionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Condition> m_queryFilter;
-    bool m_queryFilterHasBeenSet;
+    bool m_queryFilterHasBeenSet = false;
 
     ConditionalOperator m_conditionalOperator;
-    bool m_conditionalOperatorHasBeenSet;
+    bool m_conditionalOperatorHasBeenSet = false;
 
     bool m_scanIndexForward;
-    bool m_scanIndexForwardHasBeenSet;
+    bool m_scanIndexForwardHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_exclusiveStartKey;
-    bool m_exclusiveStartKeyHasBeenSet;
+    bool m_exclusiveStartKeyHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
 
     Aws::String m_projectionExpression;
-    bool m_projectionExpressionHasBeenSet;
+    bool m_projectionExpressionHasBeenSet = false;
 
     Aws::String m_filterExpression;
-    bool m_filterExpressionHasBeenSet;
+    bool m_filterExpressionHasBeenSet = false;
 
     Aws::String m_keyConditionExpression;
-    bool m_keyConditionExpressionHasBeenSet;
+    bool m_keyConditionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-    bool m_expressionAttributeValuesHasBeenSet;
+    bool m_expressionAttributeValuesHasBeenSet = false;
   };
 
 } // namespace Model

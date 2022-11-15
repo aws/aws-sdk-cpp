@@ -5,6 +5,7 @@
 
 #include <aws/datasync/model/CreateLocationObjectStorageRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -23,7 +24,8 @@ CreateLocationObjectStorageRequest::CreateLocationObjectStorageRequest() :
     m_accessKeyHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
     m_agentArnsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_serverCertificateHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,7 @@ Aws::String CreateLocationObjectStorageRequest::SerializePayload() const
 
   if(m_agentArnsHasBeenSet)
   {
-   Array<JsonValue> agentArnsJsonList(m_agentArns.size());
+   Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
    for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
    {
      agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);
@@ -85,13 +87,18 @@ Aws::String CreateLocationObjectStorageRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_serverCertificateHasBeenSet)
+  {
+   payload.WithString("ServerCertificate", HashingUtils::Base64Encode(m_serverCertificate));
   }
 
   return payload.View().WriteReadable();

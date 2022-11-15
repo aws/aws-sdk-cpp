@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon S3 location for importing the package specified as
-   * <code>S3BucketName</code> and <code>S3Key</code> </p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon S3 location to import the package from.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PackageSource">AWS
    * API Reference</a></p>
    */
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
   };
 
 } // namespace Model

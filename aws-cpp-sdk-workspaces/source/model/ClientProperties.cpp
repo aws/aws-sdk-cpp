@@ -20,13 +20,17 @@ namespace Model
 
 ClientProperties::ClientProperties() : 
     m_reconnectEnabled(ReconnectEnum::NOT_SET),
-    m_reconnectEnabledHasBeenSet(false)
+    m_reconnectEnabledHasBeenSet(false),
+    m_logUploadEnabled(LogUploadEnum::NOT_SET),
+    m_logUploadEnabledHasBeenSet(false)
 {
 }
 
 ClientProperties::ClientProperties(JsonView jsonValue) : 
     m_reconnectEnabled(ReconnectEnum::NOT_SET),
-    m_reconnectEnabledHasBeenSet(false)
+    m_reconnectEnabledHasBeenSet(false),
+    m_logUploadEnabled(LogUploadEnum::NOT_SET),
+    m_logUploadEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ ClientProperties& ClientProperties::operator =(JsonView jsonValue)
     m_reconnectEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogUploadEnabled"))
+  {
+    m_logUploadEnabled = LogUploadEnumMapper::GetLogUploadEnumForName(jsonValue.GetString("LogUploadEnabled"));
+
+    m_logUploadEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,11 @@ JsonValue ClientProperties::Jsonize() const
   if(m_reconnectEnabledHasBeenSet)
   {
    payload.WithString("ReconnectEnabled", ReconnectEnumMapper::GetNameForReconnectEnum(m_reconnectEnabled));
+  }
+
+  if(m_logUploadEnabledHasBeenSet)
+  {
+   payload.WithString("LogUploadEnabled", LogUploadEnumMapper::GetNameForLogUploadEnum(m_logUploadEnabled));
   }
 
   return payload;

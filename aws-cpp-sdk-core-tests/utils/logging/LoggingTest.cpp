@@ -5,7 +5,7 @@
 
 
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 
 #include <aws/core/utils/logging/DefaultLogSystem.h>
 #include <aws/core/utils/logging/LogMacros.h>

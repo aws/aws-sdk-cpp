@@ -82,7 +82,7 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("artifactRevisions"))
   {
-    Array<JsonView> artifactRevisionsJsonList = jsonValue.GetArray("artifactRevisions");
+    Aws::Utils::Array<JsonView> artifactRevisionsJsonList = jsonValue.GetArray("artifactRevisions");
     for(unsigned artifactRevisionsIndex = 0; artifactRevisionsIndex < artifactRevisionsJsonList.GetLength(); ++artifactRevisionsIndex)
     {
       m_artifactRevisions.push_back(artifactRevisionsJsonList[artifactRevisionsIndex].AsObject());
@@ -128,7 +128,7 @@ JsonValue PipelineExecution::Jsonize() const
 
   if(m_artifactRevisionsHasBeenSet)
   {
-   Array<JsonValue> artifactRevisionsJsonList(m_artifactRevisions.size());
+   Aws::Utils::Array<JsonValue> artifactRevisionsJsonList(m_artifactRevisions.size());
    for(unsigned artifactRevisionsIndex = 0; artifactRevisionsIndex < artifactRevisionsJsonList.GetLength(); ++artifactRevisionsIndex)
    {
      artifactRevisionsJsonList[artifactRevisionsIndex].AsObject(m_artifactRevisions[artifactRevisionsIndex].Jsonize());

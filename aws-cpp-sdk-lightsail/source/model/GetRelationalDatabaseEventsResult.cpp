@@ -30,7 +30,7 @@ GetRelationalDatabaseEventsResult& GetRelationalDatabaseEventsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("relationalDatabaseEvents"))
   {
-    Array<JsonView> relationalDatabaseEventsJsonList = jsonValue.GetArray("relationalDatabaseEvents");
+    Aws::Utils::Array<JsonView> relationalDatabaseEventsJsonList = jsonValue.GetArray("relationalDatabaseEvents");
     for(unsigned relationalDatabaseEventsIndex = 0; relationalDatabaseEventsIndex < relationalDatabaseEventsJsonList.GetLength(); ++relationalDatabaseEventsIndex)
     {
       m_relationalDatabaseEvents.push_back(relationalDatabaseEventsJsonList[relationalDatabaseEventsIndex].AsObject());

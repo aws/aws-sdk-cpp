@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_analyzerName;
-    bool m_analyzerNameHasBeenSet;
+    bool m_analyzerNameHasBeenSet = false;
   };
 
 } // namespace Model

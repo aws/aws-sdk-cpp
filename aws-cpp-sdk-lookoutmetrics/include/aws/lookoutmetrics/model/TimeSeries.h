@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_timeSeriesId;
-    bool m_timeSeriesIdHasBeenSet;
+    bool m_timeSeriesIdHasBeenSet = false;
 
     Aws::Vector<DimensionNameValue> m_dimensionList;
-    bool m_dimensionListHasBeenSet;
+    bool m_dimensionListHasBeenSet = false;
 
     Aws::Vector<double> m_metricValueList;
-    bool m_metricValueListHasBeenSet;
+    bool m_metricValueListHasBeenSet = false;
   };
 
 } // namespace Model

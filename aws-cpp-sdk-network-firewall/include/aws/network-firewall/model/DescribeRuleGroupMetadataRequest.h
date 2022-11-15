@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::String m_ruleGroupName;
-    bool m_ruleGroupNameHasBeenSet;
+    bool m_ruleGroupNameHasBeenSet = false;
 
     Aws::String m_ruleGroupArn;
-    bool m_ruleGroupArnHasBeenSet;
+    bool m_ruleGroupArnHasBeenSet = false;
 
     RuleGroupType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

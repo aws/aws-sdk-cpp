@@ -133,10 +133,10 @@ namespace Model
   private:
 
     SubscriptionType m_subscriptionType;
-    bool m_subscriptionTypeHasBeenSet;
+    bool m_subscriptionTypeHasBeenSet = false;
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
   };
 
 } // namespace Model

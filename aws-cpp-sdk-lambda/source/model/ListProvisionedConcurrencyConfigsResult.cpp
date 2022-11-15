@@ -30,7 +30,7 @@ ListProvisionedConcurrencyConfigsResult& ListProvisionedConcurrencyConfigsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisionedConcurrencyConfigs"))
   {
-    Array<JsonView> provisionedConcurrencyConfigsJsonList = jsonValue.GetArray("ProvisionedConcurrencyConfigs");
+    Aws::Utils::Array<JsonView> provisionedConcurrencyConfigsJsonList = jsonValue.GetArray("ProvisionedConcurrencyConfigs");
     for(unsigned provisionedConcurrencyConfigsIndex = 0; provisionedConcurrencyConfigsIndex < provisionedConcurrencyConfigsJsonList.GetLength(); ++provisionedConcurrencyConfigsIndex)
     {
       m_provisionedConcurrencyConfigs.push_back(provisionedConcurrencyConfigsJsonList[provisionedConcurrencyConfigsIndex].AsObject());

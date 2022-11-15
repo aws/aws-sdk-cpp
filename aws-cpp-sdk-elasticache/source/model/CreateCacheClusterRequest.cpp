@@ -43,7 +43,13 @@ CreateCacheClusterRequest::CreateCacheClusterRequest() :
     m_outpostModeHasBeenSet(false),
     m_preferredOutpostArnHasBeenSet(false),
     m_preferredOutpostArnsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_transitEncryptionEnabled(false),
+    m_transitEncryptionEnabledHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
+    m_ipDiscovery(IpDiscovery::NOT_SET),
+    m_ipDiscoveryHasBeenSet(false)
 {
 }
 
@@ -224,6 +230,21 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
       logDeliveryConfigurationsCount++;
     }
+  }
+
+  if(m_transitEncryptionEnabledHasBeenSet)
+  {
+    ss << "TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+  }
+
+  if(m_ipDiscoveryHasBeenSet)
+  {
+    ss << "IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
   }
 
   ss << "Version=2015-02-02";

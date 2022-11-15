@@ -305,22 +305,22 @@ namespace Model
   private:
 
     int m_dataTransferSubscriberFeePercent;
-    bool m_dataTransferSubscriberFeePercentHasBeenSet;
+    bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     EntitlementStatus m_entitlementStatus;
-    bool m_entitlementStatusHasBeenSet;
+    bool m_entitlementStatusHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subscribers;
-    bool m_subscribersHasBeenSet;
+    bool m_subscribersHasBeenSet = false;
   };
 
 } // namespace Model

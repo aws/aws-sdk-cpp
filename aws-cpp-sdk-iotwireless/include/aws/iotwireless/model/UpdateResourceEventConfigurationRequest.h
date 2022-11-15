@@ -13,6 +13,7 @@
 #include <aws/iotwireless/model/ProximityEventConfiguration.h>
 #include <aws/iotwireless/model/JoinEventConfiguration.h>
 #include <aws/iotwireless/model/ConnectionStatusEventConfiguration.h>
+#include <aws/iotwireless/model/MessageDeliveryStatusEventConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -123,181 +124,221 @@ namespace Model
 
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline const EventNotificationPartnerType& GetPartnerType() const{ return m_partnerType; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline bool PartnerTypeHasBeenSet() const { return m_partnerTypeHasBeenSet; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline void SetPartnerType(const EventNotificationPartnerType& value) { m_partnerTypeHasBeenSet = true; m_partnerType = value; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline void SetPartnerType(EventNotificationPartnerType&& value) { m_partnerTypeHasBeenSet = true; m_partnerType = std::move(value); }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline UpdateResourceEventConfigurationRequest& WithPartnerType(const EventNotificationPartnerType& value) { SetPartnerType(value); return *this;}
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline UpdateResourceEventConfigurationRequest& WithPartnerType(EventNotificationPartnerType&& value) { SetPartnerType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline const DeviceRegistrationStateEventConfiguration& GetDeviceRegistrationState() const{ return m_deviceRegistrationState; }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline bool DeviceRegistrationStateHasBeenSet() const { return m_deviceRegistrationStateHasBeenSet; }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline void SetDeviceRegistrationState(const DeviceRegistrationStateEventConfiguration& value) { m_deviceRegistrationStateHasBeenSet = true; m_deviceRegistrationState = value; }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline void SetDeviceRegistrationState(DeviceRegistrationStateEventConfiguration&& value) { m_deviceRegistrationStateHasBeenSet = true; m_deviceRegistrationState = std::move(value); }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithDeviceRegistrationState(const DeviceRegistrationStateEventConfiguration& value) { SetDeviceRegistrationState(value); return *this;}
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithDeviceRegistrationState(DeviceRegistrationStateEventConfiguration&& value) { SetDeviceRegistrationState(std::move(value)); return *this;}
 
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline const ProximityEventConfiguration& GetProximity() const{ return m_proximity; }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline bool ProximityHasBeenSet() const { return m_proximityHasBeenSet; }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline void SetProximity(const ProximityEventConfiguration& value) { m_proximityHasBeenSet = true; m_proximity = value; }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline void SetProximity(ProximityEventConfiguration&& value) { m_proximityHasBeenSet = true; m_proximity = std::move(value); }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithProximity(const ProximityEventConfiguration& value) { SetProximity(value); return *this;}
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithProximity(ProximityEventConfiguration&& value) { SetProximity(std::move(value)); return *this;}
 
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline const JoinEventConfiguration& GetJoin() const{ return m_join; }
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline bool JoinHasBeenSet() const { return m_joinHasBeenSet; }
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline void SetJoin(const JoinEventConfiguration& value) { m_joinHasBeenSet = true; m_join = value; }
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline void SetJoin(JoinEventConfiguration&& value) { m_joinHasBeenSet = true; m_join = std::move(value); }
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithJoin(const JoinEventConfiguration& value) { SetJoin(value); return *this;}
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithJoin(JoinEventConfiguration&& value) { SetJoin(std::move(value)); return *this;}
 
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline const ConnectionStatusEventConfiguration& GetConnectionStatus() const{ return m_connectionStatus; }
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline bool ConnectionStatusHasBeenSet() const { return m_connectionStatusHasBeenSet; }
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline void SetConnectionStatus(const ConnectionStatusEventConfiguration& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline void SetConnectionStatus(ConnectionStatusEventConfiguration&& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = std::move(value); }
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithConnectionStatus(const ConnectionStatusEventConfiguration& value) { SetConnectionStatus(value); return *this;}
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithConnectionStatus(ConnectionStatusEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline const MessageDeliveryStatusEventConfiguration& GetMessageDeliveryStatus() const{ return m_messageDeliveryStatus; }
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline bool MessageDeliveryStatusHasBeenSet() const { return m_messageDeliveryStatusHasBeenSet; }
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline void SetMessageDeliveryStatus(const MessageDeliveryStatusEventConfiguration& value) { m_messageDeliveryStatusHasBeenSet = true; m_messageDeliveryStatus = value; }
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline void SetMessageDeliveryStatus(MessageDeliveryStatusEventConfiguration&& value) { m_messageDeliveryStatusHasBeenSet = true; m_messageDeliveryStatus = std::move(value); }
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline UpdateResourceEventConfigurationRequest& WithMessageDeliveryStatus(const MessageDeliveryStatusEventConfiguration& value) { SetMessageDeliveryStatus(value); return *this;}
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline UpdateResourceEventConfigurationRequest& WithMessageDeliveryStatus(MessageDeliveryStatusEventConfiguration&& value) { SetMessageDeliveryStatus(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     IdentifierType m_identifierType;
-    bool m_identifierTypeHasBeenSet;
+    bool m_identifierTypeHasBeenSet = false;
 
     EventNotificationPartnerType m_partnerType;
-    bool m_partnerTypeHasBeenSet;
+    bool m_partnerTypeHasBeenSet = false;
 
     DeviceRegistrationStateEventConfiguration m_deviceRegistrationState;
-    bool m_deviceRegistrationStateHasBeenSet;
+    bool m_deviceRegistrationStateHasBeenSet = false;
 
     ProximityEventConfiguration m_proximity;
-    bool m_proximityHasBeenSet;
+    bool m_proximityHasBeenSet = false;
 
     JoinEventConfiguration m_join;
-    bool m_joinHasBeenSet;
+    bool m_joinHasBeenSet = false;
 
     ConnectionStatusEventConfiguration m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
+
+    MessageDeliveryStatusEventConfiguration m_messageDeliveryStatus;
+    bool m_messageDeliveryStatusHasBeenSet = false;
   };
 
 } // namespace Model

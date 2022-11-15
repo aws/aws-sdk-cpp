@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_memberName;
-    bool m_memberNameHasBeenSet;
+    bool m_memberNameHasBeenSet = false;
   };
 
 } // namespace Model

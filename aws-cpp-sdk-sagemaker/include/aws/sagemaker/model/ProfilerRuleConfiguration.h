@@ -349,25 +349,25 @@ namespace Model
   private:
 
     Aws::String m_ruleConfigurationName;
-    bool m_ruleConfigurationNameHasBeenSet;
+    bool m_ruleConfigurationNameHasBeenSet = false;
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
 
     Aws::String m_ruleEvaluatorImage;
-    bool m_ruleEvaluatorImageHasBeenSet;
+    bool m_ruleEvaluatorImageHasBeenSet = false;
 
     ProcessingInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_volumeSizeInGB;
-    bool m_volumeSizeInGBHasBeenSet;
+    bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_ruleParameters;
-    bool m_ruleParametersHasBeenSet;
+    bool m_ruleParametersHasBeenSet = false;
   };
 
 } // namespace Model

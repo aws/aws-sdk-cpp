@@ -1010,74 +1010,110 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline const HttpVersion& GetHttpVersion() const{ return m_httpVersion; }
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline bool HttpVersionHasBeenSet() const { return m_httpVersionHasBeenSet; }
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline void SetHttpVersion(const HttpVersion& value) { m_httpVersionHasBeenSet = true; m_httpVersion = value; }
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline void SetHttpVersion(HttpVersion&& value) { m_httpVersionHasBeenSet = true; m_httpVersion = std::move(value); }
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline DistributionConfig& WithHttpVersion(const HttpVersion& value) { SetHttpVersion(value); return *this;}
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline DistributionConfig& WithHttpVersion(HttpVersion&& value) { SetHttpVersion(std::move(value)); return *this;}
 
@@ -1213,55 +1249,55 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aliases m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     Aws::String m_defaultRootObject;
-    bool m_defaultRootObjectHasBeenSet;
+    bool m_defaultRootObjectHasBeenSet = false;
 
     Origins m_origins;
-    bool m_originsHasBeenSet;
+    bool m_originsHasBeenSet = false;
 
     OriginGroups m_originGroups;
-    bool m_originGroupsHasBeenSet;
+    bool m_originGroupsHasBeenSet = false;
 
     DefaultCacheBehavior m_defaultCacheBehavior;
-    bool m_defaultCacheBehaviorHasBeenSet;
+    bool m_defaultCacheBehaviorHasBeenSet = false;
 
     CacheBehaviors m_cacheBehaviors;
-    bool m_cacheBehaviorsHasBeenSet;
+    bool m_cacheBehaviorsHasBeenSet = false;
 
     CustomErrorResponses m_customErrorResponses;
-    bool m_customErrorResponsesHasBeenSet;
+    bool m_customErrorResponsesHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     LoggingConfig m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     PriceClass m_priceClass;
-    bool m_priceClassHasBeenSet;
+    bool m_priceClassHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     ViewerCertificate m_viewerCertificate;
-    bool m_viewerCertificateHasBeenSet;
+    bool m_viewerCertificateHasBeenSet = false;
 
     Restrictions m_restrictions;
-    bool m_restrictionsHasBeenSet;
+    bool m_restrictionsHasBeenSet = false;
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     HttpVersion m_httpVersion;
-    bool m_httpVersionHasBeenSet;
+    bool m_httpVersionHasBeenSet = false;
 
     bool m_isIPV6Enabled;
-    bool m_isIPV6EnabledHasBeenSet;
+    bool m_isIPV6EnabledHasBeenSet = false;
   };
 
 } // namespace Model

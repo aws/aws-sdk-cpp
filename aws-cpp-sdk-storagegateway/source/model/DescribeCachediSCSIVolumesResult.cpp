@@ -30,7 +30,7 @@ DescribeCachediSCSIVolumesResult& DescribeCachediSCSIVolumesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CachediSCSIVolumes"))
   {
-    Array<JsonView> cachediSCSIVolumesJsonList = jsonValue.GetArray("CachediSCSIVolumes");
+    Aws::Utils::Array<JsonView> cachediSCSIVolumesJsonList = jsonValue.GetArray("CachediSCSIVolumes");
     for(unsigned cachediSCSIVolumesIndex = 0; cachediSCSIVolumesIndex < cachediSCSIVolumesJsonList.GetLength(); ++cachediSCSIVolumesIndex)
     {
       m_cachediSCSIVolumes.push_back(cachediSCSIVolumesJsonList[cachediSCSIVolumesIndex].AsObject());

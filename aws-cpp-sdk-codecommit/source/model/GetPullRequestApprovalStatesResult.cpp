@@ -30,7 +30,7 @@ GetPullRequestApprovalStatesResult& GetPullRequestApprovalStatesResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("approvals"))
   {
-    Array<JsonView> approvalsJsonList = jsonValue.GetArray("approvals");
+    Aws::Utils::Array<JsonView> approvalsJsonList = jsonValue.GetArray("approvals");
     for(unsigned approvalsIndex = 0; approvalsIndex < approvalsJsonList.GetLength(); ++approvalsIndex)
     {
       m_approvals.push_back(approvalsJsonList[approvalsIndex].AsObject());

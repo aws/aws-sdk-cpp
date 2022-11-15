@@ -113,10 +113,10 @@ namespace Model
   private:
 
     QueryParameterMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

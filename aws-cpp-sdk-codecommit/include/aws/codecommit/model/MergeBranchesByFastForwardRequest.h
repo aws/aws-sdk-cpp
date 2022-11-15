@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_sourceCommitSpecifier;
-    bool m_sourceCommitSpecifierHasBeenSet;
+    bool m_sourceCommitSpecifierHasBeenSet = false;
 
     Aws::String m_destinationCommitSpecifier;
-    bool m_destinationCommitSpecifierHasBeenSet;
+    bool m_destinationCommitSpecifierHasBeenSet = false;
 
     Aws::String m_targetBranch;
-    bool m_targetBranchHasBeenSet;
+    bool m_targetBranchHasBeenSet = false;
   };
 
 } // namespace Model

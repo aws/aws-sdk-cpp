@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 CreateTopicRequest::CreateTopicRequest() : 
     m_nameHasBeenSet(false),
     m_attributesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dataProtectionPolicyHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,11 @@ Aws::String CreateTopicRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_dataProtectionPolicyHasBeenSet)
+  {
+    ss << "DataProtectionPolicy=" << StringUtils::URLEncode(m_dataProtectionPolicy.c_str()) << "&";
   }
 
   ss << "Version=2010-03-31";

@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
   };
 
 } // namespace Model

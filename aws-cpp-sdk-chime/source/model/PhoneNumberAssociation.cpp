@@ -78,7 +78,7 @@ JsonValue PhoneNumberAssociation::Jsonize() const
 
   if(m_associatedTimestampHasBeenSet)
   {
-   payload.WithString("AssociatedTimestamp", m_associatedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("AssociatedTimestamp", m_associatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

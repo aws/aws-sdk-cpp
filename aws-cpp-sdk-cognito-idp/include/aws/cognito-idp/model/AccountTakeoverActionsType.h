@@ -132,13 +132,13 @@ namespace Model
   private:
 
     AccountTakeoverActionType m_lowAction;
-    bool m_lowActionHasBeenSet;
+    bool m_lowActionHasBeenSet = false;
 
     AccountTakeoverActionType m_mediumAction;
-    bool m_mediumActionHasBeenSet;
+    bool m_mediumActionHasBeenSet = false;
 
     AccountTakeoverActionType m_highAction;
-    bool m_highActionHasBeenSet;
+    bool m_highActionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,10 +116,10 @@ namespace Model
   private:
 
     SessionContextAttributes m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     SessionIssuer m_sessionIssuer;
-    bool m_sessionIssuerHasBeenSet;
+    bool m_sessionIssuerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListEnvironmentAccountConnectionsResult& ListEnvironmentAccountConnectionsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("environmentAccountConnections"))
   {
-    Array<JsonView> environmentAccountConnectionsJsonList = jsonValue.GetArray("environmentAccountConnections");
+    Aws::Utils::Array<JsonView> environmentAccountConnectionsJsonList = jsonValue.GetArray("environmentAccountConnections");
     for(unsigned environmentAccountConnectionsIndex = 0; environmentAccountConnectionsIndex < environmentAccountConnectionsJsonList.GetLength(); ++environmentAccountConnectionsIndex)
     {
       m_environmentAccountConnections.push_back(environmentAccountConnectionsJsonList[environmentAccountConnectionsIndex].AsObject());

@@ -117,16 +117,16 @@ namespace Model
   private:
 
     BackendAuthSocialProviderConfig m_facebook;
-    bool m_facebookHasBeenSet;
+    bool m_facebookHasBeenSet = false;
 
     BackendAuthSocialProviderConfig m_google;
-    bool m_googleHasBeenSet;
+    bool m_googleHasBeenSet = false;
 
     BackendAuthSocialProviderConfig m_loginWithAmazon;
-    bool m_loginWithAmazonHasBeenSet;
+    bool m_loginWithAmazonHasBeenSet = false;
 
     BackendAuthAppleProviderConfig m_signInWithApple;
-    bool m_signInWithAppleHasBeenSet;
+    bool m_signInWithAppleHasBeenSet = false;
   };
 
 } // namespace Model

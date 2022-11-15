@@ -194,16 +194,16 @@ namespace Model
   private:
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Aws::String m_meanValue;
-    bool m_meanValueHasBeenSet;
+    bool m_meanValueHasBeenSet = false;
 
     Aws::String m_predictionIntervalLowerBound;
-    bool m_predictionIntervalLowerBoundHasBeenSet;
+    bool m_predictionIntervalLowerBoundHasBeenSet = false;
 
     Aws::String m_predictionIntervalUpperBound;
-    bool m_predictionIntervalUpperBoundHasBeenSet;
+    bool m_predictionIntervalUpperBoundHasBeenSet = false;
   };
 
 } // namespace Model

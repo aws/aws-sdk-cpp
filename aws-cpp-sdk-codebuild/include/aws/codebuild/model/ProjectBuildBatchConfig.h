@@ -243,19 +243,19 @@ namespace Model
   private:
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     bool m_combineArtifacts;
-    bool m_combineArtifactsHasBeenSet;
+    bool m_combineArtifactsHasBeenSet = false;
 
     BatchRestrictions m_restrictions;
-    bool m_restrictionsHasBeenSet;
+    bool m_restrictionsHasBeenSet = false;
 
     int m_timeoutInMins;
-    bool m_timeoutInMinsHasBeenSet;
+    bool m_timeoutInMinsHasBeenSet = false;
 
     BatchReportModeType m_batchReportMode;
-    bool m_batchReportModeHasBeenSet;
+    bool m_batchReportModeHasBeenSet = false;
   };
 
 } // namespace Model

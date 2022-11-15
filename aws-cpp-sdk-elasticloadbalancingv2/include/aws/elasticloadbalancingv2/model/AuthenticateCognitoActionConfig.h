@@ -440,28 +440,28 @@ namespace Model
   private:
 
     Aws::String m_userPoolArn;
-    bool m_userPoolArnHasBeenSet;
+    bool m_userPoolArnHasBeenSet = false;
 
     Aws::String m_userPoolClientId;
-    bool m_userPoolClientIdHasBeenSet;
+    bool m_userPoolClientIdHasBeenSet = false;
 
     Aws::String m_userPoolDomain;
-    bool m_userPoolDomainHasBeenSet;
+    bool m_userPoolDomainHasBeenSet = false;
 
     Aws::String m_sessionCookieName;
-    bool m_sessionCookieNameHasBeenSet;
+    bool m_sessionCookieNameHasBeenSet = false;
 
     Aws::String m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     long long m_sessionTimeout;
-    bool m_sessionTimeoutHasBeenSet;
+    bool m_sessionTimeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_authenticationRequestExtraParams;
-    bool m_authenticationRequestExtraParamsHasBeenSet;
+    bool m_authenticationRequestExtraParamsHasBeenSet = false;
 
     AuthenticateCognitoActionConditionalBehaviorEnum m_onUnauthenticatedRequest;
-    bool m_onUnauthenticatedRequestHasBeenSet;
+    bool m_onUnauthenticatedRequestHasBeenSet = false;
   };
 
 } // namespace Model

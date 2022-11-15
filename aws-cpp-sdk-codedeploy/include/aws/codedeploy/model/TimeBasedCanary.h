@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>A configuration that shifts traffic from one version of a Lambda function or
-   * ECS task set to another in two increments. The original and target Lambda
+   * Amazon ECS task set to another in two increments. The original and target Lambda
    * function versions or ECS task sets are specified in the deployment's AppSpec
    * file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TimeBasedCanary">AWS
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     int m_canaryPercentage;
-    bool m_canaryPercentageHasBeenSet;
+    bool m_canaryPercentageHasBeenSet = false;
 
     int m_canaryInterval;
-    bool m_canaryIntervalHasBeenSet;
+    bool m_canaryIntervalHasBeenSet = false;
   };
 
 } // namespace Model

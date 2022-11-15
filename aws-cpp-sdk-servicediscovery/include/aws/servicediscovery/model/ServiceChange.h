@@ -82,37 +82,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline const DnsConfigChange& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline void SetDnsConfig(const DnsConfigChange& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline void SetDnsConfig(DnsConfigChange&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline ServiceChange& WithDnsConfig(const DnsConfigChange& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline ServiceChange& WithDnsConfig(DnsConfigChange&& value) { SetDnsConfig(std::move(value)); return *this;}
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DnsConfigChange m_dnsConfig;
-    bool m_dnsConfigHasBeenSet;
+    bool m_dnsConfigHasBeenSet = false;
 
     HealthCheckConfig m_healthCheckConfig;
-    bool m_healthCheckConfigHasBeenSet;
+    bool m_healthCheckConfigHasBeenSet = false;
   };
 
 } // namespace Model

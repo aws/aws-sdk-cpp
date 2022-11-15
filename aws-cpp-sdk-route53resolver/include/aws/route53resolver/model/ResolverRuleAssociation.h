@@ -330,22 +330,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_resolverRuleId;
-    bool m_resolverRuleIdHasBeenSet;
+    bool m_resolverRuleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_vPCId;
-    bool m_vPCIdHasBeenSet;
+    bool m_vPCIdHasBeenSet = false;
 
     ResolverRuleAssociationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

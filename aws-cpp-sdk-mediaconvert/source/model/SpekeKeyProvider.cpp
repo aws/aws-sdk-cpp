@@ -53,7 +53,7 @@ SpekeKeyProvider& SpekeKeyProvider::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("systemIds"))
   {
-    Array<JsonView> systemIdsJsonList = jsonValue.GetArray("systemIds");
+    Aws::Utils::Array<JsonView> systemIdsJsonList = jsonValue.GetArray("systemIds");
     for(unsigned systemIdsIndex = 0; systemIdsIndex < systemIdsJsonList.GetLength(); ++systemIdsIndex)
     {
       m_systemIds.push_back(systemIdsJsonList[systemIdsIndex].AsString());
@@ -89,7 +89,7 @@ JsonValue SpekeKeyProvider::Jsonize() const
 
   if(m_systemIdsHasBeenSet)
   {
-   Array<JsonValue> systemIdsJsonList(m_systemIds.size());
+   Aws::Utils::Array<JsonValue> systemIdsJsonList(m_systemIds.size());
    for(unsigned systemIdsIndex = 0; systemIdsIndex < systemIdsJsonList.GetLength(); ++systemIdsIndex)
    {
      systemIdsJsonList[systemIdsIndex].AsString(m_systemIds[systemIdsIndex]);

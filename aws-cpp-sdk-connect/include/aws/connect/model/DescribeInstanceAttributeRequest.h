@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     InstanceAttributeType m_attributeType;
-    bool m_attributeTypeHasBeenSet;
+    bool m_attributeTypeHasBeenSet = false;
   };
 
 } // namespace Model

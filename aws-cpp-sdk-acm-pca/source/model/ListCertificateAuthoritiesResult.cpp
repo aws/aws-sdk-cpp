@@ -30,7 +30,7 @@ ListCertificateAuthoritiesResult& ListCertificateAuthoritiesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CertificateAuthorities"))
   {
-    Array<JsonView> certificateAuthoritiesJsonList = jsonValue.GetArray("CertificateAuthorities");
+    Aws::Utils::Array<JsonView> certificateAuthoritiesJsonList = jsonValue.GetArray("CertificateAuthorities");
     for(unsigned certificateAuthoritiesIndex = 0; certificateAuthoritiesIndex < certificateAuthoritiesJsonList.GetLength(); ++certificateAuthoritiesIndex)
     {
       m_certificateAuthorities.push_back(certificateAuthoritiesJsonList[certificateAuthoritiesIndex].AsObject());

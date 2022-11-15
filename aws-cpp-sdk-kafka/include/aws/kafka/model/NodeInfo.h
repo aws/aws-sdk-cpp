@@ -344,22 +344,22 @@ namespace Model
   private:
 
     Aws::String m_addedToClusterTime;
-    bool m_addedToClusterTimeHasBeenSet;
+    bool m_addedToClusterTimeHasBeenSet = false;
 
     BrokerNodeInfo m_brokerNodeInfo;
-    bool m_brokerNodeInfoHasBeenSet;
+    bool m_brokerNodeInfoHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_nodeARN;
-    bool m_nodeARNHasBeenSet;
+    bool m_nodeARNHasBeenSet = false;
 
     NodeType m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     ZookeeperNodeInfo m_zookeeperNodeInfo;
-    bool m_zookeeperNodeInfoHasBeenSet;
+    bool m_zookeeperNodeInfoHasBeenSet = false;
   };
 
 } // namespace Model

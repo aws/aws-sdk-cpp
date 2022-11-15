@@ -259,22 +259,22 @@ namespace Model
   private:
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     ResourceMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_routeName;
-    bool m_routeNameHasBeenSet;
+    bool m_routeNameHasBeenSet = false;
 
     RouteSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     RouteStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_virtualRouterName;
-    bool m_virtualRouterNameHasBeenSet;
+    bool m_virtualRouterNameHasBeenSet = false;
   };
 
 } // namespace Model

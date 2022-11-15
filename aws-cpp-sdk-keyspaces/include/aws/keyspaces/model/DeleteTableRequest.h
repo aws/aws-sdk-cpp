@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_keyspaceName;
-    bool m_keyspaceNameHasBeenSet;
+    bool m_keyspaceNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
   };
 
 } // namespace Model

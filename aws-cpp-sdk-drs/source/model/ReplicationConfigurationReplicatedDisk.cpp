@@ -24,6 +24,8 @@ ReplicationConfigurationReplicatedDisk::ReplicationConfigurationReplicatedDisk()
     m_iopsHasBeenSet(false),
     m_isBootDisk(false),
     m_isBootDiskHasBeenSet(false),
+    m_optimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET),
+    m_optimizedStagingDiskTypeHasBeenSet(false),
     m_stagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET),
     m_stagingDiskTypeHasBeenSet(false),
     m_throughput(0),
@@ -37,6 +39,8 @@ ReplicationConfigurationReplicatedDisk::ReplicationConfigurationReplicatedDisk(J
     m_iopsHasBeenSet(false),
     m_isBootDisk(false),
     m_isBootDiskHasBeenSet(false),
+    m_optimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET),
+    m_optimizedStagingDiskTypeHasBeenSet(false),
     m_stagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET),
     m_stagingDiskTypeHasBeenSet(false),
     m_throughput(0),
@@ -66,6 +70,13 @@ ReplicationConfigurationReplicatedDisk& ReplicationConfigurationReplicatedDisk::
     m_isBootDisk = jsonValue.GetBool("isBootDisk");
 
     m_isBootDiskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("optimizedStagingDiskType"))
+  {
+    m_optimizedStagingDiskType = ReplicationConfigurationReplicatedDiskStagingDiskTypeMapper::GetReplicationConfigurationReplicatedDiskStagingDiskTypeForName(jsonValue.GetString("optimizedStagingDiskType"));
+
+    m_optimizedStagingDiskTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("stagingDiskType"))
@@ -105,6 +116,11 @@ JsonValue ReplicationConfigurationReplicatedDisk::Jsonize() const
   {
    payload.WithBool("isBootDisk", m_isBootDisk);
 
+  }
+
+  if(m_optimizedStagingDiskTypeHasBeenSet)
+  {
+   payload.WithString("optimizedStagingDiskType", ReplicationConfigurationReplicatedDiskStagingDiskTypeMapper::GetNameForReplicationConfigurationReplicatedDiskStagingDiskType(m_optimizedStagingDiskType));
   }
 
   if(m_stagingDiskTypeHasBeenSet)

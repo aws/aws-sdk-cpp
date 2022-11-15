@@ -103,10 +103,10 @@ namespace Model
   private:
 
     APNSVoipSandboxChannelRequest m_aPNSVoipSandboxChannelRequest;
-    bool m_aPNSVoipSandboxChannelRequestHasBeenSet;
+    bool m_aPNSVoipSandboxChannelRequestHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
   };
 
 } // namespace Model

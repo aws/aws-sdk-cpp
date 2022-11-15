@@ -36,7 +36,10 @@ Cluster::Cluster() :
     m_platformVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_encryptionConfigHasBeenSet(false),
-    m_connectorConfigHasBeenSet(false)
+    m_connectorConfigHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_healthHasBeenSet(false),
+    m_outpostConfigHasBeenSet(false)
 {
 }
 
@@ -58,7 +61,10 @@ Cluster::Cluster(JsonView jsonValue) :
     m_platformVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_encryptionConfigHasBeenSet(false),
-    m_connectorConfigHasBeenSet(false)
+    m_connectorConfigHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_healthHasBeenSet(false),
+    m_outpostConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -175,7 +181,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("encryptionConfig"))
   {
-    Array<JsonView> encryptionConfigJsonList = jsonValue.GetArray("encryptionConfig");
+    Aws::Utils::Array<JsonView> encryptionConfigJsonList = jsonValue.GetArray("encryptionConfig");
     for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
     {
       m_encryptionConfig.push_back(encryptionConfigJsonList[encryptionConfigIndex].AsObject());
@@ -188,6 +194,27 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_connectorConfig = jsonValue.GetObject("connectorConfig");
 
     m_connectorConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("health"))
+  {
+    m_health = jsonValue.GetObject("health");
+
+    m_healthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("outpostConfig"))
+  {
+    m_outpostConfig = jsonValue.GetObject("outpostConfig");
+
+    m_outpostConfigHasBeenSet = true;
   }
 
   return *this;
@@ -292,7 +319,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_encryptionConfigHasBeenSet)
   {
-   Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
+   Aws::Utils::Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
    for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
    {
      encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());
@@ -304,6 +331,24 @@ JsonValue Cluster::Jsonize() const
   if(m_connectorConfigHasBeenSet)
   {
    payload.WithObject("connectorConfig", m_connectorConfig.Jsonize());
+
+  }
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_healthHasBeenSet)
+  {
+   payload.WithObject("health", m_health.Jsonize());
+
+  }
+
+  if(m_outpostConfigHasBeenSet)
+  {
+   payload.WithObject("outpostConfig", m_outpostConfig.Jsonize());
 
   }
 

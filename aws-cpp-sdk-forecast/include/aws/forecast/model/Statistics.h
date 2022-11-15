@@ -25,8 +25,9 @@ namespace Model
 
   /**
    * <p>Provides statistics for each data field imported into to an Amazon Forecast
-   * dataset with the <a>CreateDatasetImportJob</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * dataset with the <a
+   * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Statistics">AWS
    * API Reference</a></p>
    */
@@ -377,40 +378,40 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     int m_countDistinct;
-    bool m_countDistinctHasBeenSet;
+    bool m_countDistinctHasBeenSet = false;
 
     int m_countNull;
-    bool m_countNullHasBeenSet;
+    bool m_countNullHasBeenSet = false;
 
     int m_countNan;
-    bool m_countNanHasBeenSet;
+    bool m_countNanHasBeenSet = false;
 
     Aws::String m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
 
     Aws::String m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
 
     double m_avg;
-    bool m_avgHasBeenSet;
+    bool m_avgHasBeenSet = false;
 
     double m_stddev;
-    bool m_stddevHasBeenSet;
+    bool m_stddevHasBeenSet = false;
 
     long long m_countLong;
-    bool m_countLongHasBeenSet;
+    bool m_countLongHasBeenSet = false;
 
     long long m_countDistinctLong;
-    bool m_countDistinctLongHasBeenSet;
+    bool m_countDistinctLongHasBeenSet = false;
 
     long long m_countNullLong;
-    bool m_countNullLongHasBeenSet;
+    bool m_countNullLongHasBeenSet = false;
 
     long long m_countNanLong;
-    bool m_countNanLongHasBeenSet;
+    bool m_countNanLongHasBeenSet = false;
   };
 
 } // namespace Model

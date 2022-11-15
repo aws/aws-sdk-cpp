@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/model/UpdateAbpV1_1.h>
 #include <aws/iotwireless/model/UpdateAbpV1_0_x.h>
+#include <aws/iotwireless/model/UpdateFPorts.h>
 #include <utility>
 
 namespace Aws
@@ -182,19 +183,53 @@ namespace Model
      */
     inline LoRaWANUpdateDevice& WithAbpV1_0_x(UpdateAbpV1_0_x&& value) { SetAbpV1_0_x(std::move(value)); return *this;}
 
+
+    /**
+     * <p>FPorts object for the positioning information of the device.</p>
+     */
+    inline const UpdateFPorts& GetFPorts() const{ return m_fPorts; }
+
+    /**
+     * <p>FPorts object for the positioning information of the device.</p>
+     */
+    inline bool FPortsHasBeenSet() const { return m_fPortsHasBeenSet; }
+
+    /**
+     * <p>FPorts object for the positioning information of the device.</p>
+     */
+    inline void SetFPorts(const UpdateFPorts& value) { m_fPortsHasBeenSet = true; m_fPorts = value; }
+
+    /**
+     * <p>FPorts object for the positioning information of the device.</p>
+     */
+    inline void SetFPorts(UpdateFPorts&& value) { m_fPortsHasBeenSet = true; m_fPorts = std::move(value); }
+
+    /**
+     * <p>FPorts object for the positioning information of the device.</p>
+     */
+    inline LoRaWANUpdateDevice& WithFPorts(const UpdateFPorts& value) { SetFPorts(value); return *this;}
+
+    /**
+     * <p>FPorts object for the positioning information of the device.</p>
+     */
+    inline LoRaWANUpdateDevice& WithFPorts(UpdateFPorts&& value) { SetFPorts(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deviceProfileId;
-    bool m_deviceProfileIdHasBeenSet;
+    bool m_deviceProfileIdHasBeenSet = false;
 
     Aws::String m_serviceProfileId;
-    bool m_serviceProfileIdHasBeenSet;
+    bool m_serviceProfileIdHasBeenSet = false;
 
     UpdateAbpV1_1 m_abpV1_1;
-    bool m_abpV1_1HasBeenSet;
+    bool m_abpV1_1HasBeenSet = false;
 
     UpdateAbpV1_0_x m_abpV1_0_x;
-    bool m_abpV1_0_xHasBeenSet;
+    bool m_abpV1_0_xHasBeenSet = false;
+
+    UpdateFPorts m_fPorts;
+    bool m_fPortsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_componentId;
-    bool m_componentIdHasBeenSet;
+    bool m_componentIdHasBeenSet = false;
 
     Aws::String m_componentType;
-    bool m_componentTypeHasBeenSet;
+    bool m_componentTypeHasBeenSet = false;
 
     NetworkHeader m_egress;
-    bool m_egressHasBeenSet;
+    bool m_egressHasBeenSet = false;
 
     NetworkHeader m_ingress;
-    bool m_ingressHasBeenSet;
+    bool m_ingressHasBeenSet = false;
   };
 
 } // namespace Model

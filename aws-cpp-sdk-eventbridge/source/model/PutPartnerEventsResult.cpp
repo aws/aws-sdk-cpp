@@ -38,7 +38,7 @@ PutPartnerEventsResult& PutPartnerEventsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Entries"))
   {
-    Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
+    Aws::Utils::Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
     for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     GatewayRouteHostnameRewrite m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
   };
 
 } // namespace Model

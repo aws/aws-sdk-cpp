@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_snapshotTime;
-    bool m_snapshotTimeHasBeenSet;
+    bool m_snapshotTimeHasBeenSet = false;
   };
 
 } // namespace Model

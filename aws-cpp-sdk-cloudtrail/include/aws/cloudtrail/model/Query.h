@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_queryId;
-    bool m_queryIdHasBeenSet;
+    bool m_queryIdHasBeenSet = false;
 
     QueryStatus m_queryStatus;
-    bool m_queryStatusHasBeenSet;
+    bool m_queryStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ Aws::String DescribeScalingPlansRequest::SerializePayload() const
 
   if(m_scalingPlanNamesHasBeenSet)
   {
-   Array<JsonValue> scalingPlanNamesJsonList(m_scalingPlanNames.size());
+   Aws::Utils::Array<JsonValue> scalingPlanNamesJsonList(m_scalingPlanNames.size());
    for(unsigned scalingPlanNamesIndex = 0; scalingPlanNamesIndex < scalingPlanNamesJsonList.GetLength(); ++scalingPlanNamesIndex)
    {
      scalingPlanNamesJsonList[scalingPlanNamesIndex].AsString(m_scalingPlanNames[scalingPlanNamesIndex]);
@@ -46,7 +46,7 @@ Aws::String DescribeScalingPlansRequest::SerializePayload() const
 
   if(m_applicationSourcesHasBeenSet)
   {
-   Array<JsonValue> applicationSourcesJsonList(m_applicationSources.size());
+   Aws::Utils::Array<JsonValue> applicationSourcesJsonList(m_applicationSources.size());
    for(unsigned applicationSourcesIndex = 0; applicationSourcesIndex < applicationSourcesJsonList.GetLength(); ++applicationSourcesIndex)
    {
      applicationSourcesJsonList[applicationSourcesIndex].AsObject(m_applicationSources[applicationSourcesIndex].Jsonize());

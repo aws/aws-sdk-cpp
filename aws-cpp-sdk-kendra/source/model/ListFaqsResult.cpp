@@ -36,7 +36,7 @@ ListFaqsResult& ListFaqsResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   if(jsonValue.ValueExists("FaqSummaryItems"))
   {
-    Array<JsonView> faqSummaryItemsJsonList = jsonValue.GetArray("FaqSummaryItems");
+    Aws::Utils::Array<JsonView> faqSummaryItemsJsonList = jsonValue.GetArray("FaqSummaryItems");
     for(unsigned faqSummaryItemsIndex = 0; faqSummaryItemsIndex < faqSummaryItemsJsonList.GetLength(); ++faqSummaryItemsIndex)
     {
       m_faqSummaryItems.push_back(faqSummaryItemsJsonList[faqSummaryItemsIndex].AsObject());

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     RetentionPolicy m_retentionPolicy;
-    bool m_retentionPolicyHasBeenSet;
+    bool m_retentionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

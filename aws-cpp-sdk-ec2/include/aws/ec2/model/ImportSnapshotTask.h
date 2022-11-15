@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_importTaskId;
-    bool m_importTaskIdHasBeenSet;
+    bool m_importTaskIdHasBeenSet = false;
 
     SnapshotTaskDetail m_snapshotTaskDetail;
-    bool m_snapshotTaskDetailHasBeenSet;
+    bool m_snapshotTaskDetailHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_pollingAccounts;
-    bool m_pollingAccountsHasBeenSet;
+    bool m_pollingAccountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_pollingServicePrincipals;
-    bool m_pollingServicePrincipalsHasBeenSet;
+    bool m_pollingServicePrincipalsHasBeenSet = false;
   };
 
 } // namespace Model

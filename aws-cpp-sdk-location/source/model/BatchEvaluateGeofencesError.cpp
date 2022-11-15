@@ -77,7 +77,7 @@ JsonValue BatchEvaluateGeofencesError::Jsonize() const
 
   if(m_sampleTimeHasBeenSet)
   {
-   payload.WithString("SampleTime", m_sampleTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("SampleTime", m_sampleTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

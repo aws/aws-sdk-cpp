@@ -163,10 +163,10 @@ namespace Model
   private:
 
     ResourceCollectionType m_resourceCollectionType;
-    bool m_resourceCollectionTypeHasBeenSet;
+    bool m_resourceCollectionTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

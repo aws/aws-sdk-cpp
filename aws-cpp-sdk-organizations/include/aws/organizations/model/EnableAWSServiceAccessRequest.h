@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_servicePrincipal;
-    bool m_servicePrincipalHasBeenSet;
+    bool m_servicePrincipalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<InvalidConfigurationDetail> m_invalidConfiguration;
-    bool m_invalidConfigurationHasBeenSet;
+    bool m_invalidConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

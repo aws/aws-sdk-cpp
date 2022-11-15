@@ -109,10 +109,10 @@ namespace Model
   private:
 
     SSES3Encryption m_sSES3;
-    bool m_sSES3HasBeenSet;
+    bool m_sSES3HasBeenSet = false;
 
     SSEKMSEncryption m_sSEKMS;
-    bool m_sSEKMSHasBeenSet;
+    bool m_sSEKMSHasBeenSet = false;
   };
 
 } // namespace Model

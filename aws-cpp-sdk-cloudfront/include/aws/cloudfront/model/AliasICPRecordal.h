@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_cNAME;
-    bool m_cNAMEHasBeenSet;
+    bool m_cNAMEHasBeenSet = false;
 
     ICPRecordalStatus m_iCPRecordalStatus;
-    bool m_iCPRecordalStatusHasBeenSet;
+    bool m_iCPRecordalStatusHasBeenSet = false;
   };
 
 } // namespace Model

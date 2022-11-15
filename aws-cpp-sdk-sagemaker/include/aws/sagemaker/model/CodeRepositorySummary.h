@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::String m_codeRepositoryName;
-    bool m_codeRepositoryNameHasBeenSet;
+    bool m_codeRepositoryNameHasBeenSet = false;
 
     Aws::String m_codeRepositoryArn;
-    bool m_codeRepositoryArnHasBeenSet;
+    bool m_codeRepositoryArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     GitConfig m_gitConfig;
-    bool m_gitConfigHasBeenSet;
+    bool m_gitConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_monitoringJobDefinitionName;
-    bool m_monitoringJobDefinitionNameHasBeenSet;
+    bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
     Aws::String m_monitoringJobDefinitionArn;
-    bool m_monitoringJobDefinitionArnHasBeenSet;
+    bool m_monitoringJobDefinitionArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
   };
 
 } // namespace Model

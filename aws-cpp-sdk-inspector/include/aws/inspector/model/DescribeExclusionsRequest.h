@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_exclusionArns;
-    bool m_exclusionArnsHasBeenSet;
+    bool m_exclusionArnsHasBeenSet = false;
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

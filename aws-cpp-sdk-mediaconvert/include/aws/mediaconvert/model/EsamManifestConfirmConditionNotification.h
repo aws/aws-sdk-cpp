@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_mccXml;
-    bool m_mccXmlHasBeenSet;
+    bool m_mccXmlHasBeenSet = false;
   };
 
 } // namespace Model

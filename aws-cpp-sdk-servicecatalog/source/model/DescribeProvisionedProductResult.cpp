@@ -36,7 +36,7 @@ DescribeProvisionedProductResult& DescribeProvisionedProductResult::operator =(c
 
   if(jsonValue.ValueExists("CloudWatchDashboards"))
   {
-    Array<JsonView> cloudWatchDashboardsJsonList = jsonValue.GetArray("CloudWatchDashboards");
+    Aws::Utils::Array<JsonView> cloudWatchDashboardsJsonList = jsonValue.GetArray("CloudWatchDashboards");
     for(unsigned cloudWatchDashboardsIndex = 0; cloudWatchDashboardsIndex < cloudWatchDashboardsJsonList.GetLength(); ++cloudWatchDashboardsIndex)
     {
       m_cloudWatchDashboards.push_back(cloudWatchDashboardsJsonList[cloudWatchDashboardsIndex].AsObject());

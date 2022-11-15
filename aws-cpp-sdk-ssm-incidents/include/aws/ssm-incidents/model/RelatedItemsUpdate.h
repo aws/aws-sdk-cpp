@@ -102,10 +102,10 @@ namespace Model
   private:
 
     RelatedItem m_itemToAdd;
-    bool m_itemToAddHasBeenSet;
+    bool m_itemToAddHasBeenSet = false;
 
     ItemIdentifier m_itemToRemove;
-    bool m_itemToRemoveHasBeenSet;
+    bool m_itemToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

@@ -217,13 +217,13 @@ namespace Model
   private:
 
     Aws::String m_iPSetId;
-    bool m_iPSetIdHasBeenSet;
+    bool m_iPSetIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
 
     Aws::Vector<IPSetUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
   };
 
 } // namespace Model

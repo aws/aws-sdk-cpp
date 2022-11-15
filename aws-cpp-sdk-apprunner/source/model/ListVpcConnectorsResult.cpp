@@ -30,7 +30,7 @@ ListVpcConnectorsResult& ListVpcConnectorsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VpcConnectors"))
   {
-    Array<JsonView> vpcConnectorsJsonList = jsonValue.GetArray("VpcConnectors");
+    Aws::Utils::Array<JsonView> vpcConnectorsJsonList = jsonValue.GetArray("VpcConnectors");
     for(unsigned vpcConnectorsIndex = 0; vpcConnectorsIndex < vpcConnectorsJsonList.GetLength(); ++vpcConnectorsIndex)
     {
       m_vpcConnectors.push_back(vpcConnectorsJsonList[vpcConnectorsIndex].AsObject());

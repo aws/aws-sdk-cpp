@@ -188,16 +188,16 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::String m_ipRange;
-    bool m_ipRangeHasBeenSet;
+    bool m_ipRangeHasBeenSet = false;
 
     IpProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

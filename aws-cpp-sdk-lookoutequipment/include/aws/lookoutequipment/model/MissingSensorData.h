@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_affectedSensorCount;
-    bool m_affectedSensorCountHasBeenSet;
+    bool m_affectedSensorCountHasBeenSet = false;
 
     int m_totalNumberOfMissingValues;
-    bool m_totalNumberOfMissingValuesHasBeenSet;
+    bool m_totalNumberOfMissingValuesHasBeenSet = false;
   };
 
 } // namespace Model

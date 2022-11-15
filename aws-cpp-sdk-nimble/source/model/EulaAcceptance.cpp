@@ -83,7 +83,7 @@ JsonValue EulaAcceptance::Jsonize() const
 
   if(m_acceptedAtHasBeenSet)
   {
-   payload.WithString("acceptedAt", m_acceptedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("acceptedAt", m_acceptedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_acceptedByHasBeenSet)

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about an origin group for the distribution.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about an origin group for the CloudFront
+   * distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginGroup">AWS
    * API Reference</a></p>
    */
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AwsCloudFrontDistributionOriginGroupFailover m_failoverCriteria;
-    bool m_failoverCriteriaHasBeenSet;
+    bool m_failoverCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

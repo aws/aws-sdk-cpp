@@ -203,13 +203,13 @@ namespace Model
   private:
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_logFile;
-    bool m_logFileHasBeenSet;
+    bool m_logFileHasBeenSet = false;
   };
 
 } // namespace Model

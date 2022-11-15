@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagValuesToDelete;
-    bool m_tagValuesToDeleteHasBeenSet;
+    bool m_tagValuesToDeleteHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagValuesToAdd;
-    bool m_tagValuesToAddHasBeenSet;
+    bool m_tagValuesToAddHasBeenSet = false;
   };
 
 } // namespace Model

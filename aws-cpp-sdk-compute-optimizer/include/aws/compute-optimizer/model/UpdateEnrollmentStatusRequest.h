@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_includeMemberAccounts;
-    bool m_includeMemberAccountsHasBeenSet;
+    bool m_includeMemberAccountsHasBeenSet = false;
   };
 
 } // namespace Model

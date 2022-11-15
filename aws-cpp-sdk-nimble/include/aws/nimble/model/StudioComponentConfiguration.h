@@ -191,16 +191,16 @@ namespace Model
   private:
 
     ActiveDirectoryConfiguration m_activeDirectoryConfiguration;
-    bool m_activeDirectoryConfigurationHasBeenSet;
+    bool m_activeDirectoryConfigurationHasBeenSet = false;
 
     ComputeFarmConfiguration m_computeFarmConfiguration;
-    bool m_computeFarmConfigurationHasBeenSet;
+    bool m_computeFarmConfigurationHasBeenSet = false;
 
     LicenseServiceConfiguration m_licenseServiceConfiguration;
-    bool m_licenseServiceConfigurationHasBeenSet;
+    bool m_licenseServiceConfigurationHasBeenSet = false;
 
     SharedFileSystemConfiguration m_sharedFileSystemConfiguration;
-    bool m_sharedFileSystemConfigurationHasBeenSet;
+    bool m_sharedFileSystemConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

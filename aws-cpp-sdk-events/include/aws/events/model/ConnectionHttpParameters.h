@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<ConnectionHeaderParameter> m_headerParameters;
-    bool m_headerParametersHasBeenSet;
+    bool m_headerParametersHasBeenSet = false;
 
     Aws::Vector<ConnectionQueryStringParameter> m_queryStringParameters;
-    bool m_queryStringParametersHasBeenSet;
+    bool m_queryStringParametersHasBeenSet = false;
 
     Aws::Vector<ConnectionBodyParameter> m_bodyParameters;
-    bool m_bodyParametersHasBeenSet;
+    bool m_bodyParametersHasBeenSet = false;
   };
 
 } // namespace Model

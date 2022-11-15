@@ -338,7 +338,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
@@ -346,7 +346,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
 
@@ -354,7 +354,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
@@ -362,7 +362,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
@@ -370,7 +370,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline CreateTaskSetRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
@@ -378,7 +378,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline CreateTaskSetRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
@@ -386,7 +386,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline CreateTaskSetRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
@@ -394,7 +394,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline CreateTaskSetRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
@@ -403,7 +403,7 @@ namespace Model
      * <p>The launch type that new tasks in the task set uses. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
@@ -413,7 +413,7 @@ namespace Model
      * <p>The launch type that new tasks in the task set uses. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
@@ -423,7 +423,7 @@ namespace Model
      * <p>The launch type that new tasks in the task set uses. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
@@ -433,7 +433,7 @@ namespace Model
      * <p>The launch type that new tasks in the task set uses. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
@@ -443,7 +443,7 @@ namespace Model
      * <p>The launch type that new tasks in the task set uses. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
@@ -453,7 +453,7 @@ namespace Model
      * <p>The launch type that new tasks in the task set uses. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
@@ -967,43 +967,43 @@ namespace Model
   private:
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
-    bool m_loadBalancersHasBeenSet;
+    bool m_loadBalancersHasBeenSet = false;
 
     Aws::Vector<ServiceRegistry> m_serviceRegistries;
-    bool m_serviceRegistriesHasBeenSet;
+    bool m_serviceRegistriesHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Scale m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

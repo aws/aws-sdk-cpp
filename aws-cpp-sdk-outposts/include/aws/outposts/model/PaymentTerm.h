@@ -16,7 +16,8 @@ namespace Model
   enum class PaymentTerm
   {
     NOT_SET,
-    THREE_YEARS
+    THREE_YEARS,
+    ONE_YEAR
   };
 
 namespace PaymentTermMapper

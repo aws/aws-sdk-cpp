@@ -305,13 +305,13 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     InvocationType m_invocationType;
-    bool m_invocationTypeHasBeenSet;
+    bool m_invocationTypeHasBeenSet = false;
   };
 
 } // namespace Model

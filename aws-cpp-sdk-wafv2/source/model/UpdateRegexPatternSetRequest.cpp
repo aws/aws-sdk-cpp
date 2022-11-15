@@ -52,7 +52,7 @@ Aws::String UpdateRegexPatternSetRequest::SerializePayload() const
 
   if(m_regularExpressionListHasBeenSet)
   {
-   Array<JsonValue> regularExpressionListJsonList(m_regularExpressionList.size());
+   Aws::Utils::Array<JsonValue> regularExpressionListJsonList(m_regularExpressionList.size());
    for(unsigned regularExpressionListIndex = 0; regularExpressionListIndex < regularExpressionListJsonList.GetLength(); ++regularExpressionListIndex)
    {
      regularExpressionListJsonList[regularExpressionListIndex].AsObject(m_regularExpressionList[regularExpressionListIndex].Jsonize());

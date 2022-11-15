@@ -190,16 +190,16 @@ namespace Model
   private:
 
     ErrorDocument m_errorDocument;
-    bool m_errorDocumentHasBeenSet;
+    bool m_errorDocumentHasBeenSet = false;
 
     IndexDocument m_indexDocument;
-    bool m_indexDocumentHasBeenSet;
+    bool m_indexDocumentHasBeenSet = false;
 
     RedirectAllRequestsTo m_redirectAllRequestsTo;
-    bool m_redirectAllRequestsToHasBeenSet;
+    bool m_redirectAllRequestsToHasBeenSet = false;
 
     Aws::Vector<RoutingRule> m_routingRules;
-    bool m_routingRulesHasBeenSet;
+    bool m_routingRulesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The environment template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment template version.</p>
      */
     inline const EnvironmentTemplateVersion& GetEnvironmentTemplateVersion() const{ return m_environmentTemplateVersion; }
 
     /**
-     * <p>The environment template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment template version.</p>
      */
     inline void SetEnvironmentTemplateVersion(const EnvironmentTemplateVersion& value) { m_environmentTemplateVersion = value; }
 
     /**
-     * <p>The environment template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment template version.</p>
      */
     inline void SetEnvironmentTemplateVersion(EnvironmentTemplateVersion&& value) { m_environmentTemplateVersion = std::move(value); }
 
     /**
-     * <p>The environment template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment template version.</p>
      */
     inline GetEnvironmentTemplateVersionResult& WithEnvironmentTemplateVersion(const EnvironmentTemplateVersion& value) { SetEnvironmentTemplateVersion(value); return *this;}
 
     /**
-     * <p>The environment template version detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment template version.</p>
      */
     inline GetEnvironmentTemplateVersionResult& WithEnvironmentTemplateVersion(EnvironmentTemplateVersion&& value) { SetEnvironmentTemplateVersion(std::move(value)); return *this;}
 

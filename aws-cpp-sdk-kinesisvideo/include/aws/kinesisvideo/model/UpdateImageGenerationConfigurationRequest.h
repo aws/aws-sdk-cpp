@@ -192,13 +192,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     ImageGenerationConfiguration m_imageGenerationConfiguration;
-    bool m_imageGenerationConfigurationHasBeenSet;
+    bool m_imageGenerationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

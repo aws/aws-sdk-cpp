@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> A representation of the charge details associated with a percentage custom
-   * line item. </p><p><h3>See Also:</h3>   <a
+   * <p> A representation of the charge details that are associated with a percentage
+   * custom line item. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CustomLineItemPercentageChargeDetails">AWS
    * API Reference</a></p>
    */
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     double m_percentageValue;
-    bool m_percentageValueHasBeenSet;
+    bool m_percentageValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedValues;
-    bool m_associatedValuesHasBeenSet;
+    bool m_associatedValuesHasBeenSet = false;
   };
 
 } // namespace Model

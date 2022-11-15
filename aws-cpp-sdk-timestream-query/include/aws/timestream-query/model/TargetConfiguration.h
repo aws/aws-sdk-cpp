@@ -77,7 +77,7 @@ namespace Model
   private:
 
     TimestreamConfiguration m_timestreamConfiguration;
-    bool m_timestreamConfigurationHasBeenSet;
+    bool m_timestreamConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

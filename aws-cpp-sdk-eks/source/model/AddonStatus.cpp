@@ -27,6 +27,7 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
         static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 
 
         AddonStatus GetAddonStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return AddonStatus::DEGRADED;
           }
+          else if (hashCode == UPDATE_FAILED_HASH)
+          {
+            return AddonStatus::UPDATE_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "DELETE_FAILED";
           case AddonStatus::DEGRADED:
             return "DEGRADED";
+          case AddonStatus::UPDATE_FAILED:
+            return "UPDATE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

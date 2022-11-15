@@ -417,47 +417,108 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline const AttributeValue& GetLastLaunchedTime() const{ return m_lastLaunchedTime; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline void SetLastLaunchedTime(const AttributeValue& value) { m_lastLaunchedTime = value; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline void SetLastLaunchedTime(AttributeValue&& value) { m_lastLaunchedTime = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline DescribeImageAttributeResponse& WithLastLaunchedTime(const AttributeValue& value) { SetLastLaunchedTime(value); return *this;}
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline DescribeImageAttributeResponse& WithLastLaunchedTime(AttributeValue&& value) { SetLastLaunchedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const AttributeValue& GetImdsSupport() const{ return m_imdsSupport; }
+
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetImdsSupport(const AttributeValue& value) { m_imdsSupport = value; }
+
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetImdsSupport(AttributeValue&& value) { m_imdsSupport = std::move(value); }
+
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline DescribeImageAttributeResponse& WithImdsSupport(const AttributeValue& value) { SetImdsSupport(value); return *this;}
+
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline DescribeImageAttributeResponse& WithImdsSupport(AttributeValue&& value) { SetImdsSupport(std::move(value)); return *this;}
 
 
     
@@ -500,6 +561,8 @@ namespace Model
     AttributeValue m_uefiData;
 
     AttributeValue m_lastLaunchedTime;
+
+    AttributeValue m_imdsSupport;
 
     ResponseMetadata m_responseMetadata;
   };

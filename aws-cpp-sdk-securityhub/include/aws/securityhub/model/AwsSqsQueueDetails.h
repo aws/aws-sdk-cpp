@@ -203,16 +203,16 @@ namespace Model
   private:
 
     int m_kmsDataKeyReusePeriodSeconds;
-    bool m_kmsDataKeyReusePeriodSecondsHasBeenSet;
+    bool m_kmsDataKeyReusePeriodSecondsHasBeenSet = false;
 
     Aws::String m_kmsMasterKeyId;
-    bool m_kmsMasterKeyIdHasBeenSet;
+    bool m_kmsMasterKeyIdHasBeenSet = false;
 
     Aws::String m_queueName;
-    bool m_queueNameHasBeenSet;
+    bool m_queueNameHasBeenSet = false;
 
     Aws::String m_deadLetterTargetArn;
-    bool m_deadLetterTargetArnHasBeenSet;
+    bool m_deadLetterTargetArnHasBeenSet = false;
   };
 
 } // namespace Model

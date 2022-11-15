@@ -30,7 +30,7 @@ BatchCheckLayerAvailabilityResult& BatchCheckLayerAvailabilityResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("layers"))
   {
-    Array<JsonView> layersJsonList = jsonValue.GetArray("layers");
+    Aws::Utils::Array<JsonView> layersJsonList = jsonValue.GetArray("layers");
     for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
     {
       m_layers.push_back(layersJsonList[layersIndex].AsObject());
@@ -39,7 +39,7 @@ BatchCheckLayerAvailabilityResult& BatchCheckLayerAvailabilityResult::operator =
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

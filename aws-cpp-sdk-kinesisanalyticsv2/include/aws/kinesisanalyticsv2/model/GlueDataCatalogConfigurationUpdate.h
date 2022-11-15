@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_databaseARNUpdate;
-    bool m_databaseARNUpdateHasBeenSet;
+    bool m_databaseARNUpdateHasBeenSet = false;
   };
 
 } // namespace Model

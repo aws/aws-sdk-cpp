@@ -362,22 +362,22 @@ namespace Model
   private:
 
     Aws::String m_notebookExecutionId;
-    bool m_notebookExecutionIdHasBeenSet;
+    bool m_notebookExecutionIdHasBeenSet = false;
 
     Aws::String m_editorId;
-    bool m_editorIdHasBeenSet;
+    bool m_editorIdHasBeenSet = false;
 
     Aws::String m_notebookExecutionName;
-    bool m_notebookExecutionNameHasBeenSet;
+    bool m_notebookExecutionNameHasBeenSet = false;
 
     NotebookExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

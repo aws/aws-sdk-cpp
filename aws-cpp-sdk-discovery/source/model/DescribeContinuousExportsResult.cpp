@@ -30,7 +30,7 @@ DescribeContinuousExportsResult& DescribeContinuousExportsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("descriptions"))
   {
-    Array<JsonView> descriptionsJsonList = jsonValue.GetArray("descriptions");
+    Aws::Utils::Array<JsonView> descriptionsJsonList = jsonValue.GetArray("descriptions");
     for(unsigned descriptionsIndex = 0; descriptionsIndex < descriptionsJsonList.GetLength(); ++descriptionsIndex)
     {
       m_descriptions.push_back(descriptionsJsonList[descriptionsIndex].AsObject());

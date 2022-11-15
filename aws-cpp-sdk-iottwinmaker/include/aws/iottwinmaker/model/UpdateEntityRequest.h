@@ -305,22 +305,22 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, ComponentUpdateRequest> m_componentUpdates;
-    bool m_componentUpdatesHasBeenSet;
+    bool m_componentUpdatesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
 
     ParentEntityUpdateRequest m_parentEntityUpdate;
-    bool m_parentEntityUpdateHasBeenSet;
+    bool m_parentEntityUpdateHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

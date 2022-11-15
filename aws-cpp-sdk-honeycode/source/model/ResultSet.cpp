@@ -35,7 +35,7 @@ ResultSet& ResultSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("headers"))
   {
-    Array<JsonView> headersJsonList = jsonValue.GetArray("headers");
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("headers");
     for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
     {
       m_headers.push_back(headersJsonList[headersIndex].AsObject());
@@ -45,7 +45,7 @@ ResultSet& ResultSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("rows"))
   {
-    Array<JsonView> rowsJsonList = jsonValue.GetArray("rows");
+    Aws::Utils::Array<JsonView> rowsJsonList = jsonValue.GetArray("rows");
     for(unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex)
     {
       m_rows.push_back(rowsJsonList[rowsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue ResultSet::Jsonize() const
 
   if(m_headersHasBeenSet)
   {
-   Array<JsonValue> headersJsonList(m_headers.size());
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
    {
      headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue ResultSet::Jsonize() const
 
   if(m_rowsHasBeenSet)
   {
-   Array<JsonValue> rowsJsonList(m_rows.size());
+   Aws::Utils::Array<JsonValue> rowsJsonList(m_rows.size());
    for(unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex)
    {
      rowsJsonList[rowsIndex].AsObject(m_rows[rowsIndex].Jsonize());

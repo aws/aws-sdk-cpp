@@ -103,10 +103,10 @@ namespace Model
   private:
 
     APNSVoipChannelRequest m_aPNSVoipChannelRequest;
-    bool m_aPNSVoipChannelRequestHasBeenSet;
+    bool m_aPNSVoipChannelRequestHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
   };
 
 } // namespace Model

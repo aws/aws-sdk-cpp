@@ -103,7 +103,7 @@ namespace Model
   private:
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
   };
 
 } // namespace Model

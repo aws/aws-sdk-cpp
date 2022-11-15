@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_staticRoutesOnly;
-    bool m_staticRoutesOnlyHasBeenSet;
+    bool m_staticRoutesOnlyHasBeenSet = false;
 
     Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails> m_tunnelOptions;
-    bool m_tunnelOptionsHasBeenSet;
+    bool m_tunnelOptionsHasBeenSet = false;
   };
 
 } // namespace Model

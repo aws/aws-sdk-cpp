@@ -30,7 +30,7 @@ ListPublishingDestinationsResult& ListPublishingDestinationsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());

@@ -33,7 +33,7 @@ JobNodeDetails& JobNodeDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobRuns"))
   {
-    Array<JsonView> jobRunsJsonList = jsonValue.GetArray("JobRuns");
+    Aws::Utils::Array<JsonView> jobRunsJsonList = jsonValue.GetArray("JobRuns");
     for(unsigned jobRunsIndex = 0; jobRunsIndex < jobRunsJsonList.GetLength(); ++jobRunsIndex)
     {
       m_jobRuns.push_back(jobRunsJsonList[jobRunsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue JobNodeDetails::Jsonize() const
 
   if(m_jobRunsHasBeenSet)
   {
-   Array<JsonValue> jobRunsJsonList(m_jobRuns.size());
+   Aws::Utils::Array<JsonValue> jobRunsJsonList(m_jobRuns.size());
    for(unsigned jobRunsIndex = 0; jobRunsIndex < jobRunsJsonList.GetLength(); ++jobRunsIndex)
    {
      jobRunsJsonList[jobRunsIndex].AsObject(m_jobRuns[jobRunsIndex].Jsonize());

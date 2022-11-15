@@ -483,8 +483,8 @@ namespace Model
 
 
     /**
-     * <p>Summarizes information on whether a stack's actual configuration differs, or
-     * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+     * <p>Summarizes information about whether a stack's actual configuration differs,
+     * or has <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
@@ -493,8 +493,8 @@ namespace Model
     inline const StackDriftInformationSummary& GetDriftInformation() const{ return m_driftInformation; }
 
     /**
-     * <p>Summarizes information on whether a stack's actual configuration differs, or
-     * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+     * <p>Summarizes information about whether a stack's actual configuration differs,
+     * or has <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
@@ -503,8 +503,8 @@ namespace Model
     inline bool DriftInformationHasBeenSet() const { return m_driftInformationHasBeenSet; }
 
     /**
-     * <p>Summarizes information on whether a stack's actual configuration differs, or
-     * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+     * <p>Summarizes information about whether a stack's actual configuration differs,
+     * or has <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
@@ -513,8 +513,8 @@ namespace Model
     inline void SetDriftInformation(const StackDriftInformationSummary& value) { m_driftInformationHasBeenSet = true; m_driftInformation = value; }
 
     /**
-     * <p>Summarizes information on whether a stack's actual configuration differs, or
-     * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+     * <p>Summarizes information about whether a stack's actual configuration differs,
+     * or has <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
@@ -523,8 +523,8 @@ namespace Model
     inline void SetDriftInformation(StackDriftInformationSummary&& value) { m_driftInformationHasBeenSet = true; m_driftInformation = std::move(value); }
 
     /**
-     * <p>Summarizes information on whether a stack's actual configuration differs, or
-     * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+     * <p>Summarizes information about whether a stack's actual configuration differs,
+     * or has <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
@@ -533,8 +533,8 @@ namespace Model
     inline StackSummary& WithDriftInformation(const StackDriftInformationSummary& value) { SetDriftInformation(value); return *this;}
 
     /**
-     * <p>Summarizes information on whether a stack's actual configuration differs, or
-     * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+     * <p>Summarizes information about whether a stack's actual configuration differs,
+     * or has <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
@@ -545,37 +545,37 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_templateDescription;
-    bool m_templateDescriptionHasBeenSet;
+    bool m_templateDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletionTime;
-    bool m_deletionTimeHasBeenSet;
+    bool m_deletionTimeHasBeenSet = false;
 
     StackStatus m_stackStatus;
-    bool m_stackStatusHasBeenSet;
+    bool m_stackStatusHasBeenSet = false;
 
     Aws::String m_stackStatusReason;
-    bool m_stackStatusReasonHasBeenSet;
+    bool m_stackStatusReasonHasBeenSet = false;
 
     Aws::String m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
 
     Aws::String m_rootId;
-    bool m_rootIdHasBeenSet;
+    bool m_rootIdHasBeenSet = false;
 
     StackDriftInformationSummary m_driftInformation;
-    bool m_driftInformationHasBeenSet;
+    bool m_driftInformationHasBeenSet = false;
   };
 
 } // namespace Model

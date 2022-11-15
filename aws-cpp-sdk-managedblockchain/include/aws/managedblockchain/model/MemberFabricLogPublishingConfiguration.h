@@ -84,7 +84,7 @@ namespace Model
   private:
 
     LogConfigurations m_caLogs;
-    bool m_caLogsHasBeenSet;
+    bool m_caLogsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ ListResourceSetsResult& ListResourceSetsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("resourceSets"))
   {
-    Array<JsonView> resourceSetsJsonList = jsonValue.GetArray("resourceSets");
+    Aws::Utils::Array<JsonView> resourceSetsJsonList = jsonValue.GetArray("resourceSets");
     for(unsigned resourceSetsIndex = 0; resourceSetsIndex < resourceSetsJsonList.GetLength(); ++resourceSetsIndex)
     {
       m_resourceSets.push_back(resourceSetsJsonList[resourceSetsIndex].AsObject());

@@ -27,6 +27,12 @@ namespace kendra
 namespace Model
 {
 
+  /**
+   * <p>Provides the configuration information to connect to Jira as your data
+   * source.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/JiraConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_KENDRA_API JiraConfiguration
   {
   public:
@@ -37,160 +43,180 @@ namespace Model
 
 
     /**
-     * <p>The URL of the Jira account. For example, company.attlassian.net or
-     * https://jira.company.com. You can find your Jira account URL in the URL of your
-     * profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
+     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
+     * of your profile page for Jira desktop.</p>
      */
     inline const Aws::String& GetJiraAccountUrl() const{ return m_jiraAccountUrl; }
 
     /**
-     * <p>The URL of the Jira account. For example, company.attlassian.net or
-     * https://jira.company.com. You can find your Jira account URL in the URL of your
-     * profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
+     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
+     * of your profile page for Jira desktop.</p>
      */
     inline bool JiraAccountUrlHasBeenSet() const { return m_jiraAccountUrlHasBeenSet; }
 
     /**
-     * <p>The URL of the Jira account. For example, company.attlassian.net or
-     * https://jira.company.com. You can find your Jira account URL in the URL of your
-     * profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
+     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
+     * of your profile page for Jira desktop.</p>
      */
     inline void SetJiraAccountUrl(const Aws::String& value) { m_jiraAccountUrlHasBeenSet = true; m_jiraAccountUrl = value; }
 
     /**
-     * <p>The URL of the Jira account. For example, company.attlassian.net or
-     * https://jira.company.com. You can find your Jira account URL in the URL of your
-     * profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
+     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
+     * of your profile page for Jira desktop.</p>
      */
     inline void SetJiraAccountUrl(Aws::String&& value) { m_jiraAccountUrlHasBeenSet = true; m_jiraAccountUrl = std::move(value); }
 
     /**
-     * <p>The URL of the Jira account. For example, company.attlassian.net or
-     * https://jira.company.com. You can find your Jira account URL in the URL of your
-     * profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
+     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
+     * of your profile page for Jira desktop.</p>
      */
     inline void SetJiraAccountUrl(const char* value) { m_jiraAccountUrlHasBeenSet = true; m_jiraAccountUrl.assign(value); }
 
     /**
-     * <p>The URL of the Jira account. For example, company.attlassian.net or
-     * https://jira.company.com. You can find your Jira account URL in the URL of your
-     * profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
+     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
+     * of your profile page for Jira desktop.</p>
      */
     inline JiraConfiguration& WithJiraAccountUrl(const Aws::String& value) { SetJiraAccountUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Jira account. For example, company.attlassian.net or
-     * https://jira.company.com. You can find your Jira account URL in the URL of your
-     * profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
+     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
+     * of your profile page for Jira desktop.</p>
      */
     inline JiraConfiguration& WithJiraAccountUrl(Aws::String&& value) { SetJiraAccountUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the Jira account. For example, company.attlassian.net or
-     * https://jira.company.com. You can find your Jira account URL in the URL of your
-     * profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
+     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
+     * of your profile page for Jira desktop.</p>
      */
     inline JiraConfiguration& WithJiraAccountUrl(const char* value) { SetJiraAccountUrl(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
+     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
+     * information on creating an API token in Jira, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
+     * Authentication for a Jira data source</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
+     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
+     * information on creating an API token in Jira, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
+     * Authentication for a Jira data source</a>.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
+     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
+     * information on creating an API token in Jira, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
+     * Authentication for a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
+     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
+     * information on creating an API token in Jira, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
+     * Authentication for a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
+     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
+     * information on creating an API token in Jira, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
+     * Authentication for a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
+     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
+     * information on creating an API token in Jira, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
+     * Authentication for a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
+     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
+     * information on creating an API token in Jira, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
+     * Authentication for a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
+     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
+     * information on creating an API token in Jira, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
+     * Authentication for a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
 
     /**
-     * <p>Specify to use the change log option to update your index.</p>
+     * <p> <code>TRUE</code> to use the Jira change log to determine which documents
+     * require updating in the index. Depending on the change log's size, it may take
+     * longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in Jira.</p>
      */
     inline bool GetUseChangeLog() const{ return m_useChangeLog; }
 
     /**
-     * <p>Specify to use the change log option to update your index.</p>
+     * <p> <code>TRUE</code> to use the Jira change log to determine which documents
+     * require updating in the index. Depending on the change log's size, it may take
+     * longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in Jira.</p>
      */
     inline bool UseChangeLogHasBeenSet() const { return m_useChangeLogHasBeenSet; }
 
     /**
-     * <p>Specify to use the change log option to update your index.</p>
+     * <p> <code>TRUE</code> to use the Jira change log to determine which documents
+     * require updating in the index. Depending on the change log's size, it may take
+     * longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in Jira.</p>
      */
     inline void SetUseChangeLog(bool value) { m_useChangeLogHasBeenSet = true; m_useChangeLog = value; }
 
     /**
-     * <p>Specify to use the change log option to update your index.</p>
+     * <p> <code>TRUE</code> to use the Jira change log to determine which documents
+     * require updating in the index. Depending on the change log's size, it may take
+     * longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in Jira.</p>
      */
     inline JiraConfiguration& WithUseChangeLog(bool value) { SetUseChangeLog(value); return *this;}
 
@@ -1075,49 +1101,49 @@ namespace Model
   private:
 
     Aws::String m_jiraAccountUrl;
-    bool m_jiraAccountUrlHasBeenSet;
+    bool m_jiraAccountUrlHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_issueType;
-    bool m_issueTypeHasBeenSet;
+    bool m_issueTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<IssueSubEntity> m_issueSubEntityFilter;
-    bool m_issueSubEntityFilterHasBeenSet;
+    bool m_issueSubEntityFilterHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_attachmentFieldMappings;
-    bool m_attachmentFieldMappingsHasBeenSet;
+    bool m_attachmentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_commentFieldMappings;
-    bool m_commentFieldMappingsHasBeenSet;
+    bool m_commentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_issueFieldMappings;
-    bool m_issueFieldMappingsHasBeenSet;
+    bool m_issueFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_projectFieldMappings;
-    bool m_projectFieldMappingsHasBeenSet;
+    bool m_projectFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_workLogFieldMappings;
-    bool m_workLogFieldMappingsHasBeenSet;
+    bool m_workLogFieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

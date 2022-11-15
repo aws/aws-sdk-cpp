@@ -265,16 +265,16 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     RefreshStrategy m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     DesiredConfiguration m_desiredConfiguration;
-    bool m_desiredConfigurationHasBeenSet;
+    bool m_desiredConfigurationHasBeenSet = false;
 
     RefreshPreferences m_preferences;
-    bool m_preferencesHasBeenSet;
+    bool m_preferencesHasBeenSet = false;
   };
 
 } // namespace Model

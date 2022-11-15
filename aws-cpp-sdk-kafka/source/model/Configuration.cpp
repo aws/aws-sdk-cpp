@@ -68,7 +68,7 @@ Configuration& Configuration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("kafkaVersions"))
   {
-    Array<JsonView> kafkaVersionsJsonList = jsonValue.GetArray("kafkaVersions");
+    Aws::Utils::Array<JsonView> kafkaVersionsJsonList = jsonValue.GetArray("kafkaVersions");
     for(unsigned kafkaVersionsIndex = 0; kafkaVersionsIndex < kafkaVersionsJsonList.GetLength(); ++kafkaVersionsIndex)
     {
       m_kafkaVersions.push_back(kafkaVersionsJsonList[kafkaVersionsIndex].AsString());
@@ -112,7 +112,7 @@ JsonValue Configuration::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)
@@ -123,7 +123,7 @@ JsonValue Configuration::Jsonize() const
 
   if(m_kafkaVersionsHasBeenSet)
   {
-   Array<JsonValue> kafkaVersionsJsonList(m_kafkaVersions.size());
+   Aws::Utils::Array<JsonValue> kafkaVersionsJsonList(m_kafkaVersions.size());
    for(unsigned kafkaVersionsIndex = 0; kafkaVersionsIndex < kafkaVersionsJsonList.GetLength(); ++kafkaVersionsIndex)
    {
      kafkaVersionsJsonList[kafkaVersionsIndex].AsString(m_kafkaVersions[kafkaVersionsIndex]);

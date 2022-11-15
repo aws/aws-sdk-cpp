@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_nodeName;
-    bool m_nodeNameHasBeenSet;
+    bool m_nodeNameHasBeenSet = false;
 
     NodeFromTemplateJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
   };
 
 } // namespace Model

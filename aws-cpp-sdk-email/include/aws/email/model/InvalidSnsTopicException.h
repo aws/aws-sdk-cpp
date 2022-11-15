@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
   };
 
 } // namespace Model

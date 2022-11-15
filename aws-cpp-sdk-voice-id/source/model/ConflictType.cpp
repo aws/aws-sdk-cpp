@@ -27,6 +27,7 @@ namespace Aws
         static const int SPEAKER_NOT_SET_HASH = HashingUtils::HashString("SPEAKER_NOT_SET");
         static const int SPEAKER_OPTED_OUT_HASH = HashingUtils::HashString("SPEAKER_OPTED_OUT");
         static const int CONCURRENT_CHANGES_HASH = HashingUtils::HashString("CONCURRENT_CHANGES");
+        static const int DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES_HASH = HashingUtils::HashString("DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES");
 
 
         ConflictType GetConflictTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ConflictType::CONCURRENT_CHANGES;
           }
+          else if (hashCode == DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES_HASH)
+          {
+            return ConflictType::DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "SPEAKER_OPTED_OUT";
           case ConflictType::CONCURRENT_CHANGES:
             return "CONCURRENT_CHANGES";
+          case ConflictType::DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES:
+            return "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -325,19 +325,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_setup;
-    bool m_setupHasBeenSet;
+    bool m_setupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_configure;
-    bool m_configureHasBeenSet;
+    bool m_configureHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploy;
-    bool m_deployHasBeenSet;
+    bool m_deployHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_undeploy;
-    bool m_undeployHasBeenSet;
+    bool m_undeployHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_shutdown;
-    bool m_shutdownHasBeenSet;
+    bool m_shutdownHasBeenSet = false;
   };
 
 } // namespace Model

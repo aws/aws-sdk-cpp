@@ -28,7 +28,8 @@ WorkspaceProperties::WorkspaceProperties() :
     m_userVolumeSizeGib(0),
     m_userVolumeSizeGibHasBeenSet(false),
     m_computeTypeName(Compute::NOT_SET),
-    m_computeTypeNameHasBeenSet(false)
+    m_computeTypeNameHasBeenSet(false),
+    m_protocolsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ WorkspaceProperties::WorkspaceProperties(JsonView jsonValue) :
     m_userVolumeSizeGib(0),
     m_userVolumeSizeGibHasBeenSet(false),
     m_computeTypeName(Compute::NOT_SET),
-    m_computeTypeNameHasBeenSet(false)
+    m_computeTypeNameHasBeenSet(false),
+    m_protocolsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +86,16 @@ WorkspaceProperties& WorkspaceProperties::operator =(JsonView jsonValue)
     m_computeTypeNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Protocols"))
+  {
+    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
+    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+    {
+      m_protocols.push_back(ProtocolMapper::GetProtocolForName(protocolsJsonList[protocolsIndex].AsString()));
+    }
+    m_protocolsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +129,17 @@ JsonValue WorkspaceProperties::Jsonize() const
   if(m_computeTypeNameHasBeenSet)
   {
    payload.WithString("ComputeTypeName", ComputeMapper::GetNameForCompute(m_computeTypeName));
+  }
+
+  if(m_protocolsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("Protocols", std::move(protocolsJsonList));
+
   }
 
   return payload;

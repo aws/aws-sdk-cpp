@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_bandwidthType;
-    bool m_bandwidthTypeHasBeenSet;
+    bool m_bandwidthTypeHasBeenSet = false;
   };
 
 } // namespace Model

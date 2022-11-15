@@ -211,37 +211,45 @@ namespace Model
     inline UpdateApplicationRequest& WithRemoveSNSTopic(bool value) { SetRemoveSNSTopic(value); return *this;}
 
 
-    
+    /**
+     * <p> Turns auto-configuration on or off. </p>
+     */
     inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
 
-    
+    /**
+     * <p> Turns auto-configuration on or off. </p>
+     */
     inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
 
-    
+    /**
+     * <p> Turns auto-configuration on or off. </p>
+     */
     inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
 
-    
+    /**
+     * <p> Turns auto-configuration on or off. </p>
+     */
     inline UpdateApplicationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
 
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     bool m_opsCenterEnabled;
-    bool m_opsCenterEnabledHasBeenSet;
+    bool m_opsCenterEnabledHasBeenSet = false;
 
     bool m_cWEMonitorEnabled;
-    bool m_cWEMonitorEnabledHasBeenSet;
+    bool m_cWEMonitorEnabledHasBeenSet = false;
 
     Aws::String m_opsItemSNSTopicArn;
-    bool m_opsItemSNSTopicArnHasBeenSet;
+    bool m_opsItemSNSTopicArnHasBeenSet = false;
 
     bool m_removeSNSTopic;
-    bool m_removeSNSTopicHasBeenSet;
+    bool m_removeSNSTopicHasBeenSet = false;
 
     bool m_autoConfigEnabled;
-    bool m_autoConfigEnabledHasBeenSet;
+    bool m_autoConfigEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::Vector<HashAlgorithm> m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     HashAlgorithm m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
   };
 
 } // namespace Model

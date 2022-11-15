@@ -89,7 +89,7 @@ TargetInstance& TargetInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlatformDifferences"))
   {
-    Array<JsonView> platformDifferencesJsonList = jsonValue.GetArray("PlatformDifferences");
+    Aws::Utils::Array<JsonView> platformDifferencesJsonList = jsonValue.GetArray("PlatformDifferences");
     for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
     {
       m_platformDifferences.push_back(PlatformDifferenceMapper::GetPlatformDifferenceForName(platformDifferencesJsonList[platformDifferencesIndex].AsString()));
@@ -142,7 +142,7 @@ JsonValue TargetInstance::Jsonize() const
 
   if(m_platformDifferencesHasBeenSet)
   {
-   Array<JsonValue> platformDifferencesJsonList(m_platformDifferences.size());
+   Aws::Utils::Array<JsonValue> platformDifferencesJsonList(m_platformDifferences.size());
    for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
    {
      platformDifferencesJsonList[platformDifferencesIndex].AsString(PlatformDifferenceMapper::GetNameForPlatformDifference(m_platformDifferences[platformDifferencesIndex]));

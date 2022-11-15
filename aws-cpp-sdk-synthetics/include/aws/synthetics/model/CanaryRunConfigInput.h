@@ -158,7 +158,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
 
@@ -170,7 +172,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
 
@@ -182,7 +186,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline void SetEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
 
@@ -194,7 +200,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline void SetEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
 
@@ -206,7 +214,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline CanaryRunConfigInput& WithEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironmentVariables(value); return *this;}
 
@@ -218,7 +228,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline CanaryRunConfigInput& WithEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
 
@@ -230,7 +242,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline CanaryRunConfigInput& AddEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
 
@@ -242,7 +256,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline CanaryRunConfigInput& AddEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
 
@@ -254,7 +270,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline CanaryRunConfigInput& AddEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
 
@@ -266,7 +284,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline CanaryRunConfigInput& AddEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -278,7 +298,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline CanaryRunConfigInput& AddEnvironmentVariables(const char* key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
 
@@ -290,7 +312,9 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline CanaryRunConfigInput& AddEnvironmentVariables(Aws::String&& key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
 
@@ -302,23 +326,25 @@ namespace Model
      * can't specify any Lambda reserved environment variables as the keys for your
      * environment variables. For more information about reserved keys, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
-     * Runtime environment variables</a>.</p>
+     * Runtime environment variables</a>.</p>  <p>The environment variables
+     * keys and values are not encrypted. Do not store sensitive information in this
+     * field.</p> 
      */
     inline CanaryRunConfigInput& AddEnvironmentVariables(const char* key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
 
   private:
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     int m_memoryInMB;
-    bool m_memoryInMBHasBeenSet;
+    bool m_memoryInMBHasBeenSet = false;
 
     bool m_activeTracing;
-    bool m_activeTracingHasBeenSet;
+    bool m_activeTracingHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
   };
 
 } // namespace Model

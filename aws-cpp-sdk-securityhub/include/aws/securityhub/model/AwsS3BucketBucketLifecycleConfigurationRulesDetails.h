@@ -501,37 +501,37 @@ namespace Model
   private:
 
     AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails m_abortIncompleteMultipartUpload;
-    bool m_abortIncompleteMultipartUploadHasBeenSet;
+    bool m_abortIncompleteMultipartUploadHasBeenSet = false;
 
     Aws::String m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
 
     int m_expirationInDays;
-    bool m_expirationInDaysHasBeenSet;
+    bool m_expirationInDaysHasBeenSet = false;
 
     bool m_expiredObjectDeleteMarker;
-    bool m_expiredObjectDeleteMarkerHasBeenSet;
+    bool m_expiredObjectDeleteMarkerHasBeenSet = false;
 
     AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_iD;
-    bool m_iDHasBeenSet;
+    bool m_iDHasBeenSet = false;
 
     int m_noncurrentVersionExpirationInDays;
-    bool m_noncurrentVersionExpirationInDaysHasBeenSet;
+    bool m_noncurrentVersionExpirationInDaysHasBeenSet = false;
 
     Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails> m_noncurrentVersionTransitions;
-    bool m_noncurrentVersionTransitionsHasBeenSet;
+    bool m_noncurrentVersionTransitionsHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails> m_transitions;
-    bool m_transitionsHasBeenSet;
+    bool m_transitionsHasBeenSet = false;
   };
 
 } // namespace Model

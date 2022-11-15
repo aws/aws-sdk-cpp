@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     FairsharePolicy m_fairsharePolicy;
-    bool m_fairsharePolicyHasBeenSet;
+    bool m_fairsharePolicyHasBeenSet = false;
   };
 
 } // namespace Model

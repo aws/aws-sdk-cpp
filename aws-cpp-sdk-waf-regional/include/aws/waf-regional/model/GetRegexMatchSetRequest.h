@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_regexMatchSetId;
-    bool m_regexMatchSetIdHasBeenSet;
+    bool m_regexMatchSetIdHasBeenSet = false;
   };
 
 } // namespace Model

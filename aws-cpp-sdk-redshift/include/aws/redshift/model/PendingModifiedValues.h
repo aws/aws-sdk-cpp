@@ -462,37 +462,37 @@ namespace Model
   private:
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     Aws::String m_clusterType;
-    bool m_clusterTypeHasBeenSet;
+    bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     int m_automatedSnapshotRetentionPeriod;
-    bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+    bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
-    bool m_enhancedVpcRoutingHasBeenSet;
+    bool m_enhancedVpcRoutingHasBeenSet = false;
 
     Aws::String m_maintenanceTrackName;
-    bool m_maintenanceTrackNameHasBeenSet;
+    bool m_maintenanceTrackNameHasBeenSet = false;
 
     Aws::String m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
   };
 
 } // namespace Model

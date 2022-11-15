@@ -30,7 +30,7 @@ ListAppInstanceUserEndpointsResult& ListAppInstanceUserEndpointsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AppInstanceUserEndpoints"))
   {
-    Array<JsonView> appInstanceUserEndpointsJsonList = jsonValue.GetArray("AppInstanceUserEndpoints");
+    Aws::Utils::Array<JsonView> appInstanceUserEndpointsJsonList = jsonValue.GetArray("AppInstanceUserEndpoints");
     for(unsigned appInstanceUserEndpointsIndex = 0; appInstanceUserEndpointsIndex < appInstanceUserEndpointsJsonList.GetLength(); ++appInstanceUserEndpointsIndex)
     {
       m_appInstanceUserEndpoints.push_back(appInstanceUserEndpointsJsonList[appInstanceUserEndpointsIndex].AsObject());

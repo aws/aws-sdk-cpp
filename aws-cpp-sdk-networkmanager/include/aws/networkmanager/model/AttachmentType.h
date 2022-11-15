@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     CONNECT,
     SITE_TO_SITE_VPN,
-    VPC
+    VPC,
+    TRANSIT_GATEWAY_ROUTE_TABLE
   };
 
 namespace AttachmentTypeMapper

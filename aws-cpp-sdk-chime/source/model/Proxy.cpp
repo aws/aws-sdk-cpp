@@ -64,7 +64,7 @@ Proxy& Proxy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PhoneNumberCountries"))
   {
-    Array<JsonView> phoneNumberCountriesJsonList = jsonValue.GetArray("PhoneNumberCountries");
+    Aws::Utils::Array<JsonView> phoneNumberCountriesJsonList = jsonValue.GetArray("PhoneNumberCountries");
     for(unsigned phoneNumberCountriesIndex = 0; phoneNumberCountriesIndex < phoneNumberCountriesJsonList.GetLength(); ++phoneNumberCountriesIndex)
     {
       m_phoneNumberCountries.push_back(phoneNumberCountriesJsonList[phoneNumberCountriesIndex].AsString());
@@ -99,7 +99,7 @@ JsonValue Proxy::Jsonize() const
 
   if(m_phoneNumberCountriesHasBeenSet)
   {
-   Array<JsonValue> phoneNumberCountriesJsonList(m_phoneNumberCountries.size());
+   Aws::Utils::Array<JsonValue> phoneNumberCountriesJsonList(m_phoneNumberCountries.size());
    for(unsigned phoneNumberCountriesIndex = 0; phoneNumberCountriesIndex < phoneNumberCountriesJsonList.GetLength(); ++phoneNumberCountriesIndex)
    {
      phoneNumberCountriesJsonList[phoneNumberCountriesIndex].AsString(m_phoneNumberCountries[phoneNumberCountriesIndex]);

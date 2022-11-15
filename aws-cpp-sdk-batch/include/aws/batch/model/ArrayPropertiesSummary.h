@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the array properties of a job.</p><p><h3>See
+   * <p>An object that represents the array properties of a job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ArrayPropertiesSummary">AWS
    * API Reference</a></p>
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
   };
 
 } // namespace Model

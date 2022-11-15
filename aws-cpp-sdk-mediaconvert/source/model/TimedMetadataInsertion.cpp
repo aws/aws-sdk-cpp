@@ -33,7 +33,7 @@ TimedMetadataInsertion& TimedMetadataInsertion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id3Insertions"))
   {
-    Array<JsonView> id3InsertionsJsonList = jsonValue.GetArray("id3Insertions");
+    Aws::Utils::Array<JsonView> id3InsertionsJsonList = jsonValue.GetArray("id3Insertions");
     for(unsigned id3InsertionsIndex = 0; id3InsertionsIndex < id3InsertionsJsonList.GetLength(); ++id3InsertionsIndex)
     {
       m_id3Insertions.push_back(id3InsertionsJsonList[id3InsertionsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue TimedMetadataInsertion::Jsonize() const
 
   if(m_id3InsertionsHasBeenSet)
   {
-   Array<JsonValue> id3InsertionsJsonList(m_id3Insertions.size());
+   Aws::Utils::Array<JsonValue> id3InsertionsJsonList(m_id3Insertions.size());
    for(unsigned id3InsertionsIndex = 0; id3InsertionsIndex < id3InsertionsJsonList.GetLength(); ++id3InsertionsIndex)
    {
      id3InsertionsJsonList[id3InsertionsIndex].AsObject(m_id3Insertions[id3InsertionsIndex].Jsonize());

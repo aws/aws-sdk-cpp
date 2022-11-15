@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails> m_proxyConfigurationProperties;
-    bool m_proxyConfigurationPropertiesHasBeenSet;
+    bool m_proxyConfigurationPropertiesHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

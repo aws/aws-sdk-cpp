@@ -320,22 +320,22 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_analysisId;
-    bool m_analysisIdHasBeenSet;
+    bool m_analysisIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Parameters m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     AnalysisSourceEntity m_sourceEntity;
-    bool m_sourceEntityHasBeenSet;
+    bool m_sourceEntityHasBeenSet = false;
 
     Aws::String m_themeArn;
-    bool m_themeArnHasBeenSet;
+    bool m_themeArnHasBeenSet = false;
   };
 
 } // namespace Model

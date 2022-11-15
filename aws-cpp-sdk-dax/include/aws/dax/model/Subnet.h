@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_subnetIdentifier;
-    bool m_subnetIdentifierHasBeenSet;
+    bool m_subnetIdentifierHasBeenSet = false;
 
     Aws::String m_subnetAvailabilityZone;
-    bool m_subnetAvailabilityZoneHasBeenSet;
+    bool m_subnetAvailabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

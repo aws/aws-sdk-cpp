@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_destinationId;
-    bool m_destinationIdHasBeenSet;
+    bool m_destinationIdHasBeenSet = false;
 
     DestinationProperties m_destinationProperties;
-    bool m_destinationPropertiesHasBeenSet;
+    bool m_destinationPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -297,10 +297,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContextEquals;
-    bool m_encryptionContextEqualsHasBeenSet;
+    bool m_encryptionContextEqualsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContextSubset;
-    bool m_encryptionContextSubsetHasBeenSet;
+    bool m_encryptionContextSubsetHasBeenSet = false;
   };
 
 } // namespace Model

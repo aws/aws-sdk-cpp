@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AWSAccount m_awsAccount;
-    bool m_awsAccountHasBeenSet;
+    bool m_awsAccountHasBeenSet = false;
 
     AssessmentMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     AssessmentFramework m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

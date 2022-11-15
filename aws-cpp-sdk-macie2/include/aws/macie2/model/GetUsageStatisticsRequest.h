@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::Vector<UsageStatisticsFilter> m_filterBy;
-    bool m_filterByHasBeenSet;
+    bool m_filterByHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     UsageStatisticsSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     TimeRange m_timeRange;
-    bool m_timeRangeHasBeenSet;
+    bool m_timeRangeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -97,10 +97,10 @@ namespace Model
   private:
 
     Extensions m_extensions;
-    bool m_extensionsHasBeenSet;
+    bool m_extensionsHasBeenSet = false;
 
     ASN1Subject m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
   };
 
 } // namespace Model

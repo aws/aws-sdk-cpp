@@ -326,13 +326,13 @@ namespace Model
   private:
 
     HandshakeParty m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

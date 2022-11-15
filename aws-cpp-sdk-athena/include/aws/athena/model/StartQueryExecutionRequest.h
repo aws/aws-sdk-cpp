@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/QueryExecutionContext.h>
 #include <aws/athena/model/ResultConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/athena/model/ResultReuseConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -315,22 +317,123 @@ namespace Model
      */
     inline StartQueryExecutionRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
 
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetExecutionParameters() const{ return m_executionParameters; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline bool ExecutionParametersHasBeenSet() const { return m_executionParametersHasBeenSet; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline void SetExecutionParameters(const Aws::Vector<Aws::String>& value) { m_executionParametersHasBeenSet = true; m_executionParameters = value; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline void SetExecutionParameters(Aws::Vector<Aws::String>&& value) { m_executionParametersHasBeenSet = true; m_executionParameters = std::move(value); }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline StartQueryExecutionRequest& WithExecutionParameters(const Aws::Vector<Aws::String>& value) { SetExecutionParameters(value); return *this;}
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline StartQueryExecutionRequest& WithExecutionParameters(Aws::Vector<Aws::String>&& value) { SetExecutionParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline StartQueryExecutionRequest& AddExecutionParameters(const Aws::String& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline StartQueryExecutionRequest& AddExecutionParameters(Aws::String&& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline StartQueryExecutionRequest& AddExecutionParameters(const char* value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
+
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline const ResultReuseConfiguration& GetResultReuseConfiguration() const{ return m_resultReuseConfiguration; }
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline bool ResultReuseConfigurationHasBeenSet() const { return m_resultReuseConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline void SetResultReuseConfiguration(const ResultReuseConfiguration& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = value; }
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline void SetResultReuseConfiguration(ResultReuseConfiguration&& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline StartQueryExecutionRequest& WithResultReuseConfiguration(const ResultReuseConfiguration& value) { SetResultReuseConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the query result reuse behavior for the query.</p>
+     */
+    inline StartQueryExecutionRequest& WithResultReuseConfiguration(ResultReuseConfiguration&& value) { SetResultReuseConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     QueryExecutionContext m_queryExecutionContext;
-    bool m_queryExecutionContextHasBeenSet;
+    bool m_queryExecutionContextHasBeenSet = false;
 
     ResultConfiguration m_resultConfiguration;
-    bool m_resultConfigurationHasBeenSet;
+    bool m_resultConfigurationHasBeenSet = false;
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_executionParameters;
+    bool m_executionParametersHasBeenSet = false;
+
+    ResultReuseConfiguration m_resultReuseConfiguration;
+    bool m_resultReuseConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

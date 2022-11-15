@@ -368,22 +368,22 @@ namespace Model
   private:
 
     Aws::String m_controlPanelArn;
-    bool m_controlPanelArnHasBeenSet;
+    bool m_controlPanelArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gatingControls;
-    bool m_gatingControlsHasBeenSet;
+    bool m_gatingControlsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RuleConfig m_ruleConfig;
-    bool m_ruleConfigHasBeenSet;
+    bool m_ruleConfigHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetControls;
-    bool m_targetControlsHasBeenSet;
+    bool m_targetControlsHasBeenSet = false;
 
     int m_waitPeriodMs;
-    bool m_waitPeriodMsHasBeenSet;
+    bool m_waitPeriodMsHasBeenSet = false;
   };
 
 } // namespace Model

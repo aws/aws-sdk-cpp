@@ -269,22 +269,22 @@ namespace Model
   private:
 
     Aws::String m_networkInterfacePermissionId;
-    bool m_networkInterfacePermissionIdHasBeenSet;
+    bool m_networkInterfacePermissionIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_awsService;
-    bool m_awsServiceHasBeenSet;
+    bool m_awsServiceHasBeenSet = false;
 
     InterfacePermissionType m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
 
     NetworkInterfacePermissionState m_permissionState;
-    bool m_permissionStateHasBeenSet;
+    bool m_permissionStateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SubjectAlternativeNameMatchers m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
   };
 
 } // namespace Model

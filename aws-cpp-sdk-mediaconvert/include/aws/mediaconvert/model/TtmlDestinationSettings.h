@@ -83,7 +83,7 @@ namespace Model
   private:
 
     TtmlStylePassthrough m_stylePassthrough;
-    bool m_stylePassthroughHasBeenSet;
+    bool m_stylePassthroughHasBeenSet = false;
   };
 
 } // namespace Model

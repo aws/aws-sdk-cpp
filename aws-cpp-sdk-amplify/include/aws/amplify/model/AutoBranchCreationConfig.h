@@ -415,34 +415,34 @@ namespace Model
   private:
 
     Stage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     Aws::String m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     bool m_enableAutoBuild;
-    bool m_enableAutoBuildHasBeenSet;
+    bool m_enableAutoBuildHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     Aws::String m_basicAuthCredentials;
-    bool m_basicAuthCredentialsHasBeenSet;
+    bool m_basicAuthCredentialsHasBeenSet = false;
 
     bool m_enableBasicAuth;
-    bool m_enableBasicAuthHasBeenSet;
+    bool m_enableBasicAuthHasBeenSet = false;
 
     bool m_enablePerformanceMode;
-    bool m_enablePerformanceModeHasBeenSet;
+    bool m_enablePerformanceModeHasBeenSet = false;
 
     Aws::String m_buildSpec;
-    bool m_buildSpecHasBeenSet;
+    bool m_buildSpecHasBeenSet = false;
 
     bool m_enablePullRequestPreview;
-    bool m_enablePullRequestPreviewHasBeenSet;
+    bool m_enablePullRequestPreviewHasBeenSet = false;
 
     Aws::String m_pullRequestEnvironmentName;
-    bool m_pullRequestEnvironmentNameHasBeenSet;
+    bool m_pullRequestEnvironmentNameHasBeenSet = false;
   };
 
 } // namespace Model

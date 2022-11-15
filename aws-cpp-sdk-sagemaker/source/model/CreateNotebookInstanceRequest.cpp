@@ -31,7 +31,8 @@ CreateNotebookInstanceRequest::CreateNotebookInstanceRequest() :
     m_additionalCodeRepositoriesHasBeenSet(false),
     m_rootAccess(RootAccess::NOT_SET),
     m_rootAccessHasBeenSet(false),
-    m_platformIdentifierHasBeenSet(false)
+    m_platformIdentifierHasBeenSet(false),
+    m_instanceMetadataServiceConfigurationHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,7 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -81,7 +82,7 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -109,7 +110,7 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
 
   if(m_acceleratorTypesHasBeenSet)
   {
-   Array<JsonValue> acceleratorTypesJsonList(m_acceleratorTypes.size());
+   Aws::Utils::Array<JsonValue> acceleratorTypesJsonList(m_acceleratorTypes.size());
    for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
    {
      acceleratorTypesJsonList[acceleratorTypesIndex].AsString(NotebookInstanceAcceleratorTypeMapper::GetNameForNotebookInstanceAcceleratorType(m_acceleratorTypes[acceleratorTypesIndex]));
@@ -126,7 +127,7 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
 
   if(m_additionalCodeRepositoriesHasBeenSet)
   {
-   Array<JsonValue> additionalCodeRepositoriesJsonList(m_additionalCodeRepositories.size());
+   Aws::Utils::Array<JsonValue> additionalCodeRepositoriesJsonList(m_additionalCodeRepositories.size());
    for(unsigned additionalCodeRepositoriesIndex = 0; additionalCodeRepositoriesIndex < additionalCodeRepositoriesJsonList.GetLength(); ++additionalCodeRepositoriesIndex)
    {
      additionalCodeRepositoriesJsonList[additionalCodeRepositoriesIndex].AsString(m_additionalCodeRepositories[additionalCodeRepositoriesIndex]);
@@ -143,6 +144,12 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
   if(m_platformIdentifierHasBeenSet)
   {
    payload.WithString("PlatformIdentifier", m_platformIdentifier);
+
+  }
+
+  if(m_instanceMetadataServiceConfigurationHasBeenSet)
+  {
+   payload.WithObject("InstanceMetadataServiceConfiguration", m_instanceMetadataServiceConfiguration.Jsonize());
 
   }
 

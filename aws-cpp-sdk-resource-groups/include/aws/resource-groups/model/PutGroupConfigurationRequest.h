@@ -190,10 +190,10 @@ namespace Model
   private:
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     Aws::Vector<GroupConfigurationItem> m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

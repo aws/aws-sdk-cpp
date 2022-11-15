@@ -51,7 +51,7 @@ Aws::String GetDimensionKeyDetailsRequest::SerializePayload() const
 
   if(m_requestedDimensionsHasBeenSet)
   {
-   Array<JsonValue> requestedDimensionsJsonList(m_requestedDimensions.size());
+   Aws::Utils::Array<JsonValue> requestedDimensionsJsonList(m_requestedDimensions.size());
    for(unsigned requestedDimensionsIndex = 0; requestedDimensionsIndex < requestedDimensionsJsonList.GetLength(); ++requestedDimensionsIndex)
    {
      requestedDimensionsJsonList[requestedDimensionsIndex].AsString(m_requestedDimensions[requestedDimensionsIndex]);

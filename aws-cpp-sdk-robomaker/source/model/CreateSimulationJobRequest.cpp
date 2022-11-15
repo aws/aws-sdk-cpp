@@ -72,7 +72,7 @@ Aws::String CreateSimulationJobRequest::SerializePayload() const
 
   if(m_robotApplicationsHasBeenSet)
   {
-   Array<JsonValue> robotApplicationsJsonList(m_robotApplications.size());
+   Aws::Utils::Array<JsonValue> robotApplicationsJsonList(m_robotApplications.size());
    for(unsigned robotApplicationsIndex = 0; robotApplicationsIndex < robotApplicationsJsonList.GetLength(); ++robotApplicationsIndex)
    {
      robotApplicationsJsonList[robotApplicationsIndex].AsObject(m_robotApplications[robotApplicationsIndex].Jsonize());
@@ -83,7 +83,7 @@ Aws::String CreateSimulationJobRequest::SerializePayload() const
 
   if(m_simulationApplicationsHasBeenSet)
   {
-   Array<JsonValue> simulationApplicationsJsonList(m_simulationApplications.size());
+   Aws::Utils::Array<JsonValue> simulationApplicationsJsonList(m_simulationApplications.size());
    for(unsigned simulationApplicationsIndex = 0; simulationApplicationsIndex < simulationApplicationsJsonList.GetLength(); ++simulationApplicationsIndex)
    {
      simulationApplicationsJsonList[simulationApplicationsIndex].AsObject(m_simulationApplications[simulationApplicationsIndex].Jsonize());
@@ -94,7 +94,7 @@ Aws::String CreateSimulationJobRequest::SerializePayload() const
 
   if(m_dataSourcesHasBeenSet)
   {
-   Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
+   Aws::Utils::Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
    for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
    {
      dataSourcesJsonList[dataSourcesIndex].AsObject(m_dataSources[dataSourcesIndex].Jsonize());

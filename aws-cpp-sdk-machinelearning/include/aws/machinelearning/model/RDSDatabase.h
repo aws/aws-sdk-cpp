@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_instanceIdentifier;
-    bool m_instanceIdentifierHasBeenSet;
+    bool m_instanceIdentifierHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
   };
 
 } // namespace Model

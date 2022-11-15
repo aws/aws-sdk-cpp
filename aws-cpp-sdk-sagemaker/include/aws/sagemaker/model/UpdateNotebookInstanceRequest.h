@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/RootAccess.h>
+#include <aws/sagemaker/model/InstanceMetadataServiceConfiguration.h>
 #include <aws/sagemaker/model/NotebookInstanceAcceleratorType.h>
 #include <utility>
 
@@ -771,46 +772,80 @@ namespace Model
      */
     inline UpdateNotebookInstanceRequest& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline const InstanceMetadataServiceConfiguration& GetInstanceMetadataServiceConfiguration() const{ return m_instanceMetadataServiceConfiguration; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline bool InstanceMetadataServiceConfigurationHasBeenSet() const { return m_instanceMetadataServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline void SetInstanceMetadataServiceConfiguration(const InstanceMetadataServiceConfiguration& value) { m_instanceMetadataServiceConfigurationHasBeenSet = true; m_instanceMetadataServiceConfiguration = value; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline void SetInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration&& value) { m_instanceMetadataServiceConfigurationHasBeenSet = true; m_instanceMetadataServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithInstanceMetadataServiceConfiguration(const InstanceMetadataServiceConfiguration& value) { SetInstanceMetadataServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration&& value) { SetInstanceMetadataServiceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceName;
-    bool m_notebookInstanceNameHasBeenSet;
+    bool m_notebookInstanceNameHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_lifecycleConfigName;
-    bool m_lifecycleConfigNameHasBeenSet;
+    bool m_lifecycleConfigNameHasBeenSet = false;
 
     bool m_disassociateLifecycleConfig;
-    bool m_disassociateLifecycleConfigHasBeenSet;
+    bool m_disassociateLifecycleConfigHasBeenSet = false;
 
     int m_volumeSizeInGB;
-    bool m_volumeSizeInGBHasBeenSet;
+    bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::String m_defaultCodeRepository;
-    bool m_defaultCodeRepositoryHasBeenSet;
+    bool m_defaultCodeRepositoryHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalCodeRepositories;
-    bool m_additionalCodeRepositoriesHasBeenSet;
+    bool m_additionalCodeRepositoriesHasBeenSet = false;
 
     Aws::Vector<NotebookInstanceAcceleratorType> m_acceleratorTypes;
-    bool m_acceleratorTypesHasBeenSet;
+    bool m_acceleratorTypesHasBeenSet = false;
 
     bool m_disassociateAcceleratorTypes;
-    bool m_disassociateAcceleratorTypesHasBeenSet;
+    bool m_disassociateAcceleratorTypesHasBeenSet = false;
 
     bool m_disassociateDefaultCodeRepository;
-    bool m_disassociateDefaultCodeRepositoryHasBeenSet;
+    bool m_disassociateDefaultCodeRepositoryHasBeenSet = false;
 
     bool m_disassociateAdditionalCodeRepositories;
-    bool m_disassociateAdditionalCodeRepositoriesHasBeenSet;
+    bool m_disassociateAdditionalCodeRepositoriesHasBeenSet = false;
 
     RootAccess m_rootAccess;
-    bool m_rootAccessHasBeenSet;
+    bool m_rootAccessHasBeenSet = false;
+
+    InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
+    bool m_instanceMetadataServiceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

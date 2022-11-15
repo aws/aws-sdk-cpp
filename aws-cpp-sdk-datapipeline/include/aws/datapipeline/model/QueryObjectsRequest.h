@@ -277,19 +277,19 @@ namespace Model
   private:
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     Query m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     Aws::String m_sphere;
-    bool m_sphereHasBeenSet;
+    bool m_sphereHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

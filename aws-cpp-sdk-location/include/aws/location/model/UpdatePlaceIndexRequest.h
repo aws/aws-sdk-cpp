@@ -148,13 +148,13 @@ namespace Model
   private:
 
     DataSourceConfiguration m_dataSourceConfiguration;
-    bool m_dataSourceConfigurationHasBeenSet;
+    bool m_dataSourceConfigurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
   };
 
 } // namespace Model

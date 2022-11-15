@@ -153,13 +153,13 @@ namespace Model
   private:
 
     IntegerParameterRangeSpecification m_integerParameterRangeSpecification;
-    bool m_integerParameterRangeSpecificationHasBeenSet;
+    bool m_integerParameterRangeSpecificationHasBeenSet = false;
 
     ContinuousParameterRangeSpecification m_continuousParameterRangeSpecification;
-    bool m_continuousParameterRangeSpecificationHasBeenSet;
+    bool m_continuousParameterRangeSpecificationHasBeenSet = false;
 
     CategoricalParameterRangeSpecification m_categoricalParameterRangeSpecification;
-    bool m_categoricalParameterRangeSpecificationHasBeenSet;
+    bool m_categoricalParameterRangeSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

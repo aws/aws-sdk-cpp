@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_queryDefinitionId;
-    bool m_queryDefinitionIdHasBeenSet;
+    bool m_queryDefinitionIdHasBeenSet = false;
   };
 
 } // namespace Model

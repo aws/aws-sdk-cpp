@@ -53,7 +53,7 @@ ComponentParameterDetail& ComponentParameterDetail::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("defaultValue"))
   {
-    Array<JsonView> defaultValueJsonList = jsonValue.GetArray("defaultValue");
+    Aws::Utils::Array<JsonView> defaultValueJsonList = jsonValue.GetArray("defaultValue");
     for(unsigned defaultValueIndex = 0; defaultValueIndex < defaultValueJsonList.GetLength(); ++defaultValueIndex)
     {
       m_defaultValue.push_back(defaultValueJsonList[defaultValueIndex].AsString());
@@ -89,7 +89,7 @@ JsonValue ComponentParameterDetail::Jsonize() const
 
   if(m_defaultValueHasBeenSet)
   {
-   Array<JsonValue> defaultValueJsonList(m_defaultValue.size());
+   Aws::Utils::Array<JsonValue> defaultValueJsonList(m_defaultValue.size());
    for(unsigned defaultValueIndex = 0; defaultValueIndex < defaultValueJsonList.GetLength(); ++defaultValueIndex)
    {
      defaultValueJsonList[defaultValueIndex].AsString(m_defaultValue[defaultValueIndex]);

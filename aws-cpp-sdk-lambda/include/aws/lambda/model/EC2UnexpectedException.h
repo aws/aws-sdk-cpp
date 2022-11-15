@@ -115,13 +115,13 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_eC2ErrorCode;
-    bool m_eC2ErrorCodeHasBeenSet;
+    bool m_eC2ErrorCodeHasBeenSet = false;
   };
 
 } // namespace Model

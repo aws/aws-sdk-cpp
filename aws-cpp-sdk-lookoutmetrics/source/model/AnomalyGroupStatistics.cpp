@@ -53,7 +53,7 @@ AnomalyGroupStatistics& AnomalyGroupStatistics::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ItemizedMetricStatsList"))
   {
-    Array<JsonView> itemizedMetricStatsListJsonList = jsonValue.GetArray("ItemizedMetricStatsList");
+    Aws::Utils::Array<JsonView> itemizedMetricStatsListJsonList = jsonValue.GetArray("ItemizedMetricStatsList");
     for(unsigned itemizedMetricStatsListIndex = 0; itemizedMetricStatsListIndex < itemizedMetricStatsListJsonList.GetLength(); ++itemizedMetricStatsListIndex)
     {
       m_itemizedMetricStatsList.push_back(itemizedMetricStatsListJsonList[itemizedMetricStatsListIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue AnomalyGroupStatistics::Jsonize() const
 
   if(m_itemizedMetricStatsListHasBeenSet)
   {
-   Array<JsonValue> itemizedMetricStatsListJsonList(m_itemizedMetricStatsList.size());
+   Aws::Utils::Array<JsonValue> itemizedMetricStatsListJsonList(m_itemizedMetricStatsList.size());
    for(unsigned itemizedMetricStatsListIndex = 0; itemizedMetricStatsListIndex < itemizedMetricStatsListJsonList.GetLength(); ++itemizedMetricStatsListIndex)
    {
      itemizedMetricStatsListJsonList[itemizedMetricStatsListIndex].AsObject(m_itemizedMetricStatsList[itemizedMetricStatsListIndex].Jsonize());

@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     bool m_batchMode;
-    bool m_batchModeHasBeenSet;
+    bool m_batchModeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

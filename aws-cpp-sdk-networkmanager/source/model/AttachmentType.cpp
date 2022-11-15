@@ -23,6 +23,7 @@ namespace Aws
         static const int CONNECT_HASH = HashingUtils::HashString("CONNECT");
         static const int SITE_TO_SITE_VPN_HASH = HashingUtils::HashString("SITE_TO_SITE_VPN");
         static const int VPC_HASH = HashingUtils::HashString("VPC");
+        static const int TRANSIT_GATEWAY_ROUTE_TABLE_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ROUTE_TABLE");
 
 
         AttachmentType GetAttachmentTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == VPC_HASH)
           {
             return AttachmentType::VPC;
+          }
+          else if (hashCode == TRANSIT_GATEWAY_ROUTE_TABLE_HASH)
+          {
+            return AttachmentType::TRANSIT_GATEWAY_ROUTE_TABLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "SITE_TO_SITE_VPN";
           case AttachmentType::VPC:
             return "VPC";
+          case AttachmentType::TRANSIT_GATEWAY_ROUTE_TABLE:
+            return "TRANSIT_GATEWAY_ROUTE_TABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -162,13 +162,13 @@ namespace Model
   private:
 
     ActionOwner m_actionOwnerFilter;
-    bool m_actionOwnerFilterHasBeenSet;
+    bool m_actionOwnerFilterHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_regionFilter;
-    bool m_regionFilterHasBeenSet;
+    bool m_regionFilterHasBeenSet = false;
   };
 
 } // namespace Model

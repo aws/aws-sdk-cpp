@@ -142,13 +142,71 @@ namespace Model
      */
     inline DescribeSourceServersRequestFilters& AddSourceServerIDs(const char* value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(value); return *this; }
 
+
+    /**
+     * <p>An array of staging account IDs that extended source servers belong to. An
+     * empty array means all source servers will be shown.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetStagingAccountIDs() const{ return m_stagingAccountIDs; }
+
+    /**
+     * <p>An array of staging account IDs that extended source servers belong to. An
+     * empty array means all source servers will be shown.</p>
+     */
+    inline bool StagingAccountIDsHasBeenSet() const { return m_stagingAccountIDsHasBeenSet; }
+
+    /**
+     * <p>An array of staging account IDs that extended source servers belong to. An
+     * empty array means all source servers will be shown.</p>
+     */
+    inline void SetStagingAccountIDs(const Aws::Vector<Aws::String>& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs = value; }
+
+    /**
+     * <p>An array of staging account IDs that extended source servers belong to. An
+     * empty array means all source servers will be shown.</p>
+     */
+    inline void SetStagingAccountIDs(Aws::Vector<Aws::String>&& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs = std::move(value); }
+
+    /**
+     * <p>An array of staging account IDs that extended source servers belong to. An
+     * empty array means all source servers will be shown.</p>
+     */
+    inline DescribeSourceServersRequestFilters& WithStagingAccountIDs(const Aws::Vector<Aws::String>& value) { SetStagingAccountIDs(value); return *this;}
+
+    /**
+     * <p>An array of staging account IDs that extended source servers belong to. An
+     * empty array means all source servers will be shown.</p>
+     */
+    inline DescribeSourceServersRequestFilters& WithStagingAccountIDs(Aws::Vector<Aws::String>&& value) { SetStagingAccountIDs(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of staging account IDs that extended source servers belong to. An
+     * empty array means all source servers will be shown.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddStagingAccountIDs(const Aws::String& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs.push_back(value); return *this; }
+
+    /**
+     * <p>An array of staging account IDs that extended source servers belong to. An
+     * empty array means all source servers will be shown.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddStagingAccountIDs(Aws::String&& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of staging account IDs that extended source servers belong to. An
+     * empty array means all source servers will be shown.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddStagingAccountIDs(const char* value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs.push_back(value); return *this; }
+
   private:
 
     Aws::String m_hardwareId;
-    bool m_hardwareIdHasBeenSet;
+    bool m_hardwareIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceServerIDs;
-    bool m_sourceServerIDsHasBeenSet;
+    bool m_sourceServerIDsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_stagingAccountIDs;
+    bool m_stagingAccountIDsHasBeenSet = false;
   };
 
 } // namespace Model

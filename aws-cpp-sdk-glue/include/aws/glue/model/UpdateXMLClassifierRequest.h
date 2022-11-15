@@ -202,13 +202,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::String m_rowTag;
-    bool m_rowTagHasBeenSet;
+    bool m_rowTagHasBeenSet = false;
   };
 
 } // namespace Model

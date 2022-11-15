@@ -20,13 +20,17 @@ namespace Model
 
 DomainSettings::DomainSettings() : 
     m_securityGroupIdsHasBeenSet(false),
-    m_rStudioServerProDomainSettingsHasBeenSet(false)
+    m_rStudioServerProDomainSettingsHasBeenSet(false),
+    m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
+    m_executionRoleIdentityConfigHasBeenSet(false)
 {
 }
 
 DomainSettings::DomainSettings(JsonView jsonValue) : 
     m_securityGroupIdsHasBeenSet(false),
-    m_rStudioServerProDomainSettingsHasBeenSet(false)
+    m_rStudioServerProDomainSettingsHasBeenSet(false),
+    m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
+    m_executionRoleIdentityConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -35,7 +39,7 @@ DomainSettings& DomainSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -50,6 +54,13 @@ DomainSettings& DomainSettings::operator =(JsonView jsonValue)
     m_rStudioServerProDomainSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecutionRoleIdentityConfig"))
+  {
+    m_executionRoleIdentityConfig = ExecutionRoleIdentityConfigMapper::GetExecutionRoleIdentityConfigForName(jsonValue.GetString("ExecutionRoleIdentityConfig"));
+
+    m_executionRoleIdentityConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -59,7 +70,7 @@ JsonValue DomainSettings::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -72,6 +83,11 @@ JsonValue DomainSettings::Jsonize() const
   {
    payload.WithObject("RStudioServerProDomainSettings", m_rStudioServerProDomainSettings.Jsonize());
 
+  }
+
+  if(m_executionRoleIdentityConfigHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleIdentityConfig", ExecutionRoleIdentityConfigMapper::GetNameForExecutionRoleIdentityConfig(m_executionRoleIdentityConfig));
   }
 
   return payload;

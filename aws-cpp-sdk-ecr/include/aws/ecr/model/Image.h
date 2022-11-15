@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     ImageIdentifier m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_imageManifest;
-    bool m_imageManifestHasBeenSet;
+    bool m_imageManifestHasBeenSet = false;
 
     Aws::String m_imageManifestMediaType;
-    bool m_imageManifestMediaTypeHasBeenSet;
+    bool m_imageManifestMediaTypeHasBeenSet = false;
   };
 
 } // namespace Model

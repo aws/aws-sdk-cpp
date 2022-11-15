@@ -275,25 +275,25 @@ namespace Model
   private:
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     long long m_firstEventTimestamp;
-    bool m_firstEventTimestampHasBeenSet;
+    bool m_firstEventTimestampHasBeenSet = false;
 
     long long m_lastEventTimestamp;
-    bool m_lastEventTimestampHasBeenSet;
+    bool m_lastEventTimestampHasBeenSet = false;
 
     long long m_lastIngestionTime;
-    bool m_lastIngestionTimeHasBeenSet;
+    bool m_lastIngestionTimeHasBeenSet = false;
 
     Aws::String m_uploadSequenceToken;
-    bool m_uploadSequenceTokenHasBeenSet;
+    bool m_uploadSequenceTokenHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

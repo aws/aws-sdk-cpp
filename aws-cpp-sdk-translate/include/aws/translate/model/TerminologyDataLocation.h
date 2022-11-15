@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent custom terminology input file that
      * was successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration .</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent custom terminology input file that
      * was successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration .</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -109,7 +109,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent custom terminology input file that
      * was successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration .</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent custom terminology input file that
      * was successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration .</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent custom terminology input file that
      * was successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration .</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -151,7 +151,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent custom terminology input file that
      * was successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration .</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -165,7 +165,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent custom terminology input file that
      * was successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration .</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent custom terminology input file that
      * was successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration .</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -193,10 +193,10 @@ namespace Model
   private:
 
     Aws::String m_repositoryType;
-    bool m_repositoryTypeHasBeenSet;
+    bool m_repositoryTypeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,8 @@
 #include <aws/cloudformation/model/StackSetOperationAction.h>
 #include <aws/cloudformation/model/StackSetOperationStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudformation/model/StackSetOperationStatusDetails.h>
+#include <aws/cloudformation/model/StackSetOperationPreferences.h>
 #include <utility>
 
 namespace Aws
@@ -369,22 +371,122 @@ namespace Model
      */
     inline StackSetOperationSummary& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperationSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperationSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperationSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+
+
+    /**
+     * <p>Detailed information about the stack set operation.</p>
+     */
+    inline const StackSetOperationStatusDetails& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>Detailed information about the stack set operation.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
+
+    /**
+     * <p>Detailed information about the stack set operation.</p>
+     */
+    inline void SetStatusDetails(const StackSetOperationStatusDetails& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
+
+    /**
+     * <p>Detailed information about the stack set operation.</p>
+     */
+    inline void SetStatusDetails(StackSetOperationStatusDetails&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
+
+    /**
+     * <p>Detailed information about the stack set operation.</p>
+     */
+    inline StackSetOperationSummary& WithStatusDetails(const StackSetOperationStatusDetails& value) { SetStatusDetails(value); return *this;}
+
+    /**
+     * <p>Detailed information about the stack set operation.</p>
+     */
+    inline StackSetOperationSummary& WithStatusDetails(StackSetOperationStatusDetails&& value) { SetStatusDetails(std::move(value)); return *this;}
+
+
+    
+    inline const StackSetOperationPreferences& GetOperationPreferences() const{ return m_operationPreferences; }
+
+    
+    inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
+
+    
+    inline void SetOperationPreferences(const StackSetOperationPreferences& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = value; }
+
+    
+    inline void SetOperationPreferences(StackSetOperationPreferences&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::move(value); }
+
+    
+    inline StackSetOperationSummary& WithOperationPreferences(const StackSetOperationPreferences& value) { SetOperationPreferences(value); return *this;}
+
+    
+    inline StackSetOperationSummary& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     StackSetOperationAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     StackSetOperationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimestamp;
-    bool m_endTimestampHasBeenSet;
+    bool m_endTimestampHasBeenSet = false;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
+
+    StackSetOperationStatusDetails m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
+
+    StackSetOperationPreferences m_operationPreferences;
+    bool m_operationPreferencesHasBeenSet = false;
   };
 
 } // namespace Model

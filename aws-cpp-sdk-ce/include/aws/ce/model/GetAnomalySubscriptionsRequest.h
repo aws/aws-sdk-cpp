@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subscriptionArnList;
-    bool m_subscriptionArnListHasBeenSet;
+    bool m_subscriptionArnListHasBeenSet = false;
 
     Aws::String m_monitorArn;
-    bool m_monitorArnHasBeenSet;
+    bool m_monitorArnHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

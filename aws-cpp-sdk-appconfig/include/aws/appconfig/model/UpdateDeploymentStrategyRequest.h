@@ -315,22 +315,22 @@ namespace Model
   private:
 
     Aws::String m_deploymentStrategyId;
-    bool m_deploymentStrategyIdHasBeenSet;
+    bool m_deploymentStrategyIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_deploymentDurationInMinutes;
-    bool m_deploymentDurationInMinutesHasBeenSet;
+    bool m_deploymentDurationInMinutesHasBeenSet = false;
 
     int m_finalBakeTimeInMinutes;
-    bool m_finalBakeTimeInMinutesHasBeenSet;
+    bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
     double m_growthFactor;
-    bool m_growthFactorHasBeenSet;
+    bool m_growthFactorHasBeenSet = false;
 
     GrowthType m_growthType;
-    bool m_growthTypeHasBeenSet;
+    bool m_growthTypeHasBeenSet = false;
   };
 
 } // namespace Model

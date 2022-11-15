@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_timeRange;
-    bool m_timeRangeHasBeenSet;
+    bool m_timeRangeHasBeenSet = false;
   };
 
 } // namespace Model

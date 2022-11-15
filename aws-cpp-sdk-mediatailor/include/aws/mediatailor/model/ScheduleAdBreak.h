@@ -182,16 +182,16 @@ namespace Model
   private:
 
     long long m_approximateDurationSeconds;
-    bool m_approximateDurationSecondsHasBeenSet;
+    bool m_approximateDurationSecondsHasBeenSet = false;
 
     Aws::Utils::DateTime m_approximateStartTime;
-    bool m_approximateStartTimeHasBeenSet;
+    bool m_approximateStartTimeHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::String m_vodSourceName;
-    bool m_vodSourceNameHasBeenSet;
+    bool m_vodSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

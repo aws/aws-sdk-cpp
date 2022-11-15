@@ -106,6 +106,12 @@ DescribeSlotResult& DescribeSlotResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("subSlotSetting"))
+  {
+    m_subSlotSetting = jsonValue.GetObject("subSlotSetting");
+
+  }
+
 
 
   return *this;

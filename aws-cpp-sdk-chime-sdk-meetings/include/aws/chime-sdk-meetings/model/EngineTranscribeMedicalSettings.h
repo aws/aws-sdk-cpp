@@ -179,37 +179,37 @@ namespace Model
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a
-     * Region, Amazon Chime uses the meeting's Region.</p>
+     * Region, Amazon Chime uses the meeting's Region. </p>
      */
     inline const TranscribeMedicalRegion& GetRegion() const{ return m_region; }
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a
-     * Region, Amazon Chime uses the meeting's Region.</p>
+     * Region, Amazon Chime uses the meeting's Region. </p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a
-     * Region, Amazon Chime uses the meeting's Region.</p>
+     * Region, Amazon Chime uses the meeting's Region. </p>
      */
     inline void SetRegion(const TranscribeMedicalRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a
-     * Region, Amazon Chime uses the meeting's Region.</p>
+     * Region, Amazon Chime uses the meeting's Region. </p>
      */
     inline void SetRegion(TranscribeMedicalRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a
-     * Region, Amazon Chime uses the meeting's Region.</p>
+     * Region, Amazon Chime uses the meeting's Region. </p>
      */
     inline EngineTranscribeMedicalSettings& WithRegion(const TranscribeMedicalRegion& value) { SetRegion(value); return *this;}
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a
-     * Region, Amazon Chime uses the meeting's Region.</p>
+     * Region, Amazon Chime uses the meeting's Region. </p>
      */
     inline EngineTranscribeMedicalSettings& WithRegion(TranscribeMedicalRegion&& value) { SetRegion(std::move(value)); return *this;}
 
@@ -253,22 +253,22 @@ namespace Model
   private:
 
     TranscribeMedicalLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     TranscribeMedicalSpecialty m_specialty;
-    bool m_specialtyHasBeenSet;
+    bool m_specialtyHasBeenSet = false;
 
     TranscribeMedicalType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     TranscribeMedicalRegion m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     TranscribeMedicalContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
+    bool m_contentIdentificationTypeHasBeenSet = false;
   };
 
 } // namespace Model

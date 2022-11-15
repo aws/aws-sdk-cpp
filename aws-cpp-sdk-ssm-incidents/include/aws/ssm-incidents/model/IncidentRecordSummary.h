@@ -277,25 +277,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     int m_impact;
-    bool m_impactHasBeenSet;
+    bool m_impactHasBeenSet = false;
 
     IncidentRecordSource m_incidentRecordSource;
-    bool m_incidentRecordSourceHasBeenSet;
+    bool m_incidentRecordSourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_resolvedTime;
-    bool m_resolvedTimeHasBeenSet;
+    bool m_resolvedTimeHasBeenSet = false;
 
     IncidentRecordStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

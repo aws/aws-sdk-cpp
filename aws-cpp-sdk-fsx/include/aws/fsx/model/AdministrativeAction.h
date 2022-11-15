@@ -311,28 +311,28 @@ namespace Model
   private:
 
     AdministrativeActionType m_administrativeActionType;
-    bool m_administrativeActionTypeHasBeenSet;
+    bool m_administrativeActionTypeHasBeenSet = false;
 
     int m_progressPercent;
-    bool m_progressPercentHasBeenSet;
+    bool m_progressPercentHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestTime;
-    bool m_requestTimeHasBeenSet;
+    bool m_requestTimeHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     std::shared_ptr<FileSystem> m_targetFileSystemValues;
-    bool m_targetFileSystemValuesHasBeenSet;
+    bool m_targetFileSystemValuesHasBeenSet = false;
 
     AdministrativeActionFailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     std::shared_ptr<Volume> m_targetVolumeValues;
-    bool m_targetVolumeValuesHasBeenSet;
+    bool m_targetVolumeValuesHasBeenSet = false;
 
     std::shared_ptr<Snapshot> m_targetSnapshotValues;
-    bool m_targetSnapshotValuesHasBeenSet;
+    bool m_targetSnapshotValuesHasBeenSet = false;
   };
 
 } // namespace Model

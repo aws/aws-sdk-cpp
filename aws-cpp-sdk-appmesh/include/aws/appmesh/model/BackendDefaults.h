@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ClientPolicy m_clientPolicy;
-    bool m_clientPolicyHasBeenSet;
+    bool m_clientPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,13 +20,17 @@ namespace Model
 
 InternalServerException::InternalServerException() : 
     m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_retryAfterSeconds(0),
+    m_retryAfterSecondsHasBeenSet(false)
 {
 }
 
 InternalServerException::InternalServerException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_retryAfterSeconds(0),
+    m_retryAfterSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ InternalServerException& InternalServerException::operator =(JsonView jsonValue)
     m_requestIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RetryAfterSeconds"))
+  {
+    m_retryAfterSeconds = jsonValue.GetInteger("RetryAfterSeconds");
+
+    m_retryAfterSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +74,12 @@ JsonValue InternalServerException::Jsonize() const
   if(m_requestIdHasBeenSet)
   {
    payload.WithString("RequestId", m_requestId);
+
+  }
+
+  if(m_retryAfterSecondsHasBeenSet)
+  {
+   payload.WithInteger("RetryAfterSeconds", m_retryAfterSeconds);
 
   }
 

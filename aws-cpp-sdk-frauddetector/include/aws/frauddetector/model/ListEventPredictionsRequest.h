@@ -271,25 +271,25 @@ namespace Model
   private:
 
     FilterCondition m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     FilterCondition m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     FilterCondition m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     FilterCondition m_detectorVersionId;
-    bool m_detectorVersionIdHasBeenSet;
+    bool m_detectorVersionIdHasBeenSet = false;
 
     PredictionTimeRange m_predictionTimeRange;
-    bool m_predictionTimeRangeHasBeenSet;
+    bool m_predictionTimeRangeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -45,6 +45,17 @@ namespace Model
     Aws::String GetChecksumAlgorithmName() const override;
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        if (BucketHasBeenSet()) {
+            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+        }
+
+        return parameters;
+    }
+
+
     /**
      * <p>The bucket name.</p>
      */
@@ -382,22 +393,22 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_contentMD5;
-    bool m_contentMD5HasBeenSet;
+    bool m_contentMD5HasBeenSet = false;
 
     ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Tagging m_tagging;
-    bool m_taggingHasBeenSet;
+    bool m_taggingHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/proton/model/TemplateVersionStatus.h>
 #include <aws/proton/model/CompatibleEnvironmentTemplateInput.h>
+#include <aws/proton/model/ServiceTemplateSupportedComponentSourceType.h>
 #include <utility>
 
 namespace Aws
@@ -38,50 +39,58 @@ namespace Model
 
 
     /**
-     * <p>An array of compatible environment names for a service template major or
-     * minor version to update.</p>
+     * <p>An array of environment template objects that are compatible with this
+     * service template version. A service instance based on this service template
+     * version can run in environments based on compatible templates.</p>
      */
     inline const Aws::Vector<CompatibleEnvironmentTemplateInput>& GetCompatibleEnvironmentTemplates() const{ return m_compatibleEnvironmentTemplates; }
 
     /**
-     * <p>An array of compatible environment names for a service template major or
-     * minor version to update.</p>
+     * <p>An array of environment template objects that are compatible with this
+     * service template version. A service instance based on this service template
+     * version can run in environments based on compatible templates.</p>
      */
     inline bool CompatibleEnvironmentTemplatesHasBeenSet() const { return m_compatibleEnvironmentTemplatesHasBeenSet; }
 
     /**
-     * <p>An array of compatible environment names for a service template major or
-     * minor version to update.</p>
+     * <p>An array of environment template objects that are compatible with this
+     * service template version. A service instance based on this service template
+     * version can run in environments based on compatible templates.</p>
      */
     inline void SetCompatibleEnvironmentTemplates(const Aws::Vector<CompatibleEnvironmentTemplateInput>& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates = value; }
 
     /**
-     * <p>An array of compatible environment names for a service template major or
-     * minor version to update.</p>
+     * <p>An array of environment template objects that are compatible with this
+     * service template version. A service instance based on this service template
+     * version can run in environments based on compatible templates.</p>
      */
     inline void SetCompatibleEnvironmentTemplates(Aws::Vector<CompatibleEnvironmentTemplateInput>&& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates = std::move(value); }
 
     /**
-     * <p>An array of compatible environment names for a service template major or
-     * minor version to update.</p>
+     * <p>An array of environment template objects that are compatible with this
+     * service template version. A service instance based on this service template
+     * version can run in environments based on compatible templates.</p>
      */
     inline UpdateServiceTemplateVersionRequest& WithCompatibleEnvironmentTemplates(const Aws::Vector<CompatibleEnvironmentTemplateInput>& value) { SetCompatibleEnvironmentTemplates(value); return *this;}
 
     /**
-     * <p>An array of compatible environment names for a service template major or
-     * minor version to update.</p>
+     * <p>An array of environment template objects that are compatible with this
+     * service template version. A service instance based on this service template
+     * version can run in environments based on compatible templates.</p>
      */
     inline UpdateServiceTemplateVersionRequest& WithCompatibleEnvironmentTemplates(Aws::Vector<CompatibleEnvironmentTemplateInput>&& value) { SetCompatibleEnvironmentTemplates(std::move(value)); return *this;}
 
     /**
-     * <p>An array of compatible environment names for a service template major or
-     * minor version to update.</p>
+     * <p>An array of environment template objects that are compatible with this
+     * service template version. A service instance based on this service template
+     * version can run in environments based on compatible templates.</p>
      */
     inline UpdateServiceTemplateVersionRequest& AddCompatibleEnvironmentTemplates(const CompatibleEnvironmentTemplateInput& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates.push_back(value); return *this; }
 
     /**
-     * <p>An array of compatible environment names for a service template major or
-     * minor version to update.</p>
+     * <p>An array of environment template objects that are compatible with this
+     * service template version. A service instance based on this service template
+     * version can run in environments based on compatible templates.</p>
      */
     inline UpdateServiceTemplateVersionRequest& AddCompatibleEnvironmentTemplates(CompatibleEnvironmentTemplateInput&& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates.push_back(std::move(value)); return *this; }
 
@@ -257,6 +266,103 @@ namespace Model
 
 
     /**
+     * <p>An array of supported component sources. Components with supported sources
+     * can be attached to service instances based on this service template version.</p>
+     *  <p>A change to <code>supportedComponentSources</code> doesn't impact
+     * existing component attachments to instances based on this template version. A
+     * change only affects later associations.</p>  <p>For more information
+     * about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& GetSupportedComponentSources() const{ return m_supportedComponentSources; }
+
+    /**
+     * <p>An array of supported component sources. Components with supported sources
+     * can be attached to service instances based on this service template version.</p>
+     *  <p>A change to <code>supportedComponentSources</code> doesn't impact
+     * existing component attachments to instances based on this template version. A
+     * change only affects later associations.</p>  <p>For more information
+     * about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline bool SupportedComponentSourcesHasBeenSet() const { return m_supportedComponentSourcesHasBeenSet; }
+
+    /**
+     * <p>An array of supported component sources. Components with supported sources
+     * can be attached to service instances based on this service template version.</p>
+     *  <p>A change to <code>supportedComponentSources</code> doesn't impact
+     * existing component attachments to instances based on this template version. A
+     * change only affects later associations.</p>  <p>For more information
+     * about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline void SetSupportedComponentSources(const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources = value; }
+
+    /**
+     * <p>An array of supported component sources. Components with supported sources
+     * can be attached to service instances based on this service template version.</p>
+     *  <p>A change to <code>supportedComponentSources</code> doesn't impact
+     * existing component attachments to instances based on this template version. A
+     * change only affects later associations.</p>  <p>For more information
+     * about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline void SetSupportedComponentSources(Aws::Vector<ServiceTemplateSupportedComponentSourceType>&& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources = std::move(value); }
+
+    /**
+     * <p>An array of supported component sources. Components with supported sources
+     * can be attached to service instances based on this service template version.</p>
+     *  <p>A change to <code>supportedComponentSources</code> doesn't impact
+     * existing component attachments to instances based on this template version. A
+     * change only affects later associations.</p>  <p>For more information
+     * about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline UpdateServiceTemplateVersionRequest& WithSupportedComponentSources(const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& value) { SetSupportedComponentSources(value); return *this;}
+
+    /**
+     * <p>An array of supported component sources. Components with supported sources
+     * can be attached to service instances based on this service template version.</p>
+     *  <p>A change to <code>supportedComponentSources</code> doesn't impact
+     * existing component attachments to instances based on this template version. A
+     * change only affects later associations.</p>  <p>For more information
+     * about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline UpdateServiceTemplateVersionRequest& WithSupportedComponentSources(Aws::Vector<ServiceTemplateSupportedComponentSourceType>&& value) { SetSupportedComponentSources(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of supported component sources. Components with supported sources
+     * can be attached to service instances based on this service template version.</p>
+     *  <p>A change to <code>supportedComponentSources</code> doesn't impact
+     * existing component attachments to instances based on this template version. A
+     * change only affects later associations.</p>  <p>For more information
+     * about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline UpdateServiceTemplateVersionRequest& AddSupportedComponentSources(const ServiceTemplateSupportedComponentSourceType& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources.push_back(value); return *this; }
+
+    /**
+     * <p>An array of supported component sources. Components with supported sources
+     * can be attached to service instances based on this service template version.</p>
+     *  <p>A change to <code>supportedComponentSources</code> doesn't impact
+     * existing component attachments to instances based on this template version. A
+     * change only affects later associations.</p>  <p>For more information
+     * about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline UpdateServiceTemplateVersionRequest& AddSupportedComponentSources(ServiceTemplateSupportedComponentSourceType&& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The name of the service template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
@@ -299,22 +405,25 @@ namespace Model
   private:
 
     Aws::Vector<CompatibleEnvironmentTemplateInput> m_compatibleEnvironmentTemplates;
-    bool m_compatibleEnvironmentTemplatesHasBeenSet;
+    bool m_compatibleEnvironmentTemplatesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_majorVersion;
-    bool m_majorVersionHasBeenSet;
+    bool m_majorVersionHasBeenSet = false;
 
     Aws::String m_minorVersion;
-    bool m_minorVersionHasBeenSet;
+    bool m_minorVersionHasBeenSet = false;
 
     TemplateVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
+
+    Aws::Vector<ServiceTemplateSupportedComponentSourceType> m_supportedComponentSources;
+    bool m_supportedComponentSourcesHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

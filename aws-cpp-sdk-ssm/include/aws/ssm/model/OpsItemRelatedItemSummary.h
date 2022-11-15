@@ -347,31 +347,31 @@ namespace Model
   private:
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
 
     Aws::String m_resourceUri;
-    bool m_resourceUriHasBeenSet;
+    bool m_resourceUriHasBeenSet = false;
 
     OpsItemIdentity m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     OpsItemIdentity m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

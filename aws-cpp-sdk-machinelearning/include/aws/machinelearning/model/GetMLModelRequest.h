@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_mLModelId;
-    bool m_mLModelIdHasBeenSet;
+    bool m_mLModelIdHasBeenSet = false;
 
     bool m_verbose;
-    bool m_verboseHasBeenSet;
+    bool m_verboseHasBeenSet = false;
   };
 
 } // namespace Model

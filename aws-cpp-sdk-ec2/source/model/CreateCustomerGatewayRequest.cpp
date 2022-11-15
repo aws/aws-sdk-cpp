@@ -19,6 +19,7 @@ CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() :
     m_typeHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
+    m_ipAddressHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -35,7 +36,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
 
   if(m_publicIpHasBeenSet)
   {
-    ss << "IpAddress=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+    ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
   if(m_certificateArnHasBeenSet)
@@ -61,6 +62,11 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
   if(m_deviceNameHasBeenSet)
   {
     ss << "DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
+  }
+
+  if(m_ipAddressHasBeenSet)
+  {
+    ss << "IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

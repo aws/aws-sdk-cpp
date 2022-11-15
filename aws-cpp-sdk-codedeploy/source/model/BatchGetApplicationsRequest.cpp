@@ -23,7 +23,7 @@ Aws::String BatchGetApplicationsRequest::SerializePayload() const
 
   if(m_applicationNamesHasBeenSet)
   {
-   Array<JsonValue> applicationNamesJsonList(m_applicationNames.size());
+   Aws::Utils::Array<JsonValue> applicationNamesJsonList(m_applicationNames.size());
    for(unsigned applicationNamesIndex = 0; applicationNamesIndex < applicationNamesJsonList.GetLength(); ++applicationNamesIndex)
    {
      applicationNamesJsonList[applicationNamesIndex].AsString(m_applicationNames[applicationNamesIndex]);

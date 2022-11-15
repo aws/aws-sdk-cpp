@@ -30,7 +30,7 @@ ListParallelDataResult& ListParallelDataResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ParallelDataPropertiesList"))
   {
-    Array<JsonView> parallelDataPropertiesListJsonList = jsonValue.GetArray("ParallelDataPropertiesList");
+    Aws::Utils::Array<JsonView> parallelDataPropertiesListJsonList = jsonValue.GetArray("ParallelDataPropertiesList");
     for(unsigned parallelDataPropertiesListIndex = 0; parallelDataPropertiesListIndex < parallelDataPropertiesListJsonList.GetLength(); ++parallelDataPropertiesListIndex)
     {
       m_parallelDataPropertiesList.push_back(parallelDataPropertiesListJsonList[parallelDataPropertiesListIndex].AsObject());

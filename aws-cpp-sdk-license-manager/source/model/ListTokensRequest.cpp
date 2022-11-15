@@ -27,7 +27,7 @@ Aws::String ListTokensRequest::SerializePayload() const
 
   if(m_tokenIdsHasBeenSet)
   {
-   Array<JsonValue> tokenIdsJsonList(m_tokenIds.size());
+   Aws::Utils::Array<JsonValue> tokenIdsJsonList(m_tokenIds.size());
    for(unsigned tokenIdsIndex = 0; tokenIdsIndex < tokenIdsJsonList.GetLength(); ++tokenIdsIndex)
    {
      tokenIdsJsonList[tokenIdsIndex].AsString(m_tokenIds[tokenIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String ListTokensRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

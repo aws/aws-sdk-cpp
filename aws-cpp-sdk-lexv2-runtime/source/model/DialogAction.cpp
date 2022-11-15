@@ -23,7 +23,8 @@ DialogAction::DialogAction() :
     m_typeHasBeenSet(false),
     m_slotToElicitHasBeenSet(false),
     m_slotElicitationStyle(StyleType::NOT_SET),
-    m_slotElicitationStyleHasBeenSet(false)
+    m_slotElicitationStyleHasBeenSet(false),
+    m_subSlotToElicitHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ DialogAction::DialogAction(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_slotToElicitHasBeenSet(false),
     m_slotElicitationStyle(StyleType::NOT_SET),
-    m_slotElicitationStyleHasBeenSet(false)
+    m_slotElicitationStyleHasBeenSet(false),
+    m_subSlotToElicitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ DialogAction& DialogAction::operator =(JsonView jsonValue)
     m_slotElicitationStyleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("subSlotToElicit"))
+  {
+    m_subSlotToElicit = jsonValue.GetObject("subSlotToElicit");
+
+    m_subSlotToElicitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +90,12 @@ JsonValue DialogAction::Jsonize() const
   if(m_slotElicitationStyleHasBeenSet)
   {
    payload.WithString("slotElicitationStyle", StyleTypeMapper::GetNameForStyleType(m_slotElicitationStyle));
+  }
+
+  if(m_subSlotToElicitHasBeenSet)
+  {
+   payload.WithObject("subSlotToElicit", m_subSlotToElicit.Jsonize());
+
   }
 
   return payload;

@@ -27,12 +27,8 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>The collection of VPC links under the caller's account in a region.</p> <div
-   * class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-with-private-integration.html">Getting
-   * Started with Private Integrations</a>, <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-private-integration.html">Set
-   * up Private Integrations</a> </div><p><h3>See Also:</h3>   <a
+   * <p>The collection of VPC links under the caller's account in a
+   * region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/VpcLinks">AWS
    * API Reference</a></p>
    */

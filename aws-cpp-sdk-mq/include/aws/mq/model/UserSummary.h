@@ -129,10 +129,10 @@ namespace Model
   private:
 
     ChangeType m_pendingChange;
-    bool m_pendingChangeHasBeenSet;
+    bool m_pendingChangeHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

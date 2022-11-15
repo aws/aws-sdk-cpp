@@ -58,6 +58,7 @@ namespace Aws
         extern AWS_CORE_API const char AWS_TRAILER_HEADER[];
         extern AWS_CORE_API const char SDK_INVOCATION_ID_HEADER[];
         extern AWS_CORE_API const char SDK_REQUEST_HEADER[];
+        extern AWS_CORE_API const char X_AMZN_TRACE_ID_HEADER[];
         extern AWS_CORE_API const char CHUNKED_VALUE[];
         extern AWS_CORE_API const char AWS_CHUNKED_VALUE[];
 
@@ -125,7 +126,7 @@ namespace Aws
              */
             virtual bool HasHeader(const char* name) const = 0;
             /**
-             * Get size in bytes of the request when as it will be going accross the wire.
+             * Get size in bytes of the request when as it will be going across the wire.
              */
             virtual int64_t GetSize() const = 0;
             /**

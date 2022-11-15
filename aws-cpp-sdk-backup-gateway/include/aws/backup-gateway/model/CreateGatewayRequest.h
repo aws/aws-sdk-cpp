@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_activationKey;
-    bool m_activationKeyHasBeenSet;
+    bool m_activationKeyHasBeenSet = false;
 
     Aws::String m_gatewayDisplayName;
-    bool m_gatewayDisplayNameHasBeenSet;
+    bool m_gatewayDisplayNameHasBeenSet = false;
 
     GatewayType m_gatewayType;
-    bool m_gatewayTypeHasBeenSet;
+    bool m_gatewayTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

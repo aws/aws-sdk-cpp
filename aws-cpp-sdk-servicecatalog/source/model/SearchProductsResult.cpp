@@ -30,7 +30,7 @@ SearchProductsResult& SearchProductsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProductViewSummaries"))
   {
-    Array<JsonView> productViewSummariesJsonList = jsonValue.GetArray("ProductViewSummaries");
+    Aws::Utils::Array<JsonView> productViewSummariesJsonList = jsonValue.GetArray("ProductViewSummaries");
     for(unsigned productViewSummariesIndex = 0; productViewSummariesIndex < productViewSummariesJsonList.GetLength(); ++productViewSummariesIndex)
     {
       m_productViewSummaries.push_back(productViewSummariesJsonList[productViewSummariesIndex].AsObject());
@@ -42,7 +42,7 @@ SearchProductsResult& SearchProductsResult::operator =(const Aws::AmazonWebServi
     Aws::Map<Aws::String, JsonView> productViewAggregationsJsonMap = jsonValue.GetObject("ProductViewAggregations").GetAllObjects();
     for(auto& productViewAggregationsItem : productViewAggregationsJsonMap)
     {
-      Array<JsonView> productViewAggregationValuesJsonList = productViewAggregationsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> productViewAggregationValuesJsonList = productViewAggregationsItem.second.AsArray();
       Aws::Vector<ProductViewAggregationValue> productViewAggregationValuesList;
       productViewAggregationValuesList.reserve((size_t)productViewAggregationValuesJsonList.GetLength());
       for(unsigned productViewAggregationValuesIndex = 0; productViewAggregationValuesIndex < productViewAggregationValuesJsonList.GetLength(); ++productViewAggregationValuesIndex)

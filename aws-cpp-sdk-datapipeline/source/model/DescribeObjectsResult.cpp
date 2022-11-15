@@ -32,7 +32,7 @@ DescribeObjectsResult& DescribeObjectsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pipelineObjects"))
   {
-    Array<JsonView> pipelineObjectsJsonList = jsonValue.GetArray("pipelineObjects");
+    Aws::Utils::Array<JsonView> pipelineObjectsJsonList = jsonValue.GetArray("pipelineObjects");
     for(unsigned pipelineObjectsIndex = 0; pipelineObjectsIndex < pipelineObjectsJsonList.GetLength(); ++pipelineObjectsIndex)
     {
       m_pipelineObjects.push_back(pipelineObjectsJsonList[pipelineObjectsIndex].AsObject());

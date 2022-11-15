@@ -105,49 +105,57 @@ namespace Model
 
     /**
      * <p>A container for allowed features. Valid inputs are
-     * <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+     * <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>,
+     * <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
      */
     inline const Aws::Vector<ObjectLambdaAllowedFeature>& GetAllowedFeatures() const{ return m_allowedFeatures; }
 
     /**
      * <p>A container for allowed features. Valid inputs are
-     * <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+     * <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>,
+     * <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
      */
     inline bool AllowedFeaturesHasBeenSet() const { return m_allowedFeaturesHasBeenSet; }
 
     /**
      * <p>A container for allowed features. Valid inputs are
-     * <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+     * <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>,
+     * <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
      */
     inline void SetAllowedFeatures(const Aws::Vector<ObjectLambdaAllowedFeature>& value) { m_allowedFeaturesHasBeenSet = true; m_allowedFeatures = value; }
 
     /**
      * <p>A container for allowed features. Valid inputs are
-     * <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+     * <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>,
+     * <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
      */
     inline void SetAllowedFeatures(Aws::Vector<ObjectLambdaAllowedFeature>&& value) { m_allowedFeaturesHasBeenSet = true; m_allowedFeatures = std::move(value); }
 
     /**
      * <p>A container for allowed features. Valid inputs are
-     * <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+     * <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>,
+     * <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
      */
     inline ObjectLambdaConfiguration& WithAllowedFeatures(const Aws::Vector<ObjectLambdaAllowedFeature>& value) { SetAllowedFeatures(value); return *this;}
 
     /**
      * <p>A container for allowed features. Valid inputs are
-     * <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+     * <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>,
+     * <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
      */
     inline ObjectLambdaConfiguration& WithAllowedFeatures(Aws::Vector<ObjectLambdaAllowedFeature>&& value) { SetAllowedFeatures(std::move(value)); return *this;}
 
     /**
      * <p>A container for allowed features. Valid inputs are
-     * <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+     * <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>,
+     * <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
      */
     inline ObjectLambdaConfiguration& AddAllowedFeatures(const ObjectLambdaAllowedFeature& value) { m_allowedFeaturesHasBeenSet = true; m_allowedFeatures.push_back(value); return *this; }
 
     /**
      * <p>A container for allowed features. Valid inputs are
-     * <code>GetObject-Range</code> and <code>GetObject-PartNumber</code>.</p>
+     * <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>,
+     * <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
      */
     inline ObjectLambdaConfiguration& AddAllowedFeatures(ObjectLambdaAllowedFeature&& value) { m_allowedFeaturesHasBeenSet = true; m_allowedFeatures.push_back(std::move(value)); return *this; }
 
@@ -203,16 +211,16 @@ namespace Model
   private:
 
     Aws::String m_supportingAccessPoint;
-    bool m_supportingAccessPointHasBeenSet;
+    bool m_supportingAccessPointHasBeenSet = false;
 
     bool m_cloudWatchMetricsEnabled;
-    bool m_cloudWatchMetricsEnabledHasBeenSet;
+    bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
     Aws::Vector<ObjectLambdaAllowedFeature> m_allowedFeatures;
-    bool m_allowedFeaturesHasBeenSet;
+    bool m_allowedFeaturesHasBeenSet = false;
 
     Aws::Vector<ObjectLambdaTransformationConfiguration> m_transformationConfigurations;
-    bool m_transformationConfigurationsHasBeenSet;
+    bool m_transformationConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

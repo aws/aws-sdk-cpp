@@ -342,25 +342,25 @@ namespace Model
   private:
 
     Aws::String m_apiGatewayId;
-    bool m_apiGatewayIdHasBeenSet;
+    bool m_apiGatewayIdHasBeenSet = false;
 
     ApiGatewayEndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_nlbArn;
-    bool m_nlbArnHasBeenSet;
+    bool m_nlbArnHasBeenSet = false;
 
     Aws::String m_nlbName;
-    bool m_nlbNameHasBeenSet;
+    bool m_nlbNameHasBeenSet = false;
 
     Aws::String m_proxyUrl;
-    bool m_proxyUrlHasBeenSet;
+    bool m_proxyUrlHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_vpcLinkId;
-    bool m_vpcLinkIdHasBeenSet;
+    bool m_vpcLinkIdHasBeenSet = false;
   };
 
 } // namespace Model

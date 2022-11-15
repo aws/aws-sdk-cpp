@@ -67,7 +67,7 @@ namespace Model
   private:
 
     int m_maximumRetryAttempts;
-    bool m_maximumRetryAttemptsHasBeenSet;
+    bool m_maximumRetryAttemptsHasBeenSet = false;
   };
 
 } // namespace Model

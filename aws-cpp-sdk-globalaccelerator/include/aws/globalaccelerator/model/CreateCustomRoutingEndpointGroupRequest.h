@@ -87,50 +87,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the endpoint group is located. A listener can have only
-     * one endpoint group in a specific Region.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located. A
+     * listener can have only one endpoint group in a specific Region.</p>
      */
     inline const Aws::String& GetEndpointGroupRegion() const{ return m_endpointGroupRegion; }
 
     /**
-     * <p>The AWS Region where the endpoint group is located. A listener can have only
-     * one endpoint group in a specific Region.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located. A
+     * listener can have only one endpoint group in a specific Region.</p>
      */
     inline bool EndpointGroupRegionHasBeenSet() const { return m_endpointGroupRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region where the endpoint group is located. A listener can have only
-     * one endpoint group in a specific Region.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located. A
+     * listener can have only one endpoint group in a specific Region.</p>
      */
     inline void SetEndpointGroupRegion(const Aws::String& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = value; }
 
     /**
-     * <p>The AWS Region where the endpoint group is located. A listener can have only
-     * one endpoint group in a specific Region.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located. A
+     * listener can have only one endpoint group in a specific Region.</p>
      */
     inline void SetEndpointGroupRegion(Aws::String&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region where the endpoint group is located. A listener can have only
-     * one endpoint group in a specific Region.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located. A
+     * listener can have only one endpoint group in a specific Region.</p>
      */
     inline void SetEndpointGroupRegion(const char* value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion.assign(value); }
 
     /**
-     * <p>The AWS Region where the endpoint group is located. A listener can have only
-     * one endpoint group in a specific Region.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located. A
+     * listener can have only one endpoint group in a specific Region.</p>
      */
     inline CreateCustomRoutingEndpointGroupRequest& WithEndpointGroupRegion(const Aws::String& value) { SetEndpointGroupRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the endpoint group is located. A listener can have only
-     * one endpoint group in a specific Region.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located. A
+     * listener can have only one endpoint group in a specific Region.</p>
      */
     inline CreateCustomRoutingEndpointGroupRequest& WithEndpointGroupRegion(Aws::String&& value) { SetEndpointGroupRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the endpoint group is located. A listener can have only
-     * one endpoint group in a specific Region.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located. A
+     * listener can have only one endpoint group in a specific Region.</p>
      */
     inline CreateCustomRoutingEndpointGroupRequest& WithEndpointGroupRegion(const char* value) { SetEndpointGroupRegion(value); return *this;}
 
@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_listenerArn;
-    bool m_listenerArnHasBeenSet;
+    bool m_listenerArnHasBeenSet = false;
 
     Aws::String m_endpointGroupRegion;
-    bool m_endpointGroupRegionHasBeenSet;
+    bool m_endpointGroupRegionHasBeenSet = false;
 
     Aws::Vector<CustomRoutingDestinationConfiguration> m_destinationConfigurations;
-    bool m_destinationConfigurationsHasBeenSet;
+    bool m_destinationConfigurationsHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

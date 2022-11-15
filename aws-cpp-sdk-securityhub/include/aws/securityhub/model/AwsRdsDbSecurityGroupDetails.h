@@ -338,25 +338,25 @@ namespace Model
   private:
 
     Aws::String m_dbSecurityGroupArn;
-    bool m_dbSecurityGroupArnHasBeenSet;
+    bool m_dbSecurityGroupArnHasBeenSet = false;
 
     Aws::String m_dbSecurityGroupDescription;
-    bool m_dbSecurityGroupDescriptionHasBeenSet;
+    bool m_dbSecurityGroupDescriptionHasBeenSet = false;
 
     Aws::String m_dbSecurityGroupName;
-    bool m_dbSecurityGroupNameHasBeenSet;
+    bool m_dbSecurityGroupNameHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbSecurityGroupEc2SecurityGroup> m_ec2SecurityGroups;
-    bool m_ec2SecurityGroupsHasBeenSet;
+    bool m_ec2SecurityGroupsHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbSecurityGroupIpRange> m_ipRanges;
-    bool m_ipRangesHasBeenSet;
+    bool m_ipRangesHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

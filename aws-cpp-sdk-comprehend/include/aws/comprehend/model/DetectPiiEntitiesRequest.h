@@ -36,91 +36,89 @@ namespace Model
 
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline DetectPiiEntitiesRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline DetectPiiEntitiesRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline DetectPiiEntitiesRequest& WithText(const char* value) { SetText(value); return *this;}
 
 
     /**
-     * <p>The language of the input documents.</p>
+     * <p>The language of the input documents. Currently, English is the only valid
+     * language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language of the input documents.</p>
+     * <p>The language of the input documents. Currently, English is the only valid
+     * language.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language of the input documents.</p>
+     * <p>The language of the input documents. Currently, English is the only valid
+     * language.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language of the input documents.</p>
+     * <p>The language of the input documents. Currently, English is the only valid
+     * language.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language of the input documents.</p>
+     * <p>The language of the input documents. Currently, English is the only valid
+     * language.</p>
      */
     inline DetectPiiEntitiesRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language of the input documents.</p>
+     * <p>The language of the input documents. Currently, English is the only valid
+     * language.</p>
      */
     inline DetectPiiEntitiesRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
   };
 
 } // namespace Model

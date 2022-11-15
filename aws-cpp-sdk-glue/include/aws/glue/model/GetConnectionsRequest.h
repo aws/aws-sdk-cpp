@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>Allows you to retrieve the connection metadata without returning the
-     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * password. For instance, the Glue console uses this flag to retrieve the
      * connection, and does not display the password. Set this parameter when the
      * caller might not have permission to use the KMS key to decrypt the password, but
      * it does have permission to access the rest of the connection properties.</p>
@@ -126,7 +126,7 @@ namespace Model
 
     /**
      * <p>Allows you to retrieve the connection metadata without returning the
-     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * password. For instance, the Glue console uses this flag to retrieve the
      * connection, and does not display the password. Set this parameter when the
      * caller might not have permission to use the KMS key to decrypt the password, but
      * it does have permission to access the rest of the connection properties.</p>
@@ -135,7 +135,7 @@ namespace Model
 
     /**
      * <p>Allows you to retrieve the connection metadata without returning the
-     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * password. For instance, the Glue console uses this flag to retrieve the
      * connection, and does not display the password. Set this parameter when the
      * caller might not have permission to use the KMS key to decrypt the password, but
      * it does have permission to access the rest of the connection properties.</p>
@@ -144,7 +144,7 @@ namespace Model
 
     /**
      * <p>Allows you to retrieve the connection metadata without returning the
-     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * password. For instance, the Glue console uses this flag to retrieve the
      * connection, and does not display the password. Set this parameter when the
      * caller might not have permission to use the KMS key to decrypt the password, but
      * it does have permission to access the rest of the connection properties.</p>
@@ -216,19 +216,19 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     GetConnectionsFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     bool m_hidePassword;
-    bool m_hidePasswordHasBeenSet;
+    bool m_hidePasswordHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

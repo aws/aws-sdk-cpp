@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_nodeRole;
-    bool m_nodeRoleHasBeenSet;
+    bool m_nodeRoleHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::String m_publicIpAddress;
-    bool m_publicIpAddressHasBeenSet;
+    bool m_publicIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

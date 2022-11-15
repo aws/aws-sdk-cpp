@@ -36,7 +36,7 @@ DeleteBuildBatchResult& DeleteBuildBatchResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("buildsDeleted"))
   {
-    Array<JsonView> buildsDeletedJsonList = jsonValue.GetArray("buildsDeleted");
+    Aws::Utils::Array<JsonView> buildsDeletedJsonList = jsonValue.GetArray("buildsDeleted");
     for(unsigned buildsDeletedIndex = 0; buildsDeletedIndex < buildsDeletedJsonList.GetLength(); ++buildsDeletedIndex)
     {
       m_buildsDeleted.push_back(buildsDeletedJsonList[buildsDeletedIndex].AsString());
@@ -45,7 +45,7 @@ DeleteBuildBatchResult& DeleteBuildBatchResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("buildsNotDeleted"))
   {
-    Array<JsonView> buildsNotDeletedJsonList = jsonValue.GetArray("buildsNotDeleted");
+    Aws::Utils::Array<JsonView> buildsNotDeletedJsonList = jsonValue.GetArray("buildsNotDeleted");
     for(unsigned buildsNotDeletedIndex = 0; buildsNotDeletedIndex < buildsNotDeletedJsonList.GetLength(); ++buildsNotDeletedIndex)
     {
       m_buildsNotDeleted.push_back(buildsNotDeletedJsonList[buildsNotDeletedIndex].AsObject());

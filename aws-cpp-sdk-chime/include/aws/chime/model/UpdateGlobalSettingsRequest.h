@@ -97,10 +97,10 @@ namespace Model
   private:
 
     BusinessCallingSettings m_businessCalling;
-    bool m_businessCallingHasBeenSet;
+    bool m_businessCallingHasBeenSet = false;
 
     VoiceConnectorSettings m_voiceConnector;
-    bool m_voiceConnectorHasBeenSet;
+    bool m_voiceConnectorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet;
+    bool m_datasetGroupArnHasBeenSet = false;
 
     Aws::Vector<SupplementaryFeature> m_supplementaryFeatures;
-    bool m_supplementaryFeaturesHasBeenSet;
+    bool m_supplementaryFeaturesHasBeenSet = false;
   };
 
 } // namespace Model

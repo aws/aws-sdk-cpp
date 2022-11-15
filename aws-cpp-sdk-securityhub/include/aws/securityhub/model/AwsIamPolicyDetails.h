@@ -492,37 +492,37 @@ namespace Model
   private:
 
     int m_attachmentCount;
-    bool m_attachmentCountHasBeenSet;
+    bool m_attachmentCountHasBeenSet = false;
 
     Aws::String m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_defaultVersionId;
-    bool m_defaultVersionIdHasBeenSet;
+    bool m_defaultVersionIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_isAttachable;
-    bool m_isAttachableHasBeenSet;
+    bool m_isAttachableHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_permissionsBoundaryUsageCount;
-    bool m_permissionsBoundaryUsageCountHasBeenSet;
+    bool m_permissionsBoundaryUsageCountHasBeenSet = false;
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::Vector<AwsIamPolicyVersion> m_policyVersionList;
-    bool m_policyVersionListHasBeenSet;
+    bool m_policyVersionListHasBeenSet = false;
 
     Aws::String m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
   };
 
 } // namespace Model

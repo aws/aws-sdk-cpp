@@ -280,19 +280,19 @@ namespace Model
   private:
 
     Aws::String m_dashboardId;
-    bool m_dashboardIdHasBeenSet;
+    bool m_dashboardIdHasBeenSet = false;
 
     Aws::String m_dashboardName;
-    bool m_dashboardNameHasBeenSet;
+    bool m_dashboardNameHasBeenSet = false;
 
     Aws::String m_dashboardDescription;
-    bool m_dashboardDescriptionHasBeenSet;
+    bool m_dashboardDescriptionHasBeenSet = false;
 
     Aws::String m_dashboardDefinition;
-    bool m_dashboardDefinitionHasBeenSet;
+    bool m_dashboardDefinitionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

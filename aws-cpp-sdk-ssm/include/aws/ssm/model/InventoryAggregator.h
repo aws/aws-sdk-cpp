@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::Vector<InventoryAggregator> m_aggregators;
-    bool m_aggregatorsHasBeenSet;
+    bool m_aggregatorsHasBeenSet = false;
 
     Aws::Vector<InventoryGroup> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
   };
 
 } // namespace Model

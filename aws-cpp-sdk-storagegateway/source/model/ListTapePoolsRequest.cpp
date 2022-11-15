@@ -26,7 +26,7 @@ Aws::String ListTapePoolsRequest::SerializePayload() const
 
   if(m_poolARNsHasBeenSet)
   {
-   Array<JsonValue> poolARNsJsonList(m_poolARNs.size());
+   Aws::Utils::Array<JsonValue> poolARNsJsonList(m_poolARNs.size());
    for(unsigned poolARNsIndex = 0; poolARNsIndex < poolARNsJsonList.GetLength(); ++poolARNsIndex)
    {
      poolARNsJsonList[poolARNsIndex].AsString(m_poolARNs[poolARNsIndex]);

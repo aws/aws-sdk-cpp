@@ -109,7 +109,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_blacklistItemNames;
-    bool m_blacklistItemNamesHasBeenSet;
+    bool m_blacklistItemNamesHasBeenSet = false;
   };
 
 } // namespace Model

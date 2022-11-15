@@ -835,64 +835,64 @@ namespace Model
   private:
 
     Aws::String m_trialComponentName;
-    bool m_trialComponentNameHasBeenSet;
+    bool m_trialComponentNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_trialComponentArn;
-    bool m_trialComponentArnHasBeenSet;
+    bool m_trialComponentArnHasBeenSet = false;
 
     TrialComponentSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     TrialComponentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::Map<Aws::String, TrialComponentParameterValue> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Map<Aws::String, TrialComponentArtifact> m_inputArtifacts;
-    bool m_inputArtifactsHasBeenSet;
+    bool m_inputArtifactsHasBeenSet = false;
 
     Aws::Map<Aws::String, TrialComponentArtifact> m_outputArtifacts;
-    bool m_outputArtifactsHasBeenSet;
+    bool m_outputArtifactsHasBeenSet = false;
 
     Aws::Vector<TrialComponentMetricSummary> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     MetadataProperties m_metadataProperties;
-    bool m_metadataPropertiesHasBeenSet;
+    bool m_metadataPropertiesHasBeenSet = false;
 
     TrialComponentSourceDetail m_sourceDetail;
-    bool m_sourceDetailHasBeenSet;
+    bool m_sourceDetailHasBeenSet = false;
 
     Aws::String m_lineageGroupArn;
-    bool m_lineageGroupArnHasBeenSet;
+    bool m_lineageGroupArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Parent> m_parents;
-    bool m_parentsHasBeenSet;
+    bool m_parentsHasBeenSet = false;
   };
 
 } // namespace Model

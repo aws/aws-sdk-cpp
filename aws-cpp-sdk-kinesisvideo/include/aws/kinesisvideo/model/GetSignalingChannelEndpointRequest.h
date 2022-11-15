@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_channelARN;
-    bool m_channelARNHasBeenSet;
+    bool m_channelARNHasBeenSet = false;
 
     SingleMasterChannelEndpointConfiguration m_singleMasterChannelEndpointConfiguration;
-    bool m_singleMasterChannelEndpointConfigurationHasBeenSet;
+    bool m_singleMasterChannelEndpointConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

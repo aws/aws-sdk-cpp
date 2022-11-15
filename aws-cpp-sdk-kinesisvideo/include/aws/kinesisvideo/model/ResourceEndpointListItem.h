@@ -127,10 +127,10 @@ namespace Model
   private:
 
     ChannelProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_resourceEndpoint;
-    bool m_resourceEndpointHasBeenSet;
+    bool m_resourceEndpointHasBeenSet = false;
   };
 
 } // namespace Model

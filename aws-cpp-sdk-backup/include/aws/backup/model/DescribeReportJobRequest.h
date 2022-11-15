@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_reportJobId;
-    bool m_reportJobIdHasBeenSet;
+    bool m_reportJobIdHasBeenSet = false;
   };
 
 } // namespace Model

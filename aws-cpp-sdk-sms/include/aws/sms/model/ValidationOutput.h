@@ -290,25 +290,25 @@ namespace Model
   private:
 
     Aws::String m_validationId;
-    bool m_validationIdHasBeenSet;
+    bool m_validationIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ValidationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestValidationTime;
-    bool m_latestValidationTimeHasBeenSet;
+    bool m_latestValidationTimeHasBeenSet = false;
 
     AppValidationOutput m_appValidationOutput;
-    bool m_appValidationOutputHasBeenSet;
+    bool m_appValidationOutputHasBeenSet = false;
 
     ServerValidationOutput m_serverValidationOutput;
-    bool m_serverValidationOutputHasBeenSet;
+    bool m_serverValidationOutputHasBeenSet = false;
   };
 
 } // namespace Model

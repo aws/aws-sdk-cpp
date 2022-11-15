@@ -56,56 +56,56 @@ namespace Model
 
 
     /**
-     * <p> Enables you to customize recommendations across two attributes. You can
-     * choose to view recommendations for instances within the same instance families
-     * or across different instance families. You can also choose to view your
-     * estimated savings associated with recommendations with consideration of existing
-     * Savings Plans or RI benefits, or neither. </p>
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
      */
     inline const RightsizingRecommendationConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p> Enables you to customize recommendations across two attributes. You can
-     * choose to view recommendations for instances within the same instance families
-     * or across different instance families. You can also choose to view your
-     * estimated savings associated with recommendations with consideration of existing
-     * Savings Plans or RI benefits, or neither. </p>
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p> Enables you to customize recommendations across two attributes. You can
-     * choose to view recommendations for instances within the same instance families
-     * or across different instance families. You can also choose to view your
-     * estimated savings associated with recommendations with consideration of existing
-     * Savings Plans or RI benefits, or neither. </p>
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
      */
     inline void SetConfiguration(const RightsizingRecommendationConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p> Enables you to customize recommendations across two attributes. You can
-     * choose to view recommendations for instances within the same instance families
-     * or across different instance families. You can also choose to view your
-     * estimated savings associated with recommendations with consideration of existing
-     * Savings Plans or RI benefits, or neither. </p>
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
      */
     inline void SetConfiguration(RightsizingRecommendationConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p> Enables you to customize recommendations across two attributes. You can
-     * choose to view recommendations for instances within the same instance families
-     * or across different instance families. You can also choose to view your
-     * estimated savings associated with recommendations with consideration of existing
-     * Savings Plans or RI benefits, or neither. </p>
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
      */
     inline GetRightsizingRecommendationRequest& WithConfiguration(const RightsizingRecommendationConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p> Enables you to customize recommendations across two attributes. You can
-     * choose to view recommendations for instances within the same instance families
-     * or across different instance families. You can also choose to view your
-     * estimated savings associated with recommendations with consideration of existing
-     * Savings Plans or RI benefits, or neither. </p>
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
      */
     inline GetRightsizingRecommendationRequest& WithConfiguration(RightsizingRecommendationConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     RightsizingRecommendationConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
   };
 
 } // namespace Model

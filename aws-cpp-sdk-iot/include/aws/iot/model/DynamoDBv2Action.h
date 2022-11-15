@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     PutItemInput m_putItem;
-    bool m_putItemHasBeenSet;
+    bool m_putItemHasBeenSet = false;
   };
 
 } // namespace Model

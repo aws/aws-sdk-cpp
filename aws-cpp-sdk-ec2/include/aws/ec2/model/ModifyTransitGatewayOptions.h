@@ -394,34 +394,78 @@ namespace Model
      */
     inline ModifyTransitGatewayOptions& WithPropagationDefaultRouteTableId(const char* value) { SetPropagationDefaultRouteTableId(value); return *this;}
 
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
+     * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
+     * transit gateway with active BGP sessions. You must first delete all transit
+     * gateway attachments that have BGP configured prior to modifying the ASN on the
+     * transit gateway.</p>
+     */
+    inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
+     * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
+     * transit gateway with active BGP sessions. You must first delete all transit
+     * gateway attachments that have BGP configured prior to modifying the ASN on the
+     * transit gateway.</p>
+     */
+    inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
+     * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
+     * transit gateway with active BGP sessions. You must first delete all transit
+     * gateway attachments that have BGP configured prior to modifying the ASN on the
+     * transit gateway.</p>
+     */
+    inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
+     * 4294967294 for 32-bit ASNs.</p> <p>The modify ASN operation is not allowed on a
+     * transit gateway with active BGP sessions. You must first delete all transit
+     * gateway attachments that have BGP configured prior to modifying the ASN on the
+     * transit gateway.</p>
+     */
+    inline ModifyTransitGatewayOptions& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_addTransitGatewayCidrBlocks;
-    bool m_addTransitGatewayCidrBlocksHasBeenSet;
+    bool m_addTransitGatewayCidrBlocksHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeTransitGatewayCidrBlocks;
-    bool m_removeTransitGatewayCidrBlocksHasBeenSet;
+    bool m_removeTransitGatewayCidrBlocksHasBeenSet = false;
 
     VpnEcmpSupportValue m_vpnEcmpSupport;
-    bool m_vpnEcmpSupportHasBeenSet;
+    bool m_vpnEcmpSupportHasBeenSet = false;
 
     DnsSupportValue m_dnsSupport;
-    bool m_dnsSupportHasBeenSet;
+    bool m_dnsSupportHasBeenSet = false;
 
     AutoAcceptSharedAttachmentsValue m_autoAcceptSharedAttachments;
-    bool m_autoAcceptSharedAttachmentsHasBeenSet;
+    bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
 
     DefaultRouteTableAssociationValue m_defaultRouteTableAssociation;
-    bool m_defaultRouteTableAssociationHasBeenSet;
+    bool m_defaultRouteTableAssociationHasBeenSet = false;
 
     Aws::String m_associationDefaultRouteTableId;
-    bool m_associationDefaultRouteTableIdHasBeenSet;
+    bool m_associationDefaultRouteTableIdHasBeenSet = false;
 
     DefaultRouteTablePropagationValue m_defaultRouteTablePropagation;
-    bool m_defaultRouteTablePropagationHasBeenSet;
+    bool m_defaultRouteTablePropagationHasBeenSet = false;
 
     Aws::String m_propagationDefaultRouteTableId;
-    bool m_propagationDefaultRouteTableIdHasBeenSet;
+    bool m_propagationDefaultRouteTableIdHasBeenSet = false;
+
+    long long m_amazonSideAsn;
+    bool m_amazonSideAsnHasBeenSet = false;
   };
 
 } // namespace Model

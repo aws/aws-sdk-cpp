@@ -30,7 +30,7 @@ ListThingRegistrationTasksResult& ListThingRegistrationTasksResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("taskIds"))
   {
-    Array<JsonView> taskIdsJsonList = jsonValue.GetArray("taskIds");
+    Aws::Utils::Array<JsonView> taskIdsJsonList = jsonValue.GetArray("taskIds");
     for(unsigned taskIdsIndex = 0; taskIdsIndex < taskIdsJsonList.GetLength(); ++taskIdsIndex)
     {
       m_taskIds.push_back(taskIdsJsonList[taskIdsIndex].AsString());

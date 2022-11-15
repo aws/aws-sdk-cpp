@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/TrainingJobStatus.h>
 #include <aws/sagemaker/model/SortBy.h>
 #include <aws/sagemaker/model/SortOrder.h>
+#include <aws/sagemaker/model/WarmPoolResourceStatus.h>
 #include <utility>
 
 namespace Aws
@@ -405,37 +406,77 @@ namespace Model
      */
     inline ListTrainingJobsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline const WarmPoolResourceStatus& GetWarmPoolStatusEquals() const{ return m_warmPoolStatusEquals; }
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline bool WarmPoolStatusEqualsHasBeenSet() const { return m_warmPoolStatusEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline void SetWarmPoolStatusEquals(const WarmPoolResourceStatus& value) { m_warmPoolStatusEqualsHasBeenSet = true; m_warmPoolStatusEquals = value; }
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline void SetWarmPoolStatusEquals(WarmPoolResourceStatus&& value) { m_warmPoolStatusEqualsHasBeenSet = true; m_warmPoolStatusEquals = std::move(value); }
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline ListTrainingJobsRequest& WithWarmPoolStatusEquals(const WarmPoolResourceStatus& value) { SetWarmPoolStatusEquals(value); return *this;}
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline ListTrainingJobsRequest& WithWarmPoolStatusEquals(WarmPoolResourceStatus&& value) { SetWarmPoolStatusEquals(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeAfter;
-    bool m_creationTimeAfterHasBeenSet;
+    bool m_creationTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeBefore;
-    bool m_creationTimeBeforeHasBeenSet;
+    bool m_creationTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTimeAfter;
-    bool m_lastModifiedTimeAfterHasBeenSet;
+    bool m_lastModifiedTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTimeBefore;
-    bool m_lastModifiedTimeBeforeHasBeenSet;
+    bool m_lastModifiedTimeBeforeHasBeenSet = false;
 
     Aws::String m_nameContains;
-    bool m_nameContainsHasBeenSet;
+    bool m_nameContainsHasBeenSet = false;
 
     TrainingJobStatus m_statusEquals;
-    bool m_statusEqualsHasBeenSet;
+    bool m_statusEqualsHasBeenSet = false;
 
     SortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
+
+    WarmPoolResourceStatus m_warmPoolStatusEquals;
+    bool m_warmPoolStatusEqualsHasBeenSet = false;
   };
 
 } // namespace Model

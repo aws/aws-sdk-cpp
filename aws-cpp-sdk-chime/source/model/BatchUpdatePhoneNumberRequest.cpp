@@ -23,7 +23,7 @@ Aws::String BatchUpdatePhoneNumberRequest::SerializePayload() const
 
   if(m_updatePhoneNumberRequestItemsHasBeenSet)
   {
-   Array<JsonValue> updatePhoneNumberRequestItemsJsonList(m_updatePhoneNumberRequestItems.size());
+   Aws::Utils::Array<JsonValue> updatePhoneNumberRequestItemsJsonList(m_updatePhoneNumberRequestItems.size());
    for(unsigned updatePhoneNumberRequestItemsIndex = 0; updatePhoneNumberRequestItemsIndex < updatePhoneNumberRequestItemsJsonList.GetLength(); ++updatePhoneNumberRequestItemsIndex)
    {
      updatePhoneNumberRequestItemsJsonList[updatePhoneNumberRequestItemsIndex].AsObject(m_updatePhoneNumberRequestItems[updatePhoneNumberRequestItemsIndex].Jsonize());

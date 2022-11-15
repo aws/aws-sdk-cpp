@@ -19,10 +19,10 @@ namespace Model
 {
 
 AccessPreview::AccessPreview() : 
+    m_idHasBeenSet(false),
     m_analyzerArnHasBeenSet(false),
     m_configurationsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
     m_status(AccessPreviewStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false)
@@ -30,10 +30,10 @@ AccessPreview::AccessPreview() :
 }
 
 AccessPreview::AccessPreview(JsonView jsonValue) : 
+    m_idHasBeenSet(false),
     m_analyzerArnHasBeenSet(false),
     m_configurationsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
     m_status(AccessPreviewStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false)
@@ -43,6 +43,13 @@ AccessPreview::AccessPreview(JsonView jsonValue) :
 
 AccessPreview& AccessPreview::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("analyzerArn"))
   {
     m_analyzerArn = jsonValue.GetString("analyzerArn");
@@ -67,13 +74,6 @@ AccessPreview& AccessPreview::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AccessPreviewStatusMapper::GetAccessPreviewStatusForName(jsonValue.GetString("status"));
@@ -95,6 +95,12 @@ JsonValue AccessPreview::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
   if(m_analyzerArnHasBeenSet)
   {
    payload.WithString("analyzerArn", m_analyzerArn);
@@ -114,13 +120,7 @@ JsonValue AccessPreview::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_statusHasBeenSet)

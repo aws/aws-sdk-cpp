@@ -289,13 +289,13 @@ namespace Model
   private:
 
     Aws::String m_serverCertificateName;
-    bool m_serverCertificateNameHasBeenSet;
+    bool m_serverCertificateNameHasBeenSet = false;
 
     Aws::String m_newPath;
-    bool m_newPathHasBeenSet;
+    bool m_newPathHasBeenSet = false;
 
     Aws::String m_newServerCertificateName;
-    bool m_newServerCertificateNameHasBeenSet;
+    bool m_newServerCertificateNameHasBeenSet = false;
   };
 
 } // namespace Model

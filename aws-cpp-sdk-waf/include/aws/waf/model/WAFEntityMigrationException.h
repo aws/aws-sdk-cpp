@@ -122,13 +122,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     MigrationErrorType m_migrationErrorType;
-    bool m_migrationErrorTypeHasBeenSet;
+    bool m_migrationErrorTypeHasBeenSet = false;
 
     Aws::String m_migrationErrorReason;
-    bool m_migrationErrorReasonHasBeenSet;
+    bool m_migrationErrorReasonHasBeenSet = false;
   };
 
 } // namespace Model

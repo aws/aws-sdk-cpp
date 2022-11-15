@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_replacementTemplateData;
-    bool m_replacementTemplateDataHasBeenSet;
+    bool m_replacementTemplateDataHasBeenSet = false;
   };
 
 } // namespace Model

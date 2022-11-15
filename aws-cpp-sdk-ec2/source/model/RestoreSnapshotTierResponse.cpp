@@ -50,7 +50,7 @@ RestoreSnapshotTierResponse& RestoreSnapshotTierResponse::operator =(const Aws::
     XmlNode restoreStartTimeNode = resultNode.FirstChild("restoreStartTime");
     if(!restoreStartTimeNode.IsNull())
     {
-      m_restoreStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_restoreStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode restoreDurationNode = resultNode.FirstChild("restoreDuration");
     if(!restoreDurationNode.IsNull())

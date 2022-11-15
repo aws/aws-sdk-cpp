@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_scalingPlanName;
-    bool m_scalingPlanNameHasBeenSet;
+    bool m_scalingPlanNameHasBeenSet = false;
 
     long long m_scalingPlanVersion;
-    bool m_scalingPlanVersionHasBeenSet;
+    bool m_scalingPlanVersionHasBeenSet = false;
 
     ApplicationSource m_applicationSource;
-    bool m_applicationSourceHasBeenSet;
+    bool m_applicationSourceHasBeenSet = false;
 
     Aws::Vector<ScalingInstruction> m_scalingInstructions;
-    bool m_scalingInstructionsHasBeenSet;
+    bool m_scalingInstructionsHasBeenSet = false;
   };
 
 } // namespace Model

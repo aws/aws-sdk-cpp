@@ -39,7 +39,7 @@ Conditions& Conditions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StringEquals"))
   {
-    Array<JsonView> stringEqualsJsonList = jsonValue.GetArray("StringEquals");
+    Aws::Utils::Array<JsonView> stringEqualsJsonList = jsonValue.GetArray("StringEquals");
     for(unsigned stringEqualsIndex = 0; stringEqualsIndex < stringEqualsJsonList.GetLength(); ++stringEqualsIndex)
     {
       m_stringEquals.push_back(stringEqualsJsonList[stringEqualsIndex].AsObject());
@@ -49,7 +49,7 @@ Conditions& Conditions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StringNotEquals"))
   {
-    Array<JsonView> stringNotEqualsJsonList = jsonValue.GetArray("StringNotEquals");
+    Aws::Utils::Array<JsonView> stringNotEqualsJsonList = jsonValue.GetArray("StringNotEquals");
     for(unsigned stringNotEqualsIndex = 0; stringNotEqualsIndex < stringNotEqualsJsonList.GetLength(); ++stringNotEqualsIndex)
     {
       m_stringNotEquals.push_back(stringNotEqualsJsonList[stringNotEqualsIndex].AsObject());
@@ -59,7 +59,7 @@ Conditions& Conditions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StringLike"))
   {
-    Array<JsonView> stringLikeJsonList = jsonValue.GetArray("StringLike");
+    Aws::Utils::Array<JsonView> stringLikeJsonList = jsonValue.GetArray("StringLike");
     for(unsigned stringLikeIndex = 0; stringLikeIndex < stringLikeJsonList.GetLength(); ++stringLikeIndex)
     {
       m_stringLike.push_back(stringLikeJsonList[stringLikeIndex].AsObject());
@@ -69,7 +69,7 @@ Conditions& Conditions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StringNotLike"))
   {
-    Array<JsonView> stringNotLikeJsonList = jsonValue.GetArray("StringNotLike");
+    Aws::Utils::Array<JsonView> stringNotLikeJsonList = jsonValue.GetArray("StringNotLike");
     for(unsigned stringNotLikeIndex = 0; stringNotLikeIndex < stringNotLikeJsonList.GetLength(); ++stringNotLikeIndex)
     {
       m_stringNotLike.push_back(stringNotLikeJsonList[stringNotLikeIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue Conditions::Jsonize() const
 
   if(m_stringEqualsHasBeenSet)
   {
-   Array<JsonValue> stringEqualsJsonList(m_stringEquals.size());
+   Aws::Utils::Array<JsonValue> stringEqualsJsonList(m_stringEquals.size());
    for(unsigned stringEqualsIndex = 0; stringEqualsIndex < stringEqualsJsonList.GetLength(); ++stringEqualsIndex)
    {
      stringEqualsJsonList[stringEqualsIndex].AsObject(m_stringEquals[stringEqualsIndex].Jsonize());
@@ -97,7 +97,7 @@ JsonValue Conditions::Jsonize() const
 
   if(m_stringNotEqualsHasBeenSet)
   {
-   Array<JsonValue> stringNotEqualsJsonList(m_stringNotEquals.size());
+   Aws::Utils::Array<JsonValue> stringNotEqualsJsonList(m_stringNotEquals.size());
    for(unsigned stringNotEqualsIndex = 0; stringNotEqualsIndex < stringNotEqualsJsonList.GetLength(); ++stringNotEqualsIndex)
    {
      stringNotEqualsJsonList[stringNotEqualsIndex].AsObject(m_stringNotEquals[stringNotEqualsIndex].Jsonize());
@@ -108,7 +108,7 @@ JsonValue Conditions::Jsonize() const
 
   if(m_stringLikeHasBeenSet)
   {
-   Array<JsonValue> stringLikeJsonList(m_stringLike.size());
+   Aws::Utils::Array<JsonValue> stringLikeJsonList(m_stringLike.size());
    for(unsigned stringLikeIndex = 0; stringLikeIndex < stringLikeJsonList.GetLength(); ++stringLikeIndex)
    {
      stringLikeJsonList[stringLikeIndex].AsObject(m_stringLike[stringLikeIndex].Jsonize());
@@ -119,7 +119,7 @@ JsonValue Conditions::Jsonize() const
 
   if(m_stringNotLikeHasBeenSet)
   {
-   Array<JsonValue> stringNotLikeJsonList(m_stringNotLike.size());
+   Aws::Utils::Array<JsonValue> stringNotLikeJsonList(m_stringNotLike.size());
    for(unsigned stringNotLikeIndex = 0; stringNotLikeIndex < stringNotLikeJsonList.GetLength(); ++stringNotLikeIndex)
    {
      stringNotLikeJsonList[stringNotLikeIndex].AsObject(m_stringNotLike[stringNotLikeIndex].Jsonize());

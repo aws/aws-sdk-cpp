@@ -161,13 +161,13 @@ namespace Model
   private:
 
     ExportResourceSpecification m_resourceSpecification;
-    bool m_resourceSpecificationHasBeenSet;
+    bool m_resourceSpecificationHasBeenSet = false;
 
     ImportExportFileFormat m_fileFormat;
-    bool m_fileFormatHasBeenSet;
+    bool m_fileFormatHasBeenSet = false;
 
     Aws::String m_filePassword;
-    bool m_filePasswordHasBeenSet;
+    bool m_filePasswordHasBeenSet = false;
   };
 
 } // namespace Model

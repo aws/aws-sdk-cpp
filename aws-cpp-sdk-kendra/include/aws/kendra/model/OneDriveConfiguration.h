@@ -450,51 +450,47 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline bool GetDisableLocalGroups() const{ return m_disableLocalGroups; }
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline bool DisableLocalGroupsHasBeenSet() const { return m_disableLocalGroupsHasBeenSet; }
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline void SetDisableLocalGroups(bool value) { m_disableLocalGroupsHasBeenSet = true; m_disableLocalGroups = value; }
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline OneDriveConfiguration& WithDisableLocalGroups(bool value) { SetDisableLocalGroups(value); return *this;}
 
   private:
 
     Aws::String m_tenantDomain;
-    bool m_tenantDomainHasBeenSet;
+    bool m_tenantDomainHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     OneDriveUsers m_oneDriveUsers;
-    bool m_oneDriveUsersHasBeenSet;
+    bool m_oneDriveUsersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
 
     bool m_disableLocalGroups;
-    bool m_disableLocalGroupsHasBeenSet;
+    bool m_disableLocalGroupsHasBeenSet = false;
   };
 
 } // namespace Model

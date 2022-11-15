@@ -79,6 +79,71 @@ namespace Model
     inline UpdateCostCategoryDefinitionRequest& WithCostCategoryArn(const char* value) { SetCostCategoryArn(value); return *this;}
 
 
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline const Aws::String& GetEffectiveStart() const{ return m_effectiveStart; }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline bool EffectiveStartHasBeenSet() const { return m_effectiveStartHasBeenSet; }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline void SetEffectiveStart(const Aws::String& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = value; }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline void SetEffectiveStart(Aws::String&& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = std::move(value); }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline void SetEffectiveStart(const char* value) { m_effectiveStartHasBeenSet = true; m_effectiveStart.assign(value); }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline UpdateCostCategoryDefinitionRequest& WithEffectiveStart(const Aws::String& value) { SetEffectiveStart(value); return *this;}
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline UpdateCostCategoryDefinitionRequest& WithEffectiveStart(Aws::String&& value) { SetEffectiveStart(std::move(value)); return *this;}
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline UpdateCostCategoryDefinitionRequest& WithEffectiveStart(const char* value) { SetEffectiveStart(value); return *this;}
+
+
     
     inline const CostCategoryRuleVersion& GetRuleVersion() const{ return m_ruleVersion; }
 
@@ -239,19 +304,22 @@ namespace Model
   private:
 
     Aws::String m_costCategoryArn;
-    bool m_costCategoryArnHasBeenSet;
+    bool m_costCategoryArnHasBeenSet = false;
+
+    Aws::String m_effectiveStart;
+    bool m_effectiveStartHasBeenSet = false;
 
     CostCategoryRuleVersion m_ruleVersion;
-    bool m_ruleVersionHasBeenSet;
+    bool m_ruleVersionHasBeenSet = false;
 
     Aws::Vector<CostCategoryRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
-    bool m_splitChargeRulesHasBeenSet;
+    bool m_splitChargeRulesHasBeenSet = false;
   };
 
 } // namespace Model

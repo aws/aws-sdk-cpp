@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     License m_defaultLicense;
-    bool m_defaultLicenseHasBeenSet;
+    bool m_defaultLicenseHasBeenSet = false;
   };
 
 } // namespace Model

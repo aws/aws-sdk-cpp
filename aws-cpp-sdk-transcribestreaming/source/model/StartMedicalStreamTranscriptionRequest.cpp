@@ -35,7 +35,7 @@ StartMedicalStreamTranscriptionRequest::StartMedicalStreamTranscriptionRequest()
     m_numberOfChannelsHasBeenSet(false),
     m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
     m_contentIdentificationTypeHasBeenSet(false),
-    m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
+    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
 

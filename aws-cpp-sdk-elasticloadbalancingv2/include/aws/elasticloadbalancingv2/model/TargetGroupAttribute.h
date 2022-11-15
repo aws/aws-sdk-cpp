@@ -47,18 +47,21 @@ namespace Model
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by both Application Load Balancers and
-     * Network Load Balancers:</p> <ul> <li> <p> <code>stickiness.enabled</code> -
-     * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
-     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
-     * <p>The following attributes are supported only if the load balancer is an
-     * Application Load Balancer and the target is an instance or an IP address:</p>
-     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
-     * algorithm determines how the load balancer selects targets when routing
-     * requests. The value is <code>round_robin</code> or
+     * following attributes are supported by Application Load Balancers, Network Load
+     * Balancers, and Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether target stickiness is
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - Indicates
+     * the type of stickiness. The possible values are: </p> <ul> <li> <p>
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip_dest_ip</code> and
+     * <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li> </ul>
+     * </li> </ul> <p>The following attributes are supported only if the load balancer
+     * is an Application Load Balancer and the target is an instance or an IP
+     * address:</p> <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load
+     * balancing algorithm determines how the load balancer selects targets when
+     * routing requests. The value is <code>round_robin</code> or
      * <code>least_outstanding_requests</code>. The default is
      * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
@@ -79,7 +82,7 @@ namespace Model
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).</p> </li> </ul> <p>The following attribute is
+     * value is 1 day (86400 seconds). </p> </li> </ul> <p>The following attribute is
      * supported only if the load balancer is an Application Load Balancer and the
      * target is a Lambda function:</p> <ul> <li> <p>
      * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request
@@ -101,7 +104,22 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
+     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
+     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
+     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value
+     * you set for both attributes must be the same. </p> </li> <li> <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is unhealthy. The possible values
+     * are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The
+     * value you set for both attributes must be the same. </p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -113,18 +131,21 @@ namespace Model
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by both Application Load Balancers and
-     * Network Load Balancers:</p> <ul> <li> <p> <code>stickiness.enabled</code> -
-     * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
-     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
-     * <p>The following attributes are supported only if the load balancer is an
-     * Application Load Balancer and the target is an instance or an IP address:</p>
-     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
-     * algorithm determines how the load balancer selects targets when routing
-     * requests. The value is <code>round_robin</code> or
+     * following attributes are supported by Application Load Balancers, Network Load
+     * Balancers, and Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether target stickiness is
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - Indicates
+     * the type of stickiness. The possible values are: </p> <ul> <li> <p>
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip_dest_ip</code> and
+     * <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li> </ul>
+     * </li> </ul> <p>The following attributes are supported only if the load balancer
+     * is an Application Load Balancer and the target is an instance or an IP
+     * address:</p> <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load
+     * balancing algorithm determines how the load balancer selects targets when
+     * routing requests. The value is <code>round_robin</code> or
      * <code>least_outstanding_requests</code>. The default is
      * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
@@ -145,7 +166,7 @@ namespace Model
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).</p> </li> </ul> <p>The following attribute is
+     * value is 1 day (86400 seconds). </p> </li> </ul> <p>The following attribute is
      * supported only if the load balancer is an Application Load Balancer and the
      * target is a Lambda function:</p> <ul> <li> <p>
      * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request
@@ -167,7 +188,22 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
+     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
+     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
+     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value
+     * you set for both attributes must be the same. </p> </li> <li> <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is unhealthy. The possible values
+     * are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The
+     * value you set for both attributes must be the same. </p> </li> </ul>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
@@ -179,18 +215,21 @@ namespace Model
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by both Application Load Balancers and
-     * Network Load Balancers:</p> <ul> <li> <p> <code>stickiness.enabled</code> -
-     * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
-     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
-     * <p>The following attributes are supported only if the load balancer is an
-     * Application Load Balancer and the target is an instance or an IP address:</p>
-     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
-     * algorithm determines how the load balancer selects targets when routing
-     * requests. The value is <code>round_robin</code> or
+     * following attributes are supported by Application Load Balancers, Network Load
+     * Balancers, and Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether target stickiness is
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - Indicates
+     * the type of stickiness. The possible values are: </p> <ul> <li> <p>
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip_dest_ip</code> and
+     * <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li> </ul>
+     * </li> </ul> <p>The following attributes are supported only if the load balancer
+     * is an Application Load Balancer and the target is an instance or an IP
+     * address:</p> <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load
+     * balancing algorithm determines how the load balancer selects targets when
+     * routing requests. The value is <code>round_robin</code> or
      * <code>least_outstanding_requests</code>. The default is
      * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
@@ -211,7 +250,7 @@ namespace Model
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).</p> </li> </ul> <p>The following attribute is
+     * value is 1 day (86400 seconds). </p> </li> </ul> <p>The following attribute is
      * supported only if the load balancer is an Application Load Balancer and the
      * target is a Lambda function:</p> <ul> <li> <p>
      * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request
@@ -233,7 +272,22 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
+     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
+     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
+     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value
+     * you set for both attributes must be the same. </p> </li> <li> <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is unhealthy. The possible values
+     * are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The
+     * value you set for both attributes must be the same. </p> </li> </ul>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -245,18 +299,21 @@ namespace Model
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by both Application Load Balancers and
-     * Network Load Balancers:</p> <ul> <li> <p> <code>stickiness.enabled</code> -
-     * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
-     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
-     * <p>The following attributes are supported only if the load balancer is an
-     * Application Load Balancer and the target is an instance or an IP address:</p>
-     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
-     * algorithm determines how the load balancer selects targets when routing
-     * requests. The value is <code>round_robin</code> or
+     * following attributes are supported by Application Load Balancers, Network Load
+     * Balancers, and Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether target stickiness is
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - Indicates
+     * the type of stickiness. The possible values are: </p> <ul> <li> <p>
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip_dest_ip</code> and
+     * <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li> </ul>
+     * </li> </ul> <p>The following attributes are supported only if the load balancer
+     * is an Application Load Balancer and the target is an instance or an IP
+     * address:</p> <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load
+     * balancing algorithm determines how the load balancer selects targets when
+     * routing requests. The value is <code>round_robin</code> or
      * <code>least_outstanding_requests</code>. The default is
      * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
@@ -277,7 +334,7 @@ namespace Model
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).</p> </li> </ul> <p>The following attribute is
+     * value is 1 day (86400 seconds). </p> </li> </ul> <p>The following attribute is
      * supported only if the load balancer is an Application Load Balancer and the
      * target is a Lambda function:</p> <ul> <li> <p>
      * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request
@@ -299,7 +356,22 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
+     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
+     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
+     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value
+     * you set for both attributes must be the same. </p> </li> <li> <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is unhealthy. The possible values
+     * are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The
+     * value you set for both attributes must be the same. </p> </li> </ul>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -311,18 +383,21 @@ namespace Model
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by both Application Load Balancers and
-     * Network Load Balancers:</p> <ul> <li> <p> <code>stickiness.enabled</code> -
-     * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
-     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
-     * <p>The following attributes are supported only if the load balancer is an
-     * Application Load Balancer and the target is an instance or an IP address:</p>
-     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
-     * algorithm determines how the load balancer selects targets when routing
-     * requests. The value is <code>round_robin</code> or
+     * following attributes are supported by Application Load Balancers, Network Load
+     * Balancers, and Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether target stickiness is
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - Indicates
+     * the type of stickiness. The possible values are: </p> <ul> <li> <p>
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip_dest_ip</code> and
+     * <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li> </ul>
+     * </li> </ul> <p>The following attributes are supported only if the load balancer
+     * is an Application Load Balancer and the target is an instance or an IP
+     * address:</p> <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load
+     * balancing algorithm determines how the load balancer selects targets when
+     * routing requests. The value is <code>round_robin</code> or
      * <code>least_outstanding_requests</code>. The default is
      * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
@@ -343,7 +418,7 @@ namespace Model
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).</p> </li> </ul> <p>The following attribute is
+     * value is 1 day (86400 seconds). </p> </li> </ul> <p>The following attribute is
      * supported only if the load balancer is an Application Load Balancer and the
      * target is a Lambda function:</p> <ul> <li> <p>
      * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request
@@ -365,7 +440,22 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
+     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
+     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
+     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value
+     * you set for both attributes must be the same. </p> </li> <li> <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is unhealthy. The possible values
+     * are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The
+     * value you set for both attributes must be the same. </p> </li> </ul>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -377,18 +467,21 @@ namespace Model
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by both Application Load Balancers and
-     * Network Load Balancers:</p> <ul> <li> <p> <code>stickiness.enabled</code> -
-     * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
-     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
-     * <p>The following attributes are supported only if the load balancer is an
-     * Application Load Balancer and the target is an instance or an IP address:</p>
-     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
-     * algorithm determines how the load balancer selects targets when routing
-     * requests. The value is <code>round_robin</code> or
+     * following attributes are supported by Application Load Balancers, Network Load
+     * Balancers, and Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether target stickiness is
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - Indicates
+     * the type of stickiness. The possible values are: </p> <ul> <li> <p>
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip_dest_ip</code> and
+     * <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li> </ul>
+     * </li> </ul> <p>The following attributes are supported only if the load balancer
+     * is an Application Load Balancer and the target is an instance or an IP
+     * address:</p> <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load
+     * balancing algorithm determines how the load balancer selects targets when
+     * routing requests. The value is <code>round_robin</code> or
      * <code>least_outstanding_requests</code>. The default is
      * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
@@ -409,7 +502,7 @@ namespace Model
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).</p> </li> </ul> <p>The following attribute is
+     * value is 1 day (86400 seconds). </p> </li> </ul> <p>The following attribute is
      * supported only if the load balancer is an Application Load Balancer and the
      * target is a Lambda function:</p> <ul> <li> <p>
      * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request
@@ -431,7 +524,22 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
+     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
+     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
+     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value
+     * you set for both attributes must be the same. </p> </li> <li> <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is unhealthy. The possible values
+     * are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The
+     * value you set for both attributes must be the same. </p> </li> </ul>
      */
     inline TargetGroupAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -443,18 +551,21 @@ namespace Model
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by both Application Load Balancers and
-     * Network Load Balancers:</p> <ul> <li> <p> <code>stickiness.enabled</code> -
-     * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
-     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
-     * <p>The following attributes are supported only if the load balancer is an
-     * Application Load Balancer and the target is an instance or an IP address:</p>
-     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
-     * algorithm determines how the load balancer selects targets when routing
-     * requests. The value is <code>round_robin</code> or
+     * following attributes are supported by Application Load Balancers, Network Load
+     * Balancers, and Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether target stickiness is
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - Indicates
+     * the type of stickiness. The possible values are: </p> <ul> <li> <p>
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip_dest_ip</code> and
+     * <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li> </ul>
+     * </li> </ul> <p>The following attributes are supported only if the load balancer
+     * is an Application Load Balancer and the target is an instance or an IP
+     * address:</p> <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load
+     * balancing algorithm determines how the load balancer selects targets when
+     * routing requests. The value is <code>round_robin</code> or
      * <code>least_outstanding_requests</code>. The default is
      * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
@@ -475,7 +586,7 @@ namespace Model
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).</p> </li> </ul> <p>The following attribute is
+     * value is 1 day (86400 seconds). </p> </li> </ul> <p>The following attribute is
      * supported only if the load balancer is an Application Load Balancer and the
      * target is a Lambda function:</p> <ul> <li> <p>
      * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request
@@ -497,7 +608,22 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
+     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
+     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
+     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value
+     * you set for both attributes must be the same. </p> </li> <li> <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is unhealthy. The possible values
+     * are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The
+     * value you set for both attributes must be the same. </p> </li> </ul>
      */
     inline TargetGroupAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -509,18 +635,21 @@ namespace Model
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by both Application Load Balancers and
-     * Network Load Balancers:</p> <ul> <li> <p> <code>stickiness.enabled</code> -
-     * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
-     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
-     * <p>The following attributes are supported only if the load balancer is an
-     * Application Load Balancer and the target is an instance or an IP address:</p>
-     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
-     * algorithm determines how the load balancer selects targets when routing
-     * requests. The value is <code>round_robin</code> or
+     * following attributes are supported by Application Load Balancers, Network Load
+     * Balancers, and Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether target stickiness is
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - Indicates
+     * the type of stickiness. The possible values are: </p> <ul> <li> <p>
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> <li> <p> <code>source_ip_dest_ip</code> and
+     * <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.</p> </li> </ul>
+     * </li> </ul> <p>The following attributes are supported only if the load balancer
+     * is an Application Load Balancer and the target is an instance or an IP
+     * address:</p> <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load
+     * balancing algorithm determines how the load balancer selects targets when
+     * routing requests. The value is <code>round_robin</code> or
      * <code>least_outstanding_requests</code>. The default is
      * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
@@ -541,7 +670,7 @@ namespace Model
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).</p> </li> </ul> <p>The following attribute is
+     * value is 1 day (86400 seconds). </p> </li> </ul> <p>The following attribute is
      * supported only if the load balancer is an Application Load Balancer and the
      * target is a Lambda function:</p> <ul> <li> <p>
      * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request
@@ -563,7 +692,22 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
+     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
+     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
+     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value
+     * you set for both attributes must be the same. </p> </li> <li> <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is unhealthy. The possible values
+     * are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes
+     * (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The
+     * value you set for both attributes must be the same. </p> </li> </ul>
      */
     inline TargetGroupAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 
@@ -611,10 +755,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_scheduledActionName;
-    bool m_scheduledActionNameHasBeenSet;
+    bool m_scheduledActionNameHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

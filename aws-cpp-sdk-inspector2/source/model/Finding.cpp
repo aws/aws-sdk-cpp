@@ -23,6 +23,8 @@ Finding::Finding() :
     m_descriptionHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
+    m_fixAvailable(FixAvailable::NOT_SET),
+    m_fixAvailableHasBeenSet(false),
     m_inspectorScore(0.0),
     m_inspectorScoreHasBeenSet(false),
     m_inspectorScoreDetailsHasBeenSet(false),
@@ -47,6 +49,8 @@ Finding::Finding(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
+    m_fixAvailable(FixAvailable::NOT_SET),
+    m_fixAvailableHasBeenSet(false),
     m_inspectorScore(0.0),
     m_inspectorScoreHasBeenSet(false),
     m_inspectorScoreDetailsHasBeenSet(false),
@@ -97,6 +101,13 @@ Finding& Finding::operator =(JsonView jsonValue)
     m_firstObservedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fixAvailable"))
+  {
+    m_fixAvailable = FixAvailableMapper::GetFixAvailableForName(jsonValue.GetString("fixAvailable"));
+
+    m_fixAvailableHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inspectorScore"))
   {
     m_inspectorScore = jsonValue.GetDouble("inspectorScore");
@@ -141,7 +152,7 @@ Finding& Finding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
@@ -214,6 +225,11 @@ JsonValue Finding::Jsonize() const
    payload.WithDouble("firstObservedAt", m_firstObservedAt.SecondsWithMSPrecision());
   }
 
+  if(m_fixAvailableHasBeenSet)
+  {
+   payload.WithString("fixAvailable", FixAvailableMapper::GetNameForFixAvailable(m_fixAvailable));
+  }
+
   if(m_inspectorScoreHasBeenSet)
   {
    payload.WithDouble("inspectorScore", m_inspectorScore);
@@ -251,7 +267,7 @@ JsonValue Finding::Jsonize() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsObject(m_resources[resourcesIndex].Jsonize());

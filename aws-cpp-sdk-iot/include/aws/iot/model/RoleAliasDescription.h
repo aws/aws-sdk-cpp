@@ -287,25 +287,25 @@ namespace Model
   private:
 
     Aws::String m_roleAlias;
-    bool m_roleAliasHasBeenSet;
+    bool m_roleAliasHasBeenSet = false;
 
     Aws::String m_roleAliasArn;
-    bool m_roleAliasArnHasBeenSet;
+    bool m_roleAliasArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     int m_credentialDurationSeconds;
-    bool m_credentialDurationSecondsHasBeenSet;
+    bool m_credentialDurationSecondsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

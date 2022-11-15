@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     ResourceState m_resourceState;
-    bool m_resourceStateHasBeenSet;
+    bool m_resourceStateHasBeenSet = false;
 
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

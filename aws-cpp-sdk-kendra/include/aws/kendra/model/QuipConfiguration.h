@@ -42,42 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline QuipConfiguration& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline QuipConfiguration& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline QuipConfiguration& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -164,122 +180,137 @@ namespace Model
 
 
     /**
-     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
-     * of these options.</p>
+     * <p> <code>TRUE</code> to index file comments.</p>
      */
     inline bool GetCrawlFileComments() const{ return m_crawlFileComments; }
 
     /**
-     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
-     * of these options.</p>
+     * <p> <code>TRUE</code> to index file comments.</p>
      */
     inline bool CrawlFileCommentsHasBeenSet() const { return m_crawlFileCommentsHasBeenSet; }
 
     /**
-     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
-     * of these options.</p>
+     * <p> <code>TRUE</code> to index file comments.</p>
      */
     inline void SetCrawlFileComments(bool value) { m_crawlFileCommentsHasBeenSet = true; m_crawlFileComments = value; }
 
     /**
-     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
-     * of these options.</p>
+     * <p> <code>TRUE</code> to index file comments.</p>
      */
     inline QuipConfiguration& WithCrawlFileComments(bool value) { SetCrawlFileComments(value); return *this;}
 
 
     /**
-     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index the contents of chat rooms.</p>
      */
     inline bool GetCrawlChatRooms() const{ return m_crawlChatRooms; }
 
     /**
-     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index the contents of chat rooms.</p>
      */
     inline bool CrawlChatRoomsHasBeenSet() const { return m_crawlChatRoomsHasBeenSet; }
 
     /**
-     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index the contents of chat rooms.</p>
      */
     inline void SetCrawlChatRooms(bool value) { m_crawlChatRoomsHasBeenSet = true; m_crawlChatRooms = value; }
 
     /**
-     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index the contents of chat rooms.</p>
      */
     inline QuipConfiguration& WithCrawlChatRooms(bool value) { SetCrawlChatRooms(value); return *this;}
 
 
     /**
-     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index attachments.</p>
      */
     inline bool GetCrawlAttachments() const{ return m_crawlAttachments; }
 
     /**
-     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index attachments.</p>
      */
     inline bool CrawlAttachmentsHasBeenSet() const { return m_crawlAttachmentsHasBeenSet; }
 
     /**
-     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index attachments.</p>
      */
     inline void SetCrawlAttachments(bool value) { m_crawlAttachmentsHasBeenSet = true; m_crawlAttachments = value; }
 
     /**
-     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index attachments.</p>
      */
     inline QuipConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
 
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline const Aws::Vector<Aws::String>& GetFolderIds() const{ return m_folderIds; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline bool FolderIdsHasBeenSet() const { return m_folderIdsHasBeenSet; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline void SetFolderIds(const Aws::Vector<Aws::String>& value) { m_folderIdsHasBeenSet = true; m_folderIds = value; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline void SetFolderIds(Aws::Vector<Aws::String>&& value) { m_folderIdsHasBeenSet = true; m_folderIds = std::move(value); }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& WithFolderIds(const Aws::Vector<Aws::String>& value) { SetFolderIds(value); return *this;}
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& WithFolderIds(Aws::Vector<Aws::String>&& value) { SetFolderIds(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& AddFolderIds(const Aws::String& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& AddFolderIds(Aws::String&& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& AddFolderIds(const char* value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
 
@@ -766,40 +797,40 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_crawlFileComments;
-    bool m_crawlFileCommentsHasBeenSet;
+    bool m_crawlFileCommentsHasBeenSet = false;
 
     bool m_crawlChatRooms;
-    bool m_crawlChatRoomsHasBeenSet;
+    bool m_crawlChatRoomsHasBeenSet = false;
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_folderIds;
-    bool m_folderIdsHasBeenSet;
+    bool m_folderIdsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_threadFieldMappings;
-    bool m_threadFieldMappingsHasBeenSet;
+    bool m_threadFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_messageFieldMappings;
-    bool m_messageFieldMappingsHasBeenSet;
+    bool m_messageFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_attachmentFieldMappings;
-    bool m_attachmentFieldMappingsHasBeenSet;
+    bool m_attachmentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -60,7 +60,7 @@ namespace Model
   private:
 
     int m_minutes;
-    bool m_minutesHasBeenSet;
+    bool m_minutesHasBeenSet = false;
   };
 
 } // namespace Model

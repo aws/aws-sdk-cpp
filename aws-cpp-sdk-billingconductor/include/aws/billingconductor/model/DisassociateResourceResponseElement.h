@@ -81,48 +81,48 @@ namespace Model
 
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline const AssociateResourceError& GetError() const{ return m_error; }
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline void SetError(const AssociateResourceError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline void SetError(AssociateResourceError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline DisassociateResourceResponseElement& WithError(const AssociateResourceError& value) { SetError(value); return *this;}
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline DisassociateResourceResponseElement& WithError(AssociateResourceError&& value) { SetError(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AssociateResourceError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

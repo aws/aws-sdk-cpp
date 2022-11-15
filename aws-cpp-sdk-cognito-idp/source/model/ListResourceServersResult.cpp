@@ -30,7 +30,7 @@ ListResourceServersResult& ListResourceServersResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceServers"))
   {
-    Array<JsonView> resourceServersJsonList = jsonValue.GetArray("ResourceServers");
+    Aws::Utils::Array<JsonView> resourceServersJsonList = jsonValue.GetArray("ResourceServers");
     for(unsigned resourceServersIndex = 0; resourceServersIndex < resourceServersJsonList.GetLength(); ++resourceServersIndex)
     {
       m_resourceServers.push_back(resourceServersJsonList[resourceServersIndex].AsObject());

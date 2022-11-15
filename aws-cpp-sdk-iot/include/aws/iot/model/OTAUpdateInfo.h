@@ -717,52 +717,52 @@ namespace Model
   private:
 
     Aws::String m_otaUpdateId;
-    bool m_otaUpdateIdHasBeenSet;
+    bool m_otaUpdateIdHasBeenSet = false;
 
     Aws::String m_otaUpdateArn;
-    bool m_otaUpdateArnHasBeenSet;
+    bool m_otaUpdateArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Vector<Protocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     AwsJobExecutionsRolloutConfig m_awsJobExecutionsRolloutConfig;
-    bool m_awsJobExecutionsRolloutConfigHasBeenSet;
+    bool m_awsJobExecutionsRolloutConfigHasBeenSet = false;
 
     AwsJobPresignedUrlConfig m_awsJobPresignedUrlConfig;
-    bool m_awsJobPresignedUrlConfigHasBeenSet;
+    bool m_awsJobPresignedUrlConfigHasBeenSet = false;
 
     TargetSelection m_targetSelection;
-    bool m_targetSelectionHasBeenSet;
+    bool m_targetSelectionHasBeenSet = false;
 
     Aws::Vector<OTAUpdateFile> m_otaUpdateFiles;
-    bool m_otaUpdateFilesHasBeenSet;
+    bool m_otaUpdateFilesHasBeenSet = false;
 
     OTAUpdateStatus m_otaUpdateStatus;
-    bool m_otaUpdateStatusHasBeenSet;
+    bool m_otaUpdateStatusHasBeenSet = false;
 
     Aws::String m_awsIotJobId;
-    bool m_awsIotJobIdHasBeenSet;
+    bool m_awsIotJobIdHasBeenSet = false;
 
     Aws::String m_awsIotJobArn;
-    bool m_awsIotJobArnHasBeenSet;
+    bool m_awsIotJobArnHasBeenSet = false;
 
     ErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalParameters;
-    bool m_additionalParametersHasBeenSet;
+    bool m_additionalParametersHasBeenSet = false;
   };
 
 } // namespace Model

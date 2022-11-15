@@ -455,19 +455,19 @@ namespace Model
   private:
 
     Aws::String m_qualificationTypeId;
-    bool m_qualificationTypeIdHasBeenSet;
+    bool m_qualificationTypeIdHasBeenSet = false;
 
     Comparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
 
     Aws::Vector<int> m_integerValues;
-    bool m_integerValuesHasBeenSet;
+    bool m_integerValuesHasBeenSet = false;
 
     Aws::Vector<Locale> m_localeValues;
-    bool m_localeValuesHasBeenSet;
+    bool m_localeValuesHasBeenSet = false;
 
     HITAccessActions m_actionsGuarded;
-    bool m_actionsGuardedHasBeenSet;
+    bool m_actionsGuardedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,57 +35,57 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary to return information about. The name is case
-     * sensitive.</p>
+     * <p>The name of the custom vocabulary you want information about. Vocabulary
+     * names are case sensitive.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of the vocabulary to return information about. The name is case
-     * sensitive.</p>
+     * <p>The name of the custom vocabulary you want information about. Vocabulary
+     * names are case sensitive.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary to return information about. The name is case
-     * sensitive.</p>
+     * <p>The name of the custom vocabulary you want information about. Vocabulary
+     * names are case sensitive.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
-     * <p>The name of the vocabulary to return information about. The name is case
-     * sensitive.</p>
+     * <p>The name of the custom vocabulary you want information about. Vocabulary
+     * names are case sensitive.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary to return information about. The name is case
-     * sensitive.</p>
+     * <p>The name of the custom vocabulary you want information about. Vocabulary
+     * names are case sensitive.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary to return information about. The name is case
-     * sensitive.</p>
+     * <p>The name of the custom vocabulary you want information about. Vocabulary
+     * names are case sensitive.</p>
      */
     inline GetVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary to return information about. The name is case
-     * sensitive.</p>
+     * <p>The name of the custom vocabulary you want information about. Vocabulary
+     * names are case sensitive.</p>
      */
     inline GetVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary to return information about. The name is case
-     * sensitive.</p>
+     * <p>The name of the custom vocabulary you want information about. Vocabulary
+     * names are case sensitive.</p>
      */
     inline GetVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 
   private:
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
   };
 
 } // namespace Model

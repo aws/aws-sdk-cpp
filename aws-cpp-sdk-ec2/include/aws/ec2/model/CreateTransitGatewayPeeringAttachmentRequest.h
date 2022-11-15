@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentRequestOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -219,6 +220,37 @@ namespace Model
 
 
     /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
+    inline const CreateTransitGatewayPeeringAttachmentRequestOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
+    inline void SetOptions(const CreateTransitGatewayPeeringAttachmentRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
+    inline void SetOptions(CreateTransitGatewayPeeringAttachmentRequestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
+    inline CreateTransitGatewayPeeringAttachmentRequest& WithOptions(const CreateTransitGatewayPeeringAttachmentRequestOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
+    inline CreateTransitGatewayPeeringAttachmentRequest& WithOptions(CreateTransitGatewayPeeringAttachmentRequestOptions&& value) { SetOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags to apply to the transit gateway peering attachment.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
@@ -294,22 +326,25 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     Aws::String m_peerTransitGatewayId;
-    bool m_peerTransitGatewayIdHasBeenSet;
+    bool m_peerTransitGatewayIdHasBeenSet = false;
 
     Aws::String m_peerAccountId;
-    bool m_peerAccountIdHasBeenSet;
+    bool m_peerAccountIdHasBeenSet = false;
 
     Aws::String m_peerRegion;
-    bool m_peerRegionHasBeenSet;
+    bool m_peerRegionHasBeenSet = false;
+
+    CreateTransitGatewayPeeringAttachmentRequestOptions m_options;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

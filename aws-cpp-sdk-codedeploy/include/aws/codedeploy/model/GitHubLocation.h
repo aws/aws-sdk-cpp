@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_commitId;
-    bool m_commitIdHasBeenSet;
+    bool m_commitIdHasBeenSet = false;
   };
 
 } // namespace Model

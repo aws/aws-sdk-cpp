@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     bool m_includeAdditionalDetails;
-    bool m_includeAdditionalDetailsHasBeenSet;
+    bool m_includeAdditionalDetailsHasBeenSet = false;
   };
 
 } // namespace Model

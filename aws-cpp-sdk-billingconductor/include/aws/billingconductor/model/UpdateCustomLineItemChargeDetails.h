@@ -116,10 +116,10 @@ namespace Model
   private:
 
     UpdateCustomLineItemFlatChargeDetails m_flat;
-    bool m_flatHasBeenSet;
+    bool m_flatHasBeenSet = false;
 
     UpdateCustomLineItemPercentageChargeDetails m_percentage;
-    bool m_percentageHasBeenSet;
+    bool m_percentageHasBeenSet = false;
   };
 
 } // namespace Model

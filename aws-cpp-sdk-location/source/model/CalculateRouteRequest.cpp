@@ -49,7 +49,7 @@ Aws::String CalculateRouteRequest::SerializePayload() const
 
   if(m_departurePositionHasBeenSet)
   {
-   Array<JsonValue> departurePositionJsonList(m_departurePosition.size());
+   Aws::Utils::Array<JsonValue> departurePositionJsonList(m_departurePosition.size());
    for(unsigned departurePositionIndex = 0; departurePositionIndex < departurePositionJsonList.GetLength(); ++departurePositionIndex)
    {
      departurePositionJsonList[departurePositionIndex].AsDouble(m_departurePosition[departurePositionIndex]);
@@ -60,12 +60,12 @@ Aws::String CalculateRouteRequest::SerializePayload() const
 
   if(m_departureTimeHasBeenSet)
   {
-   payload.WithString("DepartureTime", m_departureTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("DepartureTime", m_departureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_destinationPositionHasBeenSet)
   {
-   Array<JsonValue> destinationPositionJsonList(m_destinationPosition.size());
+   Aws::Utils::Array<JsonValue> destinationPositionJsonList(m_destinationPosition.size());
    for(unsigned destinationPositionIndex = 0; destinationPositionIndex < destinationPositionJsonList.GetLength(); ++destinationPositionIndex)
    {
      destinationPositionJsonList[destinationPositionIndex].AsDouble(m_destinationPosition[destinationPositionIndex]);
@@ -98,10 +98,10 @@ Aws::String CalculateRouteRequest::SerializePayload() const
 
   if(m_waypointPositionsHasBeenSet)
   {
-   Array<JsonValue> waypointPositionsJsonList(m_waypointPositions.size());
+   Aws::Utils::Array<JsonValue> waypointPositionsJsonList(m_waypointPositions.size());
    for(unsigned waypointPositionsIndex = 0; waypointPositionsIndex < waypointPositionsJsonList.GetLength(); ++waypointPositionsIndex)
    {
-     Array<JsonValue> positionJsonList(m_waypointPositions[waypointPositionsIndex].size());
+     Aws::Utils::Array<JsonValue> positionJsonList(m_waypointPositions[waypointPositionsIndex].size());
      for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
      {
        positionJsonList[positionIndex].AsDouble(m_waypointPositions[waypointPositionsIndex][positionIndex]);

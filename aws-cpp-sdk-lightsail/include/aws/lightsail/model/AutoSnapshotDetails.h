@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     AutoSnapshotStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<AttachedDisk> m_fromAttachedDisks;
-    bool m_fromAttachedDisksHasBeenSet;
+    bool m_fromAttachedDisksHasBeenSet = false;
   };
 
 } // namespace Model

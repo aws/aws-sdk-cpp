@@ -2594,121 +2594,225 @@ namespace Model
      */
     inline S3Settings& WithDatePartitionTimezone(const char* value) { SetDatePartitionTimezone(value); return *this;}
 
+
+    /**
+     * <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code>
+     * to add padding on string data. The default value is <code>false</code>.</p>
+     */
+    inline bool GetAddTrailingPaddingCharacter() const{ return m_addTrailingPaddingCharacter; }
+
+    /**
+     * <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code>
+     * to add padding on string data. The default value is <code>false</code>.</p>
+     */
+    inline bool AddTrailingPaddingCharacterHasBeenSet() const { return m_addTrailingPaddingCharacterHasBeenSet; }
+
+    /**
+     * <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code>
+     * to add padding on string data. The default value is <code>false</code>.</p>
+     */
+    inline void SetAddTrailingPaddingCharacter(bool value) { m_addTrailingPaddingCharacterHasBeenSet = true; m_addTrailingPaddingCharacter = value; }
+
+    /**
+     * <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code>
+     * to add padding on string data. The default value is <code>false</code>.</p>
+     */
+    inline S3Settings& WithAddTrailingPaddingCharacter(bool value) { SetAddTrailingPaddingCharacter(value); return *this;}
+
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline S3Settings& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline S3Settings& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline S3Settings& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+
   private:
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_externalTableDefinition;
-    bool m_externalTableDefinitionHasBeenSet;
+    bool m_externalTableDefinitionHasBeenSet = false;
 
     Aws::String m_csvRowDelimiter;
-    bool m_csvRowDelimiterHasBeenSet;
+    bool m_csvRowDelimiterHasBeenSet = false;
 
     Aws::String m_csvDelimiter;
-    bool m_csvDelimiterHasBeenSet;
+    bool m_csvDelimiterHasBeenSet = false;
 
     Aws::String m_bucketFolder;
-    bool m_bucketFolderHasBeenSet;
+    bool m_bucketFolderHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     CompressionTypeValue m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     EncryptionModeValue m_encryptionMode;
-    bool m_encryptionModeHasBeenSet;
+    bool m_encryptionModeHasBeenSet = false;
 
     Aws::String m_serverSideEncryptionKmsKeyId;
-    bool m_serverSideEncryptionKmsKeyIdHasBeenSet;
+    bool m_serverSideEncryptionKmsKeyIdHasBeenSet = false;
 
     DataFormatValue m_dataFormat;
-    bool m_dataFormatHasBeenSet;
+    bool m_dataFormatHasBeenSet = false;
 
     EncodingTypeValue m_encodingType;
-    bool m_encodingTypeHasBeenSet;
+    bool m_encodingTypeHasBeenSet = false;
 
     int m_dictPageSizeLimit;
-    bool m_dictPageSizeLimitHasBeenSet;
+    bool m_dictPageSizeLimitHasBeenSet = false;
 
     int m_rowGroupLength;
-    bool m_rowGroupLengthHasBeenSet;
+    bool m_rowGroupLengthHasBeenSet = false;
 
     int m_dataPageSize;
-    bool m_dataPageSizeHasBeenSet;
+    bool m_dataPageSizeHasBeenSet = false;
 
     ParquetVersionValue m_parquetVersion;
-    bool m_parquetVersionHasBeenSet;
+    bool m_parquetVersionHasBeenSet = false;
 
     bool m_enableStatistics;
-    bool m_enableStatisticsHasBeenSet;
+    bool m_enableStatisticsHasBeenSet = false;
 
     bool m_includeOpForFullLoad;
-    bool m_includeOpForFullLoadHasBeenSet;
+    bool m_includeOpForFullLoadHasBeenSet = false;
 
     bool m_cdcInsertsOnly;
-    bool m_cdcInsertsOnlyHasBeenSet;
+    bool m_cdcInsertsOnlyHasBeenSet = false;
 
     Aws::String m_timestampColumnName;
-    bool m_timestampColumnNameHasBeenSet;
+    bool m_timestampColumnNameHasBeenSet = false;
 
     bool m_parquetTimestampInMillisecond;
-    bool m_parquetTimestampInMillisecondHasBeenSet;
+    bool m_parquetTimestampInMillisecondHasBeenSet = false;
 
     bool m_cdcInsertsAndUpdates;
-    bool m_cdcInsertsAndUpdatesHasBeenSet;
+    bool m_cdcInsertsAndUpdatesHasBeenSet = false;
 
     bool m_datePartitionEnabled;
-    bool m_datePartitionEnabledHasBeenSet;
+    bool m_datePartitionEnabledHasBeenSet = false;
 
     DatePartitionSequenceValue m_datePartitionSequence;
-    bool m_datePartitionSequenceHasBeenSet;
+    bool m_datePartitionSequenceHasBeenSet = false;
 
     DatePartitionDelimiterValue m_datePartitionDelimiter;
-    bool m_datePartitionDelimiterHasBeenSet;
+    bool m_datePartitionDelimiterHasBeenSet = false;
 
     bool m_useCsvNoSupValue;
-    bool m_useCsvNoSupValueHasBeenSet;
+    bool m_useCsvNoSupValueHasBeenSet = false;
 
     Aws::String m_csvNoSupValue;
-    bool m_csvNoSupValueHasBeenSet;
+    bool m_csvNoSupValueHasBeenSet = false;
 
     bool m_preserveTransactions;
-    bool m_preserveTransactionsHasBeenSet;
+    bool m_preserveTransactionsHasBeenSet = false;
 
     Aws::String m_cdcPath;
-    bool m_cdcPathHasBeenSet;
+    bool m_cdcPathHasBeenSet = false;
 
     bool m_useTaskStartTimeForFullLoadTimestamp;
-    bool m_useTaskStartTimeForFullLoadTimestampHasBeenSet;
+    bool m_useTaskStartTimeForFullLoadTimestampHasBeenSet = false;
 
     CannedAclForObjectsValue m_cannedAclForObjects;
-    bool m_cannedAclForObjectsHasBeenSet;
+    bool m_cannedAclForObjectsHasBeenSet = false;
 
     bool m_addColumnName;
-    bool m_addColumnNameHasBeenSet;
+    bool m_addColumnNameHasBeenSet = false;
 
     int m_cdcMaxBatchInterval;
-    bool m_cdcMaxBatchIntervalHasBeenSet;
+    bool m_cdcMaxBatchIntervalHasBeenSet = false;
 
     int m_cdcMinFileSize;
-    bool m_cdcMinFileSizeHasBeenSet;
+    bool m_cdcMinFileSizeHasBeenSet = false;
 
     Aws::String m_csvNullValue;
-    bool m_csvNullValueHasBeenSet;
+    bool m_csvNullValueHasBeenSet = false;
 
     int m_ignoreHeaderRows;
-    bool m_ignoreHeaderRowsHasBeenSet;
+    bool m_ignoreHeaderRowsHasBeenSet = false;
 
     int m_maxFileSize;
-    bool m_maxFileSizeHasBeenSet;
+    bool m_maxFileSizeHasBeenSet = false;
 
     bool m_rfc4180;
-    bool m_rfc4180HasBeenSet;
+    bool m_rfc4180HasBeenSet = false;
 
     Aws::String m_datePartitionTimezone;
-    bool m_datePartitionTimezoneHasBeenSet;
+    bool m_datePartitionTimezoneHasBeenSet = false;
+
+    bool m_addTrailingPaddingCharacter;
+    bool m_addTrailingPaddingCharacterHasBeenSet = false;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Detail date for a repository that has been registered with
-   * Proton.</p><p><h3>See Also:</h3>   <a
+   * <p>Detailed data of a linked repository—a repository that has been registered
+   * with Proton.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Repository">AWS
    * API Reference</a></p>
    */
@@ -40,91 +40,91 @@ namespace Model
 
 
     /**
-     * <p>The repository Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The repository Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The repository Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The repository Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The repository Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The repository Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline Repository& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The repository Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline Repository& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The repository Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline Repository& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The repository Amazon Web Services CodeStar connection that connects Proton
-     * to your repository.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account.</p>
      */
     inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
 
     /**
-     * <p>The repository Amazon Web Services CodeStar connection that connects Proton
-     * to your repository.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account.</p>
      */
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
 
     /**
-     * <p>The repository Amazon Web Services CodeStar connection that connects Proton
-     * to your repository.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account.</p>
      */
     inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
 
     /**
-     * <p>The repository Amazon Web Services CodeStar connection that connects Proton
-     * to your repository.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account.</p>
      */
     inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
 
     /**
-     * <p>The repository Amazon Web Services CodeStar connection that connects Proton
-     * to your repository.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account.</p>
      */
     inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
 
     /**
-     * <p>The repository Amazon Web Services CodeStar connection that connects Proton
-     * to your repository.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account.</p>
      */
     inline Repository& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
 
     /**
-     * <p>The repository Amazon Web Services CodeStar connection that connects Proton
-     * to your repository.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account.</p>
      */
     inline Repository& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The repository Amazon Web Services CodeStar connection that connects Proton
-     * to your repository.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account.</p>
      */
     inline Repository& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
 
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RepositoryProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

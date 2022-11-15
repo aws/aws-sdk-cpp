@@ -314,25 +314,25 @@ namespace Model
   private:
 
     Aws::String m_deletionId;
-    bool m_deletionIdHasBeenSet;
+    bool m_deletionIdHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletionStartTime;
-    bool m_deletionStartTimeHasBeenSet;
+    bool m_deletionStartTimeHasBeenSet = false;
 
     InventoryDeletionStatus m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     Aws::String m_lastStatusMessage;
-    bool m_lastStatusMessageHasBeenSet;
+    bool m_lastStatusMessageHasBeenSet = false;
 
     InventoryDeletionSummary m_deletionSummary;
-    bool m_deletionSummaryHasBeenSet;
+    bool m_deletionSummaryHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStatusUpdateTime;
-    bool m_lastStatusUpdateTimeHasBeenSet;
+    bool m_lastStatusUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

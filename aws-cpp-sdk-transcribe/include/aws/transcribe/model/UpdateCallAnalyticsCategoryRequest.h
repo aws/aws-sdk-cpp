@@ -37,117 +37,117 @@ namespace Model
 
 
     /**
-     * <p>The name of the analytics category to update. The name is case sensitive. If
-     * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the Call Analytics category you want to update. Category names
+     * are case sensitive.</p>
      */
     inline const Aws::String& GetCategoryName() const{ return m_categoryName; }
 
     /**
-     * <p>The name of the analytics category to update. The name is case sensitive. If
-     * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the Call Analytics category you want to update. Category names
+     * are case sensitive.</p>
      */
     inline bool CategoryNameHasBeenSet() const { return m_categoryNameHasBeenSet; }
 
     /**
-     * <p>The name of the analytics category to update. The name is case sensitive. If
-     * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the Call Analytics category you want to update. Category names
+     * are case sensitive.</p>
      */
     inline void SetCategoryName(const Aws::String& value) { m_categoryNameHasBeenSet = true; m_categoryName = value; }
 
     /**
-     * <p>The name of the analytics category to update. The name is case sensitive. If
-     * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the Call Analytics category you want to update. Category names
+     * are case sensitive.</p>
      */
     inline void SetCategoryName(Aws::String&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::move(value); }
 
     /**
-     * <p>The name of the analytics category to update. The name is case sensitive. If
-     * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the Call Analytics category you want to update. Category names
+     * are case sensitive.</p>
      */
     inline void SetCategoryName(const char* value) { m_categoryNameHasBeenSet = true; m_categoryName.assign(value); }
 
     /**
-     * <p>The name of the analytics category to update. The name is case sensitive. If
-     * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the Call Analytics category you want to update. Category names
+     * are case sensitive.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithCategoryName(const Aws::String& value) { SetCategoryName(value); return *this;}
 
     /**
-     * <p>The name of the analytics category to update. The name is case sensitive. If
-     * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the Call Analytics category you want to update. Category names
+     * are case sensitive.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithCategoryName(Aws::String&& value) { SetCategoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the analytics category to update. The name is case sensitive. If
-     * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error.</p>
+     * <p>The name of the Call Analytics category you want to update. Category names
+     * are case sensitive.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithCategoryName(const char* value) { SetCategoryName(value); return *this;}
 
 
     /**
-     * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used.</p>
+     * <p>The rules used for the updated Call Analytics category. The rules you provide
+     * in this field replace the ones that are currently being used in the specified
+     * category.</p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
-     * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used.</p>
+     * <p>The rules used for the updated Call Analytics category. The rules you provide
+     * in this field replace the ones that are currently being used in the specified
+     * category.</p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
-     * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used.</p>
+     * <p>The rules used for the updated Call Analytics category. The rules you provide
+     * in this field replace the ones that are currently being used in the specified
+     * category.</p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
-     * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used.</p>
+     * <p>The rules used for the updated Call Analytics category. The rules you provide
+     * in this field replace the ones that are currently being used in the specified
+     * category.</p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
-     * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used.</p>
+     * <p>The rules used for the updated Call Analytics category. The rules you provide
+     * in this field replace the ones that are currently being used in the specified
+     * category.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
-     * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used.</p>
+     * <p>The rules used for the updated Call Analytics category. The rules you provide
+     * in this field replace the ones that are currently being used in the specified
+     * category.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used.</p>
+     * <p>The rules used for the updated Call Analytics category. The rules you provide
+     * in this field replace the ones that are currently being used in the specified
+     * category.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
-     * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used.</p>
+     * <p>The rules used for the updated Call Analytics category. The rules you provide
+     * in this field replace the ones that are currently being used in the specified
+     * category.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_categoryName;
-    bool m_categoryNameHasBeenSet;
+    bool m_categoryNameHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

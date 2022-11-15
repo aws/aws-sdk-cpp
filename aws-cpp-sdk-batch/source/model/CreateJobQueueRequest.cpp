@@ -53,7 +53,7 @@ Aws::String CreateJobQueueRequest::SerializePayload() const
 
   if(m_computeEnvironmentOrderHasBeenSet)
   {
-   Array<JsonValue> computeEnvironmentOrderJsonList(m_computeEnvironmentOrder.size());
+   Aws::Utils::Array<JsonValue> computeEnvironmentOrderJsonList(m_computeEnvironmentOrder.size());
    for(unsigned computeEnvironmentOrderIndex = 0; computeEnvironmentOrderIndex < computeEnvironmentOrderJsonList.GetLength(); ++computeEnvironmentOrderIndex)
    {
      computeEnvironmentOrderJsonList[computeEnvironmentOrderIndex].AsObject(m_computeEnvironmentOrder[computeEnvironmentOrderIndex].Jsonize());

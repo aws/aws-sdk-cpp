@@ -84,7 +84,7 @@ namespace Model
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
      * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
      * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
      * call of analyze document. Comes with an alias and ID for ease of locating in a
      * response. Also contains location and confidence score.</p> </li> </ul>
@@ -117,7 +117,7 @@ namespace Model
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
      * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
      * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
      * call of analyze document. Comes with an alias and ID for ease of locating in a
      * response. Also contains location and confidence score.</p> </li> </ul>
@@ -150,7 +150,7 @@ namespace Model
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
      * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
      * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
      * call of analyze document. Comes with an alias and ID for ease of locating in a
      * response. Also contains location and confidence score.</p> </li> </ul>
@@ -183,7 +183,7 @@ namespace Model
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
      * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
      * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
      * call of analyze document. Comes with an alias and ID for ease of locating in a
      * response. Also contains location and confidence score.</p> </li> </ul>
@@ -216,7 +216,7 @@ namespace Model
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
      * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
      * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
      * call of analyze document. Comes with an alias and ID for ease of locating in a
      * response. Also contains location and confidence score.</p> </li> </ul>
@@ -249,7 +249,7 @@ namespace Model
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
      * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
      * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
      * call of analyze document. Comes with an alias and ID for ease of locating in a
      * response. Also contains location and confidence score.</p> </li> </ul>
@@ -773,45 +773,49 @@ namespace Model
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
-     * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
-     * even if it contains multiple document pages, is considered to be a single-page
-     * document. The value of <code>Page</code> is always 1. Synchronous operations
-     * don't return <code>Page</code> because every input document is considered to be
-     * a single-page document.</p>
+     * synchronous and asynchronous operations. Page values greater than 1 are only
+     * returned for multipage documents that are in PDF or TIFF format. A scanned image
+     * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
+     * document pages, is considered a single-page document. This means that for
+     * scanned images the value of <code>Page</code> is always 1. Synchronous
+     * operations operations will also return a <code>Page</code> value of 1 because
+     * every input document is considered to be a single-page document.</p>
      */
     inline int GetPage() const{ return m_page; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
-     * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
-     * even if it contains multiple document pages, is considered to be a single-page
-     * document. The value of <code>Page</code> is always 1. Synchronous operations
-     * don't return <code>Page</code> because every input document is considered to be
-     * a single-page document.</p>
+     * synchronous and asynchronous operations. Page values greater than 1 are only
+     * returned for multipage documents that are in PDF or TIFF format. A scanned image
+     * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
+     * document pages, is considered a single-page document. This means that for
+     * scanned images the value of <code>Page</code> is always 1. Synchronous
+     * operations operations will also return a <code>Page</code> value of 1 because
+     * every input document is considered to be a single-page document.</p>
      */
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
-     * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
-     * even if it contains multiple document pages, is considered to be a single-page
-     * document. The value of <code>Page</code> is always 1. Synchronous operations
-     * don't return <code>Page</code> because every input document is considered to be
-     * a single-page document.</p>
+     * synchronous and asynchronous operations. Page values greater than 1 are only
+     * returned for multipage documents that are in PDF or TIFF format. A scanned image
+     * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
+     * document pages, is considered a single-page document. This means that for
+     * scanned images the value of <code>Page</code> is always 1. Synchronous
+     * operations operations will also return a <code>Page</code> value of 1 because
+     * every input document is considered to be a single-page document.</p>
      */
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
-     * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
-     * even if it contains multiple document pages, is considered to be a single-page
-     * document. The value of <code>Page</code> is always 1. Synchronous operations
-     * don't return <code>Page</code> because every input document is considered to be
-     * a single-page document.</p>
+     * synchronous and asynchronous operations. Page values greater than 1 are only
+     * returned for multipage documents that are in PDF or TIFF format. A scanned image
+     * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
+     * document pages, is considered a single-page document. This means that for
+     * scanned images the value of <code>Page</code> is always 1. Synchronous
+     * operations operations will also return a <code>Page</code> value of 1 because
+     * every input document is considered to be a single-page document.</p>
      */
     inline Block& WithPage(int value) { SetPage(value); return *this;}
 
@@ -849,49 +853,49 @@ namespace Model
   private:
 
     BlockType m_blockType;
-    bool m_blockTypeHasBeenSet;
+    bool m_blockTypeHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     TextType m_textType;
-    bool m_textTypeHasBeenSet;
+    bool m_textTypeHasBeenSet = false;
 
     int m_rowIndex;
-    bool m_rowIndexHasBeenSet;
+    bool m_rowIndexHasBeenSet = false;
 
     int m_columnIndex;
-    bool m_columnIndexHasBeenSet;
+    bool m_columnIndexHasBeenSet = false;
 
     int m_rowSpan;
-    bool m_rowSpanHasBeenSet;
+    bool m_rowSpanHasBeenSet = false;
 
     int m_columnSpan;
-    bool m_columnSpanHasBeenSet;
+    bool m_columnSpanHasBeenSet = false;
 
     Geometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<Relationship> m_relationships;
-    bool m_relationshipsHasBeenSet;
+    bool m_relationshipsHasBeenSet = false;
 
     Aws::Vector<EntityType> m_entityTypes;
-    bool m_entityTypesHasBeenSet;
+    bool m_entityTypesHasBeenSet = false;
 
     SelectionStatus m_selectionStatus;
-    bool m_selectionStatusHasBeenSet;
+    bool m_selectionStatusHasBeenSet = false;
 
     int m_page;
-    bool m_pageHasBeenSet;
+    bool m_pageHasBeenSet = false;
 
     Query m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
   };
 
 } // namespace Model

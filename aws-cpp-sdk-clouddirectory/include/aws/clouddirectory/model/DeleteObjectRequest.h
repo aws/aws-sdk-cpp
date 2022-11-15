@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     ObjectReference m_objectReference;
-    bool m_objectReferenceHasBeenSet;
+    bool m_objectReferenceHasBeenSet = false;
   };
 
 } // namespace Model

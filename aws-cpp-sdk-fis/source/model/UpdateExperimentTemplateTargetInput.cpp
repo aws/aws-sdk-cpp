@@ -50,7 +50,7 @@ UpdateExperimentTemplateTargetInput& UpdateExperimentTemplateTargetInput::operat
 
   if(jsonValue.ValueExists("resourceArns"))
   {
-    Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("resourceArns");
+    Aws::Utils::Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("resourceArns");
     for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
     {
       m_resourceArns.push_back(resourceArnsJsonList[resourceArnsIndex].AsString());
@@ -70,7 +70,7 @@ UpdateExperimentTemplateTargetInput& UpdateExperimentTemplateTargetInput::operat
 
   if(jsonValue.ValueExists("filters"))
   {
-    Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
+    Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
     for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
     {
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue UpdateExperimentTemplateTargetInput::Jsonize() const
 
   if(m_resourceArnsHasBeenSet)
   {
-   Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
    for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
    {
      resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
@@ -132,7 +132,7 @@ JsonValue UpdateExperimentTemplateTargetInput::Jsonize() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 StartProjectVersionRequest::StartProjectVersionRequest() : 
     m_projectVersionArnHasBeenSet(false),
     m_minInferenceUnits(0),
-    m_minInferenceUnitsHasBeenSet(false)
+    m_minInferenceUnitsHasBeenSet(false),
+    m_maxInferenceUnits(0),
+    m_maxInferenceUnitsHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,12 @@ Aws::String StartProjectVersionRequest::SerializePayload() const
   if(m_minInferenceUnitsHasBeenSet)
   {
    payload.WithInteger("MinInferenceUnits", m_minInferenceUnits);
+
+  }
+
+  if(m_maxInferenceUnitsHasBeenSet)
+  {
+   payload.WithInteger("MaxInferenceUnits", m_maxInferenceUnits);
 
   }
 

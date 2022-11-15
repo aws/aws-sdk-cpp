@@ -62,7 +62,7 @@ Aws::String GetUnfilteredPartitionsMetadataRequest::SerializePayload() const
 
   if(m_supportedPermissionTypesHasBeenSet)
   {
-   Array<JsonValue> supportedPermissionTypesJsonList(m_supportedPermissionTypes.size());
+   Aws::Utils::Array<JsonValue> supportedPermissionTypesJsonList(m_supportedPermissionTypes.size());
    for(unsigned supportedPermissionTypesIndex = 0; supportedPermissionTypesIndex < supportedPermissionTypesJsonList.GetLength(); ++supportedPermissionTypesIndex)
    {
      supportedPermissionTypesJsonList[supportedPermissionTypesIndex].AsString(PermissionTypeMapper::GetNameForPermissionType(m_supportedPermissionTypes[supportedPermissionTypesIndex]));

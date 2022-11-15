@@ -256,16 +256,16 @@ namespace Model
   private:
 
     Aws::String m_trackingId;
-    bool m_trackingIdHasBeenSet;
+    bool m_trackingIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::Vector<Event> m_eventList;
-    bool m_eventListHasBeenSet;
+    bool m_eventListHasBeenSet = false;
   };
 
 } // namespace Model

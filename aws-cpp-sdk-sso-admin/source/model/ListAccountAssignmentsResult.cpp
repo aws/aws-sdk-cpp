@@ -30,7 +30,7 @@ ListAccountAssignmentsResult& ListAccountAssignmentsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountAssignments"))
   {
-    Array<JsonView> accountAssignmentsJsonList = jsonValue.GetArray("AccountAssignments");
+    Aws::Utils::Array<JsonView> accountAssignmentsJsonList = jsonValue.GetArray("AccountAssignments");
     for(unsigned accountAssignmentsIndex = 0; accountAssignmentsIndex < accountAssignmentsJsonList.GetLength(); ++accountAssignmentsIndex)
     {
       m_accountAssignments.push_back(accountAssignmentsJsonList[accountAssignmentsIndex].AsObject());

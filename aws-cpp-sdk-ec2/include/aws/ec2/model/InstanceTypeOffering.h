@@ -174,13 +174,13 @@ namespace Model
   private:
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     LocationType m_locationType;
-    bool m_locationTypeHasBeenSet;
+    bool m_locationTypeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

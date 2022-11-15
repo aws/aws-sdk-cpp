@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_dataSourceSyncJobId;
-    bool m_dataSourceSyncJobIdHasBeenSet;
+    bool m_dataSourceSyncJobIdHasBeenSet = false;
   };
 
 } // namespace Model

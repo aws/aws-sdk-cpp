@@ -81,50 +81,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline GetRepositoryEndpointRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline GetRepositoryEndpointRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain that
-     * contains the repository. It does not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain that contains the repository. It does not include dashes or spaces. </p>
      */
     inline GetRepositoryEndpointRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
@@ -172,65 +172,53 @@ namespace Model
 
     /**
      * <p> Returns which endpoint of a repository to return. A repository has one
-     * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
-     * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * </ul>
+     * endpoint for each package format. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
      * <p> Returns which endpoint of a repository to return. A repository has one
-     * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
-     * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * </ul>
+     * endpoint for each package format. </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p> Returns which endpoint of a repository to return. A repository has one
-     * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
-     * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * </ul>
+     * endpoint for each package format. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p> Returns which endpoint of a repository to return. A repository has one
-     * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
-     * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * </ul>
+     * endpoint for each package format. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p> Returns which endpoint of a repository to return. A repository has one
-     * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
-     * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * </ul>
+     * endpoint for each package format. </p>
      */
     inline GetRepositoryEndpointRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
      * <p> Returns which endpoint of a repository to return. A repository has one
-     * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
-     * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * </ul>
+     * endpoint for each package format. </p>
      */
     inline GetRepositoryEndpointRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     PackageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

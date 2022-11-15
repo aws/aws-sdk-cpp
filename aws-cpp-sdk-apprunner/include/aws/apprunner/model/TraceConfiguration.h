@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TracingVendor m_vendor;
-    bool m_vendorHasBeenSet;
+    bool m_vendorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -552,43 +552,43 @@ namespace Model
   private:
 
     AccelerationSettings m_accelerationSettings;
-    bool m_accelerationSettingsHasBeenSet;
+    bool m_accelerationSettingsHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<HopDestination> m_hopDestinations;
-    bool m_hopDestinationsHasBeenSet;
+    bool m_hopDestinationsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_queue;
-    bool m_queueHasBeenSet;
+    bool m_queueHasBeenSet = false;
 
     JobTemplateSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     StatusUpdateInterval m_statusUpdateInterval;
-    bool m_statusUpdateIntervalHasBeenSet;
+    bool m_statusUpdateIntervalHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

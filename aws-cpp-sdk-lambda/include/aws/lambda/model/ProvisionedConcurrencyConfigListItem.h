@@ -282,25 +282,25 @@ namespace Model
   private:
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     int m_requestedProvisionedConcurrentExecutions;
-    bool m_requestedProvisionedConcurrentExecutionsHasBeenSet;
+    bool m_requestedProvisionedConcurrentExecutionsHasBeenSet = false;
 
     int m_availableProvisionedConcurrentExecutions;
-    bool m_availableProvisionedConcurrentExecutionsHasBeenSet;
+    bool m_availableProvisionedConcurrentExecutionsHasBeenSet = false;
 
     int m_allocatedProvisionedConcurrentExecutions;
-    bool m_allocatedProvisionedConcurrentExecutionsHasBeenSet;
+    bool m_allocatedProvisionedConcurrentExecutionsHasBeenSet = false;
 
     ProvisionedConcurrencyStatusEnum m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
   };
 
 } // namespace Model

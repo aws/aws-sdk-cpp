@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_rdsDbInstanceArn;
-    bool m_rdsDbInstanceArnHasBeenSet;
+    bool m_rdsDbInstanceArnHasBeenSet = false;
   };
 
 } // namespace Model

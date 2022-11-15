@@ -22,7 +22,8 @@ DescribeTaskExecutionResult::DescribeTaskExecutionResult() :
     m_estimatedBytesToTransfer(0),
     m_filesTransferred(0),
     m_bytesWritten(0),
-    m_bytesTransferred(0)
+    m_bytesTransferred(0),
+    m_bytesCompressed(0)
 {
 }
 
@@ -32,7 +33,8 @@ DescribeTaskExecutionResult::DescribeTaskExecutionResult(const Aws::AmazonWebSer
     m_estimatedBytesToTransfer(0),
     m_filesTransferred(0),
     m_bytesWritten(0),
-    m_bytesTransferred(0)
+    m_bytesTransferred(0),
+    m_bytesCompressed(0)
 {
   *this = result;
 }
@@ -60,7 +62,7 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("Excludes"))
   {
-    Array<JsonView> excludesJsonList = jsonValue.GetArray("Excludes");
+    Aws::Utils::Array<JsonView> excludesJsonList = jsonValue.GetArray("Excludes");
     for(unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex)
     {
       m_excludes.push_back(excludesJsonList[excludesIndex].AsObject());
@@ -69,7 +71,7 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("Includes"))
   {
-    Array<JsonView> includesJsonList = jsonValue.GetArray("Includes");
+    Aws::Utils::Array<JsonView> includesJsonList = jsonValue.GetArray("Includes");
     for(unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex)
     {
       m_includes.push_back(includesJsonList[includesIndex].AsObject());
@@ -115,6 +117,12 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
   if(jsonValue.ValueExists("Result"))
   {
     m_result = jsonValue.GetObject("Result");
+
+  }
+
+  if(jsonValue.ValueExists("BytesCompressed"))
+  {
+    m_bytesCompressed = jsonValue.GetInt64("BytesCompressed");
 
   }
 

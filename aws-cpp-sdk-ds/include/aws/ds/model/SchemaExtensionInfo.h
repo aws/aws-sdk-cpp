@@ -304,25 +304,25 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_schemaExtensionId;
-    bool m_schemaExtensionIdHasBeenSet;
+    bool m_schemaExtensionIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SchemaExtensionStatus m_schemaExtensionStatus;
-    bool m_schemaExtensionStatusHasBeenSet;
+    bool m_schemaExtensionStatusHasBeenSet = false;
 
     Aws::String m_schemaExtensionStatusReason;
-    bool m_schemaExtensionStatusReasonHasBeenSet;
+    bool m_schemaExtensionStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDateTime;
-    bool m_endDateTimeHasBeenSet;
+    bool m_endDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

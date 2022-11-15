@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline const ContactFlowModule& GetContactFlowModule() const{ return m_contactFlowModule; }
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline void SetContactFlowModule(const ContactFlowModule& value) { m_contactFlowModule = value; }
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline void SetContactFlowModule(ContactFlowModule&& value) { m_contactFlowModule = std::move(value); }
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline DescribeContactFlowModuleResult& WithContactFlowModule(const ContactFlowModule& value) { SetContactFlowModule(value); return *this;}
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline DescribeContactFlowModuleResult& WithContactFlowModule(ContactFlowModule&& value) { SetContactFlowModule(std::move(value)); return *this;}
 

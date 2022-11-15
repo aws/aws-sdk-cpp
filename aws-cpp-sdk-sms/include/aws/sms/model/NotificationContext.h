@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_validationId;
-    bool m_validationIdHasBeenSet;
+    bool m_validationIdHasBeenSet = false;
 
     ValidationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

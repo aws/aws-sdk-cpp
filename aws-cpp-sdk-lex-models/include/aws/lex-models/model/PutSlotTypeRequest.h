@@ -604,28 +604,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<EnumerationValue> m_enumerationValues;
-    bool m_enumerationValuesHasBeenSet;
+    bool m_enumerationValuesHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     SlotValueSelectionStrategy m_valueSelectionStrategy;
-    bool m_valueSelectionStrategyHasBeenSet;
+    bool m_valueSelectionStrategyHasBeenSet = false;
 
     bool m_createVersion;
-    bool m_createVersionHasBeenSet;
+    bool m_createVersionHasBeenSet = false;
 
     Aws::String m_parentSlotTypeSignature;
-    bool m_parentSlotTypeSignatureHasBeenSet;
+    bool m_parentSlotTypeSignatureHasBeenSet = false;
 
     Aws::Vector<SlotTypeConfiguration> m_slotTypeConfigurations;
-    bool m_slotTypeConfigurationsHasBeenSet;
+    bool m_slotTypeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

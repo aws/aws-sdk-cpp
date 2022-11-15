@@ -36,49 +36,49 @@ namespace Model
 
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
+     * <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8
      * encoded characters.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
+     * <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8
      * encoded characters.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
+     * <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8
      * encoded characters.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
+     * <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8
      * encoded characters.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
+     * <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8
      * encoded characters.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
+     * <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8
      * encoded characters.</p>
      */
     inline DetectKeyPhrasesRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
+     * <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8
      * encoded characters.</p>
      */
     inline DetectKeyPhrasesRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
+     * <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8
      * encoded characters.</p>
      */
     inline DetectKeyPhrasesRequest& WithText(const char* value) { SetText(value); return *this;}
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
   };
 
 } // namespace Model

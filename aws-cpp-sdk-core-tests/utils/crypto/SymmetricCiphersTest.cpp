@@ -5,7 +5,7 @@
 
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/Cipher.h>
 #include <aws/core/utils/HashingUtils.h>

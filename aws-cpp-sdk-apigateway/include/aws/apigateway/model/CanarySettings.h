@@ -219,16 +219,16 @@ namespace Model
   private:
 
     double m_percentTraffic;
-    bool m_percentTrafficHasBeenSet;
+    bool m_percentTrafficHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stageVariableOverrides;
-    bool m_stageVariableOverridesHasBeenSet;
+    bool m_stageVariableOverridesHasBeenSet = false;
 
     bool m_useStageCache;
-    bool m_useStageCacheHasBeenSet;
+    bool m_useStageCacheHasBeenSet = false;
   };
 
 } // namespace Model

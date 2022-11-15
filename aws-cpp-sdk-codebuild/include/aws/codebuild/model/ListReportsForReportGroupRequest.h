@@ -265,19 +265,19 @@ namespace Model
   private:
 
     Aws::String m_reportGroupArn;
-    bool m_reportGroupArnHasBeenSet;
+    bool m_reportGroupArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     SortOrderType m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     ReportFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -4,7 +4,7 @@
  */
 
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>

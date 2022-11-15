@@ -321,25 +321,25 @@ namespace Model
   private:
 
     Aws::String m_datastoreId;
-    bool m_datastoreIdHasBeenSet;
+    bool m_datastoreIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_submittedBefore;
-    bool m_submittedBeforeHasBeenSet;
+    bool m_submittedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_submittedAfter;
-    bool m_submittedAfterHasBeenSet;
+    bool m_submittedAfterHasBeenSet = false;
   };
 
 } // namespace Model

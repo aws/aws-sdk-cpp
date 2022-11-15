@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_retentionPeriodValue;
-    bool m_retentionPeriodValueHasBeenSet;
+    bool m_retentionPeriodValueHasBeenSet = false;
 
     RetentionPeriodUnit m_retentionPeriodUnit;
-    bool m_retentionPeriodUnitHasBeenSet;
+    bool m_retentionPeriodUnitHasBeenSet = false;
   };
 
 } // namespace Model

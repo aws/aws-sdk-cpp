@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_columnNames;
-    bool m_columnNamesHasBeenSet;
+    bool m_columnNamesHasBeenSet = false;
   };
 
 } // namespace Model

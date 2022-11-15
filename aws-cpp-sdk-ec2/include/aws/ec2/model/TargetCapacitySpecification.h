@@ -206,19 +206,19 @@ namespace Model
   private:
 
     int m_totalTargetCapacity;
-    bool m_totalTargetCapacityHasBeenSet;
+    bool m_totalTargetCapacityHasBeenSet = false;
 
     int m_onDemandTargetCapacity;
-    bool m_onDemandTargetCapacityHasBeenSet;
+    bool m_onDemandTargetCapacityHasBeenSet = false;
 
     int m_spotTargetCapacity;
-    bool m_spotTargetCapacityHasBeenSet;
+    bool m_spotTargetCapacityHasBeenSet = false;
 
     DefaultTargetCapacityType m_defaultTargetCapacityType;
-    bool m_defaultTargetCapacityTypeHasBeenSet;
+    bool m_defaultTargetCapacityTypeHasBeenSet = false;
 
     TargetCapacityUnitType m_targetCapacityUnitType;
-    bool m_targetCapacityUnitTypeHasBeenSet;
+    bool m_targetCapacityUnitTypeHasBeenSet = false;
   };
 
 } // namespace Model

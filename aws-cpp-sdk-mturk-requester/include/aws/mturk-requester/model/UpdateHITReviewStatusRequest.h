@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_hITId;
-    bool m_hITIdHasBeenSet;
+    bool m_hITIdHasBeenSet = false;
 
     bool m_revert;
-    bool m_revertHasBeenSet;
+    bool m_revertHasBeenSet = false;
   };
 
 } // namespace Model

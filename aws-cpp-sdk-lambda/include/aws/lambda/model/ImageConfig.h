@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

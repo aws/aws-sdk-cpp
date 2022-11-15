@@ -119,10 +119,10 @@ namespace Model
   private:
 
     InstanceRefreshLivePoolProgress m_livePoolProgress;
-    bool m_livePoolProgressHasBeenSet;
+    bool m_livePoolProgressHasBeenSet = false;
 
     InstanceRefreshWarmPoolProgress m_warmPoolProgress;
-    bool m_warmPoolProgressHasBeenSet;
+    bool m_warmPoolProgressHasBeenSet = false;
   };
 
 } // namespace Model

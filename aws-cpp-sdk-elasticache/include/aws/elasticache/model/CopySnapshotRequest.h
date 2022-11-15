@@ -337,19 +337,19 @@ namespace Model
   private:
 
     Aws::String m_sourceSnapshotName;
-    bool m_sourceSnapshotNameHasBeenSet;
+    bool m_sourceSnapshotNameHasBeenSet = false;
 
     Aws::String m_targetSnapshotName;
-    bool m_targetSnapshotNameHasBeenSet;
+    bool m_targetSnapshotNameHasBeenSet = false;
 
     Aws::String m_targetBucket;
-    bool m_targetBucketHasBeenSet;
+    bool m_targetBucketHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

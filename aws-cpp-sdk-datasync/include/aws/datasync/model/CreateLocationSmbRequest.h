@@ -261,64 +261,64 @@ namespace Model
     /**
      * <p>The user who can mount the share, has the permissions to access files and
      * folders in the SMB share.</p> <p>For information about choosing a user name that
-     * ensures sufficient permissions to files, folders, and metadata, see <a
-     * href="create-smb-location.html#SMBuser">user</a>.</p>
+     * ensures sufficient permissions to files, folders, and metadata, see the <a
+     * href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
      * folders in the SMB share.</p> <p>For information about choosing a user name that
-     * ensures sufficient permissions to files, folders, and metadata, see <a
-     * href="create-smb-location.html#SMBuser">user</a>.</p>
+     * ensures sufficient permissions to files, folders, and metadata, see the <a
+     * href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
      */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
      * folders in the SMB share.</p> <p>For information about choosing a user name that
-     * ensures sufficient permissions to files, folders, and metadata, see <a
-     * href="create-smb-location.html#SMBuser">user</a>.</p>
+     * ensures sufficient permissions to files, folders, and metadata, see the <a
+     * href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
      */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
      * folders in the SMB share.</p> <p>For information about choosing a user name that
-     * ensures sufficient permissions to files, folders, and metadata, see <a
-     * href="create-smb-location.html#SMBuser">user</a>.</p>
+     * ensures sufficient permissions to files, folders, and metadata, see the <a
+     * href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
      */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
      * folders in the SMB share.</p> <p>For information about choosing a user name that
-     * ensures sufficient permissions to files, folders, and metadata, see <a
-     * href="create-smb-location.html#SMBuser">user</a>.</p>
+     * ensures sufficient permissions to files, folders, and metadata, see the <a
+     * href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
      */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
      * folders in the SMB share.</p> <p>For information about choosing a user name that
-     * ensures sufficient permissions to files, folders, and metadata, see <a
-     * href="create-smb-location.html#SMBuser">user</a>.</p>
+     * ensures sufficient permissions to files, folders, and metadata, see the <a
+     * href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
      */
     inline CreateLocationSmbRequest& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
      * folders in the SMB share.</p> <p>For information about choosing a user name that
-     * ensures sufficient permissions to files, folders, and metadata, see <a
-     * href="create-smb-location.html#SMBuser">user</a>.</p>
+     * ensures sufficient permissions to files, folders, and metadata, see the <a
+     * href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
      */
     inline CreateLocationSmbRequest& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
      * folders in the SMB share.</p> <p>For information about choosing a user name that
-     * ensures sufficient permissions to files, folders, and metadata, see <a
-     * href="create-smb-location.html#SMBuser">user</a>.</p>
+     * ensures sufficient permissions to files, folders, and metadata, see the <a
+     * href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
      */
     inline CreateLocationSmbRequest& WithUser(const char* value) { SetUser(value); return *this;}
 
@@ -558,28 +558,28 @@ namespace Model
   private:
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_serverHostname;
-    bool m_serverHostnameHasBeenSet;
+    bool m_serverHostnameHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;
-    bool m_agentArnsHasBeenSet;
+    bool m_agentArnsHasBeenSet = false;
 
     SmbMountOptions m_mountOptions;
-    bool m_mountOptionsHasBeenSet;
+    bool m_mountOptionsHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -283,22 +283,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_partitionKeys;
-    bool m_partitionKeysHasBeenSet;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::String m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     CatalogSchemaChangePolicy m_schemaChangePolicy;
-    bool m_schemaChangePolicyHasBeenSet;
+    bool m_schemaChangePolicyHasBeenSet = false;
   };
 
 } // namespace Model

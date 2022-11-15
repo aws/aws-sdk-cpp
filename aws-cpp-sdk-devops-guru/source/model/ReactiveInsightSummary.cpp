@@ -100,7 +100,7 @@ ReactiveInsightSummary& ReactiveInsightSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AssociatedResourceArns"))
   {
-    Array<JsonView> associatedResourceArnsJsonList = jsonValue.GetArray("AssociatedResourceArns");
+    Aws::Utils::Array<JsonView> associatedResourceArnsJsonList = jsonValue.GetArray("AssociatedResourceArns");
     for(unsigned associatedResourceArnsIndex = 0; associatedResourceArnsIndex < associatedResourceArnsJsonList.GetLength(); ++associatedResourceArnsIndex)
     {
       m_associatedResourceArns.push_back(associatedResourceArnsJsonList[associatedResourceArnsIndex].AsString());
@@ -157,7 +157,7 @@ JsonValue ReactiveInsightSummary::Jsonize() const
 
   if(m_associatedResourceArnsHasBeenSet)
   {
-   Array<JsonValue> associatedResourceArnsJsonList(m_associatedResourceArns.size());
+   Aws::Utils::Array<JsonValue> associatedResourceArnsJsonList(m_associatedResourceArns.size());
    for(unsigned associatedResourceArnsIndex = 0; associatedResourceArnsIndex < associatedResourceArnsJsonList.GetLength(); ++associatedResourceArnsIndex)
    {
      associatedResourceArnsJsonList[associatedResourceArnsIndex].AsString(m_associatedResourceArns[associatedResourceArnsIndex]);

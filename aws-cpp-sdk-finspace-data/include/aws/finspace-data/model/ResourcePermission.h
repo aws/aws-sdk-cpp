@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::String m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
   };
 
 } // namespace Model

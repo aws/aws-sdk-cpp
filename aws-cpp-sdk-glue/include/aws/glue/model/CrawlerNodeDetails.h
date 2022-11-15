@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Crawl> m_crawls;
-    bool m_crawlsHasBeenSet;
+    bool m_crawlsHasBeenSet = false;
   };
 
 } // namespace Model

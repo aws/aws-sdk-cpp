@@ -30,7 +30,7 @@ ListSkillsStoreCategoriesResult& ListSkillsStoreCategoriesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CategoryList"))
   {
-    Array<JsonView> categoryListJsonList = jsonValue.GetArray("CategoryList");
+    Aws::Utils::Array<JsonView> categoryListJsonList = jsonValue.GetArray("CategoryList");
     for(unsigned categoryListIndex = 0; categoryListIndex < categoryListJsonList.GetLength(); ++categoryListIndex)
     {
       m_categoryList.push_back(categoryListJsonList[categoryListIndex].AsObject());

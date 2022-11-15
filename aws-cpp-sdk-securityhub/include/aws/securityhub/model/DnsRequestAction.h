@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     bool m_blocked;
-    bool m_blockedHasBeenSet;
+    bool m_blockedHasBeenSet = false;
   };
 
 } // namespace Model

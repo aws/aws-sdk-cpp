@@ -106,7 +106,7 @@ namespace Model
   private:
 
     Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of the environment account connection detail data.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Summary data of an Proton environment account connection
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/EnvironmentAccountConnectionSummary">AWS
    * API Reference</a></p>
    */
@@ -79,6 +79,111 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
      */
     inline EnvironmentAccountConnectionSummary& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in the associated environment account.
+     * It determines the scope of infrastructure that a component can provision in the
+     * account.</p> <p>The environment account connection must have a
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in the account.</p> <p>For more
+     * information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in the associated environment account.
+     * It determines the scope of infrastructure that a component can provision in the
+     * account.</p> <p>The environment account connection must have a
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in the account.</p> <p>For more
+     * information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in the associated environment account.
+     * It determines the scope of infrastructure that a component can provision in the
+     * account.</p> <p>The environment account connection must have a
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in the account.</p> <p>For more
+     * information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in the associated environment account.
+     * It determines the scope of infrastructure that a component can provision in the
+     * account.</p> <p>The environment account connection must have a
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in the account.</p> <p>For more
+     * information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in the associated environment account.
+     * It determines the scope of infrastructure that a component can provision in the
+     * account.</p> <p>The environment account connection must have a
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in the account.</p> <p>For more
+     * information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in the associated environment account.
+     * It determines the scope of infrastructure that a component can provision in the
+     * account.</p> <p>The environment account connection must have a
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in the account.</p> <p>For more
+     * information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline EnvironmentAccountConnectionSummary& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in the associated environment account.
+     * It determines the scope of infrastructure that a component can provision in the
+     * account.</p> <p>The environment account connection must have a
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in the account.</p> <p>For more
+     * information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline EnvironmentAccountConnectionSummary& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in the associated environment account.
+     * It determines the scope of infrastructure that a component can provision in the
+     * account.</p> <p>The environment account connection must have a
+     * <code>componentRoleArn</code> to allow directly defined components to be
+     * associated with any environments running in the account.</p> <p>For more
+     * information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
+     */
+    inline EnvironmentAccountConnectionSummary& WithComponentRoleArn(const char* value) { SetComponentRoleArn(value); return *this;}
 
 
     /**
@@ -413,31 +518,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
+
+    Aws::String m_componentRoleArn;
+    bool m_componentRoleArnHasBeenSet = false;
 
     Aws::String m_environmentAccountId;
-    bool m_environmentAccountIdHasBeenSet;
+    bool m_environmentAccountIdHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedAt;
-    bool m_lastModifiedAtHasBeenSet;
+    bool m_lastModifiedAtHasBeenSet = false;
 
     Aws::String m_managementAccountId;
-    bool m_managementAccountIdHasBeenSet;
+    bool m_managementAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedAt;
-    bool m_requestedAtHasBeenSet;
+    bool m_requestedAtHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     EnvironmentAccountConnectionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

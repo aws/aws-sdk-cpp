@@ -172,10 +172,10 @@ namespace Model
   private:
 
     Aws::String m_nestedPropertyName;
-    bool m_nestedPropertyNameHasBeenSet;
+    bool m_nestedPropertyNameHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

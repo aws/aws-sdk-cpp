@@ -22,6 +22,7 @@ SearchForTextResult::SearchForTextResult() :
     m_distance(0.0),
     m_distanceHasBeenSet(false),
     m_placeHasBeenSet(false),
+    m_placeIdHasBeenSet(false),
     m_relevance(0.0),
     m_relevanceHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ SearchForTextResult::SearchForTextResult(JsonView jsonValue) :
     m_distance(0.0),
     m_distanceHasBeenSet(false),
     m_placeHasBeenSet(false),
+    m_placeIdHasBeenSet(false),
     m_relevance(0.0),
     m_relevanceHasBeenSet(false)
 {
@@ -51,6 +53,13 @@ SearchForTextResult& SearchForTextResult::operator =(JsonView jsonValue)
     m_place = jsonValue.GetObject("Place");
 
     m_placeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlaceId"))
+  {
+    m_placeId = jsonValue.GetString("PlaceId");
+
+    m_placeIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Relevance"))
@@ -76,6 +85,12 @@ JsonValue SearchForTextResult::Jsonize() const
   if(m_placeHasBeenSet)
   {
    payload.WithObject("Place", m_place.Jsonize());
+
+  }
+
+  if(m_placeIdHasBeenSet)
+  {
+   payload.WithString("PlaceId", m_placeId);
 
   }
 

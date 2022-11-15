@@ -100,13 +100,13 @@ namespace Model
   private:
 
     int m_initialNumberOfUsers;
-    bool m_initialNumberOfUsersHasBeenSet;
+    bool m_initialNumberOfUsersHasBeenSet = false;
 
     int m_spawnRate;
-    bool m_spawnRateHasBeenSet;
+    bool m_spawnRateHasBeenSet = false;
 
     int m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

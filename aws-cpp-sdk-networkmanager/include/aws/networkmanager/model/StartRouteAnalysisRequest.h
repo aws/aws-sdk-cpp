@@ -188,19 +188,19 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     RouteAnalysisEndpointOptionsSpecification m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     RouteAnalysisEndpointOptionsSpecification m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     bool m_includeReturnPath;
-    bool m_includeReturnPathHasBeenSet;
+    bool m_includeReturnPathHasBeenSet = false;
 
     bool m_useMiddleboxes;
-    bool m_useMiddleboxesHasBeenSet;
+    bool m_useMiddleboxesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -192,13 +192,13 @@ namespace Model
   private:
 
     Aws::Vector<Evaluation> m_evaluations;
-    bool m_evaluationsHasBeenSet;
+    bool m_evaluationsHasBeenSet = false;
 
     Aws::String m_resultToken;
-    bool m_resultTokenHasBeenSet;
+    bool m_resultTokenHasBeenSet = false;
 
     bool m_testMode;
-    bool m_testModeHasBeenSet;
+    bool m_testModeHasBeenSet = false;
   };
 
 } // namespace Model

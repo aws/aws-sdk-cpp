@@ -478,52 +478,52 @@ namespace Model
   private:
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     VolumeModificationState m_modificationState;
-    bool m_modificationStateHasBeenSet;
+    bool m_modificationStateHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     int m_targetSize;
-    bool m_targetSizeHasBeenSet;
+    bool m_targetSizeHasBeenSet = false;
 
     int m_targetIops;
-    bool m_targetIopsHasBeenSet;
+    bool m_targetIopsHasBeenSet = false;
 
     VolumeType m_targetVolumeType;
-    bool m_targetVolumeTypeHasBeenSet;
+    bool m_targetVolumeTypeHasBeenSet = false;
 
     int m_targetThroughput;
-    bool m_targetThroughputHasBeenSet;
+    bool m_targetThroughputHasBeenSet = false;
 
     bool m_targetMultiAttachEnabled;
-    bool m_targetMultiAttachEnabledHasBeenSet;
+    bool m_targetMultiAttachEnabledHasBeenSet = false;
 
     int m_originalSize;
-    bool m_originalSizeHasBeenSet;
+    bool m_originalSizeHasBeenSet = false;
 
     int m_originalIops;
-    bool m_originalIopsHasBeenSet;
+    bool m_originalIopsHasBeenSet = false;
 
     VolumeType m_originalVolumeType;
-    bool m_originalVolumeTypeHasBeenSet;
+    bool m_originalVolumeTypeHasBeenSet = false;
 
     int m_originalThroughput;
-    bool m_originalThroughputHasBeenSet;
+    bool m_originalThroughputHasBeenSet = false;
 
     bool m_originalMultiAttachEnabled;
-    bool m_originalMultiAttachEnabledHasBeenSet;
+    bool m_originalMultiAttachEnabledHasBeenSet = false;
 
     long long m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_geographicRole;
-    bool m_geographicRoleHasBeenSet;
+    bool m_geographicRoleHasBeenSet = false;
   };
 
 } // namespace Model

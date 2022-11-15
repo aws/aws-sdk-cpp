@@ -30,7 +30,7 @@ DescribeRemediationExecutionStatusResult& DescribeRemediationExecutionStatusResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RemediationExecutionStatuses"))
   {
-    Array<JsonView> remediationExecutionStatusesJsonList = jsonValue.GetArray("RemediationExecutionStatuses");
+    Aws::Utils::Array<JsonView> remediationExecutionStatusesJsonList = jsonValue.GetArray("RemediationExecutionStatuses");
     for(unsigned remediationExecutionStatusesIndex = 0; remediationExecutionStatusesIndex < remediationExecutionStatusesJsonList.GetLength(); ++remediationExecutionStatusesIndex)
     {
       m_remediationExecutionStatuses.push_back(remediationExecutionStatusesJsonList[remediationExecutionStatusesIndex].AsObject());

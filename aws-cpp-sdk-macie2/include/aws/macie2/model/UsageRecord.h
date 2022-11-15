@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_freeTrialStartDate;
-    bool m_freeTrialStartDateHasBeenSet;
+    bool m_freeTrialStartDateHasBeenSet = false;
 
     Aws::Vector<UsageByAccount> m_usage;
-    bool m_usageHasBeenSet;
+    bool m_usageHasBeenSet = false;
   };
 
 } // namespace Model

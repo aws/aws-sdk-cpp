@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_clusterSubnetGroupName;
-    bool m_clusterSubnetGroupNameHasBeenSet;
+    bool m_clusterSubnetGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

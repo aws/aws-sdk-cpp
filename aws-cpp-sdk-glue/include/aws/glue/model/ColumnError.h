@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     ErrorDetail m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

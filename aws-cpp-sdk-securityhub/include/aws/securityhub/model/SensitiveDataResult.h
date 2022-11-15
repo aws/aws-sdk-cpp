@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::Vector<SensitiveDataDetections> m_detections;
-    bool m_detectionsHasBeenSet;
+    bool m_detectionsHasBeenSet = false;
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
   };
 
 } // namespace Model

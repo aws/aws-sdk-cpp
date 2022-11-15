@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_domainConfigurationName;
-    bool m_domainConfigurationNameHasBeenSet;
+    bool m_domainConfigurationNameHasBeenSet = false;
   };
 
 } // namespace Model

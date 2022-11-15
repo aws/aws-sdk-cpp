@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_recommenderId;
-    bool m_recommenderIdHasBeenSet;
+    bool m_recommenderIdHasBeenSet = false;
 
     UpdateRecommenderConfiguration m_updateRecommenderConfiguration;
-    bool m_updateRecommenderConfigurationHasBeenSet;
+    bool m_updateRecommenderConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

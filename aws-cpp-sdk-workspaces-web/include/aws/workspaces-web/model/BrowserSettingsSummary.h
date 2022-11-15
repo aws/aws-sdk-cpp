@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_browserSettingsArn;
-    bool m_browserSettingsArnHasBeenSet;
+    bool m_browserSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

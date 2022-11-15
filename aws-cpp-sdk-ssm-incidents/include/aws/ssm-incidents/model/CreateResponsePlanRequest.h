@@ -209,56 +209,56 @@ namespace Model
 
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEngagements() const{ return m_engagements; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline bool EngagementsHasBeenSet() const { return m_engagementsHasBeenSet; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(const Aws::Vector<Aws::String>& value) { m_engagementsHasBeenSet = true; m_engagements = value; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(Aws::Vector<Aws::String>&& value) { m_engagementsHasBeenSet = true; m_engagements = std::move(value); }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& WithEngagements(const Aws::Vector<Aws::String>& value) { SetEngagements(value); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& WithEngagements(Aws::Vector<Aws::String>&& value) { SetEngagements(std::move(value)); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& AddEngagements(const Aws::String& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& AddEngagements(Aws::String&& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& AddEngagements(const char* value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
 
@@ -403,28 +403,28 @@ namespace Model
   private:
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     ChatChannel m_chatChannel;
-    bool m_chatChannelHasBeenSet;
+    bool m_chatChannelHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_engagements;
-    bool m_engagementsHasBeenSet;
+    bool m_engagementsHasBeenSet = false;
 
     IncidentTemplate m_incidentTemplate;
-    bool m_incidentTemplateHasBeenSet;
+    bool m_incidentTemplateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

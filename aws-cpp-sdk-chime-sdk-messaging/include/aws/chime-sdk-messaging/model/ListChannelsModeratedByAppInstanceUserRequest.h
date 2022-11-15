@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_appInstanceUserArn;
-    bool m_appInstanceUserArnHasBeenSet;
+    bool m_appInstanceUserArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -249,10 +249,10 @@ namespace Model
   private:
 
     Aws::String m_merge;
-    bool m_mergeHasBeenSet;
+    bool m_mergeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_reset;
-    bool m_resetHasBeenSet;
+    bool m_resetHasBeenSet = false;
   };
 
 } // namespace Model

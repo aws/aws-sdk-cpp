@@ -57,7 +57,7 @@ Aws::String CreateGameSessionRequest::SerializePayload() const
 
   if(m_gamePropertiesHasBeenSet)
   {
-   Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
+   Aws::Utils::Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
    for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
    {
      gamePropertiesJsonList[gamePropertiesIndex].AsObject(m_gameProperties[gamePropertiesIndex].Jsonize());

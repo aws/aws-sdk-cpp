@@ -30,7 +30,7 @@ DescribeFileSystemsResult& DescribeFileSystemsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FileSystems"))
   {
-    Array<JsonView> fileSystemsJsonList = jsonValue.GetArray("FileSystems");
+    Aws::Utils::Array<JsonView> fileSystemsJsonList = jsonValue.GetArray("FileSystems");
     for(unsigned fileSystemsIndex = 0; fileSystemsIndex < fileSystemsJsonList.GetLength(); ++fileSystemsIndex)
     {
       m_fileSystems.push_back(fileSystemsJsonList[fileSystemsIndex].AsObject());

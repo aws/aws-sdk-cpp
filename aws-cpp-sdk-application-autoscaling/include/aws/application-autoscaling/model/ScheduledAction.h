@@ -1260,37 +1260,37 @@ namespace Model
   private:
 
     Aws::String m_scheduledActionName;
-    bool m_scheduledActionNameHasBeenSet;
+    bool m_scheduledActionNameHasBeenSet = false;
 
     Aws::String m_scheduledActionARN;
-    bool m_scheduledActionARNHasBeenSet;
+    bool m_scheduledActionARNHasBeenSet = false;
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     ScalableTargetAction m_scalableTargetAction;
-    bool m_scalableTargetActionHasBeenSet;
+    bool m_scalableTargetActionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

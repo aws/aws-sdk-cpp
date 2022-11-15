@@ -116,10 +116,10 @@ namespace Model
   private:
 
     bool m_includeAllTagsOfInstance;
-    bool m_includeAllTagsOfInstanceHasBeenSet;
+    bool m_includeAllTagsOfInstanceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceTagKeys;
-    bool m_instanceTagKeysHasBeenSet;
+    bool m_instanceTagKeysHasBeenSet = false;
   };
 
 } // namespace Model

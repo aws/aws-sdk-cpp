@@ -476,31 +476,31 @@ namespace Model
   private:
 
     Aws::String m_reservedDBInstancesOfferingId;
-    bool m_reservedDBInstancesOfferingIdHasBeenSet;
+    bool m_reservedDBInstancesOfferingIdHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::String m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ GetAutoScalingGroupRecommendationsResult& GetAutoScalingGroupRecommendationsResu
 
   if(jsonValue.ValueExists("autoScalingGroupRecommendations"))
   {
-    Array<JsonView> autoScalingGroupRecommendationsJsonList = jsonValue.GetArray("autoScalingGroupRecommendations");
+    Aws::Utils::Array<JsonView> autoScalingGroupRecommendationsJsonList = jsonValue.GetArray("autoScalingGroupRecommendations");
     for(unsigned autoScalingGroupRecommendationsIndex = 0; autoScalingGroupRecommendationsIndex < autoScalingGroupRecommendationsJsonList.GetLength(); ++autoScalingGroupRecommendationsIndex)
     {
       m_autoScalingGroupRecommendations.push_back(autoScalingGroupRecommendationsJsonList[autoScalingGroupRecommendationsIndex].AsObject());
@@ -45,7 +45,7 @@ GetAutoScalingGroupRecommendationsResult& GetAutoScalingGroupRecommendationsResu
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

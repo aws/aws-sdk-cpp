@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::String m_destinationDataSharingType;
-    bool m_destinationDataSharingTypeHasBeenSet;
+    bool m_destinationDataSharingTypeHasBeenSet = false;
   };
 
 } // namespace Model

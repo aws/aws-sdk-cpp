@@ -106,10 +106,10 @@ namespace Model
   private:
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
 
     Aws::String m_packageId;
-    bool m_packageIdHasBeenSet;
+    bool m_packageIdHasBeenSet = false;
   };
 
 } // namespace Model

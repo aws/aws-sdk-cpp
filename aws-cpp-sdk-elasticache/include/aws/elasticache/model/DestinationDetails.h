@@ -105,10 +105,10 @@ namespace Model
   private:
 
     CloudWatchLogsDestinationDetails m_cloudWatchLogsDetails;
-    bool m_cloudWatchLogsDetailsHasBeenSet;
+    bool m_cloudWatchLogsDetailsHasBeenSet = false;
 
     KinesisFirehoseDestinationDetails m_kinesisFirehoseDetails;
-    bool m_kinesisFirehoseDetailsHasBeenSet;
+    bool m_kinesisFirehoseDetailsHasBeenSet = false;
   };
 
 } // namespace Model

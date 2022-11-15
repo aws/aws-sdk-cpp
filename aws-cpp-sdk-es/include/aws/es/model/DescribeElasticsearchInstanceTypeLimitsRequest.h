@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ESPartitionInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_elasticsearchVersion;
-    bool m_elasticsearchVersionHasBeenSet;
+    bool m_elasticsearchVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   if(m_inputDataConfigHasBeenSet)
   {
-   Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
+   Aws::Utils::Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
    for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
    {
      inputDataConfigJsonList[inputDataConfigIndex].AsObject(m_inputDataConfig[inputDataConfigIndex].Jsonize());

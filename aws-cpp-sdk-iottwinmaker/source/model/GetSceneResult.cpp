@@ -36,7 +36,7 @@ GetSceneResult& GetSceneResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   if(jsonValue.ValueExists("capabilities"))
   {
-    Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("capabilities");
+    Aws::Utils::Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("capabilities");
     for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
     {
       m_capabilities.push_back(capabilitiesJsonList[capabilitiesIndex].AsString());

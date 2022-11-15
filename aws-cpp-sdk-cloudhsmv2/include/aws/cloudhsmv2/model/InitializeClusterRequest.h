@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_signedCert;
-    bool m_signedCertHasBeenSet;
+    bool m_signedCertHasBeenSet = false;
 
     Aws::String m_trustAnchor;
-    bool m_trustAnchorHasBeenSet;
+    bool m_trustAnchorHasBeenSet = false;
   };
 
 } // namespace Model

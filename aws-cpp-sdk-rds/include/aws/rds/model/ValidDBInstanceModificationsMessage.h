@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<ValidStorageOptions> m_storage;
-    bool m_storageHasBeenSet;
+    bool m_storageHasBeenSet = false;
 
     Aws::Vector<AvailableProcessorFeature> m_validProcessorFeatures;
-    bool m_validProcessorFeaturesHasBeenSet;
+    bool m_validProcessorFeaturesHasBeenSet = false;
   };
 
 } // namespace Model

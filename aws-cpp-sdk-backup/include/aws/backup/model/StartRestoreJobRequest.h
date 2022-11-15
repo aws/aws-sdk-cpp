@@ -739,19 +739,19 @@ namespace Model
   private:
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

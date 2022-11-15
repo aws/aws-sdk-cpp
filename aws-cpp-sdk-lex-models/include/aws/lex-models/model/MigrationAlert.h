@@ -240,16 +240,16 @@ namespace Model
   private:
 
     MigrationAlertType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_referenceURLs;
-    bool m_referenceURLsHasBeenSet;
+    bool m_referenceURLsHasBeenSet = false;
   };
 
 } // namespace Model

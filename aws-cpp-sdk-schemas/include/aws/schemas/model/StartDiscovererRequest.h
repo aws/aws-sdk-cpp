@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_discovererId;
-    bool m_discovererIdHasBeenSet;
+    bool m_discovererIdHasBeenSet = false;
   };
 
 } // namespace Model

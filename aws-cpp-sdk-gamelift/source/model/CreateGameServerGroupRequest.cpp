@@ -67,7 +67,7 @@ Aws::String CreateGameServerGroupRequest::SerializePayload() const
 
   if(m_instanceDefinitionsHasBeenSet)
   {
-   Array<JsonValue> instanceDefinitionsJsonList(m_instanceDefinitions.size());
+   Aws::Utils::Array<JsonValue> instanceDefinitionsJsonList(m_instanceDefinitions.size());
    for(unsigned instanceDefinitionsIndex = 0; instanceDefinitionsIndex < instanceDefinitionsJsonList.GetLength(); ++instanceDefinitionsIndex)
    {
      instanceDefinitionsJsonList[instanceDefinitionsIndex].AsObject(m_instanceDefinitions[instanceDefinitionsIndex].Jsonize());
@@ -94,7 +94,7 @@ Aws::String CreateGameServerGroupRequest::SerializePayload() const
 
   if(m_vpcSubnetsHasBeenSet)
   {
-   Array<JsonValue> vpcSubnetsJsonList(m_vpcSubnets.size());
+   Aws::Utils::Array<JsonValue> vpcSubnetsJsonList(m_vpcSubnets.size());
    for(unsigned vpcSubnetsIndex = 0; vpcSubnetsIndex < vpcSubnetsJsonList.GetLength(); ++vpcSubnetsIndex)
    {
      vpcSubnetsJsonList[vpcSubnetsIndex].AsString(m_vpcSubnets[vpcSubnetsIndex]);
@@ -105,7 +105,7 @@ Aws::String CreateGameServerGroupRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

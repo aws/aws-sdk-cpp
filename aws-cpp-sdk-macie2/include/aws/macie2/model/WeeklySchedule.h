@@ -71,7 +71,7 @@ namespace Model
   private:
 
     DayOfWeek m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
   };
 
 } // namespace Model

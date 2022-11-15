@@ -19,12 +19,18 @@ namespace Model
 {
 
 DnsRequestAction::DnsRequestAction() : 
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_blocked(false),
+    m_blockedHasBeenSet(false)
 {
 }
 
 DnsRequestAction::DnsRequestAction(JsonView jsonValue) : 
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_blocked(false),
+    m_blockedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +44,20 @@ DnsRequestAction& DnsRequestAction::operator =(JsonView jsonValue)
     m_domainHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("protocol"))
+  {
+    m_protocol = jsonValue.GetString("protocol");
+
+    m_protocolHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("blocked"))
+  {
+    m_blocked = jsonValue.GetBool("blocked");
+
+    m_blockedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +68,18 @@ JsonValue DnsRequestAction::Jsonize() const
   if(m_domainHasBeenSet)
   {
    payload.WithString("domain", m_domain);
+
+  }
+
+  if(m_protocolHasBeenSet)
+  {
+   payload.WithString("protocol", m_protocol);
+
+  }
+
+  if(m_blockedHasBeenSet)
+  {
+   payload.WithBool("blocked", m_blocked);
 
   }
 

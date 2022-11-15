@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
 
     double m_faceMatchThreshold;
-    bool m_faceMatchThresholdHasBeenSet;
+    bool m_faceMatchThresholdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,11 @@ ModelDescription::ModelDescription() :
     m_evaluationManifestHasBeenSet(false),
     m_evaluationResultHasBeenSet(false),
     m_evaluationEndTimestampHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_minInferenceUnits(0),
+    m_minInferenceUnitsHasBeenSet(false),
+    m_maxInferenceUnits(0),
+    m_maxInferenceUnitsHasBeenSet(false)
 {
 }
 
@@ -48,7 +52,11 @@ ModelDescription::ModelDescription(JsonView jsonValue) :
     m_evaluationManifestHasBeenSet(false),
     m_evaluationResultHasBeenSet(false),
     m_evaluationEndTimestampHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_minInferenceUnits(0),
+    m_minInferenceUnitsHasBeenSet(false),
+    m_maxInferenceUnits(0),
+    m_maxInferenceUnitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +147,20 @@ ModelDescription& ModelDescription::operator =(JsonView jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MinInferenceUnits"))
+  {
+    m_minInferenceUnits = jsonValue.GetInteger("MinInferenceUnits");
+
+    m_minInferenceUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxInferenceUnits"))
+  {
+    m_maxInferenceUnits = jsonValue.GetInteger("MaxInferenceUnits");
+
+    m_maxInferenceUnitsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -212,6 +234,18 @@ JsonValue ModelDescription::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_minInferenceUnitsHasBeenSet)
+  {
+   payload.WithInteger("MinInferenceUnits", m_minInferenceUnits);
+
+  }
+
+  if(m_maxInferenceUnitsHasBeenSet)
+  {
+   payload.WithInteger("MaxInferenceUnits", m_maxInferenceUnits);
 
   }
 

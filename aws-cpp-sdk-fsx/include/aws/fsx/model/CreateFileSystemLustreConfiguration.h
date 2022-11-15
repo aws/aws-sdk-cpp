@@ -11,6 +11,7 @@
 #include <aws/fsx/model/DriveCacheType.h>
 #include <aws/fsx/model/DataCompressionType.h>
 #include <aws/fsx/model/LustreLogCreateConfiguration.h>
+#include <aws/fsx/model/LustreRootSquashConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -1209,46 +1210,92 @@ namespace Model
      */
     inline CreateFileSystemLustreConfiguration& WithLogConfiguration(LustreLogCreateConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline const LustreRootSquashConfiguration& GetRootSquashConfiguration() const{ return m_rootSquashConfiguration; }
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline bool RootSquashConfigurationHasBeenSet() const { return m_rootSquashConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline void SetRootSquashConfiguration(const LustreRootSquashConfiguration& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = value; }
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline void SetRootSquashConfiguration(LustreRootSquashConfiguration&& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = std::move(value); }
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithRootSquashConfiguration(const LustreRootSquashConfiguration& value) { SetRootSquashConfiguration(value); return *this;}
+
+    /**
+     * <p>The Lustre root squash configuration used when creating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithRootSquashConfiguration(LustreRootSquashConfiguration&& value) { SetRootSquashConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     Aws::String m_importPath;
-    bool m_importPathHasBeenSet;
+    bool m_importPathHasBeenSet = false;
 
     Aws::String m_exportPath;
-    bool m_exportPathHasBeenSet;
+    bool m_exportPathHasBeenSet = false;
 
     int m_importedFileChunkSize;
-    bool m_importedFileChunkSizeHasBeenSet;
+    bool m_importedFileChunkSizeHasBeenSet = false;
 
     LustreDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     AutoImportPolicyType m_autoImportPolicy;
-    bool m_autoImportPolicyHasBeenSet;
+    bool m_autoImportPolicyHasBeenSet = false;
 
     int m_perUnitStorageThroughput;
-    bool m_perUnitStorageThroughputHasBeenSet;
+    bool m_perUnitStorageThroughputHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     DriveCacheType m_driveCacheType;
-    bool m_driveCacheTypeHasBeenSet;
+    bool m_driveCacheTypeHasBeenSet = false;
 
     DataCompressionType m_dataCompressionType;
-    bool m_dataCompressionTypeHasBeenSet;
+    bool m_dataCompressionTypeHasBeenSet = false;
 
     LustreLogCreateConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
+
+    LustreRootSquashConfiguration m_rootSquashConfiguration;
+    bool m_rootSquashConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

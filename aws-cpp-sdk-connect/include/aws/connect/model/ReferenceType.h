@@ -17,7 +17,11 @@ namespace Model
   {
     NOT_SET,
     URL,
-    ATTACHMENT
+    ATTACHMENT,
+    NUMBER,
+    STRING,
+    DATE,
+    EMAIL
   };
 
 namespace ReferenceTypeMapper

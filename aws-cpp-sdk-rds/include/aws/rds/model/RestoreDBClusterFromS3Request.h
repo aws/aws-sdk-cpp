@@ -473,65 +473,65 @@ namespace Model
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and
      * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
-     * Aurora), and <code>aurora-postgresql</code> </p>
+     * Aurora)</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and
      * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
-     * Aurora), and <code>aurora-postgresql</code> </p>
+     * Aurora)</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and
      * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
-     * Aurora), and <code>aurora-postgresql</code> </p>
+     * Aurora)</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and
      * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
-     * Aurora), and <code>aurora-postgresql</code> </p>
+     * Aurora)</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and
      * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
-     * Aurora), and <code>aurora-postgresql</code> </p>
+     * Aurora)</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and
      * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
-     * Aurora), and <code>aurora-postgresql</code> </p>
+     * Aurora)</p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and
      * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
-     * Aurora), and <code>aurora-postgresql</code> </p>
+     * Aurora)</p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and
      * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
-     * Aurora), and <code>aurora-postgresql</code> </p>
+     * Aurora)</p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -545,15 +545,9 @@ namespace Model
      * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
      * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-postgresql</code>, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
-     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
-     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
-     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
-     * <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
+     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
+     * <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -566,15 +560,9 @@ namespace Model
      * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
      * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-postgresql</code>, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
-     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
-     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
-     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
-     * <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
+     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
+     * <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -587,15 +575,9 @@ namespace Model
      * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
      * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-postgresql</code>, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
-     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
-     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
-     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
-     * <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
+     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
+     * <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -608,15 +590,9 @@ namespace Model
      * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
      * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-postgresql</code>, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
-     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
-     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
-     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
-     * <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
+     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
+     * <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -629,15 +605,9 @@ namespace Model
      * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
      * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-postgresql</code>, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
-     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
-     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
-     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
-     * <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
+     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
+     * <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -650,15 +620,9 @@ namespace Model
      * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
      * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-postgresql</code>, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
-     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
-     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
-     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
-     * <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
+     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
+     * <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -671,15 +635,9 @@ namespace Model
      * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
      * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-postgresql</code>, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
-     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
-     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
-     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
-     * <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
+     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
+     * <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -692,15 +650,9 @@ namespace Model
      * engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
      * MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for <code>aurora-postgresql</code>, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine
-     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
-     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
-     * <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-     * <p> <b>Aurora PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>,
-     * <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
+     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
+     * <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1974,103 +1926,211 @@ namespace Model
     
     inline RestoreDBClusterFromS3Request& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline RestoreDBClusterFromS3Request& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline RestoreDBClusterFromS3Request& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     */
+    inline RestoreDBClusterFromS3Request& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_characterSetName;
-    bool m_characterSetNameHasBeenSet;
+    bool m_characterSetNameHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     Aws::String m_sourceEngine;
-    bool m_sourceEngineHasBeenSet;
+    bool m_sourceEngineHasBeenSet = false;
 
     Aws::String m_sourceEngineVersion;
-    bool m_sourceEngineVersionHasBeenSet;
+    bool m_sourceEngineVersionHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
 
     Aws::String m_s3IngestionRoleArn;
-    bool m_s3IngestionRoleArnHasBeenSet;
+    bool m_s3IngestionRoleArnHasBeenSet = false;
 
     long long m_backtrackWindow;
-    bool m_backtrackWindowHasBeenSet;
+    bool m_backtrackWindowHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-    bool m_enableCloudwatchLogsExportsHasBeenSet;
+    bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainIAMRoleName;
-    bool m_domainIAMRoleNameHasBeenSet;
+    bool m_domainIAMRoleNameHasBeenSet = false;
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

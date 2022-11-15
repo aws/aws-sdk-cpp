@@ -283,22 +283,22 @@ namespace Model
   private:
 
     Aws::String m_blueprintId;
-    bool m_blueprintIdHasBeenSet;
+    bool m_blueprintIdHasBeenSet = false;
 
     RelationalDatabaseEngine m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_engineDescription;
-    bool m_engineDescriptionHasBeenSet;
+    bool m_engineDescriptionHasBeenSet = false;
 
     Aws::String m_engineVersionDescription;
-    bool m_engineVersionDescriptionHasBeenSet;
+    bool m_engineVersionDescriptionHasBeenSet = false;
 
     bool m_isEngineDefault;
-    bool m_isEngineDefaultHasBeenSet;
+    bool m_isEngineDefaultHasBeenSet = false;
   };
 
 } // namespace Model

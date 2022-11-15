@@ -146,13 +146,13 @@ namespace Model
   private:
 
     DocumentAttributeCondition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     DocumentAttributeTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     bool m_documentContentDeletion;
-    bool m_documentContentDeletionHasBeenSet;
+    bool m_documentContentDeletionHasBeenSet = false;
   };
 
 } // namespace Model

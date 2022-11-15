@@ -29,7 +29,7 @@ namespace Model
    * <p>This parameter is specified when you're using an Amazon Elastic File System
    * file system for task storage. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon
-   * EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer
+   * EFS volumes</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/EFSVolumeConfiguration">AWS
    * API Reference</a></p>
@@ -179,7 +179,7 @@ namespace Model
      * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
      * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
-     * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline const EFSTransitEncryption& GetTransitEncryption() const{ return m_transitEncryption; }
 
@@ -189,7 +189,7 @@ namespace Model
      * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
      * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
-     * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline bool TransitEncryptionHasBeenSet() const { return m_transitEncryptionHasBeenSet; }
 
@@ -199,7 +199,7 @@ namespace Model
      * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
      * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
-     * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline void SetTransitEncryption(const EFSTransitEncryption& value) { m_transitEncryptionHasBeenSet = true; m_transitEncryption = value; }
 
@@ -209,7 +209,7 @@ namespace Model
      * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
      * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
-     * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline void SetTransitEncryption(EFSTransitEncryption&& value) { m_transitEncryptionHasBeenSet = true; m_transitEncryption = std::move(value); }
 
@@ -219,7 +219,7 @@ namespace Model
      * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
      * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
-     * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline EFSVolumeConfiguration& WithTransitEncryption(const EFSTransitEncryption& value) { SetTransitEncryption(value); return *this;}
 
@@ -229,7 +229,7 @@ namespace Model
      * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
      * the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
-     * Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline EFSVolumeConfiguration& WithTransitEncryption(EFSTransitEncryption&& value) { SetTransitEncryption(std::move(value)); return *this;}
 
@@ -239,8 +239,8 @@ namespace Model
      * the Amazon EFS server. If you do not specify a transit encryption port, it will
      * use the port selection strategy that the Amazon EFS mount helper uses. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline int GetTransitEncryptionPort() const{ return m_transitEncryptionPort; }
 
@@ -249,8 +249,8 @@ namespace Model
      * the Amazon EFS server. If you do not specify a transit encryption port, it will
      * use the port selection strategy that the Amazon EFS mount helper uses. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline bool TransitEncryptionPortHasBeenSet() const { return m_transitEncryptionPortHasBeenSet; }
 
@@ -259,8 +259,8 @@ namespace Model
      * the Amazon EFS server. If you do not specify a transit encryption port, it will
      * use the port selection strategy that the Amazon EFS mount helper uses. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline void SetTransitEncryptionPort(int value) { m_transitEncryptionPortHasBeenSet = true; m_transitEncryptionPort = value; }
 
@@ -269,8 +269,8 @@ namespace Model
      * the Amazon EFS server. If you do not specify a transit encryption port, it will
      * use the port selection strategy that the Amazon EFS mount helper uses. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
-     * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
+     * helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline EFSVolumeConfiguration& WithTransitEncryptionPort(int value) { SetTransitEncryptionPort(value); return *this;}
 
@@ -308,19 +308,19 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_rootDirectory;
-    bool m_rootDirectoryHasBeenSet;
+    bool m_rootDirectoryHasBeenSet = false;
 
     EFSTransitEncryption m_transitEncryption;
-    bool m_transitEncryptionHasBeenSet;
+    bool m_transitEncryptionHasBeenSet = false;
 
     int m_transitEncryptionPort;
-    bool m_transitEncryptionPortHasBeenSet;
+    bool m_transitEncryptionPortHasBeenSet = false;
 
     EFSAuthorizationConfig m_authorizationConfig;
-    bool m_authorizationConfigHasBeenSet;
+    bool m_authorizationConfigHasBeenSet = false;
   };
 
 } // namespace Model

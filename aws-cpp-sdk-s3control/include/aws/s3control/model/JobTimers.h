@@ -62,7 +62,7 @@ namespace Model
   private:
 
     long long m_elapsedTimeInActiveSeconds;
-    bool m_elapsedTimeInActiveSecondsHasBeenSet;
+    bool m_elapsedTimeInActiveSecondsHasBeenSet = false;
   };
 
 } // namespace Model

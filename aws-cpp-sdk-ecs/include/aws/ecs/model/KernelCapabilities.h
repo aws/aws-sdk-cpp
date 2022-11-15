@@ -427,10 +427,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_add;
-    bool m_addHasBeenSet;
+    bool m_addHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_drop;
-    bool m_dropHasBeenSet;
+    bool m_dropHasBeenSet = false;
   };
 
 } // namespace Model

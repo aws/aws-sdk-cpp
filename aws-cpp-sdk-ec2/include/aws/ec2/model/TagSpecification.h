@@ -26,8 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>The tags to apply to a resource when the resource is being
-   * created.</p><p><h3>See Also:</h3>   <a
+   * <p>The tags to apply to a resource when the resource is being created.</p>
+   *  <p>The <code>Valid Values</code> lists all the resource types that can be
+   * tagged. However, the action you're using might not support tagging all of these
+   * resource types. If you try to tag a resource type that is unsupported for the
+   * action you're using, you'll get an error.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TagSpecification">AWS
    * API Reference</a></p>
    */
@@ -116,10 +119,10 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

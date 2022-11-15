@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_hITId;
-    bool m_hITIdHasBeenSet;
+    bool m_hITIdHasBeenSet = false;
 
     Aws::String m_hITTypeId;
-    bool m_hITTypeIdHasBeenSet;
+    bool m_hITTypeIdHasBeenSet = false;
   };
 
 } // namespace Model

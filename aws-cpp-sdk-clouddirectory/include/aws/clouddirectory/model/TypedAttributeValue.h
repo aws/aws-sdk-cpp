@@ -208,19 +208,19 @@ namespace Model
   private:
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_binaryValue;
-    bool m_binaryValueHasBeenSet;
+    bool m_binaryValueHasBeenSet = false;
 
     bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
 
     Aws::String m_numberValue;
-    bool m_numberValueHasBeenSet;
+    bool m_numberValueHasBeenSet = false;
 
     Aws::Utils::DateTime m_datetimeValue;
-    bool m_datetimeValueHasBeenSet;
+    bool m_datetimeValueHasBeenSet = false;
   };
 
 } // namespace Model

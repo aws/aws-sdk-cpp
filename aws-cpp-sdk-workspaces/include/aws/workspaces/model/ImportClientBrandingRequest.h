@@ -273,25 +273,25 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeWindows;
-    bool m_deviceTypeWindowsHasBeenSet;
+    bool m_deviceTypeWindowsHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeOsx;
-    bool m_deviceTypeOsxHasBeenSet;
+    bool m_deviceTypeOsxHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeAndroid;
-    bool m_deviceTypeAndroidHasBeenSet;
+    bool m_deviceTypeAndroidHasBeenSet = false;
 
     IosImportClientBrandingAttributes m_deviceTypeIos;
-    bool m_deviceTypeIosHasBeenSet;
+    bool m_deviceTypeIosHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeLinux;
-    bool m_deviceTypeLinuxHasBeenSet;
+    bool m_deviceTypeLinuxHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeWeb;
-    bool m_deviceTypeWebHasBeenSet;
+    bool m_deviceTypeWebHasBeenSet = false;
   };
 
 } // namespace Model

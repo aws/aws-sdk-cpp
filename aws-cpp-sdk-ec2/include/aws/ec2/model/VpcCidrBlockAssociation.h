@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     VpcCidrBlockState m_cidrBlockState;
-    bool m_cidrBlockStateHasBeenSet;
+    bool m_cidrBlockStateHasBeenSet = false;
   };
 
 } // namespace Model

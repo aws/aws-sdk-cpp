@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Edition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
   };
 
 } // namespace Model

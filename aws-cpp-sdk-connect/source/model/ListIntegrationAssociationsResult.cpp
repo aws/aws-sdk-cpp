@@ -30,7 +30,7 @@ ListIntegrationAssociationsResult& ListIntegrationAssociationsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IntegrationAssociationSummaryList"))
   {
-    Array<JsonView> integrationAssociationSummaryListJsonList = jsonValue.GetArray("IntegrationAssociationSummaryList");
+    Aws::Utils::Array<JsonView> integrationAssociationSummaryListJsonList = jsonValue.GetArray("IntegrationAssociationSummaryList");
     for(unsigned integrationAssociationSummaryListIndex = 0; integrationAssociationSummaryListIndex < integrationAssociationSummaryListJsonList.GetLength(); ++integrationAssociationSummaryListIndex)
     {
       m_integrationAssociationSummaryList.push_back(integrationAssociationSummaryListJsonList[integrationAssociationSummaryListIndex].AsObject());

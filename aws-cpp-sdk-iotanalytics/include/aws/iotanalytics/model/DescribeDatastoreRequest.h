@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_datastoreName;
-    bool m_datastoreNameHasBeenSet;
+    bool m_datastoreNameHasBeenSet = false;
 
     bool m_includeStatistics;
-    bool m_includeStatisticsHasBeenSet;
+    bool m_includeStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

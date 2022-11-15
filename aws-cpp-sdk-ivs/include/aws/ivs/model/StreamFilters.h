@@ -71,7 +71,7 @@ namespace Model
   private:
 
     StreamHealth m_health;
-    bool m_healthHasBeenSet;
+    bool m_healthHasBeenSet = false;
   };
 
 } // namespace Model

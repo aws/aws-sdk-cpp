@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, int> m_countBySeverity;
-    bool m_countBySeverityHasBeenSet;
+    bool m_countBySeverityHasBeenSet = false;
   };
 
 } // namespace Model

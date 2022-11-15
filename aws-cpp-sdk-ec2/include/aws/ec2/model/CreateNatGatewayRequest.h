@@ -324,22 +324,22 @@ namespace Model
   private:
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     ConnectivityType m_connectivityType;
-    bool m_connectivityTypeHasBeenSet;
+    bool m_connectivityTypeHasBeenSet = false;
   };
 
 } // namespace Model

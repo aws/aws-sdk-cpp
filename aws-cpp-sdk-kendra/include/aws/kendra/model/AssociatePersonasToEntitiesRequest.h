@@ -120,8 +120,8 @@ namespace Model
 
     /**
      * <p>The personas that define the specific permissions of users or groups in your
-     * Amazon Web Services SSO identity source. The available personas or access roles
-     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * IAM Identity Center identity source. The available personas or access roles are
+     * <code>Owner</code> and <code>Viewer</code>. For more information on these
      * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
@@ -130,8 +130,8 @@ namespace Model
 
     /**
      * <p>The personas that define the specific permissions of users or groups in your
-     * Amazon Web Services SSO identity source. The available personas or access roles
-     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * IAM Identity Center identity source. The available personas or access roles are
+     * <code>Owner</code> and <code>Viewer</code>. For more information on these
      * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
@@ -140,8 +140,8 @@ namespace Model
 
     /**
      * <p>The personas that define the specific permissions of users or groups in your
-     * Amazon Web Services SSO identity source. The available personas or access roles
-     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * IAM Identity Center identity source. The available personas or access roles are
+     * <code>Owner</code> and <code>Viewer</code>. For more information on these
      * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
@@ -150,8 +150,8 @@ namespace Model
 
     /**
      * <p>The personas that define the specific permissions of users or groups in your
-     * Amazon Web Services SSO identity source. The available personas or access roles
-     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * IAM Identity Center identity source. The available personas or access roles are
+     * <code>Owner</code> and <code>Viewer</code>. For more information on these
      * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
@@ -160,8 +160,8 @@ namespace Model
 
     /**
      * <p>The personas that define the specific permissions of users or groups in your
-     * Amazon Web Services SSO identity source. The available personas or access roles
-     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * IAM Identity Center identity source. The available personas or access roles are
+     * <code>Owner</code> and <code>Viewer</code>. For more information on these
      * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
@@ -170,8 +170,8 @@ namespace Model
 
     /**
      * <p>The personas that define the specific permissions of users or groups in your
-     * Amazon Web Services SSO identity source. The available personas or access roles
-     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * IAM Identity Center identity source. The available personas or access roles are
+     * <code>Owner</code> and <code>Viewer</code>. For more information on these
      * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
@@ -180,8 +180,8 @@ namespace Model
 
     /**
      * <p>The personas that define the specific permissions of users or groups in your
-     * Amazon Web Services SSO identity source. The available personas or access roles
-     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * IAM Identity Center identity source. The available personas or access roles are
+     * <code>Owner</code> and <code>Viewer</code>. For more information on these
      * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
@@ -190,8 +190,8 @@ namespace Model
 
     /**
      * <p>The personas that define the specific permissions of users or groups in your
-     * Amazon Web Services SSO identity source. The available personas or access roles
-     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * IAM Identity Center identity source. The available personas or access roles are
+     * <code>Owner</code> and <code>Viewer</code>. For more information on these
      * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
@@ -201,13 +201,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::Vector<EntityPersonaConfiguration> m_personas;
-    bool m_personasHasBeenSet;
+    bool m_personasHasBeenSet = false;
   };
 
 } // namespace Model

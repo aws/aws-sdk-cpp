@@ -29,7 +29,9 @@ SampledHTTPRequest::SampledHTTPRequest() :
     m_responseCodeSent(0),
     m_responseCodeSentHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_captchaResponseHasBeenSet(false)
+    m_captchaResponseHasBeenSet(false),
+    m_challengeResponseHasBeenSet(false),
+    m_overriddenActionHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue) :
     m_responseCodeSent(0),
     m_responseCodeSentHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_captchaResponseHasBeenSet(false)
+    m_captchaResponseHasBeenSet(false),
+    m_challengeResponseHasBeenSet(false),
+    m_overriddenActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,7 +92,7 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RequestHeadersInserted"))
   {
-    Array<JsonView> requestHeadersInsertedJsonList = jsonValue.GetArray("RequestHeadersInserted");
+    Aws::Utils::Array<JsonView> requestHeadersInsertedJsonList = jsonValue.GetArray("RequestHeadersInserted");
     for(unsigned requestHeadersInsertedIndex = 0; requestHeadersInsertedIndex < requestHeadersInsertedJsonList.GetLength(); ++requestHeadersInsertedIndex)
     {
       m_requestHeadersInserted.push_back(requestHeadersInsertedJsonList[requestHeadersInsertedIndex].AsObject());
@@ -105,7 +109,7 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Labels"))
   {
-    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
+    Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
@@ -118,6 +122,20 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
     m_captchaResponse = jsonValue.GetObject("CaptchaResponse");
 
     m_captchaResponseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ChallengeResponse"))
+  {
+    m_challengeResponse = jsonValue.GetObject("ChallengeResponse");
+
+    m_challengeResponseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OverriddenAction"))
+  {
+    m_overriddenAction = jsonValue.GetString("OverriddenAction");
+
+    m_overriddenActionHasBeenSet = true;
   }
 
   return *this;
@@ -158,7 +176,7 @@ JsonValue SampledHTTPRequest::Jsonize() const
 
   if(m_requestHeadersInsertedHasBeenSet)
   {
-   Array<JsonValue> requestHeadersInsertedJsonList(m_requestHeadersInserted.size());
+   Aws::Utils::Array<JsonValue> requestHeadersInsertedJsonList(m_requestHeadersInserted.size());
    for(unsigned requestHeadersInsertedIndex = 0; requestHeadersInsertedIndex < requestHeadersInsertedJsonList.GetLength(); ++requestHeadersInsertedIndex)
    {
      requestHeadersInsertedJsonList[requestHeadersInsertedIndex].AsObject(m_requestHeadersInserted[requestHeadersInsertedIndex].Jsonize());
@@ -175,7 +193,7 @@ JsonValue SampledHTTPRequest::Jsonize() const
 
   if(m_labelsHasBeenSet)
   {
-   Array<JsonValue> labelsJsonList(m_labels.size());
+   Aws::Utils::Array<JsonValue> labelsJsonList(m_labels.size());
    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
    {
      labelsJsonList[labelsIndex].AsObject(m_labels[labelsIndex].Jsonize());
@@ -187,6 +205,18 @@ JsonValue SampledHTTPRequest::Jsonize() const
   if(m_captchaResponseHasBeenSet)
   {
    payload.WithObject("CaptchaResponse", m_captchaResponse.Jsonize());
+
+  }
+
+  if(m_challengeResponseHasBeenSet)
+  {
+   payload.WithObject("ChallengeResponse", m_challengeResponse.Jsonize());
+
+  }
+
+  if(m_overriddenActionHasBeenSet)
+  {
+   payload.WithString("OverriddenAction", m_overriddenAction);
 
   }
 

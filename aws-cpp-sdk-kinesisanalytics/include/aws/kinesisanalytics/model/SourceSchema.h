@@ -165,13 +165,13 @@ namespace Model
   private:
 
     RecordFormat m_recordFormat;
-    bool m_recordFormatHasBeenSet;
+    bool m_recordFormatHasBeenSet = false;
 
     Aws::String m_recordEncoding;
-    bool m_recordEncodingHasBeenSet;
+    bool m_recordEncodingHasBeenSet = false;
 
     Aws::Vector<RecordColumn> m_recordColumns;
-    bool m_recordColumnsHasBeenSet;
+    bool m_recordColumnsHasBeenSet = false;
   };
 
 } // namespace Model

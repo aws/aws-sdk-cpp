@@ -74,7 +74,7 @@ ReservedNodeExchangeStatus& ReservedNodeExchangeStatus::operator =(const XmlNode
     XmlNode requestTimeNode = resultNode.FirstChild("RequestTime");
     if(!requestTimeNode.IsNull())
     {
-      m_requestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_requestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_requestTimeHasBeenSet = true;
     }
     XmlNode sourceReservedNodeIdNode = resultNode.FirstChild("SourceReservedNodeId");
@@ -132,7 +132,7 @@ void ReservedNodeExchangeStatus::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_requestTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_sourceReservedNodeIdHasBeenSet)
@@ -179,7 +179,7 @@ void ReservedNodeExchangeStatus::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_requestTimeHasBeenSet)
   {
-      oStream << location << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_sourceReservedNodeIdHasBeenSet)
   {

@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::Vector<CodeGenNode> m_dagNodes;
-    bool m_dagNodesHasBeenSet;
+    bool m_dagNodesHasBeenSet = false;
 
     Aws::Vector<CodeGenEdge> m_dagEdges;
-    bool m_dagEdgesHasBeenSet;
+    bool m_dagEdgesHasBeenSet = false;
 
     Language m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
   };
 
 } // namespace Model

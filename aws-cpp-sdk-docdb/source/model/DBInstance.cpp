@@ -48,6 +48,8 @@ DBInstance::DBInstance() :
     m_kmsKeyIdHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
     m_cACertificateIdentifierHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_dBInstanceArnHasBeenSet(false),
@@ -83,6 +85,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_kmsKeyIdHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
     m_cACertificateIdentifierHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_dBInstanceArnHasBeenSet(false),
@@ -130,7 +134,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     XmlNode instanceCreateTimeNode = resultNode.FirstChild("InstanceCreateTime");
     if(!instanceCreateTimeNode.IsNull())
     {
-      m_instanceCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_instanceCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_instanceCreateTimeHasBeenSet = true;
     }
     XmlNode preferredBackupWindowNode = resultNode.FirstChild("PreferredBackupWindow");
@@ -184,7 +188,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     XmlNode latestRestorableTimeNode = resultNode.FirstChild("LatestRestorableTime");
     if(!latestRestorableTimeNode.IsNull())
     {
-      m_latestRestorableTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestRestorableTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_latestRestorableTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestRestorableTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_latestRestorableTimeHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
@@ -247,6 +251,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_cACertificateIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(cACertificateIdentifierNode.GetText());
       m_cACertificateIdentifierHasBeenSet = true;
     }
+    XmlNode copyTagsToSnapshotNode = resultNode.FirstChild("CopyTagsToSnapshot");
+    if(!copyTagsToSnapshotNode.IsNull())
+    {
+      m_copyTagsToSnapshot = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(copyTagsToSnapshotNode.GetText()).c_str()).c_str());
+      m_copyTagsToSnapshotHasBeenSet = true;
+    }
     XmlNode promotionTierNode = resultNode.FirstChild("PromotionTier");
     if(!promotionTierNode.IsNull())
     {
@@ -307,7 +317,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_preferredBackupWindowHasBeenSet)
@@ -357,7 +367,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_latestRestorableTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_engineVersionHasBeenSet)
@@ -411,6 +421,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
+  }
+
   if(m_promotionTierHasBeenSet)
   {
       oStream << location << index << locationValue << ".PromotionTier=" << m_promotionTier << "&";
@@ -458,7 +473,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_preferredBackupWindowHasBeenSet)
   {
@@ -500,7 +515,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_latestRestorableTimeHasBeenSet)
   {
-      oStream << location << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_engineVersionHasBeenSet)
   {
@@ -543,6 +558,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_cACertificateIdentifierHasBeenSet)
   {
       oStream << location << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+      oStream << location << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
   if(m_promotionTierHasBeenSet)
   {

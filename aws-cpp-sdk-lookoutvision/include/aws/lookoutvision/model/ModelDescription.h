@@ -489,43 +489,99 @@ namespace Model
      */
     inline ModelDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The minimum number of inference units used by the model. For more
+     * information, see <a>StartModel</a> </p>
+     */
+    inline int GetMinInferenceUnits() const{ return m_minInferenceUnits; }
+
+    /**
+     * <p>The minimum number of inference units used by the model. For more
+     * information, see <a>StartModel</a> </p>
+     */
+    inline bool MinInferenceUnitsHasBeenSet() const { return m_minInferenceUnitsHasBeenSet; }
+
+    /**
+     * <p>The minimum number of inference units used by the model. For more
+     * information, see <a>StartModel</a> </p>
+     */
+    inline void SetMinInferenceUnits(int value) { m_minInferenceUnitsHasBeenSet = true; m_minInferenceUnits = value; }
+
+    /**
+     * <p>The minimum number of inference units used by the model. For more
+     * information, see <a>StartModel</a> </p>
+     */
+    inline ModelDescription& WithMinInferenceUnits(int value) { SetMinInferenceUnits(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of inference units Amazon Lookout for Vision uses to
+     * auto-scale the model. For more information, see <a>StartModel</a>.</p>
+     */
+    inline int GetMaxInferenceUnits() const{ return m_maxInferenceUnits; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Lookout for Vision uses to
+     * auto-scale the model. For more information, see <a>StartModel</a>.</p>
+     */
+    inline bool MaxInferenceUnitsHasBeenSet() const { return m_maxInferenceUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Lookout for Vision uses to
+     * auto-scale the model. For more information, see <a>StartModel</a>.</p>
+     */
+    inline void SetMaxInferenceUnits(int value) { m_maxInferenceUnitsHasBeenSet = true; m_maxInferenceUnits = value; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Lookout for Vision uses to
+     * auto-scale the model. For more information, see <a>StartModel</a>.</p>
+     */
+    inline ModelDescription& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
+
   private:
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::String m_modelArn;
-    bool m_modelArnHasBeenSet;
+    bool m_modelArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ModelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     ModelPerformance m_performance;
-    bool m_performanceHasBeenSet;
+    bool m_performanceHasBeenSet = false;
 
     OutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     OutputS3Object m_evaluationManifest;
-    bool m_evaluationManifestHasBeenSet;
+    bool m_evaluationManifestHasBeenSet = false;
 
     OutputS3Object m_evaluationResult;
-    bool m_evaluationResultHasBeenSet;
+    bool m_evaluationResultHasBeenSet = false;
 
     Aws::Utils::DateTime m_evaluationEndTimestamp;
-    bool m_evaluationEndTimestampHasBeenSet;
+    bool m_evaluationEndTimestampHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
+
+    int m_minInferenceUnits;
+    bool m_minInferenceUnitsHasBeenSet = false;
+
+    int m_maxInferenceUnits;
+    bool m_maxInferenceUnitsHasBeenSet = false;
   };
 
 } // namespace Model

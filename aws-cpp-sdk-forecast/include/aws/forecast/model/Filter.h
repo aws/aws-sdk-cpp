@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     FilterConditionString m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
   };
 
 } // namespace Model

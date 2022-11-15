@@ -32,7 +32,7 @@ ListIAMPolicyAssignmentsResult& ListIAMPolicyAssignmentsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IAMPolicyAssignments"))
   {
-    Array<JsonView> iAMPolicyAssignmentsJsonList = jsonValue.GetArray("IAMPolicyAssignments");
+    Aws::Utils::Array<JsonView> iAMPolicyAssignmentsJsonList = jsonValue.GetArray("IAMPolicyAssignments");
     for(unsigned iAMPolicyAssignmentsIndex = 0; iAMPolicyAssignmentsIndex < iAMPolicyAssignmentsJsonList.GetLength(); ++iAMPolicyAssignmentsIndex)
     {
       m_iAMPolicyAssignments.push_back(iAMPolicyAssignmentsJsonList[iAMPolicyAssignmentsIndex].AsObject());

@@ -25,7 +25,7 @@ Aws::String UpdateUserAttributesRequest::SerializePayload() const
 
   if(m_userAttributesHasBeenSet)
   {
-   Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
+   Aws::Utils::Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
    for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
    {
      userAttributesJsonList[userAttributesIndex].AsObject(m_userAttributes[userAttributesIndex].Jsonize());

@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     Aws::String m_stateName;
-    bool m_stateNameHasBeenSet;
+    bool m_stateNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

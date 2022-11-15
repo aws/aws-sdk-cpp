@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/securityhub/model/AwsEc2InstanceMetadataOptions.h>
 #include <aws/securityhub/model/AwsEc2InstanceNetworkInterfacesDetails.h>
 #include <utility>
 
@@ -26,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The details of an EC2 instance.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of an Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2InstanceDetails">AWS
    * API Reference</a></p>
    */
@@ -506,37 +507,123 @@ namespace Model
      */
     inline AwsEc2InstanceDetails& AddNetworkInterfaces(AwsEc2InstanceNetworkInterfacesDetails&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The virtualization type of the Amazon Machine Image (AMI) required to launch
+     * the instance. </p>
+     */
+    inline const Aws::String& GetVirtualizationType() const{ return m_virtualizationType; }
+
+    /**
+     * <p>The virtualization type of the Amazon Machine Image (AMI) required to launch
+     * the instance. </p>
+     */
+    inline bool VirtualizationTypeHasBeenSet() const { return m_virtualizationTypeHasBeenSet; }
+
+    /**
+     * <p>The virtualization type of the Amazon Machine Image (AMI) required to launch
+     * the instance. </p>
+     */
+    inline void SetVirtualizationType(const Aws::String& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
+
+    /**
+     * <p>The virtualization type of the Amazon Machine Image (AMI) required to launch
+     * the instance. </p>
+     */
+    inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::move(value); }
+
+    /**
+     * <p>The virtualization type of the Amazon Machine Image (AMI) required to launch
+     * the instance. </p>
+     */
+    inline void SetVirtualizationType(const char* value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType.assign(value); }
+
+    /**
+     * <p>The virtualization type of the Amazon Machine Image (AMI) required to launch
+     * the instance. </p>
+     */
+    inline AwsEc2InstanceDetails& WithVirtualizationType(const Aws::String& value) { SetVirtualizationType(value); return *this;}
+
+    /**
+     * <p>The virtualization type of the Amazon Machine Image (AMI) required to launch
+     * the instance. </p>
+     */
+    inline AwsEc2InstanceDetails& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(std::move(value)); return *this;}
+
+    /**
+     * <p>The virtualization type of the Amazon Machine Image (AMI) required to launch
+     * the instance. </p>
+     */
+    inline AwsEc2InstanceDetails& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
+
+
+    /**
+     * <p>Details about the metadata options for the Amazon EC2 instance. </p>
+     */
+    inline const AwsEc2InstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
+
+    /**
+     * <p>Details about the metadata options for the Amazon EC2 instance. </p>
+     */
+    inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
+
+    /**
+     * <p>Details about the metadata options for the Amazon EC2 instance. </p>
+     */
+    inline void SetMetadataOptions(const AwsEc2InstanceMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
+
+    /**
+     * <p>Details about the metadata options for the Amazon EC2 instance. </p>
+     */
+    inline void SetMetadataOptions(AwsEc2InstanceMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
+
+    /**
+     * <p>Details about the metadata options for the Amazon EC2 instance. </p>
+     */
+    inline AwsEc2InstanceDetails& WithMetadataOptions(const AwsEc2InstanceMetadataOptions& value) { SetMetadataOptions(value); return *this;}
+
+    /**
+     * <p>Details about the metadata options for the Amazon EC2 instance. </p>
+     */
+    inline AwsEc2InstanceDetails& WithMetadataOptions(AwsEc2InstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipV4Addresses;
-    bool m_ipV4AddressesHasBeenSet;
+    bool m_ipV4AddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipV6Addresses;
-    bool m_ipV6AddressesHasBeenSet;
+    bool m_ipV6AddressesHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::String m_iamInstanceProfileArn;
-    bool m_iamInstanceProfileArnHasBeenSet;
+    bool m_iamInstanceProfileArnHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_launchedAt;
-    bool m_launchedAtHasBeenSet;
+    bool m_launchedAtHasBeenSet = false;
 
     Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
+
+    Aws::String m_virtualizationType;
+    bool m_virtualizationTypeHasBeenSet = false;
+
+    AwsEc2InstanceMetadataOptions m_metadataOptions;
+    bool m_metadataOptionsHasBeenSet = false;
   };
 
 } // namespace Model

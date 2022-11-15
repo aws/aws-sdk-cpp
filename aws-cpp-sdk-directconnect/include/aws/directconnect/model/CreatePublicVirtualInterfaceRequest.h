@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     NewPublicVirtualInterface m_newPublicVirtualInterface;
-    bool m_newPublicVirtualInterfaceHasBeenSet;
+    bool m_newPublicVirtualInterfaceHasBeenSet = false;
   };
 
 } // namespace Model

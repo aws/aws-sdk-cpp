@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_itemName;
-    bool m_itemNameHasBeenSet;
+    bool m_itemNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
 
     bool m_consistentRead;
-    bool m_consistentReadHasBeenSet;
+    bool m_consistentReadHasBeenSet = false;
   };
 
 } // namespace Model

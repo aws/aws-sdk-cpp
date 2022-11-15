@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_amazonId;
-    bool m_amazonIdHasBeenSet;
+    bool m_amazonIdHasBeenSet = false;
 
     Aws::String m_sidewalkId;
-    bool m_sidewalkIdHasBeenSet;
+    bool m_sidewalkIdHasBeenSet = false;
 
     Aws::String m_sidewalkManufacturingSn;
-    bool m_sidewalkManufacturingSnHasBeenSet;
+    bool m_sidewalkManufacturingSnHasBeenSet = false;
 
     Aws::Vector<CertificateList> m_deviceCertificates;
-    bool m_deviceCertificatesHasBeenSet;
+    bool m_deviceCertificatesHasBeenSet = false;
   };
 
 } // namespace Model

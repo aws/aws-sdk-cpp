@@ -185,37 +185,37 @@ namespace Model
 
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline const Aws::String& GetSingleSignOnManagedApplicationInstanceId() const{ return m_singleSignOnManagedApplicationInstanceId; }
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline void SetSingleSignOnManagedApplicationInstanceId(const Aws::String& value) { m_singleSignOnManagedApplicationInstanceId = value; }
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline void SetSingleSignOnManagedApplicationInstanceId(Aws::String&& value) { m_singleSignOnManagedApplicationInstanceId = std::move(value); }
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline void SetSingleSignOnManagedApplicationInstanceId(const char* value) { m_singleSignOnManagedApplicationInstanceId.assign(value); }
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnManagedApplicationInstanceId(const Aws::String& value) { SetSingleSignOnManagedApplicationInstanceId(value); return *this;}
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnManagedApplicationInstanceId(Aws::String&& value) { SetSingleSignOnManagedApplicationInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnManagedApplicationInstanceId(const char* value) { SetSingleSignOnManagedApplicationInstanceId(value); return *this;}
 

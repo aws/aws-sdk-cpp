@@ -126,32 +126,38 @@ namespace Model
 
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline const ServiceMetadata& GetServiceMetadata() const{ return m_serviceMetadata; }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline bool ServiceMetadataHasBeenSet() const { return m_serviceMetadataHasBeenSet; }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline void SetServiceMetadata(const ServiceMetadata& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = value; }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline void SetServiceMetadata(ServiceMetadata&& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = std::move(value); }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline ListedExecution& WithServiceMetadata(const ServiceMetadata& value) { SetServiceMetadata(value); return *this;}
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline ListedExecution& WithServiceMetadata(ServiceMetadata&& value) { SetServiceMetadata(std::move(value)); return *this;}
 
@@ -195,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     FileLocation m_initialFileLocation;
-    bool m_initialFileLocationHasBeenSet;
+    bool m_initialFileLocationHasBeenSet = false;
 
     ServiceMetadata m_serviceMetadata;
-    bool m_serviceMetadataHasBeenSet;
+    bool m_serviceMetadataHasBeenSet = false;
 
     ExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

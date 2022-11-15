@@ -35,7 +35,7 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("columns"))
   {
-    Array<JsonView> columnsJsonList = jsonValue.GetArray("columns");
+    Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("columns");
     for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
     {
       m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
@@ -45,7 +45,7 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("primaryKeyColumns"))
   {
-    Array<JsonView> primaryKeyColumnsJsonList = jsonValue.GetArray("primaryKeyColumns");
+    Aws::Utils::Array<JsonView> primaryKeyColumnsJsonList = jsonValue.GetArray("primaryKeyColumns");
     for(unsigned primaryKeyColumnsIndex = 0; primaryKeyColumnsIndex < primaryKeyColumnsJsonList.GetLength(); ++primaryKeyColumnsIndex)
     {
       m_primaryKeyColumns.push_back(primaryKeyColumnsJsonList[primaryKeyColumnsIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue SchemaDefinition::Jsonize() const
 
   if(m_columnsHasBeenSet)
   {
-   Array<JsonValue> columnsJsonList(m_columns.size());
+   Aws::Utils::Array<JsonValue> columnsJsonList(m_columns.size());
    for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
    {
      columnsJsonList[columnsIndex].AsObject(m_columns[columnsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue SchemaDefinition::Jsonize() const
 
   if(m_primaryKeyColumnsHasBeenSet)
   {
-   Array<JsonValue> primaryKeyColumnsJsonList(m_primaryKeyColumns.size());
+   Aws::Utils::Array<JsonValue> primaryKeyColumnsJsonList(m_primaryKeyColumns.size());
    for(unsigned primaryKeyColumnsIndex = 0; primaryKeyColumnsIndex < primaryKeyColumnsJsonList.GetLength(); ++primaryKeyColumnsIndex)
    {
      primaryKeyColumnsJsonList[primaryKeyColumnsIndex].AsString(m_primaryKeyColumns[primaryKeyColumnsIndex]);

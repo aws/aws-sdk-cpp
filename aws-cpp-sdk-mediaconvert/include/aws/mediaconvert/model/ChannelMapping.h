@@ -108,7 +108,7 @@ namespace Model
   private:
 
     Aws::Vector<OutputChannelMapping> m_outputChannels;
-    bool m_outputChannelsHasBeenSet;
+    bool m_outputChannelsHasBeenSet = false;
   };
 
 } // namespace Model

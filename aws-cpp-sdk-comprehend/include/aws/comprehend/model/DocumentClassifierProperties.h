@@ -635,7 +635,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -644,7 +644,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
@@ -653,7 +653,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
@@ -662,7 +662,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
@@ -671,7 +671,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline DocumentClassifierProperties& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
@@ -680,7 +680,7 @@ namespace Model
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your custom classifier. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
     inline DocumentClassifierProperties& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
@@ -924,58 +924,58 @@ namespace Model
   private:
 
     Aws::String m_documentClassifierArn;
-    bool m_documentClassifierArnHasBeenSet;
+    bool m_documentClassifierArnHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     ModelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTime;
-    bool m_submitTimeHasBeenSet;
+    bool m_submitTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingStartTime;
-    bool m_trainingStartTimeHasBeenSet;
+    bool m_trainingStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingEndTime;
-    bool m_trainingEndTimeHasBeenSet;
+    bool m_trainingEndTimeHasBeenSet = false;
 
     DocumentClassifierInputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     DocumentClassifierOutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     ClassifierMetadata m_classifierMetadata;
-    bool m_classifierMetadataHasBeenSet;
+    bool m_classifierMetadataHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     DocumentClassifierMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_modelKmsKeyId;
-    bool m_modelKmsKeyIdHasBeenSet;
+    bool m_modelKmsKeyIdHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_sourceModelArn;
-    bool m_sourceModelArnHasBeenSet;
+    bool m_sourceModelArnHasBeenSet = false;
   };
 
 } // namespace Model

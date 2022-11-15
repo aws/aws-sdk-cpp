@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
+#include <aws/elasticache/model/IpDiscovery.h>
 #include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
@@ -1378,79 +1379,137 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline void SetIpDiscovery(const IpDiscovery& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline void SetIpDiscovery(IpDiscovery&& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = std::move(value); }
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithIpDiscovery(const IpDiscovery& value) { SetIpDiscovery(value); return *this;}
+
+    /**
+     * <p>The network type you choose when modifying a cluster, either
+     * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * system</a>.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_replicationGroupDescription;
-    bool m_replicationGroupDescriptionHasBeenSet;
+    bool m_replicationGroupDescriptionHasBeenSet = false;
 
     Aws::String m_primaryClusterId;
-    bool m_primaryClusterIdHasBeenSet;
+    bool m_primaryClusterIdHasBeenSet = false;
 
     Aws::String m_snapshottingClusterId;
-    bool m_snapshottingClusterIdHasBeenSet;
+    bool m_snapshottingClusterIdHasBeenSet = false;
 
     bool m_automaticFailoverEnabled;
-    bool m_automaticFailoverEnabledHasBeenSet;
+    bool m_automaticFailoverEnabledHasBeenSet = false;
 
     bool m_multiAZEnabled;
-    bool m_multiAZEnabledHasBeenSet;
+    bool m_multiAZEnabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
-    bool m_cacheSecurityGroupNamesHasBeenSet;
+    bool m_cacheSecurityGroupNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_notificationTopicArn;
-    bool m_notificationTopicArnHasBeenSet;
+    bool m_notificationTopicArnHasBeenSet = false;
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     Aws::String m_notificationTopicStatus;
-    bool m_notificationTopicStatusHasBeenSet;
+    bool m_notificationTopicStatusHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     int m_snapshotRetentionLimit;
-    bool m_snapshotRetentionLimitHasBeenSet;
+    bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
-    bool m_snapshotWindowHasBeenSet;
+    bool m_snapshotWindowHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     Aws::String m_authToken;
-    bool m_authTokenHasBeenSet;
+    bool m_authTokenHasBeenSet = false;
 
     AuthTokenUpdateStrategyType m_authTokenUpdateStrategy;
-    bool m_authTokenUpdateStrategyHasBeenSet;
+    bool m_authTokenUpdateStrategyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroupIdsToAdd;
-    bool m_userGroupIdsToAddHasBeenSet;
+    bool m_userGroupIdsToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroupIdsToRemove;
-    bool m_userGroupIdsToRemoveHasBeenSet;
+    bool m_userGroupIdsToRemoveHasBeenSet = false;
 
     bool m_removeUserGroups;
-    bool m_removeUserGroupsHasBeenSet;
+    bool m_removeUserGroupsHasBeenSet = false;
 
     Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
-    bool m_logDeliveryConfigurationsHasBeenSet;
+    bool m_logDeliveryConfigurationsHasBeenSet = false;
+
+    IpDiscovery m_ipDiscovery;
+    bool m_ipDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

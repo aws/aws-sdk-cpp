@@ -299,19 +299,19 @@ namespace Model
   private:
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
 
     Aws::String m_dimension;
-    bool m_dimensionHasBeenSet;
+    bool m_dimensionHasBeenSet = false;
 
     Aws::String m_customerIdentifier;
-    bool m_customerIdentifierHasBeenSet;
+    bool m_customerIdentifierHasBeenSet = false;
 
     EntitlementValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
   };
 
 } // namespace Model

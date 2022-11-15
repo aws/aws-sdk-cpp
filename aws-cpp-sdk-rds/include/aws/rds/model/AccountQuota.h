@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_accountQuotaName;
-    bool m_accountQuotaNameHasBeenSet;
+    bool m_accountQuotaNameHasBeenSet = false;
 
     long long m_used;
-    bool m_usedHasBeenSet;
+    bool m_usedHasBeenSet = false;
 
     long long m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

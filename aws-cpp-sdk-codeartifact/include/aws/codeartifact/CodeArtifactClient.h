@@ -5,265 +5,56 @@
 
 #pragma once
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
-#include <aws/codeartifact/CodeArtifactErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/codeartifact/model/AssociateExternalConnectionResult.h>
-#include <aws/codeartifact/model/CopyPackageVersionsResult.h>
-#include <aws/codeartifact/model/CreateDomainResult.h>
-#include <aws/codeartifact/model/CreateRepositoryResult.h>
-#include <aws/codeartifact/model/DeleteDomainResult.h>
-#include <aws/codeartifact/model/DeleteDomainPermissionsPolicyResult.h>
-#include <aws/codeartifact/model/DeletePackageVersionsResult.h>
-#include <aws/codeartifact/model/DeleteRepositoryResult.h>
-#include <aws/codeartifact/model/DeleteRepositoryPermissionsPolicyResult.h>
-#include <aws/codeartifact/model/DescribeDomainResult.h>
-#include <aws/codeartifact/model/DescribePackageVersionResult.h>
-#include <aws/codeartifact/model/DescribeRepositoryResult.h>
-#include <aws/codeartifact/model/DisassociateExternalConnectionResult.h>
-#include <aws/codeartifact/model/DisposePackageVersionsResult.h>
-#include <aws/codeartifact/model/GetAuthorizationTokenResult.h>
-#include <aws/codeartifact/model/GetDomainPermissionsPolicyResult.h>
-#include <aws/codeartifact/model/GetPackageVersionAssetResult.h>
-#include <aws/codeartifact/model/GetPackageVersionReadmeResult.h>
-#include <aws/codeartifact/model/GetRepositoryEndpointResult.h>
-#include <aws/codeartifact/model/GetRepositoryPermissionsPolicyResult.h>
-#include <aws/codeartifact/model/ListDomainsResult.h>
-#include <aws/codeartifact/model/ListPackageVersionAssetsResult.h>
-#include <aws/codeartifact/model/ListPackageVersionDependenciesResult.h>
-#include <aws/codeartifact/model/ListPackageVersionsResult.h>
-#include <aws/codeartifact/model/ListPackagesResult.h>
-#include <aws/codeartifact/model/ListRepositoriesResult.h>
-#include <aws/codeartifact/model/ListRepositoriesInDomainResult.h>
-#include <aws/codeartifact/model/ListTagsForResourceResult.h>
-#include <aws/codeartifact/model/PutDomainPermissionsPolicyResult.h>
-#include <aws/codeartifact/model/PutRepositoryPermissionsPolicyResult.h>
-#include <aws/codeartifact/model/TagResourceResult.h>
-#include <aws/codeartifact/model/UntagResourceResult.h>
-#include <aws/codeartifact/model/UpdatePackageVersionsStatusResult.h>
-#include <aws/codeartifact/model/UpdateRepositoryResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/codeartifact/CodeArtifactServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CodeArtifact
 {
-
-namespace Model
-{
-        class AssociateExternalConnectionRequest;
-        class CopyPackageVersionsRequest;
-        class CreateDomainRequest;
-        class CreateRepositoryRequest;
-        class DeleteDomainRequest;
-        class DeleteDomainPermissionsPolicyRequest;
-        class DeletePackageVersionsRequest;
-        class DeleteRepositoryRequest;
-        class DeleteRepositoryPermissionsPolicyRequest;
-        class DescribeDomainRequest;
-        class DescribePackageVersionRequest;
-        class DescribeRepositoryRequest;
-        class DisassociateExternalConnectionRequest;
-        class DisposePackageVersionsRequest;
-        class GetAuthorizationTokenRequest;
-        class GetDomainPermissionsPolicyRequest;
-        class GetPackageVersionAssetRequest;
-        class GetPackageVersionReadmeRequest;
-        class GetRepositoryEndpointRequest;
-        class GetRepositoryPermissionsPolicyRequest;
-        class ListDomainsRequest;
-        class ListPackageVersionAssetsRequest;
-        class ListPackageVersionDependenciesRequest;
-        class ListPackageVersionsRequest;
-        class ListPackagesRequest;
-        class ListRepositoriesRequest;
-        class ListRepositoriesInDomainRequest;
-        class ListTagsForResourceRequest;
-        class PutDomainPermissionsPolicyRequest;
-        class PutRepositoryPermissionsPolicyRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdatePackageVersionsStatusRequest;
-        class UpdateRepositoryRequest;
-
-        typedef Aws::Utils::Outcome<AssociateExternalConnectionResult, CodeArtifactError> AssociateExternalConnectionOutcome;
-        typedef Aws::Utils::Outcome<CopyPackageVersionsResult, CodeArtifactError> CopyPackageVersionsOutcome;
-        typedef Aws::Utils::Outcome<CreateDomainResult, CodeArtifactError> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<CreateRepositoryResult, CodeArtifactError> CreateRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DeleteDomainResult, CodeArtifactError> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<DeleteDomainPermissionsPolicyResult, CodeArtifactError> DeleteDomainPermissionsPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeletePackageVersionsResult, CodeArtifactError> DeletePackageVersionsOutcome;
-        typedef Aws::Utils::Outcome<DeleteRepositoryResult, CodeArtifactError> DeleteRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DeleteRepositoryPermissionsPolicyResult, CodeArtifactError> DeleteRepositoryPermissionsPolicyOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainResult, CodeArtifactError> DescribeDomainOutcome;
-        typedef Aws::Utils::Outcome<DescribePackageVersionResult, CodeArtifactError> DescribePackageVersionOutcome;
-        typedef Aws::Utils::Outcome<DescribeRepositoryResult, CodeArtifactError> DescribeRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DisassociateExternalConnectionResult, CodeArtifactError> DisassociateExternalConnectionOutcome;
-        typedef Aws::Utils::Outcome<DisposePackageVersionsResult, CodeArtifactError> DisposePackageVersionsOutcome;
-        typedef Aws::Utils::Outcome<GetAuthorizationTokenResult, CodeArtifactError> GetAuthorizationTokenOutcome;
-        typedef Aws::Utils::Outcome<GetDomainPermissionsPolicyResult, CodeArtifactError> GetDomainPermissionsPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetPackageVersionAssetResult, CodeArtifactError> GetPackageVersionAssetOutcome;
-        typedef Aws::Utils::Outcome<GetPackageVersionReadmeResult, CodeArtifactError> GetPackageVersionReadmeOutcome;
-        typedef Aws::Utils::Outcome<GetRepositoryEndpointResult, CodeArtifactError> GetRepositoryEndpointOutcome;
-        typedef Aws::Utils::Outcome<GetRepositoryPermissionsPolicyResult, CodeArtifactError> GetRepositoryPermissionsPolicyOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsResult, CodeArtifactError> ListDomainsOutcome;
-        typedef Aws::Utils::Outcome<ListPackageVersionAssetsResult, CodeArtifactError> ListPackageVersionAssetsOutcome;
-        typedef Aws::Utils::Outcome<ListPackageVersionDependenciesResult, CodeArtifactError> ListPackageVersionDependenciesOutcome;
-        typedef Aws::Utils::Outcome<ListPackageVersionsResult, CodeArtifactError> ListPackageVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListPackagesResult, CodeArtifactError> ListPackagesOutcome;
-        typedef Aws::Utils::Outcome<ListRepositoriesResult, CodeArtifactError> ListRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<ListRepositoriesInDomainResult, CodeArtifactError> ListRepositoriesInDomainOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeArtifactError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutDomainPermissionsPolicyResult, CodeArtifactError> PutDomainPermissionsPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutRepositoryPermissionsPolicyResult, CodeArtifactError> PutRepositoryPermissionsPolicyOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, CodeArtifactError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, CodeArtifactError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdatePackageVersionsStatusResult, CodeArtifactError> UpdatePackageVersionsStatusOutcome;
-        typedef Aws::Utils::Outcome<UpdateRepositoryResult, CodeArtifactError> UpdateRepositoryOutcome;
-
-        typedef std::future<AssociateExternalConnectionOutcome> AssociateExternalConnectionOutcomeCallable;
-        typedef std::future<CopyPackageVersionsOutcome> CopyPackageVersionsOutcomeCallable;
-        typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
-        typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
-        typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
-        typedef std::future<DeleteDomainPermissionsPolicyOutcome> DeleteDomainPermissionsPolicyOutcomeCallable;
-        typedef std::future<DeletePackageVersionsOutcome> DeletePackageVersionsOutcomeCallable;
-        typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
-        typedef std::future<DeleteRepositoryPermissionsPolicyOutcome> DeleteRepositoryPermissionsPolicyOutcomeCallable;
-        typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
-        typedef std::future<DescribePackageVersionOutcome> DescribePackageVersionOutcomeCallable;
-        typedef std::future<DescribeRepositoryOutcome> DescribeRepositoryOutcomeCallable;
-        typedef std::future<DisassociateExternalConnectionOutcome> DisassociateExternalConnectionOutcomeCallable;
-        typedef std::future<DisposePackageVersionsOutcome> DisposePackageVersionsOutcomeCallable;
-        typedef std::future<GetAuthorizationTokenOutcome> GetAuthorizationTokenOutcomeCallable;
-        typedef std::future<GetDomainPermissionsPolicyOutcome> GetDomainPermissionsPolicyOutcomeCallable;
-        typedef std::future<GetPackageVersionAssetOutcome> GetPackageVersionAssetOutcomeCallable;
-        typedef std::future<GetPackageVersionReadmeOutcome> GetPackageVersionReadmeOutcomeCallable;
-        typedef std::future<GetRepositoryEndpointOutcome> GetRepositoryEndpointOutcomeCallable;
-        typedef std::future<GetRepositoryPermissionsPolicyOutcome> GetRepositoryPermissionsPolicyOutcomeCallable;
-        typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
-        typedef std::future<ListPackageVersionAssetsOutcome> ListPackageVersionAssetsOutcomeCallable;
-        typedef std::future<ListPackageVersionDependenciesOutcome> ListPackageVersionDependenciesOutcomeCallable;
-        typedef std::future<ListPackageVersionsOutcome> ListPackageVersionsOutcomeCallable;
-        typedef std::future<ListPackagesOutcome> ListPackagesOutcomeCallable;
-        typedef std::future<ListRepositoriesOutcome> ListRepositoriesOutcomeCallable;
-        typedef std::future<ListRepositoriesInDomainOutcome> ListRepositoriesInDomainOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutDomainPermissionsPolicyOutcome> PutDomainPermissionsPolicyOutcomeCallable;
-        typedef std::future<PutRepositoryPermissionsPolicyOutcome> PutRepositoryPermissionsPolicyOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdatePackageVersionsStatusOutcome> UpdatePackageVersionsStatusOutcomeCallable;
-        typedef std::future<UpdateRepositoryOutcome> UpdateRepositoryOutcomeCallable;
-} // namespace Model
-
-  class CodeArtifactClient;
-
-    typedef std::function<void(const CodeArtifactClient*, const Model::AssociateExternalConnectionRequest&, const Model::AssociateExternalConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateExternalConnectionResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::CopyPackageVersionsRequest&, const Model::CopyPackageVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyPackageVersionsResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DeleteDomainPermissionsPolicyRequest&, const Model::DeleteDomainPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainPermissionsPolicyResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DeletePackageVersionsRequest&, const Model::DeletePackageVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePackageVersionsResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DeleteRepositoryPermissionsPolicyRequest&, const Model::DeleteRepositoryPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryPermissionsPolicyResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DescribePackageVersionRequest&, const Model::DescribePackageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePackageVersionResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DescribeRepositoryRequest&, const Model::DescribeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoryResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DisassociateExternalConnectionRequest&, const Model::DisassociateExternalConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateExternalConnectionResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::DisposePackageVersionsRequest&, const Model::DisposePackageVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisposePackageVersionsResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::GetAuthorizationTokenRequest&, const Model::GetAuthorizationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAuthorizationTokenResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::GetDomainPermissionsPolicyRequest&, const Model::GetDomainPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainPermissionsPolicyResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::GetPackageVersionAssetRequest&, Model::GetPackageVersionAssetOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPackageVersionAssetResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::GetPackageVersionReadmeRequest&, const Model::GetPackageVersionReadmeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPackageVersionReadmeResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::GetRepositoryEndpointRequest&, const Model::GetRepositoryEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryEndpointResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::GetRepositoryPermissionsPolicyRequest&, const Model::GetRepositoryPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryPermissionsPolicyResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::ListPackageVersionAssetsRequest&, const Model::ListPackageVersionAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPackageVersionAssetsResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::ListPackageVersionDependenciesRequest&, const Model::ListPackageVersionDependenciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPackageVersionDependenciesResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::ListPackageVersionsRequest&, const Model::ListPackageVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPackageVersionsResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::ListPackagesRequest&, const Model::ListPackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPackagesResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::ListRepositoriesRequest&, const Model::ListRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::ListRepositoriesInDomainRequest&, const Model::ListRepositoriesInDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesInDomainResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::PutDomainPermissionsPolicyRequest&, const Model::PutDomainPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDomainPermissionsPolicyResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::PutRepositoryPermissionsPolicyRequest&, const Model::PutRepositoryPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryPermissionsPolicyResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::UpdatePackageVersionsStatusRequest&, const Model::UpdatePackageVersionsStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePackageVersionsStatusResponseReceivedHandler;
-    typedef std::function<void(const CodeArtifactClient*, const Model::UpdateRepositoryRequest&, const Model::UpdateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryResponseReceivedHandler;
-
   /**
-   * <p> AWS CodeArtifact is a fully managed artifact repository compatible with
-   * language-native package managers and build tools such as npm, Apache Maven, and
-   * pip. You can use CodeArtifact to share packages with development teams and pull
-   * packages. Packages can be pulled from both public and CodeArtifact repositories.
-   * You can also create an upstream relationship between a CodeArtifact repository
-   * and another repository, which effectively merges their contents from the point
-   * of view of a package manager client. </p> <p> <b>AWS CodeArtifact Components</b>
-   * </p> <p>Use the information in this guide to help you work with the following
-   * CodeArtifact components:</p> <ul> <li> <p> <b>Repository</b>: A CodeArtifact
-   * repository contains a set of <a
+   * <p> CodeArtifact is a fully managed artifact repository compatible with
+   * language-native package managers and build tools such as npm, Apache Maven, pip,
+   * and dotnet. You can use CodeArtifact to share packages with development teams
+   * and pull packages. Packages can be pulled from both public and CodeArtifact
+   * repositories. You can also create an upstream relationship between a
+   * CodeArtifact repository and another repository, which effectively merges their
+   * contents from the point of view of a package manager client. </p> <p>
+   * <b>CodeArtifact Components</b> </p> <p>Use the information in this guide to help
+   * you work with the following CodeArtifact components:</p> <ul> <li> <p>
+   * <b>Repository</b>: A CodeArtifact repository contains a set of <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
    * versions</a>, each of which maps to a set of assets, or files. Repositories are
    * polyglot, so a single repository can contain packages of any supported type.
    * Each repository exposes endpoints for fetching and publishing packages using
    * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b>
-   * <code>mvn</code> </b>), and <b> <code>pip</code> </b>.</p> </li> <li> <p>
-   * <b>Domain</b>: Repositories are aggregated into a higher-level entity known as a
-   * <i>domain</i>. All package assets and metadata are stored in the domain, but are
-   * consumed through repositories. A given package asset, such as a Maven JAR file,
-   * is stored once per domain, no matter how many repositories it's present in. All
-   * of the assets and metadata in a domain are encrypted with the same customer
-   * master key (CMK) stored in AWS Key Management Service (AWS KMS).</p> <p>Each
-   * repository is a member of a single domain and can't be moved to a different
-   * domain.</p> <p>The domain allows organizational policy to be applied across
-   * multiple repositories, such as which accounts can access repositories in the
-   * domain, and which public repositories can be used as sources of packages.</p>
-   * <p>Although an organization can have multiple domains, we recommend a single
-   * production domain that contains all published artifacts so that teams can find
-   * and share packages across their organization.</p> </li> <li> <p> <b>Package</b>:
-   * A <i>package</i> is a bundle of software and the metadata required to resolve
-   * dependencies and install the software. CodeArtifact supports <a
+   * <code>mvn</code> </b>), Python CLIs (<b> <code>pip</code> </b> and
+   * <code>twine</code>), and NuGet CLIs (<code>nuget</code> and
+   * <code>dotnet</code>).</p> </li> <li> <p> <b>Domain</b>: Repositories are
+   * aggregated into a higher-level entity known as a <i>domain</i>. All package
+   * assets and metadata are stored in the domain, but are consumed through
+   * repositories. A given package asset, such as a Maven JAR file, is stored once
+   * per domain, no matter how many repositories it's present in. All of the assets
+   * and metadata in a domain are encrypted with the same customer master key (CMK)
+   * stored in Key Management Service (KMS).</p> <p>Each repository is a member of a
+   * single domain and can't be moved to a different domain.</p> <p>The domain allows
+   * organizational policy to be applied across multiple repositories, such as which
+   * accounts can access repositories in the domain, and which public repositories
+   * can be used as sources of packages.</p> <p>Although an organization can have
+   * multiple domains, we recommend a single production domain that contains all
+   * published artifacts so that teams can find and share packages across their
+   * organization.</p> </li> <li> <p> <b>Package</b>: A <i>package</i> is a bundle of
+   * software and the metadata required to resolve dependencies and install the
+   * software. CodeArtifact supports <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
    * <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
    * and <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>
    * package formats.</p> <p>In CodeArtifact, a package consists of:</p> <ul> <li>
    * <p>A <i>name</i> (for example, <code>webpack</code> is the name of a popular npm
    * package)</p> </li> <li> <p>An optional namespace (for example,
@@ -301,8 +92,10 @@ namespace Model
    * <code>DeleteRepositoryPermissionsPolicy</code>: Deletes the resource policy that
    * is set on a repository.</p> </li> <li> <p> <code>DescribeDomain</code>: Returns
    * a <code>DomainDescription</code> object that contains information about the
-   * requested domain.</p> </li> <li> <p> <code>DescribePackageVersion</code>:
-   * Returns a <a
+   * requested domain.</p> </li> <li> <p> <code>DescribePackage</code>: Returns a <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+   * object that contains details about a package. </p> </li> <li> <p>
+   * <code>DescribePackageVersion</code>: Returns a <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
    * object that contains details about a package version. </p> </li> <li> <p>
    * <code>DescribeRepository</code>: Returns a <code>RepositoryDescription</code>
@@ -323,24 +116,28 @@ namespace Model
    * Gets the readme file or descriptive text for a package version.</p> </li> <li>
    * <p> <code>GetRepositoryEndpoint</code>: Returns the endpoint of a repository for
    * a specific package format. A repository has one endpoint for each package
-   * format: </p> <ul> <li> <p> <code>npm</code> </p> </li> <li> <p>
-   * <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li> </ul> </li>
-   * <li> <p> <code>GetRepositoryPermissionsPolicy</code>: Returns the resource
-   * policy that is set on a repository. </p> </li> <li> <p>
-   * <code>ListDomains</code>: Returns a list of <code>DomainSummary</code> objects.
-   * Each returned <code>DomainSummary</code> object contains information about a
-   * domain.</p> </li> <li> <p> <code>ListPackages</code>: Lists the packages in a
-   * repository.</p> </li> <li> <p> <code>ListPackageVersionAssets</code>: Lists the
-   * assets for a given package version.</p> </li> <li> <p>
+   * format: </p> <ul> <li> <p> <code>maven</code> </p> </li> <li> <p>
+   * <code>npm</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> <li> <p>
+   * <code>pypi</code> </p> </li> </ul> </li> <li> <p>
+   * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is
+   * set on a repository. </p> </li> <li> <p> <code>ListDomains</code>: Returns a
+   * list of <code>DomainSummary</code> objects. Each returned
+   * <code>DomainSummary</code> object contains information about a domain.</p> </li>
+   * <li> <p> <code>ListPackages</code>: Lists the packages in a repository.</p>
+   * </li> <li> <p> <code>ListPackageVersionAssets</code>: Lists the assets for a
+   * given package version.</p> </li> <li> <p>
    * <code>ListPackageVersionDependencies</code>: Returns a list of the direct
    * dependencies for a package version. </p> </li> <li> <p>
    * <code>ListPackageVersions</code>: Returns a list of package versions for a
    * specified package in a repository.</p> </li> <li> <p>
-   * <code>ListRepositories</code>: Returns a list of repositories owned by the AWS
-   * account that called this method.</p> </li> <li> <p>
+   * <code>ListRepositories</code>: Returns a list of repositories owned by the
+   * Amazon Web Services account that called this method.</p> </li> <li> <p>
    * <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a
    * domain.</p> </li> <li> <p> <code>PutDomainPermissionsPolicy</code>: Attaches a
    * resource policy to a domain.</p> </li> <li> <p>
+   * <code>PutPackageOriginConfiguration</code>: Sets the package origin
+   * configuration for a package, which determine how new versions of the package can
+   * be added to a specific repository.</p> </li> <li> <p>
    * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a
    * repository that specifies permissions to access it. </p> </li> <li> <p>
    * <code>UpdatePackageVersionsStatus</code>: Updates the status of one or more
@@ -351,26 +148,55 @@ namespace Model
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeArtifactClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeArtifactClient(const Aws::CodeArtifact::CodeArtifactClientConfiguration& clientConfiguration = Aws::CodeArtifact::CodeArtifactClientConfiguration(),
+                           std::shared_ptr<CodeArtifactEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeArtifactEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeArtifactClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeArtifactClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<CodeArtifactEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeArtifactEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::CodeArtifact::CodeArtifactClientConfiguration& clientConfiguration = Aws::CodeArtifact::CodeArtifactClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CodeArtifactClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<CodeArtifactEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeArtifactEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::CodeArtifact::CodeArtifactClientConfiguration& clientConfiguration = Aws::CodeArtifact::CodeArtifactClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeArtifactClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeArtifactClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CodeArtifactClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CodeArtifactClient();
 
 
@@ -417,12 +243,13 @@ namespace Model
         /**
          * <p> Creates a domain. CodeArtifact <i>domains</i> make it easier to manage
          * multiple repositories across an organization. You can use a domain to apply
-         * permissions across many repositories owned by different AWS accounts. An asset
-         * is stored only once in a domain, even if it's in multiple repositories. </p>
-         * <p>Although you can have multiple domains, we recommend a single production
-         * domain that contains all published artifacts so that your development teams can
-         * find and share packages. You can use a second pre-production domain to test
-         * changes to the production domain configuration. </p><p><h3>See Also:</h3>   <a
+         * permissions across many repositories owned by different Amazon Web Services
+         * accounts. An asset is stored only once in a domain, even if it's in multiple
+         * repositories. </p> <p>Although you can have multiple domains, we recommend a
+         * single production domain that contains all published artifacts so that your
+         * development teams can find and share packages. You can use a second
+         * pre-production domain to test changes to the production domain configuration.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -538,9 +365,9 @@ namespace Model
          * policy is deleted, the permissions allowed and denied by the deleted policy are
          * removed. The effect of deleting a resource policy might not be immediate. </p>
          *  <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution.
-         * After a policy is deleted, AWS users, roles, and accounts lose permissions to
-         * perform the repository actions granted by the deleted policy. </p>
-         * <p><h3>See Also:</h3>   <a
+         * After a policy is deleted, Amazon Web Services users, roles, and accounts lose
+         * permissions to perform the repository actions granted by the deleted policy.
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteRepositoryPermissionsPolicy">AWS
          * API Reference</a></p>
          */
@@ -575,6 +402,26 @@ namespace Model
          * An Async wrapper for DescribeDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns a <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+         * object that contains information about the requested package.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePackageOutcome DescribePackage(const Model::DescribePackageRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribePackage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePackageOutcomeCallable DescribePackageCallable(const Model::DescribePackageRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePackageAsync(const Model::DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a <a
@@ -664,21 +511,20 @@ namespace Model
          * domain. This API requires the <code>codeartifact:GetAuthorizationToken</code>
          * and <code>sts:GetServiceBearerToken</code> permissions. For more information
          * about authorization tokens, see <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
-         * CodeArtifact authentication and tokens</a>. </p>  <p>CodeArtifact
-         * authorization tokens are valid for a period of 12 hours when created with the
-         * <code>login</code> command. You can call <code>login</code> periodically to
-         * refresh the token. When you create an authorization token with the
-         * <code>GetAuthorizationToken</code> API, you can set a custom authorization
-         * period, up to a maximum of 12 hours, with the <code>durationSeconds</code>
-         * parameter.</p> <p>The authorization period begins after <code>login</code> or
-         * <code>GetAuthorizationToken</code> is called. If <code>login</code> or
-         * <code>GetAuthorizationToken</code> is called while assuming a role, the token
-         * lifetime is independent of the maximum session duration of the role. For
-         * example, if you call <code>sts assume-role</code> and specify a session duration
-         * of 15 minutes, then generate a CodeArtifact authorization token, the token will
-         * be valid for the full authorization period even though this is longer than the
-         * 15-minute session duration.</p> <p>See <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact
+         * authentication and tokens</a>. </p>  <p>CodeArtifact authorization tokens
+         * are valid for a period of 12 hours when created with the <code>login</code>
+         * command. You can call <code>login</code> periodically to refresh the token. When
+         * you create an authorization token with the <code>GetAuthorizationToken</code>
+         * API, you can set a custom authorization period, up to a maximum of 12 hours,
+         * with the <code>durationSeconds</code> parameter.</p> <p>The authorization period
+         * begins after <code>login</code> or <code>GetAuthorizationToken</code> is called.
+         * If <code>login</code> or <code>GetAuthorizationToken</code> is called while
+         * assuming a role, the token lifetime is independent of the maximum session
+         * duration of the role. For example, if you call <code>sts assume-role</code> and
+         * specify a session duration of 15 minutes, then generate a CodeArtifact
+         * authorization token, the token will be valid for the full authorization period
+         * even though this is longer than the 15-minute session duration.</p> <p>See <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
          * IAM Roles</a> for more information on controlling session duration. </p>
          * <p><h3>See Also:</h3>   <a
@@ -702,8 +548,8 @@ namespace Model
          * <p> The policy is a resource-based policy, not an identity-based policy. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-         * policies and resource-based policies </a> in the <i>AWS Identity and Access
-         * Management User Guide</i>. </p> <p><h3>See Also:</h3>   <a
+         * policies and resource-based policies </a> in the <i>IAM User Guide</i>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetDomainPermissionsPolicy">AWS
          * API Reference</a></p>
          */
@@ -764,8 +610,9 @@ namespace Model
         /**
          * <p> Returns the endpoint of a repository for a specific package format. A
          * repository has one endpoint for each package format: </p> <ul> <li> <p>
-         * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-         * <code>maven</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>maven</code> </p> </li> <li> <p> <code>npm</code> </p> </li> <li> <p>
+         * <code>nuget</code> </p> </li> <li> <p> <code>pypi</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">AWS
          * API Reference</a></p>
          */
@@ -802,9 +649,9 @@ namespace Model
         /**
          * <p> Returns a list of <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a>
-         * objects for all domains owned by the AWS account that makes this call. Each
-         * returned <code>DomainSummary</code> object contains information about a domain.
-         * </p><p><h3>See Also:</h3>   <a
+         * objects for all domains owned by the Amazon Web Services account that makes this
+         * call. Each returned <code>DomainSummary</code> object contains information about
+         * a domain. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListDomains">AWS
          * API Reference</a></p>
          */
@@ -907,8 +754,8 @@ namespace Model
          * <p> Returns a list of <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
          * objects. Each <code>RepositorySummary</code> contains information about a
-         * repository in the specified AWS account and that matches the input parameters.
-         * </p><p><h3>See Also:</h3>   <a
+         * repository in the specified Amazon Web Services account and that matches the
+         * input parameters. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositories">AWS
          * API Reference</a></p>
          */
@@ -946,8 +793,8 @@ namespace Model
         virtual void ListRepositoriesInDomainAsync(const Model::ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
-         * AWS CodeArtifact.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about Amazon Web Services tags for a specified Amazon
+         * Resource Name (ARN) in CodeArtifact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -986,6 +833,38 @@ namespace Model
         virtual void PutDomainPermissionsPolicyAsync(const Model::PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the package origin configuration for a package.</p> <p>The package
+         * origin configuration determines how new versions of a package can be added to a
+         * repository. You can allow or block direct publishing of new package versions, or
+         * ingestion and retaining of new package versions from an external connection or
+         * upstream source. For more information about package origin controls and
+         * configuration, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing
+         * package origin controls</a> in the <i>CodeArtifact User Guide</i>.</p> <p>
+         * <code>PutPackageOriginConfiguration</code> can be called on a package that
+         * doesn't yet exist in the repository. When called on a package that does not
+         * exist, a package is created in the repository with no versions and the requested
+         * restrictions are set on the package. This can be used to preemptively block
+         * ingesting or retaining any versions from external connections or upstream
+         * repositories, or to block publishing any versions of the package into the
+         * repository before connecting any package managers or publishers to the
+         * repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutPackageOriginConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPackageOriginConfigurationOutcome PutPackageOriginConfiguration(const Model::PutPackageOriginConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutPackageOriginConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPackageOriginConfigurationOutcomeCallable PutPackageOriginConfigurationCallable(const Model::PutPackageOriginConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for PutPackageOriginConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPackageOriginConfigurationAsync(const Model::PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Sets the resource policy on a repository that specifies permissions to
          * access it. </p> <p> When you call <code>PutRepositoryPermissionsPolicy</code>,
          * the resource policy on the repository is ignored when evaluting permissions.
@@ -1008,8 +887,8 @@ namespace Model
         virtual void PutRepositoryPermissionsPolicyAsync(const Model::PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates tags for a resource in AWS CodeArtifact.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds or updates tags for a resource in CodeArtifact.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1026,8 +905,7 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from a resource in AWS CodeArtifact.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes tags from a resource in CodeArtifact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1044,8 +922,13 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the status of one or more versions of a package. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Updates the status of one or more versions of a package. Using
+         * <code>UpdatePackageVersionsStatus</code>, you can update the status of package
+         * versions to <code>Archived</code>, <code>Published</code>, or
+         * <code>Unlisted</code>. To set the status of a package version to
+         * <code>Disposed</code>, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageVersionsStatus">AWS
          * API Reference</a></p>
          */
@@ -1080,46 +963,13 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CodeArtifactEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateExternalConnectionAsyncHelper(const Model::AssociateExternalConnectionRequest& request, const AssociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CopyPackageVersionsAsyncHelper(const Model::CopyPackageVersionsRequest& request, const CopyPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDomainPermissionsPolicyAsyncHelper(const Model::DeleteDomainPermissionsPolicyRequest& request, const DeleteDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePackageVersionsAsyncHelper(const Model::DeletePackageVersionsRequest& request, const DeletePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRepositoryPermissionsPolicyAsyncHelper(const Model::DeleteRepositoryPermissionsPolicyRequest& request, const DeleteRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribePackageVersionAsyncHelper(const Model::DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRepositoryAsyncHelper(const Model::DescribeRepositoryRequest& request, const DescribeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateExternalConnectionAsyncHelper(const Model::DisassociateExternalConnectionRequest& request, const DisassociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisposePackageVersionsAsyncHelper(const Model::DisposePackageVersionsRequest& request, const DisposePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAuthorizationTokenAsyncHelper(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDomainPermissionsPolicyAsyncHelper(const Model::GetDomainPermissionsPolicyRequest& request, const GetDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPackageVersionAssetAsyncHelper(const Model::GetPackageVersionAssetRequest& request, const GetPackageVersionAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPackageVersionReadmeAsyncHelper(const Model::GetPackageVersionReadmeRequest& request, const GetPackageVersionReadmeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRepositoryEndpointAsyncHelper(const Model::GetRepositoryEndpointRequest& request, const GetRepositoryEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRepositoryPermissionsPolicyAsyncHelper(const Model::GetRepositoryPermissionsPolicyRequest& request, const GetRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPackageVersionAssetsAsyncHelper(const Model::ListPackageVersionAssetsRequest& request, const ListPackageVersionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPackageVersionDependenciesAsyncHelper(const Model::ListPackageVersionDependenciesRequest& request, const ListPackageVersionDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPackageVersionsAsyncHelper(const Model::ListPackageVersionsRequest& request, const ListPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPackagesAsyncHelper(const Model::ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRepositoriesAsyncHelper(const Model::ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRepositoriesInDomainAsyncHelper(const Model::ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutDomainPermissionsPolicyAsyncHelper(const Model::PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRepositoryPermissionsPolicyAsyncHelper(const Model::PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePackageVersionsStatusAsyncHelper(const Model::UpdatePackageVersionsStatusRequest& request, const UpdatePackageVersionsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRepositoryAsyncHelper(const Model::UpdateRepositoryRequest& request, const UpdateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      void init(const CodeArtifactClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CodeArtifactClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CodeArtifactEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeArtifact

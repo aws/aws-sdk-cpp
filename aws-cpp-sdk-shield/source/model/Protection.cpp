@@ -64,7 +64,7 @@ Protection& Protection::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("HealthCheckIds"))
   {
-    Array<JsonView> healthCheckIdsJsonList = jsonValue.GetArray("HealthCheckIds");
+    Aws::Utils::Array<JsonView> healthCheckIdsJsonList = jsonValue.GetArray("HealthCheckIds");
     for(unsigned healthCheckIdsIndex = 0; healthCheckIdsIndex < healthCheckIdsJsonList.GetLength(); ++healthCheckIdsIndex)
     {
       m_healthCheckIds.push_back(healthCheckIdsJsonList[healthCheckIdsIndex].AsString());
@@ -113,7 +113,7 @@ JsonValue Protection::Jsonize() const
 
   if(m_healthCheckIdsHasBeenSet)
   {
-   Array<JsonValue> healthCheckIdsJsonList(m_healthCheckIds.size());
+   Aws::Utils::Array<JsonValue> healthCheckIdsJsonList(m_healthCheckIds.size());
    for(unsigned healthCheckIdsIndex = 0; healthCheckIdsIndex < healthCheckIdsJsonList.GetLength(); ++healthCheckIdsIndex)
    {
      healthCheckIdsJsonList[healthCheckIdsIndex].AsString(m_healthCheckIds[healthCheckIdsIndex]);

@@ -1406,55 +1406,55 @@ namespace Model
   private:
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     bool m_enableECSManagedTags;
-    bool m_enableECSManagedTagsHasBeenSet;
+    bool m_enableECSManagedTagsHasBeenSet = false;
 
     bool m_enableExecuteCommand;
-    bool m_enableExecuteCommandHasBeenSet;
+    bool m_enableExecuteCommandHasBeenSet = false;
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     TaskOverride m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
 
     Aws::Vector<PlacementConstraint> m_placementConstraints;
-    bool m_placementConstraintsHasBeenSet;
+    bool m_placementConstraintsHasBeenSet = false;
 
     Aws::Vector<PlacementStrategy> m_placementStrategy;
-    bool m_placementStrategyHasBeenSet;
+    bool m_placementStrategyHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     PropagateTags m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     Aws::String m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

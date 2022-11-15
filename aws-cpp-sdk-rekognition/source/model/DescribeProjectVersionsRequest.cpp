@@ -33,7 +33,7 @@ Aws::String DescribeProjectVersionsRequest::SerializePayload() const
 
   if(m_versionNamesHasBeenSet)
   {
-   Array<JsonValue> versionNamesJsonList(m_versionNames.size());
+   Aws::Utils::Array<JsonValue> versionNamesJsonList(m_versionNames.size());
    for(unsigned versionNamesIndex = 0; versionNamesIndex < versionNamesJsonList.GetLength(); ++versionNamesIndex)
    {
      versionNamesJsonList[versionNamesIndex].AsString(m_versionNames[versionNamesIndex]);

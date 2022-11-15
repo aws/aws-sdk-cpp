@@ -109,10 +109,10 @@ namespace Model
   private:
 
     PortInfo m_portInfo;
-    bool m_portInfoHasBeenSet;
+    bool m_portInfoHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
   };
 
 } // namespace Model

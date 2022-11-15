@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_consumerArn;
-    bool m_consumerArnHasBeenSet;
+    bool m_consumerArnHasBeenSet = false;
 
     Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet;
+    bool m_trackerNameHasBeenSet = false;
   };
 
 } // namespace Model

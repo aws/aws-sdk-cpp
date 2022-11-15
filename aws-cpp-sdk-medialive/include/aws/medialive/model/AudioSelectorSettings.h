@@ -118,16 +118,16 @@ namespace Model
   private:
 
     AudioHlsRenditionSelection m_audioHlsRenditionSelection;
-    bool m_audioHlsRenditionSelectionHasBeenSet;
+    bool m_audioHlsRenditionSelectionHasBeenSet = false;
 
     AudioLanguageSelection m_audioLanguageSelection;
-    bool m_audioLanguageSelectionHasBeenSet;
+    bool m_audioLanguageSelectionHasBeenSet = false;
 
     AudioPidSelection m_audioPidSelection;
-    bool m_audioPidSelectionHasBeenSet;
+    bool m_audioPidSelectionHasBeenSet = false;
 
     AudioTrackSelection m_audioTrackSelection;
-    bool m_audioTrackSelectionHasBeenSet;
+    bool m_audioTrackSelectionHasBeenSet = false;
   };
 
 } // namespace Model

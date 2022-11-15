@@ -247,22 +247,22 @@ namespace Model
   private:
 
     HealthCheckProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_healthyThreshold;
-    bool m_healthyThresholdHasBeenSet;
+    bool m_healthyThresholdHasBeenSet = false;
 
     int m_unhealthyThreshold;
-    bool m_unhealthyThresholdHasBeenSet;
+    bool m_unhealthyThresholdHasBeenSet = false;
   };
 
 } // namespace Model

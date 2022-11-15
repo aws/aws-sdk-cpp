@@ -316,25 +316,25 @@ namespace Model
   private:
 
     ResourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_originalName;
-    bool m_originalNameHasBeenSet;
+    bool m_originalNameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     UserMetadata m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
   };
 
 } // namespace Model

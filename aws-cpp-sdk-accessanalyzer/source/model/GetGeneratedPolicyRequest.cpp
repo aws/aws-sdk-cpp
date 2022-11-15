@@ -16,11 +16,11 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 GetGeneratedPolicyRequest::GetGeneratedPolicyRequest() : 
+    m_jobIdHasBeenSet(false),
     m_includeResourcePlaceholders(false),
     m_includeResourcePlaceholdersHasBeenSet(false),
     m_includeServiceLevelTemplate(false),
-    m_includeServiceLevelTemplateHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
+    m_includeServiceLevelTemplateHasBeenSet(false)
 {
 }
 

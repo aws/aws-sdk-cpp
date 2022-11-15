@@ -414,28 +414,28 @@ namespace Model
   private:
 
     Aws::String m_scalingPlanName;
-    bool m_scalingPlanNameHasBeenSet;
+    bool m_scalingPlanNameHasBeenSet = false;
 
     long long m_scalingPlanVersion;
-    bool m_scalingPlanVersionHasBeenSet;
+    bool m_scalingPlanVersionHasBeenSet = false;
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     ForecastDataType m_forecastDataType;
-    bool m_forecastDataTypeHasBeenSet;
+    bool m_forecastDataTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

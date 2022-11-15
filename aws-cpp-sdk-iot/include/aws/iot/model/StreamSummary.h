@@ -183,16 +183,16 @@ namespace Model
   private:
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     int m_streamVersion;
-    bool m_streamVersionHasBeenSet;
+    bool m_streamVersionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

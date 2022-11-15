@@ -129,13 +129,13 @@ namespace Model
   private:
 
     double m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     double m_recall;
-    bool m_recallHasBeenSet;
+    bool m_recallHasBeenSet = false;
 
     double m_f1Score;
-    bool m_f1ScoreHasBeenSet;
+    bool m_f1ScoreHasBeenSet = false;
   };
 
 } // namespace Model

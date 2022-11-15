@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int OTA_HASH = HashingUtils::HashString("OTA");
+        static const int REBOOT_HASH = HashingUtils::HashString("REBOOT");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == OTA_HASH)
           {
             return JobType::OTA;
+          }
+          else if (hashCode == REBOOT_HASH)
+          {
+            return JobType::REBOOT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case JobType::OTA:
             return "OTA";
+          case JobType::REBOOT:
+            return "REBOOT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

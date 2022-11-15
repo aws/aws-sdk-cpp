@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     bool m_scanAll;
-    bool m_scanAllHasBeenSet;
+    bool m_scanAllHasBeenSet = false;
   };
 
 } // namespace Model

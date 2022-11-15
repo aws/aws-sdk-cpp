@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::String m_secretName;
-    bool m_secretNameHasBeenSet;
+    bool m_secretNameHasBeenSet = false;
   };
 
 } // namespace Model

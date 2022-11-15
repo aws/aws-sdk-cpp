@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_findingIds;
-    bool m_findingIdsHasBeenSet;
+    bool m_findingIdsHasBeenSet = false;
 
     Feedback m_feedback;
-    bool m_feedbackHasBeenSet;
+    bool m_feedbackHasBeenSet = false;
 
     Aws::String m_comments;
-    bool m_commentsHasBeenSet;
+    bool m_commentsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Iam m_iam;
-    bool m_iamHasBeenSet;
+    bool m_iamHasBeenSet = false;
   };
 
 } // namespace Model

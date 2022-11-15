@@ -30,7 +30,7 @@ GetIceServerConfigResult& GetIceServerConfigResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IceServerList"))
   {
-    Array<JsonView> iceServerListJsonList = jsonValue.GetArray("IceServerList");
+    Aws::Utils::Array<JsonView> iceServerListJsonList = jsonValue.GetArray("IceServerList");
     for(unsigned iceServerListIndex = 0; iceServerListIndex < iceServerListJsonList.GetLength(); ++iceServerListIndex)
     {
       m_iceServerList.push_back(iceServerListJsonList[iceServerListIndex].AsObject());

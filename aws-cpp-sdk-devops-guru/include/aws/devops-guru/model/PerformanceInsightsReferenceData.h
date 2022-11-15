@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PerformanceInsightsReferenceComparisonValues m_comparisonValues;
-    bool m_comparisonValuesHasBeenSet;
+    bool m_comparisonValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ ListRuleGroupsResult& ListRuleGroupsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("RuleGroups"))
   {
-    Array<JsonView> ruleGroupsJsonList = jsonValue.GetArray("RuleGroups");
+    Aws::Utils::Array<JsonView> ruleGroupsJsonList = jsonValue.GetArray("RuleGroups");
     for(unsigned ruleGroupsIndex = 0; ruleGroupsIndex < ruleGroupsJsonList.GetLength(); ++ruleGroupsIndex)
     {
       m_ruleGroups.push_back(ruleGroupsJsonList[ruleGroupsIndex].AsObject());

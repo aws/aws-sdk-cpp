@@ -118,55 +118,55 @@ namespace Model
 
 
     /**
-     * <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+     * <p>The identifiers of users or groups in your IAM Identity Center identity
      * source. For example, user IDs could be user emails.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEntityIds() const{ return m_entityIds; }
 
     /**
-     * <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+     * <p>The identifiers of users or groups in your IAM Identity Center identity
      * source. For example, user IDs could be user emails.</p>
      */
     inline bool EntityIdsHasBeenSet() const { return m_entityIdsHasBeenSet; }
 
     /**
-     * <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+     * <p>The identifiers of users or groups in your IAM Identity Center identity
      * source. For example, user IDs could be user emails.</p>
      */
     inline void SetEntityIds(const Aws::Vector<Aws::String>& value) { m_entityIdsHasBeenSet = true; m_entityIds = value; }
 
     /**
-     * <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+     * <p>The identifiers of users or groups in your IAM Identity Center identity
      * source. For example, user IDs could be user emails.</p>
      */
     inline void SetEntityIds(Aws::Vector<Aws::String>&& value) { m_entityIdsHasBeenSet = true; m_entityIds = std::move(value); }
 
     /**
-     * <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+     * <p>The identifiers of users or groups in your IAM Identity Center identity
      * source. For example, user IDs could be user emails.</p>
      */
     inline DisassociatePersonasFromEntitiesRequest& WithEntityIds(const Aws::Vector<Aws::String>& value) { SetEntityIds(value); return *this;}
 
     /**
-     * <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+     * <p>The identifiers of users or groups in your IAM Identity Center identity
      * source. For example, user IDs could be user emails.</p>
      */
     inline DisassociatePersonasFromEntitiesRequest& WithEntityIds(Aws::Vector<Aws::String>&& value) { SetEntityIds(std::move(value)); return *this;}
 
     /**
-     * <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+     * <p>The identifiers of users or groups in your IAM Identity Center identity
      * source. For example, user IDs could be user emails.</p>
      */
     inline DisassociatePersonasFromEntitiesRequest& AddEntityIds(const Aws::String& value) { m_entityIdsHasBeenSet = true; m_entityIds.push_back(value); return *this; }
 
     /**
-     * <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+     * <p>The identifiers of users or groups in your IAM Identity Center identity
      * source. For example, user IDs could be user emails.</p>
      */
     inline DisassociatePersonasFromEntitiesRequest& AddEntityIds(Aws::String&& value) { m_entityIdsHasBeenSet = true; m_entityIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The identifiers of users or groups in your Amazon Web Services SSO identity
+     * <p>The identifiers of users or groups in your IAM Identity Center identity
      * source. For example, user IDs could be user emails.</p>
      */
     inline DisassociatePersonasFromEntitiesRequest& AddEntityIds(const char* value) { m_entityIdsHasBeenSet = true; m_entityIds.push_back(value); return *this; }
@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityIds;
-    bool m_entityIdsHasBeenSet;
+    bool m_entityIdsHasBeenSet = false;
   };
 
 } // namespace Model

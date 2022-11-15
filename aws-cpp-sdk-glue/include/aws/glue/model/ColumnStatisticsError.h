@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ColumnStatistics m_columnStatistics;
-    bool m_columnStatisticsHasBeenSet;
+    bool m_columnStatisticsHasBeenSet = false;
 
     ErrorDetail m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

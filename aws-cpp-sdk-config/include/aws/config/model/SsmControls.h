@@ -108,10 +108,10 @@ namespace Model
   private:
 
     int m_concurrentExecutionRatePercentage;
-    bool m_concurrentExecutionRatePercentageHasBeenSet;
+    bool m_concurrentExecutionRatePercentageHasBeenSet = false;
 
     int m_errorPercentage;
-    bool m_errorPercentageHasBeenSet;
+    bool m_errorPercentageHasBeenSet = false;
   };
 
 } // namespace Model

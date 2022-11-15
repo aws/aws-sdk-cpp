@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_satelliteId;
-    bool m_satelliteIdHasBeenSet;
+    bool m_satelliteIdHasBeenSet = false;
   };
 
 } // namespace Model

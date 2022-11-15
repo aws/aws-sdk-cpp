@@ -387,25 +387,25 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_productName;
-    bool m_productNameHasBeenSet;
+    bool m_productNameHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactName;
-    bool m_provisioningArtifactNameHasBeenSet;
+    bool m_provisioningArtifactNameHasBeenSet = false;
 
     Aws::String m_pathId;
-    bool m_pathIdHasBeenSet;
+    bool m_pathIdHasBeenSet = false;
 
     Aws::String m_pathName;
-    bool m_pathNameHasBeenSet;
+    bool m_pathNameHasBeenSet = false;
   };
 
 } // namespace Model

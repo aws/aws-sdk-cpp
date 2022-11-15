@@ -64,6 +64,71 @@ namespace Model
     inline CreateCostCategoryDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline const Aws::String& GetEffectiveStart() const{ return m_effectiveStart; }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline bool EffectiveStartHasBeenSet() const { return m_effectiveStartHasBeenSet; }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline void SetEffectiveStart(const Aws::String& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = value; }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline void SetEffectiveStart(Aws::String&& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = std::move(value); }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline void SetEffectiveStart(const char* value) { m_effectiveStartHasBeenSet = true; m_effectiveStart.assign(value); }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline CreateCostCategoryDefinitionRequest& WithEffectiveStart(const Aws::String& value) { SetEffectiveStart(value); return *this;}
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline CreateCostCategoryDefinitionRequest& WithEffectiveStart(Aws::String&& value) { SetEffectiveStart(std::move(value)); return *this;}
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline CreateCostCategoryDefinitionRequest& WithEffectiveStart(const char* value) { SetEffectiveStart(value); return *this;}
+
+
     
     inline const CostCategoryRuleVersion& GetRuleVersion() const{ return m_ruleVersion; }
 
@@ -215,7 +280,7 @@ namespace Model
 
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
      * <code>CostCategory</code> </a>. You can use resource tags to control access to
      * your <code>cost category</code> using IAM policies.</p> <p>Each tag consists of
@@ -224,17 +289,17 @@ namespace Model
      * number of array members is 200, you can assign a maximum of 50 user-tags to one
      * resource. The remaining are reserved for Amazon Web Services use</p> </li> <li>
      * <p>The maximum length of a key is 128 characters</p> </li> <li> <p>The maximum
-     * length of a value is 256 characters</p> </li> <li> <p>Valid characters for keys
-     * and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
-     * </p> </li> <li> <p>Keys and values are case sensitive</p> </li> <li> <p>Keys and
-     * values are trimmed for any leading or trailing whitespaces</p> </li> <li>
-     * <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is
-     * reserved for Amazon Web Services use</p> </li> </ul>
+     * length of a value is 256 characters</p> </li> <li> <p>Keys and values can only
+     * contain alphanumeric characters, spaces, and any of the following:
+     * <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
+     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
+     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
+     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
      * <code>CostCategory</code> </a>. You can use resource tags to control access to
      * your <code>cost category</code> using IAM policies.</p> <p>Each tag consists of
@@ -243,17 +308,17 @@ namespace Model
      * number of array members is 200, you can assign a maximum of 50 user-tags to one
      * resource. The remaining are reserved for Amazon Web Services use</p> </li> <li>
      * <p>The maximum length of a key is 128 characters</p> </li> <li> <p>The maximum
-     * length of a value is 256 characters</p> </li> <li> <p>Valid characters for keys
-     * and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
-     * </p> </li> <li> <p>Keys and values are case sensitive</p> </li> <li> <p>Keys and
-     * values are trimmed for any leading or trailing whitespaces</p> </li> <li>
-     * <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is
-     * reserved for Amazon Web Services use</p> </li> </ul>
+     * length of a value is 256 characters</p> </li> <li> <p>Keys and values can only
+     * contain alphanumeric characters, spaces, and any of the following:
+     * <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
+     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
+     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
+     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
      * <code>CostCategory</code> </a>. You can use resource tags to control access to
      * your <code>cost category</code> using IAM policies.</p> <p>Each tag consists of
@@ -262,17 +327,17 @@ namespace Model
      * number of array members is 200, you can assign a maximum of 50 user-tags to one
      * resource. The remaining are reserved for Amazon Web Services use</p> </li> <li>
      * <p>The maximum length of a key is 128 characters</p> </li> <li> <p>The maximum
-     * length of a value is 256 characters</p> </li> <li> <p>Valid characters for keys
-     * and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
-     * </p> </li> <li> <p>Keys and values are case sensitive</p> </li> <li> <p>Keys and
-     * values are trimmed for any leading or trailing whitespaces</p> </li> <li>
-     * <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is
-     * reserved for Amazon Web Services use</p> </li> </ul>
+     * length of a value is 256 characters</p> </li> <li> <p>Keys and values can only
+     * contain alphanumeric characters, spaces, and any of the following:
+     * <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
+     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
+     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
+     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
     inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
      * <code>CostCategory</code> </a>. You can use resource tags to control access to
      * your <code>cost category</code> using IAM policies.</p> <p>Each tag consists of
@@ -281,17 +346,17 @@ namespace Model
      * number of array members is 200, you can assign a maximum of 50 user-tags to one
      * resource. The remaining are reserved for Amazon Web Services use</p> </li> <li>
      * <p>The maximum length of a key is 128 characters</p> </li> <li> <p>The maximum
-     * length of a value is 256 characters</p> </li> <li> <p>Valid characters for keys
-     * and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
-     * </p> </li> <li> <p>Keys and values are case sensitive</p> </li> <li> <p>Keys and
-     * values are trimmed for any leading or trailing whitespaces</p> </li> <li>
-     * <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is
-     * reserved for Amazon Web Services use</p> </li> </ul>
+     * length of a value is 256 characters</p> </li> <li> <p>Keys and values can only
+     * contain alphanumeric characters, spaces, and any of the following:
+     * <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
+     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
+     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
+     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
     inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
      * <code>CostCategory</code> </a>. You can use resource tags to control access to
      * your <code>cost category</code> using IAM policies.</p> <p>Each tag consists of
@@ -300,17 +365,17 @@ namespace Model
      * number of array members is 200, you can assign a maximum of 50 user-tags to one
      * resource. The remaining are reserved for Amazon Web Services use</p> </li> <li>
      * <p>The maximum length of a key is 128 characters</p> </li> <li> <p>The maximum
-     * length of a value is 256 characters</p> </li> <li> <p>Valid characters for keys
-     * and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
-     * </p> </li> <li> <p>Keys and values are case sensitive</p> </li> <li> <p>Keys and
-     * values are trimmed for any leading or trailing whitespaces</p> </li> <li>
-     * <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is
-     * reserved for Amazon Web Services use</p> </li> </ul>
+     * length of a value is 256 characters</p> </li> <li> <p>Keys and values can only
+     * contain alphanumeric characters, spaces, and any of the following:
+     * <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
+     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
+     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
+     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
     inline CreateCostCategoryDefinitionRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
      * <code>CostCategory</code> </a>. You can use resource tags to control access to
      * your <code>cost category</code> using IAM policies.</p> <p>Each tag consists of
@@ -319,17 +384,17 @@ namespace Model
      * number of array members is 200, you can assign a maximum of 50 user-tags to one
      * resource. The remaining are reserved for Amazon Web Services use</p> </li> <li>
      * <p>The maximum length of a key is 128 characters</p> </li> <li> <p>The maximum
-     * length of a value is 256 characters</p> </li> <li> <p>Valid characters for keys
-     * and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
-     * </p> </li> <li> <p>Keys and values are case sensitive</p> </li> <li> <p>Keys and
-     * values are trimmed for any leading or trailing whitespaces</p> </li> <li>
-     * <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is
-     * reserved for Amazon Web Services use</p> </li> </ul>
+     * length of a value is 256 characters</p> </li> <li> <p>Keys and values can only
+     * contain alphanumeric characters, spaces, and any of the following:
+     * <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
+     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
+     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
+     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
     inline CreateCostCategoryDefinitionRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
      * <code>CostCategory</code> </a>. You can use resource tags to control access to
      * your <code>cost category</code> using IAM policies.</p> <p>Each tag consists of
@@ -338,17 +403,17 @@ namespace Model
      * number of array members is 200, you can assign a maximum of 50 user-tags to one
      * resource. The remaining are reserved for Amazon Web Services use</p> </li> <li>
      * <p>The maximum length of a key is 128 characters</p> </li> <li> <p>The maximum
-     * length of a value is 256 characters</p> </li> <li> <p>Valid characters for keys
-     * and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
-     * </p> </li> <li> <p>Keys and values are case sensitive</p> </li> <li> <p>Keys and
-     * values are trimmed for any leading or trailing whitespaces</p> </li> <li>
-     * <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is
-     * reserved for Amazon Web Services use</p> </li> </ul>
+     * length of a value is 256 characters</p> </li> <li> <p>Keys and values can only
+     * contain alphanumeric characters, spaces, and any of the following:
+     * <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
+     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
+     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
+     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
     inline CreateCostCategoryDefinitionRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
      * <code>CostCategory</code> </a>. You can use resource tags to control access to
      * your <code>cost category</code> using IAM policies.</p> <p>Each tag consists of
@@ -357,34 +422,37 @@ namespace Model
      * number of array members is 200, you can assign a maximum of 50 user-tags to one
      * resource. The remaining are reserved for Amazon Web Services use</p> </li> <li>
      * <p>The maximum length of a key is 128 characters</p> </li> <li> <p>The maximum
-     * length of a value is 256 characters</p> </li> <li> <p>Valid characters for keys
-     * and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code>
-     * </p> </li> <li> <p>Keys and values are case sensitive</p> </li> <li> <p>Keys and
-     * values are trimmed for any leading or trailing whitespaces</p> </li> <li>
-     * <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is
-     * reserved for Amazon Web Services use</p> </li> </ul>
+     * length of a value is 256 characters</p> </li> <li> <p>Keys and values can only
+     * contain alphanumeric characters, spaces, and any of the following:
+     * <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
+     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
+     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
+     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
     inline CreateCostCategoryDefinitionRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_effectiveStart;
+    bool m_effectiveStartHasBeenSet = false;
 
     CostCategoryRuleVersion m_ruleVersion;
-    bool m_ruleVersionHasBeenSet;
+    bool m_ruleVersionHasBeenSet = false;
 
     Aws::Vector<CostCategoryRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
-    bool m_splitChargeRulesHasBeenSet;
+    bool m_splitChargeRulesHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

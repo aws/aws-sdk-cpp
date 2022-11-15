@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
 
     int m_warmupPercentage;
-    bool m_warmupPercentageHasBeenSet;
+    bool m_warmupPercentageHasBeenSet = false;
   };
 
 } // namespace Model

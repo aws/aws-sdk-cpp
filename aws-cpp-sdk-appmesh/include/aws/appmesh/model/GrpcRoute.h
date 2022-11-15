@@ -166,16 +166,16 @@ namespace Model
   private:
 
     GrpcRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     GrpcRouteMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
 
     GrpcRetryPolicy m_retryPolicy;
-    bool m_retryPolicyHasBeenSet;
+    bool m_retryPolicyHasBeenSet = false;
 
     GrpcTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

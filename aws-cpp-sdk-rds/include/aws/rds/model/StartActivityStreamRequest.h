@@ -242,19 +242,19 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     ActivityStreamMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     bool m_engineNativeAuditFieldsIncluded;
-    bool m_engineNativeAuditFieldsIncludedHasBeenSet;
+    bool m_engineNativeAuditFieldsIncludedHasBeenSet = false;
   };
 
 } // namespace Model

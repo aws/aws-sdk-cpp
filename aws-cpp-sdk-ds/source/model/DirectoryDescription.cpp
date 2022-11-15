@@ -52,7 +52,9 @@ DirectoryDescription::DirectoryDescription() :
     m_desiredNumberOfDomainControllers(0),
     m_desiredNumberOfDomainControllersHasBeenSet(false),
     m_ownerDirectoryDescriptionHasBeenSet(false),
-    m_regionsInfoHasBeenSet(false)
+    m_regionsInfoHasBeenSet(false),
+    m_osVersion(OSVersion::NOT_SET),
+    m_osVersionHasBeenSet(false)
 {
 }
 
@@ -90,7 +92,9 @@ DirectoryDescription::DirectoryDescription(JsonView jsonValue) :
     m_desiredNumberOfDomainControllers(0),
     m_desiredNumberOfDomainControllersHasBeenSet(false),
     m_ownerDirectoryDescriptionHasBeenSet(false),
-    m_regionsInfoHasBeenSet(false)
+    m_regionsInfoHasBeenSet(false),
+    m_osVersion(OSVersion::NOT_SET),
+    m_osVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,7 +159,7 @@ DirectoryDescription& DirectoryDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DnsIpAddrs"))
   {
-    Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
+    Aws::Utils::Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
     for(unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex)
     {
       m_dnsIpAddrs.push_back(dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString());
@@ -275,6 +279,13 @@ DirectoryDescription& DirectoryDescription::operator =(JsonView jsonValue)
     m_regionsInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OsVersion"))
+  {
+    m_osVersion = OSVersionMapper::GetOSVersionForName(jsonValue.GetString("OsVersion"));
+
+    m_osVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -330,7 +341,7 @@ JsonValue DirectoryDescription::Jsonize() const
 
   if(m_dnsIpAddrsHasBeenSet)
   {
-   Array<JsonValue> dnsIpAddrsJsonList(m_dnsIpAddrs.size());
+   Aws::Utils::Array<JsonValue> dnsIpAddrsJsonList(m_dnsIpAddrs.size());
    for(unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex)
    {
      dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString(m_dnsIpAddrs[dnsIpAddrsIndex]);
@@ -426,6 +437,11 @@ JsonValue DirectoryDescription::Jsonize() const
   {
    payload.WithObject("RegionsInfo", m_regionsInfo.Jsonize());
 
+  }
+
+  if(m_osVersionHasBeenSet)
+  {
+   payload.WithString("OsVersion", OSVersionMapper::GetNameForOSVersion(m_osVersion));
   }
 
   return payload;

@@ -67,7 +67,7 @@ namespace Model
   private:
 
     long long m_scheduledEventId;
-    bool m_scheduledEventIdHasBeenSet;
+    bool m_scheduledEventIdHasBeenSet = false;
   };
 
 } // namespace Model

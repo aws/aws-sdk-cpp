@@ -264,28 +264,28 @@ namespace Model
   private:
 
     long long m_passwordLength;
-    bool m_passwordLengthHasBeenSet;
+    bool m_passwordLengthHasBeenSet = false;
 
     Aws::String m_excludeCharacters;
-    bool m_excludeCharactersHasBeenSet;
+    bool m_excludeCharactersHasBeenSet = false;
 
     bool m_excludeNumbers;
-    bool m_excludeNumbersHasBeenSet;
+    bool m_excludeNumbersHasBeenSet = false;
 
     bool m_excludePunctuation;
-    bool m_excludePunctuationHasBeenSet;
+    bool m_excludePunctuationHasBeenSet = false;
 
     bool m_excludeUppercase;
-    bool m_excludeUppercaseHasBeenSet;
+    bool m_excludeUppercaseHasBeenSet = false;
 
     bool m_excludeLowercase;
-    bool m_excludeLowercaseHasBeenSet;
+    bool m_excludeLowercaseHasBeenSet = false;
 
     bool m_includeSpace;
-    bool m_includeSpaceHasBeenSet;
+    bool m_includeSpaceHasBeenSet = false;
 
     bool m_requireEachIncludedType;
-    bool m_requireEachIncludedTypeHasBeenSet;
+    bool m_requireEachIncludedTypeHasBeenSet = false;
   };
 
 } // namespace Model

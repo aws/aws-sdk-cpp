@@ -17,7 +17,9 @@ CreateDatasetImportJobRequest::CreateDatasetImportJobRequest() :
     m_datasetArnHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_importMode(ImportMode::NOT_SET),
+    m_importModeHasBeenSet(false)
 {
 }
 
@@ -51,13 +53,18 @@ Aws::String CreateDatasetImportJobRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_importModeHasBeenSet)
+  {
+   payload.WithString("importMode", ImportModeMapper::GetNameForImportMode(m_importMode));
   }
 
   return payload.View().WriteReadable();

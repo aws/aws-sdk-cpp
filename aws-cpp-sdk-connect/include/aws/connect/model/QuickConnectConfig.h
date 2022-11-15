@@ -197,16 +197,16 @@ namespace Model
   private:
 
     QuickConnectType m_quickConnectType;
-    bool m_quickConnectTypeHasBeenSet;
+    bool m_quickConnectTypeHasBeenSet = false;
 
     UserQuickConnectConfig m_userConfig;
-    bool m_userConfigHasBeenSet;
+    bool m_userConfigHasBeenSet = false;
 
     QueueQuickConnectConfig m_queueConfig;
-    bool m_queueConfigHasBeenSet;
+    bool m_queueConfigHasBeenSet = false;
 
     PhoneNumberQuickConnectConfig m_phoneConfig;
-    bool m_phoneConfigHasBeenSet;
+    bool m_phoneConfigHasBeenSet = false;
   };
 
 } // namespace Model

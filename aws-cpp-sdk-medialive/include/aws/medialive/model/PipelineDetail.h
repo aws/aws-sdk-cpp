@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_activeInputAttachmentName;
-    bool m_activeInputAttachmentNameHasBeenSet;
+    bool m_activeInputAttachmentNameHasBeenSet = false;
 
     Aws::String m_activeInputSwitchActionName;
-    bool m_activeInputSwitchActionNameHasBeenSet;
+    bool m_activeInputSwitchActionNameHasBeenSet = false;
 
     Aws::String m_activeMotionGraphicsActionName;
-    bool m_activeMotionGraphicsActionNameHasBeenSet;
+    bool m_activeMotionGraphicsActionNameHasBeenSet = false;
 
     Aws::String m_activeMotionGraphicsUri;
-    bool m_activeMotionGraphicsUriHasBeenSet;
+    bool m_activeMotionGraphicsUriHasBeenSet = false;
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -260,16 +260,16 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::Vector<StepState> m_stepStates;
-    bool m_stepStatesHasBeenSet;
+    bool m_stepStatesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stepIds;
-    bool m_stepIdsHasBeenSet;
+    bool m_stepIdsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

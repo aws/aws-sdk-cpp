@@ -29,9 +29,8 @@ namespace Model
   /**
    * <p>Information for a release of the mobile SDK, including release notes and
    * tags.</p> <p>The mobile SDK is not generally available. Customers who have
-   * access to the mobile SDK can use it to establish and manage Security Token
-   * Service (STS) security tokens for use in HTTP(S) requests from a mobile device
-   * to WAF. For more information, see <a
+   * access to the mobile SDK can use it to establish and manage WAF tokens for use
+   * in HTTP(S) requests from a mobile device to WAF. For more information, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
    * client application integration</a> in the <i>WAF Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -203,16 +202,16 @@ namespace Model
   private:
 
     Aws::String m_releaseVersion;
-    bool m_releaseVersionHasBeenSet;
+    bool m_releaseVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_releaseNotes;
-    bool m_releaseNotesHasBeenSet;
+    bool m_releaseNotesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

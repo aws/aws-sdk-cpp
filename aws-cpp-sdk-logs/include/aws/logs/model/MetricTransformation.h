@@ -486,22 +486,22 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_metricNamespace;
-    bool m_metricNamespaceHasBeenSet;
+    bool m_metricNamespaceHasBeenSet = false;
 
     Aws::String m_metricValue;
-    bool m_metricValueHasBeenSet;
+    bool m_metricValueHasBeenSet = false;
 
     double m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     StandardUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

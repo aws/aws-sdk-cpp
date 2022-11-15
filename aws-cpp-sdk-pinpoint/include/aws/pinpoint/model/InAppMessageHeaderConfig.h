@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Alignment m_alignment;
-    bool m_alignmentHasBeenSet;
+    bool m_alignmentHasBeenSet = false;
 
     Aws::String m_header;
-    bool m_headerHasBeenSet;
+    bool m_headerHasBeenSet = false;
 
     Aws::String m_textColor;
-    bool m_textColorHasBeenSet;
+    bool m_textColorHasBeenSet = false;
   };
 
 } // namespace Model

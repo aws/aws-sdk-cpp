@@ -30,7 +30,7 @@ ListDeviceFleetsResult& ListDeviceFleetsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeviceFleetSummaries"))
   {
-    Array<JsonView> deviceFleetSummariesJsonList = jsonValue.GetArray("DeviceFleetSummaries");
+    Aws::Utils::Array<JsonView> deviceFleetSummariesJsonList = jsonValue.GetArray("DeviceFleetSummaries");
     for(unsigned deviceFleetSummariesIndex = 0; deviceFleetSummariesIndex < deviceFleetSummariesJsonList.GetLength(); ++deviceFleetSummariesIndex)
     {
       m_deviceFleetSummaries.push_back(deviceFleetSummariesJsonList[deviceFleetSummariesIndex].AsObject());

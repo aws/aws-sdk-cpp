@@ -312,25 +312,25 @@ namespace Model
   private:
 
     Aws::Vector<NetworkAclAssociation> m_associations;
-    bool m_associationsHasBeenSet;
+    bool m_associationsHasBeenSet = false;
 
     Aws::Vector<NetworkAclEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_networkAclId;
-    bool m_networkAclIdHasBeenSet;
+    bool m_networkAclIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
   };
 
 } // namespace Model

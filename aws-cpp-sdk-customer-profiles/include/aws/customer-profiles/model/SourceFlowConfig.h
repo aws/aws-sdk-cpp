@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     SourceConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     IncrementalPullConfig m_incrementalPullConfig;
-    bool m_incrementalPullConfigHasBeenSet;
+    bool m_incrementalPullConfigHasBeenSet = false;
 
     SourceConnectorProperties m_sourceConnectorProperties;
-    bool m_sourceConnectorPropertiesHasBeenSet;
+    bool m_sourceConnectorPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

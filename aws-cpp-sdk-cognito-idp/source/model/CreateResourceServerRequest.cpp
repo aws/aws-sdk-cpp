@@ -44,7 +44,7 @@ Aws::String CreateResourceServerRequest::SerializePayload() const
 
   if(m_scopesHasBeenSet)
   {
-   Array<JsonValue> scopesJsonList(m_scopes.size());
+   Aws::Utils::Array<JsonValue> scopesJsonList(m_scopes.size());
    for(unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex)
    {
      scopesJsonList[scopesIndex].AsObject(m_scopes[scopesIndex].Jsonize());

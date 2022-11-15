@@ -292,23 +292,23 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     int m_blockIndex;
-    bool m_blockIndexHasBeenSet;
+    bool m_blockIndexHasBeenSet = false;
 
 
     int m_dataLength;
-    bool m_dataLengthHasBeenSet;
+    bool m_dataLengthHasBeenSet = false;
 
     int m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

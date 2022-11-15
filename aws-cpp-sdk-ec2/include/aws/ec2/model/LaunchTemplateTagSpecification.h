@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The tag specification for the launch template.</p><p><h3>See Also:</h3>   <a
+   * <p>The tags specification for the launch template.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateTagSpecification">AWS
    * API Reference</a></p>
    */
@@ -42,32 +42,32 @@ namespace Model
 
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource to tag.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource to tag.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource to tag.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource to tag.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource to tag.</p>
      */
     inline LaunchTemplateTagSpecification& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource to tag.</p>
      */
     inline LaunchTemplateTagSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

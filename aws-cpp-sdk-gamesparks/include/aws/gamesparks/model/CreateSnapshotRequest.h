@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
   };
 
 } // namespace Model

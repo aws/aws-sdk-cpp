@@ -187,19 +187,19 @@ namespace Model
   private:
 
     FileFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     int m_startFromRow;
-    bool m_startFromRowHasBeenSet;
+    bool m_startFromRowHasBeenSet = false;
 
     bool m_containsHeader;
-    bool m_containsHeaderHasBeenSet;
+    bool m_containsHeaderHasBeenSet = false;
 
     TextQualifier m_textQualifier;
-    bool m_textQualifierHasBeenSet;
+    bool m_textQualifierHasBeenSet = false;
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
   };
 
 } // namespace Model

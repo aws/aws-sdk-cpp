@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     ErrorDetail m_errorDetail;
-    bool m_errorDetailHasBeenSet;
+    bool m_errorDetailHasBeenSet = false;
   };
 
 } // namespace Model

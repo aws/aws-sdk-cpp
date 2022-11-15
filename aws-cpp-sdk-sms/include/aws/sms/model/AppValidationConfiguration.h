@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_validationId;
-    bool m_validationIdHasBeenSet;
+    bool m_validationIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AppValidationStrategy m_appValidationStrategy;
-    bool m_appValidationStrategyHasBeenSet;
+    bool m_appValidationStrategyHasBeenSet = false;
 
     SSMValidationParameters m_ssmValidationParameters;
-    bool m_ssmValidationParametersHasBeenSet;
+    bool m_ssmValidationParametersHasBeenSet = false;
   };
 
 } // namespace Model

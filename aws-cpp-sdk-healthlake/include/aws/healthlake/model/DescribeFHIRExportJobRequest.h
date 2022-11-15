@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_datastoreId;
-    bool m_datastoreIdHasBeenSet;
+    bool m_datastoreIdHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
   };
 
 } // namespace Model

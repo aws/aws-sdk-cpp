@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_sNSTopic;
-    bool m_sNSTopicHasBeenSet;
+    bool m_sNSTopicHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

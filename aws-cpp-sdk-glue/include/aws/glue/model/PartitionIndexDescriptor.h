@@ -243,16 +243,16 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::Vector<KeySchemaElement> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     PartitionIndexStatus m_indexStatus;
-    bool m_indexStatusHasBeenSet;
+    bool m_indexStatusHasBeenSet = false;
 
     Aws::Vector<BackfillError> m_backfillErrors;
-    bool m_backfillErrorsHasBeenSet;
+    bool m_backfillErrorsHasBeenSet = false;
   };
 
 } // namespace Model

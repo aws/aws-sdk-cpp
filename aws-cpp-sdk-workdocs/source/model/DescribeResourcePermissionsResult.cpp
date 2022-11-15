@@ -30,7 +30,7 @@ DescribeResourcePermissionsResult& DescribeResourcePermissionsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Principals"))
   {
-    Array<JsonView> principalsJsonList = jsonValue.GetArray("Principals");
+    Aws::Utils::Array<JsonView> principalsJsonList = jsonValue.GetArray("Principals");
     for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
     {
       m_principals.push_back(principalsJsonList[principalsIndex].AsObject());

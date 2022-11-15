@@ -29,7 +29,7 @@ namespace Model
    * <p>The FireLens configuration for the container. This is used to specify and
    * configure a log router for container logs. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-   * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
+   * log routing</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/FirelensConfiguration">AWS
    * API Reference</a></p>
@@ -88,7 +88,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -102,7 +102,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -116,7 +116,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -130,7 +130,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -144,7 +144,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -158,7 +158,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -172,7 +172,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -186,7 +186,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -200,7 +200,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -214,7 +214,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -228,7 +228,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -242,7 +242,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -256,7 +256,7 @@ namespace Model
      * <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
-     * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
+     * a task definition that uses a FireLens configuration</a> in the <i>Amazon
      * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
@@ -265,10 +265,10 @@ namespace Model
   private:
 
     FirelensConfigurationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

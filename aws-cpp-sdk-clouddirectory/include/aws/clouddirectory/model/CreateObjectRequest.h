@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     Aws::Vector<SchemaFacet> m_schemaFacets;
-    bool m_schemaFacetsHasBeenSet;
+    bool m_schemaFacetsHasBeenSet = false;
 
     Aws::Vector<AttributeKeyAndValue> m_objectAttributeList;
-    bool m_objectAttributeListHasBeenSet;
+    bool m_objectAttributeListHasBeenSet = false;
 
     ObjectReference m_parentReference;
-    bool m_parentReferenceHasBeenSet;
+    bool m_parentReferenceHasBeenSet = false;
 
     Aws::String m_linkName;
-    bool m_linkNameHasBeenSet;
+    bool m_linkNameHasBeenSet = false;
   };
 
 } // namespace Model

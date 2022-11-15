@@ -12,7 +12,9 @@
 #include <aws/ssm/model/CommandStatus.h>
 #include <aws/ssm/model/NotificationConfig.h>
 #include <aws/ssm/model/CloudWatchOutputConfig.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/ssm/model/AlarmStateInformation.h>
 #include <utility>
 
 namespace Aws
@@ -217,44 +219,74 @@ namespace Model
 
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiresAfter() const{ return m_expiresAfter; }
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool ExpiresAfterHasBeenSet() const { return m_expiresAfterHasBeenSet; }
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetExpiresAfter(const Aws::Utils::DateTime& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = value; }
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetExpiresAfter(Aws::Utils::DateTime&& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = std::move(value); }
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline Command& WithExpiresAfter(const Aws::Utils::DateTime& value) { SetExpiresAfter(value); return *this;}
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline Command& WithExpiresAfter(Aws::Utils::DateTime&& value) { SetExpiresAfter(std::move(value)); return *this;}
 
@@ -522,7 +554,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
@@ -551,7 +585,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
@@ -580,7 +616,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
 
@@ -609,7 +647,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
@@ -638,7 +678,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
 
@@ -667,7 +709,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
@@ -696,7 +740,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
@@ -725,7 +771,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
@@ -1304,79 +1352,157 @@ namespace Model
      */
     inline Command& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline Command& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your command.</p>
+     */
+    inline Command& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const{ return m_triggeredAlarms; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline bool TriggeredAlarmsHasBeenSet() const { return m_triggeredAlarmsHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline void SetTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = value; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline void SetTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline Command& WithTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { SetTriggeredAlarms(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline Command& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline Command& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(value); return *this; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the command.</p>
+     */
+    inline Command& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_commandId;
-    bool m_commandIdHasBeenSet;
+    bool m_commandIdHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiresAfter;
-    bool m_expiresAfterHasBeenSet;
+    bool m_expiresAfterHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedDateTime;
-    bool m_requestedDateTimeHasBeenSet;
+    bool m_requestedDateTimeHasBeenSet = false;
 
     CommandStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::String m_outputS3Region;
-    bool m_outputS3RegionHasBeenSet;
+    bool m_outputS3RegionHasBeenSet = false;
 
     Aws::String m_outputS3BucketName;
-    bool m_outputS3BucketNameHasBeenSet;
+    bool m_outputS3BucketNameHasBeenSet = false;
 
     Aws::String m_outputS3KeyPrefix;
-    bool m_outputS3KeyPrefixHasBeenSet;
+    bool m_outputS3KeyPrefixHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     int m_targetCount;
-    bool m_targetCountHasBeenSet;
+    bool m_targetCountHasBeenSet = false;
 
     int m_completedCount;
-    bool m_completedCountHasBeenSet;
+    bool m_completedCountHasBeenSet = false;
 
     int m_errorCount;
-    bool m_errorCountHasBeenSet;
+    bool m_errorCountHasBeenSet = false;
 
     int m_deliveryTimedOutCount;
-    bool m_deliveryTimedOutCountHasBeenSet;
+    bool m_deliveryTimedOutCountHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     NotificationConfig m_notificationConfig;
-    bool m_notificationConfigHasBeenSet;
+    bool m_notificationConfigHasBeenSet = false;
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
-    bool m_cloudWatchOutputConfigHasBeenSet;
+    bool m_cloudWatchOutputConfigHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
+
+    Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+    bool m_triggeredAlarmsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,7 +44,7 @@ BulkEmailEntry& BulkEmailEntry::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReplacementTags"))
   {
-    Array<JsonView> replacementTagsJsonList = jsonValue.GetArray("ReplacementTags");
+    Aws::Utils::Array<JsonView> replacementTagsJsonList = jsonValue.GetArray("ReplacementTags");
     for(unsigned replacementTagsIndex = 0; replacementTagsIndex < replacementTagsJsonList.GetLength(); ++replacementTagsIndex)
     {
       m_replacementTags.push_back(replacementTagsJsonList[replacementTagsIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue BulkEmailEntry::Jsonize() const
 
   if(m_replacementTagsHasBeenSet)
   {
-   Array<JsonValue> replacementTagsJsonList(m_replacementTags.size());
+   Aws::Utils::Array<JsonValue> replacementTagsJsonList(m_replacementTags.size());
    for(unsigned replacementTagsIndex = 0; replacementTagsIndex < replacementTagsJsonList.GetLength(); ++replacementTagsIndex)
    {
      replacementTagsJsonList[replacementTagsIndex].AsObject(m_replacementTags[replacementTagsIndex].Jsonize());

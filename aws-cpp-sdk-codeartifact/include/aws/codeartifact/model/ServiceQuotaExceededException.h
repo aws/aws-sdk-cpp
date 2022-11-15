@@ -106,45 +106,45 @@ namespace Model
 
 
     /**
-     * <p> The type of AWS resource. </p>
+     * <p> The type of Amazon Web Services resource. </p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p> The type of AWS resource. </p>
+     * <p> The type of Amazon Web Services resource. </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p> The type of AWS resource. </p>
+     * <p> The type of Amazon Web Services resource. </p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p> The type of AWS resource. </p>
+     * <p> The type of Amazon Web Services resource. </p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p> The type of AWS resource. </p>
+     * <p> The type of Amazon Web Services resource. </p>
      */
     inline ServiceQuotaExceededException& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p> The type of AWS resource. </p>
+     * <p> The type of Amazon Web Services resource. </p>
      */
     inline ServiceQuotaExceededException& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

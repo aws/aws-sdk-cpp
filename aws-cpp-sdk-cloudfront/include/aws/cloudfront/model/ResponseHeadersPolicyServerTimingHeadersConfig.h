@@ -131,10 +131,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     double m_samplingRate;
-    bool m_samplingRateHasBeenSet;
+    bool m_samplingRateHasBeenSet = false;
   };
 
 } // namespace Model

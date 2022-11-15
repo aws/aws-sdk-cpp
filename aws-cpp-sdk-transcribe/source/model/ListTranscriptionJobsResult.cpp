@@ -44,7 +44,7 @@ ListTranscriptionJobsResult& ListTranscriptionJobsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("TranscriptionJobSummaries"))
   {
-    Array<JsonView> transcriptionJobSummariesJsonList = jsonValue.GetArray("TranscriptionJobSummaries");
+    Aws::Utils::Array<JsonView> transcriptionJobSummariesJsonList = jsonValue.GetArray("TranscriptionJobSummaries");
     for(unsigned transcriptionJobSummariesIndex = 0; transcriptionJobSummariesIndex < transcriptionJobSummariesJsonList.GetLength(); ++transcriptionJobSummariesIndex)
     {
       m_transcriptionJobSummaries.push_back(transcriptionJobSummariesJsonList[transcriptionJobSummariesIndex].AsObject());

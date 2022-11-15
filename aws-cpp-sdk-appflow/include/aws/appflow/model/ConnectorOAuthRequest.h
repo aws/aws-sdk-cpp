@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_authCode;
-    bool m_authCodeHasBeenSet;
+    bool m_authCodeHasBeenSet = false;
 
     Aws::String m_redirectUri;
-    bool m_redirectUriHasBeenSet;
+    bool m_redirectUriHasBeenSet = false;
   };
 
 } // namespace Model

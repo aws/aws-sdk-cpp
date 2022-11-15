@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_vpcLinkId;
-    bool m_vpcLinkIdHasBeenSet;
+    bool m_vpcLinkIdHasBeenSet = false;
   };
 
 } // namespace Model

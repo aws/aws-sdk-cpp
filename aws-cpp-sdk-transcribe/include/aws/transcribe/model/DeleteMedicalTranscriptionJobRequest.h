@@ -36,56 +36,56 @@ namespace Model
 
     /**
      * <p>The name of the medical transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * case sensitive.</p>
      */
     inline const Aws::String& GetMedicalTranscriptionJobName() const{ return m_medicalTranscriptionJobName; }
 
     /**
      * <p>The name of the medical transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * case sensitive.</p>
      */
     inline bool MedicalTranscriptionJobNameHasBeenSet() const { return m_medicalTranscriptionJobNameHasBeenSet; }
 
     /**
      * <p>The name of the medical transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * case sensitive.</p>
      */
     inline void SetMedicalTranscriptionJobName(const Aws::String& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = value; }
 
     /**
      * <p>The name of the medical transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * case sensitive.</p>
      */
     inline void SetMedicalTranscriptionJobName(Aws::String&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::move(value); }
 
     /**
      * <p>The name of the medical transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * case sensitive.</p>
      */
     inline void SetMedicalTranscriptionJobName(const char* value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName.assign(value); }
 
     /**
      * <p>The name of the medical transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * case sensitive.</p>
      */
     inline DeleteMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const Aws::String& value) { SetMedicalTranscriptionJobName(value); return *this;}
 
     /**
      * <p>The name of the medical transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * case sensitive.</p>
      */
     inline DeleteMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(Aws::String&& value) { SetMedicalTranscriptionJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the medical transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * case sensitive.</p>
      */
     inline DeleteMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const char* value) { SetMedicalTranscriptionJobName(value); return *this;}
 
   private:
 
     Aws::String m_medicalTranscriptionJobName;
-    bool m_medicalTranscriptionJobNameHasBeenSet;
+    bool m_medicalTranscriptionJobNameHasBeenSet = false;
   };
 
 } // namespace Model

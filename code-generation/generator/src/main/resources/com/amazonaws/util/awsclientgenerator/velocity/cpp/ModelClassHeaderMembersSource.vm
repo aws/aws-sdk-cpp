@@ -29,7 +29,7 @@
   ${spaces}headers.emplace("${locationName}", ss.str());
   ${spaces}ss.str("");
 #elseif($member.shape.timeStamp)
-  ${spaces}headers.emplace("${locationName}", m_${lowerCaseVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInHeader($member.shape)));
+  ${spaces}headers.emplace("${locationName}", m_${lowerCaseVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($member.shape)));
 #elseif($member.shape.map)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
@@ -60,7 +60,9 @@
 #end
 #end
 #end
+#if(!$serviceModel.endpointRules)
 ## Extra headers from ARN: 1. x-amz-account-id for s3control 2. x-amz-outpost-id for s3control.
+
 #if($operation.hasAccountIdInArn || $operation.hasOutpostIdInArn)
   ${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
   if (arn && arn.Validate().IsSuccess())
@@ -79,5 +81,6 @@
     }
   }
 #end
+#end##-#if(!$serviceModel.endpointRules)
 
 #end

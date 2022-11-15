@@ -477,22 +477,22 @@ namespace Model
   private:
 
     MotionImageInsertionFramerate m_framerate;
-    bool m_framerateHasBeenSet;
+    bool m_framerateHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     MotionImageInsertionMode m_insertionMode;
-    bool m_insertionModeHasBeenSet;
+    bool m_insertionModeHasBeenSet = false;
 
     MotionImageInsertionOffset m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     MotionImagePlayback m_playback;
-    bool m_playbackHasBeenSet;
+    bool m_playbackHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

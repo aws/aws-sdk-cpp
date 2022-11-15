@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::String m_instanceSnapshotName;
-    bool m_instanceSnapshotNameHasBeenSet;
+    bool m_instanceSnapshotNameHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

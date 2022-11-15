@@ -54,13 +54,13 @@ SnapshotRecycleBinInfo& SnapshotRecycleBinInfo::operator =(const XmlNode& xmlNod
     XmlNode recycleBinEnterTimeNode = resultNode.FirstChild("recycleBinEnterTime");
     if(!recycleBinEnterTimeNode.IsNull())
     {
-      m_recycleBinEnterTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recycleBinEnterTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_recycleBinEnterTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recycleBinEnterTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_recycleBinEnterTimeHasBeenSet = true;
     }
     XmlNode recycleBinExitTimeNode = resultNode.FirstChild("recycleBinExitTime");
     if(!recycleBinExitTimeNode.IsNull())
     {
-      m_recycleBinExitTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recycleBinExitTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_recycleBinExitTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recycleBinExitTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_recycleBinExitTimeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
@@ -89,12 +89,12 @@ void SnapshotRecycleBinInfo::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_recycleBinEnterTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RecycleBinEnterTime=" << StringUtils::URLEncode(m_recycleBinEnterTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".RecycleBinEnterTime=" << StringUtils::URLEncode(m_recycleBinEnterTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_recycleBinExitTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RecycleBinExitTime=" << StringUtils::URLEncode(m_recycleBinExitTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".RecycleBinExitTime=" << StringUtils::URLEncode(m_recycleBinExitTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -117,11 +117,11 @@ void SnapshotRecycleBinInfo::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_recycleBinEnterTimeHasBeenSet)
   {
-      oStream << location << ".RecycleBinEnterTime=" << StringUtils::URLEncode(m_recycleBinEnterTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".RecycleBinEnterTime=" << StringUtils::URLEncode(m_recycleBinEnterTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_recycleBinExitTimeHasBeenSet)
   {
-      oStream << location << ".RecycleBinExitTime=" << StringUtils::URLEncode(m_recycleBinExitTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".RecycleBinExitTime=" << StringUtils::URLEncode(m_recycleBinExitTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

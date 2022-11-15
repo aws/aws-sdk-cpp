@@ -21,7 +21,10 @@ SearchProfilesRequest::SearchProfilesRequest() :
     m_maxResultsHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_keyNameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_additionalSearchKeysHasBeenSet(false),
+    m_logicalOperator(LogicalOperator::NOT_SET),
+    m_logicalOperatorHasBeenSet(false)
 {
 }
 
@@ -37,13 +40,29 @@ Aws::String SearchProfilesRequest::SerializePayload() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
    }
    payload.WithArray("Values", std::move(valuesJsonList));
 
+  }
+
+  if(m_additionalSearchKeysHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> additionalSearchKeysJsonList(m_additionalSearchKeys.size());
+   for(unsigned additionalSearchKeysIndex = 0; additionalSearchKeysIndex < additionalSearchKeysJsonList.GetLength(); ++additionalSearchKeysIndex)
+   {
+     additionalSearchKeysJsonList[additionalSearchKeysIndex].AsObject(m_additionalSearchKeys[additionalSearchKeysIndex].Jsonize());
+   }
+   payload.WithArray("AdditionalSearchKeys", std::move(additionalSearchKeysJsonList));
+
+  }
+
+  if(m_logicalOperatorHasBeenSet)
+  {
+   payload.WithString("LogicalOperator", LogicalOperatorMapper::GetNameForLogicalOperator(m_logicalOperator));
   }
 
   return payload.View().WriteReadable();

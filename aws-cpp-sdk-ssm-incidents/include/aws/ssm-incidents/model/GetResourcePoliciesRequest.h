@@ -39,22 +39,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of resource policies to display per page of results.</p>
+     * <p>The maximum number of resource policies to display for each page of
+     * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of resource policies to display per page of results.</p>
+     * <p>The maximum number of resource policies to display for each page of
+     * results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of resource policies to display per page of results.</p>
+     * <p>The maximum number of resource policies to display for each page of
+     * results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of resource policies to display per page of results.</p>
+     * <p>The maximum number of resource policies to display for each page of
+     * results.</p>
      */
     inline GetResourcePoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -151,13 +155,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

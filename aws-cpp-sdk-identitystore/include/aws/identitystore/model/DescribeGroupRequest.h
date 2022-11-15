@@ -37,7 +37,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -64,7 +64,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -100,7 +100,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
   };
 
 } // namespace Model

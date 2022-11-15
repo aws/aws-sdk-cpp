@@ -30,7 +30,7 @@ ListFailuresForLicenseConfigurationOperationsResult& ListFailuresForLicenseConfi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LicenseOperationFailureList"))
   {
-    Array<JsonView> licenseOperationFailureListJsonList = jsonValue.GetArray("LicenseOperationFailureList");
+    Aws::Utils::Array<JsonView> licenseOperationFailureListJsonList = jsonValue.GetArray("LicenseOperationFailureList");
     for(unsigned licenseOperationFailureListIndex = 0; licenseOperationFailureListIndex < licenseOperationFailureListJsonList.GetLength(); ++licenseOperationFailureListIndex)
     {
       m_licenseOperationFailureList.push_back(licenseOperationFailureListJsonList[licenseOperationFailureListIndex].AsObject());

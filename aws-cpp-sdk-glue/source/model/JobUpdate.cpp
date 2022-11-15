@@ -40,7 +40,10 @@ JobUpdate::JobUpdate() :
     m_securityConfigurationHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
     m_glueVersionHasBeenSet(false),
-    m_codeGenConfigurationNodesHasBeenSet(false)
+    m_codeGenConfigurationNodesHasBeenSet(false),
+    m_executionClass(ExecutionClass::NOT_SET),
+    m_executionClassHasBeenSet(false),
+    m_sourceControlDetailsHasBeenSet(false)
 {
 }
 
@@ -66,7 +69,10 @@ JobUpdate::JobUpdate(JsonView jsonValue) :
     m_securityConfigurationHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
     m_glueVersionHasBeenSet(false),
-    m_codeGenConfigurationNodesHasBeenSet(false)
+    m_codeGenConfigurationNodesHasBeenSet(false),
+    m_executionClass(ExecutionClass::NOT_SET),
+    m_executionClassHasBeenSet(false),
+    m_sourceControlDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -201,6 +207,20 @@ JobUpdate& JobUpdate::operator =(JsonView jsonValue)
     m_codeGenConfigurationNodesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecutionClass"))
+  {
+    m_executionClass = ExecutionClassMapper::GetExecutionClassForName(jsonValue.GetString("ExecutionClass"));
+
+    m_executionClassHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceControlDetails"))
+  {
+    m_sourceControlDetails = jsonValue.GetObject("SourceControlDetails");
+
+    m_sourceControlDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -321,6 +341,17 @@ JsonValue JobUpdate::Jsonize() const
      codeGenConfigurationNodesJsonMap.WithObject(codeGenConfigurationNodesItem.first, codeGenConfigurationNodesItem.second.Jsonize());
    }
    payload.WithObject("CodeGenConfigurationNodes", std::move(codeGenConfigurationNodesJsonMap));
+
+  }
+
+  if(m_executionClassHasBeenSet)
+  {
+   payload.WithString("ExecutionClass", ExecutionClassMapper::GetNameForExecutionClass(m_executionClass));
+  }
+
+  if(m_sourceControlDetailsHasBeenSet)
+  {
+   payload.WithObject("SourceControlDetails", m_sourceControlDetails.Jsonize());
 
   }
 

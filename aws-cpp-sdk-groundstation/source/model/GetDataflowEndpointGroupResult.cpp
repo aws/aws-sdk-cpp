@@ -42,7 +42,7 @@ GetDataflowEndpointGroupResult& GetDataflowEndpointGroupResult::operator =(const
 
   if(jsonValue.ValueExists("endpointsDetails"))
   {
-    Array<JsonView> endpointsDetailsJsonList = jsonValue.GetArray("endpointsDetails");
+    Aws::Utils::Array<JsonView> endpointsDetailsJsonList = jsonValue.GetArray("endpointsDetails");
     for(unsigned endpointsDetailsIndex = 0; endpointsDetailsIndex < endpointsDetailsJsonList.GetLength(); ++endpointsDetailsIndex)
     {
       m_endpointsDetails.push_back(endpointsDetailsJsonList[endpointsDetailsIndex].AsObject());

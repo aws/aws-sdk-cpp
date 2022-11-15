@@ -350,28 +350,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_imageArn;
-    bool m_imageArnHasBeenSet;
+    bool m_imageArnHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     ImageStatus m_imageStatus;
-    bool m_imageStatusHasBeenSet;
+    bool m_imageStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

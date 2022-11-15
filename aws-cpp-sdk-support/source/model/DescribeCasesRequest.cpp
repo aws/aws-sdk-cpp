@@ -34,7 +34,7 @@ Aws::String DescribeCasesRequest::SerializePayload() const
 
   if(m_caseIdListHasBeenSet)
   {
-   Array<JsonValue> caseIdListJsonList(m_caseIdList.size());
+   Aws::Utils::Array<JsonValue> caseIdListJsonList(m_caseIdList.size());
    for(unsigned caseIdListIndex = 0; caseIdListIndex < caseIdListJsonList.GetLength(); ++caseIdListIndex)
    {
      caseIdListJsonList[caseIdListIndex].AsString(m_caseIdList[caseIdListIndex]);

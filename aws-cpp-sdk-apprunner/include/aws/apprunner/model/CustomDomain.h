@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_enableWWWSubdomain;
-    bool m_enableWWWSubdomainHasBeenSet;
+    bool m_enableWWWSubdomainHasBeenSet = false;
 
     Aws::Vector<CertificateValidationRecord> m_certificateValidationRecords;
-    bool m_certificateValidationRecordsHasBeenSet;
+    bool m_certificateValidationRecordsHasBeenSet = false;
 
     CustomDomainAssociationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

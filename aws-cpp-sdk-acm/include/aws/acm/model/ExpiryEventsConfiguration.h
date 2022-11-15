@@ -71,7 +71,7 @@ namespace Model
   private:
 
     int m_daysBeforeExpiry;
-    bool m_daysBeforeExpiryHasBeenSet;
+    bool m_daysBeforeExpiryHasBeenSet = false;
   };
 
 } // namespace Model

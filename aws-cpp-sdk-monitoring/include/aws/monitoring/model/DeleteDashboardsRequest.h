@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_dashboardNames;
-    bool m_dashboardNamesHasBeenSet;
+    bool m_dashboardNamesHasBeenSet = false;
   };
 
 } // namespace Model

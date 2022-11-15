@@ -46,7 +46,7 @@ IamActionDefinition& IamActionDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Roles"))
   {
-    Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
+    Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
     for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
     {
       m_roles.push_back(rolesJsonList[rolesIndex].AsString());
@@ -56,7 +56,7 @@ IamActionDefinition& IamActionDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Groups"))
   {
-    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
+    Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());
@@ -66,7 +66,7 @@ IamActionDefinition& IamActionDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Users"))
   {
-    Array<JsonView> usersJsonList = jsonValue.GetArray("Users");
+    Aws::Utils::Array<JsonView> usersJsonList = jsonValue.GetArray("Users");
     for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
     {
       m_users.push_back(usersJsonList[usersIndex].AsString());
@@ -89,7 +89,7 @@ JsonValue IamActionDefinition::Jsonize() const
 
   if(m_rolesHasBeenSet)
   {
-   Array<JsonValue> rolesJsonList(m_roles.size());
+   Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
    for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
    {
      rolesJsonList[rolesIndex].AsString(m_roles[rolesIndex]);
@@ -100,7 +100,7 @@ JsonValue IamActionDefinition::Jsonize() const
 
   if(m_groupsHasBeenSet)
   {
-   Array<JsonValue> groupsJsonList(m_groups.size());
+   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
    {
      groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);
@@ -111,7 +111,7 @@ JsonValue IamActionDefinition::Jsonize() const
 
   if(m_usersHasBeenSet)
   {
-   Array<JsonValue> usersJsonList(m_users.size());
+   Aws::Utils::Array<JsonValue> usersJsonList(m_users.size());
    for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
    {
      usersJsonList[usersIndex].AsString(m_users[usersIndex]);

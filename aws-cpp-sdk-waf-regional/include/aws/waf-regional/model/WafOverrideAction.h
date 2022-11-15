@@ -91,7 +91,7 @@ namespace Model
   private:
 
     WafOverrideActionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

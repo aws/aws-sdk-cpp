@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_queryId;
-    bool m_queryIdHasBeenSet;
+    bool m_queryIdHasBeenSet = false;
 
     long long m_workUnitId;
-    bool m_workUnitIdHasBeenSet;
+    bool m_workUnitIdHasBeenSet = false;
 
     Aws::String m_workUnitToken;
-    bool m_workUnitTokenHasBeenSet;
+    bool m_workUnitTokenHasBeenSet = false;
   };
 
 } // namespace Model

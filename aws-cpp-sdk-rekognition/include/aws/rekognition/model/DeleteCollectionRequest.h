@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
   };
 
 } // namespace Model

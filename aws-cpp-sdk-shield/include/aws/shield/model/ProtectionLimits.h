@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Limit> m_protectedResourceTypeLimits;
-    bool m_protectedResourceTypeLimitsHasBeenSet;
+    bool m_protectedResourceTypeLimitsHasBeenSet = false;
   };
 
 } // namespace Model

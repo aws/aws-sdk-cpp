@@ -265,19 +265,19 @@ namespace Model
   private:
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     ResourceDataSyncAwsOrganizationsSource m_awsOrganizationsSource;
-    bool m_awsOrganizationsSourceHasBeenSet;
+    bool m_awsOrganizationsSourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceRegions;
-    bool m_sourceRegionsHasBeenSet;
+    bool m_sourceRegionsHasBeenSet = false;
 
     bool m_includeFutureRegions;
-    bool m_includeFutureRegionsHasBeenSet;
+    bool m_includeFutureRegionsHasBeenSet = false;
 
     bool m_enableAllOpsDataSources;
-    bool m_enableAllOpsDataSourcesHasBeenSet;
+    bool m_enableAllOpsDataSourcesHasBeenSet = false;
   };
 
 } // namespace Model

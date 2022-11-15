@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<CreateVolumePermission> m_add;
-    bool m_addHasBeenSet;
+    bool m_addHasBeenSet = false;
 
     Aws::Vector<CreateVolumePermission> m_remove;
-    bool m_removeHasBeenSet;
+    bool m_removeHasBeenSet = false;
   };
 
 } // namespace Model

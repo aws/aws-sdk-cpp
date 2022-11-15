@@ -37,7 +37,7 @@ Aws::String CreateScalingPlanRequest::SerializePayload() const
 
   if(m_scalingInstructionsHasBeenSet)
   {
-   Array<JsonValue> scalingInstructionsJsonList(m_scalingInstructions.size());
+   Aws::Utils::Array<JsonValue> scalingInstructionsJsonList(m_scalingInstructions.size());
    for(unsigned scalingInstructionsIndex = 0; scalingInstructionsIndex < scalingInstructionsJsonList.GetLength(); ++scalingInstructionsIndex)
    {
      scalingInstructionsJsonList[scalingInstructionsIndex].AsObject(m_scalingInstructions[scalingInstructionsIndex].Jsonize());

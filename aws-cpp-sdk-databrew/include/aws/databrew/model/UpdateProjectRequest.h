@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Sample m_sample;
-    bool m_sampleHasBeenSet;
+    bool m_sampleHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
   };
 
 } // namespace Model

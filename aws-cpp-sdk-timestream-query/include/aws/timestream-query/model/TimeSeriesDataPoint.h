@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     std::shared_ptr<Datum> m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -162,13 +162,13 @@ KeySigningKey& KeySigningKey::operator =(const XmlNode& xmlNode)
     XmlNode createdDateNode = resultNode.FirstChild("CreatedDate");
     if(!createdDateNode.IsNull())
     {
-      m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdDateHasBeenSet = true;
     }
     XmlNode lastModifiedDateNode = resultNode.FirstChild("LastModifiedDate");
     if(!lastModifiedDateNode.IsNull())
     {
-      m_lastModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedDateHasBeenSet = true;
     }
   }
@@ -274,13 +274,13 @@ void KeySigningKey::AddToNode(XmlNode& parentNode) const
   if(m_createdDateHasBeenSet)
   {
    XmlNode createdDateNode = parentNode.CreateChildElement("CreatedDate");
-   createdDateNode.SetText(m_createdDate.ToGmtString(DateFormat::ISO_8601));
+   createdDateNode.SetText(m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_lastModifiedDateHasBeenSet)
   {
    XmlNode lastModifiedDateNode = parentNode.CreateChildElement("LastModifiedDate");
-   lastModifiedDateNode.SetText(m_lastModifiedDate.ToGmtString(DateFormat::ISO_8601));
+   lastModifiedDateNode.SetText(m_lastModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
 }

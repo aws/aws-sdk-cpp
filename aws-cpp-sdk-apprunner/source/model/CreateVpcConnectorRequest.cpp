@@ -32,7 +32,7 @@ Aws::String CreateVpcConnectorRequest::SerializePayload() const
 
   if(m_subnetsHasBeenSet)
   {
-   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
    {
      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
@@ -43,7 +43,7 @@ Aws::String CreateVpcConnectorRequest::SerializePayload() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);
@@ -54,7 +54,7 @@ Aws::String CreateVpcConnectorRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

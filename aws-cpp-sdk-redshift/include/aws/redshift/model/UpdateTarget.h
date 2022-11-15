@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_maintenanceTrackName;
-    bool m_maintenanceTrackNameHasBeenSet;
+    bool m_maintenanceTrackNameHasBeenSet = false;
 
     Aws::String m_databaseVersion;
-    bool m_databaseVersionHasBeenSet;
+    bool m_databaseVersionHasBeenSet = false;
 
     Aws::Vector<SupportedOperation> m_supportedOperations;
-    bool m_supportedOperationsHasBeenSet;
+    bool m_supportedOperationsHasBeenSet = false;
   };
 
 } // namespace Model

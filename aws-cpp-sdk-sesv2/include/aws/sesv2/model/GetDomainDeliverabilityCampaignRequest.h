@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
   };
 
 } // namespace Model

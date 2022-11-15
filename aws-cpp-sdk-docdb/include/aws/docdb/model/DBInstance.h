@@ -992,6 +992,31 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether to copy tags from the DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p>
+     */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
+    /**
+     * <p>A value that indicates whether to copy tags from the DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p>
+     */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to copy tags from the DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p>
+     */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /**
+     * <p>A value that indicates whether to copy tags from the DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p>
+     */
+    inline DBInstance& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
+
+    /**
      * <p>A value that specifies the order in which an Amazon DocumentDB replica is
      * promoted to the primary instance after a failure of the existing primary
      * instance.</p>
@@ -1118,82 +1143,85 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_dBInstanceStatus;
-    bool m_dBInstanceStatusHasBeenSet;
+    bool m_dBInstanceStatusHasBeenSet = false;
 
     Endpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Utils::DateTime m_instanceCreateTime;
-    bool m_instanceCreateTimeHasBeenSet;
+    bool m_instanceCreateTimeHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-    bool m_vpcSecurityGroupsHasBeenSet;
+    bool m_vpcSecurityGroupsHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     DBSubnetGroup m_dBSubnetGroup;
-    bool m_dBSubnetGroupHasBeenSet;
+    bool m_dBSubnetGroupHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     PendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestRestorableTime;
-    bool m_latestRestorableTimeHasBeenSet;
+    bool m_latestRestorableTimeHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<DBInstanceStatusInfo> m_statusInfos;
-    bool m_statusInfosHasBeenSet;
+    bool m_statusInfosHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dbiResourceId;
-    bool m_dbiResourceIdHasBeenSet;
+    bool m_dbiResourceIdHasBeenSet = false;
 
     Aws::String m_cACertificateIdentifier;
-    bool m_cACertificateIdentifierHasBeenSet;
+    bool m_cACertificateIdentifierHasBeenSet = false;
+
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     int m_promotionTier;
-    bool m_promotionTierHasBeenSet;
+    bool m_promotionTierHasBeenSet = false;
 
     Aws::String m_dBInstanceArn;
-    bool m_dBInstanceArnHasBeenSet;
+    bool m_dBInstanceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
-    bool m_enabledCloudwatchLogsExportsHasBeenSet;
+    bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
   };
 
 } // namespace Model

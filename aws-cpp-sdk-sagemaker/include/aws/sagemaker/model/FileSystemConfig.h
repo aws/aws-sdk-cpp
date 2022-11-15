@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_mountPath;
-    bool m_mountPathHasBeenSet;
+    bool m_mountPathHasBeenSet = false;
 
     int m_defaultUid;
-    bool m_defaultUidHasBeenSet;
+    bool m_defaultUidHasBeenSet = false;
 
     int m_defaultGid;
-    bool m_defaultGidHasBeenSet;
+    bool m_defaultGidHasBeenSet = false;
   };
 
 } // namespace Model

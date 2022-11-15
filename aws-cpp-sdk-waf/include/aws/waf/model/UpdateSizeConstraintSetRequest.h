@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_sizeConstraintSetId;
-    bool m_sizeConstraintSetIdHasBeenSet;
+    bool m_sizeConstraintSetIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
 
     Aws::Vector<SizeConstraintSetUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
   };
 
 } // namespace Model

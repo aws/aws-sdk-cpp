@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_sizeInGb;
-    bool m_sizeInGbHasBeenSet;
+    bool m_sizeInGbHasBeenSet = false;
   };
 
 } // namespace Model

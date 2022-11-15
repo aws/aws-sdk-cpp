@@ -30,7 +30,7 @@ BatchGetAccountStatusResult& BatchGetAccountStatusResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("accounts"))
   {
-    Array<JsonView> accountsJsonList = jsonValue.GetArray("accounts");
+    Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("accounts");
     for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
     {
       m_accounts.push_back(accountsJsonList[accountsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetAccountStatusResult& BatchGetAccountStatusResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("failedAccounts"))
   {
-    Array<JsonView> failedAccountsJsonList = jsonValue.GetArray("failedAccounts");
+    Aws::Utils::Array<JsonView> failedAccountsJsonList = jsonValue.GetArray("failedAccounts");
     for(unsigned failedAccountsIndex = 0; failedAccountsIndex < failedAccountsJsonList.GetLength(); ++failedAccountsIndex)
     {
       m_failedAccounts.push_back(failedAccountsJsonList[failedAccountsIndex].AsObject());

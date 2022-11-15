@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/forecast/model/TimeSeriesSelector.h>
 #include <utility>
 
 namespace Aws
@@ -444,6 +445,32 @@ namespace Model
      */
     inline DescribeForecastResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time series to include in the forecast.</p>
+     */
+    inline const TimeSeriesSelector& GetTimeSeriesSelector() const{ return m_timeSeriesSelector; }
+
+    /**
+     * <p>The time series to include in the forecast.</p>
+     */
+    inline void SetTimeSeriesSelector(const TimeSeriesSelector& value) { m_timeSeriesSelector = value; }
+
+    /**
+     * <p>The time series to include in the forecast.</p>
+     */
+    inline void SetTimeSeriesSelector(TimeSeriesSelector&& value) { m_timeSeriesSelector = std::move(value); }
+
+    /**
+     * <p>The time series to include in the forecast.</p>
+     */
+    inline DescribeForecastResult& WithTimeSeriesSelector(const TimeSeriesSelector& value) { SetTimeSeriesSelector(value); return *this;}
+
+    /**
+     * <p>The time series to include in the forecast.</p>
+     */
+    inline DescribeForecastResult& WithTimeSeriesSelector(TimeSeriesSelector&& value) { SetTimeSeriesSelector(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_forecastArn;
@@ -465,6 +492,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_lastModificationTime;
+
+    TimeSeriesSelector m_timeSeriesSelector;
   };
 
 } // namespace Model

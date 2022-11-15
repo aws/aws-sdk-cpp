@@ -670,49 +670,49 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ControlType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_testingInformation;
-    bool m_testingInformationHasBeenSet;
+    bool m_testingInformationHasBeenSet = false;
 
     Aws::String m_actionPlanTitle;
-    bool m_actionPlanTitleHasBeenSet;
+    bool m_actionPlanTitleHasBeenSet = false;
 
     Aws::String m_actionPlanInstructions;
-    bool m_actionPlanInstructionsHasBeenSet;
+    bool m_actionPlanInstructionsHasBeenSet = false;
 
     Aws::String m_controlSources;
-    bool m_controlSourcesHasBeenSet;
+    bool m_controlSourcesHasBeenSet = false;
 
     Aws::Vector<ControlMappingSource> m_controlMappingSources;
-    bool m_controlMappingSourcesHasBeenSet;
+    bool m_controlMappingSourcesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_lastUpdatedBy;
-    bool m_lastUpdatedByHasBeenSet;
+    bool m_lastUpdatedByHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,8 @@ InvalidConfigurationDetail::InvalidConfigurationDetail() :
     m_constraintHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_valueHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ InvalidConfigurationDetail::InvalidConfigurationDetail(JsonView jsonValue) :
     m_constraintHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ InvalidConfigurationDetail& InvalidConfigurationDetail::operator =(JsonView json
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Value"))
+  {
+    m_value = jsonValue.GetString("Value");
+
+    m_valueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue InvalidConfigurationDetail::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", m_type);
+
+  }
+
+  if(m_valueHasBeenSet)
+  {
+   payload.WithString("Value", m_value);
 
   }
 

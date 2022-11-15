@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventDate;
-    bool m_eventDateHasBeenSet;
+    bool m_eventDateHasBeenSet = false;
   };
 
 } // namespace Model

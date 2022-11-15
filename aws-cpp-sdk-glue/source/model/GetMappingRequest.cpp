@@ -31,7 +31,7 @@ Aws::String GetMappingRequest::SerializePayload() const
 
   if(m_sinksHasBeenSet)
   {
-   Array<JsonValue> sinksJsonList(m_sinks.size());
+   Aws::Utils::Array<JsonValue> sinksJsonList(m_sinks.size());
    for(unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex)
    {
      sinksJsonList[sinksIndex].AsObject(m_sinks[sinksIndex].Jsonize());

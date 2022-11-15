@@ -20,7 +20,7 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>The binary blob response to <a>GetExport</a>, which contains the generated
+   * <p>The binary blob response to GetExport, which contains the generated
    * SDK.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ExportResponse">AWS
    * API Reference</a></p>
@@ -123,12 +123,12 @@ namespace Model
 
 
     /**
-     * <p>The binary blob response to <a>GetExport</a>, which contains the export.</p>
+     * <p>The binary blob response to GetExport, which contains the export.</p>
      */
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
     /**
-     * <p>The binary blob response to <a>GetExport</a>, which contains the export.</p>
+     * <p>The binary blob response to GetExport, which contains the export.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
 

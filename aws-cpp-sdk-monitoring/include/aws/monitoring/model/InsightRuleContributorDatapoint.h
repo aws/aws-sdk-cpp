@@ -98,10 +98,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     double m_approximateValue;
-    bool m_approximateValueHasBeenSet;
+    bool m_approximateValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -371,28 +371,28 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_aWSAccountId;
-    bool m_aWSAccountIdHasBeenSet;
+    bool m_aWSAccountIdHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_cloudFrontDistribution;
-    bool m_cloudFrontDistributionHasBeenSet;
+    bool m_cloudFrontDistributionHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     DomainStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     CustomDomainConfigType m_customDomainConfig;
-    bool m_customDomainConfigHasBeenSet;
+    bool m_customDomainConfigHasBeenSet = false;
   };
 
 } // namespace Model

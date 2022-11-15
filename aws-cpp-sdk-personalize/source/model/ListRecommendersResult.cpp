@@ -30,7 +30,7 @@ ListRecommendersResult& ListRecommendersResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("recommenders"))
   {
-    Array<JsonView> recommendersJsonList = jsonValue.GetArray("recommenders");
+    Aws::Utils::Array<JsonView> recommendersJsonList = jsonValue.GetArray("recommenders");
     for(unsigned recommendersIndex = 0; recommendersIndex < recommendersJsonList.GetLength(); ++recommendersIndex)
     {
       m_recommenders.push_back(recommendersJsonList[recommendersIndex].AsObject());

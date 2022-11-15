@@ -48,7 +48,7 @@ static const char DEFAULT_CREDENTIALS_FILE[] = "credentials";
 extern const char DEFAULT_CONFIG_FILE[] = "config";
 
 
-static const int EXPIRATION_GRACE_PERIOD = 5 * 1000;
+static const int AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
 
 void AWSCredentialsProvider::Reload()
 {
@@ -249,9 +249,23 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
     return AWSCredentials();
 }
 
+bool InstanceProfileCredentialsProvider::ExpiresSoon() const
+{
+    ReaderLockGuard guard(m_reloadLock);
+    auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
+    AWSCredentials credentials;
+
+    if(profileIter != m_ec2MetadataConfigLoader->GetProfiles().end())
+    {
+        credentials = profileIter->second.GetCredentials();
+    }
+
+    return ((credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
+}
+
 void InstanceProfileCredentialsProvider::Reload()
 {
-    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to repull from EC2 Metadata Service.");
+    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to re-pull from EC2 Metadata Service.");
     m_ec2MetadataConfigLoader->Load();
     AWSCredentialsProvider::Reload();
 }
@@ -260,16 +274,25 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
 {
     AWS_LOGSTREAM_DEBUG(INSTANCE_LOG_TAG, "Checking if latest credential pull has expired.");
     ReaderLockGuard guard(m_reloadLock);
-    if (!IsTimeToRefresh(m_loadFrequencyMs))
+    auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
+    AWSCredentials credentials;
+
+    if(profileIter != m_ec2MetadataConfigLoader->GetProfiles().end())
     {
-        return;
+        credentials = profileIter->second.GetCredentials();
+
+        if (!credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
+        {
+            return;
+        }
+
+        guard.UpgradeToWriterLock();
+        if (!credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon()) // double-checked lock to avoid refreshing twice
+        {
+            return;
+        }
     }
 
-    guard.UpgradeToWriterLock();
-    if (!IsTimeToRefresh(m_loadFrequencyMs)) // double-checked lock to avoid refreshing twice
-    {
-        return;
-    }
     Reload();
 }
 
@@ -306,12 +329,12 @@ AWSCredentials TaskRoleCredentialsProvider::GetAWSCredentials()
 
 bool TaskRoleCredentialsProvider::ExpiresSoon() const
 {
-    return ((m_credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < EXPIRATION_GRACE_PERIOD);
+    return ((m_credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
 }
 
 void TaskRoleCredentialsProvider::Reload()
 {
-    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Credentials have expired or will expire, attempting to repull from ECS IAM Service.");
+    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Credentials have expired or will expire, attempting to re-pull from ECS IAM Service.");
 
     auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials();
     if (credentialsStr.empty()) return;

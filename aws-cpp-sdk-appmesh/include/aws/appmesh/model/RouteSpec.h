@@ -191,19 +191,19 @@ namespace Model
   private:
 
     GrpcRoute m_grpcRoute;
-    bool m_grpcRouteHasBeenSet;
+    bool m_grpcRouteHasBeenSet = false;
 
     HttpRoute m_http2Route;
-    bool m_http2RouteHasBeenSet;
+    bool m_http2RouteHasBeenSet = false;
 
     HttpRoute m_httpRoute;
-    bool m_httpRouteHasBeenSet;
+    bool m_httpRouteHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     TcpRoute m_tcpRoute;
-    bool m_tcpRouteHasBeenSet;
+    bool m_tcpRouteHasBeenSet = false;
   };
 
 } // namespace Model

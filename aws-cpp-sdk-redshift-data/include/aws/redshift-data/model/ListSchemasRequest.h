@@ -461,31 +461,91 @@ namespace Model
      */
     inline ListSchemasRequest& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline ListSchemasRequest& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline ListSchemasRequest& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline ListSchemasRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_connectedDatabase;
-    bool m_connectedDatabaseHasBeenSet;
+    bool m_connectedDatabaseHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_schemaPattern;
-    bool m_schemaPatternHasBeenSet;
+    bool m_schemaPatternHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
+
+    Aws::String m_workgroupName;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

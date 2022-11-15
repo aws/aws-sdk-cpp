@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_appstreamAgentVersion;
-    bool m_appstreamAgentVersionHasBeenSet;
+    bool m_appstreamAgentVersionHasBeenSet = false;
   };
 
 } // namespace Model

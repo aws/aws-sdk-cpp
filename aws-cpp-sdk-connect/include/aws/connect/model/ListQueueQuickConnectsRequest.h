@@ -178,38 +178,42 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline ListQueueQuickConnectsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,12 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> <i> <b>Amazon Web Services Billing Conductor is in beta release and is
-   * subject to change. Your use of Amazon Web Services Billing Conductor is subject
-   * to the Beta Service Participation terms of the <a
-   * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
-   * Terms</a> (Section 1.10).</b> </i> </p> <p> A representation of a linked
-   * account. </p><p><h3>See Also:</h3>   <a
+   * <p> A representation of a linked account. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AccountAssociationsListElement">AWS
    * API Reference</a></p>
    */
@@ -208,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_billingGroupArn;
-    bool m_billingGroupArnHasBeenSet;
+    bool m_billingGroupArnHasBeenSet = false;
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Aws::String m_accountEmail;
-    bool m_accountEmailHasBeenSet;
+    bool m_accountEmailHasBeenSet = false;
   };
 
 } // namespace Model

@@ -66,7 +66,7 @@ namespace Model
   private:
 
     bool m_profilingEnabled;
-    bool m_profilingEnabledHasBeenSet;
+    bool m_profilingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

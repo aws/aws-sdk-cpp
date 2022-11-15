@@ -35,7 +35,7 @@ RuleGroupSourceStatelessRulesAndCustomActionsDetails& RuleGroupSourceStatelessRu
 {
   if(jsonValue.ValueExists("CustomActions"))
   {
-    Array<JsonView> customActionsJsonList = jsonValue.GetArray("CustomActions");
+    Aws::Utils::Array<JsonView> customActionsJsonList = jsonValue.GetArray("CustomActions");
     for(unsigned customActionsIndex = 0; customActionsIndex < customActionsJsonList.GetLength(); ++customActionsIndex)
     {
       m_customActions.push_back(customActionsJsonList[customActionsIndex].AsObject());
@@ -45,7 +45,7 @@ RuleGroupSourceStatelessRulesAndCustomActionsDetails& RuleGroupSourceStatelessRu
 
   if(jsonValue.ValueExists("StatelessRules"))
   {
-    Array<JsonView> statelessRulesJsonList = jsonValue.GetArray("StatelessRules");
+    Aws::Utils::Array<JsonView> statelessRulesJsonList = jsonValue.GetArray("StatelessRules");
     for(unsigned statelessRulesIndex = 0; statelessRulesIndex < statelessRulesJsonList.GetLength(); ++statelessRulesIndex)
     {
       m_statelessRules.push_back(statelessRulesJsonList[statelessRulesIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue RuleGroupSourceStatelessRulesAndCustomActionsDetails::Jsonize() const
 
   if(m_customActionsHasBeenSet)
   {
-   Array<JsonValue> customActionsJsonList(m_customActions.size());
+   Aws::Utils::Array<JsonValue> customActionsJsonList(m_customActions.size());
    for(unsigned customActionsIndex = 0; customActionsIndex < customActionsJsonList.GetLength(); ++customActionsIndex)
    {
      customActionsJsonList[customActionsIndex].AsObject(m_customActions[customActionsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue RuleGroupSourceStatelessRulesAndCustomActionsDetails::Jsonize() const
 
   if(m_statelessRulesHasBeenSet)
   {
-   Array<JsonValue> statelessRulesJsonList(m_statelessRules.size());
+   Aws::Utils::Array<JsonValue> statelessRulesJsonList(m_statelessRules.size());
    for(unsigned statelessRulesIndex = 0; statelessRulesIndex < statelessRulesJsonList.GetLength(); ++statelessRulesIndex)
    {
      statelessRulesJsonList[statelessRulesIndex].AsObject(m_statelessRules[statelessRulesIndex].Jsonize());

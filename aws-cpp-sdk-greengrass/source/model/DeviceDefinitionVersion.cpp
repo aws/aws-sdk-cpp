@@ -33,7 +33,7 @@ DeviceDefinitionVersion& DeviceDefinitionVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Devices"))
   {
-    Array<JsonView> devicesJsonList = jsonValue.GetArray("Devices");
+    Aws::Utils::Array<JsonView> devicesJsonList = jsonValue.GetArray("Devices");
     for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
     {
       m_devices.push_back(devicesJsonList[devicesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue DeviceDefinitionVersion::Jsonize() const
 
   if(m_devicesHasBeenSet)
   {
-   Array<JsonValue> devicesJsonList(m_devices.size());
+   Aws::Utils::Array<JsonValue> devicesJsonList(m_devices.size());
    for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
    {
      devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_reportPlanName;
-    bool m_reportPlanNameHasBeenSet;
+    bool m_reportPlanNameHasBeenSet = false;
   };
 
 } // namespace Model

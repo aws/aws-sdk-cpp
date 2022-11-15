@@ -55,7 +55,7 @@ namespace Model
   private:
 
     Document m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
   };
 
 } // namespace Model

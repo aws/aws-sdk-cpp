@@ -163,10 +163,10 @@ namespace Model
   private:
 
     Aws::String m_standardsArn;
-    bool m_standardsArnHasBeenSet;
+    bool m_standardsArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_standardsInput;
-    bool m_standardsInputHasBeenSet;
+    bool m_standardsInputHasBeenSet = false;
   };
 
 } // namespace Model

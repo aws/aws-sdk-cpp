@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Core> m_cores;
-    bool m_coresHasBeenSet;
+    bool m_coresHasBeenSet = false;
   };
 
 } // namespace Model

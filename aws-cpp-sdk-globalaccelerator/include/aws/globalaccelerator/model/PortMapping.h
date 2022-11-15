@@ -30,9 +30,9 @@ namespace Model
   /**
    * <p>Returns the ports and associated IP addresses and ports of Amazon EC2
    * instances in your virtual private cloud (VPC) subnets. Custom routing is a port
-   * mapping protocol in AWS Global Accelerator that statically associates port
-   * ranges with VPC subnets, which allows Global Accelerator to route to specific
-   * instances and ports within one or more subnets. </p><p><h3>See Also:</h3>   <a
+   * mapping protocol in Global Accelerator that statically associates port ranges
+   * with VPC subnets, which allows Global Accelerator to route to specific instances
+   * and ports within one or more subnets. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/PortMapping">AWS
    * API Reference</a></p>
    */
@@ -271,22 +271,22 @@ namespace Model
   private:
 
     int m_acceleratorPort;
-    bool m_acceleratorPortHasBeenSet;
+    bool m_acceleratorPortHasBeenSet = false;
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     SocketAddress m_destinationSocketAddress;
-    bool m_destinationSocketAddressHasBeenSet;
+    bool m_destinationSocketAddressHasBeenSet = false;
 
     Aws::Vector<CustomRoutingProtocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     CustomRoutingDestinationTrafficState m_destinationTrafficState;
-    bool m_destinationTrafficStateHasBeenSet;
+    bool m_destinationTrafficStateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -357,19 +357,19 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     ShardIteratorType m_shardIteratorType;
-    bool m_shardIteratorTypeHasBeenSet;
+    bool m_shardIteratorTypeHasBeenSet = false;
 
     Aws::String m_startingSequenceNumber;
-    bool m_startingSequenceNumberHasBeenSet;
+    bool m_startingSequenceNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

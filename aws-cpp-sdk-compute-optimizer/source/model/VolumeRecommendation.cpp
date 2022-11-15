@@ -83,7 +83,7 @@ VolumeRecommendation& VolumeRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("utilizationMetrics"))
   {
-    Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
+    Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
     for(unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength(); ++utilizationMetricsIndex)
     {
       m_utilizationMetrics.push_back(utilizationMetricsJsonList[utilizationMetricsIndex].AsObject());
@@ -100,7 +100,7 @@ VolumeRecommendation& VolumeRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("volumeRecommendationOptions"))
   {
-    Array<JsonView> volumeRecommendationOptionsJsonList = jsonValue.GetArray("volumeRecommendationOptions");
+    Aws::Utils::Array<JsonView> volumeRecommendationOptionsJsonList = jsonValue.GetArray("volumeRecommendationOptions");
     for(unsigned volumeRecommendationOptionsIndex = 0; volumeRecommendationOptionsIndex < volumeRecommendationOptionsJsonList.GetLength(); ++volumeRecommendationOptionsIndex)
     {
       m_volumeRecommendationOptions.push_back(volumeRecommendationOptionsJsonList[volumeRecommendationOptionsIndex].AsObject());
@@ -154,7 +154,7 @@ JsonValue VolumeRecommendation::Jsonize() const
 
   if(m_utilizationMetricsHasBeenSet)
   {
-   Array<JsonValue> utilizationMetricsJsonList(m_utilizationMetrics.size());
+   Aws::Utils::Array<JsonValue> utilizationMetricsJsonList(m_utilizationMetrics.size());
    for(unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength(); ++utilizationMetricsIndex)
    {
      utilizationMetricsJsonList[utilizationMetricsIndex].AsObject(m_utilizationMetrics[utilizationMetricsIndex].Jsonize());
@@ -171,7 +171,7 @@ JsonValue VolumeRecommendation::Jsonize() const
 
   if(m_volumeRecommendationOptionsHasBeenSet)
   {
-   Array<JsonValue> volumeRecommendationOptionsJsonList(m_volumeRecommendationOptions.size());
+   Aws::Utils::Array<JsonValue> volumeRecommendationOptionsJsonList(m_volumeRecommendationOptions.size());
    for(unsigned volumeRecommendationOptionsIndex = 0; volumeRecommendationOptionsIndex < volumeRecommendationOptionsJsonList.GetLength(); ++volumeRecommendationOptionsIndex)
    {
      volumeRecommendationOptionsJsonList[volumeRecommendationOptionsIndex].AsObject(m_volumeRecommendationOptions[volumeRecommendationOptionsIndex].Jsonize());

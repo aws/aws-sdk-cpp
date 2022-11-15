@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_additionalDetailType;
-    bool m_additionalDetailTypeHasBeenSet;
+    bool m_additionalDetailTypeHasBeenSet = false;
 
     AnalysisComponent m_component;
-    bool m_componentHasBeenSet;
+    bool m_componentHasBeenSet = false;
   };
 
 } // namespace Model

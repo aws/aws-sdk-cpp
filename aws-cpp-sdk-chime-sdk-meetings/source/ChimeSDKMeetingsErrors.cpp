@@ -7,12 +7,15 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrors.h>
 #include <aws/chime-sdk-meetings/model/ServiceUnavailableException.h>
+#include <aws/chime-sdk-meetings/model/ConflictException.h>
 #include <aws/chime-sdk-meetings/model/ThrottlingException.h>
 #include <aws/chime-sdk-meetings/model/NotFoundException.h>
 #include <aws/chime-sdk-meetings/model/ServiceFailureException.h>
+#include <aws/chime-sdk-meetings/model/ResourceNotFoundException.h>
 #include <aws/chime-sdk-meetings/model/ForbiddenException.h>
 #include <aws/chime-sdk-meetings/model/UnauthorizedException.h>
 #include <aws/chime-sdk-meetings/model/LimitExceededException.h>
+#include <aws/chime-sdk-meetings/model/TooManyTagsException.h>
 #include <aws/chime-sdk-meetings/model/UnprocessableEntityException.h>
 #include <aws/chime-sdk-meetings/model/BadRequestException.h>
 
@@ -29,6 +32,12 @@ template<> AWS_CHIMESDKMEETINGS_API ServiceUnavailableException ChimeSDKMeetings
 {
   assert(this->GetErrorType() == ChimeSDKMeetingsErrors::SERVICE_UNAVAILABLE);
   return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIMESDKMEETINGS_API ConflictException ChimeSDKMeetingsError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeSDKMeetingsErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
 }
 
 template<> AWS_CHIMESDKMEETINGS_API ThrottlingException ChimeSDKMeetingsError::GetModeledError()
@@ -49,6 +58,12 @@ template<> AWS_CHIMESDKMEETINGS_API ServiceFailureException ChimeSDKMeetingsErro
   return ServiceFailureException(this->GetJsonPayload().View());
 }
 
+template<> AWS_CHIMESDKMEETINGS_API ResourceNotFoundException ChimeSDKMeetingsError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeSDKMeetingsErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
 template<> AWS_CHIMESDKMEETINGS_API ForbiddenException ChimeSDKMeetingsError::GetModeledError()
 {
   assert(this->GetErrorType() == ChimeSDKMeetingsErrors::FORBIDDEN);
@@ -67,6 +82,12 @@ template<> AWS_CHIMESDKMEETINGS_API LimitExceededException ChimeSDKMeetingsError
   return LimitExceededException(this->GetJsonPayload().View());
 }
 
+template<> AWS_CHIMESDKMEETINGS_API TooManyTagsException ChimeSDKMeetingsError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeSDKMeetingsErrors::TOO_MANY_TAGS);
+  return TooManyTagsException(this->GetJsonPayload().View());
+}
+
 template<> AWS_CHIMESDKMEETINGS_API UnprocessableEntityException ChimeSDKMeetingsError::GetModeledError()
 {
   assert(this->GetErrorType() == ChimeSDKMeetingsErrors::UNPROCESSABLE_ENTITY);
@@ -82,11 +103,13 @@ template<> AWS_CHIMESDKMEETINGS_API BadRequestException ChimeSDKMeetingsError::G
 namespace ChimeSDKMeetingsErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
@@ -95,7 +118,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == NOT_FOUND_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::CONFLICT), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::NOT_FOUND), false);
   }
@@ -114,6 +141,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::LIMIT_EXCEEDED), true);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::TOO_MANY_TAGS), false);
   }
   else if (hashCode == UNPROCESSABLE_ENTITY_HASH)
   {

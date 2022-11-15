@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::Vector<InternetGatewayAttachment> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::String m_egressOnlyInternetGatewayId;
-    bool m_egressOnlyInternetGatewayIdHasBeenSet;
+    bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

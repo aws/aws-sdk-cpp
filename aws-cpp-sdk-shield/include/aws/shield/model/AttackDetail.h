@@ -393,28 +393,28 @@ namespace Model
   private:
 
     Aws::String m_attackId;
-    bool m_attackIdHasBeenSet;
+    bool m_attackIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<SubResourceSummary> m_subResources;
-    bool m_subResourcesHasBeenSet;
+    bool m_subResourcesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<SummarizedCounter> m_attackCounters;
-    bool m_attackCountersHasBeenSet;
+    bool m_attackCountersHasBeenSet = false;
 
     Aws::Vector<AttackProperty> m_attackProperties;
-    bool m_attackPropertiesHasBeenSet;
+    bool m_attackPropertiesHasBeenSet = false;
 
     Aws::Vector<Mitigation> m_mitigations;
-    bool m_mitigationsHasBeenSet;
+    bool m_mitigationsHasBeenSet = false;
   };
 
 } // namespace Model

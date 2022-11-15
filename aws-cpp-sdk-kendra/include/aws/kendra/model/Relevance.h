@@ -26,10 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides information for manually tuning the relevance of a field in a
-   * search. When a query includes terms that match the field, the results are given
-   * a boost in the response based on these tuning parameters.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides information for tuning the relevance of a field in a search. When a
+   * query includes terms that match the field, the results are given a boost in the
+   * response based on these tuning parameters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Relevance">AWS
    * API Reference</a></p>
    */
@@ -394,19 +393,19 @@ namespace Model
   private:
 
     bool m_freshness;
-    bool m_freshnessHasBeenSet;
+    bool m_freshnessHasBeenSet = false;
 
     int m_importance;
-    bool m_importanceHasBeenSet;
+    bool m_importanceHasBeenSet = false;
 
     Aws::String m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Order m_rankOrder;
-    bool m_rankOrderHasBeenSet;
+    bool m_rankOrderHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_valueImportanceMap;
-    bool m_valueImportanceMapHasBeenSet;
+    bool m_valueImportanceMapHasBeenSet = false;
   };
 
 } // namespace Model

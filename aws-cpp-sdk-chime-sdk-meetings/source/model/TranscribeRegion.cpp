@@ -32,6 +32,7 @@ namespace Aws
         static const int eu_west_2_HASH = HashingUtils::HashString("eu-west-2");
         static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
         static const int auto__HASH = HashingUtils::HashString("auto");
+        static const int us_gov_west_1_HASH = HashingUtils::HashString("us-gov-west-1");
 
 
         TranscribeRegion GetTranscribeRegionForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return TranscribeRegion::auto_;
           }
+          else if (hashCode == us_gov_west_1_HASH)
+          {
+            return TranscribeRegion::us_gov_west_1;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +128,8 @@ namespace Aws
             return "sa-east-1";
           case TranscribeRegion::auto_:
             return "auto";
+          case TranscribeRegion::us_gov_west_1:
+            return "us-gov-west-1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

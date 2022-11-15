@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     Aws::Vector<AssetPropertyValue> m_assetPropertyValueHistory;
-    bool m_assetPropertyValueHistoryHasBeenSet;
+    bool m_assetPropertyValueHistoryHasBeenSet = false;
   };
 
 } // namespace Model

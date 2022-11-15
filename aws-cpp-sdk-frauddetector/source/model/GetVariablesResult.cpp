@@ -30,7 +30,7 @@ GetVariablesResult& GetVariablesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("variables"))
   {
-    Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
+    Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
     for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
     {
       m_variables.push_back(variablesJsonList[variablesIndex].AsObject());

@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_packageCleanup;
-    bool m_packageCleanupHasBeenSet;
+    bool m_packageCleanupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeAppPackagesFromCleanup;
-    bool m_excludeAppPackagesFromCleanupHasBeenSet;
+    bool m_excludeAppPackagesFromCleanupHasBeenSet = false;
 
     bool m_rebootAfterUse;
-    bool m_rebootAfterUseHasBeenSet;
+    bool m_rebootAfterUseHasBeenSet = false;
   };
 
 } // namespace Model

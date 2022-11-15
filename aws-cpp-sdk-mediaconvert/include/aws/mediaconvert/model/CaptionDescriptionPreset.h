@@ -335,16 +335,16 @@ namespace Model
   private:
 
     Aws::String m_customLanguageCode;
-    bool m_customLanguageCodeHasBeenSet;
+    bool m_customLanguageCodeHasBeenSet = false;
 
     CaptionDestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_languageDescription;
-    bool m_languageDescriptionHasBeenSet;
+    bool m_languageDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberId;
-    bool m_phoneNumberIdHasBeenSet;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

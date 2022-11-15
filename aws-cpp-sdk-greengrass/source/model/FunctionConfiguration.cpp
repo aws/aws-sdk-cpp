@@ -29,7 +29,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_pinned(false),
     m_pinnedHasBeenSet(false),
     m_timeout(0),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_functionRuntimeOverrideHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_pinned(false),
     m_pinnedHasBeenSet(false),
     m_timeout(0),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_functionRuntimeOverrideHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +102,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_timeoutHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FunctionRuntimeOverride"))
+  {
+    m_functionRuntimeOverride = jsonValue.GetString("FunctionRuntimeOverride");
+
+    m_functionRuntimeOverrideHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,6 +154,12 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_timeoutHasBeenSet)
   {
    payload.WithInteger("Timeout", m_timeout);
+
+  }
+
+  if(m_functionRuntimeOverrideHasBeenSet)
+  {
+   payload.WithString("FunctionRuntimeOverride", m_functionRuntimeOverride);
 
   }
 

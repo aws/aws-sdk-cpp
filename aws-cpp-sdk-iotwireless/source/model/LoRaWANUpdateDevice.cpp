@@ -22,7 +22,8 @@ LoRaWANUpdateDevice::LoRaWANUpdateDevice() :
     m_deviceProfileIdHasBeenSet(false),
     m_serviceProfileIdHasBeenSet(false),
     m_abpV1_1HasBeenSet(false),
-    m_abpV1_0_xHasBeenSet(false)
+    m_abpV1_0_xHasBeenSet(false),
+    m_fPortsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ LoRaWANUpdateDevice::LoRaWANUpdateDevice(JsonView jsonValue) :
     m_deviceProfileIdHasBeenSet(false),
     m_serviceProfileIdHasBeenSet(false),
     m_abpV1_1HasBeenSet(false),
-    m_abpV1_0_xHasBeenSet(false)
+    m_abpV1_0_xHasBeenSet(false),
+    m_fPortsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ LoRaWANUpdateDevice& LoRaWANUpdateDevice::operator =(JsonView jsonValue)
     m_abpV1_0_xHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FPorts"))
+  {
+    m_fPorts = jsonValue.GetObject("FPorts");
+
+    m_fPortsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue LoRaWANUpdateDevice::Jsonize() const
   if(m_abpV1_0_xHasBeenSet)
   {
    payload.WithObject("AbpV1_0_x", m_abpV1_0_x.Jsonize());
+
+  }
+
+  if(m_fPortsHasBeenSet)
+  {
+   payload.WithObject("FPorts", m_fPorts.Jsonize());
 
   }
 

@@ -103,7 +103,7 @@ Feature& Feature::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("evaluationRules"))
   {
-    Array<JsonView> evaluationRulesJsonList = jsonValue.GetArray("evaluationRules");
+    Aws::Utils::Array<JsonView> evaluationRulesJsonList = jsonValue.GetArray("evaluationRules");
     for(unsigned evaluationRulesIndex = 0; evaluationRulesIndex < evaluationRulesJsonList.GetLength(); ++evaluationRulesIndex)
     {
       m_evaluationRules.push_back(evaluationRulesJsonList[evaluationRulesIndex].AsObject());
@@ -165,7 +165,7 @@ Feature& Feature::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("variations"))
   {
-    Array<JsonView> variationsJsonList = jsonValue.GetArray("variations");
+    Aws::Utils::Array<JsonView> variationsJsonList = jsonValue.GetArray("variations");
     for(unsigned variationsIndex = 0; variationsIndex < variationsJsonList.GetLength(); ++variationsIndex)
     {
       m_variations.push_back(variationsJsonList[variationsIndex].AsObject());
@@ -216,7 +216,7 @@ JsonValue Feature::Jsonize() const
 
   if(m_evaluationRulesHasBeenSet)
   {
-   Array<JsonValue> evaluationRulesJsonList(m_evaluationRules.size());
+   Aws::Utils::Array<JsonValue> evaluationRulesJsonList(m_evaluationRules.size());
    for(unsigned evaluationRulesIndex = 0; evaluationRulesIndex < evaluationRulesJsonList.GetLength(); ++evaluationRulesIndex)
    {
      evaluationRulesJsonList[evaluationRulesIndex].AsObject(m_evaluationRules[evaluationRulesIndex].Jsonize());
@@ -270,7 +270,7 @@ JsonValue Feature::Jsonize() const
 
   if(m_variationsHasBeenSet)
   {
-   Array<JsonValue> variationsJsonList(m_variations.size());
+   Aws::Utils::Array<JsonValue> variationsJsonList(m_variations.size());
    for(unsigned variationsIndex = 0; variationsIndex < variationsJsonList.GetLength(); ++variationsIndex)
    {
      variationsJsonList[variationsIndex].AsObject(m_variations[variationsIndex].Jsonize());

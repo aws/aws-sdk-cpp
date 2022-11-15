@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     LAUNCH,
-    TERMINATE
+    TERMINATE,
+    CREATE_CONVERTED_SNAPSHOT
   };
 
 namespace JobTypeMapper

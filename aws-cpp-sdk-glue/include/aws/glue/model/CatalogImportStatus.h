@@ -138,13 +138,13 @@ namespace Model
   private:
 
     bool m_importCompleted;
-    bool m_importCompletedHasBeenSet;
+    bool m_importCompletedHasBeenSet = false;
 
     Aws::Utils::DateTime m_importTime;
-    bool m_importTimeHasBeenSet;
+    bool m_importTimeHasBeenSet = false;
 
     Aws::String m_importedBy;
-    bool m_importedByHasBeenSet;
+    bool m_importedByHasBeenSet = false;
   };
 
 } // namespace Model

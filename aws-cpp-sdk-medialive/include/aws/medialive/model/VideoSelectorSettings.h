@@ -78,10 +78,10 @@ namespace Model
   private:
 
     VideoSelectorPid m_videoSelectorPid;
-    bool m_videoSelectorPidHasBeenSet;
+    bool m_videoSelectorPidHasBeenSet = false;
 
     VideoSelectorProgramId m_videoSelectorProgramId;
-    bool m_videoSelectorProgramIdHasBeenSet;
+    bool m_videoSelectorProgramIdHasBeenSet = false;
   };
 
 } // namespace Model

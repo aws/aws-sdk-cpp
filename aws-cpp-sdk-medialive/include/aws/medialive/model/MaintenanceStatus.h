@@ -194,16 +194,16 @@ namespace Model
   private:
 
     MaintenanceDay m_maintenanceDay;
-    bool m_maintenanceDayHasBeenSet;
+    bool m_maintenanceDayHasBeenSet = false;
 
     Aws::String m_maintenanceDeadline;
-    bool m_maintenanceDeadlineHasBeenSet;
+    bool m_maintenanceDeadlineHasBeenSet = false;
 
     Aws::String m_maintenanceScheduledDate;
-    bool m_maintenanceScheduledDateHasBeenSet;
+    bool m_maintenanceScheduledDateHasBeenSet = false;
 
     Aws::String m_maintenanceStartTime;
-    bool m_maintenanceStartTimeHasBeenSet;
+    bool m_maintenanceStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

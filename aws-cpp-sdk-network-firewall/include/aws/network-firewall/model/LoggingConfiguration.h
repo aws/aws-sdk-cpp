@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<LogDestinationConfig> m_logDestinationConfigs;
-    bool m_logDestinationConfigsHasBeenSet;
+    bool m_logDestinationConfigsHasBeenSet = false;
   };
 
 } // namespace Model

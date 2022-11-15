@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_botLocaleExportPassword;
-    bool m_botLocaleExportPasswordHasBeenSet;
+    bool m_botLocaleExportPasswordHasBeenSet = false;
 
     Aws::String m_associatedTranscriptsPassword;
-    bool m_associatedTranscriptsPasswordHasBeenSet;
+    bool m_associatedTranscriptsPasswordHasBeenSet = false;
   };
 
 } // namespace Model

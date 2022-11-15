@@ -71,7 +71,7 @@ namespace Model
   private:
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

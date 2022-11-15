@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recommendationIds;
-    bool m_recommendationIdsHasBeenSet;
+    bool m_recommendationIdsHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

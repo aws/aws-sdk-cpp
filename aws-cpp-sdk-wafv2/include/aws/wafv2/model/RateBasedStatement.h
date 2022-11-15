@@ -48,14 +48,15 @@ namespace Model
    * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
    * <p>A string match statement that searches in the User-Agent header for the
    * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-   * rate limit. For this example, the rate limit is 1,000. Requests that meet both
-   * of the conditions in the statements are counted. If the count exceeds 1,000
-   * requests per five minutes, the rule action triggers. Requests that do not meet
-   * both conditions are not counted towards the rate limit and are not affected by
-   * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
-   * another statement, for example inside a <code>NotStatement</code> or
-   * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
-   * inside a web ACL and inside a rule group. </p><p><h3>See Also:</h3>   <a
+   * rate limit. For this example, the rate limit is 1,000. Requests that meet the
+   * criteria of both of the nested statements are counted. If the count exceeds
+   * 1,000 requests per five minutes, the rule action triggers. Requests that do not
+   * meet the criteria of both of the nested statements are not counted towards the
+   * rate limit and are not affected by this rule.</p> <p>You cannot nest a
+   * <code>RateBasedStatement</code> inside another statement, for example inside a
+   * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
+   * <code>RateBasedStatement</code> inside a web ACL and inside a rule group.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RateBasedStatement">AWS
    * API Reference</a></p>
    */
@@ -282,16 +283,16 @@ namespace Model
   private:
 
     long long m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     RateBasedStatementAggregateKeyType m_aggregateKeyType;
-    bool m_aggregateKeyTypeHasBeenSet;
+    bool m_aggregateKeyTypeHasBeenSet = false;
 
     std::shared_ptr<Statement> m_scopeDownStatement;
-    bool m_scopeDownStatementHasBeenSet;
+    bool m_scopeDownStatementHasBeenSet = false;
 
     ForwardedIPConfig m_forwardedIPConfig;
-    bool m_forwardedIPConfigHasBeenSet;
+    bool m_forwardedIPConfigHasBeenSet = false;
   };
 
 } // namespace Model

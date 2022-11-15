@@ -109,7 +109,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -127,10 +127,10 @@ namespace Model
   private:
 
     CognitoMemberDefinition m_cognitoMemberDefinition;
-    bool m_cognitoMemberDefinitionHasBeenSet;
+    bool m_cognitoMemberDefinitionHasBeenSet = false;
 
     OidcMemberDefinition m_oidcMemberDefinition;
-    bool m_oidcMemberDefinitionHasBeenSet;
+    bool m_oidcMemberDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

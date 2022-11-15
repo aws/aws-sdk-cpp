@@ -23,7 +23,7 @@ Aws::String DeleteIdentitiesRequest::SerializePayload() const
 
   if(m_identityIdsToDeleteHasBeenSet)
   {
-   Array<JsonValue> identityIdsToDeleteJsonList(m_identityIdsToDelete.size());
+   Aws::Utils::Array<JsonValue> identityIdsToDeleteJsonList(m_identityIdsToDelete.size());
    for(unsigned identityIdsToDeleteIndex = 0; identityIdsToDeleteIndex < identityIdsToDeleteJsonList.GetLength(); ++identityIdsToDeleteIndex)
    {
      identityIdsToDeleteJsonList[identityIdsToDeleteIndex].AsString(m_identityIdsToDelete[identityIdsToDeleteIndex]);

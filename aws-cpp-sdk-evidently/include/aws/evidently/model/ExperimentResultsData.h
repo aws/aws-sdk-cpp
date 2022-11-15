@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     ExperimentResultResponseType m_resultStat;
-    bool m_resultStatHasBeenSet;
+    bool m_resultStatHasBeenSet = false;
 
     Aws::String m_treatmentName;
-    bool m_treatmentNameHasBeenSet;
+    bool m_treatmentNameHasBeenSet = false;
 
     Aws::Vector<double> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -45,7 +45,7 @@ Aws::String SearchDatabasesByLFTagsRequest::SerializePayload() const
 
   if(m_expressionHasBeenSet)
   {
-   Array<JsonValue> expressionJsonList(m_expression.size());
+   Aws::Utils::Array<JsonValue> expressionJsonList(m_expression.size());
    for(unsigned expressionIndex = 0; expressionIndex < expressionJsonList.GetLength(); ++expressionIndex)
    {
      expressionJsonList[expressionIndex].AsObject(m_expression[expressionIndex].Jsonize());

@@ -295,13 +295,13 @@ namespace Model
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_sNSTopicArn;
-    bool m_sNSTopicArnHasBeenSet;
+    bool m_sNSTopicArnHasBeenSet = false;
 
     Aws::Vector<BackupVaultEvent> m_backupVaultEvents;
-    bool m_backupVaultEventsHasBeenSet;
+    bool m_backupVaultEventsHasBeenSet = false;
   };
 
 } // namespace Model

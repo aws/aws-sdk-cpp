@@ -31,7 +31,7 @@ Aws::String SetStatusRequest::SerializePayload() const
 
   if(m_objectIdsHasBeenSet)
   {
-   Array<JsonValue> objectIdsJsonList(m_objectIds.size());
+   Aws::Utils::Array<JsonValue> objectIdsJsonList(m_objectIds.size());
    for(unsigned objectIdsIndex = 0; objectIdsIndex < objectIdsJsonList.GetLength(); ++objectIdsIndex)
    {
      objectIdsJsonList[objectIdsIndex].AsString(m_objectIds[objectIdsIndex]);

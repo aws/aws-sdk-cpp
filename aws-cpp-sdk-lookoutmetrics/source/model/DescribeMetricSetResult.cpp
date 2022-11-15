@@ -76,7 +76,7 @@ DescribeMetricSetResult& DescribeMetricSetResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("MetricList"))
   {
-    Array<JsonView> metricListJsonList = jsonValue.GetArray("MetricList");
+    Aws::Utils::Array<JsonView> metricListJsonList = jsonValue.GetArray("MetricList");
     for(unsigned metricListIndex = 0; metricListIndex < metricListJsonList.GetLength(); ++metricListIndex)
     {
       m_metricList.push_back(metricListJsonList[metricListIndex].AsObject());
@@ -91,7 +91,7 @@ DescribeMetricSetResult& DescribeMetricSetResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("DimensionList"))
   {
-    Array<JsonView> dimensionListJsonList = jsonValue.GetArray("DimensionList");
+    Aws::Utils::Array<JsonView> dimensionListJsonList = jsonValue.GetArray("DimensionList");
     for(unsigned dimensionListIndex = 0; dimensionListIndex < dimensionListJsonList.GetLength(); ++dimensionListIndex)
     {
       m_dimensionList.push_back(dimensionListJsonList[dimensionListIndex].AsString());
@@ -114,6 +114,15 @@ DescribeMetricSetResult& DescribeMetricSetResult::operator =(const Aws::AmazonWe
   {
     m_metricSource = jsonValue.GetObject("MetricSource");
 
+  }
+
+  if(jsonValue.ValueExists("DimensionFilterList"))
+  {
+    Aws::Utils::Array<JsonView> dimensionFilterListJsonList = jsonValue.GetArray("DimensionFilterList");
+    for(unsigned dimensionFilterListIndex = 0; dimensionFilterListIndex < dimensionFilterListJsonList.GetLength(); ++dimensionFilterListIndex)
+    {
+      m_dimensionFilterList.push_back(dimensionFilterListJsonList[dimensionFilterListIndex].AsObject());
+    }
   }
 
 

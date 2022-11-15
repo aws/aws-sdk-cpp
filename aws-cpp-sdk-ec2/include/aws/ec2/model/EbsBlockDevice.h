@@ -565,31 +565,31 @@ namespace Model
   private:
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     int m_volumeSize;
-    bool m_volumeSizeHasBeenSet;
+    bool m_volumeSizeHasBeenSet = false;
 
     VolumeType m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     int m_throughput;
-    bool m_throughputHasBeenSet;
+    bool m_throughputHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
   };
 
 } // namespace Model

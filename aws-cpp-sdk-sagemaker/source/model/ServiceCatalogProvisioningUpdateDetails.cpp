@@ -42,7 +42,7 @@ ServiceCatalogProvisioningUpdateDetails& ServiceCatalogProvisioningUpdateDetails
 
   if(jsonValue.ValueExists("ProvisioningParameters"))
   {
-    Array<JsonView> provisioningParametersJsonList = jsonValue.GetArray("ProvisioningParameters");
+    Aws::Utils::Array<JsonView> provisioningParametersJsonList = jsonValue.GetArray("ProvisioningParameters");
     for(unsigned provisioningParametersIndex = 0; provisioningParametersIndex < provisioningParametersJsonList.GetLength(); ++provisioningParametersIndex)
     {
       m_provisioningParameters.push_back(provisioningParametersJsonList[provisioningParametersIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ServiceCatalogProvisioningUpdateDetails::Jsonize() const
 
   if(m_provisioningParametersHasBeenSet)
   {
-   Array<JsonValue> provisioningParametersJsonList(m_provisioningParameters.size());
+   Aws::Utils::Array<JsonValue> provisioningParametersJsonList(m_provisioningParameters.size());
    for(unsigned provisioningParametersIndex = 0; provisioningParametersIndex < provisioningParametersJsonList.GetLength(); ++provisioningParametersIndex)
    {
      provisioningParametersJsonList[provisioningParametersIndex].AsObject(m_provisioningParameters[provisioningParametersIndex].Jsonize());

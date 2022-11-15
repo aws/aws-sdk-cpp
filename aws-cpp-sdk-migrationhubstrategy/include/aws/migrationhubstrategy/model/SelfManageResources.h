@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<SelfManageTargetDestination> m_targetDestination;
-    bool m_targetDestinationHasBeenSet;
+    bool m_targetDestinationHasBeenSet = false;
   };
 
 } // namespace Model

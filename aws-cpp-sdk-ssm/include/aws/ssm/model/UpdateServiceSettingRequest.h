@@ -45,9 +45,10 @@ namespace Model
      * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> <li>
-     * <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
+     * <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
      */
     inline const Aws::String& GetSettingId() const{ return m_settingId; }
 
@@ -58,9 +59,10 @@ namespace Model
      * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> <li>
-     * <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
+     * <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
      */
     inline bool SettingIdHasBeenSet() const { return m_settingIdHasBeenSet; }
 
@@ -71,9 +73,10 @@ namespace Model
      * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> <li>
-     * <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
+     * <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
      */
     inline void SetSettingId(const Aws::String& value) { m_settingIdHasBeenSet = true; m_settingId = value; }
 
@@ -84,9 +87,10 @@ namespace Model
      * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> <li>
-     * <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
+     * <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
      */
     inline void SetSettingId(Aws::String&& value) { m_settingIdHasBeenSet = true; m_settingId = std::move(value); }
 
@@ -97,9 +101,10 @@ namespace Model
      * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> <li>
-     * <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
+     * <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
      */
     inline void SetSettingId(const char* value) { m_settingIdHasBeenSet = true; m_settingId.assign(value); }
 
@@ -110,9 +115,10 @@ namespace Model
      * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> <li>
-     * <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
+     * <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
      */
     inline UpdateServiceSettingRequest& WithSettingId(const Aws::String& value) { SetSettingId(value); return *this;}
 
@@ -123,9 +129,10 @@ namespace Model
      * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> <li>
-     * <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
+     * <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
      */
     inline UpdateServiceSettingRequest& WithSettingId(Aws::String&& value) { SetSettingId(std::move(value)); return *this;}
 
@@ -136,9 +143,10 @@ namespace Model
      * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> <li>
-     * <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
+     * <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
      */
     inline UpdateServiceSettingRequest& WithSettingId(const char* value) { SetSettingId(value); return *this;}
 
@@ -146,12 +154,6 @@ namespace Model
     /**
      * <p>The new value to specify for the service setting. The following list
      * specifies the available values for each setting.</p> <ul> <li> <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-destination</code>:
      * <code>CloudWatch</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an
@@ -159,19 +161,19 @@ namespace Model
      * <code>/ssm/documents/console/public-sharing-permission</code>:
      * <code>Enable</code> or <code>Disable</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-     * <code>advanced</code> </p> </li> </ul>
+     * <code>advanced</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or
+     * <code>Disabled</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+     * <code>false</code> </p> </li> </ul>
      */
     inline const Aws::String& GetSettingValue() const{ return m_settingValue; }
 
     /**
      * <p>The new value to specify for the service setting. The following list
      * specifies the available values for each setting.</p> <ul> <li> <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-destination</code>:
      * <code>CloudWatch</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an
@@ -179,19 +181,19 @@ namespace Model
      * <code>/ssm/documents/console/public-sharing-permission</code>:
      * <code>Enable</code> or <code>Disable</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-     * <code>advanced</code> </p> </li> </ul>
+     * <code>advanced</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or
+     * <code>Disabled</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+     * <code>false</code> </p> </li> </ul>
      */
     inline bool SettingValueHasBeenSet() const { return m_settingValueHasBeenSet; }
 
     /**
      * <p>The new value to specify for the service setting. The following list
      * specifies the available values for each setting.</p> <ul> <li> <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-destination</code>:
      * <code>CloudWatch</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an
@@ -199,19 +201,19 @@ namespace Model
      * <code>/ssm/documents/console/public-sharing-permission</code>:
      * <code>Enable</code> or <code>Disable</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-     * <code>advanced</code> </p> </li> </ul>
+     * <code>advanced</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or
+     * <code>Disabled</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+     * <code>false</code> </p> </li> </ul>
      */
     inline void SetSettingValue(const Aws::String& value) { m_settingValueHasBeenSet = true; m_settingValue = value; }
 
     /**
      * <p>The new value to specify for the service setting. The following list
      * specifies the available values for each setting.</p> <ul> <li> <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-destination</code>:
      * <code>CloudWatch</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an
@@ -219,19 +221,19 @@ namespace Model
      * <code>/ssm/documents/console/public-sharing-permission</code>:
      * <code>Enable</code> or <code>Disable</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-     * <code>advanced</code> </p> </li> </ul>
+     * <code>advanced</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or
+     * <code>Disabled</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+     * <code>false</code> </p> </li> </ul>
      */
     inline void SetSettingValue(Aws::String&& value) { m_settingValueHasBeenSet = true; m_settingValue = std::move(value); }
 
     /**
      * <p>The new value to specify for the service setting. The following list
      * specifies the available values for each setting.</p> <ul> <li> <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-destination</code>:
      * <code>CloudWatch</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an
@@ -239,19 +241,19 @@ namespace Model
      * <code>/ssm/documents/console/public-sharing-permission</code>:
      * <code>Enable</code> or <code>Disable</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-     * <code>advanced</code> </p> </li> </ul>
+     * <code>advanced</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or
+     * <code>Disabled</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+     * <code>false</code> </p> </li> </ul>
      */
     inline void SetSettingValue(const char* value) { m_settingValueHasBeenSet = true; m_settingValue.assign(value); }
 
     /**
      * <p>The new value to specify for the service setting. The following list
      * specifies the available values for each setting.</p> <ul> <li> <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-destination</code>:
      * <code>CloudWatch</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an
@@ -259,19 +261,19 @@ namespace Model
      * <code>/ssm/documents/console/public-sharing-permission</code>:
      * <code>Enable</code> or <code>Disable</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-     * <code>advanced</code> </p> </li> </ul>
+     * <code>advanced</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or
+     * <code>Disabled</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+     * <code>false</code> </p> </li> </ul>
      */
     inline UpdateServiceSettingRequest& WithSettingValue(const Aws::String& value) { SetSettingValue(value); return *this;}
 
     /**
      * <p>The new value to specify for the service setting. The following list
      * specifies the available values for each setting.</p> <ul> <li> <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-destination</code>:
      * <code>CloudWatch</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an
@@ -279,19 +281,19 @@ namespace Model
      * <code>/ssm/documents/console/public-sharing-permission</code>:
      * <code>Enable</code> or <code>Disable</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-     * <code>advanced</code> </p> </li> </ul>
+     * <code>advanced</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or
+     * <code>Disabled</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+     * <code>false</code> </p> </li> </ul>
      */
     inline UpdateServiceSettingRequest& WithSettingValue(Aws::String&& value) { SetSettingValue(std::move(value)); return *this;}
 
     /**
      * <p>The new value to specify for the service setting. The following list
      * specifies the available values for each setting.</p> <ul> <li> <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-     * <code>false</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-destination</code>:
      * <code>CloudWatch</code> </p> </li> <li> <p>
      * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an
@@ -299,17 +301,23 @@ namespace Model
      * <code>/ssm/documents/console/public-sharing-permission</code>:
      * <code>Enable</code> or <code>Disable</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-     * <code>advanced</code> </p> </li> </ul>
+     * <code>advanced</code> </p> </li> <li> <p>
+     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or
+     * <code>Disabled</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+     * <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+     * <code>false</code> </p> </li> </ul>
      */
     inline UpdateServiceSettingRequest& WithSettingValue(const char* value) { SetSettingValue(value); return *this;}
 
   private:
 
     Aws::String m_settingId;
-    bool m_settingIdHasBeenSet;
+    bool m_settingIdHasBeenSet = false;
 
     Aws::String m_settingValue;
-    bool m_settingValueHasBeenSet;
+    bool m_settingValueHasBeenSet = false;
   };
 
 } // namespace Model

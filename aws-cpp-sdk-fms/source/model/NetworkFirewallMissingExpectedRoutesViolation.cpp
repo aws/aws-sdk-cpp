@@ -44,7 +44,7 @@ NetworkFirewallMissingExpectedRoutesViolation& NetworkFirewallMissingExpectedRou
 
   if(jsonValue.ValueExists("ExpectedRoutes"))
   {
-    Array<JsonView> expectedRoutesJsonList = jsonValue.GetArray("ExpectedRoutes");
+    Aws::Utils::Array<JsonView> expectedRoutesJsonList = jsonValue.GetArray("ExpectedRoutes");
     for(unsigned expectedRoutesIndex = 0; expectedRoutesIndex < expectedRoutesJsonList.GetLength(); ++expectedRoutesIndex)
     {
       m_expectedRoutes.push_back(expectedRoutesJsonList[expectedRoutesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue NetworkFirewallMissingExpectedRoutesViolation::Jsonize() const
 
   if(m_expectedRoutesHasBeenSet)
   {
-   Array<JsonValue> expectedRoutesJsonList(m_expectedRoutes.size());
+   Aws::Utils::Array<JsonValue> expectedRoutesJsonList(m_expectedRoutes.size());
    for(unsigned expectedRoutesIndex = 0; expectedRoutesIndex < expectedRoutesJsonList.GetLength(); ++expectedRoutesIndex)
    {
      expectedRoutesJsonList[expectedRoutesIndex].AsObject(m_expectedRoutes[expectedRoutesIndex].Jsonize());

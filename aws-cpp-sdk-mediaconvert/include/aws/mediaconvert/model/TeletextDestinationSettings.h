@@ -184,10 +184,10 @@ namespace Model
   private:
 
     Aws::String m_pageNumber;
-    bool m_pageNumberHasBeenSet;
+    bool m_pageNumberHasBeenSet = false;
 
     Aws::Vector<TeletextPageType> m_pageTypes;
-    bool m_pageTypesHasBeenSet;
+    bool m_pageTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -272,22 +272,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     RoutingConfig m_routingConfig;
-    bool m_routingConfigHasBeenSet;
+    bool m_routingConfigHasBeenSet = false;
 
     ReplicationConfig m_replicationConfig;
-    bool m_replicationConfigHasBeenSet;
+    bool m_replicationConfigHasBeenSet = false;
 
     Aws::Vector<EndpointEventBus> m_eventBuses;
-    bool m_eventBusesHasBeenSet;
+    bool m_eventBusesHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

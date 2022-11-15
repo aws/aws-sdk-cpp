@@ -140,13 +140,13 @@ namespace Model
   private:
 
     int m_columnDepth;
-    bool m_columnDepthHasBeenSet;
+    bool m_columnDepthHasBeenSet = false;
 
     FecOutputIncludeFec m_includeFec;
-    bool m_includeFecHasBeenSet;
+    bool m_includeFecHasBeenSet = false;
 
     int m_rowLength;
-    bool m_rowLengthHasBeenSet;
+    bool m_rowLengthHasBeenSet = false;
   };
 
 } // namespace Model

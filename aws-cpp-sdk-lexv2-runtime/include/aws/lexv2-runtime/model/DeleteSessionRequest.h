@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botAliasId;
-    bool m_botAliasIdHasBeenSet;
+    bool m_botAliasIdHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

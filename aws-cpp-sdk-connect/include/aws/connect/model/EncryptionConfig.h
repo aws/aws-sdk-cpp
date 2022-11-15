@@ -120,10 +120,10 @@ namespace Model
   private:
 
     EncryptionType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
   };
 
 } // namespace Model

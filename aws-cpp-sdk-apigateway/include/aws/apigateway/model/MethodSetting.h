@@ -161,42 +161,34 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether full requests and responses are logged for this method,
-     * which affects the log entries pushed to Amazon CloudWatch Logs. This can be
-     * useful to troubleshoot APIs, but can result in logging sensitive data. We
-     * recommend that you don't enable this option for production APIs. The PATCH path
-     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and
-     * the value is a Boolean.</p>
+     * <p>Specifies whether data trace logging is enabled for this method, which
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
+     * value is a Boolean.</p>
      */
     inline bool GetDataTraceEnabled() const{ return m_dataTraceEnabled; }
 
     /**
-     * <p>Specifies whether full requests and responses are logged for this method,
-     * which affects the log entries pushed to Amazon CloudWatch Logs. This can be
-     * useful to troubleshoot APIs, but can result in logging sensitive data. We
-     * recommend that you don't enable this option for production APIs. The PATCH path
-     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and
-     * the value is a Boolean.</p>
+     * <p>Specifies whether data trace logging is enabled for this method, which
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
+     * value is a Boolean.</p>
      */
     inline bool DataTraceEnabledHasBeenSet() const { return m_dataTraceEnabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether full requests and responses are logged for this method,
-     * which affects the log entries pushed to Amazon CloudWatch Logs. This can be
-     * useful to troubleshoot APIs, but can result in logging sensitive data. We
-     * recommend that you don't enable this option for production APIs. The PATCH path
-     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and
-     * the value is a Boolean.</p>
+     * <p>Specifies whether data trace logging is enabled for this method, which
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
+     * value is a Boolean.</p>
      */
     inline void SetDataTraceEnabled(bool value) { m_dataTraceEnabledHasBeenSet = true; m_dataTraceEnabled = value; }
 
     /**
-     * <p>Specifies whether full requests and responses are logged for this method,
-     * which affects the log entries pushed to Amazon CloudWatch Logs. This can be
-     * useful to troubleshoot APIs, but can result in logging sensitive data. We
-     * recommend that you don't enable this option for production APIs. The PATCH path
-     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and
-     * the value is a Boolean.</p>
+     * <p>Specifies whether data trace logging is enabled for this method, which
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
+     * value is a Boolean.</p>
      */
     inline MethodSetting& WithDataTraceEnabled(bool value) { SetDataTraceEnabled(value); return *this;}
 
@@ -450,34 +442,34 @@ namespace Model
   private:
 
     bool m_metricsEnabled;
-    bool m_metricsEnabledHasBeenSet;
+    bool m_metricsEnabledHasBeenSet = false;
 
     Aws::String m_loggingLevel;
-    bool m_loggingLevelHasBeenSet;
+    bool m_loggingLevelHasBeenSet = false;
 
     bool m_dataTraceEnabled;
-    bool m_dataTraceEnabledHasBeenSet;
+    bool m_dataTraceEnabledHasBeenSet = false;
 
     int m_throttlingBurstLimit;
-    bool m_throttlingBurstLimitHasBeenSet;
+    bool m_throttlingBurstLimitHasBeenSet = false;
 
     double m_throttlingRateLimit;
-    bool m_throttlingRateLimitHasBeenSet;
+    bool m_throttlingRateLimitHasBeenSet = false;
 
     bool m_cachingEnabled;
-    bool m_cachingEnabledHasBeenSet;
+    bool m_cachingEnabledHasBeenSet = false;
 
     int m_cacheTtlInSeconds;
-    bool m_cacheTtlInSecondsHasBeenSet;
+    bool m_cacheTtlInSecondsHasBeenSet = false;
 
     bool m_cacheDataEncrypted;
-    bool m_cacheDataEncryptedHasBeenSet;
+    bool m_cacheDataEncryptedHasBeenSet = false;
 
     bool m_requireAuthorizationForCacheControl;
-    bool m_requireAuthorizationForCacheControlHasBeenSet;
+    bool m_requireAuthorizationForCacheControlHasBeenSet = false;
 
     UnauthorizedCacheControlHeaderStrategy m_unauthorizedCacheControlHeaderStrategy;
-    bool m_unauthorizedCacheControlHeaderStrategyHasBeenSet;
+    bool m_unauthorizedCacheControlHeaderStrategyHasBeenSet = false;
   };
 
 } // namespace Model

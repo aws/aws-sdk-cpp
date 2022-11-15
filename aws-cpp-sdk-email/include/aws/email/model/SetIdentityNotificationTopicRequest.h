@@ -222,13 +222,13 @@ namespace Model
   private:
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     NotificationType m_notificationType;
-    bool m_notificationTypeHasBeenSet;
+    bool m_notificationTypeHasBeenSet = false;
 
     Aws::String m_snsTopic;
-    bool m_snsTopicHasBeenSet;
+    bool m_snsTopicHasBeenSet = false;
   };
 
 } // namespace Model

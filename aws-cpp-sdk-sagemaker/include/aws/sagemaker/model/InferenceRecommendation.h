@@ -135,13 +135,13 @@ namespace Model
   private:
 
     RecommendationMetrics m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     EndpointOutputConfiguration m_endpointConfiguration;
-    bool m_endpointConfigurationHasBeenSet;
+    bool m_endpointConfigurationHasBeenSet = false;
 
     ModelConfiguration m_modelConfiguration;
-    bool m_modelConfigurationHasBeenSet;
+    bool m_modelConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

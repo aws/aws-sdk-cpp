@@ -44,7 +44,9 @@ PostgreSQLSettings::PostgreSQLSettings() :
     m_pluginName(PluginNameValue::NOT_SET),
     m_pluginNameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_trimSpaceInChar(false),
+    m_trimSpaceInCharHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ PostgreSQLSettings::PostgreSQLSettings(JsonView jsonValue) :
     m_pluginName(PluginNameValue::NOT_SET),
     m_pluginNameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_trimSpaceInChar(false),
+    m_trimSpaceInCharHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -207,6 +211,13 @@ PostgreSQLSettings& PostgreSQLSettings::operator =(JsonView jsonValue)
     m_secretsManagerSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrimSpaceInChar"))
+  {
+    m_trimSpaceInChar = jsonValue.GetBool("TrimSpaceInChar");
+
+    m_trimSpaceInCharHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -318,6 +329,12 @@ JsonValue PostgreSQLSettings::Jsonize() const
   if(m_secretsManagerSecretIdHasBeenSet)
   {
    payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
+
+  }
+
+  if(m_trimSpaceInCharHasBeenSet)
+  {
+   payload.WithBool("TrimSpaceInChar", m_trimSpaceInChar);
 
   }
 

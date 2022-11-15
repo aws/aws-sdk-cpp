@@ -240,64 +240,72 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline VirtualMachine& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline VirtualMachine& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the virtual machine.</p>
+     * <p>The Amazon Resource Name (ARN) of the virtual machine. For example,
+     * <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
      */
     inline VirtualMachine& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
   private:
 
     Aws::String m_hostName;
-    bool m_hostNameHasBeenSet;
+    bool m_hostNameHasBeenSet = false;
 
     Aws::String m_hypervisorId;
-    bool m_hypervisorIdHasBeenSet;
+    bool m_hypervisorIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastBackupDate;
-    bool m_lastBackupDateHasBeenSet;
+    bool m_lastBackupDateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

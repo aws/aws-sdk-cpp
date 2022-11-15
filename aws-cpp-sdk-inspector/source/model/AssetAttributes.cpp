@@ -84,7 +84,7 @@ AssetAttributes& AssetAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ipv4Addresses"))
   {
-    Array<JsonView> ipv4AddressesJsonList = jsonValue.GetArray("ipv4Addresses");
+    Aws::Utils::Array<JsonView> ipv4AddressesJsonList = jsonValue.GetArray("ipv4Addresses");
     for(unsigned ipv4AddressesIndex = 0; ipv4AddressesIndex < ipv4AddressesJsonList.GetLength(); ++ipv4AddressesIndex)
     {
       m_ipv4Addresses.push_back(ipv4AddressesJsonList[ipv4AddressesIndex].AsString());
@@ -94,7 +94,7 @@ AssetAttributes& AssetAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -104,7 +104,7 @@ AssetAttributes& AssetAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("networkInterfaces"))
   {
-    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
     for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
     {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
@@ -151,7 +151,7 @@ JsonValue AssetAttributes::Jsonize() const
 
   if(m_ipv4AddressesHasBeenSet)
   {
-   Array<JsonValue> ipv4AddressesJsonList(m_ipv4Addresses.size());
+   Aws::Utils::Array<JsonValue> ipv4AddressesJsonList(m_ipv4Addresses.size());
    for(unsigned ipv4AddressesIndex = 0; ipv4AddressesIndex < ipv4AddressesJsonList.GetLength(); ++ipv4AddressesIndex)
    {
      ipv4AddressesJsonList[ipv4AddressesIndex].AsString(m_ipv4Addresses[ipv4AddressesIndex]);
@@ -162,7 +162,7 @@ JsonValue AssetAttributes::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -173,7 +173,7 @@ JsonValue AssetAttributes::Jsonize() const
 
   if(m_networkInterfacesHasBeenSet)
   {
-   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   Aws::Utils::Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
    {
      networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());

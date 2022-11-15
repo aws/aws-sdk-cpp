@@ -88,42 +88,98 @@ namespace Model
 
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>A unique pagination token that can be used in a subsequent request. You will
+     * receive a pagination token in the response body of a previous
+     * <code>ListNameSpaces</code> API call if there is more data that can be returned.
+     * To receive the data, make another <code>ListNamespaces</code> API call with the
+     * returned token to retrieve the next page of data. Each token is valid for 24
+     * hours. If you try to make a <code>ListNamespaces</code> API call with an expired
+     * token, you will receive a <code>HTTP 400 InvalidNextTokenException</code>
+     * error.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>A unique pagination token that can be used in a subsequent request. You will
+     * receive a pagination token in the response body of a previous
+     * <code>ListNameSpaces</code> API call if there is more data that can be returned.
+     * To receive the data, make another <code>ListNamespaces</code> API call with the
+     * returned token to retrieve the next page of data. Each token is valid for 24
+     * hours. If you try to make a <code>ListNamespaces</code> API call with an expired
+     * token, you will receive a <code>HTTP 400 InvalidNextTokenException</code>
+     * error.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>A unique pagination token that can be used in a subsequent request. You will
+     * receive a pagination token in the response body of a previous
+     * <code>ListNameSpaces</code> API call if there is more data that can be returned.
+     * To receive the data, make another <code>ListNamespaces</code> API call with the
+     * returned token to retrieve the next page of data. Each token is valid for 24
+     * hours. If you try to make a <code>ListNamespaces</code> API call with an expired
+     * token, you will receive a <code>HTTP 400 InvalidNextTokenException</code>
+     * error.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>A unique pagination token that can be used in a subsequent request. You will
+     * receive a pagination token in the response body of a previous
+     * <code>ListNameSpaces</code> API call if there is more data that can be returned.
+     * To receive the data, make another <code>ListNamespaces</code> API call with the
+     * returned token to retrieve the next page of data. Each token is valid for 24
+     * hours. If you try to make a <code>ListNamespaces</code> API call with an expired
+     * token, you will receive a <code>HTTP 400 InvalidNextTokenException</code>
+     * error.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>A unique pagination token that can be used in a subsequent request. You will
+     * receive a pagination token in the response body of a previous
+     * <code>ListNameSpaces</code> API call if there is more data that can be returned.
+     * To receive the data, make another <code>ListNamespaces</code> API call with the
+     * returned token to retrieve the next page of data. Each token is valid for 24
+     * hours. If you try to make a <code>ListNamespaces</code> API call with an expired
+     * token, you will receive a <code>HTTP 400 InvalidNextTokenException</code>
+     * error.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>A unique pagination token that can be used in a subsequent request. You will
+     * receive a pagination token in the response body of a previous
+     * <code>ListNameSpaces</code> API call if there is more data that can be returned.
+     * To receive the data, make another <code>ListNamespaces</code> API call with the
+     * returned token to retrieve the next page of data. Each token is valid for 24
+     * hours. If you try to make a <code>ListNamespaces</code> API call with an expired
+     * token, you will receive a <code>HTTP 400 InvalidNextTokenException</code>
+     * error.</p>
      */
     inline ListNamespacesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>A unique pagination token that can be used in a subsequent request. You will
+     * receive a pagination token in the response body of a previous
+     * <code>ListNameSpaces</code> API call if there is more data that can be returned.
+     * To receive the data, make another <code>ListNamespaces</code> API call with the
+     * returned token to retrieve the next page of data. Each token is valid for 24
+     * hours. If you try to make a <code>ListNamespaces</code> API call with an expired
+     * token, you will receive a <code>HTTP 400 InvalidNextTokenException</code>
+     * error.</p>
      */
     inline ListNamespacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>A unique pagination token that can be used in a subsequent request. You will
+     * receive a pagination token in the response body of a previous
+     * <code>ListNameSpaces</code> API call if there is more data that can be returned.
+     * To receive the data, make another <code>ListNamespaces</code> API call with the
+     * returned token to retrieve the next page of data. Each token is valid for 24
+     * hours. If you try to make a <code>ListNamespaces</code> API call with an expired
+     * token, you will receive a <code>HTTP 400 InvalidNextTokenException</code>
+     * error.</p>
      */
     inline ListNamespacesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -151,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

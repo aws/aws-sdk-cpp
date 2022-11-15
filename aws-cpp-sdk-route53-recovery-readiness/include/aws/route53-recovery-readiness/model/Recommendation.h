@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_recommendationText;
-    bool m_recommendationTextHasBeenSet;
+    bool m_recommendationTextHasBeenSet = false;
   };
 
 } // namespace Model

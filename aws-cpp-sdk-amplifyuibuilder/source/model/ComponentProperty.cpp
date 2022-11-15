@@ -102,7 +102,7 @@ ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("concat"))
   {
-    Array<JsonView> concatJsonList = jsonValue.GetArray("concat");
+    Aws::Utils::Array<JsonView> concatJsonList = jsonValue.GetArray("concat");
     for(unsigned concatIndex = 0; concatIndex < concatJsonList.GetLength(); ++concatIndex)
     {
       m_concat.push_back(concatJsonList[concatIndex].AsObject());
@@ -218,7 +218,7 @@ JsonValue ComponentProperty::Jsonize() const
 
   if(m_concatHasBeenSet)
   {
-   Array<JsonValue> concatJsonList(m_concat.size());
+   Aws::Utils::Array<JsonValue> concatJsonList(m_concat.size());
    for(unsigned concatIndex = 0; concatIndex < concatJsonList.GetLength(); ++concatIndex)
    {
      concatJsonList[concatIndex].AsObject(m_concat[concatIndex].Jsonize());

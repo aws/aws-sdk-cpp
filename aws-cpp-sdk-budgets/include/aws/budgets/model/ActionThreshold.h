@@ -71,10 +71,10 @@ namespace Model
   private:
 
     double m_actionThresholdValue;
-    bool m_actionThresholdValueHasBeenSet;
+    bool m_actionThresholdValueHasBeenSet = false;
 
     ThresholdType m_actionThresholdType;
-    bool m_actionThresholdTypeHasBeenSet;
+    bool m_actionThresholdTypeHasBeenSet = false;
   };
 
 } // namespace Model

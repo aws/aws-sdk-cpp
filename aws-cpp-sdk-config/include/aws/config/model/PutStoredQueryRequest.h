@@ -134,10 +134,10 @@ namespace Model
   private:
 
     StoredQuery m_storedQuery;
-    bool m_storedQueryHasBeenSet;
+    bool m_storedQueryHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

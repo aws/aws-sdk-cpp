@@ -475,37 +475,37 @@ namespace Model
   private:
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     AssociationEdgeType m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     SortAssociationsBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,6 +18,7 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_type(DataSourceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_configurationHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -56,6 +57,12 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
 
   }
 
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("VpcConfiguration", m_vpcConfiguration.Jsonize());
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
@@ -76,7 +83,7 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
 #include <aws/core/auth/AWSCredentials.h>
@@ -51,13 +52,13 @@ TEST_F(EC2DualStackTests, TestDualStackMocked)
 
     Aws::EC2::Model::DescribeHostsRequest request;
     Aws::EC2::Model::DescribeHostsOutcome response = ec2Client.DescribeHosts(request);
-    ASSERT_TRUE(response.IsSuccess());
+    AWS_ASSERT_SUCCESS(response);
 
     auto requestsMade = mockHttpClient->GetAllRequestsMade();
     ASSERT_EQ(1u, requestsMade.size());
     const Aws::Http::Standard::StandardHttpRequest requestMade = requestsMade[0];
-    ASSERT_EQ("https://api.ec2.us-east-1.aws", requestMade.GetURIString());
-    ASSERT_EQ("api.ec2.us-east-1.aws", requestMade.GetHeaderValue("host"));
+    ASSERT_EQ("https://ec2.us-east-1.api.aws", requestMade.GetURIString());
+    ASSERT_EQ("ec2.us-east-1.api.aws", requestMade.GetHeaderValue("host"));
 
     mockHttpClient->Reset();
     mockHttpClient = nullptr;
@@ -77,5 +78,5 @@ TEST_F(EC2DualStackTests, TestDualStackEndpoint)
     Aws::EC2::Model::DescribeHostsRequest request;
     Aws::EC2::Model::DescribeHostsOutcome response = ec2Client.DescribeHosts(request);
 
-    ASSERT_TRUE(response.IsSuccess());
+    AWS_ASSERT_SUCCESS(response);
 }

@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::Vector<TableToReload> m_tablesToReload;
-    bool m_tablesToReloadHasBeenSet;
+    bool m_tablesToReloadHasBeenSet = false;
 
     ReloadOptionValue m_reloadOption;
-    bool m_reloadOptionHasBeenSet;
+    bool m_reloadOptionHasBeenSet = false;
   };
 
 } // namespace Model

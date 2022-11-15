@@ -214,19 +214,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     PackageImportJobInputConfig m_inputConfig;
-    bool m_inputConfigHasBeenSet;
+    bool m_inputConfigHasBeenSet = false;
 
     Aws::Vector<JobResourceTags> m_jobTags;
-    bool m_jobTagsHasBeenSet;
+    bool m_jobTagsHasBeenSet = false;
 
     PackageImportJobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     PackageImportJobOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -772,28 +772,28 @@ namespace Model
   private:
 
     ApiPassthrough m_apiPassthrough;
-    bool m_apiPassthroughHasBeenSet;
+    bool m_apiPassthroughHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_csr;
-    bool m_csrHasBeenSet;
+    bool m_csrHasBeenSet = false;
 
     SigningAlgorithm m_signingAlgorithm;
-    bool m_signingAlgorithmHasBeenSet;
+    bool m_signingAlgorithmHasBeenSet = false;
 
     Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet;
+    bool m_templateArnHasBeenSet = false;
 
     Validity m_validity;
-    bool m_validityHasBeenSet;
+    bool m_validityHasBeenSet = false;
 
     Validity m_validityNotBefore;
-    bool m_validityNotBeforeHasBeenSet;
+    bool m_validityNotBeforeHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Aws::String m_proxySessionId;
-    bool m_proxySessionIdHasBeenSet;
+    bool m_proxySessionIdHasBeenSet = false;
   };
 
 } // namespace Model

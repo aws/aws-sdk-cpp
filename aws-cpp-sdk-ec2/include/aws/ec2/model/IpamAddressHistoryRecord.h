@@ -29,9 +29,10 @@ namespace Model
 
   /**
    * <p>The historical record of a CIDR within an IPAM scope. For more information,
-   * see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of
-   * IP addresses</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See
-   * Also:</h3>   <a
+   * see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/view-history-cidr-ipam.html">View
+   * the history of IP addresses</a> in the <i>Amazon VPC IPAM User Guide</i>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamAddressHistoryRecord">AWS
    * API Reference</a></p>
    */
@@ -285,48 +286,48 @@ namespace Model
     /**
      * <p>The compliance status of a resource. For more information on compliance
      * statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline const IpamComplianceStatus& GetResourceComplianceStatus() const{ return m_resourceComplianceStatus; }
 
     /**
      * <p>The compliance status of a resource. For more information on compliance
      * statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline bool ResourceComplianceStatusHasBeenSet() const { return m_resourceComplianceStatusHasBeenSet; }
 
     /**
      * <p>The compliance status of a resource. For more information on compliance
      * statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetResourceComplianceStatus(const IpamComplianceStatus& value) { m_resourceComplianceStatusHasBeenSet = true; m_resourceComplianceStatus = value; }
 
     /**
      * <p>The compliance status of a resource. For more information on compliance
      * statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetResourceComplianceStatus(IpamComplianceStatus&& value) { m_resourceComplianceStatusHasBeenSet = true; m_resourceComplianceStatus = std::move(value); }
 
     /**
      * <p>The compliance status of a resource. For more information on compliance
      * statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamAddressHistoryRecord& WithResourceComplianceStatus(const IpamComplianceStatus& value) { SetResourceComplianceStatus(value); return *this;}
 
     /**
      * <p>The compliance status of a resource. For more information on compliance
      * statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamAddressHistoryRecord& WithResourceComplianceStatus(IpamComplianceStatus&& value) { SetResourceComplianceStatus(std::move(value)); return *this;}
 
@@ -335,8 +336,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline const IpamOverlapStatus& GetResourceOverlapStatus() const{ return m_resourceOverlapStatus; }
 
@@ -344,8 +345,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline bool ResourceOverlapStatusHasBeenSet() const { return m_resourceOverlapStatusHasBeenSet; }
 
@@ -353,8 +354,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetResourceOverlapStatus(const IpamOverlapStatus& value) { m_resourceOverlapStatusHasBeenSet = true; m_resourceOverlapStatus = value; }
 
@@ -362,8 +363,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetResourceOverlapStatus(IpamOverlapStatus&& value) { m_resourceOverlapStatusHasBeenSet = true; m_resourceOverlapStatus = std::move(value); }
 
@@ -371,8 +372,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamAddressHistoryRecord& WithResourceOverlapStatus(const IpamOverlapStatus& value) { SetResourceOverlapStatus(value); return *this;}
 
@@ -380,8 +381,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamAddressHistoryRecord& WithResourceOverlapStatus(IpamOverlapStatus&& value) { SetResourceOverlapStatus(std::move(value)); return *this;}
 
@@ -515,37 +516,37 @@ namespace Model
   private:
 
     Aws::String m_resourceOwnerId;
-    bool m_resourceOwnerIdHasBeenSet;
+    bool m_resourceOwnerIdHasBeenSet = false;
 
     Aws::String m_resourceRegion;
-    bool m_resourceRegionHasBeenSet;
+    bool m_resourceRegionHasBeenSet = false;
 
     IpamAddressHistoryResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceCidr;
-    bool m_resourceCidrHasBeenSet;
+    bool m_resourceCidrHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     IpamComplianceStatus m_resourceComplianceStatus;
-    bool m_resourceComplianceStatusHasBeenSet;
+    bool m_resourceComplianceStatusHasBeenSet = false;
 
     IpamOverlapStatus m_resourceOverlapStatus;
-    bool m_resourceOverlapStatusHasBeenSet;
+    bool m_resourceOverlapStatusHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_sampledStartTime;
-    bool m_sampledStartTimeHasBeenSet;
+    bool m_sampledStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_sampledEndTime;
-    bool m_sampledEndTimeHasBeenSet;
+    bool m_sampledEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

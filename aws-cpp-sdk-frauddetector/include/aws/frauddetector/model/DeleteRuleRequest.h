@@ -55,7 +55,7 @@ namespace Model
   private:
 
     Rule m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
   };
 
 } // namespace Model

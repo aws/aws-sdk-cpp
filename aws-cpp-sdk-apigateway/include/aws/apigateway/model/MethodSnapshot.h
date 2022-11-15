@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a summary of a <a>Method</a> resource, given a particular date and
+   * <p>Represents a summary of a Method resource, given a particular date and
    * time.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/MethodSnapshot">AWS
    * API Reference</a></p>
@@ -104,32 +104,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
+     * <p>Specifies whether the method requires a valid ApiKey.</p>
      */
     inline bool GetApiKeyRequired() const{ return m_apiKeyRequired; }
 
     /**
-     * <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
+     * <p>Specifies whether the method requires a valid ApiKey.</p>
      */
     inline bool ApiKeyRequiredHasBeenSet() const { return m_apiKeyRequiredHasBeenSet; }
 
     /**
-     * <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
+     * <p>Specifies whether the method requires a valid ApiKey.</p>
      */
     inline void SetApiKeyRequired(bool value) { m_apiKeyRequiredHasBeenSet = true; m_apiKeyRequired = value; }
 
     /**
-     * <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
+     * <p>Specifies whether the method requires a valid ApiKey.</p>
      */
     inline MethodSnapshot& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
 
   private:
 
     Aws::String m_authorizationType;
-    bool m_authorizationTypeHasBeenSet;
+    bool m_authorizationTypeHasBeenSet = false;
 
     bool m_apiKeyRequired;
-    bool m_apiKeyRequiredHasBeenSet;
+    bool m_apiKeyRequiredHasBeenSet = false;
   };
 
 } // namespace Model

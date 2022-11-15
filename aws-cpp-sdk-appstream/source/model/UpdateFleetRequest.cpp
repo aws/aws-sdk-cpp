@@ -127,7 +127,7 @@ Aws::String UpdateFleetRequest::SerializePayload() const
 
   if(m_attributesToDeleteHasBeenSet)
   {
-   Array<JsonValue> attributesToDeleteJsonList(m_attributesToDelete.size());
+   Aws::Utils::Array<JsonValue> attributesToDeleteJsonList(m_attributesToDelete.size());
    for(unsigned attributesToDeleteIndex = 0; attributesToDeleteIndex < attributesToDeleteJsonList.GetLength(); ++attributesToDeleteIndex)
    {
      attributesToDeleteJsonList[attributesToDeleteIndex].AsString(FleetAttributeMapper::GetNameForFleetAttribute(m_attributesToDelete[attributesToDeleteIndex]));
@@ -160,7 +160,7 @@ Aws::String UpdateFleetRequest::SerializePayload() const
 
   if(m_usbDeviceFilterStringsHasBeenSet)
   {
-   Array<JsonValue> usbDeviceFilterStringsJsonList(m_usbDeviceFilterStrings.size());
+   Aws::Utils::Array<JsonValue> usbDeviceFilterStringsJsonList(m_usbDeviceFilterStrings.size());
    for(unsigned usbDeviceFilterStringsIndex = 0; usbDeviceFilterStringsIndex < usbDeviceFilterStringsJsonList.GetLength(); ++usbDeviceFilterStringsIndex)
    {
      usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString(m_usbDeviceFilterStrings[usbDeviceFilterStringsIndex]);

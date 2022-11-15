@@ -291,13 +291,13 @@ namespace Model
   private:
 
     Aws::String m_dataTableName;
-    bool m_dataTableNameHasBeenSet;
+    bool m_dataTableNameHasBeenSet = false;
 
     Aws::String m_dataTableColumns;
-    bool m_dataTableColumnsHasBeenSet;
+    bool m_dataTableColumnsHasBeenSet = false;
 
     Aws::String m_copyOptions;
-    bool m_copyOptionsHasBeenSet;
+    bool m_copyOptionsHasBeenSet = false;
   };
 
 } // namespace Model

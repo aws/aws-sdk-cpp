@@ -295,22 +295,22 @@ namespace Model
   private:
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     Aws::String m_signalName;
-    bool m_signalNameHasBeenSet;
+    bool m_signalNameHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
     Aws::String m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
   };
 
 } // namespace Model

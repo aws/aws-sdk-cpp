@@ -144,13 +144,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_fpgaImageId;
-    bool m_fpgaImageIdHasBeenSet;
+    bool m_fpgaImageIdHasBeenSet = false;
 
     FpgaImageAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
   };
 
 } // namespace Model

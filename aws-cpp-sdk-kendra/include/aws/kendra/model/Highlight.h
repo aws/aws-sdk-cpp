@@ -142,16 +142,16 @@ namespace Model
   private:
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
 
     bool m_topAnswer;
-    bool m_topAnswerHasBeenSet;
+    bool m_topAnswerHasBeenSet = false;
 
     HighlightType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

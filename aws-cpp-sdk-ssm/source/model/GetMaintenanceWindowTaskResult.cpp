@@ -48,7 +48,7 @@ GetMaintenanceWindowTaskResult& GetMaintenanceWindowTaskResult::operator =(const
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
@@ -127,6 +127,12 @@ GetMaintenanceWindowTaskResult& GetMaintenanceWindowTaskResult::operator =(const
   if(jsonValue.ValueExists("CutoffBehavior"))
   {
     m_cutoffBehavior = MaintenanceWindowTaskCutoffBehaviorMapper::GetMaintenanceWindowTaskCutoffBehaviorForName(jsonValue.GetString("CutoffBehavior"));
+
+  }
+
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
 
   }
 

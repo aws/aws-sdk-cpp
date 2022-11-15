@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_onDemandCost;
-    bool m_onDemandCostHasBeenSet;
+    bool m_onDemandCostHasBeenSet = false;
   };
 
 } // namespace Model

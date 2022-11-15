@@ -84,7 +84,7 @@ TranscriptFilter& TranscriptFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
@@ -129,7 +129,7 @@ JsonValue TranscriptFilter::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);

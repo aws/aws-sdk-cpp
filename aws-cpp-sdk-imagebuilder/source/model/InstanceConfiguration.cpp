@@ -42,7 +42,7 @@ InstanceConfiguration& InstanceConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("blockDeviceMappings"))
   {
-    Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("blockDeviceMappings");
+    Aws::Utils::Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("blockDeviceMappings");
     for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
     {
       m_blockDeviceMappings.push_back(blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue InstanceConfiguration::Jsonize() const
 
   if(m_blockDeviceMappingsHasBeenSet)
   {
-   Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
+   Aws::Utils::Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
    for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
    {
      blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject(m_blockDeviceMappings[blockDeviceMappingsIndex].Jsonize());

@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_destinationPath;
-    bool m_destinationPathHasBeenSet;
+    bool m_destinationPathHasBeenSet = false;
 
     GroupOwnerSetting m_groupOwnerSetting;
-    bool m_groupOwnerSettingHasBeenSet;
+    bool m_groupOwnerSettingHasBeenSet = false;
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

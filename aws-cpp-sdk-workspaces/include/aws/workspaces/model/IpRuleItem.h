@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_ipRule;
-    bool m_ipRuleHasBeenSet;
+    bool m_ipRuleHasBeenSet = false;
 
     Aws::String m_ruleDesc;
-    bool m_ruleDescHasBeenSet;
+    bool m_ruleDescHasBeenSet = false;
   };
 
 } // namespace Model

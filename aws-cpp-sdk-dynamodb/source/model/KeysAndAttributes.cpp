@@ -43,7 +43,7 @@ KeysAndAttributes& KeysAndAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
+    Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
       Aws::Map<Aws::String, JsonView> keyJsonMap = keysJsonList[keysIndex].GetAllObjects();
@@ -59,7 +59,7 @@ KeysAndAttributes& KeysAndAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttributesToGet"))
   {
-    Array<JsonView> attributesToGetJsonList = jsonValue.GetArray("AttributesToGet");
+    Aws::Utils::Array<JsonView> attributesToGetJsonList = jsonValue.GetArray("AttributesToGet");
     for(unsigned attributesToGetIndex = 0; attributesToGetIndex < attributesToGetJsonList.GetLength(); ++attributesToGetIndex)
     {
       m_attributesToGet.push_back(attributesToGetJsonList[attributesToGetIndex].AsString());
@@ -100,7 +100,7 @@ JsonValue KeysAndAttributes::Jsonize() const
 
   if(m_keysHasBeenSet)
   {
-   Array<JsonValue> keysJsonList(m_keys.size());
+   Aws::Utils::Array<JsonValue> keysJsonList(m_keys.size());
    for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
    {
      JsonValue keyJsonMap;
@@ -116,7 +116,7 @@ JsonValue KeysAndAttributes::Jsonize() const
 
   if(m_attributesToGetHasBeenSet)
   {
-   Array<JsonValue> attributesToGetJsonList(m_attributesToGet.size());
+   Aws::Utils::Array<JsonValue> attributesToGetJsonList(m_attributesToGet.size());
    for(unsigned attributesToGetIndex = 0; attributesToGetIndex < attributesToGetJsonList.GetLength(); ++attributesToGetIndex)
    {
      attributesToGetJsonList[attributesToGetIndex].AsString(m_attributesToGet[attributesToGetIndex]);

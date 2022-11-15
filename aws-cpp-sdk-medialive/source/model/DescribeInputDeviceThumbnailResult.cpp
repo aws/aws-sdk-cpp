@@ -80,7 +80,7 @@ DescribeInputDeviceThumbnailResult& DescribeInputDeviceThumbnailResult::operator
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-    m_lastModified = DateTime(lastModifiedIter->second, DateFormat::RFC822);
+    m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
   }
 
    return *this;

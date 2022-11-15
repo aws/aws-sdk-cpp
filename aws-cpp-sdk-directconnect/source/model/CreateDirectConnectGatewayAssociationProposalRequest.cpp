@@ -45,7 +45,7 @@ Aws::String CreateDirectConnectGatewayAssociationProposalRequest::SerializePaylo
 
   if(m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet)
   {
-   Array<JsonValue> addAllowedPrefixesToDirectConnectGatewayJsonList(m_addAllowedPrefixesToDirectConnectGateway.size());
+   Aws::Utils::Array<JsonValue> addAllowedPrefixesToDirectConnectGatewayJsonList(m_addAllowedPrefixesToDirectConnectGateway.size());
    for(unsigned addAllowedPrefixesToDirectConnectGatewayIndex = 0; addAllowedPrefixesToDirectConnectGatewayIndex < addAllowedPrefixesToDirectConnectGatewayJsonList.GetLength(); ++addAllowedPrefixesToDirectConnectGatewayIndex)
    {
      addAllowedPrefixesToDirectConnectGatewayJsonList[addAllowedPrefixesToDirectConnectGatewayIndex].AsObject(m_addAllowedPrefixesToDirectConnectGateway[addAllowedPrefixesToDirectConnectGatewayIndex].Jsonize());
@@ -56,7 +56,7 @@ Aws::String CreateDirectConnectGatewayAssociationProposalRequest::SerializePaylo
 
   if(m_removeAllowedPrefixesToDirectConnectGatewayHasBeenSet)
   {
-   Array<JsonValue> removeAllowedPrefixesToDirectConnectGatewayJsonList(m_removeAllowedPrefixesToDirectConnectGateway.size());
+   Aws::Utils::Array<JsonValue> removeAllowedPrefixesToDirectConnectGatewayJsonList(m_removeAllowedPrefixesToDirectConnectGateway.size());
    for(unsigned removeAllowedPrefixesToDirectConnectGatewayIndex = 0; removeAllowedPrefixesToDirectConnectGatewayIndex < removeAllowedPrefixesToDirectConnectGatewayJsonList.GetLength(); ++removeAllowedPrefixesToDirectConnectGatewayIndex)
    {
      removeAllowedPrefixesToDirectConnectGatewayJsonList[removeAllowedPrefixesToDirectConnectGatewayIndex].AsObject(m_removeAllowedPrefixesToDirectConnectGateway[removeAllowedPrefixesToDirectConnectGatewayIndex].Jsonize());

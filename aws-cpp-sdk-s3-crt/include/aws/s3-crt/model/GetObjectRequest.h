@@ -48,6 +48,17 @@ namespace Model
     Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        if (BucketHasBeenSet()) {
+            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+        }
+
+        return parameters;
+    }
+
+
     /**
      * <p>The bucket name containing the object. </p> <p>When using this action with an
      * access point, you must direct requests to the access point hostname. The access
@@ -1161,70 +1172,70 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet;
+    bool m_ifMatchHasBeenSet = false;
 
     Aws::Utils::DateTime m_ifModifiedSince;
-    bool m_ifModifiedSinceHasBeenSet;
+    bool m_ifModifiedSinceHasBeenSet = false;
 
     Aws::String m_ifNoneMatch;
-    bool m_ifNoneMatchHasBeenSet;
+    bool m_ifNoneMatchHasBeenSet = false;
 
     Aws::Utils::DateTime m_ifUnmodifiedSince;
-    bool m_ifUnmodifiedSinceHasBeenSet;
+    bool m_ifUnmodifiedSinceHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_range;
-    bool m_rangeHasBeenSet;
+    bool m_rangeHasBeenSet = false;
 
     Aws::String m_responseCacheControl;
-    bool m_responseCacheControlHasBeenSet;
+    bool m_responseCacheControlHasBeenSet = false;
 
     Aws::String m_responseContentDisposition;
-    bool m_responseContentDispositionHasBeenSet;
+    bool m_responseContentDispositionHasBeenSet = false;
 
     Aws::String m_responseContentEncoding;
-    bool m_responseContentEncodingHasBeenSet;
+    bool m_responseContentEncodingHasBeenSet = false;
 
     Aws::String m_responseContentLanguage;
-    bool m_responseContentLanguageHasBeenSet;
+    bool m_responseContentLanguageHasBeenSet = false;
 
     Aws::String m_responseContentType;
-    bool m_responseContentTypeHasBeenSet;
+    bool m_responseContentTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_responseExpires;
-    bool m_responseExpiresHasBeenSet;
+    bool m_responseExpiresHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_sSECustomerAlgorithm;
-    bool m_sSECustomerAlgorithmHasBeenSet;
+    bool m_sSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_sSECustomerKey;
-    bool m_sSECustomerKeyHasBeenSet;
+    bool m_sSECustomerKeyHasBeenSet = false;
 
     Aws::String m_sSECustomerKeyMD5;
-    bool m_sSECustomerKeyMD5HasBeenSet;
+    bool m_sSECustomerKeyMD5HasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     int m_partNumber;
-    bool m_partNumberHasBeenSet;
+    bool m_partNumberHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     ChecksumMode m_checksumMode;
-    bool m_checksumModeHasBeenSet;
+    bool m_checksumModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

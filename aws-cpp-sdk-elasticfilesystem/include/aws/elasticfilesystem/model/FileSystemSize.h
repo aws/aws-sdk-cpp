@@ -164,16 +164,16 @@ namespace Model
   private:
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     long long m_valueInIA;
-    bool m_valueInIAHasBeenSet;
+    bool m_valueInIAHasBeenSet = false;
 
     long long m_valueInStandard;
-    bool m_valueInStandardHasBeenSet;
+    bool m_valueInStandardHasBeenSet = false;
   };
 
 } // namespace Model

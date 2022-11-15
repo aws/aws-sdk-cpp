@@ -392,28 +392,28 @@ namespace Model
   private:
 
     ActionTypeEnum m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_targetGroupArn;
-    bool m_targetGroupArnHasBeenSet;
+    bool m_targetGroupArnHasBeenSet = false;
 
     AuthenticateOidcActionConfig m_authenticateOidcConfig;
-    bool m_authenticateOidcConfigHasBeenSet;
+    bool m_authenticateOidcConfigHasBeenSet = false;
 
     AuthenticateCognitoActionConfig m_authenticateCognitoConfig;
-    bool m_authenticateCognitoConfigHasBeenSet;
+    bool m_authenticateCognitoConfigHasBeenSet = false;
 
     int m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
 
     RedirectActionConfig m_redirectConfig;
-    bool m_redirectConfigHasBeenSet;
+    bool m_redirectConfigHasBeenSet = false;
 
     FixedResponseActionConfig m_fixedResponseConfig;
-    bool m_fixedResponseConfigHasBeenSet;
+    bool m_fixedResponseConfigHasBeenSet = false;
 
     ForwardActionConfig m_forwardConfig;
-    bool m_forwardConfigHasBeenSet;
+    bool m_forwardConfigHasBeenSet = false;
   };
 
 } // namespace Model

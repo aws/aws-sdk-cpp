@@ -151,97 +151,129 @@ namespace Model
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-     * Comprehend</a> to determine the source language.</p>
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateText</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-     * Comprehend</a> to determine the source language.</p>
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateText</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline bool SourceLanguageCodeHasBeenSet() const { return m_sourceLanguageCodeHasBeenSet; }
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-     * Comprehend</a> to determine the source language.</p>
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateText</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = value; }
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-     * Comprehend</a> to determine the source language.</p>
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateText</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::move(value); }
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-     * Comprehend</a> to determine the source language.</p>
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateText</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode.assign(value); }
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-     * Comprehend</a> to determine the source language.</p>
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateText</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline TranslateTextRequest& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-     * Comprehend</a> to determine the source language.</p>
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateText</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline TranslateTextRequest& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-     * Comprehend</a> to determine the source language.</p>
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateText</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline TranslateTextRequest& WithSourceLanguageCode(const char* value) { SetSourceLanguageCode(value); return *this;}
 
@@ -296,57 +328,63 @@ namespace Model
 
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline const TranslationSettings& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline TranslateTextRequest& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * <p>Settings to configure your translation output, including the option to set
+     * the formality level of the output text and the option to mask profane words and
+     * phrases.</p>
      */
     inline TranslateTextRequest& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terminologyNames;
-    bool m_terminologyNamesHasBeenSet;
+    bool m_terminologyNamesHasBeenSet = false;
 
     Aws::String m_sourceLanguageCode;
-    bool m_sourceLanguageCodeHasBeenSet;
+    bool m_sourceLanguageCodeHasBeenSet = false;
 
     Aws::String m_targetLanguageCode;
-    bool m_targetLanguageCodeHasBeenSet;
+    bool m_targetLanguageCodeHasBeenSet = false;
 
     TranslationSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

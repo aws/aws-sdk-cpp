@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<PropertyGroup> m_propertyGroups;
-    bool m_propertyGroupsHasBeenSet;
+    bool m_propertyGroupsHasBeenSet = false;
   };
 
 } // namespace Model

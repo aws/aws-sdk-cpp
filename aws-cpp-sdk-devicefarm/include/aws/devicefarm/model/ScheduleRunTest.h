@@ -849,19 +849,19 @@ namespace Model
   private:
 
     TestType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_testPackageArn;
-    bool m_testPackageArnHasBeenSet;
+    bool m_testPackageArnHasBeenSet = false;
 
     Aws::String m_testSpecArn;
-    bool m_testSpecArnHasBeenSet;
+    bool m_testSpecArnHasBeenSet = false;
 
     Aws::String m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

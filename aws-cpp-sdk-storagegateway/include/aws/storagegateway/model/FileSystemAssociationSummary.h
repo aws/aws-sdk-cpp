@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_fileSystemAssociationId;
-    bool m_fileSystemAssociationIdHasBeenSet;
+    bool m_fileSystemAssociationIdHasBeenSet = false;
 
     Aws::String m_fileSystemAssociationARN;
-    bool m_fileSystemAssociationARNHasBeenSet;
+    bool m_fileSystemAssociationARNHasBeenSet = false;
 
     Aws::String m_fileSystemAssociationStatus;
-    bool m_fileSystemAssociationStatusHasBeenSet;
+    bool m_fileSystemAssociationStatusHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
   };
 
 } // namespace Model

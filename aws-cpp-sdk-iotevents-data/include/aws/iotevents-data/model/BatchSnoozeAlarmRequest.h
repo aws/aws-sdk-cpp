@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<SnoozeAlarmActionRequest> m_snoozeActionRequests;
-    bool m_snoozeActionRequestsHasBeenSet;
+    bool m_snoozeActionRequestsHasBeenSet = false;
   };
 
 } // namespace Model

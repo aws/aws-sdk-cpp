@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_problemId;
-    bool m_problemIdHasBeenSet;
+    bool m_problemIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -65,7 +65,7 @@ namespace Model
   private:
 
     FieldLevelEncryptionProfileConfig m_fieldLevelEncryptionProfileConfig;
-    bool m_fieldLevelEncryptionProfileConfigHasBeenSet;
+    bool m_fieldLevelEncryptionProfileConfigHasBeenSet = false;
   };
 
 } // namespace Model

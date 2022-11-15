@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_checkName;
-    bool m_checkNameHasBeenSet;
+    bool m_checkNameHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ Aws::String DeleteRecommendationPreferencesRequest::SerializePayload() const
 
   if(m_recommendationPreferenceNamesHasBeenSet)
   {
-   Array<JsonValue> recommendationPreferenceNamesJsonList(m_recommendationPreferenceNames.size());
+   Aws::Utils::Array<JsonValue> recommendationPreferenceNamesJsonList(m_recommendationPreferenceNames.size());
    for(unsigned recommendationPreferenceNamesIndex = 0; recommendationPreferenceNamesIndex < recommendationPreferenceNamesJsonList.GetLength(); ++recommendationPreferenceNamesIndex)
    {
      recommendationPreferenceNamesJsonList[recommendationPreferenceNamesIndex].AsString(RecommendationPreferenceNameMapper::GetNameForRecommendationPreferenceName(m_recommendationPreferenceNames[recommendationPreferenceNamesIndex]));

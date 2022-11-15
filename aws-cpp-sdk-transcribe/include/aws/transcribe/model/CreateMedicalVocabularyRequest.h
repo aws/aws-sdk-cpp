@@ -38,253 +38,253 @@ namespace Model
 
 
     /**
-     * <p>The name of your new vocabulary.</p> <p>This name is case sensitive, cannot
-     * contain spaces, and must be unique within an Amazon Web Services account. If you
-     * try to create a vocabulary with the same name as a previous vocabulary, you get
-     * a <code>ConflictException</code> error.</p>
+     * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
+     * <p>This name is case sensitive, cannot contain spaces, and must be unique within
+     * an Amazon Web Services account. If you try to create a new medical vocabulary
+     * with the same name as an existing medical vocabulary, you get a
+     * <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of your new vocabulary.</p> <p>This name is case sensitive, cannot
-     * contain spaces, and must be unique within an Amazon Web Services account. If you
-     * try to create a vocabulary with the same name as a previous vocabulary, you get
-     * a <code>ConflictException</code> error.</p>
+     * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
+     * <p>This name is case sensitive, cannot contain spaces, and must be unique within
+     * an Amazon Web Services account. If you try to create a new medical vocabulary
+     * with the same name as an existing medical vocabulary, you get a
+     * <code>ConflictException</code> error.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
-     * <p>The name of your new vocabulary.</p> <p>This name is case sensitive, cannot
-     * contain spaces, and must be unique within an Amazon Web Services account. If you
-     * try to create a vocabulary with the same name as a previous vocabulary, you get
-     * a <code>ConflictException</code> error.</p>
+     * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
+     * <p>This name is case sensitive, cannot contain spaces, and must be unique within
+     * an Amazon Web Services account. If you try to create a new medical vocabulary
+     * with the same name as an existing medical vocabulary, you get a
+     * <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
-     * <p>The name of your new vocabulary.</p> <p>This name is case sensitive, cannot
-     * contain spaces, and must be unique within an Amazon Web Services account. If you
-     * try to create a vocabulary with the same name as a previous vocabulary, you get
-     * a <code>ConflictException</code> error.</p>
+     * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
+     * <p>This name is case sensitive, cannot contain spaces, and must be unique within
+     * an Amazon Web Services account. If you try to create a new medical vocabulary
+     * with the same name as an existing medical vocabulary, you get a
+     * <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of your new vocabulary.</p> <p>This name is case sensitive, cannot
-     * contain spaces, and must be unique within an Amazon Web Services account. If you
-     * try to create a vocabulary with the same name as a previous vocabulary, you get
-     * a <code>ConflictException</code> error.</p>
+     * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
+     * <p>This name is case sensitive, cannot contain spaces, and must be unique within
+     * an Amazon Web Services account. If you try to create a new medical vocabulary
+     * with the same name as an existing medical vocabulary, you get a
+     * <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of your new vocabulary.</p> <p>This name is case sensitive, cannot
-     * contain spaces, and must be unique within an Amazon Web Services account. If you
-     * try to create a vocabulary with the same name as a previous vocabulary, you get
-     * a <code>ConflictException</code> error.</p>
+     * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
+     * <p>This name is case sensitive, cannot contain spaces, and must be unique within
+     * an Amazon Web Services account. If you try to create a new medical vocabulary
+     * with the same name as an existing medical vocabulary, you get a
+     * <code>ConflictException</code> error.</p>
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of your new vocabulary.</p> <p>This name is case sensitive, cannot
-     * contain spaces, and must be unique within an Amazon Web Services account. If you
-     * try to create a vocabulary with the same name as a previous vocabulary, you get
-     * a <code>ConflictException</code> error.</p>
+     * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
+     * <p>This name is case sensitive, cannot contain spaces, and must be unique within
+     * an Amazon Web Services account. If you try to create a new medical vocabulary
+     * with the same name as an existing medical vocabulary, you get a
+     * <code>ConflictException</code> error.</p>
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of your new vocabulary.</p> <p>This name is case sensitive, cannot
-     * contain spaces, and must be unique within an Amazon Web Services account. If you
-     * try to create a vocabulary with the same name as a previous vocabulary, you get
-     * a <code>ConflictException</code> error.</p>
+     * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
+     * <p>This name is case sensitive, cannot contain spaces, and must be unique within
+     * an Amazon Web Services account. If you try to create a new medical vocabulary
+     * with the same name as an existing medical vocabulary, you get a
+     * <code>ConflictException</code> error.</p>
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 
 
     /**
      * <p>The language code that represents the language of the entries in your custom
-     * vocabulary. Note that U.S. English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.</p>
+     * vocabulary. US English (<code>en-US</code>) is the only language supported with
+     * Amazon Transcribe Medical.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * <p>The language code that represents the language of the entries in your custom
-     * vocabulary. Note that U.S. English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.</p>
+     * vocabulary. US English (<code>en-US</code>) is the only language supported with
+     * Amazon Transcribe Medical.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language code that represents the language of the entries in your custom
-     * vocabulary. Note that U.S. English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.</p>
+     * vocabulary. US English (<code>en-US</code>) is the only language supported with
+     * Amazon Transcribe Medical.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * <p>The language code that represents the language of the entries in your custom
-     * vocabulary. Note that U.S. English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.</p>
+     * vocabulary. US English (<code>en-US</code>) is the only language supported with
+     * Amazon Transcribe Medical.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>The language code that represents the language of the entries in your custom
-     * vocabulary. Note that U.S. English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.</p>
+     * vocabulary. US English (<code>en-US</code>) is the only language supported with
+     * Amazon Transcribe Medical.</p>
      */
     inline CreateMedicalVocabularyRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * <p>The language code that represents the language of the entries in your custom
-     * vocabulary. Note that U.S. English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.</p>
+     * vocabulary. US English (<code>en-US</code>) is the only language supported with
+     * Amazon Transcribe Medical.</p>
      */
     inline CreateMedicalVocabularyRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
     /**
      * <p>The Amazon S3 location (URI) of the text file that contains your custom
-     * vocabulary. The URI must be in the same Amazon Web Services Region as the
-     * resource that you're calling.</p> <p>Here's an example URI path:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
-     * </p>
+     * medical vocabulary. The URI must be in the same Amazon Web Services Region as
+     * the resource you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
      */
     inline const Aws::String& GetVocabularyFileUri() const{ return m_vocabularyFileUri; }
 
     /**
      * <p>The Amazon S3 location (URI) of the text file that contains your custom
-     * vocabulary. The URI must be in the same Amazon Web Services Region as the
-     * resource that you're calling.</p> <p>Here's an example URI path:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
-     * </p>
+     * medical vocabulary. The URI must be in the same Amazon Web Services Region as
+     * the resource you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
      */
     inline bool VocabularyFileUriHasBeenSet() const { return m_vocabularyFileUriHasBeenSet; }
 
     /**
      * <p>The Amazon S3 location (URI) of the text file that contains your custom
-     * vocabulary. The URI must be in the same Amazon Web Services Region as the
-     * resource that you're calling.</p> <p>Here's an example URI path:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
-     * </p>
+     * medical vocabulary. The URI must be in the same Amazon Web Services Region as
+     * the resource you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
      */
     inline void SetVocabularyFileUri(const Aws::String& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = value; }
 
     /**
      * <p>The Amazon S3 location (URI) of the text file that contains your custom
-     * vocabulary. The URI must be in the same Amazon Web Services Region as the
-     * resource that you're calling.</p> <p>Here's an example URI path:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
-     * </p>
+     * medical vocabulary. The URI must be in the same Amazon Web Services Region as
+     * the resource you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
      */
     inline void SetVocabularyFileUri(Aws::String&& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = std::move(value); }
 
     /**
      * <p>The Amazon S3 location (URI) of the text file that contains your custom
-     * vocabulary. The URI must be in the same Amazon Web Services Region as the
-     * resource that you're calling.</p> <p>Here's an example URI path:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
-     * </p>
+     * medical vocabulary. The URI must be in the same Amazon Web Services Region as
+     * the resource you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
      */
     inline void SetVocabularyFileUri(const char* value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri.assign(value); }
 
     /**
      * <p>The Amazon S3 location (URI) of the text file that contains your custom
-     * vocabulary. The URI must be in the same Amazon Web Services Region as the
-     * resource that you're calling.</p> <p>Here's an example URI path:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
-     * </p>
+     * medical vocabulary. The URI must be in the same Amazon Web Services Region as
+     * the resource you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyFileUri(const Aws::String& value) { SetVocabularyFileUri(value); return *this;}
 
     /**
      * <p>The Amazon S3 location (URI) of the text file that contains your custom
-     * vocabulary. The URI must be in the same Amazon Web Services Region as the
-     * resource that you're calling.</p> <p>Here's an example URI path:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
-     * </p>
+     * medical vocabulary. The URI must be in the same Amazon Web Services Region as
+     * the resource you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyFileUri(Aws::String&& value) { SetVocabularyFileUri(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 location (URI) of the text file that contains your custom
-     * vocabulary. The URI must be in the same Amazon Web Services Region as the
-     * resource that you're calling.</p> <p>Here's an example URI path:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/my-s3-bucket/my-vocab-file.txt</code>
-     * </p>
+     * medical vocabulary. The URI must be in the same Amazon Web Services Region as
+     * the resource you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyFileUri(const char* value) { SetVocabularyFileUri(value); return *this;}
 
 
     /**
-     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
-     * vocabulary at the time you create the new vocabulary.</p> <p>To learn more about
-     * using tags with Amazon Transcribe, refer to <a
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
+     * more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
-     * vocabulary at the time you create the new vocabulary.</p> <p>To learn more about
-     * using tags with Amazon Transcribe, refer to <a
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
+     * more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
-     * vocabulary at the time you create the new vocabulary.</p> <p>To learn more about
-     * using tags with Amazon Transcribe, refer to <a
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
+     * more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
-     * vocabulary at the time you create the new vocabulary.</p> <p>To learn more about
-     * using tags with Amazon Transcribe, refer to <a
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
+     * more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
-     * vocabulary at the time you create the new vocabulary.</p> <p>To learn more about
-     * using tags with Amazon Transcribe, refer to <a
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
+     * more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
     inline CreateMedicalVocabularyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
-     * vocabulary at the time you create the new vocabulary.</p> <p>To learn more about
-     * using tags with Amazon Transcribe, refer to <a
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
+     * more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
     inline CreateMedicalVocabularyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
-     * vocabulary at the time you create the new vocabulary.</p> <p>To learn more about
-     * using tags with Amazon Transcribe, refer to <a
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
+     * more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
     inline CreateMedicalVocabularyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
-     * vocabulary at the time you create the new vocabulary.</p> <p>To learn more about
-     * using tags with Amazon Transcribe, refer to <a
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
+     * more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -293,16 +293,16 @@ namespace Model
   private:
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_vocabularyFileUri;
-    bool m_vocabularyFileUriHasBeenSet;
+    bool m_vocabularyFileUriHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

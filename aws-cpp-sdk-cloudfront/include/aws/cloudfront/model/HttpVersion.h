@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     http1_1,
-    http2
+    http2,
+    http3,
+    http2and3
   };
 
 namespace HttpVersionMapper

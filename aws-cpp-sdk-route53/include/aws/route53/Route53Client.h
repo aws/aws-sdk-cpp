@@ -5,413 +5,82 @@
 
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
-#include <aws/route53/Route53Errors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/route53/model/ActivateKeySigningKeyResult.h>
-#include <aws/route53/model/AssociateVPCWithHostedZoneResult.h>
-#include <aws/route53/model/ChangeResourceRecordSetsResult.h>
-#include <aws/route53/model/ChangeTagsForResourceResult.h>
-#include <aws/route53/model/CreateHealthCheckResult.h>
-#include <aws/route53/model/CreateHostedZoneResult.h>
-#include <aws/route53/model/CreateKeySigningKeyResult.h>
-#include <aws/route53/model/CreateQueryLoggingConfigResult.h>
-#include <aws/route53/model/CreateReusableDelegationSetResult.h>
-#include <aws/route53/model/CreateTrafficPolicyResult.h>
-#include <aws/route53/model/CreateTrafficPolicyInstanceResult.h>
-#include <aws/route53/model/CreateTrafficPolicyVersionResult.h>
-#include <aws/route53/model/CreateVPCAssociationAuthorizationResult.h>
-#include <aws/route53/model/DeactivateKeySigningKeyResult.h>
-#include <aws/route53/model/DeleteHealthCheckResult.h>
-#include <aws/route53/model/DeleteHostedZoneResult.h>
-#include <aws/route53/model/DeleteKeySigningKeyResult.h>
-#include <aws/route53/model/DeleteQueryLoggingConfigResult.h>
-#include <aws/route53/model/DeleteReusableDelegationSetResult.h>
-#include <aws/route53/model/DeleteTrafficPolicyResult.h>
-#include <aws/route53/model/DeleteTrafficPolicyInstanceResult.h>
-#include <aws/route53/model/DeleteVPCAssociationAuthorizationResult.h>
-#include <aws/route53/model/DisableHostedZoneDNSSECResult.h>
-#include <aws/route53/model/DisassociateVPCFromHostedZoneResult.h>
-#include <aws/route53/model/EnableHostedZoneDNSSECResult.h>
-#include <aws/route53/model/GetAccountLimitResult.h>
-#include <aws/route53/model/GetChangeResult.h>
-#include <aws/route53/model/GetCheckerIpRangesResult.h>
-#include <aws/route53/model/GetDNSSECResult.h>
-#include <aws/route53/model/GetGeoLocationResult.h>
-#include <aws/route53/model/GetHealthCheckResult.h>
-#include <aws/route53/model/GetHealthCheckCountResult.h>
-#include <aws/route53/model/GetHealthCheckLastFailureReasonResult.h>
-#include <aws/route53/model/GetHealthCheckStatusResult.h>
-#include <aws/route53/model/GetHostedZoneResult.h>
-#include <aws/route53/model/GetHostedZoneCountResult.h>
-#include <aws/route53/model/GetHostedZoneLimitResult.h>
-#include <aws/route53/model/GetQueryLoggingConfigResult.h>
-#include <aws/route53/model/GetReusableDelegationSetResult.h>
-#include <aws/route53/model/GetReusableDelegationSetLimitResult.h>
-#include <aws/route53/model/GetTrafficPolicyResult.h>
-#include <aws/route53/model/GetTrafficPolicyInstanceResult.h>
-#include <aws/route53/model/GetTrafficPolicyInstanceCountResult.h>
-#include <aws/route53/model/ListGeoLocationsResult.h>
-#include <aws/route53/model/ListHealthChecksResult.h>
-#include <aws/route53/model/ListHostedZonesResult.h>
-#include <aws/route53/model/ListHostedZonesByNameResult.h>
-#include <aws/route53/model/ListHostedZonesByVPCResult.h>
-#include <aws/route53/model/ListQueryLoggingConfigsResult.h>
-#include <aws/route53/model/ListResourceRecordSetsResult.h>
-#include <aws/route53/model/ListReusableDelegationSetsResult.h>
-#include <aws/route53/model/ListTagsForResourceResult.h>
-#include <aws/route53/model/ListTagsForResourcesResult.h>
-#include <aws/route53/model/ListTrafficPoliciesResult.h>
-#include <aws/route53/model/ListTrafficPolicyInstancesResult.h>
-#include <aws/route53/model/ListTrafficPolicyInstancesByHostedZoneResult.h>
-#include <aws/route53/model/ListTrafficPolicyInstancesByPolicyResult.h>
-#include <aws/route53/model/ListTrafficPolicyVersionsResult.h>
-#include <aws/route53/model/ListVPCAssociationAuthorizationsResult.h>
-#include <aws/route53/model/TestDNSAnswerResult.h>
-#include <aws/route53/model/UpdateHealthCheckResult.h>
-#include <aws/route53/model/UpdateHostedZoneCommentResult.h>
-#include <aws/route53/model/UpdateTrafficPolicyCommentResult.h>
-#include <aws/route53/model/UpdateTrafficPolicyInstanceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/route53/Route53ServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Route53
 {
-
-namespace Model
-{
-        class ActivateKeySigningKeyRequest;
-        class AssociateVPCWithHostedZoneRequest;
-        class ChangeResourceRecordSetsRequest;
-        class ChangeTagsForResourceRequest;
-        class CreateHealthCheckRequest;
-        class CreateHostedZoneRequest;
-        class CreateKeySigningKeyRequest;
-        class CreateQueryLoggingConfigRequest;
-        class CreateReusableDelegationSetRequest;
-        class CreateTrafficPolicyRequest;
-        class CreateTrafficPolicyInstanceRequest;
-        class CreateTrafficPolicyVersionRequest;
-        class CreateVPCAssociationAuthorizationRequest;
-        class DeactivateKeySigningKeyRequest;
-        class DeleteHealthCheckRequest;
-        class DeleteHostedZoneRequest;
-        class DeleteKeySigningKeyRequest;
-        class DeleteQueryLoggingConfigRequest;
-        class DeleteReusableDelegationSetRequest;
-        class DeleteTrafficPolicyRequest;
-        class DeleteTrafficPolicyInstanceRequest;
-        class DeleteVPCAssociationAuthorizationRequest;
-        class DisableHostedZoneDNSSECRequest;
-        class DisassociateVPCFromHostedZoneRequest;
-        class EnableHostedZoneDNSSECRequest;
-        class GetAccountLimitRequest;
-        class GetChangeRequest;
-        class GetCheckerIpRangesRequest;
-        class GetDNSSECRequest;
-        class GetGeoLocationRequest;
-        class GetHealthCheckRequest;
-        class GetHealthCheckCountRequest;
-        class GetHealthCheckLastFailureReasonRequest;
-        class GetHealthCheckStatusRequest;
-        class GetHostedZoneRequest;
-        class GetHostedZoneCountRequest;
-        class GetHostedZoneLimitRequest;
-        class GetQueryLoggingConfigRequest;
-        class GetReusableDelegationSetRequest;
-        class GetReusableDelegationSetLimitRequest;
-        class GetTrafficPolicyRequest;
-        class GetTrafficPolicyInstanceRequest;
-        class GetTrafficPolicyInstanceCountRequest;
-        class ListGeoLocationsRequest;
-        class ListHealthChecksRequest;
-        class ListHostedZonesRequest;
-        class ListHostedZonesByNameRequest;
-        class ListHostedZonesByVPCRequest;
-        class ListQueryLoggingConfigsRequest;
-        class ListResourceRecordSetsRequest;
-        class ListReusableDelegationSetsRequest;
-        class ListTagsForResourceRequest;
-        class ListTagsForResourcesRequest;
-        class ListTrafficPoliciesRequest;
-        class ListTrafficPolicyInstancesRequest;
-        class ListTrafficPolicyInstancesByHostedZoneRequest;
-        class ListTrafficPolicyInstancesByPolicyRequest;
-        class ListTrafficPolicyVersionsRequest;
-        class ListVPCAssociationAuthorizationsRequest;
-        class TestDNSAnswerRequest;
-        class UpdateHealthCheckRequest;
-        class UpdateHostedZoneCommentRequest;
-        class UpdateTrafficPolicyCommentRequest;
-        class UpdateTrafficPolicyInstanceRequest;
-
-        typedef Aws::Utils::Outcome<ActivateKeySigningKeyResult, Route53Error> ActivateKeySigningKeyOutcome;
-        typedef Aws::Utils::Outcome<AssociateVPCWithHostedZoneResult, Route53Error> AssociateVPCWithHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<ChangeResourceRecordSetsResult, Route53Error> ChangeResourceRecordSetsOutcome;
-        typedef Aws::Utils::Outcome<ChangeTagsForResourceResult, Route53Error> ChangeTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<CreateHealthCheckResult, Route53Error> CreateHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<CreateHostedZoneResult, Route53Error> CreateHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<CreateKeySigningKeyResult, Route53Error> CreateKeySigningKeyOutcome;
-        typedef Aws::Utils::Outcome<CreateQueryLoggingConfigResult, Route53Error> CreateQueryLoggingConfigOutcome;
-        typedef Aws::Utils::Outcome<CreateReusableDelegationSetResult, Route53Error> CreateReusableDelegationSetOutcome;
-        typedef Aws::Utils::Outcome<CreateTrafficPolicyResult, Route53Error> CreateTrafficPolicyOutcome;
-        typedef Aws::Utils::Outcome<CreateTrafficPolicyInstanceResult, Route53Error> CreateTrafficPolicyInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateTrafficPolicyVersionResult, Route53Error> CreateTrafficPolicyVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateVPCAssociationAuthorizationResult, Route53Error> CreateVPCAssociationAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<DeactivateKeySigningKeyResult, Route53Error> DeactivateKeySigningKeyOutcome;
-        typedef Aws::Utils::Outcome<DeleteHealthCheckResult, Route53Error> DeleteHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<DeleteHostedZoneResult, Route53Error> DeleteHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<DeleteKeySigningKeyResult, Route53Error> DeleteKeySigningKeyOutcome;
-        typedef Aws::Utils::Outcome<DeleteQueryLoggingConfigResult, Route53Error> DeleteQueryLoggingConfigOutcome;
-        typedef Aws::Utils::Outcome<DeleteReusableDelegationSetResult, Route53Error> DeleteReusableDelegationSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteTrafficPolicyResult, Route53Error> DeleteTrafficPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteTrafficPolicyInstanceResult, Route53Error> DeleteTrafficPolicyInstanceOutcome;
-        typedef Aws::Utils::Outcome<DeleteVPCAssociationAuthorizationResult, Route53Error> DeleteVPCAssociationAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<DisableHostedZoneDNSSECResult, Route53Error> DisableHostedZoneDNSSECOutcome;
-        typedef Aws::Utils::Outcome<DisassociateVPCFromHostedZoneResult, Route53Error> DisassociateVPCFromHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<EnableHostedZoneDNSSECResult, Route53Error> EnableHostedZoneDNSSECOutcome;
-        typedef Aws::Utils::Outcome<GetAccountLimitResult, Route53Error> GetAccountLimitOutcome;
-        typedef Aws::Utils::Outcome<GetChangeResult, Route53Error> GetChangeOutcome;
-        typedef Aws::Utils::Outcome<GetCheckerIpRangesResult, Route53Error> GetCheckerIpRangesOutcome;
-        typedef Aws::Utils::Outcome<GetDNSSECResult, Route53Error> GetDNSSECOutcome;
-        typedef Aws::Utils::Outcome<GetGeoLocationResult, Route53Error> GetGeoLocationOutcome;
-        typedef Aws::Utils::Outcome<GetHealthCheckResult, Route53Error> GetHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<GetHealthCheckCountResult, Route53Error> GetHealthCheckCountOutcome;
-        typedef Aws::Utils::Outcome<GetHealthCheckLastFailureReasonResult, Route53Error> GetHealthCheckLastFailureReasonOutcome;
-        typedef Aws::Utils::Outcome<GetHealthCheckStatusResult, Route53Error> GetHealthCheckStatusOutcome;
-        typedef Aws::Utils::Outcome<GetHostedZoneResult, Route53Error> GetHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<GetHostedZoneCountResult, Route53Error> GetHostedZoneCountOutcome;
-        typedef Aws::Utils::Outcome<GetHostedZoneLimitResult, Route53Error> GetHostedZoneLimitOutcome;
-        typedef Aws::Utils::Outcome<GetQueryLoggingConfigResult, Route53Error> GetQueryLoggingConfigOutcome;
-        typedef Aws::Utils::Outcome<GetReusableDelegationSetResult, Route53Error> GetReusableDelegationSetOutcome;
-        typedef Aws::Utils::Outcome<GetReusableDelegationSetLimitResult, Route53Error> GetReusableDelegationSetLimitOutcome;
-        typedef Aws::Utils::Outcome<GetTrafficPolicyResult, Route53Error> GetTrafficPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceResult, Route53Error> GetTrafficPolicyInstanceOutcome;
-        typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceCountResult, Route53Error> GetTrafficPolicyInstanceCountOutcome;
-        typedef Aws::Utils::Outcome<ListGeoLocationsResult, Route53Error> ListGeoLocationsOutcome;
-        typedef Aws::Utils::Outcome<ListHealthChecksResult, Route53Error> ListHealthChecksOutcome;
-        typedef Aws::Utils::Outcome<ListHostedZonesResult, Route53Error> ListHostedZonesOutcome;
-        typedef Aws::Utils::Outcome<ListHostedZonesByNameResult, Route53Error> ListHostedZonesByNameOutcome;
-        typedef Aws::Utils::Outcome<ListHostedZonesByVPCResult, Route53Error> ListHostedZonesByVPCOutcome;
-        typedef Aws::Utils::Outcome<ListQueryLoggingConfigsResult, Route53Error> ListQueryLoggingConfigsOutcome;
-        typedef Aws::Utils::Outcome<ListResourceRecordSetsResult, Route53Error> ListResourceRecordSetsOutcome;
-        typedef Aws::Utils::Outcome<ListReusableDelegationSetsResult, Route53Error> ListReusableDelegationSetsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Route53Error> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourcesResult, Route53Error> ListTagsForResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPoliciesResult, Route53Error> ListTrafficPoliciesOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesResult, Route53Error> ListTrafficPolicyInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesByHostedZoneResult, Route53Error> ListTrafficPolicyInstancesByHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesByPolicyResult, Route53Error> ListTrafficPolicyInstancesByPolicyOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPolicyVersionsResult, Route53Error> ListTrafficPolicyVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListVPCAssociationAuthorizationsResult, Route53Error> ListVPCAssociationAuthorizationsOutcome;
-        typedef Aws::Utils::Outcome<TestDNSAnswerResult, Route53Error> TestDNSAnswerOutcome;
-        typedef Aws::Utils::Outcome<UpdateHealthCheckResult, Route53Error> UpdateHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<UpdateHostedZoneCommentResult, Route53Error> UpdateHostedZoneCommentOutcome;
-        typedef Aws::Utils::Outcome<UpdateTrafficPolicyCommentResult, Route53Error> UpdateTrafficPolicyCommentOutcome;
-        typedef Aws::Utils::Outcome<UpdateTrafficPolicyInstanceResult, Route53Error> UpdateTrafficPolicyInstanceOutcome;
-
-        typedef std::future<ActivateKeySigningKeyOutcome> ActivateKeySigningKeyOutcomeCallable;
-        typedef std::future<AssociateVPCWithHostedZoneOutcome> AssociateVPCWithHostedZoneOutcomeCallable;
-        typedef std::future<ChangeResourceRecordSetsOutcome> ChangeResourceRecordSetsOutcomeCallable;
-        typedef std::future<ChangeTagsForResourceOutcome> ChangeTagsForResourceOutcomeCallable;
-        typedef std::future<CreateHealthCheckOutcome> CreateHealthCheckOutcomeCallable;
-        typedef std::future<CreateHostedZoneOutcome> CreateHostedZoneOutcomeCallable;
-        typedef std::future<CreateKeySigningKeyOutcome> CreateKeySigningKeyOutcomeCallable;
-        typedef std::future<CreateQueryLoggingConfigOutcome> CreateQueryLoggingConfigOutcomeCallable;
-        typedef std::future<CreateReusableDelegationSetOutcome> CreateReusableDelegationSetOutcomeCallable;
-        typedef std::future<CreateTrafficPolicyOutcome> CreateTrafficPolicyOutcomeCallable;
-        typedef std::future<CreateTrafficPolicyInstanceOutcome> CreateTrafficPolicyInstanceOutcomeCallable;
-        typedef std::future<CreateTrafficPolicyVersionOutcome> CreateTrafficPolicyVersionOutcomeCallable;
-        typedef std::future<CreateVPCAssociationAuthorizationOutcome> CreateVPCAssociationAuthorizationOutcomeCallable;
-        typedef std::future<DeactivateKeySigningKeyOutcome> DeactivateKeySigningKeyOutcomeCallable;
-        typedef std::future<DeleteHealthCheckOutcome> DeleteHealthCheckOutcomeCallable;
-        typedef std::future<DeleteHostedZoneOutcome> DeleteHostedZoneOutcomeCallable;
-        typedef std::future<DeleteKeySigningKeyOutcome> DeleteKeySigningKeyOutcomeCallable;
-        typedef std::future<DeleteQueryLoggingConfigOutcome> DeleteQueryLoggingConfigOutcomeCallable;
-        typedef std::future<DeleteReusableDelegationSetOutcome> DeleteReusableDelegationSetOutcomeCallable;
-        typedef std::future<DeleteTrafficPolicyOutcome> DeleteTrafficPolicyOutcomeCallable;
-        typedef std::future<DeleteTrafficPolicyInstanceOutcome> DeleteTrafficPolicyInstanceOutcomeCallable;
-        typedef std::future<DeleteVPCAssociationAuthorizationOutcome> DeleteVPCAssociationAuthorizationOutcomeCallable;
-        typedef std::future<DisableHostedZoneDNSSECOutcome> DisableHostedZoneDNSSECOutcomeCallable;
-        typedef std::future<DisassociateVPCFromHostedZoneOutcome> DisassociateVPCFromHostedZoneOutcomeCallable;
-        typedef std::future<EnableHostedZoneDNSSECOutcome> EnableHostedZoneDNSSECOutcomeCallable;
-        typedef std::future<GetAccountLimitOutcome> GetAccountLimitOutcomeCallable;
-        typedef std::future<GetChangeOutcome> GetChangeOutcomeCallable;
-        typedef std::future<GetCheckerIpRangesOutcome> GetCheckerIpRangesOutcomeCallable;
-        typedef std::future<GetDNSSECOutcome> GetDNSSECOutcomeCallable;
-        typedef std::future<GetGeoLocationOutcome> GetGeoLocationOutcomeCallable;
-        typedef std::future<GetHealthCheckOutcome> GetHealthCheckOutcomeCallable;
-        typedef std::future<GetHealthCheckCountOutcome> GetHealthCheckCountOutcomeCallable;
-        typedef std::future<GetHealthCheckLastFailureReasonOutcome> GetHealthCheckLastFailureReasonOutcomeCallable;
-        typedef std::future<GetHealthCheckStatusOutcome> GetHealthCheckStatusOutcomeCallable;
-        typedef std::future<GetHostedZoneOutcome> GetHostedZoneOutcomeCallable;
-        typedef std::future<GetHostedZoneCountOutcome> GetHostedZoneCountOutcomeCallable;
-        typedef std::future<GetHostedZoneLimitOutcome> GetHostedZoneLimitOutcomeCallable;
-        typedef std::future<GetQueryLoggingConfigOutcome> GetQueryLoggingConfigOutcomeCallable;
-        typedef std::future<GetReusableDelegationSetOutcome> GetReusableDelegationSetOutcomeCallable;
-        typedef std::future<GetReusableDelegationSetLimitOutcome> GetReusableDelegationSetLimitOutcomeCallable;
-        typedef std::future<GetTrafficPolicyOutcome> GetTrafficPolicyOutcomeCallable;
-        typedef std::future<GetTrafficPolicyInstanceOutcome> GetTrafficPolicyInstanceOutcomeCallable;
-        typedef std::future<GetTrafficPolicyInstanceCountOutcome> GetTrafficPolicyInstanceCountOutcomeCallable;
-        typedef std::future<ListGeoLocationsOutcome> ListGeoLocationsOutcomeCallable;
-        typedef std::future<ListHealthChecksOutcome> ListHealthChecksOutcomeCallable;
-        typedef std::future<ListHostedZonesOutcome> ListHostedZonesOutcomeCallable;
-        typedef std::future<ListHostedZonesByNameOutcome> ListHostedZonesByNameOutcomeCallable;
-        typedef std::future<ListHostedZonesByVPCOutcome> ListHostedZonesByVPCOutcomeCallable;
-        typedef std::future<ListQueryLoggingConfigsOutcome> ListQueryLoggingConfigsOutcomeCallable;
-        typedef std::future<ListResourceRecordSetsOutcome> ListResourceRecordSetsOutcomeCallable;
-        typedef std::future<ListReusableDelegationSetsOutcome> ListReusableDelegationSetsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTagsForResourcesOutcome> ListTagsForResourcesOutcomeCallable;
-        typedef std::future<ListTrafficPoliciesOutcome> ListTrafficPoliciesOutcomeCallable;
-        typedef std::future<ListTrafficPolicyInstancesOutcome> ListTrafficPolicyInstancesOutcomeCallable;
-        typedef std::future<ListTrafficPolicyInstancesByHostedZoneOutcome> ListTrafficPolicyInstancesByHostedZoneOutcomeCallable;
-        typedef std::future<ListTrafficPolicyInstancesByPolicyOutcome> ListTrafficPolicyInstancesByPolicyOutcomeCallable;
-        typedef std::future<ListTrafficPolicyVersionsOutcome> ListTrafficPolicyVersionsOutcomeCallable;
-        typedef std::future<ListVPCAssociationAuthorizationsOutcome> ListVPCAssociationAuthorizationsOutcomeCallable;
-        typedef std::future<TestDNSAnswerOutcome> TestDNSAnswerOutcomeCallable;
-        typedef std::future<UpdateHealthCheckOutcome> UpdateHealthCheckOutcomeCallable;
-        typedef std::future<UpdateHostedZoneCommentOutcome> UpdateHostedZoneCommentOutcomeCallable;
-        typedef std::future<UpdateTrafficPolicyCommentOutcome> UpdateTrafficPolicyCommentOutcomeCallable;
-        typedef std::future<UpdateTrafficPolicyInstanceOutcome> UpdateTrafficPolicyInstanceOutcomeCallable;
-} // namespace Model
-
-  class Route53Client;
-
-    typedef std::function<void(const Route53Client*, const Model::ActivateKeySigningKeyRequest&, const Model::ActivateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateKeySigningKeyResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::AssociateVPCWithHostedZoneRequest&, const Model::AssociateVPCWithHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVPCWithHostedZoneResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ChangeResourceRecordSetsRequest&, const Model::ChangeResourceRecordSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeResourceRecordSetsResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ChangeTagsForResourceRequest&, const Model::ChangeTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::CreateHealthCheckRequest&, const Model::CreateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHealthCheckResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::CreateHostedZoneRequest&, const Model::CreateHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHostedZoneResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::CreateKeySigningKeyRequest&, const Model::CreateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeySigningKeyResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::CreateQueryLoggingConfigRequest&, const Model::CreateQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueryLoggingConfigResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::CreateReusableDelegationSetRequest&, const Model::CreateReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReusableDelegationSetResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyRequest&, const Model::CreateTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyInstanceRequest&, const Model::CreateTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyInstanceResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyVersionRequest&, const Model::CreateTrafficPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyVersionResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::CreateVPCAssociationAuthorizationRequest&, const Model::CreateVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCAssociationAuthorizationResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DeactivateKeySigningKeyRequest&, const Model::DeactivateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateKeySigningKeyResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DeleteHealthCheckRequest&, const Model::DeleteHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHealthCheckResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DeleteHostedZoneRequest&, const Model::DeleteHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostedZoneResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DeleteKeySigningKeyRequest&, const Model::DeleteKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeySigningKeyResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DeleteQueryLoggingConfigRequest&, const Model::DeleteQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueryLoggingConfigResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DeleteReusableDelegationSetRequest&, const Model::DeleteReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReusableDelegationSetResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyRequest&, const Model::DeleteTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyInstanceRequest&, const Model::DeleteTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyInstanceResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DeleteVPCAssociationAuthorizationRequest&, const Model::DeleteVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVPCAssociationAuthorizationResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DisableHostedZoneDNSSECRequest&, const Model::DisableHostedZoneDNSSECOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableHostedZoneDNSSECResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::DisassociateVPCFromHostedZoneRequest&, const Model::DisassociateVPCFromHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVPCFromHostedZoneResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::EnableHostedZoneDNSSECRequest&, const Model::EnableHostedZoneDNSSECOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableHostedZoneDNSSECResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetAccountLimitRequest&, const Model::GetAccountLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountLimitResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetChangeRequest&, const Model::GetChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetCheckerIpRangesRequest&, const Model::GetCheckerIpRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCheckerIpRangesResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetDNSSECRequest&, const Model::GetDNSSECOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDNSSECResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetGeoLocationRequest&, const Model::GetGeoLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeoLocationResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetHealthCheckRequest&, const Model::GetHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetHealthCheckCountRequest&, const Model::GetHealthCheckCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckCountResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetHealthCheckLastFailureReasonRequest&, const Model::GetHealthCheckLastFailureReasonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckLastFailureReasonResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetHealthCheckStatusRequest&, const Model::GetHealthCheckStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckStatusResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetHostedZoneRequest&, const Model::GetHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedZoneResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetHostedZoneCountRequest&, const Model::GetHostedZoneCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedZoneCountResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetHostedZoneLimitRequest&, const Model::GetHostedZoneLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedZoneLimitResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetQueryLoggingConfigRequest&, const Model::GetQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryLoggingConfigResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetReusableDelegationSetRequest&, const Model::GetReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReusableDelegationSetResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetReusableDelegationSetLimitRequest&, const Model::GetReusableDelegationSetLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReusableDelegationSetLimitResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyRequest&, const Model::GetTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyInstanceRequest&, const Model::GetTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyInstanceResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyInstanceCountRequest&, const Model::GetTrafficPolicyInstanceCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyInstanceCountResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListGeoLocationsRequest&, const Model::ListGeoLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeoLocationsResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListHealthChecksRequest&, const Model::ListHealthChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHealthChecksResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListHostedZonesRequest&, const Model::ListHostedZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListHostedZonesByNameRequest&, const Model::ListHostedZonesByNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesByNameResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListHostedZonesByVPCRequest&, const Model::ListHostedZonesByVPCOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesByVPCResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListQueryLoggingConfigsRequest&, const Model::ListQueryLoggingConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueryLoggingConfigsResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListResourceRecordSetsRequest&, const Model::ListResourceRecordSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceRecordSetsResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListReusableDelegationSetsRequest&, const Model::ListReusableDelegationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReusableDelegationSetsResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListTagsForResourcesRequest&, const Model::ListTagsForResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourcesResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListTrafficPoliciesRequest&, const Model::ListTrafficPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrafficPoliciesResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListTrafficPolicyInstancesRequest&, const Model::ListTrafficPolicyInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrafficPolicyInstancesResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListTrafficPolicyInstancesByHostedZoneRequest&, const Model::ListTrafficPolicyInstancesByHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrafficPolicyInstancesByHostedZoneResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListTrafficPolicyInstancesByPolicyRequest&, const Model::ListTrafficPolicyInstancesByPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrafficPolicyInstancesByPolicyResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListTrafficPolicyVersionsRequest&, const Model::ListTrafficPolicyVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrafficPolicyVersionsResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::ListVPCAssociationAuthorizationsRequest&, const Model::ListVPCAssociationAuthorizationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVPCAssociationAuthorizationsResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::TestDNSAnswerRequest&, const Model::TestDNSAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestDNSAnswerResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::UpdateHealthCheckRequest&, const Model::UpdateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHealthCheckResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::UpdateHostedZoneCommentRequest&, const Model::UpdateHostedZoneCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHostedZoneCommentResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::UpdateTrafficPolicyCommentRequest&, const Model::UpdateTrafficPolicyCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrafficPolicyCommentResponseReceivedHandler;
-    typedef std::function<void(const Route53Client*, const Model::UpdateTrafficPolicyInstanceRequest&, const Model::UpdateTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrafficPolicyInstanceResponseReceivedHandler;
-
   /**
-   * <p>Amazon Route 53 is a highly available and scalable Domain Name System (DNS)
-   * web service.</p>
+   * <p>Amazon Route 53 is a highly available and scalable Domain Name System (DNS)
+   * web service.</p> <p>You can use Route 53 to:</p> <ul> <li> <p>Register domain
+   * names.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-domain-registration.html">How
+   * domain registration works</a>.</p> </li> <li> <p>Route internet traffic to the
+   * resources for your domain</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">How
+   * internet traffic is routed to your website or web application</a>.</p> </li>
+   * <li> <p>Check the health of your resources.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html">How
+   * Route 53 checks the health of your resources</a>.</p> </li> </ul>
    */
   class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        Route53Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        Route53Client(const Aws::Route53::Route53ClientConfiguration& clientConfiguration = Aws::Route53::Route53ClientConfiguration(),
+                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = Aws::MakeShared<Route53EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        Route53Client(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        Route53Client(const Aws::Auth::AWSCredentials& credentials,
+                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = Aws::MakeShared<Route53EndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Route53::Route53ClientConfiguration& clientConfiguration = Aws::Route53::Route53ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         Route53Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = Aws::MakeShared<Route53EndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Route53::Route53ClientConfiguration& clientConfiguration = Aws::Route53::Route53ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        Route53Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        Route53Client(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        Route53Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~Route53Client();
 
 
@@ -469,6 +138,34 @@ namespace Model
          * An Async wrapper for AssociateVPCWithHostedZone that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateVPCWithHostedZoneAsync(const Model::AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates, changes, or deletes CIDR blocks within a collection. Contains
+         * authoritative IP information mapping blocks to one or multiple locations.</p>
+         * <p>A change request can update multiple locations in a collection at a time,
+         * which is helpful if you want to move one or more CIDR blocks from one location
+         * to another in one transaction, without downtime. </p> <p> <b>Limits</b> </p>
+         * <p>The max number of CIDR blocks included in the request is 1000. As a result,
+         * big updates require multiple API calls.</p> <p> <b> PUT and DELETE_IF_EXISTS</b>
+         * </p> <p>Use <code>ChangeCidrCollection</code> to perform the following
+         * actions:</p> <ul> <li> <p> <code>PUT</code>: Create a CIDR block within the
+         * specified collection.</p> </li> <li> <p> <code> DELETE_IF_EXISTS</code>: Delete
+         * an existing CIDR block from the collection.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ChangeCidrCollectionOutcome ChangeCidrCollection(const Model::ChangeCidrCollectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ChangeCidrCollection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ChangeCidrCollectionOutcomeCallable ChangeCidrCollectionCallable(const Model::ChangeCidrCollectionRequest& request) const;
+
+        /**
+         * An Async wrapper for ChangeCidrCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ChangeCidrCollectionAsync(const Model::ChangeCidrCollectionRequest& request, const ChangeCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates, changes, or deletes a resource record set, which contains
@@ -568,6 +265,24 @@ namespace Model
         virtual void ChangeTagsForResourceAsync(const Model::ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a CIDR collection in the current Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCidrCollectionOutcome CreateCidrCollection(const Model::CreateCidrCollectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCidrCollection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCidrCollectionOutcomeCallable CreateCidrCollectionCallable(const Model::CreateCidrCollectionRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateCidrCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCidrCollectionAsync(const Model::CreateCidrCollectionRequest& request, const CreateCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new health check.</p> <p>For information about adding health checks
          * to resource record sets, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId">HealthCheckId</a>
@@ -618,26 +333,26 @@ namespace Model
          * public hosted zone to a private hosted zone or vice versa. Instead, you must
          * create a new hosted zone with the same name and create new resource record
          * sets.</p>  <p>For more information about charges for hosted zones,
-         * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+         * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
          * Pricing</a>.</p> <p>Note the following:</p> <ul> <li> <p>You can't create a
          * hosted zone for a top-level domain (TLD) such as .com.</p> </li> <li> <p>For
          * public hosted zones, Route 53 automatically creates a default SOA record and
          * four NS records for the zone. For more information about SOA and NS records, see
          * <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
-         * and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon
+         * and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon
          * Route 53 Developer Guide</i>.</p> <p>If you want to use the same name servers
          * for multiple public hosted zones, you can optionally associate a reusable
          * delegation set with the hosted zone. See the <code>DelegationSetId</code>
          * element.</p> </li> <li> <p>If your domain is registered with a registrar other
-         * than Route 53, you must update the name servers with your registrar to make
+         * than Route 53, you must update the name servers with your registrar to make
          * Route 53 the DNS service for the domain. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
-         * DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route
+         * DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route
          * 53 Developer Guide</i>. </p> </li> </ul> <p>When you submit a
          * <code>CreateHostedZone</code> request, the initial status of the hosted zone is
          * <code>PENDING</code>. For public hosted zones, this means that the NS and SOA
-         * records are not yet available on all Route 53 DNS servers. When the NS and SOA
+         * records are not yet available on all Route 53 DNS servers. When the NS and SOA
          * records are available, the status of the zone changes to
          * <code>INSYNC</code>.</p> <p>The <code>CreateHostedZone</code> request requires
          * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p> 
@@ -945,6 +660,24 @@ namespace Model
         virtual void DeactivateKeySigningKeyAsync(const Model::DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a CIDR collection in the current Amazon Web Services account. The
+         * collection must be empty before it can be deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCidrCollectionOutcome DeleteCidrCollection(const Model::DeleteCidrCollectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCidrCollection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCidrCollectionOutcomeCallable DeleteCidrCollectionCallable(const Model::DeleteCidrCollectionRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteCidrCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCidrCollectionAsync(const Model::DeleteCidrCollectionRequest& request, const DeleteCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
          * you from deleting a health check even if the health check is associated with one
          * or more resource record sets. If you delete a health check and you don't update
@@ -979,7 +712,7 @@ namespace Model
          * service, such as Cloud Map, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
          * Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon
-         * Route 53 Developer Guide</i> for information about how to delete it. (The
+         * Route 53 Developer Guide</i> for information about how to delete it. (The
          * process is the same for public and private hosted zones that were created by
          * another service.)</p> <p>If you want to keep your domain registration but you
          * want to stop routing internet traffic to your website or web application, we
@@ -994,9 +727,9 @@ namespace Model
          *  <p>If you want to avoid the monthly charge for the hosted zone, you
          * can transfer DNS service for the domain to a free DNS service. When you transfer
          * DNS service, you have to update the name servers for the domain registration. If
-         * the domain is registered with Route 53, see <a
+         * the domain is registered with Route 53, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
-         * for information about how to replace Route 53 name servers with name servers for
+         * for information about how to replace Route 53 name servers with name servers for
          * the new DNS service. If the domain is registered with another registrar, use the
          * method provided by the registrar to update name servers for the domain
          * registration. For more information, perform an internet search on "free DNS
@@ -1004,7 +737,7 @@ namespace Model
          * default SOA record and NS resource record sets. If the hosted zone contains
          * other resource record sets, you must delete them before you can delete the
          * hosted zone. If you try to delete a hosted zone that contains other resource
-         * record sets, the request fails, and Route 53 returns a
+         * record sets, the request fails, and Route 53 returns a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
          * from your hosted zone, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.</p>
@@ -1631,6 +1364,60 @@ namespace Model
         virtual void GetTrafficPolicyInstanceCountAsync(const Model::GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a paginated list of location objects and their CIDR
+         * blocks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCidrBlocksOutcome ListCidrBlocks(const Model::ListCidrBlocksRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCidrBlocks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCidrBlocksOutcomeCallable ListCidrBlocksCallable(const Model::ListCidrBlocksRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCidrBlocks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCidrBlocksAsync(const Model::ListCidrBlocksRequest& request, const ListCidrBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a paginated list of CIDR collections in the Amazon Web Services
+         * account (metadata only).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCidrCollectionsOutcome ListCidrCollections(const Model::ListCidrCollectionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCidrCollections that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCidrCollectionsOutcomeCallable ListCidrCollectionsCallable(const Model::ListCidrCollectionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCidrCollections that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCidrCollectionsAsync(const Model::ListCidrCollectionsRequest& request, const ListCidrCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a paginated list of CIDR locations for the given collection (metadata
+         * only, does not include CIDR blocks).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCidrLocationsOutcome ListCidrLocations(const Model::ListCidrLocationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCidrLocations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCidrLocationsOutcomeCallable ListCidrLocationsCallable(const Model::ListCidrLocationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCidrLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCidrLocationsAsync(const Model::ListCidrLocationsRequest& request, const ListCidrLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a list of supported geographic locations.</p> <p>Countries are
          * listed first, and continents are listed last. If Amazon Route 53 supports
          * subdivisions for a country (for example, states or provinces), the subdivisions
@@ -2179,76 +1966,13 @@ namespace Model
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<Route53EndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void ActivateKeySigningKeyAsyncHelper(const Model::ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateVPCWithHostedZoneAsyncHelper(const Model::AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ChangeResourceRecordSetsAsyncHelper(const Model::ChangeResourceRecordSetsRequest& request, const ChangeResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ChangeTagsForResourceAsyncHelper(const Model::ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateHealthCheckAsyncHelper(const Model::CreateHealthCheckRequest& request, const CreateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateHostedZoneAsyncHelper(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateKeySigningKeyAsyncHelper(const Model::CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateQueryLoggingConfigAsyncHelper(const Model::CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateReusableDelegationSetAsyncHelper(const Model::CreateReusableDelegationSetRequest& request, const CreateReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTrafficPolicyAsyncHelper(const Model::CreateTrafficPolicyRequest& request, const CreateTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTrafficPolicyInstanceAsyncHelper(const Model::CreateTrafficPolicyInstanceRequest& request, const CreateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTrafficPolicyVersionAsyncHelper(const Model::CreateTrafficPolicyVersionRequest& request, const CreateTrafficPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateVPCAssociationAuthorizationAsyncHelper(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeactivateKeySigningKeyAsyncHelper(const Model::DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteHealthCheckAsyncHelper(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteHostedZoneAsyncHelper(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteKeySigningKeyAsyncHelper(const Model::DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteQueryLoggingConfigAsyncHelper(const Model::DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteReusableDelegationSetAsyncHelper(const Model::DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTrafficPolicyAsyncHelper(const Model::DeleteTrafficPolicyRequest& request, const DeleteTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTrafficPolicyInstanceAsyncHelper(const Model::DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteVPCAssociationAuthorizationAsyncHelper(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableHostedZoneDNSSECAsyncHelper(const Model::DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateVPCFromHostedZoneAsyncHelper(const Model::DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableHostedZoneDNSSECAsyncHelper(const Model::EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAccountLimitAsyncHelper(const Model::GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetChangeAsyncHelper(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCheckerIpRangesAsyncHelper(const Model::GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDNSSECAsyncHelper(const Model::GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetGeoLocationAsyncHelper(const Model::GetGeoLocationRequest& request, const GetGeoLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHealthCheckAsyncHelper(const Model::GetHealthCheckRequest& request, const GetHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHealthCheckCountAsyncHelper(const Model::GetHealthCheckCountRequest& request, const GetHealthCheckCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHealthCheckLastFailureReasonAsyncHelper(const Model::GetHealthCheckLastFailureReasonRequest& request, const GetHealthCheckLastFailureReasonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHealthCheckStatusAsyncHelper(const Model::GetHealthCheckStatusRequest& request, const GetHealthCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHostedZoneAsyncHelper(const Model::GetHostedZoneRequest& request, const GetHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHostedZoneCountAsyncHelper(const Model::GetHostedZoneCountRequest& request, const GetHostedZoneCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHostedZoneLimitAsyncHelper(const Model::GetHostedZoneLimitRequest& request, const GetHostedZoneLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetQueryLoggingConfigAsyncHelper(const Model::GetQueryLoggingConfigRequest& request, const GetQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetReusableDelegationSetAsyncHelper(const Model::GetReusableDelegationSetRequest& request, const GetReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetReusableDelegationSetLimitAsyncHelper(const Model::GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTrafficPolicyAsyncHelper(const Model::GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTrafficPolicyInstanceAsyncHelper(const Model::GetTrafficPolicyInstanceRequest& request, const GetTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTrafficPolicyInstanceCountAsyncHelper(const Model::GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListGeoLocationsAsyncHelper(const Model::ListGeoLocationsRequest& request, const ListGeoLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHealthChecksAsyncHelper(const Model::ListHealthChecksRequest& request, const ListHealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHostedZonesAsyncHelper(const Model::ListHostedZonesRequest& request, const ListHostedZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHostedZonesByNameAsyncHelper(const Model::ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHostedZonesByVPCAsyncHelper(const Model::ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListQueryLoggingConfigsAsyncHelper(const Model::ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListResourceRecordSetsAsyncHelper(const Model::ListResourceRecordSetsRequest& request, const ListResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListReusableDelegationSetsAsyncHelper(const Model::ListReusableDelegationSetsRequest& request, const ListReusableDelegationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourcesAsyncHelper(const Model::ListTagsForResourcesRequest& request, const ListTagsForResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTrafficPoliciesAsyncHelper(const Model::ListTrafficPoliciesRequest& request, const ListTrafficPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTrafficPolicyInstancesAsyncHelper(const Model::ListTrafficPolicyInstancesRequest& request, const ListTrafficPolicyInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTrafficPolicyInstancesByHostedZoneAsyncHelper(const Model::ListTrafficPolicyInstancesByHostedZoneRequest& request, const ListTrafficPolicyInstancesByHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTrafficPolicyInstancesByPolicyAsyncHelper(const Model::ListTrafficPolicyInstancesByPolicyRequest& request, const ListTrafficPolicyInstancesByPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTrafficPolicyVersionsAsyncHelper(const Model::ListTrafficPolicyVersionsRequest& request, const ListTrafficPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListVPCAssociationAuthorizationsAsyncHelper(const Model::ListVPCAssociationAuthorizationsRequest& request, const ListVPCAssociationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TestDNSAnswerAsyncHelper(const Model::TestDNSAnswerRequest& request, const TestDNSAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateHealthCheckAsyncHelper(const Model::UpdateHealthCheckRequest& request, const UpdateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateHostedZoneCommentAsyncHelper(const Model::UpdateHostedZoneCommentRequest& request, const UpdateHostedZoneCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateTrafficPolicyCommentAsyncHelper(const Model::UpdateTrafficPolicyCommentRequest& request, const UpdateTrafficPolicyCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateTrafficPolicyInstanceAsyncHelper(const Model::UpdateTrafficPolicyInstanceRequest& request, const UpdateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void init(const Route53ClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        Route53ClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<Route53EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Route53

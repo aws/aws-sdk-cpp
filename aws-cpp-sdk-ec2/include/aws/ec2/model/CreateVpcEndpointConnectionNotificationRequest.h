@@ -324,22 +324,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_connectionNotificationArn;
-    bool m_connectionNotificationArnHasBeenSet;
+    bool m_connectionNotificationArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectionEvents;
-    bool m_connectionEventsHasBeenSet;
+    bool m_connectionEventsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

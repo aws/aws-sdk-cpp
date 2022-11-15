@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_eventResourceARN;
-    bool m_eventResourceARNHasBeenSet;
+    bool m_eventResourceARNHasBeenSet = false;
   };
 
 } // namespace Model

@@ -99,10 +99,10 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     bool m_cleanAmplifyApp;
-    bool m_cleanAmplifyAppHasBeenSet;
+    bool m_cleanAmplifyAppHasBeenSet = false;
   };
 
 } // namespace Model

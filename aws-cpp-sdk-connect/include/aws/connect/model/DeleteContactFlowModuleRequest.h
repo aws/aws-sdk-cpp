@@ -82,52 +82,52 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline const Aws::String& GetContactFlowModuleId() const{ return m_contactFlowModuleId; }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline bool ContactFlowModuleIdHasBeenSet() const { return m_contactFlowModuleIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline void SetContactFlowModuleId(const Aws::String& value) { m_contactFlowModuleIdHasBeenSet = true; m_contactFlowModuleId = value; }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline void SetContactFlowModuleId(Aws::String&& value) { m_contactFlowModuleIdHasBeenSet = true; m_contactFlowModuleId = std::move(value); }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline void SetContactFlowModuleId(const char* value) { m_contactFlowModuleIdHasBeenSet = true; m_contactFlowModuleId.assign(value); }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline DeleteContactFlowModuleRequest& WithContactFlowModuleId(const Aws::String& value) { SetContactFlowModuleId(value); return *this;}
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline DeleteContactFlowModuleRequest& WithContactFlowModuleId(Aws::String&& value) { SetContactFlowModuleId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline DeleteContactFlowModuleRequest& WithContactFlowModuleId(const char* value) { SetContactFlowModuleId(value); return *this;}
 
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_contactFlowModuleId;
-    bool m_contactFlowModuleIdHasBeenSet;
+    bool m_contactFlowModuleIdHasBeenSet = false;
   };
 
 } // namespace Model

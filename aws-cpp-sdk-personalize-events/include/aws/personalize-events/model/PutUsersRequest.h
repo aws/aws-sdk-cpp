@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
 
     Aws::Vector<User> m_users;
-    bool m_usersHasBeenSet;
+    bool m_usersHasBeenSet = false;
   };
 
 } // namespace Model

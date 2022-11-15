@@ -42,7 +42,7 @@ SalesforceStandardObjectAttachmentConfiguration& SalesforceStandardObjectAttachm
 
   if(jsonValue.ValueExists("FieldMappings"))
   {
-    Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
+    Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
     for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
     {
       m_fieldMappings.push_back(fieldMappingsJsonList[fieldMappingsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue SalesforceStandardObjectAttachmentConfiguration::Jsonize() const
 
   if(m_fieldMappingsHasBeenSet)
   {
-   Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
+   Aws::Utils::Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
    for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
    {
      fieldMappingsJsonList[fieldMappingsIndex].AsObject(m_fieldMappings[fieldMappingsIndex].Jsonize());

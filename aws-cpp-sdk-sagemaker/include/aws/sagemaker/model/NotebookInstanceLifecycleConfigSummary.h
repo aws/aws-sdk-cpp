@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceLifecycleConfigName;
-    bool m_notebookInstanceLifecycleConfigNameHasBeenSet;
+    bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
     Aws::String m_notebookInstanceLifecycleConfigArn;
-    bool m_notebookInstanceLifecycleConfigArnHasBeenSet;
+    bool m_notebookInstanceLifecycleConfigArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -157,10 +157,10 @@ namespace Model
   private:
 
     ForwardValues m_option;
-    bool m_optionHasBeenSet;
+    bool m_optionHasBeenSet = false;
 
     Aws::Vector<HeaderEnum> m_headersAllowList;
-    bool m_headersAllowListHasBeenSet;
+    bool m_headersAllowListHasBeenSet = false;
   };
 
 } // namespace Model

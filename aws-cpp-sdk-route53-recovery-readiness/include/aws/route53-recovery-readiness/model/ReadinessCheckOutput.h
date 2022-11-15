@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_readinessCheckArn;
-    bool m_readinessCheckArnHasBeenSet;
+    bool m_readinessCheckArnHasBeenSet = false;
 
     Aws::String m_readinessCheckName;
-    bool m_readinessCheckNameHasBeenSet;
+    bool m_readinessCheckNameHasBeenSet = false;
 
     Aws::String m_resourceSet;
-    bool m_resourceSetHasBeenSet;
+    bool m_resourceSetHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

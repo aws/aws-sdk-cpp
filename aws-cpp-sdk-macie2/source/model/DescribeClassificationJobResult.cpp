@@ -40,6 +40,15 @@ DescribeClassificationJobResult::DescribeClassificationJobResult(const Aws::Amaz
 DescribeClassificationJobResult& DescribeClassificationJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("allowListIds"))
+  {
+    Aws::Utils::Array<JsonView> allowListIdsJsonList = jsonValue.GetArray("allowListIds");
+    for(unsigned allowListIdsIndex = 0; allowListIdsIndex < allowListIdsJsonList.GetLength(); ++allowListIdsIndex)
+    {
+      m_allowListIds.push_back(allowListIdsJsonList[allowListIdsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
@@ -54,7 +63,7 @@ DescribeClassificationJobResult& DescribeClassificationJobResult::operator =(con
 
   if(jsonValue.ValueExists("customDataIdentifierIds"))
   {
-    Array<JsonView> customDataIdentifierIdsJsonList = jsonValue.GetArray("customDataIdentifierIds");
+    Aws::Utils::Array<JsonView> customDataIdentifierIdsJsonList = jsonValue.GetArray("customDataIdentifierIds");
     for(unsigned customDataIdentifierIdsIndex = 0; customDataIdentifierIdsIndex < customDataIdentifierIdsJsonList.GetLength(); ++customDataIdentifierIdsIndex)
     {
       m_customDataIdentifierIds.push_back(customDataIdentifierIdsJsonList[customDataIdentifierIdsIndex].AsString());
@@ -111,7 +120,7 @@ DescribeClassificationJobResult& DescribeClassificationJobResult::operator =(con
 
   if(jsonValue.ValueExists("managedDataIdentifierIds"))
   {
-    Array<JsonView> managedDataIdentifierIdsJsonList = jsonValue.GetArray("managedDataIdentifierIds");
+    Aws::Utils::Array<JsonView> managedDataIdentifierIdsJsonList = jsonValue.GetArray("managedDataIdentifierIds");
     for(unsigned managedDataIdentifierIdsIndex = 0; managedDataIdentifierIdsIndex < managedDataIdentifierIdsJsonList.GetLength(); ++managedDataIdentifierIdsIndex)
     {
       m_managedDataIdentifierIds.push_back(managedDataIdentifierIdsJsonList[managedDataIdentifierIdsIndex].AsString());

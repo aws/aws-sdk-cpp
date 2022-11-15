@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The model training validation messages.</p><p><h3>See Also:</h3>   <a
+   * <p>The model training data validation metrics.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DataValidationMetrics">AWS
    * API Reference</a></p>
    */
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The file-specific model training validation messages.</p>
+     * <p>The file-specific model training data validation messages.</p>
      */
     inline const Aws::Vector<FileValidationMessage>& GetFileLevelMessages() const{ return m_fileLevelMessages; }
 
     /**
-     * <p>The file-specific model training validation messages.</p>
+     * <p>The file-specific model training data validation messages.</p>
      */
     inline bool FileLevelMessagesHasBeenSet() const { return m_fileLevelMessagesHasBeenSet; }
 
     /**
-     * <p>The file-specific model training validation messages.</p>
+     * <p>The file-specific model training data validation messages.</p>
      */
     inline void SetFileLevelMessages(const Aws::Vector<FileValidationMessage>& value) { m_fileLevelMessagesHasBeenSet = true; m_fileLevelMessages = value; }
 
     /**
-     * <p>The file-specific model training validation messages.</p>
+     * <p>The file-specific model training data validation messages.</p>
      */
     inline void SetFileLevelMessages(Aws::Vector<FileValidationMessage>&& value) { m_fileLevelMessagesHasBeenSet = true; m_fileLevelMessages = std::move(value); }
 
     /**
-     * <p>The file-specific model training validation messages.</p>
+     * <p>The file-specific model training data validation messages.</p>
      */
     inline DataValidationMetrics& WithFileLevelMessages(const Aws::Vector<FileValidationMessage>& value) { SetFileLevelMessages(value); return *this;}
 
     /**
-     * <p>The file-specific model training validation messages.</p>
+     * <p>The file-specific model training data validation messages.</p>
      */
     inline DataValidationMetrics& WithFileLevelMessages(Aws::Vector<FileValidationMessage>&& value) { SetFileLevelMessages(std::move(value)); return *this;}
 
     /**
-     * <p>The file-specific model training validation messages.</p>
+     * <p>The file-specific model training data validation messages.</p>
      */
     inline DataValidationMetrics& AddFileLevelMessages(const FileValidationMessage& value) { m_fileLevelMessagesHasBeenSet = true; m_fileLevelMessages.push_back(value); return *this; }
 
     /**
-     * <p>The file-specific model training validation messages.</p>
+     * <p>The file-specific model training data validation messages.</p>
      */
     inline DataValidationMetrics& AddFileLevelMessages(FileValidationMessage&& value) { m_fileLevelMessagesHasBeenSet = true; m_fileLevelMessages.push_back(std::move(value)); return *this; }
 
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<FileValidationMessage> m_fileLevelMessages;
-    bool m_fileLevelMessagesHasBeenSet;
+    bool m_fileLevelMessagesHasBeenSet = false;
 
     Aws::Vector<FieldValidationMessage> m_fieldLevelMessages;
-    bool m_fieldLevelMessagesHasBeenSet;
+    bool m_fieldLevelMessagesHasBeenSet = false;
   };
 
 } // namespace Model

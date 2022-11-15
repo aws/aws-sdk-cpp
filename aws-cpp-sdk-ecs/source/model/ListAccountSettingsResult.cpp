@@ -30,7 +30,7 @@ ListAccountSettingsResult& ListAccountSettingsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("settings"))
   {
-    Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
+    Aws::Utils::Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
     for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
     {
       m_settings.push_back(settingsJsonList[settingsIndex].AsObject());

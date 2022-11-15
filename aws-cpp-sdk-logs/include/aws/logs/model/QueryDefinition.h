@@ -256,19 +256,19 @@ namespace Model
   private:
 
     Aws::String m_queryDefinitionId;
-    bool m_queryDefinitionIdHasBeenSet;
+    bool m_queryDefinitionIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     long long m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logGroupNames;
-    bool m_logGroupNamesHasBeenSet;
+    bool m_logGroupNamesHasBeenSet = false;
   };
 
 } // namespace Model

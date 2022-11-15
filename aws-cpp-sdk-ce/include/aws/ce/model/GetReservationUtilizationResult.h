@@ -36,63 +36,63 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that you used your RIs.</p>
+     * <p>The amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline const Aws::Vector<UtilizationByTime>& GetUtilizationsByTime() const{ return m_utilizationsByTime; }
 
     /**
-     * <p>The amount of time that you used your RIs.</p>
+     * <p>The amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline void SetUtilizationsByTime(const Aws::Vector<UtilizationByTime>& value) { m_utilizationsByTime = value; }
 
     /**
-     * <p>The amount of time that you used your RIs.</p>
+     * <p>The amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline void SetUtilizationsByTime(Aws::Vector<UtilizationByTime>&& value) { m_utilizationsByTime = std::move(value); }
 
     /**
-     * <p>The amount of time that you used your RIs.</p>
+     * <p>The amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline GetReservationUtilizationResult& WithUtilizationsByTime(const Aws::Vector<UtilizationByTime>& value) { SetUtilizationsByTime(value); return *this;}
 
     /**
-     * <p>The amount of time that you used your RIs.</p>
+     * <p>The amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline GetReservationUtilizationResult& WithUtilizationsByTime(Aws::Vector<UtilizationByTime>&& value) { SetUtilizationsByTime(std::move(value)); return *this;}
 
     /**
-     * <p>The amount of time that you used your RIs.</p>
+     * <p>The amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline GetReservationUtilizationResult& AddUtilizationsByTime(const UtilizationByTime& value) { m_utilizationsByTime.push_back(value); return *this; }
 
     /**
-     * <p>The amount of time that you used your RIs.</p>
+     * <p>The amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline GetReservationUtilizationResult& AddUtilizationsByTime(UtilizationByTime&& value) { m_utilizationsByTime.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The total amount of time that you used your RIs.</p>
+     * <p>The total amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline const ReservationAggregates& GetTotal() const{ return m_total; }
 
     /**
-     * <p>The total amount of time that you used your RIs.</p>
+     * <p>The total amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline void SetTotal(const ReservationAggregates& value) { m_total = value; }
 
     /**
-     * <p>The total amount of time that you used your RIs.</p>
+     * <p>The total amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline void SetTotal(ReservationAggregates&& value) { m_total = std::move(value); }
 
     /**
-     * <p>The total amount of time that you used your RIs.</p>
+     * <p>The total amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline GetReservationUtilizationResult& WithTotal(const ReservationAggregates& value) { SetTotal(value); return *this;}
 
     /**
-     * <p>The total amount of time that you used your RIs.</p>
+     * <p>The total amount of time that you used your Reserved Instances (RIs).</p>
      */
     inline GetReservationUtilizationResult& WithTotal(ReservationAggregates&& value) { SetTotal(std::move(value)); return *this;}
 

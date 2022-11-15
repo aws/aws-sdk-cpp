@@ -38,27 +38,6 @@ namespace Model
 
 
     /**
-     * <p>The database connection ID that executed the SQL statement.</p>
-     */
-    inline long long GetDbConnectionId() const{ return m_dbConnectionId; }
-
-    /**
-     * <p>The database connection ID that executed the SQL statement.</p>
-     */
-    inline bool DbConnectionIdHasBeenSet() const { return m_dbConnectionIdHasBeenSet; }
-
-    /**
-     * <p>The database connection ID that executed the SQL statement.</p>
-     */
-    inline void SetDbConnectionId(long long value) { m_dbConnectionIdHasBeenSet = true; m_dbConnectionId = value; }
-
-    /**
-     * <p>The database connection ID that executed the SQL statement.</p>
-     */
-    inline StatementTimeoutException& WithDbConnectionId(long long value) { SetDbConnectionId(value); return *this;}
-
-
-    /**
      * <p>The error message returned by this <code>StatementTimeoutException</code>
      * error.</p>
      */
@@ -106,13 +85,34 @@ namespace Model
      */
     inline StatementTimeoutException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
+    /**
+     * <p>The database connection ID that executed the SQL statement.</p>
+     */
+    inline long long GetDbConnectionId() const{ return m_dbConnectionId; }
+
+    /**
+     * <p>The database connection ID that executed the SQL statement.</p>
+     */
+    inline bool DbConnectionIdHasBeenSet() const { return m_dbConnectionIdHasBeenSet; }
+
+    /**
+     * <p>The database connection ID that executed the SQL statement.</p>
+     */
+    inline void SetDbConnectionId(long long value) { m_dbConnectionIdHasBeenSet = true; m_dbConnectionId = value; }
+
+    /**
+     * <p>The database connection ID that executed the SQL statement.</p>
+     */
+    inline StatementTimeoutException& WithDbConnectionId(long long value) { SetDbConnectionId(value); return *this;}
+
   private:
 
-    long long m_dbConnectionId;
-    bool m_dbConnectionIdHasBeenSet;
-
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
+
+    long long m_dbConnectionId;
+    bool m_dbConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ ModelPackageStatusDetails& ModelPackageStatusDetails::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("ValidationStatuses"))
   {
-    Array<JsonView> validationStatusesJsonList = jsonValue.GetArray("ValidationStatuses");
+    Aws::Utils::Array<JsonView> validationStatusesJsonList = jsonValue.GetArray("ValidationStatuses");
     for(unsigned validationStatusesIndex = 0; validationStatusesIndex < validationStatusesJsonList.GetLength(); ++validationStatusesIndex)
     {
       m_validationStatuses.push_back(validationStatusesJsonList[validationStatusesIndex].AsObject());
@@ -45,7 +45,7 @@ ModelPackageStatusDetails& ModelPackageStatusDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ImageScanStatuses"))
   {
-    Array<JsonView> imageScanStatusesJsonList = jsonValue.GetArray("ImageScanStatuses");
+    Aws::Utils::Array<JsonView> imageScanStatusesJsonList = jsonValue.GetArray("ImageScanStatuses");
     for(unsigned imageScanStatusesIndex = 0; imageScanStatusesIndex < imageScanStatusesJsonList.GetLength(); ++imageScanStatusesIndex)
     {
       m_imageScanStatuses.push_back(imageScanStatusesJsonList[imageScanStatusesIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue ModelPackageStatusDetails::Jsonize() const
 
   if(m_validationStatusesHasBeenSet)
   {
-   Array<JsonValue> validationStatusesJsonList(m_validationStatuses.size());
+   Aws::Utils::Array<JsonValue> validationStatusesJsonList(m_validationStatuses.size());
    for(unsigned validationStatusesIndex = 0; validationStatusesIndex < validationStatusesJsonList.GetLength(); ++validationStatusesIndex)
    {
      validationStatusesJsonList[validationStatusesIndex].AsObject(m_validationStatuses[validationStatusesIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue ModelPackageStatusDetails::Jsonize() const
 
   if(m_imageScanStatusesHasBeenSet)
   {
-   Array<JsonValue> imageScanStatusesJsonList(m_imageScanStatuses.size());
+   Aws::Utils::Array<JsonValue> imageScanStatusesJsonList(m_imageScanStatuses.size());
    for(unsigned imageScanStatusesIndex = 0; imageScanStatusesIndex < imageScanStatusesJsonList.GetLength(); ++imageScanStatusesIndex)
    {
      imageScanStatusesJsonList[imageScanStatusesIndex].AsObject(m_imageScanStatuses[imageScanStatusesIndex].Jsonize());

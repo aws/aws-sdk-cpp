@@ -34,43 +34,43 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the activated extension, in this account
+     * <p>The Amazon Resource Name (ARN) of the activated extension, in this account
      * and region.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the activated extension, in this account
+     * <p>The Amazon Resource Name (ARN) of the activated extension, in this account
      * and region.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the activated extension, in this account
+     * <p>The Amazon Resource Name (ARN) of the activated extension, in this account
      * and region.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the activated extension, in this account
+     * <p>The Amazon Resource Name (ARN) of the activated extension, in this account
      * and region.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the activated extension, in this account
+     * <p>The Amazon Resource Name (ARN) of the activated extension, in this account
      * and region.</p>
      */
     inline ActivateTypeResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the activated extension, in this account
+     * <p>The Amazon Resource Name (ARN) of the activated extension, in this account
      * and region.</p>
      */
     inline ActivateTypeResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the activated extension, in this account
+     * <p>The Amazon Resource Name (ARN) of the activated extension, in this account
      * and region.</p>
      */
     inline ActivateTypeResult& WithArn(const char* value) { SetArn(value); return *this;}

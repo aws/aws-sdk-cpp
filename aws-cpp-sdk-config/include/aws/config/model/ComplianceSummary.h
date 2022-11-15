@@ -146,13 +146,13 @@ namespace Model
   private:
 
     ComplianceContributorCount m_compliantResourceCount;
-    bool m_compliantResourceCountHasBeenSet;
+    bool m_compliantResourceCountHasBeenSet = false;
 
     ComplianceContributorCount m_nonCompliantResourceCount;
-    bool m_nonCompliantResourceCountHasBeenSet;
+    bool m_nonCompliantResourceCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_complianceSummaryTimestamp;
-    bool m_complianceSummaryTimestampHasBeenSet;
+    bool m_complianceSummaryTimestampHasBeenSet = false;
   };
 
 } // namespace Model

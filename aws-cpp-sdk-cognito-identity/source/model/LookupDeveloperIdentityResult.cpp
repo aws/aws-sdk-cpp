@@ -36,7 +36,7 @@ LookupDeveloperIdentityResult& LookupDeveloperIdentityResult::operator =(const A
 
   if(jsonValue.ValueExists("DeveloperUserIdentifierList"))
   {
-    Array<JsonView> developerUserIdentifierListJsonList = jsonValue.GetArray("DeveloperUserIdentifierList");
+    Aws::Utils::Array<JsonView> developerUserIdentifierListJsonList = jsonValue.GetArray("DeveloperUserIdentifierList");
     for(unsigned developerUserIdentifierListIndex = 0; developerUserIdentifierListIndex < developerUserIdentifierListJsonList.GetLength(); ++developerUserIdentifierListIndex)
     {
       m_developerUserIdentifierList.push_back(developerUserIdentifierListJsonList[developerUserIdentifierListIndex].AsString());

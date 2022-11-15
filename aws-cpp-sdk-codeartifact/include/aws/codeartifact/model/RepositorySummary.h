@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline const Aws::String& GetAdministratorAccount() const{ return m_administratorAccount; }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline bool AdministratorAccountHasBeenSet() const { return m_administratorAccountHasBeenSet; }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline void SetAdministratorAccount(const Aws::String& value) { m_administratorAccountHasBeenSet = true; m_administratorAccount = value; }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline void SetAdministratorAccount(Aws::String&& value) { m_administratorAccountHasBeenSet = true; m_administratorAccount = std::move(value); }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline void SetAdministratorAccount(const char* value) { m_administratorAccountHasBeenSet = true; m_administratorAccount.assign(value); }
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline RepositorySummary& WithAdministratorAccount(const Aws::String& value) { SetAdministratorAccount(value); return *this;}
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline RepositorySummary& WithAdministratorAccount(Aws::String&& value) { SetAdministratorAccount(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS account ID that manages the repository. </p>
+     * <p> The Amazon Web Services account ID that manages the repository. </p>
      */
     inline RepositorySummary& WithAdministratorAccount(const char* value) { SetAdministratorAccount(value); return *this;}
 
@@ -165,50 +165,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline RepositorySummary& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline RepositorySummary& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline RepositorySummary& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_administratorAccount;
-    bool m_administratorAccountHasBeenSet;
+    bool m_administratorAccountHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

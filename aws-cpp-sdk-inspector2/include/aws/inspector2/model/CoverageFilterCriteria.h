@@ -263,49 +263,57 @@ namespace Model
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline const Aws::Vector<CoverageStringFilter>& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline void SetResourceType(const Aws::Vector<CoverageStringFilter>& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline void SetResourceType(Aws::Vector<CoverageStringFilter>&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& WithResourceType(const Aws::Vector<CoverageStringFilter>& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& WithResourceType(Aws::Vector<CoverageStringFilter>&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& AddResourceType(const CoverageStringFilter& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(value); return *this; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& AddResourceType(CoverageStringFilter&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(std::move(value)); return *this; }
 
@@ -443,31 +451,31 @@ namespace Model
   private:
 
     Aws::Vector<CoverageStringFilter> m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<CoverageMapFilter> m_ec2InstanceTags;
-    bool m_ec2InstanceTagsHasBeenSet;
+    bool m_ec2InstanceTagsHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_ecrImageTags;
-    bool m_ecrImageTagsHasBeenSet;
+    bool m_ecrImageTagsHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_ecrRepositoryName;
-    bool m_ecrRepositoryNameHasBeenSet;
+    bool m_ecrRepositoryNameHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_scanStatusCode;
-    bool m_scanStatusCodeHasBeenSet;
+    bool m_scanStatusCodeHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_scanStatusReason;
-    bool m_scanStatusReasonHasBeenSet;
+    bool m_scanStatusReasonHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -549,6 +549,55 @@ namespace Model
 
 
     /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline const Aws::String& GetSegment() const{ return m_segment; }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline void SetSegment(const Aws::String& value) { m_segmentHasBeenSet = true; m_segment = value; }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline void SetSegment(Aws::String&& value) { m_segmentHasBeenSet = true; m_segment = std::move(value); }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline void SetSegment(const char* value) { m_segmentHasBeenSet = true; m_segment.assign(value); }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline Experiment& WithSegment(const Aws::String& value) { SetSegment(value); return *this;}
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline Experiment& WithSegment(Aws::String&& value) { SetSegment(std::move(value)); return *this;}
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline Experiment& WithSegment(const char* value) { SetSegment(value); return *this;}
+
+
+    /**
      * <p>The current state of the experiment.</p>
      */
     inline const ExperimentStatus& GetStatus() const{ return m_status; }
@@ -782,55 +831,58 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ExperimentExecution m_execution;
-    bool m_executionHasBeenSet;
+    bool m_executionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::Vector<MetricGoal> m_metricGoals;
-    bool m_metricGoalsHasBeenSet;
+    bool m_metricGoalsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OnlineAbDefinition m_onlineAbDefinition;
-    bool m_onlineAbDefinitionHasBeenSet;
+    bool m_onlineAbDefinitionHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_randomizationSalt;
-    bool m_randomizationSaltHasBeenSet;
+    bool m_randomizationSaltHasBeenSet = false;
 
     long long m_samplingRate;
-    bool m_samplingRateHasBeenSet;
+    bool m_samplingRateHasBeenSet = false;
 
     ExperimentSchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
+
+    Aws::String m_segment;
+    bool m_segmentHasBeenSet = false;
 
     ExperimentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Treatment> m_treatments;
-    bool m_treatmentsHasBeenSet;
+    bool m_treatmentsHasBeenSet = false;
 
     ExperimentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

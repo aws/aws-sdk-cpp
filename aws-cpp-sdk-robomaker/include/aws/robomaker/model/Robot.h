@@ -371,31 +371,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     RobotStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_greenGrassGroupId;
-    bool m_greenGrassGroupIdHasBeenSet;
+    bool m_greenGrassGroupIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Architecture m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::String m_lastDeploymentJob;
-    bool m_lastDeploymentJobHasBeenSet;
+    bool m_lastDeploymentJobHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentTime;
-    bool m_lastDeploymentTimeHasBeenSet;
+    bool m_lastDeploymentTimeHasBeenSet = false;
   };
 
 } // namespace Model

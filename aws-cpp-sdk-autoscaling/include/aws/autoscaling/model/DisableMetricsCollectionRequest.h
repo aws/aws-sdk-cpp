@@ -79,9 +79,10 @@ namespace Model
 
 
     /**
-     * <p>Specifies one or more of the following metrics:</p> <ul> <li> <p>
-     * <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p>
-     * </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <p>Identifies the metrics to disable.</p> <p>You can specify one or more of the
+     * following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li>
+     * <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
@@ -99,14 +100,17 @@ namespace Model
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
-     * parameter, all metrics are disabled. </p>
+     * property, all metrics are disabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p>Specifies one or more of the following metrics:</p> <ul> <li> <p>
-     * <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p>
-     * </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <p>Identifies the metrics to disable.</p> <p>You can specify one or more of the
+     * following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li>
+     * <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
@@ -124,14 +128,17 @@ namespace Model
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
-     * parameter, all metrics are disabled. </p>
+     * property, all metrics are disabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
-     * <p>Specifies one or more of the following metrics:</p> <ul> <li> <p>
-     * <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p>
-     * </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <p>Identifies the metrics to disable.</p> <p>You can specify one or more of the
+     * following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li>
+     * <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
@@ -149,14 +156,17 @@ namespace Model
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
-     * parameter, all metrics are disabled. </p>
+     * property, all metrics are disabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * <p>Specifies one or more of the following metrics:</p> <ul> <li> <p>
-     * <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p>
-     * </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <p>Identifies the metrics to disable.</p> <p>You can specify one or more of the
+     * following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li>
+     * <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
@@ -174,14 +184,17 @@ namespace Model
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
-     * parameter, all metrics are disabled. </p>
+     * property, all metrics are disabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
-     * <p>Specifies one or more of the following metrics:</p> <ul> <li> <p>
-     * <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p>
-     * </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <p>Identifies the metrics to disable.</p> <p>You can specify one or more of the
+     * following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li>
+     * <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
@@ -199,14 +212,17 @@ namespace Model
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
-     * parameter, all metrics are disabled. </p>
+     * property, all metrics are disabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline DisableMetricsCollectionRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p>Specifies one or more of the following metrics:</p> <ul> <li> <p>
-     * <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p>
-     * </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <p>Identifies the metrics to disable.</p> <p>You can specify one or more of the
+     * following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li>
+     * <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
@@ -224,14 +240,17 @@ namespace Model
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
-     * parameter, all metrics are disabled. </p>
+     * property, all metrics are disabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline DisableMetricsCollectionRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies one or more of the following metrics:</p> <ul> <li> <p>
-     * <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p>
-     * </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <p>Identifies the metrics to disable.</p> <p>You can specify one or more of the
+     * following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li>
+     * <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
@@ -249,14 +268,17 @@ namespace Model
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
-     * parameter, all metrics are disabled. </p>
+     * property, all metrics are disabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline DisableMetricsCollectionRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /**
-     * <p>Specifies one or more of the following metrics:</p> <ul> <li> <p>
-     * <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p>
-     * </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <p>Identifies the metrics to disable.</p> <p>You can specify one or more of the
+     * following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li>
+     * <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
@@ -274,14 +296,17 @@ namespace Model
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
-     * parameter, all metrics are disabled. </p>
+     * property, all metrics are disabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline DisableMetricsCollectionRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies one or more of the following metrics:</p> <ul> <li> <p>
-     * <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p>
-     * </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <p>Identifies the metrics to disable.</p> <p>You can specify one or more of the
+     * following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li>
+     * <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
@@ -299,17 +324,19 @@ namespace Model
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you omit this
-     * parameter, all metrics are disabled. </p>
+     * property, all metrics are disabled.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline DisableMetricsCollectionRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

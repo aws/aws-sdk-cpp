@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
+#include <aws/sagemaker/model/ExplainerConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -536,25 +537,59 @@ namespace Model
      */
     inline CreateEndpointConfigRequest& WithAsyncInferenceConfig(AsyncInferenceConfig&& value) { SetAsyncInferenceConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+     */
+    inline const ExplainerConfig& GetExplainerConfig() const{ return m_explainerConfig; }
+
+    /**
+     * <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+     */
+    inline bool ExplainerConfigHasBeenSet() const { return m_explainerConfigHasBeenSet; }
+
+    /**
+     * <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+     */
+    inline void SetExplainerConfig(const ExplainerConfig& value) { m_explainerConfigHasBeenSet = true; m_explainerConfig = value; }
+
+    /**
+     * <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+     */
+    inline void SetExplainerConfig(ExplainerConfig&& value) { m_explainerConfigHasBeenSet = true; m_explainerConfig = std::move(value); }
+
+    /**
+     * <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+     */
+    inline CreateEndpointConfigRequest& WithExplainerConfig(const ExplainerConfig& value) { SetExplainerConfig(value); return *this;}
+
+    /**
+     * <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+     */
+    inline CreateEndpointConfigRequest& WithExplainerConfig(ExplainerConfig&& value) { SetExplainerConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     Aws::Vector<ProductionVariant> m_productionVariants;
-    bool m_productionVariantsHasBeenSet;
+    bool m_productionVariantsHasBeenSet = false;
 
     DataCaptureConfig m_dataCaptureConfig;
-    bool m_dataCaptureConfigHasBeenSet;
+    bool m_dataCaptureConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     AsyncInferenceConfig m_asyncInferenceConfig;
-    bool m_asyncInferenceConfigHasBeenSet;
+    bool m_asyncInferenceConfigHasBeenSet = false;
+
+    ExplainerConfig m_explainerConfig;
+    bool m_explainerConfigHasBeenSet = false;
   };
 
 } // namespace Model

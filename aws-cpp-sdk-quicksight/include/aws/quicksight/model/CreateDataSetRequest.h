@@ -705,46 +705,46 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, PhysicalTable> m_physicalTableMap;
-    bool m_physicalTableMapHasBeenSet;
+    bool m_physicalTableMapHasBeenSet = false;
 
     Aws::Map<Aws::String, LogicalTable> m_logicalTableMap;
-    bool m_logicalTableMapHasBeenSet;
+    bool m_logicalTableMapHasBeenSet = false;
 
     DataSetImportMode m_importMode;
-    bool m_importModeHasBeenSet;
+    bool m_importModeHasBeenSet = false;
 
     Aws::Vector<ColumnGroup> m_columnGroups;
-    bool m_columnGroupsHasBeenSet;
+    bool m_columnGroupsHasBeenSet = false;
 
     Aws::Map<Aws::String, FieldFolder> m_fieldFolders;
-    bool m_fieldFoldersHasBeenSet;
+    bool m_fieldFoldersHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
-    bool m_rowLevelPermissionDataSetHasBeenSet;
+    bool m_rowLevelPermissionDataSetHasBeenSet = false;
 
     RowLevelPermissionTagConfiguration m_rowLevelPermissionTagConfiguration;
-    bool m_rowLevelPermissionTagConfigurationHasBeenSet;
+    bool m_rowLevelPermissionTagConfigurationHasBeenSet = false;
 
     Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
-    bool m_columnLevelPermissionRulesHasBeenSet;
+    bool m_columnLevelPermissionRulesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     DataSetUsageConfiguration m_dataSetUsageConfiguration;
-    bool m_dataSetUsageConfigurationHasBeenSet;
+    bool m_dataSetUsageConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

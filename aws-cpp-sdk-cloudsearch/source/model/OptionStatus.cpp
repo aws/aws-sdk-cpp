@@ -54,13 +54,13 @@ OptionStatus& OptionStatus::operator =(const XmlNode& xmlNode)
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("UpdateDate");
     if(!updateDateNode.IsNull())
     {
-      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
     XmlNode updateVersionNode = resultNode.FirstChild("UpdateVersion");
@@ -90,12 +90,12 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location, u
 {
   if(m_creationDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_updateVersionHasBeenSet)
@@ -119,11 +119,11 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
 {
   if(m_creationDateHasBeenSet)
   {
-      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateVersionHasBeenSet)
   {

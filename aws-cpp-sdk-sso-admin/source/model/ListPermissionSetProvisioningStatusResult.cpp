@@ -30,7 +30,7 @@ ListPermissionSetProvisioningStatusResult& ListPermissionSetProvisioningStatusRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PermissionSetsProvisioningStatus"))
   {
-    Array<JsonView> permissionSetsProvisioningStatusJsonList = jsonValue.GetArray("PermissionSetsProvisioningStatus");
+    Aws::Utils::Array<JsonView> permissionSetsProvisioningStatusJsonList = jsonValue.GetArray("PermissionSetsProvisioningStatus");
     for(unsigned permissionSetsProvisioningStatusIndex = 0; permissionSetsProvisioningStatusIndex < permissionSetsProvisioningStatusJsonList.GetLength(); ++permissionSetsProvisioningStatusIndex)
     {
       m_permissionSetsProvisioningStatus.push_back(permissionSetsProvisioningStatusJsonList[permissionSetsProvisioningStatusIndex].AsObject());

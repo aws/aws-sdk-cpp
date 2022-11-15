@@ -33,7 +33,7 @@ ResourcePath& ResourcePath::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Components"))
   {
-    Array<JsonView> componentsJsonList = jsonValue.GetArray("Components");
+    Aws::Utils::Array<JsonView> componentsJsonList = jsonValue.GetArray("Components");
     for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
     {
       m_components.push_back(componentsJsonList[componentsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ResourcePath::Jsonize() const
 
   if(m_componentsHasBeenSet)
   {
-   Array<JsonValue> componentsJsonList(m_components.size());
+   Aws::Utils::Array<JsonValue> componentsJsonList(m_components.size());
    for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
    {
      componentsJsonList[componentsIndex].AsObject(m_components[componentsIndex].Jsonize());

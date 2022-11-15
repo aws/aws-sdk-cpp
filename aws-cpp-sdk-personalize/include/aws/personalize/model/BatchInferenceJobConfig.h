@@ -159,7 +159,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
-    bool m_itemExplorationConfigHasBeenSet;
+    bool m_itemExplorationConfigHasBeenSet = false;
   };
 
 } // namespace Model

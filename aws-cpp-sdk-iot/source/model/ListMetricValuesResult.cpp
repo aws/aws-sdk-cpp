@@ -30,7 +30,7 @@ ListMetricValuesResult& ListMetricValuesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("metricDatumList"))
   {
-    Array<JsonView> metricDatumListJsonList = jsonValue.GetArray("metricDatumList");
+    Aws::Utils::Array<JsonView> metricDatumListJsonList = jsonValue.GetArray("metricDatumList");
     for(unsigned metricDatumListIndex = 0; metricDatumListIndex < metricDatumListJsonList.GetLength(); ++metricDatumListIndex)
     {
       m_metricDatumList.push_back(metricDatumListJsonList[metricDatumListIndex].AsObject());

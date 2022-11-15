@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PeeringTgwInfo.h>
+#include <aws/ec2/model/TransitGatewayPeeringAttachmentOptions.h>
 #include <aws/ec2/model/PeeringAttachmentStatus.h>
 #include <aws/ec2/model/TransitGatewayAttachmentState.h>
 #include <aws/core/utils/DateTime.h>
@@ -88,6 +89,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline const Aws::String& GetAccepterTransitGatewayAttachmentId() const{ return m_accepterTransitGatewayAttachmentId; }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline bool AccepterTransitGatewayAttachmentIdHasBeenSet() const { return m_accepterTransitGatewayAttachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline void SetAccepterTransitGatewayAttachmentId(const Aws::String& value) { m_accepterTransitGatewayAttachmentIdHasBeenSet = true; m_accepterTransitGatewayAttachmentId = value; }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline void SetAccepterTransitGatewayAttachmentId(Aws::String&& value) { m_accepterTransitGatewayAttachmentIdHasBeenSet = true; m_accepterTransitGatewayAttachmentId = std::move(value); }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline void SetAccepterTransitGatewayAttachmentId(const char* value) { m_accepterTransitGatewayAttachmentIdHasBeenSet = true; m_accepterTransitGatewayAttachmentId.assign(value); }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline TransitGatewayPeeringAttachment& WithAccepterTransitGatewayAttachmentId(const Aws::String& value) { SetAccepterTransitGatewayAttachmentId(value); return *this;}
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline TransitGatewayPeeringAttachment& WithAccepterTransitGatewayAttachmentId(Aws::String&& value) { SetAccepterTransitGatewayAttachmentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline TransitGatewayPeeringAttachment& WithAccepterTransitGatewayAttachmentId(const char* value) { SetAccepterTransitGatewayAttachmentId(value); return *this;}
+
+
+    /**
      * <p>Information about the requester transit gateway.</p>
      */
     inline const PeeringTgwInfo& GetRequesterTgwInfo() const{ return m_requesterTgwInfo; }
@@ -147,6 +189,37 @@ namespace Model
      * <p>Information about the accepter transit gateway.</p>
      */
     inline TransitGatewayPeeringAttachment& WithAccepterTgwInfo(PeeringTgwInfo&& value) { SetAccepterTgwInfo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
+    inline const TransitGatewayPeeringAttachmentOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
+    inline void SetOptions(const TransitGatewayPeeringAttachmentOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
+    inline void SetOptions(TransitGatewayPeeringAttachmentOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
+    inline TransitGatewayPeeringAttachment& WithOptions(const TransitGatewayPeeringAttachmentOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
+    inline TransitGatewayPeeringAttachment& WithOptions(TransitGatewayPeeringAttachmentOptions&& value) { SetOptions(std::move(value)); return *this;}
 
 
     /**
@@ -291,25 +364,31 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayAttachmentId;
-    bool m_transitGatewayAttachmentIdHasBeenSet;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
+
+    Aws::String m_accepterTransitGatewayAttachmentId;
+    bool m_accepterTransitGatewayAttachmentIdHasBeenSet = false;
 
     PeeringTgwInfo m_requesterTgwInfo;
-    bool m_requesterTgwInfoHasBeenSet;
+    bool m_requesterTgwInfoHasBeenSet = false;
 
     PeeringTgwInfo m_accepterTgwInfo;
-    bool m_accepterTgwInfoHasBeenSet;
+    bool m_accepterTgwInfoHasBeenSet = false;
+
+    TransitGatewayPeeringAttachmentOptions m_options;
+    bool m_optionsHasBeenSet = false;
 
     PeeringAttachmentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     TransitGatewayAttachmentState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

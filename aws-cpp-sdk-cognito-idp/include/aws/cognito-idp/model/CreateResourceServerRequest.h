@@ -226,16 +226,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<ResourceServerScopeType> m_scopes;
-    bool m_scopesHasBeenSet;
+    bool m_scopesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ OpenZFSNfsExport& OpenZFSNfsExport::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClientConfigurations"))
   {
-    Array<JsonView> clientConfigurationsJsonList = jsonValue.GetArray("ClientConfigurations");
+    Aws::Utils::Array<JsonView> clientConfigurationsJsonList = jsonValue.GetArray("ClientConfigurations");
     for(unsigned clientConfigurationsIndex = 0; clientConfigurationsIndex < clientConfigurationsJsonList.GetLength(); ++clientConfigurationsIndex)
     {
       m_clientConfigurations.push_back(clientConfigurationsJsonList[clientConfigurationsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue OpenZFSNfsExport::Jsonize() const
 
   if(m_clientConfigurationsHasBeenSet)
   {
-   Array<JsonValue> clientConfigurationsJsonList(m_clientConfigurations.size());
+   Aws::Utils::Array<JsonValue> clientConfigurationsJsonList(m_clientConfigurations.size());
    for(unsigned clientConfigurationsIndex = 0; clientConfigurationsIndex < clientConfigurationsJsonList.GetLength(); ++clientConfigurationsIndex)
    {
      clientConfigurationsJsonList[clientConfigurationsIndex].AsObject(m_clientConfigurations[clientConfigurationsIndex].Jsonize());

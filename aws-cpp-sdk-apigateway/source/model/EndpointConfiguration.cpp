@@ -35,7 +35,7 @@ EndpointConfiguration& EndpointConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("types"))
   {
-    Array<JsonView> typesJsonList = jsonValue.GetArray("types");
+    Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
     for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
     {
       m_types.push_back(EndpointTypeMapper::GetEndpointTypeForName(typesJsonList[typesIndex].AsString()));
@@ -45,7 +45,7 @@ EndpointConfiguration& EndpointConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("vpcEndpointIds"))
   {
-    Array<JsonView> vpcEndpointIdsJsonList = jsonValue.GetArray("vpcEndpointIds");
+    Aws::Utils::Array<JsonView> vpcEndpointIdsJsonList = jsonValue.GetArray("vpcEndpointIds");
     for(unsigned vpcEndpointIdsIndex = 0; vpcEndpointIdsIndex < vpcEndpointIdsJsonList.GetLength(); ++vpcEndpointIdsIndex)
     {
       m_vpcEndpointIds.push_back(vpcEndpointIdsJsonList[vpcEndpointIdsIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue EndpointConfiguration::Jsonize() const
 
   if(m_typesHasBeenSet)
   {
-   Array<JsonValue> typesJsonList(m_types.size());
+   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
    {
      typesJsonList[typesIndex].AsString(EndpointTypeMapper::GetNameForEndpointType(m_types[typesIndex]));
@@ -73,7 +73,7 @@ JsonValue EndpointConfiguration::Jsonize() const
 
   if(m_vpcEndpointIdsHasBeenSet)
   {
-   Array<JsonValue> vpcEndpointIdsJsonList(m_vpcEndpointIds.size());
+   Aws::Utils::Array<JsonValue> vpcEndpointIdsJsonList(m_vpcEndpointIds.size());
    for(unsigned vpcEndpointIdsIndex = 0; vpcEndpointIdsIndex < vpcEndpointIdsJsonList.GetLength(); ++vpcEndpointIdsIndex)
    {
      vpcEndpointIdsJsonList[vpcEndpointIdsIndex].AsString(m_vpcEndpointIds[vpcEndpointIdsIndex]);

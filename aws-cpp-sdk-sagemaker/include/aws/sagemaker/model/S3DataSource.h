@@ -521,19 +521,68 @@ namespace Model
      */
     inline S3DataSource& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
+
+    /**
+     * <p>A list of names of instance groups that get data from the S3 data source.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInstanceGroupNames() const{ return m_instanceGroupNames; }
+
+    /**
+     * <p>A list of names of instance groups that get data from the S3 data source.</p>
+     */
+    inline bool InstanceGroupNamesHasBeenSet() const { return m_instanceGroupNamesHasBeenSet; }
+
+    /**
+     * <p>A list of names of instance groups that get data from the S3 data source.</p>
+     */
+    inline void SetInstanceGroupNames(const Aws::Vector<Aws::String>& value) { m_instanceGroupNamesHasBeenSet = true; m_instanceGroupNames = value; }
+
+    /**
+     * <p>A list of names of instance groups that get data from the S3 data source.</p>
+     */
+    inline void SetInstanceGroupNames(Aws::Vector<Aws::String>&& value) { m_instanceGroupNamesHasBeenSet = true; m_instanceGroupNames = std::move(value); }
+
+    /**
+     * <p>A list of names of instance groups that get data from the S3 data source.</p>
+     */
+    inline S3DataSource& WithInstanceGroupNames(const Aws::Vector<Aws::String>& value) { SetInstanceGroupNames(value); return *this;}
+
+    /**
+     * <p>A list of names of instance groups that get data from the S3 data source.</p>
+     */
+    inline S3DataSource& WithInstanceGroupNames(Aws::Vector<Aws::String>&& value) { SetInstanceGroupNames(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of names of instance groups that get data from the S3 data source.</p>
+     */
+    inline S3DataSource& AddInstanceGroupNames(const Aws::String& value) { m_instanceGroupNamesHasBeenSet = true; m_instanceGroupNames.push_back(value); return *this; }
+
+    /**
+     * <p>A list of names of instance groups that get data from the S3 data source.</p>
+     */
+    inline S3DataSource& AddInstanceGroupNames(Aws::String&& value) { m_instanceGroupNamesHasBeenSet = true; m_instanceGroupNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of names of instance groups that get data from the S3 data source.</p>
+     */
+    inline S3DataSource& AddInstanceGroupNames(const char* value) { m_instanceGroupNamesHasBeenSet = true; m_instanceGroupNames.push_back(value); return *this; }
+
   private:
 
     S3DataType m_s3DataType;
-    bool m_s3DataTypeHasBeenSet;
+    bool m_s3DataTypeHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     S3DataDistribution m_s3DataDistributionType;
-    bool m_s3DataDistributionTypeHasBeenSet;
+    bool m_s3DataDistributionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_instanceGroupNames;
+    bool m_instanceGroupNamesHasBeenSet = false;
   };
 
 } // namespace Model

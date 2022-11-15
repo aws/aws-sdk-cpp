@@ -250,22 +250,22 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ResourceScanMetadata m_resourceMetadata;
-    bool m_resourceMetadataHasBeenSet;
+    bool m_resourceMetadataHasBeenSet = false;
 
     CoverageResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     ScanStatus m_scanStatus;
-    bool m_scanStatusHasBeenSet;
+    bool m_scanStatusHasBeenSet = false;
 
     ScanType m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
   };
 
 } // namespace Model

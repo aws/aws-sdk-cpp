@@ -92,52 +92,52 @@ namespace Model
 
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's provisioned resources you want.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's provisioned resources you want.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's provisioned resources you want.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's provisioned resources you want.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's provisioned resources you want.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's provisioned resources you want.</p>
      */
     inline ListServicePipelineProvisionedResourcesRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's provisioned resources you want.</p>
      */
     inline ListServicePipelineProvisionedResourcesRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service whose pipeline's provisioned resources you want.</p>
      */
     inline ListServicePipelineProvisionedResourcesRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

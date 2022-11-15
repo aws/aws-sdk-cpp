@@ -2284,127 +2284,159 @@ namespace Model
      */
     inline OracleSettings& WithSecretsManagerOracleAsmSecretId(const char* value) { SetSecretsManagerOracleAsmSecretId(value); return *this;}
 
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool GetTrimSpaceInChar() const{ return m_trimSpaceInChar; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool TrimSpaceInCharHasBeenSet() const { return m_trimSpaceInCharHasBeenSet; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline void SetTrimSpaceInChar(bool value) { m_trimSpaceInCharHasBeenSet = true; m_trimSpaceInChar = value; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline OracleSettings& WithTrimSpaceInChar(bool value) { SetTrimSpaceInChar(value); return *this;}
+
   private:
 
     bool m_addSupplementalLogging;
-    bool m_addSupplementalLoggingHasBeenSet;
+    bool m_addSupplementalLoggingHasBeenSet = false;
 
     int m_archivedLogDestId;
-    bool m_archivedLogDestIdHasBeenSet;
+    bool m_archivedLogDestIdHasBeenSet = false;
 
     int m_additionalArchivedLogDestId;
-    bool m_additionalArchivedLogDestIdHasBeenSet;
+    bool m_additionalArchivedLogDestIdHasBeenSet = false;
 
     Aws::Vector<int> m_extraArchivedLogDestIds;
-    bool m_extraArchivedLogDestIdsHasBeenSet;
+    bool m_extraArchivedLogDestIdsHasBeenSet = false;
 
     bool m_allowSelectNestedTables;
-    bool m_allowSelectNestedTablesHasBeenSet;
+    bool m_allowSelectNestedTablesHasBeenSet = false;
 
     int m_parallelAsmReadThreads;
-    bool m_parallelAsmReadThreadsHasBeenSet;
+    bool m_parallelAsmReadThreadsHasBeenSet = false;
 
     int m_readAheadBlocks;
-    bool m_readAheadBlocksHasBeenSet;
+    bool m_readAheadBlocksHasBeenSet = false;
 
     bool m_accessAlternateDirectly;
-    bool m_accessAlternateDirectlyHasBeenSet;
+    bool m_accessAlternateDirectlyHasBeenSet = false;
 
     bool m_useAlternateFolderForOnline;
-    bool m_useAlternateFolderForOnlineHasBeenSet;
+    bool m_useAlternateFolderForOnlineHasBeenSet = false;
 
     Aws::String m_oraclePathPrefix;
-    bool m_oraclePathPrefixHasBeenSet;
+    bool m_oraclePathPrefixHasBeenSet = false;
 
     Aws::String m_usePathPrefix;
-    bool m_usePathPrefixHasBeenSet;
+    bool m_usePathPrefixHasBeenSet = false;
 
     bool m_replacePathPrefix;
-    bool m_replacePathPrefixHasBeenSet;
+    bool m_replacePathPrefixHasBeenSet = false;
 
     bool m_enableHomogenousTablespace;
-    bool m_enableHomogenousTablespaceHasBeenSet;
+    bool m_enableHomogenousTablespaceHasBeenSet = false;
 
     bool m_directPathNoLog;
-    bool m_directPathNoLogHasBeenSet;
+    bool m_directPathNoLogHasBeenSet = false;
 
     bool m_archivedLogsOnly;
-    bool m_archivedLogsOnlyHasBeenSet;
+    bool m_archivedLogsOnlyHasBeenSet = false;
 
     Aws::String m_asmPassword;
-    bool m_asmPasswordHasBeenSet;
+    bool m_asmPasswordHasBeenSet = false;
 
     Aws::String m_asmServer;
-    bool m_asmServerHasBeenSet;
+    bool m_asmServerHasBeenSet = false;
 
     Aws::String m_asmUser;
-    bool m_asmUserHasBeenSet;
+    bool m_asmUserHasBeenSet = false;
 
     CharLengthSemantics m_charLengthSemantics;
-    bool m_charLengthSemanticsHasBeenSet;
+    bool m_charLengthSemanticsHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     bool m_directPathParallelLoad;
-    bool m_directPathParallelLoadHasBeenSet;
+    bool m_directPathParallelLoadHasBeenSet = false;
 
     bool m_failTasksOnLobTruncation;
-    bool m_failTasksOnLobTruncationHasBeenSet;
+    bool m_failTasksOnLobTruncationHasBeenSet = false;
 
     int m_numberDatatypeScale;
-    bool m_numberDatatypeScaleHasBeenSet;
+    bool m_numberDatatypeScaleHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     bool m_readTableSpaceName;
-    bool m_readTableSpaceNameHasBeenSet;
+    bool m_readTableSpaceNameHasBeenSet = false;
 
     int m_retryInterval;
-    bool m_retryIntervalHasBeenSet;
+    bool m_retryIntervalHasBeenSet = false;
 
     Aws::String m_securityDbEncryption;
-    bool m_securityDbEncryptionHasBeenSet;
+    bool m_securityDbEncryptionHasBeenSet = false;
 
     Aws::String m_securityDbEncryptionName;
-    bool m_securityDbEncryptionNameHasBeenSet;
+    bool m_securityDbEncryptionNameHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_spatialDataOptionToGeoJsonFunctionName;
-    bool m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet;
+    bool m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = false;
 
     int m_standbyDelayTime;
-    bool m_standbyDelayTimeHasBeenSet;
+    bool m_standbyDelayTimeHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     bool m_useBFile;
-    bool m_useBFileHasBeenSet;
+    bool m_useBFileHasBeenSet = false;
 
     bool m_useDirectPathFullLoad;
-    bool m_useDirectPathFullLoadHasBeenSet;
+    bool m_useDirectPathFullLoadHasBeenSet = false;
 
     bool m_useLogminerReader;
-    bool m_useLogminerReaderHasBeenSet;
+    bool m_useLogminerReaderHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
-    bool m_secretsManagerAccessRoleArnHasBeenSet;
+    bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerSecretId;
-    bool m_secretsManagerSecretIdHasBeenSet;
+    bool m_secretsManagerSecretIdHasBeenSet = false;
 
     Aws::String m_secretsManagerOracleAsmAccessRoleArn;
-    bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet;
+    bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerOracleAsmSecretId;
-    bool m_secretsManagerOracleAsmSecretIdHasBeenSet;
+    bool m_secretsManagerOracleAsmSecretIdHasBeenSet = false;
+
+    bool m_trimSpaceInChar;
+    bool m_trimSpaceInCharHasBeenSet = false;
   };
 
 } // namespace Model

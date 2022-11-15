@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

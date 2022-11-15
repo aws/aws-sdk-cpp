@@ -44,6 +44,8 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h.in"
 file(GLOB AWS_HEADERS "include/aws/core/*.h")
 file(GLOB AWS_AUTH_HEADERS "include/aws/core/auth/*.h")
 file(GLOB AWS_AUTH_SIGNER_HEADERS "include/aws/core/auth/signer/*.h")
+file(GLOB AWS_AUTH_SIGNER_PROVIDER_HEADERS "include/aws/core/auth/signer-provider/*.h")
+file(GLOB AWS_AUTH_BEARER_TOKEN_PROVIDER_HEADERS "include/aws/core/auth/bearer-token-provider/*.h")
 file(GLOB AWS_CLIENT_HEADERS "include/aws/core/client/*.h")
 file(GLOB AWS_INTERNAL_HEADERS "include/aws/core/internal/*.h")
 file(GLOB NET_HEADERS "include/aws/core/net/*.h")
@@ -51,6 +53,8 @@ file(GLOB HTTP_HEADERS "include/aws/core/http/*.h")
 file(GLOB HTTP_STANDARD_HEADERS "include/aws/core/http/standard/*.h")
 file(GLOB CONFIG_HEADERS "include/aws/core/config/*.h")
 file(GLOB CONFIG_DEFAULTS_HEADERS "include/aws/core/config/defaults/*.h")
+file(GLOB ENDPOINT_HEADERS "include/aws/core/endpoint/*.h")
+file(GLOB ENDPOINT_INTERNAL_HEADERS "include/aws/core/endpoint/internal/*.h")
 file(GLOB MONITORING_HEADERS "include/aws/core/monitoring/*.h")
 file(GLOB PLATFORM_HEADERS "include/aws/core/platform/*.h")
 file(GLOB UTILS_HEADERS "include/aws/core/utils/*.h")
@@ -73,6 +77,8 @@ file(GLOB AWS_TINYXML2_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyx
 file(GLOB CJSON_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/cjson/*.cpp")
 file(GLOB AWS_AUTH_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/auth/*.cpp")
 file(GLOB AWS_AUTH_SIGNER_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/auth/signer/*.cpp")
+file(GLOB AWS_AUTH_SIGNER_PROVIDER_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/auth/signer-provider/*.cpp")
+file(GLOB AWS_AUTH_BEARER_TOKEN_PROVIDER_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/auth/bearer-token-provider/*.cpp")
 file(GLOB AWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.cpp")
 file(GLOB AWS_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/internal/*.cpp")
 file(GLOB AWS_MODEL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/aws/model/*.cpp")
@@ -80,6 +86,8 @@ file(GLOB HTTP_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/*.cpp")
 file(GLOB HTTP_STANDARD_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/standard/*.cpp")
 file(GLOB CONFIG_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/config/*.cpp")
 file(GLOB CONFIG_DEFAULTS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/config/defaults/*.cpp")
+file(GLOB ENDPOINT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/endpoint/*.cpp")
+file(GLOB ENDPOINT_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/endpoint/internal/*.cpp")
 file(GLOB MONITORING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/monitoring/*.cpp")
 file(GLOB UTILS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/*.cpp")
 file(GLOB UTILS_EVENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/event/*.cpp")
@@ -216,11 +224,15 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_TINYXML2_SOURCE}
     ${AWS_AUTH_SOURCE}
     ${AWS_AUTH_SIGNER_SOURCE}
+    ${AWS_AUTH_SIGNER_PROVIDER_SOURCE}
+    ${AWS_AUTH_BEARER_TOKEN_PROVIDER_SOURCE}
     ${AWS_CLIENT_SOURCE}
     ${HTTP_STANDARD_SOURCE}
     ${HTTP_CLIENT_SOURCE}
     ${CONFIG_SOURCE}
     ${CONFIG_DEFAULTS_SOURCE}
+    ${ENDPOINT_SOURCE}
+    ${ENDPOINT_INTERNAL_SOURCE}
     ${UTILS_BASE64_SOURCE}
     ${UTILS_THREADING_SOURCE}
     ${UTILS_RETRY_SOURCE}
@@ -237,6 +249,8 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${AWS_HEADERS}
   ${AWS_AUTH_HEADERS}
   ${AWS_AUTH_SIGNER_HEADERS}
+  ${AWS_AUTH_SIGNER_PROVIDER_HEADERS}
+  ${AWS_AUTH_BEARER_TOKEN_PROVIDER_HEADERS}
   ${AWS_CLIENT_HEADERS}
   ${AWS_INTERNAL_HEADERS}
   ${NET_HEADERS}
@@ -244,6 +258,8 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${HTTP_STANDARD_HEADERS}
   ${CONFIG_HEADERS}
   ${CONFIG_DEFAULTS_HEADERS}
+  ${ENDPOINT_HEADERS}
+  ${ENDPOINT_INTERNAL_HEADERS}
   ${MONITORING_HEADERS}
   ${HTTP_CLIENT_HEADERS}
   ${PLATFORM_HEADERS}
@@ -350,6 +366,8 @@ if(MSVC)
     source_group("Header Files\\aws\\core" FILES ${AWS_HEADERS})
     source_group("Header Files\\aws\\core\\auth" FILES ${AWS_AUTH_HEADERS})
     source_group("Header Files\\aws\\core\\auth\\signer" FILES ${AWS_AUTH_SIGNER_HEADERS})
+    source_group("Header Files\\aws\\core\\auth\\signer-provider" FILES ${AWS_AUTH_SIGNER_PROVIDER_HEADERS})
+    source_group("Header Files\\aws\\core\\auth\\bearer-token-provider" FILES ${AWS_AUTH_BEARER_TOKEN_PROVIDER_HEADERS})
     source_group("Header Files\\aws\\core\\client" FILES ${AWS_CLIENT_HEADERS})
     source_group("Header Files\\aws\\core\\internal" FILES ${AWS_INTERNAL_HEADERS})
     source_group("Header Files\\aws\\core\\net" FILES ${NET_HEADERS})
@@ -357,6 +375,8 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\http\\standard" FILES ${HTTP_STANDARD_HEADERS})
     source_group("Header Files\\aws\\core\\config" FILES ${CONFIG_HEADERS})
     source_group("Header Files\\aws\\core\\config\\defaults" FILES ${CONFIG_DEFAULTS_HEADERS})
+    source_group("Header Files\\aws\\core\\endpoint" FILES ${ENDPOINT_HEADERS})
+    source_group("Header Files\\aws\\core\\endpoint\\internal" FILES ${ENDPOINT_INTERNAL_HEADERS})
     source_group("Header Files\\aws\\core\\monitoring" FILES ${MONITORING_HEADERS})
     source_group("Header Files\\aws\\core\\platform" FILES ${PLATFORM_HEADERS})
     source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
@@ -396,6 +416,8 @@ if(MSVC)
     source_group("Source Files\\external\\tinyxml2" FILES ${AWS_TINYXML2_SOURCE})
     source_group("Source Files\\auth" FILES ${AWS_AUTH_SOURCE})
     source_group("Source Files\\auth\\signer" FILES ${AWS_AUTH_SIGNER_SOURCE})
+    source_group("Source Files\\auth\\signer-provider" FILES ${AWS_AUTH_SIGNER_PROVIDER_SOURCE})
+    source_group("Source Files\\auth\\bearer-token-provider" FILES ${AWS_AUTH_BEARER_TOKEN_PROVIDER_SOURCE})
     source_group("Source Files\\client" FILES ${AWS_CLIENT_SOURCE})
     source_group("Source Files\\internal" FILES ${AWS_INTERNAL_SOURCE})
     source_group("Source Files\\net\\windows" FILES ${NET_SOURCE})
@@ -403,6 +425,8 @@ if(MSVC)
     source_group("Source Files\\http\\standard" FILES ${HTTP_STANDARD_SOURCE})
     source_group("Source Files\\config" FILES ${CONFIG_SOURCE})
     source_group("Source Files\\config\\defaults" FILES ${CONFIG_DEFAULTS_SOURCE})
+    source_group("Source Files\\endpoint" FILES ${ENDPOINT_SOURCE})
+    source_group("Source Files\\endpoint\\internal" FILES ${ENDPOINT_INTERNAL_SOURCE})
     source_group("Source Files\\monitoring" FILES ${MONITORING_SOURCE})
     source_group("Source Files\\platform\\windows" FILES ${PLATFORM_WINDOWS_SOURCE})
     source_group("Source Files\\utils" FILES ${UTILS_SOURCE})
@@ -564,6 +588,8 @@ endif()
 install (FILES ${AWS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core)
 install (FILES ${AWS_AUTH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth)
 install (FILES ${AWS_AUTH_SIGNER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth/signer)
+install (FILES ${AWS_AUTH_SIGNER_PROVIDER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth/signer-provider)
+install (FILES ${AWS_AUTH_BEARER_TOKEN_PROVIDER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth/bearer-token-provider)
 install (FILES ${AWS_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/client)
 install (FILES ${AWS_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/internal)
 install (FILES ${NET_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/net)
@@ -571,6 +597,8 @@ install (FILES ${HTTP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http)
 install (FILES ${HTTP_STANDARD_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/standard)
 install (FILES ${CONFIG_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/)
 install (FILES ${CONFIG_DEFAULTS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/defaults)
+install (FILES ${ENDPOINT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/endpoint)
+install (FILES ${ENDPOINT_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/endpoint/internal)
 install (FILES ${MONITORING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/monitoring)
 install (FILES ${PLATFORM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/platform)
 install (FILES ${UTILS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils)

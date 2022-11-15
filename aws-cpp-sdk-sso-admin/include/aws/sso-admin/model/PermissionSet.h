@@ -82,64 +82,56 @@ namespace Model
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline PermissionSet& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline PermissionSet& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline PermissionSet& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
 
@@ -316,22 +308,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet;
+    bool m_permissionSetArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_sessionDuration;
-    bool m_sessionDurationHasBeenSet;
+    bool m_sessionDurationHasBeenSet = false;
 
     Aws::String m_relayState;
-    bool m_relayStateHasBeenSet;
+    bool m_relayStateHasBeenSet = false;
   };
 
 } // namespace Model

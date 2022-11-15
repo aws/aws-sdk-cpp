@@ -243,16 +243,16 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
 
     bool m_protection;
-    bool m_protectionHasBeenSet;
+    bool m_protectionHasBeenSet = false;
 
     bool m_modeBlock;
-    bool m_modeBlockHasBeenSet;
+    bool m_modeBlockHasBeenSet = false;
 
     Aws::String m_reportUri;
-    bool m_reportUriHasBeenSet;
+    bool m_reportUriHasBeenSet = false;
   };
 
 } // namespace Model

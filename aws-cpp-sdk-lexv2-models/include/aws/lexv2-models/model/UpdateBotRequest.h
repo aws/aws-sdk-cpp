@@ -313,22 +313,22 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     DataPrivacy m_dataPrivacy;
-    bool m_dataPrivacyHasBeenSet;
+    bool m_dataPrivacyHasBeenSet = false;
 
     int m_idleSessionTTLInSeconds;
-    bool m_idleSessionTTLInSecondsHasBeenSet;
+    bool m_idleSessionTTLInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

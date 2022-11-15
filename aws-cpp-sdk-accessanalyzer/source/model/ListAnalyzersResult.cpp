@@ -30,7 +30,7 @@ ListAnalyzersResult& ListAnalyzersResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("analyzers"))
   {
-    Array<JsonView> analyzersJsonList = jsonValue.GetArray("analyzers");
+    Aws::Utils::Array<JsonView> analyzersJsonList = jsonValue.GetArray("analyzers");
     for(unsigned analyzersIndex = 0; analyzersIndex < analyzersJsonList.GetLength(); ++analyzersIndex)
     {
       m_analyzers.push_back(analyzersJsonList[analyzersIndex].AsObject());

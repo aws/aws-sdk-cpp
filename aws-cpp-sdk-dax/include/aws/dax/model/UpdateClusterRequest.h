@@ -387,25 +387,25 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_notificationTopicArn;
-    bool m_notificationTopicArnHasBeenSet;
+    bool m_notificationTopicArnHasBeenSet = false;
 
     Aws::String m_notificationTopicStatus;
-    bool m_notificationTopicStatusHasBeenSet;
+    bool m_notificationTopicStatusHasBeenSet = false;
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
   };
 
 } // namespace Model

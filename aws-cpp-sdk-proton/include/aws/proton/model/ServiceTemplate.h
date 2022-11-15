@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The service template detail data.</p><p><h3>See Also:</h3>   <a
+   * <p>Detailed data of an Proton service template resource.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ServiceTemplate">AWS
    * API Reference</a></p>
    */
@@ -400,31 +401,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedAt;
-    bool m_lastModifiedAtHasBeenSet;
+    bool m_lastModifiedAtHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Provisioning m_pipelineProvisioning;
-    bool m_pipelineProvisioningHasBeenSet;
+    bool m_pipelineProvisioningHasBeenSet = false;
 
     Aws::String m_recommendedVersion;
-    bool m_recommendedVersionHasBeenSet;
+    bool m_recommendedVersionHasBeenSet = false;
   };
 
 } // namespace Model

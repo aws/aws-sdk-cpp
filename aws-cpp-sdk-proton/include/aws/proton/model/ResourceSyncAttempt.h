@@ -251,22 +251,22 @@ namespace Model
   private:
 
     Aws::Vector<ResourceSyncEvent> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Revision m_initialRevision;
-    bool m_initialRevisionHasBeenSet;
+    bool m_initialRevisionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     ResourceSyncStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Revision m_targetRevision;
-    bool m_targetRevisionHasBeenSet;
+    bool m_targetRevisionHasBeenSet = false;
   };
 
 } // namespace Model

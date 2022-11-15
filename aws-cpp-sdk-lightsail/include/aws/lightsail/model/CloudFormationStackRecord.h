@@ -368,28 +368,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     RecordState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<CloudFormationStackRecordSourceInfo> m_sourceInfo;
-    bool m_sourceInfoHasBeenSet;
+    bool m_sourceInfoHasBeenSet = false;
 
     DestinationInfo m_destinationInfo;
-    bool m_destinationInfoHasBeenSet;
+    bool m_destinationInfoHasBeenSet = false;
   };
 
 } // namespace Model

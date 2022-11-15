@@ -25,7 +25,9 @@ ProvisioningTemplateSummary::ProvisioningTemplateSummary() :
     m_creationDateHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_type(TemplateType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ ProvisioningTemplateSummary::ProvisioningTemplateSummary(JsonView jsonValue) :
     m_creationDateHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_type(TemplateType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +89,13 @@ ProvisioningTemplateSummary& ProvisioningTemplateSummary::operator =(JsonView js
     m_enabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +135,11 @@ JsonValue ProvisioningTemplateSummary::Jsonize() const
   {
    payload.WithBool("enabled", m_enabled);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", TemplateTypeMapper::GetNameForTemplateType(m_type));
   }
 
   return payload;

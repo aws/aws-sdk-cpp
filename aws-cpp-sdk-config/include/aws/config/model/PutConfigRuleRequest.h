@@ -110,10 +110,10 @@ namespace Model
   private:
 
     ConfigRule m_configRule;
-    bool m_configRuleHasBeenSet;
+    bool m_configRuleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

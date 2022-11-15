@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_catalogName;
-    bool m_catalogNameHasBeenSet;
+    bool m_catalogNameHasBeenSet = false;
 
     DataCatalogType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

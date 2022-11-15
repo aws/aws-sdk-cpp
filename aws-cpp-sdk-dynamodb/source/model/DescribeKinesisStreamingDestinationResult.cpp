@@ -36,7 +36,7 @@ DescribeKinesisStreamingDestinationResult& DescribeKinesisStreamingDestinationRe
 
   if(jsonValue.ValueExists("KinesisDataStreamDestinations"))
   {
-    Array<JsonView> kinesisDataStreamDestinationsJsonList = jsonValue.GetArray("KinesisDataStreamDestinations");
+    Aws::Utils::Array<JsonView> kinesisDataStreamDestinationsJsonList = jsonValue.GetArray("KinesisDataStreamDestinations");
     for(unsigned kinesisDataStreamDestinationsIndex = 0; kinesisDataStreamDestinationsIndex < kinesisDataStreamDestinationsJsonList.GetLength(); ++kinesisDataStreamDestinationsIndex)
     {
       m_kinesisDataStreamDestinations.push_back(kinesisDataStreamDestinationsJsonList[kinesisDataStreamDestinationsIndex].AsObject());

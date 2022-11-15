@@ -30,7 +30,7 @@ namespace Model
   /**
    * <p>Describes a global network. This is a single private network acting as a
    * high-level container for your network objects, including an Amazon Web
-   * Services-manged Core Network.</p><p><h3>See Also:</h3>   <a
+   * Services-managed Core Network.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GlobalNetwork">AWS
    * API Reference</a></p>
    */
@@ -271,22 +271,22 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_globalNetworkArn;
-    bool m_globalNetworkArnHasBeenSet;
+    bool m_globalNetworkArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     GlobalNetworkState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

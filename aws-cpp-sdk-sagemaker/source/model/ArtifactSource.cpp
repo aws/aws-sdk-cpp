@@ -42,7 +42,7 @@ ArtifactSource& ArtifactSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SourceTypes"))
   {
-    Array<JsonView> sourceTypesJsonList = jsonValue.GetArray("SourceTypes");
+    Aws::Utils::Array<JsonView> sourceTypesJsonList = jsonValue.GetArray("SourceTypes");
     for(unsigned sourceTypesIndex = 0; sourceTypesIndex < sourceTypesJsonList.GetLength(); ++sourceTypesIndex)
     {
       m_sourceTypes.push_back(sourceTypesJsonList[sourceTypesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ArtifactSource::Jsonize() const
 
   if(m_sourceTypesHasBeenSet)
   {
-   Array<JsonValue> sourceTypesJsonList(m_sourceTypes.size());
+   Aws::Utils::Array<JsonValue> sourceTypesJsonList(m_sourceTypes.size());
    for(unsigned sourceTypesIndex = 0; sourceTypesIndex < sourceTypesJsonList.GetLength(); ++sourceTypesIndex)
    {
      sourceTypesJsonList[sourceTypesIndex].AsObject(m_sourceTypes[sourceTypesIndex].Jsonize());

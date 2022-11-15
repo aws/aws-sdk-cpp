@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_explainabilityArn;
-    bool m_explainabilityArnHasBeenSet;
+    bool m_explainabilityArnHasBeenSet = false;
   };
 
 } // namespace Model

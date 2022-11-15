@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/ApplicationSettingsResponse.h>
+#include <aws/appstream/model/StreamingExperienceSettings.h>
 #include <aws/appstream/model/StorageConnector.h>
 #include <aws/appstream/model/StackError.h>
 #include <aws/appstream/model/UserSetting.h>
@@ -611,46 +612,86 @@ namespace Model
      */
     inline Stack& AddEmbedHostDomains(const char* value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains.push_back(value); return *this; }
 
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline const StreamingExperienceSettings& GetStreamingExperienceSettings() const{ return m_streamingExperienceSettings; }
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline bool StreamingExperienceSettingsHasBeenSet() const { return m_streamingExperienceSettingsHasBeenSet; }
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline void SetStreamingExperienceSettings(const StreamingExperienceSettings& value) { m_streamingExperienceSettingsHasBeenSet = true; m_streamingExperienceSettings = value; }
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline void SetStreamingExperienceSettings(StreamingExperienceSettings&& value) { m_streamingExperienceSettingsHasBeenSet = true; m_streamingExperienceSettings = std::move(value); }
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline Stack& WithStreamingExperienceSettings(const StreamingExperienceSettings& value) { SetStreamingExperienceSettings(value); return *this;}
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline Stack& WithStreamingExperienceSettings(StreamingExperienceSettings&& value) { SetStreamingExperienceSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Vector<StorageConnector> m_storageConnectors;
-    bool m_storageConnectorsHasBeenSet;
+    bool m_storageConnectorsHasBeenSet = false;
 
     Aws::String m_redirectURL;
-    bool m_redirectURLHasBeenSet;
+    bool m_redirectURLHasBeenSet = false;
 
     Aws::String m_feedbackURL;
-    bool m_feedbackURLHasBeenSet;
+    bool m_feedbackURLHasBeenSet = false;
 
     Aws::Vector<StackError> m_stackErrors;
-    bool m_stackErrorsHasBeenSet;
+    bool m_stackErrorsHasBeenSet = false;
 
     Aws::Vector<UserSetting> m_userSettings;
-    bool m_userSettingsHasBeenSet;
+    bool m_userSettingsHasBeenSet = false;
 
     ApplicationSettingsResponse m_applicationSettings;
-    bool m_applicationSettingsHasBeenSet;
+    bool m_applicationSettingsHasBeenSet = false;
 
     Aws::Vector<AccessEndpoint> m_accessEndpoints;
-    bool m_accessEndpointsHasBeenSet;
+    bool m_accessEndpointsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_embedHostDomains;
-    bool m_embedHostDomainsHasBeenSet;
+    bool m_embedHostDomainsHasBeenSet = false;
+
+    StreamingExperienceSettings m_streamingExperienceSettings;
+    bool m_streamingExperienceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

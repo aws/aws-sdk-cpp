@@ -398,25 +398,25 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionId;
-    bool m_pipelineExecutionIdHasBeenSet;
+    bool m_pipelineExecutionIdHasBeenSet = false;
 
     PipelineExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::Vector<SourceRevision> m_sourceRevisions;
-    bool m_sourceRevisionsHasBeenSet;
+    bool m_sourceRevisionsHasBeenSet = false;
 
     ExecutionTrigger m_trigger;
-    bool m_triggerHasBeenSet;
+    bool m_triggerHasBeenSet = false;
 
     StopExecutionTrigger m_stopTrigger;
-    bool m_stopTriggerHasBeenSet;
+    bool m_stopTriggerHasBeenSet = false;
   };
 
 } // namespace Model

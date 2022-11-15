@@ -255,25 +255,25 @@ namespace Model
   private:
 
     int m_startHourOfDay;
-    bool m_startHourOfDayHasBeenSet;
+    bool m_startHourOfDayHasBeenSet = false;
 
     int m_startMinuteOfHour;
-    bool m_startMinuteOfHourHasBeenSet;
+    bool m_startMinuteOfHourHasBeenSet = false;
 
     int m_endHourOfDay;
-    bool m_endHourOfDayHasBeenSet;
+    bool m_endHourOfDayHasBeenSet = false;
 
     int m_endMinuteOfHour;
-    bool m_endMinuteOfHourHasBeenSet;
+    bool m_endMinuteOfHourHasBeenSet = false;
 
     Aws::Vector<int> m_daysOfWeek;
-    bool m_daysOfWeekHasBeenSet;
+    bool m_daysOfWeekHasBeenSet = false;
 
     long long m_averageUploadRateLimitInBitsPerSec;
-    bool m_averageUploadRateLimitInBitsPerSecHasBeenSet;
+    bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
 
     long long m_averageDownloadRateLimitInBitsPerSec;
-    bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet;
+    bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet = false;
   };
 
 } // namespace Model

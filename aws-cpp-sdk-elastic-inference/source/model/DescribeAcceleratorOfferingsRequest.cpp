@@ -30,7 +30,7 @@ Aws::String DescribeAcceleratorOfferingsRequest::SerializePayload() const
 
   if(m_acceleratorTypesHasBeenSet)
   {
-   Array<JsonValue> acceleratorTypesJsonList(m_acceleratorTypes.size());
+   Aws::Utils::Array<JsonValue> acceleratorTypesJsonList(m_acceleratorTypes.size());
    for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
    {
      acceleratorTypesJsonList[acceleratorTypesIndex].AsString(m_acceleratorTypes[acceleratorTypesIndex]);

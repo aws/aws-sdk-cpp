@@ -30,7 +30,7 @@ DescribePendingAggregationRequestsResult& DescribePendingAggregationRequestsResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PendingAggregationRequests"))
   {
-    Array<JsonView> pendingAggregationRequestsJsonList = jsonValue.GetArray("PendingAggregationRequests");
+    Aws::Utils::Array<JsonView> pendingAggregationRequestsJsonList = jsonValue.GetArray("PendingAggregationRequests");
     for(unsigned pendingAggregationRequestsIndex = 0; pendingAggregationRequestsIndex < pendingAggregationRequestsJsonList.GetLength(); ++pendingAggregationRequestsIndex)
     {
       m_pendingAggregationRequests.push_back(pendingAggregationRequestsJsonList[pendingAggregationRequestsIndex].AsObject());

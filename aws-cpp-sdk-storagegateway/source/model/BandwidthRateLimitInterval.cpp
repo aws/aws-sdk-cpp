@@ -85,7 +85,7 @@ BandwidthRateLimitInterval& BandwidthRateLimitInterval::operator =(JsonView json
 
   if(jsonValue.ValueExists("DaysOfWeek"))
   {
-    Array<JsonView> daysOfWeekJsonList = jsonValue.GetArray("DaysOfWeek");
+    Aws::Utils::Array<JsonView> daysOfWeekJsonList = jsonValue.GetArray("DaysOfWeek");
     for(unsigned daysOfWeekIndex = 0; daysOfWeekIndex < daysOfWeekJsonList.GetLength(); ++daysOfWeekIndex)
     {
       m_daysOfWeek.push_back(daysOfWeekJsonList[daysOfWeekIndex].AsInteger());
@@ -140,7 +140,7 @@ JsonValue BandwidthRateLimitInterval::Jsonize() const
 
   if(m_daysOfWeekHasBeenSet)
   {
-   Array<JsonValue> daysOfWeekJsonList(m_daysOfWeek.size());
+   Aws::Utils::Array<JsonValue> daysOfWeekJsonList(m_daysOfWeek.size());
    for(unsigned daysOfWeekIndex = 0; daysOfWeekIndex < daysOfWeekJsonList.GetLength(); ++daysOfWeekIndex)
    {
      daysOfWeekJsonList[daysOfWeekIndex].AsInteger(m_daysOfWeek[daysOfWeekIndex]);

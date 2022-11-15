@@ -240,49 +240,65 @@ namespace Model
     inline UpdateTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
 
-    
+    /**
+     * <p>The version ID at which to update the table contents. </p>
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    
+    /**
+     * <p>The version ID at which to update the table contents. </p>
+     */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
-    
+    /**
+     * <p>The version ID at which to update the table contents. </p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    
+    /**
+     * <p>The version ID at which to update the table contents. </p>
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
-    
+    /**
+     * <p>The version ID at which to update the table contents. </p>
+     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
-    
+    /**
+     * <p>The version ID at which to update the table contents. </p>
+     */
     inline UpdateTableRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    
+    /**
+     * <p>The version ID at which to update the table contents. </p>
+     */
     inline UpdateTableRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The version ID at which to update the table contents. </p>
+     */
     inline UpdateTableRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     TableInput m_tableInput;
-    bool m_tableInputHasBeenSet;
+    bool m_tableInputHasBeenSet = false;
 
     bool m_skipArchive;
-    bool m_skipArchiveHasBeenSet;
+    bool m_skipArchiveHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

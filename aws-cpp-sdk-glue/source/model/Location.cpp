@@ -37,7 +37,7 @@ Location& Location::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Jdbc"))
   {
-    Array<JsonView> jdbcJsonList = jsonValue.GetArray("Jdbc");
+    Aws::Utils::Array<JsonView> jdbcJsonList = jsonValue.GetArray("Jdbc");
     for(unsigned jdbcIndex = 0; jdbcIndex < jdbcJsonList.GetLength(); ++jdbcIndex)
     {
       m_jdbc.push_back(jdbcJsonList[jdbcIndex].AsObject());
@@ -47,7 +47,7 @@ Location& Location::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("S3"))
   {
-    Array<JsonView> s3JsonList = jsonValue.GetArray("S3");
+    Aws::Utils::Array<JsonView> s3JsonList = jsonValue.GetArray("S3");
     for(unsigned s3Index = 0; s3Index < s3JsonList.GetLength(); ++s3Index)
     {
       m_s3.push_back(s3JsonList[s3Index].AsObject());
@@ -57,7 +57,7 @@ Location& Location::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DynamoDB"))
   {
-    Array<JsonView> dynamoDBJsonList = jsonValue.GetArray("DynamoDB");
+    Aws::Utils::Array<JsonView> dynamoDBJsonList = jsonValue.GetArray("DynamoDB");
     for(unsigned dynamoDBIndex = 0; dynamoDBIndex < dynamoDBJsonList.GetLength(); ++dynamoDBIndex)
     {
       m_dynamoDB.push_back(dynamoDBJsonList[dynamoDBIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue Location::Jsonize() const
 
   if(m_jdbcHasBeenSet)
   {
-   Array<JsonValue> jdbcJsonList(m_jdbc.size());
+   Aws::Utils::Array<JsonValue> jdbcJsonList(m_jdbc.size());
    for(unsigned jdbcIndex = 0; jdbcIndex < jdbcJsonList.GetLength(); ++jdbcIndex)
    {
      jdbcJsonList[jdbcIndex].AsObject(m_jdbc[jdbcIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue Location::Jsonize() const
 
   if(m_s3HasBeenSet)
   {
-   Array<JsonValue> s3JsonList(m_s3.size());
+   Aws::Utils::Array<JsonValue> s3JsonList(m_s3.size());
    for(unsigned s3Index = 0; s3Index < s3JsonList.GetLength(); ++s3Index)
    {
      s3JsonList[s3Index].AsObject(m_s3[s3Index].Jsonize());
@@ -96,7 +96,7 @@ JsonValue Location::Jsonize() const
 
   if(m_dynamoDBHasBeenSet)
   {
-   Array<JsonValue> dynamoDBJsonList(m_dynamoDB.size());
+   Aws::Utils::Array<JsonValue> dynamoDBJsonList(m_dynamoDB.size());
    for(unsigned dynamoDBIndex = 0; dynamoDBIndex < dynamoDBJsonList.GetLength(); ++dynamoDBIndex)
    {
      dynamoDBJsonList[dynamoDBIndex].AsObject(m_dynamoDB[dynamoDBIndex].Jsonize());

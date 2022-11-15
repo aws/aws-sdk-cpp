@@ -282,19 +282,19 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskIndividualAssessmentArn;
-    bool m_replicationTaskIndividualAssessmentArnHasBeenSet;
+    bool m_replicationTaskIndividualAssessmentArnHasBeenSet = false;
 
     Aws::String m_replicationTaskAssessmentRunArn;
-    bool m_replicationTaskAssessmentRunArnHasBeenSet;
+    bool m_replicationTaskAssessmentRunArnHasBeenSet = false;
 
     Aws::String m_individualAssessmentName;
-    bool m_individualAssessmentNameHasBeenSet;
+    bool m_individualAssessmentNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_replicationTaskIndividualAssessmentStartDate;
-    bool m_replicationTaskIndividualAssessmentStartDateHasBeenSet;
+    bool m_replicationTaskIndividualAssessmentStartDateHasBeenSet = false;
   };
 
 } // namespace Model

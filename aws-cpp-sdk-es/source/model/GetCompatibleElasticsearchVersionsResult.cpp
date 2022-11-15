@@ -30,7 +30,7 @@ GetCompatibleElasticsearchVersionsResult& GetCompatibleElasticsearchVersionsResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CompatibleElasticsearchVersions"))
   {
-    Array<JsonView> compatibleElasticsearchVersionsJsonList = jsonValue.GetArray("CompatibleElasticsearchVersions");
+    Aws::Utils::Array<JsonView> compatibleElasticsearchVersionsJsonList = jsonValue.GetArray("CompatibleElasticsearchVersions");
     for(unsigned compatibleElasticsearchVersionsIndex = 0; compatibleElasticsearchVersionsIndex < compatibleElasticsearchVersionsJsonList.GetLength(); ++compatibleElasticsearchVersionsIndex)
     {
       m_compatibleElasticsearchVersions.push_back(compatibleElasticsearchVersionsJsonList[compatibleElasticsearchVersionsIndex].AsObject());

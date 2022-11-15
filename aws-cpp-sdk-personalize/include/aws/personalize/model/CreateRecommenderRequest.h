@@ -298,19 +298,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet;
+    bool m_datasetGroupArnHasBeenSet = false;
 
     Aws::String m_recipeArn;
-    bool m_recipeArnHasBeenSet;
+    bool m_recipeArnHasBeenSet = false;
 
     RecommenderConfig m_recommenderConfig;
-    bool m_recommenderConfigHasBeenSet;
+    bool m_recommenderConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

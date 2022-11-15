@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Status of the VPC options for the specified domain.</p><p><h3>See Also:</h3> 
+   * <p>Status of the VPC options for a specified domain.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/VPCDerivedInfoStatus">AWS
    * API Reference</a></p>
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     VPCDerivedInfo m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     OptionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_serverGroupId;
-    bool m_serverGroupIdHasBeenSet;
+    bool m_serverGroupIdHasBeenSet = false;
 
     Aws::Vector<ServerReplicationConfiguration> m_serverReplicationConfigurations;
-    bool m_serverReplicationConfigurationsHasBeenSet;
+    bool m_serverReplicationConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

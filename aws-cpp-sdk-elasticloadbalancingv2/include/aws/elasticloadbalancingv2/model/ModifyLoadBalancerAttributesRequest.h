@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerArn;
-    bool m_loadBalancerArnHasBeenSet;
+    bool m_loadBalancerArnHasBeenSet = false;
 
     Aws::Vector<LoadBalancerAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

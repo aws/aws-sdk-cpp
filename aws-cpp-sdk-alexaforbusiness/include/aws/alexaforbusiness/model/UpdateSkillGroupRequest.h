@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_skillGroupArn;
-    bool m_skillGroupArnHasBeenSet;
+    bool m_skillGroupArnHasBeenSet = false;
 
     Aws::String m_skillGroupName;
-    bool m_skillGroupNameHasBeenSet;
+    bool m_skillGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

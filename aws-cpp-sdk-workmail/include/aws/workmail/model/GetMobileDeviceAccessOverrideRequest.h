@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+     * <p>The WorkMail organization to which you want to apply the override.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+     * <p>The WorkMail organization to which you want to apply the override.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+     * <p>The WorkMail organization to which you want to apply the override.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+     * <p>The WorkMail organization to which you want to apply the override.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+     * <p>The WorkMail organization to which you want to apply the override.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+     * <p>The WorkMail organization to which you want to apply the override.</p>
      */
     inline GetMobileDeviceAccessOverrideRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+     * <p>The WorkMail organization to which you want to apply the override.</p>
      */
     inline GetMobileDeviceAccessOverrideRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+     * <p>The WorkMail organization to which you want to apply the override.</p>
      */
     inline GetMobileDeviceAccessOverrideRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
   };
 
 } // namespace Model

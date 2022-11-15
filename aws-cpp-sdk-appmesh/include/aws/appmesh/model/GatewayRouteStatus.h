@@ -71,7 +71,7 @@ namespace Model
   private:
 
     GatewayRouteStatusCode m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

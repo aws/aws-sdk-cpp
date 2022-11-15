@@ -13,6 +13,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/DeploymentTargets.h>
 #include <aws/cloudformation/model/StackSetDriftDetectionDetails.h>
+#include <aws/cloudformation/model/StackSetOperationStatusDetails.h>
 #include <utility>
 
 namespace Aws
@@ -381,10 +382,10 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation.</p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -392,10 +393,10 @@ namespace Model
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation.</p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -403,10 +404,10 @@ namespace Model
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation.</p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -414,10 +415,10 @@ namespace Model
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation.</p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -425,10 +426,10 @@ namespace Model
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation.</p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -436,10 +437,10 @@ namespace Model
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation.</p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -447,10 +448,10 @@ namespace Model
     inline StackSetOperation& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation.</p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -458,10 +459,10 @@ namespace Model
     inline StackSetOperation& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack
-     * set operation.</p> <p>Use customized administrator roles to control which users
-     * or groups can manage specific stack sets within the same administrator account.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * operation.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
@@ -727,43 +728,121 @@ namespace Model
      */
     inline StackSetOperation& WithStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { SetStackSetDriftDetectionDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperation& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperation& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the operation in details.</p>
+     */
+    inline StackSetOperation& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline const StackSetOperationStatusDetails& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline void SetStatusDetails(const StackSetOperationStatusDetails& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline void SetStatusDetails(StackSetOperationStatusDetails&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline StackSetOperation& WithStatusDetails(const StackSetOperationStatusDetails& value) { SetStatusDetails(value); return *this;}
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline StackSetOperation& WithStatusDetails(StackSetOperationStatusDetails&& value) { SetStatusDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::String m_stackSetId;
-    bool m_stackSetIdHasBeenSet;
+    bool m_stackSetIdHasBeenSet = false;
 
     StackSetOperationAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     StackSetOperationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     StackSetOperationPreferences m_operationPreferences;
-    bool m_operationPreferencesHasBeenSet;
+    bool m_operationPreferencesHasBeenSet = false;
 
     bool m_retainStacks;
-    bool m_retainStacksHasBeenSet;
+    bool m_retainStacksHasBeenSet = false;
 
     Aws::String m_administrationRoleARN;
-    bool m_administrationRoleARNHasBeenSet;
+    bool m_administrationRoleARNHasBeenSet = false;
 
     Aws::String m_executionRoleName;
-    bool m_executionRoleNameHasBeenSet;
+    bool m_executionRoleNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimestamp;
-    bool m_endTimestampHasBeenSet;
+    bool m_endTimestampHasBeenSet = false;
 
     DeploymentTargets m_deploymentTargets;
-    bool m_deploymentTargetsHasBeenSet;
+    bool m_deploymentTargetsHasBeenSet = false;
 
     StackSetDriftDetectionDetails m_stackSetDriftDetectionDetails;
-    bool m_stackSetDriftDetectionDetailsHasBeenSet;
+    bool m_stackSetDriftDetectionDetailsHasBeenSet = false;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
+
+    StackSetOperationStatusDetails m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
   };
 
 } // namespace Model

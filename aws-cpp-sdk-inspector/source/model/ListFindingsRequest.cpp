@@ -27,7 +27,7 @@ Aws::String ListFindingsRequest::SerializePayload() const
 
   if(m_assessmentRunArnsHasBeenSet)
   {
-   Array<JsonValue> assessmentRunArnsJsonList(m_assessmentRunArns.size());
+   Aws::Utils::Array<JsonValue> assessmentRunArnsJsonList(m_assessmentRunArns.size());
    for(unsigned assessmentRunArnsIndex = 0; assessmentRunArnsIndex < assessmentRunArnsJsonList.GetLength(); ++assessmentRunArnsIndex)
    {
      assessmentRunArnsJsonList[assessmentRunArnsIndex].AsString(m_assessmentRunArns[assessmentRunArnsIndex]);

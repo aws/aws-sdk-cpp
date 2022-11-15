@@ -150,7 +150,7 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

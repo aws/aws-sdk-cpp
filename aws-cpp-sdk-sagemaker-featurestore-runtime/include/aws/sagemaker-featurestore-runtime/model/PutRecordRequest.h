@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::Vector<FeatureValue> m_record;
-    bool m_recordHasBeenSet;
+    bool m_recordHasBeenSet = false;
   };
 
 } // namespace Model

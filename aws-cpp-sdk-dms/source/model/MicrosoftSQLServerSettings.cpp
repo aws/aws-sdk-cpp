@@ -39,7 +39,9 @@ MicrosoftSQLServerSettings::MicrosoftSQLServerSettings() :
     m_useThirdPartyBackupDevice(false),
     m_useThirdPartyBackupDeviceHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_trimSpaceInChar(false),
+    m_trimSpaceInCharHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ MicrosoftSQLServerSettings::MicrosoftSQLServerSettings(JsonView jsonValue) :
     m_useThirdPartyBackupDevice(false),
     m_useThirdPartyBackupDeviceHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_trimSpaceInChar(false),
+    m_trimSpaceInCharHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -169,6 +173,13 @@ MicrosoftSQLServerSettings& MicrosoftSQLServerSettings::operator =(JsonView json
     m_secretsManagerSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrimSpaceInChar"))
+  {
+    m_trimSpaceInChar = jsonValue.GetBool("TrimSpaceInChar");
+
+    m_trimSpaceInCharHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -256,6 +267,12 @@ JsonValue MicrosoftSQLServerSettings::Jsonize() const
   if(m_secretsManagerSecretIdHasBeenSet)
   {
    payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
+
+  }
+
+  if(m_trimSpaceInCharHasBeenSet)
+  {
+   payload.WithBool("TrimSpaceInChar", m_trimSpaceInChar);
 
   }
 

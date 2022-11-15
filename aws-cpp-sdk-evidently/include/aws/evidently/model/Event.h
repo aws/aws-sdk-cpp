@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     EventType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

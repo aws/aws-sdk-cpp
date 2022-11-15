@@ -21,6 +21,10 @@ namespace Aws
       {
 
         static const int PRESET_AUDIO_1_HASH = HashingUtils::HashString("PRESET-AUDIO-1");
+        static const int PRESET_AUDIO_2_HASH = HashingUtils::HashString("PRESET-AUDIO-2");
+        static const int PRESET_AUDIO_3_HASH = HashingUtils::HashString("PRESET-AUDIO-3");
+        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
+        static const int UNENCRYPTED_HASH = HashingUtils::HashString("UNENCRYPTED");
 
 
         PresetSpeke20Audio GetPresetSpeke20AudioForName(const Aws::String& name)
@@ -29,6 +33,22 @@ namespace Aws
           if (hashCode == PRESET_AUDIO_1_HASH)
           {
             return PresetSpeke20Audio::PRESET_AUDIO_1;
+          }
+          else if (hashCode == PRESET_AUDIO_2_HASH)
+          {
+            return PresetSpeke20Audio::PRESET_AUDIO_2;
+          }
+          else if (hashCode == PRESET_AUDIO_3_HASH)
+          {
+            return PresetSpeke20Audio::PRESET_AUDIO_3;
+          }
+          else if (hashCode == SHARED_HASH)
+          {
+            return PresetSpeke20Audio::SHARED;
+          }
+          else if (hashCode == UNENCRYPTED_HASH)
+          {
+            return PresetSpeke20Audio::UNENCRYPTED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +66,14 @@ namespace Aws
           {
           case PresetSpeke20Audio::PRESET_AUDIO_1:
             return "PRESET-AUDIO-1";
+          case PresetSpeke20Audio::PRESET_AUDIO_2:
+            return "PRESET-AUDIO-2";
+          case PresetSpeke20Audio::PRESET_AUDIO_3:
+            return "PRESET-AUDIO-3";
+          case PresetSpeke20Audio::SHARED:
+            return "SHARED";
+          case PresetSpeke20Audio::UNENCRYPTED:
+            return "UNENCRYPTED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

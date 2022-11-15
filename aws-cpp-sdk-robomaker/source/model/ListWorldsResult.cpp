@@ -30,7 +30,7 @@ ListWorldsResult& ListWorldsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("worldSummaries"))
   {
-    Array<JsonView> worldSummariesJsonList = jsonValue.GetArray("worldSummaries");
+    Aws::Utils::Array<JsonView> worldSummariesJsonList = jsonValue.GetArray("worldSummaries");
     for(unsigned worldSummariesIndex = 0; worldSummariesIndex < worldSummariesJsonList.GetLength(); ++worldSummariesIndex)
     {
       m_worldSummaries.push_back(worldSummariesJsonList[worldSummariesIndex].AsObject());

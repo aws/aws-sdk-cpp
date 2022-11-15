@@ -289,7 +289,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -309,7 +309,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -329,7 +329,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -349,7 +349,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -369,7 +369,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -389,7 +389,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -409,7 +409,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -429,7 +429,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -449,7 +449,7 @@ namespace Model
      * without taking the units into account. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
-     * different units (for example, hours vs. GB). To get more meaningful
+     * different units (for example, hour or GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -565,22 +565,22 @@ namespace Model
   private:
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Granularity m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     Aws::Vector<GroupDefinition> m_groupBy;
-    bool m_groupByHasBeenSet;
+    bool m_groupByHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_nodeAssociationStatusToken;
-    bool m_nodeAssociationStatusTokenHasBeenSet;
+    bool m_nodeAssociationStatusTokenHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
   };
 
 } // namespace Model

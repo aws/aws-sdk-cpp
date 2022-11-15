@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_association;
-    bool m_associationHasBeenSet;
+    bool m_associationHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

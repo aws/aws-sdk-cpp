@@ -420,34 +420,34 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTime;
-    bool m_submitTimeHasBeenSet;
+    bool m_submitTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_datastoreId;
-    bool m_datastoreIdHasBeenSet;
+    bool m_datastoreIdHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     OutputDataConfig m_jobOutputDataConfig;
-    bool m_jobOutputDataConfigHasBeenSet;
+    bool m_jobOutputDataConfigHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListApplicationStatesResult& ListApplicationStatesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ApplicationStateList"))
   {
-    Array<JsonView> applicationStateListJsonList = jsonValue.GetArray("ApplicationStateList");
+    Aws::Utils::Array<JsonView> applicationStateListJsonList = jsonValue.GetArray("ApplicationStateList");
     for(unsigned applicationStateListIndex = 0; applicationStateListIndex < applicationStateListJsonList.GetLength(); ++applicationStateListIndex)
     {
       m_applicationStateList.push_back(applicationStateListJsonList[applicationStateListIndex].AsObject());

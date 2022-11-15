@@ -30,7 +30,7 @@ GetAuthorizationTokenResult& GetAuthorizationTokenResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("authorizationData"))
   {
-    Array<JsonView> authorizationDataJsonList = jsonValue.GetArray("authorizationData");
+    Aws::Utils::Array<JsonView> authorizationDataJsonList = jsonValue.GetArray("authorizationData");
     for(unsigned authorizationDataIndex = 0; authorizationDataIndex < authorizationDataJsonList.GetLength(); ++authorizationDataIndex)
     {
       m_authorizationData.push_back(authorizationDataJsonList[authorizationDataIndex].AsObject());

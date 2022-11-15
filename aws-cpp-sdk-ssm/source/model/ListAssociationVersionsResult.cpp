@@ -30,7 +30,7 @@ ListAssociationVersionsResult& ListAssociationVersionsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AssociationVersions"))
   {
-    Array<JsonView> associationVersionsJsonList = jsonValue.GetArray("AssociationVersions");
+    Aws::Utils::Array<JsonView> associationVersionsJsonList = jsonValue.GetArray("AssociationVersions");
     for(unsigned associationVersionsIndex = 0; associationVersionsIndex < associationVersionsJsonList.GetLength(); ++associationVersionsIndex)
     {
       m_associationVersions.push_back(associationVersionsJsonList[associationVersionsIndex].AsObject());

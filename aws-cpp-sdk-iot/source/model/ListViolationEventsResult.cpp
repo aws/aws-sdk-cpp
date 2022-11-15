@@ -30,7 +30,7 @@ ListViolationEventsResult& ListViolationEventsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("violationEvents"))
   {
-    Array<JsonView> violationEventsJsonList = jsonValue.GetArray("violationEvents");
+    Aws::Utils::Array<JsonView> violationEventsJsonList = jsonValue.GetArray("violationEvents");
     for(unsigned violationEventsIndex = 0; violationEventsIndex < violationEventsJsonList.GetLength(); ++violationEventsIndex)
     {
       m_violationEvents.push_back(violationEventsJsonList[violationEventsIndex].AsObject());

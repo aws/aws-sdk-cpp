@@ -166,10 +166,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_calendarNames;
-    bool m_calendarNamesHasBeenSet;
+    bool m_calendarNamesHasBeenSet = false;
 
     Aws::String m_atTime;
-    bool m_atTimeHasBeenSet;
+    bool m_atTimeHasBeenSet = false;
   };
 
 } // namespace Model

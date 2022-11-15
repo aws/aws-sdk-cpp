@@ -31,7 +31,7 @@ Aws::String ExportAutoScalingGroupRecommendationsRequest::SerializePayload() con
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
@@ -42,7 +42,7 @@ Aws::String ExportAutoScalingGroupRecommendationsRequest::SerializePayload() con
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
@@ -53,7 +53,7 @@ Aws::String ExportAutoScalingGroupRecommendationsRequest::SerializePayload() con
 
   if(m_fieldsToExportHasBeenSet)
   {
-   Array<JsonValue> fieldsToExportJsonList(m_fieldsToExport.size());
+   Aws::Utils::Array<JsonValue> fieldsToExportJsonList(m_fieldsToExport.size());
    for(unsigned fieldsToExportIndex = 0; fieldsToExportIndex < fieldsToExportJsonList.GetLength(); ++fieldsToExportIndex)
    {
      fieldsToExportJsonList[fieldsToExportIndex].AsString(ExportableAutoScalingGroupFieldMapper::GetNameForExportableAutoScalingGroupField(m_fieldsToExport[fieldsToExportIndex]));

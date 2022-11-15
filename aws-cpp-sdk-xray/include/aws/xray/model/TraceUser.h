@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::Vector<ServiceId> m_serviceIds;
-    bool m_serviceIdsHasBeenSet;
+    bool m_serviceIdsHasBeenSet = false;
   };
 
 } // namespace Model

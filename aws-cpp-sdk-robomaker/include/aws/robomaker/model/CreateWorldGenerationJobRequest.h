@@ -324,19 +324,19 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
 
     WorldCount m_worldCount;
-    bool m_worldCountHasBeenSet;
+    bool m_worldCountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_worldTags;
-    bool m_worldTagsHasBeenSet;
+    bool m_worldTagsHasBeenSet = false;
   };
 
 } // namespace Model

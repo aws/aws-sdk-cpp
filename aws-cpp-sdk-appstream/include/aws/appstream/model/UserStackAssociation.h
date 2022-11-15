@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     AuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     bool m_sendEmailNotification;
-    bool m_sendEmailNotificationHasBeenSet;
+    bool m_sendEmailNotificationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -639,31 +639,31 @@ namespace Model
   private:
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_severityCode;
-    bool m_severityCodeHasBeenSet;
+    bool m_severityCodeHasBeenSet = false;
 
     Aws::String m_categoryCode;
-    bool m_categoryCodeHasBeenSet;
+    bool m_categoryCodeHasBeenSet = false;
 
     Aws::String m_communicationBody;
-    bool m_communicationBodyHasBeenSet;
+    bool m_communicationBodyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ccEmailAddresses;
-    bool m_ccEmailAddressesHasBeenSet;
+    bool m_ccEmailAddressesHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::String m_issueType;
-    bool m_issueTypeHasBeenSet;
+    bool m_issueTypeHasBeenSet = false;
 
     Aws::String m_attachmentSetId;
-    bool m_attachmentSetIdHasBeenSet;
+    bool m_attachmentSetIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ ConfigurationOverrides& ConfigurationOverrides::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("applicationConfiguration"))
   {
-    Array<JsonView> applicationConfigurationJsonList = jsonValue.GetArray("applicationConfiguration");
+    Aws::Utils::Array<JsonView> applicationConfigurationJsonList = jsonValue.GetArray("applicationConfiguration");
     for(unsigned applicationConfigurationIndex = 0; applicationConfigurationIndex < applicationConfigurationJsonList.GetLength(); ++applicationConfigurationIndex)
     {
       m_applicationConfiguration.push_back(applicationConfigurationJsonList[applicationConfigurationIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue ConfigurationOverrides::Jsonize() const
 
   if(m_applicationConfigurationHasBeenSet)
   {
-   Array<JsonValue> applicationConfigurationJsonList(m_applicationConfiguration.size());
+   Aws::Utils::Array<JsonValue> applicationConfigurationJsonList(m_applicationConfiguration.size());
    for(unsigned applicationConfigurationIndex = 0; applicationConfigurationIndex < applicationConfigurationJsonList.GetLength(); ++applicationConfigurationIndex)
    {
      applicationConfigurationJsonList[applicationConfigurationIndex].AsObject(m_applicationConfiguration[applicationConfigurationIndex].Jsonize());

@@ -324,25 +324,25 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_grantArn;
-    bool m_grantArnHasBeenSet;
+    bool m_grantArnHasBeenSet = false;
 
     Aws::String m_grantName;
-    bool m_grantNameHasBeenSet;
+    bool m_grantNameHasBeenSet = false;
 
     Aws::Vector<AllowedOperation> m_allowedOperations;
-    bool m_allowedOperationsHasBeenSet;
+    bool m_allowedOperationsHasBeenSet = false;
 
     GrantStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
   };
 
 } // namespace Model

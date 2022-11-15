@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_vpnConnectionDeviceTypeId;
-    bool m_vpnConnectionDeviceTypeIdHasBeenSet;
+    bool m_vpnConnectionDeviceTypeIdHasBeenSet = false;
 
     Aws::String m_vendor;
-    bool m_vendorHasBeenSet;
+    bool m_vendorHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_software;
-    bool m_softwareHasBeenSet;
+    bool m_softwareHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ SelectedVideoStreams& SelectedVideoStreams::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttendeeIds"))
   {
-    Array<JsonView> attendeeIdsJsonList = jsonValue.GetArray("AttendeeIds");
+    Aws::Utils::Array<JsonView> attendeeIdsJsonList = jsonValue.GetArray("AttendeeIds");
     for(unsigned attendeeIdsIndex = 0; attendeeIdsIndex < attendeeIdsJsonList.GetLength(); ++attendeeIdsIndex)
     {
       m_attendeeIds.push_back(attendeeIdsJsonList[attendeeIdsIndex].AsString());
@@ -45,7 +45,7 @@ SelectedVideoStreams& SelectedVideoStreams::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExternalUserIds"))
   {
-    Array<JsonView> externalUserIdsJsonList = jsonValue.GetArray("ExternalUserIds");
+    Aws::Utils::Array<JsonView> externalUserIdsJsonList = jsonValue.GetArray("ExternalUserIds");
     for(unsigned externalUserIdsIndex = 0; externalUserIdsIndex < externalUserIdsJsonList.GetLength(); ++externalUserIdsIndex)
     {
       m_externalUserIds.push_back(externalUserIdsJsonList[externalUserIdsIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue SelectedVideoStreams::Jsonize() const
 
   if(m_attendeeIdsHasBeenSet)
   {
-   Array<JsonValue> attendeeIdsJsonList(m_attendeeIds.size());
+   Aws::Utils::Array<JsonValue> attendeeIdsJsonList(m_attendeeIds.size());
    for(unsigned attendeeIdsIndex = 0; attendeeIdsIndex < attendeeIdsJsonList.GetLength(); ++attendeeIdsIndex)
    {
      attendeeIdsJsonList[attendeeIdsIndex].AsString(m_attendeeIds[attendeeIdsIndex]);
@@ -73,7 +73,7 @@ JsonValue SelectedVideoStreams::Jsonize() const
 
   if(m_externalUserIdsHasBeenSet)
   {
-   Array<JsonValue> externalUserIdsJsonList(m_externalUserIds.size());
+   Aws::Utils::Array<JsonValue> externalUserIdsJsonList(m_externalUserIds.size());
    for(unsigned externalUserIdsIndex = 0; externalUserIdsIndex < externalUserIdsJsonList.GetLength(); ++externalUserIdsIndex)
    {
      externalUserIdsJsonList[externalUserIdsIndex].AsString(m_externalUserIds[externalUserIdsIndex]);

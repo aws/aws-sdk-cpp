@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::String m_payloadData;
-    bool m_payloadDataHasBeenSet;
+    bool m_payloadDataHasBeenSet = false;
   };
 
 } // namespace Model

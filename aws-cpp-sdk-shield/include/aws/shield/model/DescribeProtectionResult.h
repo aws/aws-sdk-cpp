@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The <a>Protection</a> object that is described.</p>
+     * <p>The <a>Protection</a> that you requested. </p>
      */
     inline const Protection& GetProtection() const{ return m_protection; }
 
     /**
-     * <p>The <a>Protection</a> object that is described.</p>
+     * <p>The <a>Protection</a> that you requested. </p>
      */
     inline void SetProtection(const Protection& value) { m_protection = value; }
 
     /**
-     * <p>The <a>Protection</a> object that is described.</p>
+     * <p>The <a>Protection</a> that you requested. </p>
      */
     inline void SetProtection(Protection&& value) { m_protection = std::move(value); }
 
     /**
-     * <p>The <a>Protection</a> object that is described.</p>
+     * <p>The <a>Protection</a> that you requested. </p>
      */
     inline DescribeProtectionResult& WithProtection(const Protection& value) { SetProtection(value); return *this;}
 
     /**
-     * <p>The <a>Protection</a> object that is described.</p>
+     * <p>The <a>Protection</a> that you requested. </p>
      */
     inline DescribeProtectionResult& WithProtection(Protection&& value) { SetProtection(std::move(value)); return *this;}
 

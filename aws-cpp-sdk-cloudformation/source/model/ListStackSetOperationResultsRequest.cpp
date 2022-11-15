@@ -17,7 +17,8 @@ ListStackSetOperationResultsRequest::ListStackSetOperationResultsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_callAs(CallAs::NOT_SET),
-    m_callAsHasBeenSet(false)
+    m_callAsHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,16 @@ Aws::String ListStackSetOperationResultsRequest::SerializePayload() const
   if(m_callAsHasBeenSet)
   {
     ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   ss << "Version=2010-05-15";

@@ -72,131 +72,147 @@ namespace Model
 
 
     /**
-     * <p>The ID of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The ID of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
 
     /**
-     * <p>The ID of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The ID of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
     /**
-     * <p>The ID of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The ID of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
-     * <p>The ID of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The ID of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
 
     /**
-     * <p>The ID of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The ID of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
 
     /**
-     * <p>The ID of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The ID of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
 
     /**
-     * <p>The ID of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The ID of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The ID of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
 
 
     /**
-     * <p>The name of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The name of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
 
     /**
-     * <p>The name of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The name of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
-     * <p>The name of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The name of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
     /**
-     * <p>The name of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The name of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
 
     /**
-     * <p>The name of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The name of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
 
     /**
-     * <p>The name of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The name of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The name of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch template. To describe one or more versions of a
-     * specified launch template, you must specify either the launch template ID or the
-     * launch template name in the request. To describe all the latest or default
-     * launch template versions in your account, you must omit this parameter.</p>
+     * <p>The name of the launch template.</p> <p>To describe one or more versions of a
+     * specified launch template, you must specify either the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p> <p>To describe all the latest or default launch template versions in
+     * your account, you must omit this parameter.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
 
@@ -210,8 +226,8 @@ namespace Model
      * your account that are defined as the latest version, the valid value is
      * <code>$Latest</code>. To describe all launch templates in your account that are
      * defined as the default version, the valid value is <code>$Default</code>. You
-     * can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-     * cannot specify numbers.</p>
+     * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+     * You cannot specify numbers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
 
@@ -224,8 +240,8 @@ namespace Model
      * your account that are defined as the latest version, the valid value is
      * <code>$Latest</code>. To describe all launch templates in your account that are
      * defined as the default version, the valid value is <code>$Default</code>. You
-     * can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-     * cannot specify numbers.</p>
+     * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+     * You cannot specify numbers.</p>
      */
     inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
 
@@ -238,8 +254,8 @@ namespace Model
      * your account that are defined as the latest version, the valid value is
      * <code>$Latest</code>. To describe all launch templates in your account that are
      * defined as the default version, the valid value is <code>$Default</code>. You
-     * can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-     * cannot specify numbers.</p>
+     * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+     * You cannot specify numbers.</p>
      */
     inline void SetVersions(const Aws::Vector<Aws::String>& value) { m_versionsHasBeenSet = true; m_versions = value; }
 
@@ -252,8 +268,8 @@ namespace Model
      * your account that are defined as the latest version, the valid value is
      * <code>$Latest</code>. To describe all launch templates in your account that are
      * defined as the default version, the valid value is <code>$Default</code>. You
-     * can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-     * cannot specify numbers.</p>
+     * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+     * You cannot specify numbers.</p>
      */
     inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = std::move(value); }
 
@@ -266,8 +282,8 @@ namespace Model
      * your account that are defined as the latest version, the valid value is
      * <code>$Latest</code>. To describe all launch templates in your account that are
      * defined as the default version, the valid value is <code>$Default</code>. You
-     * can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-     * cannot specify numbers.</p>
+     * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+     * You cannot specify numbers.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& WithVersions(const Aws::Vector<Aws::String>& value) { SetVersions(value); return *this;}
 
@@ -280,8 +296,8 @@ namespace Model
      * your account that are defined as the latest version, the valid value is
      * <code>$Latest</code>. To describe all launch templates in your account that are
      * defined as the default version, the valid value is <code>$Default</code>. You
-     * can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-     * cannot specify numbers.</p>
+     * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+     * You cannot specify numbers.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(std::move(value)); return *this;}
 
@@ -294,8 +310,8 @@ namespace Model
      * your account that are defined as the latest version, the valid value is
      * <code>$Latest</code>. To describe all launch templates in your account that are
      * defined as the default version, the valid value is <code>$Default</code>. You
-     * can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-     * cannot specify numbers.</p>
+     * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+     * You cannot specify numbers.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& AddVersions(const Aws::String& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
 
@@ -308,8 +324,8 @@ namespace Model
      * your account that are defined as the latest version, the valid value is
      * <code>$Latest</code>. To describe all launch templates in your account that are
      * defined as the default version, the valid value is <code>$Default</code>. You
-     * can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-     * cannot specify numbers.</p>
+     * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+     * You cannot specify numbers.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(std::move(value)); return *this; }
 
@@ -322,8 +338,8 @@ namespace Model
      * your account that are defined as the latest version, the valid value is
      * <code>$Latest</code>. To describe all launch templates in your account that are
      * defined as the default version, the valid value is <code>$Default</code>. You
-     * can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-     * cannot specify numbers.</p>
+     * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+     * You cannot specify numbers.</p>
      */
     inline DescribeLaunchTemplateVersionsRequest& AddVersions(const char* value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
 
@@ -691,31 +707,31 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versions;
-    bool m_versionsHasBeenSet;
+    bool m_versionsHasBeenSet = false;
 
     Aws::String m_minVersion;
-    bool m_minVersionHasBeenSet;
+    bool m_minVersionHasBeenSet = false;
 
     Aws::String m_maxVersion;
-    bool m_maxVersionHasBeenSet;
+    bool m_maxVersionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

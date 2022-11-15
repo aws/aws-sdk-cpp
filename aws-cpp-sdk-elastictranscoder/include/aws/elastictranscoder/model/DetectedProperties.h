@@ -165,19 +165,19 @@ namespace Model
   private:
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     Aws::String m_frameRate;
-    bool m_frameRateHasBeenSet;
+    bool m_frameRateHasBeenSet = false;
 
     long long m_fileSize;
-    bool m_fileSizeHasBeenSet;
+    bool m_fileSizeHasBeenSet = false;
 
     long long m_durationMillis;
-    bool m_durationMillisHasBeenSet;
+    bool m_durationMillisHasBeenSet = false;
   };
 
 } // namespace Model

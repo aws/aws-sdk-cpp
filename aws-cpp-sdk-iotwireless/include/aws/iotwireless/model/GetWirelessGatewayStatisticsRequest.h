@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_wirelessGatewayId;
-    bool m_wirelessGatewayIdHasBeenSet;
+    bool m_wirelessGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

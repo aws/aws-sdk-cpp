@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_longTermPricingId;
-    bool m_longTermPricingIdHasBeenSet;
+    bool m_longTermPricingIdHasBeenSet = false;
 
     Aws::String m_replacementJob;
-    bool m_replacementJobHasBeenSet;
+    bool m_replacementJobHasBeenSet = false;
 
     bool m_isLongTermPricingAutoRenew;
-    bool m_isLongTermPricingAutoRenewHasBeenSet;
+    bool m_isLongTermPricingAutoRenewHasBeenSet = false;
   };
 
 } // namespace Model

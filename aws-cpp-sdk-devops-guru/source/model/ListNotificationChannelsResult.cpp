@@ -30,7 +30,7 @@ ListNotificationChannelsResult& ListNotificationChannelsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Channels"))
   {
-    Array<JsonView> channelsJsonList = jsonValue.GetArray("Channels");
+    Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("Channels");
     for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
     {
       m_channels.push_back(channelsJsonList[channelsIndex].AsObject());

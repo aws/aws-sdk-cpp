@@ -1,0 +1,108 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($endpointPrefix = $metadata.endpointPrefix)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+
+#if($serviceModel.metadata.serviceId == "S3")
+static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
+static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
+static const char S3_DISABLE_MULTIREGION_ACCESS_POINTS_ENV_VAR[] = "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS";
+static const char S3_DISABLE_MULTIREGION_ACCESS_POINTS_CONFIG_VAR[] = "s3_disable_multiregion_access_points";
+#end
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
+static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
+#end
+
+void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}SpecificConfig(const Aws::String& inputProfileName)
+{
+#if($serviceModel.metadata.serviceId == "S3")
+  if (Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET == this->useUSEast1RegionalEndPointOption)
+  {
+    const Aws::String& useUSEastOption =
+        BaseClientConfigClass::LoadConfigFromEnvOrProfile(US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR,
+                                                          inputProfileName,
+                                                          US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR,
+                                                          {"legacy", "regional"},
+                                                          "regional");
+    if (useUSEastOption == "legacy") {
+      this->useUSEast1RegionalEndPointOption = Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
+    } else {
+      this->useUSEast1RegionalEndPointOption = Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
+    }
+  }
+
+  Aws::String s3DisableMultiRegionAccessPoints = ClientConfiguration::LoadConfigFromEnvOrProfile(S3_DISABLE_MULTIREGION_ACCESS_POINTS_ENV_VAR,
+                                                                                        inputProfileName,
+                                                                                        S3_DISABLE_MULTIREGION_ACCESS_POINTS_CONFIG_VAR,
+                                                                                        {"true", "false"},
+                                                                                        "false");
+  if (s3DisableMultiRegionAccessPoints == "true")
+  {
+    disableMultiRegionAccessPoints = true;
+  }
+#end
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+  Aws::String useArnRegionCfg = ClientConfiguration::LoadConfigFromEnvOrProfile(S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE,
+                                                                               inputProfileName,
+                                                                               S3_USE_ARN_REGION_CONFIG_FILE_OPTION,
+                                                                               {"true", "false"},
+                                                                               "false");
+  if (useArnRegionCfg == "true")
+  {
+    useArnRegion = true;
+  }
+#end
+}
+
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration()
+: BaseClientConfigClass()
+{
+  Load${serviceNamespace}SpecificConfig(this->profileName);
+}
+
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const char* inputProfileName)
+: BaseClientConfigClass(inputProfileName)
+{
+  Load${serviceNamespace}SpecificConfig(Aws::String(inputProfileName));
+}
+
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(bool useSmartDefaults, const char* defaultMode)
+: BaseClientConfigClass(useSmartDefaults, defaultMode)
+{
+  Load${serviceNamespace}SpecificConfig(this->profileName);
+}
+
+#set($classNamePrefix = $metadata.classNamePrefix)
+#set($clsPrefixWSpace = $classNamePrefix.replaceAll(".", " "))
+#set($earlyClose = $serviceModel.metadata.serviceId != "S3")
+${classNamePrefix}ClientConfiguration::${classNamePrefix}ClientConfiguration(const Client::ClientConfiguration& config#if($earlyClose))#else,
+#end
+#if($serviceModel.metadata.serviceId == "S3")
+${clsPrefixWSpace}                     ${clsPrefixWSpace}Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy,
+${clsPrefixWSpace}                     ${clsPrefixWSpace}bool iUseVirtualAddressing,
+${clsPrefixWSpace}                     ${clsPrefixWSpace}US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption)
+#end
+  : BaseClientConfigClass(config)#if($serviceModel.metadata.serviceId == "S3"),
+#else
+#end
+#if($serviceModel.metadata.serviceId == "S3")
+    useVirtualAddressing(iUseVirtualAddressing),
+    useUSEast1RegionalEndPointOption(iUseUSEast1RegionalEndPointOption),
+    payloadSigningPolicy(iPayloadSigningPolicy)
+#end
+{
+  Load${serviceNamespace}SpecificConfig(this->profileName);
+}
+
+
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

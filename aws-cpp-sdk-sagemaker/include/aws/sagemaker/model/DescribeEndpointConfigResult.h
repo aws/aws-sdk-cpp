@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
+#include <aws/sagemaker/model/ExplainerConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <utility>
 
@@ -272,6 +273,32 @@ namespace Model
      */
     inline DescribeEndpointConfigResult& WithAsyncInferenceConfig(AsyncInferenceConfig&& value) { SetAsyncInferenceConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline const ExplainerConfig& GetExplainerConfig() const{ return m_explainerConfig; }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline void SetExplainerConfig(const ExplainerConfig& value) { m_explainerConfig = value; }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline void SetExplainerConfig(ExplainerConfig&& value) { m_explainerConfig = std::move(value); }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline DescribeEndpointConfigResult& WithExplainerConfig(const ExplainerConfig& value) { SetExplainerConfig(value); return *this;}
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline DescribeEndpointConfigResult& WithExplainerConfig(ExplainerConfig&& value) { SetExplainerConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointConfigName;
@@ -287,6 +314,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     AsyncInferenceConfig m_asyncInferenceConfig;
+
+    ExplainerConfig m_explainerConfig;
   };
 
 } // namespace Model

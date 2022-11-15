@@ -213,16 +213,16 @@ namespace Model
   private:
 
     TrafficRoutingConfigType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_waitIntervalInSeconds;
-    bool m_waitIntervalInSecondsHasBeenSet;
+    bool m_waitIntervalInSecondsHasBeenSet = false;
 
     CapacitySize m_canarySize;
-    bool m_canarySizeHasBeenSet;
+    bool m_canarySizeHasBeenSet = false;
 
     CapacitySize m_linearStepSize;
-    bool m_linearStepSizeHasBeenSet;
+    bool m_linearStepSizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rawInputRecords;
-    bool m_rawInputRecordsHasBeenSet;
+    bool m_rawInputRecordsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_processedInputRecords;
-    bool m_processedInputRecordsHasBeenSet;
+    bool m_processedInputRecordsHasBeenSet = false;
   };
 
 } // namespace Model

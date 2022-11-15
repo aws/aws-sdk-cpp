@@ -109,10 +109,10 @@ namespace Model
   private:
 
     InitializationConfiguration m_initializationConfiguration;
-    bool m_initializationConfigurationHasBeenSet;
+    bool m_initializationConfigurationHasBeenSet = false;
 
     AcknowledgeFlow m_acknowledgeFlow;
-    bool m_acknowledgeFlowHasBeenSet;
+    bool m_acknowledgeFlowHasBeenSet = false;
   };
 
 } // namespace Model

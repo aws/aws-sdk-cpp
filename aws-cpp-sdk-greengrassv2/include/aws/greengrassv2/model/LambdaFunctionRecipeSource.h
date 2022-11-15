@@ -355,22 +355,22 @@ namespace Model
   private:
 
     Aws::String m_lambdaArn;
-    bool m_lambdaArnHasBeenSet;
+    bool m_lambdaArnHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     Aws::Vector<ComponentPlatform> m_componentPlatforms;
-    bool m_componentPlatformsHasBeenSet;
+    bool m_componentPlatformsHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentDependencyRequirement> m_componentDependencies;
-    bool m_componentDependenciesHasBeenSet;
+    bool m_componentDependenciesHasBeenSet = false;
 
     LambdaExecutionParameters m_componentLambdaParameters;
-    bool m_componentLambdaParametersHasBeenSet;
+    bool m_componentLambdaParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -452,31 +452,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     TransformType m_transformType;
-    bool m_transformTypeHasBeenSet;
+    bool m_transformTypeHasBeenSet = false;
 
     TransformStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedBefore;
-    bool m_lastModifiedBeforeHasBeenSet;
+    bool m_lastModifiedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedAfter;
-    bool m_lastModifiedAfterHasBeenSet;
+    bool m_lastModifiedAfterHasBeenSet = false;
 
     Aws::Vector<SchemaColumn> m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
   };
 
 } // namespace Model

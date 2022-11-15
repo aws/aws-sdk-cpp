@@ -40,7 +40,7 @@ GetCostCategoriesResult& GetCostCategoriesResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("CostCategoryNames"))
   {
-    Array<JsonView> costCategoryNamesJsonList = jsonValue.GetArray("CostCategoryNames");
+    Aws::Utils::Array<JsonView> costCategoryNamesJsonList = jsonValue.GetArray("CostCategoryNames");
     for(unsigned costCategoryNamesIndex = 0; costCategoryNamesIndex < costCategoryNamesJsonList.GetLength(); ++costCategoryNamesIndex)
     {
       m_costCategoryNames.push_back(costCategoryNamesJsonList[costCategoryNamesIndex].AsString());
@@ -49,7 +49,7 @@ GetCostCategoriesResult& GetCostCategoriesResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("CostCategoryValues"))
   {
-    Array<JsonView> costCategoryValuesJsonList = jsonValue.GetArray("CostCategoryValues");
+    Aws::Utils::Array<JsonView> costCategoryValuesJsonList = jsonValue.GetArray("CostCategoryValues");
     for(unsigned costCategoryValuesIndex = 0; costCategoryValuesIndex < costCategoryValuesJsonList.GetLength(); ++costCategoryValuesIndex)
     {
       m_costCategoryValues.push_back(costCategoryValuesJsonList[costCategoryValuesIndex].AsString());

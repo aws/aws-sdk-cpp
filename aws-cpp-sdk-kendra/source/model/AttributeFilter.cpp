@@ -47,11 +47,18 @@ AttributeFilter::AttributeFilter(JsonView jsonValue) :
   *this = jsonValue;
 }
 
+const AttributeFilter& AttributeFilter::GetNotFilter() const{ return *m_notFilter; }
+bool AttributeFilter::NotFilterHasBeenSet() const { return m_notFilterHasBeenSet; }
+void AttributeFilter::SetNotFilter(const AttributeFilter& value) { m_notFilterHasBeenSet = true; m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", value); }
+void AttributeFilter::SetNotFilter(AttributeFilter&& value) { m_notFilterHasBeenSet = true; m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", std::move(value)); }
+AttributeFilter& AttributeFilter::WithNotFilter(const AttributeFilter& value) { SetNotFilter(value); return *this;}
+AttributeFilter& AttributeFilter::WithNotFilter(AttributeFilter&& value) { SetNotFilter(std::move(value)); return *this;}
+
 AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AndAllFilters"))
   {
-    Array<JsonView> andAllFiltersJsonList = jsonValue.GetArray("AndAllFilters");
+    Aws::Utils::Array<JsonView> andAllFiltersJsonList = jsonValue.GetArray("AndAllFilters");
     for(unsigned andAllFiltersIndex = 0; andAllFiltersIndex < andAllFiltersJsonList.GetLength(); ++andAllFiltersIndex)
     {
       m_andAllFilters.push_back(andAllFiltersJsonList[andAllFiltersIndex].AsObject());
@@ -61,7 +68,7 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OrAllFilters"))
   {
-    Array<JsonView> orAllFiltersJsonList = jsonValue.GetArray("OrAllFilters");
+    Aws::Utils::Array<JsonView> orAllFiltersJsonList = jsonValue.GetArray("OrAllFilters");
     for(unsigned orAllFiltersIndex = 0; orAllFiltersIndex < orAllFiltersJsonList.GetLength(); ++orAllFiltersIndex)
     {
       m_orAllFilters.push_back(orAllFiltersJsonList[orAllFiltersIndex].AsObject());
@@ -71,8 +78,7 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NotFilter"))
   {
-    m_notFilter.resize(1);
-    m_notFilter[0] = jsonValue.GetObject("NotFilter");
+    m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", jsonValue.GetObject("NotFilter"));
 
     m_notFilterHasBeenSet = true;
   }
@@ -135,7 +141,7 @@ JsonValue AttributeFilter::Jsonize() const
 
   if(m_andAllFiltersHasBeenSet)
   {
-   Array<JsonValue> andAllFiltersJsonList(m_andAllFilters.size());
+   Aws::Utils::Array<JsonValue> andAllFiltersJsonList(m_andAllFilters.size());
    for(unsigned andAllFiltersIndex = 0; andAllFiltersIndex < andAllFiltersJsonList.GetLength(); ++andAllFiltersIndex)
    {
      andAllFiltersJsonList[andAllFiltersIndex].AsObject(m_andAllFilters[andAllFiltersIndex].Jsonize());
@@ -146,7 +152,7 @@ JsonValue AttributeFilter::Jsonize() const
 
   if(m_orAllFiltersHasBeenSet)
   {
-   Array<JsonValue> orAllFiltersJsonList(m_orAllFilters.size());
+   Aws::Utils::Array<JsonValue> orAllFiltersJsonList(m_orAllFilters.size());
    for(unsigned orAllFiltersIndex = 0; orAllFiltersIndex < orAllFiltersJsonList.GetLength(); ++orAllFiltersIndex)
    {
      orAllFiltersJsonList[orAllFiltersIndex].AsObject(m_orAllFilters[orAllFiltersIndex].Jsonize());
@@ -157,7 +163,7 @@ JsonValue AttributeFilter::Jsonize() const
 
   if(m_notFilterHasBeenSet)
   {
-   payload.WithObject("NotFilter", m_notFilter[0].Jsonize());
+   payload.WithObject("NotFilter", m_notFilter->Jsonize());
 
   }
 

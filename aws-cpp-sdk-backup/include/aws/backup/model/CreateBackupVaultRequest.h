@@ -301,16 +301,16 @@ namespace Model
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_backupVaultTags;
-    bool m_backupVaultTagsHasBeenSet;
+    bool m_backupVaultTagsHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

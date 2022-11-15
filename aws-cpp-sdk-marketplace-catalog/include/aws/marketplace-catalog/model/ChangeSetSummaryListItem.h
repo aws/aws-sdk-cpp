@@ -422,28 +422,28 @@ namespace Model
   private:
 
     Aws::String m_changeSetId;
-    bool m_changeSetIdHasBeenSet;
+    bool m_changeSetIdHasBeenSet = false;
 
     Aws::String m_changeSetArn;
-    bool m_changeSetArnHasBeenSet;
+    bool m_changeSetArnHasBeenSet = false;
 
     Aws::String m_changeSetName;
-    bool m_changeSetNameHasBeenSet;
+    bool m_changeSetNameHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     ChangeStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityIdList;
-    bool m_entityIdListHasBeenSet;
+    bool m_entityIdListHasBeenSet = false;
 
     FailureCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
   };
 
 } // namespace Model

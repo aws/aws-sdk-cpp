@@ -588,37 +588,37 @@ namespace Model
   private:
 
     Aws::String m_dBClusterEndpointIdentifier;
-    bool m_dBClusterEndpointIdentifierHasBeenSet;
+    bool m_dBClusterEndpointIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterEndpointResourceIdentifier;
-    bool m_dBClusterEndpointResourceIdentifierHasBeenSet;
+    bool m_dBClusterEndpointResourceIdentifierHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_customEndpointType;
-    bool m_customEndpointTypeHasBeenSet;
+    bool m_customEndpointTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_staticMembers;
-    bool m_staticMembersHasBeenSet;
+    bool m_staticMembersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedMembers;
-    bool m_excludedMembersHasBeenSet;
+    bool m_excludedMembersHasBeenSet = false;
 
     Aws::String m_dBClusterEndpointArn;
-    bool m_dBClusterEndpointArnHasBeenSet;
+    bool m_dBClusterEndpointArnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

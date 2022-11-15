@@ -92,8 +92,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
@@ -102,8 +102,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
@@ -112,8 +112,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
@@ -122,8 +122,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
@@ -132,8 +132,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
@@ -142,8 +142,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
@@ -152,8 +152,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
@@ -162,8 +162,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
@@ -219,43 +219,43 @@ namespace Model
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline const EnrollmentConfig& GetEnrollmentConfig() const{ return m_enrollmentConfig; }
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline bool EnrollmentConfigHasBeenSet() const { return m_enrollmentConfigHasBeenSet; }
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline void SetEnrollmentConfig(const EnrollmentConfig& value) { m_enrollmentConfigHasBeenSet = true; m_enrollmentConfig = value; }
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline void SetEnrollmentConfig(EnrollmentConfig&& value) { m_enrollmentConfigHasBeenSet = true; m_enrollmentConfig = std::move(value); }
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithEnrollmentConfig(const EnrollmentConfig& value) { SetEnrollmentConfig(value); return *this;}
 
     /**
      * <p>The enrollment config that contains details such as the action to take when a
-     * speaker is already enrolled in the Voice ID system or when a speaker is
-     * identified as a fraudster.</p>
+     * speaker is already enrolled in Voice ID or when a speaker is identified as a
+     * fraudster.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithEnrollmentConfig(EnrollmentConfig&& value) { SetEnrollmentConfig(std::move(value)); return *this;}
 
@@ -340,62 +340,62 @@ namespace Model
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     EnrollmentConfig m_enrollmentConfig;
-    bool m_enrollmentConfigHasBeenSet;
+    bool m_enrollmentConfigHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
   };
 
 } // namespace Model

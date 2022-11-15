@@ -30,7 +30,7 @@ ListSipRulesResult& ListSipRulesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SipRules"))
   {
-    Array<JsonView> sipRulesJsonList = jsonValue.GetArray("SipRules");
+    Aws::Utils::Array<JsonView> sipRulesJsonList = jsonValue.GetArray("SipRules");
     for(unsigned sipRulesIndex = 0; sipRulesIndex < sipRulesJsonList.GetLength(); ++sipRulesIndex)
     {
       m_sipRules.push_back(sipRulesJsonList[sipRulesIndex].AsObject());

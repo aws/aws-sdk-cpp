@@ -77,48 +77,48 @@ namespace Model
 
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID device registration state event topic
+     * is enabled or disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetWirelessDeviceIdEventTopic() const{ return m_wirelessDeviceIdEventTopic; }
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID device registration state event topic
+     * is enabled or disabled.</p>
      */
     inline bool WirelessDeviceIdEventTopicHasBeenSet() const { return m_wirelessDeviceIdEventTopicHasBeenSet; }
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID device registration state event topic
+     * is enabled or disabled.</p>
      */
     inline void SetWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = value; }
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID device registration state event topic
+     * is enabled or disabled.</p>
      */
     inline void SetWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = std::move(value); }
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID device registration state event topic
+     * is enabled or disabled.</p>
      */
     inline DeviceRegistrationStateEventConfiguration& WithWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { SetWirelessDeviceIdEventTopic(value); return *this;}
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID device registration state event topic
+     * is enabled or disabled.</p>
      */
     inline DeviceRegistrationStateEventConfiguration& WithWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { SetWirelessDeviceIdEventTopic(std::move(value)); return *this;}
 
   private:
 
     SidewalkEventNotificationConfigurations m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
 
     EventNotificationTopicStatus m_wirelessDeviceIdEventTopic;
-    bool m_wirelessDeviceIdEventTopicHasBeenSet;
+    bool m_wirelessDeviceIdEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

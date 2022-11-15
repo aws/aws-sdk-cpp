@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_names;
-    bool m_namesHasBeenSet;
+    bool m_namesHasBeenSet = false;
 
     bool m_withDecryption;
-    bool m_withDecryptionHasBeenSet;
+    bool m_withDecryptionHasBeenSet = false;
   };
 
 } // namespace Model

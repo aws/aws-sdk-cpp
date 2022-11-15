@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ChallengeName m_challengeName;
-    bool m_challengeNameHasBeenSet;
+    bool m_challengeNameHasBeenSet = false;
 
     ChallengeResponse m_challengeResponse;
-    bool m_challengeResponseHasBeenSet;
+    bool m_challengeResponseHasBeenSet = false;
   };
 
 } // namespace Model

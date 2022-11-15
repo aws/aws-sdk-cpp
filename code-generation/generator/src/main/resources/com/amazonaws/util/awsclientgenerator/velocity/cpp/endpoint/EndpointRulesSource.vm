@@ -1,0 +1,55 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($endpointPrefix = $metadata.endpointPrefix)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointRules.h>
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+#if ($serviceModel.endpointRules)
+##const Aws::String ${metadata.classNamePrefix}EndpointRules::Rules = \
+###foreach($tmpStr in $serviceModel.endpointRules.split($nl))
+###if( $foreach.hasNext )
+##R"*line*(${tmpStr})*line*"
+###else
+##R"*line*(${tmpStr})*line*";
+###end
+###end
+
+Aws::String ${metadata.classNamePrefix}EndpointRules::GetRulesAsString()
+{
+    return Aws::String(${metadata.classNamePrefix}EndpointRules::Rules.begin(), ${metadata.classNamePrefix}EndpointRules::Rules.end());
+}
+
+const Aws::Vector<char> ${metadata.classNamePrefix}EndpointRules::Rules = {
+#set($lineLenth = 0)
+#foreach($tmpChar in $serviceModel.endpointRules.toCharArray())
+#if($tmpChar.equals($nl) || $tmpChar == $nl)
+#set($tmpChar = "\n")
+#end
+#if($tmpChar == "\")
+#set($tmpChar = "\\")
+#end
+#if($tmpChar == "'")
+#set($tmpChar = "\'")
+#end
+#if(25 == $lineLenth)
+#set($lineLenth = 0)
+
+#end
+#set($lineLenth = $lineLenth + 1)
+#if( $foreach.hasNext )
+'${tmpChar}',##comment to avoid newline
+#else
+'${tmpChar}'##comment to avoid newline
+#end
+#end
+};
+
+#end
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

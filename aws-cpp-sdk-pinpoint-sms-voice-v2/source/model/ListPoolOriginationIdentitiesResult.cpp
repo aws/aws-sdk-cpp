@@ -42,7 +42,7 @@ ListPoolOriginationIdentitiesResult& ListPoolOriginationIdentitiesResult::operat
 
   if(jsonValue.ValueExists("OriginationIdentities"))
   {
-    Array<JsonView> originationIdentitiesJsonList = jsonValue.GetArray("OriginationIdentities");
+    Aws::Utils::Array<JsonView> originationIdentitiesJsonList = jsonValue.GetArray("OriginationIdentities");
     for(unsigned originationIdentitiesIndex = 0; originationIdentitiesIndex < originationIdentitiesJsonList.GetLength(); ++originationIdentitiesIndex)
     {
       m_originationIdentities.push_back(originationIdentitiesJsonList[originationIdentitiesIndex].AsObject());

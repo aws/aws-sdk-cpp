@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Information about the platform for the Amazon ECS service or task.</p> <p>For
-   * more informataion about <code>RuntimePlatform</code>, see <a
+   * more information about <code>RuntimePlatform</code>, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform">RuntimePlatform</a>
    * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
@@ -45,42 +45,42 @@ namespace Model
     /**
      * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
      * platform by setting the value to <code>ARM64</code>. This option is avaiable for
-     * tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
+     * tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
      */
     inline const CPUArchitecture& GetCpuArchitecture() const{ return m_cpuArchitecture; }
 
     /**
      * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
      * platform by setting the value to <code>ARM64</code>. This option is avaiable for
-     * tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
+     * tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
      */
     inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }
 
     /**
      * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
      * platform by setting the value to <code>ARM64</code>. This option is avaiable for
-     * tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
+     * tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
      */
     inline void SetCpuArchitecture(const CPUArchitecture& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = value; }
 
     /**
      * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
      * platform by setting the value to <code>ARM64</code>. This option is avaiable for
-     * tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
+     * tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
      */
     inline void SetCpuArchitecture(CPUArchitecture&& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = std::move(value); }
 
     /**
      * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
      * platform by setting the value to <code>ARM64</code>. This option is avaiable for
-     * tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
+     * tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
      */
     inline RuntimePlatform& WithCpuArchitecture(const CPUArchitecture& value) { SetCpuArchitecture(value); return *this;}
 
     /**
      * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
      * platform by setting the value to <code>ARM64</code>. This option is avaiable for
-     * tasks that run on Linuc Amazon EC2 instance or Linux containers on Fargate.</p>
+     * tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
      */
     inline RuntimePlatform& WithCpuArchitecture(CPUArchitecture&& value) { SetCpuArchitecture(std::move(value)); return *this;}
 
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     CPUArchitecture m_cpuArchitecture;
-    bool m_cpuArchitectureHasBeenSet;
+    bool m_cpuArchitectureHasBeenSet = false;
 
     OSFamily m_operatingSystemFamily;
-    bool m_operatingSystemFamilyHasBeenSet;
+    bool m_operatingSystemFamilyHasBeenSet = false;
   };
 
 } // namespace Model

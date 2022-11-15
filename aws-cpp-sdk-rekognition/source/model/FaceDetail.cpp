@@ -133,7 +133,7 @@ FaceDetail& FaceDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Emotions"))
   {
-    Array<JsonView> emotionsJsonList = jsonValue.GetArray("Emotions");
+    Aws::Utils::Array<JsonView> emotionsJsonList = jsonValue.GetArray("Emotions");
     for(unsigned emotionsIndex = 0; emotionsIndex < emotionsJsonList.GetLength(); ++emotionsIndex)
     {
       m_emotions.push_back(emotionsJsonList[emotionsIndex].AsObject());
@@ -143,7 +143,7 @@ FaceDetail& FaceDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Landmarks"))
   {
-    Array<JsonView> landmarksJsonList = jsonValue.GetArray("Landmarks");
+    Aws::Utils::Array<JsonView> landmarksJsonList = jsonValue.GetArray("Landmarks");
     for(unsigned landmarksIndex = 0; landmarksIndex < landmarksJsonList.GetLength(); ++landmarksIndex)
     {
       m_landmarks.push_back(landmarksJsonList[landmarksIndex].AsObject());
@@ -241,7 +241,7 @@ JsonValue FaceDetail::Jsonize() const
 
   if(m_emotionsHasBeenSet)
   {
-   Array<JsonValue> emotionsJsonList(m_emotions.size());
+   Aws::Utils::Array<JsonValue> emotionsJsonList(m_emotions.size());
    for(unsigned emotionsIndex = 0; emotionsIndex < emotionsJsonList.GetLength(); ++emotionsIndex)
    {
      emotionsJsonList[emotionsIndex].AsObject(m_emotions[emotionsIndex].Jsonize());
@@ -252,7 +252,7 @@ JsonValue FaceDetail::Jsonize() const
 
   if(m_landmarksHasBeenSet)
   {
-   Array<JsonValue> landmarksJsonList(m_landmarks.size());
+   Aws::Utils::Array<JsonValue> landmarksJsonList(m_landmarks.size());
    for(unsigned landmarksIndex = 0; landmarksIndex < landmarksJsonList.GetLength(); ++landmarksIndex)
    {
      landmarksJsonList[landmarksIndex].AsObject(m_landmarks[landmarksIndex].Jsonize());

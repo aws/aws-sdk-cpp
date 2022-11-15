@@ -30,7 +30,7 @@ BatchGetProjectsResult& BatchGetProjectsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("projects"))
   {
-    Array<JsonView> projectsJsonList = jsonValue.GetArray("projects");
+    Aws::Utils::Array<JsonView> projectsJsonList = jsonValue.GetArray("projects");
     for(unsigned projectsIndex = 0; projectsIndex < projectsJsonList.GetLength(); ++projectsIndex)
     {
       m_projects.push_back(projectsJsonList[projectsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetProjectsResult& BatchGetProjectsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("projectsNotFound"))
   {
-    Array<JsonView> projectsNotFoundJsonList = jsonValue.GetArray("projectsNotFound");
+    Aws::Utils::Array<JsonView> projectsNotFoundJsonList = jsonValue.GetArray("projectsNotFound");
     for(unsigned projectsNotFoundIndex = 0; projectsNotFoundIndex < projectsNotFoundJsonList.GetLength(); ++projectsNotFoundIndex)
     {
       m_projectsNotFound.push_back(projectsNotFoundJsonList[projectsNotFoundIndex].AsString());

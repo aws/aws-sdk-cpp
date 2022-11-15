@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Attachment m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::String m_transportAttachmentId;
-    bool m_transportAttachmentIdHasBeenSet;
+    bool m_transportAttachmentIdHasBeenSet = false;
 
     ConnectAttachmentOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

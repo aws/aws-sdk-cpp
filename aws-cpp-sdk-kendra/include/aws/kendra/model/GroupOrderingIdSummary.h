@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Information on the processing of <code>PUT</code> and <code>DELETE</code>
-   * actions for mapping users to their groups.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information on the processing of <code>PUT</code> and
+   * <code>DELETE</code> actions for mapping users to their groups.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GroupOrderingIdSummary">AWS
    * API Reference</a></p>
    */
@@ -251,19 +252,19 @@ namespace Model
   private:
 
     PrincipalMappingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_receivedAt;
-    bool m_receivedAtHasBeenSet;
+    bool m_receivedAtHasBeenSet = false;
 
     long long m_orderingId;
-    bool m_orderingIdHasBeenSet;
+    bool m_orderingIdHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

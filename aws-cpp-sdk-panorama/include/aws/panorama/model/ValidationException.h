@@ -223,19 +223,19 @@ namespace Model
   private:
 
     Aws::Vector<ValidationExceptionErrorArgument> m_errorArguments;
-    bool m_errorArgumentsHasBeenSet;
+    bool m_errorArgumentsHasBeenSet = false;
 
     Aws::String m_errorId;
-    bool m_errorIdHasBeenSet;
+    bool m_errorIdHasBeenSet = false;
 
     Aws::Vector<ValidationExceptionField> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ValidationExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -296,28 +296,28 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     TestGridSessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeAfter;
-    bool m_creationTimeAfterHasBeenSet;
+    bool m_creationTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeBefore;
-    bool m_creationTimeBeforeHasBeenSet;
+    bool m_creationTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimeAfter;
-    bool m_endTimeAfterHasBeenSet;
+    bool m_endTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimeBefore;
-    bool m_endTimeBeforeHasBeenSet;
+    bool m_endTimeBeforeHasBeenSet = false;
 
     int m_maxResult;
-    bool m_maxResultHasBeenSet;
+    bool m_maxResultHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

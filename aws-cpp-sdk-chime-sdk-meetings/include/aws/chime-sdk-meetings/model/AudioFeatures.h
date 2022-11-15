@@ -72,7 +72,7 @@ namespace Model
   private:
 
     MeetingFeatureStatus m_echoReduction;
-    bool m_echoReductionHasBeenSet;
+    bool m_echoReductionHasBeenSet = false;
   };
 
 } // namespace Model

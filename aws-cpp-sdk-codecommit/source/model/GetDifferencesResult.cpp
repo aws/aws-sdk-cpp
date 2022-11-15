@@ -30,7 +30,7 @@ GetDifferencesResult& GetDifferencesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("differences"))
   {
-    Array<JsonView> differencesJsonList = jsonValue.GetArray("differences");
+    Aws::Utils::Array<JsonView> differencesJsonList = jsonValue.GetArray("differences");
     for(unsigned differencesIndex = 0; differencesIndex < differencesJsonList.GetLength(); ++differencesIndex)
     {
       m_differences.push_back(differencesJsonList[differencesIndex].AsObject());

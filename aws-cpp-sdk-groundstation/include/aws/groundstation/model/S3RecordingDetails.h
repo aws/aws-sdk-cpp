@@ -80,52 +80,52 @@ namespace Model
 
 
     /**
-     * <p>Template of the S3 key used.</p>
+     * <p>Key template used for the S3 Recording Configuration</p>
      */
     inline const Aws::String& GetKeyTemplate() const{ return m_keyTemplate; }
 
     /**
-     * <p>Template of the S3 key used.</p>
+     * <p>Key template used for the S3 Recording Configuration</p>
      */
     inline bool KeyTemplateHasBeenSet() const { return m_keyTemplateHasBeenSet; }
 
     /**
-     * <p>Template of the S3 key used.</p>
+     * <p>Key template used for the S3 Recording Configuration</p>
      */
     inline void SetKeyTemplate(const Aws::String& value) { m_keyTemplateHasBeenSet = true; m_keyTemplate = value; }
 
     /**
-     * <p>Template of the S3 key used.</p>
+     * <p>Key template used for the S3 Recording Configuration</p>
      */
     inline void SetKeyTemplate(Aws::String&& value) { m_keyTemplateHasBeenSet = true; m_keyTemplate = std::move(value); }
 
     /**
-     * <p>Template of the S3 key used.</p>
+     * <p>Key template used for the S3 Recording Configuration</p>
      */
     inline void SetKeyTemplate(const char* value) { m_keyTemplateHasBeenSet = true; m_keyTemplate.assign(value); }
 
     /**
-     * <p>Template of the S3 key used.</p>
+     * <p>Key template used for the S3 Recording Configuration</p>
      */
     inline S3RecordingDetails& WithKeyTemplate(const Aws::String& value) { SetKeyTemplate(value); return *this;}
 
     /**
-     * <p>Template of the S3 key used.</p>
+     * <p>Key template used for the S3 Recording Configuration</p>
      */
     inline S3RecordingDetails& WithKeyTemplate(Aws::String&& value) { SetKeyTemplate(std::move(value)); return *this;}
 
     /**
-     * <p>Template of the S3 key used.</p>
+     * <p>Key template used for the S3 Recording Configuration</p>
      */
     inline S3RecordingDetails& WithKeyTemplate(const char* value) { SetKeyTemplate(value); return *this;}
 
   private:
 
     Aws::String m_bucketArn;
-    bool m_bucketArnHasBeenSet;
+    bool m_bucketArnHasBeenSet = false;
 
     Aws::String m_keyTemplate;
-    bool m_keyTemplateHasBeenSet;
+    bool m_keyTemplateHasBeenSet = false;
   };
 
 } // namespace Model

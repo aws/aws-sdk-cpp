@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ChannelMembershipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_readMarkerTimestamp;
-    bool m_readMarkerTimestampHasBeenSet;
+    bool m_readMarkerTimestampHasBeenSet = false;
   };
 
 } // namespace Model

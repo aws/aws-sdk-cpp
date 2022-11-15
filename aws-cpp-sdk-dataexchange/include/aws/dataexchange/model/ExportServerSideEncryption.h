@@ -27,7 +27,7 @@ namespace Model
   /**
    * <p>Encryption configuration of the export job. Includes the encryption type in
    * addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS
-   * encryption. type.</p><p><h3>See Also:</h3>   <a
+   * encryption type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ExportServerSideEncryption">AWS
    * API Reference</a></p>
    */
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     ServerSideEncryptionTypes m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

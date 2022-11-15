@@ -32,7 +32,8 @@ ModelVersionDetail::ModelVersionDetail() :
     m_trainingResultHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_trainingResultV2HasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ModelVersionDetail::ModelVersionDetail(JsonView jsonValue) :
     m_trainingResultHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_trainingResultV2HasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -141,6 +143,13 @@ ModelVersionDetail& ModelVersionDetail::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("trainingResultV2"))
+  {
+    m_trainingResultV2 = jsonValue.GetObject("trainingResultV2");
+
+    m_trainingResultV2HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -215,6 +224,12 @@ JsonValue ModelVersionDetail::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_trainingResultV2HasBeenSet)
+  {
+   payload.WithObject("trainingResultV2", m_trainingResultV2.Jsonize());
 
   }
 

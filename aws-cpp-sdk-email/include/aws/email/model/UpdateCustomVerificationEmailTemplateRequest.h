@@ -352,22 +352,22 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_fromEmailAddress;
-    bool m_fromEmailAddressHasBeenSet;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     Aws::String m_templateSubject;
-    bool m_templateSubjectHasBeenSet;
+    bool m_templateSubjectHasBeenSet = false;
 
     Aws::String m_templateContent;
-    bool m_templateContentHasBeenSet;
+    bool m_templateContentHasBeenSet = false;
 
     Aws::String m_successRedirectionURL;
-    bool m_successRedirectionURLHasBeenSet;
+    bool m_successRedirectionURLHasBeenSet = false;
 
     Aws::String m_failureRedirectionURL;
-    bool m_failureRedirectionURLHasBeenSet;
+    bool m_failureRedirectionURLHasBeenSet = false;
   };
 
 } // namespace Model

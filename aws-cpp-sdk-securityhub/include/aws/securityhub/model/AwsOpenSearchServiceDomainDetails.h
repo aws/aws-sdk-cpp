@@ -14,6 +14,7 @@
 #include <aws/securityhub/model/AwsOpenSearchServiceDomainVpcOptionsDetails.h>
 #include <aws/securityhub/model/AwsOpenSearchServiceDomainLogPublishingOptionsDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/securityhub/model/AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails.h>
 #include <utility>
 
 namespace Aws
@@ -620,49 +621,83 @@ namespace Model
      */
     inline AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(const char* key, const char* value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& GetAdvancedSecurityOptions() const{ return m_advancedSecurityOptions; }
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline bool AdvancedSecurityOptionsHasBeenSet() const { return m_advancedSecurityOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline void SetAdvancedSecurityOptions(const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = value; }
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline void SetAdvancedSecurityOptions(AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails&& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = std::move(value); }
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline AwsOpenSearchServiceDomainDetails& WithAdvancedSecurityOptions(const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& value) { SetAdvancedSecurityOptions(value); return *this;}
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline AwsOpenSearchServiceDomainDetails& WithAdvancedSecurityOptions(AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_accessPolicies;
-    bool m_accessPoliciesHasBeenSet;
+    bool m_accessPoliciesHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_domainEndpoint;
-    bool m_domainEndpointHasBeenSet;
+    bool m_domainEndpointHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails m_encryptionAtRestOptions;
-    bool m_encryptionAtRestOptionsHasBeenSet;
+    bool m_encryptionAtRestOptionsHasBeenSet = false;
 
     AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails m_nodeToNodeEncryptionOptions;
-    bool m_nodeToNodeEncryptionOptionsHasBeenSet;
+    bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
     AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails m_serviceSoftwareOptions;
-    bool m_serviceSoftwareOptionsHasBeenSet;
+    bool m_serviceSoftwareOptionsHasBeenSet = false;
 
     AwsOpenSearchServiceDomainClusterConfigDetails m_clusterConfig;
-    bool m_clusterConfigHasBeenSet;
+    bool m_clusterConfigHasBeenSet = false;
 
     AwsOpenSearchServiceDomainDomainEndpointOptionsDetails m_domainEndpointOptions;
-    bool m_domainEndpointOptionsHasBeenSet;
+    bool m_domainEndpointOptionsHasBeenSet = false;
 
     AwsOpenSearchServiceDomainVpcOptionsDetails m_vpcOptions;
-    bool m_vpcOptionsHasBeenSet;
+    bool m_vpcOptionsHasBeenSet = false;
 
     AwsOpenSearchServiceDomainLogPublishingOptionsDetails m_logPublishingOptions;
-    bool m_logPublishingOptionsHasBeenSet;
+    bool m_logPublishingOptionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_domainEndpoints;
-    bool m_domainEndpointsHasBeenSet;
+    bool m_domainEndpointsHasBeenSet = false;
+
+    AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails m_advancedSecurityOptions;
+    bool m_advancedSecurityOptionsHasBeenSet = false;
   };
 
 } // namespace Model

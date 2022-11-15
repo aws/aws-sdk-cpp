@@ -489,31 +489,31 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     StatisticSet m_statisticValues;
-    bool m_statisticValuesHasBeenSet;
+    bool m_statisticValuesHasBeenSet = false;
 
     Aws::Vector<double> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::Vector<double> m_counts;
-    bool m_countsHasBeenSet;
+    bool m_countsHasBeenSet = false;
 
     StandardUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     int m_storageResolution;
-    bool m_storageResolutionHasBeenSet;
+    bool m_storageResolutionHasBeenSet = false;
   };
 
 } // namespace Model

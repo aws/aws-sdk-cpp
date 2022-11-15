@@ -46,7 +46,7 @@ RenameField& RenameField::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -56,7 +56,7 @@ RenameField& RenameField::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SourcePath"))
   {
-    Array<JsonView> sourcePathJsonList = jsonValue.GetArray("SourcePath");
+    Aws::Utils::Array<JsonView> sourcePathJsonList = jsonValue.GetArray("SourcePath");
     for(unsigned sourcePathIndex = 0; sourcePathIndex < sourcePathJsonList.GetLength(); ++sourcePathIndex)
     {
       m_sourcePath.push_back(sourcePathJsonList[sourcePathIndex].AsString());
@@ -66,7 +66,7 @@ RenameField& RenameField::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetPath"))
   {
-    Array<JsonView> targetPathJsonList = jsonValue.GetArray("TargetPath");
+    Aws::Utils::Array<JsonView> targetPathJsonList = jsonValue.GetArray("TargetPath");
     for(unsigned targetPathIndex = 0; targetPathIndex < targetPathJsonList.GetLength(); ++targetPathIndex)
     {
       m_targetPath.push_back(targetPathJsonList[targetPathIndex].AsString());
@@ -89,7 +89,7 @@ JsonValue RenameField::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
@@ -100,7 +100,7 @@ JsonValue RenameField::Jsonize() const
 
   if(m_sourcePathHasBeenSet)
   {
-   Array<JsonValue> sourcePathJsonList(m_sourcePath.size());
+   Aws::Utils::Array<JsonValue> sourcePathJsonList(m_sourcePath.size());
    for(unsigned sourcePathIndex = 0; sourcePathIndex < sourcePathJsonList.GetLength(); ++sourcePathIndex)
    {
      sourcePathJsonList[sourcePathIndex].AsString(m_sourcePath[sourcePathIndex]);
@@ -111,7 +111,7 @@ JsonValue RenameField::Jsonize() const
 
   if(m_targetPathHasBeenSet)
   {
-   Array<JsonValue> targetPathJsonList(m_targetPath.size());
+   Aws::Utils::Array<JsonValue> targetPathJsonList(m_targetPath.size());
    for(unsigned targetPathIndex = 0; targetPathIndex < targetPathJsonList.GetLength(); ++targetPathIndex)
    {
      targetPathJsonList[targetPathIndex].AsString(m_targetPath[targetPathIndex]);

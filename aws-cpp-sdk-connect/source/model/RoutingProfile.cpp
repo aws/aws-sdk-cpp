@@ -26,7 +26,11 @@ RoutingProfile::RoutingProfile() :
     m_descriptionHasBeenSet(false),
     m_mediaConcurrenciesHasBeenSet(false),
     m_defaultOutboundQueueIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_numberOfAssociatedQueues(0),
+    m_numberOfAssociatedQueuesHasBeenSet(false),
+    m_numberOfAssociatedUsers(0),
+    m_numberOfAssociatedUsersHasBeenSet(false)
 {
 }
 
@@ -38,7 +42,11 @@ RoutingProfile::RoutingProfile(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_mediaConcurrenciesHasBeenSet(false),
     m_defaultOutboundQueueIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_numberOfAssociatedQueues(0),
+    m_numberOfAssociatedQueuesHasBeenSet(false),
+    m_numberOfAssociatedUsers(0),
+    m_numberOfAssociatedUsersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,7 +90,7 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MediaConcurrencies"))
   {
-    Array<JsonView> mediaConcurrenciesJsonList = jsonValue.GetArray("MediaConcurrencies");
+    Aws::Utils::Array<JsonView> mediaConcurrenciesJsonList = jsonValue.GetArray("MediaConcurrencies");
     for(unsigned mediaConcurrenciesIndex = 0; mediaConcurrenciesIndex < mediaConcurrenciesJsonList.GetLength(); ++mediaConcurrenciesIndex)
     {
       m_mediaConcurrencies.push_back(mediaConcurrenciesJsonList[mediaConcurrenciesIndex].AsObject());
@@ -105,6 +113,20 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfAssociatedQueues"))
+  {
+    m_numberOfAssociatedQueues = jsonValue.GetInt64("NumberOfAssociatedQueues");
+
+    m_numberOfAssociatedQueuesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfAssociatedUsers"))
+  {
+    m_numberOfAssociatedUsers = jsonValue.GetInt64("NumberOfAssociatedUsers");
+
+    m_numberOfAssociatedUsersHasBeenSet = true;
   }
 
   return *this;
@@ -146,7 +168,7 @@ JsonValue RoutingProfile::Jsonize() const
 
   if(m_mediaConcurrenciesHasBeenSet)
   {
-   Array<JsonValue> mediaConcurrenciesJsonList(m_mediaConcurrencies.size());
+   Aws::Utils::Array<JsonValue> mediaConcurrenciesJsonList(m_mediaConcurrencies.size());
    for(unsigned mediaConcurrenciesIndex = 0; mediaConcurrenciesIndex < mediaConcurrenciesJsonList.GetLength(); ++mediaConcurrenciesIndex)
    {
      mediaConcurrenciesJsonList[mediaConcurrenciesIndex].AsObject(m_mediaConcurrencies[mediaConcurrenciesIndex].Jsonize());
@@ -169,6 +191,18 @@ JsonValue RoutingProfile::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_numberOfAssociatedQueuesHasBeenSet)
+  {
+   payload.WithInt64("NumberOfAssociatedQueues", m_numberOfAssociatedQueues);
+
+  }
+
+  if(m_numberOfAssociatedUsersHasBeenSet)
+  {
+   payload.WithInt64("NumberOfAssociatedUsers", m_numberOfAssociatedUsers);
 
   }
 

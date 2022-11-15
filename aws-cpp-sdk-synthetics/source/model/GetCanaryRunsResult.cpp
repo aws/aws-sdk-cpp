@@ -30,7 +30,7 @@ GetCanaryRunsResult& GetCanaryRunsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CanaryRuns"))
   {
-    Array<JsonView> canaryRunsJsonList = jsonValue.GetArray("CanaryRuns");
+    Aws::Utils::Array<JsonView> canaryRunsJsonList = jsonValue.GetArray("CanaryRuns");
     for(unsigned canaryRunsIndex = 0; canaryRunsIndex < canaryRunsJsonList.GetLength(); ++canaryRunsIndex)
     {
       m_canaryRuns.push_back(canaryRunsJsonList[canaryRunsIndex].AsObject());

@@ -333,22 +333,22 @@ namespace Model
   private:
 
     Aws::String m_globalTableName;
-    bool m_globalTableNameHasBeenSet;
+    bool m_globalTableNameHasBeenSet = false;
 
     BillingMode m_globalTableBillingMode;
-    bool m_globalTableBillingModeHasBeenSet;
+    bool m_globalTableBillingModeHasBeenSet = false;
 
     long long m_globalTableProvisionedWriteCapacityUnits;
-    bool m_globalTableProvisionedWriteCapacityUnitsHasBeenSet;
+    bool m_globalTableProvisionedWriteCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;
-    bool m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet;
+    bool m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = false;
 
     Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate> m_globalTableGlobalSecondaryIndexSettingsUpdate;
-    bool m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet;
+    bool m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet = false;
 
     Aws::Vector<ReplicaSettingsUpdate> m_replicaSettingsUpdate;
-    bool m_replicaSettingsUpdateHasBeenSet;
+    bool m_replicaSettingsUpdateHasBeenSet = false;
   };
 
 } // namespace Model

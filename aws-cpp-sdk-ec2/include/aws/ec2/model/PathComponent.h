@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TransitGatewayRouteTableRoute.h>
 #include <aws/ec2/model/AdditionalDetail.h>
+#include <aws/ec2/model/Explanation.h>
 #include <utility>
 
 namespace Aws
@@ -449,22 +450,34 @@ namespace Model
     inline PathComponent& AddAdditionalDetails(AdditionalDetail&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline const AnalysisComponent& GetTransitGateway() const{ return m_transitGateway; }
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline bool TransitGatewayHasBeenSet() const { return m_transitGatewayHasBeenSet; }
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline void SetTransitGateway(const AnalysisComponent& value) { m_transitGatewayHasBeenSet = true; m_transitGateway = value; }
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline void SetTransitGateway(AnalysisComponent&& value) { m_transitGatewayHasBeenSet = true; m_transitGateway = std::move(value); }
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline PathComponent& WithTransitGateway(const AnalysisComponent& value) { SetTransitGateway(value); return *this;}
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline PathComponent& WithTransitGateway(AnalysisComponent&& value) { SetTransitGateway(std::move(value)); return *this;}
 
 
@@ -498,52 +511,130 @@ namespace Model
      */
     inline PathComponent& WithTransitGatewayRouteTableRoute(TransitGatewayRouteTableRoute&& value) { SetTransitGatewayRouteTableRoute(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The explanation codes.</p>
+     */
+    inline const Aws::Vector<Explanation>& GetExplanations() const{ return m_explanations; }
+
+    /**
+     * <p>The explanation codes.</p>
+     */
+    inline bool ExplanationsHasBeenSet() const { return m_explanationsHasBeenSet; }
+
+    /**
+     * <p>The explanation codes.</p>
+     */
+    inline void SetExplanations(const Aws::Vector<Explanation>& value) { m_explanationsHasBeenSet = true; m_explanations = value; }
+
+    /**
+     * <p>The explanation codes.</p>
+     */
+    inline void SetExplanations(Aws::Vector<Explanation>&& value) { m_explanationsHasBeenSet = true; m_explanations = std::move(value); }
+
+    /**
+     * <p>The explanation codes.</p>
+     */
+    inline PathComponent& WithExplanations(const Aws::Vector<Explanation>& value) { SetExplanations(value); return *this;}
+
+    /**
+     * <p>The explanation codes.</p>
+     */
+    inline PathComponent& WithExplanations(Aws::Vector<Explanation>&& value) { SetExplanations(std::move(value)); return *this;}
+
+    /**
+     * <p>The explanation codes.</p>
+     */
+    inline PathComponent& AddExplanations(const Explanation& value) { m_explanationsHasBeenSet = true; m_explanations.push_back(value); return *this; }
+
+    /**
+     * <p>The explanation codes.</p>
+     */
+    inline PathComponent& AddExplanations(Explanation&& value) { m_explanationsHasBeenSet = true; m_explanations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The load balancer listener.</p>
+     */
+    inline const AnalysisComponent& GetElasticLoadBalancerListener() const{ return m_elasticLoadBalancerListener; }
+
+    /**
+     * <p>The load balancer listener.</p>
+     */
+    inline bool ElasticLoadBalancerListenerHasBeenSet() const { return m_elasticLoadBalancerListenerHasBeenSet; }
+
+    /**
+     * <p>The load balancer listener.</p>
+     */
+    inline void SetElasticLoadBalancerListener(const AnalysisComponent& value) { m_elasticLoadBalancerListenerHasBeenSet = true; m_elasticLoadBalancerListener = value; }
+
+    /**
+     * <p>The load balancer listener.</p>
+     */
+    inline void SetElasticLoadBalancerListener(AnalysisComponent&& value) { m_elasticLoadBalancerListenerHasBeenSet = true; m_elasticLoadBalancerListener = std::move(value); }
+
+    /**
+     * <p>The load balancer listener.</p>
+     */
+    inline PathComponent& WithElasticLoadBalancerListener(const AnalysisComponent& value) { SetElasticLoadBalancerListener(value); return *this;}
+
+    /**
+     * <p>The load balancer listener.</p>
+     */
+    inline PathComponent& WithElasticLoadBalancerListener(AnalysisComponent&& value) { SetElasticLoadBalancerListener(std::move(value)); return *this;}
+
   private:
 
     int m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
 
     AnalysisAclRule m_aclRule;
-    bool m_aclRuleHasBeenSet;
+    bool m_aclRuleHasBeenSet = false;
 
     AnalysisComponent m_attachedTo;
-    bool m_attachedToHasBeenSet;
+    bool m_attachedToHasBeenSet = false;
 
     AnalysisComponent m_component;
-    bool m_componentHasBeenSet;
+    bool m_componentHasBeenSet = false;
 
     AnalysisComponent m_destinationVpc;
-    bool m_destinationVpcHasBeenSet;
+    bool m_destinationVpcHasBeenSet = false;
 
     AnalysisPacketHeader m_outboundHeader;
-    bool m_outboundHeaderHasBeenSet;
+    bool m_outboundHeaderHasBeenSet = false;
 
     AnalysisPacketHeader m_inboundHeader;
-    bool m_inboundHeaderHasBeenSet;
+    bool m_inboundHeaderHasBeenSet = false;
 
     AnalysisRouteTableRoute m_routeTableRoute;
-    bool m_routeTableRouteHasBeenSet;
+    bool m_routeTableRouteHasBeenSet = false;
 
     AnalysisSecurityGroupRule m_securityGroupRule;
-    bool m_securityGroupRuleHasBeenSet;
+    bool m_securityGroupRuleHasBeenSet = false;
 
     AnalysisComponent m_sourceVpc;
-    bool m_sourceVpcHasBeenSet;
+    bool m_sourceVpcHasBeenSet = false;
 
     AnalysisComponent m_subnet;
-    bool m_subnetHasBeenSet;
+    bool m_subnetHasBeenSet = false;
 
     AnalysisComponent m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
 
     Aws::Vector<AdditionalDetail> m_additionalDetails;
-    bool m_additionalDetailsHasBeenSet;
+    bool m_additionalDetailsHasBeenSet = false;
 
     AnalysisComponent m_transitGateway;
-    bool m_transitGatewayHasBeenSet;
+    bool m_transitGatewayHasBeenSet = false;
 
     TransitGatewayRouteTableRoute m_transitGatewayRouteTableRoute;
-    bool m_transitGatewayRouteTableRouteHasBeenSet;
+    bool m_transitGatewayRouteTableRouteHasBeenSet = false;
+
+    Aws::Vector<Explanation> m_explanations;
+    bool m_explanationsHasBeenSet = false;
+
+    AnalysisComponent m_elasticLoadBalancerListener;
+    bool m_elasticLoadBalancerListenerHasBeenSet = false;
   };
 
 } // namespace Model

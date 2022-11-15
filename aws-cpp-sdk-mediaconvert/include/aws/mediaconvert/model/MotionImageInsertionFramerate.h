@@ -90,10 +90,10 @@ namespace Model
   private:
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ DescribeComponentResult& DescribeComponentResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("ResourceList"))
   {
-    Array<JsonView> resourceListJsonList = jsonValue.GetArray("ResourceList");
+    Aws::Utils::Array<JsonView> resourceListJsonList = jsonValue.GetArray("ResourceList");
     for(unsigned resourceListIndex = 0; resourceListIndex < resourceListJsonList.GetLength(); ++resourceListIndex)
     {
       m_resourceList.push_back(resourceListJsonList[resourceListIndex].AsString());

@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_friendlyName;
-    bool m_friendlyNameHasBeenSet;
+    bool m_friendlyNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_manufacturerName;
-    bool m_manufacturerNameHasBeenSet;
+    bool m_manufacturerNameHasBeenSet = false;
   };
 
 } // namespace Model

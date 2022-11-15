@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     Aws::Utils::DateTime m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
   };
 
 } // namespace Model

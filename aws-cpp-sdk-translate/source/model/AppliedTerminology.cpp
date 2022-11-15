@@ -42,7 +42,7 @@ AppliedTerminology& AppliedTerminology::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Terms"))
   {
-    Array<JsonView> termsJsonList = jsonValue.GetArray("Terms");
+    Aws::Utils::Array<JsonView> termsJsonList = jsonValue.GetArray("Terms");
     for(unsigned termsIndex = 0; termsIndex < termsJsonList.GetLength(); ++termsIndex)
     {
       m_terms.push_back(termsJsonList[termsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue AppliedTerminology::Jsonize() const
 
   if(m_termsHasBeenSet)
   {
-   Array<JsonValue> termsJsonList(m_terms.size());
+   Aws::Utils::Array<JsonValue> termsJsonList(m_terms.size());
    for(unsigned termsIndex = 0; termsIndex < termsJsonList.GetLength(); ++termsIndex)
    {
      termsJsonList[termsIndex].AsObject(m_terms[termsIndex].Jsonize());

@@ -153,7 +153,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_timestampFormats;
-    bool m_timestampFormatsHasBeenSet;
+    bool m_timestampFormatsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -293,19 +293,19 @@ namespace Model
   private:
 
     Aws::String m_assessmentTargetArn;
-    bool m_assessmentTargetArnHasBeenSet;
+    bool m_assessmentTargetArnHasBeenSet = false;
 
     Aws::String m_assessmentTemplateName;
-    bool m_assessmentTemplateNameHasBeenSet;
+    bool m_assessmentTemplateNameHasBeenSet = false;
 
     int m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rulesPackageArns;
-    bool m_rulesPackageArnsHasBeenSet;
+    bool m_rulesPackageArnsHasBeenSet = false;
 
     Aws::Vector<Attribute> m_userAttributesForFindings;
-    bool m_userAttributesForFindingsHasBeenSet;
+    bool m_userAttributesForFindingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -428,34 +428,78 @@ namespace Model
      */
     inline SendChannelMessageRequest& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline SendChannelMessageRequest& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline SendChannelMessageRequest& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline SendChannelMessageRequest& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     ChannelMessageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ChannelMessagePersistenceType m_persistence;
-    bool m_persistenceHasBeenSet;
+    bool m_persistenceHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
 
     PushNotificationConfiguration m_pushNotification;
-    bool m_pushNotificationHasBeenSet;
+    bool m_pushNotificationHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
+
+    Aws::String m_subChannelId;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

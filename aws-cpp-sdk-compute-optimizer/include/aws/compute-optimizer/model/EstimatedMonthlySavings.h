@@ -96,10 +96,10 @@ namespace Model
   private:
 
     Currency m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

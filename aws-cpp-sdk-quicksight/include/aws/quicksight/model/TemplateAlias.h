@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_aliasName;
-    bool m_aliasNameHasBeenSet;
+    bool m_aliasNameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_templateVersionNumber;
-    bool m_templateVersionNumberHasBeenSet;
+    bool m_templateVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

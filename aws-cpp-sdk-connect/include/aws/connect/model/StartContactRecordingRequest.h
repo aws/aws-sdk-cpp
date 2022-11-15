@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     Aws::String m_initialContactId;
-    bool m_initialContactIdHasBeenSet;
+    bool m_initialContactIdHasBeenSet = false;
 
     VoiceRecordingConfiguration m_voiceRecordingConfiguration;
-    bool m_voiceRecordingConfigurationHasBeenSet;
+    bool m_voiceRecordingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

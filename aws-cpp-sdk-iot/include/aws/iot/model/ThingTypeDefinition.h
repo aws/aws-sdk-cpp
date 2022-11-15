@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     Aws::String m_thingTypeArn;
-    bool m_thingTypeArnHasBeenSet;
+    bool m_thingTypeArnHasBeenSet = false;
 
     ThingTypeProperties m_thingTypeProperties;
-    bool m_thingTypePropertiesHasBeenSet;
+    bool m_thingTypePropertiesHasBeenSet = false;
 
     ThingTypeMetadata m_thingTypeMetadata;
-    bool m_thingTypeMetadataHasBeenSet;
+    bool m_thingTypeMetadataHasBeenSet = false;
   };
 
 } // namespace Model

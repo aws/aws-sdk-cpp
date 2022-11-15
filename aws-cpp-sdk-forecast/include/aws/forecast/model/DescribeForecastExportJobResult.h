@@ -375,6 +375,42 @@ namespace Model
      */
     inline DescribeForecastExportJobResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline void SetFormat(const Aws::String& value) { m_format = value; }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline void SetFormat(Aws::String&& value) { m_format = std::move(value); }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline void SetFormat(const char* value) { m_format.assign(value); }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline DescribeForecastExportJobResult& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline DescribeForecastExportJobResult& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline DescribeForecastExportJobResult& WithFormat(const char* value) { SetFormat(value); return *this;}
+
   private:
 
     Aws::String m_forecastExportJobArn;
@@ -392,6 +428,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_lastModificationTime;
+
+    Aws::String m_format;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ DescribeBackupsResult& DescribeBackupsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Backups"))
   {
-    Array<JsonView> backupsJsonList = jsonValue.GetArray("Backups");
+    Aws::Utils::Array<JsonView> backupsJsonList = jsonValue.GetArray("Backups");
     for(unsigned backupsIndex = 0; backupsIndex < backupsJsonList.GetLength(); ++backupsIndex)
     {
       m_backups.push_back(backupsJsonList[backupsIndex].AsObject());

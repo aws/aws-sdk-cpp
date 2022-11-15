@@ -67,7 +67,7 @@ namespace Model
   private:
 
     ConferencePreference m_conferencePreference;
-    bool m_conferencePreferenceHasBeenSet;
+    bool m_conferencePreferenceHasBeenSet = false;
   };
 
 } // namespace Model

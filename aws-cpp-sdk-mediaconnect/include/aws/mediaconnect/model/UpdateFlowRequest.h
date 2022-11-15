@@ -118,13 +118,13 @@ namespace Model
   private:
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     UpdateFailoverConfig m_sourceFailoverConfig;
-    bool m_sourceFailoverConfigHasBeenSet;
+    bool m_sourceFailoverConfigHasBeenSet = false;
 
     UpdateMaintenance m_maintenance;
-    bool m_maintenanceHasBeenSet;
+    bool m_maintenanceHasBeenSet = false;
   };
 
 } // namespace Model

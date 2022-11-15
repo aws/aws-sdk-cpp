@@ -53,7 +53,7 @@ Aws::String PutAccountDetailsRequest::SerializePayload() const
 
   if(m_additionalContactEmailAddressesHasBeenSet)
   {
-   Array<JsonValue> additionalContactEmailAddressesJsonList(m_additionalContactEmailAddresses.size());
+   Aws::Utils::Array<JsonValue> additionalContactEmailAddressesJsonList(m_additionalContactEmailAddresses.size());
    for(unsigned additionalContactEmailAddressesIndex = 0; additionalContactEmailAddressesIndex < additionalContactEmailAddressesJsonList.GetLength(); ++additionalContactEmailAddressesIndex)
    {
      additionalContactEmailAddressesJsonList[additionalContactEmailAddressesIndex].AsString(m_additionalContactEmailAddresses[additionalContactEmailAddressesIndex]);

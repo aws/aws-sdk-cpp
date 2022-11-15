@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_backupPlanId;
-    bool m_backupPlanIdHasBeenSet;
+    bool m_backupPlanIdHasBeenSet = false;
 
     Aws::String m_selectionId;
-    bool m_selectionIdHasBeenSet;
+    bool m_selectionIdHasBeenSet = false;
   };
 
 } // namespace Model

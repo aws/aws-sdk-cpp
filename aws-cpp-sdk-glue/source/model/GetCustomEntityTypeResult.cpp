@@ -42,7 +42,7 @@ GetCustomEntityTypeResult& GetCustomEntityTypeResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ContextWords"))
   {
-    Array<JsonView> contextWordsJsonList = jsonValue.GetArray("ContextWords");
+    Aws::Utils::Array<JsonView> contextWordsJsonList = jsonValue.GetArray("ContextWords");
     for(unsigned contextWordsIndex = 0; contextWordsIndex < contextWordsJsonList.GetLength(); ++contextWordsIndex)
     {
       m_contextWords.push_back(contextWordsJsonList[contextWordsIndex].AsString());

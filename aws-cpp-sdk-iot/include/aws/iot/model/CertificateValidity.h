@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_ec2InstanceID;
-    bool m_ec2InstanceIDHasBeenSet;
+    bool m_ec2InstanceIDHasBeenSet = false;
 
     FirstBoot m_firstBoot;
-    bool m_firstBootHasBeenSet;
+    bool m_firstBootHasBeenSet = false;
 
     Aws::String m_jobID;
-    bool m_jobIDHasBeenSet;
+    bool m_jobIDHasBeenSet = false;
   };
 
 } // namespace Model

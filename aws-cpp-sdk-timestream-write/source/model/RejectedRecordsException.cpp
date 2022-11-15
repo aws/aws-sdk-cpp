@@ -42,7 +42,7 @@ RejectedRecordsException& RejectedRecordsException::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("RejectedRecords"))
   {
-    Array<JsonView> rejectedRecordsJsonList = jsonValue.GetArray("RejectedRecords");
+    Aws::Utils::Array<JsonView> rejectedRecordsJsonList = jsonValue.GetArray("RejectedRecords");
     for(unsigned rejectedRecordsIndex = 0; rejectedRecordsIndex < rejectedRecordsJsonList.GetLength(); ++rejectedRecordsIndex)
     {
       m_rejectedRecords.push_back(rejectedRecordsJsonList[rejectedRecordsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue RejectedRecordsException::Jsonize() const
 
   if(m_rejectedRecordsHasBeenSet)
   {
-   Array<JsonValue> rejectedRecordsJsonList(m_rejectedRecords.size());
+   Aws::Utils::Array<JsonValue> rejectedRecordsJsonList(m_rejectedRecords.size());
    for(unsigned rejectedRecordsIndex = 0; rejectedRecordsIndex < rejectedRecordsJsonList.GetLength(); ++rejectedRecordsIndex)
    {
      rejectedRecordsJsonList[rejectedRecordsIndex].AsObject(m_rejectedRecords[rejectedRecordsIndex].Jsonize());

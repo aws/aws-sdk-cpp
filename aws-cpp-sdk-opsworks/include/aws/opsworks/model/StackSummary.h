@@ -243,22 +243,22 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     int m_layersCount;
-    bool m_layersCountHasBeenSet;
+    bool m_layersCountHasBeenSet = false;
 
     int m_appsCount;
-    bool m_appsCountHasBeenSet;
+    bool m_appsCountHasBeenSet = false;
 
     InstancesCount m_instancesCount;
-    bool m_instancesCountHasBeenSet;
+    bool m_instancesCountHasBeenSet = false;
   };
 
 } // namespace Model

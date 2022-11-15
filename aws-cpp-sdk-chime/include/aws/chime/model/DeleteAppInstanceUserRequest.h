@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_appInstanceUserArn;
-    bool m_appInstanceUserArnHasBeenSet;
+    bool m_appInstanceUserArnHasBeenSet = false;
   };
 
 } // namespace Model

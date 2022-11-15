@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TimeSpan m_timeSpan;
-    bool m_timeSpanHasBeenSet;
+    bool m_timeSpanHasBeenSet = false;
   };
 
 } // namespace Model

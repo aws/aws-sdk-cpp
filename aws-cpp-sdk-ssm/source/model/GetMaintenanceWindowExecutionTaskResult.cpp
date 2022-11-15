@@ -66,7 +66,7 @@ GetMaintenanceWindowExecutionTaskResult& GetMaintenanceWindowExecutionTaskResult
 
   if(jsonValue.ValueExists("TaskParameters"))
   {
-    Array<JsonView> taskParametersJsonList = jsonValue.GetArray("TaskParameters");
+    Aws::Utils::Array<JsonView> taskParametersJsonList = jsonValue.GetArray("TaskParameters");
     for(unsigned taskParametersIndex = 0; taskParametersIndex < taskParametersJsonList.GetLength(); ++taskParametersIndex)
     {
       Aws::Map<Aws::String, JsonView> maintenanceWindowTaskParametersJsonMap = taskParametersJsonList[taskParametersIndex].GetAllObjects();
@@ -119,6 +119,21 @@ GetMaintenanceWindowExecutionTaskResult& GetMaintenanceWindowExecutionTaskResult
   {
     m_endTime = jsonValue.GetDouble("EndTime");
 
+  }
+
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("TriggeredAlarms"))
+  {
+    Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
+    for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
+    {
+      m_triggeredAlarms.push_back(triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject());
+    }
   }
 
 

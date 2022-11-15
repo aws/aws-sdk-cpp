@@ -151,16 +151,16 @@ namespace Model
   private:
 
     ConformancePackComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     int m_compliantRuleCount;
-    bool m_compliantRuleCountHasBeenSet;
+    bool m_compliantRuleCountHasBeenSet = false;
 
     int m_nonCompliantRuleCount;
-    bool m_nonCompliantRuleCountHasBeenSet;
+    bool m_nonCompliantRuleCountHasBeenSet = false;
 
     int m_totalRuleCount;
-    bool m_totalRuleCountHasBeenSet;
+    bool m_totalRuleCountHasBeenSet = false;
   };
 
 } // namespace Model

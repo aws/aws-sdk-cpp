@@ -67,7 +67,7 @@ AgentInfo& AgentInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("agentNetworkInfoList"))
   {
-    Array<JsonView> agentNetworkInfoListJsonList = jsonValue.GetArray("agentNetworkInfoList");
+    Aws::Utils::Array<JsonView> agentNetworkInfoListJsonList = jsonValue.GetArray("agentNetworkInfoList");
     for(unsigned agentNetworkInfoListIndex = 0; agentNetworkInfoListIndex < agentNetworkInfoListJsonList.GetLength(); ++agentNetworkInfoListIndex)
     {
       m_agentNetworkInfoList.push_back(agentNetworkInfoListJsonList[agentNetworkInfoListIndex].AsObject());
@@ -145,7 +145,7 @@ JsonValue AgentInfo::Jsonize() const
 
   if(m_agentNetworkInfoListHasBeenSet)
   {
-   Array<JsonValue> agentNetworkInfoListJsonList(m_agentNetworkInfoList.size());
+   Aws::Utils::Array<JsonValue> agentNetworkInfoListJsonList(m_agentNetworkInfoList.size());
    for(unsigned agentNetworkInfoListIndex = 0; agentNetworkInfoListIndex < agentNetworkInfoListJsonList.GetLength(); ++agentNetworkInfoListIndex)
    {
      agentNetworkInfoListJsonList[agentNetworkInfoListIndex].AsObject(m_agentNetworkInfoList[agentNetworkInfoListIndex].Jsonize());

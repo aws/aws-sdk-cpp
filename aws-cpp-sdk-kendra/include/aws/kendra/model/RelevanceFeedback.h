@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_resultId;
-    bool m_resultIdHasBeenSet;
+    bool m_resultIdHasBeenSet = false;
 
     RelevanceType m_relevanceValue;
-    bool m_relevanceValueHasBeenSet;
+    bool m_relevanceValueHasBeenSet = false;
   };
 
 } // namespace Model

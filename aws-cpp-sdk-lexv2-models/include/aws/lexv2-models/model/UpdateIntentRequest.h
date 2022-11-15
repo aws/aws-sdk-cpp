@@ -13,6 +13,7 @@
 #include <aws/lexv2-models/model/IntentConfirmationSetting.h>
 #include <aws/lexv2-models/model/IntentClosingSetting.h>
 #include <aws/lexv2-models/model/KendraConfiguration.h>
+#include <aws/lexv2-models/model/InitialResponseSetting.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <aws/lexv2-models/model/SlotPriority.h>
 #include <aws/lexv2-models/model/InputContext.h>
@@ -735,55 +736,89 @@ namespace Model
      */
     inline UpdateIntentRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const InitialResponseSetting& GetInitialResponseSetting() const{ return m_initialResponseSetting; }
+
+    /**
+     * <p/>
+     */
+    inline bool InitialResponseSettingHasBeenSet() const { return m_initialResponseSettingHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetInitialResponseSetting(const InitialResponseSetting& value) { m_initialResponseSettingHasBeenSet = true; m_initialResponseSetting = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetInitialResponseSetting(InitialResponseSetting&& value) { m_initialResponseSettingHasBeenSet = true; m_initialResponseSetting = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline UpdateIntentRequest& WithInitialResponseSetting(const InitialResponseSetting& value) { SetInitialResponseSetting(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline UpdateIntentRequest& WithInitialResponseSetting(InitialResponseSetting&& value) { SetInitialResponseSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_intentId;
-    bool m_intentIdHasBeenSet;
+    bool m_intentIdHasBeenSet = false;
 
     Aws::String m_intentName;
-    bool m_intentNameHasBeenSet;
+    bool m_intentNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_parentIntentSignature;
-    bool m_parentIntentSignatureHasBeenSet;
+    bool m_parentIntentSignatureHasBeenSet = false;
 
     Aws::Vector<SampleUtterance> m_sampleUtterances;
-    bool m_sampleUtterancesHasBeenSet;
+    bool m_sampleUtterancesHasBeenSet = false;
 
     DialogCodeHookSettings m_dialogCodeHook;
-    bool m_dialogCodeHookHasBeenSet;
+    bool m_dialogCodeHookHasBeenSet = false;
 
     FulfillmentCodeHookSettings m_fulfillmentCodeHook;
-    bool m_fulfillmentCodeHookHasBeenSet;
+    bool m_fulfillmentCodeHookHasBeenSet = false;
 
     Aws::Vector<SlotPriority> m_slotPriorities;
-    bool m_slotPrioritiesHasBeenSet;
+    bool m_slotPrioritiesHasBeenSet = false;
 
     IntentConfirmationSetting m_intentConfirmationSetting;
-    bool m_intentConfirmationSettingHasBeenSet;
+    bool m_intentConfirmationSettingHasBeenSet = false;
 
     IntentClosingSetting m_intentClosingSetting;
-    bool m_intentClosingSettingHasBeenSet;
+    bool m_intentClosingSettingHasBeenSet = false;
 
     Aws::Vector<InputContext> m_inputContexts;
-    bool m_inputContextsHasBeenSet;
+    bool m_inputContextsHasBeenSet = false;
 
     Aws::Vector<OutputContext> m_outputContexts;
-    bool m_outputContextsHasBeenSet;
+    bool m_outputContextsHasBeenSet = false;
 
     KendraConfiguration m_kendraConfiguration;
-    bool m_kendraConfigurationHasBeenSet;
+    bool m_kendraConfigurationHasBeenSet = false;
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
+
+    InitialResponseSetting m_initialResponseSetting;
+    bool m_initialResponseSettingHasBeenSet = false;
   };
 
 } // namespace Model

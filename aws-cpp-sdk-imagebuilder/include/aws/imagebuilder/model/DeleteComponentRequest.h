@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_componentBuildVersionArn;
-    bool m_componentBuildVersionArnHasBeenSet;
+    bool m_componentBuildVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

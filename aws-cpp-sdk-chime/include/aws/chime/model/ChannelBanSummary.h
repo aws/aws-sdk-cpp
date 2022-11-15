@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Identity m_member;
-    bool m_memberHasBeenSet;
+    bool m_memberHasBeenSet = false;
   };
 
 } // namespace Model

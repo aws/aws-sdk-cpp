@@ -325,25 +325,25 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     Aws::String m_globalReplicationGroupDescription;
-    bool m_globalReplicationGroupDescriptionHasBeenSet;
+    bool m_globalReplicationGroupDescriptionHasBeenSet = false;
 
     bool m_automaticFailoverEnabled;
-    bool m_automaticFailoverEnabledHasBeenSet;
+    bool m_automaticFailoverEnabledHasBeenSet = false;
   };
 
 } // namespace Model

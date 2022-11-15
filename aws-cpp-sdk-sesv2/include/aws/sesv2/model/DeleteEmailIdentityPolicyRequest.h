@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_emailIdentity;
-    bool m_emailIdentityHasBeenSet;
+    bool m_emailIdentityHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
   };
 
 } // namespace Model

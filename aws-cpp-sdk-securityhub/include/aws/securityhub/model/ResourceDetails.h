@@ -49,6 +49,7 @@
 #include <aws/securityhub/model/AwsRdsDbClusterSnapshotDetails.h>
 #include <aws/securityhub/model/AwsRdsDbClusterDetails.h>
 #include <aws/securityhub/model/AwsEcsClusterDetails.h>
+#include <aws/securityhub/model/AwsEcsContainerDetails.h>
 #include <aws/securityhub/model/AwsEcsTaskDefinitionDetails.h>
 #include <aws/securityhub/model/ContainerDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -68,6 +69,21 @@
 #include <aws/securityhub/model/AwsNetworkFirewallFirewallDetails.h>
 #include <aws/securityhub/model/AwsNetworkFirewallRuleGroupDetails.h>
 #include <aws/securityhub/model/AwsRdsDbSecurityGroupDetails.h>
+#include <aws/securityhub/model/AwsKinesisStreamDetails.h>
+#include <aws/securityhub/model/AwsEc2TransitGatewayDetails.h>
+#include <aws/securityhub/model/AwsEfsAccessPointDetails.h>
+#include <aws/securityhub/model/AwsCloudFormationStackDetails.h>
+#include <aws/securityhub/model/AwsCloudWatchAlarmDetails.h>
+#include <aws/securityhub/model/AwsEc2VpcPeeringConnectionDetails.h>
+#include <aws/securityhub/model/AwsWafRegionalRuleGroupDetails.h>
+#include <aws/securityhub/model/AwsWafRegionalRuleDetails.h>
+#include <aws/securityhub/model/AwsWafRegionalWebAclDetails.h>
+#include <aws/securityhub/model/AwsWafRuleDetails.h>
+#include <aws/securityhub/model/AwsWafRuleGroupDetails.h>
+#include <aws/securityhub/model/AwsEcsTaskDetails.h>
+#include <aws/securityhub/model/AwsBackupBackupVaultDetails.h>
+#include <aws/securityhub/model/AwsBackupBackupPlanDetails.h>
+#include <aws/securityhub/model/AwsBackupRecoveryPointDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -295,63 +311,63 @@ namespace Model
 
 
     /**
-     * <p>Details for an EC2 volume.</p>
+     * <p>Details for an Amazon EC2 volume.</p>
      */
     inline const AwsEc2VolumeDetails& GetAwsEc2Volume() const{ return m_awsEc2Volume; }
 
     /**
-     * <p>Details for an EC2 volume.</p>
+     * <p>Details for an Amazon EC2 volume.</p>
      */
     inline bool AwsEc2VolumeHasBeenSet() const { return m_awsEc2VolumeHasBeenSet; }
 
     /**
-     * <p>Details for an EC2 volume.</p>
+     * <p>Details for an Amazon EC2 volume.</p>
      */
     inline void SetAwsEc2Volume(const AwsEc2VolumeDetails& value) { m_awsEc2VolumeHasBeenSet = true; m_awsEc2Volume = value; }
 
     /**
-     * <p>Details for an EC2 volume.</p>
+     * <p>Details for an Amazon EC2 volume.</p>
      */
     inline void SetAwsEc2Volume(AwsEc2VolumeDetails&& value) { m_awsEc2VolumeHasBeenSet = true; m_awsEc2Volume = std::move(value); }
 
     /**
-     * <p>Details for an EC2 volume.</p>
+     * <p>Details for an Amazon EC2 volume.</p>
      */
     inline ResourceDetails& WithAwsEc2Volume(const AwsEc2VolumeDetails& value) { SetAwsEc2Volume(value); return *this;}
 
     /**
-     * <p>Details for an EC2 volume.</p>
+     * <p>Details for an Amazon EC2 volume.</p>
      */
     inline ResourceDetails& WithAwsEc2Volume(AwsEc2VolumeDetails&& value) { SetAwsEc2Volume(std::move(value)); return *this;}
 
 
     /**
-     * <p>Details for an EC2 VPC.</p>
+     * <p>Details for an Amazon EC2 VPC.</p>
      */
     inline const AwsEc2VpcDetails& GetAwsEc2Vpc() const{ return m_awsEc2Vpc; }
 
     /**
-     * <p>Details for an EC2 VPC.</p>
+     * <p>Details for an Amazon EC2 VPC.</p>
      */
     inline bool AwsEc2VpcHasBeenSet() const { return m_awsEc2VpcHasBeenSet; }
 
     /**
-     * <p>Details for an EC2 VPC.</p>
+     * <p>Details for an Amazon EC2 VPC.</p>
      */
     inline void SetAwsEc2Vpc(const AwsEc2VpcDetails& value) { m_awsEc2VpcHasBeenSet = true; m_awsEc2Vpc = value; }
 
     /**
-     * <p>Details for an EC2 VPC.</p>
+     * <p>Details for an Amazon EC2 VPC.</p>
      */
     inline void SetAwsEc2Vpc(AwsEc2VpcDetails&& value) { m_awsEc2VpcHasBeenSet = true; m_awsEc2Vpc = std::move(value); }
 
     /**
-     * <p>Details for an EC2 VPC.</p>
+     * <p>Details for an Amazon EC2 VPC.</p>
      */
     inline ResourceDetails& WithAwsEc2Vpc(const AwsEc2VpcDetails& value) { SetAwsEc2Vpc(value); return *this;}
 
     /**
-     * <p>Details for an EC2 VPC.</p>
+     * <p>Details for an Amazon EC2 VPC.</p>
      */
     inline ResourceDetails& WithAwsEc2Vpc(AwsEc2VpcDetails&& value) { SetAwsEc2Vpc(std::move(value)); return *this;}
 
@@ -1330,32 +1346,32 @@ namespace Model
 
 
     /**
-     * <p>Details for an WAF WebACL.</p>
+     * <p>Details for an WAF web ACL.</p>
      */
     inline const AwsWafWebAclDetails& GetAwsWafWebAcl() const{ return m_awsWafWebAcl; }
 
     /**
-     * <p>Details for an WAF WebACL.</p>
+     * <p>Details for an WAF web ACL.</p>
      */
     inline bool AwsWafWebAclHasBeenSet() const { return m_awsWafWebAclHasBeenSet; }
 
     /**
-     * <p>Details for an WAF WebACL.</p>
+     * <p>Details for an WAF web ACL.</p>
      */
     inline void SetAwsWafWebAcl(const AwsWafWebAclDetails& value) { m_awsWafWebAclHasBeenSet = true; m_awsWafWebAcl = value; }
 
     /**
-     * <p>Details for an WAF WebACL.</p>
+     * <p>Details for an WAF web ACL.</p>
      */
     inline void SetAwsWafWebAcl(AwsWafWebAclDetails&& value) { m_awsWafWebAclHasBeenSet = true; m_awsWafWebAcl = std::move(value); }
 
     /**
-     * <p>Details for an WAF WebACL.</p>
+     * <p>Details for an WAF web ACL.</p>
      */
     inline ResourceDetails& WithAwsWafWebAcl(const AwsWafWebAclDetails& value) { SetAwsWafWebAcl(value); return *this;}
 
     /**
-     * <p>Details for an WAF WebACL.</p>
+     * <p>Details for an WAF web ACL.</p>
      */
     inline ResourceDetails& WithAwsWafWebAcl(AwsWafWebAclDetails&& value) { SetAwsWafWebAcl(std::move(value)); return *this;}
 
@@ -1454,34 +1470,65 @@ namespace Model
 
 
     /**
-     * <p>Details about an ECS cluster.</p>
+     * <p>Details about an Amazon ECS cluster.</p>
      */
     inline const AwsEcsClusterDetails& GetAwsEcsCluster() const{ return m_awsEcsCluster; }
 
     /**
-     * <p>Details about an ECS cluster.</p>
+     * <p>Details about an Amazon ECS cluster.</p>
      */
     inline bool AwsEcsClusterHasBeenSet() const { return m_awsEcsClusterHasBeenSet; }
 
     /**
-     * <p>Details about an ECS cluster.</p>
+     * <p>Details about an Amazon ECS cluster.</p>
      */
     inline void SetAwsEcsCluster(const AwsEcsClusterDetails& value) { m_awsEcsClusterHasBeenSet = true; m_awsEcsCluster = value; }
 
     /**
-     * <p>Details about an ECS cluster.</p>
+     * <p>Details about an Amazon ECS cluster.</p>
      */
     inline void SetAwsEcsCluster(AwsEcsClusterDetails&& value) { m_awsEcsClusterHasBeenSet = true; m_awsEcsCluster = std::move(value); }
 
     /**
-     * <p>Details about an ECS cluster.</p>
+     * <p>Details about an Amazon ECS cluster.</p>
      */
     inline ResourceDetails& WithAwsEcsCluster(const AwsEcsClusterDetails& value) { SetAwsEcsCluster(value); return *this;}
 
     /**
-     * <p>Details about an ECS cluster.</p>
+     * <p>Details about an Amazon ECS cluster.</p>
      */
     inline ResourceDetails& WithAwsEcsCluster(AwsEcsClusterDetails&& value) { SetAwsEcsCluster(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides information about a Docker container that's part of a task. </p>
+     */
+    inline const AwsEcsContainerDetails& GetAwsEcsContainer() const{ return m_awsEcsContainer; }
+
+    /**
+     * <p>Provides information about a Docker container that's part of a task. </p>
+     */
+    inline bool AwsEcsContainerHasBeenSet() const { return m_awsEcsContainerHasBeenSet; }
+
+    /**
+     * <p>Provides information about a Docker container that's part of a task. </p>
+     */
+    inline void SetAwsEcsContainer(const AwsEcsContainerDetails& value) { m_awsEcsContainerHasBeenSet = true; m_awsEcsContainer = value; }
+
+    /**
+     * <p>Provides information about a Docker container that's part of a task. </p>
+     */
+    inline void SetAwsEcsContainer(AwsEcsContainerDetails&& value) { m_awsEcsContainerHasBeenSet = true; m_awsEcsContainer = std::move(value); }
+
+    /**
+     * <p>Provides information about a Docker container that's part of a task. </p>
+     */
+    inline ResourceDetails& WithAwsEcsContainer(const AwsEcsContainerDetails& value) { SetAwsEcsContainer(value); return *this;}
+
+    /**
+     * <p>Provides information about a Docker container that's part of a task. </p>
+     */
+    inline ResourceDetails& WithAwsEcsContainer(AwsEcsContainerDetails&& value) { SetAwsEcsContainer(std::move(value)); return *this;}
 
 
     /**
@@ -1803,32 +1850,32 @@ namespace Model
 
 
     /**
-     * <p>Details about an EC2 VPN connection.</p>
+     * <p>Details about an Amazon EC2 VPN connection.</p>
      */
     inline const AwsEc2VpnConnectionDetails& GetAwsEc2VpnConnection() const{ return m_awsEc2VpnConnection; }
 
     /**
-     * <p>Details about an EC2 VPN connection.</p>
+     * <p>Details about an Amazon EC2 VPN connection.</p>
      */
     inline bool AwsEc2VpnConnectionHasBeenSet() const { return m_awsEc2VpnConnectionHasBeenSet; }
 
     /**
-     * <p>Details about an EC2 VPN connection.</p>
+     * <p>Details about an Amazon EC2 VPN connection.</p>
      */
     inline void SetAwsEc2VpnConnection(const AwsEc2VpnConnectionDetails& value) { m_awsEc2VpnConnectionHasBeenSet = true; m_awsEc2VpnConnection = value; }
 
     /**
-     * <p>Details about an EC2 VPN connection.</p>
+     * <p>Details about an Amazon EC2 VPN connection.</p>
      */
     inline void SetAwsEc2VpnConnection(AwsEc2VpnConnectionDetails&& value) { m_awsEc2VpnConnectionHasBeenSet = true; m_awsEc2VpnConnection = std::move(value); }
 
     /**
-     * <p>Details about an EC2 VPN connection.</p>
+     * <p>Details about an Amazon EC2 VPN connection.</p>
      */
     inline ResourceDetails& WithAwsEc2VpnConnection(const AwsEc2VpnConnectionDetails& value) { SetAwsEc2VpnConnection(value); return *this;}
 
     /**
-     * <p>Details about an EC2 VPN connection.</p>
+     * <p>Details about an Amazon EC2 VPN connection.</p>
      */
     inline ResourceDetails& WithAwsEc2VpnConnection(AwsEc2VpnConnectionDetails&& value) { SetAwsEc2VpnConnection(std::move(value)); return *this;}
 
@@ -2204,196 +2251,769 @@ namespace Model
      */
     inline ResourceDetails& WithAwsRdsDbSecurityGroup(AwsRdsDbSecurityGroupDetails&& value) { SetAwsRdsDbSecurityGroup(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details about an Amazon Kinesis data stream.</p>
+     */
+    inline const AwsKinesisStreamDetails& GetAwsKinesisStream() const{ return m_awsKinesisStream; }
+
+    /**
+     * <p>Details about an Amazon Kinesis data stream.</p>
+     */
+    inline bool AwsKinesisStreamHasBeenSet() const { return m_awsKinesisStreamHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon Kinesis data stream.</p>
+     */
+    inline void SetAwsKinesisStream(const AwsKinesisStreamDetails& value) { m_awsKinesisStreamHasBeenSet = true; m_awsKinesisStream = value; }
+
+    /**
+     * <p>Details about an Amazon Kinesis data stream.</p>
+     */
+    inline void SetAwsKinesisStream(AwsKinesisStreamDetails&& value) { m_awsKinesisStreamHasBeenSet = true; m_awsKinesisStream = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon Kinesis data stream.</p>
+     */
+    inline ResourceDetails& WithAwsKinesisStream(const AwsKinesisStreamDetails& value) { SetAwsKinesisStream(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon Kinesis data stream.</p>
+     */
+    inline ResourceDetails& WithAwsKinesisStream(AwsKinesisStreamDetails&& value) { SetAwsKinesisStream(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon EC2 transit gateway that interconnects your virtual
+     * private clouds (VPC) and on-premises networks.</p>
+     */
+    inline const AwsEc2TransitGatewayDetails& GetAwsEc2TransitGateway() const{ return m_awsEc2TransitGateway; }
+
+    /**
+     * <p>Details about an Amazon EC2 transit gateway that interconnects your virtual
+     * private clouds (VPC) and on-premises networks.</p>
+     */
+    inline bool AwsEc2TransitGatewayHasBeenSet() const { return m_awsEc2TransitGatewayHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon EC2 transit gateway that interconnects your virtual
+     * private clouds (VPC) and on-premises networks.</p>
+     */
+    inline void SetAwsEc2TransitGateway(const AwsEc2TransitGatewayDetails& value) { m_awsEc2TransitGatewayHasBeenSet = true; m_awsEc2TransitGateway = value; }
+
+    /**
+     * <p>Details about an Amazon EC2 transit gateway that interconnects your virtual
+     * private clouds (VPC) and on-premises networks.</p>
+     */
+    inline void SetAwsEc2TransitGateway(AwsEc2TransitGatewayDetails&& value) { m_awsEc2TransitGatewayHasBeenSet = true; m_awsEc2TransitGateway = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon EC2 transit gateway that interconnects your virtual
+     * private clouds (VPC) and on-premises networks.</p>
+     */
+    inline ResourceDetails& WithAwsEc2TransitGateway(const AwsEc2TransitGatewayDetails& value) { SetAwsEc2TransitGateway(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon EC2 transit gateway that interconnects your virtual
+     * private clouds (VPC) and on-premises networks.</p>
+     */
+    inline ResourceDetails& WithAwsEc2TransitGateway(AwsEc2TransitGatewayDetails&& value) { SetAwsEc2TransitGateway(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon EFS access point. An access point is an
+     * application-specific view into an EFS file system that applies an operating
+     * system user and group, and a file system path, to any file system request made
+     * through the access point. </p>
+     */
+    inline const AwsEfsAccessPointDetails& GetAwsEfsAccessPoint() const{ return m_awsEfsAccessPoint; }
+
+    /**
+     * <p>Details about an Amazon EFS access point. An access point is an
+     * application-specific view into an EFS file system that applies an operating
+     * system user and group, and a file system path, to any file system request made
+     * through the access point. </p>
+     */
+    inline bool AwsEfsAccessPointHasBeenSet() const { return m_awsEfsAccessPointHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon EFS access point. An access point is an
+     * application-specific view into an EFS file system that applies an operating
+     * system user and group, and a file system path, to any file system request made
+     * through the access point. </p>
+     */
+    inline void SetAwsEfsAccessPoint(const AwsEfsAccessPointDetails& value) { m_awsEfsAccessPointHasBeenSet = true; m_awsEfsAccessPoint = value; }
+
+    /**
+     * <p>Details about an Amazon EFS access point. An access point is an
+     * application-specific view into an EFS file system that applies an operating
+     * system user and group, and a file system path, to any file system request made
+     * through the access point. </p>
+     */
+    inline void SetAwsEfsAccessPoint(AwsEfsAccessPointDetails&& value) { m_awsEfsAccessPointHasBeenSet = true; m_awsEfsAccessPoint = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon EFS access point. An access point is an
+     * application-specific view into an EFS file system that applies an operating
+     * system user and group, and a file system path, to any file system request made
+     * through the access point. </p>
+     */
+    inline ResourceDetails& WithAwsEfsAccessPoint(const AwsEfsAccessPointDetails& value) { SetAwsEfsAccessPoint(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon EFS access point. An access point is an
+     * application-specific view into an EFS file system that applies an operating
+     * system user and group, and a file system path, to any file system request made
+     * through the access point. </p>
+     */
+    inline ResourceDetails& WithAwsEfsAccessPoint(AwsEfsAccessPointDetails&& value) { SetAwsEfsAccessPoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web
+     * Services resources that you can manage as a single unit.</p>
+     */
+    inline const AwsCloudFormationStackDetails& GetAwsCloudFormationStack() const{ return m_awsCloudFormationStack; }
+
+    /**
+     * <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web
+     * Services resources that you can manage as a single unit.</p>
+     */
+    inline bool AwsCloudFormationStackHasBeenSet() const { return m_awsCloudFormationStackHasBeenSet; }
+
+    /**
+     * <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web
+     * Services resources that you can manage as a single unit.</p>
+     */
+    inline void SetAwsCloudFormationStack(const AwsCloudFormationStackDetails& value) { m_awsCloudFormationStackHasBeenSet = true; m_awsCloudFormationStack = value; }
+
+    /**
+     * <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web
+     * Services resources that you can manage as a single unit.</p>
+     */
+    inline void SetAwsCloudFormationStack(AwsCloudFormationStackDetails&& value) { m_awsCloudFormationStackHasBeenSet = true; m_awsCloudFormationStack = std::move(value); }
+
+    /**
+     * <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web
+     * Services resources that you can manage as a single unit.</p>
+     */
+    inline ResourceDetails& WithAwsCloudFormationStack(const AwsCloudFormationStackDetails& value) { SetAwsCloudFormationStack(value); return *this;}
+
+    /**
+     * <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web
+     * Services resources that you can manage as a single unit.</p>
+     */
+    inline ResourceDetails& WithAwsCloudFormationStack(AwsCloudFormationStackDetails&& value) { SetAwsCloudFormationStack(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and
+     * receive alerts about your Amazon Web Services resources and applications across
+     * multiple Regions.</p>
+     */
+    inline const AwsCloudWatchAlarmDetails& GetAwsCloudWatchAlarm() const{ return m_awsCloudWatchAlarm; }
+
+    /**
+     * <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and
+     * receive alerts about your Amazon Web Services resources and applications across
+     * multiple Regions.</p>
+     */
+    inline bool AwsCloudWatchAlarmHasBeenSet() const { return m_awsCloudWatchAlarmHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and
+     * receive alerts about your Amazon Web Services resources and applications across
+     * multiple Regions.</p>
+     */
+    inline void SetAwsCloudWatchAlarm(const AwsCloudWatchAlarmDetails& value) { m_awsCloudWatchAlarmHasBeenSet = true; m_awsCloudWatchAlarm = value; }
+
+    /**
+     * <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and
+     * receive alerts about your Amazon Web Services resources and applications across
+     * multiple Regions.</p>
+     */
+    inline void SetAwsCloudWatchAlarm(AwsCloudWatchAlarmDetails&& value) { m_awsCloudWatchAlarmHasBeenSet = true; m_awsCloudWatchAlarm = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and
+     * receive alerts about your Amazon Web Services resources and applications across
+     * multiple Regions.</p>
+     */
+    inline ResourceDetails& WithAwsCloudWatchAlarm(const AwsCloudWatchAlarmDetails& value) { SetAwsCloudWatchAlarm(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and
+     * receive alerts about your Amazon Web Services resources and applications across
+     * multiple Regions.</p>
+     */
+    inline ResourceDetails& WithAwsCloudWatchAlarm(AwsCloudWatchAlarmDetails&& value) { SetAwsCloudWatchAlarm(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection
+     * is a networking connection between two VPCs that enables you to route traffic
+     * between them privately. </p>
+     */
+    inline const AwsEc2VpcPeeringConnectionDetails& GetAwsEc2VpcPeeringConnection() const{ return m_awsEc2VpcPeeringConnection; }
+
+    /**
+     * <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection
+     * is a networking connection between two VPCs that enables you to route traffic
+     * between them privately. </p>
+     */
+    inline bool AwsEc2VpcPeeringConnectionHasBeenSet() const { return m_awsEc2VpcPeeringConnectionHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection
+     * is a networking connection between two VPCs that enables you to route traffic
+     * between them privately. </p>
+     */
+    inline void SetAwsEc2VpcPeeringConnection(const AwsEc2VpcPeeringConnectionDetails& value) { m_awsEc2VpcPeeringConnectionHasBeenSet = true; m_awsEc2VpcPeeringConnection = value; }
+
+    /**
+     * <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection
+     * is a networking connection between two VPCs that enables you to route traffic
+     * between them privately. </p>
+     */
+    inline void SetAwsEc2VpcPeeringConnection(AwsEc2VpcPeeringConnectionDetails&& value) { m_awsEc2VpcPeeringConnectionHasBeenSet = true; m_awsEc2VpcPeeringConnection = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection
+     * is a networking connection between two VPCs that enables you to route traffic
+     * between them privately. </p>
+     */
+    inline ResourceDetails& WithAwsEc2VpcPeeringConnection(const AwsEc2VpcPeeringConnectionDetails& value) { SetAwsEc2VpcPeeringConnection(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection
+     * is a networking connection between two VPCs that enables you to route traffic
+     * between them privately. </p>
+     */
+    inline ResourceDetails& WithAwsEc2VpcPeeringConnection(AwsEc2VpcPeeringConnectionDetails&& value) { SetAwsEc2VpcPeeringConnection(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an WAF rule group for Regional resources. </p>
+     */
+    inline const AwsWafRegionalRuleGroupDetails& GetAwsWafRegionalRuleGroup() const{ return m_awsWafRegionalRuleGroup; }
+
+    /**
+     * <p>Details about an WAF rule group for Regional resources. </p>
+     */
+    inline bool AwsWafRegionalRuleGroupHasBeenSet() const { return m_awsWafRegionalRuleGroupHasBeenSet; }
+
+    /**
+     * <p>Details about an WAF rule group for Regional resources. </p>
+     */
+    inline void SetAwsWafRegionalRuleGroup(const AwsWafRegionalRuleGroupDetails& value) { m_awsWafRegionalRuleGroupHasBeenSet = true; m_awsWafRegionalRuleGroup = value; }
+
+    /**
+     * <p>Details about an WAF rule group for Regional resources. </p>
+     */
+    inline void SetAwsWafRegionalRuleGroup(AwsWafRegionalRuleGroupDetails&& value) { m_awsWafRegionalRuleGroupHasBeenSet = true; m_awsWafRegionalRuleGroup = std::move(value); }
+
+    /**
+     * <p>Details about an WAF rule group for Regional resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRegionalRuleGroup(const AwsWafRegionalRuleGroupDetails& value) { SetAwsWafRegionalRuleGroup(value); return *this;}
+
+    /**
+     * <p>Details about an WAF rule group for Regional resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRegionalRuleGroup(AwsWafRegionalRuleGroupDetails&& value) { SetAwsWafRegionalRuleGroup(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an WAF rule for Regional resources. </p>
+     */
+    inline const AwsWafRegionalRuleDetails& GetAwsWafRegionalRule() const{ return m_awsWafRegionalRule; }
+
+    /**
+     * <p>Details about an WAF rule for Regional resources. </p>
+     */
+    inline bool AwsWafRegionalRuleHasBeenSet() const { return m_awsWafRegionalRuleHasBeenSet; }
+
+    /**
+     * <p>Details about an WAF rule for Regional resources. </p>
+     */
+    inline void SetAwsWafRegionalRule(const AwsWafRegionalRuleDetails& value) { m_awsWafRegionalRuleHasBeenSet = true; m_awsWafRegionalRule = value; }
+
+    /**
+     * <p>Details about an WAF rule for Regional resources. </p>
+     */
+    inline void SetAwsWafRegionalRule(AwsWafRegionalRuleDetails&& value) { m_awsWafRegionalRuleHasBeenSet = true; m_awsWafRegionalRule = std::move(value); }
+
+    /**
+     * <p>Details about an WAF rule for Regional resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRegionalRule(const AwsWafRegionalRuleDetails& value) { SetAwsWafRegionalRule(value); return *this;}
+
+    /**
+     * <p>Details about an WAF rule for Regional resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRegionalRule(AwsWafRegionalRuleDetails&& value) { SetAwsWafRegionalRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an WAF web access control list (web ACL) for Regional
+     * resources. </p>
+     */
+    inline const AwsWafRegionalWebAclDetails& GetAwsWafRegionalWebAcl() const{ return m_awsWafRegionalWebAcl; }
+
+    /**
+     * <p>Details about an WAF web access control list (web ACL) for Regional
+     * resources. </p>
+     */
+    inline bool AwsWafRegionalWebAclHasBeenSet() const { return m_awsWafRegionalWebAclHasBeenSet; }
+
+    /**
+     * <p>Details about an WAF web access control list (web ACL) for Regional
+     * resources. </p>
+     */
+    inline void SetAwsWafRegionalWebAcl(const AwsWafRegionalWebAclDetails& value) { m_awsWafRegionalWebAclHasBeenSet = true; m_awsWafRegionalWebAcl = value; }
+
+    /**
+     * <p>Details about an WAF web access control list (web ACL) for Regional
+     * resources. </p>
+     */
+    inline void SetAwsWafRegionalWebAcl(AwsWafRegionalWebAclDetails&& value) { m_awsWafRegionalWebAclHasBeenSet = true; m_awsWafRegionalWebAcl = std::move(value); }
+
+    /**
+     * <p>Details about an WAF web access control list (web ACL) for Regional
+     * resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRegionalWebAcl(const AwsWafRegionalWebAclDetails& value) { SetAwsWafRegionalWebAcl(value); return *this;}
+
+    /**
+     * <p>Details about an WAF web access control list (web ACL) for Regional
+     * resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRegionalWebAcl(AwsWafRegionalWebAclDetails&& value) { SetAwsWafRegionalWebAcl(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an WAF rule for global resources. </p>
+     */
+    inline const AwsWafRuleDetails& GetAwsWafRule() const{ return m_awsWafRule; }
+
+    /**
+     * <p>Details about an WAF rule for global resources. </p>
+     */
+    inline bool AwsWafRuleHasBeenSet() const { return m_awsWafRuleHasBeenSet; }
+
+    /**
+     * <p>Details about an WAF rule for global resources. </p>
+     */
+    inline void SetAwsWafRule(const AwsWafRuleDetails& value) { m_awsWafRuleHasBeenSet = true; m_awsWafRule = value; }
+
+    /**
+     * <p>Details about an WAF rule for global resources. </p>
+     */
+    inline void SetAwsWafRule(AwsWafRuleDetails&& value) { m_awsWafRuleHasBeenSet = true; m_awsWafRule = std::move(value); }
+
+    /**
+     * <p>Details about an WAF rule for global resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRule(const AwsWafRuleDetails& value) { SetAwsWafRule(value); return *this;}
+
+    /**
+     * <p>Details about an WAF rule for global resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRule(AwsWafRuleDetails&& value) { SetAwsWafRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an WAF rule group for global resources. </p>
+     */
+    inline const AwsWafRuleGroupDetails& GetAwsWafRuleGroup() const{ return m_awsWafRuleGroup; }
+
+    /**
+     * <p>Details about an WAF rule group for global resources. </p>
+     */
+    inline bool AwsWafRuleGroupHasBeenSet() const { return m_awsWafRuleGroupHasBeenSet; }
+
+    /**
+     * <p>Details about an WAF rule group for global resources. </p>
+     */
+    inline void SetAwsWafRuleGroup(const AwsWafRuleGroupDetails& value) { m_awsWafRuleGroupHasBeenSet = true; m_awsWafRuleGroup = value; }
+
+    /**
+     * <p>Details about an WAF rule group for global resources. </p>
+     */
+    inline void SetAwsWafRuleGroup(AwsWafRuleGroupDetails&& value) { m_awsWafRuleGroupHasBeenSet = true; m_awsWafRuleGroup = std::move(value); }
+
+    /**
+     * <p>Details about an WAF rule group for global resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRuleGroup(const AwsWafRuleGroupDetails& value) { SetAwsWafRuleGroup(value); return *this;}
+
+    /**
+     * <p>Details about an WAF rule group for global resources. </p>
+     */
+    inline ResourceDetails& WithAwsWafRuleGroup(AwsWafRuleGroupDetails&& value) { SetAwsWafRuleGroup(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about a task in a cluster. </p>
+     */
+    inline const AwsEcsTaskDetails& GetAwsEcsTask() const{ return m_awsEcsTask; }
+
+    /**
+     * <p>Details about a task in a cluster. </p>
+     */
+    inline bool AwsEcsTaskHasBeenSet() const { return m_awsEcsTaskHasBeenSet; }
+
+    /**
+     * <p>Details about a task in a cluster. </p>
+     */
+    inline void SetAwsEcsTask(const AwsEcsTaskDetails& value) { m_awsEcsTaskHasBeenSet = true; m_awsEcsTask = value; }
+
+    /**
+     * <p>Details about a task in a cluster. </p>
+     */
+    inline void SetAwsEcsTask(AwsEcsTaskDetails&& value) { m_awsEcsTaskHasBeenSet = true; m_awsEcsTask = std::move(value); }
+
+    /**
+     * <p>Details about a task in a cluster. </p>
+     */
+    inline ResourceDetails& WithAwsEcsTask(const AwsEcsTaskDetails& value) { SetAwsEcsTask(value); return *this;}
+
+    /**
+     * <p>Details about a task in a cluster. </p>
+     */
+    inline ResourceDetails& WithAwsEcsTask(AwsEcsTaskDetails&& value) { SetAwsEcsTask(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline const AwsBackupBackupVaultDetails& GetAwsBackupBackupVault() const{ return m_awsBackupBackupVault; }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline bool AwsBackupBackupVaultHasBeenSet() const { return m_awsBackupBackupVaultHasBeenSet; }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline void SetAwsBackupBackupVault(const AwsBackupBackupVaultDetails& value) { m_awsBackupBackupVaultHasBeenSet = true; m_awsBackupBackupVault = value; }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline void SetAwsBackupBackupVault(AwsBackupBackupVaultDetails&& value) { m_awsBackupBackupVaultHasBeenSet = true; m_awsBackupBackupVault = std::move(value); }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupVault(const AwsBackupBackupVaultDetails& value) { SetAwsBackupBackupVault(value); return *this;}
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupVault(AwsBackupBackupVaultDetails&& value) { SetAwsBackupBackupVault(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline const AwsBackupBackupPlanDetails& GetAwsBackupBackupPlan() const{ return m_awsBackupBackupPlan; }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline bool AwsBackupBackupPlanHasBeenSet() const { return m_awsBackupBackupPlanHasBeenSet; }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline void SetAwsBackupBackupPlan(const AwsBackupBackupPlanDetails& value) { m_awsBackupBackupPlanHasBeenSet = true; m_awsBackupBackupPlan = value; }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline void SetAwsBackupBackupPlan(AwsBackupBackupPlanDetails&& value) { m_awsBackupBackupPlanHasBeenSet = true; m_awsBackupBackupPlan = std::move(value); }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupPlan(const AwsBackupBackupPlanDetails& value) { SetAwsBackupBackupPlan(value); return *this;}
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupPlan(AwsBackupBackupPlanDetails&& value) { SetAwsBackupBackupPlan(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline const AwsBackupRecoveryPointDetails& GetAwsBackupRecoveryPoint() const{ return m_awsBackupRecoveryPoint; }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline bool AwsBackupRecoveryPointHasBeenSet() const { return m_awsBackupRecoveryPointHasBeenSet; }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline void SetAwsBackupRecoveryPoint(const AwsBackupRecoveryPointDetails& value) { m_awsBackupRecoveryPointHasBeenSet = true; m_awsBackupRecoveryPoint = value; }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline void SetAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetails&& value) { m_awsBackupRecoveryPointHasBeenSet = true; m_awsBackupRecoveryPoint = std::move(value); }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline ResourceDetails& WithAwsBackupRecoveryPoint(const AwsBackupRecoveryPointDetails& value) { SetAwsBackupRecoveryPoint(value); return *this;}
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline ResourceDetails& WithAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetails&& value) { SetAwsBackupRecoveryPoint(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
-    bool m_awsAutoScalingAutoScalingGroupHasBeenSet;
+    bool m_awsAutoScalingAutoScalingGroupHasBeenSet = false;
 
     AwsCodeBuildProjectDetails m_awsCodeBuildProject;
-    bool m_awsCodeBuildProjectHasBeenSet;
+    bool m_awsCodeBuildProjectHasBeenSet = false;
 
     AwsCloudFrontDistributionDetails m_awsCloudFrontDistribution;
-    bool m_awsCloudFrontDistributionHasBeenSet;
+    bool m_awsCloudFrontDistributionHasBeenSet = false;
 
     AwsEc2InstanceDetails m_awsEc2Instance;
-    bool m_awsEc2InstanceHasBeenSet;
+    bool m_awsEc2InstanceHasBeenSet = false;
 
     AwsEc2NetworkInterfaceDetails m_awsEc2NetworkInterface;
-    bool m_awsEc2NetworkInterfaceHasBeenSet;
+    bool m_awsEc2NetworkInterfaceHasBeenSet = false;
 
     AwsEc2SecurityGroupDetails m_awsEc2SecurityGroup;
-    bool m_awsEc2SecurityGroupHasBeenSet;
+    bool m_awsEc2SecurityGroupHasBeenSet = false;
 
     AwsEc2VolumeDetails m_awsEc2Volume;
-    bool m_awsEc2VolumeHasBeenSet;
+    bool m_awsEc2VolumeHasBeenSet = false;
 
     AwsEc2VpcDetails m_awsEc2Vpc;
-    bool m_awsEc2VpcHasBeenSet;
+    bool m_awsEc2VpcHasBeenSet = false;
 
     AwsEc2EipDetails m_awsEc2Eip;
-    bool m_awsEc2EipHasBeenSet;
+    bool m_awsEc2EipHasBeenSet = false;
 
     AwsEc2SubnetDetails m_awsEc2Subnet;
-    bool m_awsEc2SubnetHasBeenSet;
+    bool m_awsEc2SubnetHasBeenSet = false;
 
     AwsEc2NetworkAclDetails m_awsEc2NetworkAcl;
-    bool m_awsEc2NetworkAclHasBeenSet;
+    bool m_awsEc2NetworkAclHasBeenSet = false;
 
     AwsElbv2LoadBalancerDetails m_awsElbv2LoadBalancer;
-    bool m_awsElbv2LoadBalancerHasBeenSet;
+    bool m_awsElbv2LoadBalancerHasBeenSet = false;
 
     AwsElasticBeanstalkEnvironmentDetails m_awsElasticBeanstalkEnvironment;
-    bool m_awsElasticBeanstalkEnvironmentHasBeenSet;
+    bool m_awsElasticBeanstalkEnvironmentHasBeenSet = false;
 
     AwsElasticsearchDomainDetails m_awsElasticsearchDomain;
-    bool m_awsElasticsearchDomainHasBeenSet;
+    bool m_awsElasticsearchDomainHasBeenSet = false;
 
     AwsS3BucketDetails m_awsS3Bucket;
-    bool m_awsS3BucketHasBeenSet;
+    bool m_awsS3BucketHasBeenSet = false;
 
     AwsS3AccountPublicAccessBlockDetails m_awsS3AccountPublicAccessBlock;
-    bool m_awsS3AccountPublicAccessBlockHasBeenSet;
+    bool m_awsS3AccountPublicAccessBlockHasBeenSet = false;
 
     AwsS3ObjectDetails m_awsS3Object;
-    bool m_awsS3ObjectHasBeenSet;
+    bool m_awsS3ObjectHasBeenSet = false;
 
     AwsSecretsManagerSecretDetails m_awsSecretsManagerSecret;
-    bool m_awsSecretsManagerSecretHasBeenSet;
+    bool m_awsSecretsManagerSecretHasBeenSet = false;
 
     AwsIamAccessKeyDetails m_awsIamAccessKey;
-    bool m_awsIamAccessKeyHasBeenSet;
+    bool m_awsIamAccessKeyHasBeenSet = false;
 
     AwsIamUserDetails m_awsIamUser;
-    bool m_awsIamUserHasBeenSet;
+    bool m_awsIamUserHasBeenSet = false;
 
     AwsIamPolicyDetails m_awsIamPolicy;
-    bool m_awsIamPolicyHasBeenSet;
+    bool m_awsIamPolicyHasBeenSet = false;
 
     AwsApiGatewayV2StageDetails m_awsApiGatewayV2Stage;
-    bool m_awsApiGatewayV2StageHasBeenSet;
+    bool m_awsApiGatewayV2StageHasBeenSet = false;
 
     AwsApiGatewayV2ApiDetails m_awsApiGatewayV2Api;
-    bool m_awsApiGatewayV2ApiHasBeenSet;
+    bool m_awsApiGatewayV2ApiHasBeenSet = false;
 
     AwsDynamoDbTableDetails m_awsDynamoDbTable;
-    bool m_awsDynamoDbTableHasBeenSet;
+    bool m_awsDynamoDbTableHasBeenSet = false;
 
     AwsApiGatewayStageDetails m_awsApiGatewayStage;
-    bool m_awsApiGatewayStageHasBeenSet;
+    bool m_awsApiGatewayStageHasBeenSet = false;
 
     AwsApiGatewayRestApiDetails m_awsApiGatewayRestApi;
-    bool m_awsApiGatewayRestApiHasBeenSet;
+    bool m_awsApiGatewayRestApiHasBeenSet = false;
 
     AwsCloudTrailTrailDetails m_awsCloudTrailTrail;
-    bool m_awsCloudTrailTrailHasBeenSet;
+    bool m_awsCloudTrailTrailHasBeenSet = false;
 
     AwsSsmPatchComplianceDetails m_awsSsmPatchCompliance;
-    bool m_awsSsmPatchComplianceHasBeenSet;
+    bool m_awsSsmPatchComplianceHasBeenSet = false;
 
     AwsCertificateManagerCertificateDetails m_awsCertificateManagerCertificate;
-    bool m_awsCertificateManagerCertificateHasBeenSet;
+    bool m_awsCertificateManagerCertificateHasBeenSet = false;
 
     AwsRedshiftClusterDetails m_awsRedshiftCluster;
-    bool m_awsRedshiftClusterHasBeenSet;
+    bool m_awsRedshiftClusterHasBeenSet = false;
 
     AwsElbLoadBalancerDetails m_awsElbLoadBalancer;
-    bool m_awsElbLoadBalancerHasBeenSet;
+    bool m_awsElbLoadBalancerHasBeenSet = false;
 
     AwsIamGroupDetails m_awsIamGroup;
-    bool m_awsIamGroupHasBeenSet;
+    bool m_awsIamGroupHasBeenSet = false;
 
     AwsIamRoleDetails m_awsIamRole;
-    bool m_awsIamRoleHasBeenSet;
+    bool m_awsIamRoleHasBeenSet = false;
 
     AwsKmsKeyDetails m_awsKmsKey;
-    bool m_awsKmsKeyHasBeenSet;
+    bool m_awsKmsKeyHasBeenSet = false;
 
     AwsLambdaFunctionDetails m_awsLambdaFunction;
-    bool m_awsLambdaFunctionHasBeenSet;
+    bool m_awsLambdaFunctionHasBeenSet = false;
 
     AwsLambdaLayerVersionDetails m_awsLambdaLayerVersion;
-    bool m_awsLambdaLayerVersionHasBeenSet;
+    bool m_awsLambdaLayerVersionHasBeenSet = false;
 
     AwsRdsDbInstanceDetails m_awsRdsDbInstance;
-    bool m_awsRdsDbInstanceHasBeenSet;
+    bool m_awsRdsDbInstanceHasBeenSet = false;
 
     AwsSnsTopicDetails m_awsSnsTopic;
-    bool m_awsSnsTopicHasBeenSet;
+    bool m_awsSnsTopicHasBeenSet = false;
 
     AwsSqsQueueDetails m_awsSqsQueue;
-    bool m_awsSqsQueueHasBeenSet;
+    bool m_awsSqsQueueHasBeenSet = false;
 
     AwsWafWebAclDetails m_awsWafWebAcl;
-    bool m_awsWafWebAclHasBeenSet;
+    bool m_awsWafWebAclHasBeenSet = false;
 
     AwsRdsDbSnapshotDetails m_awsRdsDbSnapshot;
-    bool m_awsRdsDbSnapshotHasBeenSet;
+    bool m_awsRdsDbSnapshotHasBeenSet = false;
 
     AwsRdsDbClusterSnapshotDetails m_awsRdsDbClusterSnapshot;
-    bool m_awsRdsDbClusterSnapshotHasBeenSet;
+    bool m_awsRdsDbClusterSnapshotHasBeenSet = false;
 
     AwsRdsDbClusterDetails m_awsRdsDbCluster;
-    bool m_awsRdsDbClusterHasBeenSet;
+    bool m_awsRdsDbClusterHasBeenSet = false;
 
     AwsEcsClusterDetails m_awsEcsCluster;
-    bool m_awsEcsClusterHasBeenSet;
+    bool m_awsEcsClusterHasBeenSet = false;
+
+    AwsEcsContainerDetails m_awsEcsContainer;
+    bool m_awsEcsContainerHasBeenSet = false;
 
     AwsEcsTaskDefinitionDetails m_awsEcsTaskDefinition;
-    bool m_awsEcsTaskDefinitionHasBeenSet;
+    bool m_awsEcsTaskDefinitionHasBeenSet = false;
 
     ContainerDetails m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_other;
-    bool m_otherHasBeenSet;
+    bool m_otherHasBeenSet = false;
 
     AwsRdsEventSubscriptionDetails m_awsRdsEventSubscription;
-    bool m_awsRdsEventSubscriptionHasBeenSet;
+    bool m_awsRdsEventSubscriptionHasBeenSet = false;
 
     AwsEcsServiceDetails m_awsEcsService;
-    bool m_awsEcsServiceHasBeenSet;
+    bool m_awsEcsServiceHasBeenSet = false;
 
     AwsAutoScalingLaunchConfigurationDetails m_awsAutoScalingLaunchConfiguration;
-    bool m_awsAutoScalingLaunchConfigurationHasBeenSet;
+    bool m_awsAutoScalingLaunchConfigurationHasBeenSet = false;
 
     AwsEc2VpnConnectionDetails m_awsEc2VpnConnection;
-    bool m_awsEc2VpnConnectionHasBeenSet;
+    bool m_awsEc2VpnConnectionHasBeenSet = false;
 
     AwsEcrContainerImageDetails m_awsEcrContainerImage;
-    bool m_awsEcrContainerImageHasBeenSet;
+    bool m_awsEcrContainerImageHasBeenSet = false;
 
     AwsOpenSearchServiceDomainDetails m_awsOpenSearchServiceDomain;
-    bool m_awsOpenSearchServiceDomainHasBeenSet;
+    bool m_awsOpenSearchServiceDomainHasBeenSet = false;
 
     AwsEc2VpcEndpointServiceDetails m_awsEc2VpcEndpointService;
-    bool m_awsEc2VpcEndpointServiceHasBeenSet;
+    bool m_awsEc2VpcEndpointServiceHasBeenSet = false;
 
     AwsXrayEncryptionConfigDetails m_awsXrayEncryptionConfig;
-    bool m_awsXrayEncryptionConfigHasBeenSet;
+    bool m_awsXrayEncryptionConfigHasBeenSet = false;
 
     AwsWafRateBasedRuleDetails m_awsWafRateBasedRule;
-    bool m_awsWafRateBasedRuleHasBeenSet;
+    bool m_awsWafRateBasedRuleHasBeenSet = false;
 
     AwsWafRegionalRateBasedRuleDetails m_awsWafRegionalRateBasedRule;
-    bool m_awsWafRegionalRateBasedRuleHasBeenSet;
+    bool m_awsWafRegionalRateBasedRuleHasBeenSet = false;
 
     AwsEcrRepositoryDetails m_awsEcrRepository;
-    bool m_awsEcrRepositoryHasBeenSet;
+    bool m_awsEcrRepositoryHasBeenSet = false;
 
     AwsEksClusterDetails m_awsEksCluster;
-    bool m_awsEksClusterHasBeenSet;
+    bool m_awsEksClusterHasBeenSet = false;
 
     AwsNetworkFirewallFirewallPolicyDetails m_awsNetworkFirewallFirewallPolicy;
-    bool m_awsNetworkFirewallFirewallPolicyHasBeenSet;
+    bool m_awsNetworkFirewallFirewallPolicyHasBeenSet = false;
 
     AwsNetworkFirewallFirewallDetails m_awsNetworkFirewallFirewall;
-    bool m_awsNetworkFirewallFirewallHasBeenSet;
+    bool m_awsNetworkFirewallFirewallHasBeenSet = false;
 
     AwsNetworkFirewallRuleGroupDetails m_awsNetworkFirewallRuleGroup;
-    bool m_awsNetworkFirewallRuleGroupHasBeenSet;
+    bool m_awsNetworkFirewallRuleGroupHasBeenSet = false;
 
     AwsRdsDbSecurityGroupDetails m_awsRdsDbSecurityGroup;
-    bool m_awsRdsDbSecurityGroupHasBeenSet;
+    bool m_awsRdsDbSecurityGroupHasBeenSet = false;
+
+    AwsKinesisStreamDetails m_awsKinesisStream;
+    bool m_awsKinesisStreamHasBeenSet = false;
+
+    AwsEc2TransitGatewayDetails m_awsEc2TransitGateway;
+    bool m_awsEc2TransitGatewayHasBeenSet = false;
+
+    AwsEfsAccessPointDetails m_awsEfsAccessPoint;
+    bool m_awsEfsAccessPointHasBeenSet = false;
+
+    AwsCloudFormationStackDetails m_awsCloudFormationStack;
+    bool m_awsCloudFormationStackHasBeenSet = false;
+
+    AwsCloudWatchAlarmDetails m_awsCloudWatchAlarm;
+    bool m_awsCloudWatchAlarmHasBeenSet = false;
+
+    AwsEc2VpcPeeringConnectionDetails m_awsEc2VpcPeeringConnection;
+    bool m_awsEc2VpcPeeringConnectionHasBeenSet = false;
+
+    AwsWafRegionalRuleGroupDetails m_awsWafRegionalRuleGroup;
+    bool m_awsWafRegionalRuleGroupHasBeenSet = false;
+
+    AwsWafRegionalRuleDetails m_awsWafRegionalRule;
+    bool m_awsWafRegionalRuleHasBeenSet = false;
+
+    AwsWafRegionalWebAclDetails m_awsWafRegionalWebAcl;
+    bool m_awsWafRegionalWebAclHasBeenSet = false;
+
+    AwsWafRuleDetails m_awsWafRule;
+    bool m_awsWafRuleHasBeenSet = false;
+
+    AwsWafRuleGroupDetails m_awsWafRuleGroup;
+    bool m_awsWafRuleGroupHasBeenSet = false;
+
+    AwsEcsTaskDetails m_awsEcsTask;
+    bool m_awsEcsTaskHasBeenSet = false;
+
+    AwsBackupBackupVaultDetails m_awsBackupBackupVault;
+    bool m_awsBackupBackupVaultHasBeenSet = false;
+
+    AwsBackupBackupPlanDetails m_awsBackupBackupPlan;
+    bool m_awsBackupBackupPlanHasBeenSet = false;
+
+    AwsBackupRecoveryPointDetails m_awsBackupRecoveryPoint;
+    bool m_awsBackupRecoveryPointHasBeenSet = false;
   };
 
 } // namespace Model

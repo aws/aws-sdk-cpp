@@ -381,28 +381,28 @@ namespace Model
   private:
 
     Aws::String m_edgePackagingJobName;
-    bool m_edgePackagingJobNameHasBeenSet;
+    bool m_edgePackagingJobNameHasBeenSet = false;
 
     Aws::String m_compilationJobName;
-    bool m_compilationJobNameHasBeenSet;
+    bool m_compilationJobNameHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     EdgeOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::String m_resourceKey;
-    bool m_resourceKeyHasBeenSet;
+    bool m_resourceKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

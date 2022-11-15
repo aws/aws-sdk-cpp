@@ -390,31 +390,31 @@ namespace Model
   private:
 
     Aws::String m_apiDescription;
-    bool m_apiDescriptionHasBeenSet;
+    bool m_apiDescriptionHasBeenSet = false;
 
     Aws::String m_apiEndpoint;
-    bool m_apiEndpointHasBeenSet;
+    bool m_apiEndpointHasBeenSet = false;
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     Aws::String m_apiName;
-    bool m_apiNameHasBeenSet;
+    bool m_apiNameHasBeenSet = false;
 
     Aws::String m_apiSpecificationDownloadUrl;
-    bool m_apiSpecificationDownloadUrlHasBeenSet;
+    bool m_apiSpecificationDownloadUrlHasBeenSet = false;
 
     Aws::Utils::DateTime m_apiSpecificationDownloadUrlExpiresAt;
-    bool m_apiSpecificationDownloadUrlExpiresAtHasBeenSet;
+    bool m_apiSpecificationDownloadUrlExpiresAtHasBeenSet = false;
 
     ProtocolType m_protocolType;
-    bool m_protocolTypeHasBeenSet;
+    bool m_protocolTypeHasBeenSet = false;
 
     Aws::String m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
   };
 
 } // namespace Model

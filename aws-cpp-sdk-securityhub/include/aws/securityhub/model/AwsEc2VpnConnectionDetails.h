@@ -83,42 +83,66 @@ namespace Model
 
 
     /**
-     * <p>The current state of the VPN connection.</p>
+     * <p>The current state of the VPN connection. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>deleted</code>
+     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <code>pending</code> </p> </li> </ul>
      */
     inline const Aws::String& GetState() const{ return m_state; }
 
     /**
-     * <p>The current state of the VPN connection.</p>
+     * <p>The current state of the VPN connection. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>deleted</code>
+     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <code>pending</code> </p> </li> </ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The current state of the VPN connection.</p>
+     * <p>The current state of the VPN connection. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>deleted</code>
+     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <code>pending</code> </p> </li> </ul>
      */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The current state of the VPN connection.</p>
+     * <p>The current state of the VPN connection. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>deleted</code>
+     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <code>pending</code> </p> </li> </ul>
      */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The current state of the VPN connection.</p>
+     * <p>The current state of the VPN connection. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>deleted</code>
+     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <code>pending</code> </p> </li> </ul>
      */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
     /**
-     * <p>The current state of the VPN connection.</p>
+     * <p>The current state of the VPN connection. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>deleted</code>
+     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <code>pending</code> </p> </li> </ul>
      */
     inline AwsEc2VpnConnectionDetails& WithState(const Aws::String& value) { SetState(value); return *this;}
 
     /**
-     * <p>The current state of the VPN connection.</p>
+     * <p>The current state of the VPN connection. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>deleted</code>
+     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <code>pending</code> </p> </li> </ul>
      */
     inline AwsEc2VpnConnectionDetails& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the VPN connection.</p>
+     * <p>The current state of the VPN connection. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>deleted</code>
+     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <code>pending</code> </p> </li> </ul>
      */
     inline AwsEc2VpnConnectionDetails& WithState(const char* value) { SetState(value); return *this;}
 
@@ -532,37 +556,37 @@ namespace Model
   private:
 
     Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
+    bool m_vpnConnectionIdHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_customerGatewayId;
-    bool m_customerGatewayIdHasBeenSet;
+    bool m_customerGatewayIdHasBeenSet = false;
 
     Aws::String m_customerGatewayConfiguration;
-    bool m_customerGatewayConfigurationHasBeenSet;
+    bool m_customerGatewayConfigurationHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_vpnGatewayId;
-    bool m_vpnGatewayIdHasBeenSet;
+    bool m_vpnGatewayIdHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::Vector<AwsEc2VpnConnectionVgwTelemetryDetails> m_vgwTelemetry;
-    bool m_vgwTelemetryHasBeenSet;
+    bool m_vgwTelemetryHasBeenSet = false;
 
     AwsEc2VpnConnectionOptionsDetails m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<AwsEc2VpnConnectionRoutesDetails> m_routes;
-    bool m_routesHasBeenSet;
+    bool m_routesHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

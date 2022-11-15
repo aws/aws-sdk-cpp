@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_deploymentStrategyId;
-    bool m_deploymentStrategyIdHasBeenSet;
+    bool m_deploymentStrategyIdHasBeenSet = false;
   };
 
 } // namespace Model

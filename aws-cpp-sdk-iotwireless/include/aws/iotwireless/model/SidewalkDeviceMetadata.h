@@ -155,16 +155,16 @@ namespace Model
   private:
 
     int m_rssi;
-    bool m_rssiHasBeenSet;
+    bool m_rssiHasBeenSet = false;
 
     BatteryLevel m_batteryLevel;
-    bool m_batteryLevelHasBeenSet;
+    bool m_batteryLevelHasBeenSet = false;
 
     Event m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     DeviceState m_deviceState;
-    bool m_deviceStateHasBeenSet;
+    bool m_deviceStateHasBeenSet = false;
   };
 
 } // namespace Model

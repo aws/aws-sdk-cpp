@@ -227,13 +227,13 @@ namespace Model
   private:
 
     Aws::String m_sourceField;
-    bool m_sourceFieldHasBeenSet;
+    bool m_sourceFieldHasBeenSet = false;
 
     SuggesterFuzzyMatching m_fuzzyMatching;
-    bool m_fuzzyMatchingHasBeenSet;
+    bool m_fuzzyMatchingHasBeenSet = false;
 
     Aws::String m_sortExpression;
-    bool m_sortExpressionHasBeenSet;
+    bool m_sortExpressionHasBeenSet = false;
   };
 
 } // namespace Model

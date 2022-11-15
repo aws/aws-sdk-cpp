@@ -93,72 +93,72 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline CreateRuleGroupRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline CreateRuleGroupRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -627,28 +627,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     long long m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     VisibilityConfig m_visibilityConfig;
-    bool m_visibilityConfigHasBeenSet;
+    bool m_visibilityConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
-    bool m_customResponseBodiesHasBeenSet;
+    bool m_customResponseBodiesHasBeenSet = false;
   };
 
 } // namespace Model

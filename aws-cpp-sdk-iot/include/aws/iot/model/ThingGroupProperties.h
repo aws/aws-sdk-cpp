@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_thingGroupDescription;
-    bool m_thingGroupDescriptionHasBeenSet;
+    bool m_thingGroupDescriptionHasBeenSet = false;
 
     AttributePayload m_attributePayload;
-    bool m_attributePayloadHasBeenSet;
+    bool m_attributePayloadHasBeenSet = false;
   };
 
 } // namespace Model

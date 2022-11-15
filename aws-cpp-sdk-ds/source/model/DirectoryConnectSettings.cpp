@@ -46,7 +46,7 @@ DirectoryConnectSettings& DirectoryConnectSettings::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -56,7 +56,7 @@ DirectoryConnectSettings& DirectoryConnectSettings::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("CustomerDnsIps"))
   {
-    Array<JsonView> customerDnsIpsJsonList = jsonValue.GetArray("CustomerDnsIps");
+    Aws::Utils::Array<JsonView> customerDnsIpsJsonList = jsonValue.GetArray("CustomerDnsIps");
     for(unsigned customerDnsIpsIndex = 0; customerDnsIpsIndex < customerDnsIpsJsonList.GetLength(); ++customerDnsIpsIndex)
     {
       m_customerDnsIps.push_back(customerDnsIpsJsonList[customerDnsIpsIndex].AsString());
@@ -86,7 +86,7 @@ JsonValue DirectoryConnectSettings::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -97,7 +97,7 @@ JsonValue DirectoryConnectSettings::Jsonize() const
 
   if(m_customerDnsIpsHasBeenSet)
   {
-   Array<JsonValue> customerDnsIpsJsonList(m_customerDnsIps.size());
+   Aws::Utils::Array<JsonValue> customerDnsIpsJsonList(m_customerDnsIps.size());
    for(unsigned customerDnsIpsIndex = 0; customerDnsIpsIndex < customerDnsIpsJsonList.GetLength(); ++customerDnsIpsIndex)
    {
      customerDnsIpsJsonList[customerDnsIpsIndex].AsString(m_customerDnsIps[customerDnsIpsIndex]);

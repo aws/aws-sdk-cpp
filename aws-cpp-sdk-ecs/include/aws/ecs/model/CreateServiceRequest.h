@@ -254,7 +254,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -300,7 +300,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -346,7 +346,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -392,7 +392,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -438,7 +438,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -484,7 +484,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -530,7 +530,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -576,7 +576,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -1916,7 +1916,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
@@ -1925,7 +1925,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
@@ -1934,7 +1934,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
@@ -1943,7 +1943,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline CreateServiceRequest& WithEnableECSManagedTags(bool value) { SetEnableECSManagedTags(value); return *this;}
@@ -2029,70 +2029,70 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
-    bool m_loadBalancersHasBeenSet;
+    bool m_loadBalancersHasBeenSet = false;
 
     Aws::Vector<ServiceRegistry> m_serviceRegistries;
-    bool m_serviceRegistriesHasBeenSet;
+    bool m_serviceRegistriesHasBeenSet = false;
 
     int m_desiredCount;
-    bool m_desiredCountHasBeenSet;
+    bool m_desiredCountHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     DeploymentConfiguration m_deploymentConfiguration;
-    bool m_deploymentConfigurationHasBeenSet;
+    bool m_deploymentConfigurationHasBeenSet = false;
 
     Aws::Vector<PlacementConstraint> m_placementConstraints;
-    bool m_placementConstraintsHasBeenSet;
+    bool m_placementConstraintsHasBeenSet = false;
 
     Aws::Vector<PlacementStrategy> m_placementStrategy;
-    bool m_placementStrategyHasBeenSet;
+    bool m_placementStrategyHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     int m_healthCheckGracePeriodSeconds;
-    bool m_healthCheckGracePeriodSecondsHasBeenSet;
+    bool m_healthCheckGracePeriodSecondsHasBeenSet = false;
 
     SchedulingStrategy m_schedulingStrategy;
-    bool m_schedulingStrategyHasBeenSet;
+    bool m_schedulingStrategyHasBeenSet = false;
 
     DeploymentController m_deploymentController;
-    bool m_deploymentControllerHasBeenSet;
+    bool m_deploymentControllerHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_enableECSManagedTags;
-    bool m_enableECSManagedTagsHasBeenSet;
+    bool m_enableECSManagedTagsHasBeenSet = false;
 
     PropagateTags m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     bool m_enableExecuteCommand;
-    bool m_enableExecuteCommandHasBeenSet;
+    bool m_enableExecuteCommandHasBeenSet = false;
   };
 
 } // namespace Model

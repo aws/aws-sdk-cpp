@@ -30,7 +30,7 @@ DescribeAggregateComplianceByConfigRulesResult& DescribeAggregateComplianceByCon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AggregateComplianceByConfigRules"))
   {
-    Array<JsonView> aggregateComplianceByConfigRulesJsonList = jsonValue.GetArray("AggregateComplianceByConfigRules");
+    Aws::Utils::Array<JsonView> aggregateComplianceByConfigRulesJsonList = jsonValue.GetArray("AggregateComplianceByConfigRules");
     for(unsigned aggregateComplianceByConfigRulesIndex = 0; aggregateComplianceByConfigRulesIndex < aggregateComplianceByConfigRulesJsonList.GetLength(); ++aggregateComplianceByConfigRulesIndex)
     {
       m_aggregateComplianceByConfigRules.push_back(aggregateComplianceByConfigRulesJsonList[aggregateComplianceByConfigRulesIndex].AsObject());

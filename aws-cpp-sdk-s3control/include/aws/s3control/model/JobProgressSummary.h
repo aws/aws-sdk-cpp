@@ -135,16 +135,16 @@ namespace Model
   private:
 
     long long m_totalNumberOfTasks;
-    bool m_totalNumberOfTasksHasBeenSet;
+    bool m_totalNumberOfTasksHasBeenSet = false;
 
     long long m_numberOfTasksSucceeded;
-    bool m_numberOfTasksSucceededHasBeenSet;
+    bool m_numberOfTasksSucceededHasBeenSet = false;
 
     long long m_numberOfTasksFailed;
-    bool m_numberOfTasksFailedHasBeenSet;
+    bool m_numberOfTasksFailedHasBeenSet = false;
 
     JobTimers m_timers;
-    bool m_timersHasBeenSet;
+    bool m_timersHasBeenSet = false;
   };
 
 } // namespace Model

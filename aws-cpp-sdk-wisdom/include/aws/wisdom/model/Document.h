@@ -133,13 +133,13 @@ namespace Model
   private:
 
     ContentReference m_contentReference;
-    bool m_contentReferenceHasBeenSet;
+    bool m_contentReferenceHasBeenSet = false;
 
     DocumentText m_excerpt;
-    bool m_excerptHasBeenSet;
+    bool m_excerptHasBeenSet = false;
 
     DocumentText m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

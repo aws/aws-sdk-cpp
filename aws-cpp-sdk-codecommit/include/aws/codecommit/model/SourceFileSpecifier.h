@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     bool m_isMove;
-    bool m_isMoveHasBeenSet;
+    bool m_isMoveHasBeenSet = false;
   };
 
 } // namespace Model

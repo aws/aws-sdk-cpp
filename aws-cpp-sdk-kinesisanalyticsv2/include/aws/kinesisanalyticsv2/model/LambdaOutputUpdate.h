@@ -123,7 +123,7 @@ namespace Model
   private:
 
     Aws::String m_resourceARNUpdate;
-    bool m_resourceARNUpdateHasBeenSet;
+    bool m_resourceARNUpdateHasBeenSet = false;
   };
 
 } // namespace Model

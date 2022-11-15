@@ -30,7 +30,7 @@ ListAssociationsForLicenseConfigurationResult& ListAssociationsForLicenseConfigu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LicenseConfigurationAssociations"))
   {
-    Array<JsonView> licenseConfigurationAssociationsJsonList = jsonValue.GetArray("LicenseConfigurationAssociations");
+    Aws::Utils::Array<JsonView> licenseConfigurationAssociationsJsonList = jsonValue.GetArray("LicenseConfigurationAssociations");
     for(unsigned licenseConfigurationAssociationsIndex = 0; licenseConfigurationAssociationsIndex < licenseConfigurationAssociationsJsonList.GetLength(); ++licenseConfigurationAssociationsIndex)
     {
       m_licenseConfigurationAssociations.push_back(licenseConfigurationAssociationsJsonList[licenseConfigurationAssociationsIndex].AsObject());

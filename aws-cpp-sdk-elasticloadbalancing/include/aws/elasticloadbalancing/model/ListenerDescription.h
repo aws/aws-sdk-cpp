@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Listener m_listener;
-    bool m_listenerHasBeenSet;
+    bool m_listenerHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNames;
-    bool m_policyNamesHasBeenSet;
+    bool m_policyNamesHasBeenSet = false;
   };
 
 } // namespace Model

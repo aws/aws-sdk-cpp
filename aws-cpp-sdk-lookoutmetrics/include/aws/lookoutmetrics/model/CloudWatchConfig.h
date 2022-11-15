@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutmetrics/model/BackTestConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -85,10 +86,44 @@ namespace Model
      */
     inline CloudWatchConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>Settings for backtest mode.</p>
+     */
+    inline const BackTestConfiguration& GetBackTestConfiguration() const{ return m_backTestConfiguration; }
+
+    /**
+     * <p>Settings for backtest mode.</p>
+     */
+    inline bool BackTestConfigurationHasBeenSet() const { return m_backTestConfigurationHasBeenSet; }
+
+    /**
+     * <p>Settings for backtest mode.</p>
+     */
+    inline void SetBackTestConfiguration(const BackTestConfiguration& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = value; }
+
+    /**
+     * <p>Settings for backtest mode.</p>
+     */
+    inline void SetBackTestConfiguration(BackTestConfiguration&& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = std::move(value); }
+
+    /**
+     * <p>Settings for backtest mode.</p>
+     */
+    inline CloudWatchConfig& WithBackTestConfiguration(const BackTestConfiguration& value) { SetBackTestConfiguration(value); return *this;}
+
+    /**
+     * <p>Settings for backtest mode.</p>
+     */
+    inline CloudWatchConfig& WithBackTestConfiguration(BackTestConfiguration&& value) { SetBackTestConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
+
+    BackTestConfiguration m_backTestConfiguration;
+    bool m_backTestConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

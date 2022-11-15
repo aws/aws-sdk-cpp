@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>A request to get information about a collection of <a>ClientCertificate</a>
+   * <p>A request to get information about a collection of ClientCertificate
    * resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificatesRequest">AWS
    * API Reference</a></p>
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

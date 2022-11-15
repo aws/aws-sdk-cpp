@@ -165,13 +165,13 @@ namespace Model
   private:
 
     CanaryRunState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     CanaryRunStateReasonCode m_stateReasonCode;
-    bool m_stateReasonCodeHasBeenSet;
+    bool m_stateReasonCodeHasBeenSet = false;
   };
 
 } // namespace Model

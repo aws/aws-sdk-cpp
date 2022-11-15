@@ -36,7 +36,7 @@ ListRelatedItemsResult& ListRelatedItemsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("relatedItems"))
   {
-    Array<JsonView> relatedItemsJsonList = jsonValue.GetArray("relatedItems");
+    Aws::Utils::Array<JsonView> relatedItemsJsonList = jsonValue.GetArray("relatedItems");
     for(unsigned relatedItemsIndex = 0; relatedItemsIndex < relatedItemsJsonList.GetLength(); ++relatedItemsIndex)
     {
       m_relatedItems.push_back(relatedItemsJsonList[relatedItemsIndex].AsObject());

@@ -80,10 +80,10 @@ namespace Model
   private:
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
 
     SelectionCriteria m_selectionCriteria;
-    bool m_selectionCriteriaHasBeenSet;
+    bool m_selectionCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

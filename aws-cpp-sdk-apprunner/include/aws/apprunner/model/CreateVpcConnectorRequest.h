@@ -80,63 +80,72 @@ namespace Model
     /**
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
-     * App Runner determines the Amazon VPC from the subnets you specify.</p>
+     * App Runner determines the Amazon VPC from the subnets you specify.</p> 
+     * <p> App Runner currently only provides support for IPv4. </p> 
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
-     * App Runner determines the Amazon VPC from the subnets you specify.</p>
+     * App Runner determines the Amazon VPC from the subnets you specify.</p> 
+     * <p> App Runner currently only provides support for IPv4. </p> 
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
-     * App Runner determines the Amazon VPC from the subnets you specify.</p>
+     * App Runner determines the Amazon VPC from the subnets you specify.</p> 
+     * <p> App Runner currently only provides support for IPv4. </p> 
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
-     * App Runner determines the Amazon VPC from the subnets you specify.</p>
+     * App Runner determines the Amazon VPC from the subnets you specify.</p> 
+     * <p> App Runner currently only provides support for IPv4. </p> 
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
-     * App Runner determines the Amazon VPC from the subnets you specify.</p>
+     * App Runner determines the Amazon VPC from the subnets you specify.</p> 
+     * <p> App Runner currently only provides support for IPv4. </p> 
      */
     inline CreateVpcConnectorRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
-     * App Runner determines the Amazon VPC from the subnets you specify.</p>
+     * App Runner determines the Amazon VPC from the subnets you specify.</p> 
+     * <p> App Runner currently only provides support for IPv4. </p> 
      */
     inline CreateVpcConnectorRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
-     * App Runner determines the Amazon VPC from the subnets you specify.</p>
+     * App Runner determines the Amazon VPC from the subnets you specify.</p> 
+     * <p> App Runner currently only provides support for IPv4. </p> 
      */
     inline CreateVpcConnectorRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
-     * App Runner determines the Amazon VPC from the subnets you specify.</p>
+     * App Runner determines the Amazon VPC from the subnets you specify.</p> 
+     * <p> App Runner currently only provides support for IPv4. </p> 
      */
     inline CreateVpcConnectorRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
-     * App Runner determines the Amazon VPC from the subnets you specify.</p>
+     * App Runner determines the Amazon VPC from the subnets you specify.</p> 
+     * <p> App Runner currently only provides support for IPv4. </p> 
      */
     inline CreateVpcConnectorRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -265,16 +274,16 @@ namespace Model
   private:
 
     Aws::String m_vpcConnectorName;
-    bool m_vpcConnectorNameHasBeenSet;
+    bool m_vpcConnectorNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

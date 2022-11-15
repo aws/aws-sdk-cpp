@@ -60,7 +60,7 @@ Root& Root::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PolicyTypes"))
   {
-    Array<JsonView> policyTypesJsonList = jsonValue.GetArray("PolicyTypes");
+    Aws::Utils::Array<JsonView> policyTypesJsonList = jsonValue.GetArray("PolicyTypes");
     for(unsigned policyTypesIndex = 0; policyTypesIndex < policyTypesJsonList.GetLength(); ++policyTypesIndex)
     {
       m_policyTypes.push_back(policyTypesJsonList[policyTypesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue Root::Jsonize() const
 
   if(m_policyTypesHasBeenSet)
   {
-   Array<JsonValue> policyTypesJsonList(m_policyTypes.size());
+   Aws::Utils::Array<JsonValue> policyTypesJsonList(m_policyTypes.size());
    for(unsigned policyTypesIndex = 0; policyTypesIndex < policyTypesJsonList.GetLength(); ++policyTypesIndex)
    {
      policyTypesJsonList[policyTypesIndex].AsObject(m_policyTypes[policyTypesIndex].Jsonize());

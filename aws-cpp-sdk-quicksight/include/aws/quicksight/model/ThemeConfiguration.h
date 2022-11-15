@@ -141,13 +141,13 @@ namespace Model
   private:
 
     DataColorPalette m_dataColorPalette;
-    bool m_dataColorPaletteHasBeenSet;
+    bool m_dataColorPaletteHasBeenSet = false;
 
     UIColorPalette m_uIColorPalette;
-    bool m_uIColorPaletteHasBeenSet;
+    bool m_uIColorPaletteHasBeenSet = false;
 
     SheetStyle m_sheet;
-    bool m_sheetHasBeenSet;
+    bool m_sheetHasBeenSet = false;
   };
 
 } // namespace Model

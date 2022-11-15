@@ -23,7 +23,7 @@ Aws::String StopDataCollectionByAgentIdsRequest::SerializePayload() const
 
   if(m_agentIdsHasBeenSet)
   {
-   Array<JsonValue> agentIdsJsonList(m_agentIds.size());
+   Aws::Utils::Array<JsonValue> agentIdsJsonList(m_agentIds.size());
    for(unsigned agentIdsIndex = 0; agentIdsIndex < agentIdsJsonList.GetLength(); ++agentIdsIndex)
    {
      agentIdsJsonList[agentIdsIndex].AsString(m_agentIds[agentIdsIndex]);

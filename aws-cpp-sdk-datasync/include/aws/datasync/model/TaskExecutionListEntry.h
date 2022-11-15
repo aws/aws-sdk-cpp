@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_taskExecutionArn;
-    bool m_taskExecutionArnHasBeenSet;
+    bool m_taskExecutionArnHasBeenSet = false;
 
     TaskExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

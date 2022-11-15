@@ -8,6 +8,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/ExportSourceType.h>
 #include <aws/rds/model/Filter.h>
 #include <utility>
 
@@ -358,22 +359,56 @@ namespace Model
      */
     inline DescribeExportTasksRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline const ExportSourceType& GetSourceType() const{ return m_sourceType; }
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline void SetSourceType(const ExportSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline void SetSourceType(ExportSourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline DescribeExportTasksRequest& WithSourceType(const ExportSourceType& value) { SetSourceType(value); return *this;}
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline DescribeExportTasksRequest& WithSourceType(ExportSourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_exportTaskIdentifier;
-    bool m_exportTaskIdentifierHasBeenSet;
+    bool m_exportTaskIdentifierHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
+
+    ExportSourceType m_sourceType;
+    bool m_sourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

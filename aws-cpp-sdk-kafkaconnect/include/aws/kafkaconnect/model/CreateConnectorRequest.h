@@ -559,40 +559,40 @@ namespace Model
   private:
 
     Capacity m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_connectorConfiguration;
-    bool m_connectorConfigurationHasBeenSet;
+    bool m_connectorConfigurationHasBeenSet = false;
 
     Aws::String m_connectorDescription;
-    bool m_connectorDescriptionHasBeenSet;
+    bool m_connectorDescriptionHasBeenSet = false;
 
     Aws::String m_connectorName;
-    bool m_connectorNameHasBeenSet;
+    bool m_connectorNameHasBeenSet = false;
 
     KafkaCluster m_kafkaCluster;
-    bool m_kafkaClusterHasBeenSet;
+    bool m_kafkaClusterHasBeenSet = false;
 
     KafkaClusterClientAuthentication m_kafkaClusterClientAuthentication;
-    bool m_kafkaClusterClientAuthenticationHasBeenSet;
+    bool m_kafkaClusterClientAuthenticationHasBeenSet = false;
 
     KafkaClusterEncryptionInTransit m_kafkaClusterEncryptionInTransit;
-    bool m_kafkaClusterEncryptionInTransitHasBeenSet;
+    bool m_kafkaClusterEncryptionInTransitHasBeenSet = false;
 
     Aws::String m_kafkaConnectVersion;
-    bool m_kafkaConnectVersionHasBeenSet;
+    bool m_kafkaConnectVersionHasBeenSet = false;
 
     LogDelivery m_logDelivery;
-    bool m_logDeliveryHasBeenSet;
+    bool m_logDeliveryHasBeenSet = false;
 
     Aws::Vector<Plugin> m_plugins;
-    bool m_pluginsHasBeenSet;
+    bool m_pluginsHasBeenSet = false;
 
     Aws::String m_serviceExecutionRoleArn;
-    bool m_serviceExecutionRoleArnHasBeenSet;
+    bool m_serviceExecutionRoleArnHasBeenSet = false;
 
     WorkerConfiguration m_workerConfiguration;
-    bool m_workerConfigurationHasBeenSet;
+    bool m_workerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

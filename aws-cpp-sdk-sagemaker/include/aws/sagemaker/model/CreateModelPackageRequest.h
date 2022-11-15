@@ -758,49 +758,97 @@ namespace Model
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline const Aws::String& GetTask() const{ return m_task; }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = std::move(value); }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline void SetTask(const char* value) { m_taskHasBeenSet = true; m_task.assign(value); }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline CreateModelPackageRequest& WithTask(const Aws::String& value) { SetTask(value); return *this;}
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline CreateModelPackageRequest& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline CreateModelPackageRequest& WithTask(const char* value) { SetTask(value); return *this;}
 
@@ -929,58 +977,58 @@ namespace Model
   private:
 
     Aws::String m_modelPackageName;
-    bool m_modelPackageNameHasBeenSet;
+    bool m_modelPackageNameHasBeenSet = false;
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     Aws::String m_modelPackageDescription;
-    bool m_modelPackageDescriptionHasBeenSet;
+    bool m_modelPackageDescriptionHasBeenSet = false;
 
     InferenceSpecification m_inferenceSpecification;
-    bool m_inferenceSpecificationHasBeenSet;
+    bool m_inferenceSpecificationHasBeenSet = false;
 
     ModelPackageValidationSpecification m_validationSpecification;
-    bool m_validationSpecificationHasBeenSet;
+    bool m_validationSpecificationHasBeenSet = false;
 
     SourceAlgorithmSpecification m_sourceAlgorithmSpecification;
-    bool m_sourceAlgorithmSpecificationHasBeenSet;
+    bool m_sourceAlgorithmSpecificationHasBeenSet = false;
 
     bool m_certifyForMarketplace;
-    bool m_certifyForMarketplaceHasBeenSet;
+    bool m_certifyForMarketplaceHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ModelApprovalStatus m_modelApprovalStatus;
-    bool m_modelApprovalStatusHasBeenSet;
+    bool m_modelApprovalStatusHasBeenSet = false;
 
     MetadataProperties m_metadataProperties;
-    bool m_metadataPropertiesHasBeenSet;
+    bool m_metadataPropertiesHasBeenSet = false;
 
     ModelMetrics m_modelMetrics;
-    bool m_modelMetricsHasBeenSet;
+    bool m_modelMetricsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-    bool m_customerMetadataPropertiesHasBeenSet;
+    bool m_customerMetadataPropertiesHasBeenSet = false;
 
     DriftCheckBaselines m_driftCheckBaselines;
-    bool m_driftCheckBaselinesHasBeenSet;
+    bool m_driftCheckBaselinesHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
 
     Aws::String m_samplePayloadUrl;
-    bool m_samplePayloadUrlHasBeenSet;
+    bool m_samplePayloadUrlHasBeenSet = false;
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
-    bool m_additionalInferenceSpecificationsHasBeenSet;
+    bool m_additionalInferenceSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -415,28 +415,28 @@ namespace Model
   private:
 
     AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads;
-    bool m_allowsUnencryptedObjectUploadsHasBeenSet;
+    bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ServerSideEncryption m_defaultServerSideEncryption;
-    bool m_defaultServerSideEncryptionHasBeenSet;
+    bool m_defaultServerSideEncryptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     S3BucketOwner m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     BucketPublicAccess m_publicAccess;
-    bool m_publicAccessHasBeenSet;
+    bool m_publicAccessHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

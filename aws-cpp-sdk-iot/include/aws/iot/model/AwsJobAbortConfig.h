@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsJobAbortCriteria> m_abortCriteriaList;
-    bool m_abortCriteriaListHasBeenSet;
+    bool m_abortCriteriaListHasBeenSet = false;
   };
 
 } // namespace Model

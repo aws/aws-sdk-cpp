@@ -33,7 +33,7 @@ CategoryDetails& CategoryDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PointsOfInterest"))
   {
-    Array<JsonView> pointsOfInterestJsonList = jsonValue.GetArray("PointsOfInterest");
+    Aws::Utils::Array<JsonView> pointsOfInterestJsonList = jsonValue.GetArray("PointsOfInterest");
     for(unsigned pointsOfInterestIndex = 0; pointsOfInterestIndex < pointsOfInterestJsonList.GetLength(); ++pointsOfInterestIndex)
     {
       m_pointsOfInterest.push_back(pointsOfInterestJsonList[pointsOfInterestIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue CategoryDetails::Jsonize() const
 
   if(m_pointsOfInterestHasBeenSet)
   {
-   Array<JsonValue> pointsOfInterestJsonList(m_pointsOfInterest.size());
+   Aws::Utils::Array<JsonValue> pointsOfInterestJsonList(m_pointsOfInterest.size());
    for(unsigned pointsOfInterestIndex = 0; pointsOfInterestIndex < pointsOfInterestJsonList.GetLength(); ++pointsOfInterestIndex)
    {
      pointsOfInterestJsonList[pointsOfInterestIndex].AsObject(m_pointsOfInterest[pointsOfInterestIndex].Jsonize());

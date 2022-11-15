@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_scriptId;
-    bool m_scriptIdHasBeenSet;
+    bool m_scriptIdHasBeenSet = false;
   };
 
 } // namespace Model

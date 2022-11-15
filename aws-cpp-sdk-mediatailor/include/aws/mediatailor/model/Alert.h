@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The code for the alert. For example, NOT_PROCESSED.</p>
+     * <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
      */
     inline const Aws::String& GetAlertCode() const{ return m_alertCode; }
 
     /**
-     * <p>The code for the alert. For example, NOT_PROCESSED.</p>
+     * <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
      */
     inline bool AlertCodeHasBeenSet() const { return m_alertCodeHasBeenSet; }
 
     /**
-     * <p>The code for the alert. For example, NOT_PROCESSED.</p>
+     * <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
      */
     inline void SetAlertCode(const Aws::String& value) { m_alertCodeHasBeenSet = true; m_alertCode = value; }
 
     /**
-     * <p>The code for the alert. For example, NOT_PROCESSED.</p>
+     * <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
      */
     inline void SetAlertCode(Aws::String&& value) { m_alertCodeHasBeenSet = true; m_alertCode = std::move(value); }
 
     /**
-     * <p>The code for the alert. For example, NOT_PROCESSED.</p>
+     * <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
      */
     inline void SetAlertCode(const char* value) { m_alertCodeHasBeenSet = true; m_alertCode.assign(value); }
 
     /**
-     * <p>The code for the alert. For example, NOT_PROCESSED.</p>
+     * <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
      */
     inline Alert& WithAlertCode(const Aws::String& value) { SetAlertCode(value); return *this;}
 
     /**
-     * <p>The code for the alert. For example, NOT_PROCESSED.</p>
+     * <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
      */
     inline Alert& WithAlertCode(Aws::String&& value) { SetAlertCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code for the alert. For example, NOT_PROCESSED.</p>
+     * <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
      */
     inline Alert& WithAlertCode(const char* value) { SetAlertCode(value); return *this;}
 
@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_alertCode;
-    bool m_alertCodeHasBeenSet;
+    bool m_alertCodeHasBeenSet = false;
 
     Aws::String m_alertMessage;
-    bool m_alertMessageHasBeenSet;
+    bool m_alertMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_relatedResourceArns;
-    bool m_relatedResourceArnsHasBeenSet;
+    bool m_relatedResourceArnsHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

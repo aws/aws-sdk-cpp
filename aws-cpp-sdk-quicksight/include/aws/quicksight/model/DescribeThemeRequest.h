@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_themeId;
-    bool m_themeIdHasBeenSet;
+    bool m_themeIdHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::String m_aliasName;
-    bool m_aliasNameHasBeenSet;
+    bool m_aliasNameHasBeenSet = false;
   };
 
 } // namespace Model

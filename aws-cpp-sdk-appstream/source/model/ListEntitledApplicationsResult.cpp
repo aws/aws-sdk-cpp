@@ -30,7 +30,7 @@ ListEntitledApplicationsResult& ListEntitledApplicationsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EntitledApplications"))
   {
-    Array<JsonView> entitledApplicationsJsonList = jsonValue.GetArray("EntitledApplications");
+    Aws::Utils::Array<JsonView> entitledApplicationsJsonList = jsonValue.GetArray("EntitledApplications");
     for(unsigned entitledApplicationsIndex = 0; entitledApplicationsIndex < entitledApplicationsJsonList.GetLength(); ++entitledApplicationsIndex)
     {
       m_entitledApplications.push_back(entitledApplicationsJsonList[entitledApplicationsIndex].AsObject());

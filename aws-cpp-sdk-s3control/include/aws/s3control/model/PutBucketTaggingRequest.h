@@ -37,6 +37,20 @@ namespace Model
     inline bool ShouldComputeContentMd5() const override { return true; }
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        if (AccountIdHasBeenSet()) {
+            parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+        }
+        if (BucketHasBeenSet()) {
+            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+        }
+
+        return parameters;
+    }
+
+
     /**
      * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
@@ -232,13 +246,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Tagging m_tagging;
-    bool m_taggingHasBeenSet;
+    bool m_taggingHasBeenSet = false;
   };
 
 } // namespace Model

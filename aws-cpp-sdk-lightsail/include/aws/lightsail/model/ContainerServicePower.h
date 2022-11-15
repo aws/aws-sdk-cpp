@@ -211,22 +211,22 @@ namespace Model
   private:
 
     Aws::String m_powerId;
-    bool m_powerIdHasBeenSet;
+    bool m_powerIdHasBeenSet = false;
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
 
     double m_cpuCount;
-    bool m_cpuCountHasBeenSet;
+    bool m_cpuCountHasBeenSet = false;
 
     double m_ramSizeInGb;
-    bool m_ramSizeInGbHasBeenSet;
+    bool m_ramSizeInGbHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_isActive;
-    bool m_isActiveHasBeenSet;
+    bool m_isActiveHasBeenSet = false;
   };
 
 } // namespace Model

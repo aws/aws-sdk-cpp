@@ -490,8 +490,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -506,8 +507,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
@@ -522,8 +524,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -538,8 +541,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -554,8 +558,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -570,8 +575,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -586,8 +592,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -602,8 +609,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -1612,79 +1620,79 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_clusterType;
-    bool m_clusterTypeHasBeenSet;
+    bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clusterSecurityGroups;
-    bool m_clusterSecurityGroupsHasBeenSet;
+    bool m_clusterSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_clusterParameterGroupName;
-    bool m_clusterParameterGroupNameHasBeenSet;
+    bool m_clusterParameterGroupNameHasBeenSet = false;
 
     int m_automatedSnapshotRetentionPeriod;
-    bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+    bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     bool m_allowVersionUpgrade;
-    bool m_allowVersionUpgradeHasBeenSet;
+    bool m_allowVersionUpgradeHasBeenSet = false;
 
     Aws::String m_hsmClientCertificateIdentifier;
-    bool m_hsmClientCertificateIdentifierHasBeenSet;
+    bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
     Aws::String m_hsmConfigurationIdentifier;
-    bool m_hsmConfigurationIdentifierHasBeenSet;
+    bool m_hsmConfigurationIdentifierHasBeenSet = false;
 
     Aws::String m_newClusterIdentifier;
-    bool m_newClusterIdentifierHasBeenSet;
+    bool m_newClusterIdentifierHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::String m_elasticIp;
-    bool m_elasticIpHasBeenSet;
+    bool m_elasticIpHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
-    bool m_enhancedVpcRoutingHasBeenSet;
+    bool m_enhancedVpcRoutingHasBeenSet = false;
 
     Aws::String m_maintenanceTrackName;
-    bool m_maintenanceTrackNameHasBeenSet;
+    bool m_maintenanceTrackNameHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_availabilityZoneRelocation;
-    bool m_availabilityZoneRelocationHasBeenSet;
+    bool m_availabilityZoneRelocationHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

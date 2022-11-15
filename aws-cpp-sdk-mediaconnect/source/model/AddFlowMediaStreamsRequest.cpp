@@ -24,7 +24,7 @@ Aws::String AddFlowMediaStreamsRequest::SerializePayload() const
 
   if(m_mediaStreamsHasBeenSet)
   {
-   Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
+   Aws::Utils::Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
    for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
    {
      mediaStreamsJsonList[mediaStreamsIndex].AsObject(m_mediaStreams[mediaStreamsIndex].Jsonize());

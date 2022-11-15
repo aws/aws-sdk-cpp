@@ -20,7 +20,7 @@ namespace Model
 {
 
   /**
-   * <p>Request to create an <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Request to create an ApiKey resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKeyRequest">AWS
    * API Reference</a></p>
    */
@@ -39,104 +39,104 @@ namespace Model
 
 
     /**
-     * <p>The name of the <a>ApiKey</a>.</p>
+     * <p>The name of the ApiKey.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the <a>ApiKey</a>.</p>
+     * <p>The name of the ApiKey.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the <a>ApiKey</a>.</p>
+     * <p>The name of the ApiKey.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the <a>ApiKey</a>.</p>
+     * <p>The name of the ApiKey.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the <a>ApiKey</a>.</p>
+     * <p>The name of the ApiKey.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the <a>ApiKey</a>.</p>
+     * <p>The name of the ApiKey.</p>
      */
     inline CreateApiKeyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the <a>ApiKey</a>.</p>
+     * <p>The name of the ApiKey.</p>
      */
     inline CreateApiKeyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the <a>ApiKey</a>.</p>
+     * <p>The name of the ApiKey.</p>
      */
     inline CreateApiKeyRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The description of the <a>ApiKey</a>.</p>
+     * <p>The description of the ApiKey.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the <a>ApiKey</a>.</p>
+     * <p>The description of the ApiKey.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the <a>ApiKey</a>.</p>
+     * <p>The description of the ApiKey.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the <a>ApiKey</a>.</p>
+     * <p>The description of the ApiKey.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the <a>ApiKey</a>.</p>
+     * <p>The description of the ApiKey.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the <a>ApiKey</a>.</p>
+     * <p>The description of the ApiKey.</p>
      */
     inline CreateApiKeyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the <a>ApiKey</a>.</p>
+     * <p>The description of the ApiKey.</p>
      */
     inline CreateApiKeyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the <a>ApiKey</a>.</p>
+     * <p>The description of the ApiKey.</p>
      */
     inline CreateApiKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>Specifies whether the ApiKey can be used by callers.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>Specifies whether the ApiKey can be used by callers.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>Specifies whether the ApiKey can be used by callers.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>Specifies whether the ApiKey can be used by callers.</p>
      */
     inline CreateApiKeyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -403,28 +403,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_generateDistinctId;
-    bool m_generateDistinctIdHasBeenSet;
+    bool m_generateDistinctIdHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Vector<StageKey> m_stageKeys;
-    bool m_stageKeysHasBeenSet;
+    bool m_stageKeysHasBeenSet = false;
 
     Aws::String m_customerId;
-    bool m_customerIdHasBeenSet;
+    bool m_customerIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

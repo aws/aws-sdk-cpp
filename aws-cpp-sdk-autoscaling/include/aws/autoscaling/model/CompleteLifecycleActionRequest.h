@@ -176,49 +176,49 @@ namespace Model
 
 
     /**
-     * <p>The action for the group to take. This parameter can be either
+     * <p>The action for the group to take. You can specify either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
     inline const Aws::String& GetLifecycleActionResult() const{ return m_lifecycleActionResult; }
 
     /**
-     * <p>The action for the group to take. This parameter can be either
+     * <p>The action for the group to take. You can specify either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
     inline bool LifecycleActionResultHasBeenSet() const { return m_lifecycleActionResultHasBeenSet; }
 
     /**
-     * <p>The action for the group to take. This parameter can be either
+     * <p>The action for the group to take. You can specify either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
     inline void SetLifecycleActionResult(const Aws::String& value) { m_lifecycleActionResultHasBeenSet = true; m_lifecycleActionResult = value; }
 
     /**
-     * <p>The action for the group to take. This parameter can be either
+     * <p>The action for the group to take. You can specify either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
     inline void SetLifecycleActionResult(Aws::String&& value) { m_lifecycleActionResultHasBeenSet = true; m_lifecycleActionResult = std::move(value); }
 
     /**
-     * <p>The action for the group to take. This parameter can be either
+     * <p>The action for the group to take. You can specify either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
     inline void SetLifecycleActionResult(const char* value) { m_lifecycleActionResultHasBeenSet = true; m_lifecycleActionResult.assign(value); }
 
     /**
-     * <p>The action for the group to take. This parameter can be either
+     * <p>The action for the group to take. You can specify either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
     inline CompleteLifecycleActionRequest& WithLifecycleActionResult(const Aws::String& value) { SetLifecycleActionResult(value); return *this;}
 
     /**
-     * <p>The action for the group to take. This parameter can be either
+     * <p>The action for the group to take. You can specify either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
     inline CompleteLifecycleActionRequest& WithLifecycleActionResult(Aws::String&& value) { SetLifecycleActionResult(std::move(value)); return *this;}
 
     /**
-     * <p>The action for the group to take. This parameter can be either
+     * <p>The action for the group to take. You can specify either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
     inline CompleteLifecycleActionRequest& WithLifecycleActionResult(const char* value) { SetLifecycleActionResult(value); return *this;}
@@ -267,19 +267,19 @@ namespace Model
   private:
 
     Aws::String m_lifecycleHookName;
-    bool m_lifecycleHookNameHasBeenSet;
+    bool m_lifecycleHookNameHasBeenSet = false;
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_lifecycleActionToken;
-    bool m_lifecycleActionTokenHasBeenSet;
+    bool m_lifecycleActionTokenHasBeenSet = false;
 
     Aws::String m_lifecycleActionResult;
-    bool m_lifecycleActionResultHasBeenSet;
+    bool m_lifecycleActionResultHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

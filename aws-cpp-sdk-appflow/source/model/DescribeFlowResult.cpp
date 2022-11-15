@@ -74,7 +74,7 @@ DescribeFlowResult& DescribeFlowResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("destinationFlowConfigList"))
   {
-    Array<JsonView> destinationFlowConfigListJsonList = jsonValue.GetArray("destinationFlowConfigList");
+    Aws::Utils::Array<JsonView> destinationFlowConfigListJsonList = jsonValue.GetArray("destinationFlowConfigList");
     for(unsigned destinationFlowConfigListIndex = 0; destinationFlowConfigListIndex < destinationFlowConfigListJsonList.GetLength(); ++destinationFlowConfigListIndex)
     {
       m_destinationFlowConfigList.push_back(destinationFlowConfigListJsonList[destinationFlowConfigListIndex].AsObject());
@@ -95,7 +95,7 @@ DescribeFlowResult& DescribeFlowResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("tasks"))
   {
-    Array<JsonView> tasksJsonList = jsonValue.GetArray("tasks");
+    Aws::Utils::Array<JsonView> tasksJsonList = jsonValue.GetArray("tasks");
     for(unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex)
     {
       m_tasks.push_back(tasksJsonList[tasksIndex].AsObject());

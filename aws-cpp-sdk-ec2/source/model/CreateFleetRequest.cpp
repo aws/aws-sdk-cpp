@@ -89,12 +89,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   if(m_validFromHasBeenSet)
   {
-    ss << "ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_validUntilHasBeenSet)
   {
-    ss << "ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_replaceUnhealthyInstancesHasBeenSet)

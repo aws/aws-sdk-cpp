@@ -86,7 +86,7 @@ FindMatchesMetrics& FindMatchesMetrics::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ColumnImportances"))
   {
-    Array<JsonView> columnImportancesJsonList = jsonValue.GetArray("ColumnImportances");
+    Aws::Utils::Array<JsonView> columnImportancesJsonList = jsonValue.GetArray("ColumnImportances");
     for(unsigned columnImportancesIndex = 0; columnImportancesIndex < columnImportancesJsonList.GetLength(); ++columnImportancesIndex)
     {
       m_columnImportances.push_back(columnImportancesJsonList[columnImportancesIndex].AsObject());
@@ -133,7 +133,7 @@ JsonValue FindMatchesMetrics::Jsonize() const
 
   if(m_columnImportancesHasBeenSet)
   {
-   Array<JsonValue> columnImportancesJsonList(m_columnImportances.size());
+   Aws::Utils::Array<JsonValue> columnImportancesJsonList(m_columnImportances.size());
    for(unsigned columnImportancesIndex = 0; columnImportancesIndex < columnImportancesJsonList.GetLength(); ++columnImportancesIndex)
    {
      columnImportancesJsonList[columnImportancesIndex].AsObject(m_columnImportances[columnImportancesIndex].Jsonize());

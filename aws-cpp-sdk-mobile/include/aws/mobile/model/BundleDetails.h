@@ -191,22 +191,22 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_iconUrl;
-    bool m_iconUrlHasBeenSet;
+    bool m_iconUrlHasBeenSet = false;
 
     Aws::Vector<Platform> m_availablePlatforms;
-    bool m_availablePlatformsHasBeenSet;
+    bool m_availablePlatformsHasBeenSet = false;
   };
 
 } // namespace Model

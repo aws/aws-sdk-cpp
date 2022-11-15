@@ -1,16 +1,28 @@
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
+#if(!$serviceModel.endpointRules)
   Aws::StringStream ss;
 #if($metadata.hasEndpointTrait)
   ss << m_baseUri << "${operation.http.requestUri}";
 #else
   ss << m_uri << "${operation.http.requestUri}";
 #end
-#if($operation.result && $operation.result.shape.hasStreamMembers())
-  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"));
-#elseif($operation.request)
-  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"));
-#else
-  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"));
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/EndpointRulesNoRequestUriComputation.vm")
+#if($serviceModel.endpointRules && $operation.http.requestUri && $operation.http.requestUri != "/")
+  endpointResolutionOutcome.GetResult().AddPathSegments("${operation.http.requestUri}");
+#end
+#if($serviceModel.endpointRules)
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
+#else
+  return ${operation.name}Outcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
+#end
+#else##-#if($serviceModel.endpointRules)
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
+#else
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
+#end
+#end##-#if($serviceModel.endpointRules)
 }

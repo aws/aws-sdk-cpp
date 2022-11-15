@@ -19,6 +19,8 @@ namespace Model
 {
 
 AudioSelector::AudioSelector() : 
+    m_audioDurationCorrection(AudioDurationCorrection::NOT_SET),
+    m_audioDurationCorrectionHasBeenSet(false),
     m_customLanguageCodeHasBeenSet(false),
     m_defaultSelection(AudioDefaultSelection::NOT_SET),
     m_defaultSelectionHasBeenSet(false),
@@ -39,6 +41,8 @@ AudioSelector::AudioSelector() :
 }
 
 AudioSelector::AudioSelector(JsonView jsonValue) : 
+    m_audioDurationCorrection(AudioDurationCorrection::NOT_SET),
+    m_audioDurationCorrectionHasBeenSet(false),
     m_customLanguageCodeHasBeenSet(false),
     m_defaultSelection(AudioDefaultSelection::NOT_SET),
     m_defaultSelectionHasBeenSet(false),
@@ -61,6 +65,13 @@ AudioSelector::AudioSelector(JsonView jsonValue) :
 
 AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDurationCorrection"))
+  {
+    m_audioDurationCorrection = AudioDurationCorrectionMapper::GetAudioDurationCorrectionForName(jsonValue.GetString("audioDurationCorrection"));
+
+    m_audioDurationCorrectionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("customLanguageCode"))
   {
     m_customLanguageCode = jsonValue.GetString("customLanguageCode");
@@ -105,7 +116,7 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("pids"))
   {
-    Array<JsonView> pidsJsonList = jsonValue.GetArray("pids");
+    Aws::Utils::Array<JsonView> pidsJsonList = jsonValue.GetArray("pids");
     for(unsigned pidsIndex = 0; pidsIndex < pidsJsonList.GetLength(); ++pidsIndex)
     {
       m_pids.push_back(pidsJsonList[pidsIndex].AsInteger());
@@ -136,7 +147,7 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tracks"))
   {
-    Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
+    Aws::Utils::Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
     for(unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex)
     {
       m_tracks.push_back(tracksJsonList[tracksIndex].AsInteger());
@@ -150,6 +161,11 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 JsonValue AudioSelector::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioDurationCorrectionHasBeenSet)
+  {
+   payload.WithString("audioDurationCorrection", AudioDurationCorrectionMapper::GetNameForAudioDurationCorrection(m_audioDurationCorrection));
+  }
 
   if(m_customLanguageCodeHasBeenSet)
   {
@@ -187,7 +203,7 @@ JsonValue AudioSelector::Jsonize() const
 
   if(m_pidsHasBeenSet)
   {
-   Array<JsonValue> pidsJsonList(m_pids.size());
+   Aws::Utils::Array<JsonValue> pidsJsonList(m_pids.size());
    for(unsigned pidsIndex = 0; pidsIndex < pidsJsonList.GetLength(); ++pidsIndex)
    {
      pidsJsonList[pidsIndex].AsInteger(m_pids[pidsIndex]);
@@ -215,7 +231,7 @@ JsonValue AudioSelector::Jsonize() const
 
   if(m_tracksHasBeenSet)
   {
-   Array<JsonValue> tracksJsonList(m_tracks.size());
+   Aws::Utils::Array<JsonValue> tracksJsonList(m_tracks.size());
    for(unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex)
    {
      tracksJsonList[tracksIndex].AsInteger(m_tracks[tracksIndex]);

@@ -226,13 +226,13 @@ namespace Model
   private:
 
     TaskList m_taskList;
-    bool m_taskListHasBeenSet;
+    bool m_taskListHasBeenSet = false;
 
     Aws::String m_taskPriority;
-    bool m_taskPriorityHasBeenSet;
+    bool m_taskPriorityHasBeenSet = false;
 
     Aws::String m_startToCloseTimeout;
-    bool m_startToCloseTimeoutHasBeenSet;
+    bool m_startToCloseTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

@@ -147,51 +147,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
-     * If the secret is encrypted with the Amazon Web Services managed key
-     * <code>aws/secretsmanager</code>, this field is omitted.</p>
+     * <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt
+     * the secret value. If the secret is encrypted with the Amazon Web Services
+     * managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets
+     * created using the console use an KMS key ID.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
-     * If the secret is encrypted with the Amazon Web Services managed key
-     * <code>aws/secretsmanager</code>, this field is omitted.</p>
+     * <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt
+     * the secret value. If the secret is encrypted with the Amazon Web Services
+     * managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets
+     * created using the console use an KMS key ID.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
-     * If the secret is encrypted with the Amazon Web Services managed key
-     * <code>aws/secretsmanager</code>, this field is omitted.</p>
+     * <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt
+     * the secret value. If the secret is encrypted with the Amazon Web Services
+     * managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets
+     * created using the console use an KMS key ID.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
-     * If the secret is encrypted with the Amazon Web Services managed key
-     * <code>aws/secretsmanager</code>, this field is omitted.</p>
+     * <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt
+     * the secret value. If the secret is encrypted with the Amazon Web Services
+     * managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets
+     * created using the console use an KMS key ID.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
-     * If the secret is encrypted with the Amazon Web Services managed key
-     * <code>aws/secretsmanager</code>, this field is omitted.</p>
+     * <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt
+     * the secret value. If the secret is encrypted with the Amazon Web Services
+     * managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets
+     * created using the console use an KMS key ID.</p>
      */
     inline DescribeSecretResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
-     * If the secret is encrypted with the Amazon Web Services managed key
-     * <code>aws/secretsmanager</code>, this field is omitted.</p>
+     * <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt
+     * the secret value. If the secret is encrypted with the Amazon Web Services
+     * managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets
+     * created using the console use an KMS key ID.</p>
      */
     inline DescribeSecretResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
-     * If the secret is encrypted with the Amazon Web Services managed key
-     * <code>aws/secretsmanager</code>, this field is omitted.</p>
+     * <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt
+     * the secret value. If the secret is encrypted with the Amazon Web Services
+     * managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets
+     * created using the console use an KMS key ID.</p>
      */
     inline DescribeSecretResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -360,37 +367,32 @@ namespace Model
 
 
     /**
-     * <p>The last date that the secret value was retrieved. This value does not
-     * include the time. This field is omitted if the secret has never been
-     * retrieved.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessedDate() const{ return m_lastAccessedDate; }
 
     /**
-     * <p>The last date that the secret value was retrieved. This value does not
-     * include the time. This field is omitted if the secret has never been
-     * retrieved.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline void SetLastAccessedDate(const Aws::Utils::DateTime& value) { m_lastAccessedDate = value; }
 
     /**
-     * <p>The last date that the secret value was retrieved. This value does not
-     * include the time. This field is omitted if the secret has never been
-     * retrieved.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline void SetLastAccessedDate(Aws::Utils::DateTime&& value) { m_lastAccessedDate = std::move(value); }
 
     /**
-     * <p>The last date that the secret value was retrieved. This value does not
-     * include the time. This field is omitted if the secret has never been
-     * retrieved.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline DescribeSecretResult& WithLastAccessedDate(const Aws::Utils::DateTime& value) { SetLastAccessedDate(value); return *this;}
 
     /**
-     * <p>The last date that the secret value was retrieved. This value does not
-     * include the time. This field is omitted if the secret has never been
-     * retrieved.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline DescribeSecretResult& WithLastAccessedDate(Aws::Utils::DateTime&& value) { SetLastAccessedDate(std::move(value)); return *this;}
 
@@ -716,37 +718,51 @@ namespace Model
 
 
     /**
-     * <p>The name of the service that created this secret.</p>
+     * <p>The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     * managed by other Amazon Web Services services</a>.</p>
      */
     inline const Aws::String& GetOwningService() const{ return m_owningService; }
 
     /**
-     * <p>The name of the service that created this secret.</p>
+     * <p>The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     * managed by other Amazon Web Services services</a>.</p>
      */
     inline void SetOwningService(const Aws::String& value) { m_owningService = value; }
 
     /**
-     * <p>The name of the service that created this secret.</p>
+     * <p>The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     * managed by other Amazon Web Services services</a>.</p>
      */
     inline void SetOwningService(Aws::String&& value) { m_owningService = std::move(value); }
 
     /**
-     * <p>The name of the service that created this secret.</p>
+     * <p>The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     * managed by other Amazon Web Services services</a>.</p>
      */
     inline void SetOwningService(const char* value) { m_owningService.assign(value); }
 
     /**
-     * <p>The name of the service that created this secret.</p>
+     * <p>The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     * managed by other Amazon Web Services services</a>.</p>
      */
     inline DescribeSecretResult& WithOwningService(const Aws::String& value) { SetOwningService(value); return *this;}
 
     /**
-     * <p>The name of the service that created this secret.</p>
+     * <p>The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     * managed by other Amazon Web Services services</a>.</p>
      */
     inline DescribeSecretResult& WithOwningService(Aws::String&& value) { SetOwningService(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the service that created this secret.</p>
+     * <p>The ID of the service that created this secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+     * managed by other Amazon Web Services services</a>.</p>
      */
     inline DescribeSecretResult& WithOwningService(const char* value) { SetOwningService(value); return *this;}
 

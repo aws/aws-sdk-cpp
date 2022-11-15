@@ -88,7 +88,7 @@ namespace Model
   private:
 
     WebvttDestinationStyleControl m_styleControl;
-    bool m_styleControlHasBeenSet;
+    bool m_styleControlHasBeenSet = false;
   };
 
 } // namespace Model

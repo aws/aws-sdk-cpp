@@ -77,7 +77,7 @@ namespace Model
   private:
 
     ConfidenceLevel m_confidenceLevel;
-    bool m_confidenceLevelHasBeenSet;
+    bool m_confidenceLevelHasBeenSet = false;
   };
 
 } // namespace Model

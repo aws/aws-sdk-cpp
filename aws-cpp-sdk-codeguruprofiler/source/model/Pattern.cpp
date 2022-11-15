@@ -47,7 +47,7 @@ Pattern& Pattern::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("countersToAggregate"))
   {
-    Array<JsonView> countersToAggregateJsonList = jsonValue.GetArray("countersToAggregate");
+    Aws::Utils::Array<JsonView> countersToAggregateJsonList = jsonValue.GetArray("countersToAggregate");
     for(unsigned countersToAggregateIndex = 0; countersToAggregateIndex < countersToAggregateJsonList.GetLength(); ++countersToAggregateIndex)
     {
       m_countersToAggregate.push_back(countersToAggregateJsonList[countersToAggregateIndex].AsString());
@@ -85,10 +85,10 @@ Pattern& Pattern::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("targetFrames"))
   {
-    Array<JsonView> targetFramesJsonList = jsonValue.GetArray("targetFrames");
+    Aws::Utils::Array<JsonView> targetFramesJsonList = jsonValue.GetArray("targetFrames");
     for(unsigned targetFramesIndex = 0; targetFramesIndex < targetFramesJsonList.GetLength(); ++targetFramesIndex)
     {
-      Array<JsonView> targetFrameJsonList = targetFramesJsonList[targetFramesIndex].AsArray();
+      Aws::Utils::Array<JsonView> targetFrameJsonList = targetFramesJsonList[targetFramesIndex].AsArray();
       Aws::Vector<Aws::String> targetFrameList;
       targetFrameList.reserve((size_t)targetFrameJsonList.GetLength());
       for(unsigned targetFrameIndex = 0; targetFrameIndex < targetFrameJsonList.GetLength(); ++targetFrameIndex)
@@ -116,7 +116,7 @@ JsonValue Pattern::Jsonize() const
 
   if(m_countersToAggregateHasBeenSet)
   {
-   Array<JsonValue> countersToAggregateJsonList(m_countersToAggregate.size());
+   Aws::Utils::Array<JsonValue> countersToAggregateJsonList(m_countersToAggregate.size());
    for(unsigned countersToAggregateIndex = 0; countersToAggregateIndex < countersToAggregateJsonList.GetLength(); ++countersToAggregateIndex)
    {
      countersToAggregateJsonList[countersToAggregateIndex].AsString(m_countersToAggregate[countersToAggregateIndex]);
@@ -151,10 +151,10 @@ JsonValue Pattern::Jsonize() const
 
   if(m_targetFramesHasBeenSet)
   {
-   Array<JsonValue> targetFramesJsonList(m_targetFrames.size());
+   Aws::Utils::Array<JsonValue> targetFramesJsonList(m_targetFrames.size());
    for(unsigned targetFramesIndex = 0; targetFramesIndex < targetFramesJsonList.GetLength(); ++targetFramesIndex)
    {
-     Array<JsonValue> targetFrameJsonList(m_targetFrames[targetFramesIndex].size());
+     Aws::Utils::Array<JsonValue> targetFrameJsonList(m_targetFrames[targetFramesIndex].size());
      for(unsigned targetFrameIndex = 0; targetFrameIndex < targetFrameJsonList.GetLength(); ++targetFrameIndex)
      {
        targetFrameJsonList[targetFrameIndex].AsString(m_targetFrames[targetFramesIndex][targetFrameIndex]);

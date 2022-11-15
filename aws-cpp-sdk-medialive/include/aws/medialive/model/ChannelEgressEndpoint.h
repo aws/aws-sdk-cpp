@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_sourceIp;
-    bool m_sourceIpHasBeenSet;
+    bool m_sourceIpHasBeenSet = false;
   };
 
 } // namespace Model

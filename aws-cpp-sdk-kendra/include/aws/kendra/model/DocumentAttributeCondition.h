@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::String m_conditionDocumentAttributeKey;
-    bool m_conditionDocumentAttributeKeyHasBeenSet;
+    bool m_conditionDocumentAttributeKeyHasBeenSet = false;
 
     ConditionOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     DocumentAttributeValue m_conditionOnValue;
-    bool m_conditionOnValueHasBeenSet;
+    bool m_conditionOnValueHasBeenSet = false;
   };
 
 } // namespace Model

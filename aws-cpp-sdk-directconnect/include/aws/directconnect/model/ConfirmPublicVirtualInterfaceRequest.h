@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
   };
 
 } // namespace Model

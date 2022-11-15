@@ -60,7 +60,7 @@ Aws::String CreatePredictorRequest::SerializePayload() const
 
   if(m_forecastTypesHasBeenSet)
   {
-   Array<JsonValue> forecastTypesJsonList(m_forecastTypes.size());
+   Aws::Utils::Array<JsonValue> forecastTypesJsonList(m_forecastTypes.size());
    for(unsigned forecastTypesIndex = 0; forecastTypesIndex < forecastTypesJsonList.GetLength(); ++forecastTypesIndex)
    {
      forecastTypesJsonList[forecastTypesIndex].AsString(m_forecastTypes[forecastTypesIndex]);
@@ -129,7 +129,7 @@ Aws::String CreatePredictorRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

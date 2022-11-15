@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_placementName;
-    bool m_placementNameHasBeenSet;
+    bool m_placementNameHasBeenSet = false;
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

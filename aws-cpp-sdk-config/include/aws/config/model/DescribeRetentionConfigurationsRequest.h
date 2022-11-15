@@ -159,10 +159,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_retentionConfigurationNames;
-    bool m_retentionConfigurationNamesHasBeenSet;
+    bool m_retentionConfigurationNamesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

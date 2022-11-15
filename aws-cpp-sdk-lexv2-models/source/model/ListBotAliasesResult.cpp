@@ -30,7 +30,7 @@ ListBotAliasesResult& ListBotAliasesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("botAliasSummaries"))
   {
-    Array<JsonView> botAliasSummariesJsonList = jsonValue.GetArray("botAliasSummaries");
+    Aws::Utils::Array<JsonView> botAliasSummariesJsonList = jsonValue.GetArray("botAliasSummaries");
     for(unsigned botAliasSummariesIndex = 0; botAliasSummariesIndex < botAliasSummariesJsonList.GetLength(); ++botAliasSummariesIndex)
     {
       m_botAliasSummaries.push_back(botAliasSummariesJsonList[botAliasSummariesIndex].AsObject());

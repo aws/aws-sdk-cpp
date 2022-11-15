@@ -111,7 +111,7 @@ namespace Model
   private:
 
     Aws::String m_sAMLProviderArn;
-    bool m_sAMLProviderArnHasBeenSet;
+    bool m_sAMLProviderArnHasBeenSet = false;
   };
 
 } // namespace Model

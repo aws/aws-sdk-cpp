@@ -154,58 +154,74 @@ namespace Model
 
 
     /**
-     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Valid values are <code>LifecycleAndOperator</code> or
+     * <code>LifecycleOrOperator</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Valid values are <code>LifecycleAndOperator</code> or
+     * <code>LifecycleOrOperator</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Valid values are <code>LifecycleAndOperator</code> or
+     * <code>LifecycleOrOperator</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Valid values are <code>LifecycleAndOperator</code> or
+     * <code>LifecycleOrOperator</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Valid values are <code>LifecycleAndOperator</code> or
+     * <code>LifecycleOrOperator</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Valid values are <code>LifecycleAndOperator</code> or
+     * <code>LifecycleOrOperator</code>.</p>
      */
     inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Valid values are <code>LifecycleAndOperator</code> or
+     * <code>LifecycleOrOperator</code>.</p>
      */
     inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.</p>
+     * <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands.
+     * Valid values are <code>LifecycleAndOperator</code> or
+     * <code>LifecycleOrOperator</code>.</p>
      */
     inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithType(const char* value) { SetType(value); return *this;}
 
   private:
 
     Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails> m_operands;
-    bool m_operandsHasBeenSet;
+    bool m_operandsHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails m_tag;
-    bool m_tagHasBeenSet;
+    bool m_tagHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

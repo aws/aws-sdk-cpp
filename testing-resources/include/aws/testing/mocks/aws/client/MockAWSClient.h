@@ -39,6 +39,13 @@ public:
     bool ShouldComputeContentMd5() const override { return m_shouldComputeMd5; }
     void SetComputeContentMd5(bool value) { m_shouldComputeMd5 = value; }
     virtual const char* GetServiceRequestName() const override { return "AmazonWebServiceRequestMock"; }
+    virtual bool HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const override {
+        (void) header;
+        std::stringstream ss;
+        ss << body.rdbuf();
+        auto bodyString = ss.str();
+        return bodyString.find("TestErrorInBodyOfResponse") != std::string::npos;
+    }
 
 private:
     std::shared_ptr<Aws::IOStream> m_body;
@@ -49,8 +56,14 @@ private:
 class CountedRetryStrategy : public Aws::Client::DefaultRetryStrategy
 {
 public:
-    CountedRetryStrategy() : m_attemptedRetries(0), m_maxRetries((std::numeric_limits<long>::max)()) {}
-    CountedRetryStrategy(long maxRetires) : m_attemptedRetries(0), m_maxRetries(maxRetires <= 0 ? (std::numeric_limits<long>::max)() : maxRetires) {}
+    CountedRetryStrategy()
+        : Aws::Client::DefaultRetryStrategy(),
+          m_attemptedRetries(0)
+      {}
+    CountedRetryStrategy(long maxRetires)
+        : Aws::Client::DefaultRetryStrategy(maxRetires <= 0 ? (std::numeric_limits<long>::max)() : maxRetires),
+          m_attemptedRetries(0)
+      {}
 
     bool ShouldRetry(const Aws::Client::AWSError<Aws::Client::CoreErrors>& error, long attemptedRetries) const override
     {
@@ -69,7 +82,6 @@ public:
     void ResetAttemptedRetriesCount() { m_attemptedRetries = 0; }
 private:
     mutable long m_attemptedRetries;
-    long m_maxRetries;
 };
 
 class MockAWSErrorMarshaller : public Aws::Client::AWSErrorMarshaller
@@ -119,11 +131,16 @@ protected:
     std::shared_ptr<CountedRetryStrategy> m_countedRetryStrategy;
     Aws::Client::AWSError<Aws::Client::CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override
     {
+        if (response->GetResponseCode() == Aws::Http::HttpResponseCode::OK)
+        {
+            return { Aws::Client::CoreErrors::SLOW_DOWN, "TestErrorInBodyOfResponse", "TestErrorInBodyOfResponse", false };
+        }
         Aws::Client::AWSError<Aws::Client::CoreErrors> error;
         if (response->HasClientError())
         {
             bool retryable = response->GetClientErrorType() == Aws::Client::CoreErrors::NETWORK_CONNECTION ? true : false;
             error = Aws::Client::AWSError<Aws::Client::CoreErrors>(response->GetClientErrorType(), "", response->GetClientErrorMessage(), retryable);
+            return error;
         }
         error = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::INVALID_ACTION, false);
         error.SetResponseHeaders(response->GetHeaders());

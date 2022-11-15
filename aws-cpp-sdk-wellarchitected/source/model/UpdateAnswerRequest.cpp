@@ -32,7 +32,7 @@ Aws::String UpdateAnswerRequest::SerializePayload() const
 
   if(m_selectedChoicesHasBeenSet)
   {
-   Array<JsonValue> selectedChoicesJsonList(m_selectedChoices.size());
+   Aws::Utils::Array<JsonValue> selectedChoicesJsonList(m_selectedChoices.size());
    for(unsigned selectedChoicesIndex = 0; selectedChoicesIndex < selectedChoicesJsonList.GetLength(); ++selectedChoicesIndex)
    {
      selectedChoicesJsonList[selectedChoicesIndex].AsString(m_selectedChoices[selectedChoicesIndex]);

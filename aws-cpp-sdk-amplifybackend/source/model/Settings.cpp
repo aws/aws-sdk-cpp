@@ -35,7 +35,7 @@ Settings& Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("mfaTypes"))
   {
-    Array<JsonView> mfaTypesJsonList = jsonValue.GetArray("mfaTypes");
+    Aws::Utils::Array<JsonView> mfaTypesJsonList = jsonValue.GetArray("mfaTypes");
     for(unsigned mfaTypesIndex = 0; mfaTypesIndex < mfaTypesJsonList.GetLength(); ++mfaTypesIndex)
     {
       m_mfaTypes.push_back(MfaTypesElementMapper::GetMfaTypesElementForName(mfaTypesJsonList[mfaTypesIndex].AsString()));
@@ -59,7 +59,7 @@ JsonValue Settings::Jsonize() const
 
   if(m_mfaTypesHasBeenSet)
   {
-   Array<JsonValue> mfaTypesJsonList(m_mfaTypes.size());
+   Aws::Utils::Array<JsonValue> mfaTypesJsonList(m_mfaTypes.size());
    for(unsigned mfaTypesIndex = 0; mfaTypesIndex < mfaTypesJsonList.GetLength(); ++mfaTypesIndex)
    {
      mfaTypesJsonList[mfaTypesIndex].AsString(MfaTypesElementMapper::GetNameForMfaTypesElement(m_mfaTypes[mfaTypesIndex]));

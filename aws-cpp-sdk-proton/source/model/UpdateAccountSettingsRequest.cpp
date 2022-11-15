@@ -13,6 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() : 
+    m_deletePipelineProvisioningRepository(false),
+    m_deletePipelineProvisioningRepositoryHasBeenSet(false),
+    m_pipelineCodebuildRoleArnHasBeenSet(false),
     m_pipelineProvisioningRepositoryHasBeenSet(false),
     m_pipelineServiceRoleArnHasBeenSet(false)
 {
@@ -21,6 +24,18 @@ UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() :
 Aws::String UpdateAccountSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_deletePipelineProvisioningRepositoryHasBeenSet)
+  {
+   payload.WithBool("deletePipelineProvisioningRepository", m_deletePipelineProvisioningRepository);
+
+  }
+
+  if(m_pipelineCodebuildRoleArnHasBeenSet)
+  {
+   payload.WithString("pipelineCodebuildRoleArn", m_pipelineCodebuildRoleArn);
+
+  }
 
   if(m_pipelineProvisioningRepositoryHasBeenSet)
   {

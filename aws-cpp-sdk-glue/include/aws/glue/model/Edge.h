@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An edge represents a directed connection between two components on a workflow
-   * graph.</p><p><h3>See Also:</h3>   <a
+   * <p>An edge represents a directed connection between two Glue components that are
+   * part of the workflow the edge belongs to.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Edge">AWS API
    * Reference</a></p>
    */
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
 
     Aws::String m_destinationId;
-    bool m_destinationIdHasBeenSet;
+    bool m_destinationIdHasBeenSet = false;
   };
 
 } // namespace Model

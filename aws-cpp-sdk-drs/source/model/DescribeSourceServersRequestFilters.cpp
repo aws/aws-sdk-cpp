@@ -20,13 +20,15 @@ namespace Model
 
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters() : 
     m_hardwareIdHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false)
+    m_sourceServerIDsHasBeenSet(false),
+    m_stagingAccountIDsHasBeenSet(false)
 {
 }
 
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue) : 
     m_hardwareIdHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false)
+    m_sourceServerIDsHasBeenSet(false),
+    m_stagingAccountIDsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,12 +44,22 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
 
   if(jsonValue.ValueExists("sourceServerIDs"))
   {
-    Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
+    Aws::Utils::Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
     for(unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex)
     {
       m_sourceServerIDs.push_back(sourceServerIDsJsonList[sourceServerIDsIndex].AsString());
     }
     m_sourceServerIDsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stagingAccountIDs"))
+  {
+    Aws::Utils::Array<JsonView> stagingAccountIDsJsonList = jsonValue.GetArray("stagingAccountIDs");
+    for(unsigned stagingAccountIDsIndex = 0; stagingAccountIDsIndex < stagingAccountIDsJsonList.GetLength(); ++stagingAccountIDsIndex)
+    {
+      m_stagingAccountIDs.push_back(stagingAccountIDsJsonList[stagingAccountIDsIndex].AsString());
+    }
+    m_stagingAccountIDsHasBeenSet = true;
   }
 
   return *this;
@@ -65,12 +77,23 @@ JsonValue DescribeSourceServersRequestFilters::Jsonize() const
 
   if(m_sourceServerIDsHasBeenSet)
   {
-   Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
+   Aws::Utils::Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
    for(unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex)
    {
      sourceServerIDsJsonList[sourceServerIDsIndex].AsString(m_sourceServerIDs[sourceServerIDsIndex]);
    }
    payload.WithArray("sourceServerIDs", std::move(sourceServerIDsJsonList));
+
+  }
+
+  if(m_stagingAccountIDsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> stagingAccountIDsJsonList(m_stagingAccountIDs.size());
+   for(unsigned stagingAccountIDsIndex = 0; stagingAccountIDsIndex < stagingAccountIDsJsonList.GetLength(); ++stagingAccountIDsIndex)
+   {
+     stagingAccountIDsJsonList[stagingAccountIDsIndex].AsString(m_stagingAccountIDs[stagingAccountIDsIndex]);
+   }
+   payload.WithArray("stagingAccountIDs", std::move(stagingAccountIDsJsonList));
 
   }
 

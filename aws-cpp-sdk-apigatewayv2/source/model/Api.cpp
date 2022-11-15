@@ -134,7 +134,7 @@ Api& Api::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("importInfo"))
   {
-    Array<JsonView> importInfoJsonList = jsonValue.GetArray("importInfo");
+    Aws::Utils::Array<JsonView> importInfoJsonList = jsonValue.GetArray("importInfo");
     for(unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex)
     {
       m_importInfo.push_back(importInfoJsonList[importInfoIndex].AsString());
@@ -182,7 +182,7 @@ Api& Api::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
@@ -229,7 +229,7 @@ JsonValue Api::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithString("createdDate", m_createdDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)
@@ -252,7 +252,7 @@ JsonValue Api::Jsonize() const
 
   if(m_importInfoHasBeenSet)
   {
-   Array<JsonValue> importInfoJsonList(m_importInfo.size());
+   Aws::Utils::Array<JsonValue> importInfoJsonList(m_importInfo.size());
    for(unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex)
    {
      importInfoJsonList[importInfoIndex].AsString(m_importInfo[importInfoIndex]);
@@ -297,7 +297,7 @@ JsonValue Api::Jsonize() const
 
   if(m_warningsHasBeenSet)
   {
-   Array<JsonValue> warningsJsonList(m_warnings.size());
+   Aws::Utils::Array<JsonValue> warningsJsonList(m_warnings.size());
    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
    {
      warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);

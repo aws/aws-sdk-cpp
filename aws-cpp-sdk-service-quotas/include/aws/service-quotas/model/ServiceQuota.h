@@ -444,40 +444,40 @@ namespace Model
   private:
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_quotaArn;
-    bool m_quotaArnHasBeenSet;
+    bool m_quotaArnHasBeenSet = false;
 
     Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_quotaName;
-    bool m_quotaNameHasBeenSet;
+    bool m_quotaNameHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     bool m_adjustable;
-    bool m_adjustableHasBeenSet;
+    bool m_adjustableHasBeenSet = false;
 
     bool m_globalQuota;
-    bool m_globalQuotaHasBeenSet;
+    bool m_globalQuotaHasBeenSet = false;
 
     MetricInfo m_usageMetric;
-    bool m_usageMetricHasBeenSet;
+    bool m_usageMetricHasBeenSet = false;
 
     QuotaPeriod m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     ErrorReason m_errorReason;
-    bool m_errorReasonHasBeenSet;
+    bool m_errorReasonHasBeenSet = false;
   };
 
 } // namespace Model

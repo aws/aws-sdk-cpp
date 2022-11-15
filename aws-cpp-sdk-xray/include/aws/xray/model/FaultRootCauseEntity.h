@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<RootCauseException> m_exceptions;
-    bool m_exceptionsHasBeenSet;
+    bool m_exceptionsHasBeenSet = false;
 
     bool m_remote;
-    bool m_remoteHasBeenSet;
+    bool m_remoteHasBeenSet = false;
   };
 
 } // namespace Model

@@ -133,10 +133,10 @@ namespace Model
   private:
 
     int m_days;
-    bool m_daysHasBeenSet;
+    bool m_daysHasBeenSet = false;
 
     IntelligentTieringAccessTier m_accessTier;
-    bool m_accessTierHasBeenSet;
+    bool m_accessTierHasBeenSet = false;
   };
 
 } // namespace Model

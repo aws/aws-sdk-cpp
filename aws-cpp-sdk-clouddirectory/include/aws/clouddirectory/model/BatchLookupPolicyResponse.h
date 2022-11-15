@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Vector<PolicyToPath> m_policyToPathList;
-    bool m_policyToPathListHasBeenSet;
+    bool m_policyToPathListHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

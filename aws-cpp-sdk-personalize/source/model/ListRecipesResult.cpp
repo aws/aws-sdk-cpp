@@ -30,7 +30,7 @@ ListRecipesResult& ListRecipesResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("recipes"))
   {
-    Array<JsonView> recipesJsonList = jsonValue.GetArray("recipes");
+    Aws::Utils::Array<JsonView> recipesJsonList = jsonValue.GetArray("recipes");
     for(unsigned recipesIndex = 0; recipesIndex < recipesJsonList.GetLength(); ++recipesIndex)
     {
       m_recipes.push_back(recipesJsonList[recipesIndex].AsObject());

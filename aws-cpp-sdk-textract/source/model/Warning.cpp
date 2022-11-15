@@ -42,7 +42,7 @@ Warning& Warning::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Pages"))
   {
-    Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
+    Aws::Utils::Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
     for(unsigned pagesIndex = 0; pagesIndex < pagesJsonList.GetLength(); ++pagesIndex)
     {
       m_pages.push_back(pagesJsonList[pagesIndex].AsInteger());
@@ -65,7 +65,7 @@ JsonValue Warning::Jsonize() const
 
   if(m_pagesHasBeenSet)
   {
-   Array<JsonValue> pagesJsonList(m_pages.size());
+   Aws::Utils::Array<JsonValue> pagesJsonList(m_pages.size());
    for(unsigned pagesIndex = 0; pagesIndex < pagesJsonList.GetLength(); ++pagesIndex)
    {
      pagesJsonList[pagesIndex].AsInteger(m_pages[pagesIndex]);

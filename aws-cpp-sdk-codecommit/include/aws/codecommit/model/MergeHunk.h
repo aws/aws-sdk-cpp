@@ -186,16 +186,16 @@ namespace Model
   private:
 
     bool m_isConflict;
-    bool m_isConflictHasBeenSet;
+    bool m_isConflictHasBeenSet = false;
 
     MergeHunkDetail m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     MergeHunkDetail m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     MergeHunkDetail m_base;
-    bool m_baseHasBeenSet;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

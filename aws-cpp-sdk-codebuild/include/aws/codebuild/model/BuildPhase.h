@@ -349,22 +349,22 @@ namespace Model
   private:
 
     BuildPhaseType m_phaseType;
-    bool m_phaseTypeHasBeenSet;
+    bool m_phaseTypeHasBeenSet = false;
 
     StatusType m_phaseStatus;
-    bool m_phaseStatusHasBeenSet;
+    bool m_phaseStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     long long m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
 
     Aws::Vector<PhaseContext> m_contexts;
-    bool m_contextsHasBeenSet;
+    bool m_contextsHasBeenSet = false;
   };
 
 } // namespace Model

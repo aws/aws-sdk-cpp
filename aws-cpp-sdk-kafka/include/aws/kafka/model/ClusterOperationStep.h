@@ -143,10 +143,10 @@ namespace Model
   private:
 
     ClusterOperationStepInfo m_stepInfo;
-    bool m_stepInfoHasBeenSet;
+    bool m_stepInfoHasBeenSet = false;
 
     Aws::String m_stepName;
-    bool m_stepNameHasBeenSet;
+    bool m_stepNameHasBeenSet = false;
   };
 
 } // namespace Model

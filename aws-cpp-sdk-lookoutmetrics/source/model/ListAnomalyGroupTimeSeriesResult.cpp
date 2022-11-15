@@ -42,7 +42,7 @@ ListAnomalyGroupTimeSeriesResult& ListAnomalyGroupTimeSeriesResult::operator =(c
 
   if(jsonValue.ValueExists("TimestampList"))
   {
-    Array<JsonView> timestampListJsonList = jsonValue.GetArray("TimestampList");
+    Aws::Utils::Array<JsonView> timestampListJsonList = jsonValue.GetArray("TimestampList");
     for(unsigned timestampListIndex = 0; timestampListIndex < timestampListJsonList.GetLength(); ++timestampListIndex)
     {
       m_timestampList.push_back(timestampListJsonList[timestampListIndex].AsString());
@@ -57,7 +57,7 @@ ListAnomalyGroupTimeSeriesResult& ListAnomalyGroupTimeSeriesResult::operator =(c
 
   if(jsonValue.ValueExists("TimeSeriesList"))
   {
-    Array<JsonView> timeSeriesListJsonList = jsonValue.GetArray("TimeSeriesList");
+    Aws::Utils::Array<JsonView> timeSeriesListJsonList = jsonValue.GetArray("TimeSeriesList");
     for(unsigned timeSeriesListIndex = 0; timeSeriesListIndex < timeSeriesListJsonList.GetLength(); ++timeSeriesListIndex)
     {
       m_timeSeriesList.push_back(timeSeriesListJsonList[timeSeriesListIndex].AsObject());

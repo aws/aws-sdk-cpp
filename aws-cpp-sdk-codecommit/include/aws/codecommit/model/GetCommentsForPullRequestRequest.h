@@ -302,22 +302,22 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_beforeCommitId;
-    bool m_beforeCommitIdHasBeenSet;
+    bool m_beforeCommitIdHasBeenSet = false;
 
     Aws::String m_afterCommitId;
-    bool m_afterCommitIdHasBeenSet;
+    bool m_afterCommitIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,6 +44,8 @@ AutomationExecutionMetadata::AutomationExecutionMetadata() :
     m_targetHasBeenSet(false),
     m_automationType(AutomationType::NOT_SET),
     m_automationTypeHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_triggeredAlarmsHasBeenSet(false),
     m_automationSubtype(AutomationSubtype::NOT_SET),
     m_automationSubtypeHasBeenSet(false),
     m_scheduledTimeHasBeenSet(false),
@@ -80,6 +82,8 @@ AutomationExecutionMetadata::AutomationExecutionMetadata(JsonView jsonValue) :
     m_targetHasBeenSet(false),
     m_automationType(AutomationType::NOT_SET),
     m_automationTypeHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_triggeredAlarmsHasBeenSet(false),
     m_automationSubtype(AutomationSubtype::NOT_SET),
     m_automationSubtypeHasBeenSet(false),
     m_scheduledTimeHasBeenSet(false),
@@ -154,7 +158,7 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(JsonView js
     Aws::Map<Aws::String, JsonView> outputsJsonMap = jsonValue.GetObject("Outputs").GetAllObjects();
     for(auto& outputsItem : outputsJsonMap)
     {
-      Array<JsonView> automationParameterValueListJsonList = outputsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> automationParameterValueListJsonList = outputsItem.second.AsArray();
       Aws::Vector<Aws::String> automationParameterValueListList;
       automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
@@ -210,7 +214,7 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(JsonView js
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
@@ -220,14 +224,14 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(JsonView js
 
   if(jsonValue.ValueExists("TargetMaps"))
   {
-    Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
+    Aws::Utils::Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
     for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
     {
       Aws::Map<Aws::String, JsonView> targetMapJsonMap = targetMapsJsonList[targetMapsIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::Vector<Aws::String>> targetMapMap;
       for(auto& targetMapItem : targetMapJsonMap)
       {
-        Array<JsonView> targetMapValueListJsonList = targetMapItem.second.AsArray();
+        Aws::Utils::Array<JsonView> targetMapValueListJsonList = targetMapItem.second.AsArray();
         Aws::Vector<Aws::String> targetMapValueListList;
         targetMapValueListList.reserve((size_t)targetMapValueListJsonList.GetLength());
         for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
@@ -276,6 +280,23 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(JsonView js
     m_automationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
+
+    m_alarmConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TriggeredAlarms"))
+  {
+    Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
+    for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
+    {
+      m_triggeredAlarms.push_back(triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject());
+    }
+    m_triggeredAlarmsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AutomationSubtype"))
   {
     m_automationSubtype = AutomationSubtypeMapper::GetAutomationSubtypeForName(jsonValue.GetString("AutomationSubtype"));
@@ -292,7 +313,7 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(JsonView js
 
   if(jsonValue.ValueExists("Runbooks"))
   {
-    Array<JsonView> runbooksJsonList = jsonValue.GetArray("Runbooks");
+    Aws::Utils::Array<JsonView> runbooksJsonList = jsonValue.GetArray("Runbooks");
     for(unsigned runbooksIndex = 0; runbooksIndex < runbooksJsonList.GetLength(); ++runbooksIndex)
     {
       m_runbooks.push_back(runbooksJsonList[runbooksIndex].AsObject());
@@ -378,7 +399,7 @@ JsonValue AutomationExecutionMetadata::Jsonize() const
    JsonValue outputsJsonMap;
    for(auto& outputsItem : m_outputs)
    {
-     Array<JsonValue> automationParameterValueListJsonList(outputsItem.second.size());
+     Aws::Utils::Array<JsonValue> automationParameterValueListJsonList(outputsItem.second.size());
      for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
      {
        automationParameterValueListJsonList[automationParameterValueListIndex].AsString(outputsItem.second[automationParameterValueListIndex]);
@@ -426,7 +447,7 @@ JsonValue AutomationExecutionMetadata::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
@@ -437,13 +458,13 @@ JsonValue AutomationExecutionMetadata::Jsonize() const
 
   if(m_targetMapsHasBeenSet)
   {
-   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   Aws::Utils::Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
    for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
    {
      JsonValue targetMapJsonMap;
      for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
      {
-       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       Aws::Utils::Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
        for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
        {
          targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);
@@ -485,6 +506,23 @@ JsonValue AutomationExecutionMetadata::Jsonize() const
    payload.WithString("AutomationType", AutomationTypeMapper::GetNameForAutomationType(m_automationType));
   }
 
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
+
+  }
+
+  if(m_triggeredAlarmsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> triggeredAlarmsJsonList(m_triggeredAlarms.size());
+   for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
+   {
+     triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject(m_triggeredAlarms[triggeredAlarmsIndex].Jsonize());
+   }
+   payload.WithArray("TriggeredAlarms", std::move(triggeredAlarmsJsonList));
+
+  }
+
   if(m_automationSubtypeHasBeenSet)
   {
    payload.WithString("AutomationSubtype", AutomationSubtypeMapper::GetNameForAutomationSubtype(m_automationSubtype));
@@ -497,7 +535,7 @@ JsonValue AutomationExecutionMetadata::Jsonize() const
 
   if(m_runbooksHasBeenSet)
   {
-   Array<JsonValue> runbooksJsonList(m_runbooks.size());
+   Aws::Utils::Array<JsonValue> runbooksJsonList(m_runbooks.size());
    for(unsigned runbooksIndex = 0; runbooksIndex < runbooksJsonList.GetLength(); ++runbooksIndex)
    {
      runbooksJsonList[runbooksIndex].AsObject(m_runbooks[runbooksIndex].Jsonize());

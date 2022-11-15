@@ -14,7 +14,8 @@ DisableTransitGatewayRouteTablePropagationRequest::DisableTransitGatewayRouteTab
     m_transitGatewayRouteTableIdHasBeenSet(false),
     m_transitGatewayAttachmentIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,11 @@ Aws::String DisableTransitGatewayRouteTablePropagationRequest::SerializePayload(
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_transitGatewayRouteTableAnnouncementIdHasBeenSet)
+  {
+    ss << "TransitGatewayRouteTableAnnouncementId=" << StringUtils::URLEncode(m_transitGatewayRouteTableAnnouncementId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

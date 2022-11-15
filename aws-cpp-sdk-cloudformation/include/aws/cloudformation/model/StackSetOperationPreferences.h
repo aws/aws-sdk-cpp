@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>The user-specified preferences for how CloudFormation performs a stack set
-   * operation.</p> <p>For more information on maximum concurrent accounts and
+   * operation.</p> <p>For more information about maximum concurrent accounts and
    * failure tolerance, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
    * set operation options</a>.</p><p><h3>See Also:</h3>   <a
@@ -343,22 +343,22 @@ namespace Model
   private:
 
     RegionConcurrencyType m_regionConcurrencyType;
-    bool m_regionConcurrencyTypeHasBeenSet;
+    bool m_regionConcurrencyTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regionOrder;
-    bool m_regionOrderHasBeenSet;
+    bool m_regionOrderHasBeenSet = false;
 
     int m_failureToleranceCount;
-    bool m_failureToleranceCountHasBeenSet;
+    bool m_failureToleranceCountHasBeenSet = false;
 
     int m_failureTolerancePercentage;
-    bool m_failureTolerancePercentageHasBeenSet;
+    bool m_failureTolerancePercentageHasBeenSet = false;
 
     int m_maxConcurrentCount;
-    bool m_maxConcurrentCountHasBeenSet;
+    bool m_maxConcurrentCountHasBeenSet = false;
 
     int m_maxConcurrentPercentage;
-    bool m_maxConcurrentPercentageHasBeenSet;
+    bool m_maxConcurrentPercentageHasBeenSet = false;
   };
 
 } // namespace Model

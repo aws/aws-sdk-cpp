@@ -36,7 +36,7 @@ GetAppResult& GetAppResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   if(jsonValue.ValueExists("serverGroups"))
   {
-    Array<JsonView> serverGroupsJsonList = jsonValue.GetArray("serverGroups");
+    Aws::Utils::Array<JsonView> serverGroupsJsonList = jsonValue.GetArray("serverGroups");
     for(unsigned serverGroupsIndex = 0; serverGroupsIndex < serverGroupsJsonList.GetLength(); ++serverGroupsIndex)
     {
       m_serverGroups.push_back(serverGroupsJsonList[serverGroupsIndex].AsObject());
@@ -45,7 +45,7 @@ GetAppResult& GetAppResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

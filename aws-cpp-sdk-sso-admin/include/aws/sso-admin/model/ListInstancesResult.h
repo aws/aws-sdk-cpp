@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Lists the SSO instances that the caller has access to.</p>
+     * <p>Lists the IAM Identity Center instances that the caller has access to.</p>
      */
     inline const Aws::Vector<InstanceMetadata>& GetInstances() const{ return m_instances; }
 
     /**
-     * <p>Lists the SSO instances that the caller has access to.</p>
+     * <p>Lists the IAM Identity Center instances that the caller has access to.</p>
      */
     inline void SetInstances(const Aws::Vector<InstanceMetadata>& value) { m_instances = value; }
 
     /**
-     * <p>Lists the SSO instances that the caller has access to.</p>
+     * <p>Lists the IAM Identity Center instances that the caller has access to.</p>
      */
     inline void SetInstances(Aws::Vector<InstanceMetadata>&& value) { m_instances = std::move(value); }
 
     /**
-     * <p>Lists the SSO instances that the caller has access to.</p>
+     * <p>Lists the IAM Identity Center instances that the caller has access to.</p>
      */
     inline ListInstancesResult& WithInstances(const Aws::Vector<InstanceMetadata>& value) { SetInstances(value); return *this;}
 
     /**
-     * <p>Lists the SSO instances that the caller has access to.</p>
+     * <p>Lists the IAM Identity Center instances that the caller has access to.</p>
      */
     inline ListInstancesResult& WithInstances(Aws::Vector<InstanceMetadata>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the SSO instances that the caller has access to.</p>
+     * <p>Lists the IAM Identity Center instances that the caller has access to.</p>
      */
     inline ListInstancesResult& AddInstances(const InstanceMetadata& value) { m_instances.push_back(value); return *this; }
 
     /**
-     * <p>Lists the SSO instances that the caller has access to.</p>
+     * <p>Lists the IAM Identity Center instances that the caller has access to.</p>
      */
     inline ListInstancesResult& AddInstances(InstanceMetadata&& value) { m_instances.push_back(std::move(value)); return *this; }
 

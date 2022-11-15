@@ -28,7 +28,8 @@ UpdateIntentRequest::UpdateIntentRequest() :
     m_kendraConfigurationHasBeenSet(false),
     m_botIdHasBeenSet(false),
     m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
+    m_localeIdHasBeenSet(false),
+    m_initialResponseSettingHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,7 @@ Aws::String UpdateIntentRequest::SerializePayload() const
 
   if(m_sampleUtterancesHasBeenSet)
   {
-   Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
+   Aws::Utils::Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
    for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
    {
      sampleUtterancesJsonList[sampleUtterancesIndex].AsObject(m_sampleUtterances[sampleUtterancesIndex].Jsonize());
@@ -79,7 +80,7 @@ Aws::String UpdateIntentRequest::SerializePayload() const
 
   if(m_slotPrioritiesHasBeenSet)
   {
-   Array<JsonValue> slotPrioritiesJsonList(m_slotPriorities.size());
+   Aws::Utils::Array<JsonValue> slotPrioritiesJsonList(m_slotPriorities.size());
    for(unsigned slotPrioritiesIndex = 0; slotPrioritiesIndex < slotPrioritiesJsonList.GetLength(); ++slotPrioritiesIndex)
    {
      slotPrioritiesJsonList[slotPrioritiesIndex].AsObject(m_slotPriorities[slotPrioritiesIndex].Jsonize());
@@ -102,7 +103,7 @@ Aws::String UpdateIntentRequest::SerializePayload() const
 
   if(m_inputContextsHasBeenSet)
   {
-   Array<JsonValue> inputContextsJsonList(m_inputContexts.size());
+   Aws::Utils::Array<JsonValue> inputContextsJsonList(m_inputContexts.size());
    for(unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex)
    {
      inputContextsJsonList[inputContextsIndex].AsObject(m_inputContexts[inputContextsIndex].Jsonize());
@@ -113,7 +114,7 @@ Aws::String UpdateIntentRequest::SerializePayload() const
 
   if(m_outputContextsHasBeenSet)
   {
-   Array<JsonValue> outputContextsJsonList(m_outputContexts.size());
+   Aws::Utils::Array<JsonValue> outputContextsJsonList(m_outputContexts.size());
    for(unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex)
    {
      outputContextsJsonList[outputContextsIndex].AsObject(m_outputContexts[outputContextsIndex].Jsonize());
@@ -125,6 +126,12 @@ Aws::String UpdateIntentRequest::SerializePayload() const
   if(m_kendraConfigurationHasBeenSet)
   {
    payload.WithObject("kendraConfiguration", m_kendraConfiguration.Jsonize());
+
+  }
+
+  if(m_initialResponseSettingHasBeenSet)
+  {
+   payload.WithObject("initialResponseSetting", m_initialResponseSetting.Jsonize());
 
   }
 

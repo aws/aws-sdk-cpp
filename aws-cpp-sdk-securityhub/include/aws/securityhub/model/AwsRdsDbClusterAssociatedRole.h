@@ -80,52 +80,68 @@ namespace Model
 
 
     /**
-     * <p>The status of the association between the IAM role and the DB cluster.</p>
+     * <p>The status of the association between the IAM role and the DB cluster. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>ACTIVE</code> </p> </li> <li> <p>
+     * <code>INVALID</code> </p> </li> <li> <p> <code>PENDING</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the association between the IAM role and the DB cluster.</p>
+     * <p>The status of the association between the IAM role and the DB cluster. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>ACTIVE</code> </p> </li> <li> <p>
+     * <code>INVALID</code> </p> </li> <li> <p> <code>PENDING</code> </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the association between the IAM role and the DB cluster.</p>
+     * <p>The status of the association between the IAM role and the DB cluster. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>ACTIVE</code> </p> </li> <li> <p>
+     * <code>INVALID</code> </p> </li> <li> <p> <code>PENDING</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the association between the IAM role and the DB cluster.</p>
+     * <p>The status of the association between the IAM role and the DB cluster. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>ACTIVE</code> </p> </li> <li> <p>
+     * <code>INVALID</code> </p> </li> <li> <p> <code>PENDING</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the association between the IAM role and the DB cluster.</p>
+     * <p>The status of the association between the IAM role and the DB cluster. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>ACTIVE</code> </p> </li> <li> <p>
+     * <code>INVALID</code> </p> </li> <li> <p> <code>PENDING</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the association between the IAM role and the DB cluster.</p>
+     * <p>The status of the association between the IAM role and the DB cluster. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>ACTIVE</code> </p> </li> <li> <p>
+     * <code>INVALID</code> </p> </li> <li> <p> <code>PENDING</code> </p> </li> </ul>
      */
     inline AwsRdsDbClusterAssociatedRole& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the association between the IAM role and the DB cluster.</p>
+     * <p>The status of the association between the IAM role and the DB cluster. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>ACTIVE</code> </p> </li> <li> <p>
+     * <code>INVALID</code> </p> </li> <li> <p> <code>PENDING</code> </p> </li> </ul>
      */
     inline AwsRdsDbClusterAssociatedRole& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the association between the IAM role and the DB cluster.</p>
+     * <p>The status of the association between the IAM role and the DB cluster. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>ACTIVE</code> </p> </li> <li> <p>
+     * <code>INVALID</code> </p> </li> <li> <p> <code>PENDING</code> </p> </li> </ul>
      */
     inline AwsRdsDbClusterAssociatedRole& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

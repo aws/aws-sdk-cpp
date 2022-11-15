@@ -36,7 +36,7 @@ ListRoutesResult& ListRoutesResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("RouteSummaryList"))
   {
-    Array<JsonView> routeSummaryListJsonList = jsonValue.GetArray("RouteSummaryList");
+    Aws::Utils::Array<JsonView> routeSummaryListJsonList = jsonValue.GetArray("RouteSummaryList");
     for(unsigned routeSummaryListIndex = 0; routeSummaryListIndex < routeSummaryListJsonList.GetLength(); ++routeSummaryListIndex)
     {
       m_routeSummaryList.push_back(routeSummaryListJsonList[routeSummaryListIndex].AsObject());

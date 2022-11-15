@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerNameBeginsWith;
-    bool m_inferenceSchedulerNameBeginsWithHasBeenSet;
+    bool m_inferenceSchedulerNameBeginsWithHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
   };
 
 } // namespace Model

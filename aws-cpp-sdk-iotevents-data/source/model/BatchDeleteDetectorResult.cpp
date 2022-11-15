@@ -30,7 +30,7 @@ BatchDeleteDetectorResult& BatchDeleteDetectorResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("batchDeleteDetectorErrorEntries"))
   {
-    Array<JsonView> batchDeleteDetectorErrorEntriesJsonList = jsonValue.GetArray("batchDeleteDetectorErrorEntries");
+    Aws::Utils::Array<JsonView> batchDeleteDetectorErrorEntriesJsonList = jsonValue.GetArray("batchDeleteDetectorErrorEntries");
     for(unsigned batchDeleteDetectorErrorEntriesIndex = 0; batchDeleteDetectorErrorEntriesIndex < batchDeleteDetectorErrorEntriesJsonList.GetLength(); ++batchDeleteDetectorErrorEntriesIndex)
     {
       m_batchDeleteDetectorErrorEntries.push_back(batchDeleteDetectorErrorEntriesJsonList[batchDeleteDetectorErrorEntriesIndex].AsObject());

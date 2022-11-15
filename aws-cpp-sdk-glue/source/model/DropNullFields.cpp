@@ -46,7 +46,7 @@ DropNullFields& DropNullFields::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -63,7 +63,7 @@ DropNullFields& DropNullFields::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NullTextList"))
   {
-    Array<JsonView> nullTextListJsonList = jsonValue.GetArray("NullTextList");
+    Aws::Utils::Array<JsonView> nullTextListJsonList = jsonValue.GetArray("NullTextList");
     for(unsigned nullTextListIndex = 0; nullTextListIndex < nullTextListJsonList.GetLength(); ++nullTextListIndex)
     {
       m_nullTextList.push_back(nullTextListJsonList[nullTextListIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue DropNullFields::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
@@ -103,7 +103,7 @@ JsonValue DropNullFields::Jsonize() const
 
   if(m_nullTextListHasBeenSet)
   {
-   Array<JsonValue> nullTextListJsonList(m_nullTextList.size());
+   Aws::Utils::Array<JsonValue> nullTextListJsonList(m_nullTextList.size());
    for(unsigned nullTextListIndex = 0; nullTextListIndex < nullTextListJsonList.GetLength(); ++nullTextListIndex)
    {
      nullTextListJsonList[nullTextListIndex].AsObject(m_nullTextList[nullTextListIndex].Jsonize());

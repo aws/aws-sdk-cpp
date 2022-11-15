@@ -805,25 +805,25 @@ namespace Model
   private:
 
     Aws::String m_mLModelId;
-    bool m_mLModelIdHasBeenSet;
+    bool m_mLModelIdHasBeenSet = false;
 
     Aws::String m_mLModelName;
-    bool m_mLModelNameHasBeenSet;
+    bool m_mLModelNameHasBeenSet = false;
 
     MLModelType m_mLModelType;
-    bool m_mLModelTypeHasBeenSet;
+    bool m_mLModelTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_trainingDataSourceId;
-    bool m_trainingDataSourceIdHasBeenSet;
+    bool m_trainingDataSourceIdHasBeenSet = false;
 
     Aws::String m_recipe;
-    bool m_recipeHasBeenSet;
+    bool m_recipeHasBeenSet = false;
 
     Aws::String m_recipeUri;
-    bool m_recipeUriHasBeenSet;
+    bool m_recipeUriHasBeenSet = false;
   };
 
 } // namespace Model

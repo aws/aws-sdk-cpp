@@ -42,7 +42,7 @@ DisassociateSubnetsResult& DisassociateSubnetsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("SubnetMappings"))
   {
-    Array<JsonView> subnetMappingsJsonList = jsonValue.GetArray("SubnetMappings");
+    Aws::Utils::Array<JsonView> subnetMappingsJsonList = jsonValue.GetArray("SubnetMappings");
     for(unsigned subnetMappingsIndex = 0; subnetMappingsIndex < subnetMappingsJsonList.GetLength(); ++subnetMappingsIndex)
     {
       m_subnetMappings.push_back(subnetMappingsJsonList[subnetMappingsIndex].AsObject());

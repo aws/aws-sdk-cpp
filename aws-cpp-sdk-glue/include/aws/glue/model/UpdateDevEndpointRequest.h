@@ -478,28 +478,28 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_publicKey;
-    bool m_publicKeyHasBeenSet;
+    bool m_publicKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addPublicKeys;
-    bool m_addPublicKeysHasBeenSet;
+    bool m_addPublicKeysHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deletePublicKeys;
-    bool m_deletePublicKeysHasBeenSet;
+    bool m_deletePublicKeysHasBeenSet = false;
 
     DevEndpointCustomLibraries m_customLibraries;
-    bool m_customLibrariesHasBeenSet;
+    bool m_customLibrariesHasBeenSet = false;
 
     bool m_updateEtlLibraries;
-    bool m_updateEtlLibrariesHasBeenSet;
+    bool m_updateEtlLibrariesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deleteArguments;
-    bool m_deleteArgumentsHasBeenSet;
+    bool m_deleteArgumentsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_addArguments;
-    bool m_addArgumentsHasBeenSet;
+    bool m_addArgumentsHasBeenSet = false;
   };
 
 } // namespace Model

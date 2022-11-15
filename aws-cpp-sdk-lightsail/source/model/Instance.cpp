@@ -42,7 +42,8 @@ Instance::Instance() :
     m_networkingHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false)
+    m_sshKeyNameHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ Instance::Instance(JsonView jsonValue) :
     m_networkingHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false)
+    m_sshKeyNameHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,7 +123,7 @@ Instance& Instance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -152,7 +154,7 @@ Instance& Instance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("addOns"))
   {
-    Array<JsonView> addOnsJsonList = jsonValue.GetArray("addOns");
+    Aws::Utils::Array<JsonView> addOnsJsonList = jsonValue.GetArray("addOns");
     for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
     {
       m_addOns.push_back(addOnsJsonList[addOnsIndex].AsObject());
@@ -183,7 +185,7 @@ Instance& Instance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ipv6Addresses"))
   {
-    Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
+    Aws::Utils::Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
     for(unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex)
     {
       m_ipv6Addresses.push_back(ipv6AddressesJsonList[ipv6AddressesIndex].AsString());
@@ -233,6 +235,13 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_sshKeyNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metadataOptions"))
+  {
+    m_metadataOptions = jsonValue.GetObject("metadataOptions");
+
+    m_metadataOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -276,7 +285,7 @@ JsonValue Instance::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -305,7 +314,7 @@ JsonValue Instance::Jsonize() const
 
   if(m_addOnsHasBeenSet)
   {
-   Array<JsonValue> addOnsJsonList(m_addOns.size());
+   Aws::Utils::Array<JsonValue> addOnsJsonList(m_addOns.size());
    for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
    {
      addOnsJsonList[addOnsIndex].AsObject(m_addOns[addOnsIndex].Jsonize());
@@ -334,7 +343,7 @@ JsonValue Instance::Jsonize() const
 
   if(m_ipv6AddressesHasBeenSet)
   {
-   Array<JsonValue> ipv6AddressesJsonList(m_ipv6Addresses.size());
+   Aws::Utils::Array<JsonValue> ipv6AddressesJsonList(m_ipv6Addresses.size());
    for(unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex)
    {
      ipv6AddressesJsonList[ipv6AddressesIndex].AsString(m_ipv6Addresses[ipv6AddressesIndex]);
@@ -375,6 +384,12 @@ JsonValue Instance::Jsonize() const
   if(m_sshKeyNameHasBeenSet)
   {
    payload.WithString("sshKeyName", m_sshKeyName);
+
+  }
+
+  if(m_metadataOptionsHasBeenSet)
+  {
+   payload.WithObject("metadataOptions", m_metadataOptions.Jsonize());
 
   }
 

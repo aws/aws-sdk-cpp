@@ -142,16 +142,16 @@ namespace Model
   private:
 
     int m_status2xx;
-    bool m_status2xxHasBeenSet;
+    bool m_status2xxHasBeenSet = false;
 
     int m_status3xx;
-    bool m_status3xxHasBeenSet;
+    bool m_status3xxHasBeenSet = false;
 
     int m_status4xx;
-    bool m_status4xxHasBeenSet;
+    bool m_status4xxHasBeenSet = false;
 
     int m_status5xx;
-    bool m_status5xxHasBeenSet;
+    bool m_status5xxHasBeenSet = false;
   };
 
 } // namespace Model

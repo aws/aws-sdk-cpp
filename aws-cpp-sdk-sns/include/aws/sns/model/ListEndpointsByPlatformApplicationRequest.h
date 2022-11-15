@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_platformApplicationArn;
-    bool m_platformApplicationArnHasBeenSet;
+    bool m_platformApplicationArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

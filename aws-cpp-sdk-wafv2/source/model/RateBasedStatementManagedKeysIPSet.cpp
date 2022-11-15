@@ -44,7 +44,7 @@ RateBasedStatementManagedKeysIPSet& RateBasedStatementManagedKeysIPSet::operator
 
   if(jsonValue.ValueExists("Addresses"))
   {
-    Array<JsonView> addressesJsonList = jsonValue.GetArray("Addresses");
+    Aws::Utils::Array<JsonView> addressesJsonList = jsonValue.GetArray("Addresses");
     for(unsigned addressesIndex = 0; addressesIndex < addressesJsonList.GetLength(); ++addressesIndex)
     {
       m_addresses.push_back(addressesJsonList[addressesIndex].AsString());
@@ -66,7 +66,7 @@ JsonValue RateBasedStatementManagedKeysIPSet::Jsonize() const
 
   if(m_addressesHasBeenSet)
   {
-   Array<JsonValue> addressesJsonList(m_addresses.size());
+   Aws::Utils::Array<JsonValue> addressesJsonList(m_addresses.size());
    for(unsigned addressesIndex = 0; addressesIndex < addressesJsonList.GetLength(); ++addressesIndex)
    {
      addressesJsonList[addressesIndex].AsString(m_addresses[addressesIndex]);

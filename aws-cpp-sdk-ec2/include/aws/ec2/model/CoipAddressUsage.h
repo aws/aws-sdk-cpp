@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_awsService;
-    bool m_awsServiceHasBeenSet;
+    bool m_awsServiceHasBeenSet = false;
 
     Aws::String m_coIp;
-    bool m_coIpHasBeenSet;
+    bool m_coIpHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     InsightType m_insightType;
-    bool m_insightTypeHasBeenSet;
+    bool m_insightTypeHasBeenSet = false;
   };
 
 } // namespace Model

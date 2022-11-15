@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_hostIds;
-    bool m_hostIdsHasBeenSet;
+    bool m_hostIdsHasBeenSet = false;
   };
 
 } // namespace Model

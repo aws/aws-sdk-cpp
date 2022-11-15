@@ -113,7 +113,7 @@ InstanceSnapshot& InstanceSnapshot::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -137,7 +137,7 @@ InstanceSnapshot& InstanceSnapshot::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("fromAttachedDisks"))
   {
-    Array<JsonView> fromAttachedDisksJsonList = jsonValue.GetArray("fromAttachedDisks");
+    Aws::Utils::Array<JsonView> fromAttachedDisksJsonList = jsonValue.GetArray("fromAttachedDisks");
     for(unsigned fromAttachedDisksIndex = 0; fromAttachedDisksIndex < fromAttachedDisksJsonList.GetLength(); ++fromAttachedDisksIndex)
     {
       m_fromAttachedDisks.push_back(fromAttachedDisksJsonList[fromAttachedDisksIndex].AsObject());
@@ -230,7 +230,7 @@ JsonValue InstanceSnapshot::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -252,7 +252,7 @@ JsonValue InstanceSnapshot::Jsonize() const
 
   if(m_fromAttachedDisksHasBeenSet)
   {
-   Array<JsonValue> fromAttachedDisksJsonList(m_fromAttachedDisks.size());
+   Aws::Utils::Array<JsonValue> fromAttachedDisksJsonList(m_fromAttachedDisks.size());
    for(unsigned fromAttachedDisksIndex = 0; fromAttachedDisksIndex < fromAttachedDisksJsonList.GetLength(); ++fromAttachedDisksIndex)
    {
      fromAttachedDisksJsonList[fromAttachedDisksIndex].AsObject(m_fromAttachedDisks[fromAttachedDisksIndex].Jsonize());

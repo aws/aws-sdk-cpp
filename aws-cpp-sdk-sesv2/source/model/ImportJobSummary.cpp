@@ -23,7 +23,11 @@ ImportJobSummary::ImportJobSummary() :
     m_importDestinationHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+    m_createdTimestampHasBeenSet(false),
+    m_processedRecordsCount(0),
+    m_processedRecordsCountHasBeenSet(false),
+    m_failedRecordsCount(0),
+    m_failedRecordsCountHasBeenSet(false)
 {
 }
 
@@ -32,7 +36,11 @@ ImportJobSummary::ImportJobSummary(JsonView jsonValue) :
     m_importDestinationHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+    m_createdTimestampHasBeenSet(false),
+    m_processedRecordsCount(0),
+    m_processedRecordsCountHasBeenSet(false),
+    m_failedRecordsCount(0),
+    m_failedRecordsCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +75,20 @@ ImportJobSummary& ImportJobSummary::operator =(JsonView jsonValue)
     m_createdTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProcessedRecordsCount"))
+  {
+    m_processedRecordsCount = jsonValue.GetInteger("ProcessedRecordsCount");
+
+    m_processedRecordsCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FailedRecordsCount"))
+  {
+    m_failedRecordsCount = jsonValue.GetInteger("FailedRecordsCount");
+
+    m_failedRecordsCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +116,18 @@ JsonValue ImportJobSummary::Jsonize() const
   if(m_createdTimestampHasBeenSet)
   {
    payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_processedRecordsCountHasBeenSet)
+  {
+   payload.WithInteger("ProcessedRecordsCount", m_processedRecordsCount);
+
+  }
+
+  if(m_failedRecordsCountHasBeenSet)
+  {
+   payload.WithInteger("FailedRecordsCount", m_failedRecordsCount);
+
   }
 
   return payload;

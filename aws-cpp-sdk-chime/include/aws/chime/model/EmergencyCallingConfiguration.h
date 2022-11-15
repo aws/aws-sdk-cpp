@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<DNISEmergencyCallingConfiguration> m_dNIS;
-    bool m_dNISHasBeenSet;
+    bool m_dNISHasBeenSet = false;
   };
 
 } // namespace Model

@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::Vector<ColumnDefinition> m_allColumns;
-    bool m_allColumnsHasBeenSet;
+    bool m_allColumnsHasBeenSet = false;
 
     Aws::Vector<PartitionKey> m_partitionKeys;
-    bool m_partitionKeysHasBeenSet;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::Vector<ClusteringKey> m_clusteringKeys;
-    bool m_clusteringKeysHasBeenSet;
+    bool m_clusteringKeysHasBeenSet = false;
 
     Aws::Vector<StaticColumn> m_staticColumns;
-    bool m_staticColumnsHasBeenSet;
+    bool m_staticColumnsHasBeenSet = false;
   };
 
 } // namespace Model

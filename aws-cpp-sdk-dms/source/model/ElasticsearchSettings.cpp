@@ -24,7 +24,9 @@ ElasticsearchSettings::ElasticsearchSettings() :
     m_fullLoadErrorPercentage(0),
     m_fullLoadErrorPercentageHasBeenSet(false),
     m_errorRetryDuration(0),
-    m_errorRetryDurationHasBeenSet(false)
+    m_errorRetryDurationHasBeenSet(false),
+    m_useNewMappingType(false),
+    m_useNewMappingTypeHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ ElasticsearchSettings::ElasticsearchSettings(JsonView jsonValue) :
     m_fullLoadErrorPercentage(0),
     m_fullLoadErrorPercentageHasBeenSet(false),
     m_errorRetryDuration(0),
-    m_errorRetryDurationHasBeenSet(false)
+    m_errorRetryDurationHasBeenSet(false),
+    m_useNewMappingType(false),
+    m_useNewMappingTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +73,13 @@ ElasticsearchSettings& ElasticsearchSettings::operator =(JsonView jsonValue)
     m_errorRetryDurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UseNewMappingType"))
+  {
+    m_useNewMappingType = jsonValue.GetBool("UseNewMappingType");
+
+    m_useNewMappingTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +108,12 @@ JsonValue ElasticsearchSettings::Jsonize() const
   if(m_errorRetryDurationHasBeenSet)
   {
    payload.WithInteger("ErrorRetryDuration", m_errorRetryDuration);
+
+  }
+
+  if(m_useNewMappingTypeHasBeenSet)
+  {
+   payload.WithBool("UseNewMappingType", m_useNewMappingType);
 
   }
 

@@ -116,10 +116,10 @@ namespace Model
   private:
 
     ChangeDirectionEnum m_desiredChange;
-    bool m_desiredChangeHasBeenSet;
+    bool m_desiredChangeHasBeenSet = false;
 
     MetricDefinitionConfig m_metricDefinition;
-    bool m_metricDefinitionHasBeenSet;
+    bool m_metricDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

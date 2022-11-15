@@ -175,16 +175,16 @@ namespace Model
   private:
 
     PeeringConnectionOptionsRequest m_accepterPeeringConnectionOptions;
-    bool m_accepterPeeringConnectionOptionsHasBeenSet;
+    bool m_accepterPeeringConnectionOptionsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     PeeringConnectionOptionsRequest m_requesterPeeringConnectionOptions;
-    bool m_requesterPeeringConnectionOptionsHasBeenSet;
+    bool m_requesterPeeringConnectionOptionsHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

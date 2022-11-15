@@ -121,16 +121,16 @@ namespace Model
   private:
 
     int m_maximumVideoBufferDelayMilliseconds;
-    bool m_maximumVideoBufferDelayMillisecondsHasBeenSet;
+    bool m_maximumVideoBufferDelayMillisecondsHasBeenSet = false;
 
     int m_transportStreamBitrate;
-    bool m_transportStreamBitrateHasBeenSet;
+    bool m_transportStreamBitrateHasBeenSet = false;
 
     int m_transportStreamId;
-    bool m_transportStreamIdHasBeenSet;
+    bool m_transportStreamIdHasBeenSet = false;
 
     int m_transportStreamReservedBitrate;
-    bool m_transportStreamReservedBitrateHasBeenSet;
+    bool m_transportStreamReservedBitrateHasBeenSet = false;
   };
 
 } // namespace Model

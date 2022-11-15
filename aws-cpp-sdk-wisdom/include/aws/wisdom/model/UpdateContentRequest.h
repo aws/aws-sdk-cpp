@@ -495,28 +495,28 @@ namespace Model
   private:
 
     Aws::String m_contentId;
-    bool m_contentIdHasBeenSet;
+    bool m_contentIdHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet;
+    bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_overrideLinkOutUri;
-    bool m_overrideLinkOutUriHasBeenSet;
+    bool m_overrideLinkOutUriHasBeenSet = false;
 
     bool m_removeOverrideLinkOutUri;
-    bool m_removeOverrideLinkOutUriHasBeenSet;
+    bool m_removeOverrideLinkOutUriHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
   };
 
 } // namespace Model

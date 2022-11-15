@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     Aws::Vector<DimensionDetail> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

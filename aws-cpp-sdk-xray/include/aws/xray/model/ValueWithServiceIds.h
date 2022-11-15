@@ -113,10 +113,10 @@ namespace Model
   private:
 
     AnnotationValue m_annotationValue;
-    bool m_annotationValueHasBeenSet;
+    bool m_annotationValueHasBeenSet = false;
 
     Aws::Vector<ServiceId> m_serviceIds;
-    bool m_serviceIdsHasBeenSet;
+    bool m_serviceIdsHasBeenSet = false;
   };
 
 } // namespace Model

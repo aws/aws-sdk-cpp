@@ -88,7 +88,7 @@ DestinationFieldProperties& DestinationFieldProperties::operator =(JsonView json
 
   if(jsonValue.ValueExists("supportedWriteOperations"))
   {
-    Array<JsonView> supportedWriteOperationsJsonList = jsonValue.GetArray("supportedWriteOperations");
+    Aws::Utils::Array<JsonView> supportedWriteOperationsJsonList = jsonValue.GetArray("supportedWriteOperations");
     for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
     {
       m_supportedWriteOperations.push_back(WriteOperationTypeMapper::GetWriteOperationTypeForName(supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString()));
@@ -135,7 +135,7 @@ JsonValue DestinationFieldProperties::Jsonize() const
 
   if(m_supportedWriteOperationsHasBeenSet)
   {
-   Array<JsonValue> supportedWriteOperationsJsonList(m_supportedWriteOperations.size());
+   Aws::Utils::Array<JsonValue> supportedWriteOperationsJsonList(m_supportedWriteOperations.size());
    for(unsigned supportedWriteOperationsIndex = 0; supportedWriteOperationsIndex < supportedWriteOperationsJsonList.GetLength(); ++supportedWriteOperationsIndex)
    {
      supportedWriteOperationsJsonList[supportedWriteOperationsIndex].AsString(WriteOperationTypeMapper::GetNameForWriteOperationType(m_supportedWriteOperations[supportedWriteOperationsIndex]));

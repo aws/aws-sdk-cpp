@@ -44,7 +44,7 @@ PendingDeploymentSummary& PendingDeploymentSummary::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ProductionVariants"))
   {
-    Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
+    Aws::Utils::Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
     for(unsigned productionVariantsIndex = 0; productionVariantsIndex < productionVariantsJsonList.GetLength(); ++productionVariantsIndex)
     {
       m_productionVariants.push_back(productionVariantsJsonList[productionVariantsIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue PendingDeploymentSummary::Jsonize() const
 
   if(m_productionVariantsHasBeenSet)
   {
-   Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
+   Aws::Utils::Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
    for(unsigned productionVariantsIndex = 0; productionVariantsIndex < productionVariantsJsonList.GetLength(); ++productionVariantsIndex)
    {
      productionVariantsJsonList[productionVariantsIndex].AsObject(m_productionVariants[productionVariantsIndex].Jsonize());

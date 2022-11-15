@@ -120,7 +120,7 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
     XmlNode modifiedSinceConstraintNode = resultNode.FirstChild("ModifiedSinceConstraint");
     if(!modifiedSinceConstraintNode.IsNull())
     {
-      m_modifiedSinceConstraint = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modifiedSinceConstraintNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_modifiedSinceConstraint = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modifiedSinceConstraintNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_modifiedSinceConstraintHasBeenSet = true;
     }
     XmlNode newObjectMetadataNode = resultNode.FirstChild("NewObjectMetadata");
@@ -162,7 +162,7 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
     XmlNode unModifiedSinceConstraintNode = resultNode.FirstChild("UnModifiedSinceConstraint");
     if(!unModifiedSinceConstraintNode.IsNull())
     {
-      m_unModifiedSinceConstraint = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unModifiedSinceConstraintNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_unModifiedSinceConstraint = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unModifiedSinceConstraintNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_unModifiedSinceConstraintHasBeenSet = true;
     }
     XmlNode sSEAwsKmsKeyIdNode = resultNode.FirstChild("SSEAwsKmsKeyId");
@@ -192,7 +192,7 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
     XmlNode objectLockRetainUntilDateNode = resultNode.FirstChild("ObjectLockRetainUntilDate");
     if(!objectLockRetainUntilDateNode.IsNull())
     {
-      m_objectLockRetainUntilDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockRetainUntilDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_objectLockRetainUntilDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockRetainUntilDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_objectLockRetainUntilDateHasBeenSet = true;
     }
     XmlNode bucketKeyEnabledNode = resultNode.FirstChild("BucketKeyEnabled");
@@ -246,7 +246,7 @@ void S3CopyObjectOperation::AddToNode(XmlNode& parentNode) const
   if(m_modifiedSinceConstraintHasBeenSet)
   {
    XmlNode modifiedSinceConstraintNode = parentNode.CreateChildElement("ModifiedSinceConstraint");
-   modifiedSinceConstraintNode.SetText(m_modifiedSinceConstraint.ToGmtString(DateFormat::ISO_8601));
+   modifiedSinceConstraintNode.SetText(m_modifiedSinceConstraint.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_newObjectMetadataHasBeenSet)
@@ -288,7 +288,7 @@ void S3CopyObjectOperation::AddToNode(XmlNode& parentNode) const
   if(m_unModifiedSinceConstraintHasBeenSet)
   {
    XmlNode unModifiedSinceConstraintNode = parentNode.CreateChildElement("UnModifiedSinceConstraint");
-   unModifiedSinceConstraintNode.SetText(m_unModifiedSinceConstraint.ToGmtString(DateFormat::ISO_8601));
+   unModifiedSinceConstraintNode.SetText(m_unModifiedSinceConstraint.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_sSEAwsKmsKeyIdHasBeenSet)
@@ -318,7 +318,7 @@ void S3CopyObjectOperation::AddToNode(XmlNode& parentNode) const
   if(m_objectLockRetainUntilDateHasBeenSet)
   {
    XmlNode objectLockRetainUntilDateNode = parentNode.CreateChildElement("ObjectLockRetainUntilDate");
-   objectLockRetainUntilDateNode.SetText(m_objectLockRetainUntilDate.ToGmtString(DateFormat::ISO_8601));
+   objectLockRetainUntilDateNode.SetText(m_objectLockRetainUntilDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_bucketKeyEnabledHasBeenSet)

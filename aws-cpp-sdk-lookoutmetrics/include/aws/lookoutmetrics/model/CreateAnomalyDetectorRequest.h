@@ -282,19 +282,19 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorName;
-    bool m_anomalyDetectorNameHasBeenSet;
+    bool m_anomalyDetectorNameHasBeenSet = false;
 
     Aws::String m_anomalyDetectorDescription;
-    bool m_anomalyDetectorDescriptionHasBeenSet;
+    bool m_anomalyDetectorDescriptionHasBeenSet = false;
 
     AnomalyDetectorConfig m_anomalyDetectorConfig;
-    bool m_anomalyDetectorConfigHasBeenSet;
+    bool m_anomalyDetectorConfigHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

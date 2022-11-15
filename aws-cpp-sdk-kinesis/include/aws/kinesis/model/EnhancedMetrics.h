@@ -169,7 +169,7 @@ namespace Model
   private:
 
     Aws::Vector<MetricsName> m_shardLevelMetrics;
-    bool m_shardLevelMetricsHasBeenSet;
+    bool m_shardLevelMetricsHasBeenSet = false;
   };
 
 } // namespace Model

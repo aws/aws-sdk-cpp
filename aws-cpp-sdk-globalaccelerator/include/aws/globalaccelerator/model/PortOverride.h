@@ -28,7 +28,7 @@ namespace Model
    * routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
    * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-   * Port overrides</a> in the <i>AWS Global Accelerator Developer
+   * Overriding listener ports</a> in the <i>Global Accelerator Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/PortOverride">AWS
    * API Reference</a></p>
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     int m_listenerPort;
-    bool m_listenerPortHasBeenSet;
+    bool m_listenerPortHasBeenSet = false;
 
     int m_endpointPort;
-    bool m_endpointPortHasBeenSet;
+    bool m_endpointPortHasBeenSet = false;
   };
 
 } // namespace Model

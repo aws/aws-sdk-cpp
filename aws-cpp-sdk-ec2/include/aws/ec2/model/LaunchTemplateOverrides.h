@@ -74,49 +74,81 @@ namespace Model
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline LaunchTemplateOverrides& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline LaunchTemplateOverrides& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline LaunchTemplateOverrides& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
@@ -295,7 +327,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
 
@@ -305,7 +337,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
 
@@ -315,7 +347,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
 
@@ -325,7 +357,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
 
@@ -335,7 +367,7 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline LaunchTemplateOverrides& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
 
@@ -345,32 +377,32 @@ namespace Model
      * On-Demand and Spot allocation strategies to launch instances from these instance
      * types, in the same way as when you specify a list of instance types.</p> 
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p> 
+     * <code>InstanceType</code>.</p> 
      */
     inline LaunchTemplateOverrides& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 
   private:
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_spotPrice;
-    bool m_spotPriceHasBeenSet;
+    bool m_spotPriceHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     double m_weightedCapacity;
-    bool m_weightedCapacityHasBeenSet;
+    bool m_weightedCapacityHasBeenSet = false;
 
     double m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     InstanceRequirements m_instanceRequirements;
-    bool m_instanceRequirementsHasBeenSet;
+    bool m_instanceRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

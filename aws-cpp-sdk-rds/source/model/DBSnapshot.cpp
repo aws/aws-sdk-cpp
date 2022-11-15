@@ -57,7 +57,10 @@ DBSnapshot::DBSnapshot() :
     m_dbiResourceIdHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_originalSnapshotCreateTimeHasBeenSet(false),
-    m_snapshotTargetHasBeenSet(false)
+    m_snapshotDatabaseTimeHasBeenSet(false),
+    m_snapshotTargetHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
 }
 
@@ -98,7 +101,10 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_dbiResourceIdHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_originalSnapshotCreateTimeHasBeenSet(false),
-    m_snapshotTargetHasBeenSet(false)
+    m_snapshotDatabaseTimeHasBeenSet(false),
+    m_snapshotTargetHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -124,7 +130,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
     if(!snapshotCreateTimeNode.IsNull())
     {
-      m_snapshotCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_snapshotCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_snapshotCreateTimeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
@@ -166,7 +172,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode instanceCreateTimeNode = resultNode.FirstChild("InstanceCreateTime");
     if(!instanceCreateTimeNode.IsNull())
     {
-      m_instanceCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_instanceCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_instanceCreateTimeHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
@@ -298,14 +304,26 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode originalSnapshotCreateTimeNode = resultNode.FirstChild("OriginalSnapshotCreateTime");
     if(!originalSnapshotCreateTimeNode.IsNull())
     {
-      m_originalSnapshotCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalSnapshotCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_originalSnapshotCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalSnapshotCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_originalSnapshotCreateTimeHasBeenSet = true;
+    }
+    XmlNode snapshotDatabaseTimeNode = resultNode.FirstChild("SnapshotDatabaseTime");
+    if(!snapshotDatabaseTimeNode.IsNull())
+    {
+      m_snapshotDatabaseTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotDatabaseTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_snapshotDatabaseTimeHasBeenSet = true;
     }
     XmlNode snapshotTargetNode = resultNode.FirstChild("SnapshotTarget");
     if(!snapshotTargetNode.IsNull())
     {
       m_snapshotTarget = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTargetNode.GetText());
       m_snapshotTargetHasBeenSet = true;
+    }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
     }
   }
 
@@ -326,7 +344,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_snapshotCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_engineHasBeenSet)
@@ -361,7 +379,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_masterUsernameHasBeenSet)
@@ -473,12 +491,22 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_originalSnapshotCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_snapshotDatabaseTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotDatabaseTime=" << StringUtils::URLEncode(m_snapshotDatabaseTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_snapshotTargetHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
+  }
+
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 
 }
@@ -495,7 +523,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-      oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_engineHasBeenSet)
   {
@@ -523,7 +551,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-      oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {
@@ -615,11 +643,19 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_originalSnapshotCreateTimeHasBeenSet)
   {
-      oStream << location << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_snapshotDatabaseTimeHasBeenSet)
+  {
+      oStream << location << ".SnapshotDatabaseTime=" << StringUtils::URLEncode(m_snapshotDatabaseTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_snapshotTargetHasBeenSet)
   {
       oStream << location << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
+  }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 }
 

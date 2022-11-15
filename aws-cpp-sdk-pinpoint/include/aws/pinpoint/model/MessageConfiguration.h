@@ -389,31 +389,31 @@ namespace Model
   private:
 
     Message m_aDMMessage;
-    bool m_aDMMessageHasBeenSet;
+    bool m_aDMMessageHasBeenSet = false;
 
     Message m_aPNSMessage;
-    bool m_aPNSMessageHasBeenSet;
+    bool m_aPNSMessageHasBeenSet = false;
 
     Message m_baiduMessage;
-    bool m_baiduMessageHasBeenSet;
+    bool m_baiduMessageHasBeenSet = false;
 
     CampaignCustomMessage m_customMessage;
-    bool m_customMessageHasBeenSet;
+    bool m_customMessageHasBeenSet = false;
 
     Message m_defaultMessage;
-    bool m_defaultMessageHasBeenSet;
+    bool m_defaultMessageHasBeenSet = false;
 
     CampaignEmailMessage m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
 
     Message m_gCMMessage;
-    bool m_gCMMessageHasBeenSet;
+    bool m_gCMMessageHasBeenSet = false;
 
     CampaignSmsMessage m_sMSMessage;
-    bool m_sMSMessageHasBeenSet;
+    bool m_sMSMessageHasBeenSet = false;
 
     CampaignInAppMessage m_inAppMessage;
-    bool m_inAppMessageHasBeenSet;
+    bool m_inAppMessageHasBeenSet = false;
   };
 
 } // namespace Model

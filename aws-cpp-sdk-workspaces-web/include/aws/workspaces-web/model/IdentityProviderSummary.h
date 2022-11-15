@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_identityProviderArn;
-    bool m_identityProviderArnHasBeenSet;
+    bool m_identityProviderArnHasBeenSet = false;
 
     Aws::String m_identityProviderName;
-    bool m_identityProviderNameHasBeenSet;
+    bool m_identityProviderNameHasBeenSet = false;
 
     IdentityProviderType m_identityProviderType;
-    bool m_identityProviderTypeHasBeenSet;
+    bool m_identityProviderTypeHasBeenSet = false;
   };
 
 } // namespace Model

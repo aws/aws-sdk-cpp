@@ -367,22 +367,22 @@ namespace Model
   private:
 
     Aws::String m_originalMessageId;
-    bool m_originalMessageIdHasBeenSet;
+    bool m_originalMessageIdHasBeenSet = false;
 
     Aws::String m_bounceSender;
-    bool m_bounceSenderHasBeenSet;
+    bool m_bounceSenderHasBeenSet = false;
 
     Aws::String m_explanation;
-    bool m_explanationHasBeenSet;
+    bool m_explanationHasBeenSet = false;
 
     MessageDsn m_messageDsn;
-    bool m_messageDsnHasBeenSet;
+    bool m_messageDsnHasBeenSet = false;
 
     Aws::Vector<BouncedRecipientInfo> m_bouncedRecipientInfoList;
-    bool m_bouncedRecipientInfoListHasBeenSet;
+    bool m_bouncedRecipientInfoListHasBeenSet = false;
 
     Aws::String m_bounceSenderArn;
-    bool m_bounceSenderArnHasBeenSet;
+    bool m_bounceSenderArnHasBeenSet = false;
   };
 
 } // namespace Model

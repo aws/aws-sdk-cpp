@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/DirectInternetAccess.h>
 #include <aws/sagemaker/model/RootAccess.h>
+#include <aws/sagemaker/model/InstanceMetadataServiceConfiguration.h>
 #include <aws/sagemaker/model/NotebookInstanceAcceleratorType.h>
 #include <utility>
 
@@ -979,6 +980,32 @@ namespace Model
      */
     inline DescribeNotebookInstanceResult& WithPlatformIdentifier(const char* value) { SetPlatformIdentifier(value); return *this;}
 
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline const InstanceMetadataServiceConfiguration& GetInstanceMetadataServiceConfiguration() const{ return m_instanceMetadataServiceConfiguration; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline void SetInstanceMetadataServiceConfiguration(const InstanceMetadataServiceConfiguration& value) { m_instanceMetadataServiceConfiguration = value; }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline void SetInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration&& value) { m_instanceMetadataServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline DescribeNotebookInstanceResult& WithInstanceMetadataServiceConfiguration(const InstanceMetadataServiceConfiguration& value) { SetInstanceMetadataServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Information on the IMDS configuration of the notebook instance</p>
+     */
+    inline DescribeNotebookInstanceResult& WithInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration&& value) { SetInstanceMetadataServiceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceArn;
@@ -1022,6 +1049,8 @@ namespace Model
     RootAccess m_rootAccess;
 
     Aws::String m_platformIdentifier;
+
+    InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
   };
 
 } // namespace Model

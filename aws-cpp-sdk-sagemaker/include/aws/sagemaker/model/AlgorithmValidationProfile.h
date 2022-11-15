@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     TrainingJobDefinition m_trainingJobDefinition;
-    bool m_trainingJobDefinitionHasBeenSet;
+    bool m_trainingJobDefinitionHasBeenSet = false;
 
     TransformJobDefinition m_transformJobDefinition;
-    bool m_transformJobDefinitionHasBeenSet;
+    bool m_transformJobDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

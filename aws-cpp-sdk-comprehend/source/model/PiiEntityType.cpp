@@ -43,6 +43,20 @@ namespace Aws
         static const int IP_ADDRESS_HASH = HashingUtils::HashString("IP_ADDRESS");
         static const int MAC_ADDRESS_HASH = HashingUtils::HashString("MAC_ADDRESS");
         static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static const int LICENSE_PLATE_HASH = HashingUtils::HashString("LICENSE_PLATE");
+        static const int VEHICLE_IDENTIFICATION_NUMBER_HASH = HashingUtils::HashString("VEHICLE_IDENTIFICATION_NUMBER");
+        static const int UK_NATIONAL_INSURANCE_NUMBER_HASH = HashingUtils::HashString("UK_NATIONAL_INSURANCE_NUMBER");
+        static const int CA_SOCIAL_INSURANCE_NUMBER_HASH = HashingUtils::HashString("CA_SOCIAL_INSURANCE_NUMBER");
+        static const int US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER_HASH = HashingUtils::HashString("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
+        static const int UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER_HASH = HashingUtils::HashString("UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER");
+        static const int IN_PERMANENT_ACCOUNT_NUMBER_HASH = HashingUtils::HashString("IN_PERMANENT_ACCOUNT_NUMBER");
+        static const int IN_NREGA_HASH = HashingUtils::HashString("IN_NREGA");
+        static const int INTERNATIONAL_BANK_ACCOUNT_NUMBER_HASH = HashingUtils::HashString("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
+        static const int SWIFT_CODE_HASH = HashingUtils::HashString("SWIFT_CODE");
+        static const int UK_NATIONAL_HEALTH_SERVICE_NUMBER_HASH = HashingUtils::HashString("UK_NATIONAL_HEALTH_SERVICE_NUMBER");
+        static const int CA_HEALTH_NUMBER_HASH = HashingUtils::HashString("CA_HEALTH_NUMBER");
+        static const int IN_AADHAAR_HASH = HashingUtils::HashString("IN_AADHAAR");
+        static const int IN_VOTER_NUMBER_HASH = HashingUtils::HashString("IN_VOTER_NUMBER");
 
 
         PiiEntityType GetPiiEntityTypeForName(const Aws::String& name)
@@ -140,6 +154,62 @@ namespace Aws
           {
             return PiiEntityType::ALL;
           }
+          else if (hashCode == LICENSE_PLATE_HASH)
+          {
+            return PiiEntityType::LICENSE_PLATE;
+          }
+          else if (hashCode == VEHICLE_IDENTIFICATION_NUMBER_HASH)
+          {
+            return PiiEntityType::VEHICLE_IDENTIFICATION_NUMBER;
+          }
+          else if (hashCode == UK_NATIONAL_INSURANCE_NUMBER_HASH)
+          {
+            return PiiEntityType::UK_NATIONAL_INSURANCE_NUMBER;
+          }
+          else if (hashCode == CA_SOCIAL_INSURANCE_NUMBER_HASH)
+          {
+            return PiiEntityType::CA_SOCIAL_INSURANCE_NUMBER;
+          }
+          else if (hashCode == US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER_HASH)
+          {
+            return PiiEntityType::US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER;
+          }
+          else if (hashCode == UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER_HASH)
+          {
+            return PiiEntityType::UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER;
+          }
+          else if (hashCode == IN_PERMANENT_ACCOUNT_NUMBER_HASH)
+          {
+            return PiiEntityType::IN_PERMANENT_ACCOUNT_NUMBER;
+          }
+          else if (hashCode == IN_NREGA_HASH)
+          {
+            return PiiEntityType::IN_NREGA;
+          }
+          else if (hashCode == INTERNATIONAL_BANK_ACCOUNT_NUMBER_HASH)
+          {
+            return PiiEntityType::INTERNATIONAL_BANK_ACCOUNT_NUMBER;
+          }
+          else if (hashCode == SWIFT_CODE_HASH)
+          {
+            return PiiEntityType::SWIFT_CODE;
+          }
+          else if (hashCode == UK_NATIONAL_HEALTH_SERVICE_NUMBER_HASH)
+          {
+            return PiiEntityType::UK_NATIONAL_HEALTH_SERVICE_NUMBER;
+          }
+          else if (hashCode == CA_HEALTH_NUMBER_HASH)
+          {
+            return PiiEntityType::CA_HEALTH_NUMBER;
+          }
+          else if (hashCode == IN_AADHAAR_HASH)
+          {
+            return PiiEntityType::IN_AADHAAR;
+          }
+          else if (hashCode == IN_VOTER_NUMBER_HASH)
+          {
+            return PiiEntityType::IN_VOTER_NUMBER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -200,6 +270,34 @@ namespace Aws
             return "MAC_ADDRESS";
           case PiiEntityType::ALL:
             return "ALL";
+          case PiiEntityType::LICENSE_PLATE:
+            return "LICENSE_PLATE";
+          case PiiEntityType::VEHICLE_IDENTIFICATION_NUMBER:
+            return "VEHICLE_IDENTIFICATION_NUMBER";
+          case PiiEntityType::UK_NATIONAL_INSURANCE_NUMBER:
+            return "UK_NATIONAL_INSURANCE_NUMBER";
+          case PiiEntityType::CA_SOCIAL_INSURANCE_NUMBER:
+            return "CA_SOCIAL_INSURANCE_NUMBER";
+          case PiiEntityType::US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER:
+            return "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER";
+          case PiiEntityType::UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER:
+            return "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER";
+          case PiiEntityType::IN_PERMANENT_ACCOUNT_NUMBER:
+            return "IN_PERMANENT_ACCOUNT_NUMBER";
+          case PiiEntityType::IN_NREGA:
+            return "IN_NREGA";
+          case PiiEntityType::INTERNATIONAL_BANK_ACCOUNT_NUMBER:
+            return "INTERNATIONAL_BANK_ACCOUNT_NUMBER";
+          case PiiEntityType::SWIFT_CODE:
+            return "SWIFT_CODE";
+          case PiiEntityType::UK_NATIONAL_HEALTH_SERVICE_NUMBER:
+            return "UK_NATIONAL_HEALTH_SERVICE_NUMBER";
+          case PiiEntityType::CA_HEALTH_NUMBER:
+            return "CA_HEALTH_NUMBER";
+          case PiiEntityType::IN_AADHAAR:
+            return "IN_AADHAAR";
+          case PiiEntityType::IN_VOTER_NUMBER:
+            return "IN_VOTER_NUMBER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

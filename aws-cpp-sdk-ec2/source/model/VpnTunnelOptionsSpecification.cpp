@@ -44,7 +44,8 @@ VpnTunnelOptionsSpecification::VpnTunnelOptionsSpecification() :
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
     m_iKEVersionsHasBeenSet(false),
-    m_startupActionHasBeenSet(false)
+    m_startupActionHasBeenSet(false),
+    m_logOptionsHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ VpnTunnelOptionsSpecification::VpnTunnelOptionsSpecification(const XmlNode& xmlN
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
     m_iKEVersionsHasBeenSet(false),
-    m_startupActionHasBeenSet(false)
+    m_startupActionHasBeenSet(false),
+    m_logOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -233,6 +235,12 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
       m_startupAction = Aws::Utils::Xml::DecodeEscapedXmlText(startupActionNode.GetText());
       m_startupActionHasBeenSet = true;
     }
+    XmlNode logOptionsNode = resultNode.FirstChild("LogOptions");
+    if(!logOptionsNode.IsNull())
+    {
+      m_logOptions = logOptionsNode;
+      m_logOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -372,6 +380,13 @@ void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << index << locationValue << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
   }
 
+  if(m_logOptionsHasBeenSet)
+  {
+      Aws::StringStream logOptionsLocationAndMemberSs;
+      logOptionsLocationAndMemberSs << location << index << locationValue << ".LogOptions";
+      m_logOptions.OutputToStream(oStream, logOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -489,6 +504,12 @@ void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const 
   if(m_startupActionHasBeenSet)
   {
       oStream << location << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
+  }
+  if(m_logOptionsHasBeenSet)
+  {
+      Aws::String logOptionsLocationAndMember(location);
+      logOptionsLocationAndMember += ".LogOptions";
+      m_logOptions.OutputToStream(oStream, logOptionsLocationAndMember.c_str());
   }
 }
 

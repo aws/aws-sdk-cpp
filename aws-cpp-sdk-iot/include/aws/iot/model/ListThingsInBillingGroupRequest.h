@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_billingGroupName;
-    bool m_billingGroupNameHasBeenSet;
+    bool m_billingGroupNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ DataColorPalette& DataColorPalette::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Colors"))
   {
-    Array<JsonView> colorsJsonList = jsonValue.GetArray("Colors");
+    Aws::Utils::Array<JsonView> colorsJsonList = jsonValue.GetArray("Colors");
     for(unsigned colorsIndex = 0; colorsIndex < colorsJsonList.GetLength(); ++colorsIndex)
     {
       m_colors.push_back(colorsJsonList[colorsIndex].AsString());
@@ -47,7 +47,7 @@ DataColorPalette& DataColorPalette::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MinMaxGradient"))
   {
-    Array<JsonView> minMaxGradientJsonList = jsonValue.GetArray("MinMaxGradient");
+    Aws::Utils::Array<JsonView> minMaxGradientJsonList = jsonValue.GetArray("MinMaxGradient");
     for(unsigned minMaxGradientIndex = 0; minMaxGradientIndex < minMaxGradientJsonList.GetLength(); ++minMaxGradientIndex)
     {
       m_minMaxGradient.push_back(minMaxGradientJsonList[minMaxGradientIndex].AsString());
@@ -71,7 +71,7 @@ JsonValue DataColorPalette::Jsonize() const
 
   if(m_colorsHasBeenSet)
   {
-   Array<JsonValue> colorsJsonList(m_colors.size());
+   Aws::Utils::Array<JsonValue> colorsJsonList(m_colors.size());
    for(unsigned colorsIndex = 0; colorsIndex < colorsJsonList.GetLength(); ++colorsIndex)
    {
      colorsJsonList[colorsIndex].AsString(m_colors[colorsIndex]);
@@ -82,7 +82,7 @@ JsonValue DataColorPalette::Jsonize() const
 
   if(m_minMaxGradientHasBeenSet)
   {
-   Array<JsonValue> minMaxGradientJsonList(m_minMaxGradient.size());
+   Aws::Utils::Array<JsonValue> minMaxGradientJsonList(m_minMaxGradient.size());
    for(unsigned minMaxGradientIndex = 0; minMaxGradientIndex < minMaxGradientJsonList.GetLength(); ++minMaxGradientIndex)
    {
      minMaxGradientJsonList[minMaxGradientIndex].AsString(m_minMaxGradient[minMaxGradientIndex]);

@@ -218,19 +218,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_imageTags;
-    bool m_imageTagsHasBeenSet;
+    bool m_imageTagsHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     Aws::Utils::DateTime m_imagePushedAt;
-    bool m_imagePushedAtHasBeenSet;
+    bool m_imagePushedAtHasBeenSet = false;
 
     LifecyclePolicyRuleAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     int m_appliedRulePriority;
-    bool m_appliedRulePriorityHasBeenSet;
+    bool m_appliedRulePriorityHasBeenSet = false;
   };
 
 } // namespace Model

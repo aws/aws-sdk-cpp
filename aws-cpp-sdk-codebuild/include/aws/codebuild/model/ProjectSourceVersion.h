@@ -258,10 +258,10 @@ namespace Model
   private:
 
     Aws::String m_sourceIdentifier;
-    bool m_sourceIdentifierHasBeenSet;
+    bool m_sourceIdentifierHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
   };
 
 } // namespace Model

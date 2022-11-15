@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<NotificationAction> m_notificationActions;
-    bool m_notificationActionsHasBeenSet;
+    bool m_notificationActionsHasBeenSet = false;
   };
 
 } // namespace Model

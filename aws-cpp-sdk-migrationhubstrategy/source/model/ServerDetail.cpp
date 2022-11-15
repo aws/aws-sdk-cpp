@@ -82,7 +82,7 @@ ServerDetail& ServerDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("applicationComponentStrategySummary"))
   {
-    Array<JsonView> applicationComponentStrategySummaryJsonList = jsonValue.GetArray("applicationComponentStrategySummary");
+    Aws::Utils::Array<JsonView> applicationComponentStrategySummaryJsonList = jsonValue.GetArray("applicationComponentStrategySummary");
     for(unsigned applicationComponentStrategySummaryIndex = 0; applicationComponentStrategySummaryIndex < applicationComponentStrategySummaryJsonList.GetLength(); ++applicationComponentStrategySummaryIndex)
     {
       m_applicationComponentStrategySummary.push_back(applicationComponentStrategySummaryJsonList[applicationComponentStrategySummaryIndex].AsObject());
@@ -113,7 +113,7 @@ ServerDetail& ServerDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("listAntipatternSeveritySummary"))
   {
-    Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
+    Aws::Utils::Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
     for(unsigned listAntipatternSeveritySummaryIndex = 0; listAntipatternSeveritySummaryIndex < listAntipatternSeveritySummaryJsonList.GetLength(); ++listAntipatternSeveritySummaryIndex)
     {
       m_listAntipatternSeveritySummary.push_back(listAntipatternSeveritySummaryJsonList[listAntipatternSeveritySummaryIndex].AsObject());
@@ -182,7 +182,7 @@ JsonValue ServerDetail::Jsonize() const
 
   if(m_applicationComponentStrategySummaryHasBeenSet)
   {
-   Array<JsonValue> applicationComponentStrategySummaryJsonList(m_applicationComponentStrategySummary.size());
+   Aws::Utils::Array<JsonValue> applicationComponentStrategySummaryJsonList(m_applicationComponentStrategySummary.size());
    for(unsigned applicationComponentStrategySummaryIndex = 0; applicationComponentStrategySummaryIndex < applicationComponentStrategySummaryJsonList.GetLength(); ++applicationComponentStrategySummaryIndex)
    {
      applicationComponentStrategySummaryJsonList[applicationComponentStrategySummaryIndex].AsObject(m_applicationComponentStrategySummary[applicationComponentStrategySummaryIndex].Jsonize());
@@ -209,7 +209,7 @@ JsonValue ServerDetail::Jsonize() const
 
   if(m_listAntipatternSeveritySummaryHasBeenSet)
   {
-   Array<JsonValue> listAntipatternSeveritySummaryJsonList(m_listAntipatternSeveritySummary.size());
+   Aws::Utils::Array<JsonValue> listAntipatternSeveritySummaryJsonList(m_listAntipatternSeveritySummary.size());
    for(unsigned listAntipatternSeveritySummaryIndex = 0; listAntipatternSeveritySummaryIndex < listAntipatternSeveritySummaryJsonList.GetLength(); ++listAntipatternSeveritySummaryIndex)
    {
      listAntipatternSeveritySummaryJsonList[listAntipatternSeveritySummaryIndex].AsObject(m_listAntipatternSeveritySummary[listAntipatternSeveritySummaryIndex].Jsonize());

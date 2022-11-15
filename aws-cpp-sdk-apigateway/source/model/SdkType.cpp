@@ -60,7 +60,7 @@ SdkType& SdkType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("configurationProperties"))
   {
-    Array<JsonView> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
+    Aws::Utils::Array<JsonView> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
     for(unsigned configurationPropertiesIndex = 0; configurationPropertiesIndex < configurationPropertiesJsonList.GetLength(); ++configurationPropertiesIndex)
     {
       m_configurationProperties.push_back(configurationPropertiesJsonList[configurationPropertiesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue SdkType::Jsonize() const
 
   if(m_configurationPropertiesHasBeenSet)
   {
-   Array<JsonValue> configurationPropertiesJsonList(m_configurationProperties.size());
+   Aws::Utils::Array<JsonValue> configurationPropertiesJsonList(m_configurationProperties.size());
    for(unsigned configurationPropertiesIndex = 0; configurationPropertiesIndex < configurationPropertiesJsonList.GetLength(); ++configurationPropertiesIndex)
    {
      configurationPropertiesJsonList[configurationPropertiesIndex].AsObject(m_configurationProperties[configurationPropertiesIndex].Jsonize());

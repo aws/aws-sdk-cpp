@@ -50,7 +50,7 @@ FieldLevelEncryptionProfile& FieldLevelEncryptionProfile::operator =(const XmlNo
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
-      m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode fieldLevelEncryptionProfileConfigNode = resultNode.FirstChild("FieldLevelEncryptionProfileConfig");
@@ -76,7 +76,7 @@ void FieldLevelEncryptionProfile::AddToNode(XmlNode& parentNode) const
   if(m_lastModifiedTimeHasBeenSet)
   {
    XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(DateFormat::ISO_8601));
+   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_fieldLevelEncryptionProfileConfigHasBeenSet)

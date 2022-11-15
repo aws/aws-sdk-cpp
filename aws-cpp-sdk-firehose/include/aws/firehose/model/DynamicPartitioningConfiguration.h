@@ -106,10 +106,10 @@ namespace Model
   private:
 
     RetryOptions m_retryOptions;
-    bool m_retryOptionsHasBeenSet;
+    bool m_retryOptionsHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

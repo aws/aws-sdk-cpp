@@ -89,55 +89,55 @@ namespace Model
 
 
     /**
-     * <p>The request id associated with the call responsible for the exception.</p>
+     * <p>The request ID associated with the call responsible for the exception.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The request id associated with the call responsible for the exception.</p>
+     * <p>The request ID associated with the call responsible for the exception.</p>
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
-     * <p>The request id associated with the call responsible for the exception.</p>
+     * <p>The request ID associated with the call responsible for the exception.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
-     * <p>The request id associated with the call responsible for the exception.</p>
+     * <p>The request ID associated with the call responsible for the exception.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
-     * <p>The request id associated with the call responsible for the exception.</p>
+     * <p>The request ID associated with the call responsible for the exception.</p>
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
-     * <p>The request id associated with the call responsible for the exception.</p>
+     * <p>The request ID associated with the call responsible for the exception.</p>
      */
     inline NotFoundException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The request id associated with the call responsible for the exception.</p>
+     * <p>The request ID associated with the call responsible for the exception.</p>
      */
     inline NotFoundException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The request id associated with the call responsible for the exception.</p>
+     * <p>The request ID associated with the call responsible for the exception.</p>
      */
     inline NotFoundException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

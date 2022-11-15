@@ -290,16 +290,16 @@ namespace Model
   private:
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_privateLinkEndpoint;
-    bool m_privateLinkEndpointHasBeenSet;
+    bool m_privateLinkEndpointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetArns;
-    bool m_subnetArnsHasBeenSet;
+    bool m_subnetArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupArns;
-    bool m_securityGroupArnsHasBeenSet;
+    bool m_securityGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

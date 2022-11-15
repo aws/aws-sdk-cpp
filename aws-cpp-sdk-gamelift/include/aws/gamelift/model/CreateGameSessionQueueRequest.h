@@ -594,31 +594,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     Aws::Vector<PlayerLatencyPolicy> m_playerLatencyPolicies;
-    bool m_playerLatencyPoliciesHasBeenSet;
+    bool m_playerLatencyPoliciesHasBeenSet = false;
 
     Aws::Vector<GameSessionQueueDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     FilterConfiguration m_filterConfiguration;
-    bool m_filterConfigurationHasBeenSet;
+    bool m_filterConfigurationHasBeenSet = false;
 
     PriorityConfiguration m_priorityConfiguration;
-    bool m_priorityConfigurationHasBeenSet;
+    bool m_priorityConfigurationHasBeenSet = false;
 
     Aws::String m_customEventData;
-    bool m_customEventDataHasBeenSet;
+    bool m_customEventDataHasBeenSet = false;
 
     Aws::String m_notificationTarget;
-    bool m_notificationTargetHasBeenSet;
+    bool m_notificationTargetHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ DescribeEventDetailsResult& DescribeEventDetailsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("successfulSet"))
   {
-    Array<JsonView> successfulSetJsonList = jsonValue.GetArray("successfulSet");
+    Aws::Utils::Array<JsonView> successfulSetJsonList = jsonValue.GetArray("successfulSet");
     for(unsigned successfulSetIndex = 0; successfulSetIndex < successfulSetJsonList.GetLength(); ++successfulSetIndex)
     {
       m_successfulSet.push_back(successfulSetJsonList[successfulSetIndex].AsObject());
@@ -39,7 +39,7 @@ DescribeEventDetailsResult& DescribeEventDetailsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("failedSet"))
   {
-    Array<JsonView> failedSetJsonList = jsonValue.GetArray("failedSet");
+    Aws::Utils::Array<JsonView> failedSetJsonList = jsonValue.GetArray("failedSet");
     for(unsigned failedSetIndex = 0; failedSetIndex < failedSetJsonList.GetLength(); ++failedSetIndex)
     {
       m_failedSet.push_back(failedSetJsonList[failedSetIndex].AsObject());

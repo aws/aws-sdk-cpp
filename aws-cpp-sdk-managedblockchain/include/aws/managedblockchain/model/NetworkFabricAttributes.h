@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_orderingServiceEndpoint;
-    bool m_orderingServiceEndpointHasBeenSet;
+    bool m_orderingServiceEndpointHasBeenSet = false;
 
     Edition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
   };
 
 } // namespace Model

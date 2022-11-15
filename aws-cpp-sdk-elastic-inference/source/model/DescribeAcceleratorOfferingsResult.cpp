@@ -30,7 +30,7 @@ DescribeAcceleratorOfferingsResult& DescribeAcceleratorOfferingsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("acceleratorTypeOfferings"))
   {
-    Array<JsonView> acceleratorTypeOfferingsJsonList = jsonValue.GetArray("acceleratorTypeOfferings");
+    Aws::Utils::Array<JsonView> acceleratorTypeOfferingsJsonList = jsonValue.GetArray("acceleratorTypeOfferings");
     for(unsigned acceleratorTypeOfferingsIndex = 0; acceleratorTypeOfferingsIndex < acceleratorTypeOfferingsJsonList.GetLength(); ++acceleratorTypeOfferingsIndex)
     {
       m_acceleratorTypeOfferings.push_back(acceleratorTypeOfferingsJsonList[acceleratorTypeOfferingsIndex].AsObject());

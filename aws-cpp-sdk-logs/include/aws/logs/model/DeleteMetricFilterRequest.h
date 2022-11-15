@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_filterName;
-    bool m_filterNameHasBeenSet;
+    bool m_filterNameHasBeenSet = false;
   };
 
 } // namespace Model

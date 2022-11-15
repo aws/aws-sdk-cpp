@@ -81,7 +81,7 @@ InstanceTypeSpecification& InstanceTypeSpecification::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
@@ -91,7 +91,7 @@ InstanceTypeSpecification& InstanceTypeSpecification::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("EbsBlockDevices"))
   {
-    Array<JsonView> ebsBlockDevicesJsonList = jsonValue.GetArray("EbsBlockDevices");
+    Aws::Utils::Array<JsonView> ebsBlockDevicesJsonList = jsonValue.GetArray("EbsBlockDevices");
     for(unsigned ebsBlockDevicesIndex = 0; ebsBlockDevicesIndex < ebsBlockDevicesJsonList.GetLength(); ++ebsBlockDevicesIndex)
     {
       m_ebsBlockDevices.push_back(ebsBlockDevicesJsonList[ebsBlockDevicesIndex].AsObject());
@@ -146,7 +146,7 @@ JsonValue InstanceTypeSpecification::Jsonize() const
 
   if(m_configurationsHasBeenSet)
   {
-   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
    {
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
@@ -157,7 +157,7 @@ JsonValue InstanceTypeSpecification::Jsonize() const
 
   if(m_ebsBlockDevicesHasBeenSet)
   {
-   Array<JsonValue> ebsBlockDevicesJsonList(m_ebsBlockDevices.size());
+   Aws::Utils::Array<JsonValue> ebsBlockDevicesJsonList(m_ebsBlockDevices.size());
    for(unsigned ebsBlockDevicesIndex = 0; ebsBlockDevicesIndex < ebsBlockDevicesJsonList.GetLength(); ++ebsBlockDevicesIndex)
    {
      ebsBlockDevicesJsonList[ebsBlockDevicesIndex].AsObject(m_ebsBlockDevices[ebsBlockDevicesIndex].Jsonize());

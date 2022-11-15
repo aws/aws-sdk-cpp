@@ -28,7 +28,8 @@ ModifyInstanceAttributeRequest::ModifyInstanceAttributeRequest() :
     m_ramdiskHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
     m_userDataHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_disableApiStopHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,11 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
   if(m_valueHasBeenSet)
   {
     ss << "Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
+  }
+
+  if(m_disableApiStopHasBeenSet)
+  {
+    m_disableApiStop.OutputToStream(ss, "DisableApiStop");
   }
 
   ss << "Version=2016-11-15";

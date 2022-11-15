@@ -53,7 +53,7 @@ namespace Model
   private:
 
     CreateApplicationRequest m_createApplicationRequest;
-    bool m_createApplicationRequestHasBeenSet;
+    bool m_createApplicationRequestHasBeenSet = false;
   };
 
 } // namespace Model

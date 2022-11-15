@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_fromTimeStamp;
-    bool m_fromTimeStampHasBeenSet;
+    bool m_fromTimeStampHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_toTimeStamp;
-    bool m_toTimeStampHasBeenSet;
+    bool m_toTimeStampHasBeenSet = false;
   };
 
 } // namespace Model

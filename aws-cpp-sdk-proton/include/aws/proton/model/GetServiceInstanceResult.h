@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The service instance detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service instance.</p>
      */
     inline const ServiceInstance& GetServiceInstance() const{ return m_serviceInstance; }
 
     /**
-     * <p>The service instance detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service instance.</p>
      */
     inline void SetServiceInstance(const ServiceInstance& value) { m_serviceInstance = value; }
 
     /**
-     * <p>The service instance detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service instance.</p>
      */
     inline void SetServiceInstance(ServiceInstance&& value) { m_serviceInstance = std::move(value); }
 
     /**
-     * <p>The service instance detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service instance.</p>
      */
     inline GetServiceInstanceResult& WithServiceInstance(const ServiceInstance& value) { SetServiceInstance(value); return *this;}
 
     /**
-     * <p>The service instance detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested service instance.</p>
      */
     inline GetServiceInstanceResult& WithServiceInstance(ServiceInstance&& value) { SetServiceInstance(std::move(value)); return *this;}
 

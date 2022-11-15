@@ -159,13 +159,13 @@ namespace Model
   private:
 
     ObjectReference m_objectReference;
-    bool m_objectReferenceHasBeenSet;
+    bool m_objectReferenceHasBeenSet = false;
 
     SchemaFacet m_schemaFacet;
-    bool m_schemaFacetHasBeenSet;
+    bool m_schemaFacetHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
   };
 
 } // namespace Model

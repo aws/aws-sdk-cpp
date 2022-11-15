@@ -102,10 +102,10 @@ namespace Model
   private:
 
     TileStyle m_tile;
-    bool m_tileHasBeenSet;
+    bool m_tileHasBeenSet = false;
 
     TileLayoutStyle m_tileLayout;
-    bool m_tileLayoutHasBeenSet;
+    bool m_tileLayoutHasBeenSet = false;
   };
 
 } // namespace Model

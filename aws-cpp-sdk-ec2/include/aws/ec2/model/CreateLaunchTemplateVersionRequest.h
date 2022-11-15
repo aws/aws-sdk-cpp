@@ -74,7 +74,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -82,7 +82,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -90,7 +90,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -98,7 +98,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -106,7 +106,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -114,7 +114,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -122,7 +122,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -130,105 +130,121 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>The ID of the launch template. You must specify either the launch template ID
-     * or launch template name in the request.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
 
     /**
-     * <p>The ID of the launch template. You must specify either the launch template ID
-     * or launch template name in the request.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
     /**
-     * <p>The ID of the launch template. You must specify either the launch template ID
-     * or launch template name in the request.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
-     * <p>The ID of the launch template. You must specify either the launch template ID
-     * or launch template name in the request.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
 
     /**
-     * <p>The ID of the launch template. You must specify either the launch template ID
-     * or launch template name in the request.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
 
     /**
-     * <p>The ID of the launch template. You must specify either the launch template ID
-     * or launch template name in the request.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
 
     /**
-     * <p>The ID of the launch template. You must specify either the launch template ID
-     * or launch template name in the request.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the launch template. You must specify either the launch template ID
-     * or launch template name in the request.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
 
 
     /**
-     * <p>The name of the launch template. You must specify either the launch template
-     * ID or launch template name in the request.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
 
     /**
-     * <p>The name of the launch template. You must specify either the launch template
-     * ID or launch template name in the request.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
-     * <p>The name of the launch template. You must specify either the launch template
-     * ID or launch template name in the request.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
     /**
-     * <p>The name of the launch template. You must specify either the launch template
-     * ID or launch template name in the request.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
 
     /**
-     * <p>The name of the launch template. You must specify either the launch template
-     * ID or launch template name in the request.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
 
     /**
-     * <p>The name of the launch template. You must specify either the launch template
-     * ID or launch template name in the request.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the launch template. You must specify either the launch template
-     * ID or launch template name in the request.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch template. You must specify either the launch template
-     * ID or launch template name in the request.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
 
@@ -380,25 +396,25 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
 
     Aws::String m_versionDescription;
-    bool m_versionDescriptionHasBeenSet;
+    bool m_versionDescriptionHasBeenSet = false;
 
     RequestLaunchTemplateData m_launchTemplateData;
-    bool m_launchTemplateDataHasBeenSet;
+    bool m_launchTemplateDataHasBeenSet = false;
   };
 
 } // namespace Model

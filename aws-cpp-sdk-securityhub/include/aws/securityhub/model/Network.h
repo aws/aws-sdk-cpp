@@ -498,40 +498,40 @@ namespace Model
   private:
 
     NetworkDirection m_direction;
-    bool m_directionHasBeenSet;
+    bool m_directionHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     PortRange m_openPortRange;
-    bool m_openPortRangeHasBeenSet;
+    bool m_openPortRangeHasBeenSet = false;
 
     Aws::String m_sourceIpV4;
-    bool m_sourceIpV4HasBeenSet;
+    bool m_sourceIpV4HasBeenSet = false;
 
     Aws::String m_sourceIpV6;
-    bool m_sourceIpV6HasBeenSet;
+    bool m_sourceIpV6HasBeenSet = false;
 
     int m_sourcePort;
-    bool m_sourcePortHasBeenSet;
+    bool m_sourcePortHasBeenSet = false;
 
     Aws::String m_sourceDomain;
-    bool m_sourceDomainHasBeenSet;
+    bool m_sourceDomainHasBeenSet = false;
 
     Aws::String m_sourceMac;
-    bool m_sourceMacHasBeenSet;
+    bool m_sourceMacHasBeenSet = false;
 
     Aws::String m_destinationIpV4;
-    bool m_destinationIpV4HasBeenSet;
+    bool m_destinationIpV4HasBeenSet = false;
 
     Aws::String m_destinationIpV6;
-    bool m_destinationIpV6HasBeenSet;
+    bool m_destinationIpV6HasBeenSet = false;
 
     int m_destinationPort;
-    bool m_destinationPortHasBeenSet;
+    bool m_destinationPortHasBeenSet = false;
 
     Aws::String m_destinationDomain;
-    bool m_destinationDomainHasBeenSet;
+    bool m_destinationDomainHasBeenSet = false;
   };
 
 } // namespace Model

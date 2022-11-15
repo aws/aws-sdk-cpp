@@ -139,13 +139,13 @@ namespace Model
   private:
 
     Aws::String m_otaUpdateId;
-    bool m_otaUpdateIdHasBeenSet;
+    bool m_otaUpdateIdHasBeenSet = false;
 
     bool m_deleteStream;
-    bool m_deleteStreamHasBeenSet;
+    bool m_deleteStreamHasBeenSet = false;
 
     bool m_forceDeleteAWSJob;
-    bool m_forceDeleteAWSJobHasBeenSet;
+    bool m_forceDeleteAWSJobHasBeenSet = false;
   };
 
 } // namespace Model

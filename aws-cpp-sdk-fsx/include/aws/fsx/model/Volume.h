@@ -474,40 +474,40 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     VolumeLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OntapVolumeConfiguration m_ontapConfiguration;
-    bool m_ontapConfigurationHasBeenSet;
+    bool m_ontapConfigurationHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     VolumeType m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     LifecycleTransitionReason m_lifecycleTransitionReason;
-    bool m_lifecycleTransitionReasonHasBeenSet;
+    bool m_lifecycleTransitionReasonHasBeenSet = false;
 
     Aws::Vector<AdministrativeAction> m_administrativeActions;
-    bool m_administrativeActionsHasBeenSet;
+    bool m_administrativeActionsHasBeenSet = false;
 
     OpenZFSVolumeConfiguration m_openZFSConfiguration;
-    bool m_openZFSConfigurationHasBeenSet;
+    bool m_openZFSConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

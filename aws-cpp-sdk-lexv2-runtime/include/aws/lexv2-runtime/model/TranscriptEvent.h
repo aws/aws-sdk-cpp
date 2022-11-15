@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
   };
 
 } // namespace Model

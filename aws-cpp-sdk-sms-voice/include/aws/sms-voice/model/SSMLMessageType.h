@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_voiceId;
-    bool m_voiceIdHasBeenSet;
+    bool m_voiceIdHasBeenSet = false;
   };
 
 } // namespace Model

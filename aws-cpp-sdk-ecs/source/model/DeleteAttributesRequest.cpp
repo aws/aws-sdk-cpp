@@ -30,7 +30,7 @@ Aws::String DeleteAttributesRequest::SerializePayload() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());

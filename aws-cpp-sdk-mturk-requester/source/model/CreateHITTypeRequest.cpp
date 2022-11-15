@@ -67,7 +67,7 @@ Aws::String CreateHITTypeRequest::SerializePayload() const
 
   if(m_qualificationRequirementsHasBeenSet)
   {
-   Array<JsonValue> qualificationRequirementsJsonList(m_qualificationRequirements.size());
+   Aws::Utils::Array<JsonValue> qualificationRequirementsJsonList(m_qualificationRequirements.size());
    for(unsigned qualificationRequirementsIndex = 0; qualificationRequirementsIndex < qualificationRequirementsJsonList.GetLength(); ++qualificationRequirementsIndex)
    {
      qualificationRequirementsJsonList[qualificationRequirementsIndex].AsObject(m_qualificationRequirements[qualificationRequirementsIndex].Jsonize());

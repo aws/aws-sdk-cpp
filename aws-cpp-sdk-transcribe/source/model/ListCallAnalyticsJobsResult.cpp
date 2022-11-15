@@ -44,7 +44,7 @@ ListCallAnalyticsJobsResult& ListCallAnalyticsJobsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("CallAnalyticsJobSummaries"))
   {
-    Array<JsonView> callAnalyticsJobSummariesJsonList = jsonValue.GetArray("CallAnalyticsJobSummaries");
+    Aws::Utils::Array<JsonView> callAnalyticsJobSummariesJsonList = jsonValue.GetArray("CallAnalyticsJobSummaries");
     for(unsigned callAnalyticsJobSummariesIndex = 0; callAnalyticsJobSummariesIndex < callAnalyticsJobSummariesJsonList.GetLength(); ++callAnalyticsJobSummariesIndex)
     {
       m_callAnalyticsJobSummaries.push_back(callAnalyticsJobSummariesJsonList[callAnalyticsJobSummariesIndex].AsObject());

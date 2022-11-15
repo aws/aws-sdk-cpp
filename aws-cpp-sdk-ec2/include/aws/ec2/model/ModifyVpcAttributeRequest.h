@@ -199,16 +199,50 @@ namespace Model
      */
     inline ModifyVpcAttributeRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline const AttributeBooleanValue& GetEnableNetworkAddressUsageMetrics() const{ return m_enableNetworkAddressUsageMetrics; }
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline bool EnableNetworkAddressUsageMetricsHasBeenSet() const { return m_enableNetworkAddressUsageMetricsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline void SetEnableNetworkAddressUsageMetrics(const AttributeBooleanValue& value) { m_enableNetworkAddressUsageMetricsHasBeenSet = true; m_enableNetworkAddressUsageMetrics = value; }
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline void SetEnableNetworkAddressUsageMetrics(AttributeBooleanValue&& value) { m_enableNetworkAddressUsageMetricsHasBeenSet = true; m_enableNetworkAddressUsageMetrics = std::move(value); }
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline ModifyVpcAttributeRequest& WithEnableNetworkAddressUsageMetrics(const AttributeBooleanValue& value) { SetEnableNetworkAddressUsageMetrics(value); return *this;}
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline ModifyVpcAttributeRequest& WithEnableNetworkAddressUsageMetrics(AttributeBooleanValue&& value) { SetEnableNetworkAddressUsageMetrics(std::move(value)); return *this;}
+
   private:
 
     AttributeBooleanValue m_enableDnsHostnames;
-    bool m_enableDnsHostnamesHasBeenSet;
+    bool m_enableDnsHostnamesHasBeenSet = false;
 
     AttributeBooleanValue m_enableDnsSupport;
-    bool m_enableDnsSupportHasBeenSet;
+    bool m_enableDnsSupportHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
+
+    AttributeBooleanValue m_enableNetworkAddressUsageMetrics;
+    bool m_enableNetworkAddressUsageMetricsHasBeenSet = false;
   };
 
 } // namespace Model

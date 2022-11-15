@@ -113,10 +113,10 @@ namespace Model
   private:
 
     CandidateArtifactLocations m_candidateArtifactLocations;
-    bool m_candidateArtifactLocationsHasBeenSet;
+    bool m_candidateArtifactLocationsHasBeenSet = false;
 
     Aws::Vector<MetricDatum> m_candidateMetrics;
-    bool m_candidateMetricsHasBeenSet;
+    bool m_candidateMetricsHasBeenSet = false;
   };
 
 } // namespace Model

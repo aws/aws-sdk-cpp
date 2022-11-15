@@ -162,12 +162,12 @@ JsonValue LifecyclePolicy::Jsonize() const
 
   if(m_dateCreatedHasBeenSet)
   {
-   payload.WithString("DateCreated", m_dateCreated.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("DateCreated", m_dateCreated.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_dateModifiedHasBeenSet)
   {
-   payload.WithString("DateModified", m_dateModified.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("DateModified", m_dateModified.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_policyDetailsHasBeenSet)

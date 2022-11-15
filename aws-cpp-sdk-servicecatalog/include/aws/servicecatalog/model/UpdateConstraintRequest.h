@@ -203,7 +203,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -241,7 +241,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -279,7 +279,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -317,7 +317,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -355,7 +355,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -393,7 +393,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -431,7 +431,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -469,7 +469,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -480,16 +480,16 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

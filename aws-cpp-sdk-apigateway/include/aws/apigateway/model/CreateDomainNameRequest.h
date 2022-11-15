@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -488,38 +488,38 @@ namespace Model
 
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = value; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = std::move(value); }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline CreateDomainNameRequest& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline CreateDomainNameRequest& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
@@ -618,42 +618,42 @@ namespace Model
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline const SecurityPolicy& GetSecurityPolicy() const{ return m_securityPolicy; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline bool SecurityPolicyHasBeenSet() const { return m_securityPolicyHasBeenSet; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline void SetSecurityPolicy(const SecurityPolicy& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = value; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline void SetSecurityPolicy(SecurityPolicy&& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = std::move(value); }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline CreateDomainNameRequest& WithSecurityPolicy(const SecurityPolicy& value) { SetSecurityPolicy(value); return *this;}
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline CreateDomainNameRequest& WithSecurityPolicy(SecurityPolicy&& value) { SetSecurityPolicy(std::move(value)); return *this;}
@@ -737,43 +737,43 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
 
     Aws::String m_certificateBody;
-    bool m_certificateBodyHasBeenSet;
+    bool m_certificateBodyHasBeenSet = false;
 
     Aws::String m_certificatePrivateKey;
-    bool m_certificatePrivateKeyHasBeenSet;
+    bool m_certificatePrivateKeyHasBeenSet = false;
 
     Aws::String m_certificateChain;
-    bool m_certificateChainHasBeenSet;
+    bool m_certificateChainHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_regionalCertificateName;
-    bool m_regionalCertificateNameHasBeenSet;
+    bool m_regionalCertificateNameHasBeenSet = false;
 
     Aws::String m_regionalCertificateArn;
-    bool m_regionalCertificateArnHasBeenSet;
+    bool m_regionalCertificateArnHasBeenSet = false;
 
     EndpointConfiguration m_endpointConfiguration;
-    bool m_endpointConfigurationHasBeenSet;
+    bool m_endpointConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     SecurityPolicy m_securityPolicy;
-    bool m_securityPolicyHasBeenSet;
+    bool m_securityPolicyHasBeenSet = false;
 
     MutualTlsAuthenticationInput m_mutualTlsAuthentication;
-    bool m_mutualTlsAuthenticationHasBeenSet;
+    bool m_mutualTlsAuthenticationHasBeenSet = false;
 
     Aws::String m_ownershipVerificationCertificateArn;
-    bool m_ownershipVerificationCertificateArnHasBeenSet;
+    bool m_ownershipVerificationCertificateArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -72,7 +72,7 @@ JobEntry& JobEntry::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue JobEntry::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("CreatedAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_detailsHasBeenSet)
@@ -134,7 +134,7 @@ JsonValue JobEntry::Jsonize() const
 
   if(m_errorsHasBeenSet)
   {
-   Array<JsonValue> errorsJsonList(m_errors.size());
+   Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
    {
      errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
@@ -161,7 +161,7 @@ JsonValue JobEntry::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("UpdatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

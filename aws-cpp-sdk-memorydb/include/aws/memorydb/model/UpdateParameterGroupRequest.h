@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     Aws::Vector<ParameterNameValue> m_parameterNameValues;
-    bool m_parameterNameValuesHasBeenSet;
+    bool m_parameterNameValuesHasBeenSet = false;
   };
 
 } // namespace Model

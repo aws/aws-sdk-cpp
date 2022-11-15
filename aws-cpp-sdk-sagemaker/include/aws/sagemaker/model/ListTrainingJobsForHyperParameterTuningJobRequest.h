@@ -271,22 +271,22 @@ namespace Model
   private:
 
     Aws::String m_hyperParameterTuningJobName;
-    bool m_hyperParameterTuningJobNameHasBeenSet;
+    bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     TrainingJobStatus m_statusEquals;
-    bool m_statusEqualsHasBeenSet;
+    bool m_statusEqualsHasBeenSet = false;
 
     TrainingJobSortByOptions m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

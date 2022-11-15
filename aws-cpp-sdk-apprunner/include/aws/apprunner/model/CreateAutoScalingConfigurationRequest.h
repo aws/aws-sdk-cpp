@@ -307,19 +307,19 @@ namespace Model
   private:
 
     Aws::String m_autoScalingConfigurationName;
-    bool m_autoScalingConfigurationNameHasBeenSet;
+    bool m_autoScalingConfigurationNameHasBeenSet = false;
 
     int m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

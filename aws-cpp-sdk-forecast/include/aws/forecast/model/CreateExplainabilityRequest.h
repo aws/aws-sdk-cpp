@@ -205,25 +205,25 @@ namespace Model
 
 
     /**
-     * <p>Create an Expainability visualization that is viewable within the AWS
+     * <p>Create an Explainability visualization that is viewable within the AWS
      * console.</p>
      */
     inline bool GetEnableVisualization() const{ return m_enableVisualization; }
 
     /**
-     * <p>Create an Expainability visualization that is viewable within the AWS
+     * <p>Create an Explainability visualization that is viewable within the AWS
      * console.</p>
      */
     inline bool EnableVisualizationHasBeenSet() const { return m_enableVisualizationHasBeenSet; }
 
     /**
-     * <p>Create an Expainability visualization that is viewable within the AWS
+     * <p>Create an Explainability visualization that is viewable within the AWS
      * console.</p>
      */
     inline void SetEnableVisualization(bool value) { m_enableVisualizationHasBeenSet = true; m_enableVisualization = value; }
 
     /**
-     * <p>Create an Expainability visualization that is viewable within the AWS
+     * <p>Create an Explainability visualization that is viewable within the AWS
      * console.</p>
      */
     inline CreateExplainabilityRequest& WithEnableVisualization(bool value) { SetEnableVisualization(value); return *this;}
@@ -514,31 +514,31 @@ namespace Model
   private:
 
     Aws::String m_explainabilityName;
-    bool m_explainabilityNameHasBeenSet;
+    bool m_explainabilityNameHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     ExplainabilityConfig m_explainabilityConfig;
-    bool m_explainabilityConfigHasBeenSet;
+    bool m_explainabilityConfigHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Schema m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     bool m_enableVisualization;
-    bool m_enableVisualizationHasBeenSet;
+    bool m_enableVisualizationHasBeenSet = false;
 
     Aws::String m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::String m_endDateTime;
-    bool m_endDateTimeHasBeenSet;
+    bool m_endDateTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

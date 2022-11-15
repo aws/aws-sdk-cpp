@@ -150,64 +150,72 @@ namespace Model
     /**
      * <p>The status of the recommender update.</p> <p>A recommender can be in one of
      * the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP
+     * IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt;
+     * ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the recommender update.</p> <p>A recommender can be in one of
      * the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP
+     * IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt;
+     * ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the recommender update.</p> <p>A recommender can be in one of
      * the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP
+     * IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt;
+     * ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the recommender update.</p> <p>A recommender can be in one of
      * the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP
+     * IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt;
+     * ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the recommender update.</p> <p>A recommender can be in one of
      * the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP
+     * IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt;
+     * ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The status of the recommender update.</p> <p>A recommender can be in one of
      * the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP
+     * IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt;
+     * ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline RecommenderUpdateSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the recommender update.</p> <p>A recommender can be in one of
      * the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP
+     * IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt;
+     * ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline RecommenderUpdateSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the recommender update.</p> <p>A recommender can be in one of
      * the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
-     * IN_PROGRESS</p> </li> </ul>
+     * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP
+     * IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt;
+     * ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
      */
     inline RecommenderUpdateSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -255,19 +263,19 @@ namespace Model
   private:
 
     RecommenderConfig m_recommenderConfig;
-    bool m_recommenderConfigHasBeenSet;
+    bool m_recommenderConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

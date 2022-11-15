@@ -26,7 +26,7 @@ Aws::String GetCertificatesRequest::SerializePayload() const
 
   if(m_certificateStatusesHasBeenSet)
   {
-   Array<JsonValue> certificateStatusesJsonList(m_certificateStatuses.size());
+   Aws::Utils::Array<JsonValue> certificateStatusesJsonList(m_certificateStatuses.size());
    for(unsigned certificateStatusesIndex = 0; certificateStatusesIndex < certificateStatusesJsonList.GetLength(); ++certificateStatusesIndex)
    {
      certificateStatusesJsonList[certificateStatusesIndex].AsString(CertificateStatusMapper::GetNameForCertificateStatus(m_certificateStatuses[certificateStatusesIndex]));

@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_timerName;
-    bool m_timerNameHasBeenSet;
+    bool m_timerNameHasBeenSet = false;
 
     Aws::String m_durationExpression;
-    bool m_durationExpressionHasBeenSet;
+    bool m_durationExpressionHasBeenSet = false;
   };
 
 } // namespace Model

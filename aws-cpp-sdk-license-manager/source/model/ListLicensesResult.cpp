@@ -30,7 +30,7 @@ ListLicensesResult& ListLicensesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Licenses"))
   {
-    Array<JsonView> licensesJsonList = jsonValue.GetArray("Licenses");
+    Aws::Utils::Array<JsonView> licensesJsonList = jsonValue.GetArray("Licenses");
     for(unsigned licensesIndex = 0; licensesIndex < licensesJsonList.GetLength(); ++licensesIndex)
     {
       m_licenses.push_back(licensesJsonList[licensesIndex].AsObject());

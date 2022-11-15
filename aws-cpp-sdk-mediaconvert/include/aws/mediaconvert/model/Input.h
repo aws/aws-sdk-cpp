@@ -1369,56 +1369,62 @@ namespace Model
 
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline const InputVideoGenerator& GetVideoGenerator() const{ return m_videoGenerator; }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline bool VideoGeneratorHasBeenSet() const { return m_videoGeneratorHasBeenSet; }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline void SetVideoGenerator(const InputVideoGenerator& value) { m_videoGeneratorHasBeenSet = true; m_videoGenerator = value; }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline void SetVideoGenerator(InputVideoGenerator&& value) { m_videoGeneratorHasBeenSet = true; m_videoGenerator = std::move(value); }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline Input& WithVideoGenerator(const InputVideoGenerator& value) { SetVideoGenerator(value); return *this;}
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline Input& WithVideoGenerator(InputVideoGenerator&& value) { SetVideoGenerator(std::move(value)); return *this;}
 
@@ -1462,70 +1468,70 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AudioSelectorGroup> m_audioSelectorGroups;
-    bool m_audioSelectorGroupsHasBeenSet;
+    bool m_audioSelectorGroupsHasBeenSet = false;
 
     Aws::Map<Aws::String, AudioSelector> m_audioSelectors;
-    bool m_audioSelectorsHasBeenSet;
+    bool m_audioSelectorsHasBeenSet = false;
 
     Aws::Map<Aws::String, CaptionSelector> m_captionSelectors;
-    bool m_captionSelectorsHasBeenSet;
+    bool m_captionSelectorsHasBeenSet = false;
 
     Rectangle m_crop;
-    bool m_cropHasBeenSet;
+    bool m_cropHasBeenSet = false;
 
     InputDeblockFilter m_deblockFilter;
-    bool m_deblockFilterHasBeenSet;
+    bool m_deblockFilterHasBeenSet = false;
 
     InputDecryptionSettings m_decryptionSettings;
-    bool m_decryptionSettingsHasBeenSet;
+    bool m_decryptionSettingsHasBeenSet = false;
 
     InputDenoiseFilter m_denoiseFilter;
-    bool m_denoiseFilterHasBeenSet;
+    bool m_denoiseFilterHasBeenSet = false;
 
     Aws::String m_dolbyVisionMetadataXml;
-    bool m_dolbyVisionMetadataXmlHasBeenSet;
+    bool m_dolbyVisionMetadataXmlHasBeenSet = false;
 
     Aws::String m_fileInput;
-    bool m_fileInputHasBeenSet;
+    bool m_fileInputHasBeenSet = false;
 
     InputFilterEnable m_filterEnable;
-    bool m_filterEnableHasBeenSet;
+    bool m_filterEnableHasBeenSet = false;
 
     int m_filterStrength;
-    bool m_filterStrengthHasBeenSet;
+    bool m_filterStrengthHasBeenSet = false;
 
     ImageInserter m_imageInserter;
-    bool m_imageInserterHasBeenSet;
+    bool m_imageInserterHasBeenSet = false;
 
     Aws::Vector<InputClipping> m_inputClippings;
-    bool m_inputClippingsHasBeenSet;
+    bool m_inputClippingsHasBeenSet = false;
 
     InputScanType m_inputScanType;
-    bool m_inputScanTypeHasBeenSet;
+    bool m_inputScanTypeHasBeenSet = false;
 
     Rectangle m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_programNumber;
-    bool m_programNumberHasBeenSet;
+    bool m_programNumberHasBeenSet = false;
 
     InputPsiControl m_psiControl;
-    bool m_psiControlHasBeenSet;
+    bool m_psiControlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supplementalImps;
-    bool m_supplementalImpsHasBeenSet;
+    bool m_supplementalImpsHasBeenSet = false;
 
     InputTimecodeSource m_timecodeSource;
-    bool m_timecodeSourceHasBeenSet;
+    bool m_timecodeSourceHasBeenSet = false;
 
     Aws::String m_timecodeStart;
-    bool m_timecodeStartHasBeenSet;
+    bool m_timecodeStartHasBeenSet = false;
 
     InputVideoGenerator m_videoGenerator;
-    bool m_videoGeneratorHasBeenSet;
+    bool m_videoGeneratorHasBeenSet = false;
 
     VideoSelector m_videoSelector;
-    bool m_videoSelectorHasBeenSet;
+    bool m_videoSelectorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,7 +27,8 @@ Rule::Rule() :
     m_overrideActionHasBeenSet(false),
     m_ruleLabelsHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false)
+    m_captchaConfigHasBeenSet(false),
+    m_challengeConfigHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Rule::Rule(JsonView jsonValue) :
     m_overrideActionHasBeenSet(false),
     m_ruleLabelsHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false)
+    m_captchaConfigHasBeenSet(false),
+    m_challengeConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,7 +86,7 @@ Rule& Rule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RuleLabels"))
   {
-    Array<JsonView> ruleLabelsJsonList = jsonValue.GetArray("RuleLabels");
+    Aws::Utils::Array<JsonView> ruleLabelsJsonList = jsonValue.GetArray("RuleLabels");
     for(unsigned ruleLabelsIndex = 0; ruleLabelsIndex < ruleLabelsJsonList.GetLength(); ++ruleLabelsIndex)
     {
       m_ruleLabels.push_back(ruleLabelsJsonList[ruleLabelsIndex].AsObject());
@@ -104,6 +106,13 @@ Rule& Rule::operator =(JsonView jsonValue)
     m_captchaConfig = jsonValue.GetObject("CaptchaConfig");
 
     m_captchaConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ChallengeConfig"))
+  {
+    m_challengeConfig = jsonValue.GetObject("ChallengeConfig");
+
+    m_challengeConfigHasBeenSet = true;
   }
 
   return *this;
@@ -145,7 +154,7 @@ JsonValue Rule::Jsonize() const
 
   if(m_ruleLabelsHasBeenSet)
   {
-   Array<JsonValue> ruleLabelsJsonList(m_ruleLabels.size());
+   Aws::Utils::Array<JsonValue> ruleLabelsJsonList(m_ruleLabels.size());
    for(unsigned ruleLabelsIndex = 0; ruleLabelsIndex < ruleLabelsJsonList.GetLength(); ++ruleLabelsIndex)
    {
      ruleLabelsJsonList[ruleLabelsIndex].AsObject(m_ruleLabels[ruleLabelsIndex].Jsonize());
@@ -163,6 +172,12 @@ JsonValue Rule::Jsonize() const
   if(m_captchaConfigHasBeenSet)
   {
    payload.WithObject("CaptchaConfig", m_captchaConfig.Jsonize());
+
+  }
+
+  if(m_challengeConfigHasBeenSet)
+  {
+   payload.WithObject("ChallengeConfig", m_challengeConfig.Jsonize());
 
   }
 

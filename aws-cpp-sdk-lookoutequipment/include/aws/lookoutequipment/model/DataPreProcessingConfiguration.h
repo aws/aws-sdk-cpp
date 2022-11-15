@@ -120,7 +120,7 @@ namespace Model
   private:
 
     TargetSamplingRate m_targetSamplingRate;
-    bool m_targetSamplingRateHasBeenSet;
+    bool m_targetSamplingRateHasBeenSet = false;
   };
 
 } // namespace Model

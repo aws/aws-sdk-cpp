@@ -34,7 +34,11 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail() :
     m_statusReasonHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_updatePolicyHasBeenSet(false)
+    m_updatePolicyHasBeenSet(false),
+    m_eksConfigurationHasBeenSet(false),
+    m_containerOrchestrationType(OrchestrationType::NOT_SET),
+    m_containerOrchestrationTypeHasBeenSet(false),
+    m_uuidHasBeenSet(false)
 {
 }
 
@@ -54,7 +58,11 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) :
     m_statusReasonHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_updatePolicyHasBeenSet(false)
+    m_updatePolicyHasBeenSet(false),
+    m_eksConfigurationHasBeenSet(false),
+    m_containerOrchestrationType(OrchestrationType::NOT_SET),
+    m_containerOrchestrationTypeHasBeenSet(false),
+    m_uuidHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -148,6 +156,27 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValu
     m_updatePolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eksConfiguration"))
+  {
+    m_eksConfiguration = jsonValue.GetObject("eksConfiguration");
+
+    m_eksConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerOrchestrationType"))
+  {
+    m_containerOrchestrationType = OrchestrationTypeMapper::GetOrchestrationTypeForName(jsonValue.GetString("containerOrchestrationType"));
+
+    m_containerOrchestrationTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("uuid"))
+  {
+    m_uuid = jsonValue.GetString("uuid");
+
+    m_uuidHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -226,6 +255,23 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const
   if(m_updatePolicyHasBeenSet)
   {
    payload.WithObject("updatePolicy", m_updatePolicy.Jsonize());
+
+  }
+
+  if(m_eksConfigurationHasBeenSet)
+  {
+   payload.WithObject("eksConfiguration", m_eksConfiguration.Jsonize());
+
+  }
+
+  if(m_containerOrchestrationTypeHasBeenSet)
+  {
+   payload.WithString("containerOrchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_containerOrchestrationType));
+  }
+
+  if(m_uuidHasBeenSet)
+  {
+   payload.WithString("uuid", m_uuid);
 
   }
 

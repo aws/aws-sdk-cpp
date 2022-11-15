@@ -30,7 +30,9 @@ Accelerator::Accelerator() :
     m_status(AcceleratorStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_dualStackDnsNameHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ Accelerator::Accelerator(JsonView jsonValue) :
     m_status(AcceleratorStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_dualStackDnsNameHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,7 +87,7 @@ Accelerator& Accelerator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IpSets"))
   {
-    Array<JsonView> ipSetsJsonList = jsonValue.GetArray("IpSets");
+    Aws::Utils::Array<JsonView> ipSetsJsonList = jsonValue.GetArray("IpSets");
     for(unsigned ipSetsIndex = 0; ipSetsIndex < ipSetsJsonList.GetLength(); ++ipSetsIndex)
     {
       m_ipSets.push_back(ipSetsJsonList[ipSetsIndex].AsObject());
@@ -119,6 +123,23 @@ Accelerator& Accelerator::operator =(JsonView jsonValue)
     m_lastModifiedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DualStackDnsName"))
+  {
+    m_dualStackDnsName = jsonValue.GetString("DualStackDnsName");
+
+    m_dualStackDnsNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Events"))
+  {
+    Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
+    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
+    {
+      m_events.push_back(eventsJsonList[eventsIndex].AsObject());
+    }
+    m_eventsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -151,7 +172,7 @@ JsonValue Accelerator::Jsonize() const
 
   if(m_ipSetsHasBeenSet)
   {
-   Array<JsonValue> ipSetsJsonList(m_ipSets.size());
+   Aws::Utils::Array<JsonValue> ipSetsJsonList(m_ipSets.size());
    for(unsigned ipSetsIndex = 0; ipSetsIndex < ipSetsJsonList.GetLength(); ++ipSetsIndex)
    {
      ipSetsJsonList[ipSetsIndex].AsObject(m_ipSets[ipSetsIndex].Jsonize());
@@ -179,6 +200,23 @@ JsonValue Accelerator::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_dualStackDnsNameHasBeenSet)
+  {
+   payload.WithString("DualStackDnsName", m_dualStackDnsName);
+
+  }
+
+  if(m_eventsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
+   for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
+   {
+     eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
+   }
+   payload.WithArray("Events", std::move(eventsJsonList));
+
   }
 
   return payload;

@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_templatedPathList;
-    bool m_templatedPathListHasBeenSet;
+    bool m_templatedPathListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_historicalDataPathList;
-    bool m_historicalDataPathListHasBeenSet;
+    bool m_historicalDataPathListHasBeenSet = false;
   };
 
 } // namespace Model

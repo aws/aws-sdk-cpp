@@ -234,16 +234,16 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regionNames;
-    bool m_regionNamesHasBeenSet;
+    bool m_regionNamesHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_allRegions;
-    bool m_allRegionsHasBeenSet;
+    bool m_allRegionsHasBeenSet = false;
   };
 
 } // namespace Model

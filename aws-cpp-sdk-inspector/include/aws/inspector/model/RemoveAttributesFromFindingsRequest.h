@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_findingArns;
-    bool m_findingArnsHasBeenSet;
+    bool m_findingArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeKeys;
-    bool m_attributeKeysHasBeenSet;
+    bool m_attributeKeysHasBeenSet = false;
   };
 
 } // namespace Model

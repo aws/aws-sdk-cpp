@@ -87,8 +87,8 @@ namespace Model
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
      * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
      * and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
-     * Multi-AZ or Single-AZ file system deployment</a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline const OntapDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
@@ -100,8 +100,8 @@ namespace Model
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
      * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
      * and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
-     * Multi-AZ or Single-AZ file system deployment</a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
@@ -113,8 +113,8 @@ namespace Model
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
      * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
      * and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
-     * Multi-AZ or Single-AZ file system deployment</a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline void SetDeploymentType(const OntapDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
@@ -126,8 +126,8 @@ namespace Model
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
      * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
      * and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
-     * Multi-AZ or Single-AZ file system deployment</a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline void SetDeploymentType(OntapDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
@@ -139,8 +139,8 @@ namespace Model
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
      * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
      * and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
-     * Multi-AZ or Single-AZ file system deployment</a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline CreateFileSystemOntapConfiguration& WithDeploymentType(const OntapDeploymentType& value) { SetDeploymentType(value); return *this;}
 
@@ -152,8 +152,8 @@ namespace Model
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
      * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
      * and Single-AZ deployments, refer to <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
-     * Multi-AZ or Single-AZ file system deployment</a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+     * a file system deployment type</a>. </p>
      */
     inline CreateFileSystemOntapConfiguration& WithDeploymentType(OntapDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
@@ -501,34 +501,34 @@ namespace Model
   private:
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     OntapDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_endpointIpAddressRange;
-    bool m_endpointIpAddressRangeHasBeenSet;
+    bool m_endpointIpAddressRangeHasBeenSet = false;
 
     Aws::String m_fsxAdminPassword;
-    bool m_fsxAdminPasswordHasBeenSet;
+    bool m_fsxAdminPasswordHasBeenSet = false;
 
     DiskIopsConfiguration m_diskIopsConfiguration;
-    bool m_diskIopsConfigurationHasBeenSet;
+    bool m_diskIopsConfigurationHasBeenSet = false;
 
     Aws::String m_preferredSubnetId;
-    bool m_preferredSubnetIdHasBeenSet;
+    bool m_preferredSubnetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_routeTableIds;
-    bool m_routeTableIdsHasBeenSet;
+    bool m_routeTableIdsHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

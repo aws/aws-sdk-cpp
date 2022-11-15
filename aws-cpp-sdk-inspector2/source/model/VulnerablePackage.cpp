@@ -28,6 +28,7 @@ VulnerablePackage::VulnerablePackage() :
     m_packageManager(PackageManager::NOT_SET),
     m_packageManagerHasBeenSet(false),
     m_releaseHasBeenSet(false),
+    m_remediationHasBeenSet(false),
     m_sourceLayerHashHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ VulnerablePackage::VulnerablePackage(JsonView jsonValue) :
     m_packageManager(PackageManager::NOT_SET),
     m_packageManagerHasBeenSet(false),
     m_releaseHasBeenSet(false),
+    m_remediationHasBeenSet(false),
     m_sourceLayerHashHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
@@ -98,6 +100,13 @@ VulnerablePackage& VulnerablePackage::operator =(JsonView jsonValue)
     m_release = jsonValue.GetString("release");
 
     m_releaseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("remediation"))
+  {
+    m_remediation = jsonValue.GetString("remediation");
+
+    m_remediationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceLayerHash"))
@@ -159,6 +168,12 @@ JsonValue VulnerablePackage::Jsonize() const
   if(m_releaseHasBeenSet)
   {
    payload.WithString("release", m_release);
+
+  }
+
+  if(m_remediationHasBeenSet)
+  {
+   payload.WithString("remediation", m_remediation);
 
   }
 

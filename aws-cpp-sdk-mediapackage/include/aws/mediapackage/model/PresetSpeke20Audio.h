@@ -16,7 +16,11 @@ namespace Model
   enum class PresetSpeke20Audio
   {
     NOT_SET,
-    PRESET_AUDIO_1
+    PRESET_AUDIO_1,
+    PRESET_AUDIO_2,
+    PRESET_AUDIO_3,
+    SHARED,
+    UNENCRYPTED
   };
 
 namespace PresetSpeke20AudioMapper

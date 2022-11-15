@@ -28,7 +28,7 @@ Aws::String ListComplianceItemsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
@@ -39,7 +39,7 @@ Aws::String ListComplianceItemsRequest::SerializePayload() const
 
   if(m_resourceIdsHasBeenSet)
   {
-   Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
    {
      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
@@ -50,7 +50,7 @@ Aws::String ListComplianceItemsRequest::SerializePayload() const
 
   if(m_resourceTypesHasBeenSet)
   {
-   Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
    {
      resourceTypesJsonList[resourceTypesIndex].AsString(m_resourceTypes[resourceTypesIndex]);

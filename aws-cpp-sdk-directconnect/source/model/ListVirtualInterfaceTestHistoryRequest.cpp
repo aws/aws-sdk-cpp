@@ -41,7 +41,7 @@ Aws::String ListVirtualInterfaceTestHistoryRequest::SerializePayload() const
 
   if(m_bgpPeersHasBeenSet)
   {
-   Array<JsonValue> bgpPeersJsonList(m_bgpPeers.size());
+   Aws::Utils::Array<JsonValue> bgpPeersJsonList(m_bgpPeers.size());
    for(unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex)
    {
      bgpPeersJsonList[bgpPeersIndex].AsString(m_bgpPeers[bgpPeersIndex]);

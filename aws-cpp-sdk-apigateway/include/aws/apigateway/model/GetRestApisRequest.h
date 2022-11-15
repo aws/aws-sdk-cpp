@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>The GET request to list existing <a>RestApis</a> defined for your
+   * <p>The GET request to list existing RestApis defined for your
    * collection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApisRequest">AWS
    * API Reference</a></p>
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListContributorInsightsResult& ListContributorInsightsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ContributorInsightsSummaries"))
   {
-    Array<JsonView> contributorInsightsSummariesJsonList = jsonValue.GetArray("ContributorInsightsSummaries");
+    Aws::Utils::Array<JsonView> contributorInsightsSummariesJsonList = jsonValue.GetArray("ContributorInsightsSummaries");
     for(unsigned contributorInsightsSummariesIndex = 0; contributorInsightsSummariesIndex < contributorInsightsSummariesJsonList.GetLength(); ++contributorInsightsSummariesIndex)
     {
       m_contributorInsightsSummaries.push_back(contributorInsightsSummariesJsonList[contributorInsightsSummariesIndex].AsObject());

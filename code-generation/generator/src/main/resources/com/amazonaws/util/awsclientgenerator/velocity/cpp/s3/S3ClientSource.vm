@@ -6,10 +6,13 @@
 #set($serviceNamespace = $serviceModel.metadata.namespace)
 #set($USEast1RegionalEndpointArgString = ", Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption")
 #set($USEast1RegionalEndpointInitString = ", m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)")
+#if(!$serviceModel.endpointRules)
 #set($AdditionalServiceSpecificConfigLoadString = "Load${serviceNamespace}SpecificConfig(config.profileName);")
+#end
 #set($ForRegionExtraArgsString = ", m_USEast1RegionalEndpointOption == Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
 
+#if(!$serviceModel.endpointRules)
 static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
 static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
@@ -76,24 +79,25 @@ void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Stri
     m_disableMultiRegionAccessPoints = false;
   }
 }
+#end
 
+#set($clsWSpace = $className.replaceAll(".", " "))
 \#include<aws/core/utils/HashingUtils.h>
-Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket,
+            ${clsWSpace}                       const Aws::String& key,
+            ${clsWSpace}                       Aws::Http::HttpMethod method,
+            ${clsWSpace}                       uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, {}, expirationInSeconds);
 }
 
-Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket,
+            ${clsWSpace}                       const Aws::String& key,
+            ${clsWSpace}                       Aws::Http::HttpMethod method,
+            ${clsWSpace}                       const Http::HeaderValueCollection& customizedHeaders,
+            ${clsWSpace}                       uint64_t expirationInSeconds)
 {
+#if(!$serviceModel.endpointRules)
     ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
     if (!computeEndpointOutcome.IsSuccess())
     {
@@ -104,110 +108,100 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket, const 
     uri.SetPath(uri.GetPath() + "/" + key);
     return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
         computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
-}
-
-Aws::String ${className}::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
-{
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
+#else
+    if (!m_endpointProvider)
     {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Endpoint provider is not initialized.");
         return {};
     }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
+    ResolveEndpointOutcome computeEndpointOutcome = m_endpointProvider->ResolveEndpoint({{Aws::String("Bucket"), bucket}});
+    if (!computeEndpointOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError().GetMessage());
+        return {};
+    }
+    Aws::Endpoint::AWSEndpoint& endpoint = computeEndpointOutcome.GetResult();
+    URI uri(endpoint.GetURL());
     uri.SetPath(uri.GetPath() + "/" + key);
+    endpoint.SetURL(uri.GetURIString());
+    return AWSClient::GeneratePresignedUrl(endpoint, method, customizedHeaders, expirationInSeconds);
+#end
+}
+
+Aws::String ${className}::GeneratePresignedUrlWithSSES3(const Aws::String& bucket,
+            ${clsWSpace}                                const Aws::String& key,
+            ${clsWSpace}                                Aws::Http::HttpMethod method,
+            ${clsWSpace}                                uint64_t expirationInSeconds)
+{
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), headers, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, headers, expirationInSeconds);
 }
 
-Aws::String ${className}::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSES3(const Aws::String& bucket,
+            ${clsWSpace}                                const Aws::String& key,
+            ${clsWSpace}                                Aws::Http::HttpMethod method,
+            ${clsWSpace}                                Http::HeaderValueCollection customizedHeaders,
+            ${clsWSpace}                                uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String ${className}::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket,
+            ${clsWSpace}                                 const Aws::String& key,
+            ${clsWSpace}                                 Aws::Http::HttpMethod method,
+            ${clsWSpace}                                 const Aws::String& kmsMasterKeyId,
+            ${clsWSpace}                                 uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::aws_kms));
     headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), headers, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, headers, expirationInSeconds);
 }
 
-Aws::String ${className}::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket,
+            ${clsWSpace}                                 const Aws::String& key,
+            ${clsWSpace}                                 Aws::Http::HttpMethod method,
+            ${clsWSpace}                                 Http::HeaderValueCollection customizedHeaders,
+            ${clsWSpace}                                 const Aws::String& kmsMasterKeyId,
+            ${clsWSpace}                                 uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::aws_kms));
     customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String ${className}::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
+            ${clsWSpace}                               const Aws::String& key,
+            ${clsWSpace}                               Aws::Http::HttpMethod method,
+            ${clsWSpace}                               const Aws::String& base64EncodedAES256Key,
+            ${clsWSpace}                               uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::AES256));
     headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), headers, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, headers, expirationInSeconds);
 }
 
-Aws::String ${className}::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
+            ${clsWSpace}                               const Aws::String& key,
+            ${clsWSpace}                               Aws::Http::HttpMethod method,
+            ${clsWSpace}                               Http::HeaderValueCollection customizedHeaders,
+            ${clsWSpace}                               const Aws::String& base64EncodedAES256Key,
+            ${clsWSpace}                               uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::AES256));
     customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, customizedHeaders, expirationInSeconds);
 }
+#if(!$serviceModel.endpointRules)
 
 ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& bucketOrArn) const
 {
@@ -267,7 +261,7 @@ ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& bu
                 return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
                     "S3 Multi Region Access Point ARNs do not support custom endpoint override right now.", false));
             }
-            ss << ${metadata.classNamePrefix}Endpoint::ForMultiRegionAccessPointArn(arn, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
+            ss << ${metadata.classNamePrefix}Endpoint::ForMultiRegionAccessPointArn(arn, m_useDualStack, /*endpointOverride*/ "");
             return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), "*", SERVICE_NAME, Aws::Auth::ASYMMETRIC_SIGV4_SIGNER));
         }
         // Regular S3 Access Point ARN
@@ -351,6 +345,8 @@ ComputeEndpointOutcome ${className}::ComputeEndpointStringWithServiceName(const 
         }
     }
 }
+#end
+
 
 bool ${className}::MultipartUploadSupported() const
 {

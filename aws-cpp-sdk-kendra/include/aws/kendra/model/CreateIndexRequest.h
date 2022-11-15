@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The name for the new index.</p>
+     * <p>A name for the index.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name for the new index.</p>
+     * <p>A name for the index.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name for the new index.</p>
+     * <p>A name for the index.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name for the new index.</p>
+     * <p>A name for the index.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name for the new index.</p>
+     * <p>A name for the index.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name for the new index.</p>
+     * <p>A name for the index.</p>
      */
     inline CreateIndexRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name for the new index.</p>
+     * <p>A name for the index.</p>
      */
     inline CreateIndexRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the new index.</p>
+     * <p>A name for the index.</p>
      */
     inline CreateIndexRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -526,43 +526,43 @@ namespace Model
 
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline CreateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline CreateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
@@ -570,34 +570,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     IndexEdition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-    bool m_serverSideEncryptionConfigurationHasBeenSet;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
-    bool m_userTokenConfigurationsHasBeenSet;
+    bool m_userTokenConfigurationsHasBeenSet = false;
 
     UserContextPolicy m_userContextPolicy;
-    bool m_userContextPolicyHasBeenSet;
+    bool m_userContextPolicyHasBeenSet = false;
 
     UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
-    bool m_userGroupResolutionConfigurationHasBeenSet;
+    bool m_userGroupResolutionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

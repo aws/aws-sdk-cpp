@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<RecipientDetail> m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
   };
 
 } // namespace Model

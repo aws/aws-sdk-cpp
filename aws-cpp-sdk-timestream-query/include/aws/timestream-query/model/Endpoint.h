@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     long long m_cachePeriodInMinutes;
-    bool m_cachePeriodInMinutesHasBeenSet;
+    bool m_cachePeriodInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

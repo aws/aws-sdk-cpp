@@ -131,7 +131,7 @@ namespace Aws
             /**
              * @brief Receive data from network.
              * @param address, if not null and underlying implementation supply the incoming data's source address, this will be filled with source address info.
-             * @param addressLength, the size of source adddress, should not be null.
+             * @param addressLength, the size of source address, should not be null.
              * @param buffer, the memory address where you want to store received data.
              * @param bufferLen, the size of data buffer.
              * @return -1 on failure, check errno for detailed error information, on success, returns the actual bytes of data received.

@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<CompletedPart> m_parts;
-    bool m_partsHasBeenSet;
+    bool m_partsHasBeenSet = false;
   };
 
 } // namespace Model

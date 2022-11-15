@@ -81,57 +81,57 @@ namespace Model
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
-     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda
+     * Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline const Aws::String& GetFunctionAlias() const{ return m_functionAlias; }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
-     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda
+     * Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline bool FunctionAliasHasBeenSet() const { return m_functionAliasHasBeenSet; }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
-     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda
+     * Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline void SetFunctionAlias(const Aws::String& value) { m_functionAliasHasBeenSet = true; m_functionAlias = value; }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
-     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda
+     * Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline void SetFunctionAlias(Aws::String&& value) { m_functionAliasHasBeenSet = true; m_functionAlias = std::move(value); }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
-     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda
+     * Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline void SetFunctionAlias(const char* value) { m_functionAliasHasBeenSet = true; m_functionAlias.assign(value); }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
-     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda
+     * Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline LambdaFunctionInfo& WithFunctionAlias(const Aws::String& value) { SetFunctionAlias(value); return *this;}
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
-     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda
+     * Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline LambdaFunctionInfo& WithFunctionAlias(Aws::String&& value) { SetFunctionAlias(std::move(value)); return *this;}
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
-     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda
+     * Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline LambdaFunctionInfo& WithFunctionAlias(const char* value) { SetFunctionAlias(value); return *this;}
 
@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_functionAlias;
-    bool m_functionAliasHasBeenSet;
+    bool m_functionAliasHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_targetVersion;
-    bool m_targetVersionHasBeenSet;
+    bool m_targetVersionHasBeenSet = false;
 
     double m_targetVersionWeight;
-    bool m_targetVersionWeightHasBeenSet;
+    bool m_targetVersionWeightHasBeenSet = false;
   };
 
 } // namespace Model

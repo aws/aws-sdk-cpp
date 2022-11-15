@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_byteBuffer;
-    bool m_byteBufferHasBeenSet;
+    bool m_byteBufferHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
   };
 
 } // namespace Model

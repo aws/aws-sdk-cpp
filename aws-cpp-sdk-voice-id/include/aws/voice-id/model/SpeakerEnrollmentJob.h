@@ -486,77 +486,77 @@ namespace Model
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline SpeakerEnrollmentJob& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline SpeakerEnrollmentJob& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_endedAt;
-    bool m_endedAtHasBeenSet;
+    bool m_endedAtHasBeenSet = false;
 
     EnrollmentConfig m_enrollmentConfig;
-    bool m_enrollmentConfigHasBeenSet;
+    bool m_enrollmentConfigHasBeenSet = false;
 
     FailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobProgress m_jobProgress;
-    bool m_jobProgressHasBeenSet;
+    bool m_jobProgressHasBeenSet = false;
 
     SpeakerEnrollmentJobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
   };
 
 } // namespace Model

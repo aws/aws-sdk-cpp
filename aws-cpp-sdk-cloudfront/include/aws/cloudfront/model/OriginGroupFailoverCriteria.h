@@ -78,7 +78,7 @@ namespace Model
   private:
 
     StatusCodes m_statusCodes;
-    bool m_statusCodesHasBeenSet;
+    bool m_statusCodesHasBeenSet = false;
   };
 
 } // namespace Model

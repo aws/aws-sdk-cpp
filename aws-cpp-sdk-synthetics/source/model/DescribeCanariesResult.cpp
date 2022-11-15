@@ -30,7 +30,7 @@ DescribeCanariesResult& DescribeCanariesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Canaries"))
   {
-    Array<JsonView> canariesJsonList = jsonValue.GetArray("Canaries");
+    Aws::Utils::Array<JsonView> canariesJsonList = jsonValue.GetArray("Canaries");
     for(unsigned canariesIndex = 0; canariesIndex < canariesJsonList.GetLength(); ++canariesIndex)
     {
       m_canaries.push_back(canariesJsonList[canariesIndex].AsObject());

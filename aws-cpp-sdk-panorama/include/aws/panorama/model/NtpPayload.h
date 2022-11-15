@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ntpServers;
-    bool m_ntpServersHasBeenSet;
+    bool m_ntpServersHasBeenSet = false;
   };
 
 } // namespace Model

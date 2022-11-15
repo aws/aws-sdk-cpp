@@ -312,8 +312,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <a>CreateModel</a> request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -334,8 +336,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <a>CreateModel</a> request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -356,8 +360,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <a>CreateModel</a> request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -378,8 +384,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <a>CreateModel</a> request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -400,8 +408,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <a>CreateModel</a> request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -422,8 +432,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <a>CreateModel</a> request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -444,8 +456,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <a>CreateModel</a> request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -466,8 +480,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <a>CreateModel</a> request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * specify in your <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -476,16 +492,16 @@ namespace Model
   private:
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
 
     Aws::String m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
 
     AssemblyType m_assembleWith;
-    bool m_assembleWithHasBeenSet;
+    bool m_assembleWithHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

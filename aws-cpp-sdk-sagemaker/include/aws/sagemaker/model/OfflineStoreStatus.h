@@ -120,10 +120,10 @@ namespace Model
   private:
 
     OfflineStoreStatusValue m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_blockedReason;
-    bool m_blockedReasonHasBeenSet;
+    bool m_blockedReasonHasBeenSet = false;
   };
 
 } // namespace Model

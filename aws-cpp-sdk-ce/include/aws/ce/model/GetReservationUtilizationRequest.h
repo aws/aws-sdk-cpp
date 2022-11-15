@@ -41,62 +41,62 @@ namespace Model
 
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline GetReservationUtilizationRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline GetReservationUtilizationRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 
@@ -301,7 +301,7 @@ namespace Model
 
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
@@ -317,13 +317,13 @@ namespace Model
      * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
      * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
      * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
-     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
-     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
      */
     inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
@@ -339,13 +339,13 @@ namespace Model
      * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
      * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
      * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
-     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
-     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
@@ -361,13 +361,13 @@ namespace Model
      * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
      * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
      * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
-     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
-     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
      */
     inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
@@ -383,13 +383,13 @@ namespace Model
      * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
      * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
      * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
-     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
-     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
      */
     inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
@@ -405,13 +405,13 @@ namespace Model
      * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
      * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
      * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
-     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
-     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
      */
     inline GetReservationUtilizationRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
@@ -427,8 +427,8 @@ namespace Model
      * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
      * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
      * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
-     * </p> </li> </ul> <p>Supported values for <code>SortOrder</code> are
-     * <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
      */
     inline GetReservationUtilizationRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
 
@@ -525,25 +525,25 @@ namespace Model
   private:
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Aws::Vector<GroupDefinition> m_groupBy;
-    bool m_groupByHasBeenSet;
+    bool m_groupByHasBeenSet = false;
 
     Granularity m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     SortDefinition m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

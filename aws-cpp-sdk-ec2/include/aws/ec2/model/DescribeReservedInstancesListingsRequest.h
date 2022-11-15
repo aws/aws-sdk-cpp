@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
 
     Aws::String m_reservedInstancesListingId;
-    bool m_reservedInstancesListingIdHasBeenSet;
+    bool m_reservedInstancesListingIdHasBeenSet = false;
   };
 
 } // namespace Model

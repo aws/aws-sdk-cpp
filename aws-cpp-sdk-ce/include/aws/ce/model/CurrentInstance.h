@@ -241,49 +241,49 @@ namespace Model
 
 
     /**
-     * <p> The number of hours during the lookback period that's covered by
+     * <p>The number of hours during the lookback period that's covered by
      * reservations.</p>
      */
     inline const Aws::String& GetReservationCoveredHoursInLookbackPeriod() const{ return m_reservationCoveredHoursInLookbackPeriod; }
 
     /**
-     * <p> The number of hours during the lookback period that's covered by
+     * <p>The number of hours during the lookback period that's covered by
      * reservations.</p>
      */
     inline bool ReservationCoveredHoursInLookbackPeriodHasBeenSet() const { return m_reservationCoveredHoursInLookbackPeriodHasBeenSet; }
 
     /**
-     * <p> The number of hours during the lookback period that's covered by
+     * <p>The number of hours during the lookback period that's covered by
      * reservations.</p>
      */
     inline void SetReservationCoveredHoursInLookbackPeriod(const Aws::String& value) { m_reservationCoveredHoursInLookbackPeriodHasBeenSet = true; m_reservationCoveredHoursInLookbackPeriod = value; }
 
     /**
-     * <p> The number of hours during the lookback period that's covered by
+     * <p>The number of hours during the lookback period that's covered by
      * reservations.</p>
      */
     inline void SetReservationCoveredHoursInLookbackPeriod(Aws::String&& value) { m_reservationCoveredHoursInLookbackPeriodHasBeenSet = true; m_reservationCoveredHoursInLookbackPeriod = std::move(value); }
 
     /**
-     * <p> The number of hours during the lookback period that's covered by
+     * <p>The number of hours during the lookback period that's covered by
      * reservations.</p>
      */
     inline void SetReservationCoveredHoursInLookbackPeriod(const char* value) { m_reservationCoveredHoursInLookbackPeriodHasBeenSet = true; m_reservationCoveredHoursInLookbackPeriod.assign(value); }
 
     /**
-     * <p> The number of hours during the lookback period that's covered by
+     * <p>The number of hours during the lookback period that's covered by
      * reservations.</p>
      */
     inline CurrentInstance& WithReservationCoveredHoursInLookbackPeriod(const Aws::String& value) { SetReservationCoveredHoursInLookbackPeriod(value); return *this;}
 
     /**
-     * <p> The number of hours during the lookback period that's covered by
+     * <p>The number of hours during the lookback period that's covered by
      * reservations.</p>
      */
     inline CurrentInstance& WithReservationCoveredHoursInLookbackPeriod(Aws::String&& value) { SetReservationCoveredHoursInLookbackPeriod(std::move(value)); return *this;}
 
     /**
-     * <p> The number of hours during the lookback period that's covered by
+     * <p>The number of hours during the lookback period that's covered by
      * reservations.</p>
      */
     inline CurrentInstance& WithReservationCoveredHoursInLookbackPeriod(const char* value) { SetReservationCoveredHoursInLookbackPeriod(value); return *this;}
@@ -339,49 +339,49 @@ namespace Model
 
 
     /**
-     * <p> The number of hours during the lookback period that's billed at On-Demand
+     * <p>The number of hours during the lookback period that's billed at On-Demand
      * rates.</p>
      */
     inline const Aws::String& GetOnDemandHoursInLookbackPeriod() const{ return m_onDemandHoursInLookbackPeriod; }
 
     /**
-     * <p> The number of hours during the lookback period that's billed at On-Demand
+     * <p>The number of hours during the lookback period that's billed at On-Demand
      * rates.</p>
      */
     inline bool OnDemandHoursInLookbackPeriodHasBeenSet() const { return m_onDemandHoursInLookbackPeriodHasBeenSet; }
 
     /**
-     * <p> The number of hours during the lookback period that's billed at On-Demand
+     * <p>The number of hours during the lookback period that's billed at On-Demand
      * rates.</p>
      */
     inline void SetOnDemandHoursInLookbackPeriod(const Aws::String& value) { m_onDemandHoursInLookbackPeriodHasBeenSet = true; m_onDemandHoursInLookbackPeriod = value; }
 
     /**
-     * <p> The number of hours during the lookback period that's billed at On-Demand
+     * <p>The number of hours during the lookback period that's billed at On-Demand
      * rates.</p>
      */
     inline void SetOnDemandHoursInLookbackPeriod(Aws::String&& value) { m_onDemandHoursInLookbackPeriodHasBeenSet = true; m_onDemandHoursInLookbackPeriod = std::move(value); }
 
     /**
-     * <p> The number of hours during the lookback period that's billed at On-Demand
+     * <p>The number of hours during the lookback period that's billed at On-Demand
      * rates.</p>
      */
     inline void SetOnDemandHoursInLookbackPeriod(const char* value) { m_onDemandHoursInLookbackPeriodHasBeenSet = true; m_onDemandHoursInLookbackPeriod.assign(value); }
 
     /**
-     * <p> The number of hours during the lookback period that's billed at On-Demand
+     * <p>The number of hours during the lookback period that's billed at On-Demand
      * rates.</p>
      */
     inline CurrentInstance& WithOnDemandHoursInLookbackPeriod(const Aws::String& value) { SetOnDemandHoursInLookbackPeriod(value); return *this;}
 
     /**
-     * <p> The number of hours during the lookback period that's billed at On-Demand
+     * <p>The number of hours during the lookback period that's billed at On-Demand
      * rates.</p>
      */
     inline CurrentInstance& WithOnDemandHoursInLookbackPeriod(Aws::String&& value) { SetOnDemandHoursInLookbackPeriod(std::move(value)); return *this;}
 
     /**
-     * <p> The number of hours during the lookback period that's billed at On-Demand
+     * <p>The number of hours during the lookback period that's billed at On-Demand
      * rates.</p>
      */
     inline CurrentInstance& WithOnDemandHoursInLookbackPeriod(const char* value) { SetOnDemandHoursInLookbackPeriod(value); return *this;}
@@ -478,49 +478,49 @@ namespace Model
 
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
      * this instance.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
      * this instance.</p>
      */
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
      * this instance.</p>
      */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
      * this instance.</p>
      */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
      * this instance.</p>
      */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
      * this instance.</p>
      */
     inline CurrentInstance& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
      * this instance.</p>
      */
     inline CurrentInstance& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
+     * <p>The currency code that Amazon Web Services used to calculate the costs for
      * this instance.</p>
      */
     inline CurrentInstance& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
@@ -528,37 +528,37 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::Vector<TagValues> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ResourceDetails m_resourceDetails;
-    bool m_resourceDetailsHasBeenSet;
+    bool m_resourceDetailsHasBeenSet = false;
 
     ResourceUtilization m_resourceUtilization;
-    bool m_resourceUtilizationHasBeenSet;
+    bool m_resourceUtilizationHasBeenSet = false;
 
     Aws::String m_reservationCoveredHoursInLookbackPeriod;
-    bool m_reservationCoveredHoursInLookbackPeriodHasBeenSet;
+    bool m_reservationCoveredHoursInLookbackPeriodHasBeenSet = false;
 
     Aws::String m_savingsPlansCoveredHoursInLookbackPeriod;
-    bool m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet;
+    bool m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet = false;
 
     Aws::String m_onDemandHoursInLookbackPeriod;
-    bool m_onDemandHoursInLookbackPeriodHasBeenSet;
+    bool m_onDemandHoursInLookbackPeriodHasBeenSet = false;
 
     Aws::String m_totalRunningHoursInLookbackPeriod;
-    bool m_totalRunningHoursInLookbackPeriodHasBeenSet;
+    bool m_totalRunningHoursInLookbackPeriodHasBeenSet = false;
 
     Aws::String m_monthlyCost;
-    bool m_monthlyCostHasBeenSet;
+    bool m_monthlyCostHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
   };
 
 } // namespace Model

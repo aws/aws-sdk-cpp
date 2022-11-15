@@ -211,16 +211,16 @@ namespace Model
   private:
 
     Aws::String m_versionLabel;
-    bool m_versionLabelHasBeenSet;
+    bool m_versionLabelHasBeenSet = false;
 
     long long m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_deploymentTime;
-    bool m_deploymentTimeHasBeenSet;
+    bool m_deploymentTimeHasBeenSet = false;
   };
 
 } // namespace Model

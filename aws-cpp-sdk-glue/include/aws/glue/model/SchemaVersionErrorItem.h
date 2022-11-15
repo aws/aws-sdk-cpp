@@ -92,10 +92,10 @@ namespace Model
   private:
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     ErrorDetails m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

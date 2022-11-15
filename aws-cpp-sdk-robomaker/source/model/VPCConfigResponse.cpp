@@ -41,7 +41,7 @@ VPCConfigResponse& VPCConfigResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("subnets"))
   {
-    Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
+    Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
@@ -51,7 +51,7 @@ VPCConfigResponse& VPCConfigResponse::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -82,7 +82,7 @@ JsonValue VPCConfigResponse::Jsonize() const
 
   if(m_subnetsHasBeenSet)
   {
-   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
    {
      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
@@ -93,7 +93,7 @@ JsonValue VPCConfigResponse::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);

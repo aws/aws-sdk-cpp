@@ -36,7 +36,7 @@ ListImagePackagesResult& ListImagePackagesResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("imagePackageList"))
   {
-    Array<JsonView> imagePackageListJsonList = jsonValue.GetArray("imagePackageList");
+    Aws::Utils::Array<JsonView> imagePackageListJsonList = jsonValue.GetArray("imagePackageList");
     for(unsigned imagePackageListIndex = 0; imagePackageListIndex < imagePackageListJsonList.GetLength(); ++imagePackageListIndex)
     {
       m_imagePackageList.push_back(imagePackageListJsonList[imagePackageListIndex].AsObject());

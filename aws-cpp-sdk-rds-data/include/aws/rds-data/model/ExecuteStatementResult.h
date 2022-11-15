@@ -42,6 +42,49 @@ namespace Model
 
 
     /**
+     * <p>The records returned by the SQL statement. This field is blank if the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     */
+    inline const Aws::Vector<Aws::Vector<Field>>& GetRecords() const{ return m_records; }
+
+    /**
+     * <p>The records returned by the SQL statement. This field is blank if the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     */
+    inline void SetRecords(const Aws::Vector<Aws::Vector<Field>>& value) { m_records = value; }
+
+    /**
+     * <p>The records returned by the SQL statement. This field is blank if the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     */
+    inline void SetRecords(Aws::Vector<Aws::Vector<Field>>&& value) { m_records = std::move(value); }
+
+    /**
+     * <p>The records returned by the SQL statement. This field is blank if the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     */
+    inline ExecuteStatementResult& WithRecords(const Aws::Vector<Aws::Vector<Field>>& value) { SetRecords(value); return *this;}
+
+    /**
+     * <p>The records returned by the SQL statement. This field is blank if the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     */
+    inline ExecuteStatementResult& WithRecords(Aws::Vector<Aws::Vector<Field>>&& value) { SetRecords(std::move(value)); return *this;}
+
+    /**
+     * <p>The records returned by the SQL statement. This field is blank if the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     */
+    inline ExecuteStatementResult& AddRecords(const Aws::Vector<Field>& value) { m_records.push_back(value); return *this; }
+
+    /**
+     * <p>The records returned by the SQL statement. This field is blank if the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     */
+    inline ExecuteStatementResult& AddRecords(Aws::Vector<Field>&& value) { m_records.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Metadata for the columns included in the results. This field is blank if the
      * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
      */
@@ -85,74 +128,19 @@ namespace Model
 
 
     /**
-     * <p>A string value that represents the result set of a <code>SELECT</code>
-     * statement in JSON format. This value is only present when the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
-     * size limit for this field is currently 10 MB. If the JSON-formatted string
-     * representing the result set requires more than 10 MB, the call returns an
-     * error.</p>
+     * <p>The number of records updated by the request.</p>
      */
-    inline const Aws::String& GetFormattedRecords() const{ return m_formattedRecords; }
+    inline long long GetNumberOfRecordsUpdated() const{ return m_numberOfRecordsUpdated; }
 
     /**
-     * <p>A string value that represents the result set of a <code>SELECT</code>
-     * statement in JSON format. This value is only present when the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
-     * size limit for this field is currently 10 MB. If the JSON-formatted string
-     * representing the result set requires more than 10 MB, the call returns an
-     * error.</p>
+     * <p>The number of records updated by the request.</p>
      */
-    inline void SetFormattedRecords(const Aws::String& value) { m_formattedRecords = value; }
+    inline void SetNumberOfRecordsUpdated(long long value) { m_numberOfRecordsUpdated = value; }
 
     /**
-     * <p>A string value that represents the result set of a <code>SELECT</code>
-     * statement in JSON format. This value is only present when the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
-     * size limit for this field is currently 10 MB. If the JSON-formatted string
-     * representing the result set requires more than 10 MB, the call returns an
-     * error.</p>
+     * <p>The number of records updated by the request.</p>
      */
-    inline void SetFormattedRecords(Aws::String&& value) { m_formattedRecords = std::move(value); }
-
-    /**
-     * <p>A string value that represents the result set of a <code>SELECT</code>
-     * statement in JSON format. This value is only present when the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
-     * size limit for this field is currently 10 MB. If the JSON-formatted string
-     * representing the result set requires more than 10 MB, the call returns an
-     * error.</p>
-     */
-    inline void SetFormattedRecords(const char* value) { m_formattedRecords.assign(value); }
-
-    /**
-     * <p>A string value that represents the result set of a <code>SELECT</code>
-     * statement in JSON format. This value is only present when the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
-     * size limit for this field is currently 10 MB. If the JSON-formatted string
-     * representing the result set requires more than 10 MB, the call returns an
-     * error.</p>
-     */
-    inline ExecuteStatementResult& WithFormattedRecords(const Aws::String& value) { SetFormattedRecords(value); return *this;}
-
-    /**
-     * <p>A string value that represents the result set of a <code>SELECT</code>
-     * statement in JSON format. This value is only present when the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
-     * size limit for this field is currently 10 MB. If the JSON-formatted string
-     * representing the result set requires more than 10 MB, the call returns an
-     * error.</p>
-     */
-    inline ExecuteStatementResult& WithFormattedRecords(Aws::String&& value) { SetFormattedRecords(std::move(value)); return *this;}
-
-    /**
-     * <p>A string value that represents the result set of a <code>SELECT</code>
-     * statement in JSON format. This value is only present when the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
-     * size limit for this field is currently 10 MB. If the JSON-formatted string
-     * representing the result set requires more than 10 MB, the call returns an
-     * error.</p>
-     */
-    inline ExecuteStatementResult& WithFormattedRecords(const char* value) { SetFormattedRecords(value); return *this;}
+    inline ExecuteStatementResult& WithNumberOfRecordsUpdated(long long value) { SetNumberOfRecordsUpdated(value); return *this;}
 
 
     /**
@@ -234,74 +222,86 @@ namespace Model
 
 
     /**
-     * <p>The number of records updated by the request.</p>
+     * <p>A string value that represents the result set of a <code>SELECT</code>
+     * statement in JSON format. This value is only present when the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
+     * size limit for this field is currently 10 MB. If the JSON-formatted string
+     * representing the result set requires more than 10 MB, the call returns an
+     * error.</p>
      */
-    inline long long GetNumberOfRecordsUpdated() const{ return m_numberOfRecordsUpdated; }
+    inline const Aws::String& GetFormattedRecords() const{ return m_formattedRecords; }
 
     /**
-     * <p>The number of records updated by the request.</p>
+     * <p>A string value that represents the result set of a <code>SELECT</code>
+     * statement in JSON format. This value is only present when the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
+     * size limit for this field is currently 10 MB. If the JSON-formatted string
+     * representing the result set requires more than 10 MB, the call returns an
+     * error.</p>
      */
-    inline void SetNumberOfRecordsUpdated(long long value) { m_numberOfRecordsUpdated = value; }
+    inline void SetFormattedRecords(const Aws::String& value) { m_formattedRecords = value; }
 
     /**
-     * <p>The number of records updated by the request.</p>
+     * <p>A string value that represents the result set of a <code>SELECT</code>
+     * statement in JSON format. This value is only present when the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
+     * size limit for this field is currently 10 MB. If the JSON-formatted string
+     * representing the result set requires more than 10 MB, the call returns an
+     * error.</p>
      */
-    inline ExecuteStatementResult& WithNumberOfRecordsUpdated(long long value) { SetNumberOfRecordsUpdated(value); return *this;}
-
-
-    /**
-     * <p>The records returned by the SQL statement. This field is blank if the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-     */
-    inline const Aws::Vector<Aws::Vector<Field>>& GetRecords() const{ return m_records; }
+    inline void SetFormattedRecords(Aws::String&& value) { m_formattedRecords = std::move(value); }
 
     /**
-     * <p>The records returned by the SQL statement. This field is blank if the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     * <p>A string value that represents the result set of a <code>SELECT</code>
+     * statement in JSON format. This value is only present when the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
+     * size limit for this field is currently 10 MB. If the JSON-formatted string
+     * representing the result set requires more than 10 MB, the call returns an
+     * error.</p>
      */
-    inline void SetRecords(const Aws::Vector<Aws::Vector<Field>>& value) { m_records = value; }
+    inline void SetFormattedRecords(const char* value) { m_formattedRecords.assign(value); }
 
     /**
-     * <p>The records returned by the SQL statement. This field is blank if the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     * <p>A string value that represents the result set of a <code>SELECT</code>
+     * statement in JSON format. This value is only present when the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
+     * size limit for this field is currently 10 MB. If the JSON-formatted string
+     * representing the result set requires more than 10 MB, the call returns an
+     * error.</p>
      */
-    inline void SetRecords(Aws::Vector<Aws::Vector<Field>>&& value) { m_records = std::move(value); }
+    inline ExecuteStatementResult& WithFormattedRecords(const Aws::String& value) { SetFormattedRecords(value); return *this;}
 
     /**
-     * <p>The records returned by the SQL statement. This field is blank if the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     * <p>A string value that represents the result set of a <code>SELECT</code>
+     * statement in JSON format. This value is only present when the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
+     * size limit for this field is currently 10 MB. If the JSON-formatted string
+     * representing the result set requires more than 10 MB, the call returns an
+     * error.</p>
      */
-    inline ExecuteStatementResult& WithRecords(const Aws::Vector<Aws::Vector<Field>>& value) { SetRecords(value); return *this;}
+    inline ExecuteStatementResult& WithFormattedRecords(Aws::String&& value) { SetFormattedRecords(std::move(value)); return *this;}
 
     /**
-     * <p>The records returned by the SQL statement. This field is blank if the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
+     * <p>A string value that represents the result set of a <code>SELECT</code>
+     * statement in JSON format. This value is only present when the
+     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p> <p>The
+     * size limit for this field is currently 10 MB. If the JSON-formatted string
+     * representing the result set requires more than 10 MB, the call returns an
+     * error.</p>
      */
-    inline ExecuteStatementResult& WithRecords(Aws::Vector<Aws::Vector<Field>>&& value) { SetRecords(std::move(value)); return *this;}
-
-    /**
-     * <p>The records returned by the SQL statement. This field is blank if the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-     */
-    inline ExecuteStatementResult& AddRecords(const Aws::Vector<Field>& value) { m_records.push_back(value); return *this; }
-
-    /**
-     * <p>The records returned by the SQL statement. This field is blank if the
-     * <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-     */
-    inline ExecuteStatementResult& AddRecords(Aws::Vector<Field>&& value) { m_records.push_back(std::move(value)); return *this; }
+    inline ExecuteStatementResult& WithFormattedRecords(const char* value) { SetFormattedRecords(value); return *this;}
 
   private:
 
+    Aws::Vector<Aws::Vector<Field>> m_records;
+
     Aws::Vector<ColumnMetadata> m_columnMetadata;
-
-    Aws::String m_formattedRecords;
-
-    Aws::Vector<Field> m_generatedFields;
 
     long long m_numberOfRecordsUpdated;
 
-    Aws::Vector<Aws::Vector<Field>> m_records;
+    Aws::Vector<Field> m_generatedFields;
+
+    Aws::String m_formattedRecords;
   };
 
 } // namespace Model

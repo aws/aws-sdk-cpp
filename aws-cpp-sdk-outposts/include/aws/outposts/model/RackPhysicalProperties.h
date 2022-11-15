@@ -366,31 +366,31 @@ namespace Model
   private:
 
     PowerDrawKva m_powerDrawKva;
-    bool m_powerDrawKvaHasBeenSet;
+    bool m_powerDrawKvaHasBeenSet = false;
 
     PowerPhase m_powerPhase;
-    bool m_powerPhaseHasBeenSet;
+    bool m_powerPhaseHasBeenSet = false;
 
     PowerConnector m_powerConnector;
-    bool m_powerConnectorHasBeenSet;
+    bool m_powerConnectorHasBeenSet = false;
 
     PowerFeedDrop m_powerFeedDrop;
-    bool m_powerFeedDropHasBeenSet;
+    bool m_powerFeedDropHasBeenSet = false;
 
     UplinkGbps m_uplinkGbps;
-    bool m_uplinkGbpsHasBeenSet;
+    bool m_uplinkGbpsHasBeenSet = false;
 
     UplinkCount m_uplinkCount;
-    bool m_uplinkCountHasBeenSet;
+    bool m_uplinkCountHasBeenSet = false;
 
     FiberOpticCableType m_fiberOpticCableType;
-    bool m_fiberOpticCableTypeHasBeenSet;
+    bool m_fiberOpticCableTypeHasBeenSet = false;
 
     OpticalStandard m_opticalStandard;
-    bool m_opticalStandardHasBeenSet;
+    bool m_opticalStandardHasBeenSet = false;
 
     MaximumSupportedWeightLbs m_maximumSupportedWeightLbs;
-    bool m_maximumSupportedWeightLbsHasBeenSet;
+    bool m_maximumSupportedWeightLbsHasBeenSet = false;
   };
 
 } // namespace Model

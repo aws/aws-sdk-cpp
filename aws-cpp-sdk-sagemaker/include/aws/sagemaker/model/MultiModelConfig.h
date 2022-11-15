@@ -107,7 +107,7 @@ namespace Model
   private:
 
     ModelCacheSetting m_modelCacheSetting;
-    bool m_modelCacheSettingHasBeenSet;
+    bool m_modelCacheSettingHasBeenSet = false;
   };
 
 } // namespace Model

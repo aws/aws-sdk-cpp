@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_templateData;
-    bool m_templateDataHasBeenSet;
+    bool m_templateDataHasBeenSet = false;
   };
 
 } // namespace Model

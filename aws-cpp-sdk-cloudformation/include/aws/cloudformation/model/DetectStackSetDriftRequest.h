@@ -247,16 +247,16 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     StackSetOperationPreferences m_operationPreferences;
-    bool m_operationPreferencesHasBeenSet;
+    bool m_operationPreferencesHasBeenSet = false;
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
   };
 
 } // namespace Model

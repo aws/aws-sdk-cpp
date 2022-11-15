@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_serviceActionId;
-    bool m_serviceActionIdHasBeenSet;
+    bool m_serviceActionIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     ServiceActionAssociationErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

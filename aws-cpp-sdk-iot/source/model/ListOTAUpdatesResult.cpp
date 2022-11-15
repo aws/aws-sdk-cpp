@@ -30,7 +30,7 @@ ListOTAUpdatesResult& ListOTAUpdatesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("otaUpdates"))
   {
-    Array<JsonView> otaUpdatesJsonList = jsonValue.GetArray("otaUpdates");
+    Aws::Utils::Array<JsonView> otaUpdatesJsonList = jsonValue.GetArray("otaUpdates");
     for(unsigned otaUpdatesIndex = 0; otaUpdatesIndex < otaUpdatesJsonList.GetLength(); ++otaUpdatesIndex)
     {
       m_otaUpdates.push_back(otaUpdatesJsonList[otaUpdatesIndex].AsObject());

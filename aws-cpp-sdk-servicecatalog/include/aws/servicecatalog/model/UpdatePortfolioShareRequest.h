@@ -142,50 +142,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline UpdatePortfolioShareRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline UpdatePortfolioShareRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline UpdatePortfolioShareRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -240,19 +240,19 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_portfolioId;
-    bool m_portfolioIdHasBeenSet;
+    bool m_portfolioIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     OrganizationNode m_organizationNode;
-    bool m_organizationNodeHasBeenSet;
+    bool m_organizationNodeHasBeenSet = false;
 
     bool m_shareTagOptions;
-    bool m_shareTagOptionsHasBeenSet;
+    bool m_shareTagOptionsHasBeenSet = false;
   };
 
 } // namespace Model

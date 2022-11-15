@@ -612,46 +612,46 @@ namespace Model
   private:
 
     Aws::String m_networkInsightsAnalysisId;
-    bool m_networkInsightsAnalysisIdHasBeenSet;
+    bool m_networkInsightsAnalysisIdHasBeenSet = false;
 
     Aws::String m_networkInsightsAnalysisArn;
-    bool m_networkInsightsAnalysisArnHasBeenSet;
+    bool m_networkInsightsAnalysisArnHasBeenSet = false;
 
     Aws::String m_networkInsightsPathId;
-    bool m_networkInsightsPathIdHasBeenSet;
+    bool m_networkInsightsPathIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_filterInArns;
-    bool m_filterInArnsHasBeenSet;
+    bool m_filterInArnsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     AnalysisStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_warningMessage;
-    bool m_warningMessageHasBeenSet;
+    bool m_warningMessageHasBeenSet = false;
 
     bool m_networkPathFound;
-    bool m_networkPathFoundHasBeenSet;
+    bool m_networkPathFoundHasBeenSet = false;
 
     Aws::Vector<PathComponent> m_forwardPathComponents;
-    bool m_forwardPathComponentsHasBeenSet;
+    bool m_forwardPathComponentsHasBeenSet = false;
 
     Aws::Vector<PathComponent> m_returnPathComponents;
-    bool m_returnPathComponentsHasBeenSet;
+    bool m_returnPathComponentsHasBeenSet = false;
 
     Aws::Vector<Explanation> m_explanations;
-    bool m_explanationsHasBeenSet;
+    bool m_explanationsHasBeenSet = false;
 
     Aws::Vector<AlternatePathHint> m_alternatePathHints;
-    bool m_alternatePathHintsHasBeenSet;
+    bool m_alternatePathHintsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

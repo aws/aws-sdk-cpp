@@ -401,28 +401,28 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_launchProfileProtocolVersions;
-    bool m_launchProfileProtocolVersionsHasBeenSet;
+    bool m_launchProfileProtocolVersionsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StreamConfigurationCreate m_streamConfiguration;
-    bool m_streamConfigurationHasBeenSet;
+    bool m_streamConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_studioComponentIds;
-    bool m_studioComponentIdsHasBeenSet;
+    bool m_studioComponentIdsHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

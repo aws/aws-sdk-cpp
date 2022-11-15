@@ -44,7 +44,7 @@ ListWorkerBlocksResult& ListWorkerBlocksResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("WorkerBlocks"))
   {
-    Array<JsonView> workerBlocksJsonList = jsonValue.GetArray("WorkerBlocks");
+    Aws::Utils::Array<JsonView> workerBlocksJsonList = jsonValue.GetArray("WorkerBlocks");
     for(unsigned workerBlocksIndex = 0; workerBlocksIndex < workerBlocksJsonList.GetLength(); ++workerBlocksIndex)
     {
       m_workerBlocks.push_back(workerBlocksJsonList[workerBlocksIndex].AsObject());

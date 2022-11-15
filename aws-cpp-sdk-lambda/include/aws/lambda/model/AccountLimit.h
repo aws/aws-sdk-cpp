@@ -159,19 +159,19 @@ namespace Model
   private:
 
     long long m_totalCodeSize;
-    bool m_totalCodeSizeHasBeenSet;
+    bool m_totalCodeSizeHasBeenSet = false;
 
     long long m_codeSizeUnzipped;
-    bool m_codeSizeUnzippedHasBeenSet;
+    bool m_codeSizeUnzippedHasBeenSet = false;
 
     long long m_codeSizeZipped;
-    bool m_codeSizeZippedHasBeenSet;
+    bool m_codeSizeZippedHasBeenSet = false;
 
     int m_concurrentExecutions;
-    bool m_concurrentExecutionsHasBeenSet;
+    bool m_concurrentExecutionsHasBeenSet = false;
 
     int m_unreservedConcurrentExecutions;
-    bool m_unreservedConcurrentExecutionsHasBeenSet;
+    bool m_unreservedConcurrentExecutionsHasBeenSet = false;
   };
 
 } // namespace Model

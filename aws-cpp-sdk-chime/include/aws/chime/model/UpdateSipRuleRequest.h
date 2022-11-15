@@ -180,16 +180,16 @@ namespace Model
   private:
 
     Aws::String m_sipRuleId;
-    bool m_sipRuleIdHasBeenSet;
+    bool m_sipRuleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     Aws::Vector<SipRuleTargetApplication> m_targetApplications;
-    bool m_targetApplicationsHasBeenSet;
+    bool m_targetApplicationsHasBeenSet = false;
   };
 
 } // namespace Model

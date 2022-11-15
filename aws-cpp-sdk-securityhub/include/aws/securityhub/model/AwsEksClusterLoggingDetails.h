@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails> m_clusterLogging;
-    bool m_clusterLoggingHasBeenSet;
+    bool m_clusterLoggingHasBeenSet = false;
   };
 
 } // namespace Model

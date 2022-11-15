@@ -35,7 +35,7 @@ StatisticsConfiguration& StatisticsConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IncludedStatistics"))
   {
-    Array<JsonView> includedStatisticsJsonList = jsonValue.GetArray("IncludedStatistics");
+    Aws::Utils::Array<JsonView> includedStatisticsJsonList = jsonValue.GetArray("IncludedStatistics");
     for(unsigned includedStatisticsIndex = 0; includedStatisticsIndex < includedStatisticsJsonList.GetLength(); ++includedStatisticsIndex)
     {
       m_includedStatistics.push_back(includedStatisticsJsonList[includedStatisticsIndex].AsString());
@@ -45,7 +45,7 @@ StatisticsConfiguration& StatisticsConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Overrides"))
   {
-    Array<JsonView> overridesJsonList = jsonValue.GetArray("Overrides");
+    Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("Overrides");
     for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
     {
       m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue StatisticsConfiguration::Jsonize() const
 
   if(m_includedStatisticsHasBeenSet)
   {
-   Array<JsonValue> includedStatisticsJsonList(m_includedStatistics.size());
+   Aws::Utils::Array<JsonValue> includedStatisticsJsonList(m_includedStatistics.size());
    for(unsigned includedStatisticsIndex = 0; includedStatisticsIndex < includedStatisticsJsonList.GetLength(); ++includedStatisticsIndex)
    {
      includedStatisticsJsonList[includedStatisticsIndex].AsString(m_includedStatistics[includedStatisticsIndex]);
@@ -73,7 +73,7 @@ JsonValue StatisticsConfiguration::Jsonize() const
 
   if(m_overridesHasBeenSet)
   {
-   Array<JsonValue> overridesJsonList(m_overrides.size());
+   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
    {
      overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());

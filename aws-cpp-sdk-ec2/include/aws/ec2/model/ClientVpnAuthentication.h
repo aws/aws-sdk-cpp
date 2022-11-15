@@ -171,16 +171,16 @@ namespace Model
   private:
 
     ClientVpnAuthenticationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     DirectoryServiceAuthentication m_activeDirectory;
-    bool m_activeDirectoryHasBeenSet;
+    bool m_activeDirectoryHasBeenSet = false;
 
     CertificateAuthentication m_mutualAuthentication;
-    bool m_mutualAuthenticationHasBeenSet;
+    bool m_mutualAuthenticationHasBeenSet = false;
 
     FederatedAuthentication m_federatedAuthentication;
-    bool m_federatedAuthenticationHasBeenSet;
+    bool m_federatedAuthenticationHasBeenSet = false;
   };
 
 } // namespace Model

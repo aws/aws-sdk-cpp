@@ -21,14 +21,16 @@ namespace Model
 IdentityDocument::IdentityDocument() : 
     m_documentIndex(0),
     m_documentIndexHasBeenSet(false),
-    m_identityDocumentFieldsHasBeenSet(false)
+    m_identityDocumentFieldsHasBeenSet(false),
+    m_blocksHasBeenSet(false)
 {
 }
 
 IdentityDocument::IdentityDocument(JsonView jsonValue) : 
     m_documentIndex(0),
     m_documentIndexHasBeenSet(false),
-    m_identityDocumentFieldsHasBeenSet(false)
+    m_identityDocumentFieldsHasBeenSet(false),
+    m_blocksHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,12 +46,22 @@ IdentityDocument& IdentityDocument::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IdentityDocumentFields"))
   {
-    Array<JsonView> identityDocumentFieldsJsonList = jsonValue.GetArray("IdentityDocumentFields");
+    Aws::Utils::Array<JsonView> identityDocumentFieldsJsonList = jsonValue.GetArray("IdentityDocumentFields");
     for(unsigned identityDocumentFieldsIndex = 0; identityDocumentFieldsIndex < identityDocumentFieldsJsonList.GetLength(); ++identityDocumentFieldsIndex)
     {
       m_identityDocumentFields.push_back(identityDocumentFieldsJsonList[identityDocumentFieldsIndex].AsObject());
     }
     m_identityDocumentFieldsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Blocks"))
+  {
+    Aws::Utils::Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
+    for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
+    {
+      m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());
+    }
+    m_blocksHasBeenSet = true;
   }
 
   return *this;
@@ -67,12 +79,23 @@ JsonValue IdentityDocument::Jsonize() const
 
   if(m_identityDocumentFieldsHasBeenSet)
   {
-   Array<JsonValue> identityDocumentFieldsJsonList(m_identityDocumentFields.size());
+   Aws::Utils::Array<JsonValue> identityDocumentFieldsJsonList(m_identityDocumentFields.size());
    for(unsigned identityDocumentFieldsIndex = 0; identityDocumentFieldsIndex < identityDocumentFieldsJsonList.GetLength(); ++identityDocumentFieldsIndex)
    {
      identityDocumentFieldsJsonList[identityDocumentFieldsIndex].AsObject(m_identityDocumentFields[identityDocumentFieldsIndex].Jsonize());
    }
    payload.WithArray("IdentityDocumentFields", std::move(identityDocumentFieldsJsonList));
+
+  }
+
+  if(m_blocksHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> blocksJsonList(m_blocks.size());
+   for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
+   {
+     blocksJsonList[blocksIndex].AsObject(m_blocks[blocksIndex].Jsonize());
+   }
+   payload.WithArray("Blocks", std::move(blocksJsonList));
 
   }
 

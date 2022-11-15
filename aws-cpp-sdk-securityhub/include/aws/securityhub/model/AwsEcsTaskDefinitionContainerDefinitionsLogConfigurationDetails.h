@@ -42,42 +42,106 @@ namespace Model
 
 
     /**
-     * <p>The log driver to use for the container.</p>
+     * <p>The log driver to use for the container.</p> <p>Valid values on Fargate are
+     * as follows:</p> <ul> <li> <p> <code>awsfirelens</code> </p> </li> <li> <p>
+     * <code>awslogs</code> </p> </li> <li> <p> <code>splunk</code> </p> </li> </ul>
+     * <p>Valid values on Amazon EC2 are as follows:</p> <ul> <li> <p>
+     * <code>awsfirelens</code> </p> </li> <li> <p> <code>awslogs</code> </p> </li>
+     * <li> <p> <code>fluentd</code> </p> </li> <li> <p> <code>gelf</code> </p> </li>
+     * <li> <p> <code>journald</code> </p> </li> <li> <p> <code>json-file</code> </p>
+     * </li> <li> <p> <code>logentries</code> </p> </li> <li> <p> <code>splunk</code>
+     * </p> </li> <li> <p> <code>syslog</code> </p> </li> </ul>
      */
     inline const Aws::String& GetLogDriver() const{ return m_logDriver; }
 
     /**
-     * <p>The log driver to use for the container.</p>
+     * <p>The log driver to use for the container.</p> <p>Valid values on Fargate are
+     * as follows:</p> <ul> <li> <p> <code>awsfirelens</code> </p> </li> <li> <p>
+     * <code>awslogs</code> </p> </li> <li> <p> <code>splunk</code> </p> </li> </ul>
+     * <p>Valid values on Amazon EC2 are as follows:</p> <ul> <li> <p>
+     * <code>awsfirelens</code> </p> </li> <li> <p> <code>awslogs</code> </p> </li>
+     * <li> <p> <code>fluentd</code> </p> </li> <li> <p> <code>gelf</code> </p> </li>
+     * <li> <p> <code>journald</code> </p> </li> <li> <p> <code>json-file</code> </p>
+     * </li> <li> <p> <code>logentries</code> </p> </li> <li> <p> <code>splunk</code>
+     * </p> </li> <li> <p> <code>syslog</code> </p> </li> </ul>
      */
     inline bool LogDriverHasBeenSet() const { return m_logDriverHasBeenSet; }
 
     /**
-     * <p>The log driver to use for the container.</p>
+     * <p>The log driver to use for the container.</p> <p>Valid values on Fargate are
+     * as follows:</p> <ul> <li> <p> <code>awsfirelens</code> </p> </li> <li> <p>
+     * <code>awslogs</code> </p> </li> <li> <p> <code>splunk</code> </p> </li> </ul>
+     * <p>Valid values on Amazon EC2 are as follows:</p> <ul> <li> <p>
+     * <code>awsfirelens</code> </p> </li> <li> <p> <code>awslogs</code> </p> </li>
+     * <li> <p> <code>fluentd</code> </p> </li> <li> <p> <code>gelf</code> </p> </li>
+     * <li> <p> <code>journald</code> </p> </li> <li> <p> <code>json-file</code> </p>
+     * </li> <li> <p> <code>logentries</code> </p> </li> <li> <p> <code>splunk</code>
+     * </p> </li> <li> <p> <code>syslog</code> </p> </li> </ul>
      */
     inline void SetLogDriver(const Aws::String& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
 
     /**
-     * <p>The log driver to use for the container.</p>
+     * <p>The log driver to use for the container.</p> <p>Valid values on Fargate are
+     * as follows:</p> <ul> <li> <p> <code>awsfirelens</code> </p> </li> <li> <p>
+     * <code>awslogs</code> </p> </li> <li> <p> <code>splunk</code> </p> </li> </ul>
+     * <p>Valid values on Amazon EC2 are as follows:</p> <ul> <li> <p>
+     * <code>awsfirelens</code> </p> </li> <li> <p> <code>awslogs</code> </p> </li>
+     * <li> <p> <code>fluentd</code> </p> </li> <li> <p> <code>gelf</code> </p> </li>
+     * <li> <p> <code>journald</code> </p> </li> <li> <p> <code>json-file</code> </p>
+     * </li> <li> <p> <code>logentries</code> </p> </li> <li> <p> <code>splunk</code>
+     * </p> </li> <li> <p> <code>syslog</code> </p> </li> </ul>
      */
     inline void SetLogDriver(Aws::String&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::move(value); }
 
     /**
-     * <p>The log driver to use for the container.</p>
+     * <p>The log driver to use for the container.</p> <p>Valid values on Fargate are
+     * as follows:</p> <ul> <li> <p> <code>awsfirelens</code> </p> </li> <li> <p>
+     * <code>awslogs</code> </p> </li> <li> <p> <code>splunk</code> </p> </li> </ul>
+     * <p>Valid values on Amazon EC2 are as follows:</p> <ul> <li> <p>
+     * <code>awsfirelens</code> </p> </li> <li> <p> <code>awslogs</code> </p> </li>
+     * <li> <p> <code>fluentd</code> </p> </li> <li> <p> <code>gelf</code> </p> </li>
+     * <li> <p> <code>journald</code> </p> </li> <li> <p> <code>json-file</code> </p>
+     * </li> <li> <p> <code>logentries</code> </p> </li> <li> <p> <code>splunk</code>
+     * </p> </li> <li> <p> <code>syslog</code> </p> </li> </ul>
      */
     inline void SetLogDriver(const char* value) { m_logDriverHasBeenSet = true; m_logDriver.assign(value); }
 
     /**
-     * <p>The log driver to use for the container.</p>
+     * <p>The log driver to use for the container.</p> <p>Valid values on Fargate are
+     * as follows:</p> <ul> <li> <p> <code>awsfirelens</code> </p> </li> <li> <p>
+     * <code>awslogs</code> </p> </li> <li> <p> <code>splunk</code> </p> </li> </ul>
+     * <p>Valid values on Amazon EC2 are as follows:</p> <ul> <li> <p>
+     * <code>awsfirelens</code> </p> </li> <li> <p> <code>awslogs</code> </p> </li>
+     * <li> <p> <code>fluentd</code> </p> </li> <li> <p> <code>gelf</code> </p> </li>
+     * <li> <p> <code>journald</code> </p> </li> <li> <p> <code>json-file</code> </p>
+     * </li> <li> <p> <code>logentries</code> </p> </li> <li> <p> <code>splunk</code>
+     * </p> </li> <li> <p> <code>syslog</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithLogDriver(const Aws::String& value) { SetLogDriver(value); return *this;}
 
     /**
-     * <p>The log driver to use for the container.</p>
+     * <p>The log driver to use for the container.</p> <p>Valid values on Fargate are
+     * as follows:</p> <ul> <li> <p> <code>awsfirelens</code> </p> </li> <li> <p>
+     * <code>awslogs</code> </p> </li> <li> <p> <code>splunk</code> </p> </li> </ul>
+     * <p>Valid values on Amazon EC2 are as follows:</p> <ul> <li> <p>
+     * <code>awsfirelens</code> </p> </li> <li> <p> <code>awslogs</code> </p> </li>
+     * <li> <p> <code>fluentd</code> </p> </li> <li> <p> <code>gelf</code> </p> </li>
+     * <li> <p> <code>journald</code> </p> </li> <li> <p> <code>json-file</code> </p>
+     * </li> <li> <p> <code>logentries</code> </p> </li> <li> <p> <code>splunk</code>
+     * </p> </li> <li> <p> <code>syslog</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithLogDriver(Aws::String&& value) { SetLogDriver(std::move(value)); return *this;}
 
     /**
-     * <p>The log driver to use for the container.</p>
+     * <p>The log driver to use for the container.</p> <p>Valid values on Fargate are
+     * as follows:</p> <ul> <li> <p> <code>awsfirelens</code> </p> </li> <li> <p>
+     * <code>awslogs</code> </p> </li> <li> <p> <code>splunk</code> </p> </li> </ul>
+     * <p>Valid values on Amazon EC2 are as follows:</p> <ul> <li> <p>
+     * <code>awsfirelens</code> </p> </li> <li> <p> <code>awslogs</code> </p> </li>
+     * <li> <p> <code>fluentd</code> </p> </li> <li> <p> <code>gelf</code> </p> </li>
+     * <li> <p> <code>journald</code> </p> </li> <li> <p> <code>json-file</code> </p>
+     * </li> <li> <p> <code>logentries</code> </p> </li> <li> <p> <code>splunk</code>
+     * </p> </li> <li> <p> <code>syslog</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithLogDriver(const char* value) { SetLogDriver(value); return *this;}
 
@@ -204,13 +268,13 @@ namespace Model
   private:
 
     Aws::String m_logDriver;
-    bool m_logDriverHasBeenSet;
+    bool m_logDriverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails> m_secretOptions;
-    bool m_secretOptionsHasBeenSet;
+    bool m_secretOptionsHasBeenSet = false;
   };
 
 } // namespace Model

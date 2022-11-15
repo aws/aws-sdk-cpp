@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     PhoneNumberType m_phoneNumberType;
-    bool m_phoneNumberTypeHasBeenSet;
+    bool m_phoneNumberTypeHasBeenSet = false;
 
     PhoneNumberCountryCode m_phoneNumberCountryCode;
-    bool m_phoneNumberCountryCodeHasBeenSet;
+    bool m_phoneNumberCountryCodeHasBeenSet = false;
   };
 
 } // namespace Model

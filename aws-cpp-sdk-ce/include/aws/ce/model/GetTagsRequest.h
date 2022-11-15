@@ -195,151 +195,151 @@ namespace Model
 
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
      */
     inline const Aws::Vector<SortDefinition>& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
      */
     inline void SetSortBy(const Aws::Vector<SortDefinition>& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
      */
     inline void SetSortBy(Aws::Vector<SortDefinition>&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
      */
     inline GetTagsRequest& WithSortBy(const Aws::Vector<SortDefinition>& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
      */
     inline GetTagsRequest& WithSortBy(Aws::Vector<SortDefinition>&& value) { SetSortBy(std::move(value)); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
      */
     inline GetTagsRequest& AddSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(value); return *this; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
      * and usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
      */
     inline GetTagsRequest& AddSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>This field is only used when SortBy is provided in the request. The maximum
-     * number of objects that to be returned for this request. If MaxResults is not
-     * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
-     * limit of 1000.</p>
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper quota
+     * of 1000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>This field is only used when SortBy is provided in the request. The maximum
-     * number of objects that to be returned for this request. If MaxResults is not
-     * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
-     * limit of 1000.</p>
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper quota
+     * of 1000.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>This field is only used when SortBy is provided in the request. The maximum
-     * number of objects that to be returned for this request. If MaxResults is not
-     * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
-     * limit of 1000.</p>
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper quota
+     * of 1000.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>This field is only used when SortBy is provided in the request. The maximum
-     * number of objects that to be returned for this request. If MaxResults is not
-     * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
-     * limit of 1000.</p>
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper quota
+     * of 1000.</p>
      */
     inline GetTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -403,25 +403,25 @@ namespace Model
   private:
 
     Aws::String m_searchString;
-    bool m_searchStringHasBeenSet;
+    bool m_searchStringHasBeenSet = false;
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::Vector<SortDefinition> m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
   };
 
 } // namespace Model

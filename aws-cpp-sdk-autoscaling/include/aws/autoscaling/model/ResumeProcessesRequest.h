@@ -86,7 +86,7 @@ namespace Model
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul> <p>If you
-     * omit this parameter, all processes are specified.</p>
+     * omit this property, all processes are specified.</p>
      */
     inline const Aws::Vector<Aws::String>& GetScalingProcesses() const{ return m_scalingProcesses; }
 
@@ -98,7 +98,7 @@ namespace Model
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul> <p>If you
-     * omit this parameter, all processes are specified.</p>
+     * omit this property, all processes are specified.</p>
      */
     inline bool ScalingProcessesHasBeenSet() const { return m_scalingProcessesHasBeenSet; }
 
@@ -110,7 +110,7 @@ namespace Model
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul> <p>If you
-     * omit this parameter, all processes are specified.</p>
+     * omit this property, all processes are specified.</p>
      */
     inline void SetScalingProcesses(const Aws::Vector<Aws::String>& value) { m_scalingProcessesHasBeenSet = true; m_scalingProcesses = value; }
 
@@ -122,7 +122,7 @@ namespace Model
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul> <p>If you
-     * omit this parameter, all processes are specified.</p>
+     * omit this property, all processes are specified.</p>
      */
     inline void SetScalingProcesses(Aws::Vector<Aws::String>&& value) { m_scalingProcessesHasBeenSet = true; m_scalingProcesses = std::move(value); }
 
@@ -134,7 +134,7 @@ namespace Model
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul> <p>If you
-     * omit this parameter, all processes are specified.</p>
+     * omit this property, all processes are specified.</p>
      */
     inline ResumeProcessesRequest& WithScalingProcesses(const Aws::Vector<Aws::String>& value) { SetScalingProcesses(value); return *this;}
 
@@ -146,7 +146,7 @@ namespace Model
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul> <p>If you
-     * omit this parameter, all processes are specified.</p>
+     * omit this property, all processes are specified.</p>
      */
     inline ResumeProcessesRequest& WithScalingProcesses(Aws::Vector<Aws::String>&& value) { SetScalingProcesses(std::move(value)); return *this;}
 
@@ -158,7 +158,7 @@ namespace Model
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul> <p>If you
-     * omit this parameter, all processes are specified.</p>
+     * omit this property, all processes are specified.</p>
      */
     inline ResumeProcessesRequest& AddScalingProcesses(const Aws::String& value) { m_scalingProcessesHasBeenSet = true; m_scalingProcesses.push_back(value); return *this; }
 
@@ -170,7 +170,7 @@ namespace Model
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul> <p>If you
-     * omit this parameter, all processes are specified.</p>
+     * omit this property, all processes are specified.</p>
      */
     inline ResumeProcessesRequest& AddScalingProcesses(Aws::String&& value) { m_scalingProcessesHasBeenSet = true; m_scalingProcesses.push_back(std::move(value)); return *this; }
 
@@ -182,17 +182,17 @@ namespace Model
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul> <p>If you
-     * omit this parameter, all processes are specified.</p>
+     * omit this property, all processes are specified.</p>
      */
     inline ResumeProcessesRequest& AddScalingProcesses(const char* value) { m_scalingProcessesHasBeenSet = true; m_scalingProcesses.push_back(value); return *this; }
 
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scalingProcesses;
-    bool m_scalingProcessesHasBeenSet;
+    bool m_scalingProcessesHasBeenSet = false;
   };
 
 } // namespace Model

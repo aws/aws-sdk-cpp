@@ -24,7 +24,7 @@ Aws::String CreateDataflowEndpointGroupRequest::SerializePayload() const
 
   if(m_endpointDetailsHasBeenSet)
   {
-   Array<JsonValue> endpointDetailsJsonList(m_endpointDetails.size());
+   Aws::Utils::Array<JsonValue> endpointDetailsJsonList(m_endpointDetails.size());
    for(unsigned endpointDetailsIndex = 0; endpointDetailsIndex < endpointDetailsJsonList.GetLength(); ++endpointDetailsIndex)
    {
      endpointDetailsJsonList[endpointDetailsIndex].AsObject(m_endpointDetails[endpointDetailsIndex].Jsonize());

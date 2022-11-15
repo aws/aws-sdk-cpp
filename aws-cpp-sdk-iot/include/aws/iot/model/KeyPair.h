@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_publicKey;
-    bool m_publicKeyHasBeenSet;
+    bool m_publicKeyHasBeenSet = false;
 
     Aws::String m_privateKey;
-    bool m_privateKeyHasBeenSet;
+    bool m_privateKeyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -141,13 +141,73 @@ namespace Model
      */
     inline StartResourceScanRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
+     */
+    inline const Aws::String& GetResourceOwnerAccount() const{ return m_resourceOwnerAccount; }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
+     */
+    inline bool ResourceOwnerAccountHasBeenSet() const { return m_resourceOwnerAccountHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
+     */
+    inline void SetResourceOwnerAccount(const Aws::String& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
+     */
+    inline void SetResourceOwnerAccount(Aws::String&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
+     */
+    inline void SetResourceOwnerAccount(const char* value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
+     */
+    inline StartResourceScanRequest& WithResourceOwnerAccount(const Aws::String& value) { SetResourceOwnerAccount(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
+     */
+    inline StartResourceScanRequest& WithResourceOwnerAccount(Aws::String&& value) { SetResourceOwnerAccount(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
+     */
+    inline StartResourceScanRequest& WithResourceOwnerAccount(const char* value) { SetResourceOwnerAccount(value); return *this;}
+
   private:
 
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
+
+    Aws::String m_resourceOwnerAccount;
+    bool m_resourceOwnerAccountHasBeenSet = false;
   };
 
 } // namespace Model

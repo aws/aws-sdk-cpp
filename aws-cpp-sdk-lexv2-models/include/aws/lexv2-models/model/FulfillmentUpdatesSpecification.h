@@ -173,16 +173,16 @@ namespace Model
   private:
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     FulfillmentStartResponseSpecification m_startResponse;
-    bool m_startResponseHasBeenSet;
+    bool m_startResponseHasBeenSet = false;
 
     FulfillmentUpdateResponseSpecification m_updateResponse;
-    bool m_updateResponseHasBeenSet;
+    bool m_updateResponseHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     ScheduledInstancesLaunchSpecification m_launchSpecification;
-    bool m_launchSpecificationHasBeenSet;
+    bool m_launchSpecificationHasBeenSet = false;
 
     Aws::String m_scheduledInstanceId;
-    bool m_scheduledInstanceIdHasBeenSet;
+    bool m_scheduledInstanceIdHasBeenSet = false;
   };
 
 } // namespace Model

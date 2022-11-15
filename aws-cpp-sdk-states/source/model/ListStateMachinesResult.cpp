@@ -30,7 +30,7 @@ ListStateMachinesResult& ListStateMachinesResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("stateMachines"))
   {
-    Array<JsonView> stateMachinesJsonList = jsonValue.GetArray("stateMachines");
+    Aws::Utils::Array<JsonView> stateMachinesJsonList = jsonValue.GetArray("stateMachines");
     for(unsigned stateMachinesIndex = 0; stateMachinesIndex < stateMachinesJsonList.GetLength(); ++stateMachinesIndex)
     {
       m_stateMachines.push_back(stateMachinesJsonList[stateMachinesIndex].AsObject());

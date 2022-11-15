@@ -50,7 +50,7 @@ AgentsAlreadyRunningAssessmentException& AgentsAlreadyRunningAssessmentException
 
   if(jsonValue.ValueExists("agents"))
   {
-    Array<JsonView> agentsJsonList = jsonValue.GetArray("agents");
+    Aws::Utils::Array<JsonView> agentsJsonList = jsonValue.GetArray("agents");
     for(unsigned agentsIndex = 0; agentsIndex < agentsJsonList.GetLength(); ++agentsIndex)
     {
       m_agents.push_back(agentsJsonList[agentsIndex].AsObject());
@@ -87,7 +87,7 @@ JsonValue AgentsAlreadyRunningAssessmentException::Jsonize() const
 
   if(m_agentsHasBeenSet)
   {
-   Array<JsonValue> agentsJsonList(m_agents.size());
+   Aws::Utils::Array<JsonValue> agentsJsonList(m_agents.size());
    for(unsigned agentsIndex = 0; agentsIndex < agentsJsonList.GetLength(); ++agentsIndex)
    {
      agentsJsonList[agentsIndex].AsObject(m_agents[agentsIndex].Jsonize());

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PhoneNumberProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
   };
 
 } // namespace Model

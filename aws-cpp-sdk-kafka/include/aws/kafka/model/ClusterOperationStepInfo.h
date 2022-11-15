@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::String m_stepStatus;
-    bool m_stepStatusHasBeenSet;
+    bool m_stepStatusHasBeenSet = false;
   };
 
 } // namespace Model

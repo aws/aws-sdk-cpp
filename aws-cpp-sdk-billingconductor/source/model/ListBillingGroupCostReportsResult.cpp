@@ -30,7 +30,7 @@ ListBillingGroupCostReportsResult& ListBillingGroupCostReportsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BillingGroupCostReports"))
   {
-    Array<JsonView> billingGroupCostReportsJsonList = jsonValue.GetArray("BillingGroupCostReports");
+    Aws::Utils::Array<JsonView> billingGroupCostReportsJsonList = jsonValue.GetArray("BillingGroupCostReports");
     for(unsigned billingGroupCostReportsIndex = 0; billingGroupCostReportsIndex < billingGroupCostReportsJsonList.GetLength(); ++billingGroupCostReportsIndex)
     {
       m_billingGroupCostReports.push_back(billingGroupCostReportsJsonList[billingGroupCostReportsIndex].AsObject());

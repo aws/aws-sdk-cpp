@@ -33,7 +33,7 @@ RandomSplitActivity& RandomSplitActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Branches"))
   {
-    Array<JsonView> branchesJsonList = jsonValue.GetArray("Branches");
+    Aws::Utils::Array<JsonView> branchesJsonList = jsonValue.GetArray("Branches");
     for(unsigned branchesIndex = 0; branchesIndex < branchesJsonList.GetLength(); ++branchesIndex)
     {
       m_branches.push_back(branchesJsonList[branchesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue RandomSplitActivity::Jsonize() const
 
   if(m_branchesHasBeenSet)
   {
-   Array<JsonValue> branchesJsonList(m_branches.size());
+   Aws::Utils::Array<JsonValue> branchesJsonList(m_branches.size());
    for(unsigned branchesIndex = 0; branchesIndex < branchesJsonList.GetLength(); ++branchesIndex)
    {
      branchesJsonList[branchesIndex].AsObject(m_branches[branchesIndex].Jsonize());

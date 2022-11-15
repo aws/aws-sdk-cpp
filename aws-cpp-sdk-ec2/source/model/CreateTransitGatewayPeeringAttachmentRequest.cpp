@@ -15,6 +15,7 @@ CreateTransitGatewayPeeringAttachmentRequest::CreateTransitGatewayPeeringAttachm
     m_peerTransitGatewayIdHasBeenSet(false),
     m_peerAccountIdHasBeenSet(false),
     m_peerRegionHasBeenSet(false),
+    m_optionsHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
@@ -43,6 +44,11 @@ Aws::String CreateTransitGatewayPeeringAttachmentRequest::SerializePayload() con
   if(m_peerRegionHasBeenSet)
   {
     ss << "PeerRegion=" << StringUtils::URLEncode(m_peerRegion.c_str()) << "&";
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+    m_options.OutputToStream(ss, "Options");
   }
 
   if(m_tagSpecificationsHasBeenSet)

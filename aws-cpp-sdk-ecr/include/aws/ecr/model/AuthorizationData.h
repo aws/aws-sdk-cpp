@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_authorizationToken;
-    bool m_authorizationTokenHasBeenSet;
+    bool m_authorizationTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiresAt;
-    bool m_expiresAtHasBeenSet;
+    bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_proxyEndpoint;
-    bool m_proxyEndpointHasBeenSet;
+    bool m_proxyEndpointHasBeenSet = false;
   };
 
 } // namespace Model

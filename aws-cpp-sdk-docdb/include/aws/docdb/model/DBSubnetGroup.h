@@ -289,22 +289,22 @@ namespace Model
   private:
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupDescription;
-    bool m_dBSubnetGroupDescriptionHasBeenSet;
+    bool m_dBSubnetGroupDescriptionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetGroupStatus;
-    bool m_subnetGroupStatusHasBeenSet;
+    bool m_subnetGroupStatusHasBeenSet = false;
 
     Aws::Vector<Subnet> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupArn;
-    bool m_dBSubnetGroupArnHasBeenSet;
+    bool m_dBSubnetGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

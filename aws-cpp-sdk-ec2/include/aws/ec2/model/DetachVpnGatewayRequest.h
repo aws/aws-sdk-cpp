@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_vpnGatewayId;
-    bool m_vpnGatewayIdHasBeenSet;
+    bool m_vpnGatewayIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

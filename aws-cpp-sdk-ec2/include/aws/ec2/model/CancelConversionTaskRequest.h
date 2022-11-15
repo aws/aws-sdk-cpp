@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_conversionTaskId;
-    bool m_conversionTaskIdHasBeenSet;
+    bool m_conversionTaskIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_reasonMessage;
-    bool m_reasonMessageHasBeenSet;
+    bool m_reasonMessageHasBeenSet = false;
   };
 
 } // namespace Model

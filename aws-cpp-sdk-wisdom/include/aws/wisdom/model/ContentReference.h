@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_contentArn;
-    bool m_contentArnHasBeenSet;
+    bool m_contentArnHasBeenSet = false;
 
     Aws::String m_contentId;
-    bool m_contentIdHasBeenSet;
+    bool m_contentIdHasBeenSet = false;
 
     Aws::String m_knowledgeBaseArn;
-    bool m_knowledgeBaseArnHasBeenSet;
+    bool m_knowledgeBaseArnHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet;
+    bool m_knowledgeBaseIdHasBeenSet = false;
   };
 
 } // namespace Model

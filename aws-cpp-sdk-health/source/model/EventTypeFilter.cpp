@@ -37,7 +37,7 @@ EventTypeFilter& EventTypeFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventTypeCodes"))
   {
-    Array<JsonView> eventTypeCodesJsonList = jsonValue.GetArray("eventTypeCodes");
+    Aws::Utils::Array<JsonView> eventTypeCodesJsonList = jsonValue.GetArray("eventTypeCodes");
     for(unsigned eventTypeCodesIndex = 0; eventTypeCodesIndex < eventTypeCodesJsonList.GetLength(); ++eventTypeCodesIndex)
     {
       m_eventTypeCodes.push_back(eventTypeCodesJsonList[eventTypeCodesIndex].AsString());
@@ -47,7 +47,7 @@ EventTypeFilter& EventTypeFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("services"))
   {
-    Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
+    Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsString());
@@ -57,7 +57,7 @@ EventTypeFilter& EventTypeFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("eventTypeCategories"))
   {
-    Array<JsonView> eventTypeCategoriesJsonList = jsonValue.GetArray("eventTypeCategories");
+    Aws::Utils::Array<JsonView> eventTypeCategoriesJsonList = jsonValue.GetArray("eventTypeCategories");
     for(unsigned eventTypeCategoriesIndex = 0; eventTypeCategoriesIndex < eventTypeCategoriesJsonList.GetLength(); ++eventTypeCategoriesIndex)
     {
       m_eventTypeCategories.push_back(EventTypeCategoryMapper::GetEventTypeCategoryForName(eventTypeCategoriesJsonList[eventTypeCategoriesIndex].AsString()));
@@ -74,7 +74,7 @@ JsonValue EventTypeFilter::Jsonize() const
 
   if(m_eventTypeCodesHasBeenSet)
   {
-   Array<JsonValue> eventTypeCodesJsonList(m_eventTypeCodes.size());
+   Aws::Utils::Array<JsonValue> eventTypeCodesJsonList(m_eventTypeCodes.size());
    for(unsigned eventTypeCodesIndex = 0; eventTypeCodesIndex < eventTypeCodesJsonList.GetLength(); ++eventTypeCodesIndex)
    {
      eventTypeCodesJsonList[eventTypeCodesIndex].AsString(m_eventTypeCodes[eventTypeCodesIndex]);
@@ -85,7 +85,7 @@ JsonValue EventTypeFilter::Jsonize() const
 
   if(m_servicesHasBeenSet)
   {
-   Array<JsonValue> servicesJsonList(m_services.size());
+   Aws::Utils::Array<JsonValue> servicesJsonList(m_services.size());
    for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
    {
      servicesJsonList[servicesIndex].AsString(m_services[servicesIndex]);
@@ -96,7 +96,7 @@ JsonValue EventTypeFilter::Jsonize() const
 
   if(m_eventTypeCategoriesHasBeenSet)
   {
-   Array<JsonValue> eventTypeCategoriesJsonList(m_eventTypeCategories.size());
+   Aws::Utils::Array<JsonValue> eventTypeCategoriesJsonList(m_eventTypeCategories.size());
    for(unsigned eventTypeCategoriesIndex = 0; eventTypeCategoriesIndex < eventTypeCategoriesJsonList.GetLength(); ++eventTypeCategoriesIndex)
    {
      eventTypeCategoriesJsonList[eventTypeCategoriesIndex].AsString(EventTypeCategoryMapper::GetNameForEventTypeCategory(m_eventTypeCategories[eventTypeCategoriesIndex]));

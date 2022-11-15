@@ -70,19 +70,29 @@ namespace Model
     inline ProvisionPublicIpv4PoolCidrResponse& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline const PublicIpv4PoolRange& GetPoolAddressRange() const{ return m_poolAddressRange; }
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline void SetPoolAddressRange(const PublicIpv4PoolRange& value) { m_poolAddressRange = value; }
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline void SetPoolAddressRange(PublicIpv4PoolRange&& value) { m_poolAddressRange = std::move(value); }
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline ProvisionPublicIpv4PoolCidrResponse& WithPoolAddressRange(const PublicIpv4PoolRange& value) { SetPoolAddressRange(value); return *this;}
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline ProvisionPublicIpv4PoolCidrResponse& WithPoolAddressRange(PublicIpv4PoolRange&& value) { SetPoolAddressRange(std::move(value)); return *this;}
 
 

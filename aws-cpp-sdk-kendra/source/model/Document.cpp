@@ -28,7 +28,8 @@ Document::Document() :
     m_accessControlListHasBeenSet(false),
     m_hierarchicalAccessControlListHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_accessControlConfigurationIdHasBeenSet(false)
 {
 }
 
@@ -41,7 +42,8 @@ Document::Document(JsonView jsonValue) :
     m_accessControlListHasBeenSet(false),
     m_hierarchicalAccessControlListHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_accessControlConfigurationIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,7 +79,7 @@ Document& Document::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -87,7 +89,7 @@ Document& Document::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AccessControlList"))
   {
-    Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
+    Aws::Utils::Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
     for(unsigned accessControlListIndex = 0; accessControlListIndex < accessControlListJsonList.GetLength(); ++accessControlListIndex)
     {
       m_accessControlList.push_back(accessControlListJsonList[accessControlListIndex].AsObject());
@@ -97,7 +99,7 @@ Document& Document::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("HierarchicalAccessControlList"))
   {
-    Array<JsonView> hierarchicalAccessControlListJsonList = jsonValue.GetArray("HierarchicalAccessControlList");
+    Aws::Utils::Array<JsonView> hierarchicalAccessControlListJsonList = jsonValue.GetArray("HierarchicalAccessControlList");
     for(unsigned hierarchicalAccessControlListIndex = 0; hierarchicalAccessControlListIndex < hierarchicalAccessControlListJsonList.GetLength(); ++hierarchicalAccessControlListIndex)
     {
       m_hierarchicalAccessControlList.push_back(hierarchicalAccessControlListJsonList[hierarchicalAccessControlListIndex].AsObject());
@@ -110,6 +112,13 @@ Document& Document::operator =(JsonView jsonValue)
     m_contentType = ContentTypeMapper::GetContentTypeForName(jsonValue.GetString("ContentType"));
 
     m_contentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AccessControlConfigurationId"))
+  {
+    m_accessControlConfigurationId = jsonValue.GetString("AccessControlConfigurationId");
+
+    m_accessControlConfigurationIdHasBeenSet = true;
   }
 
   return *this;
@@ -144,7 +153,7 @@ JsonValue Document::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
@@ -155,7 +164,7 @@ JsonValue Document::Jsonize() const
 
   if(m_accessControlListHasBeenSet)
   {
-   Array<JsonValue> accessControlListJsonList(m_accessControlList.size());
+   Aws::Utils::Array<JsonValue> accessControlListJsonList(m_accessControlList.size());
    for(unsigned accessControlListIndex = 0; accessControlListIndex < accessControlListJsonList.GetLength(); ++accessControlListIndex)
    {
      accessControlListJsonList[accessControlListIndex].AsObject(m_accessControlList[accessControlListIndex].Jsonize());
@@ -166,7 +175,7 @@ JsonValue Document::Jsonize() const
 
   if(m_hierarchicalAccessControlListHasBeenSet)
   {
-   Array<JsonValue> hierarchicalAccessControlListJsonList(m_hierarchicalAccessControlList.size());
+   Aws::Utils::Array<JsonValue> hierarchicalAccessControlListJsonList(m_hierarchicalAccessControlList.size());
    for(unsigned hierarchicalAccessControlListIndex = 0; hierarchicalAccessControlListIndex < hierarchicalAccessControlListJsonList.GetLength(); ++hierarchicalAccessControlListIndex)
    {
      hierarchicalAccessControlListJsonList[hierarchicalAccessControlListIndex].AsObject(m_hierarchicalAccessControlList[hierarchicalAccessControlListIndex].Jsonize());
@@ -178,6 +187,12 @@ JsonValue Document::Jsonize() const
   if(m_contentTypeHasBeenSet)
   {
    payload.WithString("ContentType", ContentTypeMapper::GetNameForContentType(m_contentType));
+  }
+
+  if(m_accessControlConfigurationIdHasBeenSet)
+  {
+   payload.WithString("AccessControlConfigurationId", m_accessControlConfigurationId);
+
   }
 
   return payload;

@@ -649,25 +649,25 @@ namespace Model
   private:
 
     Aws::String m_inputKey;
-    bool m_inputKeyHasBeenSet;
+    bool m_inputKeyHasBeenSet = false;
 
     Aws::String m_maxWidth;
-    bool m_maxWidthHasBeenSet;
+    bool m_maxWidthHasBeenSet = false;
 
     Aws::String m_maxHeight;
-    bool m_maxHeightHasBeenSet;
+    bool m_maxHeightHasBeenSet = false;
 
     Aws::String m_sizingPolicy;
-    bool m_sizingPolicyHasBeenSet;
+    bool m_sizingPolicyHasBeenSet = false;
 
     Aws::String m_paddingPolicy;
-    bool m_paddingPolicyHasBeenSet;
+    bool m_paddingPolicyHasBeenSet = false;
 
     Aws::String m_albumArtFormat;
-    bool m_albumArtFormatHasBeenSet;
+    bool m_albumArtFormatHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

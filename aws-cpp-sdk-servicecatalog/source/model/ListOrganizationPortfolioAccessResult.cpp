@@ -30,7 +30,7 @@ ListOrganizationPortfolioAccessResult& ListOrganizationPortfolioAccessResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OrganizationNodes"))
   {
-    Array<JsonView> organizationNodesJsonList = jsonValue.GetArray("OrganizationNodes");
+    Aws::Utils::Array<JsonView> organizationNodesJsonList = jsonValue.GetArray("OrganizationNodes");
     for(unsigned organizationNodesIndex = 0; organizationNodesIndex < organizationNodesJsonList.GetLength(); ++organizationNodesIndex)
     {
       m_organizationNodes.push_back(organizationNodesJsonList[organizationNodesIndex].AsObject());

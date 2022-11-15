@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_deploymentArn;
-    bool m_deploymentArnHasBeenSet;
+    bool m_deploymentArnHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     DeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_groupArn;
-    bool m_groupArnHasBeenSet;
+    bool m_groupArnHasBeenSet = false;
   };
 
 } // namespace Model

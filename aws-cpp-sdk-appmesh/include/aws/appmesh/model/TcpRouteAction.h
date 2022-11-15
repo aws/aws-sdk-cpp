@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<WeightedTarget> m_weightedTargets;
-    bool m_weightedTargetsHasBeenSet;
+    bool m_weightedTargetsHasBeenSet = false;
   };
 
 } // namespace Model

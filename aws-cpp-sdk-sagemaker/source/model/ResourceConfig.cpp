@@ -25,7 +25,10 @@ ResourceConfig::ResourceConfig() :
     m_instanceCountHasBeenSet(false),
     m_volumeSizeInGB(0),
     m_volumeSizeInGBHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_instanceGroupsHasBeenSet(false),
+    m_keepAlivePeriodInSeconds(0),
+    m_keepAlivePeriodInSecondsHasBeenSet(false)
 {
 }
 
@@ -36,7 +39,10 @@ ResourceConfig::ResourceConfig(JsonView jsonValue) :
     m_instanceCountHasBeenSet(false),
     m_volumeSizeInGB(0),
     m_volumeSizeInGBHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_instanceGroupsHasBeenSet(false),
+    m_keepAlivePeriodInSeconds(0),
+    m_keepAlivePeriodInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +77,23 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
     m_volumeKmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceGroups"))
+  {
+    Aws::Utils::Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
+    for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
+    {
+      m_instanceGroups.push_back(instanceGroupsJsonList[instanceGroupsIndex].AsObject());
+    }
+    m_instanceGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeepAlivePeriodInSeconds"))
+  {
+    m_keepAlivePeriodInSeconds = jsonValue.GetInteger("KeepAlivePeriodInSeconds");
+
+    m_keepAlivePeriodInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +121,23 @@ JsonValue ResourceConfig::Jsonize() const
   if(m_volumeKmsKeyIdHasBeenSet)
   {
    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+
+  }
+
+  if(m_instanceGroupsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
+   for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
+   {
+     instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
+   }
+   payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
+
+  }
+
+  if(m_keepAlivePeriodInSecondsHasBeenSet)
+  {
+   payload.WithInteger("KeepAlivePeriodInSeconds", m_keepAlivePeriodInSeconds);
 
   }
 

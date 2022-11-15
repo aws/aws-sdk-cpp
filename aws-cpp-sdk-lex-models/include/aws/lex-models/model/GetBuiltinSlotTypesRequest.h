@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Aws::String m_signatureContains;
-    bool m_signatureContainsHasBeenSet;
+    bool m_signatureContainsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

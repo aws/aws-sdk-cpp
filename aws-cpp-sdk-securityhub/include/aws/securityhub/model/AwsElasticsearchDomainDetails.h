@@ -608,43 +608,43 @@ namespace Model
   private:
 
     Aws::String m_accessPolicies;
-    bool m_accessPoliciesHasBeenSet;
+    bool m_accessPoliciesHasBeenSet = false;
 
     AwsElasticsearchDomainDomainEndpointOptions m_domainEndpointOptions;
-    bool m_domainEndpointOptionsHasBeenSet;
+    bool m_domainEndpointOptionsHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
 
     Aws::String m_elasticsearchVersion;
-    bool m_elasticsearchVersionHasBeenSet;
+    bool m_elasticsearchVersionHasBeenSet = false;
 
     AwsElasticsearchDomainElasticsearchClusterConfigDetails m_elasticsearchClusterConfig;
-    bool m_elasticsearchClusterConfigHasBeenSet;
+    bool m_elasticsearchClusterConfigHasBeenSet = false;
 
     AwsElasticsearchDomainEncryptionAtRestOptions m_encryptionAtRestOptions;
-    bool m_encryptionAtRestOptionsHasBeenSet;
+    bool m_encryptionAtRestOptionsHasBeenSet = false;
 
     AwsElasticsearchDomainLogPublishingOptions m_logPublishingOptions;
-    bool m_logPublishingOptionsHasBeenSet;
+    bool m_logPublishingOptionsHasBeenSet = false;
 
     AwsElasticsearchDomainNodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
-    bool m_nodeToNodeEncryptionOptionsHasBeenSet;
+    bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
     AwsElasticsearchDomainServiceSoftwareOptions m_serviceSoftwareOptions;
-    bool m_serviceSoftwareOptionsHasBeenSet;
+    bool m_serviceSoftwareOptionsHasBeenSet = false;
 
     AwsElasticsearchDomainVPCOptions m_vPCOptions;
-    bool m_vPCOptionsHasBeenSet;
+    bool m_vPCOptionsHasBeenSet = false;
   };
 
 } // namespace Model

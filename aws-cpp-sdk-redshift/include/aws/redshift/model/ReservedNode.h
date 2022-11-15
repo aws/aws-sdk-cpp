@@ -550,43 +550,43 @@ namespace Model
   private:
 
     Aws::String m_reservedNodeId;
-    bool m_reservedNodeIdHasBeenSet;
+    bool m_reservedNodeIdHasBeenSet = false;
 
     Aws::String m_reservedNodeOfferingId;
-    bool m_reservedNodeOfferingIdHasBeenSet;
+    bool m_reservedNodeOfferingIdHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_nodeCount;
-    bool m_nodeCountHasBeenSet;
+    bool m_nodeCountHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
 
     ReservedNodeOfferingType m_reservedNodeOfferingType;
-    bool m_reservedNodeOfferingTypeHasBeenSet;
+    bool m_reservedNodeOfferingTypeHasBeenSet = false;
   };
 
 } // namespace Model

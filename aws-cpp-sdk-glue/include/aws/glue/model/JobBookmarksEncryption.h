@@ -121,10 +121,10 @@ namespace Model
   private:
 
     JobBookmarksEncryptionMode m_jobBookmarksEncryptionMode;
-    bool m_jobBookmarksEncryptionModeHasBeenSet;
+    bool m_jobBookmarksEncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

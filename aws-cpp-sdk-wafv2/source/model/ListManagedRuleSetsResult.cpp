@@ -36,7 +36,7 @@ ListManagedRuleSetsResult& ListManagedRuleSetsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ManagedRuleSets"))
   {
-    Array<JsonView> managedRuleSetsJsonList = jsonValue.GetArray("ManagedRuleSets");
+    Aws::Utils::Array<JsonView> managedRuleSetsJsonList = jsonValue.GetArray("ManagedRuleSets");
     for(unsigned managedRuleSetsIndex = 0; managedRuleSetsIndex < managedRuleSetsJsonList.GetLength(); ++managedRuleSetsIndex)
     {
       m_managedRuleSets.push_back(managedRuleSetsJsonList[managedRuleSetsIndex].AsObject());

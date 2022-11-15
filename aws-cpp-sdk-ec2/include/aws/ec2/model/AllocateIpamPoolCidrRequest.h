@@ -378,75 +378,84 @@ namespace Model
 
 
     /**
-     * <p>Exclude a particular CIDR range from being returned by the pool.</p>
+     * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDisallowedCidrs() const{ return m_disallowedCidrs; }
 
     /**
-     * <p>Exclude a particular CIDR range from being returned by the pool.</p>
+     * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
      */
     inline bool DisallowedCidrsHasBeenSet() const { return m_disallowedCidrsHasBeenSet; }
 
     /**
-     * <p>Exclude a particular CIDR range from being returned by the pool.</p>
+     * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
      */
     inline void SetDisallowedCidrs(const Aws::Vector<Aws::String>& value) { m_disallowedCidrsHasBeenSet = true; m_disallowedCidrs = value; }
 
     /**
-     * <p>Exclude a particular CIDR range from being returned by the pool.</p>
+     * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
      */
     inline void SetDisallowedCidrs(Aws::Vector<Aws::String>&& value) { m_disallowedCidrsHasBeenSet = true; m_disallowedCidrs = std::move(value); }
 
     /**
-     * <p>Exclude a particular CIDR range from being returned by the pool.</p>
+     * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
      */
     inline AllocateIpamPoolCidrRequest& WithDisallowedCidrs(const Aws::Vector<Aws::String>& value) { SetDisallowedCidrs(value); return *this;}
 
     /**
-     * <p>Exclude a particular CIDR range from being returned by the pool.</p>
+     * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
      */
     inline AllocateIpamPoolCidrRequest& WithDisallowedCidrs(Aws::Vector<Aws::String>&& value) { SetDisallowedCidrs(std::move(value)); return *this;}
 
     /**
-     * <p>Exclude a particular CIDR range from being returned by the pool.</p>
+     * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
      */
     inline AllocateIpamPoolCidrRequest& AddDisallowedCidrs(const Aws::String& value) { m_disallowedCidrsHasBeenSet = true; m_disallowedCidrs.push_back(value); return *this; }
 
     /**
-     * <p>Exclude a particular CIDR range from being returned by the pool.</p>
+     * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
      */
     inline AllocateIpamPoolCidrRequest& AddDisallowedCidrs(Aws::String&& value) { m_disallowedCidrsHasBeenSet = true; m_disallowedCidrs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Exclude a particular CIDR range from being returned by the pool.</p>
+     * <p>Exclude a particular CIDR range from being returned by the pool. Disallowed
+     * CIDRs are only allowed if using netmask length for allocation.</p>
      */
     inline AllocateIpamPoolCidrRequest& AddDisallowedCidrs(const char* value) { m_disallowedCidrsHasBeenSet = true; m_disallowedCidrs.push_back(value); return *this; }
 
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
-    bool m_ipamPoolIdHasBeenSet;
+    bool m_ipamPoolIdHasBeenSet = false;
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     int m_netmaskLength;
-    bool m_netmaskLengthHasBeenSet;
+    bool m_netmaskLengthHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_previewNextCidr;
-    bool m_previewNextCidrHasBeenSet;
+    bool m_previewNextCidrHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_disallowedCidrs;
-    bool m_disallowedCidrsHasBeenSet;
+    bool m_disallowedCidrsHasBeenSet = false;
   };
 
 } // namespace Model

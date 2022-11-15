@@ -121,13 +121,13 @@ namespace Model
   private:
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

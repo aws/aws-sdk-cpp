@@ -51,7 +51,7 @@ ServerGroup& ServerGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("serverList"))
   {
-    Array<JsonView> serverListJsonList = jsonValue.GetArray("serverList");
+    Aws::Utils::Array<JsonView> serverListJsonList = jsonValue.GetArray("serverList");
     for(unsigned serverListIndex = 0; serverListIndex < serverListJsonList.GetLength(); ++serverListIndex)
     {
       m_serverList.push_back(serverListJsonList[serverListIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue ServerGroup::Jsonize() const
 
   if(m_serverListHasBeenSet)
   {
-   Array<JsonValue> serverListJsonList(m_serverList.size());
+   Aws::Utils::Array<JsonValue> serverListJsonList(m_serverList.size());
    for(unsigned serverListIndex = 0; serverListIndex < serverListJsonList.GetLength(); ++serverListIndex)
    {
      serverListJsonList[serverListIndex].AsObject(m_serverList[serverListIndex].Jsonize());

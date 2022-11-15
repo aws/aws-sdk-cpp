@@ -346,25 +346,25 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     VolumeType m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     int m_throughput;
-    bool m_throughputHasBeenSet;
+    bool m_throughputHasBeenSet = false;
 
     bool m_multiAttachEnabled;
-    bool m_multiAttachEnabledHasBeenSet;
+    bool m_multiAttachEnabledHasBeenSet = false;
   };
 
 } // namespace Model

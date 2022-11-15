@@ -59,7 +59,7 @@ namespace Model
   private:
 
     LoRaWANMulticastMetadata m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
   };
 
 } // namespace Model

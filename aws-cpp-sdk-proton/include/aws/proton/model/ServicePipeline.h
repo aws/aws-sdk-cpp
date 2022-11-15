@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The service pipeline detail data.</p><p><h3>See Also:</h3>   <a
+   * <p>Detailed data of an Proton service instance pipeline resource.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ServicePipeline">AWS
    * API Reference</a></p>
    */
@@ -435,34 +436,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     DeploymentStatus m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::String m_deploymentStatusMessage;
-    bool m_deploymentStatusMessageHasBeenSet;
+    bool m_deploymentStatusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentAttemptedAt;
-    bool m_lastDeploymentAttemptedAtHasBeenSet;
+    bool m_lastDeploymentAttemptedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentSucceededAt;
-    bool m_lastDeploymentSucceededAtHasBeenSet;
+    bool m_lastDeploymentSucceededAtHasBeenSet = false;
 
     Aws::String m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::String m_templateMajorVersion;
-    bool m_templateMajorVersionHasBeenSet;
+    bool m_templateMajorVersionHasBeenSet = false;
 
     Aws::String m_templateMinorVersion;
-    bool m_templateMinorVersionHasBeenSet;
+    bool m_templateMinorVersionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

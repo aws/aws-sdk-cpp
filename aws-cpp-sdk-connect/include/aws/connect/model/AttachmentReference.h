@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the attachment reference if the <code>referenceType</code>
-   * is <code>ATTACHMENT</code>. Otherwise, null.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a reference when the <code>referenceType</code> is
+   * <code>ATTACHMENT</code>. Otherwise, null.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AttachmentReference">AWS
    * API Reference</a></p>
    */
@@ -81,86 +81,86 @@ namespace Model
 
 
     /**
-     * <p>Contains the location path of the attachment reference.</p>
+     * <p>The location path of the attachment reference.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Contains the location path of the attachment reference.</p>
+     * <p>The location path of the attachment reference.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Contains the location path of the attachment reference.</p>
+     * <p>The location path of the attachment reference.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Contains the location path of the attachment reference.</p>
+     * <p>The location path of the attachment reference.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>Contains the location path of the attachment reference.</p>
+     * <p>The location path of the attachment reference.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Contains the location path of the attachment reference.</p>
+     * <p>The location path of the attachment reference.</p>
      */
     inline AttachmentReference& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Contains the location path of the attachment reference.</p>
+     * <p>The location path of the attachment reference.</p>
      */
     inline AttachmentReference& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the location path of the attachment reference.</p>
+     * <p>The location path of the attachment reference.</p>
      */
     inline AttachmentReference& WithValue(const char* value) { SetValue(value); return *this;}
 
 
     /**
-     * <p>Status of an attachment reference type.</p>
+     * <p>Status of the attachment reference type.</p>
      */
     inline const ReferenceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status of an attachment reference type.</p>
+     * <p>Status of the attachment reference type.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Status of an attachment reference type.</p>
+     * <p>Status of the attachment reference type.</p>
      */
     inline void SetStatus(const ReferenceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Status of an attachment reference type.</p>
+     * <p>Status of the attachment reference type.</p>
      */
     inline void SetStatus(ReferenceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Status of an attachment reference type.</p>
+     * <p>Status of the attachment reference type.</p>
      */
     inline AttachmentReference& WithStatus(const ReferenceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status of an attachment reference type.</p>
+     * <p>Status of the attachment reference type.</p>
      */
     inline AttachmentReference& WithStatus(ReferenceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ReferenceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

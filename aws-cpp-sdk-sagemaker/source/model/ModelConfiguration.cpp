@@ -42,7 +42,7 @@ ModelConfiguration& ModelConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EnvironmentParameters"))
   {
-    Array<JsonView> environmentParametersJsonList = jsonValue.GetArray("EnvironmentParameters");
+    Aws::Utils::Array<JsonView> environmentParametersJsonList = jsonValue.GetArray("EnvironmentParameters");
     for(unsigned environmentParametersIndex = 0; environmentParametersIndex < environmentParametersJsonList.GetLength(); ++environmentParametersIndex)
     {
       m_environmentParameters.push_back(environmentParametersJsonList[environmentParametersIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ModelConfiguration::Jsonize() const
 
   if(m_environmentParametersHasBeenSet)
   {
-   Array<JsonValue> environmentParametersJsonList(m_environmentParameters.size());
+   Aws::Utils::Array<JsonValue> environmentParametersJsonList(m_environmentParameters.size());
    for(unsigned environmentParametersIndex = 0; environmentParametersIndex < environmentParametersJsonList.GetLength(); ++environmentParametersIndex)
    {
      environmentParametersJsonList[environmentParametersIndex].AsObject(m_environmentParameters[environmentParametersIndex].Jsonize());

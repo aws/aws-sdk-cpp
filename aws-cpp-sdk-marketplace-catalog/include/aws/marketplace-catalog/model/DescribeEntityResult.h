@@ -119,44 +119,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline const Aws::String& GetEntityArn() const{ return m_entityArn; }
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline void SetEntityArn(const Aws::String& value) { m_entityArn = value; }
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline void SetEntityArn(Aws::String&& value) { m_entityArn = std::move(value); }
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline void SetEntityArn(const char* value) { m_entityArn.assign(value); }
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline DescribeEntityResult& WithEntityArn(const Aws::String& value) { SetEntityArn(value); return *this;}
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline DescribeEntityResult& WithEntityArn(Aws::String&& value) { SetEntityArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline DescribeEntityResult& WithEntityArn(const char* value) { SetEntityArn(value); return *this;}
 

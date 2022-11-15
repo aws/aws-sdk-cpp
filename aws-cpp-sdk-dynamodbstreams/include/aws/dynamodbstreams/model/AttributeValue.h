@@ -457,49 +457,49 @@ namespace Model
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline const Aws::Vector<AttributeValue>& GetL() const{ return m_l; }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline bool LHasBeenSet() const { return m_lHasBeenSet; }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline void SetL(const Aws::Vector<AttributeValue>& value) { m_lHasBeenSet = true; m_l = value; }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline void SetL(Aws::Vector<AttributeValue>&& value) { m_lHasBeenSet = true; m_l = std::move(value); }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline AttributeValue& WithL(const Aws::Vector<AttributeValue>& value) { SetL(value); return *this;}
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline AttributeValue& WithL(Aws::Vector<AttributeValue>&& value) { SetL(std::move(value)); return *this;}
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline AttributeValue& AddL(const AttributeValue& value) { m_lHasBeenSet = true; m_l.push_back(value); return *this; }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline AttributeValue& AddL(AttributeValue&& value) { m_lHasBeenSet = true; m_l.push_back(std::move(value)); return *this; }
 
@@ -556,34 +556,34 @@ namespace Model
   private:
 
     Aws::String m_s;
-    bool m_sHasBeenSet;
+    bool m_sHasBeenSet = false;
 
     Aws::String m_n;
-    bool m_nHasBeenSet;
+    bool m_nHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_b;
-    bool m_bHasBeenSet;
+    bool m_bHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sS;
-    bool m_sSHasBeenSet;
+    bool m_sSHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nS;
-    bool m_nSHasBeenSet;
+    bool m_nSHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_bS;
-    bool m_bSHasBeenSet;
+    bool m_bSHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_m;
-    bool m_mHasBeenSet;
+    bool m_mHasBeenSet = false;
 
     Aws::Vector<AttributeValue> m_l;
-    bool m_lHasBeenSet;
+    bool m_lHasBeenSet = false;
 
     bool m_nULL;
-    bool m_nULLHasBeenSet;
+    bool m_nULLHasBeenSet = false;
 
     bool m_bOOL;
-    bool m_bOOLHasBeenSet;
+    bool m_bOOLHasBeenSet = false;
   };
 
 } // namespace Model

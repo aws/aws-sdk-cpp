@@ -26,7 +26,7 @@ Aws::String DescribeFileSystemsRequest::SerializePayload() const
 
   if(m_fileSystemIdsHasBeenSet)
   {
-   Array<JsonValue> fileSystemIdsJsonList(m_fileSystemIds.size());
+   Aws::Utils::Array<JsonValue> fileSystemIdsJsonList(m_fileSystemIds.size());
    for(unsigned fileSystemIdsIndex = 0; fileSystemIdsIndex < fileSystemIdsJsonList.GetLength(); ++fileSystemIdsIndex)
    {
      fileSystemIdsJsonList[fileSystemIdsIndex].AsString(m_fileSystemIds[fileSystemIdsIndex]);

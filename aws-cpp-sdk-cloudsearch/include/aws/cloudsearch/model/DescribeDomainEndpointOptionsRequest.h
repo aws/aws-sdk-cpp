@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_deployed;
-    bool m_deployedHasBeenSet;
+    bool m_deployedHasBeenSet = false;
   };
 
 } // namespace Model

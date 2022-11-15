@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_licenseManagerReportGeneratorArn;
-    bool m_licenseManagerReportGeneratorArnHasBeenSet;
+    bool m_licenseManagerReportGeneratorArnHasBeenSet = false;
   };
 
 } // namespace Model

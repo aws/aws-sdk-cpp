@@ -4,7 +4,6 @@
  */
 
 #include <aws/s3control/model/PutBucketPolicyRequest.h>
-#include <aws/s3control/S3ControlARN.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -58,20 +57,6 @@ Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeade
     ss << std::boolalpha << m_confirmRemoveSelfBucketAccess;
     headers.emplace("x-amz-confirm-remove-self-bucket-access", ss.str());
     ss.str("");
-  }
-
-  Aws::S3Control::S3ControlARN arn(m_bucket);
-  if (arn && arn.Validate().IsSuccess())
-  {
-    ss << arn.GetAccountId();
-    headers.emplace("x-amz-account-id", ss.str());
-    ss.str("");
-    if (arn.GetResourceType() == Aws::S3Control::ARNResourceType::OUTPOST)
-    {
-      ss << arn.GetResourceId();
-      headers.emplace("x-amz-outpost-id",  ss.str());
-      ss.str("");
-    }
   }
 
   return headers;

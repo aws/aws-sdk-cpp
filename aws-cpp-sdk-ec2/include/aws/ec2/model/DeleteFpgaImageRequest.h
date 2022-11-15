@@ -112,10 +112,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_fpgaImageId;
-    bool m_fpgaImageIdHasBeenSet;
+    bool m_fpgaImageIdHasBeenSet = false;
   };
 
 } // namespace Model

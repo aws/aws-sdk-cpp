@@ -233,22 +233,22 @@ namespace Model
   private:
 
     StringFilter m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     NumberFilter m_epoch;
-    bool m_epochHasBeenSet;
+    bool m_epochHasBeenSet = false;
 
     StringFilter m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StringFilter m_release;
-    bool m_releaseHasBeenSet;
+    bool m_releaseHasBeenSet = false;
 
     StringFilter m_sourceLayerHash;
-    bool m_sourceLayerHashHasBeenSet;
+    bool m_sourceLayerHashHasBeenSet = false;
 
     StringFilter m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

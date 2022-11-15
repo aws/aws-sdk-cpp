@@ -73,7 +73,7 @@ OrganizationConformancePack& OrganizationConformancePack::operator =(JsonView js
 
   if(jsonValue.ValueExists("ConformancePackInputParameters"))
   {
-    Array<JsonView> conformancePackInputParametersJsonList = jsonValue.GetArray("ConformancePackInputParameters");
+    Aws::Utils::Array<JsonView> conformancePackInputParametersJsonList = jsonValue.GetArray("ConformancePackInputParameters");
     for(unsigned conformancePackInputParametersIndex = 0; conformancePackInputParametersIndex < conformancePackInputParametersJsonList.GetLength(); ++conformancePackInputParametersIndex)
     {
       m_conformancePackInputParameters.push_back(conformancePackInputParametersJsonList[conformancePackInputParametersIndex].AsObject());
@@ -83,7 +83,7 @@ OrganizationConformancePack& OrganizationConformancePack::operator =(JsonView js
 
   if(jsonValue.ValueExists("ExcludedAccounts"))
   {
-    Array<JsonView> excludedAccountsJsonList = jsonValue.GetArray("ExcludedAccounts");
+    Aws::Utils::Array<JsonView> excludedAccountsJsonList = jsonValue.GetArray("ExcludedAccounts");
     for(unsigned excludedAccountsIndex = 0; excludedAccountsIndex < excludedAccountsJsonList.GetLength(); ++excludedAccountsIndex)
     {
       m_excludedAccounts.push_back(excludedAccountsJsonList[excludedAccountsIndex].AsString());
@@ -131,7 +131,7 @@ JsonValue OrganizationConformancePack::Jsonize() const
 
   if(m_conformancePackInputParametersHasBeenSet)
   {
-   Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
+   Aws::Utils::Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
    for(unsigned conformancePackInputParametersIndex = 0; conformancePackInputParametersIndex < conformancePackInputParametersJsonList.GetLength(); ++conformancePackInputParametersIndex)
    {
      conformancePackInputParametersJsonList[conformancePackInputParametersIndex].AsObject(m_conformancePackInputParameters[conformancePackInputParametersIndex].Jsonize());
@@ -142,7 +142,7 @@ JsonValue OrganizationConformancePack::Jsonize() const
 
   if(m_excludedAccountsHasBeenSet)
   {
-   Array<JsonValue> excludedAccountsJsonList(m_excludedAccounts.size());
+   Aws::Utils::Array<JsonValue> excludedAccountsJsonList(m_excludedAccounts.size());
    for(unsigned excludedAccountsIndex = 0; excludedAccountsIndex < excludedAccountsJsonList.GetLength(); ++excludedAccountsIndex)
    {
      excludedAccountsJsonList[excludedAccountsIndex].AsString(m_excludedAccounts[excludedAccountsIndex]);

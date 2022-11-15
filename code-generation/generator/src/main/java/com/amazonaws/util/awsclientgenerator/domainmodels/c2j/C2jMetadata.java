@@ -24,4 +24,5 @@ public class C2jMetadata {
     private String uid;
     private String timestampFormat;
     private String serviceId;
+    private C2jAwsQueryCompatible awsQueryCompatible;
 }

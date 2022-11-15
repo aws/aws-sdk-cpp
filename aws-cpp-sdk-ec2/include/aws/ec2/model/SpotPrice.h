@@ -27,8 +27,12 @@ namespace Model
 {
 
   /**
-   * <p>Describes the maximum price per hour that you are willing to pay for a Spot
-   * Instance.</p><p><h3>See Also:</h3>   <a
+   * <p>The maximum price per unit hour that you are willing to pay for a Spot
+   * Instance. We do not recommend using this parameter because it can lead to
+   * increased interruptions. If you do not specify this parameter, you will pay the
+   * current Spot price.</p>  <p>If you specify a maximum price, your
+   * instances will be interrupted more frequently than if you do not specify this
+   * parameter.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotPrice">AWS API
    * Reference</a></p>
    */
@@ -147,50 +151,82 @@ namespace Model
 
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotPrice& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotPrice& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot
-     * Instance.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotPrice& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
@@ -234,19 +270,19 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     RIProductDescription m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::String m_spotPrice;
-    bool m_spotPriceHasBeenSet;
+    bool m_spotPriceHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

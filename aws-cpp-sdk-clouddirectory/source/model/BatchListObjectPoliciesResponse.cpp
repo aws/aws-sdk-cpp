@@ -35,7 +35,7 @@ BatchListObjectPoliciesResponse& BatchListObjectPoliciesResponse::operator =(Jso
 {
   if(jsonValue.ValueExists("AttachedPolicyIds"))
   {
-    Array<JsonView> attachedPolicyIdsJsonList = jsonValue.GetArray("AttachedPolicyIds");
+    Aws::Utils::Array<JsonView> attachedPolicyIdsJsonList = jsonValue.GetArray("AttachedPolicyIds");
     for(unsigned attachedPolicyIdsIndex = 0; attachedPolicyIdsIndex < attachedPolicyIdsJsonList.GetLength(); ++attachedPolicyIdsIndex)
     {
       m_attachedPolicyIds.push_back(attachedPolicyIdsJsonList[attachedPolicyIdsIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue BatchListObjectPoliciesResponse::Jsonize() const
 
   if(m_attachedPolicyIdsHasBeenSet)
   {
-   Array<JsonValue> attachedPolicyIdsJsonList(m_attachedPolicyIds.size());
+   Aws::Utils::Array<JsonValue> attachedPolicyIdsJsonList(m_attachedPolicyIds.size());
    for(unsigned attachedPolicyIdsIndex = 0; attachedPolicyIdsIndex < attachedPolicyIdsJsonList.GetLength(); ++attachedPolicyIdsIndex)
    {
      attachedPolicyIdsJsonList[attachedPolicyIdsIndex].AsString(m_attachedPolicyIds[attachedPolicyIdsIndex]);

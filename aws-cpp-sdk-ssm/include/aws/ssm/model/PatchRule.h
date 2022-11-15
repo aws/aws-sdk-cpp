@@ -234,19 +234,19 @@ namespace Model
   private:
 
     PatchFilterGroup m_patchFilterGroup;
-    bool m_patchFilterGroupHasBeenSet;
+    bool m_patchFilterGroupHasBeenSet = false;
 
     PatchComplianceLevel m_complianceLevel;
-    bool m_complianceLevelHasBeenSet;
+    bool m_complianceLevelHasBeenSet = false;
 
     int m_approveAfterDays;
-    bool m_approveAfterDaysHasBeenSet;
+    bool m_approveAfterDaysHasBeenSet = false;
 
     Aws::String m_approveUntilDate;
-    bool m_approveUntilDateHasBeenSet;
+    bool m_approveUntilDateHasBeenSet = false;
 
     bool m_enableNonSecurity;
-    bool m_enableNonSecurityHasBeenSet;
+    bool m_enableNonSecurityHasBeenSet = false;
   };
 
 } // namespace Model

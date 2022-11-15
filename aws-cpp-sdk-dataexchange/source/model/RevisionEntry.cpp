@@ -153,7 +153,7 @@ JsonValue RevisionEntry::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("CreatedAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_dataSetIdHasBeenSet)
@@ -182,7 +182,7 @@ JsonValue RevisionEntry::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("UpdatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_revocationCommentHasBeenSet)
@@ -199,7 +199,7 @@ JsonValue RevisionEntry::Jsonize() const
 
   if(m_revokedAtHasBeenSet)
   {
-   payload.WithString("RevokedAt", m_revokedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("RevokedAt", m_revokedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

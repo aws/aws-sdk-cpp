@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_documentClassifierArn;
-    bool m_documentClassifierArnHasBeenSet;
+    bool m_documentClassifierArnHasBeenSet = false;
   };
 
 } // namespace Model

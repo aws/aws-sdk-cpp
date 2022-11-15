@@ -173,16 +173,16 @@ namespace Model
   private:
 
     ImportJobSubmitter m_submitter;
-    bool m_submitterHasBeenSet;
+    bool m_submitterHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTime;
-    bool m_submitTimeHasBeenSet;
+    bool m_submitTimeHasBeenSet = false;
 
     ImportOptions m_importOptions;
-    bool m_importOptionsHasBeenSet;
+    bool m_importOptionsHasBeenSet = false;
 
     ImportDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
   };
 
 } // namespace Model

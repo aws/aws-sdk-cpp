@@ -24,8 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>Describes a security group and Amazon Web Services account ID
-   * pair.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a security group and Amazon Web Services account ID pair.</p>
+   *  <p>We are retiring EC2-Classic. We recommend that you migrate from
+   * EC2-Classic to a VPC. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+   * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+   * Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserIdGroupPair">AWS
    * API Reference</a></p>
    */
@@ -417,25 +421,25 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_peeringStatus;
-    bool m_peeringStatusHasBeenSet;
+    bool m_peeringStatusHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListCampaignsResult& ListCampaignsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("campaigns"))
   {
-    Array<JsonView> campaignsJsonList = jsonValue.GetArray("campaigns");
+    Aws::Utils::Array<JsonView> campaignsJsonList = jsonValue.GetArray("campaigns");
     for(unsigned campaignsIndex = 0; campaignsIndex < campaignsJsonList.GetLength(); ++campaignsIndex)
     {
       m_campaigns.push_back(campaignsJsonList[campaignsIndex].AsObject());

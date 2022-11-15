@@ -89,10 +89,10 @@ namespace Model
   private:
 
     int m_numberOfNotifiedThings;
-    bool m_numberOfNotifiedThingsHasBeenSet;
+    bool m_numberOfNotifiedThingsHasBeenSet = false;
 
     int m_numberOfSucceededThings;
-    bool m_numberOfSucceededThingsHasBeenSet;
+    bool m_numberOfSucceededThingsHasBeenSet = false;
   };
 
 } // namespace Model

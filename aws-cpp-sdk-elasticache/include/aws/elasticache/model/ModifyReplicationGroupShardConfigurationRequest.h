@@ -419,22 +419,22 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     int m_nodeGroupCount;
-    bool m_nodeGroupCountHasBeenSet;
+    bool m_nodeGroupCountHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::Vector<ReshardingConfiguration> m_reshardingConfiguration;
-    bool m_reshardingConfigurationHasBeenSet;
+    bool m_reshardingConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nodeGroupsToRemove;
-    bool m_nodeGroupsToRemoveHasBeenSet;
+    bool m_nodeGroupsToRemoveHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nodeGroupsToRetain;
-    bool m_nodeGroupsToRetainHasBeenSet;
+    bool m_nodeGroupsToRetainHasBeenSet = false;
   };
 
 } // namespace Model

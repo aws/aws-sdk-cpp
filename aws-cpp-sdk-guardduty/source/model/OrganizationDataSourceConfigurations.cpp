@@ -20,13 +20,15 @@ namespace Model
 
 OrganizationDataSourceConfigurations::OrganizationDataSourceConfigurations() : 
     m_s3LogsHasBeenSet(false),
-    m_kubernetesHasBeenSet(false)
+    m_kubernetesHasBeenSet(false),
+    m_malwareProtectionHasBeenSet(false)
 {
 }
 
 OrganizationDataSourceConfigurations::OrganizationDataSourceConfigurations(JsonView jsonValue) : 
     m_s3LogsHasBeenSet(false),
-    m_kubernetesHasBeenSet(false)
+    m_kubernetesHasBeenSet(false),
+    m_malwareProtectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ OrganizationDataSourceConfigurations& OrganizationDataSourceConfigurations::oper
     m_kubernetesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("malwareProtection"))
+  {
+    m_malwareProtection = jsonValue.GetObject("malwareProtection");
+
+    m_malwareProtectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue OrganizationDataSourceConfigurations::Jsonize() const
   if(m_kubernetesHasBeenSet)
   {
    payload.WithObject("kubernetes", m_kubernetes.Jsonize());
+
+  }
+
+  if(m_malwareProtectionHasBeenSet)
+  {
+   payload.WithObject("malwareProtection", m_malwareProtection.Jsonize());
 
   }
 

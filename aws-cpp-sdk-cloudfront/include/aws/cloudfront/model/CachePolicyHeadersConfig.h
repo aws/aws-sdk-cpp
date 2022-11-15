@@ -146,10 +146,10 @@ namespace Model
   private:
 
     CachePolicyHeaderBehavior m_headerBehavior;
-    bool m_headerBehaviorHasBeenSet;
+    bool m_headerBehaviorHasBeenSet = false;
 
     Headers m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
   };
 
 } // namespace Model

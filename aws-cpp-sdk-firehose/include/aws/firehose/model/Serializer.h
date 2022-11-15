@@ -132,10 +132,10 @@ namespace Model
   private:
 
     ParquetSerDe m_parquetSerDe;
-    bool m_parquetSerDeHasBeenSet;
+    bool m_parquetSerDeHasBeenSet = false;
 
     OrcSerDe m_orcSerDe;
-    bool m_orcSerDeHasBeenSet;
+    bool m_orcSerDeHasBeenSet = false;
   };
 
 } // namespace Model

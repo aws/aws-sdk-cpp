@@ -23,7 +23,8 @@ BatchChannelMemberships::BatchChannelMemberships() :
     m_type(ChannelMembershipType::NOT_SET),
     m_typeHasBeenSet(false),
     m_membersHasBeenSet(false),
-    m_channelArnHasBeenSet(false)
+    m_channelArnHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ BatchChannelMemberships::BatchChannelMemberships(JsonView jsonValue) :
     m_type(ChannelMembershipType::NOT_SET),
     m_typeHasBeenSet(false),
     m_membersHasBeenSet(false),
-    m_channelArnHasBeenSet(false)
+    m_channelArnHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -55,7 +57,7 @@ BatchChannelMemberships& BatchChannelMemberships::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Members"))
   {
-    Array<JsonView> membersJsonList = jsonValue.GetArray("Members");
+    Aws::Utils::Array<JsonView> membersJsonList = jsonValue.GetArray("Members");
     for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
     {
       m_members.push_back(membersJsonList[membersIndex].AsObject());
@@ -68,6 +70,13 @@ BatchChannelMemberships& BatchChannelMemberships::operator =(JsonView jsonValue)
     m_channelArn = jsonValue.GetString("ChannelArn");
 
     m_channelArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SubChannelId"))
+  {
+    m_subChannelId = jsonValue.GetString("SubChannelId");
+
+    m_subChannelIdHasBeenSet = true;
   }
 
   return *this;
@@ -90,7 +99,7 @@ JsonValue BatchChannelMemberships::Jsonize() const
 
   if(m_membersHasBeenSet)
   {
-   Array<JsonValue> membersJsonList(m_members.size());
+   Aws::Utils::Array<JsonValue> membersJsonList(m_members.size());
    for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
    {
      membersJsonList[membersIndex].AsObject(m_members[membersIndex].Jsonize());
@@ -102,6 +111,12 @@ JsonValue BatchChannelMemberships::Jsonize() const
   if(m_channelArnHasBeenSet)
   {
    payload.WithString("ChannelArn", m_channelArn);
+
+  }
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
 
   }
 

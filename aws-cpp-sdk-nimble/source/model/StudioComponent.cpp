@@ -27,7 +27,9 @@ StudioComponent::StudioComponent() :
     m_ec2SecurityGroupIdsHasBeenSet(false),
     m_initializationScriptsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_runtimeRoleArnHasBeenSet(false),
     m_scriptParametersHasBeenSet(false),
+    m_secureInitializationRoleArnHasBeenSet(false),
     m_state(StudioComponentState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StudioComponentStatusCode::NOT_SET),
@@ -53,7 +55,9 @@ StudioComponent::StudioComponent(JsonView jsonValue) :
     m_ec2SecurityGroupIdsHasBeenSet(false),
     m_initializationScriptsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_runtimeRoleArnHasBeenSet(false),
     m_scriptParametersHasBeenSet(false),
+    m_secureInitializationRoleArnHasBeenSet(false),
     m_state(StudioComponentState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StudioComponentStatusCode::NOT_SET),
@@ -110,7 +114,7 @@ StudioComponent& StudioComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ec2SecurityGroupIds"))
   {
-    Array<JsonView> ec2SecurityGroupIdsJsonList = jsonValue.GetArray("ec2SecurityGroupIds");
+    Aws::Utils::Array<JsonView> ec2SecurityGroupIdsJsonList = jsonValue.GetArray("ec2SecurityGroupIds");
     for(unsigned ec2SecurityGroupIdsIndex = 0; ec2SecurityGroupIdsIndex < ec2SecurityGroupIdsJsonList.GetLength(); ++ec2SecurityGroupIdsIndex)
     {
       m_ec2SecurityGroupIds.push_back(ec2SecurityGroupIdsJsonList[ec2SecurityGroupIdsIndex].AsString());
@@ -120,7 +124,7 @@ StudioComponent& StudioComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("initializationScripts"))
   {
-    Array<JsonView> initializationScriptsJsonList = jsonValue.GetArray("initializationScripts");
+    Aws::Utils::Array<JsonView> initializationScriptsJsonList = jsonValue.GetArray("initializationScripts");
     for(unsigned initializationScriptsIndex = 0; initializationScriptsIndex < initializationScriptsJsonList.GetLength(); ++initializationScriptsIndex)
     {
       m_initializationScripts.push_back(initializationScriptsJsonList[initializationScriptsIndex].AsObject());
@@ -135,14 +139,28 @@ StudioComponent& StudioComponent::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("runtimeRoleArn"))
+  {
+    m_runtimeRoleArn = jsonValue.GetString("runtimeRoleArn");
+
+    m_runtimeRoleArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scriptParameters"))
   {
-    Array<JsonView> scriptParametersJsonList = jsonValue.GetArray("scriptParameters");
+    Aws::Utils::Array<JsonView> scriptParametersJsonList = jsonValue.GetArray("scriptParameters");
     for(unsigned scriptParametersIndex = 0; scriptParametersIndex < scriptParametersJsonList.GetLength(); ++scriptParametersIndex)
     {
       m_scriptParameters.push_back(scriptParametersJsonList[scriptParametersIndex].AsObject());
     }
     m_scriptParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secureInitializationRoleArn"))
+  {
+    m_secureInitializationRoleArn = jsonValue.GetString("secureInitializationRoleArn");
+
+    m_secureInitializationRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -232,7 +250,7 @@ JsonValue StudioComponent::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_createdByHasBeenSet)
@@ -249,7 +267,7 @@ JsonValue StudioComponent::Jsonize() const
 
   if(m_ec2SecurityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> ec2SecurityGroupIdsJsonList(m_ec2SecurityGroupIds.size());
+   Aws::Utils::Array<JsonValue> ec2SecurityGroupIdsJsonList(m_ec2SecurityGroupIds.size());
    for(unsigned ec2SecurityGroupIdsIndex = 0; ec2SecurityGroupIdsIndex < ec2SecurityGroupIdsJsonList.GetLength(); ++ec2SecurityGroupIdsIndex)
    {
      ec2SecurityGroupIdsJsonList[ec2SecurityGroupIdsIndex].AsString(m_ec2SecurityGroupIds[ec2SecurityGroupIdsIndex]);
@@ -260,7 +278,7 @@ JsonValue StudioComponent::Jsonize() const
 
   if(m_initializationScriptsHasBeenSet)
   {
-   Array<JsonValue> initializationScriptsJsonList(m_initializationScripts.size());
+   Aws::Utils::Array<JsonValue> initializationScriptsJsonList(m_initializationScripts.size());
    for(unsigned initializationScriptsIndex = 0; initializationScriptsIndex < initializationScriptsJsonList.GetLength(); ++initializationScriptsIndex)
    {
      initializationScriptsJsonList[initializationScriptsIndex].AsObject(m_initializationScripts[initializationScriptsIndex].Jsonize());
@@ -275,14 +293,26 @@ JsonValue StudioComponent::Jsonize() const
 
   }
 
+  if(m_runtimeRoleArnHasBeenSet)
+  {
+   payload.WithString("runtimeRoleArn", m_runtimeRoleArn);
+
+  }
+
   if(m_scriptParametersHasBeenSet)
   {
-   Array<JsonValue> scriptParametersJsonList(m_scriptParameters.size());
+   Aws::Utils::Array<JsonValue> scriptParametersJsonList(m_scriptParameters.size());
    for(unsigned scriptParametersIndex = 0; scriptParametersIndex < scriptParametersJsonList.GetLength(); ++scriptParametersIndex)
    {
      scriptParametersJsonList[scriptParametersIndex].AsObject(m_scriptParameters[scriptParametersIndex].Jsonize());
    }
    payload.WithArray("scriptParameters", std::move(scriptParametersJsonList));
+
+  }
+
+  if(m_secureInitializationRoleArnHasBeenSet)
+  {
+   payload.WithString("secureInitializationRoleArn", m_secureInitializationRoleArn);
 
   }
 
@@ -331,7 +361,7 @@ JsonValue StudioComponent::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedByHasBeenSet)

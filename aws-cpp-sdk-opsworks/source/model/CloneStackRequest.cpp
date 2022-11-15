@@ -167,7 +167,7 @@ Aws::String CloneStackRequest::SerializePayload() const
 
   if(m_cloneAppIdsHasBeenSet)
   {
-   Array<JsonValue> cloneAppIdsJsonList(m_cloneAppIds.size());
+   Aws::Utils::Array<JsonValue> cloneAppIdsJsonList(m_cloneAppIds.size());
    for(unsigned cloneAppIdsIndex = 0; cloneAppIdsIndex < cloneAppIdsJsonList.GetLength(); ++cloneAppIdsIndex)
    {
      cloneAppIdsJsonList[cloneAppIdsIndex].AsString(m_cloneAppIds[cloneAppIdsIndex]);

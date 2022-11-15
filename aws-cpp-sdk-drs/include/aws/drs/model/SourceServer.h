@@ -10,6 +10,7 @@
 #include <aws/drs/model/LastLaunchResult.h>
 #include <aws/drs/model/LifeCycle.h>
 #include <aws/drs/model/SourceProperties.h>
+#include <aws/drs/model/StagingArea.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -285,6 +286,37 @@ namespace Model
 
 
     /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline const StagingArea& GetStagingArea() const{ return m_stagingArea; }
+
+    /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline bool StagingAreaHasBeenSet() const { return m_stagingAreaHasBeenSet; }
+
+    /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline void SetStagingArea(const StagingArea& value) { m_stagingAreaHasBeenSet = true; m_stagingArea = value; }
+
+    /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline void SetStagingArea(StagingArea&& value) { m_stagingAreaHasBeenSet = true; m_stagingArea = std::move(value); }
+
+    /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline SourceServer& WithStagingArea(const StagingArea& value) { SetStagingArea(value); return *this;}
+
+    /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline SourceServer& WithStagingArea(StagingArea&& value) { SetStagingArea(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags associated with the Source Server.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -352,28 +384,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     DataReplicationInfo m_dataReplicationInfo;
-    bool m_dataReplicationInfoHasBeenSet;
+    bool m_dataReplicationInfoHasBeenSet = false;
 
     LastLaunchResult m_lastLaunchResult;
-    bool m_lastLaunchResultHasBeenSet;
+    bool m_lastLaunchResultHasBeenSet = false;
 
     LifeCycle m_lifeCycle;
-    bool m_lifeCycleHasBeenSet;
+    bool m_lifeCycleHasBeenSet = false;
 
     Aws::String m_recoveryInstanceId;
-    bool m_recoveryInstanceIdHasBeenSet;
+    bool m_recoveryInstanceIdHasBeenSet = false;
 
     SourceProperties m_sourceProperties;
-    bool m_sourcePropertiesHasBeenSet;
+    bool m_sourcePropertiesHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
+
+    StagingArea m_stagingArea;
+    bool m_stagingAreaHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

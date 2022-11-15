@@ -20,6 +20,8 @@ namespace Model
 
 Environment::Environment() : 
     m_arnHasBeenSet(false),
+    m_codebuildRoleArnHasBeenSet(false),
+    m_componentRoleArnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_deploymentStatus(DeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
@@ -43,6 +45,8 @@ Environment::Environment() :
 
 Environment::Environment(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_codebuildRoleArnHasBeenSet(false),
+    m_componentRoleArnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_deploymentStatus(DeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
@@ -72,6 +76,20 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("codebuildRoleArn"))
+  {
+    m_codebuildRoleArn = jsonValue.GetString("codebuildRoleArn");
+
+    m_codebuildRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("componentRoleArn"))
+  {
+    m_componentRoleArn = jsonValue.GetString("componentRoleArn");
+
+    m_componentRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -196,6 +214,18 @@ JsonValue Environment::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_codebuildRoleArnHasBeenSet)
+  {
+   payload.WithString("codebuildRoleArn", m_codebuildRoleArn);
+
+  }
+
+  if(m_componentRoleArnHasBeenSet)
+  {
+   payload.WithString("componentRoleArn", m_componentRoleArn);
 
   }
 

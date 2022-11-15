@@ -86,32 +86,32 @@ namespace Model
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline const DataType& GetNestedType() const{ return m_nestedType[0]; }
+    const DataType& GetNestedType() const;
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline bool NestedTypeHasBeenSet() const { return m_nestedTypeHasBeenSet; }
+    bool NestedTypeHasBeenSet() const;
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline void SetNestedType(const DataType& value) { m_nestedTypeHasBeenSet = true; m_nestedType.resize(1); m_nestedType[0] = value; }
+    void SetNestedType(const DataType& value);
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline void SetNestedType(DataType&& value) { m_nestedTypeHasBeenSet = true; m_nestedType.resize(1); m_nestedType[0] = std::move(value); }
+    void SetNestedType(DataType&& value);
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline DataType& WithNestedType(const DataType& value) { SetNestedType(value); return *this;}
+    DataType& WithNestedType(const DataType& value);
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    inline DataType& WithNestedType(DataType&& value) { SetNestedType(std::move(value)); return *this;}
+    DataType& WithNestedType(DataType&& value);
 
 
     /**
@@ -219,19 +219,19 @@ namespace Model
   private:
 
     Aws::Vector<DataValue> m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
-    Aws::Vector<DataType> m_nestedType;
-    bool m_nestedTypeHasBeenSet;
+    std::shared_ptr<DataType> m_nestedType;
+    bool m_nestedTypeHasBeenSet = false;
 
     Relationship m_relationship;
-    bool m_relationshipHasBeenSet;
+    bool m_relationshipHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_unitOfMeasure;
-    bool m_unitOfMeasureHasBeenSet;
+    bool m_unitOfMeasureHasBeenSet = false;
   };
 
 } // namespace Model

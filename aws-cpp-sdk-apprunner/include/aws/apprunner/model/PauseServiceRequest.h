@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_serviceArn;
-    bool m_serviceArnHasBeenSet;
+    bool m_serviceArnHasBeenSet = false;
   };
 
 } // namespace Model

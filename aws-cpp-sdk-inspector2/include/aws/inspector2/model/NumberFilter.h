@@ -80,10 +80,10 @@ namespace Model
   private:
 
     double m_lowerInclusive;
-    bool m_lowerInclusiveHasBeenSet;
+    bool m_lowerInclusiveHasBeenSet = false;
 
     double m_upperInclusive;
-    bool m_upperInclusiveHasBeenSet;
+    bool m_upperInclusiveHasBeenSet = false;
   };
 
 } // namespace Model

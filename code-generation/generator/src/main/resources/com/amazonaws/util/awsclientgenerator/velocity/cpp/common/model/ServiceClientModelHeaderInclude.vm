@@ -1,0 +1,108 @@
+##This template contains generated minimal model (includes, forward declarataions, and typedefs) required for Service Client API Header file
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+
+/* Generic header includes */
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
+#if($serviceModel.endpointRules && $serviceModel.metadata.serviceId == "S3")
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+#else
+\#include <aws/core/client/GenericClientConfiguration.h>
+#end
+\#include <aws/core/client/AWSError.h>
+\#include <aws/core/utils/memory/stl/AWSString.h>
+\#include <aws/core/client/AsyncCallerContext.h>
+\#include <aws/core/http/HttpTypes.h>
+#if($serviceModel.endpointRules)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
+#end
+#if($metadata.hasEndpointDiscoveryTrait)
+\#include <aws/core/utils/ConcurrentCache.h>
+#end
+\#include <future>
+\#include <functional>
+/* End of generic header includes */
+
+/* Service model headers required in ${metadata.classNamePrefix}Client header */
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelIncludes.vm")
+/* End of service model headers required in ${metadata.classNamePrefix}Client header */
+
+namespace Aws
+{
+  namespace Http
+  {
+    class HttpClient;
+    class HttpClientFactory;
+  } // namespace Http
+
+  namespace Utils
+  {
+    template< typename R, typename E> class Outcome;
+#foreach($operation in $serviceModel.operations)
+#if($operation.request && $operation.request.shape.hasEventStreamMembers())
+
+    namespace Event
+    {
+      class EventEncoderStream;
+    } // namespace Event
+#break
+#end
+#end
+
+    namespace Threading
+    {
+      class Executor;
+    } // namespace Threading
+  } // namespace Utils
+
+  namespace Auth
+  {
+#if($serviceModel.hasBearerAuth())
+    class BearerTokenAuthSignerProvider;
+#end
+#if($serviceModel.hasSigV4Auth())
+    class AWSCredentials;
+    class AWSCredentialsProvider;
+#end
+  } // namespace Auth
+
+  namespace Client
+  {
+    class RetryStrategy;
+  } // namespace Client
+#if ($rootNamespace != "Aws")
+} // namespace Aws
+
+namespace ${rootNamespace}
+{
+#end
+
+  namespace ${metadata.namespace}
+  {
+#if($serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control")
+#if(!$metadata.hasEndpointDiscoveryTrait)
+    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+#else
+    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
+#end
+#end
+    using ${metadata.classNamePrefix}EndpointProviderBase = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProviderBase;
+    using ${metadata.classNamePrefix}EndpointProvider = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProvider;
+
+    namespace Model
+    {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")
+    } // namespace Model
+
+#set($className = "${metadata.classNamePrefix}Client")
+    class ${className};
+
+    /* Service model async handlers definitions */
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderEventTypeDeclarations.vm")
+    /* End of service model async handlers definitions */
+  } // namespace ${metadata.namespace}
+} // namespace ${rootNamespace}

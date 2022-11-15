@@ -115,10 +115,10 @@ namespace Model
   private:
 
     AuthorizationType m_authorizationType;
-    bool m_authorizationTypeHasBeenSet;
+    bool m_authorizationTypeHasBeenSet = false;
 
     AwsIamConfig m_awsIamConfig;
-    bool m_awsIamConfigHasBeenSet;
+    bool m_awsIamConfigHasBeenSet = false;
   };
 
 } // namespace Model

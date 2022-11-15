@@ -130,10 +130,10 @@ namespace Model
   private:
 
     RecipeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<ConditionExpression> m_conditionExpressions;
-    bool m_conditionExpressionsHasBeenSet;
+    bool m_conditionExpressionsHasBeenSet = false;
   };
 
 } // namespace Model

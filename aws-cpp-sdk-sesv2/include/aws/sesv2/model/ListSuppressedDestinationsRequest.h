@@ -88,86 +88,74 @@ namespace Model
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list after a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list after a specific date.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list after a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list after a specific date.</p>
      */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list after a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list after a specific date.</p>
      */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list after a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list after a specific date.</p>
      */
     inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list after a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list after a specific date.</p>
      */
     inline ListSuppressedDestinationsRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list after a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list after a specific date.</p>
      */
     inline ListSuppressedDestinationsRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list before a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list before a specific date.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list before a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list before a specific date.</p>
      */
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list before a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list before a specific date.</p>
      */
     inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list before a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list before a specific date.</p>
      */
     inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list before a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list before a specific date.</p>
      */
     inline ListSuppressedDestinationsRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
 
     /**
      * <p>Used to filter the list of suppressed email destinations so that it only
-     * includes addresses that were added to the list before a specific date. The date
-     * that you specify should be in Unix time format.</p>
+     * includes addresses that were added to the list before a specific date.</p>
      */
     inline ListSuppressedDestinationsRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
 
@@ -268,19 +256,19 @@ namespace Model
   private:
 
     Aws::Vector<SuppressionListReason> m_reasons;
-    bool m_reasonsHasBeenSet;
+    bool m_reasonsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
   };
 
 } // namespace Model

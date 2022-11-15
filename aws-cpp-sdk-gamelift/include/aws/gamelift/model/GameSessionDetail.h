@@ -127,10 +127,10 @@ namespace Model
   private:
 
     GameSession m_gameSession;
-    bool m_gameSessionHasBeenSet;
+    bool m_gameSessionHasBeenSet = false;
 
     ProtectionPolicy m_protectionPolicy;
-    bool m_protectionPolicyHasBeenSet;
+    bool m_protectionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

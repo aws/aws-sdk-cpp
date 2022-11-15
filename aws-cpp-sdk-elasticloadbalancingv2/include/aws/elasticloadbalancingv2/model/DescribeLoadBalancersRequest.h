@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_loadBalancerArns;
-    bool m_loadBalancerArnsHasBeenSet;
+    bool m_loadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_names;
-    bool m_namesHasBeenSet;
+    bool m_namesHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
   };
 
 } // namespace Model

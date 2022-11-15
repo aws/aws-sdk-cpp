@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_partitionValues;
-    bool m_partitionValuesHasBeenSet;
+    bool m_partitionValuesHasBeenSet = false;
 
     ErrorDetail m_errorDetail;
-    bool m_errorDetailHasBeenSet;
+    bool m_errorDetailHasBeenSet = false;
   };
 
 } // namespace Model

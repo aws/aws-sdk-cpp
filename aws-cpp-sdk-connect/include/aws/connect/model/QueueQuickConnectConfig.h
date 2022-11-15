@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a queue for a quick connect. The contact flow must
-   * be of type Transfer to Queue.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a queue for a quick connect. The flow must be of
+   * type Transfer to Queue.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QueueQuickConnectConfig">AWS
    * API Reference</a></p>
    */
@@ -80,52 +80,52 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline void SetContactFlowId(const Aws::String& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = value; }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline void SetContactFlowId(Aws::String&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::move(value); }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline void SetContactFlowId(const char* value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId.assign(value); }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline QueueQuickConnectConfig& WithContactFlowId(const Aws::String& value) { SetContactFlowId(value); return *this;}
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline QueueQuickConnectConfig& WithContactFlowId(Aws::String&& value) { SetContactFlowId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline QueueQuickConnectConfig& WithContactFlowId(const char* value) { SetContactFlowId(value); return *this;}
 
   private:
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::String m_contactFlowId;
-    bool m_contactFlowIdHasBeenSet;
+    bool m_contactFlowIdHasBeenSet = false;
   };
 
 } // namespace Model

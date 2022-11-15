@@ -290,25 +290,25 @@ namespace Model
   private:
 
     Aws::String m_autoMLJobName;
-    bool m_autoMLJobNameHasBeenSet;
+    bool m_autoMLJobNameHasBeenSet = false;
 
     CandidateStatus m_statusEquals;
-    bool m_statusEqualsHasBeenSet;
+    bool m_statusEqualsHasBeenSet = false;
 
     Aws::String m_candidateNameEquals;
-    bool m_candidateNameEqualsHasBeenSet;
+    bool m_candidateNameEqualsHasBeenSet = false;
 
     AutoMLSortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     CandidateSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

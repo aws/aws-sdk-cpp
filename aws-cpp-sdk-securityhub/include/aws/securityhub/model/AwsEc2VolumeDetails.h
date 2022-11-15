@@ -113,22 +113,63 @@ namespace Model
 
 
     /**
-     * <p>Whether the volume is encrypted.</p>
+     * <p>The device name for the volume that is attached to the instance. </p>
+     */
+    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The device name for the volume that is attached to the instance. </p>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The device name for the volume that is attached to the instance. </p>
+     */
+    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+
+    /**
+     * <p>The device name for the volume that is attached to the instance. </p>
+     */
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
+
+    /**
+     * <p>The device name for the volume that is attached to the instance. </p>
+     */
+    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
+
+    /**
+     * <p>The device name for the volume that is attached to the instance. </p>
+     */
+    inline AwsEc2VolumeDetails& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
+
+    /**
+     * <p>The device name for the volume that is attached to the instance. </p>
+     */
+    inline AwsEc2VolumeDetails& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The device name for the volume that is attached to the instance. </p>
+     */
+    inline AwsEc2VolumeDetails& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the volume is encrypted.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Whether the volume is encrypted.</p>
+     * <p>Specifies whether the volume is encrypted.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Whether the volume is encrypted.</p>
+     * <p>Specifies whether the volume is encrypted.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Whether the volume is encrypted.</p>
+     * <p>Specifies whether the volume is encrypted.</p>
      */
     inline AwsEc2VolumeDetails& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
@@ -196,42 +237,74 @@ namespace Model
 
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline AwsEc2VolumeDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline AwsEc2VolumeDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline AwsEc2VolumeDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -325,28 +398,163 @@ namespace Model
      */
     inline AwsEc2VolumeDetails& AddAttachments(AwsEc2VolumeAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the volume. </p>
+     */
+    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
+    /**
+     * <p>The ID of the volume. </p>
+     */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the volume. </p>
+     */
+    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+
+    /**
+     * <p>The ID of the volume. </p>
+     */
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
+
+    /**
+     * <p>The ID of the volume. </p>
+     */
+    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
+
+    /**
+     * <p>The ID of the volume. </p>
+     */
+    inline AwsEc2VolumeDetails& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+
+    /**
+     * <p>The ID of the volume. </p>
+     */
+    inline AwsEc2VolumeDetails& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the volume. </p>
+     */
+    inline AwsEc2VolumeDetails& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
+
+    /**
+     * <p>The volume type. </p>
+     */
+    inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+
+    /**
+     * <p>The volume type. </p>
+     */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
+
+    /**
+     * <p>The volume type. </p>
+     */
+    inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+
+    /**
+     * <p>The volume type. </p>
+     */
+    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
+
+    /**
+     * <p>The volume type. </p>
+     */
+    inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
+
+    /**
+     * <p>The volume type. </p>
+     */
+    inline AwsEc2VolumeDetails& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
+
+    /**
+     * <p>The volume type. </p>
+     */
+    inline AwsEc2VolumeDetails& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
+
+    /**
+     * <p>The volume type. </p>
+     */
+    inline AwsEc2VolumeDetails& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the volume was scanned or skipped. </p>
+     */
+    inline const Aws::String& GetVolumeScanStatus() const{ return m_volumeScanStatus; }
+
+    /**
+     * <p>Indicates whether the volume was scanned or skipped. </p>
+     */
+    inline bool VolumeScanStatusHasBeenSet() const { return m_volumeScanStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the volume was scanned or skipped. </p>
+     */
+    inline void SetVolumeScanStatus(const Aws::String& value) { m_volumeScanStatusHasBeenSet = true; m_volumeScanStatus = value; }
+
+    /**
+     * <p>Indicates whether the volume was scanned or skipped. </p>
+     */
+    inline void SetVolumeScanStatus(Aws::String&& value) { m_volumeScanStatusHasBeenSet = true; m_volumeScanStatus = std::move(value); }
+
+    /**
+     * <p>Indicates whether the volume was scanned or skipped. </p>
+     */
+    inline void SetVolumeScanStatus(const char* value) { m_volumeScanStatusHasBeenSet = true; m_volumeScanStatus.assign(value); }
+
+    /**
+     * <p>Indicates whether the volume was scanned or skipped. </p>
+     */
+    inline AwsEc2VolumeDetails& WithVolumeScanStatus(const Aws::String& value) { SetVolumeScanStatus(value); return *this;}
+
+    /**
+     * <p>Indicates whether the volume was scanned or skipped. </p>
+     */
+    inline AwsEc2VolumeDetails& WithVolumeScanStatus(Aws::String&& value) { SetVolumeScanStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether the volume was scanned or skipped. </p>
+     */
+    inline AwsEc2VolumeDetails& WithVolumeScanStatus(const char* value) { SetVolumeScanStatus(value); return *this;}
+
   private:
 
     Aws::String m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
+
+    Aws::String m_deviceName;
+    bool m_deviceNameHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<AwsEc2VolumeAttachment> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
+
+    Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet = false;
+
+    Aws::String m_volumeType;
+    bool m_volumeTypeHasBeenSet = false;
+
+    Aws::String m_volumeScanStatus;
+    bool m_volumeScanStatusHasBeenSet = false;
   };
 
 } // namespace Model

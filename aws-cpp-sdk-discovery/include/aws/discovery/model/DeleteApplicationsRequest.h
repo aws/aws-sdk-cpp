@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_configurationIds;
-    bool m_configurationIdsHasBeenSet;
+    bool m_configurationIdsHasBeenSet = false;
   };
 
 } // namespace Model

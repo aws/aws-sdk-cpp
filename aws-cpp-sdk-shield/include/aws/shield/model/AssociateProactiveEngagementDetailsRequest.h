@@ -134,7 +134,7 @@ namespace Model
   private:
 
     Aws::Vector<EmergencyContact> m_emergencyContactList;
-    bool m_emergencyContactListHasBeenSet;
+    bool m_emergencyContactListHasBeenSet = false;
   };
 
 } // namespace Model

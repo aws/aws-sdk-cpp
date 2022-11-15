@@ -119,10 +119,10 @@ namespace Model
   private:
 
     SMSTemplateRequest m_sMSTemplateRequest;
-    bool m_sMSTemplateRequestHasBeenSet;
+    bool m_sMSTemplateRequestHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

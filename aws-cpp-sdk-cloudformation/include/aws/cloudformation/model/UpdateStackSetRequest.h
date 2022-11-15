@@ -1047,7 +1047,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1061,7 +1061,7 @@ namespace Model
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1075,7 +1075,7 @@ namespace Model
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1089,7 +1089,7 @@ namespace Model
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1103,7 +1103,7 @@ namespace Model
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1117,7 +1117,7 @@ namespace Model
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1131,7 +1131,7 @@ namespace Model
     inline UpdateStackSetRequest& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1145,7 +1145,7 @@ namespace Model
     inline UpdateStackSetRequest& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -2065,61 +2065,61 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_templateURL;
-    bool m_templateURLHasBeenSet;
+    bool m_templateURLHasBeenSet = false;
 
     bool m_usePreviousTemplate;
-    bool m_usePreviousTemplateHasBeenSet;
+    bool m_usePreviousTemplateHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     StackSetOperationPreferences m_operationPreferences;
-    bool m_operationPreferencesHasBeenSet;
+    bool m_operationPreferencesHasBeenSet = false;
 
     Aws::String m_administrationRoleARN;
-    bool m_administrationRoleARNHasBeenSet;
+    bool m_administrationRoleARNHasBeenSet = false;
 
     Aws::String m_executionRoleName;
-    bool m_executionRoleNameHasBeenSet;
+    bool m_executionRoleNameHasBeenSet = false;
 
     DeploymentTargets m_deploymentTargets;
-    bool m_deploymentTargetsHasBeenSet;
+    bool m_deploymentTargetsHasBeenSet = false;
 
     PermissionModels m_permissionModel;
-    bool m_permissionModelHasBeenSet;
+    bool m_permissionModelHasBeenSet = false;
 
     AutoDeployment m_autoDeployment;
-    bool m_autoDeploymentHasBeenSet;
+    bool m_autoDeploymentHasBeenSet = false;
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accounts;
-    bool m_accountsHasBeenSet;
+    bool m_accountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
 
     ManagedExecution m_managedExecution;
-    bool m_managedExecutionHasBeenSet;
+    bool m_managedExecutionHasBeenSet = false;
   };
 
 } // namespace Model

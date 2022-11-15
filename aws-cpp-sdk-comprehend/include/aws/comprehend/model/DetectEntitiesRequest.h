@@ -36,50 +36,42 @@ namespace Model
 
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline DetectEntitiesRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline DetectEntitiesRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
-     * <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-     * encoded characters.</p>
+     * <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
      */
     inline DetectEntitiesRequest& WithText(const char* value) { SetText(value); return *this;}
 
@@ -145,7 +137,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
 
@@ -155,7 +149,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
 
@@ -165,7 +161,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
@@ -175,7 +173,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
@@ -185,7 +185,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
@@ -195,7 +197,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline DetectEntitiesRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
 
@@ -205,7 +209,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline DetectEntitiesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
@@ -215,20 +221,22 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline DetectEntitiesRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
   };
 
 } // namespace Model

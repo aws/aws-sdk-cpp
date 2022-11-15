@@ -22,12 +22,18 @@ namespace Model
 {
 
   /**
-   * <p>An object that allows percentages to specify the proportion of the call where
-   * you would like to apply a filter. For example, you can specify the first half of
-   * the call. You can also specify the period of time between halfway through to
-   * three-quarters of the way through the call. Because the length of conversation
-   * can vary between calls, you can apply relative time ranges across all calls.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>A time range, in percentage, between two points in your media file.</p>
+   * <p>You can use <code>StartPercentage</code> and <code>EndPercentage</code> to
+   * search a custom segment. For example, setting <code>StartPercentage</code> to 10
+   * and <code>EndPercentage</code> to 50 only searches for your specified criteria
+   * in the audio contained between the 10 percent mark and the 50 percent mark of
+   * your media file.</p> <p>You can use also <code>First</code> to search from the
+   * start of the media file until the time you specify, or <code>Last</code> to
+   * search from the time you specify until the end of the media file. For example,
+   * setting <code>First</code> to 10 only searches for your specified criteria in
+   * the audio contained in the first 10 percent of the media file.</p> <p>If you
+   * prefer to use milliseconds instead of percentage, see .</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/RelativeTimeRange">AWS
    * API Reference</a></p>
    */
@@ -41,181 +47,129 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates the percentage of the beginning of the time range. To
-     * set a relative time range, you must specify a start percentage and an end
-     * percentage. For example, if you specify the following values:</p> <ul> <li>
-     * <p>StartPercentage - 10</p> </li> <li> <p>EndPercentage - 50</p> </li> </ul>
-     * <p>This looks at the time range starting from 10% of the way into the call to
-     * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
-     * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark.</p>
+     * <p>The time, in percentage, when Amazon Transcribe starts searching for the
+     * specified criteria in your media file. If you include
+     * <code>StartPercentage</code> in your request, you must also include
+     * <code>EndPercentage</code>.</p>
      */
     inline int GetStartPercentage() const{ return m_startPercentage; }
 
     /**
-     * <p>A value that indicates the percentage of the beginning of the time range. To
-     * set a relative time range, you must specify a start percentage and an end
-     * percentage. For example, if you specify the following values:</p> <ul> <li>
-     * <p>StartPercentage - 10</p> </li> <li> <p>EndPercentage - 50</p> </li> </ul>
-     * <p>This looks at the time range starting from 10% of the way into the call to
-     * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
-     * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark.</p>
+     * <p>The time, in percentage, when Amazon Transcribe starts searching for the
+     * specified criteria in your media file. If you include
+     * <code>StartPercentage</code> in your request, you must also include
+     * <code>EndPercentage</code>.</p>
      */
     inline bool StartPercentageHasBeenSet() const { return m_startPercentageHasBeenSet; }
 
     /**
-     * <p>A value that indicates the percentage of the beginning of the time range. To
-     * set a relative time range, you must specify a start percentage and an end
-     * percentage. For example, if you specify the following values:</p> <ul> <li>
-     * <p>StartPercentage - 10</p> </li> <li> <p>EndPercentage - 50</p> </li> </ul>
-     * <p>This looks at the time range starting from 10% of the way into the call to
-     * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
-     * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark.</p>
+     * <p>The time, in percentage, when Amazon Transcribe starts searching for the
+     * specified criteria in your media file. If you include
+     * <code>StartPercentage</code> in your request, you must also include
+     * <code>EndPercentage</code>.</p>
      */
     inline void SetStartPercentage(int value) { m_startPercentageHasBeenSet = true; m_startPercentage = value; }
 
     /**
-     * <p>A value that indicates the percentage of the beginning of the time range. To
-     * set a relative time range, you must specify a start percentage and an end
-     * percentage. For example, if you specify the following values:</p> <ul> <li>
-     * <p>StartPercentage - 10</p> </li> <li> <p>EndPercentage - 50</p> </li> </ul>
-     * <p>This looks at the time range starting from 10% of the way into the call to
-     * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
-     * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark.</p>
+     * <p>The time, in percentage, when Amazon Transcribe starts searching for the
+     * specified criteria in your media file. If you include
+     * <code>StartPercentage</code> in your request, you must also include
+     * <code>EndPercentage</code>.</p>
      */
     inline RelativeTimeRange& WithStartPercentage(int value) { SetStartPercentage(value); return *this;}
 
 
     /**
-     * <p>A value that indicates the percentage of the end of the time range. To set a
-     * relative time range, you must specify a start percentage and an end percentage.
-     * For example, if you specify the following values:</p> <ul> <li>
-     * <p>StartPercentage - 10</p> </li> <li> <p>EndPercentage - 50</p> </li> </ul>
-     * <p>This looks at the time range starting from 10% of the way into the call to
-     * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
-     * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark.</p>
+     * <p>The time, in percentage, when Amazon Transcribe stops searching for the
+     * specified criteria in your media file. If you include <code>EndPercentage</code>
+     * in your request, you must also include <code>StartPercentage</code>.</p>
      */
     inline int GetEndPercentage() const{ return m_endPercentage; }
 
     /**
-     * <p>A value that indicates the percentage of the end of the time range. To set a
-     * relative time range, you must specify a start percentage and an end percentage.
-     * For example, if you specify the following values:</p> <ul> <li>
-     * <p>StartPercentage - 10</p> </li> <li> <p>EndPercentage - 50</p> </li> </ul>
-     * <p>This looks at the time range starting from 10% of the way into the call to
-     * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
-     * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark.</p>
+     * <p>The time, in percentage, when Amazon Transcribe stops searching for the
+     * specified criteria in your media file. If you include <code>EndPercentage</code>
+     * in your request, you must also include <code>StartPercentage</code>.</p>
      */
     inline bool EndPercentageHasBeenSet() const { return m_endPercentageHasBeenSet; }
 
     /**
-     * <p>A value that indicates the percentage of the end of the time range. To set a
-     * relative time range, you must specify a start percentage and an end percentage.
-     * For example, if you specify the following values:</p> <ul> <li>
-     * <p>StartPercentage - 10</p> </li> <li> <p>EndPercentage - 50</p> </li> </ul>
-     * <p>This looks at the time range starting from 10% of the way into the call to
-     * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
-     * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark.</p>
+     * <p>The time, in percentage, when Amazon Transcribe stops searching for the
+     * specified criteria in your media file. If you include <code>EndPercentage</code>
+     * in your request, you must also include <code>StartPercentage</code>.</p>
      */
     inline void SetEndPercentage(int value) { m_endPercentageHasBeenSet = true; m_endPercentage = value; }
 
     /**
-     * <p>A value that indicates the percentage of the end of the time range. To set a
-     * relative time range, you must specify a start percentage and an end percentage.
-     * For example, if you specify the following values:</p> <ul> <li>
-     * <p>StartPercentage - 10</p> </li> <li> <p>EndPercentage - 50</p> </li> </ul>
-     * <p>This looks at the time range starting from 10% of the way into the call to
-     * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
-     * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark.</p>
+     * <p>The time, in percentage, when Amazon Transcribe stops searching for the
+     * specified criteria in your media file. If you include <code>EndPercentage</code>
+     * in your request, you must also include <code>StartPercentage</code>.</p>
      */
     inline RelativeTimeRange& WithEndPercentage(int value) { SetEndPercentage(value); return *this;}
 
 
     /**
-     * <p>A range that takes the portion of the call up to the time in milliseconds set
-     * by the value that you've specified. For example, if you specify
-     * <code>120000</code>, the time range is set for the first 120,000 milliseconds of
-     * the call.</p>
+     * <p>The time, in percentage, from the start of your media file until the value
+     * you specify in which Amazon Transcribe searches for your specified criteria.</p>
      */
     inline int GetFirst() const{ return m_first; }
 
     /**
-     * <p>A range that takes the portion of the call up to the time in milliseconds set
-     * by the value that you've specified. For example, if you specify
-     * <code>120000</code>, the time range is set for the first 120,000 milliseconds of
-     * the call.</p>
+     * <p>The time, in percentage, from the start of your media file until the value
+     * you specify in which Amazon Transcribe searches for your specified criteria.</p>
      */
     inline bool FirstHasBeenSet() const { return m_firstHasBeenSet; }
 
     /**
-     * <p>A range that takes the portion of the call up to the time in milliseconds set
-     * by the value that you've specified. For example, if you specify
-     * <code>120000</code>, the time range is set for the first 120,000 milliseconds of
-     * the call.</p>
+     * <p>The time, in percentage, from the start of your media file until the value
+     * you specify in which Amazon Transcribe searches for your specified criteria.</p>
      */
     inline void SetFirst(int value) { m_firstHasBeenSet = true; m_first = value; }
 
     /**
-     * <p>A range that takes the portion of the call up to the time in milliseconds set
-     * by the value that you've specified. For example, if you specify
-     * <code>120000</code>, the time range is set for the first 120,000 milliseconds of
-     * the call.</p>
+     * <p>The time, in percentage, from the start of your media file until the value
+     * you specify in which Amazon Transcribe searches for your specified criteria.</p>
      */
     inline RelativeTimeRange& WithFirst(int value) { SetFirst(value); return *this;}
 
 
     /**
-     * <p>A range that takes the portion of the call from the time in milliseconds set
-     * by the value that you've specified to the end of the call. For example, if you
-     * specify <code>120000</code>, the time range is set for the last 120,000
-     * milliseconds of the call.</p>
+     * <p>The time, in percentage, from the value you specify until the end of your
+     * media file in which Amazon Transcribe searches for your specified criteria.</p>
      */
     inline int GetLast() const{ return m_last; }
 
     /**
-     * <p>A range that takes the portion of the call from the time in milliseconds set
-     * by the value that you've specified to the end of the call. For example, if you
-     * specify <code>120000</code>, the time range is set for the last 120,000
-     * milliseconds of the call.</p>
+     * <p>The time, in percentage, from the value you specify until the end of your
+     * media file in which Amazon Transcribe searches for your specified criteria.</p>
      */
     inline bool LastHasBeenSet() const { return m_lastHasBeenSet; }
 
     /**
-     * <p>A range that takes the portion of the call from the time in milliseconds set
-     * by the value that you've specified to the end of the call. For example, if you
-     * specify <code>120000</code>, the time range is set for the last 120,000
-     * milliseconds of the call.</p>
+     * <p>The time, in percentage, from the value you specify until the end of your
+     * media file in which Amazon Transcribe searches for your specified criteria.</p>
      */
     inline void SetLast(int value) { m_lastHasBeenSet = true; m_last = value; }
 
     /**
-     * <p>A range that takes the portion of the call from the time in milliseconds set
-     * by the value that you've specified to the end of the call. For example, if you
-     * specify <code>120000</code>, the time range is set for the last 120,000
-     * milliseconds of the call.</p>
+     * <p>The time, in percentage, from the value you specify until the end of your
+     * media file in which Amazon Transcribe searches for your specified criteria.</p>
      */
     inline RelativeTimeRange& WithLast(int value) { SetLast(value); return *this;}
 
   private:
 
     int m_startPercentage;
-    bool m_startPercentageHasBeenSet;
+    bool m_startPercentageHasBeenSet = false;
 
     int m_endPercentage;
-    bool m_endPercentageHasBeenSet;
+    bool m_endPercentageHasBeenSet = false;
 
     int m_first;
-    bool m_firstHasBeenSet;
+    bool m_firstHasBeenSet = false;
 
     int m_last;
-    bool m_lastHasBeenSet;
+    bool m_lastHasBeenSet = false;
   };
 
 } // namespace Model

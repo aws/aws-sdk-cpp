@@ -112,7 +112,7 @@ bool AWSAuthV4Signer::SignRequestWithSigV4a(Aws::Http::HttpRequest& request, con
             }
             else
             {
-                // The hash will be calculated from the payload during siging.
+                // The hash will be calculated from the payload during signing.
                 payloadHash = {};
             }
         }

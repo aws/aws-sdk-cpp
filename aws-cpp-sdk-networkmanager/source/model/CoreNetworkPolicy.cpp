@@ -95,7 +95,7 @@ CoreNetworkPolicy& CoreNetworkPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PolicyErrors"))
   {
-    Array<JsonView> policyErrorsJsonList = jsonValue.GetArray("PolicyErrors");
+    Aws::Utils::Array<JsonView> policyErrorsJsonList = jsonValue.GetArray("PolicyErrors");
     for(unsigned policyErrorsIndex = 0; policyErrorsIndex < policyErrorsJsonList.GetLength(); ++policyErrorsIndex)
     {
       m_policyErrors.push_back(policyErrorsJsonList[policyErrorsIndex].AsObject());
@@ -152,7 +152,7 @@ JsonValue CoreNetworkPolicy::Jsonize() const
 
   if(m_policyErrorsHasBeenSet)
   {
-   Array<JsonValue> policyErrorsJsonList(m_policyErrors.size());
+   Aws::Utils::Array<JsonValue> policyErrorsJsonList(m_policyErrors.size());
    for(unsigned policyErrorsIndex = 0; policyErrorsIndex < policyErrorsJsonList.GetLength(); ++policyErrorsIndex)
    {
      policyErrorsJsonList[policyErrorsIndex].AsObject(m_policyErrors[policyErrorsIndex].Jsonize());

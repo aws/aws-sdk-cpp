@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_generatedFraudsterId;
-    bool m_generatedFraudsterIdHasBeenSet;
+    bool m_generatedFraudsterIdHasBeenSet = false;
 
     int m_riskScore;
-    bool m_riskScoreHasBeenSet;
+    bool m_riskScoreHasBeenSet = false;
   };
 
 } // namespace Model

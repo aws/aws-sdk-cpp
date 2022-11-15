@@ -76,7 +76,7 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SS"))
   {
-    Array<JsonView> sSJsonList = jsonValue.GetArray("SS");
+    Aws::Utils::Array<JsonView> sSJsonList = jsonValue.GetArray("SS");
     for(unsigned sSIndex = 0; sSIndex < sSJsonList.GetLength(); ++sSIndex)
     {
       m_sS.push_back(sSJsonList[sSIndex].AsString());
@@ -86,7 +86,7 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NS"))
   {
-    Array<JsonView> nSJsonList = jsonValue.GetArray("NS");
+    Aws::Utils::Array<JsonView> nSJsonList = jsonValue.GetArray("NS");
     for(unsigned nSIndex = 0; nSIndex < nSJsonList.GetLength(); ++nSIndex)
     {
       m_nS.push_back(nSJsonList[nSIndex].AsString());
@@ -96,7 +96,7 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("BS"))
   {
-    Array<JsonView> bSJsonList = jsonValue.GetArray("BS");
+    Aws::Utils::Array<JsonView> bSJsonList = jsonValue.GetArray("BS");
     for(unsigned bSIndex = 0; bSIndex < bSJsonList.GetLength(); ++bSIndex)
     {
       m_bS.push_back(HashingUtils::Base64Decode(bSJsonList[bSIndex].AsString()));
@@ -116,7 +116,7 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("L"))
   {
-    Array<JsonView> lJsonList = jsonValue.GetArray("L");
+    Aws::Utils::Array<JsonView> lJsonList = jsonValue.GetArray("L");
     for(unsigned lIndex = 0; lIndex < lJsonList.GetLength(); ++lIndex)
     {
       m_l.push_back(lJsonList[lIndex].AsObject());
@@ -164,7 +164,7 @@ JsonValue AttributeValue::Jsonize() const
 
   if(m_sSHasBeenSet)
   {
-   Array<JsonValue> sSJsonList(m_sS.size());
+   Aws::Utils::Array<JsonValue> sSJsonList(m_sS.size());
    for(unsigned sSIndex = 0; sSIndex < sSJsonList.GetLength(); ++sSIndex)
    {
      sSJsonList[sSIndex].AsString(m_sS[sSIndex]);
@@ -175,7 +175,7 @@ JsonValue AttributeValue::Jsonize() const
 
   if(m_nSHasBeenSet)
   {
-   Array<JsonValue> nSJsonList(m_nS.size());
+   Aws::Utils::Array<JsonValue> nSJsonList(m_nS.size());
    for(unsigned nSIndex = 0; nSIndex < nSJsonList.GetLength(); ++nSIndex)
    {
      nSJsonList[nSIndex].AsString(m_nS[nSIndex]);
@@ -186,7 +186,7 @@ JsonValue AttributeValue::Jsonize() const
 
   if(m_bSHasBeenSet)
   {
-   Array<JsonValue> bSJsonList(m_bS.size());
+   Aws::Utils::Array<JsonValue> bSJsonList(m_bS.size());
    for(unsigned bSIndex = 0; bSIndex < bSJsonList.GetLength(); ++bSIndex)
    {
      bSJsonList[bSIndex].AsString(HashingUtils::Base64Encode(m_bS[bSIndex]));
@@ -208,7 +208,7 @@ JsonValue AttributeValue::Jsonize() const
 
   if(m_lHasBeenSet)
   {
-   Array<JsonValue> lJsonList(m_l.size());
+   Aws::Utils::Array<JsonValue> lJsonList(m_l.size());
    for(unsigned lIndex = 0; lIndex < lJsonList.GetLength(); ++lIndex)
    {
      lJsonList[lIndex].AsObject(m_l[lIndex].Jsonize());

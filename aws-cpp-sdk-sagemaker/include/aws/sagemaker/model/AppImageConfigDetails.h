@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_appImageConfigArn;
-    bool m_appImageConfigArnHasBeenSet;
+    bool m_appImageConfigArnHasBeenSet = false;
 
     Aws::String m_appImageConfigName;
-    bool m_appImageConfigNameHasBeenSet;
+    bool m_appImageConfigNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     KernelGatewayImageConfig m_kernelGatewayImageConfig;
-    bool m_kernelGatewayImageConfigHasBeenSet;
+    bool m_kernelGatewayImageConfigHasBeenSet = false;
   };
 
 } // namespace Model

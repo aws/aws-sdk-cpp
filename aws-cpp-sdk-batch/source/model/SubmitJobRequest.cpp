@@ -28,7 +28,8 @@ SubmitJobRequest::SubmitJobRequest() :
     m_propagateTags(false),
     m_propagateTagsHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_eksPropertiesOverrideHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,7 @@ Aws::String SubmitJobRequest::SerializePayload() const
 
   if(m_dependsOnHasBeenSet)
   {
-   Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
+   Aws::Utils::Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
    for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
    {
      dependsOnJsonList[dependsOnIndex].AsObject(m_dependsOn[dependsOnIndex].Jsonize());
@@ -132,6 +133,12 @@ Aws::String SubmitJobRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_eksPropertiesOverrideHasBeenSet)
+  {
+   payload.WithObject("eksPropertiesOverride", m_eksPropertiesOverride.Jsonize());
 
   }
 

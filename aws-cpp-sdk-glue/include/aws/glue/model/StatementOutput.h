@@ -253,22 +253,22 @@ namespace Model
   private:
 
     StatementOutputData m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     int m_executionCount;
-    bool m_executionCountHasBeenSet;
+    bool m_executionCountHasBeenSet = false;
 
     StatementState m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorName;
-    bool m_errorNameHasBeenSet;
+    bool m_errorNameHasBeenSet = false;
 
     Aws::String m_errorValue;
-    bool m_errorValueHasBeenSet;
+    bool m_errorValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_traceback;
-    bool m_tracebackHasBeenSet;
+    bool m_tracebackHasBeenSet = false;
   };
 
 } // namespace Model

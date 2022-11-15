@@ -134,10 +134,10 @@ namespace Model
   private:
 
     ExtendedKeyUsageType m_extendedKeyUsageType;
-    bool m_extendedKeyUsageTypeHasBeenSet;
+    bool m_extendedKeyUsageTypeHasBeenSet = false;
 
     Aws::String m_extendedKeyUsageObjectIdentifier;
-    bool m_extendedKeyUsageObjectIdentifierHasBeenSet;
+    bool m_extendedKeyUsageObjectIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

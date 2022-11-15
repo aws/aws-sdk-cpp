@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/MediaLiveRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/RenewalSettings.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -138,6 +139,37 @@ namespace Model
      * Offering to purchase, e.g. '87654321'
      */
     inline PurchaseOfferingRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
+
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline const RenewalSettings& GetRenewalSettings() const{ return m_renewalSettings; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline bool RenewalSettingsHasBeenSet() const { return m_renewalSettingsHasBeenSet; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline void SetRenewalSettings(const RenewalSettings& value) { m_renewalSettingsHasBeenSet = true; m_renewalSettings = value; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline void SetRenewalSettings(RenewalSettings&& value) { m_renewalSettingsHasBeenSet = true; m_renewalSettings = std::move(value); }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline PurchaseOfferingRequest& WithRenewalSettings(const RenewalSettings& value) { SetRenewalSettings(value); return *this;}
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline PurchaseOfferingRequest& WithRenewalSettings(RenewalSettings&& value) { SetRenewalSettings(std::move(value)); return *this;}
 
 
     /**
@@ -314,22 +346,25 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
+
+    RenewalSettings m_renewalSettings;
+    bool m_renewalSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

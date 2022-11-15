@@ -83,7 +83,7 @@ namespace Model
   private:
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
   };
 
 } // namespace Model

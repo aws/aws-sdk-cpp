@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_inputDeviceId;
-    bool m_inputDeviceIdHasBeenSet;
+    bool m_inputDeviceIdHasBeenSet = false;
 
     AcceptHeader m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
   };
 
 } // namespace Model

@@ -497,82 +497,82 @@ namespace Model
 
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline const Aws::String& GetCreatedByService() const{ return m_createdByService; }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline bool CreatedByServiceHasBeenSet() const { return m_createdByServiceHasBeenSet; }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline void SetCreatedByService(const Aws::String& value) { m_createdByServiceHasBeenSet = true; m_createdByService = value; }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline void SetCreatedByService(Aws::String&& value) { m_createdByServiceHasBeenSet = true; m_createdByService = std::move(value); }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline void SetCreatedByService(const char* value) { m_createdByServiceHasBeenSet = true; m_createdByService.assign(value); }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline RemediationConfiguration& WithCreatedByService(const Aws::String& value) { SetCreatedByService(value); return *this;}
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline RemediationConfiguration& WithCreatedByService(Aws::String&& value) { SetCreatedByService(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline RemediationConfiguration& WithCreatedByService(const char* value) { SetCreatedByService(value); return *this;}
 
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     RemediationTargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::String m_targetVersion;
-    bool m_targetVersionHasBeenSet;
+    bool m_targetVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, RemediationParameterValue> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     bool m_automatic;
-    bool m_automaticHasBeenSet;
+    bool m_automaticHasBeenSet = false;
 
     ExecutionControls m_executionControls;
-    bool m_executionControlsHasBeenSet;
+    bool m_executionControlsHasBeenSet = false;
 
     int m_maximumAutomaticAttempts;
-    bool m_maximumAutomaticAttemptsHasBeenSet;
+    bool m_maximumAutomaticAttemptsHasBeenSet = false;
 
     long long m_retryAttemptSeconds;
-    bool m_retryAttemptSecondsHasBeenSet;
+    bool m_retryAttemptSecondsHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_createdByService;
-    bool m_createdByServiceHasBeenSet;
+    bool m_createdByServiceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -366,16 +366,16 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerArn;
-    bool m_loadBalancerArnHasBeenSet;
+    bool m_loadBalancerArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<SubnetMapping> m_subnetMappings;
-    bool m_subnetMappingsHasBeenSet;
+    bool m_subnetMappingsHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

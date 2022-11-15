@@ -237,7 +237,7 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -292,7 +292,7 @@ JsonValue BucketMetadata::Jsonize() const
 
   if(m_bucketCreatedAtHasBeenSet)
   {
-   payload.WithString("bucketCreatedAt", m_bucketCreatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("bucketCreatedAt", m_bucketCreatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_bucketNameHasBeenSet)
@@ -332,7 +332,7 @@ JsonValue BucketMetadata::Jsonize() const
 
   if(m_lastUpdatedHasBeenSet)
   {
-   payload.WithString("lastUpdated", m_lastUpdated.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastUpdated", m_lastUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_objectCountHasBeenSet)
@@ -390,7 +390,7 @@ JsonValue BucketMetadata::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -160,7 +160,7 @@ CreatePrivateVirtualInterfaceResult& CreatePrivateVirtualInterfaceResult::operat
 
   if(jsonValue.ValueExists("routeFilterPrefixes"))
   {
-    Array<JsonView> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
+    Aws::Utils::Array<JsonView> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
     for(unsigned routeFilterPrefixesIndex = 0; routeFilterPrefixesIndex < routeFilterPrefixesJsonList.GetLength(); ++routeFilterPrefixesIndex)
     {
       m_routeFilterPrefixes.push_back(routeFilterPrefixesJsonList[routeFilterPrefixesIndex].AsObject());
@@ -169,7 +169,7 @@ CreatePrivateVirtualInterfaceResult& CreatePrivateVirtualInterfaceResult::operat
 
   if(jsonValue.ValueExists("bgpPeers"))
   {
-    Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
+    Aws::Utils::Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
     for(unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex)
     {
       m_bgpPeers.push_back(bgpPeersJsonList[bgpPeersIndex].AsObject());
@@ -196,7 +196,7 @@ CreatePrivateVirtualInterfaceResult& CreatePrivateVirtualInterfaceResult::operat
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

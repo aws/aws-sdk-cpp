@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_typedLinkName;
-    bool m_typedLinkNameHasBeenSet;
+    bool m_typedLinkNameHasBeenSet = false;
   };
 
 } // namespace Model

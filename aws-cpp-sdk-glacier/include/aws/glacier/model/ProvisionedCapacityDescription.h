@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_capacityId;
-    bool m_capacityIdHasBeenSet;
+    bool m_capacityIdHasBeenSet = false;
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
   };
 
 } // namespace Model

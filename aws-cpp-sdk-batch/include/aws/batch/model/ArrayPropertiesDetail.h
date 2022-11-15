@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the array properties of a job.</p><p><h3>See
+   * <p>An object that represents the array properties of a job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ArrayPropertiesDetail">AWS
    * API Reference</a></p>
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, int> m_statusSummary;
-    bool m_statusSummaryHasBeenSet;
+    bool m_statusSummaryHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
   };
 
 } // namespace Model

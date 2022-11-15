@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_customDnsServers;
-    bool m_customDnsServersHasBeenSet;
+    bool m_customDnsServersHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

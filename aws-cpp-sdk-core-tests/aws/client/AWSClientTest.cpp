@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -94,18 +95,26 @@ protected:
         mockHttpClient = nullptr;
         mockHttpClientFactory = nullptr;
 
+        Aws::Environment::UnSetEnv("AWS_LAMBDA_FUNCTION_NAME");
+        Aws::Environment::UnSetEnv("_X_AMZN_TRACE_ID");
+
         CleanupHttp();
         InitHttp();
     }
 
     void QueueMockResponse(HttpResponseCode code, const HeaderValueCollection& headers)
     {
+        QueueMockResponse(code, headers, "ss");
+    }
+
+    void QueueMockResponse(HttpResponseCode code, const HeaderValueCollection& headers, const Aws::String& body)
+    {
         auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         httpRequest->SetResolvedRemoteHost("127.0.0.1");
         auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
         httpResponse->SetResponseCode(code);
-        httpResponse->GetResponseBody() << "";
+        httpResponse->GetResponseBody() << body;
         for(auto&& header : headers)
         {
             httpResponse->AddHeader(header.first, header.second);
@@ -334,7 +343,7 @@ TEST_F(AWSClientTestSuite, TestRetryHeaders)
     QueueMockResponse(HttpResponseCode::OK, HeaderValueCollection{std::make_pair("Date", serverTime3.ToGmtString(DateFormat::RFC822))});
     AmazonWebServiceRequestMock request;
     auto outcome = client->MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(2, client->GetRequestAttemptedRetries());
     const auto& requests = mockHttpClient->GetAllRequestsMade();
     ASSERT_EQ(3u, requests.size());
@@ -398,7 +407,7 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     QueueMockResponse(HttpResponseCode::OK, responseHeaders);
     AmazonWebServiceRequestMock request;
     auto outcome = clientWithStandardRetryStrategy.MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(500, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 
@@ -418,7 +427,7 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     QueueMockResponse(requestTimeoutError, responseHeaders); // Acquire 10 tokens
     QueueMockResponse(HttpResponseCode::OK, responseHeaders); // Release 10 tokens
     outcome = clientWithStandardRetryStrategy.MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(2, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(480, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 
@@ -441,9 +450,123 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     // 6. Successful request.
     QueueMockResponse(HttpResponseCode::OK, responseHeaders); // Release 1 token
     outcome = clientWithStandardRetryStrategy.MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(3, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+}
+
+TEST_F(AWSClientTestSuite, TestRecursionDetection)
+{
+    struct AWSClientTestSuite_TestRecursionDetection_TestCase
+    {
+        Aws::Map<Aws::String, Aws::String> envVars;
+        Aws::Map<Aws::String, Aws::String> requestHeadersBefore;
+        Aws::Map<Aws::String, Aws::String> requestHeadersAfter;
+        bool xAmznTraceIdHeaderExpected;
+    };
+
+    static const std::vector<AWSClientTestSuite_TestRecursionDetection_TestCase> TEST_CASES =
+            {
+                    {{}, {}, {}, false},
+
+                    {/*envVars*/ {{"AWS_LAMBDA_FUNCTION_NAME", "some-function"},
+                                  {"_X_AMZN_TRACE_ID", "Root=1-5759e988-bd862e3fe1be46a994272793;Parent=53995c3f42cd8ad8;Sampled=1;lineage=a87bd80c:0,68fd508a:5,c512fbe3:2"}},
+                     /*requestHeadersBefore*/ {},
+                     /*requestHeadersAfter*/  {{"X-Amzn-Trace-Id", "Root=1-5759e988-bd862e3fe1be46a994272793;Parent=53995c3f42cd8ad8;Sampled=1;lineage=a87bd80c:0,68fd508a:5,c512fbe3:2"}},
+                     /*xAmznTraceIdHeaderExpected*/ true},
+
+                    {/*envVars*/ {{"_X_AMZN_TRACE_ID", "Root=1-5759e988-bd862e3fe1be46a994272793;Parent=53995c3f42cd8ad8;Sampled=1;lineage=a87bd80c:0,68fd508a:5,c512fbe3:2"}},
+                     /*requestHeadersBefore*/ {},
+                     /*requestHeadersAfter*/  {},
+                     /*xAmznTraceIdHeaderExpected*/ false},
+
+                    {/*envVars*/ {{"AWS_LAMBDA_FUNCTION_NAME", "some-function"},
+                                  {"_X_AMZN_TRACE_ID", "first\nsecond"}},
+                     /*requestHeadersBefore*/ {},
+                     /*requestHeadersAfter*/  {{"X-Amzn-Trace-Id", "first%0Asecond"}},
+                     /*xAmznTraceIdHeaderExpected*/ true},
+
+                    {/*envVars*/ {{"AWS_LAMBDA_FUNCTION_NAME", "some-function"},
+                                  {"_X_AMZN_TRACE_ID", "test123-=;:+&[]{}\"'"}},
+                     /*requestHeadersBefore*/ {},
+                     /*requestHeadersAfter*/  {{"X-Amzn-Trace-Id", "test123-=;:+&[]{}\"'"}},
+                     /*xAmznTraceIdHeaderExpected*/ true}
+            };
+
+    for(const auto& test_case : TEST_CASES)
+    {
+        // Set environment
+        Aws::Environment::UnSetEnv("AWS_LAMBDA_FUNCTION_NAME");
+        Aws::Environment::UnSetEnv("_X_AMZN_TRACE_ID");
+
+        for(const auto& envVarToSet : test_case.envVars)
+        {
+            Aws::Environment::SetEnv(envVarToSet.first.c_str(), envVarToSet.second.c_str(), /*overwrite*/ true);
+        }
+
+        ClientConfiguration config;
+        auto countedRetryStrategy = Aws::MakeShared<CountedRetryStrategy>(ALLOCATION_TAG);
+        config.retryStrategy = std::static_pointer_cast<DefaultRetryStrategy>(countedRetryStrategy); // must be set thanks to the Mock design
+        MockAWSClient mockedClient(config);
+
+        HeaderValueCollection responseHeaders;
+        QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+
+        // Prepare request
+        AmazonWebServiceRequestMock request;
+        auto requestHeaders = request.GetHeaders();
+        for(const auto& requestHeaderToSet : test_case.requestHeadersBefore)
+        {
+            requestHeaders.emplace(requestHeaderToSet);
+        }
+        request.SetHeaders(requestHeaders);
+
+        // Make request
+        auto outcome = mockedClient.MakeRequest(request);
+        AWS_ASSERT_SUCCESS(outcome);
+
+        // Validate actual headers set
+        const auto& requestsMade = mockHttpClient->GetAllRequestsMade();
+        ASSERT_EQ(1u, requestsMade.size());
+
+        if(test_case.xAmznTraceIdHeaderExpected)
+        {
+            for(const auto& expectedHeader : test_case.requestHeadersAfter)
+            {
+                ASSERT_TRUE(requestsMade[0].HasHeader(expectedHeader.first.c_str()));
+                const auto& headersMade = requestsMade[0].GetHeaders();
+                auto setHeaderIt = headersMade.find(expectedHeader.first);
+                if(setHeaderIt == headersMade.end())
+                {
+                    setHeaderIt = headersMade.find(Aws::Utils::StringUtils::ToLower(expectedHeader.first.c_str()));
+                }
+
+                ASSERT_TRUE(setHeaderIt != headersMade.end());
+                if(setHeaderIt != headersMade.end())
+                {
+                    ASSERT_EQ(expectedHeader.second, setHeaderIt->second);
+                }
+            }
+        }
+        else
+        {
+            ASSERT_FALSE(requestsMade[0].HasHeader("X-Amzn-Trace-Id"));
+        }
+        mockHttpClient->Reset();
+    }
+}
+
+TEST_F(AWSClientTestSuite, TestErrorInBodyOfResponse)
+{
+    HeaderValueCollection responseHeaders;
+    AmazonWebServiceRequestMock request;
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders, "<Error><Code>SomeException</Code><Message>TestErrorInBodyOfResponse</Message></Error>");
+    auto outcome = client->MakeRequest(request);
+
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(outcome.GetError().GetErrorType(), CoreErrors::SLOW_DOWN);
+    ASSERT_EQ(outcome.GetError().GetMessage(), "TestErrorInBodyOfResponse");
+    ASSERT_EQ(outcome.GetError().GetExceptionName(), "TestErrorInBodyOfResponse");
 }
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
@@ -614,7 +737,7 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationSetsRegionToProfile)
 {
     // create a config file with profile named Dijkstra
     Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    configFileNew << "[Dijkstra]" << std::endl;
+    configFileNew << "[profile Dijkstra]" << std::endl;  // profile keyword is mandatory per specification
     configFileNew << "region = " << Aws::Region::US_WEST_2 << std::endl;
 
     configFileNew.flush();

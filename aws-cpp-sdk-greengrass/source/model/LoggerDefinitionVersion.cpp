@@ -33,7 +33,7 @@ LoggerDefinitionVersion& LoggerDefinitionVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Loggers"))
   {
-    Array<JsonView> loggersJsonList = jsonValue.GetArray("Loggers");
+    Aws::Utils::Array<JsonView> loggersJsonList = jsonValue.GetArray("Loggers");
     for(unsigned loggersIndex = 0; loggersIndex < loggersJsonList.GetLength(); ++loggersIndex)
     {
       m_loggers.push_back(loggersJsonList[loggersIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue LoggerDefinitionVersion::Jsonize() const
 
   if(m_loggersHasBeenSet)
   {
-   Array<JsonValue> loggersJsonList(m_loggers.size());
+   Aws::Utils::Array<JsonValue> loggersJsonList(m_loggers.size());
    for(unsigned loggersIndex = 0; loggersIndex < loggersJsonList.GetLength(); ++loggersIndex)
    {
      loggersJsonList[loggersIndex].AsObject(m_loggers[loggersIndex].Jsonize());

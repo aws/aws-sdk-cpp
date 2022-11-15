@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Spend m_actualSpend;
-    bool m_actualSpendHasBeenSet;
+    bool m_actualSpendHasBeenSet = false;
 
     Spend m_forecastedSpend;
-    bool m_forecastedSpendHasBeenSet;
+    bool m_forecastedSpendHasBeenSet = false;
   };
 
 } // namespace Model

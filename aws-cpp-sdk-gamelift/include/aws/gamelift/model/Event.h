@@ -923,22 +923,22 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     EventCode m_eventCode;
-    bool m_eventCodeHasBeenSet;
+    bool m_eventCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_preSignedLogUrl;
-    bool m_preSignedLogUrlHasBeenSet;
+    bool m_preSignedLogUrlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ BatchListObjectParentPathsResponse& BatchListObjectParentPathsResponse::operator
 {
   if(jsonValue.ValueExists("PathToObjectIdentifiersList"))
   {
-    Array<JsonView> pathToObjectIdentifiersListJsonList = jsonValue.GetArray("PathToObjectIdentifiersList");
+    Aws::Utils::Array<JsonView> pathToObjectIdentifiersListJsonList = jsonValue.GetArray("PathToObjectIdentifiersList");
     for(unsigned pathToObjectIdentifiersListIndex = 0; pathToObjectIdentifiersListIndex < pathToObjectIdentifiersListJsonList.GetLength(); ++pathToObjectIdentifiersListIndex)
     {
       m_pathToObjectIdentifiersList.push_back(pathToObjectIdentifiersListJsonList[pathToObjectIdentifiersListIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue BatchListObjectParentPathsResponse::Jsonize() const
 
   if(m_pathToObjectIdentifiersListHasBeenSet)
   {
-   Array<JsonValue> pathToObjectIdentifiersListJsonList(m_pathToObjectIdentifiersList.size());
+   Aws::Utils::Array<JsonValue> pathToObjectIdentifiersListJsonList(m_pathToObjectIdentifiersList.size());
    for(unsigned pathToObjectIdentifiersListIndex = 0; pathToObjectIdentifiersListIndex < pathToObjectIdentifiersListJsonList.GetLength(); ++pathToObjectIdentifiersListIndex)
    {
      pathToObjectIdentifiersListJsonList[pathToObjectIdentifiersListIndex].AsObject(m_pathToObjectIdentifiersList[pathToObjectIdentifiersListIndex].Jsonize());

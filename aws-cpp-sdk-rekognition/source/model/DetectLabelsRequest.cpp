@@ -17,7 +17,9 @@ DetectLabelsRequest::DetectLabelsRequest() :
     m_maxLabels(0),
     m_maxLabelsHasBeenSet(false),
     m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false)
+    m_minConfidenceHasBeenSet(false),
+    m_featuresHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,23 @@ Aws::String DetectLabelsRequest::SerializePayload() const
   if(m_minConfidenceHasBeenSet)
   {
    payload.WithDouble("MinConfidence", m_minConfidence);
+
+  }
+
+  if(m_featuresHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> featuresJsonList(m_features.size());
+   for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+   {
+     featuresJsonList[featuresIndex].AsString(DetectLabelsFeatureNameMapper::GetNameForDetectLabelsFeatureName(m_features[featuresIndex]));
+   }
+   payload.WithArray("Features", std::move(featuresJsonList));
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
 
   }
 

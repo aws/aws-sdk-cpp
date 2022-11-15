@@ -364,19 +364,19 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_importToken;
-    bool m_importTokenHasBeenSet;
+    bool m_importTokenHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_encryptedKeyMaterial;
-    bool m_encryptedKeyMaterialHasBeenSet;
+    bool m_encryptedKeyMaterialHasBeenSet = false;
 
     Aws::Utils::DateTime m_validTo;
-    bool m_validToHasBeenSet;
+    bool m_validToHasBeenSet = false;
 
     ExpirationModelType m_expirationModel;
-    bool m_expirationModelHasBeenSet;
+    bool m_expirationModelHasBeenSet = false;
   };
 
 } // namespace Model

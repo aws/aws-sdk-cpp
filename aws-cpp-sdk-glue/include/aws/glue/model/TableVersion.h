@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Table m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -110,10 +110,10 @@ namespace Model
   private:
 
     int m_instancePort;
-    bool m_instancePortHasBeenSet;
+    bool m_instancePortHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNames;
-    bool m_policyNamesHasBeenSet;
+    bool m_policyNamesHasBeenSet = false;
   };
 
 } // namespace Model

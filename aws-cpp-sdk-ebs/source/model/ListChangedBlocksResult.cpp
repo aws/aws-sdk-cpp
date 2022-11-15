@@ -34,7 +34,7 @@ ListChangedBlocksResult& ListChangedBlocksResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ChangedBlocks"))
   {
-    Array<JsonView> changedBlocksJsonList = jsonValue.GetArray("ChangedBlocks");
+    Aws::Utils::Array<JsonView> changedBlocksJsonList = jsonValue.GetArray("ChangedBlocks");
     for(unsigned changedBlocksIndex = 0; changedBlocksIndex < changedBlocksJsonList.GetLength(); ++changedBlocksIndex)
     {
       m_changedBlocks.push_back(changedBlocksJsonList[changedBlocksIndex].AsObject());

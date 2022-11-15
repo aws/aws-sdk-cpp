@@ -48,7 +48,7 @@ Aws::String IndexFacesRequest::SerializePayload() const
 
   if(m_detectionAttributesHasBeenSet)
   {
-   Array<JsonValue> detectionAttributesJsonList(m_detectionAttributes.size());
+   Aws::Utils::Array<JsonValue> detectionAttributesJsonList(m_detectionAttributes.size());
    for(unsigned detectionAttributesIndex = 0; detectionAttributesIndex < detectionAttributesJsonList.GetLength(); ++detectionAttributesIndex)
    {
      detectionAttributesJsonList[detectionAttributesIndex].AsString(AttributeMapper::GetNameForAttribute(m_detectionAttributes[detectionAttributesIndex]));

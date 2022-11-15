@@ -30,7 +30,7 @@ ListInstanceTypeDetailsResult& ListInstanceTypeDetailsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceTypeDetails"))
   {
-    Array<JsonView> instanceTypeDetailsJsonList = jsonValue.GetArray("InstanceTypeDetails");
+    Aws::Utils::Array<JsonView> instanceTypeDetailsJsonList = jsonValue.GetArray("InstanceTypeDetails");
     for(unsigned instanceTypeDetailsIndex = 0; instanceTypeDetailsIndex < instanceTypeDetailsJsonList.GetLength(); ++instanceTypeDetailsIndex)
     {
       m_instanceTypeDetails.push_back(instanceTypeDetailsJsonList[instanceTypeDetailsIndex].AsObject());

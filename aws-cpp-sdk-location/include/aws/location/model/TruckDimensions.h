@@ -42,50 +42,58 @@ namespace Model
 
     /**
      * <p>The height of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 50 meters. </p> 
      */
     inline double GetHeight() const{ return m_height; }
 
     /**
      * <p>The height of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 50 meters. </p> 
      */
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
 
     /**
      * <p>The height of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 50 meters. </p> 
      */
     inline void SetHeight(double value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
      * <p>The height of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 50 meters. </p> 
      */
     inline TruckDimensions& WithHeight(double value) { SetHeight(value); return *this;}
 
 
     /**
      * <p>The length of the truck.</p> <ul> <li> <p>For example, <code>15.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 300 meters. </p> 
      */
     inline double GetLength() const{ return m_length; }
 
     /**
      * <p>The length of the truck.</p> <ul> <li> <p>For example, <code>15.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 300 meters. </p> 
      */
     inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
 
     /**
      * <p>The length of the truck.</p> <ul> <li> <p>For example, <code>15.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 300 meters. </p> 
      */
     inline void SetLength(double value) { m_lengthHasBeenSet = true; m_length = value; }
 
     /**
      * <p>The length of the truck.</p> <ul> <li> <p>For example, <code>15.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 300 meters. </p> 
      */
     inline TruckDimensions& WithLength(double value) { SetLength(value); return *this;}
 
@@ -129,41 +137,45 @@ namespace Model
 
     /**
      * <p>The width of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 50 meters. </p> 
      */
     inline double GetWidth() const{ return m_width; }
 
     /**
      * <p>The width of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 50 meters. </p> 
      */
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
 
     /**
      * <p>The width of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 50 meters. </p> 
      */
     inline void SetWidth(double value) { m_widthHasBeenSet = true; m_width = value; }
 
     /**
      * <p>The width of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>
+     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
+     * must be between 0 and 50 meters. </p> 
      */
     inline TruckDimensions& WithWidth(double value) { SetWidth(value); return *this;}
 
   private:
 
     double m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     double m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
 
     DimensionUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     double m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

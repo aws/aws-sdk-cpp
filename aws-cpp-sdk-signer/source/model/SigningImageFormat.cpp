@@ -37,7 +37,7 @@ SigningImageFormat& SigningImageFormat::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("supportedFormats"))
   {
-    Array<JsonView> supportedFormatsJsonList = jsonValue.GetArray("supportedFormats");
+    Aws::Utils::Array<JsonView> supportedFormatsJsonList = jsonValue.GetArray("supportedFormats");
     for(unsigned supportedFormatsIndex = 0; supportedFormatsIndex < supportedFormatsJsonList.GetLength(); ++supportedFormatsIndex)
     {
       m_supportedFormats.push_back(ImageFormatMapper::GetImageFormatForName(supportedFormatsJsonList[supportedFormatsIndex].AsString()));
@@ -61,7 +61,7 @@ JsonValue SigningImageFormat::Jsonize() const
 
   if(m_supportedFormatsHasBeenSet)
   {
-   Array<JsonValue> supportedFormatsJsonList(m_supportedFormats.size());
+   Aws::Utils::Array<JsonValue> supportedFormatsJsonList(m_supportedFormats.size());
    for(unsigned supportedFormatsIndex = 0; supportedFormatsIndex < supportedFormatsJsonList.GetLength(); ++supportedFormatsIndex)
    {
      supportedFormatsJsonList[supportedFormatsIndex].AsString(ImageFormatMapper::GetNameForImageFormat(m_supportedFormats[supportedFormatsIndex]));

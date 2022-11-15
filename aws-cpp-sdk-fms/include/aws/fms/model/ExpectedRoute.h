@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Aws::String m_ipV4Cidr;
-    bool m_ipV4CidrHasBeenSet;
+    bool m_ipV4CidrHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_ipV6Cidr;
-    bool m_ipV6CidrHasBeenSet;
+    bool m_ipV6CidrHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_contributingSubnets;
-    bool m_contributingSubnetsHasBeenSet;
+    bool m_contributingSubnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedTargets;
-    bool m_allowedTargetsHasBeenSet;
+    bool m_allowedTargetsHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
   };
 
 } // namespace Model

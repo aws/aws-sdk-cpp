@@ -20,7 +20,8 @@ namespace Model
     START_DRILL,
     FAILBACK,
     DIAGNOSTIC,
-    TERMINATE_RECOVERY_INSTANCES
+    TERMINATE_RECOVERY_INSTANCES,
+    TARGET_ACCOUNT
   };
 
 namespace InitiatedByMapper

@@ -30,7 +30,7 @@ GetDistributionBundlesResult& GetDistributionBundlesResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("bundles"))
   {
-    Array<JsonView> bundlesJsonList = jsonValue.GetArray("bundles");
+    Aws::Utils::Array<JsonView> bundlesJsonList = jsonValue.GetArray("bundles");
     for(unsigned bundlesIndex = 0; bundlesIndex < bundlesJsonList.GetLength(); ++bundlesIndex)
     {
       m_bundles.push_back(bundlesJsonList[bundlesIndex].AsObject());

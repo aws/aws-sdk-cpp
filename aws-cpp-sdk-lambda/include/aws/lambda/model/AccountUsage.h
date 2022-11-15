@@ -84,10 +84,10 @@ namespace Model
   private:
 
     long long m_totalCodeSize;
-    bool m_totalCodeSizeHasBeenSet;
+    bool m_totalCodeSizeHasBeenSet = false;
 
     long long m_functionCount;
-    bool m_functionCountHasBeenSet;
+    bool m_functionCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -117,10 +117,10 @@ provide the language to consider when translating
   private:
 
     DvbSubOcrLanguage m_ocrLanguage;
-    bool m_ocrLanguageHasBeenSet;
+    bool m_ocrLanguageHasBeenSet = false;
 
     int m_pid;
-    bool m_pidHasBeenSet;
+    bool m_pidHasBeenSet = false;
   };
 
 } // namespace Model

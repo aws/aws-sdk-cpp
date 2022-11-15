@@ -82,7 +82,7 @@ namespace Model
   private:
 
     TermsAggregation m_termsAggregation;
-    bool m_termsAggregationHasBeenSet;
+    bool m_termsAggregationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_policyTypeNames;
-    bool m_policyTypeNamesHasBeenSet;
+    bool m_policyTypeNamesHasBeenSet = false;
   };
 
 } // namespace Model

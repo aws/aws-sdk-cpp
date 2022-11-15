@@ -44,7 +44,7 @@ ChildShard& ChildShard::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ParentShards"))
   {
-    Array<JsonView> parentShardsJsonList = jsonValue.GetArray("ParentShards");
+    Aws::Utils::Array<JsonView> parentShardsJsonList = jsonValue.GetArray("ParentShards");
     for(unsigned parentShardsIndex = 0; parentShardsIndex < parentShardsJsonList.GetLength(); ++parentShardsIndex)
     {
       m_parentShards.push_back(parentShardsJsonList[parentShardsIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue ChildShard::Jsonize() const
 
   if(m_parentShardsHasBeenSet)
   {
-   Array<JsonValue> parentShardsJsonList(m_parentShards.size());
+   Aws::Utils::Array<JsonValue> parentShardsJsonList(m_parentShards.size());
    for(unsigned parentShardsIndex = 0; parentShardsIndex < parentShardsJsonList.GetLength(); ++parentShardsIndex)
    {
      parentShardsJsonList[parentShardsIndex].AsString(m_parentShards[parentShardsIndex]);

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     EC2ResourceUtilization m_eC2ResourceUtilization;
-    bool m_eC2ResourceUtilizationHasBeenSet;
+    bool m_eC2ResourceUtilizationHasBeenSet = false;
   };
 
 } // namespace Model

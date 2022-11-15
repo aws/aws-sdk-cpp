@@ -133,13 +133,13 @@ namespace Model
   private:
 
     DetectedField m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     DetectedField m_metricSetFrequency;
-    bool m_metricSetFrequencyHasBeenSet;
+    bool m_metricSetFrequencyHasBeenSet = false;
 
     DetectedMetricSource m_metricSource;
-    bool m_metricSourceHasBeenSet;
+    bool m_metricSourceHasBeenSet = false;
   };
 
 } // namespace Model

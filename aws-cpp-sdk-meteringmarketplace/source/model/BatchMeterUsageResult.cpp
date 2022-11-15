@@ -30,7 +30,7 @@ BatchMeterUsageResult& BatchMeterUsageResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Results"))
   {
-    Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
+    Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
     for(unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex)
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchMeterUsageResult& BatchMeterUsageResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("UnprocessedRecords"))
   {
-    Array<JsonView> unprocessedRecordsJsonList = jsonValue.GetArray("UnprocessedRecords");
+    Aws::Utils::Array<JsonView> unprocessedRecordsJsonList = jsonValue.GetArray("UnprocessedRecords");
     for(unsigned unprocessedRecordsIndex = 0; unprocessedRecordsIndex < unprocessedRecordsJsonList.GetLength(); ++unprocessedRecordsIndex)
     {
       m_unprocessedRecords.push_back(unprocessedRecordsJsonList[unprocessedRecordsIndex].AsObject());

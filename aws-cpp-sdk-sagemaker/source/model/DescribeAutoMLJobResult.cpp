@@ -50,7 +50,7 @@ DescribeAutoMLJobResult& DescribeAutoMLJobResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("InputDataConfig"))
   {
-    Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
+    Aws::Utils::Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
     for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
     {
       m_inputDataConfig.push_back(inputDataConfigJsonList[inputDataConfigIndex].AsObject());
@@ -113,7 +113,7 @@ DescribeAutoMLJobResult& DescribeAutoMLJobResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("PartialFailureReasons"))
   {
-    Array<JsonView> partialFailureReasonsJsonList = jsonValue.GetArray("PartialFailureReasons");
+    Aws::Utils::Array<JsonView> partialFailureReasonsJsonList = jsonValue.GetArray("PartialFailureReasons");
     for(unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength(); ++partialFailureReasonsIndex)
     {
       m_partialFailureReasons.push_back(partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject());

@@ -22,7 +22,8 @@ ListTablesRequest::ListTablesRequest() :
     m_nextTokenHasBeenSet(false),
     m_schemaPatternHasBeenSet(false),
     m_secretArnHasBeenSet(false),
-    m_tablePatternHasBeenSet(false)
+    m_tablePatternHasBeenSet(false),
+    m_workgroupNameHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,12 @@ Aws::String ListTablesRequest::SerializePayload() const
   if(m_tablePatternHasBeenSet)
   {
    payload.WithString("TablePattern", m_tablePattern);
+
+  }
+
+  if(m_workgroupNameHasBeenSet)
+  {
+   payload.WithString("WorkgroupName", m_workgroupName);
 
   }
 

@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_lambdaArn;
-    bool m_lambdaArnHasBeenSet;
+    bool m_lambdaArnHasBeenSet = false;
 
     Aws::Vector<EventTriggerDefinition> m_eventTriggers;
-    bool m_eventTriggersHasBeenSet;
+    bool m_eventTriggersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,49 +33,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the media capture pipeline being deleted. </p>
+     * <p>The ID of the media pipeline being deleted. </p>
      */
     inline const Aws::String& GetMediaPipelineId() const{ return m_mediaPipelineId; }
 
     /**
-     * <p>The ID of the media capture pipeline being deleted. </p>
+     * <p>The ID of the media pipeline being deleted. </p>
      */
     inline bool MediaPipelineIdHasBeenSet() const { return m_mediaPipelineIdHasBeenSet; }
 
     /**
-     * <p>The ID of the media capture pipeline being deleted. </p>
+     * <p>The ID of the media pipeline being deleted. </p>
      */
     inline void SetMediaPipelineId(const Aws::String& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = value; }
 
     /**
-     * <p>The ID of the media capture pipeline being deleted. </p>
+     * <p>The ID of the media pipeline being deleted. </p>
      */
     inline void SetMediaPipelineId(Aws::String&& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = std::move(value); }
 
     /**
-     * <p>The ID of the media capture pipeline being deleted. </p>
+     * <p>The ID of the media pipeline being deleted. </p>
      */
     inline void SetMediaPipelineId(const char* value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId.assign(value); }
 
     /**
-     * <p>The ID of the media capture pipeline being deleted. </p>
+     * <p>The ID of the media pipeline being deleted. </p>
      */
     inline DeleteMediaCapturePipelineRequest& WithMediaPipelineId(const Aws::String& value) { SetMediaPipelineId(value); return *this;}
 
     /**
-     * <p>The ID of the media capture pipeline being deleted. </p>
+     * <p>The ID of the media pipeline being deleted. </p>
      */
     inline DeleteMediaCapturePipelineRequest& WithMediaPipelineId(Aws::String&& value) { SetMediaPipelineId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the media capture pipeline being deleted. </p>
+     * <p>The ID of the media pipeline being deleted. </p>
      */
     inline DeleteMediaCapturePipelineRequest& WithMediaPipelineId(const char* value) { SetMediaPipelineId(value); return *this;}
 
   private:
 
     Aws::String m_mediaPipelineId;
-    bool m_mediaPipelineIdHasBeenSet;
+    bool m_mediaPipelineIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ Aws::String BacktrackDBClusterRequest::SerializePayload() const
 
   if(m_backtrackToHasBeenSet)
   {
-    ss << "BacktrackTo=" << StringUtils::URLEncode(m_backtrackTo.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "BacktrackTo=" << StringUtils::URLEncode(m_backtrackTo.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_forceHasBeenSet)

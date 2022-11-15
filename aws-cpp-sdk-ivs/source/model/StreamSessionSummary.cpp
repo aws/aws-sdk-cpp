@@ -76,7 +76,7 @@ JsonValue StreamSessionSummary::Jsonize() const
 
   if(m_endTimeHasBeenSet)
   {
-   payload.WithString("endTime", m_endTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_hasErrorEventHasBeenSet)
@@ -87,7 +87,7 @@ JsonValue StreamSessionSummary::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithString("startTime", m_startTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_streamIdHasBeenSet)

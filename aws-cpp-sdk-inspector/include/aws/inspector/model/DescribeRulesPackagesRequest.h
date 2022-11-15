@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_rulesPackageArns;
-    bool m_rulesPackageArnsHasBeenSet;
+    bool m_rulesPackageArnsHasBeenSet = false;
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

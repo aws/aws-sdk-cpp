@@ -180,16 +180,16 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Aws::String m_proxySessionId;
-    bool m_proxySessionIdHasBeenSet;
+    bool m_proxySessionIdHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     int m_expiryMinutes;
-    bool m_expiryMinutesHasBeenSet;
+    bool m_expiryMinutesHasBeenSet = false;
   };
 
 } // namespace Model

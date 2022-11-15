@@ -30,7 +30,7 @@ ListContextsResult& ListContextsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ContextSummaries"))
   {
-    Array<JsonView> contextSummariesJsonList = jsonValue.GetArray("ContextSummaries");
+    Aws::Utils::Array<JsonView> contextSummariesJsonList = jsonValue.GetArray("ContextSummaries");
     for(unsigned contextSummariesIndex = 0; contextSummariesIndex < contextSummariesJsonList.GetLength(); ++contextSummariesIndex)
     {
       m_contextSummaries.push_back(contextSummariesJsonList[contextSummariesIndex].AsObject());

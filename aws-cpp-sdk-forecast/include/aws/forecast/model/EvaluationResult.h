@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_algorithmArn;
-    bool m_algorithmArnHasBeenSet;
+    bool m_algorithmArnHasBeenSet = false;
 
     Aws::Vector<WindowSummary> m_testWindows;
-    bool m_testWindowsHasBeenSet;
+    bool m_testWindowsHasBeenSet = false;
   };
 
 } // namespace Model

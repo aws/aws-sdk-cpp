@@ -103,7 +103,7 @@ Evidence& Evidence::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourcesIncluded"))
   {
-    Array<JsonView> resourcesIncludedJsonList = jsonValue.GetArray("resourcesIncluded");
+    Aws::Utils::Array<JsonView> resourcesIncludedJsonList = jsonValue.GetArray("resourcesIncluded");
     for(unsigned resourcesIncludedIndex = 0; resourcesIncludedIndex < resourcesIncludedJsonList.GetLength(); ++resourcesIncludedIndex)
     {
       m_resourcesIncluded.push_back(resourcesIncludedJsonList[resourcesIncludedIndex].AsObject());
@@ -214,7 +214,7 @@ JsonValue Evidence::Jsonize() const
 
   if(m_resourcesIncludedHasBeenSet)
   {
-   Array<JsonValue> resourcesIncludedJsonList(m_resourcesIncluded.size());
+   Aws::Utils::Array<JsonValue> resourcesIncludedJsonList(m_resourcesIncluded.size());
    for(unsigned resourcesIncludedIndex = 0; resourcesIncludedIndex < resourcesIncludedJsonList.GetLength(); ++resourcesIncludedIndex)
    {
      resourcesIncludedJsonList[resourcesIncludedIndex].AsObject(m_resourcesIncluded[resourcesIncludedIndex].Jsonize());

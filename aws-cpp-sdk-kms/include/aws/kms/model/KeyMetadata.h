@@ -1227,70 +1227,70 @@ namespace Model
   private:
 
     Aws::String m_aWSAccountId;
-    bool m_aWSAccountIdHasBeenSet;
+    bool m_aWSAccountIdHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     KeyUsageType m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     KeyState m_keyState;
-    bool m_keyStateHasBeenSet;
+    bool m_keyStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletionDate;
-    bool m_deletionDateHasBeenSet;
+    bool m_deletionDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_validTo;
-    bool m_validToHasBeenSet;
+    bool m_validToHasBeenSet = false;
 
     OriginType m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
 
     Aws::String m_cloudHsmClusterId;
-    bool m_cloudHsmClusterIdHasBeenSet;
+    bool m_cloudHsmClusterIdHasBeenSet = false;
 
     ExpirationModelType m_expirationModel;
-    bool m_expirationModelHasBeenSet;
+    bool m_expirationModelHasBeenSet = false;
 
     KeyManagerType m_keyManager;
-    bool m_keyManagerHasBeenSet;
+    bool m_keyManagerHasBeenSet = false;
 
     KeySpec m_keySpec;
-    bool m_keySpecHasBeenSet;
+    bool m_keySpecHasBeenSet = false;
 
     Aws::Vector<EncryptionAlgorithmSpec> m_encryptionAlgorithms;
-    bool m_encryptionAlgorithmsHasBeenSet;
+    bool m_encryptionAlgorithmsHasBeenSet = false;
 
     Aws::Vector<SigningAlgorithmSpec> m_signingAlgorithms;
-    bool m_signingAlgorithmsHasBeenSet;
+    bool m_signingAlgorithmsHasBeenSet = false;
 
     bool m_multiRegion;
-    bool m_multiRegionHasBeenSet;
+    bool m_multiRegionHasBeenSet = false;
 
     MultiRegionConfiguration m_multiRegionConfiguration;
-    bool m_multiRegionConfigurationHasBeenSet;
+    bool m_multiRegionConfigurationHasBeenSet = false;
 
     int m_pendingDeletionWindowInDays;
-    bool m_pendingDeletionWindowInDaysHasBeenSet;
+    bool m_pendingDeletionWindowInDaysHasBeenSet = false;
 
     Aws::Vector<MacAlgorithmSpec> m_macAlgorithms;
-    bool m_macAlgorithmsHasBeenSet;
+    bool m_macAlgorithmsHasBeenSet = false;
   };
 
 } // namespace Model

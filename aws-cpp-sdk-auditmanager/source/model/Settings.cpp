@@ -64,7 +64,7 @@ Settings& Settings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("defaultProcessOwners"))
   {
-    Array<JsonView> defaultProcessOwnersJsonList = jsonValue.GetArray("defaultProcessOwners");
+    Aws::Utils::Array<JsonView> defaultProcessOwnersJsonList = jsonValue.GetArray("defaultProcessOwners");
     for(unsigned defaultProcessOwnersIndex = 0; defaultProcessOwnersIndex < defaultProcessOwnersJsonList.GetLength(); ++defaultProcessOwnersIndex)
     {
       m_defaultProcessOwners.push_back(defaultProcessOwnersJsonList[defaultProcessOwnersIndex].AsObject());
@@ -106,7 +106,7 @@ JsonValue Settings::Jsonize() const
 
   if(m_defaultProcessOwnersHasBeenSet)
   {
-   Array<JsonValue> defaultProcessOwnersJsonList(m_defaultProcessOwners.size());
+   Aws::Utils::Array<JsonValue> defaultProcessOwnersJsonList(m_defaultProcessOwners.size());
    for(unsigned defaultProcessOwnersIndex = 0; defaultProcessOwnersIndex < defaultProcessOwnersJsonList.GetLength(); ++defaultProcessOwnersIndex)
    {
      defaultProcessOwnersJsonList[defaultProcessOwnersIndex].AsObject(m_defaultProcessOwners[defaultProcessOwnersIndex].Jsonize());

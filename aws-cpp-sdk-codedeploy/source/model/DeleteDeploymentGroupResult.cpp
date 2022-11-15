@@ -30,7 +30,7 @@ DeleteDeploymentGroupResult& DeleteDeploymentGroupResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("hooksNotCleanedUp"))
   {
-    Array<JsonView> hooksNotCleanedUpJsonList = jsonValue.GetArray("hooksNotCleanedUp");
+    Aws::Utils::Array<JsonView> hooksNotCleanedUpJsonList = jsonValue.GetArray("hooksNotCleanedUp");
     for(unsigned hooksNotCleanedUpIndex = 0; hooksNotCleanedUpIndex < hooksNotCleanedUpJsonList.GetLength(); ++hooksNotCleanedUpIndex)
     {
       m_hooksNotCleanedUp.push_back(hooksNotCleanedUpJsonList[hooksNotCleanedUpIndex].AsObject());

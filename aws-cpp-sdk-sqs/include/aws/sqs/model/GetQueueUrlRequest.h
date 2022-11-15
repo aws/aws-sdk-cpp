@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_queueName;
-    bool m_queueNameHasBeenSet;
+    bool m_queueNameHasBeenSet = false;
 
     Aws::String m_queueOwnerAWSAccountId;
-    bool m_queueOwnerAWSAccountIdHasBeenSet;
+    bool m_queueOwnerAWSAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

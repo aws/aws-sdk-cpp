@@ -35,7 +35,7 @@ Aws::String GetOpsSummaryRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
@@ -46,7 +46,7 @@ Aws::String GetOpsSummaryRequest::SerializePayload() const
 
   if(m_aggregatorsHasBeenSet)
   {
-   Array<JsonValue> aggregatorsJsonList(m_aggregators.size());
+   Aws::Utils::Array<JsonValue> aggregatorsJsonList(m_aggregators.size());
    for(unsigned aggregatorsIndex = 0; aggregatorsIndex < aggregatorsJsonList.GetLength(); ++aggregatorsIndex)
    {
      aggregatorsJsonList[aggregatorsIndex].AsObject(m_aggregators[aggregatorsIndex].Jsonize());
@@ -57,7 +57,7 @@ Aws::String GetOpsSummaryRequest::SerializePayload() const
 
   if(m_resultAttributesHasBeenSet)
   {
-   Array<JsonValue> resultAttributesJsonList(m_resultAttributes.size());
+   Aws::Utils::Array<JsonValue> resultAttributesJsonList(m_resultAttributes.size());
    for(unsigned resultAttributesIndex = 0; resultAttributesIndex < resultAttributesJsonList.GetLength(); ++resultAttributesIndex)
    {
      resultAttributesJsonList[resultAttributesIndex].AsObject(m_resultAttributes[resultAttributesIndex].Jsonize());

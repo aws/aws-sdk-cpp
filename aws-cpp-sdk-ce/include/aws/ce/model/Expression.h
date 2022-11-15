@@ -158,32 +158,32 @@ namespace Model
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline const Expression& GetNot() const{ return m_not[0]; }
+    const Expression& GetNot() const;
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline bool NotHasBeenSet() const { return m_notHasBeenSet; }
+    bool NotHasBeenSet() const;
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline void SetNot(const Expression& value) { m_notHasBeenSet = true; m_not.resize(1); m_not[0] = value; }
+    void SetNot(const Expression& value);
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline void SetNot(Expression&& value) { m_notHasBeenSet = true; m_not.resize(1); m_not[0] = std::move(value); }
+    void SetNot(Expression&& value);
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline Expression& WithNot(const Expression& value) { SetNot(value); return *this;}
+    Expression& WithNot(const Expression& value);
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline Expression& WithNot(Expression&& value) { SetNot(std::move(value)); return *this;}
+    Expression& WithNot(Expression&& value);
 
 
     /**
@@ -281,22 +281,22 @@ namespace Model
   private:
 
     Aws::Vector<Expression> m_or;
-    bool m_orHasBeenSet;
+    bool m_orHasBeenSet = false;
 
     Aws::Vector<Expression> m_and;
-    bool m_andHasBeenSet;
+    bool m_andHasBeenSet = false;
 
-    Aws::Vector<Expression> m_not;
-    bool m_notHasBeenSet;
+    std::shared_ptr<Expression> m_not;
+    bool m_notHasBeenSet = false;
 
     DimensionValues m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     TagValues m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     CostCategoryValues m_costCategories;
-    bool m_costCategoriesHasBeenSet;
+    bool m_costCategoriesHasBeenSet = false;
   };
 
 } // namespace Model

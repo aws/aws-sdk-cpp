@@ -90,59 +90,59 @@ namespace Model
 
     /**
      * <p>The simple JSON object used to send a subset of a push notification to the
-     * requsted member.</p>
+     * requested member.</p>
      */
     inline const Aws::String& GetFilterRule() const{ return m_filterRule; }
 
     /**
      * <p>The simple JSON object used to send a subset of a push notification to the
-     * requsted member.</p>
+     * requested member.</p>
      */
     inline bool FilterRuleHasBeenSet() const { return m_filterRuleHasBeenSet; }
 
     /**
      * <p>The simple JSON object used to send a subset of a push notification to the
-     * requsted member.</p>
+     * requested member.</p>
      */
     inline void SetFilterRule(const Aws::String& value) { m_filterRuleHasBeenSet = true; m_filterRule = value; }
 
     /**
      * <p>The simple JSON object used to send a subset of a push notification to the
-     * requsted member.</p>
+     * requested member.</p>
      */
     inline void SetFilterRule(Aws::String&& value) { m_filterRuleHasBeenSet = true; m_filterRule = std::move(value); }
 
     /**
      * <p>The simple JSON object used to send a subset of a push notification to the
-     * requsted member.</p>
+     * requested member.</p>
      */
     inline void SetFilterRule(const char* value) { m_filterRuleHasBeenSet = true; m_filterRule.assign(value); }
 
     /**
      * <p>The simple JSON object used to send a subset of a push notification to the
-     * requsted member.</p>
+     * requested member.</p>
      */
     inline PushNotificationPreferences& WithFilterRule(const Aws::String& value) { SetFilterRule(value); return *this;}
 
     /**
      * <p>The simple JSON object used to send a subset of a push notification to the
-     * requsted member.</p>
+     * requested member.</p>
      */
     inline PushNotificationPreferences& WithFilterRule(Aws::String&& value) { SetFilterRule(std::move(value)); return *this;}
 
     /**
      * <p>The simple JSON object used to send a subset of a push notification to the
-     * requsted member.</p>
+     * requested member.</p>
      */
     inline PushNotificationPreferences& WithFilterRule(const char* value) { SetFilterRule(value); return *this;}
 
   private:
 
     AllowNotifications m_allowNotifications;
-    bool m_allowNotificationsHasBeenSet;
+    bool m_allowNotificationsHasBeenSet = false;
 
     Aws::String m_filterRule;
-    bool m_filterRuleHasBeenSet;
+    bool m_filterRuleHasBeenSet = false;
   };
 
 } // namespace Model

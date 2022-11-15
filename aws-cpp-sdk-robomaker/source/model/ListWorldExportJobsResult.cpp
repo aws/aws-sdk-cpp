@@ -30,7 +30,7 @@ ListWorldExportJobsResult& ListWorldExportJobsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("worldExportJobSummaries"))
   {
-    Array<JsonView> worldExportJobSummariesJsonList = jsonValue.GetArray("worldExportJobSummaries");
+    Aws::Utils::Array<JsonView> worldExportJobSummariesJsonList = jsonValue.GetArray("worldExportJobSummaries");
     for(unsigned worldExportJobSummariesIndex = 0; worldExportJobSummariesIndex < worldExportJobSummariesJsonList.GetLength(); ++worldExportJobSummariesIndex)
     {
       m_worldExportJobSummaries.push_back(worldExportJobSummariesJsonList[worldExportJobSummariesIndex].AsObject());

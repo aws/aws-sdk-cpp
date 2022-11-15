@@ -35,101 +35,108 @@ namespace Model
 
 
     /**
-     * <p>The operation returns a page of jobs at a time. The maximum size of the list
-     * is set by the MaxResults parameter. If there are more language models in the
-     * list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-     * token. Include the token in the next request to the operation to return the next
-     * page of language models.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The operation returns a page of jobs at a time. The maximum size of the list
-     * is set by the MaxResults parameter. If there are more language models in the
-     * list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-     * token. Include the token in the next request to the operation to return the next
-     * page of language models.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The operation returns a page of jobs at a time. The maximum size of the list
-     * is set by the MaxResults parameter. If there are more language models in the
-     * list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-     * token. Include the token in the next request to the operation to return the next
-     * page of language models.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The operation returns a page of jobs at a time. The maximum size of the list
-     * is set by the MaxResults parameter. If there are more language models in the
-     * list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-     * token. Include the token in the next request to the operation to return the next
-     * page of language models.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The operation returns a page of jobs at a time. The maximum size of the list
-     * is set by the MaxResults parameter. If there are more language models in the
-     * list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-     * token. Include the token in the next request to the operation to return the next
-     * page of language models.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline ListLanguageModelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The operation returns a page of jobs at a time. The maximum size of the list
-     * is set by the MaxResults parameter. If there are more language models in the
-     * list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-     * token. Include the token in the next request to the operation to return the next
-     * page of language models.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline ListLanguageModelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The operation returns a page of jobs at a time. The maximum size of the list
-     * is set by the MaxResults parameter. If there are more language models in the
-     * list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-     * token. Include the token in the next request to the operation to return the next
-     * page of language models.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline ListLanguageModelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>A list of objects containing information about custom language models.</p>
+     * <p>Provides information about the custom language models that match the criteria
+     * specified in your request.</p>
      */
     inline const Aws::Vector<LanguageModel>& GetModels() const{ return m_models; }
 
     /**
-     * <p>A list of objects containing information about custom language models.</p>
+     * <p>Provides information about the custom language models that match the criteria
+     * specified in your request.</p>
      */
     inline void SetModels(const Aws::Vector<LanguageModel>& value) { m_models = value; }
 
     /**
-     * <p>A list of objects containing information about custom language models.</p>
+     * <p>Provides information about the custom language models that match the criteria
+     * specified in your request.</p>
      */
     inline void SetModels(Aws::Vector<LanguageModel>&& value) { m_models = std::move(value); }
 
     /**
-     * <p>A list of objects containing information about custom language models.</p>
+     * <p>Provides information about the custom language models that match the criteria
+     * specified in your request.</p>
      */
     inline ListLanguageModelsResult& WithModels(const Aws::Vector<LanguageModel>& value) { SetModels(value); return *this;}
 
     /**
-     * <p>A list of objects containing information about custom language models.</p>
+     * <p>Provides information about the custom language models that match the criteria
+     * specified in your request.</p>
      */
     inline ListLanguageModelsResult& WithModels(Aws::Vector<LanguageModel>&& value) { SetModels(std::move(value)); return *this;}
 
     /**
-     * <p>A list of objects containing information about custom language models.</p>
+     * <p>Provides information about the custom language models that match the criteria
+     * specified in your request.</p>
      */
     inline ListLanguageModelsResult& AddModels(const LanguageModel& value) { m_models.push_back(value); return *this; }
 
     /**
-     * <p>A list of objects containing information about custom language models.</p>
+     * <p>Provides information about the custom language models that match the criteria
+     * specified in your request.</p>
      */
     inline ListLanguageModelsResult& AddModels(LanguageModel&& value) { m_models.push_back(std::move(value)); return *this; }
 

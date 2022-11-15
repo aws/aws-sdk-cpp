@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::Vector<TransformOperation> m_dataTransforms;
-    bool m_dataTransformsHasBeenSet;
+    bool m_dataTransformsHasBeenSet = false;
 
     LogicalTableSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

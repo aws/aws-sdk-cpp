@@ -149,72 +149,72 @@ namespace Model
 
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
     inline const Aws::String& GetAirflowVersion() const{ return m_airflowVersion; }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
     inline bool AirflowVersionHasBeenSet() const { return m_airflowVersionHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
     inline void SetAirflowVersion(const Aws::String& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = value; }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
     inline void SetAirflowVersion(Aws::String&& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = std::move(value); }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
     inline void SetAirflowVersion(const char* value) { m_airflowVersionHasBeenSet = true; m_airflowVersion.assign(value); }
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
     inline CreateEnvironmentRequest& WithAirflowVersion(const Aws::String& value) { SetAirflowVersion(value); return *this;}
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
     inline CreateEnvironmentRequest& WithAirflowVersion(Aws::String&& value) { SetAirflowVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
@@ -1020,29 +1020,29 @@ namespace Model
 
     /**
      * <p>The number of Apache Airflow schedulers to run in your environment. Valid
-     * values:</p> <ul> <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p>
-     * </li> <li> <p>v1.10.12 - Accepts 1.</p> </li> </ul>
+     * values:</p> <ul> <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+     * <li> <p>v1 - Accepts 1.</p> </li> </ul>
      */
     inline int GetSchedulers() const{ return m_schedulers; }
 
     /**
      * <p>The number of Apache Airflow schedulers to run in your environment. Valid
-     * values:</p> <ul> <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p>
-     * </li> <li> <p>v1.10.12 - Accepts 1.</p> </li> </ul>
+     * values:</p> <ul> <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+     * <li> <p>v1 - Accepts 1.</p> </li> </ul>
      */
     inline bool SchedulersHasBeenSet() const { return m_schedulersHasBeenSet; }
 
     /**
      * <p>The number of Apache Airflow schedulers to run in your environment. Valid
-     * values:</p> <ul> <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p>
-     * </li> <li> <p>v1.10.12 - Accepts 1.</p> </li> </ul>
+     * values:</p> <ul> <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+     * <li> <p>v1 - Accepts 1.</p> </li> </ul>
      */
     inline void SetSchedulers(int value) { m_schedulersHasBeenSet = true; m_schedulers = value; }
 
     /**
      * <p>The number of Apache Airflow schedulers to run in your environment. Valid
-     * values:</p> <ul> <li> <p>v2.0.2 - Accepts between 2 to 5. Defaults to 2.</p>
-     * </li> <li> <p>v1.10.12 - Accepts 1.</p> </li> </ul>
+     * values:</p> <ul> <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
+     * <li> <p>v1 - Accepts 1.</p> </li> </ul>
      */
     inline CreateEnvironmentRequest& WithSchedulers(int value) { SetSchedulers(value); return *this;}
 
@@ -1335,64 +1335,64 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_airflowConfigurationOptions;
-    bool m_airflowConfigurationOptionsHasBeenSet;
+    bool m_airflowConfigurationOptionsHasBeenSet = false;
 
     Aws::String m_airflowVersion;
-    bool m_airflowVersionHasBeenSet;
+    bool m_airflowVersionHasBeenSet = false;
 
     Aws::String m_dagS3Path;
-    bool m_dagS3PathHasBeenSet;
+    bool m_dagS3PathHasBeenSet = false;
 
     Aws::String m_environmentClass;
-    bool m_environmentClassHasBeenSet;
+    bool m_environmentClassHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKey;
-    bool m_kmsKeyHasBeenSet;
+    bool m_kmsKeyHasBeenSet = false;
 
     LoggingConfigurationInput m_loggingConfiguration;
-    bool m_loggingConfigurationHasBeenSet;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     int m_maxWorkers;
-    bool m_maxWorkersHasBeenSet;
+    bool m_maxWorkersHasBeenSet = false;
 
     int m_minWorkers;
-    bool m_minWorkersHasBeenSet;
+    bool m_minWorkersHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     Aws::String m_pluginsS3ObjectVersion;
-    bool m_pluginsS3ObjectVersionHasBeenSet;
+    bool m_pluginsS3ObjectVersionHasBeenSet = false;
 
     Aws::String m_pluginsS3Path;
-    bool m_pluginsS3PathHasBeenSet;
+    bool m_pluginsS3PathHasBeenSet = false;
 
     Aws::String m_requirementsS3ObjectVersion;
-    bool m_requirementsS3ObjectVersionHasBeenSet;
+    bool m_requirementsS3ObjectVersionHasBeenSet = false;
 
     Aws::String m_requirementsS3Path;
-    bool m_requirementsS3PathHasBeenSet;
+    bool m_requirementsS3PathHasBeenSet = false;
 
     int m_schedulers;
-    bool m_schedulersHasBeenSet;
+    bool m_schedulersHasBeenSet = false;
 
     Aws::String m_sourceBucketArn;
-    bool m_sourceBucketArnHasBeenSet;
+    bool m_sourceBucketArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     WebserverAccessMode m_webserverAccessMode;
-    bool m_webserverAccessModeHasBeenSet;
+    bool m_webserverAccessModeHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceWindowStart;
-    bool m_weeklyMaintenanceWindowStartHasBeenSet;
+    bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
   };
 
 } // namespace Model

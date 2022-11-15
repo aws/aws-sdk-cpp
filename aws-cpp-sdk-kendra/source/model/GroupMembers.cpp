@@ -37,7 +37,7 @@ GroupMembers& GroupMembers::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MemberGroups"))
   {
-    Array<JsonView> memberGroupsJsonList = jsonValue.GetArray("MemberGroups");
+    Aws::Utils::Array<JsonView> memberGroupsJsonList = jsonValue.GetArray("MemberGroups");
     for(unsigned memberGroupsIndex = 0; memberGroupsIndex < memberGroupsJsonList.GetLength(); ++memberGroupsIndex)
     {
       m_memberGroups.push_back(memberGroupsJsonList[memberGroupsIndex].AsObject());
@@ -47,7 +47,7 @@ GroupMembers& GroupMembers::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MemberUsers"))
   {
-    Array<JsonView> memberUsersJsonList = jsonValue.GetArray("MemberUsers");
+    Aws::Utils::Array<JsonView> memberUsersJsonList = jsonValue.GetArray("MemberUsers");
     for(unsigned memberUsersIndex = 0; memberUsersIndex < memberUsersJsonList.GetLength(); ++memberUsersIndex)
     {
       m_memberUsers.push_back(memberUsersJsonList[memberUsersIndex].AsObject());
@@ -71,7 +71,7 @@ JsonValue GroupMembers::Jsonize() const
 
   if(m_memberGroupsHasBeenSet)
   {
-   Array<JsonValue> memberGroupsJsonList(m_memberGroups.size());
+   Aws::Utils::Array<JsonValue> memberGroupsJsonList(m_memberGroups.size());
    for(unsigned memberGroupsIndex = 0; memberGroupsIndex < memberGroupsJsonList.GetLength(); ++memberGroupsIndex)
    {
      memberGroupsJsonList[memberGroupsIndex].AsObject(m_memberGroups[memberGroupsIndex].Jsonize());
@@ -82,7 +82,7 @@ JsonValue GroupMembers::Jsonize() const
 
   if(m_memberUsersHasBeenSet)
   {
-   Array<JsonValue> memberUsersJsonList(m_memberUsers.size());
+   Aws::Utils::Array<JsonValue> memberUsersJsonList(m_memberUsers.size());
    for(unsigned memberUsersIndex = 0; memberUsersIndex < memberUsersJsonList.GetLength(); ++memberUsersIndex)
    {
      memberUsersJsonList[memberUsersIndex].AsObject(m_memberUsers[memberUsersIndex].Jsonize());

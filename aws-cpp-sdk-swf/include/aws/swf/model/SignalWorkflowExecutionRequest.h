@@ -257,19 +257,19 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     Aws::String m_signalName;
-    bool m_signalNameHasBeenSet;
+    bool m_signalNameHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
   };
 
 } // namespace Model

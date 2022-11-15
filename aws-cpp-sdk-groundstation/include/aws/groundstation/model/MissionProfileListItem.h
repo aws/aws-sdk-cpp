@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_missionProfileArn;
-    bool m_missionProfileArnHasBeenSet;
+    bool m_missionProfileArnHasBeenSet = false;
 
     Aws::String m_missionProfileId;
-    bool m_missionProfileIdHasBeenSet;
+    bool m_missionProfileIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

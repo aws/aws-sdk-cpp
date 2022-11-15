@@ -159,13 +159,13 @@ namespace Model
   private:
 
     VirtualGatewayListenerTlsCertificate m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     VirtualGatewayListenerTlsMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     VirtualGatewayListenerTlsValidationContext m_validation;
-    bool m_validationHasBeenSet;
+    bool m_validationHasBeenSet = false;
   };
 
 } // namespace Model

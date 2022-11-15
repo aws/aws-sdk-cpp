@@ -46,6 +46,15 @@ DisassociateCustomDomainResult& DisassociateCustomDomainResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("VpcDNSTargets"))
+  {
+    Aws::Utils::Array<JsonView> vpcDNSTargetsJsonList = jsonValue.GetArray("VpcDNSTargets");
+    for(unsigned vpcDNSTargetsIndex = 0; vpcDNSTargetsIndex < vpcDNSTargetsJsonList.GetLength(); ++vpcDNSTargetsIndex)
+    {
+      m_vpcDNSTargets.push_back(vpcDNSTargetsJsonList[vpcDNSTargetsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

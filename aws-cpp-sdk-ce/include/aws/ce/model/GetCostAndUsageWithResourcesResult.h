@@ -130,37 +130,37 @@ namespace Model
 
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline const Aws::Vector<ResultByTime>& GetResultsByTime() const{ return m_resultsByTime; }
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline void SetResultsByTime(const Aws::Vector<ResultByTime>& value) { m_resultsByTime = value; }
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline void SetResultsByTime(Aws::Vector<ResultByTime>&& value) { m_resultsByTime = std::move(value); }
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline GetCostAndUsageWithResourcesResult& WithResultsByTime(const Aws::Vector<ResultByTime>& value) { SetResultsByTime(value); return *this;}
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline GetCostAndUsageWithResourcesResult& WithResultsByTime(Aws::Vector<ResultByTime>&& value) { SetResultsByTime(std::move(value)); return *this;}
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline GetCostAndUsageWithResourcesResult& AddResultsByTime(const ResultByTime& value) { m_resultsByTime.push_back(value); return *this; }
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline GetCostAndUsageWithResourcesResult& AddResultsByTime(ResultByTime&& value) { m_resultsByTime.push_back(std::move(value)); return *this; }
 

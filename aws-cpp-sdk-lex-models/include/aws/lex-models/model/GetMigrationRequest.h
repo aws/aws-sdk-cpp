@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_migrationId;
-    bool m_migrationIdHasBeenSet;
+    bool m_migrationIdHasBeenSet = false;
   };
 
 } // namespace Model

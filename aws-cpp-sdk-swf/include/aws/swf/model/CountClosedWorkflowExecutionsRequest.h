@@ -406,25 +406,25 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     ExecutionTimeFilter m_startTimeFilter;
-    bool m_startTimeFilterHasBeenSet;
+    bool m_startTimeFilterHasBeenSet = false;
 
     ExecutionTimeFilter m_closeTimeFilter;
-    bool m_closeTimeFilterHasBeenSet;
+    bool m_closeTimeFilterHasBeenSet = false;
 
     WorkflowExecutionFilter m_executionFilter;
-    bool m_executionFilterHasBeenSet;
+    bool m_executionFilterHasBeenSet = false;
 
     WorkflowTypeFilter m_typeFilter;
-    bool m_typeFilterHasBeenSet;
+    bool m_typeFilterHasBeenSet = false;
 
     TagFilter m_tagFilter;
-    bool m_tagFilterHasBeenSet;
+    bool m_tagFilterHasBeenSet = false;
 
     CloseStatusFilter m_closeStatusFilter;
-    bool m_closeStatusFilterHasBeenSet;
+    bool m_closeStatusFilterHasBeenSet = false;
   };
 
 } // namespace Model

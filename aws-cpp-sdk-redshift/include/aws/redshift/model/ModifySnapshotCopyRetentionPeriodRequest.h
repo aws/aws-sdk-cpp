@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     int m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     bool m_manual;
-    bool m_manualHasBeenSet;
+    bool m_manualHasBeenSet = false;
   };
 
 } // namespace Model

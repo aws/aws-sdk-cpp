@@ -31,7 +31,7 @@ Aws::String UpdateResourceSetRequest::SerializePayload() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsObject(m_resources[resourcesIndex].Jsonize());
