@@ -38,7 +38,8 @@ WorkspaceDirectory::WorkspaceDirectory() :
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
     m_selfservicePermissionsHasBeenSet(false),
-    m_samlPropertiesHasBeenSet(false)
+    m_samlPropertiesHasBeenSet(false),
+    m_certificateBasedAuthPropertiesHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ WorkspaceDirectory::WorkspaceDirectory(JsonView jsonValue) :
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
     m_selfservicePermissionsHasBeenSet(false),
-    m_samlPropertiesHasBeenSet(false)
+    m_samlPropertiesHasBeenSet(false),
+    m_certificateBasedAuthPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -197,6 +199,13 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
     m_samlPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CertificateBasedAuthProperties"))
+  {
+    m_certificateBasedAuthProperties = jsonValue.GetObject("CertificateBasedAuthProperties");
+
+    m_certificateBasedAuthPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -315,6 +324,12 @@ JsonValue WorkspaceDirectory::Jsonize() const
   if(m_samlPropertiesHasBeenSet)
   {
    payload.WithObject("SamlProperties", m_samlProperties.Jsonize());
+
+  }
+
+  if(m_certificateBasedAuthPropertiesHasBeenSet)
+  {
+   payload.WithObject("CertificateBasedAuthProperties", m_certificateBasedAuthProperties.Jsonize());
 
   }
 

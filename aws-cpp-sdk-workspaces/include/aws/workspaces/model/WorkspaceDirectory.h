@@ -14,6 +14,7 @@
 #include <aws/workspaces/model/Tenancy.h>
 #include <aws/workspaces/model/SelfservicePermissions.h>
 #include <aws/workspaces/model/SamlProperties.h>
+#include <aws/workspaces/model/CertificateBasedAuthProperties.h>
 #include <utility>
 
 namespace Aws
@@ -804,6 +805,49 @@ namespace Model
      */
     inline WorkspaceDirectory& WithSamlProperties(SamlProperties&& value) { SetSamlProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory for WorkSpaces
+     * login.</p>
+     */
+    inline const CertificateBasedAuthProperties& GetCertificateBasedAuthProperties() const{ return m_certificateBasedAuthProperties; }
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory for WorkSpaces
+     * login.</p>
+     */
+    inline bool CertificateBasedAuthPropertiesHasBeenSet() const { return m_certificateBasedAuthPropertiesHasBeenSet; }
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory for WorkSpaces
+     * login.</p>
+     */
+    inline void SetCertificateBasedAuthProperties(const CertificateBasedAuthProperties& value) { m_certificateBasedAuthPropertiesHasBeenSet = true; m_certificateBasedAuthProperties = value; }
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory for WorkSpaces
+     * login.</p>
+     */
+    inline void SetCertificateBasedAuthProperties(CertificateBasedAuthProperties&& value) { m_certificateBasedAuthPropertiesHasBeenSet = true; m_certificateBasedAuthProperties = std::move(value); }
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory for WorkSpaces
+     * login.</p>
+     */
+    inline WorkspaceDirectory& WithCertificateBasedAuthProperties(const CertificateBasedAuthProperties& value) { SetCertificateBasedAuthProperties(value); return *this;}
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory for WorkSpaces
+     * login.</p>
+     */
+    inline WorkspaceDirectory& WithCertificateBasedAuthProperties(CertificateBasedAuthProperties&& value) { SetCertificateBasedAuthProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_directoryId;
@@ -856,6 +900,9 @@ namespace Model
 
     SamlProperties m_samlProperties;
     bool m_samlPropertiesHasBeenSet = false;
+
+    CertificateBasedAuthProperties m_certificateBasedAuthProperties;
+    bool m_certificateBasedAuthPropertiesHasBeenSet = false;
   };
 
 } // namespace Model
