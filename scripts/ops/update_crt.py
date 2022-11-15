@@ -86,11 +86,10 @@ def main():
 
     call_git(cwd=CRT_DIR, timeout=60, command="checkout main --recurse-submodules")
     call_git(cwd=CRT_DIR, timeout=60, command="pull --recurse-submodules")
-
     latest_crt_version = call_git(cwd=CRT_DIR, timeout=10, command="describe --abbrev=0 --tags")
-    print(f"Updated submodule to the latest CRT tag: {latest_crt_version}")
 
     call_git(cwd=CRT_DIR, timeout=60, command=f"checkout {latest_crt_version} --recurse-submodules")
+    print(f"Updated submodule to the latest CRT tag: {latest_crt_version}")
 
     print(f"Now updating script {PREFETCH_DEPS_SH_NAME}")
 
@@ -108,7 +107,7 @@ def main():
     jinja2_env = jinja2.Environment()
     jinja2_template = jinja2_env.from_string(PREFETCH_DEPS_TEMPLATE)
     rendered_script = jinja2_template.render(t_crt_cpp_hash=crt_cpp_hash,
-                                             t_crt_cpp_tag=current_crt_version,
+                                             t_crt_cpp_tag=latest_crt_version,
                                              t_crt_modules=crt_cpp_c_modules,
                                              t_crt_modules_len=len(crt_cpp_c_modules))
 
